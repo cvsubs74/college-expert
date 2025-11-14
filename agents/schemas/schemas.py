@@ -131,3 +131,13 @@ class KnowledgeBaseOutput(BaseModel):
     answer: str = Field(description="Answer from knowledge base search")
     citations: List[Citation] = Field(default_factory=list, description="Citations from knowledge base")
     suggested_questions: List[str] = Field(default_factory=list, description="Follow-up questions")
+
+
+# ============================================================================
+# Orchestrator Output Schema
+# ============================================================================
+
+class OrchestratorOutput(BaseModel):
+    """Final output from the College Counselor agent."""
+    result: str = Field(description="Markdown-formatted response with complete answer")
+    suggested_questions: List[str] = Field(default_factory=list, description="Suggested follow-up questions for the user")

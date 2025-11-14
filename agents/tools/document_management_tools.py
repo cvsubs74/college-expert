@@ -10,7 +10,6 @@ import time
 import requests
 from typing import Dict, Any, List, Optional
 from google import genai
-from .tool_logger import log_tool_call
 
 # Initialize Gemini Developer API client
 client = genai.Client(
@@ -45,7 +44,6 @@ def get_store_name():
         raise
 
 
-@log_tool_call
 def upload_document(
     file_path: str,
     display_name: Optional[str] = None
@@ -120,7 +118,6 @@ def upload_document(
         }
 
 
-@log_tool_call
 def list_documents() -> Dict[str, Any]:
     """
     List all documents in the File Search store.
@@ -214,7 +211,6 @@ def list_documents() -> Dict[str, Any]:
         }
 
 
-@log_tool_call
 def delete_document(document_name: str) -> Dict[str, Any]:
     """
     Delete a document from the File Search store.
@@ -253,7 +249,6 @@ def delete_document(document_name: str) -> Dict[str, Any]:
         }
 
 
-@log_tool_call
 def get_document_count() -> Dict[str, Any]:
     """
     Get the count of documents in the File Search store.

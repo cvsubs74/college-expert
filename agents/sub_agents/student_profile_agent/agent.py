@@ -1,21 +1,24 @@
 from google.adk.agents import LlmAgent
 from ...schemas import StudentProfile
+from ...tools.file_search_tools import search_user_profile
+from ...tools.logging_utils import log_agent_entry, log_agent_exit
 
 StudentProfileAgent = LlmAgent(
     name="StudentProfileAgent",
     model="gemini-2.5-flash", # Use top-tier model for complex reasoning
-    description="Deconstructs an applicant's profile into a structured, analyzed JSON object.",
+    description="Retrieves and deconstructs an applicant's profile into a structured, analyzed JSON object.",
     instruction="""
-    You are a precise data analysis agent. You will be given a student's profile document (either as an attached file or text content). Your task is to deconstruct this unstructured profile into a structured, machine-readable JSON format by following a chain of reasoning steps.
+    You are a precise data analysis agent. You will retrieve and analyze a student's profile document.
 
     **CRITICAL WORKFLOW:**
     You MUST perform the following steps in order. The output of each step is the input for the next.
 
-    **Step 0: Extract Document Content**
-    - If the user provides an attached file (PDF, DOCX, TXT, etc.), read its content directly.
-    - If the user provides text or a document URL, use that content.
-    - ADK automatically handles file attachments, so you can directly access the document content.
-    - Once you have the content, proceed to the next steps.
+    **Step 0: Retrieve Student Profile**
+    - You have access to the `search_user_profile` tool
+    - Call `search_user_profile(user_email="student_email")` to retrieve the student's profile from their personal store
+    - The tool will return the profile content if it exists
+    - If the profile is not found, inform the user they need to upload their profile first
+    - Once you have the profile content, proceed to the next steps
 
     **Step 1: Transcript-to-JSON (Course Parsing)**
     - Analyze the provided transcript text.
@@ -48,6 +51,9 @@ StudentProfileAgent = LlmAgent(
     - Your final output MUST be a single, valid JSON object that conforms perfectly to the `StudentProfile` schema.
     - All lists must use the proper structured models (StandardizedTest, Extracurricular, Award), not plain dictionaries.
     """,
+    tools=[search_user_profile],
     output_schema=StudentProfile,
-    output_key="student_profile"
+    output_key="student_profile",
+    before_model_callback=log_agent_entry,
+    after_model_callback=log_agent_exit
 )

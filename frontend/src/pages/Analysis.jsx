@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { startSession, sendMessage, extractResponseText } from '../services/api';
+import { startSession, sendMessage, extractFullResponse } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 
 function Analysis() {
@@ -19,6 +19,7 @@ function Analysis() {
   const [analysis, setAnalysis] = useState(null);
   const [error, setError] = useState(null);
   const [conversationHistory, setConversationHistory] = useState([]);
+  const [suggestedQuestions, setSuggestedQuestions] = useState([]);
 
   // Load saved data from localStorage
   useEffect(() => {
@@ -69,18 +70,23 @@ function Analysis() {
       console.log('Sending analysis request...');
       const response = await startSession(message, currentUser?.email);
 
-      // Extract the response text
-      const responseText = extractResponseText(response);
-      console.log('Agent response:', responseText);
+      // Extract the response text and suggested questions
+      const { result, suggested_questions } = extractFullResponse(response);
+      console.log('Agent response:', result);
+      
+      // Update suggested questions
+      if (suggested_questions && Array.isArray(suggested_questions)) {
+        setSuggestedQuestions(suggested_questions);
+      }
 
       // Add to conversation history
       setConversationHistory(prev => [
         ...prev,
         { role: 'user', content: message },
-        { role: 'assistant', content: responseText }
+        { role: 'assistant', content: result }
       ]);
 
-      setAnalysis(responseText);
+      setAnalysis(result);
     } catch (err) {
       console.error('Analysis error:', err);
       setError(
@@ -97,6 +103,7 @@ function Analysis() {
     setIntendedMajor('');
     setAnalysis(null);
     setConversationHistory([]);
+    setSuggestedQuestions([]);
     setError(null);
     // Keep the session - just clear the form and results
     // Session will be reused for the next analysis
@@ -111,16 +118,21 @@ function Analysis() {
     try {
       // Use startSession which will reuse the existing session
       const response = await startSession(followUpMessage, currentUser?.email);
-      const responseText = extractResponseText(response);
+      const { result, suggested_questions } = extractFullResponse(response);
+      
+      // Update suggested questions
+      if (suggested_questions && Array.isArray(suggested_questions)) {
+        setSuggestedQuestions(suggested_questions);
+      }
 
       // Add to conversation history
       setConversationHistory(prev => [
         ...prev,
         { role: 'user', content: followUpMessage },
-        { role: 'assistant', content: responseText }
+        { role: 'assistant', content: result }
       ]);
 
-      setAnalysis(responseText);
+      setAnalysis(result);
     } catch (err) {
       console.error('Follow-up error:', err);
       setError('Failed to send follow-up message. Please try again.');
@@ -128,6 +140,17 @@ function Analysis() {
       setAnalyzing(false);
     }
   };
+
+  // Generic suggested questions for admissions analysis (used as fallback)
+  const defaultAnalysisQuestions = [
+    "What can I do to strengthen my application?",
+    "How does my profile compare to admitted students?",
+    "Should I apply Early Decision or Regular Decision?",
+    "What should I emphasize in my application essays?"
+  ];
+
+  // Display suggested questions - use dynamic ones if available, otherwise defaults
+  const displayedQuestions = suggestedQuestions.length > 0 ? suggestedQuestions : defaultAnalysisQuestions;
 
   return (
     <div className="space-y-8">
@@ -231,6 +254,25 @@ function Analysis() {
             <li>You'll receive a detailed report with risk assessment and recommendations</li>
           </ul>
         </div>
+
+        {/* Suggested Questions Before Analysis */}
+        {!analysis && (
+          <div className="mt-6">
+            <h3 className="text-sm font-medium text-gray-900 mb-3">Common questions about admissions:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {defaultAnalysisQuestions.map((question, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleSendFollowUp(question)}
+                  disabled={analyzing}
+                  className="text-left px-4 py-3 bg-gray-50 hover:bg-primary hover:text-white text-gray-700 rounded-lg text-sm transition-colors border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {question}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Analysis Results */}
@@ -250,6 +292,24 @@ function Analysis() {
               {analysis}
             </ReactMarkdown>
           </div>
+
+          {/* Suggested Questions */}
+          {!analyzing && suggestedQuestions.length > 0 && (
+            <div className="mt-6 pt-6 border-t border-gray-200">
+              <h3 className="text-sm font-medium text-gray-900 mb-3">You might also ask:</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {suggestedQuestions.slice(0, 4).map((question, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleSendFollowUp(question)}
+                    className="text-left px-4 py-3 bg-blue-50 hover:bg-primary hover:text-white text-blue-700 rounded-lg text-sm transition-colors border border-blue-200"
+                  >
+                    {question}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Follow-up Section */}
           <div className="mt-6 pt-6 border-t border-gray-200">

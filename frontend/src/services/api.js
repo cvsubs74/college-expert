@@ -224,7 +224,8 @@ export const deleteStudentProfile = async (documentName) => {
 };
 
 /**
- * Extract text content from the agent's response
+ * Extract text content and suggested questions from the agent's response
+ * Returns an object with { text, suggested_questions }
  */
 export const extractResponseText = (sessionData) => {
   if (!sessionData || !sessionData.events) {
@@ -239,10 +240,61 @@ export const extractResponseText = (sessionData) => {
   }
 
   // Extract text from all parts
-  return lastEvent.content.parts
+  const rawText = lastEvent.content.parts
     .filter(part => part.text)
     .map(part => part.text)
     .join('\n\n');
+  
+  // Try to parse as JSON (OrchestratorOutput format)
+  try {
+    const parsed = JSON.parse(rawText);
+    if (parsed.result !== undefined) {
+      // Return the result text (for backward compatibility)
+      return parsed.result;
+    }
+  } catch (e) {
+    // Not JSON, return as-is
+  }
+  
+  return rawText;
+};
+
+/**
+ * Extract the full response object including suggested questions
+ * Returns { result: string, suggested_questions: string[] }
+ */
+export const extractFullResponse = (sessionData) => {
+  if (!sessionData || !sessionData.events) {
+    return { result: '', suggested_questions: [] };
+  }
+
+  // Get the last event
+  const lastEvent = sessionData.events[sessionData.events.length - 1];
+  
+  if (!lastEvent || !lastEvent.content || !lastEvent.content.parts) {
+    return { result: '', suggested_questions: [] };
+  }
+
+  // Extract text from all parts
+  const rawText = lastEvent.content.parts
+    .filter(part => part.text)
+    .map(part => part.text)
+    .join('\n\n');
+  
+  // Try to parse as JSON (OrchestratorOutput format)
+  try {
+    const parsed = JSON.parse(rawText);
+    if (parsed.result !== undefined) {
+      return {
+        result: parsed.result,
+        suggested_questions: parsed.suggested_questions || []
+      };
+    }
+  } catch (e) {
+    // Not JSON, return raw text with no suggestions
+  }
+  
+  return { result: rawText, suggested_questions: [] };
 };
 
 // ============================================

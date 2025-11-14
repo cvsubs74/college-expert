@@ -10,7 +10,6 @@ import os
 from typing import Dict, Any
 from google import genai
 from google.genai import types
-from .tool_logger import log_tool_call
 
 
 # Initialize Gemini Developer API client (File Search requires Developer API, not Vertex AI)
@@ -52,7 +51,6 @@ def get_store_name(store_display_name=None):
         raise
 
 
-@log_tool_call
 def search_knowledge_base(
     query: str,
     model: str = "gemini-2.5-flash"
@@ -138,7 +136,6 @@ def search_knowledge_base(
         }
 
 
-@log_tool_call
 def search_user_profile(
     user_email: str,
     query: str = "student academic profile transcript grades courses extracurriculars",

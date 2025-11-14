@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { startSession, sendMessage, extractResponseText } from '../services/api';
+import { startSession, sendMessage, extractFullResponse } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 
 function Chat() {
@@ -17,6 +17,7 @@ function Chat() {
   const [inputMessage, setInputMessage] = useState('');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(null);
+  const [suggestedQuestions, setSuggestedQuestions] = useState([]);
   const messagesEndRef = useRef(null);
 
   // Load messages from localStorage
@@ -73,11 +74,16 @@ Question: ${userMessage}`;
       // Use startSession - it will reuse existing session or create new one
       const response = await startSession(knowledgeBaseQuery, currentUser?.email);
 
-      // Extract response text
-      const responseText = extractResponseText(response);
+      // Extract response text and suggested questions
+      const { result, suggested_questions } = extractFullResponse(response);
+      
+      // Update suggested questions
+      if (suggested_questions && Array.isArray(suggested_questions)) {
+        setSuggestedQuestions(suggested_questions);
+      }
 
       // Add assistant response to chat
-      setMessages([...newMessages, { role: 'assistant', content: responseText }]);
+      setMessages([...newMessages, { role: 'assistant', content: result }]);
     } catch (err) {
       console.error('Error sending message:', err);
       setError('Failed to send message. Please try again.');
@@ -89,21 +95,61 @@ Question: ${userMessage}`;
   };
 
   const handleNewChat = () => {
-    setSessionId(null);
     setMessages([]);
     setError(null);
-    localStorage.removeItem('chatSessionId');
+    setSuggestedQuestions([]);
     localStorage.removeItem('chatMessages');
   };
 
-  const suggestedQuestions = [
-    "What does USC look for in applicants?",
-    "What are the admission requirements for Stanford?",
-    "How important are extracurricular activities?",
-    "What is holistic admissions review?",
-    "How do colleges evaluate test scores?",
-    "What makes a strong college essay?"
+  const handleSuggestedQuestion = async (question) => {
+    if (sending) return;
+    
+    setSending(true);
+    setError(null);
+
+    // Add user message to chat
+    const newMessages = [...messages, { role: 'user', content: question }];
+    setMessages(newMessages);
+
+    try {
+      // Construct query that emphasizes knowledge base usage
+      const knowledgeBaseQuery = `Please answer the following question using ONLY information from the college admissions knowledge base. Do not use general knowledge. If the information is not in the knowledge base, say so.
+
+Question: ${question}`;
+
+      // Use startSession - it will reuse existing session or create new one
+      const response = await startSession(knowledgeBaseQuery, currentUser?.email);
+
+      // Extract response text and suggested questions
+      const { result, suggested_questions } = extractFullResponse(response);
+      
+      // Update suggested questions
+      if (suggested_questions && Array.isArray(suggested_questions)) {
+        setSuggestedQuestions(suggested_questions);
+      }
+
+      // Add assistant response to chat
+      setMessages([...newMessages, { role: 'assistant', content: result }]);
+    } catch (err) {
+      console.error('Error sending message:', err);
+      setError('Failed to send message. Please try again.');
+      // Remove user message on error
+      setMessages(messages);
+    } finally {
+      setSending(false);
+    }
+  };
+
+  // Generic suggested questions for initial load
+  const defaultSuggestedQuestions = [
+    "How do colleges evaluate applications holistically?",
+    "What role do standardized test scores play in admissions?",
+    "How important are extracurricular activities in college applications?",
+    "What makes a strong college application essay?"
   ];
+
+  // Display suggested questions - use dynamic ones if available, otherwise defaults
+  const displayedQuestions = suggestedQuestions.length > 0 ? suggestedQuestions : defaultSuggestedQuestions;
 
   return (
     <div className="space-y-6">
@@ -160,11 +206,11 @@ Question: ${userMessage}`;
               <div className="max-w-2xl mx-auto">
                 <p className="text-sm font-medium text-gray-700 mb-3">Suggested questions:</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {suggestedQuestions.map((question, index) => (
+                  {displayedQuestions.map((question, index) => (
                     <button
                       key={index}
-                      onClick={() => setInputMessage(question)}
-                      className="text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg text-sm text-gray-700 transition-colors"
+                      onClick={() => handleSuggestedQuestion(question)}
+                      className="text-left px-4 py-3 bg-gray-50 hover:bg-primary hover:text-white rounded-lg text-sm text-gray-700 transition-colors border border-gray-200"
                     >
                       {question}
                     </button>
@@ -206,6 +252,24 @@ Question: ${userMessage}`;
                       <ArrowPathIcon className="h-4 w-4 text-gray-600 animate-spin" />
                       <span className="text-sm text-gray-600">Thinking...</span>
                     </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Suggested Questions after response */}
+              {!sending && suggestedQuestions.length > 0 && messages.length > 0 && (
+                <div className="max-w-4xl">
+                  <p className="text-xs font-medium text-gray-600 mb-3">You might also ask:</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {suggestedQuestions.slice(0, 4).map((question, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleSuggestedQuestion(question)}
+                        className="text-left px-4 py-3 bg-blue-50 hover:bg-primary hover:text-white text-blue-700 rounded-lg text-sm transition-colors border border-blue-200"
+                      >
+                        {question}
+                      </button>
+                    ))}
                   </div>
                 </div>
               )}

@@ -6,6 +6,7 @@ from google.adk.agents import LlmAgent, SequentialAgent
 from ...tools.file_search_tools import search_knowledge_base
 from ...tools.document_management_tools import list_documents
 from ...schemas import KnowledgeBaseOutput
+from ...tools.logging_utils import log_agent_entry, log_agent_exit
 
 
 # Retriever agent - calls the tool and stores raw data
@@ -32,7 +33,9 @@ knowledge_base_retriever = LlmAgent(
     - You CANNOT upload or delete documents - only administrators can do that via the Knowledge Base page
     """,
     tools=[search_knowledge_base, list_documents],
-    output_key="raw_search_results"
+    output_key="raw_search_results",
+    before_model_callback=log_agent_entry,
+    after_model_callback=log_agent_exit
 )
 
 # Formatter agent - formats the data into KnowledgeBaseOutput schema
@@ -70,7 +73,9 @@ knowledge_base_formatter = LlmAgent(
     - Keep language clear and professional
     """,
     output_schema=KnowledgeBaseOutput,
-    output_key="knowledge_base_output"
+    output_key="knowledge_base_output",
+    before_model_callback=log_agent_entry,
+    after_model_callback=log_agent_exit
 )
 
 # Sequential agent combining retriever and formatter
