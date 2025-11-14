@@ -4,7 +4,7 @@ Uses sequential pattern: retriever -> formatter
 """
 from google.adk.agents import LlmAgent, SequentialAgent
 from ...tools.file_search_tools import search_knowledge_base
-from ...tools.document_management_tools import upload_document, list_documents
+from ...tools.document_management_tools import list_documents
 from ...schemas import KnowledgeBaseOutput
 
 
@@ -14,25 +14,24 @@ knowledge_base_retriever = LlmAgent(
     model="gemini-2.5-flash",
     description="Retrieves information from college admissions knowledge base and manages documents",
     instruction="""
-    You retrieve information from the college admissions knowledge base and can manage documents.
+    You retrieve information from the college admissions knowledge base.
 
     **AVAILABLE TOOLS:**
     1. `search_knowledge_base(query)` - Search the knowledge base for information
-    2. `upload_document(file_path, display_name)` - Upload a document to the knowledge base
-    3. `list_documents()` - List all documents in the knowledge base
+    2. `list_documents()` - List all documents in the knowledge base
 
     **YOUR JOB:**
     - If the user asks a question, call `search_knowledge_base` with the query
-    - If the user wants to upload a document, call `upload_document` with the file path
     - If the user wants to see what's in the knowledge base, call `list_documents`
     - Store the raw response in the state using output_key
 
     **IMPORTANT:**
-    - Just call the appropriate tool and pass the results forward
+    - Just call the tool and return the raw result
     - Do NOT format or modify the response
     - The next agent will handle formatting
+    - You CANNOT upload or delete documents - only administrators can do that via the Knowledge Base page
     """,
-    tools=[search_knowledge_base, upload_document, list_documents],
+    tools=[search_knowledge_base, list_documents],
     output_key="raw_search_results"
 )
 
