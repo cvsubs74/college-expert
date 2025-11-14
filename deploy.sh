@@ -120,8 +120,20 @@ echo -e "${BLUE}  Step 2: Deploying Frontend${NC}"
 echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
 echo ""
 
+# Get Knowledge Base Manager URL
+KNOWLEDGE_BASE_URL=$(gcloud functions describe knowledge-base-manager --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+
 export VITE_API_URL=$AGENT_URL
 export VITE_PROFILE_MANAGER_URL=$FUNCTION_URL
+export VITE_KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_URL
+
+# Firebase Configuration
+export VITE_FIREBASE_API_KEY="AIzaSyB21YdLOZTjO1przhjsX1Es64-kFGov5XE"
+export VITE_FIREBASE_AUTH_DOMAIN="college-counsellor.firebaseapp.com"
+export VITE_FIREBASE_PROJECT_ID="college-counsellor"
+export VITE_FIREBASE_STORAGE_BUCKET="college-counsellor.firebasestorage.app"
+export VITE_FIREBASE_MESSAGING_SENDER_ID="1098097030863"
+export VITE_FIREBASE_APP_ID="1:1098097030863:web:6e7d2d9e7f1f7b7f7f7f7f"
 
 ./deploy_frontend.sh
 
