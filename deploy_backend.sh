@@ -16,7 +16,8 @@ NC='\033[0m' # No Color
 PROJECT_ID=${GCP_PROJECT_ID:-"college-counsellor"}
 REGION="us-east1"
 AGENT_SERVICE_NAME="college-counselor-agent"
-CLOUD_FUNCTION_NAME="profile-manager"
+PROFILE_MANAGER_FUNCTION="profile-manager"
+KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
 
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║     College Counselor - Backend Deployment                ║${NC}"
@@ -96,8 +97,8 @@ echo ""
 
 cd cloud_functions/profile_manager
 
-echo -e "${YELLOW}Deploying cloud function...${NC}"
-gcloud functions deploy $CLOUD_FUNCTION_NAME \
+echo -e "${YELLOW}Deploying Profile Manager cloud function...${NC}"
+gcloud functions deploy $PROFILE_MANAGER_FUNCTION \
     --gen2 \
     --runtime=python312 \
     --region=$REGION \
@@ -105,13 +106,41 @@ gcloud functions deploy $CLOUD_FUNCTION_NAME \
     --entry-point=profile_manager \
     --trigger-http \
     --allow-unauthenticated \
-    --set-env-vars GEMINI_API_KEY=$GEMINI_API_KEY \
+    --env-vars-file=.env.yaml \
     --timeout=540s \
     --memory=512MB
 
-FUNCTION_URL=$(gcloud functions describe $CLOUD_FUNCTION_NAME --region=$REGION --gen2 --format='value(serviceConfig.uri)')
-echo -e "${GREEN}✓ Cloud function deployed successfully${NC}"
-echo -e "${GREEN}  URL: ${FUNCTION_URL}${NC}"
+PROFILE_MANAGER_URL=$(gcloud functions describe $PROFILE_MANAGER_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+echo -e "${GREEN}✓ Profile Manager deployed successfully${NC}"
+echo -e "${GREEN}  URL: ${PROFILE_MANAGER_URL}${NC}"
+echo ""
+
+cd ../..
+
+# Deploy Knowledge Base Manager Cloud Function
+echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+echo -e "${BLUE}  Step 3: Deploying Knowledge Base Manager Cloud Function${NC}"
+echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+echo ""
+
+cd cloud_functions/knowledge_base_manager
+
+echo -e "${YELLOW}Deploying Knowledge Base Manager cloud function...${NC}"
+gcloud functions deploy $KNOWLEDGE_BASE_FUNCTION \
+    --gen2 \
+    --runtime=python312 \
+    --region=$REGION \
+    --source=. \
+    --entry-point=knowledge_base_manager \
+    --trigger-http \
+    --allow-unauthenticated \
+    --env-vars-file=.env.yaml \
+    --timeout=540s \
+    --memory=512MB
+
+KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+echo -e "${GREEN}✓ Knowledge Base Manager deployed successfully${NC}"
+echo -e "${GREEN}  URL: ${KNOWLEDGE_BASE_URL}${NC}"
 echo ""
 
 cd ../..
@@ -122,12 +151,14 @@ echo -e "${BLUE}║              Backend Deployment Complete! 🎉              
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 echo -e "${GREEN}Deployment Summary:${NC}"
-echo -e "  Backend Agent:      ${AGENT_URL}"
-echo -e "  Cloud Function:     ${FUNCTION_URL}"
+echo -e "  Backend Agent:           ${AGENT_URL}"
+echo -e "  Profile Manager:         ${PROFILE_MANAGER_URL}"
+echo -e "  Knowledge Base Manager:  ${KNOWLEDGE_BASE_URL}"
 echo ""
 echo -e "${YELLOW}Save these URLs for frontend configuration:${NC}"
 echo ""
 echo -e "export VITE_API_URL='${AGENT_URL}'"
-echo -e "export VITE_FUNCTION_URL='${FUNCTION_URL}'"
+echo -e "export VITE_PROFILE_MANAGER_URL='${PROFILE_MANAGER_URL}'"
+echo -e "export VITE_KNOWLEDGE_BASE_URL='${KNOWLEDGE_BASE_URL}'"
 echo ""
 echo -e "${GREEN}Next step: Deploy frontend with ./deploy_frontend.sh${NC}"
