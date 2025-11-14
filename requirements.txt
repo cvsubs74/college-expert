@@ -1,0 +1,16 @@
+gitpython==3.1.40
+google-adk>=1.10.0
+google-cloud-logging
+google-cloud-storage
+python-dotenv
+requests
+uvicorn
+fastapi
+flask
+flask-cors
+nest-asyncio>=1.6.0
+httpx
+google-genai==1.49.0  # Version 1.50.0 breaks file_search_stores attribute
+google-generativeai  # Keep for compatibility
+beautifulsoup4  # Required for load_web_page tool
+lxml  # Parser for BeautifulSoup
