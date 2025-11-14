@@ -107,7 +107,7 @@ After completing these steps:
 **Profile Manager:** https://profile-manager-pfnwjfp26a-ue.a.run.app
 
 **Firebase Config:**
-- API Key: AIzaSyB21YdLOZTjO1przhjsX1Es64-kFGov5XE ✅
+- API Key: AIzaSy... (redacted) ✅
 - Auth Domain: college-counsellor.firebaseapp.com ✅
 - Project ID: college-counsellor ✅
 

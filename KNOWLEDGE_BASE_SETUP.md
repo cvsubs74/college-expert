@@ -92,20 +92,20 @@ Chat Question → search_knowledge_base(query) → Searches shared knowledge bas
 
 ### Backend Agent (`agents/.env`)
 ```bash
-GEMINI_API_KEY=AIzaSyDtb207RCMvNABwEZGq1mP6SCxcNtl6mfo
+GEMINI_API_KEY=your_gemini_api_key_here
 GOOGLE_GENAI_USE_VERTEXAI=0  # Use Developer API for File Search
 DATA_STORE=college_admissions_kb  # Shared knowledge base store
 ```
 
 ### Profile Manager (`.env.yaml`)
 ```yaml
-GEMINI_API_KEY: "AIzaSyDtb207RCMvNABwEZGq1mP6SCxcNtl6mfo"
+GEMINI_API_KEY: "your_gemini_api_key_here"
 DATA_STORE: "student_profile"  # Base name for user-specific stores
 ```
 
 ### Knowledge Base Manager (`.env.yaml`)
 ```yaml
-GEMINI_API_KEY: "AIzaSyDtb207RCMvNABwEZGq1mP6SCxcNtl6mfo"
+GEMINI_API_KEY: "your_gemini_api_key_here"
 DATA_STORE: "college_admissions_kb"  # Shared knowledge base store
 ```
 

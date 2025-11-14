@@ -277,13 +277,13 @@ firebase hosting:sites:delete college-strategy --project college-counselling-478
 GOOGLE_GENAI_USE_VERTEXAI=0
 GCP_PROJECT_ID=college-counselling-478115
 GOOGLE_CLOUD_LOCATION=us-east1
-GEMINI_API_KEY=AIzaSyDtb207RCMvNABwEZGq1mP6SCxcNtl6mfo
+GEMINI_API_KEY=your_gemini_api_key_here
 DATA_STORE=college_admissions_kb
 ```
 
 ### Profile Manager (.env.yaml)
 ```yaml
-GEMINI_API_KEY: "AIzaSyDtb207RCMvNABwEZGq1mP6SCxcNtl6mfo"
+GEMINI_API_KEY: "your_gemini_api_key_here"
 DATA_STORE: "student_profile"
 ```
 
