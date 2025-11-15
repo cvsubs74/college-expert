@@ -204,17 +204,27 @@ Question: ${question}`;
               
               {/* Suggested Questions */}
               <div className="max-w-2xl mx-auto">
-                <p className="text-sm font-medium text-gray-700 mb-3">Suggested questions:</p>
+                <p className="text-sm font-medium text-gray-700 mb-3">💡 Suggested questions:</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {displayedQuestions.map((question, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleSuggestedQuestion(question)}
-                      className="text-left px-4 py-3 bg-gray-50 hover:bg-primary hover:text-white rounded-lg text-sm text-gray-700 transition-colors border border-gray-200"
-                    >
-                      {question}
-                    </button>
-                  ))}
+                  {displayedQuestions.map((question, index) => {
+                    // Color code buttons based on index
+                    const colorClasses = [
+                      'bg-blue-50 border-blue-300 hover:bg-blue-100 hover:border-blue-400 text-blue-900',
+                      'bg-green-50 border-green-300 hover:bg-green-100 hover:border-green-400 text-green-900',
+                      'bg-purple-50 border-purple-300 hover:bg-purple-100 hover:border-purple-400 text-purple-900',
+                      'bg-orange-50 border-orange-300 hover:bg-orange-100 hover:border-orange-400 text-orange-900'
+                    ];
+                    
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => handleSuggestedQuestion(question)}
+                        className={`text-left px-4 py-3 rounded-lg text-sm transition-colors border ${colorClasses[index % 4]}`}
+                      >
+                        {question}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -259,17 +269,27 @@ Question: ${question}`;
               {/* Suggested Questions after response */}
               {!sending && suggestedQuestions.length > 0 && messages.length > 0 && (
                 <div className="max-w-4xl">
-                  <p className="text-xs font-medium text-gray-600 mb-3">You might also ask:</p>
+                  <p className="text-xs font-medium text-gray-600 mb-3">💡 You might also ask:</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {suggestedQuestions.slice(0, 4).map((question, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleSuggestedQuestion(question)}
-                        className="text-left px-4 py-3 bg-blue-50 hover:bg-primary hover:text-white text-blue-700 rounded-lg text-sm transition-colors border border-blue-200"
-                      >
-                        {question}
-                      </button>
-                    ))}
+                    {suggestedQuestions.slice(0, 4).map((question, index) => {
+                      // Color code buttons based on index
+                      const colorClasses = [
+                        'bg-blue-50 border-blue-300 hover:bg-blue-100 hover:border-blue-400 text-blue-900',
+                        'bg-green-50 border-green-300 hover:bg-green-100 hover:border-green-400 text-green-900',
+                        'bg-purple-50 border-purple-300 hover:bg-purple-100 hover:border-purple-400 text-purple-900',
+                        'bg-orange-50 border-orange-300 hover:bg-orange-100 hover:border-orange-400 text-orange-900'
+                      ];
+                      
+                      return (
+                        <button
+                          key={index}
+                          onClick={() => handleSuggestedQuestion(question)}
+                          className={`text-left px-4 py-3 rounded-lg text-sm transition-colors border ${colorClasses[index % 4]}`}
+                        >
+                          {question}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               )}

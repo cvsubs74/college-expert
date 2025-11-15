@@ -16,20 +16,32 @@ echo -e "${BLUE}║     College Counselor - Frontend Deployment               �
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
-# Check if URLs are provided
+cd frontend
+
+# Check if .env file exists
+if [ ! -f .env ]; then
+    echo -e "${RED}Error: frontend/.env file not found${NC}"
+    echo -e "${YELLOW}Please create frontend/.env file with your configuration.${NC}"
+    echo -e "${YELLOW}You can copy from .env.example: cp frontend/.env.example frontend/.env${NC}"
+    exit 1
+fi
+
+# Load environment variables from .env file
+echo -e "${YELLOW}Loading configuration from .env file...${NC}"
+set -a
+source .env
+set +a
+
+# Validate required variables
 if [ -z "$VITE_API_URL" ]; then
-    echo -e "${RED}Error: VITE_API_URL not set${NC}"
-    echo "Please set it with: export VITE_API_URL='your-agent-url'"
+    echo -e "${RED}Error: VITE_API_URL not set in .env file${NC}"
     exit 1
 fi
 
 if [ -z "$VITE_PROFILE_MANAGER_URL" ]; then
-    echo -e "${RED}Error: VITE_PROFILE_MANAGER_URL not set${NC}"
-    echo "Please set it with: export VITE_PROFILE_MANAGER_URL='your-function-url'"
+    echo -e "${RED}Error: VITE_PROFILE_MANAGER_URL not set in .env file${NC}"
     exit 1
 fi
-
-cd frontend
 
 # Install dependencies
 echo -e "${YELLOW}Installing dependencies...${NC}"

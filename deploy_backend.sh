@@ -13,7 +13,6 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-PROJECT_ID=${GCP_PROJECT_ID:-"college-counsellor"}
 REGION="us-east1"
 AGENT_SERVICE_NAME="college-counselor-agent"
 PROFILE_MANAGER_FUNCTION="profile-manager"
@@ -24,18 +23,30 @@ echo -e "${BLUE}║     College Counselor - Backend Deployment                �
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
-# Check if project ID is set
-if [ -z "$PROJECT_ID" ]; then
-    echo -e "${RED}Error: GCP_PROJECT_ID environment variable is not set${NC}"
-    echo "Please set it with: export GCP_PROJECT_ID='college-counsellor'"
+# Check if agents/.env file exists
+if [ ! -f agents/.env ]; then
+    echo -e "${RED}Error: agents/.env file not found${NC}"
+    echo -e "${YELLOW}Please create agents/.env file with GEMINI_API_KEY${NC}"
     exit 1
 fi
 
+# Load environment variables from agents/.env
+echo -e "${YELLOW}Loading configuration from agents/.env...${NC}"
+set -a
+source agents/.env
+set +a
+
 # Check if GEMINI_API_KEY is set
 if [ -z "$GEMINI_API_KEY" ]; then
-    echo -e "${RED}Error: GEMINI_API_KEY environment variable is not set${NC}"
-    echo "Please set it with: export GEMINI_API_KEY='your-api-key'"
+    echo -e "${RED}Error: GEMINI_API_KEY not set in agents/.env file${NC}"
     exit 1
+fi
+
+# Get project ID from gcloud config or use default
+PROJECT_ID=$(gcloud config get-value project 2>/dev/null)
+if [ -z "$PROJECT_ID" ]; then
+    PROJECT_ID="college-counselling-478115"
+    echo -e "${YELLOW}Using default project: ${PROJECT_ID}${NC}"
 fi
 
 echo -e "${GREEN}Using GCP Project: ${PROJECT_ID}${NC}"
@@ -155,10 +166,21 @@ echo -e "  Backend Agent:           ${AGENT_URL}"
 echo -e "  Profile Manager:         ${PROFILE_MANAGER_URL}"
 echo -e "  Knowledge Base Manager:  ${KNOWLEDGE_BASE_URL}"
 echo ""
-echo -e "${YELLOW}Save these URLs for frontend configuration:${NC}"
-echo ""
-echo -e "export VITE_API_URL='${AGENT_URL}'"
-echo -e "export VITE_PROFILE_MANAGER_URL='${PROFILE_MANAGER_URL}'"
-echo -e "export VITE_KNOWLEDGE_BASE_URL='${KNOWLEDGE_BASE_URL}'"
+
+# Update frontend/.env file with backend URLs
+if [ -f frontend/.env ]; then
+    echo -e "${YELLOW}Updating frontend/.env with backend URLs...${NC}"
+    
+    # Update or add URLs in frontend/.env
+    sed -i.bak "s|^VITE_API_URL=.*|VITE_API_URL=${AGENT_URL}|" frontend/.env
+    sed -i.bak "s|^VITE_PROFILE_MANAGER_URL=.*|VITE_PROFILE_MANAGER_URL=${PROFILE_MANAGER_URL}|" frontend/.env
+    sed -i.bak "s|^VITE_KNOWLEDGE_BASE_URL=.*|VITE_KNOWLEDGE_BASE_URL=${KNOWLEDGE_BASE_URL}|" frontend/.env
+    
+    rm -f frontend/.env.bak
+    echo -e "${GREEN}✓ Frontend .env file updated${NC}"
+else
+    echo -e "${YELLOW}Note: frontend/.env not found. Create it from frontend/.env.example${NC}"
+fi
+
 echo ""
 echo -e "${GREEN}Next step: Deploy frontend with ./deploy_frontend.sh${NC}"

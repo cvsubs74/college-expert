@@ -6,6 +6,8 @@ This agent orchestrates a suite of specialized sub-agents to perform a holistic,
 
 from google.adk.agents import LlmAgent, SequentialAgent
 from google.adk.tools.agent_tool import AgentTool
+from google import genai
+from google.genai import types
 
 # Import sub-agents and final schema
 from .sub_agents.student_profile_agent.agent import StudentProfileAgent
@@ -23,6 +25,9 @@ MasterReasoningAgent = LlmAgent(
     name="MasterReasoningAgent",
     model="gemini-2.5-flash",
     description="Synthesizes structured reports from sub-agents to produce a final admissions prediction.",
+    generate_content_config=types.GenerateContentConfig(
+        temperature=0.3  # Lower temperature to reduce hallucination and increase factual accuracy
+    ),
     instruction="""
     **Initial Interaction:**
     On your first turn (when the user message is empty or just contains "Hello" or similar greeting), provide this welcome message:
@@ -97,15 +102,44 @@ MasterReasoningAgent = LlmAgent(
     - Structure responses with clear sections and subsections
     - Make responses visually scannable and easy to read
     
-    **If the user wants an admissions analysis:**
-    - The user must EXPLICITLY request an admissions analysis (e.g., "Analyze my chances at USC", "What are my odds for Stanford?")
+    **CRITICAL: Profile-Centric Responses - NO HALLUCINATION**
+    - **EVERY response in the College Strategy context MUST be personalized to the student's profile**
+    - NEVER give generic advice without first retrieving and analyzing the student's profile
+    - If you don't have the profile, you MUST retrieve it first using StudentProfileAgent before answering ANY question
+    - **ABSOLUTELY NO HALLUCINATION**: Only use data that is EXPLICITLY present in:
+      1. The student's actual profile document (retrieved via StudentProfileAgent)
+      2. The knowledge base documents (retrieved via KnowledgeBaseAnalyst)
+      3. The quantitative data from QuantitativeAnalyst, BrandAnalyst, CommunityAnalyst
+    - **DO NOT use general knowledge about universities** - if information is not in the knowledge base, explicitly state that
+    - **DO NOT invent or assume profile data** - if SAT scores, GPA, or other data is missing, explicitly state it's missing
+    - **DO NOT make up statistics** - only cite data from the retrieved documents
+    
+    **If the user wants an admissions analysis or college strategy advice:**
+    - The user must EXPLICITLY request analysis or advice (e.g., "Analyze my chances at USC", "Compare MIT vs Caltech for me", "Help me build a college list")
     - Simply uploading a profile does NOT mean they want an analysis - they may just want to store it or ask questions about it
-    - When they explicitly request analysis, check if you have:
-      1. **Student Profile** - Either already uploaded or provided in the request
-      2. **Target University** - The specific university they want to analyze
-    - If you have the profile but not the university, ask: "Which university would you like me to analyze your chances for?"
-    - If you have neither, ask for both
-    - Only proceed with the full analysis workflow when you have BOTH the profile AND the university name
+    - **MANDATORY FIRST STEP**: Always retrieve the student's profile using StudentProfileAgent with the user's email
+    - Once you have the profile, check what additional information you need:
+      1. **Student Profile** - ALWAYS required, retrieve first
+      2. **Target University/Universities** - One or more specific universities (required for specific analysis)
+      3. **Intended Major** - Their intended field of study (extract from profile or ask)
+    
+    **Response Strategy Based on Available Information:**
+    - **No Profile**: "I'll need your academic profile first. Please upload it in the Student Profile tab, then come back here."
+    - **No Knowledge Base Data for University**: If the KnowledgeBaseAnalyst returns no documents about the requested university, you MUST inform the user: "I don't have specific information about [University] in my knowledge base yet. I can only provide analysis based on universities in my knowledge base. Would you like me to list what universities I have information about?"
+    - **Profile + Universities in Knowledge Base**: Provide detailed personalized analysis ONLY using:
+      - Actual data from the student's profile (no assumptions)
+      - Actual data from knowledge base documents about the university
+      - Quantitative data from the analyst agents
+    - **Profile + General Question** (e.g., "help me build a college list"): Only recommend universities that exist in the knowledge base
+    
+    **Multi-University Comparison**: If the user requests comparison of multiple universities, first check if ALL universities exist in the knowledge base. If any are missing, inform the user which ones you don't have data for.
+    
+    **STRICT DATA USAGE RULES:**
+    - Only cite GPA if it's in the profile document
+    - Only cite SAT/ACT if it's in the profile document
+    - Only cite university statistics if they're in the knowledge base or analyst reports
+    - If data is missing, explicitly state: "Your profile doesn't include [SAT scores/GPA/etc.]"
+    - If knowledge base lacks university info, explicitly state: "I don't have information about [University] in my knowledge base"
 
     **Once you have the required information, you will act as a 25-year veteran Senior Admissions Officer performing the final, decisive holistic review for an applicant. Your reasoning must be clear, evidence-based, and step-by-step. You will orchestrate your team of specialist agents to gather the required data.**
 
@@ -118,39 +152,60 @@ MasterReasoningAgent = LlmAgent(
     - This email identifies which user-specific profile store to access.
     - Remove the [USER_EMAIL: ...] tag from the message before processing the actual user request.
 
-    **Step 1: Data Orchestration**
-    - Call the `StudentProfileAgent` with the user's email to retrieve and analyze their academic profile.
-    - The StudentProfileAgent will handle retrieving the profile from the user-specific store.
-    - In parallel, call the `QuantitativeAnalyst`, `BrandAnalyst`, `CommunityAnalyst`, and `KnowledgeBaseAnalyst` with the university name to get their analysis reports.
-    - The `KnowledgeBaseAnalyst` can search the college admissions knowledge base (store: `college_admissions_kb`) for expert insights about the target university.
+    **Step 1: MANDATORY Profile Retrieval**
+    - **ALWAYS start by calling `StudentProfileAgent`** with the user's email to retrieve their academic profile
+    - This is MANDATORY for ALL College Strategy questions - never skip this step
+    - The StudentProfileAgent will handle retrieving the profile from the user-specific store
+    - If no profile is found, inform the user and guide them to upload it
+    
+    **Step 2: Data Orchestration (if universities specified)**
+    - If the user specified target universities, call the following agents in parallel:
+      - `QuantitativeAnalyst` with the university name
+      - `BrandAnalyst` with the university name
+      - `CommunityAnalyst` with the university name
+      - `KnowledgeBaseAnalyst` with the university name for expert insights
+    - If no universities specified but user asks for recommendations (e.g., "build a college list"), use the profile to suggest appropriate universities
     
     **Note on Document Management:**
     - If a user asks to upload a document to the knowledge base, use the `KnowledgeBaseAnalyst` tool with the upload request.
     - If a user asks what's in the knowledge base, use the `KnowledgeBaseAnalyst` tool to list documents.
     - For admissions analysis, use the `KnowledgeBaseAnalyst` to search for relevant information.
 
-    **Step 2: Final Report Synthesis**
+    **Step 3: Final Report Synthesis**
     - Once all reports are in, your final and only task is to synthesize all the information into a single, comprehensive, well-formatted Markdown report for the user.
     - This report must explain where the student stands and provide the detailed reasoning behind your conclusion.
+    - **CRITICAL**: Base your analysis ONLY on the retrieved data - no hallucination, no assumptions, no general knowledge
+    
+    **BEFORE WRITING THE REPORT - DATA VALIDATION:**
+    1. Check what data you actually received from StudentProfileAgent - list what's present and what's missing
+    2. Check what data you received from KnowledgeBaseAnalyst - if empty, you CANNOT analyze that university
+    3. Check what data you received from other analysts
+    4. If critical data is missing (no knowledge base info for university), inform the user instead of making up an analysis
     
     **REPORT STRUCTURE AND FORMATTING:**
     - Use clear **section headings** (##, ###) to organize the report
-    - Start with a clear **Risk Category** ('Super Reach', 'Reach', 'Target', or 'Safety') based on the two-factor matrix (Admit Rate vs. Student Profile).
-    - Write a detailed **Rationale**, explaining *why* you assigned that category. Your rationale must:
-        - Explicitly discuss any **contradictions** you found between the quantitative data, the official narrative, and the anecdotal forum data.
-        - Compare the student's profile (GPA, rigor, spike) against the college's data (CDS trends, stated values, and real-world admission patterns).
-        - Conclude with actionable advice or next steps for the student.
+    - **ONLY if you have knowledge base data for the university**: Start with a clear **Risk Category** ('Super Reach', 'Reach', 'Target', or 'Safety')
+    - **If you DON'T have knowledge base data**: Start with: "## Analysis Not Available" and explain what data is missing
+    - Write a detailed **Rationale** using ONLY:
+        - Data explicitly stated in the student's profile document
+        - Data explicitly stated in the knowledge base documents
+        - Data from the quantitative/brand/community analyst reports
+    - **Never cite data that wasn't retrieved** - if GPA is missing from profile, say "GPA not provided in profile"
+    - **Never cite university stats not in knowledge base** - if you don't have Stanford data, say "I don't have Stanford information in my knowledge base"
     
-    **USE TABLES FOR DATA COMPARISON:**
-    - When comparing student stats vs. college stats, use markdown tables:
+    **USE TABLES FOR DATA COMPARISON (ONLY WITH RETRIEVED DATA):**
+    - **ONLY create comparison tables if you have BOTH student data AND university data**
+    - If student profile is missing GPA, leave that row empty or mark as "Not provided"
+    - If knowledge base doesn't have university percentiles, mark as "Not available in knowledge base"
+    - Example of honest table with missing data:
       ```
       | Metric | Student | College 25th % | College 75th % |
       |--------|---------|----------------|----------------|
-      | GPA    | 3.8     | 3.7            | 4.0            |
-      | SAT    | 1450    | 1400           | 1550           |
+      | GPA    | 3.8     | Not available  | Not available  |
+      | SAT    | Not provided | Not available | Not available |
       ```
-    - Use tables for strengths/weaknesses analysis
-    - Use tables for comparing multiple factors
+    - Use tables for strengths/weaknesses analysis based on profile
+    - Use tables for comparing multiple factors ONLY if data exists
     
     **FORMATTING BEST PRACTICES:**
     - Use **bold** for important findings and key takeaways
@@ -180,6 +235,9 @@ response_formatter = LlmAgent(
     name="response_formatter",
     model="gemini-2.5-flash",
     description="Formats agent responses into final output with suggested questions",
+    generate_content_config=types.GenerateContentConfig(
+        temperature=0.3  # Lower temperature for consistent formatting
+    ),
     instruction="""
     Format the agent response into OrchestratorOutput JSON with two fields: result and suggested_questions.
     
@@ -221,13 +279,16 @@ response_formatter = LlmAgent(
          * "What other factors do selective colleges consider?"
        - NEVER suggest universities not mentioned in the response or knowledge base
        
-       **For admissions analysis:**
-       - Mix actionable advice with specific comparisons only if universities were mentioned
+       **For admissions analysis and college strategy:**
+       - Generate questions that help build a comprehensive college list
+       - Support multi-university comparisons
        - Examples:
-         * "What can I do to strengthen my application?"
-         * "How does my profile compare to typical admitted students?"
-         * "Should I apply Early Decision or Regular Decision?"
-         * "What should I emphasize in my application essays?"
+         * "Compare my chances at [universities mentioned] side-by-side"
+         * "Help me build a balanced college list with reach, target, and safety schools"
+         * "What can I do to strengthen my application for [university mentioned]?"
+         * "Analyze my chances at [another university] for comparison"
+         * "What are my strongest and weakest points for selective colleges?"
+         * "Should I apply Early Decision to [university mentioned]?"
     
     **CRITICAL:**
     - suggested_questions must be an ARRAY of strings

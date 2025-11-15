@@ -55,8 +55,8 @@ function Navigation() {
                     : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
                 } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
-                <ChatBubbleLeftRightIcon className="h-5 w-5 mr-2" />
-                College Info Chat
+                <BookOpenIcon className="h-5 w-5 mr-2" />
+                College Research
               </Link>
               <Link
                 to="/analysis"
@@ -66,8 +66,8 @@ function Navigation() {
                     : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
                 } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
-                <ChartBarIcon className="h-5 w-5 mr-2" />
-                Admissions Analysis
+                <ChatBubbleLeftRightIcon className="h-5 w-5 mr-2" />
+                My College Strategy
               </Link>
               {/* Knowledge Base - Only visible to admin */}
               {currentUser?.email === 'cvsubs@gmail.com' && (

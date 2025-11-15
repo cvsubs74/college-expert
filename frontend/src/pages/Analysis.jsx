@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
-  AcademicCapIcon,
-  ArrowPathIcon,
-  CheckCircleIcon,
-  XCircleIcon,
-  SparklesIcon
+  PaperAirplaneIcon,
+  SparklesIcon,
+  UserIcon,
+  AcademicCapIcon
 } from '@heroicons/react/24/outline';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -13,348 +12,158 @@ import { useAuth } from '../context/AuthContext';
 
 function Analysis() {
   const { currentUser } = useAuth();
-  const [collegeName, setCollegeName] = useState('');
-  const [intendedMajor, setIntendedMajor] = useState('');
-  const [analyzing, setAnalyzing] = useState(false);
-  const [analysis, setAnalysis] = useState(null);
-  const [error, setError] = useState(null);
-  const [conversationHistory, setConversationHistory] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
   const [suggestedQuestions, setSuggestedQuestions] = useState([]);
+  const messagesEndRef = useRef(null);
 
-  // Load saved data from localStorage
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   useEffect(() => {
-    const savedCollege = localStorage.getItem('collegeName');
-    const savedMajor = localStorage.getItem('intendedMajor');
-    
-    if (savedCollege) setCollegeName(savedCollege);
-    if (savedMajor) setIntendedMajor(savedMajor);
-  }, []);
+    scrollToBottom();
+  }, [messages]);
 
-  // Save data to localStorage
+  // Initial greeting with intelligent suggested questions
   useEffect(() => {
-    if (collegeName) localStorage.setItem('collegeName', collegeName);
-    if (intendedMajor) localStorage.setItem('intendedMajor', intendedMajor);
-  }, [collegeName, intendedMajor]);
-
-  // Clear state when user changes
-  useEffect(() => {
-    if (!currentUser) {
-      setCollegeName('');
-      setIntendedMajor('');
-      setAnalysis(null);
-      setConversationHistory([]);
-      setError(null);
+    if (messages.length === 0) {
+      setSuggestedQuestions([
+        "Analyze my chances at Stanford for Computer Science",
+        "Compare my profile for MIT vs Caltech in Engineering",
+        "What are my strengths and weaknesses for Ivy League schools?",
+        "Help me build a balanced college list for Business majors"
+      ]);
     }
-  }, [currentUser]);
+  }, [messages.length]);
 
-  const handleAnalyze = async () => {
-    if (!collegeName.trim()) {
-      setError('Please enter the college name');
-      return;
-    }
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
+    if (!input.trim() || loading) return;
 
-    if (!intendedMajor.trim()) {
-      setError('Please enter your intended major');
-      return;
-    }
+    const userMessage = input.trim();
+    setInput('');
+    setLoading(true);
 
-    setAnalyzing(true);
-    setError(null);
-    setAnalysis(null);
+    // Add user message to chat
+    setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
 
     try {
-      // Construct the analysis request message
-      const message = `I want to analyze my admissions chances for ${collegeName}. My intended major is ${intendedMajor}.`;
+      // Send message with user email tag
+      const messageWithEmail = `[USER_EMAIL: ${currentUser?.email}] ${userMessage}`;
+      const response = await startSession(messageWithEmail, currentUser?.email);
 
-      // Use startSession - it will reuse existing session from localStorage or create new one
-      console.log('Sending analysis request...');
-      const response = await startSession(message, currentUser?.email);
-
-      // Extract the response text and suggested questions
+      // Extract response and suggested questions
       const { result, suggested_questions } = extractFullResponse(response);
-      console.log('Agent response:', result);
-      
+
+      // Add assistant response
+      setMessages(prev => [...prev, { role: 'assistant', content: result }]);
+
       // Update suggested questions
-      if (suggested_questions && Array.isArray(suggested_questions)) {
+      if (suggested_questions && Array.isArray(suggested_questions) && suggested_questions.length > 0) {
         setSuggestedQuestions(suggested_questions);
       }
-
-      // Add to conversation history
-      setConversationHistory(prev => [
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setMessages(prev => [
         ...prev,
-        { role: 'user', content: message },
-        { role: 'assistant', content: result }
+        {
+          role: 'assistant',
+          content: 'Sorry, I encountered an error. Please make sure you have uploaded your profile in the Student Profile tab and try again.'
+        }
       ]);
-
-      setAnalysis(result);
-    } catch (err) {
-      console.error('Analysis error:', err);
-      setError(
-        err.response?.data?.message || 
-        'Failed to analyze admissions chances. Please make sure you have uploaded your student profile and try again.'
-      );
     } finally {
-      setAnalyzing(false);
+      setLoading(false);
     }
   };
 
-  const handleReset = () => {
-    setCollegeName('');
-    setIntendedMajor('');
-    setAnalysis(null);
-    setConversationHistory([]);
-    setSuggestedQuestions([]);
-    setError(null);
-    // Keep the session - just clear the form and results
-    // Session will be reused for the next analysis
+  const handleSuggestedQuestion = async (question) => {
+    setInput(question);
+    // Trigger send
+    const event = { preventDefault: () => {} };
+    setInput(question);
+    setTimeout(() => {
+      handleSendMessage(event);
+    }, 100);
   };
-
-  const handleSendFollowUp = async (followUpMessage) => {
-    if (!followUpMessage.trim()) return;
-
-    setAnalyzing(true);
-    setError(null);
-
-    try {
-      // Use startSession which will reuse the existing session
-      const response = await startSession(followUpMessage, currentUser?.email);
-      const { result, suggested_questions } = extractFullResponse(response);
-      
-      // Update suggested questions
-      if (suggested_questions && Array.isArray(suggested_questions)) {
-        setSuggestedQuestions(suggested_questions);
-      }
-
-      // Add to conversation history
-      setConversationHistory(prev => [
-        ...prev,
-        { role: 'user', content: followUpMessage },
-        { role: 'assistant', content: result }
-      ]);
-
-      setAnalysis(result);
-    } catch (err) {
-      console.error('Follow-up error:', err);
-      setError('Failed to send follow-up message. Please try again.');
-    } finally {
-      setAnalyzing(false);
-    }
-  };
-
-  // Generic suggested questions for admissions analysis (used as fallback)
-  const defaultAnalysisQuestions = [
-    "What can I do to strengthen my application?",
-    "How does my profile compare to admitted students?",
-    "Should I apply Early Decision or Regular Decision?",
-    "What should I emphasize in my application essays?"
-  ];
-
-  // Display suggested questions - use dynamic ones if available, otherwise defaults
-  const displayedQuestions = suggestedQuestions.length > 0 ? suggestedQuestions : defaultAnalysisQuestions;
 
   return (
-    <div className="space-y-8">
+    <div className="max-w-5xl mx-auto">
       {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Admissions Analysis</h1>
-        <p className="mt-2 text-gray-600">
-          Enter your target college and intended major to get a comprehensive admissions analysis.
-        </p>
+      <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+        <div className="flex items-center space-x-3">
+          <div className="p-3 bg-primary/10 rounded-lg">
+            <AcademicCapIcon className="h-8 w-8 text-primary" />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">My College Strategy</h1>
+            <p className="text-gray-600 mt-1">
+              Get personalized admissions analysis and build your college list
+            </p>
+          </div>
+        </div>
       </div>
 
-      {/* Input Form */}
-      <div className="bg-white shadow rounded-lg p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">College Information</h2>
-        
-        <div className="space-y-4">
-          {/* College Name */}
-          <div>
-            <label htmlFor="college-name" className="block text-sm font-medium text-gray-700 mb-2">
-              Target College/University *
-            </label>
-            <input
-              id="college-name"
-              type="text"
-              value={collegeName}
-              onChange={(e) => setCollegeName(e.target.value)}
-              placeholder="e.g., University of Southern California, Stanford University"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-              disabled={analyzing}
-            />
-          </div>
+      {/* Chat Container */}
+      <div className="bg-white rounded-lg shadow-sm flex flex-col" style={{ height: 'calc(100vh - 280px)' }}>
+        {/* Messages */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-6">
+          {messages.length === 0 && (
+            <div className="text-center py-12">
+              <SparklesIcon className="h-16 w-16 text-primary mx-auto mb-4" />
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">
+                Let's Build Your College Strategy
+              </h2>
+              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                I'll help you analyze your admissions chances, compare universities, and build a balanced college list.
+                Just tell me which colleges you're interested in and your intended major!
+              </p>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto text-left">
+                <p className="text-sm text-blue-900 font-medium mb-2">💡 What I can help with:</p>
+                <ul className="text-sm text-blue-800 space-y-1">
+                  <li>• Analyze your chances at specific universities</li>
+                  <li>• Compare multiple schools side-by-side</li>
+                  <li>• Evaluate your profile strengths and weaknesses</li>
+                  <li>• Build a balanced college list (reach, target, safety)</li>
+                  <li>• Answer questions about your academic profile</li>
+                </ul>
+              </div>
+            </div>
+          )}
 
-          {/* Intended Major */}
-          <div>
-            <label htmlFor="intended-major" className="block text-sm font-medium text-gray-700 mb-2">
-              Intended Major *
-            </label>
-            <input
-              id="intended-major"
-              type="text"
-              value={intendedMajor}
-              onChange={(e) => setIntendedMajor(e.target.value)}
-              placeholder="e.g., Computer Science, Business Administration, Biology"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-              disabled={analyzing}
-            />
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex space-x-4">
-            <button
-              onClick={handleAnalyze}
-              disabled={analyzing || !collegeName.trim() || !intendedMajor.trim()}
-              className={`flex-1 flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white ${
-                analyzing || !collegeName.trim() || !intendedMajor.trim()
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-primary hover:bg-blue-700'
-              } transition-colors`}
+          {messages.map((message, index) => (
+            <div
+              key={index}
+              className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
-              {analyzing ? (
-                <>
-                  <ArrowPathIcon className="h-5 w-5 mr-2 animate-spin" />
-                  Analyzing...
-                </>
-              ) : (
-                <>
-                  <SparklesIcon className="h-5 w-5 mr-2" />
-                  Analyze Admissions Chances
-                </>
-              )}
-            </button>
-
-            {analysis && (
-              <button
-                onClick={handleReset}
-                disabled={analyzing}
-                className="px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors"
-              >
-                New Analysis
-              </button>
-            )}
-          </div>
-
-          {/* Error Message */}
-          {error && (
-            <div className="p-4 rounded-md bg-red-50">
-              <div className="flex">
-                <XCircleIcon className="h-5 w-5 text-red-400" />
-                <p className="ml-3 text-sm text-red-800">{error}</p>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Important Note */}
-        <div className="mt-6 p-4 bg-blue-50 rounded-md">
-          <h3 className="text-sm font-medium text-blue-900 mb-2">Before You Analyze:</h3>
-          <ul className="text-sm text-blue-800 space-y-1 list-disc list-inside">
-            <li>Make sure you've uploaded your student profile in the "Student Profile" tab</li>
-            <li>The analysis will take 1-2 minutes as the AI agent gathers comprehensive data</li>
-            <li>You'll receive a detailed report with risk assessment and recommendations</li>
-          </ul>
-        </div>
-
-        {/* Suggested Questions Before Analysis */}
-        {!analysis && (
-          <div className="mt-6">
-            <h3 className="text-sm font-medium text-gray-900 mb-3">Common questions about admissions:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {defaultAnalysisQuestions.map((question, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleSendFollowUp(question)}
-                  disabled={analyzing}
-                  className="text-left px-4 py-3 bg-gray-50 hover:bg-primary hover:text-white text-gray-700 rounded-lg text-sm transition-colors border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {question}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Analysis Results */}
-      {analysis && (
-        <div className="bg-white shadow rounded-lg p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold text-gray-900">Analysis Report</h2>
-            <div className="flex items-center text-sm text-green-600">
-              <CheckCircleIcon className="h-5 w-5 mr-1" />
-              Analysis Complete
-            </div>
-          </div>
-
-          {/* Markdown Content */}
-          <div className="prose prose-blue max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {analysis}
-            </ReactMarkdown>
-          </div>
-
-          {/* Suggested Questions */}
-          {!analyzing && suggestedQuestions.length > 0 && (
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <h3 className="text-sm font-medium text-gray-900 mb-3">You might also ask:</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {suggestedQuestions.slice(0, 4).map((question, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleSendFollowUp(question)}
-                    className="text-left px-4 py-3 bg-blue-50 hover:bg-primary hover:text-white text-blue-700 rounded-lg text-sm transition-colors border border-blue-200"
-                  >
-                    {question}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Follow-up Section */}
-          <div className="mt-6 pt-6 border-t border-gray-200">
-            <h3 className="text-sm font-medium text-gray-900 mb-3">Have questions about this analysis?</h3>
-            
-            {analyzing && (
-              <div className="mb-3 flex items-center text-sm text-blue-600">
-                <ArrowPathIcon className="h-4 w-4 mr-2 animate-spin" />
-                Processing your question...
-              </div>
-            )}
-            
-            <FollowUpInput onSend={handleSendFollowUp} disabled={analyzing} />
-          </div>
-        </div>
-      )}
-
-      {/* Conversation History */}
-      {conversationHistory.length > 1 && (
-        <div className="bg-white shadow rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Follow-up Conversation ({conversationHistory.length - 2} messages)
-          </h2>
-          
-          {/* Scrollable container with max height */}
-          <div className="max-h-96 overflow-y-auto space-y-3 pr-2">
-            {conversationHistory.slice(0, -2).map((message, index) => (
               <div
-                key={index}
-                className={`p-3 rounded-lg border ${
-                  message.role === 'user'
-                    ? 'bg-blue-50 border-blue-200 ml-12'
-                    : 'bg-gray-50 border-gray-200 mr-12'
+                className={`flex space-x-3 max-w-3xl ${
+                  message.role === 'user' ? 'flex-row-reverse space-x-reverse' : ''
                 }`}
               >
-                <div className="flex items-center mb-2">
-                  <p className="text-xs font-semibold text-gray-600">
-                    {message.role === 'user' ? '👤 You' : '🤖 AI Counselor'}
-                  </p>
+                <div
+                  className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center ${
+                    message.role === 'user' ? 'bg-primary' : 'bg-gray-200'
+                  }`}
+                >
+                  {message.role === 'user' ? (
+                    <UserIcon className="h-5 w-5 text-white" />
+                  ) : (
+                    <AcademicCapIcon className="h-5 w-5 text-gray-600" />
+                  )}
                 </div>
-                <div className={`text-sm ${message.role === 'user' ? 'text-gray-800' : 'text-gray-900'}`}>
+                <div
+                  className={`flex-1 rounded-lg p-4 ${
+                    message.role === 'user'
+                      ? 'bg-primary text-white'
+                      : 'bg-gray-50 text-gray-900'
+                  }`}
+                >
                   {message.role === 'user' ? (
                     <p className="whitespace-pre-wrap">{message.content}</p>
                   ) : (
-                    <div className="prose prose-sm max-w-none prose-headings:text-sm prose-headings:font-semibold prose-p:my-1 prose-ul:my-1 prose-li:my-0">
+                    <div className="prose prose-sm max-w-none">
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
                         {message.content}
                       </ReactMarkdown>
@@ -362,52 +171,81 @@ function Analysis() {
                   )}
                 </div>
               </div>
-            ))}
-          </div>
-          
-          <p className="mt-3 text-xs text-gray-500 italic">
-            Scroll to see older messages
-          </p>
+            </div>
+          ))}
+
+          {loading && (
+            <div className="flex justify-start">
+              <div className="flex space-x-3 max-w-3xl">
+                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
+                  <AcademicCapIcon className="h-5 w-5 text-gray-600" />
+                </div>
+                <div className="flex-1 rounded-lg p-4 bg-gray-50">
+                  <div className="flex space-x-2">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div ref={messagesEndRef} />
         </div>
-      )}
+
+        {/* Suggested Questions */}
+        {suggestedQuestions.length > 0 && (
+          <div className="border-t border-gray-200 p-4 bg-gray-50">
+            <p className="text-sm font-medium text-gray-700 mb-3">💡 Suggested questions:</p>
+            <div className="grid grid-cols-2 gap-2">
+              {suggestedQuestions.slice(0, 4).map((question, index) => {
+                // Color code buttons based on index
+                const colorClasses = [
+                  'bg-blue-50 border-blue-300 hover:bg-blue-100 hover:border-blue-400 text-blue-900',
+                  'bg-green-50 border-green-300 hover:bg-green-100 hover:border-green-400 text-green-900',
+                  'bg-purple-50 border-purple-300 hover:bg-purple-100 hover:border-purple-400 text-purple-900',
+                  'bg-orange-50 border-orange-300 hover:bg-orange-100 hover:border-orange-400 text-orange-900'
+                ];
+                
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleSuggestedQuestion(question)}
+                    disabled={loading}
+                    className={`text-left text-sm px-4 py-2 border rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${colorClasses[index % 4]}`}
+                  >
+                    {question}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Input */}
+        <div className="border-t border-gray-200 p-4">
+          <form onSubmit={handleSendMessage} className="flex space-x-4">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Ask about your chances, compare schools, or request analysis..."
+              disabled={loading}
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+            />
+            <button
+              type="submit"
+              disabled={loading || !input.trim()}
+              className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+            >
+              <PaperAirplaneIcon className="h-5 w-5" />
+              <span>Send</span>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-  );
-}
-
-// Follow-up Input Component
-function FollowUpInput({ onSend, disabled }) {
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (message.trim()) {
-      onSend(message);
-      setMessage('');
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="flex space-x-2">
-      <input
-        type="text"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Ask a follow-up question..."
-        className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-        disabled={disabled}
-      />
-      <button
-        type="submit"
-        disabled={disabled || !message.trim()}
-        className={`px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white ${
-          disabled || !message.trim()
-            ? 'bg-gray-400 cursor-not-allowed'
-            : 'bg-primary hover:bg-blue-700'
-        } transition-colors`}
-      >
-        Send
-      </button>
-    </form>
   );
 }
 
