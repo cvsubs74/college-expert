@@ -114,6 +114,24 @@ class ForumPatterns(BaseModel):
 
 
 # ============================================================================
+# Career Outcomes Analyst Schemas
+# ============================================================================
+
+class CareerOutcomesData(BaseModel):
+    """Structured career outcomes analysis for a university program."""
+    employment_rate: Optional[str] = Field(default=None, description="Overall employment rate (e.g., '95% within 6 months')")
+    median_salary: Optional[str] = Field(default=None, description="Median starting salary (e.g., '$85,000')")
+    top_employers: List[str] = Field(default_factory=list, description="List of top employers hiring graduates")
+    common_industries: List[str] = Field(default_factory=list, description="Common industries graduates enter")
+    common_job_titles: List[str] = Field(default_factory=list, description="Common job titles for graduates")
+    graduate_school_rate: Optional[str] = Field(default=None, description="Percentage pursuing graduate education")
+    career_services: str = Field(default="", description="Description of career services and support available")
+    notable_outcomes: str = Field(default="", description="Notable achievements, placements, or unique outcomes")
+    data_availability: str = Field(description="Assessment of data availability: 'Comprehensive', 'Partial', or 'Limited'")
+    summary: str = Field(description="Overall summary of career outcomes and prospects")
+
+
+# ============================================================================
 # Knowledge Base Analyst Schemas
 # ============================================================================
 

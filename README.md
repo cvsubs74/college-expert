@@ -231,13 +231,23 @@ college_counselor/
 
 ## 📖 Usage Guide
 
-### 1. Ask About Colleges
+### 1. Ask About Colleges (General Questions)
 
 1. Visit https://college-strategy.web.app/chat
-2. Ask: "What does USC look for in applicants?"
-3. Get knowledge base powered answer
-4. Ask follow-up questions
+2. Ask general questions like:
+   - "What does USC look for in applicants?"
+   - "Compare career outcomes for UC Berkeley vs UCLA business programs"
+   - "What are the admission requirements for Stanford?"
+3. Agent automatically calls 5 specialist agents:
+   - QuantitativeAnalyst (admissions stats)
+   - BrandAnalyst (institutional priorities)
+   - CommunityAnalyst (student experiences)
+   - CareerOutcomesAnalyst (employment & career data)
+   - KnowledgeBaseAnalyst (general info)
+4. Get comprehensive answer with data from all sources
 5. Use suggested questions for deeper exploration
+
+**Note:** General questions do NOT require uploading your profile
 
 ### 2. Manage Student Profiles
 
@@ -273,23 +283,34 @@ college_counselor/
 - Preview PDFs and documents
 - Manage shared knowledge base
 
-### 4. Get Admissions Analysis
+### 4. Get Admissions Analysis (Personalized)
 
-1. Visit https://college-strategy.web.app/analysis
-2. Type your question (e.g., "Analyze my chances at Stanford for Computer Science")
-3. Agent automatically:
-   - Retrieves your profile from student_profile store
-   - Calls specialist agents (Quantitative, Brand, Community, KnowledgeBase)
-   - Synthesizes comprehensive analysis
-4. Wait 2-5 minutes for detailed report
-5. Review risk assessment and recommendations
+1. **First, upload your profile** (see step 2 above)
+2. Visit https://college-strategy.web.app/analysis
+3. Type your question (e.g., "Analyze my chances at Stanford for Computer Science")
+4. Agent automatically:
+   - Retrieves YOUR profile from student_profile store
+   - Calls ALL 6 specialist agents:
+     * StudentProfileAgent (your academic profile)
+     * QuantitativeAnalyst (compare your stats to university)
+     * BrandAnalyst (assess your fit with institutional priorities)
+     * CommunityAnalyst (evaluate your extracurricular alignment)
+     * CareerOutcomesAnalyst (career prospects for your major)
+     * KnowledgeBaseAnalyst (program-specific information)
+   - Synthesizes personalized admissions prediction
+5. Wait 2-5 minutes for detailed report
+6. Review risk assessment and recommendations
+
+**Note:** Admissions analysis REQUIRES uploading your profile first
 
 ## 🤖 Agent Capabilities
 
 ### MasterReasoningAgent (Orchestrator)
-- **Simplified Instructions:** 30 lines (down from 200)
-- **Mandatory Profile Retrieval:** Always calls StudentProfileAgent first
-- **Multi-Agent Coordination:** Orchestrates 5 specialist agents
+- **Two-Mode Operation:**
+  - **General Questions:** Calls 5 agents (all except StudentProfile)
+  - **Personal Analysis:** Calls all 6 agents (including StudentProfile)
+- **Smart Routing:** Automatically detects if question is general or personal
+- **Multi-Agent Coordination:** Orchestrates up to 6 specialist agents
 - **Data Validation:** Ensures no hallucination, only uses retrieved data
 - **Timeout Handling:** 5-minute processing window
 
@@ -314,6 +335,15 @@ college_counselor/
 - Reviews extracurricular alignment
 - Evaluates community impact
 - Assesses leadership potential
+
+### CareerOutcomesAnalyst
+- Searches for employment statistics and salary data
+- Identifies top employers and common industries
+- Analyzes job titles and career paths
+- Reviews graduate school placement rates
+- Evaluates career services and support
+- Assesses data availability (Comprehensive/Partial/Limited)
+- Returns structured CareerOutcomesData schema
 
 ### KnowledgeBaseAnalyst
 - Searches shared knowledge base
