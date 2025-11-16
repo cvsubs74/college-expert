@@ -7,7 +7,7 @@ const PROFILE_MANAGER_URL = import.meta.env.VITE_PROFILE_MANAGER_URL || 'http://
 // Create axios instance for agent API
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 120000, // 2 minutes for agent processing
+  timeout: 300000, // 5 minutes for agent processing (complex analysis with multiple sub-agents)
   headers: {
     'Content-Type': 'application/json',
   },
@@ -211,14 +211,35 @@ export const listStudentProfiles = async (userEmail) => {
  * Delete a student profile document
  * Uses the profile manager cloud function
  */
-export const deleteStudentProfile = async (documentName) => {
+export const deleteStudentProfile = async (documentName, userEmail, filename) => {
   try {
     const response = await profileApi.delete('/delete-profile', {
-      data: { document_name: documentName }
+      data: { 
+        document_name: documentName,
+        user_email: userEmail,
+        filename: filename
+      }
     });
     return response.data;
   } catch (error) {
     console.error('Error deleting profile:', error);
+    throw error;
+  }
+};
+
+/**
+ * Get student profile document content for preview
+ * Uses the profile manager cloud function
+ */
+export const getStudentProfileContent = async (userEmail, filename) => {
+  try {
+    const response = await profileApi.post('/get-profile-content', {
+      user_email: userEmail,
+      filename: filename
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting profile content:', error);
     throw error;
   }
 };
@@ -349,14 +370,33 @@ export const listKnowledgeBaseDocuments = async () => {
  * Delete a document from the knowledge base
  * Uses the knowledge base manager cloud function
  */
-export const deleteKnowledgeBaseDocument = async (fileName) => {
+export const deleteKnowledgeBaseDocument = async (documentName, filename) => {
   try {
     const response = await knowledgeBaseApi.delete('/delete-document', {
-      data: { file_name: fileName }
+      data: { 
+        document_name: documentName,
+        filename: filename
+      }
     });
     return response.data;
   } catch (error) {
-    console.error('Error deleting knowledge base document:', error);
+    console.error('Error deleting document:', error);
+    throw error;
+  }
+};
+
+/**
+ * Get knowledge base document content for preview
+ * Uses the knowledge base manager cloud function
+ */
+export const getKnowledgeBaseDocumentContent = async (fileName) => {
+  try {
+    const response = await knowledgeBaseApi.post('/get-document-content', {
+      file_name: fileName
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting document content:', error);
     throw error;
   }
 };

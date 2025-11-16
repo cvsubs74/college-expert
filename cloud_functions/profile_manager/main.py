@@ -10,6 +10,7 @@ import requests
 import functions_framework
 from flask import jsonify
 from google import genai
+from google.cloud import storage
 
 # Initialize Gemini client
 client = genai.Client(
@@ -17,8 +18,30 @@ client = genai.Client(
     http_options={'api_version': 'v1alpha'}
 )
 
-# Get the base data store name from environment variable
+# Get configuration from environment variables
 STUDENT_PROFILE_STORE_BASE = os.getenv("DATA_STORE", "student_profile")
+GCS_BUCKET_NAME = os.getenv("GCS_BUCKET", "college-counselling-478115-student-profiles")
+
+# Initialize GCS client
+storage_client = storage.Client()
+
+def get_storage_bucket():
+    """Get or create GCS bucket."""
+    try:
+        bucket = storage_client.bucket(GCS_BUCKET_NAME)
+        if not bucket.exists():
+            bucket = storage_client.create_bucket(GCS_BUCKET_NAME, location="us-east1")
+            print(f"[STORAGE] Created bucket: {GCS_BUCKET_NAME}")
+        return bucket
+    except Exception as e:
+        print(f"[STORAGE ERROR] {str(e)}")
+        raise
+
+def get_storage_path(user_email, filename):
+    """Generate Firebase Storage path for user profile."""
+    # Sanitize email for path
+    sanitized_email = user_email.replace('@', '_').replace('.', '_').lower()
+    return f"profiles/{sanitized_email}/{filename}"
 
 def get_user_store_name(user_email):
     """
@@ -88,6 +111,8 @@ def profile_manager(request):
             return handle_list(request, headers)
         elif path == '/delete-profile' and request.method == 'DELETE':
             return handle_delete(request, headers)
+        elif path == '/get-profile-content' and request.method == 'POST':
+            return handle_get_content(request, headers)
         else:
             return jsonify({
                 'success': False,
@@ -105,7 +130,7 @@ def profile_manager(request):
 
 
 def handle_upload(request, headers):
-    """Handle student profile upload."""
+    """Handle student profile upload - stores in Firebase Storage and File Search."""
     try:
         # Get file from request
         if 'file' not in request.files:
@@ -143,7 +168,27 @@ def handle_upload(request, headers):
             tmp_path = tmp_file.name
         
         try:
-            # Upload to File Search store
+            file_size = os.path.getsize(tmp_path)
+            
+            # Step 1: Upload to Firebase Storage
+            storage_path = get_storage_path(user_email, file.filename)
+            print(f"[UPLOAD] Uploading to Firebase Storage: {storage_path}")
+            
+            bucket = get_storage_bucket()
+            blob = bucket.blob(storage_path)
+            blob.upload_from_filename(tmp_path, content_type=file.content_type)
+            
+            # Make the file accessible with authentication
+            blob.metadata = {
+                'user_email': user_email,
+                'original_filename': file.filename,
+                'uploaded_at': time.strftime('%Y-%m-%d %H:%M:%S')
+            }
+            blob.patch()
+            
+            print(f"[UPLOAD] Successfully uploaded to Firebase Storage")
+            
+            # Step 2: Upload to File Search store for AI processing
             config = {'display_name': file.filename}
             
             operation = client.file_search_stores.upload_to_file_search_store(
@@ -153,19 +198,18 @@ def handle_upload(request, headers):
             )
             
             # Wait for import to complete
-            print(f"[UPLOAD] Waiting for import to complete...")
+            print(f"[UPLOAD] Waiting for File Search import to complete...")
             while not operation.done:
                 time.sleep(2)
                 operation = client.operations.get(operation)
             
-            print(f"[UPLOAD] Successfully uploaded {file.filename}")
-            
-            file_size = os.path.getsize(tmp_path)
+            print(f"[UPLOAD] Successfully uploaded to File Search")
             
             return jsonify({
                 'success': True,
                 'message': f'Successfully uploaded {file.filename}',
                 'filename': file.filename,
+                'storage_path': storage_path,
                 'store_name': user_store,
                 'user_email': user_email,
                 'size_bytes': file_size
@@ -275,10 +319,12 @@ def handle_list(request, headers):
 
 
 def handle_delete(request, headers):
-    """Delete a student profile."""
+    """Delete a student profile from both Firebase Storage and File Search using REST API."""
     try:
         data = request.get_json()
         document_name = data.get('document_name')
+        user_email = data.get('user_email')
+        filename = data.get('filename')
         
         if not document_name:
             return jsonify({
@@ -288,10 +334,43 @@ def handle_delete(request, headers):
         
         print(f"[DELETE] Deleting document: {document_name}")
         
-        # Delete the document
-        client.file_search_stores.documents.delete(name=document_name)
+        # Step 1: Delete from Firebase Storage (if user_email and filename provided)
+        if user_email and filename:
+            try:
+                storage_path = get_storage_path(user_email, filename)
+                bucket = get_storage_bucket()
+                blob = bucket.blob(storage_path)
+                
+                if blob.exists():
+                    blob.delete()
+                    print(f"[DELETE] Deleted from Firebase Storage: {storage_path}")
+                else:
+                    print(f"[DELETE] File not found in Firebase Storage: {storage_path}")
+            except Exception as storage_error:
+                print(f"[DELETE WARNING] Firebase Storage deletion failed: {str(storage_error)}")
+                # Continue with File Search deletion even if storage deletion fails
         
-        print(f"[DELETE] Successfully deleted {document_name}")
+        # Step 2: Delete from File Search using REST API with force=true
+        api_key = os.getenv("GEMINI_API_KEY")
+        delete_url = f"https://generativelanguage.googleapis.com/v1beta/{document_name}"
+        
+        delete_response = requests.delete(
+            delete_url,
+            headers={"X-Goog-Api-Key": api_key},
+            params={"force": "true"},  # Force delete even if document has chunks
+            timeout=30
+        )
+        
+        if delete_response.status_code == 200:
+            print(f"[DELETE] Successfully deleted from File Search: {document_name}")
+        elif delete_response.status_code == 404:
+            print(f"[DELETE] Document not found in File Search: {document_name}")
+        else:
+            print(f"[DELETE ERROR] File Search deletion failed: {delete_response.status_code} - {delete_response.text}")
+            return jsonify({
+                'success': False,
+                'error': f'Failed to delete from File Search: {delete_response.status_code}'
+            }), 500, headers
         
         return jsonify({
             'success': True,
@@ -305,4 +384,99 @@ def handle_delete(request, headers):
         return jsonify({
             'success': False,
             'error': f'Delete failed: {str(e)}'
+        }), 500, headers
+
+
+def handle_get_content(request, headers):
+    """Get document content for preview from Firebase Storage."""
+    try:
+        data = request.get_json()
+        print(f"[GET_CONTENT] Received request data: {data}")
+        
+        if not data:
+            print(f"[GET_CONTENT ERROR] No JSON data in request")
+            return jsonify({
+                'success': False,
+                'error': 'No data provided in request'
+            }), 400, headers
+        
+        user_email = data.get('user_email')
+        filename = data.get('filename')
+        
+        if not user_email or not filename:
+            print(f"[GET_CONTENT ERROR] Missing user_email or filename in data: {data}")
+            return jsonify({
+                'success': False,
+                'error': 'Missing user_email or filename parameter'
+            }), 400, headers
+        
+        print(f"[GET_CONTENT] Fetching content for: {filename} (user: {user_email})")
+        
+        # Get Firebase Storage path
+        storage_path = get_storage_path(user_email, filename)
+        
+        # Download from Firebase Storage
+        bucket = get_storage_bucket()
+        blob = bucket.blob(storage_path)
+        
+        if not blob.exists():
+            print(f"[GET_CONTENT ERROR] File not found: {storage_path}")
+            return jsonify({
+                'success': False,
+                'error': 'File not found in storage'
+            }), 404, headers
+        
+        # Reload blob to get metadata
+        blob.reload()
+        
+        # For PDFs and binary files, return a message
+        # For text files, try to download as text
+        mime_type = blob.content_type or 'application/octet-stream'
+        file_size = blob.size or 0
+        upload_time = blob.time_created.strftime('%Y-%m-%d %H:%M:%S') if blob.time_created else 'Unknown'
+        
+        print(f"[GET_CONTENT] File metadata - mime_type: {mime_type}, size: {file_size}, filename: {filename}")
+        
+        # Check if it's a PDF by extension if mime_type is generic
+        is_pdf = 'pdf' in mime_type.lower() or filename.lower().endswith('.pdf')
+        
+        if is_pdf:
+            # Make blob publicly readable temporarily and get public URL
+            blob.make_public()
+            download_url = blob.public_url
+            content = None  # No text content for PDFs
+            print(f"[GET_CONTENT] Generated public URL for PDF: {download_url}")
+        elif 'text' in mime_type.lower() or mime_type == 'application/json':
+            try:
+                content = blob.download_as_text()
+                download_url = None
+            except Exception as e:
+                print(f"[GET_CONTENT] Could not download as text: {str(e)}")
+                content = f"Document: {filename}\n\nCould not extract text content.\n\nFile size: {file_size:,} bytes"
+                download_url = None
+        else:
+            content = f"Document: {filename}\n\nPreview not available for this file type ({mime_type}).\n\nFile size: {file_size:,} bytes\nUploaded: {upload_time}"
+            download_url = None
+        
+        print(f"[GET_CONTENT] Successfully retrieved content (content length: {len(content) if content else 0})")
+        
+        return jsonify({
+            'success': True,
+            'content': content,
+            'mime_type': mime_type,
+            'display_name': filename,
+            'storage_path': storage_path,
+            'download_url': download_url,
+            'file_size': file_size,
+            'upload_time': upload_time,
+            'is_pdf': is_pdf
+        }), 200, headers
+        
+    except Exception as e:
+        print(f"[GET_CONTENT ERROR] {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'success': False,
+            'error': f'Failed to get content: {str(e)}'
         }), 500, headers

@@ -1,9 +1,21 @@
-# Environment variables
+# Environment variables and secrets
 .env
 .env.local
 .env.*.local
 *.env
 .env.yaml
+**/.env.yaml
+**/cloud_functions/**/.env.yaml
+
+# API Keys and credentials
+*.key
+*.pem
+secrets/
+credentials/
+service-account*.json
+*-key.json
+google-credentials.json
+firebase-adminsdk*.json
 
 # Python
 __pycache__/
@@ -31,6 +43,7 @@ MANIFEST
 venv/
 ENV/
 env/
+*.pyc
 
 # Node
 node_modules/
@@ -41,6 +54,8 @@ yarn-error.log*
 dist/
 dist-ssr/
 *.local
+package-lock.json
+yarn.lock
 
 # IDEs
 .vscode/
@@ -49,20 +64,39 @@ dist-ssr/
 *.swo
 *~
 .DS_Store
+*.code-workspace
 
 # Firebase
 .firebase/
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
+.firebaserc
 
-# Secrets
-*.key
-*.pem
-secrets/
-credentials/
+# Google Cloud
+.gcloud/
+*.log
 
 # Temporary files
 *.tmp
 *.temp
 .cache/
+*.bak
+*.backup
+
+# Build artifacts
+*.whl
+*.tar.gz
+*.zip
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
