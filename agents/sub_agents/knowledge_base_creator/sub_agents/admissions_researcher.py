@@ -219,12 +219,12 @@ admissions_retriever = LlmAgent(
 # Loop Agent: Iterates through retrieval and critique (NO formatting in loop)
 admissions_research_loop = LoopAgent(
     name="AdmissionsResearchLoop",
-    description="Iterates through data retrieval and critique to ensure complete and accurate RAW data.",
+    description="Iterates through data retrieval and critique to ensure complete RAW data.",
     sub_agents=[
         admissions_retriever,
         admissions_critic
     ],
-    max_iterations=3
+    max_iterations=2
 )
 
 # Main Admissions Researcher: Just the loop - raw data stays in state

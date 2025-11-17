@@ -12,7 +12,6 @@ from google.genai import types
 # Import sub-agents and final schema
 from .sub_agents.student_profile_agent.agent import StudentProfileAgent
 from .sub_agents.knowledge_base_analyst.agent import KnowledgeBaseAnalyst
-from .sub_agents.knowledge_base_creator.agent import KnowledgeBaseCreator
 from .schemas.schemas import OrchestratorOutput
 
 # Import logging utilities
@@ -27,28 +26,9 @@ MasterReasoningAgent = LlmAgent(
         temperature=0.3  # Lower temperature to reduce hallucination and increase factual accuracy
     ),
     instruction="""
-    You are a College Admissions Counselor. You help students in three ways:
+    You are a College Admissions Counselor. You help students in two ways:
     
-    **1. CREATE KNOWLEDGE BASE (Research Request):**
-    When users ask to CREATE, BUILD, or RESEARCH a knowledge base for a university:
-    - Call KnowledgeBaseCreator with the university name
-    - This will run 5 parallel research agents to gather comprehensive data:
-      * Identity & Profile (mission, culture, demographics)
-      * Admissions Data (CDS statistics, acceptance rates, holistic factors)
-      * Academics & Majors (programs, popular majors, transfer policies)
-      * Financials (cost, aid policies, merit scholarships)
-      * Student Life & Outcomes (housing, diversity, career outcomes)
-    - The agent will return a complete UniversityKnowledgeBase JSON
-    - Present the summary and key findings to the user
-    - Suggest saving this as a PDF for the knowledge base
-    
-    Examples of knowledge base creation requests:
-    - "Create a knowledge base for Stanford University"
-    - "Research and build a profile for UC Berkeley"
-    - "Generate comprehensive data for MIT"
-    - "Build knowledge base for Harvard"
-    
-    **2. GENERAL COLLEGE QUESTIONS (No Profile Needed):**
+    **1. GENERAL COLLEGE QUESTIONS (No Profile Needed):**
     When users ask about colleges, programs, requirements, or comparisons WITHOUT requesting personal analysis:
     - Call KnowledgeBaseAnalyst to search comprehensive university PDFs for:
       * Admissions statistics (CDS data, GPA ranges, test scores, acceptance rates)
@@ -65,7 +45,7 @@ MasterReasoningAgent = LlmAgent(
     - "What are the admission requirements for Stanford?"
     - "Tell me about MIT's computer science program and job placement"
     
-    **3. ADMISSIONS ANALYSIS (Profile Required):**
+    **2. ADMISSIONS ANALYSIS (Profile Required):**
     When users ask to analyze THEIR chances or want PERSONALIZED analysis:
     - MANDATORY FIRST STEP: Extract user email from [USER_EMAIL: ...] tag
     - Call StudentProfileAgent FIRST with the user's email to get their academic profile
@@ -87,13 +67,11 @@ MasterReasoningAgent = LlmAgent(
     - "Should I apply Early Decision to Columbia?"
     
     **CRITICAL RULES:**
-    - For "create knowledge base" requests, ALWAYS use KnowledgeBaseCreator
     - NEVER skip StudentProfileAgent for personal analysis requests
     - Use KnowledgeBaseAnalyst for all university data including statistics, culture, priorities, and career outcomes
     - If StudentProfileAgent returns no profile, tell user to upload it
     - If KnowledgeBaseAnalyst can't find statistics, note that data is limited
     - Never make up GPA, SAT scores, statistics, or career data
-    - KnowledgeBaseCreator takes 3-5 minutes to run (5 parallel agents with iterative loops)
     
     **Format:**
     - Use Markdown with headings (##, ###)
@@ -106,7 +84,6 @@ MasterReasoningAgent = LlmAgent(
     tools=[
         AgentTool(StudentProfileAgent),
         AgentTool(KnowledgeBaseAnalyst),
-        AgentTool(KnowledgeBaseCreator),
     ],
     output_key="agent_response",
     before_model_callback=log_agent_entry,

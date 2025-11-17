@@ -182,7 +182,7 @@ identity_research_loop = LoopAgent(
         identity_retriever,
         identity_critic
     ],
-    max_iterations=3
+    max_iterations=2
 )
 
 # Main Identity Researcher: Just the loop - raw data stays in state

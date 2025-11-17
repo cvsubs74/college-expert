@@ -148,7 +148,7 @@ financials_research_loop = LoopAgent(
         financials_retriever,
         financials_critic
     ],
-    max_iterations=3
+    max_iterations=2
 )
 
 # Main Researcher: Just the loop - raw data stays in state
