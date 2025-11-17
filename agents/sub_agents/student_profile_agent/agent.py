@@ -25,13 +25,16 @@ StudentProfileAgent = LlmAgent(
     - Convert the text into a structured JSON array of course objects. Each object must have 'course_name', 'subject', 'grade', 'level' (one of 'Regular', 'Honors', 'AP', 'IB', 'Other'), and 'year'.
     - Use few-shot examples in your reasoning to ensure accuracy.
 
-    **Step 2: Quantify the Academic Profile (Analysis)**
-    - Take the JSON from Step 1 as input.
-    - Calculate the 'unweighted_gpa' on a 4.0 scale (A=4.0, A-=3.7, B+=3.3, B=3.0, etc.).
-    - Calculate the 'weighted_gpa' using these weights: AP/IB=+1.0, Honors=+0.5.
-    - Calculate 'course_rigor' by tallying the total number of AP, IB, and Honors courses.
-    - Analyze grades by year to determine the 'grade_trend' ('Upward', 'Downward', or 'Static').
-    - The result of this step is the `academic_analysis` object.
+    **Step 2: Extract Academic Metrics (DO NOT CALCULATE)**
+    - **CRITICAL:** Extract GPA values DIRECTLY from the profile document - DO NOT calculate them yourself
+    - Look for explicit GPA values in the document (e.g., "Weighted GPA: 3.95", "Unweighted GPA: 3.63")
+    - If the document states the GPA values, use those EXACT values
+    - Only if GPA is not explicitly stated in the document, then calculate from course grades:
+      * Calculate 'unweighted_gpa' on a 4.0 scale (A=4.0, A-=3.7, B+=3.3, B=3.0, etc.)
+      * Calculate 'weighted_gpa' using these weights: AP/IB=+1.0, Honors=+0.5
+    - Calculate 'course_rigor' by tallying the total number of AP, IB, and Honors courses from Step 1
+    - Analyze grades by year to determine the 'grade_trend' ('Upward', 'Downward', or 'Static')
+    - The result of this step is the `academic_analysis` object with the CORRECT GPA values from the document
 
     **Step 3: Identify the 'Spike' (Thematic Analysis)**
     - Analyze the student's extracurricular activities list and essay summary.

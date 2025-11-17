@@ -22,6 +22,15 @@ client = genai.Client(
 KNOWLEDGE_BASE_STORE = os.getenv("DATA_STORE", "college_admissions_kb")
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET", "college-counselling-478115-knowledge-base")
 
+# Chunking configuration from YAML
+CHUNKING_MAX_TOKENS_PER_CHUNK = int(os.getenv("CHUNKING_MAX_TOKENS_PER_CHUNK", "800"))
+CHUNKING_MAX_OVERLAP_TOKENS = int(os.getenv("CHUNKING_MAX_OVERLAP_TOKENS", "100"))
+
+# Log chunking configuration
+print(f"[CONFIG] Chunking Configuration:")
+print(f"[CONFIG]   - Max Tokens Per Chunk: {CHUNKING_MAX_TOKENS_PER_CHUNK}")
+print(f"[CONFIG]   - Max Overlap Tokens: {CHUNKING_MAX_OVERLAP_TOKENS}")
+
 # Initialize GCS client
 storage_client = storage.Client()
 
@@ -166,14 +175,32 @@ def handle_upload(request, headers):
             
             print(f"[UPLOAD] Successfully uploaded to Firebase Storage")
             
-            # Step 2: Upload to File Search store for AI processing
-            config = {'display_name': file.filename}
+            # Step 2: Upload to File Search store for AI processing with chunking config
+            config = {
+                'display_name': file.filename,
+                'chunking_config': {
+                    'white_space_config': {
+                        'max_tokens_per_chunk': CHUNKING_MAX_TOKENS_PER_CHUNK,
+                        'max_overlap_tokens': CHUNKING_MAX_OVERLAP_TOKENS
+                    }
+                }
+            }
             
-            operation = client.file_search_stores.upload_to_file_search_store(
-                file=tmp_path,
-                file_search_store_name=store_name,
-                config=config
-            )
+            print(f"[UPLOAD] Using chunking config: max_tokens={CHUNKING_MAX_TOKENS_PER_CHUNK}, overlap={CHUNKING_MAX_OVERLAP_TOKENS}")
+            print(f"[UPLOAD] Config object: {config}")
+            
+            try:
+                operation = client.file_search_stores.upload_to_file_search_store(
+                    file=tmp_path,
+                    file_search_store_name=store_name,
+                    config=config
+                )
+            except Exception as upload_error:
+                print(f"[UPLOAD ERROR] File Search upload failed: {str(upload_error)}")
+                print(f"[UPLOAD ERROR] Store name: {store_name}")
+                print(f"[UPLOAD ERROR] File path: {tmp_path}")
+                print(f"[UPLOAD ERROR] Config: {config}")
+                raise
             
             # Wait for import to complete
             print(f"[UPLOAD] Waiting for File Search import to complete...")

@@ -9,11 +9,10 @@ This agent searches the knowledge base for career outcomes data including:
 - Career services and support
 """
 
-from google.genai.types import Tool, GenerateContentConfig, FunctionDeclaration
+from google.adk.agents import LlmAgent, SequentialAgent
 from google.genai import types
-from google.genai.agents import LlmAgent, SequentialAgent, AgentTool
-from agents.schemas.schemas import CareerOutcomesData
-from agents.tools.file_search_tools import search_knowledge_base
+from ...schemas.schemas import CareerOutcomesData
+from ...tools.file_search_tools import search_knowledge_base
 
 
 # 1. Retriever Agent: Searches knowledge base for career outcomes data
@@ -21,7 +20,7 @@ retriever_agent = LlmAgent(
     name="career_outcomes_retriever",
     model="gemini-2.5-flash",
     description="Searches the knowledge base for career outcomes, employment statistics, and career services information.",
-    generate_content_config=GenerateContentConfig(
+    generate_content_config=types.GenerateContentConfig(
         temperature=0.1
     ),
     instruction="""
@@ -48,7 +47,7 @@ retriever_agent = LlmAgent(
     Return all relevant information you find. If data is limited, explicitly state what's missing.
     Store your findings in the output_key for the formatter to process.
     """,
-    tools=[Tool(function_declarations=[search_knowledge_base])],
+    tools=[search_knowledge_base],
     output_key="raw_career_data"
 )
 
@@ -58,7 +57,7 @@ formatter_agent = LlmAgent(
     name="career_outcomes_formatter",
     model="gemini-2.5-flash",
     description="Formats raw career outcomes data into a structured analysis.",
-    generate_content_config=GenerateContentConfig(
+    generate_content_config=types.GenerateContentConfig(
         temperature=0.2
     ),
     instruction="""

@@ -1,7 +1,16 @@
 #!/bin/bash
 
-# College Counselor - Complete Deployment Script
-# Deploys backend agent, cloud function, and frontend
+# College Counselor - Modular Deployment Script
+# Supports deploying individual components or all at once
+#
+# Usage:
+#   ./deploy.sh                    # Deploy everything
+#   ./deploy.sh agent              # Deploy only the agent
+#   ./deploy.sh profile            # Deploy only profile manager
+#   ./deploy.sh knowledge          # Deploy only knowledge base manager
+#   ./deploy.sh functions          # Deploy all cloud functions
+#   ./deploy.sh backend            # Deploy agent + all functions
+#   ./deploy.sh frontend           # Deploy only frontend
 
 set -e  # Exit on error
 
@@ -13,17 +22,49 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
+CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # Configuration
 PROJECT_ID=${GCP_PROJECT_ID:-"college-counselling-478115"}
 REGION="us-east1"
 AGENT_SERVICE_NAME="college-counselor-agent"
-CLOUD_FUNCTION_NAME="profile-manager"
+PROFILE_MANAGER_FUNCTION="profile-manager"
+KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
 FRONTEND_SITE_NAME="college-counselor"
 
+# Parse command line arguments
+DEPLOY_TARGET="${1:-all}"
+
+# Show usage if help requested
+if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
+    echo -e "${CYAN}╔════════════════════════════════════════════════════════════╗${NC}"
+    echo -e "${CYAN}║     College Counselor - Deployment Script Help            ║${NC}"
+    echo -e "${CYAN}╚════════════════════════════════════════════════════════════╝${NC}"
+    echo ""
+    echo -e "${GREEN}Usage:${NC}"
+    echo -e "  ./deploy.sh [target]"
+    echo ""
+    echo -e "${GREEN}Targets:${NC}"
+    echo -e "  ${YELLOW}all${NC}         - Deploy everything (agent + functions + frontend)"
+    echo -e "  ${YELLOW}agent${NC}       - Deploy only the backend agent"
+    echo -e "  ${YELLOW}profile${NC}     - Deploy only profile manager function"
+    echo -e "  ${YELLOW}knowledge${NC}   - Deploy only knowledge base manager function"
+    echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions (profile + knowledge)"
+    echo -e "  ${YELLOW}backend${NC}     - Deploy agent + all functions"
+    echo -e "  ${YELLOW}frontend${NC}    - Deploy only frontend"
+    echo ""
+    echo -e "${GREEN}Examples:${NC}"
+    echo -e "  ./deploy.sh              # Deploy everything"
+    echo -e "  ./deploy.sh agent        # Deploy only agent"
+    echo -e "  ./deploy.sh knowledge    # Deploy only knowledge base manager"
+    echo ""
+    exit 0
+fi
+
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"
-echo -e "${BLUE}║     College Counselor - Complete Deployment Script        ║${NC}"
+echo -e "${BLUE}║     College Counselor - Deployment Script                 ║${NC}"
+echo -e "${BLUE}║     Target: ${DEPLOY_TARGET}${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -93,66 +134,155 @@ echo -e "${YELLOW}Setting GCP project...${NC}"
 gcloud config set project $PROJECT_ID
 echo ""
 
-# Deploy Backend (Agent + Cloud Function)
-echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-echo -e "${BLUE}  Step 1: Deploying Backend${NC}"
-echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-echo ""
+# Deployment Functions
+deploy_agent() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Backend Agent${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd agents
+    cat > .env << EOF
+GEMINI_API_KEY=${GEMINI_API_KEY}
+DATA_STORE=college_admissions_kb
+GOOGLE_GENAI_USE_VERTEXAI=0
+EOF
+    
+    adk deploy cloud_run \
+        --project="$PROJECT_ID" \
+        --region="$REGION" \
+        --service_name="$AGENT_SERVICE_NAME" \
+        --allow_origins="*" \
+        --with_ui \
+        .
+    
+    gcloud run services add-iam-policy-binding "$AGENT_SERVICE_NAME" \
+        --member="allUsers" \
+        --role="roles/run.invoker" \
+        --region="$REGION" \
+        --platform=managed
+    
+    AGENT_URL=$(gcloud run services describe $AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)')
+    echo -e "${GREEN}✓ Agent deployed: ${AGENT_URL}${NC}"
+    cd ..
+}
 
-# Export environment variables for the backend deployment script
-export GCP_PROJECT_ID=$PROJECT_ID
-export GEMINI_API_KEY=$GEMINI_API_KEY
+deploy_profile_manager() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Profile Manager Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd cloud_functions/profile_manager
+    gcloud functions deploy $PROFILE_MANAGER_FUNCTION \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=profile_manager \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=.env.yaml \
+        --timeout=540s \
+        --memory=512MB
+    
+    PROFILE_MANAGER_URL=$(gcloud functions describe $PROFILE_MANAGER_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Profile Manager deployed: ${PROFILE_MANAGER_URL}${NC}"
+    cd ../..
+}
 
-./deploy_backend.sh
+deploy_knowledge_base_manager() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Knowledge Base Manager Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd cloud_functions/knowledge_base_manager
+    gcloud functions deploy $KNOWLEDGE_BASE_FUNCTION \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=knowledge_base_manager \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=.env.yaml \
+        --timeout=540s \
+        --memory=512MB
+    
+    KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Knowledge Base Manager deployed: ${KNOWLEDGE_BASE_URL}${NC}"
+    cd ../..
+}
 
-# Extract URLs from backend deployment
-AGENT_URL=$(gcloud run services describe $AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)' 2>/dev/null || echo "")
-FUNCTION_URL=$(gcloud functions describe $CLOUD_FUNCTION_NAME --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+deploy_frontend() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Frontend${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    # Get backend URLs
+    AGENT_URL=$(gcloud run services describe $AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)' 2>/dev/null || echo "")
+    PROFILE_MANAGER_URL=$(gcloud functions describe $PROFILE_MANAGER_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    
+    export VITE_API_URL=$AGENT_URL
+    export VITE_PROFILE_MANAGER_URL=$PROFILE_MANAGER_URL
+    export VITE_KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_URL
+    
+    # Firebase Configuration
+    export VITE_FIREBASE_API_KEY="AIzaSyB21YdLOZTjO1przhjsX1Es64-kFGov5XE"
+    export VITE_FIREBASE_AUTH_DOMAIN="college-counsellor.firebaseapp.com"
+    export VITE_FIREBASE_PROJECT_ID="college-counsellor"
+    export VITE_FIREBASE_STORAGE_BUCKET="college-counsellor.firebasestorage.app"
+    export VITE_FIREBASE_MESSAGING_SENDER_ID="1098097030863"
+    export VITE_FIREBASE_APP_ID="1:1098097030863:web:6e7d2d9e7f1f7b7f7f7f7f"
+    
+    ./deploy_frontend.sh
+    echo -e "${GREEN}✓ Frontend deployed: https://college-strategy.web.app${NC}"
+}
 
-if [ -z "$AGENT_URL" ] || [ -z "$FUNCTION_URL" ]; then
-    echo -e "${RED}Error: Failed to get backend URLs${NC}"
-    exit 1
-fi
-
-# Deploy Frontend
-echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-echo -e "${BLUE}  Step 2: Deploying Frontend${NC}"
-echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-echo ""
-
-# Get Knowledge Base Manager URL
-KNOWLEDGE_BASE_URL=$(gcloud functions describe knowledge-base-manager --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
-
-export VITE_API_URL=$AGENT_URL
-export VITE_PROFILE_MANAGER_URL=$FUNCTION_URL
-export VITE_KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_URL
-
-# Firebase Configuration
-export VITE_FIREBASE_API_KEY="AIzaSyB21YdLOZTjO1przhjsX1Es64-kFGov5XE"
-export VITE_FIREBASE_AUTH_DOMAIN="college-counsellor.firebaseapp.com"
-export VITE_FIREBASE_PROJECT_ID="college-counsellor"
-export VITE_FIREBASE_STORAGE_BUCKET="college-counsellor.firebasestorage.app"
-export VITE_FIREBASE_MESSAGING_SENDER_ID="1098097030863"
-export VITE_FIREBASE_APP_ID="1:1098097030863:web:6e7d2d9e7f1f7b7f7f7f7f"
-
-./deploy_frontend.sh
-
-FRONTEND_URL="https://college-strategy.web.app"
+# Execute deployment based on target
+case "$DEPLOY_TARGET" in
+    "agent")
+        deploy_agent
+        ;;
+    "profile")
+        deploy_profile_manager
+        ;;
+    "knowledge")
+        deploy_knowledge_base_manager
+        ;;
+    "functions")
+        deploy_profile_manager
+        deploy_knowledge_base_manager
+        ;;
+    "backend")
+        deploy_agent
+        deploy_profile_manager
+        deploy_knowledge_base_manager
+        ;;
+    "frontend")
+        deploy_frontend
+        ;;
+    "all")
+        deploy_agent
+        deploy_profile_manager
+        deploy_knowledge_base_manager
+        deploy_frontend
+        ;;
+    *)
+        echo -e "${RED}Error: Unknown deployment target '${DEPLOY_TARGET}'${NC}"
+        echo -e "${YELLOW}Run './deploy.sh --help' for usage information${NC}"
+        exit 1
+        ;;
+esac
 
 # Summary
+echo ""
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║              Deployment Complete! 🎉                       ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
-echo -e "${GREEN}Deployment Summary:${NC}"
-echo -e "  Backend Agent:      ${AGENT_URL}"
-echo -e "  Cloud Function:     ${FUNCTION_URL}"
-echo -e "  Frontend:           ${FRONTEND_URL}"
+echo -e "${GREEN}Deployed: ${DEPLOY_TARGET}${NC}"
 echo ""
-echo -e "${YELLOW}Next Steps:${NC}"
-echo -e "  1. Visit ${FRONTEND_URL}"
-echo -e "  2. Upload your student profile in the 'Student Profile' tab"
-echo -e "  3. Enter college information in the 'Admissions Analysis' tab"
-echo -e "  4. Click 'Analyze' to get your admissions assessment"
-echo ""
-echo -e "${GREEN}Happy analyzing! 🎓${NC}"
