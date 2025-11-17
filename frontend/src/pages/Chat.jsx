@@ -13,29 +13,36 @@ import { useAuth } from '../context/AuthContext';
 
 function Chat() {
   const { currentUser } = useAuth();
-  const [messages, setMessages] = useState([]);
+  
+  // Initialize messages from localStorage to prevent clearing on tab switch
+  const [messages, setMessages] = useState(() => {
+    try {
+      const savedMessages = localStorage.getItem('chatMessages');
+      return savedMessages ? JSON.parse(savedMessages) : [];
+    } catch (e) {
+      console.error('Error loading messages from localStorage:', e);
+      return [];
+    }
+  });
+  
   const [inputMessage, setInputMessage] = useState('');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(null);
   const [suggestedQuestions, setSuggestedQuestions] = useState([]);
   const messagesEndRef = useRef(null);
 
-  // Load messages from localStorage
+  // Save messages to localStorage whenever they change
   useEffect(() => {
-    const savedMessages = localStorage.getItem('chatMessages');
-    
-    if (savedMessages) {
-      try {
-        setMessages(JSON.parse(savedMessages));
-      } catch (e) {
-        console.error('Error loading messages:', e);
+    if (messages.length > 0) {
+      localStorage.setItem('chatMessages', JSON.stringify(messages));
+      console.log('[Chat] Saved', messages.length, 'messages to localStorage');
+    } else {
+      // Only remove if explicitly cleared (not on initial mount)
+      const savedMessages = localStorage.getItem('chatMessages');
+      if (savedMessages && messages.length === 0) {
+        console.log('[Chat] Messages cleared, keeping localStorage for persistence');
       }
     }
-  }, []);
-
-  // Save messages to localStorage
-  useEffect(() => {
-    if (messages.length > 0) localStorage.setItem('chatMessages', JSON.stringify(messages));
   }, [messages]);
 
   // Auto-scroll to bottom

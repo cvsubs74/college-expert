@@ -53,7 +53,7 @@ admissions_critic = LlmAgent(
     { raw_admissions_data? }
     
     ADMISSIONS_FEEDBACK (previous):
-    { ADMISSIONS_FEEDBACK? }
+    { admissions_feedback? }
     """,
     tools=[exit_loop],
     output_key="admissions_feedback"
@@ -69,7 +69,7 @@ admissions_retriever = LlmAgent(
     instruction="""
     You are an admissions data retriever. Search for comprehensive admissions statistics.
     
-    **IF ADMISSIONS_FEEDBACK EXISTS:**
+    **IF admissions_feedback EXISTS:**
     - Address each specific gap mentioned in the feedback
     - Perform targeted searches for missing data
     - Example: If "Missing SAT range", search "[University] Common Data Set Section C9 SAT scores"
@@ -207,7 +207,7 @@ admissions_retriever = LlmAgent(
     - Include CDS year in citation (e.g., "Common Data Set 2024-2025")
     
     ADMISSIONS_FEEDBACK:
-    { ADMISSIONS_FEEDBACK? }
+    { admissions_feedback? }
     
     RAW_ADMISSIONS_DATA (previous):
     { raw_admissions_data? }

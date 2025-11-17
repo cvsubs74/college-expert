@@ -63,7 +63,7 @@ academics_critic = LlmAgent(
     { raw_academics_data? }
     
     ACADEMICS_FEEDBACK (previous):
-    { ACADEMICS_FEEDBACK? }
+    { academics_feedback? }
     """,
     tools=[exit_loop],
     output_key="academics_feedback"
@@ -79,7 +79,7 @@ academics_retriever = LlmAgent(
     instruction="""
     You are an academics data retriever.
     
-    **IF ACADEMICS_FEEDBACK EXISTS:** Address specific gaps
+    **IF academics_feedback EXISTS:** Address specific gaps
     **IF NO FEEDBACK:** Perform comprehensive searches
     
     **SEARCH STRATEGY:**
@@ -226,7 +226,7 @@ academics_retriever = LlmAgent(
     - Include academic catalog year in citation
     
     ACADEMICS_FEEDBACK:
-    { ACADEMICS_FEEDBACK? }
+    { academics_feedback? }
     """,
     tools=[google_search],
     output_key="raw_academics_data"

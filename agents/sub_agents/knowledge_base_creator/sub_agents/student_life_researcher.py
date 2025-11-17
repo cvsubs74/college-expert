@@ -34,7 +34,7 @@ student_life_critic = LlmAgent(
     { raw_student_life_data? }
     
     STUDENT_LIFE_FEEDBACK (previous):
-    { STUDENT_LIFE_FEEDBACK? }
+    { student_life_feedback? }
     """,
     tools=[exit_loop],
     output_key="student_life_feedback"
@@ -50,7 +50,7 @@ student_life_retriever = LlmAgent(
     instruction="""
     You are a student life data retriever.
     
-    **IF STUDENT_LIFE_FEEDBACK EXISTS:** Address specific gaps
+    **IF student_life_feedback EXISTS:** Address specific gaps
     **IF NO FEEDBACK:** Perform comprehensive searches
     
     **SEARCH STRATEGY:**
@@ -144,7 +144,7 @@ student_life_retriever = LlmAgent(
     - Include report year for career outcomes (e.g., "Class of 2024 Career Outcomes")
     
     STUDENT_LIFE_FEEDBACK:
-    { STUDENT_LIFE_FEEDBACK? }
+    { student_life_feedback? }
     """,
     tools=[google_search],
     output_key="raw_student_life_data"

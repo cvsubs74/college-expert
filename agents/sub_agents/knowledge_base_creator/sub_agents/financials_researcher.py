@@ -34,7 +34,7 @@ financials_critic = LlmAgent(
     { raw_financials_data? }
     
     FINANCIALS_FEEDBACK (previous):
-    { FINANCIALS_FEEDBACK? }
+    { financials_feedback? }
     """,
     tools=[exit_loop],
     output_key="financials_feedback"
@@ -50,7 +50,7 @@ financials_retriever = LlmAgent(
     instruction="""
     You are a financial data retriever.
     
-    **IF FINANCIALS_FEEDBACK EXISTS:** Address specific gaps
+    **IF financials_feedback EXISTS:** Address specific gaps
     **IF NO FEEDBACK:** Perform comprehensive searches
     
     **SEARCH STRATEGY:**
@@ -134,7 +134,7 @@ financials_retriever = LlmAgent(
     - Include academic year in citation (e.g., "2024-2025 Cost of Attendance")
     
     FINANCIALS_FEEDBACK:
-    { FINANCIALS_FEEDBACK? }
+    { financials_feedback? }
     """,
     tools=[google_search],
     output_key="raw_financials_data"

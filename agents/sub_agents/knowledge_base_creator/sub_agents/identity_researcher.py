@@ -53,7 +53,7 @@ identity_critic = LlmAgent(
     { raw_identity_data? }
     
     IDENTITY_FEEDBACK (previous):
-    { IDENTITY_FEEDBACK? }
+    { identity_feedback? }
     """,
     tools=[exit_loop],
     output_key="identity_feedback"
@@ -69,7 +69,7 @@ identity_retriever = LlmAgent(
     instruction="""
     You are a university identity data retriever. Search for comprehensive information.
     
-    **IF IDENTITY_FEEDBACK EXISTS:**
+    **IF identity_feedback EXISTS:**
     - Address each specific gap mentioned in the feedback
     - Perform targeted searches for missing data
     - Example: If "Missing student-to-faculty ratio", search "[University] Common Data Set student faculty ratio"
@@ -165,7 +165,7 @@ identity_retriever = LlmAgent(
     - Number all citations for easy reference
     
     IDENTITY_FEEDBACK:
-    { IDENTITY_FEEDBACK? }
+    { identity_feedback? }
     
     RAW_IDENTITY_DATA (previous):
     { raw_identity_data? }
