@@ -2,6 +2,7 @@ gitpython==3.1.40
 google-adk>=1.10.0
 google-cloud-logging
 google-cloud-storage
+google-cloud-firestore  # Required for Firestore knowledge base analyst
 python-dotenv
 requests
 uvicorn
@@ -13,4 +14,5 @@ httpx
 google-genai==1.49.0  # Version 1.50.0 breaks file_search_stores attribute
 google-generativeai  # Keep for compatibility
 beautifulsoup4  # Required for load_web_page tool
+elasticsearch  # Required for Elasticsearch knowledge base analyst
 lxml  # Parser for BeautifulSoup

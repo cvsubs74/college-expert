@@ -249,6 +249,70 @@ def delete_document(document_name: str) -> Dict[str, Any]:
         }
 
 
+def get_document_content(file_name: str) -> Dict[str, Any]:
+    """
+    Get the full content of a specific document from the File Search store.
+    
+    Args:
+        file_name: The resource name of the document (full path like "fileSearchStores/.../documents/...")
+        
+    Returns:
+        Dictionary with document content and metadata
+        
+    Example:
+        get_document_content("fileSearchStores/collegeadmissionskb-4boxdeg45i4o/documents/stanfordpdf-abc123")
+    """
+    try:
+        print(f"[GET] Retrieving document: {file_name}")
+        
+        # Call the Cloud Function endpoint
+        api_url = os.getenv("KNOWLEDGE_BASE_URL", "http://localhost:8081")
+        url = f"{api_url}/get-document"
+        
+        payload = {"file_name": file_name}
+        
+        response = requests.post(
+            url,
+            json=payload,
+            headers={"Content-Type": "application/json"},
+            timeout=30
+        )
+        
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("success"):
+                doc = data.get("document", {})
+                print(f"[GET] Successfully retrieved document: {doc.get('display_name', 'Unknown')}")
+                return {
+                    "success": True,
+                    "document": doc,
+                    "message": f"✅ Retrieved document: {doc.get('display_name', 'Unknown')}"
+                }
+            else:
+                error = data.get("error", "Unknown error")
+                print(f"[GET ERROR] Backend error: {error}")
+                return {
+                    "success": False,
+                    "error": error,
+                    "message": f"❌ Failed to retrieve document: {error}"
+                }
+        else:
+            print(f"[GET ERROR] HTTP {response.status_code}: {response.text}")
+            return {
+                "success": False,
+                "error": f"HTTP {response.status_code} - {response.text}",
+                "message": f"❌ Failed to retrieve document: HTTP {response.status_code}"
+            }
+            
+    except Exception as e:
+        print(f"[GET ERROR] Exception: {str(e)}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"❌ Failed to retrieve document: {str(e)}"
+        }
+
+
 def get_document_count() -> Dict[str, Any]:
     """
     Get the count of documents in the File Search store.

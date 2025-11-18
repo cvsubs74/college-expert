@@ -27,6 +27,57 @@ function KnowledgeBase() {
   const [pdfError, setPdfError] = useState(null);
   const [selectedDocuments, setSelectedDocuments] = useState([]);
   const [deleting, setDeleting] = useState(false);
+  
+  // Get knowledge base approach from environment
+  const knowledgeBaseApproach = import.meta.env.VITE_KNOWLEDGE_BASE_APPROACH || 'rag';
+  
+  // Get approach display info
+  const getApproachInfo = (approach) => {
+    switch (approach) {
+      case 'rag':
+        return {
+          name: 'RAG (Gemini File Search)',
+          description: 'Using Gemini File Search API for semantic document retrieval',
+          bgClass: 'bg-blue-50',
+          borderClass: 'border-blue-200',
+          dotClass: 'bg-blue-500',
+          textClass: 'text-blue-900',
+          subTextClass: 'text-blue-700'
+        };
+      case 'firestore':
+        return {
+          name: 'Firestore Database',
+          description: 'Using Cloud Firestore for structured document storage',
+          bgClass: 'bg-green-50',
+          borderClass: 'border-green-200',
+          dotClass: 'bg-green-500',
+          textClass: 'text-green-900',
+          subTextClass: 'text-green-700'
+        };
+      case 'elasticsearch':
+        return {
+          name: 'Elasticsearch',
+          description: 'Using Elasticsearch for advanced search capabilities',
+          bgClass: 'bg-purple-50',
+          borderClass: 'border-purple-200',
+          dotClass: 'bg-purple-500',
+          textClass: 'text-purple-900',
+          subTextClass: 'text-purple-700'
+        };
+      default:
+        return {
+          name: 'Unknown',
+          description: 'Unknown knowledge base approach',
+          bgClass: 'bg-gray-50',
+          borderClass: 'border-gray-200',
+          dotClass: 'bg-gray-500',
+          textClass: 'text-gray-900',
+          subTextClass: 'text-gray-700'
+        };
+    }
+  };
+  
+  const approachInfo = getApproachInfo(knowledgeBaseApproach);
 
   useEffect(() => {
     loadDocuments();
@@ -178,7 +229,7 @@ function KnowledgeBase() {
 
     try {
       const deletePromises = selectedDocuments.map(doc =>
-        deleteKnowledgeBaseDocument(doc.resource_name, doc.name)
+        deleteKnowledgeBaseDocument(doc.name, doc.display_name || doc.name)
       );
 
       const results = await Promise.all(deletePromises);
@@ -206,9 +257,9 @@ function KnowledgeBase() {
 
   const toggleDocumentSelection = (doc) => {
     setSelectedDocuments(prev => {
-      const isSelected = prev.some(d => d.resource_name === doc.resource_name);
+      const isSelected = prev.some(d => d.name === doc.name);
       if (isSelected) {
-        return prev.filter(d => d.resource_name !== doc.resource_name);
+        return prev.filter(d => d.name !== doc.name);
       } else {
         return [...prev, doc];
       }
@@ -275,6 +326,21 @@ function KnowledgeBase() {
         <p className="mt-2 text-gray-600">
           Upload university research documents to the shared knowledge base. These documents will be available to all users for college information queries.
         </p>
+        
+        {/* Knowledge Base Approach Indicator */}
+        <div className={`mt-4 inline-flex items-center px-4 py-2 rounded-lg ${approachInfo.bgClass} border ${approachInfo.borderClass}`}>
+          <div className="flex items-center space-x-2">
+            <div className={`w-3 h-3 rounded-full ${approachInfo.dotClass}`}></div>
+            <div>
+              <p className={`text-sm font-medium ${approachInfo.textClass}`}>
+                {approachInfo.name}
+              </p>
+              <p className={`text-xs ${approachInfo.subTextClass}`}>
+                {approachInfo.description}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Upload Section */}
@@ -494,9 +560,9 @@ function KnowledgeBase() {
                       />
                       <DocumentTextIcon className="h-6 w-6 text-gray-400" />
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-gray-900">{doc.name}</p>
+                        <p className="text-sm font-medium text-gray-900">{doc.display_name || doc.name}</p>
                     <p className="text-xs text-gray-500">
-                      {formatFileSize(doc.size)} • {doc.mime_type}
+                      {formatFileSize(doc.size_bytes || doc.size)} • {doc.mime_type}
                     </p>
                   </div>
                 </div>
@@ -509,7 +575,7 @@ function KnowledgeBase() {
                     <EyeIcon className="h-5 w-5" />
                   </button>
                   <button
-                    onClick={() => handleDelete(doc.resource_name, doc.name)}
+                    onClick={() => handleDelete(doc.name, doc.display_name || doc.name)}
                     className="p-2 text-red-600 hover:bg-red-50 rounded-md transition-colors"
                     title="Delete document"
                   >

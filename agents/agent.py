@@ -4,6 +4,7 @@ AI-Powered College Admissions Prediction System - Master Reasoning Agent
 This agent orchestrates a suite of specialized sub-agents to perform a holistic, reasoning-based analysis of college admissions chances.
 """
 
+import os
 from google.adk.agents import LlmAgent, SequentialAgent
 from google.adk.tools.agent_tool import AgentTool
 from google import genai
@@ -11,11 +12,47 @@ from google.genai import types
 
 # Import sub-agents and final schema
 from .sub_agents.student_profile_agent.agent import StudentProfileAgent
-from .sub_agents.knowledge_base_analyst.agent import KnowledgeBaseAnalyst
 from .schemas.schemas import OrchestratorOutput
 
 # Import logging utilities
 from .tools.logging_utils import log_agent_entry, log_agent_exit
+
+# Get knowledge base approach from environment variable
+KNOWLEDGE_BASE_APPROACH = os.getenv('KNOWLEDGE_BASE_APPROACH', 'rag').lower()
+
+# Select the appropriate knowledge base analyst based on environment variable
+# Import only the required sub-agent to avoid dependency issues
+if KNOWLEDGE_BASE_APPROACH == 'elasticsearch':
+    try:
+        from .sub_agents.knowledge_base_analyst_ES.agent import KnowledgeBaseESAnalyst
+        SELECTED_KB_ANALYST = KnowledgeBaseESAnalyst
+        KB_ANALYST_NAME = "KnowledgeBaseESAnalyst (Elasticsearch)"
+    except ImportError as e:
+        print(f"[AGENT] Warning: Could not import Elasticsearch analyst: {e}")
+        print("[AGENT] Falling back to RAG approach")
+        from .sub_agents.knowledge_base_analyst.agent import KnowledgeBaseAnalyst
+        SELECTED_KB_ANALYST = KnowledgeBaseAnalyst
+        KB_ANALYST_NAME = "KnowledgeBaseAnalyst (RAG)"
+        KNOWLEDGE_BASE_APPROACH = 'rag'
+elif KNOWLEDGE_BASE_APPROACH == 'firestore':
+    try:
+        from .sub_agents.knowledge_base_analyst_FS.agent import KnowledgeBaseAnalystFS
+        SELECTED_KB_ANALYST = KnowledgeBaseAnalystFS
+        KB_ANALYST_NAME = "KnowledgeBaseAnalystFS (Firestore)"
+    except ImportError as e:
+        print(f"[AGENT] Warning: Could not import Firestore analyst: {e}")
+        print("[AGENT] Falling back to RAG approach")
+        from .sub_agents.knowledge_base_analyst.agent import KnowledgeBaseAnalyst
+        SELECTED_KB_ANALYST = KnowledgeBaseAnalyst
+        KB_ANALYST_NAME = "KnowledgeBaseAnalyst (RAG)"
+        KNOWLEDGE_BASE_APPROACH = 'rag'
+else:  # default to rag
+    from .sub_agents.knowledge_base_analyst.agent import KnowledgeBaseAnalyst
+    SELECTED_KB_ANALYST = KnowledgeBaseAnalyst
+    KB_ANALYST_NAME = "KnowledgeBaseAnalyst (RAG)"
+
+print(f"[AGENT] Using knowledge base approach: {KNOWLEDGE_BASE_APPROACH}")
+print(f"[AGENT] Selected analyst: {KB_ANALYST_NAME}")
 
 # The Master Reasoning Agent
 MasterReasoningAgent = LlmAgent(
@@ -30,14 +67,19 @@ MasterReasoningAgent = LlmAgent(
     
     **1. GENERAL COLLEGE QUESTIONS (No Profile Needed):**
     When users ask about colleges, programs, requirements, or comparisons WITHOUT requesting personal analysis:
-    - Call KnowledgeBaseAnalyst to search comprehensive university PDFs for:
-      * Admissions statistics (CDS data, GPA ranges, test scores, acceptance rates)
+    
+    **Knowledge Base Approach:** """ + KB_ANALYST_NAME + """
+    
+    **Use the available knowledge base tool to search for:**
+      * Admissions statistics (GPA ranges, test scores, acceptance rates)
       * Institutional priorities and values (what they look for in applicants)
       * Student experiences and campus culture
       * Career outcomes (employment stats, salaries, top employers, career services)
       * Program details, requirements, and unique features
-    - DO NOT call StudentProfileAgent for general questions
-    - Synthesize data from the knowledge base into a comprehensive answer
+      * University-specific searches, comparisons, and structured data
+    
+    **DO NOT call StudentProfileAgent for general questions**
+    **Synthesize data from the knowledge base into a comprehensive answer**
     
     Examples of general questions:
     - "What does USC look for in applicants?"
@@ -49,10 +91,16 @@ MasterReasoningAgent = LlmAgent(
     When users ask to analyze THEIR chances or want PERSONALIZED analysis:
     - MANDATORY FIRST STEP: Extract user email from [USER_EMAIL: ...] tag
     - Call StudentProfileAgent FIRST with the user's email to get their academic profile
-    - Call KnowledgeBaseAnalyst to get comprehensive university data including:
+    
+    **Knowledge Base Approach:** """ + KB_ANALYST_NAME + """
+    
+    **Use the available knowledge base tool to search for:**
       * Latest admissions statistics (acceptance rates, GPA ranges, test scores)
       * Institutional priorities and values
       * Career outcomes for their intended major
+      * University-specific searches and structured data extraction
+    
+    **Analysis Process:**
     - Compare the student's profile against the university's:
       * Academic requirements (compare student's GPA/test scores to university's ranges)
       * Institutional fit (values, priorities, what they seek)
@@ -68,9 +116,9 @@ MasterReasoningAgent = LlmAgent(
     
     **CRITICAL RULES:**
     - NEVER skip StudentProfileAgent for personal analysis requests
-    - Use KnowledgeBaseAnalyst for all university data including statistics, culture, priorities, and career outcomes
+    - Use the available knowledge base tool for university information
     - If StudentProfileAgent returns no profile, tell user to upload it
-    - If KnowledgeBaseAnalyst can't find statistics, note that data is limited
+    - If the knowledge base tool can't find statistics, note that data is limited
     - Never make up GPA, SAT scores, statistics, or career data
     
     **Format:**
@@ -83,7 +131,7 @@ MasterReasoningAgent = LlmAgent(
     """,
     tools=[
         AgentTool(StudentProfileAgent),
-        AgentTool(KnowledgeBaseAnalyst),
+        AgentTool(SELECTED_KB_ANALYST),
     ],
     output_key="agent_response",
     before_model_callback=log_agent_entry,

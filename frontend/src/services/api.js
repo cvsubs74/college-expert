@@ -322,14 +322,32 @@ export const extractFullResponse = (sessionData) => {
 // Knowledge Base Management API
 // ============================================
 
+// Get knowledge base approach from environment
+const KNOWLEDGE_BASE_APPROACH = import.meta.env.VITE_KNOWLEDGE_BASE_APPROACH || 'rag';
+
+// Determine knowledge base URL based on approach
+const getKnowledgeBaseUrl = () => {
+  switch (KNOWLEDGE_BASE_APPROACH) {
+    case 'elasticsearch':
+      return import.meta.env.VITE_KNOWLEDGE_BASE_ES_URL || 'http://localhost:8083';
+    case 'firestore':
+      return import.meta.env.VITE_KNOWLEDGE_BASE_FS_URL || 'http://localhost:8082';
+    default: // rag
+      return import.meta.env.VITE_KNOWLEDGE_BASE_URL || 'http://localhost:8081';
+  }
+};
+
 // Create axios instance for knowledge base manager cloud function
 const knowledgeBaseApi = axios.create({
-  baseURL: import.meta.env.VITE_KNOWLEDGE_BASE_URL || 'http://localhost:8081',
+  baseURL: getKnowledgeBaseUrl(),
   timeout: 60000,
   headers: {
     'Content-Type': 'application/json',
   },
 });
+
+console.log(`[FRONTEND] Using knowledge base approach: ${KNOWLEDGE_BASE_APPROACH}`);
+console.log(`[FRONTEND] Knowledge base URL: ${getKnowledgeBaseUrl()}`);
 
 /**
  * Upload university research document to the college_admissions_kb store
@@ -348,6 +366,13 @@ export const uploadKnowledgeBaseDocument = async (file) => {
     return response.data;
   } catch (error) {
     console.error('Error uploading knowledge base document:', error);
+    console.error('Error details:', {
+      message: error.message,
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      data: error.response?.data,
+      url: knowledgeBaseApi.defaults.baseURL + '/upload-document'
+    });
     throw error;
   }
 };
@@ -358,7 +383,7 @@ export const uploadKnowledgeBaseDocument = async (file) => {
  */
 export const listKnowledgeBaseDocuments = async () => {
   try {
-    const response = await knowledgeBaseApi.get('/list-documents');
+    const response = await knowledgeBaseApi.get('/documents');
     return response.data;
   } catch (error) {
     console.error('Error listing knowledge base documents:', error);
@@ -372,11 +397,8 @@ export const listKnowledgeBaseDocuments = async () => {
  */
 export const deleteKnowledgeBaseDocument = async (documentName, filename) => {
   try {
-    const response = await knowledgeBaseApi.delete('/delete-document', {
-      data: { 
-        document_name: documentName,
-        filename: filename
-      }
+    const response = await knowledgeBaseApi.post('/delete', {
+      file_name: documentName  // Backend expects file_name parameter
     });
     return response.data;
   } catch (error) {

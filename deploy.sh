@@ -31,7 +31,13 @@ REGION="us-east1"
 AGENT_SERVICE_NAME="college-counselor-agent"
 PROFILE_MANAGER_FUNCTION="profile-manager"
 KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
+KNOWLEDGE_BASE_FS_FUNCTION="knowledge-base-manager-fs"
+KNOWLEDGE_BASE_ES_FUNCTION="knowledge-base-manager-es"
 FRONTEND_SITE_NAME="college-counselor"
+
+# Knowledge Base Approach Configuration
+# Valid values: "rag", "firestore", "elasticsearch"
+KNOWLEDGE_BASE_APPROACH=${KNOWLEDGE_BASE_APPROACH:-"rag"}
 
 # Parse command line arguments
 DEPLOY_TARGET="${1:-all}"
@@ -45,19 +51,29 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "${GREEN}Usage:${NC}"
     echo -e "  ./deploy.sh [target]"
     echo ""
+    echo -e "${GREEN}Knowledge Base Approach:${NC}"
+    echo -e "  Set KNOWLEDGE_BASE_APPROACH environment variable:"
+    echo -e "  ${YELLOW}export KNOWLEDGE_BASE_APPROACH=\"rag\"${NC}         # Use Gemini File Search API (default)"
+    echo -e "  ${YELLOW}export KNOWLEDGE_BASE_APPROACH=\"firestore\"${NC}   # Use direct Firestore queries"
+    echo -e "  ${YELLOW}export KNOWLEDGE_BASE_APPROACH=\"elasticsearch\"${NC} # Use Elasticsearch"
+    echo ""
     echo -e "${GREEN}Targets:${NC}"
     echo -e "  ${YELLOW}all${NC}         - Deploy everything (agent + functions + frontend)"
     echo -e "  ${YELLOW}agent${NC}       - Deploy only the backend agent"
     echo -e "  ${YELLOW}profile${NC}     - Deploy only profile manager function"
-    echo -e "  ${YELLOW}knowledge${NC}   - Deploy only knowledge base manager function"
-    echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions (profile + knowledge)"
+    echo -e "  ${YELLOW}knowledge${NC}   - Deploy knowledge base function based on approach"
+    echo -e "  ${YELLOW}knowledge-rag${NC} - Deploy RAG knowledge base function"
+    echo -e "  ${YELLOW}knowledge-fs${NC} - Deploy Firestore knowledge base function"
+    echo -e "  ${YELLOW}knowledge-es${NC} - Deploy Elasticsearch knowledge base function"
+    echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions"
     echo -e "  ${YELLOW}backend${NC}     - Deploy agent + all functions"
     echo -e "  ${YELLOW}frontend${NC}    - Deploy only frontend"
     echo ""
     echo -e "${GREEN}Examples:${NC}"
-    echo -e "  ./deploy.sh              # Deploy everything"
-    echo -e "  ./deploy.sh agent        # Deploy only agent"
-    echo -e "  ./deploy.sh knowledge    # Deploy only knowledge base manager"
+    echo -e "  ./deploy.sh                                    # Deploy everything with RAG"
+    echo -e "  KNOWLEDGE_BASE_APPROACH=\"firestore\" ./deploy.sh # Deploy everything with Firestore"
+    echo -e "  KNOWLEDGE_BASE_APPROACH=\"elasticsearch\" ./deploy.sh # Deploy everything with ES"
+    echo -e "  ./deploy.sh knowledge                          # Deploy knowledge base based on approach"
     echo ""
     exit 0
 fi
@@ -65,6 +81,7 @@ fi
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║     College Counselor - Deployment Script                 ║${NC}"
 echo -e "${BLUE}║     Target: ${DEPLOY_TARGET}${NC}"
+echo -e "${BLUE}║     KB Approach: ${KNOWLEDGE_BASE_APPROACH}${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -146,6 +163,7 @@ deploy_agent() {
 GEMINI_API_KEY=${GEMINI_API_KEY}
 DATA_STORE=college_admissions_kb
 GOOGLE_GENAI_USE_VERTEXAI=0
+KNOWLEDGE_BASE_APPROACH=${KNOWLEDGE_BASE_APPROACH}
 EOF
     
     adk deploy cloud_run \
@@ -193,25 +211,144 @@ deploy_profile_manager() {
 
 deploy_knowledge_base_manager() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-    echo -e "${BLUE}  Deploying Knowledge Base Manager Function${NC}"
+    echo -e "${BLUE}  Deploying Knowledge Base Manager Function (${KNOWLEDGE_BASE_APPROACH})${NC}"
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo ""
     
-    cd cloud_functions/knowledge_base_manager
-    gcloud functions deploy $KNOWLEDGE_BASE_FUNCTION \
+    case $KNOWLEDGE_BASE_APPROACH in
+        "rag")
+            echo -e "${YELLOW}Deploying RAG knowledge base manager (Gemini File Search)...${NC}"
+            cd cloud_functions/knowledge_base_manager
+            gcloud functions deploy $KNOWLEDGE_BASE_FUNCTION \
+                --gen2 \
+                --runtime=python312 \
+                --region=$REGION \
+                --source=. \
+                --entry-point=knowledge_base_manager_http_entry \
+                --trigger-http \
+                --allow-unauthenticated \
+                --env-vars-file=.env.yaml \
+                --timeout=540s \
+                --memory=512MB
+            ;;
+        "firestore")
+            echo -e "${YELLOW}Deploying Firestore knowledge base manager...${NC}"
+            cd cloud_functions/knowledge_base_manager_FS
+            gcloud functions deploy $KNOWLEDGE_BASE_FS_FUNCTION \
+                --gen2 \
+                --runtime=python312 \
+                --region=$REGION \
+                --source=. \
+                --entry-point=knowledge_base_manager_fs_http_entry \
+                --trigger-http \
+                --allow-unauthenticated \
+                --timeout=540s \
+                --memory=512MB \
+                --max-instances=10
+            ;;
+        "elasticsearch")
+            echo -e "${YELLOW}Deploying Elasticsearch knowledge base manager...${NC}"
+            # Check for Elasticsearch credentials
+            if [ -z "$ES_CLOUD_ID" ] || [ -z "$ES_API_KEY" ]; then
+                echo -e "${RED}Error: Elasticsearch credentials not set${NC}"
+                echo -e "${YELLOW}Please set:${NC}"
+                echo -e "  export ES_CLOUD_ID='your-elastic-cloud-id'"
+                echo -e "  export ES_API_KEY='your-elastic-api-key'"
+                exit 1
+            fi
+            cd cloud_functions/knowledge_base_manager_ES
+            gcloud functions deploy $KNOWLEDGE_BASE_ES_FUNCTION \
+                --gen2 \
+                --runtime=python312 \
+                --region=$REGION \
+                --source=. \
+                --entry-point=knowledge_base_manager_es_http_entry \
+                --trigger-http \
+                --allow-unauthenticated \
+                --env-vars-file=env.yaml \
+                --timeout=540s \
+                --memory=1024MB \
+                --max-instances=10
+            ;;
+        *)
+            echo -e "${RED}Error: Invalid KNOWLEDGE_BASE_APPROACH '$KNOWLEDGE_BASE_APPROACH'${NC}"
+            echo -e "${YELLOW}Valid values: rag, firestore, elasticsearch${NC}"
+            exit 1
+            ;;
+    esac
+    
+    # Get the deployed function URL
+    case $KNOWLEDGE_BASE_APPROACH in
+        "rag")
+            KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+            ;;
+        "firestore")
+            KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FS_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+            ;;
+        "elasticsearch")
+            KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+            ;;
+    esac
+    
+    echo -e "${GREEN}✓ Knowledge Base Manager (${KNOWLEDGE_BASE_APPROACH}) deployed: ${KNOWLEDGE_BASE_URL}${NC}"
+    cd ../..
+}
+
+deploy_knowledge_base_manager_es() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Knowledge Base Manager ES Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    # Check for Elasticsearch credentials
+    if [ -z "$ES_CLOUD_ID" ] || [ -z "$ES_API_KEY" ]; then
+        echo -e "${RED}Error: Elasticsearch credentials not set${NC}"
+        echo -e "${YELLOW}Please set:${NC}"
+        echo -e "  export ES_CLOUD_ID='your-elastic-cloud-id'"
+        echo -e "  export ES_API_KEY='your-elastic-api-key'"
+        exit 1
+    fi
+    
+    cd cloud_functions/knowledge_base_manager_es
+    gcloud functions deploy $KNOWLEDGE_BASE_ES_FUNCTION \
         --gen2 \
         --runtime=python312 \
         --region=$REGION \
         --source=. \
-        --entry-point=knowledge_base_manager \
+        --entry-point=knowledge_base_manager_es_http_entry \
         --trigger-http \
         --allow-unauthenticated \
-        --env-vars-file=.env.yaml \
+        --env-vars-file=env.yaml \
         --timeout=540s \
-        --memory=512MB
+        --memory=1024MB \
+        --max-instances=10
     
-    KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
-    echo -e "${GREEN}✓ Knowledge Base Manager deployed: ${KNOWLEDGE_BASE_URL}${NC}"
+    KNOWLEDGE_BASE_ES_URL=$(gcloud functions describe $KNOWLEDGE_BASE_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Knowledge Base Manager ES deployed: ${KNOWLEDGE_BASE_ES_URL}${NC}"
+    cd ../..
+}
+
+deploy_knowledge_base_manager_fs() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Knowledge Base Manager FS Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd cloud_functions/knowledge_base_manager_FS
+    gcloud functions deploy $KNOWLEDGE_BASE_FS_FUNCTION \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=knowledge_base_manager_fs_http_entry \
+        --trigger-http \
+        --allow-unauthenticated \
+        --timeout=540s \
+        --memory=512MB \
+        --max-instances=10
+    
+    KNOWLEDGE_BASE_FS_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FS_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Knowledge Base Manager FS deployed: ${KNOWLEDGE_BASE_FS_URL}${NC}"
     cd ../..
 }
 
@@ -224,11 +361,31 @@ deploy_frontend() {
     # Get backend URLs
     AGENT_URL=$(gcloud run services describe $AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)' 2>/dev/null || echo "")
     PROFILE_MANAGER_URL=$(gcloud functions describe $PROFILE_MANAGER_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    
+    # Get all knowledge base URLs for dynamic switching
     KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    KNOWLEDGE_BASE_FS_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FS_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    KNOWLEDGE_BASE_ES_URL=$(gcloud functions describe $KNOWLEDGE_BASE_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    
+    # Set primary knowledge base URL based on approach
+    case $KNOWLEDGE_BASE_APPROACH in
+        "elasticsearch")
+            KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_ES_URL
+            ;;
+        "firestore")
+            KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_FS_URL
+            ;;
+        *) # rag
+            KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+            ;;
+    esac
     
     export VITE_API_URL=$AGENT_URL
     export VITE_PROFILE_MANAGER_URL=$PROFILE_MANAGER_URL
     export VITE_KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_URL
+    export VITE_KNOWLEDGE_BASE_FS_URL=$KNOWLEDGE_BASE_FS_URL
+    export VITE_KNOWLEDGE_BASE_ES_URL=$KNOWLEDGE_BASE_ES_URL
+    export VITE_KNOWLEDGE_BASE_APPROACH=$KNOWLEDGE_BASE_APPROACH
     
     # Firebase Configuration
     export VITE_FIREBASE_API_KEY="AIzaSyB21YdLOZTjO1przhjsX1Es64-kFGov5XE"
@@ -253,14 +410,25 @@ case "$DEPLOY_TARGET" in
     "knowledge")
         deploy_knowledge_base_manager
         ;;
+    "knowledge-rag")
+        KNOWLEDGE_BASE_APPROACH="rag" deploy_knowledge_base_manager
+        ;;
+    "knowledge-fs")
+        KNOWLEDGE_BASE_APPROACH="firestore" deploy_knowledge_base_manager
+        ;;
+    "knowledge-es")
+        deploy_knowledge_base_manager_es
+        ;;
     "functions")
         deploy_profile_manager
         deploy_knowledge_base_manager
+        deploy_knowledge_base_manager_es
         ;;
     "backend")
         deploy_agent
         deploy_profile_manager
         deploy_knowledge_base_manager
+        deploy_knowledge_base_manager_es
         ;;
     "frontend")
         deploy_frontend
@@ -269,6 +437,7 @@ case "$DEPLOY_TARGET" in
         deploy_agent
         deploy_profile_manager
         deploy_knowledge_base_manager
+        deploy_knowledge_base_manager_es
         deploy_frontend
         ;;
     *)

@@ -1,89 +1,80 @@
 """
-Knowledge Base Analyst - Searches and manages college admissions knowledge base using File Search.
-Uses sequential pattern: retriever -> formatter
+Knowledge Base Analyst - Intelligent Document Selection with File Search API
+Evaluates queries to select relevant documents, then uses File Search API to query only those documents.
+Combines intelligent document selection with targeted vector search for optimal results.
 """
-from google.adk.agents import LlmAgent, SequentialAgent
-from ...tools.file_search_tools import search_knowledge_base
+from google.adk.agents import LlmAgent
 from ...tools.document_management_tools import list_documents
-from ...schemas import KnowledgeBaseOutput
+from ...tools.file_search_tools import search_knowledge_base
 from ...tools.logging_utils import log_agent_entry, log_agent_exit
+import os
 
-
-# Retriever agent - calls the tool and stores raw data
-knowledge_base_retriever = LlmAgent(
-    name="knowledge_base_retriever",
-    model="gemini-2.5-flash",
-    description="Retrieves information from college admissions knowledge base and manages documents",
-    instruction="""
-    You retrieve information from the college admissions knowledge base.
-
-    **AVAILABLE TOOLS:**
-    1. `search_knowledge_base(query)` - Search the knowledge base for information
-    2. `list_documents()` - List all documents in the knowledge base
-
-    **YOUR JOB:**
-    - If the user asks a question, call `search_knowledge_base` with the query
-    - If the user wants to see what's in the knowledge base, call `list_documents`
-    - Store the raw response in the state using output_key
-
-    **IMPORTANT:**
-    - Just call the tool and return the raw result
-    - Do NOT format or modify the response
-    - The next agent will handle formatting
-    - You CANNOT upload or delete documents - only administrators can do that via the Knowledge Base page
-    """,
-    tools=[search_knowledge_base, list_documents],
-    output_key="raw_search_results",
-    before_model_callback=log_agent_entry,
-    after_model_callback=log_agent_exit
-)
-
-# Formatter agent - formats the data into KnowledgeBaseOutput schema
-knowledge_base_formatter = LlmAgent(
-    name="knowledge_base_formatter",
-    model="gemini-2.5-flash",
-    description="Formats knowledge base search results into structured output",
-    instruction="""
-    You format search results into the KnowledgeBaseOutput schema.
-
-    **INPUT:**
-    You receive raw_search_results from the previous agent with:
-    - answer: the main answer text
-    - citations: array of {source: "filename", content: "snippet text"}
-
-    **YOUR JOB:**
-    Format into KnowledgeBaseOutput with:
-    - operation: "search"
-    - success: true
-    - message: "Search completed successfully"
-    - answer: the answer from raw_search_results
-    - citations: COPY the citations array EXACTLY (preserve both source and content)
-    - suggested_questions: Generate 3-5 relevant follow-up questions
-
-    **CRITICAL - CITATION HANDLING:**
-    - Preserve BOTH "source" and "content" fields from each citation
-    - DO NOT modify or summarize the citation content
-    - DO NOT drop any fields
-    - Copy the citations array exactly as provided
-
-    **RULES:**
-    - Return valid JSON matching KnowledgeBaseOutput schema
-    - Include all citations with full content
-    - Generate helpful follow-up questions
-    - Keep language clear and professional
-    """,
-    output_schema=KnowledgeBaseOutput,
-    output_key="knowledge_base_output",
-    before_model_callback=log_agent_entry,
-    after_model_callback=log_agent_exit
-)
-
-# Sequential agent combining retriever and formatter
-KnowledgeBaseAnalyst = SequentialAgent(
+KnowledgeBaseAnalyst = LlmAgent(
     name="KnowledgeBaseAnalyst",
-    description="Manages and searches the college admissions knowledge base. Can upload documents, list documents, and search for expert insights and best practices.",
-    sub_agents=[
-        knowledge_base_retriever,
-        knowledge_base_formatter
-    ]
+    model="gemini-2.5-flash",
+    description="Searches and retrieves information from the college admissions knowledge base using intelligent document selection and targeted File Search API queries",
+    instruction="""
+    You are a knowledge base analyst that evaluates queries and selectively searches relevant documents using the File Search API.
+    
+    **AVAILABLE TOOLS:**
+    1. `list_documents()` - List all available documents with metadata (display_name, file_name, size, etc.)
+    2. `search_knowledge_base(query, document_names)` - Search specific documents using File Search API with automatic relevance ranking and citations
+    
+    **INTELLIGENT DOCUMENT SELECTION WORKFLOW:**
+    For any questions related to colleges, admissions, programs, or requirements:
+    
+    **Step 1: Query Analysis and Document Selection**
+    - Call `list_documents()` to get all available documents with their display names and file_names
+    - Analyze the user's query to identify key entities (universities, programs, topics)
+    - Review the document list and select 2-5 most relevant documents based on display names
+    - Extract the file_names (resource names) of the selected documents
+    
+    **Step 2: Targeted File Search API Query**
+    - Call `search_knowledge_base(query, document_names=[selected_file_names])` with the user's question and selected document file_names
+    - This searches ONLY the selected documents using the File Search API's vector search
+    - The API automatically provides relevance ranking and citations from the searched documents
+    
+    **Step 3: Present Results with Citations**
+    - The search response includes the answer and automatic citations from the searched documents
+    - Present the comprehensive answer with the provided citations
+    - The citations show which specific documents contributed to each piece of information
+    
+    **DOCUMENT SELECTION STRATEGY:**
+    - Match university names in query to document display names (e.g., "Stanford" → "Stanford University Admissions.pdf")
+    - Look for program-specific documents (e.g., "computer science" → "CS Programs Guide.pdf")
+    - Identify relevant topic documents (e.g., "financial aid" → "Financial Aid Handbook.pdf")
+    - Prioritize recent or comprehensive documents when multiple options exist
+    - Use the file_name (resource name like "fileSearchStores/.../documents/...") for the search API
+    
+    **ANSWER FORMAT:**
+    - Provide clear, comprehensive answers in markdown format
+    - Include the citations returned by the search function to show sources
+    - Focus on admissions statistics, requirements, programs, and career outcomes
+    - Generate 3-5 relevant follow-up questions at the end
+    
+    **ERROR HANDLING:**
+    - If search fails (success: False), explain the error and suggest checking available documents or rephrasing the query
+    - If search returns no citations or generic answer, suggest selecting different documents or rephrasing the query
+    - If no documents seem relevant, list available documents and ask user to specify
+    - Always explain which documents were selected and why
+    
+    **IMPORTANT:**
+    - You CANNOT upload or delete documents - only administrators can do that via the Knowledge Base page
+    - Always start with `list_documents()` to see available options before selecting
+    - Use the file_name (resource name) parameter for search_knowledge_base(), not display_name
+    - Only search documents that are clearly relevant to the query
+    - Explain your document selection reasoning to the user
+    - The File Search API automatically handles relevance ranking and citation extraction
+    
+    **QUERY EXAMPLES:**
+    - "What are Stanford's computer science admission requirements?" (select Stanford documents, then search with targeted query)
+    - "Compare MIT and Caltech engineering programs" (select MIT and Caltech documents, then search with comparison query)
+    - "What GPA do I need for UCLA business school?" (select UCLA documents, then search with specific requirements query)
+    - "Tell me about Ivy League acceptance rates" (select Ivy League documents, then search with admissions statistics query)
+    - "What documents do you have available?" (just use list_documents(), no search needed)
+    """,
+    tools=[list_documents, search_knowledge_base],
+    output_key="knowledge_base_results",
+    before_model_callback=log_agent_entry,
+    after_model_callback=log_agent_exit
 )
