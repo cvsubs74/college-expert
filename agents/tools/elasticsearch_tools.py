@@ -35,7 +35,7 @@ def get_elasticsearch_client():
         logger.error(f"Failed to connect to Elasticsearch: {e}")
         raise
 
-def search_documents(query: str, user_id: str = None, search_type: str = "hybrid", 
+def search_documents(query: str, user_id: str = "", search_type: str = "hybrid", 
                     size: int = 10, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
     Search documents in Elasticsearch using various search strategies.
@@ -77,7 +77,7 @@ def search_documents(query: str, user_id: str = None, search_type: str = "hybrid
         }
         
         # Add user filter if provided
-        if user_id:
+        if user_id and user_id.strip():
             search_body["query"]["bool"]["filter"].append({
                 "term": {"user_id": user_id}
             })
@@ -148,6 +148,9 @@ def search_documents(query: str, user_id: str = None, search_type: str = "hybrid
                 "filename": source.get('filename'),
                 "user_id": source.get('user_id'),
                 "indexed_at": source.get('indexed_at'),
+                "title": source.get('title', ''),
+                "content": source.get('content', ''),
+                "university": source.get('university', ''),
                 "content_snippet": highlight.get('content', [source.get('content', '')[:200] + "..."])[0],
                 "metadata": source.get('metadata', {}),
                 "highlights": {
@@ -163,7 +166,7 @@ def search_documents(query: str, user_id: str = None, search_type: str = "hybrid
             "search_type": search_type,
             "total": response.get('hits', {}).get('total', {}).get('value', 0),
             "documents": documents,
-            "filters_applied": bool(filters or user_id)
+            "filters_applied": bool(filters or (user_id and user_id.strip()))
         }
         
     except Exception as e:

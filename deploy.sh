@@ -88,7 +88,7 @@ echo ""
 # Check and fetch GEMINI_API_KEY if not set
 if [ -z "$GEMINI_API_KEY" ]; then
     echo -e "${YELLOW}GEMINI_API_KEY not set. Attempting to fetch from Secret Manager...${NC}"
-    if GEMINI_API_KEY=$(gcloud secrets versions access latest --secret=gemini-api-key --project=$PROJECT_ID 2>/dev/null); then
+    if GEMINI_API_KEY=$(gcloud secrets versions access 9 --secret=gemini-api-key --project=$PROJECT_ID 2>/dev/null); then
         echo -e "${GREEN}✓ Successfully fetched GEMINI_API_KEY from Secret Manager${NC}"
         export GEMINI_API_KEY
     else
@@ -165,6 +165,13 @@ DATA_STORE=college_admissions_kb
 GOOGLE_GENAI_USE_VERTEXAI=0
 KNOWLEDGE_BASE_APPROACH=${KNOWLEDGE_BASE_APPROACH}
 EOF
+    
+    # Add Elasticsearch environment variables if using ES approach
+    if [ "$KNOWLEDGE_BASE_APPROACH" = "elasticsearch" ]; then
+        echo "ES_CLOUD_ID=${ES_CLOUD_ID}" >> .env
+        echo "ES_API_KEY=${ES_API_KEY}" >> .env
+        echo "ES_INDEX_NAME=university_documents" >> .env
+    fi
     
     adk deploy cloud_run \
         --project="$PROJECT_ID" \
