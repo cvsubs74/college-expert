@@ -35,7 +35,7 @@ def add_cors_headers(response, status_code=200):
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-User-Email',
             'Access-Control-Max-Age': '3600'
         })
     elif isinstance(response, tuple) and len(response) >= 2:
@@ -51,7 +51,7 @@ def add_cors_headers(response, status_code=200):
         headers.update({
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-User-Email',
             'Access-Control-Max-Age': '3600'
         })
         
@@ -234,56 +234,86 @@ def search_file_search(query, user_id=None, limit=10):
         
         print(f"[FILE SEARCH] Searching for: {query}")
         
-        # Search using REST API approach
-        api_key = os.getenv('GEMINI_API_KEY')
-        if not api_key:
-            return {"success": False, "error": "API key not available"}
-        
-        print(f"[SEARCH] Searching for: {query} via REST API in {store_name}")
-        
-        # Create the search via REST API
-        search_url = f"https://generativelanguage.googleapis.com/v1beta/{store_name}:query"
-        
-        search_data = {
-            "query": query,
-            "maxResults": limit
-        }
-        
-        response = requests.post(
-            search_url,
-            headers={"X-Goog-Api-Key": api_key, "Content-Type": "application/json"},
-            json=search_data,
-            timeout=60
-        )
-        
-        if response.status_code != 200:
-            print(f"[SEARCH ERROR] API returned status {response.status_code}: {response.text}")
-            return {"success": False, "error": f"Search failed: {response.status_code} - {response.text}"}
-        
-        search_result = response.json()
-        
-        # Process results
-        documents = []
-        for result in search_result.get('results', []):
-            doc_data = {
-                "file_name": result.get('document', {}).get('name', ''),
-                "display_name": result.get('document', {}).get('displayName', ''),
-                "score": result.get('score', 0.0),
-                "snippets": result.get('chunks', [])
+        # Use the REST API approach for File Search
+        try:
+            api_key = os.getenv('GEMINI_API_KEY')
+            if not api_key:
+                return {"success": False, "error": "API key not available"}
+            
+            # Create a search request using generateContent REST API
+            search_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+            
+            search_data = {
+                "contents": [{
+                    "parts": [{
+                        "text": f"Search for documents related to: {query}. Return the document names and relevant content snippets."
+                    }]
+                }],
+                "tools": [{
+                    "file_search": {
+                        "file_search_store_names": [store_name]
+                    }
+                }]
             }
-            documents.append(doc_data)
-        
-        print(f"[SEARCH] Found {len(documents)} documents")
-        
-        print(f"[FILE SEARCH] Found {len(documents)} documents")
-        
-        return {
-            "success": True,
-            "documents": documents,
-            "total_found": len(documents),
-            "query": query,
-            "search_method": "file_search_rag"
-        }
+            
+            response = requests.post(
+                search_url,
+                headers={"Content-Type": "application/json"},
+                json=search_data,
+                timeout=60
+            )
+            
+            if response.status_code != 200:
+                print(f"[SEARCH ERROR] API returned status {response.status_code}: {response.text}")
+                return {"success": False, "error": f"Search failed: {response.status_code} - {response.text}"}
+            
+            search_result = response.json()
+            print(f"[SEARCH] GenerateContent search completed for: {query}")
+            
+            # Extract document references from the response
+            documents = []
+            
+            # Check if the response has any citations or file references
+            if 'candidates' in search_result:
+                for candidate in search_result['candidates']:
+                    if 'content' in candidate and 'parts' in candidate['content']:
+                        for part in candidate['content']['parts']:
+                            if 'text' in part:
+                                # This is text content - parse for document info
+                                text = part['text']
+                                print(f"[SEARCH] Response text: {text[:200]}...")
+                                
+                                # For now, return the text as a snippet
+                                doc_data = {
+                                    "file_name": "search_result",
+                                    "display_name": "Search Result",
+                                    "score": 1.0,
+                                    "snippets": [text]
+                                }
+                                documents.append(doc_data)
+            
+            print(f"[FILE SEARCH] Found {len(documents)} documents")
+            
+            return {
+                "success": True,
+                "documents": documents,
+                "total_found": len(documents),
+                "query": query,
+                "search_method": "file_search_rag",
+                "response_text": search_result.get('candidates', [{}])[0].get('content', {}).get('parts', [{}])[0].get('text', '') if search_result.get('candidates') else None
+            }
+            
+        except Exception as e:
+            print(f"[SEARCH ERROR] GenerateContent search failed: {e}")
+            # Fall back to empty results rather than error
+            return {
+                "success": True,
+                "documents": [],
+                "total_found": 0,
+                "query": query,
+                "search_method": "file_search_rag",
+                "message": f"No results found: {str(e)}"
+            }
         
     except Exception as e:
         print(f"[FILE SEARCH ERROR] Failed to search: {e}")

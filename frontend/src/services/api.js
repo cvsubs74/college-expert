@@ -1,29 +1,51 @@
 import axios from 'axios';
 
 // Get API base URLs from environment or use defaults
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
-const PROFILE_MANAGER_URL = import.meta.env.VITE_PROFILE_MANAGER_URL || 'http://localhost:8080';
+const RAG_AGENT_URL = import.meta.env.VITE_RAG_AGENT_URL || 'https://college-expert-rag-agent-pfnwjfp26a-ue.a.run.app';
+const ES_AGENT_URL = import.meta.env.VITE_ES_AGENT_URL || 'https://college-expert-es-agent-pfnwjfp26a-ue.a.run.app';
+
+// Get knowledge base approach from environment
+const KNOWLEDGE_BASE_APPROACH = import.meta.env.VITE_KNOWLEDGE_BASE_APPROACH || 'rag';
+
+// Get the appropriate agent URL based on approach
+const getAgentUrl = () => {
+  const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
+  return approach === 'elasticsearch' ? ES_AGENT_URL : RAG_AGENT_URL;
+};
+
+// Get the app name based on approach
+const getAppName = () => {
+  const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
+  return approach === 'elasticsearch' ? 'college_expert_es' : 'college_expert_rag';
+};
+
+// Determine profile manager URL based on approach
+const getProfileManagerUrl = () => {
+  const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
+  if (approach === 'elasticsearch') {
+    return import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+  }
+  return import.meta.env.VITE_PROFILE_MANAGER_URL || 'https://profile-manager-pfnwjfp26a-ue.a.run.app';
+};
 
 // Create axios instance for agent API
 const api = axios.create({
-  baseURL: API_BASE_URL,
   timeout: 300000, // 5 minutes for agent processing (complex analysis with multiple sub-agents)
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Create axios instance for profile manager cloud function
-const profileApi = axios.create({
-  baseURL: PROFILE_MANAGER_URL,
-  timeout: 60000, // 1 minute for file operations
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+// Note: We don't create static axios instances for profile/KB managers
+// because the baseURL needs to change dynamically when user switches approaches.
+// Instead, we'll use axios directly with the dynamic URL in each function.
+
+console.log(`[FRONTEND] Using knowledge base approach: ${KNOWLEDGE_BASE_APPROACH}`);
+console.log(`[FRONTEND] Profile manager URL: ${getProfileManagerUrl()}`);
 
 // Session management - use localStorage to persist across page changes
 const SESSION_STORAGE_KEY = 'college_counselor_session_id';
+const APPROACH_STORAGE_KEY = 'knowledgeBaseApproach';
 
 const getSessionId = () => {
   return localStorage.getItem(SESSION_STORAGE_KEY);
@@ -35,6 +57,10 @@ const setSessionId = (sessionId) => {
 
 const clearSessionId = () => {
   localStorage.removeItem(SESSION_STORAGE_KEY);
+};
+
+const getApproach = () => {
+  return localStorage.getItem(APPROACH_STORAGE_KEY) || 'rag';
 };
 
 /**
@@ -55,56 +81,55 @@ const createSession = async () => {
 };
 
 /**
- * Start a new session with the College Counselor agent
- * Uses the /run endpoint for immediate execution
+ * Start a new session and send first message
+ * Uses ADK deployment pattern: 
+ * 1. POST /apps/{app_name}/users/user/sessions to create session
+ * 2. POST /run to send the actual message
+ * Matches integration test pattern
  */
 export const startSession = async (message, userEmail = null) => {
   try {
-    // Get or create session
-    let sessionId = getSessionId();
-    if (!sessionId) {
-      sessionId = await createSession();
-    }
-
-    console.log('[API] Sending message to session:', sessionId);
-
-    // Prepend user email to message if provided
-    let fullMessage = message;
-    if (userEmail) {
-      fullMessage = `[USER_EMAIL: ${userEmail}]\n\n${message}`;
-    }
-
-    // Send message using /run endpoint (enabled with --with_ui flag)
-    const response = await api.post('/run', {
-      app_name: 'agents',
-      user_id: 'user',
-      session_id: sessionId,
-      new_message: {
-        parts: [{ text: fullMessage }]
-      },
-      streaming: false
-    });
-
-    console.log('[API] Response received:', response.data);
+    const agentUrl = getAgentUrl();
+    const appName = getAppName();
+    const approach = getApproach();
     
-    return {
-      id: sessionId,
-      events: response.data || []
-    };
+    console.log(`[API] Using approach: ${approach}`);
+    console.log(`[API] Agent URL: ${agentUrl}`);
+    console.log(`[API] App name: ${appName}`);
+
+    console.log('[API] Creating new session...');
+
+    // Step 1: Create session with simple message (like integration test)
+    const sessionResponse = await axios.post(
+      `${agentUrl}/apps/${appName}/users/user/sessions`,
+      { user_input: "Hello" },
+      { 
+        timeout: 300000,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
+
+    console.log('[API] Session created:', sessionResponse.data);
+    
+    // Extract session ID from response
+    const sessionId = sessionResponse.data.id;
+    setSessionId(sessionId);
+    
+    console.log('[API] Session ID:', sessionId);
+    console.log('[API] Now sending actual message via /run...');
+
+    // Step 2: Send the actual message using /run endpoint
+    return await sendMessage(sessionId, message, userEmail);
   } catch (error) {
-    console.error('Error starting session:', error);
-    // If session not found, clear it and retry once
-    if (error.response?.status === 404) {
-      console.log('[API] Session not found, creating new session...');
-      clearSessionId();
-      // Don't retry here, let the caller handle it
-    }
+    console.error('[API] Error starting session:', error);
     throw error;
   }
 };
 
 /**
  * Send a message to an existing session
+ * Uses ADK deployment pattern: POST /run
+ * Matches integration test pattern
  */
 export const sendMessage = async (sessionId, message, userEmail = null) => {
   try {
@@ -113,28 +138,49 @@ export const sendMessage = async (sessionId, message, userEmail = null) => {
     // Update stored session ID
     setSessionId(sessionId);
 
+    const agentUrl = getAgentUrl();
+    const appName = getAppName();
+    const approach = getApproach();
+    
+    console.log(`[API] Using approach: ${approach}`);
+    console.log(`[API] Agent URL: ${agentUrl}`);
+
     // Prepend user email to message if provided
     let fullMessage = message;
     if (userEmail) {
       fullMessage = `[USER_EMAIL: ${userEmail}]\n\n${message}`;
     }
 
-    // Send message using /run endpoint
-    const response = await api.post('/run', {
-      app_name: 'agents',
-      user_id: 'user',
+    // Send message using ADK /run endpoint - matches integration test
+    const requestData = {
+      app_name: appName,
+      user_id: "user",
       session_id: sessionId,
       new_message: {
-        parts: [{ text: fullMessage }]
-      },
-      streaming: false
-    });
+        parts: [{
+          text: fullMessage
+        }]
+      }
+    };
+    
+    const response = await axios.post(
+      `${agentUrl}/run`,
+      requestData,
+      { 
+        timeout: 300000,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
 
     console.log('[API] Response received:', response.data);
     
+    // The /run endpoint returns an array of events directly, not wrapped in {events: [...]}
+    const events = Array.isArray(response.data) ? response.data : (response.data.events || []);
+    
     return {
       id: sessionId,
-      events: response.data || []
+      events: events,
+      approach: approach
     };
   } catch (error) {
     console.error('Error sending message:', error);
@@ -172,12 +218,15 @@ export const uploadStudentProfile = async (file, userEmail) => {
     
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('user_email', userEmail);
+    formData.append('user_email', userEmail);  // Use user_email as backend expects
     
-    // Call the profile manager cloud function
-    const response = await profileApi.post('/upload-profile', formData, {
+    // Call the profile manager cloud function with dynamic URL
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/upload-profile`, formData, {
+      timeout: 60000,
       headers: {
         'Content-Type': 'multipart/form-data',
+        'X-User-Email': userEmail
       },
     });
     return response.data;
@@ -197,8 +246,11 @@ export const listStudentProfiles = async (userEmail) => {
       throw new Error('User email is required to list profiles');
     }
     
-    const response = await profileApi.get('/list-profiles', {
-      params: { user_email: userEmail }
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.get(`${baseUrl}/list-profiles`, {
+      timeout: 60000,
+      params: { user_email: userEmail },  // Use user_email and /list-profiles endpoint
+      headers: { 'X-User-Email': userEmail }
     });
     return response.data;
   } catch (error) {
@@ -211,14 +263,17 @@ export const listStudentProfiles = async (userEmail) => {
  * Delete a student profile document
  * Uses the profile manager cloud function
  */
-export const deleteStudentProfile = async (documentName, userEmail, filename) => {
+export const deleteStudentProfile = async (documentId, userEmail, filename) => {
   try {
-    const response = await profileApi.delete('/delete-profile', {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.delete(`${baseUrl}/delete-profile`, {
+      timeout: 60000,
       data: { 
-        document_name: documentName,
+        document_name: documentId,
         user_email: userEmail,
         filename: filename
-      }
+      },
+      headers: { 'X-User-Email': userEmail }
     });
     return response.data;
   } catch (error) {
@@ -233,9 +288,13 @@ export const deleteStudentProfile = async (documentName, userEmail, filename) =>
  */
 export const getStudentProfileContent = async (userEmail, filename) => {
   try {
-    const response = await profileApi.post('/get-profile-content', {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/get-profile-content`, {
       user_email: userEmail,
       filename: filename
+    }, {
+      timeout: 60000,
+      headers: { 'X-User-Email': userEmail }
     });
     return response.data;
   } catch (error) {
@@ -322,45 +381,38 @@ export const extractFullResponse = (sessionData) => {
 // Knowledge Base Management API
 // ============================================
 
-// Get knowledge base approach from environment
-const KNOWLEDGE_BASE_APPROACH = import.meta.env.VITE_KNOWLEDGE_BASE_APPROACH || 'rag';
-
 // Determine knowledge base URL based on approach
 const getKnowledgeBaseUrl = () => {
-  switch (KNOWLEDGE_BASE_APPROACH) {
-    case 'elasticsearch':
-      return import.meta.env.VITE_KNOWLEDGE_BASE_ES_URL || 'http://localhost:8083';
-    case 'firestore':
-      return import.meta.env.VITE_KNOWLEDGE_BASE_FS_URL || 'http://localhost:8082';
-    default: // rag
-      return import.meta.env.VITE_KNOWLEDGE_BASE_URL || 'http://localhost:8081';
+  const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
+  if (approach === 'elasticsearch') {
+    return import.meta.env.VITE_KNOWLEDGE_BASE_ES_URL || 'https://knowledge-base-manager-es-pfnwjfp26a-ue.a.run.app';
   }
+  return import.meta.env.VITE_KNOWLEDGE_BASE_URL || 'https://knowledge-base-manager-pfnwjfp26a-ue.a.run.app';
 };
 
-// Create axios instance for knowledge base manager cloud function
-const knowledgeBaseApi = axios.create({
-  baseURL: getKnowledgeBaseUrl(),
-  timeout: 60000,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+// Note: knowledgeBaseApi removed - we use dynamic URLs in each function call
 
-console.log(`[FRONTEND] Using knowledge base approach: ${KNOWLEDGE_BASE_APPROACH}`);
 console.log(`[FRONTEND] Knowledge base URL: ${getKnowledgeBaseUrl()}`);
 
 /**
  * Upload university research document to the college_admissions_kb store
  * Uses the knowledge base manager cloud function
+ * Works with all approaches (RAG, Firestore, Elasticsearch) using the same endpoint
  */
-export const uploadKnowledgeBaseDocument = async (file) => {
+export const uploadKnowledgeBaseDocument = async (file, userId) => {
   try {
     const formData = new FormData();
     formData.append('file', file);
+    if (userId) {
+      formData.append('user_id', userId);
+    }
     
-    const response = await knowledgeBaseApi.post('/upload-document', formData, {
+    const baseUrl = getKnowledgeBaseUrl();
+    const response = await axios.post(`${baseUrl}/upload-document`, formData, {
+      timeout: 60000,
       headers: {
         'Content-Type': 'multipart/form-data',
+        ...(userId && { 'X-User-Email': userId })
       },
     });
     return response.data;
@@ -371,7 +423,7 @@ export const uploadKnowledgeBaseDocument = async (file) => {
       status: error.response?.status,
       statusText: error.response?.statusText,
       data: error.response?.data,
-      url: knowledgeBaseApi.defaults.baseURL + '/upload-document'
+      url: getKnowledgeBaseUrl() + '/upload-document'
     });
     throw error;
   }
@@ -380,10 +432,16 @@ export const uploadKnowledgeBaseDocument = async (file) => {
 /**
  * List all documents in the knowledge base
  * Uses the knowledge base manager cloud function
+ * Works with all approaches (RAG, Firestore, Elasticsearch) using the same endpoint
  */
-export const listKnowledgeBaseDocuments = async () => {
+export const listKnowledgeBaseDocuments = async (userId) => {
   try {
-    const response = await knowledgeBaseApi.get('/documents');
+    const baseUrl = getKnowledgeBaseUrl();
+    const response = await axios.get(`${baseUrl}/documents`, {
+      timeout: 60000,
+      params: userId ? { user_id: userId } : {},
+      headers: userId ? { 'X-User-Email': userId } : {}
+    });
     return response.data;
   } catch (error) {
     console.error('Error listing knowledge base documents:', error);
@@ -394,11 +452,17 @@ export const listKnowledgeBaseDocuments = async () => {
 /**
  * Delete a document from the knowledge base
  * Uses the knowledge base manager cloud function
+ * Works with all approaches (RAG, Firestore, Elasticsearch) using the same endpoint
  */
-export const deleteKnowledgeBaseDocument = async (documentName, filename) => {
+export const deleteKnowledgeBaseDocument = async (documentName, filename, userId) => {
   try {
-    const response = await knowledgeBaseApi.post('/delete', {
-      file_name: documentName  // Backend expects file_name parameter
+    const baseUrl = getKnowledgeBaseUrl();
+    const response = await axios.post(`${baseUrl}/delete`, {
+      file_name: documentName,
+      ...(userId && { user_id: userId })
+    }, {
+      timeout: 60000,
+      headers: userId ? { 'X-User-Email': userId } : {}
     });
     return response.data;
   } catch (error) {
@@ -413,8 +477,11 @@ export const deleteKnowledgeBaseDocument = async (documentName, filename) => {
  */
 export const getKnowledgeBaseDocumentContent = async (fileName) => {
   try {
-    const response = await knowledgeBaseApi.post('/get-document-content', {
+    const baseUrl = getKnowledgeBaseUrl();
+    const response = await axios.post(`${baseUrl}/get-document-content`, {
       file_name: fileName
+    }, {
+      timeout: 60000
     });
     return response.data;
   } catch (error) {

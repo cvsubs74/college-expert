@@ -92,7 +92,7 @@ def profile_manager(request):
         headers = {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Headers': 'Content-Type, X-User-Email',
             'Access-Control-Max-Age': '3600'
         }
         return ('', 204, headers)
@@ -109,6 +109,8 @@ def profile_manager(request):
             return handle_upload(request, headers)
         elif path == '/list-profiles' and request.method == 'GET':
             return handle_list(request, headers)
+        elif path == '/search' and request.method == 'POST':
+            return handle_search(request, headers)
         elif path == '/delete-profile' and request.method == 'DELETE':
             return handle_delete(request, headers)
         elif path == '/get-profile-content' and request.method == 'POST':
@@ -316,6 +318,128 @@ def handle_list(request, headers):
             'success': False,
             'error': f'List failed: {str(e)}'
         }), 500, headers
+
+
+def handle_search(request, headers):
+    """Search student profile using File Search API."""
+    try:
+        data = request.get_json()
+        print(f"[SEARCH] Received request data: {data}")
+        
+        if not data:
+            return jsonify({
+                'success': False,
+                'error': 'No data provided in request'
+            }), 400, headers
+        
+        user_email = data.get('user_email')
+        query = data.get('query', 'student academic profile')
+        limit = data.get('limit', 5)
+        
+        if not user_email:
+            return jsonify({
+                'success': False,
+                'error': 'Missing user_email parameter'
+            }), 400, headers
+        
+        # Generate user-specific store name
+        user_store = get_user_store_name(user_email)
+        print(f"[SEARCH] Searching in {user_store} for user {user_email}")
+        
+        # Get the store resource name
+        store_name = get_store_name(user_store)
+        print(f"[SEARCH] Store name: {store_name}")
+        
+        # Use Gemini's generateContent with File Search
+        api_key = os.getenv('GEMINI_API_KEY')
+        if not api_key:
+            return jsonify({
+                'success': False,
+                'error': 'API key not available'
+            }), 500, headers
+        
+        search_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+        
+        search_data = {
+            "contents": [{
+                "parts": [{
+                    "text": f"Search for student profile information related to: {query}. Provide a comprehensive summary of the student's academic profile, including grades, courses, extracurricular activities, and any other relevant information."
+                }]
+            }],
+            "tools": [{
+                "file_search": {
+                    "file_search_store_names": [store_name]
+                }
+            }]
+        }
+        
+        print(f"[SEARCH] Calling Gemini API for query: {query}")
+        response = requests.post(
+            search_url,
+            headers={"Content-Type": "application/json"},
+            json=search_data,
+            timeout=60
+        )
+        
+        if response.status_code != 200:
+            print(f"[SEARCH ERROR] API returned status {response.status_code}: {response.text}")
+            return jsonify({
+                'success': False,
+                'error': f'Search failed: {response.status_code} - {response.text}'
+            }), 500, headers
+        
+        search_result = response.json()
+        print(f"[SEARCH] GenerateContent search completed")
+        
+        # Extract response and build documents list
+        documents = []
+        response_text = ""
+        
+        if 'candidates' in search_result:
+            for candidate in search_result['candidates']:
+                if 'content' in candidate and 'parts' in candidate['content']:
+                    for part in candidate['content']['parts']:
+                        if 'text' in part:
+                            text = part['text']
+                            response_text = text
+                            print(f"[SEARCH] Response text length: {len(text)}")
+                            
+                            # Create a document structure
+                            doc_data = {
+                                "id": f"profile_{user_email}",
+                                "score": 1.0,
+                                "document": {
+                                    "filename": f"profile_{user_email}.pdf",
+                                    "user_id": user_email,
+                                    "content": text,
+                                    "indexed_at": time.time(),
+                                    "upload_date": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                    "metadata": {
+                                        "user_email": user_email,
+                                        "query": query
+                                    }
+                                }
+                            }
+                            documents.append(doc_data)
+        
+        return jsonify({
+            'success': True,
+            'documents': documents,
+            'total_found': len(documents),
+            'user_email': user_email,
+            'query': query,
+            'response_text': response_text
+        }), 200, headers
+        
+    except Exception as e:
+        print(f"[SEARCH ERROR] {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'success': False,
+            'error': f'Search failed: {str(e)}'
+        }), 500, headers
+
 
 
 def handle_delete(request, headers):

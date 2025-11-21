@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useApproach } from '../context/ApproachContext';
 import { 
   uploadStudentProfile, 
   listStudentProfiles, 
@@ -33,6 +34,57 @@ function Profile() {
   const [pdfError, setPdfError] = useState(null);
   const [selectedProfiles, setSelectedProfiles] = useState([]);
   const [deleting, setDeleting] = useState(false);
+  
+  // Get knowledge base approach from context (profile manager follows same approach)
+  const { selectedApproach: knowledgeBaseApproach } = useApproach();
+  
+  // Get approach display info (same as KnowledgeBase)
+  const getApproachInfo = (approach) => {
+    switch (approach) {
+      case 'rag':
+        return {
+          name: 'RAG (Gemini File Search)',
+          description: 'Using Gemini File Search API for profile storage and retrieval',
+          bgClass: 'bg-blue-50',
+          borderClass: 'border-blue-200',
+          dotClass: 'bg-blue-500',
+          textClass: 'text-blue-900',
+          subTextClass: 'text-blue-700'
+        };
+      case 'firestore':
+        return {
+          name: 'Firestore Database',
+          description: 'Using Cloud Firestore for structured profile storage',
+          bgClass: 'bg-green-50',
+          borderClass: 'border-green-200',
+          dotClass: 'bg-green-500',
+          textClass: 'text-green-900',
+          subTextClass: 'text-green-700'
+        };
+      case 'elasticsearch':
+        return {
+          name: 'Elasticsearch',
+          description: 'Using Elasticsearch for advanced profile search and analysis',
+          bgClass: 'bg-purple-50',
+          borderClass: 'border-purple-200',
+          dotClass: 'bg-purple-500',
+          textClass: 'text-purple-900',
+          subTextClass: 'text-purple-700'
+        };
+      default:
+        return {
+          name: 'Unknown',
+          description: 'Unknown profile storage approach',
+          bgClass: 'bg-gray-50',
+          borderClass: 'border-gray-200',
+          dotClass: 'bg-gray-500',
+          textClass: 'text-gray-900',
+          subTextClass: 'text-gray-700'
+        };
+    }
+  };
+  
+  const approachInfo = getApproachInfo(knowledgeBaseApproach);
 
   useEffect(() => {
     if (currentUser?.email) {
@@ -51,7 +103,17 @@ function Profile() {
     try {
       const response = await listStudentProfiles(currentUser.email);
       if (response.success && response.documents) {
-        setProfiles(response.documents);
+        // Transform documents to match frontend expectations
+        const transformedProfiles = response.documents.map(doc => ({
+          id: doc.name,
+          name: doc.name,
+          display_name: doc.display_name,
+          size_bytes: doc.size_bytes,
+          create_time: doc.create_time,
+          state: doc.state,
+          document: doc
+        }));
+        setProfiles(transformedProfiles);
       } else {
         setProfiles([]);
       }
@@ -158,13 +220,13 @@ function Profile() {
     }
   };
 
-  const handleDelete = async (documentName, displayName) => {
+  const handleDelete = async (documentId, displayName) => {
     if (!confirm(`Are you sure you want to delete "${displayName}"?`)) {
       return;
     }
 
     try {
-      const response = await deleteStudentProfile(documentName, currentUser.email, displayName);
+      const response = await deleteStudentProfile(documentId, currentUser.email, displayName);
       if (response.success) {
         setUploadStatus({
           type: 'success',
@@ -195,7 +257,7 @@ function Profile() {
 
     try {
       const deletePromises = selectedProfiles.map(profile =>
-        deleteStudentProfile(profile.name, currentUser.email, profile.display_name)
+        deleteStudentProfile(profile.id, currentUser.email, profile.display_name)
       );
 
       const results = await Promise.all(deletePromises);
@@ -223,9 +285,9 @@ function Profile() {
 
   const toggleProfileSelection = (profile) => {
     setSelectedProfiles(prev => {
-      const isSelected = prev.some(p => p.name === profile.name);
+      const isSelected = prev.some(p => p.id === profile.id);
       if (isSelected) {
-        return prev.filter(p => p.name !== profile.name);
+        return prev.filter(p => p.id !== profile.id);
       } else {
         return [...prev, profile];
       }
@@ -304,6 +366,19 @@ function Profile() {
         <p className="mt-2 text-gray-600">
           Upload your academic profile, transcript, and extracurricular information. This will be used for your admissions analysis.
         </p>
+        
+        {/* Approach Indicator */}
+        <div className={`mt-4 inline-flex items-center px-4 py-2 rounded-lg border ${approachInfo.bgClass} ${approachInfo.borderClass}`}>
+          <div className={`w-2 h-2 rounded-full mr-3 ${approachInfo.dotClass}`}></div>
+          <div>
+            <div className={`text-sm font-medium ${approachInfo.textClass}`}>
+              {approachInfo.name}
+            </div>
+            <div className={`text-xs ${approachInfo.subTextClass}`}>
+              {approachInfo.description}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Upload Section */}
@@ -564,7 +639,7 @@ function Profile() {
                     <EyeIcon className="h-5 w-5" />
                   </button>
                   <button
-                    onClick={() => handleDelete(profile.name, profile.display_name)}
+                    onClick={() => handleDelete(profile.id, profile.display_name)}
                     className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-md transition-colors"
                     title="Delete profile"
                   >

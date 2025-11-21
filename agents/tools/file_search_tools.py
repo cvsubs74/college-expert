@@ -1,26 +1,18 @@
 """
-Gemini File Search Tools - Search college admissions knowledge base using File Search API.
-
-Based on: https://ai.google.dev/gemini-api/docs/file-search
-
-NOTE: File Search is only supported with the Gemini Developer API, not Vertex AI.
-This requires using the Developer API key, not Vertex AI credentials.
+Knowledge Base Tools - Interface to Knowledge Base Manager Cloud Function (RAG)
+Calls the knowledge base manager RAG cloud function for document search and retrieval
 """
 import os
-from typing import Dict, Any
-from google import genai
-from google.genai import types
+import json
+import logging
+import requests
+from typing import Dict, List, Any, Optional
 
+# Configure logging
+logger = logging.getLogger(__name__)
 
-# Initialize Gemini Developer API client (File Search requires Developer API, not Vertex AI)
-# Make sure GEMINI_API_KEY is set to your Developer API key
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY"),
-    http_options={'api_version': 'v1alpha'}  # File Search requires v1alpha
-)
-
-# Get the data store name from environment variable
-DATA_STORE = os.getenv("DATA_STORE", "college_admissions_kb")
+# Knowledge Base Manager Cloud Function URL (RAG)
+KNOWLEDGE_BASE_MANAGER_RAG_URL = os.environ.get('KNOWLEDGE_BASE_MANAGER_RAG_URL', 'https://knowledge-base-manager-pfnwjfp26a-ue.a.run.app')
 
 
 def get_store_name(store_display_name=None):
@@ -31,6 +23,12 @@ def get_store_name(store_display_name=None):
     """
     target_store = store_display_name or DATA_STORE
     try:
+        # Check if client has file_search_stores attribute
+        if not hasattr(client, 'file_search_stores'):
+            print(f"[STORE ERROR] File Search API not available - client missing file_search_stores attribute")
+            print(f"[STORE ERROR] This might be due to API version or authentication issues")
+            return None
+            
         # List all stores to find ours
         for store in client.file_search_stores.list():
             if getattr(store, 'display_name', '') == target_store:
@@ -48,7 +46,7 @@ def get_store_name(store_display_name=None):
         print(f"[STORE ERROR] Failed to get/create store: {str(e)}")
         import traceback
         traceback.print_exc()
-        raise
+        return None
 
 
 def search_knowledge_base(
@@ -56,84 +54,88 @@ def search_knowledge_base(
     model: str = "gemini-2.5-flash"
 ) -> Dict[str, Any]:
     """
-    Search the college admissions knowledge base using semantic search.
-    
-    This function queries the File Search store and returns relevant information
-    with citations from the indexed documents. Uses the DATA_STORE environment variable.
+    Search documents via the Knowledge Base Manager Cloud Function (RAG).
+    Knowledge base is a generic store accessible to all users.
     
     Args:
-        query: The search query
-        model: Gemini model to use (default: gemini-2.5-flash)
+        query: Search query text
+        model: Gemini model to use (default: gemini-2.5-flash) - kept for compatibility
         
     Returns:
-        Dictionary with search results and citations
-        
-    Example:
-        search_knowledge_base(
-            query="What are the key factors in holistic admissions review?"
-        )
+        Dictionary with search results including documents and metadata
     """
     try:
-        # Get the actual store resource name (not just display name)
-        store_name = get_store_name()
+        # Call the knowledge base manager cloud function
+        url = f"{KNOWLEDGE_BASE_MANAGER_RAG_URL}/search"
         
-        response = client.models.generate_content(
-            model=model,
-            contents=query,
-            config=types.GenerateContentConfig(
-                tools=[
-                    types.Tool(
-                        file_search=types.FileSearch(
-                            file_search_store_names=[store_name]
-                        )
-                    )
-                ]
-            )
-        )
+        headers = {
+            "Content-Type": "application/json",
+            "X-User-Email": "knowledge_base_user"  # Generic user for knowledge base access
+        }
         
-        # Extract answer
-        answer = response.text if hasattr(response, 'text') else str(response)
+        data = {
+            "query": query,
+            "user_id": "",  # Empty for generic knowledge base search
+            "limit": 10  # Number of results to return
+        }
         
-        # Extract citations from grounding metadata
-        citations = []
-        if hasattr(response, 'candidates') and response.candidates:
-            for candidate in response.candidates:
-                if hasattr(candidate, 'grounding_metadata'):
-                    metadata = candidate.grounding_metadata
-                    if hasattr(metadata, 'grounding_chunks'):
-                        for chunk in metadata.grounding_chunks:
-                            # Try to get citation from retrieved_context first
-                            if hasattr(chunk, 'retrieved_context'):
-                                ctx = chunk.retrieved_context
-                                source = getattr(ctx, 'title', getattr(ctx, 'uri', 'Unknown'))
-                                content = getattr(ctx, 'text', '')
-                                citations.append({
-                                    "source": source,
-                                    "content": content[:500] if content else ''  # Limit content length
-                                })
-                            # Fallback to direct attributes
-                            elif hasattr(chunk, 'web') and hasattr(chunk.web, 'uri'):
-                                citations.append({
-                                    "source": getattr(chunk.web, 'title', chunk.web.uri),
-                                    "content": getattr(chunk.web, 'uri', '')
-                                })
+        response = requests.post(url, json=data, headers=headers, timeout=30)
+        response.raise_for_status()
         
-        print(f"[SEARCH] Found answer with {len(citations)} citations")
-        if citations:
-            print(f"[SEARCH] Sample citation: {citations[0]['source']}")
+        result = response.json()
         
+        if result.get("success"):
+            # Transform to match expected agent format
+            documents = []
+            for doc in result.get("documents", []):
+                document = {
+                    "id": doc["id"],
+                    "score": doc.get("score", 1.0),
+                    "filename": doc["document"].get("filename"),
+                    "file_name": doc["document"].get("filename"),
+                    "user_id": doc["document"].get("user_id"),
+                    "indexed_at": doc["document"].get("indexed_at"),
+                    "upload_date": doc["document"].get("upload_date"),
+                    "title": doc["document"].get("filename", ""),
+                    "content": doc["document"].get("content", ""),
+                    "university": doc["document"].get("university_name", ""),
+                    "metadata": doc["document"].get("metadata", {})
+                }
+                documents.append(document)
+            
+            return {
+                "success": True,
+                "documents": documents,
+                "total_found": result.get("total_found", len(documents)),
+                "query": query,
+                "answer": f"Found {len(documents)} relevant documents for: {query}",
+                "citations": [{"source": doc["filename"], "text": doc["content"][:200] + "..."} for doc in documents[:3]]
+            }
+        else:
+            return {
+                "success": False,
+                "error": result.get("error", "Unknown error"),
+                "message": f"❌ Search failed: {result.get('error', 'Unknown error')}"
+            }
+            
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Knowledge base search request failed: {e}")
         return {
-            "success": True,
-            "answer": answer,
-            "citations": citations,
-            "message": "✅ Search completed successfully"
+            "success": False,
+            "error": str(e),
+            "message": f"❌ Knowledge base service unavailable: {str(e)}"
         }
     except Exception as e:
+        logger.error(f"Knowledge base search failed: {e}")
         return {
             "success": False,
             "error": str(e),
             "message": f"❌ Search failed: {str(e)}"
         }
+
+
+# Profile Manager Cloud Function URL (RAG)
+PROFILE_MANAGER_RAG_URL = os.environ.get('PROFILE_MANAGER_RAG_URL', 'https://profile-manager-pfnwjfp26a-ue.a.run.app')
 
 
 def search_user_profile(
@@ -142,15 +144,14 @@ def search_user_profile(
     model: str = "gemini-2.5-flash"
 ) -> Dict[str, Any]:
     """
-    Search a user's specific profile store to retrieve their academic profile.
+    Search user profile via the Profile Manager Cloud Function (RAG).
     
-    This function searches the user-specific File Search store and returns the profile content.
-    The store name is derived from the user's email: student_profile_<sanitized_email>
+    This function calls the profile manager cloud function to retrieve user profile data.
     
     Args:
         user_email: The user's email address (e.g., user@gmail.com)
         query: The search query (default: general profile query)
-        model: Gemini model to use (default: gemini-2.5-flash)
+        model: Gemini model to use (default: gemini-2.5-flash) - kept for compatibility
         
     Returns:
         Dictionary with profile content and metadata
@@ -162,75 +163,71 @@ def search_user_profile(
         )
     """
     try:
-        # Sanitize email for store name
-        sanitized_email = user_email.replace('@', '_').replace('.', '_').lower()
-        user_store_name = f"student_profile_{sanitized_email}"
+        print(f"[USER_PROFILE] Searching profile for user: {user_email}")
         
-        print(f"[USER_PROFILE] Searching store: {user_store_name} for user: {user_email}")
+        # Call the profile manager cloud function
+        url = f"{PROFILE_MANAGER_RAG_URL}/search"
         
-        # Get the actual store resource name
-        store_name = get_store_name(user_store_name)
-        
-        response = client.models.generate_content(
-            model=model,
-            contents=query,
-            config=types.GenerateContentConfig(
-                tools=[
-                    types.Tool(
-                        file_search=types.FileSearch(
-                            file_search_store_names=[store_name]
-                        )
-                    )
-                ]
-            )
-        )
-        
-        # Extract answer
-        answer = response.text if hasattr(response, 'text') else str(response)
-        
-        # Extract citations
-        citations = []
-        if hasattr(response, 'candidates') and response.candidates:
-            for candidate in response.candidates:
-                if hasattr(candidate, 'grounding_metadata'):
-                    metadata = candidate.grounding_metadata
-                    if hasattr(metadata, 'grounding_chunks'):
-                        for chunk in metadata.grounding_chunks:
-                            if hasattr(chunk, 'retrieved_context'):
-                                ctx = chunk.retrieved_context
-                                source = getattr(ctx, 'title', getattr(ctx, 'uri', 'Unknown'))
-                                content = getattr(ctx, 'text', '')
-                                citations.append({
-                                    "source": source,
-                                    "content": content
-                                })
-        
-        print(f"[USER_PROFILE] Found profile with {len(citations)} document chunks")
-        
-        return {
-            "success": True,
-            "profile_content": answer,
-            "citations": citations,
-            "user_email": user_email,
-            "store_name": user_store_name,
-            "message": f"✅ Retrieved profile for {user_email}"
+        headers = {
+            "Content-Type": "application/json",
+            "X-User-Email": user_email
         }
-    except Exception as e:
-        error_msg = str(e)
-        print(f"[USER_PROFILE ERROR] {error_msg}")
         
-        # Check if store doesn't exist
-        if "not found" in error_msg.lower():
+        data = {
+            "query": query,
+            "user_email": user_email,
+            "limit": 5
+        }
+        
+        response = requests.post(url, json=data, headers=headers, timeout=30)
+        response.raise_for_status()
+        
+        result = response.json()
+        
+        if result.get("success"):
+            # Transform to match expected agent format
+            documents = []
+            for doc in result.get("documents", []):
+                document = {
+                    "id": doc["id"],
+                    "score": doc.get("score", 1.0),
+                    "filename": doc["document"].get("filename"),
+                    "file_name": doc["document"].get("filename"),
+                    "user_id": doc["document"].get("user_id"),
+                    "indexed_at": doc["document"].get("indexed_at"),
+                    "upload_date": doc["document"].get("upload_date"),
+                    "title": doc["document"].get("filename", ""),
+                    "content": doc["document"].get("content", ""),
+                    "metadata": doc["document"].get("metadata", {})
+                }
+                documents.append(document)
+            
+            return {
+                "success": True,
+                "documents": documents,
+                "total_found": result.get("total_found", len(documents)),
+                "user_email": user_email,
+                "answer": f"Found {len(documents)} profile documents for: {user_email}",
+                "profile_data": documents[0]["content"] if documents else "No profile found"
+            }
+        else:
             return {
                 "success": False,
-                "error": "Profile not found",
-                "message": f"❌ No profile found for {user_email}. Please upload your profile in the Student Profile page first.",
-                "user_email": user_email
+                "error": result.get("error", "Unknown error"),
+                "message": f"❌ Profile search failed: {result.get('error', 'Unknown error')}"
             }
-        
+            
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Profile search request failed: {e}")
         return {
             "success": False,
-            "error": error_msg,
-            "message": f"❌ Failed to retrieve profile: {error_msg}",
-            "user_email": user_email
+            "error": str(e),
+            "message": f"❌ Profile service unavailable: {str(e)}"
+        }
+    except Exception as e:
+        logger.error(f"Profile search failed: {e}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"❌ Profile search failed: {str(e)}"
         }

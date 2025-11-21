@@ -11,6 +11,8 @@ import {
   XMarkIcon
 } from '@heroicons/react/24/outline';
 import { uploadKnowledgeBaseDocument, listKnowledgeBaseDocuments, deleteKnowledgeBaseDocument, getKnowledgeBaseDocumentContent } from '../services/api';
+import { auth } from '../firebase';
+import { useApproach } from '../context/ApproachContext';
 
 function KnowledgeBase() {
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -28,8 +30,8 @@ function KnowledgeBase() {
   const [selectedDocuments, setSelectedDocuments] = useState([]);
   const [deleting, setDeleting] = useState(false);
   
-  // Get knowledge base approach from environment
-  const knowledgeBaseApproach = import.meta.env.VITE_KNOWLEDGE_BASE_APPROACH || 'rag';
+  // Get knowledge base approach from context (reads from localStorage)
+  const { selectedApproach: knowledgeBaseApproach } = useApproach();
   
   // Get approach display info
   const getApproachInfo = (approach) => {
@@ -87,7 +89,9 @@ function KnowledgeBase() {
     setLoading(true);
     setError(null);
     try {
-      const response = await listKnowledgeBaseDocuments();
+      const currentUser = auth.currentUser;
+      const userId = currentUser?.email || 'anonymous';
+      const response = await listKnowledgeBaseDocuments(userId);
       if (response.success && response.documents) {
         setDocuments(response.documents);
       } else {
@@ -132,7 +136,9 @@ function KnowledgeBase() {
             [file.name]: { status: 'uploading', progress: 0 }
           }));
 
-          const response = await uploadKnowledgeBaseDocument(file);
+          const currentUser = auth.currentUser;
+          const userId = currentUser?.email || 'anonymous';
+          const response = await uploadKnowledgeBaseDocument(file, userId);
           
           if (response.success) {
             setUploadProgress(prev => ({
@@ -197,7 +203,9 @@ function KnowledgeBase() {
     }
 
     try {
-      const response = await deleteKnowledgeBaseDocument(documentName, displayName);
+      const currentUser = auth.currentUser;
+      const userId = currentUser?.email || 'anonymous';
+      const response = await deleteKnowledgeBaseDocument(documentName, displayName, userId);
       
       if (response.success) {
         setUploadStatus({
@@ -256,20 +264,38 @@ function KnowledgeBase() {
   };
 
   const toggleDocumentSelection = (doc) => {
+    console.log('[DEBUG] Toggle document:', doc.display_name, 'name:', doc.name);
+    console.log('[DEBUG] Full doc object:', doc);
     setSelectedDocuments(prev => {
+      console.log('[DEBUG] Current selected count:', prev.length);
+      console.log('[DEBUG] Current selected names:', prev.map(d => d.name));
+      console.log('[DEBUG] Documents array length:', documents.length);
+      
       const isSelected = prev.some(d => d.name === doc.name);
+      console.log('[DEBUG] Is selected:', isSelected);
+      
       if (isSelected) {
-        return prev.filter(d => d.name !== doc.name);
+        const newSelection = prev.filter(d => d.name !== doc.name);
+        console.log('[DEBUG] After deselect - count:', newSelection.length);
+        console.log('[DEBUG] After deselect - names:', newSelection.map(d => d.name));
+        return newSelection;
       } else {
-        return [...prev, doc];
+        const newSelection = [...prev, doc];
+        console.log('[DEBUG] After select - count:', newSelection.length);
+        console.log('[DEBUG] After select - names:', newSelection.map(d => d.name));
+        return newSelection;
       }
     });
   };
 
   const toggleSelectAll = () => {
+    console.log('[DEBUG] toggleSelectAll called!');
+    console.log('[DEBUG] Current selected:', selectedDocuments.length, 'Total docs:', documents.length);
     if (selectedDocuments.length === documents.length) {
+      console.log('[DEBUG] Deselecting all');
       setSelectedDocuments([]);
     } else {
+      console.log('[DEBUG] Selecting all');
       setSelectedDocuments([...documents]);
     }
   };
@@ -354,21 +380,25 @@ function KnowledgeBase() {
               Select Documents (PDF, DOCX, TXT) - Multiple files supported
             </label>
             <div className="flex items-center space-x-4">
+              <label 
+                htmlFor="file-upload-input" 
+                className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary cursor-pointer ${uploading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                <DocumentArrowUpIcon className="h-5 w-5 mr-2" />
+                Choose Files
+              </label>
               <input
-                id="file-upload"
+                id="file-upload-input"
                 type="file"
                 accept=".pdf,.docx,.txt"
                 onChange={handleFileSelect}
                 disabled={uploading}
                 multiple
-                className="block w-full text-sm text-gray-500
-                  file:mr-4 file:py-2 file:px-4
-                  file:rounded-md file:border-0
-                  file:text-sm file:font-semibold
-                  file:bg-primary file:text-white
-                  hover:file:bg-blue-700
-                  disabled:opacity-50 disabled:cursor-not-allowed"
+                className="hidden"
               />
+              {selectedFiles.length === 0 && (
+                <span className="text-sm text-gray-500">No files selected</span>
+              )}
             </div>
           </div>
 
@@ -528,25 +558,35 @@ function KnowledgeBase() {
           <>
             {documents.length > 0 && (
               <div className="mb-3 pb-3 border-b border-gray-200">
-                <label className="flex items-center space-x-2 cursor-pointer">
+                <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
-                    checked={selectedDocuments.length === documents.length}
-                    onChange={toggleSelectAll}
-                    className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                    id="select-all-checkbox"
+                    checked={selectedDocuments.length === documents.length && documents.length > 0}
+                    ref={(el) => {
+                      if (el) {
+                        el.indeterminate = selectedDocuments.length > 0 && selectedDocuments.length < documents.length;
+                      }
+                    }}
+                    onChange={(e) => {
+                      e.stopPropagation();
+                      toggleSelectAll();
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                    className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary cursor-pointer"
                   />
-                  <span className="text-sm font-medium text-gray-700">
+                  <label htmlFor="select-all-checkbox" className="text-sm font-medium text-gray-700 cursor-pointer">
                     Select All
-                  </span>
-                </label>
+                  </label>
+                </div>
               </div>
             )}
             <div className="space-y-3">
               {documents.map((doc, index) => {
-                const isSelected = selectedDocuments.some(d => d.resource_name === doc.resource_name);
+                const isSelected = selectedDocuments.some(d => d.name === doc.name);
                 return (
                   <div
-                    key={index}
+                    key={doc.name || index}
                     className={`flex items-center justify-between p-4 border rounded-lg transition-colors ${
                       isSelected ? 'border-primary bg-blue-50' : 'border-gray-200 hover:bg-gray-50'
                     }`}
@@ -555,7 +595,11 @@ function KnowledgeBase() {
                       <input
                         type="checkbox"
                         checked={isSelected}
-                        onChange={() => toggleDocumentSelection(doc)}
+                        onChange={(e) => {
+                          e.stopPropagation();
+                          toggleDocumentSelection(doc);
+                        }}
+                        onClick={(e) => e.stopPropagation()}
                         className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
                       />
                       <DocumentTextIcon className="h-6 w-6 text-gray-400" />

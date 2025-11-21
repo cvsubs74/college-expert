@@ -5,8 +5,11 @@ import Analysis from './pages/Analysis';
 import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
 import LandingPage from './pages/LandingPage';
+import ApproachSelector from './pages/ApproachSelector';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import ApproachIndicator from './components/ApproachIndicator';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { ApproachProvider } from './context/ApproachContext';
 import { logout } from './services/authService';
 import './index.css';
 
@@ -88,6 +91,9 @@ function Navigation() {
           <div className="flex items-center">
             {currentUser && (
               <div className="flex items-center space-x-4">
+                {/* Approach Indicator */}
+                <ApproachIndicator />
+                
                 <div className="flex items-center space-x-2">
                   {currentUser.photoURL && (
                     <img
@@ -130,24 +136,29 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <Routes>
-          {/* Public route */}
-          <Route path="/" element={<LandingPage />} />
+        <ApproachProvider>
+          <Routes>
+            {/* Public route */}
+            <Route path="/" element={<LandingPage />} />
 
-          {/* Protected routes */}
-          <Route
-            element={
-              <ProtectedRoute>
-                <AppLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/analysis" element={<Analysis />} />
-            <Route path="/knowledge-base" element={<KnowledgeBase />} />
-          </Route>
-        </Routes>
+            {/* Approach selector (can be accessed both before and after login) */}
+            <Route path="/select-approach" element={<ApproachSelector />} />
+
+            {/* Protected routes */}
+            <Route
+              element={
+                <ProtectedRoute>
+                  <AppLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/analysis" element={<Analysis />} />
+              <Route path="/knowledge-base" element={<KnowledgeBase />} />
+            </Route>
+          </Routes>
+        </ApproachProvider>
       </AuthProvider>
     </Router>
   );

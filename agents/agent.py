@@ -11,64 +11,92 @@ from google import genai
 from google.genai import types
 
 # Import sub-agents and final schema
-from .sub_agents.student_profile_agent.agent import StudentProfileAgent
 from .schemas.schemas import OrchestratorOutput
 
 # Import logging utilities
 from .tools.logging_utils import log_agent_entry, log_agent_exit
 
-# Get knowledge base approach from environment variable
-KNOWLEDGE_BASE_APPROACH = os.getenv('KNOWLEDGE_BASE_APPROACH', 'rag').lower()
+# Import ALL sub-agents at startup for dynamic routing
+print("[AGENT] Importing all sub-agents for dynamic approach selection...")
 
-# Select the appropriate knowledge base analyst based on environment variable
-# Import only the required sub-agent to avoid dependency issues
-if KNOWLEDGE_BASE_APPROACH == 'elasticsearch':
-    try:
-        from .sub_agents.knowledge_base_analyst_ES.agent import KnowledgeBaseESAnalyst
-        SELECTED_KB_ANALYST = KnowledgeBaseESAnalyst
-        KB_ANALYST_NAME = "KnowledgeBaseESAnalyst (Elasticsearch)"
-    except ImportError as e:
-        print(f"[AGENT] Warning: Could not import Elasticsearch analyst: {e}")
-        print("[AGENT] Falling back to RAG approach")
-        from .sub_agents.knowledge_base_analyst.agent import KnowledgeBaseAnalyst
-        SELECTED_KB_ANALYST = KnowledgeBaseAnalyst
-        KB_ANALYST_NAME = "KnowledgeBaseAnalyst (RAG)"
-        KNOWLEDGE_BASE_APPROACH = 'rag'
-elif KNOWLEDGE_BASE_APPROACH == 'firestore':
-    try:
-        from .sub_agents.knowledge_base_analyst_FS.agent import KnowledgeBaseAnalystFS
-        SELECTED_KB_ANALYST = KnowledgeBaseAnalystFS
-        KB_ANALYST_NAME = "KnowledgeBaseAnalystFS (Firestore)"
-    except ImportError as e:
-        print(f"[AGENT] Warning: Could not import Firestore analyst: {e}")
-        print("[AGENT] Falling back to RAG approach")
-        from .sub_agents.knowledge_base_analyst.agent import KnowledgeBaseAnalyst
-        SELECTED_KB_ANALYST = KnowledgeBaseAnalyst
-        KB_ANALYST_NAME = "KnowledgeBaseAnalyst (RAG)"
-        KNOWLEDGE_BASE_APPROACH = 'rag'
-else:  # default to rag
-    from .sub_agents.knowledge_base_analyst.agent import KnowledgeBaseAnalyst
-    SELECTED_KB_ANALYST = KnowledgeBaseAnalyst
-    KB_ANALYST_NAME = "KnowledgeBaseAnalyst (RAG)"
+# Import RAG (File Search) sub-agents
+from .sub_agents.student_profile_agent.agent import StudentProfileAgent
+from .sub_agents.knowledge_base_analyst.agent import KnowledgeBaseAnalyst
 
-print(f"[AGENT] Using knowledge base approach: {KNOWLEDGE_BASE_APPROACH}")
-print(f"[AGENT] Selected analyst: {KB_ANALYST_NAME}")
+# Import Elasticsearch sub-agents
+try:
+    from .sub_agents.student_profile_agent_es.agent import StudentProfileESAgent
+    from .sub_agents.knowledge_base_analyst_es.agent import KnowledgeBaseESAnalyst
+    ES_AVAILABLE = True
+    print("[AGENT] ✓ Elasticsearch sub-agents loaded")
+except ImportError as e:
+    ES_AVAILABLE = False
+    print(f"[AGENT] ✗ Elasticsearch sub-agents not available: {e}")
+    StudentProfileESAgent = None
+    KnowledgeBaseESAnalyst = None
 
-# The Master Reasoning Agent
-MasterReasoningAgent = LlmAgent(
-    name="MasterReasoningAgent",
-    model="gemini-2.5-flash",
-    description="Synthesizes structured reports from sub-agents to produce a final admissions prediction.",
-    generate_content_config=types.GenerateContentConfig(
-        temperature=0.3  # Lower temperature to reduce hallucination and increase factual accuracy
-    ),
-    instruction="""
+print("[AGENT] ✓ RAG (File Search) sub-agents loaded")
+
+# Sub-agent registry for dynamic selection
+SUB_AGENT_REGISTRY = {
+    'rag': {
+        'student_profile': StudentProfileAgent,
+        'knowledge_base': KnowledgeBaseAnalyst,
+        'student_profile_name': 'StudentProfileAgent (File Search)',
+        'knowledge_base_name': 'KnowledgeBaseAnalyst (RAG)'
+    },
+    'elasticsearch': {
+        'student_profile': StudentProfileESAgent if ES_AVAILABLE else StudentProfileAgent,
+        'knowledge_base': KnowledgeBaseESAnalyst if ES_AVAILABLE else KnowledgeBaseAnalyst,
+        'student_profile_name': 'StudentProfileESAgent (Cloud Function API)' if ES_AVAILABLE else 'StudentProfileAgent (File Search)',
+        'knowledge_base_name': 'KnowledgeBaseESAnalyst (Elasticsearch)' if ES_AVAILABLE else 'KnowledgeBaseAnalyst (RAG)'
+    }
+}
+
+# Default approach (can be overridden by request parameter)
+DEFAULT_APPROACH = os.getenv('KNOWLEDGE_BASE_APPROACH', 'rag').lower()
+print(f"[AGENT] Default approach: {DEFAULT_APPROACH}, Available: {', '.join(SUB_AGENT_REGISTRY.keys())}")
+
+def get_sub_agents_for_approach(approach='rag'):
+    """
+    Dynamically select sub-agents based on the requested approach.
+    
+    Args:
+        approach: One of 'rag' or 'elasticsearch'
+    
+    Returns:
+        Tuple of (student_profile_agent, knowledge_base_agent, student_profile_name, kb_name)
+    """
+    approach = approach.lower() if approach else 'rag'
+    
+    if approach not in SUB_AGENT_REGISTRY:
+        print(f"[AGENT] Warning: Unknown approach '{approach}', falling back to 'rag'")
+        approach = 'rag'
+    
+    registry = SUB_AGENT_REGISTRY[approach]
+    print(f"[AGENT] Selected approach: {approach}")
+    print(f"[AGENT] Student Profile Agent: {registry['student_profile_name']}")
+    print(f"[AGENT] Knowledge Base Agent: {registry['knowledge_base_name']}")
+    
+    return (
+        registry['student_profile'],
+        registry['knowledge_base'],
+        registry['student_profile_name'],
+        registry['knowledge_base_name']
+    )
+
+# Create Master Reasoning Agents for each approach
+def create_master_reasoning_agent(approach='rag'):
+    """Create a Master Reasoning Agent for the specified approach."""
+    student_profile_agent, kb_analyst, sp_name, kb_name = get_sub_agents_for_approach(approach)
+    
+    agent_instruction = """
     You are a College Admissions Counselor. You help students in two ways:
     
     **1. GENERAL COLLEGE QUESTIONS (No Profile Needed):**
     When users ask about colleges, programs, requirements, or comparisons WITHOUT requesting personal analysis:
     
-    **Knowledge Base Approach:** """ + KB_ANALYST_NAME + """
+    **Knowledge Base Approach:** """ + kb_name + """
     
     **Use the available knowledge base tool to search for:**
       * Admissions statistics (GPA ranges, test scores, acceptance rates)
@@ -90,9 +118,9 @@ MasterReasoningAgent = LlmAgent(
     **2. ADMISSIONS ANALYSIS (Profile Required):**
     When users ask to analyze THEIR chances or want PERSONALIZED analysis:
     - MANDATORY FIRST STEP: Extract user email from [USER_EMAIL: ...] tag
-    - Call StudentProfileAgent FIRST with the user's email to get their academic profile
+    - Call """ + sp_name + """ FIRST with the user's email to get their academic profile
     
-    **Knowledge Base Approach:** """ + KB_ANALYST_NAME + """
+    **Knowledge Base Approach:** """ + kb_name + """
     
     **Use the available knowledge base tool to search for:**
       * Latest admissions statistics (acceptance rates, GPA ranges, test scores)
@@ -115,9 +143,9 @@ MasterReasoningAgent = LlmAgent(
     - "Should I apply Early Decision to Columbia?"
     
     **CRITICAL RULES:**
-    - NEVER skip StudentProfileAgent for personal analysis requests
+    - NEVER skip """ + sp_name + """ for personal analysis requests
     - Use the available knowledge base tool for university information
-    - If StudentProfileAgent returns no profile, tell user to upload it
+    - If """ + sp_name + """ returns no profile, tell user to upload it
     - If the knowledge base tool can't find statistics, note that data is limited
     - Never make up GPA, SAT scores, statistics, or career data
     
@@ -128,48 +156,94 @@ MasterReasoningAgent = LlmAgent(
     - Use tables for comparisons (only if you have the data)
     
     **Output:** Store your response in output_key for the formatter.
-    """,
-    tools=[
-        AgentTool(StudentProfileAgent),
-        AgentTool(SELECTED_KB_ANALYST),
-    ],
-    output_key="agent_response",
-    before_model_callback=log_agent_entry,
-    after_model_callback=log_agent_exit
-)
-
-# Formatter agent - formats the response into OrchestratorOutput with suggested questions
-response_formatter = LlmAgent(
-    name="response_formatter",
-    model="gemini-2.5-flash",
-    description="Formats agent responses into final output with suggested questions",
-    generate_content_config=types.GenerateContentConfig(
-        temperature=0.3  # Lower temperature for consistent formatting
-    ),
-    instruction="""
-    Format the agent_response into OrchestratorOutput JSON:
+    """
     
-    1. **result**: Copy agent_response AS-IS (don't modify)
-    2. **suggested_questions**: Generate 4 relevant follow-up questions
-    
-    **Question Rules:**
-    - Only mention universities that appear in agent_response
-    - Mix general and specific questions
-    - For greetings: use general questions about admissions
-    - For analysis: suggest comparisons or next steps
-    - Return as array of strings
-    """,
-    output_schema=OrchestratorOutput,
-    output_key="formatted_output",
-    before_model_callback=log_agent_entry,
-    after_model_callback=log_agent_exit
-)
+    return LlmAgent(
+        name=f"MasterReasoningAgent_{approach.upper()}",
+        model="gemini-2.5-flash",
+        description=f"Synthesizes structured reports from sub-agents ({approach} approach) to produce a final admissions prediction.",
+        generate_content_config=types.GenerateContentConfig(
+            temperature=0.3
+        ),
+        instruction=agent_instruction,
+        tools=[
+            AgentTool(student_profile_agent),
+            AgentTool(kb_analyst),
+        ],
+        output_key="agent_response",
+        before_model_callback=log_agent_entry,
+        after_model_callback=log_agent_exit
+    )
 
-# Main agent using sequential pattern
-root_agent = SequentialAgent(
-    name="CollegeCounselorAgent",
-    sub_agents=[
-        MasterReasoningAgent,
-        response_formatter
-    ]
-)
+# Create master agents for all approaches
+print("[AGENT] Creating Master Reasoning Agents...")
+MasterReasoningAgent_RAG = create_master_reasoning_agent('rag')
+MasterReasoningAgent_ES = create_master_reasoning_agent('elasticsearch')
+
+# Registry of master agents
+MASTER_AGENT_REGISTRY = {
+    'rag': MasterReasoningAgent_RAG,
+    'elasticsearch': MasterReasoningAgent_ES
+}
+print("[AGENT] ✓ Master agents created")
+
+# Create formatter agents for each approach to avoid parent agent conflicts
+def create_response_formatter(approach='rag'):
+    """Create a response formatter agent for the specified approach."""
+    return LlmAgent(
+        name=f"response_formatter_{approach}",
+        model="gemini-2.5-flash",
+        description="Formats agent responses into final output with suggested questions",
+        generate_content_config=types.GenerateContentConfig(
+            temperature=0.3  # Lower temperature for consistent formatting
+        ),
+        instruction="""
+        Format the agent_response into OrchestratorOutput JSON:
+        
+        1. **result**: Copy agent_response AS-IS (don't modify)
+        2. **suggested_questions**: Generate 4 relevant follow-up questions
+        
+        **Question Rules:**
+        - Only mention universities that appear in agent_response
+        - Mix general and specific questions
+        - For greetings: use general questions about admissions
+        - For analysis: suggest comparisons or next steps
+        - Return as array of strings
+        """,
+        output_schema=OrchestratorOutput,
+        output_key="formatted_output",
+        before_model_callback=log_agent_entry,
+        after_model_callback=log_agent_exit
+    )
+
+# Create sequential agents for each approach
+def create_root_agent(approach='rag'):
+    """Create a root agent for the specified approach."""
+    master_agent = MASTER_AGENT_REGISTRY.get(approach, MasterReasoningAgent_RAG)
+    response_formatter = create_response_formatter(approach)
+    
+    return SequentialAgent(
+        name=f"CollegeCounselorAgent_{approach.upper()}",
+        description=f"College counseling agent using {approach.upper()} approach for knowledge base queries",
+        sub_agents=[
+            master_agent,
+            response_formatter
+        ]
+    )
+
+# Create root agents for all approaches
+print("[AGENT] Creating root agents...")
+root_agent_rag = create_root_agent('rag')
+root_agent_es = create_root_agent('elasticsearch')
+print("[AGENT] ✓ Root agents created for: rag, elasticsearch")
+
+# Registry of root agents for dynamic selection
+ROOT_AGENT_REGISTRY = {
+    'rag': root_agent_rag,
+    'elasticsearch': root_agent_es
+}
+
+# Default root agent (ADK web server uses this)
+root_agent = root_agent_rag
+
+print(f"[AGENT] ✓ Initialization complete - Available approaches: {list(ROOT_AGENT_REGISTRY.keys())}")

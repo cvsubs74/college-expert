@@ -10,5 +10,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true
+  },
+  define: {
+    __APP_VERSION__: JSON.stringify(new Date().toISOString())
   }
 })

@@ -29,6 +29,7 @@ function Chat() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(null);
   const [suggestedQuestions, setSuggestedQuestions] = useState([]);
+  const [sessionId, setSessionId] = useState(null); // Track session ID
   const messagesEndRef = useRef(null);
 
   // Save messages to localStorage whenever they change
@@ -50,11 +51,12 @@ function Chat() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Clear messages when user signs out
+  // Clear messages and session when user signs out
   useEffect(() => {
     if (!currentUser) {
       setMessages([]);
       setError(null);
+      setSessionId(null);
     }
   }, [currentUser]);
 
@@ -78,8 +80,22 @@ function Chat() {
 
 Question: ${userMessage}`;
 
-      // Use startSession - it will reuse existing session or create new one
-      const response = await startSession(knowledgeBaseQuery, currentUser?.email);
+      let response;
+      
+      // First message: create session
+      if (!sessionId) {
+        console.log('[Chat] Creating new session (first message)');
+        response = await startSession(knowledgeBaseQuery, currentUser?.email);
+        // Store session ID for subsequent messages
+        if (response.sessionId) {
+          setSessionId(response.sessionId);
+          console.log('[Chat] Session created:', response.sessionId);
+        }
+      } else {
+        // Subsequent messages: use existing session
+        console.log('[Chat] Sending message to existing session:', sessionId);
+        response = await sendMessage(sessionId, knowledgeBaseQuery, currentUser?.email);
+      }
 
       // Extract response text and suggested questions
       const { result, suggested_questions } = extractFullResponse(response);
@@ -105,6 +121,7 @@ Question: ${userMessage}`;
     setMessages([]);
     setError(null);
     setSuggestedQuestions([]);
+    setSessionId(null); // Clear session ID for new chat
     localStorage.removeItem('chatMessages');
   };
 
@@ -124,8 +141,22 @@ Question: ${userMessage}`;
 
 Question: ${question}`;
 
-      // Use startSession - it will reuse existing session or create new one
-      const response = await startSession(knowledgeBaseQuery, currentUser?.email);
+      let response;
+      
+      // First message: create session
+      if (!sessionId) {
+        console.log('[Chat] Creating new session (suggested question - first message)');
+        response = await startSession(knowledgeBaseQuery, currentUser?.email);
+        // Store session ID for subsequent messages
+        if (response.sessionId) {
+          setSessionId(response.sessionId);
+          console.log('[Chat] Session created:', response.sessionId);
+        }
+      } else {
+        // Subsequent messages: use existing session
+        console.log('[Chat] Sending suggested question to existing session:', sessionId);
+        response = await sendMessage(sessionId, knowledgeBaseQuery, currentUser?.email);
+      }
 
       // Extract response text and suggested questions
       const { result, suggested_questions } = extractFullResponse(response);

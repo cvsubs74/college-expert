@@ -15,7 +15,7 @@
 set -e  # Exit on error
 
 # Make sub-scripts executable
-chmod +x deploy_backend.sh deploy_frontend.sh
+chmod +x deploy_frontend.sh
 
 # Colors for output
 RED='\033[0;31m'
@@ -28,16 +28,13 @@ NC='\033[0m' # No Color
 # Configuration
 PROJECT_ID=${GCP_PROJECT_ID:-"college-counselling-478115"}
 REGION="us-east1"
-AGENT_SERVICE_NAME="college-counselor-agent"
+RAG_AGENT_SERVICE_NAME="college-expert-rag-agent"
+ES_AGENT_SERVICE_NAME="college-expert-es-agent"
 PROFILE_MANAGER_FUNCTION="profile-manager"
+PROFILE_MANAGER_ES_FUNCTION="profile-manager-es"
 KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
-KNOWLEDGE_BASE_FS_FUNCTION="knowledge-base-manager-fs"
 KNOWLEDGE_BASE_ES_FUNCTION="knowledge-base-manager-es"
 FRONTEND_SITE_NAME="college-counselor"
-
-# Knowledge Base Approach Configuration
-# Valid values: "rag", "firestore", "elasticsearch"
-KNOWLEDGE_BASE_APPROACH=${KNOWLEDGE_BASE_APPROACH:-"rag"}
 
 # Parse command line arguments
 DEPLOY_TARGET="${1:-all}"
@@ -51,29 +48,30 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "${GREEN}Usage:${NC}"
     echo -e "  ./deploy.sh [target]"
     echo ""
-    echo -e "${GREEN}Knowledge Base Approach:${NC}"
-    echo -e "  Set KNOWLEDGE_BASE_APPROACH environment variable:"
-    echo -e "  ${YELLOW}export KNOWLEDGE_BASE_APPROACH=\"rag\"${NC}         # Use Gemini File Search API (default)"
-    echo -e "  ${YELLOW}export KNOWLEDGE_BASE_APPROACH=\"firestore\"${NC}   # Use direct Firestore queries"
-    echo -e "  ${YELLOW}export KNOWLEDGE_BASE_APPROACH=\"elasticsearch\"${NC} # Use Elasticsearch"
+    echo -e "${GREEN}Dynamic Approach Selection:${NC}"
+    echo -e "  The agent now supports dynamic approach selection via the UI."
+    echo -e "  All cloud functions (RAG, Elasticsearch) should be deployed."
+    echo -e "  Users can switch between approaches without redeployment."
     echo ""
     echo -e "${GREEN}Targets:${NC}"
-    echo -e "  ${YELLOW}all${NC}         - Deploy everything (agent + functions + frontend)"
-    echo -e "  ${YELLOW}agent${NC}       - Deploy only the backend agent"
-    echo -e "  ${YELLOW}profile${NC}     - Deploy only profile manager function"
-    echo -e "  ${YELLOW}knowledge${NC}   - Deploy knowledge base function based on approach"
+    echo -e "  ${YELLOW}all${NC}         - Deploy everything (both agents + all functions + frontend)"
+    echo -e "  ${YELLOW}agent-rag${NC}   - Deploy RAG-based college expert agent"
+    echo -e "  ${YELLOW}agent-es${NC}    - Deploy Elasticsearch-based college expert agent"
+    echo -e "  ${YELLOW}agents${NC}      - Deploy both agents (recommended)"
+    echo -e "  ${YELLOW}profile-rag${NC}  - Deploy RAG profile manager function"
+    echo -e "  ${YELLOW}profile-es${NC}  - Deploy Elasticsearch profile manager function"
     echo -e "  ${YELLOW}knowledge-rag${NC} - Deploy RAG knowledge base function"
-    echo -e "  ${YELLOW}knowledge-fs${NC} - Deploy Firestore knowledge base function"
     echo -e "  ${YELLOW}knowledge-es${NC} - Deploy Elasticsearch knowledge base function"
-    echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions"
-    echo -e "  ${YELLOW}backend${NC}     - Deploy agent + all functions"
+    echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions (recommended)"
+    echo -e "  ${YELLOW}backend${NC}     - Deploy both agents + all functions (recommended)"
     echo -e "  ${YELLOW}frontend${NC}    - Deploy only frontend"
     echo ""
     echo -e "${GREEN}Examples:${NC}"
-    echo -e "  ./deploy.sh                                    # Deploy everything with RAG"
-    echo -e "  KNOWLEDGE_BASE_APPROACH=\"firestore\" ./deploy.sh # Deploy everything with Firestore"
-    echo -e "  KNOWLEDGE_BASE_APPROACH=\"elasticsearch\" ./deploy.sh # Deploy everything with ES"
-    echo -e "  ./deploy.sh knowledge                          # Deploy knowledge base based on approach"
+    echo -e "  ./deploy.sh                    # Deploy everything (both agents)"
+    echo -e "  ./deploy.sh agents             # Deploy both agents"
+    echo -e "  ./deploy.sh agent-rag          # Deploy only RAG agent"
+    echo -e "  ./deploy.sh agent-es           # Deploy only ES agent"
+    echo -e "  ./deploy.sh backend            # Deploy both agents + all cloud functions"
     echo ""
     exit 0
 fi
@@ -81,14 +79,14 @@ fi
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║     College Counselor - Deployment Script                 ║${NC}"
 echo -e "${BLUE}║     Target: ${DEPLOY_TARGET}${NC}"
-echo -e "${BLUE}║     KB Approach: ${KNOWLEDGE_BASE_APPROACH}${NC}"
+echo -e "${BLUE}║     Dynamic Routing: All approaches supported              ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
 # Check and fetch GEMINI_API_KEY if not set
 if [ -z "$GEMINI_API_KEY" ]; then
     echo -e "${YELLOW}GEMINI_API_KEY not set. Attempting to fetch from Secret Manager...${NC}"
-    if GEMINI_API_KEY=$(gcloud secrets versions access 9 --secret=gemini-api-key --project=$PROJECT_ID 2>/dev/null); then
+    if GEMINI_API_KEY=$(gcloud secrets versions access latest --secret=gemini-api-key --project=$PROJECT_ID 2>/dev/null); then
         echo -e "${GREEN}✓ Successfully fetched GEMINI_API_KEY from Secret Manager${NC}"
         export GEMINI_API_KEY
     else
@@ -96,6 +94,32 @@ if [ -z "$GEMINI_API_KEY" ]; then
         echo -e "${YELLOW}Please run './setup_secrets.sh' to set up the secret first${NC}"
         exit 1
     fi
+fi
+
+# Check and fetch Elasticsearch credentials (needed for ES cloud functions)
+if [ -z "$ES_CLOUD_ID" ]; then
+    echo -e "${YELLOW}ES_CLOUD_ID not set. Attempting to fetch from Secret Manager...${NC}"
+    if ES_CLOUD_ID=$(gcloud secrets versions access latest --secret=es-cloud-id --project=$PROJECT_ID 2>/dev/null); then
+        echo -e "${GREEN}✓ Successfully fetched ES_CLOUD_ID from Secret Manager${NC}"
+        export ES_CLOUD_ID
+    else
+        echo -e "${YELLOW}⚠ Could not fetch ES_CLOUD_ID (ES functions will be skipped)${NC}"
+    fi
+fi
+
+if [ -z "$ES_API_KEY" ]; then
+    echo -e "${YELLOW}ES_API_KEY not set. Attempting to fetch from Secret Manager...${NC}"
+    if ES_API_KEY=$(gcloud secrets versions access latest --secret=es-api-key --project=$PROJECT_ID 2>/dev/null); then
+        echo -e "${GREEN}✓ Successfully fetched ES_API_KEY from Secret Manager${NC}"
+        export ES_API_KEY
+    else
+        echo -e "${YELLOW}⚠ Could not fetch ES_API_KEY (ES functions will be skipped)${NC}"
+    fi
+fi
+
+# Set default index name if not set
+if [ -z "$ES_INDEX_NAME" ]; then
+    export ES_INDEX_NAME="university_documents"
 fi
 echo ""
 
@@ -152,52 +176,103 @@ gcloud config set project $PROJECT_ID
 echo ""
 
 # Deployment Functions
-deploy_agent() {
+deploy_agent_rag() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-    echo -e "${BLUE}  Deploying Backend Agent${NC}"
+    echo -e "${BLUE}  Deploying RAG Agent${NC}"
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo ""
     
-    cd agents
+    # Set up environment for RAG agent
+    cd agents/college_expert_rag
     cat > .env << EOF
 GEMINI_API_KEY=${GEMINI_API_KEY}
-DATA_STORE=college_admissions_kb
+KNOWLEDGE_BASE_MANAGER_RAG_URL=https://knowledge-base-manager-pfnwjfp26a-ue.a.run.app
+PROFILE_MANAGER_RAG_URL=https://profile-manager-pfnwjfp26a-ue.a.run.app
 GOOGLE_GENAI_USE_VERTEXAI=0
-KNOWLEDGE_BASE_APPROACH=${KNOWLEDGE_BASE_APPROACH}
 EOF
+    cd ../..
     
-    # Add Elasticsearch environment variables if using ES approach
-    if [ "$KNOWLEDGE_BASE_APPROACH" = "elasticsearch" ]; then
-        echo "ES_CLOUD_ID=${ES_CLOUD_ID}" >> .env
-        echo "ES_API_KEY=${ES_API_KEY}" >> .env
-        echo "ES_INDEX_NAME=university_documents" >> .env
-    fi
-    
+    # Deploy RAG agent from root directory, passing the agent path
     adk deploy cloud_run \
         --project="$PROJECT_ID" \
         --region="$REGION" \
-        --service_name="$AGENT_SERVICE_NAME" \
+        --service_name="$RAG_AGENT_SERVICE_NAME" \
         --allow_origins="*" \
         --with_ui \
-        .
+        agents/college_expert_rag
     
-    gcloud run services add-iam-policy-binding "$AGENT_SERVICE_NAME" \
+    gcloud run services add-iam-policy-binding "$RAG_AGENT_SERVICE_NAME" \
         --member="allUsers" \
         --role="roles/run.invoker" \
         --region="$REGION" \
         --platform=managed
     
-    AGENT_URL=$(gcloud run services describe $AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)')
-    echo -e "${GREEN}✓ Agent deployed: ${AGENT_URL}${NC}"
-    cd ..
+    RAG_AGENT_URL=$(gcloud run services describe $RAG_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)')
+    echo -e "${GREEN}✓ RAG Agent deployed: ${RAG_AGENT_URL}${NC}"
+    cd ../..
 }
 
-deploy_profile_manager() {
+deploy_agent_es() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-    echo -e "${BLUE}  Deploying Profile Manager Function${NC}"
+    echo -e "${BLUE}  Deploying ES Agent${NC}"
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo ""
     
+    # Check for Elasticsearch credentials
+    if [ -z "$ES_CLOUD_ID" ] || [ -z "$ES_API_KEY" ]; then
+        echo -e "${RED}Error: Elasticsearch credentials not set${NC}"
+        echo -e "${YELLOW}Please set:${NC}"
+        echo -e "  export ES_CLOUD_ID='your-elastic-cloud-id'"
+        echo -e "  export ES_API_KEY='your-elastic-api-key'"
+        exit 1
+    fi
+    
+    # Set up environment for ES agent
+    cd agents/college_expert_es
+    cat > .env << EOF
+GEMINI_API_KEY=${GEMINI_API_KEY}
+KNOWLEDGE_BASE_MANAGER_ES_URL=https://knowledge-base-manager-es-pfnwjfp26a-ue.a.run.app
+PROFILE_MANAGER_ES_URL=https://profile-manager-es-pfnwjfp26a-ue.a.run.app
+ES_CLOUD_ID=${ES_CLOUD_ID}
+ES_API_KEY=${ES_API_KEY}
+ES_INDEX_NAME=university_documents
+GOOGLE_GENAI_USE_VERTEXAI=0
+EOF
+    cd ../..
+    
+    # Deploy ES agent from root directory, passing the agent path
+    adk deploy cloud_run \
+        --project="$PROJECT_ID" \
+        --region="$REGION" \
+        --service_name="$ES_AGENT_SERVICE_NAME" \
+        --allow_origins="*" \
+        --with_ui \
+        agents/college_expert_es
+    
+    gcloud run services add-iam-policy-binding "$ES_AGENT_SERVICE_NAME" \
+        --member="allUsers" \
+        --role="roles/run.invoker" \
+        --region="$REGION" \
+        --platform=managed
+    
+    ES_AGENT_URL=$(gcloud run services describe $ES_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)')
+    echo -e "${GREEN}✓ ES Agent deployed: ${ES_AGENT_URL}${NC}"
+    cd ../..
+}
+
+deploy_agents() {
+    echo -e "${CYAN}Deploying both RAG and ES agents...${NC}"
+    deploy_agent_rag
+    deploy_agent_es
+}
+
+deploy_profile_manager_rag() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Profile Manager RAG Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    echo -e "${YELLOW}Deploying RAG profile manager...${NC}"
     cd cloud_functions/profile_manager
     gcloud functions deploy $PROFILE_MANAGER_FUNCTION \
         --gen2 \
@@ -212,92 +287,66 @@ deploy_profile_manager() {
         --memory=512MB
     
     PROFILE_MANAGER_URL=$(gcloud functions describe $PROFILE_MANAGER_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
-    echo -e "${GREEN}✓ Profile Manager deployed: ${PROFILE_MANAGER_URL}${NC}"
+    echo -e "${GREEN}✓ Profile Manager RAG deployed: ${PROFILE_MANAGER_URL}${NC}"
     cd ../..
 }
 
-deploy_knowledge_base_manager() {
+deploy_profile_manager_es() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-    echo -e "${BLUE}  Deploying Knowledge Base Manager Function (${KNOWLEDGE_BASE_APPROACH})${NC}"
+    echo -e "${BLUE}  Deploying Profile Manager ES Function${NC}"
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo ""
     
-    case $KNOWLEDGE_BASE_APPROACH in
-        "rag")
-            echo -e "${YELLOW}Deploying RAG knowledge base manager (Gemini File Search)...${NC}"
-            cd cloud_functions/knowledge_base_manager
-            gcloud functions deploy $KNOWLEDGE_BASE_FUNCTION \
-                --gen2 \
-                --runtime=python312 \
-                --region=$REGION \
-                --source=. \
-                --entry-point=knowledge_base_manager_http_entry \
-                --trigger-http \
-                --allow-unauthenticated \
-                --env-vars-file=.env.yaml \
-                --timeout=540s \
-                --memory=512MB
-            ;;
-        "firestore")
-            echo -e "${YELLOW}Deploying Firestore knowledge base manager...${NC}"
-            cd cloud_functions/knowledge_base_manager_FS
-            gcloud functions deploy $KNOWLEDGE_BASE_FS_FUNCTION \
-                --gen2 \
-                --runtime=python312 \
-                --region=$REGION \
-                --source=. \
-                --entry-point=knowledge_base_manager_fs_http_entry \
-                --trigger-http \
-                --allow-unauthenticated \
-                --timeout=540s \
-                --memory=512MB \
-                --max-instances=10
-            ;;
-        "elasticsearch")
-            echo -e "${YELLOW}Deploying Elasticsearch knowledge base manager...${NC}"
-            # Check for Elasticsearch credentials
-            if [ -z "$ES_CLOUD_ID" ] || [ -z "$ES_API_KEY" ]; then
-                echo -e "${RED}Error: Elasticsearch credentials not set${NC}"
-                echo -e "${YELLOW}Please set:${NC}"
-                echo -e "  export ES_CLOUD_ID='your-elastic-cloud-id'"
-                echo -e "  export ES_API_KEY='your-elastic-api-key'"
-                exit 1
-            fi
-            cd cloud_functions/knowledge_base_manager_ES
-            gcloud functions deploy $KNOWLEDGE_BASE_ES_FUNCTION \
-                --gen2 \
-                --runtime=python312 \
-                --region=$REGION \
-                --source=. \
-                --entry-point=knowledge_base_manager_es_http_entry \
-                --trigger-http \
-                --allow-unauthenticated \
-                --env-vars-file=env.yaml \
-                --timeout=540s \
-                --memory=1024MB \
-                --max-instances=10
-            ;;
-        *)
-            echo -e "${RED}Error: Invalid KNOWLEDGE_BASE_APPROACH '$KNOWLEDGE_BASE_APPROACH'${NC}"
-            echo -e "${YELLOW}Valid values: rag, firestore, elasticsearch${NC}"
-            exit 1
-            ;;
-    esac
+    # Check for Elasticsearch credentials
+    if [ -z "$ES_CLOUD_ID" ] || [ -z "$ES_API_KEY" ]; then
+        echo -e "${RED}Error: Elasticsearch credentials not set${NC}"
+        echo -e "${YELLOW}Please set:${NC}"
+        echo -e "  export ES_CLOUD_ID='your-elastic-cloud-id'"
+        echo -e "  export ES_API_KEY='your-elastic-api-key'"
+        exit 1
+    fi
     
-    # Get the deployed function URL
-    case $KNOWLEDGE_BASE_APPROACH in
-        "rag")
-            KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
-            ;;
-        "firestore")
-            KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FS_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
-            ;;
-        "elasticsearch")
-            KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
-            ;;
-    esac
+    cd cloud_functions/profile_manager_es
+    gcloud functions deploy $PROFILE_MANAGER_ES_FUNCTION \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=profile_manager_es_http_entry \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.yaml \
+        --timeout=540s \
+        --memory=1024MB \
+        --max-instances=10
     
-    echo -e "${GREEN}✓ Knowledge Base Manager (${KNOWLEDGE_BASE_APPROACH}) deployed: ${KNOWLEDGE_BASE_URL}${NC}"
+    PROFILE_MANAGER_ES_URL=$(gcloud functions describe $PROFILE_MANAGER_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Profile Manager ES deployed: ${PROFILE_MANAGER_ES_URL}${NC}"
+    cd ../..
+}
+
+deploy_knowledge_base_manager_rag() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Knowledge Base Manager RAG Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    echo -e "${YELLOW}Deploying RAG knowledge base manager...${NC}"
+    cd cloud_functions/knowledge_base_manager
+    gcloud functions deploy $KNOWLEDGE_BASE_FUNCTION \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=knowledge_base_manager_http_entry \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=.env.yaml \
+        --timeout=540s \
+        --memory=512MB
+    
+    KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Knowledge Base Manager RAG deployed: ${KNOWLEDGE_BASE_URL}${NC}"
     cd ../..
 }
 
@@ -335,30 +384,6 @@ deploy_knowledge_base_manager_es() {
     cd ../..
 }
 
-deploy_knowledge_base_manager_fs() {
-    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-    echo -e "${BLUE}  Deploying Knowledge Base Manager FS Function${NC}"
-    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
-    echo ""
-    
-    cd cloud_functions/knowledge_base_manager_FS
-    gcloud functions deploy $KNOWLEDGE_BASE_FS_FUNCTION \
-        --gen2 \
-        --runtime=python312 \
-        --region=$REGION \
-        --source=. \
-        --entry-point=knowledge_base_manager_fs_http_entry \
-        --trigger-http \
-        --allow-unauthenticated \
-        --timeout=540s \
-        --memory=512MB \
-        --max-instances=10
-    
-    KNOWLEDGE_BASE_FS_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FS_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
-    echo -e "${GREEN}✓ Knowledge Base Manager FS deployed: ${KNOWLEDGE_BASE_FS_URL}${NC}"
-    cd ../..
-}
-
 deploy_frontend() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Frontend${NC}"
@@ -366,41 +391,37 @@ deploy_frontend() {
     echo ""
     
     # Get backend URLs
-    AGENT_URL=$(gcloud run services describe $AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)' 2>/dev/null || echo "")
+    RAG_AGENT_URL=$(gcloud run services describe $RAG_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)' 2>/dev/null || echo "")
+    ES_AGENT_URL=$(gcloud run services describe $ES_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)' 2>/dev/null || echo "")
     PROFILE_MANAGER_URL=$(gcloud functions describe $PROFILE_MANAGER_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
+    PROFILE_MANAGER_ES_URL=$(gcloud functions describe $PROFILE_MANAGER_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
     
     # Get all knowledge base URLs for dynamic switching
     KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
-    KNOWLEDGE_BASE_FS_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FS_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
     KNOWLEDGE_BASE_ES_URL=$(gcloud functions describe $KNOWLEDGE_BASE_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
     
-    # Set primary knowledge base URL based on approach
-    case $KNOWLEDGE_BASE_APPROACH in
-        "elasticsearch")
-            KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_ES_URL
-            ;;
-        "firestore")
-            KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_FS_URL
-            ;;
-        *) # rag
-            KNOWLEDGE_BASE_URL=$(gcloud functions describe $KNOWLEDGE_BASE_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)' 2>/dev/null || echo "")
-            ;;
-    esac
-    
-    export VITE_API_URL=$AGENT_URL
+    export VITE_RAG_AGENT_URL=$RAG_AGENT_URL
+    export VITE_ES_AGENT_URL=$ES_AGENT_URL
     export VITE_PROFILE_MANAGER_URL=$PROFILE_MANAGER_URL
+    export VITE_PROFILE_MANAGER_ES_URL=$PROFILE_MANAGER_ES_URL
     export VITE_KNOWLEDGE_BASE_URL=$KNOWLEDGE_BASE_URL
-    export VITE_KNOWLEDGE_BASE_FS_URL=$KNOWLEDGE_BASE_FS_URL
     export VITE_KNOWLEDGE_BASE_ES_URL=$KNOWLEDGE_BASE_ES_URL
-    export VITE_KNOWLEDGE_BASE_APPROACH=$KNOWLEDGE_BASE_APPROACH
     
-    # Firebase Configuration
-    export VITE_FIREBASE_API_KEY="AIzaSyB21YdLOZTjO1przhjsX1Es64-kFGov5XE"
-    export VITE_FIREBASE_AUTH_DOMAIN="college-counsellor.firebaseapp.com"
-    export VITE_FIREBASE_PROJECT_ID="college-counsellor"
-    export VITE_FIREBASE_STORAGE_BUCKET="college-counsellor.firebasestorage.app"
-    export VITE_FIREBASE_MESSAGING_SENDER_ID="1098097030863"
-    export VITE_FIREBASE_APP_ID="1:1098097030863:web:6e7d2d9e7f1f7b7f7f7f7f"
+    echo -e "${GREEN}✓ URLs configured:${NC}"
+    echo -e "  RAG Agent URL: ${RAG_AGENT_URL}"
+    echo -e "  ES Agent URL: ${ES_AGENT_URL}"
+    echo -e "  Profile Manager RAG URL: ${PROFILE_MANAGER_URL}"
+    echo -e "  Profile Manager ES URL: ${PROFILE_MANAGER_ES_URL}"
+    echo -e "  Knowledge Base RAG URL: ${KNOWLEDGE_BASE_URL}"
+    echo -e "  Knowledge Base ES URL: ${KNOWLEDGE_BASE_ES_URL}"
+    
+    # Firebase Configuration - using correct project ID
+    export VITE_FIREBASE_API_KEY="AIzaSyDfxSzWnAsjUF5rdiaQ8WJtNfC-6AHWTCI"
+    export VITE_FIREBASE_AUTH_DOMAIN="college-counselling-478115.firebaseapp.com"
+    export VITE_FIREBASE_PROJECT_ID="college-counselling-478115"
+    export VITE_FIREBASE_STORAGE_BUCKET="college-counselling-478115.firebasestorage.app"
+    export VITE_FIREBASE_MESSAGING_SENDER_ID="808989169388"
+    export VITE_FIREBASE_APP_ID="1:808989169388:web:6e7d2d9e7f1f7b7f7f7f7f"
     
     ./deploy_frontend.sh
     echo -e "${GREEN}✓ Frontend deployed: https://college-strategy.web.app${NC}"
@@ -408,42 +429,51 @@ deploy_frontend() {
 
 # Execute deployment based on target
 case "$DEPLOY_TARGET" in
-    "agent")
-        deploy_agent
+    "agent-rag")
+        deploy_agent_rag
         ;;
-    "profile")
-        deploy_profile_manager
+    "agent-es")
+        deploy_agent_es
         ;;
-    "knowledge")
-        deploy_knowledge_base_manager
+    "agents")
+        deploy_agents
+        ;;
+    "profile-rag")
+        deploy_profile_manager_rag
+        ;;
+    "profile-es")
+        deploy_profile_manager_es
         ;;
     "knowledge-rag")
-        KNOWLEDGE_BASE_APPROACH="rag" deploy_knowledge_base_manager
-        ;;
-    "knowledge-fs")
-        KNOWLEDGE_BASE_APPROACH="firestore" deploy_knowledge_base_manager
+        deploy_knowledge_base_manager_rag
         ;;
     "knowledge-es")
         deploy_knowledge_base_manager_es
         ;;
     "functions")
-        deploy_profile_manager
-        deploy_knowledge_base_manager
+        echo -e "${CYAN}Deploying all cloud functions for dynamic routing...${NC}"
+        deploy_profile_manager_rag
+        deploy_profile_manager_es
+        deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         ;;
     "backend")
-        deploy_agent
-        deploy_profile_manager
-        deploy_knowledge_base_manager
+        echo -e "${CYAN}Deploying backend with all cloud functions for dynamic routing...${NC}"
+        deploy_agents
+        deploy_profile_manager_rag
+        deploy_profile_manager_es
+        deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         ;;
     "frontend")
         deploy_frontend
         ;;
     "all")
-        deploy_agent
-        deploy_profile_manager
-        deploy_knowledge_base_manager
+        echo -e "${CYAN}Deploying complete system with dynamic routing support...${NC}"
+        deploy_agents
+        deploy_profile_manager_rag
+        deploy_profile_manager_es
+        deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         deploy_frontend
         ;;
