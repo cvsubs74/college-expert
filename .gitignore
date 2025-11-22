@@ -6,7 +6,10 @@
 .env.yaml
 **/.env.yaml
 **/cloud_functions/**/.env.yaml
+env.yaml
+**/env.yaml
 cloud_functions/knowledge_base_manager_ES/env.yaml
+cloud_functions/profile_manager_es/env.yaml
 
 # API Keys and credentials
 *.key
