@@ -1194,10 +1194,6 @@ def knowledge_base_manager_es_http(request):
                 else:
                     return add_cors_headers(result, 500)
         
-        # --- GET DOCUMENT CONTENT ROUTE (for preview from GCS) ---
-        elif resource_type == 'get-document-content' and request.method == 'POST':
-            return handle_get_document_content(request)
-        
         # --- HEALTH CHECK ROUTE ---
         elif resource_type == 'health':
             if request.method == 'GET':
@@ -1227,106 +1223,6 @@ def knowledge_base_manager_es_http(request):
     except Exception as e:
         logger.error(f"Unexpected error: {str(e)}")
         return add_cors_headers({'error': 'Internal server error'}, 500)
-
-def handle_get_document_content(request):
-    """Get document content for preview from Google Cloud Storage."""
-    try:
-        data = request.get_json()
-        logger.info(f"[GET_DOCUMENT_CONTENT] Received request data: {data}")
-        
-        if not data:
-            logger.error(f"[GET_DOCUMENT_CONTENT ERROR] No JSON data in request")
-            return add_cors_headers({
-                'success': False,
-                'error': 'No data provided in request'
-            }, 400)
-        
-        file_name = data.get('file_name')
-        
-        if not file_name:
-            logger.error(f"[GET_DOCUMENT_CONTENT ERROR] Missing file_name in data: {data}")
-            return add_cors_headers({
-                'success': False,
-                'error': 'Missing file_name parameter'
-            }, 400)
-        
-        logger.info(f"[GET_DOCUMENT_CONTENT] Fetching content for: {file_name}")
-        
-        # Get Google Cloud Storage path
-        storage_path = f"knowledge-base/{file_name}"
-        bucket_name = 'college-counselling-478115-knowledge-base'
-        
-        # Download from Google Cloud Storage
-        storage_client = get_storage_client()
-        if not storage_client:
-            return add_cors_headers({
-                'success': False,
-                'error': 'Storage client not initialized'
-            }, 500)
-        
-        bucket = storage_client.bucket(bucket_name)
-        blob = bucket.blob(storage_path)
-        
-        if not blob.exists():
-            logger.error(f"[GET_DOCUMENT_CONTENT ERROR] File not found: {storage_path}")
-            return add_cors_headers({
-                'success': False,
-                'error': 'File not found in storage'
-            }, 404)
-        
-        # Reload blob to get metadata
-        blob.reload()
-        
-        # Get file metadata
-        mime_type = blob.content_type or 'application/octet-stream'
-        file_size = blob.size or 0
-        upload_time = blob.time_created.strftime('%Y-%m-%d %H:%M:%S') if blob.time_created else 'Unknown'
-        
-        logger.info(f"[GET_DOCUMENT_CONTENT] File metadata - mime_type: {mime_type}, size: {file_size}, filename: {file_name}")
-        
-        # Check if it's a PDF by extension if mime_type is generic
-        is_pdf = 'pdf' in mime_type.lower() or file_name.lower().endswith('.pdf')
-        
-        if is_pdf:
-            # Make blob publicly readable temporarily and get public URL
-            blob.make_public()
-            download_url = blob.public_url
-            content = None  # No text content for PDFs
-            logger.info(f"[GET_DOCUMENT_CONTENT] Generated public URL for PDF: {download_url}")
-        elif 'text' in mime_type.lower() or mime_type == 'application/json':
-            try:
-                content = blob.download_as_text()
-                download_url = None
-            except Exception as e:
-                logger.error(f"[GET_DOCUMENT_CONTENT] Could not download as text: {str(e)}")
-                content = f"Document: {file_name}\n\nCould not extract text content.\n\nFile size: {file_size:,} bytes"
-                download_url = None
-        else:
-            content = f"Document: {file_name}\n\nPreview not available for this file type ({mime_type}).\n\nFile size: {file_size:,} bytes\nUploaded: {upload_time}"
-            download_url = None
-        
-        logger.info(f"[GET_DOCUMENT_CONTENT] Successfully retrieved content (content length: {len(content) if content else 0})")
-        
-        return add_cors_headers({
-            'success': True,
-            'content': content,
-            'mime_type': mime_type,
-            'display_name': file_name,
-            'storage_path': storage_path,
-            'download_url': download_url,
-            'file_size': file_size,
-            'upload_time': upload_time,
-            'is_pdf': is_pdf
-        }, 200)
-        
-    except Exception as e:
-        logger.error(f"[GET_DOCUMENT_CONTENT ERROR] {str(e)}")
-        import traceback
-        traceback.print_exc()
-        return add_cors_headers({
-            'success': False,
-            'error': f'Failed to get content: {str(e)}'
-        }, 500)
 
 # Entry point for deployment
 def knowledge_base_manager_es_http_entry(request):
