@@ -209,7 +209,6 @@ EOF
     
     RAG_AGENT_URL=$(gcloud run services describe $RAG_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)')
     echo -e "${GREEN}✓ RAG Agent deployed: ${RAG_AGENT_URL}${NC}"
-    cd ../..
 }
 
 deploy_agent_es() {
@@ -257,7 +256,6 @@ EOF
     
     ES_AGENT_URL=$(gcloud run services describe $ES_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)')
     echo -e "${GREEN}✓ ES Agent deployed: ${ES_AGENT_URL}${NC}"
-    cd ../..
 }
 
 deploy_agents() {
