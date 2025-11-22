@@ -83,38 +83,32 @@ echo -e "${BLUE}║     Dynamic Routing: All approaches supported              �
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
-# Check and fetch GEMINI_API_KEY if not set
-if [ -z "$GEMINI_API_KEY" ]; then
-    echo -e "${YELLOW}GEMINI_API_KEY not set. Attempting to fetch from Secret Manager...${NC}"
-    if GEMINI_API_KEY=$(gcloud secrets versions access latest --secret=gemini-api-key --project=$PROJECT_ID 2>/dev/null); then
-        echo -e "${GREEN}✓ Successfully fetched GEMINI_API_KEY from Secret Manager${NC}"
-        export GEMINI_API_KEY
-    else
-        echo -e "${RED}Error: Could not fetch GEMINI_API_KEY from Secret Manager${NC}"
-        echo -e "${YELLOW}Please run './setup_secrets.sh' to set up the secret first${NC}"
-        exit 1
-    fi
+# Always fetch GEMINI_API_KEY from Secret Manager (overwrite any existing value)
+echo -e "${YELLOW}Fetching GEMINI_API_KEY from Secret Manager...${NC}"
+if GEMINI_API_KEY=$(gcloud secrets versions access latest --secret=gemini-api-key --project=$PROJECT_ID 2>/dev/null); then
+    echo -e "${GREEN}✓ Successfully fetched GEMINI_API_KEY from Secret Manager${NC}"
+    export GEMINI_API_KEY
+else
+    echo -e "${RED}Error: Could not fetch GEMINI_API_KEY from Secret Manager${NC}"
+    echo -e "${YELLOW}Please run './setup_secrets.sh' to set up the secret first${NC}"
+    exit 1
 fi
 
-# Check and fetch Elasticsearch credentials (needed for ES cloud functions)
-if [ -z "$ES_CLOUD_ID" ]; then
-    echo -e "${YELLOW}ES_CLOUD_ID not set. Attempting to fetch from Secret Manager...${NC}"
-    if ES_CLOUD_ID=$(gcloud secrets versions access latest --secret=es-cloud-id --project=$PROJECT_ID 2>/dev/null); then
-        echo -e "${GREEN}✓ Successfully fetched ES_CLOUD_ID from Secret Manager${NC}"
-        export ES_CLOUD_ID
-    else
-        echo -e "${YELLOW}⚠ Could not fetch ES_CLOUD_ID (ES functions will be skipped)${NC}"
-    fi
+# Always fetch Elasticsearch credentials from Secret Manager (needed for ES cloud functions)
+echo -e "${YELLOW}Fetching ES_CLOUD_ID from Secret Manager...${NC}"
+if ES_CLOUD_ID=$(gcloud secrets versions access latest --secret=es-cloud-id --project=$PROJECT_ID 2>/dev/null); then
+    echo -e "${GREEN}✓ Successfully fetched ES_CLOUD_ID from Secret Manager${NC}"
+    export ES_CLOUD_ID
+else
+    echo -e "${YELLOW}⚠ Could not fetch ES_CLOUD_ID (ES functions will be skipped)${NC}"
 fi
 
-if [ -z "$ES_API_KEY" ]; then
-    echo -e "${YELLOW}ES_API_KEY not set. Attempting to fetch from Secret Manager...${NC}"
-    if ES_API_KEY=$(gcloud secrets versions access latest --secret=es-api-key --project=$PROJECT_ID 2>/dev/null); then
-        echo -e "${GREEN}✓ Successfully fetched ES_API_KEY from Secret Manager${NC}"
-        export ES_API_KEY
-    else
-        echo -e "${YELLOW}⚠ Could not fetch ES_API_KEY (ES functions will be skipped)${NC}"
-    fi
+echo -e "${YELLOW}Fetching ES_API_KEY from Secret Manager...${NC}"
+if ES_API_KEY=$(gcloud secrets versions access latest --secret=es-api-key --project=$PROJECT_ID 2>/dev/null); then
+    echo -e "${GREEN}✓ Successfully fetched ES_API_KEY from Secret Manager${NC}"
+    export ES_API_KEY
+else
+    echo -e "${YELLOW}⚠ Could not fetch ES_API_KEY (ES functions will be skipped)${NC}"
 fi
 
 # Set default index name if not set
