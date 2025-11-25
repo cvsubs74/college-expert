@@ -1,8 +1,15 @@
 import axios from 'axios';
 
 // Get API base URLs from environment or use defaults
-const RAG_AGENT_URL = import.meta.env.VITE_RAG_AGENT_URL || 'https://college-expert-rag-agent-pfnwjfp26a-ue.a.run.app';
-const ES_AGENT_URL = import.meta.env.VITE_ES_AGENT_URL || 'https://college-expert-es-agent-pfnwjfp26a-ue.a.run.app';
+const RAG_AGENT_URL = import.meta.env.VITE_RAG_AGENT_URL;
+const ES_AGENT_URL = import.meta.env.VITE_ES_AGENT_URL;
+const VERTEXAI_AGENT_URL = import.meta.env.VITE_VERTEXAI_AGENT_URL;
+const VERTEXAI_KNOWLEDGE_BASE_URL = import.meta.env.VITE_KNOWLEDGE_BASE_VERTEXAI_URL;
+const VERTEXAI_PROFILE_MANAGER_URL = import.meta.env.VITE_PROFILE_MANAGER_VERTEXAI_URL;
+const KNOWLEDGE_BASE_URL = import.meta.env.VITE_KNOWLEDGE_BASE_URL;
+const KNOWLEDGE_BASE_ES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_ES_URL;
+const PROFILE_MANAGER_URL = import.meta.env.VITE_PROFILE_MANAGER_URL;
+const PROFILE_MANAGER_ES_URL = import.meta.env.VITE_PROFILE_MANAGER_ES_URL;
 
 // Get knowledge base approach from environment
 const KNOWLEDGE_BASE_APPROACH = import.meta.env.VITE_KNOWLEDGE_BASE_APPROACH || 'rag';
@@ -10,13 +17,17 @@ const KNOWLEDGE_BASE_APPROACH = import.meta.env.VITE_KNOWLEDGE_BASE_APPROACH || 
 // Get the appropriate agent URL based on approach
 const getAgentUrl = () => {
   const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
-  return approach === 'elasticsearch' ? ES_AGENT_URL : RAG_AGENT_URL;
+  if (approach === 'elasticsearch') return ES_AGENT_URL;
+  if (approach === 'vertexai') return VERTEXAI_AGENT_URL;
+  return RAG_AGENT_URL;
 };
 
 // Get the app name based on approach
 const getAppName = () => {
   const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
-  return approach === 'elasticsearch' ? 'college_expert_es' : 'college_expert_rag';
+  if (approach === 'elasticsearch') return 'college_expert_es';
+  if (approach === 'vertexai') return 'college_expert_adk';
+  return 'college_expert_rag';
 };
 
 // Determine profile manager URL based on approach
@@ -24,6 +35,9 @@ const getProfileManagerUrl = () => {
   const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
   if (approach === 'elasticsearch') {
     return import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+  }
+  if (approach === 'vertexai') {
+    return import.meta.env.VITE_PROFILE_MANAGER_VERTEXAI_URL || 'https://profile-manager-vertexai-pfnwjfp26a-ue.a.run.app';
   }
   return import.meta.env.VITE_PROFILE_MANAGER_URL || 'https://profile-manager-pfnwjfp26a-ue.a.run.app';
 };
@@ -63,22 +77,6 @@ const getApproach = () => {
   return localStorage.getItem(APPROACH_STORAGE_KEY) || 'rag';
 };
 
-/**
- * Create a new session
- */
-const createSession = async () => {
-  try {
-    console.log('[API] Creating new session...');
-    const response = await api.post('/apps/agents/users/user/sessions', {});
-    const sessionId = response.data.id;
-    setSessionId(sessionId);
-    console.log('[API] Session created:', sessionId);
-    return sessionId;
-  } catch (error) {
-    console.error('[API] Error creating session:', error);
-    throw error;
-  }
-};
 
 /**
  * Start a new session and send first message
@@ -92,7 +90,7 @@ export const startSession = async (message, userEmail = null) => {
     const agentUrl = getAgentUrl();
     const appName = getAppName();
     const approach = getApproach();
-    
+
     console.log(`[API] Using approach: ${approach}`);
     console.log(`[API] Agent URL: ${agentUrl}`);
     console.log(`[API] App name: ${appName}`);
@@ -103,18 +101,18 @@ export const startSession = async (message, userEmail = null) => {
     const sessionResponse = await axios.post(
       `${agentUrl}/apps/${appName}/users/user/sessions`,
       { user_input: "Hello" },
-      { 
+      {
         timeout: 300000,
         headers: { 'Content-Type': 'application/json' }
       }
     );
 
     console.log('[API] Session created:', sessionResponse.data);
-    
+
     // Extract session ID from response
     const sessionId = sessionResponse.data.id;
     setSessionId(sessionId);
-    
+
     console.log('[API] Session ID:', sessionId);
     console.log('[API] Now sending actual message via /run...');
 
@@ -134,14 +132,14 @@ export const startSession = async (message, userEmail = null) => {
 export const sendMessage = async (sessionId, message, userEmail = null) => {
   try {
     console.log('[API] Sending message to session:', sessionId);
-    
+
     // Update stored session ID
     setSessionId(sessionId);
 
     const agentUrl = getAgentUrl();
     const appName = getAppName();
     const approach = getApproach();
-    
+
     console.log(`[API] Using approach: ${approach}`);
     console.log(`[API] Agent URL: ${agentUrl}`);
 
@@ -162,21 +160,21 @@ export const sendMessage = async (sessionId, message, userEmail = null) => {
         }]
       }
     };
-    
+
     const response = await axios.post(
       `${agentUrl}/run`,
       requestData,
-      { 
+      {
         timeout: 300000,
         headers: { 'Content-Type': 'application/json' }
       }
     );
 
     console.log('[API] Response received:', response.data);
-    
+
     // The /run endpoint returns an array of events directly, not wrapped in {events: [...]}
     const events = Array.isArray(response.data) ? response.data : (response.data.events || []);
-    
+
     return {
       id: sessionId,
       events: events,
@@ -215,11 +213,11 @@ export const uploadStudentProfile = async (file, userEmail) => {
     if (!userEmail) {
       throw new Error('User email is required for profile upload');
     }
-    
+
     const formData = new FormData();
     formData.append('file', file);
     formData.append('user_email', userEmail);  // Use user_email as backend expects
-    
+
     // Call the profile manager cloud function with dynamic URL
     const baseUrl = getProfileManagerUrl();
     const response = await axios.post(`${baseUrl}/upload-profile`, formData, {
@@ -245,7 +243,7 @@ export const listStudentProfiles = async (userEmail) => {
     if (!userEmail) {
       throw new Error('User email is required to list profiles');
     }
-    
+
     const baseUrl = getProfileManagerUrl();
     const response = await axios.get(`${baseUrl}/list-profiles`, {
       timeout: 60000,
@@ -268,7 +266,7 @@ export const deleteStudentProfile = async (documentId, userEmail, filename) => {
     const baseUrl = getProfileManagerUrl();
     const response = await axios.delete(`${baseUrl}/delete-profile`, {
       timeout: 60000,
-      data: { 
+      data: {
         document_name: documentId,
         user_email: userEmail,
         filename: filename
@@ -314,7 +312,7 @@ export const extractResponseText = (sessionData) => {
 
   // Get the last event
   const lastEvent = sessionData.events[sessionData.events.length - 1];
-  
+
   if (!lastEvent || !lastEvent.content || !lastEvent.content.parts) {
     return '';
   }
@@ -324,7 +322,7 @@ export const extractResponseText = (sessionData) => {
     .filter(part => part.text)
     .map(part => part.text)
     .join('\n\n');
-  
+
   // Try to parse as JSON (OrchestratorOutput format)
   try {
     const parsed = JSON.parse(rawText);
@@ -335,7 +333,7 @@ export const extractResponseText = (sessionData) => {
   } catch (e) {
     // Not JSON, return as-is
   }
-  
+
   return rawText;
 };
 
@@ -350,7 +348,7 @@ export const extractFullResponse = (sessionData) => {
 
   // Get the last event
   const lastEvent = sessionData.events[sessionData.events.length - 1];
-  
+
   if (!lastEvent || !lastEvent.content || !lastEvent.content.parts) {
     return { result: '', suggested_questions: [] };
   }
@@ -360,7 +358,7 @@ export const extractFullResponse = (sessionData) => {
     .filter(part => part.text)
     .map(part => part.text)
     .join('\n\n');
-  
+
   // Try to parse as JSON (OrchestratorOutput format)
   try {
     const parsed = JSON.parse(rawText);
@@ -373,7 +371,7 @@ export const extractFullResponse = (sessionData) => {
   } catch (e) {
     // Not JSON, return raw text with no suggestions
   }
-  
+
   return { result: rawText, suggested_questions: [] };
 };
 
@@ -386,6 +384,9 @@ const getKnowledgeBaseUrl = () => {
   const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
   if (approach === 'elasticsearch') {
     return import.meta.env.VITE_KNOWLEDGE_BASE_ES_URL || 'https://knowledge-base-manager-es-pfnwjfp26a-ue.a.run.app';
+  }
+  if (approach === 'vertexai') {
+    return import.meta.env.VITE_KNOWLEDGE_BASE_VERTEXAI_URL || 'https://knowledge-base-manager-vertexai-pfnwjfp26a-ue.a.run.app';
   }
   return import.meta.env.VITE_KNOWLEDGE_BASE_URL || 'https://knowledge-base-manager-pfnwjfp26a-ue.a.run.app';
 };
@@ -406,7 +407,7 @@ export const uploadKnowledgeBaseDocument = async (file, userId) => {
     if (userId) {
       formData.append('user_id', userId);
     }
-    
+
     const baseUrl = getKnowledgeBaseUrl();
     const response = await axios.post(`${baseUrl}/upload-document`, formData, {
       timeout: 60000,
@@ -486,6 +487,138 @@ export const getKnowledgeBaseDocumentContent = async (fileName) => {
     return response.data;
   } catch (error) {
     console.error('Error getting document content:', error);
+    throw error;
+  }
+};
+
+/**
+ * Upload document to Vertex AI (via cloud function)
+ * Uploads to GCS then indexes in Vertex AI RAG
+ */
+export const uploadVertexAIDocument = async (file, userId) => {
+  try {
+    const formData = new FormData();
+    formData.append('file', file);
+    if (userId) {
+      formData.append('user_id', userId);
+    }
+
+    const baseUrl = VERTEXAI_KNOWLEDGE_BASE_URL;
+    const response = await axios.post(`${baseUrl}/upload-document`, formData, {
+      timeout: 120000,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        ...(userId && { 'X-User-Email': userId })
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error uploading Vertex AI document:', error);
+    throw error;
+  }
+};
+
+/**
+ * Upload profile to Vertex AI (via cloud function)
+ * Uploads to user-specific GCS folder then indexes in Vertex AI RAG
+ */
+export const uploadVertexAIProfile = async (file, userId) => {
+  try {
+    const formData = new FormData();
+    formData.append('file', file);
+    if (userId) {
+      formData.append('user_id', userId);
+    }
+
+    const baseUrl = VERTEXAI_PROFILE_MANAGER_URL;
+    const response = await axios.post(`${baseUrl}/upload-profile`, formData, {
+      timeout: 120000,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        ...(userId && { 'X-User-Email': userId })
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error uploading Vertex AI profile:', error);
+    throw error;
+  }
+};
+
+/**
+ * List documents from Vertex AI (via cloud function)
+ * Lists from GCS
+ */
+export const listVertexAIDocuments = async (userId) => {
+  try {
+    const baseUrl = VERTEXAI_KNOWLEDGE_BASE_URL;
+    const response = await axios.get(`${baseUrl}/documents`, {
+      timeout: 60000,
+      params: userId ? { user_id: userId } : {},
+      headers: userId ? { 'X-User-Email': userId } : {}
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error listing Vertex AI documents:', error);
+    throw error;
+  }
+};
+
+/**
+ * List profiles from Vertex AI (via cloud function)
+ * Lists from user-specific GCS folder
+ */
+export const listVertexAIProfiles = async (userId) => {
+  try {
+    const baseUrl = VERTEXAI_PROFILE_MANAGER_URL;
+    const response = await axios.get(`${baseUrl}/profiles`, {
+      timeout: 60000,
+      params: { user_email: userId },
+      headers: { 'X-User-Email': userId }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error listing Vertex AI profiles:', error);
+    throw error;
+  }
+};
+
+/**
+ * Delete document from Vertex AI (via cloud function)
+ * Deletes from both GCS and Vertex AI RAG
+ */
+export const deleteVertexAIDocument = async (documentName, displayName, userId) => {
+  try {
+    const baseUrl = VERTEXAI_KNOWLEDGE_BASE_URL;
+    const response = await axios.post(`${baseUrl}/delete`, {
+      file_name: documentName
+    }, {
+      timeout: 60000,
+      headers: userId ? { 'X-User-Email': userId } : {}
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting Vertex AI document:', error);
+    throw error;
+  }
+};
+
+/**
+ * Delete profile from Vertex AI (via cloud function)
+ * Deletes from both GCS and Vertex AI RAG
+ */
+export const deleteVertexAIProfile = async (documentId, userId, displayName) => {
+  try {
+    const baseUrl = VERTEXAI_PROFILE_MANAGER_URL;
+    const response = await axios.post(`${baseUrl}/delete`, {
+      file_name: documentId
+    }, {
+      timeout: 60000,
+      headers: { 'X-User-Email': userId }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting Vertex AI profile:', error);
     throw error;
   }
 };

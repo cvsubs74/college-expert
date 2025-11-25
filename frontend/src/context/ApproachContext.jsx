@@ -36,6 +36,19 @@ export const APPROACHES = {
       'Advanced filters'
     ],
     bestFor: 'Advanced search features and full control'
+  },
+  vertexai: {
+    id: 'vertexai',
+    name: 'Vertex AI',
+    description: 'ADK RAG with Vertex AI corpora - Advanced semantic search',
+    icon: '🧠',
+    features: [
+      'Vertex AI RAG Engine',
+      'Semantic search',
+      'Agent-based uploads',
+      'User-scoped corpora'
+    ],
+    bestFor: 'Advanced RAG with semantic understanding'
   }
 };
 
@@ -47,11 +60,11 @@ export const ApproachProvider = ({ children }) => {
   useEffect(() => {
     const savedApproach = localStorage.getItem('knowledgeBaseApproach');
     const approachSelected = localStorage.getItem('approachSelected');
-    
+
     if (savedApproach && APPROACHES[savedApproach]) {
       setSelectedApproach(savedApproach);
     }
-    
+
     if (approachSelected === 'true') {
       setIsApproachSelected(true);
     }

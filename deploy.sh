@@ -376,6 +376,93 @@ deploy_knowledge_base_manager_es() {
     cd ../..
 }
 
+deploy_knowledge_base_manager_vertexai() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Knowledge Base Manager Vertex AI Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd cloud_functions/knowledge_base_manager_vertexai
+    gcloud functions deploy knowledge-base-manager-vertexai \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=knowledge_base_manager_vertexai_http_entry \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.yaml \
+        --timeout=540s \
+        --memory=1024MB \
+        --max-instances=10
+    
+    KNOWLEDGE_BASE_VERTEXAI_URL=$(gcloud functions describe knowledge-base-manager-vertexai --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Knowledge Base Manager Vertex AI deployed: ${KNOWLEDGE_BASE_VERTEXAI_URL}${NC}"
+    cd ../..
+}
+
+deploy_profile_manager_vertexai() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Profile Manager Vertex AI Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    cd cloud_functions/profile_manager_vertexai
+    gcloud functions deploy profile-manager-vertexai \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=profile_manager_vertexai_http_entry \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.yaml \
+        --timeout=540s \
+        --memory=1024MB \
+        --max-instances=10
+    
+    PROFILE_MANAGER_VERTEXAI_URL=$(gcloud functions describe profile-manager-vertexai --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Profile Manager Vertex AI deployed: ${PROFILE_MANAGER_VERTEXAI_URL}${NC}"
+    cd ../..
+}
+
+
+deploy_agent_adk() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying ADK Agent${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    # Set up environment for ADK agent
+    cd agents/college_expert_adk
+    cat > .env <<EOF
+GEMINI_API_KEY=${GEMINI_API_KEY}
+GCP_PROJECT_ID=${PROJECT_ID}
+REGION=${REGION}
+GOOGLE_GENAI_USE_VERTEXAI=0
+EOF
+    cd ../..
+    
+    # Deploy ADK agent from root directory, passing the agent path
+    # Note: The base image error is expected and can be ignored - the agent still deploys
+    adk deploy cloud_run \
+        --project="$PROJECT_ID" \
+        --region="$REGION" \
+        --service_name="college-expert-adk-agent" \
+        --allow_origins="*" \
+        --with_ui \
+        agents/college_expert_adk || true
+    
+    gcloud run services add-iam-policy-binding "college-expert-adk-agent" \
+        --member="allUsers" \
+        --role="roles/run.invoker" \
+        --region="$REGION" \
+        --platform=managed
+    
+    ADK_AGENT_URL=$(gcloud run services describe college-expert-adk-agent --region=$REGION --format='value(status.url)')
+    echo -e "${GREEN}✓ ADK Agent deployed: ${ADK_AGENT_URL}${NC}"
+}
+
 deploy_frontend() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Frontend${NC}"
@@ -442,31 +529,54 @@ case "$DEPLOY_TARGET" in
     "knowledge-es")
         deploy_knowledge_base_manager_es
         ;;
+    "agent-adk")
+        deploy_agent_adk
+        ;;
+    "knowledge-vertexai")
+        deploy_knowledge_base_manager_vertexai
+        ;;
+    "profile-vertexai")
+        deploy_profile_manager_vertexai
+        ;;
+    "vertexai")
+        echo -e "${CYAN}Deploying Vertex AI backend (cloud functions + agent)...${NC}"
+        deploy_knowledge_base_manager_vertexai
+        deploy_profile_manager_vertexai
+        deploy_agent_adk
+        ;;
     "functions")
         echo -e "${CYAN}Deploying all cloud functions for dynamic routing...${NC}"
         deploy_profile_manager_rag
         deploy_profile_manager_es
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
+        deploy_knowledge_base_manager_vertexai
+        deploy_profile_manager_vertexai
         ;;
     "backend")
-        echo -e "${CYAN}Deploying backend with all cloud functions for dynamic routing...${NC}"
+        echo -e "${CYAN}Deploying backend (agents + cloud functions)...${NC}"
         deploy_agents
+        deploy_agent_adk
         deploy_profile_manager_rag
         deploy_profile_manager_es
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
+        deploy_knowledge_base_manager_vertexai
+        deploy_profile_manager_vertexai
         ;;
     "frontend")
         deploy_frontend
         ;;
     "all")
-        echo -e "${CYAN}Deploying complete system with dynamic routing support...${NC}"
+        echo -e "${CYAN}Deploying complete system...${NC}"
         deploy_agents
+        deploy_agent_adk
         deploy_profile_manager_rag
         deploy_profile_manager_es
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
+        deploy_knowledge_base_manager_vertexai
+        deploy_profile_manager_vertexai
         deploy_frontend
         ;;
     *)

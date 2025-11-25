@@ -10,7 +10,7 @@ import {
   EyeIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline';
-import { uploadKnowledgeBaseDocument, listKnowledgeBaseDocuments, deleteKnowledgeBaseDocument, getKnowledgeBaseDocumentContent } from '../services/api';
+import { uploadKnowledgeBaseDocument, listKnowledgeBaseDocuments, deleteKnowledgeBaseDocument, getKnowledgeBaseDocumentContent, uploadVertexAIDocument, listVertexAIDocuments, deleteVertexAIDocument } from '../services/api';
 import { auth } from '../firebase';
 import { useApproach } from '../context/ApproachContext';
 
@@ -29,10 +29,10 @@ function KnowledgeBase() {
   const [pdfError, setPdfError] = useState(null);
   const [selectedDocuments, setSelectedDocuments] = useState([]);
   const [deleting, setDeleting] = useState(false);
-  
+
   // Get knowledge base approach from context (reads from localStorage)
   const { selectedApproach: knowledgeBaseApproach } = useApproach();
-  
+
   // Get approach display info
   const getApproachInfo = (approach) => {
     switch (approach) {
@@ -66,6 +66,16 @@ function KnowledgeBase() {
           textClass: 'text-purple-900',
           subTextClass: 'text-purple-700'
         };
+      case 'vertexai':
+        return {
+          name: 'Vertex AI',
+          description: 'Using Vertex AI RAG Engine with semantic corpora',
+          bgClass: 'bg-indigo-50',
+          borderClass: 'border-indigo-200',
+          dotClass: 'bg-indigo-500',
+          textClass: 'text-indigo-900',
+          subTextClass: 'text-indigo-700'
+        };
       default:
         return {
           name: 'Unknown',
@@ -78,7 +88,7 @@ function KnowledgeBase() {
         };
     }
   };
-  
+
   const approachInfo = getApproachInfo(knowledgeBaseApproach);
 
   useEffect(() => {
@@ -91,7 +101,15 @@ function KnowledgeBase() {
     try {
       const currentUser = auth.currentUser;
       const userId = currentUser?.email || 'anonymous';
-      const response = await listKnowledgeBaseDocuments(userId);
+
+      // Use Vertex AI list for vertexai approach
+      let response;
+      if (knowledgeBaseApproach === 'vertexai') {
+        response = await listVertexAIDocuments(userId);
+      } else {
+        response = await listKnowledgeBaseDocuments(userId);
+      }
+
       if (response.success && response.documents) {
         setDocuments(response.documents);
       } else {
@@ -138,8 +156,15 @@ function KnowledgeBase() {
 
           const currentUser = auth.currentUser;
           const userId = currentUser?.email || 'anonymous';
-          const response = await uploadKnowledgeBaseDocument(file, userId);
-          
+
+          // Use Vertex AI upload for vertexai approach
+          let response;
+          if (knowledgeBaseApproach === 'vertexai') {
+            response = await uploadVertexAIDocument(file, userId);
+          } else {
+            response = await uploadKnowledgeBaseDocument(file, userId);
+          }
+
           if (response.success) {
             setUploadProgress(prev => ({
               ...prev,
@@ -164,7 +189,7 @@ function KnowledgeBase() {
       });
 
       const results = await Promise.all(uploadPromises);
-      
+
       const successCount = results.filter(r => r.success).length;
       const failCount = results.filter(r => !r.success).length;
 
@@ -182,8 +207,11 @@ function KnowledgeBase() {
 
       // Reset file input
       setSelectedFiles([]);
-      document.getElementById('file-upload').value = '';
-      
+      const fileInput = document.getElementById('file-upload-input');
+      if (fileInput) {
+        fileInput.value = '';
+      }
+
       // Reload documents list
       await loadDocuments();
     } catch (err) {
@@ -205,8 +233,15 @@ function KnowledgeBase() {
     try {
       const currentUser = auth.currentUser;
       const userId = currentUser?.email || 'anonymous';
-      const response = await deleteKnowledgeBaseDocument(documentName, displayName, userId);
-      
+
+      // Use Vertex AI delete for vertexai approach
+      let response;
+      if (knowledgeBaseApproach === 'vertexai') {
+        response = await deleteVertexAIDocument(documentName, userId);
+      } else {
+        response = await deleteKnowledgeBaseDocument(documentName, displayName, userId);
+      }
+
       if (response.success) {
         setUploadStatus({
           type: 'success',
@@ -270,10 +305,10 @@ function KnowledgeBase() {
       console.log('[DEBUG] Current selected count:', prev.length);
       console.log('[DEBUG] Current selected names:', prev.map(d => d.name));
       console.log('[DEBUG] Documents array length:', documents.length);
-      
+
       const isSelected = prev.some(d => d.name === doc.name);
       console.log('[DEBUG] Is selected:', isSelected);
-      
+
       if (isSelected) {
         const newSelection = prev.filter(d => d.name !== doc.name);
         console.log('[DEBUG] After deselect - count:', newSelection.length);
@@ -314,7 +349,7 @@ function KnowledgeBase() {
     setPdfUrl(null);
     setPdfError(null);
     setLoadingContent(true);
-    
+
     try {
       const response = await getKnowledgeBaseDocumentContent(doc.name);
       if (response.success) {
@@ -352,7 +387,7 @@ function KnowledgeBase() {
         <p className="mt-2 text-gray-600">
           Upload university research documents to the shared knowledge base. These documents will be available to all users for college information queries.
         </p>
-        
+
         {/* Knowledge Base Approach Indicator */}
         <div className={`mt-4 inline-flex items-center px-4 py-2 rounded-lg ${approachInfo.bgClass} border ${approachInfo.borderClass}`}>
           <div className="flex items-center space-x-2">
@@ -372,7 +407,7 @@ function KnowledgeBase() {
       {/* Upload Section */}
       <div className="bg-white shadow rounded-lg p-6">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">Upload University Research</h2>
-        
+
         <div className="space-y-4">
           {/* File Input */}
           <div>
@@ -380,8 +415,8 @@ function KnowledgeBase() {
               Select Documents (PDF, DOCX, TXT) - Multiple files supported
             </label>
             <div className="flex items-center space-x-4">
-              <label 
-                htmlFor="file-upload-input" 
+              <label
+                htmlFor="file-upload-input"
                 className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary cursor-pointer ${uploading ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 <DocumentArrowUpIcon className="h-5 w-5 mr-2" />
@@ -390,7 +425,7 @@ function KnowledgeBase() {
               <input
                 id="file-upload-input"
                 type="file"
-                accept=".pdf,.docx,.txt"
+                accept=".pdf,.docx,.txt,.md"
                 onChange={handleFileSelect}
                 disabled={uploading}
                 multiple
@@ -455,11 +490,10 @@ function KnowledgeBase() {
           <button
             onClick={handleUpload}
             disabled={selectedFiles.length === 0 || uploading}
-            className={`w-full flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-white ${
-              selectedFiles.length === 0 || uploading
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-primary hover:bg-blue-700'
-            } transition-colors`}
+            className={`w-full flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-white ${selectedFiles.length === 0 || uploading
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-primary hover:bg-blue-700'
+              } transition-colors`}
           >
             {uploading ? (
               <>
@@ -476,10 +510,9 @@ function KnowledgeBase() {
 
           {/* Upload Status */}
           {uploadStatus && (
-            <div className={`p-4 rounded-md ${
-              uploadStatus.type === 'success' ? 'bg-green-50' : 
+            <div className={`p-4 rounded-md ${uploadStatus.type === 'success' ? 'bg-green-50' :
               uploadStatus.type === 'warning' ? 'bg-yellow-50' : 'bg-red-50'
-            }`}>
+              }`}>
               <div className="flex">
                 {uploadStatus.type === 'success' ? (
                   <CheckCircleIcon className="h-5 w-5 text-green-400" />
@@ -488,10 +521,9 @@ function KnowledgeBase() {
                 ) : (
                   <XCircleIcon className="h-5 w-5 text-red-400" />
                 )}
-                <p className={`ml-3 text-sm ${
-                  uploadStatus.type === 'success' ? 'text-green-800' : 
+                <p className={`ml-3 text-sm ${uploadStatus.type === 'success' ? 'text-green-800' :
                   uploadStatus.type === 'warning' ? 'text-yellow-800' : 'text-red-800'
-                }`}>
+                  }`}>
                   {uploadStatus.message}
                 </p>
               </div>
@@ -587,9 +619,8 @@ function KnowledgeBase() {
                 return (
                   <div
                     key={doc.name || index}
-                    className={`flex items-center justify-between p-4 border rounded-lg transition-colors ${
-                      isSelected ? 'border-primary bg-blue-50' : 'border-gray-200 hover:bg-gray-50'
-                    }`}
+                    className={`flex items-center justify-between p-4 border rounded-lg transition-colors ${isSelected ? 'border-primary bg-blue-50' : 'border-gray-200 hover:bg-gray-50'
+                      }`}
                   >
                     <div className="flex items-center space-x-3 flex-1">
                       <input
@@ -605,28 +636,28 @@ function KnowledgeBase() {
                       <DocumentTextIcon className="h-6 w-6 text-gray-400" />
                       <div className="flex-1">
                         <p className="text-sm font-medium text-gray-900">{doc.display_name || doc.name}</p>
-                    <p className="text-xs text-gray-500">
-                      {formatFileSize(doc.size_bytes || doc.size)} • {doc.mime_type}
-                    </p>
+                        <p className="text-xs text-gray-500">
+                          {formatFileSize(doc.size_bytes || doc.size)} • {doc.mime_type}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <button
+                        onClick={() => handlePreview(doc)}
+                        className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors"
+                        title="Preview document"
+                      >
+                        <EyeIcon className="h-5 w-5" />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(doc.name, doc.display_name || doc.name)}
+                        className="p-2 text-red-600 hover:bg-red-50 rounded-md transition-colors"
+                        title="Delete document"
+                      >
+                        <TrashIcon className="h-5 w-5" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={() => handlePreview(doc)}
-                    className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors"
-                    title="Preview document"
-                  >
-                    <EyeIcon className="h-5 w-5" />
-                  </button>
-                  <button
-                    onClick={() => handleDelete(doc.name, doc.display_name || doc.name)}
-                    className="p-2 text-red-600 hover:bg-red-50 rounded-md transition-colors"
-                    title="Delete document"
-                  >
-                    <TrashIcon className="h-5 w-5" />
-                  </button>
-                </div>
-              </div>
                 );
               })}
             </div>

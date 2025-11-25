@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useApproach } from '../context/ApproachContext';
-import { 
-  uploadStudentProfile, 
-  listStudentProfiles, 
+import {
+  uploadStudentProfile,
+  listStudentProfiles,
   deleteStudentProfile,
-  getStudentProfileContent
+  getStudentProfileContent,
+  uploadVertexAIProfile,
+  listVertexAIProfiles,
+  deleteVertexAIProfile
 } from '../services/api';
 import {
   DocumentArrowUpIcon,
@@ -34,10 +37,10 @@ function Profile() {
   const [pdfError, setPdfError] = useState(null);
   const [selectedProfiles, setSelectedProfiles] = useState([]);
   const [deleting, setDeleting] = useState(false);
-  
+
   // Get knowledge base approach from context (profile manager follows same approach)
   const { selectedApproach: knowledgeBaseApproach } = useApproach();
-  
+
   // Get approach display info (same as KnowledgeBase)
   const getApproachInfo = (approach) => {
     switch (approach) {
@@ -83,14 +86,14 @@ function Profile() {
         };
     }
   };
-  
+
   const approachInfo = getApproachInfo(knowledgeBaseApproach);
 
   useEffect(() => {
     if (currentUser?.email) {
       loadProfiles();
     }
-  }, [currentUser]);
+  }, [currentUser, knowledgeBaseApproach]); // Added knowledgeBaseApproach to dependencies
 
   const loadProfiles = async () => {
     if (!currentUser?.email) {
@@ -101,7 +104,14 @@ function Profile() {
     setLoading(true);
     setError(null);
     try {
-      const response = await listStudentProfiles(currentUser.email);
+      // Use Vertex AI list for vertexai approach
+      let response;
+      if (knowledgeBaseApproach === 'vertexai') {
+        response = await listVertexAIProfiles(currentUser.email);
+      } else {
+        response = await listStudentProfiles(currentUser.email);
+      }
+
       if (response.success && response.documents) {
         // Transform documents to match frontend expectations
         const transformedProfiles = response.documents.map(doc => ({
@@ -161,8 +171,14 @@ function Profile() {
             [file.name]: { status: 'uploading', progress: 0 }
           }));
 
-          const response = await uploadStudentProfile(file, currentUser.email);
-          
+          // Use Vertex AI upload for vertexai approach
+          let response;
+          if (knowledgeBaseApproach === 'vertexai') {
+            response = await uploadVertexAIProfile(file, currentUser.email);
+          } else {
+            response = await uploadStudentProfile(file, currentUser.email);
+          }
+
           if (response.success) {
             setUploadProgress(prev => ({
               ...prev,
@@ -177,7 +193,7 @@ function Profile() {
             return { success: false, filename: file.name, error: response.message };
           }
         } catch (err) {
-          console.error(`Upload error for ${file.name}:`, err);
+          console.error(`Upload error for ${file.name}: `, err);
           setUploadProgress(prev => ({
             ...prev,
             [file.name]: { status: 'error', progress: 0, error: err.message }
@@ -187,14 +203,14 @@ function Profile() {
       });
 
       const results = await Promise.all(uploadPromises);
-      
+
       const successCount = results.filter(r => r.success).length;
       const failCount = results.filter(r => !r.success).length;
 
       if (successCount > 0) {
         setUploadStatus({
           type: successCount === selectedFiles.length ? 'success' : 'warning',
-          message: `Successfully uploaded ${successCount} file(s)${failCount > 0 ? `, ${failCount} failed` : ''}`
+          message: `Successfully uploaded ${successCount} file(s)${failCount > 0 ? `, ${failCount} failed` : ''} `
         });
       } else {
         setUploadStatus({
@@ -206,7 +222,7 @@ function Profile() {
       // Reset file input
       setSelectedFiles([]);
       document.getElementById('file-upload').value = '';
-      
+
       // Reload profiles list
       await loadProfiles();
     } catch (err) {
@@ -221,16 +237,22 @@ function Profile() {
   };
 
   const handleDelete = async (documentId, displayName) => {
-    if (!confirm(`Are you sure you want to delete "${displayName}"?`)) {
+    if (!confirm(`Are you sure you want to delete "${displayName}" ? `)) {
       return;
     }
 
     try {
-      const response = await deleteStudentProfile(documentId, currentUser.email, displayName);
+      // Use Vertex AI delete for vertexai approach
+      let response;
+      if (knowledgeBaseApproach === 'vertexai') {
+        response = await deleteVertexAIProfile(documentId, currentUser.email);
+      } else {
+        response = await deleteStudentProfile(documentId, currentUser.email, displayName);
+      }
       if (response.success) {
         setUploadStatus({
           type: 'success',
-          message: `Successfully deleted ${displayName}`
+          message: `Successfully deleted ${displayName} `
         });
         await loadProfiles();
       } else {
@@ -248,7 +270,7 @@ function Profile() {
       return;
     }
 
-    if (!confirm(`Are you sure you want to delete ${selectedProfiles.length} profile(s)?`)) {
+    if (!confirm(`Are you sure you want to delete ${selectedProfiles.length} profile(s) ? `)) {
       return;
     }
 
@@ -267,7 +289,7 @@ function Profile() {
       if (successCount > 0) {
         setUploadStatus({
           type: successCount === selectedProfiles.length ? 'success' : 'warning',
-          message: `Successfully deleted ${successCount} profile(s)${failCount > 0 ? `, ${failCount} failed` : ''}`
+          message: `Successfully deleted ${successCount} profile(s)${failCount > 0 ? `, ${failCount} failed` : ''} `
         });
       } else {
         setError('All deletions failed');
@@ -327,7 +349,7 @@ function Profile() {
     setPdfUrl(null);
     setPdfError(null);
     setLoadingContent(true);
-    
+
     try {
       const filename = profile.display_name || profile.name.split('/').pop();
       const response = await getStudentProfileContent(currentUser.email, filename);
@@ -366,15 +388,15 @@ function Profile() {
         <p className="mt-2 text-gray-600">
           Upload your academic profile, transcript, and extracurricular information. This will be used for your admissions analysis.
         </p>
-        
+
         {/* Approach Indicator */}
         <div className={`mt-4 inline-flex items-center px-4 py-2 rounded-lg border ${approachInfo.bgClass} ${approachInfo.borderClass}`}>
           <div className={`w-2 h-2 rounded-full mr-3 ${approachInfo.dotClass}`}></div>
           <div>
-            <div className={`text-sm font-medium ${approachInfo.textClass}`}>
+            <div className={`text-sm font-semibold ${approachInfo.textClass}`}>
               {approachInfo.name}
             </div>
-            <div className={`text-xs ${approachInfo.subTextClass}`}>
+            <div className={`text-xs font-medium ${approachInfo.subTextClass}`}>
               {approachInfo.description}
             </div>
           </div>
@@ -384,7 +406,7 @@ function Profile() {
       {/* Upload Section */}
       <div className="bg-white shadow rounded-lg p-6">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">Upload Profile</h2>
-        
+
         <div className="space-y-4">
           {/* File Input */}
           <div>
@@ -396,8 +418,8 @@ function Profile() {
                 <div className="text-center">
                   <DocumentArrowUpIcon className="mx-auto h-12 w-12 text-gray-400" />
                   <p className="mt-2 text-sm text-gray-600">
-                    {selectedFiles.length > 0 
-                      ? `${selectedFiles.length} file(s) selected` 
+                    {selectedFiles.length > 0
+                      ? `${selectedFiles.length} file(s) selected`
                       : 'Click to select files'}
                   </p>
                   {selectedFiles.length > 0 && (
@@ -469,11 +491,10 @@ function Profile() {
           <button
             onClick={handleUpload}
             disabled={selectedFiles.length === 0 || uploading}
-            className={`w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white ${
-              selectedFiles.length === 0 || uploading
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-primary hover:bg-blue-700'
-            } transition-colors`}
+            className={`w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-white shadow-sm ${selectedFiles.length === 0 || uploading
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary'
+              } transition-all duration-200`}
           >
             {uploading ? (
               <>
@@ -490,22 +511,20 @@ function Profile() {
 
           {/* Status Messages */}
           {uploadStatus && (
-            <div className={`p-4 rounded-md ${
-              uploadStatus.type === 'success' ? 'bg-green-50' : 
-              uploadStatus.type === 'warning' ? 'bg-yellow-50' : 'bg-red-50'
-            }`}>
-              <div className="flex">
+            <div className={`p-4 rounded-lg border ${uploadStatus.type === 'success' ? 'bg-green-50 border-green-200' :
+              uploadStatus.type === 'warning' ? 'bg-yellow-50 border-yellow-200' : 'bg-red-50 border-red-200'
+              }`}>
+              <div className="flex items-start">
                 {uploadStatus.type === 'success' ? (
-                  <CheckCircleIcon className="h-5 w-5 text-green-400" />
+                  <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
                 ) : uploadStatus.type === 'warning' ? (
-                  <CheckCircleIcon className="h-5 w-5 text-yellow-400" />
+                  <CheckCircleIcon className="h-5 w-5 text-yellow-500 mt-0.5" />
                 ) : (
-                  <XCircleIcon className="h-5 w-5 text-red-400" />
+                  <XCircleIcon className="h-5 w-5 text-red-500 mt-0.5" />
                 )}
-                <p className={`ml-3 text-sm ${
-                  uploadStatus.type === 'success' ? 'text-green-800' : 
+                <p className={`ml-3 text-sm font-medium ${uploadStatus.type === 'success' ? 'text-green-800' :
                   uploadStatus.type === 'warning' ? 'text-yellow-800' : 'text-red-800'
-                }`}>
+                  }`}>
                   {uploadStatus.message}
                 </p>
               </div>
@@ -555,7 +574,7 @@ function Profile() {
                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 disabled:opacity-50"
               >
                 <TrashIcon className="h-4 w-4 mr-2" />
-                {deleting ? 'Deleting...' : `Delete ${selectedProfiles.length}`}
+                {deleting ? 'Deleting...' : `Delete ${selectedProfiles.length} `}
               </button>
             )}
             <button
@@ -563,7 +582,7 @@ function Profile() {
               disabled={loading}
               className="flex items-center px-3 py-2 text-sm text-gray-700 hover:text-primary transition-colors"
             >
-              <ArrowPathIcon className={`h-4 w-4 mr-1 ${loading ? 'animate-spin' : ''}`} />
+              <ArrowPathIcon className={`h - 4 w - 4 mr - 1 ${loading ? 'animate-spin' : ''} `} />
               Refresh
             </button>
           </div>
@@ -602,9 +621,8 @@ function Profile() {
                 return (
                   <div
                     key={index}
-                    className={`flex items-center justify-between p-4 border rounded-lg transition-colors ${
-                      isSelected ? 'border-primary bg-blue-50' : 'border-gray-200 hover:bg-gray-50'
-                    }`}
+                    className={`flex items - center justify - between p - 4 border rounded - lg transition - colors ${isSelected ? 'border-primary bg-blue-50' : 'border-gray-200 hover:bg-gray-50'
+                      } `}
                   >
                     <div className="flex items-center space-x-3 flex-1">
                       <input
@@ -618,35 +636,34 @@ function Profile() {
                         <p className="text-sm font-medium text-gray-900 truncate">
                           {profile.display_name || profile.name}
                         </p>
-                    <p className="text-xs text-gray-500">
-                      {formatFileSize(profile.size_bytes)} • {formatDate(profile.create_time)}
-                    </p>
-                    {profile.state && (
-                      <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
-                        profile.state === 'ACTIVE' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                      }`}>
-                        {profile.state}
-                      </span>
-                    )}
+                        <p className="text-xs text-gray-500">
+                          {formatFileSize(profile.size_bytes)} • {formatDate(profile.create_time)}
+                        </p>
+                        {profile.state && (
+                          <span className={`inline - flex items - center px - 2 py - 0.5 rounded text - xs font - medium ${profile.state === 'ACTIVE' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                            } `}>
+                            {profile.state}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <button
+                        onClick={() => handlePreview(profile)}
+                        className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors"
+                        title="Preview document"
+                      >
+                        <EyeIcon className="h-5 w-5" />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(profile.id, profile.display_name)}
+                        className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-md transition-colors"
+                        title="Delete profile"
+                      >
+                        <TrashIcon className="h-5 w-5" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={() => handlePreview(profile)}
-                    className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors"
-                    title="Preview document"
-                  >
-                    <EyeIcon className="h-5 w-5" />
-                  </button>
-                  <button
-                    onClick={() => handleDelete(profile.id, profile.display_name)}
-                    className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-md transition-colors"
-                    title="Delete profile"
-                  >
-                    <TrashIcon className="h-5 w-5" />
-                  </button>
-                </div>
-              </div>
                 );
               })}
             </div>
