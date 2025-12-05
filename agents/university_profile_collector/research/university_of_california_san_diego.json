@@ -1,0 +1,696 @@
+
+{
+  "_id": "university_of_california_san_diego",
+  "metadata": {
+    "official_name": "University of California San Diego",
+    "location": {
+      "city": "La Jolla",
+      "state": "CA",
+      "country": "USA",
+      "zip_code": null
+    },
+    "last_updated": "2024-07-30",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of California San Diego (UCSD) is a highly-ranked public research university consistently recognized for its academic excellence, innovation, and social mobility. It is a major contributor to scientific research and offers a comprehensive range of undergraduate and graduate programs.",
+    "market_position": "Public Ivy / Elite Public Research University",
+    "admissions_philosophy": "UC San Diego conducts a holistic review of first-year applicants to identify and admit students who are prepared to contribute and thrive within the Triton community. Every application, including personal insight questions, is thoroughly reviewed, considering both academic achievements (GPA, rigor of coursework beyond A-G requirements, senior year schedule) and personal qualities such as leadership, motivation, tenacity, initiative, creativity, intellectual independence, and concern for others and community. Notably, UC San Diego does not consider SAT or ACT test scores as a factor in admissions or scholarship decisions.",
+    "rankings": [
+      {
+        "source": "US News & World Report",
+        "year": "2026",
+        "overall_rank": 29,
+        "public_rank": 6
+      },
+      {
+        "source": "Niche",
+        "year": "N/A (Current Grade)",
+        "overall_grade": "A+"
+      },
+      {
+        "source": "Forbes",
+        "year": "2026",
+        "overall_rank": 20,
+        "public_rank": 3
+      }
+    ],
+    "analyst_takeaways": [
+      "UC San Diego's consistent high rankings across multiple reputable sources (US News, Forbes, Niche) underscore its strong academic standing and desirability, particularly as a top-tier public institution. This sustained performance helps attract high-caliber students and faculty.",
+      "The commitment to a holistic review process for undergraduate admissions, coupled with a test-blind policy, indicates an emphasis on a broader range of student attributes beyond standardized test scores. This approach aims to foster a diverse student body and may appeal to applicants who demonstrate strong academic potential and personal qualities but may not excel on standardized tests.",
+      "As a leading public research university, UC San Diego likely attracts significant research funding and fosters an environment of innovation. Its strong performance in social mobility rankings also highlights its commitment to providing opportunities and successful outcomes for students from diverse socioeconomic backgrounds.",
+      "The university's location in La Jolla, California, near the Pacific Ocean, combined with its strong academic profile, presents an attractive value proposition for prospective students seeking both a high-quality education and a desirable living environment.",
+      "The mention of specific program rankings (e.g., psychology, computer science, engineering, economics in the top 20 by US News) suggests strong departmental strengths that can serve as recruitment advantages for students interested in these fields."
+    ]
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 28.4,
+      "in_state_acceptance_rate": 24.6,
+      "international_acceptance_rate": null,
+      "is_test_optional": false,
+      "test_policy_details": "UC San Diego, like the entire University of California system, does not consider standardized test scores (SAT/ACT) in its admissions process, making it test-blind.",
+      "early_admission_stats": [],
+      "transfer_acceptance_rate": 52.7
+    },
+    "longitudinal_trends": {
+      "application_and_admission_numbers": [
+        {
+          "year": "2025-2026",
+          "applications_received": 136740,
+          "number_of_admits": 38460,
+          "acceptance_rate": 28.4
+        },
+        {
+          "year": "2024-2025",
+          "applications_received": 134450,
+          "number_of_admits": 35916,
+          "acceptance_rate": 26.7
+        },
+        {
+          "year": "2023-2024",
+          "applications_received": 130835,
+          "number_of_admits": 32061,
+          "acceptance_rate": 24.0
+        },
+        {
+          "year": "2022-2023",
+          "applications_received": 131229,
+          "number_of_admits": 31102,
+          "acceptance_rate": 23.7
+        },
+        {
+          "year": "2021-2022",
+          "applications_received": 100022,
+          "number_of_admits": 40426,
+          "acceptance_rate": 40.4
+        }
+      ],
+      "acceptance_rate_trend": "UC San Diego's acceptance rate has fluctuated, showing an overall trend of increasing selectivity from 40.4% in 2021-2022 to 24.0% in 2023-2024, with a slight increase to 28.4% for Fall 2025.",
+      "waitlist_stats": [
+        {
+          "class_year": "2028",
+          "offered_waitlist": 27521,
+          "admitted_from_waitlist": 4539,
+          "waitlist_acceptance_rate": "16.5% (Clastify), 23.7% (AdmissionSight)"
+        },
+        {
+          "class_year": "2027",
+          "offered_waitlist": 29087,
+          "admitted_from_waitlist": 2616,
+          "waitlist_acceptance_rate": "9.0%"
+        },
+        {
+          "class_year": "2026",
+          "offered_waitlist": 51350,
+          "admitted_from_waitlist": 2400,
+          "waitlist_acceptance_rate": "4.67% (Clastify), 4.7% (AdmissionSight), 6.6% (Admission SEC AC.BD)"
+        },
+        {
+          "class_year": "2025",
+          "offered_waitlist": 25419,
+          "admitted_from_waitlist": 0,
+          "waitlist_acceptance_rate": "0% (no applicants admitted from 25,419 waits or 8,835 opted in)"
+        },
+        {
+          "class_year": "2024",
+          "offered_waitlist": 19714,
+          "admitted_from_waitlist": 5282,
+          "waitlist_acceptance_rate": "26.8% (AdmissionSight), 26.79% (Clastify)"
+        }
+      ],
+      "notable_policy_changes": "The University of California system, including UC San Diego, adopted a test-blind policy, meaning standardized test scores (SAT/ACT) are not considered in the admissions process."
+    },
+    "admitted_student_profile": {
+      "gpa": {
+        "average_gpa": 3.9,
+        "middle_50_percent_gpa_range": null,
+        "minimum_gpa_requirement": "3.0 for California residents, 3.4 for non-residents (admitted students typically exceed these)."
+      },
+      "testing": {
+        "sat_composite_middle_50_percent": null,
+        "average_sat": null,
+        "sat_math_middle_50_percent": null,
+        "sat_ebrw_middle_50_percent": null,
+        "act_composite_middle_50_percent": null,
+        "average_act": null,
+        "act_25th_percentile": null,
+        "act_75th_percentile": null,
+        "test_optional_notes": "Standardized test scores (SAT/ACT) are not used for admission or scholarship decisions."
+      },
+      "demographics": {
+        "first_gen_percent": null,
+        "legacy_percent": null,
+        "geographic_breakdown_notes": "State residency is considered. Approximately 3% of UCSD students are from out-of-state."
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "UC San Diego is organized into eight academic schools and eight undergraduate residential colleges. The choice of undergraduate college primarily dictates General Education requirements and campus experience, not the major itself. Undergraduate admissions are handled by the central UC San Diego Admissions Office, with majors being declared either directly upon admission or through a competitive application process for 'selective' (previously 'capped' or 'impacted') majors after enrollment.",
+    "colleges": [
+      {
+        "name": "Undergraduate Residential Colleges",
+        "type": "Residential College",
+        "admissions_model_overview": "Students are admitted to UC San Diego and then assigned to one of these eight colleges based on their preference ranking on the UC application and space availability. These colleges define general education requirements and offer a smaller community within the larger university.",
+        "acceptance_rate": null,
+        "majors": [],
+        "minors": [],
+        "notes": "Comprises Revelle, John Muir, Thurgood Marshall, Earl Warren, Eleanor Roosevelt, Sixth, Seventh, and Eighth colleges. Changing colleges is rare and difficult. General Education requirements vary by college."
+      },
+      {
+        "name": "School of Arts & Humanities",
+        "type": "Academic School",
+        "admissions_model_overview": "Direct Entry for most majors. For majors in Music, Theatre and Dance, or Visual Arts, applicants can submit an optional supplementary portfolio/audition to enhance their overall UC San Diego application.",
+        "acceptance_rate": "66% (transfer admit rate in 2023)",
+        "majors": [
+          "African American Studies (B.A.)",
+          "Black Diaspora and African American Studies (B.A.)",
+          "Chicanx and Latinx Studies (B.A.)",
+          "Chinese Studies (B.A.)",
+          "Cinematic Arts (B.A.)",
+          "Classical Studies (B.A.)",
+          "Dance (B.A.)",
+          "German Studies (B.A.)",
+          "History (B.A.)",
+          "Interdisciplinary Computing and the Arts (B.A.)",
+          "Italian Studies (B.A.)",
+          "Japanese Studies (B.A.)",
+          "Jewish Studies (B.A.)",
+          "Literary Arts (B.A.)",
+          "Literature/Writing (B.A.)",
+          "Literatures in English (B.A.)",
+          "Literatures in Spanish (B.A.)",
+          "Media (B.A.)",
+          "Music (B.A.)",
+          "Music: Composition (B.A.)",
+          "Music: Interdisciplinary Computing and the Arts (ICAM) (B.A.)",
+          "Music: Jazz (B.A.)",
+          "Music: Performance (B.A.)",
+          "Music: Technology (B.A.)",
+          "Philosophy (B.A.)",
+          "Russian, East European & Eurasian Studies (B.A.)",
+          "Speculative Design (B.A.)",
+          "Studio (B.A.) (Visual Arts)",
+          "Theatre (B.A.)",
+          "Visual Arts (B.A.)",
+          "Visual Arts: Art History/Criticism (B.A.)",
+          "World Literature and Culture (B.A.)"
+        ],
+        "minors": [
+          "Art History",
+          "Asian American & Pacific Islander Studies",
+          "Black Diaspora and African American Studies",
+          "Chicanx and Latinx Studies",
+          "Chinese Studies",
+          "Classical Studies",
+          "Digital Video and Film Production",
+          "European Studies",
+          "Film Studies",
+          "German Studies",
+          "Global South Studies",
+          "History",
+          "History and Criticism of Film and Video",
+          "Interdisciplinary Computing and the Arts (ICAM)",
+          "Italian Studies",
+          "Japanese Studies",
+          "Jewish Studies",
+          "Middle East Studies",
+          "Photography",
+          "Russian, East European, and Eurasian Studies",
+          "Speculative Design",
+          "Studio Performance/Painting/Drawing/Sculpture",
+          "Transnational Korean Studies"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "School of Biological Sciences",
+        "type": "Academic School",
+        "admissions_model_overview": "Direct Entry to the major. Effective Spring 2025, Biological Sciences majors are no longer selective for current UC San Diego students, open to all interested in declaring a focus. Transfer students require specific major preparation.",
+        "acceptance_rate": "53.4% (Life Sciences transfer admit rate in 2023)",
+        "majors": [
+          "Biology with Specialization in Bioinformatics (B.S.)",
+          "Ecology, Behavior and Evolution (B.S.)",
+          "General Biology (B.S.)",
+          "Human Biology (B.S.)",
+          "Microbiology (B.S.)",
+          "Molecular and Cell Biology (B.S.)",
+          "Neurobiology (B.S.)"
+        ],
+        "minors": [],
+        "notes": "The school offers minors not explicitly listed here."
+      },
+      {
+        "name": "Jacobs School of Engineering",
+        "type": "Academic School",
+        "admissions_model_overview": "All engineering and computer science majors are 'selective' or 'screened' for freshman and transfer applicants. First-year applicants must indicate an engineering major as their first choice. Acceptance to these majors is competitive and may require specific prerequisite courses and a high GPA for current students wishing to switch into these majors.",
+        "acceptance_rate": "56.7% (combined engineering transfer admit rate in 2023). Computer Science freshman admit rate was around 12% in 2023. Computer Science major-specific acceptance rate 15-20% for freshmen.",
+        "majors": [
+          "Bioengineering (B.S.) (Impacted/Selective)",
+          "Bioengineering (Biotechnology) (B.S.) (Impacted/Selective)",
+          "Bioengineering (Bioinformatics) (B.S.) (Impacted/Selective)",
+          "Bioengineering: BioSystems (B.S.) (Impacted/Selective)",
+          "Chemical Engineering (B.S.) (Impacted/Selective)",
+          "Computer Engineering (B.S.) (Impacted/Selective)",
+          "Computer Science (B.S.) (Impacted/Selective)",
+          "Electrical Engineering (B.S.) (Impacted/Selective)",
+          "Electrical Engineering & Society (B.S.) (Impacted/Selective)",
+          "Engineering Physics (B.S.) (Pre-major, then requires fulfillment of course and GPA requirements to be admitted to the major)",
+          "Mechanical Engineering (B.S.) (Impacted/Selective)",
+          "Aerospace Engineering (B.S.) (Impacted/Selective)",
+          "NanoEngineering (B.S.) (Impacted/Selective, screened effective 2026)",
+          "Structural Engineering (B.S.) (Impacted/Selective, screened effective 2025)"
+        ],
+        "minors": [],
+        "notes": "Internal transfer to selective engineering majors is highly competitive. For most engineering majors, current students can apply to switch once per year (between Summer and Fall quarters) based on a point system considering academic performance, California residency, first-generation status, and Pell eligibility. Space is limited, and acceptance is not guaranteed. Transfer students generally will not be permitted to apply to selective engineering majors."
+      },
+      {
+        "name": "School of Physical Sciences",
+        "type": "Academic School",
+        "admissions_model_overview": "Direct Entry for most majors. Some majors, like Physics, are listed as impacted/selective for all students.",
+        "acceptance_rate": "57.2% (Physical Sciences/Health transfer admit rate in 2023)",
+        "majors": [
+          "Astronomy & Astrophysics (B.A./B.S.)",
+          "Biochemistry (B.S.)",
+          "Chemistry (B.S.)",
+          "Environmental Chemistry (B.S.)",
+          "Mathematics (B.S.)",
+          "Mathematics (Applied) (B.S.)",
+          "Mathematics and Economics - Joint Major (B.S.)",
+          "Mathematics - Applied Science (B.S.)",
+          "Mathematics - Computer Science (B.S.)",
+          "Mathematics - Secondary Education (B.A.)",
+          "Molecular Synthesis (B.S.)",
+          "Pharmacological Chemistry (B.S.)",
+          "Physics (B.S.) (Impacted/Selective)",
+          "General Physics (B.A.)",
+          "General Physics/Secondary Education (B.A.)",
+          "Physics/Biophysics (B.S.)",
+          "Physics with Specialization in Computational Physics (B.S.)",
+          "Physics with Specialization in Earth Sciences (B.S.)",
+          "Physics with Specialization in Materials Physics (B.S.)",
+          "Physics with Specialization in Astrophysics (B.S.)",
+          "Probability and Statistics (B.S.)"
+        ],
+        "minors": [],
+        "notes": "The School offers a wide variety of minors."
+      },
+      {
+        "name": "School of Social Sciences",
+        "type": "Academic School",
+        "admissions_model_overview": "Direct Entry for most majors. Students are admitted to UC San Diego and then declare a major within the school.",
+        "acceptance_rate": "57.1% (Social Sciences transfer admit rate in 2023)",
+        "majors": [
+          "Anthropology (Archaeology) (B.A.)",
+          "Anthropology (Biological Anthropology) (B.A.)",
+          "Anthropology (Sociocultural Anthropology) (B.A.)",
+          "Anthropology with a Concentration in Climate Change and Human Solutions (B.A.)",
+          "Biological Anthropology (B.S.)",
+          "Environmental Anthropology (B.S.)",
+          "Business Psychology (B.S.)",
+          "Cognitive Science (B.A./B.S.)",
+          "Cognitive Science with Specialization in Clinical Aspects of Cognition (B.S.)",
+          "Cognitive Science with Specialization in Design and Interaction (B.S.)",
+          "Cognitive Science with Specialization in Language and Culture (B.S.)",
+          "Cognitive Science with Specialization in Machine Learning and Neural Computation (B.S.)",
+          "Cognitive Science with Specialization in Neuroscience (B.S.)",
+          "Cognitive and Behavioral Neuroscience (B.S.)",
+          "Communication (B.A.)",
+          "Media Industries and Communication (B.A.)",
+          "Critical Gender Studies (B.A.)",
+          "Economics (B.A./B.S.)",
+          "Business Economics (B.S.)",
+          "Economics and Mathematics - Joint Major (B.S.)",
+          "Education Sciences (B.S.)",
+          "Ethnic Studies (B.A.)",
+          "Global Health (B.A./B.S.)",
+          "Global South Studies (B.A.)",
+          "Human Developmental Sciences (B.A./B.S.)",
+          "Human Developmental Sciences with a Specialization in Equity and Diversity (B.S.)",
+          "Human Developmental Sciences with a Specialization in Healthy Aging (B.S.)",
+          "International Studies (B.A.)",
+          "International Studies—Anthropology (B.A.)",
+          "International Studies—Economics (B.A.)",
+          "International Studies—History (B.A.)",
+          "International Studies—International Business (B.A.)",
+          "International Studies—Linguistics (B.A.)",
+          "International Studies—Literature (B.A.)",
+          "International Studies—Philosophy (B.A.)",
+          "International Studies—Political Science (B.A.)",
+          "International Studies—Sociology (B.A.)",
+          "Linguistics (B.A.)",
+          "Linguistics (Specialization in Cognition and Language) (B.A.)",
+          "Linguistics (Specialization in Language and Society) (B.A.)",
+          "Linguistics: Language Studies (Specialization in Individual Language) (B.A.)",
+          "Linguistics (Specialization in Speech and Language Sciences) (B.A.)",
+          "Political Science (B.A.)",
+          "Political Science/American Politics (B.A.)",
+          "Political Science/Comparative Politics (B.A.)",
+          "Political Science/Data Analytics (B.S.)",
+          "Political Science/International Relations (B.A.)",
+          "Political Science/Political Theory (B.A.)",
+          "Political Science/Public Law (B.A.)",
+          "Political Science/Public Policy (B.A.)",
+          "Political Science/Race, Ethnicity, and Politics (B.A.)",
+          "Psychology (B.A./B.S.)",
+          "Psychology with a Specialization in Clinical Psychology (B.S.)",
+          "Psychology with a Specialization in Cognitive Psychology (B.S.)",
+          "Psychology with a Specialization in Developmental Psychology (B.S.)",
+          "Psychology with a Specialization in Human Health (B.S.)",
+          "Psychology with a Specialization in Sensation and Perception (B.S.)",
+          "Psychology with a Specialization in Social Psychology (B.S.)",
+          "Study of Religion (B.A.)",
+          "Sociology (B.A.)",
+          "Sociology - American Studies (B.A.)",
+          "Sociology - Culture and Communication (B.A.)",
+          "Sociology - Economy and Society (B.A.)",
+          "Sociology - International Studies (B.A.)",
+          "Sociology - Law and Society (B.A.)",
+          "Sociology - Science and Medicine (B.A.)",
+          "Sociology - Social Inequality (B.A.)",
+          "Urban Studies and Planning (B.A.)",
+          "Real Estate and Development (B.S.)"
+        ],
+        "minors": [
+          "Computational Social Science",
+          "Economics",
+          "Education Studies",
+          "Ethnic Studies",
+          "Global Health",
+          "Human Developmental Sciences",
+          "Latin American Studies",
+          "Linguistics",
+          "Political Science",
+          "Psychology",
+          "Sociology",
+          "Urban Studies and Planning"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "Rady School of Management",
+        "type": "Academic School",
+        "admissions_model_overview": "No separate admissions process for undergraduate programs. Any UC San Diego student can take Rady School classes. To pursue a minor or business-related major, students enroll in courses as they would any other undergraduate course at UCSD.",
+        "acceptance_rate": null,
+        "majors": [
+          "Business Economics (B.S.) (collaborative)",
+          "International Studies — International Business (B.A.) (collaborative)",
+          "Business Psychology (B.S.) (collaborative)"
+        ],
+        "minors": [
+          "Accounting Minor",
+          "Business Analytics Minor",
+          "Business Minor",
+          "Entrepreneurship & Innovation Minor",
+          "Finance Minor",
+          "Marketing Minor",
+          "Technology, Innovation and Supply Chain Minor"
+        ],
+        "notes": "The Rady School of Management primarily focuses on graduate programs, which had a 40.5% acceptance rate in Fall 2019."
+      },
+      {
+        "name": "Herbert Wertheim School of Public Health and Human Longevity Science",
+        "type": "Academic School",
+        "admissions_model_overview": "All Bachelor of Science in Public Health (BSPH) majors have 'Selective Major' status for incoming and continuing students. Students not directly admitted to a BSPH major can complete Public Health Entry Requirements in their first quarter and then apply to declare the major.",
+        "acceptance_rate": "66% (Public Health transfer admit rate in 2023)",
+        "majors": [
+          "Public Health (B.S.) (Impacted/Selective)",
+          "Public Health with Concentration in Biostatistics (B.S.)",
+          "Public Health with Concentration in Climate and Environmental Sciences (B.S.)",
+          "Public Health with Concentration in Community Health Sciences (B.S.)",
+          "Public Health with Concentration in Epidemiology (B.S.)",
+          "Public Health with Concentration in Health Policy and Management Sciences (B.S.)",
+          "Public Health with Concentration in Medicine Sciences (B.S.)"
+        ],
+        "minors": [
+          "Public Health Minor"
+        ],
+        "notes": "Internal transfer requires completion of PH 40 'Introduction to Public Health', BILD 3, and one statistics course (PSYC 60, COGS 14B, HDS 60, or MATH 11), all with a grade of C- or higher. Completion of these requirements does not guarantee admission due to the selective major process."
+      },
+      {
+        "name": "School of Computing, Information, and Data Sciences (SCIDS) / Halıcıoğlu Data Science Institute (HDSI)",
+        "type": "Academic School",
+        "admissions_model_overview": "The Data Science major is a 'Capped Major' (Selective Major). Students can apply for direct admission as a Data Science major by listing it as their first preferred major. Continuing UC San Diego students wishing to change into Data Science must apply via the Selective Major Application, which requires completion of specific screening courses and a minimum 2.0 UC GPA. Starting Fall 2025, transfer students will no longer be eligible to apply to the Data Science major through this process.",
+        "acceptance_rate": "15-20% (Data Science freshman estimate in 2023)",
+        "majors": [
+          "Data Science (B.S.) (Impacted/Selective)"
+        ],
+        "minors": [
+          "Data Science Minor (not available to Computer Science and Engineering majors)"
+        ],
+        "notes": "Internal transfer to Data Science requires successful completion of 3 screening courses: (MATH 18 or MATH 31AH), (MATH 20C or MATH 31BH), and DSC 10. Courses must be completed for a letter grade at the time of application."
+      },
+      {
+        "name": "Scripps Institution of Oceanography",
+        "type": "Academic School",
+        "admissions_model_overview": "Direct Entry for majors. Students are admitted to UC San Diego and then declare a major within this school.",
+        "acceptance_rate": null,
+        "majors": [
+          "Oceanic and Atmospheric Sciences (B.S.)",
+          "Oceanic and Atmospheric Sciences (B.S./MPP only)",
+          "Earth Sciences (B.S.)"
+        ],
+        "minors": [],
+        "notes": "The school may offer minors not explicitly listed here."
+      }
+    ],
+    "minors_certificates": {
+      "undergraduate_minors": [
+        "Accounting",
+        "Art History",
+        "Asian American & Pacific Islander Studies",
+        "Black Diaspora and African American Studies",
+        "Business Analytics",
+        "Business",
+        "Chicanx and Latinx Studies",
+        "Chinese Studies",
+        "Classical Studies",
+        "Computational Social Science",
+        "Computer Science",
+        "Data Science (not for CSE majors)",
+        "Digital Video and Film Production",
+        "Economics",
+        "Education Studies",
+        "Entrepreneurship & Innovation",
+        "Environmental Science",
+        "European Studies",
+        "Ethnic Studies",
+        "Film Studies",
+        "Finance",
+        "German Studies",
+        "Global Health",
+        "Global South Studies",
+        "History",
+        "History and Criticism of Film and Video",
+        "Human Developmental Sciences",
+        "Interdisciplinary Computing and the Arts (ICAM)",
+        "Italian Studies",
+        "Japanese Studies",
+        "Jewish Studies",
+        "Latin American Studies",
+        "Linguistics",
+        "Marketing",
+        "Mathematics",
+        "Middle East Studies",
+        "Philosophy",
+        "Photography",
+        "Political Science",
+        "Psychology",
+        "Public Health",
+        "Russian, East European, and Eurasian Studies",
+        "Sociology",
+        "Speculative Design",
+        "Studio Performance/Painting/Drawing/Sculpture",
+        "Technology, Innovation and Supply Chain",
+        "Theatre and Dance",
+        "Transnational Korean Studies",
+        "Urban Studies and Planning"
+      ],
+      "professional_certificates": [
+        "Business Administration",
+        "Business Management",
+        "Business Intelligence Analysis",
+        "Digital Marketing",
+        "Leadership & Management",
+        "Project Management",
+        "Teaching English as a Foreign Language (TEFL)",
+        ".NET Development with C#",
+        "ADMET in Drug Development",
+        "AI Fundamentals for Leadership",
+        "Computational Social Science (Specialization)",
+        "Occupational Safety & Health (OSHA)"
+      ],
+      "change_of_major_policy": "The ability to change majors at UC San Diego depends on whether the desired major is 'selective' (formerly 'capped' or 'impacted') or not. Non-selective majors generally have a simpler process. Selective majors require a competitive screening process, often involving prerequisite courses and maintaining a certain GPA. Starting Fall 2025, transfer students admitted to UC San Diego will generally no longer be allowed to apply to selective majors in the Summer application cycle after their first year. Students who have completed 150 or more units must submit a quarter-by-quarter plan and obtain both department and college permission to change their major."
+    }
+  },
+  "application_process": {
+    "platforms": [
+      "UC Application (also known as UC Apply)"
+    ],
+    "application_deadlines": {
+      "early_decision_deadline": null,
+      "early_action_deadline": null,
+      "regular_decision_deadline": "December 1 (Application submission period: October 1 - December 1 for Fall admission)",
+      "ed2_deadline": null,
+      "financial_aid_priority_deadline": "March 2 (for FAFSA and California Dream Act applications to be considered for priority funding; UC application also serves as scholarship application for merit-based aid)",
+      "admission_decisions_posted": "By Mid-March (First-Year Applicants), By April 30 (Transfer Applicants)",
+      "accept_offer_deadline": "May 1 (First-Year Admits), June 1 (Transfer Admits)",
+      "waitlist_opt_in_deadline": "April 15 (First-Year Applicants), May 15 (Transfer Applicants)",
+      "appeals_deadline": "March 28 (First-Year Applicants not admitted), May 9 (Transfer Applicants not admitted)",
+      "final_transcripts_due": "July 1",
+      "ap_ib_results_due": "July 15"
+    },
+    "supplemental_requirements": {
+      "number_and_type_of_essays": "Four Personal Insight Questions (PIQs) selected from eight prompts, each with a 350-word limit. UC San Diego does not require a separate supplemental essay beyond the UC Application.",
+      "portfolio_requirements": "Optional for majors in the Arts.",
+      "audition_requirements": "No specific audition requirements mentioned for undergraduate admissions."
+    },
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Grade Point Average (GPA) in 10th and 11th grade A-G coursework (weighted for UC-approved honors, AP, IB, or UC-transferable college courses)",
+        "Rigor of coursework beyond minimum A-G requirements, including honors, AP, IB, or transferable college courses",
+        "Senior year schedule",
+        "Personal qualities (leadership, motivation, tenacity, initiative, originality, creativity, intellectual independence, responsibility, insight, maturity, concern for others and community)",
+        "Creative, intellectual, social, or professional achievement"
+      ],
+      "secondary_factors": [
+        "Challenges, hardships, or unusual circumstances",
+        "Eligibility in the Local Context (ELC) for students ranking in the top 9% of their California high school class"
+      ],
+      "essay_importance": "High (Personal Insight Questions are thoroughly reviewed and are an opportunity to showcase experiences, values, goals, and contributions to the community; all questions are given equal consideration)",
+      "demonstrated_interest_policy": "Does not consider demonstrated interest.",
+      "interview_policy": "Does not conduct interviews for undergraduate admissions.",
+      "legacy_consideration_strength": "None (Public universities in California, including UC San Diego, do not practice legacy admissions, and California has banned preferential legacy admissions).",
+      "first_generation_boost": "Considered (Academic accomplishments are evaluated in light of life experiences and special circumstances, including being a first-generation college student)."
+    }
+  },
+  "financials": {
+    "tuition_model": "Public, varying by residency (in-state vs. out-of-state).",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition_and_fees": "$16,758",
+        "room_and_board_on_campus": "$24,858",
+        "total_estimated_coa": "$42,902"
+      },
+      "out_of_state": {
+        "tuition_and_fees": "$50,958",
+        "room_and_board_on_campus": "$24,858",
+        "total_estimated_coa": "$77,102"
+      }
+    },
+    "aid_philosophy": {
+      "need_blind": "Yes, for all but some international applicants.",
+      "meets_100_percent_need": "Committed to providing a comprehensive need-based financial aid program. Regents scholars with demonstrated financial need receive additional funds to meet that need.",
+      "merit_available": "Yes, scholarships are awarded for academic merit only, or merit and additional criteria."
+    },
+    "scholarships": [
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit-based (academic excellence). Also provides additional funds for California residents with demonstrated financial need.",
+        "amount_range": "$5,000 annually (for those without demonstrated financial need), potentially more for those with need.",
+        "deadlines_application_method": "Based solely on academic achievement as reflected in your UC admissions application. No separate application is mentioned for initial consideration.",
+        "benefits_beyond_money": "Annual honorarium. For CA residents with financial need, additional scholarship and/or grant funds to meet their financial need for 4 academic years (freshmen) or 2 (transfers)."
+      },
+      {
+        "name": "Rose Foundation Scholarship",
+        "type": "Merit and Need-based. For graduates of San Diego County or Imperial County high schools who are historically underrepresented, demonstrate financial need, are full-time students, and have at least a 2.5 GPA.",
+        "amount_range": "Up to $20,000 ($5,000 per year for 4 years).",
+        "deadlines_application_method": "General scholarships require FAFSA/Dream Act Application by April 2nd for need-based consideration.",
+        "benefits_beyond_money": null
+      },
+      {
+        "name": "Chancellor's Associates Scholarship",
+        "type": "Need-based. For incoming freshman California residents with family income less than $80,000.",
+        "amount_range": "Renewable, specific amount not listed.",
+        "deadlines_application_method": "General scholarships require FAFSA/Dream Act Application by April 2nd for need-based consideration.",
+        "benefits_beyond_money": null
+      },
+      {
+        "name": "UC San Diego Crankstart Scholarship",
+        "type": "Need-based. For transfer students from California community colleges with a high GPA, demonstrated financial need, and who have overcome hardships/challenges.",
+        "amount_range": "Renewable, specific amount not listed.",
+        "deadlines_application_method": "General scholarships require FAFSA/Dream Act Application by April 2nd for need-based consideration.",
+        "benefits_beyond_money": null
+      },
+      {
+        "name": "Hope Scholars Program",
+        "type": "Need-based, for former foster youth.",
+        "amount_range": "Up to $5,000 per academic year.",
+        "deadlines_application_method": "General scholarships require FAFSA/Dream Act Application by April 2nd for need-based consideration.",
+        "benefits_beyond_money": null
+      },
+      {
+        "name": "General Continuing Undergraduate Scholarships",
+        "type": "Merit or a combination of merit and other factors such as major, leadership, or financial need.",
+        "amount_range": "Varies.",
+        "deadlines_application_method": "The 2025-2026 application was closed on April 2, 2025. Recipients and non-recipients notified by October 2025. FAFSA or Dream Act Application is required by April 2nd for need-based scholarships.",
+        "benefits_beyond_money": null
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "UCSD generally has a generous policy for granting credit for prior learning, including AP, IB, and transfer coursework, provided it meets specific score requirements and is not duplicative. The credit can be used for elective units, general education requirements, or as subject credit towards a major or minor. While credit is awarded, there's an emphasis on ensuring academic fit, with mechanisms like articulation agreements and departmental petitions to align transfer work with UCSD's curriculum.",
+    "ap_policy": {
+      "general_rule": "The University of California San Diego grants credit for most College Board Advanced Placement (AP) Tests on which a student scores 3 or higher.",
+      "exceptions": "Students will not receive credit for a UC San Diego course if it duplicates AP credit. If an AP exam duplicates another AP or IB exam in the same subject area, credit will be awarded only once.",
+      "usage": "AP credit can be used as subject credit for a minor or prerequisite to a major, credit toward general education requirements, or elective units toward graduation. The units granted for AP tests are not counted toward the maximum number of credits required for formal declaration of an undergraduate major, nor do they require students to graduate earlier. Some AP scores can also clear the Entry Level Writing requirement or satisfy American History and Institutions requirements."
+    },
+    "ib_policy": {
+      "hl_vs_sl_treatment": "Only Higher Level (HL) International Baccalaureate (IB) exams are accepted for credit by the University of California. Standard Level (SL) exams are generally not given credit, with the exception that a score of 6 or 7 on a Standard Level English A exam can meet the UC Entry Level Writing requirement, though no unit credit is granted for it.",
+      "diploma_bonus": "The University of California grants 6 quarter units of credit for the IB Diploma where a student earns a score of 30 or more, in addition to units earned for individual Higher Level exams.",
+      "general_rule": "For individual Higher Level exams, UC San Diego grants 8 quarter units of credit for scores of 5 or higher. If an IB exam duplicates an AP exam or a college course in the same subject area, credit will be awarded only once.",
+      "usage": "IB credit can apply toward graduation, major requirements, or college-specific general education requirements. A maximum of 30 units of IB credit is typically the limit at UC San Diego."
+    },
+    "transfer_articulation": {
+      "tools_used": "For courses taken at California Community Colleges, students should use assist.org to review transfer articulation agreements and understand how courses will transfer to UC San Diego. Some departments may also share equivalency information for courses from other UC campuses, out-of-state institutions, and other four-year universities.",
+      "unit_caps_and_restrictions": "All lower-division units from two-year and/or four-year colleges/universities are limited to a maximum of 70 semester (105 quarter) units toward the UC degree. For units beyond this maximum, subject credit may be granted to satisfy subject requirements, but not unit credit. To be considered for junior-level transfer, students must complete 60 semester (90 quarter) units of UC-transferable college credit with a minimum GPA of 2.4 (2.8 for non-California residents). Each transferable course must be worth at least 3 semester (4-5 quarter) units. A grade of C or better is generally required for transferability, and grades of D typically do not satisfy major or general education requirements. Pass/Credit (P/CR) grades are acceptable if equivalent to a C or better, but students are strongly advised to take major-specific courses for a letter grade. For courses without a known UC San Diego equivalency, especially if needed for a specific degree requirement, students must submit a petition to the relevant department for faculty evaluation."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic achievement, including a high GPA and challenging coursework (AP, IB, honors). The average weighted GPA of admitted students is significantly higher than the minimum requirements, with some sources citing 4.08-4.29.",
+      "Demonstration of personal qualities such as leadership, motivation, tenacity, initiative, originality, creativity, intellectual independence, responsibility, insight, maturity, and concern for others and the community.",
+      "A holistic review process that considers both academic and non-academic factors.",
+      "For California residents, a minimum GPA of 3.0, and for non-residents, a minimum GPA of 3.4, with no grade lower than a 'C' in A-G courses.",
+      "Applicants often exceed minimum UC admission requirements significantly.",
+      "The acceptance rate is competitive, ranging from approximately 25% to 38% in recent years."
+    ],
+    "common_activities": [
+      "Extracurricular activities that demonstrate dedication and commitment.",
+      "Leadership roles, such as serving as an executive in a club, mentoring other students, leading a sports team, or taking care of family.",
+      "Community service.",
+      "Exemplary, sustained achievement in intellectual or creative endeavors, including performing arts and athletics.",
+      "Employment.",
+      "Participation in academic enrichment programs."
+    ],
+    "essay_tips": {
+      "topics_that_worked": [
+        "Leadership experiences, particularly those where the student positively influenced others, resolved disputes, or contributed to group efforts over time, often by describing a problem, its solution, and lessons learned.",
+        "Describing the most significant challenge faced and steps taken to overcome it, and its effect on academic achievement.",
+        "Highlighting a greatest talent or skill and how it has been developed and demonstrated over time.",
+        "Discussing an academic subject that inspires the student and how this interest has been furthered inside and/or outside the classroom.",
+        "Explaining what makes a student stand out as a strong candidate beyond what's already in the application.",
+        "Showcasing contributions to making the school or community a better place.",
+        "Connecting personal experiences or insights to global issues, showing awareness and urgency, and tying them to future goals at the university."
+      ],
+      "writing_style_preferences": [
+        "Essays are considered 'very important' for understanding a student's strengths, character, and personal qualities.",
+        "Responses to the UC Personal Insight Questions (PIQs) should be 350 words or less for each of the four chosen prompts.",
+        "Choose prompts that allow you to show who you are in your own words.",
+        "Authenticity and clear communication are valued.",
+        "Weaving in curiosity, connection, and impact naturally into the story."
+      ],
+      "things_to_avoid": [
+        "Generic essays that could apply to any student at any school, lacking vivid stories, intellectual depth, or real connection to the university.",
+        "Not showcasing personal meaning and values behind experiences or ideas."
+      ]
+    },
+    "red_flags": [
+      "UCSD does not consider SAT or ACT test scores as a factor in admissions or scholarship decisions. However, some sources suggest that having scores significantly below the average (e.g., ACT 26 or below, SAT below 1470) could still make admission difficult due to the competitiveness.",
+      "Recommendation letters are not taken into account.",
+      "Appeals for non-admission are very rare and only considered if applicants have new and compelling academic information not presented in their original application.",
+      "While not explicitly stated as a 'red flag' for UCSD, one anecdotal report suggests that highly selective UCs might reject 'overqualified' students if they perceive the school as a safety and expect the student to choose a 'better' university."
+    ]
+  }
+}
