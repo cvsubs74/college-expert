@@ -8,19 +8,20 @@ Each class is annotated with:
 - Source: Where to find this data (search hints)
 - Example: Sample values
 
-AGENT MAPPING (11 Agents):
+AGENT MAPPING (13 Agents):
 1. StrategyAgent -> Metadata, StrategicProfile
 2. AdmissionsCurrentAgent -> CurrentStatus
-3. AdmissionsTrendsAgent -> LongitudinalTrends
-4. AdmittedProfileAgent -> AdmittedStudentProfile (GPA, Testing, Demographics)
+3. AdmissionsTrendsAgent -> LongitudinalTrends (includes WaitlistDetailedStats)
+4. AdmittedProfileAgent -> AdmittedStudentProfile (GPA, Testing, Demographics, RaceEthnicity)
 5. CollegesAgent -> College structure, housing, archetypes
-6. MajorsAgent -> Major details per college
+6. MajorsAgent -> Major details per college (includes Impaction Details)
 7. ApplicationAgent -> Deadlines, supplementals, holistic factors
 8. StrategyTacticsAgent -> ApplicationStrategy (gaming tactics)
 9. FinancialsAgent -> Cost of attendance, aid philosophy
 10. ScholarshipsAgent -> All scholarships
 11. CreditPoliciesAgent -> AP/IB/Transfer policies
 12. StudentInsightsAgent -> Crowdsourced tips
+13. OutcomesAgent -> Career ROI, Retention, Earnings
 """
 
 from typing import List, Optional
@@ -210,9 +211,36 @@ class CurrentStatus(BaseModel):
 
 # ==============================================================================
 # AGENT: AdmissionsTrendsAgent
-# Responsible for: LongitudinalTrends (historical data over 3-5 years)
+# Responsible for: LongitudinalTrends (includes WaitlistDetailedStats)
 # Sources: Common Data Set archives, Prep Scholar, news articles
 # ==============================================================================
+
+class WaitlistDetailedStats(BaseModel):
+    """Detailed breakdown of waitlist outcomes (The 'Black Box')."""
+    year: int = Field(
+        description="[REQUIRED] Cycle year. Example: 2024"
+    )
+    offered_spots: Optional[int] = Field(
+        default=None,
+        description="[REQUIRED] Total students offered a waitlist spot. Source: Common Data Set Section C2"
+    )
+    accepted_spots: Optional[int] = Field(
+        default=None,
+        description="[REQUIRED] Total students who accepted a waitlist spot. Source: Common Data Set Section C2"
+    )
+    admitted_from_waitlist: Optional[int] = Field(
+        default=None,
+        description="[REQUIRED] Total students admitted from the waitlist. Source: Common Data Set Section C2"
+    )
+    waitlist_admit_rate: Optional[float] = Field(
+        default=None,
+        description="[OPTIONAL] Calculated conversion rate: (admitted / accepted) * 100"
+    )
+    is_waitlist_ranked: bool = Field(
+        default=False,
+        description="[REQUIRED] Whether waitlist positions are ranked. Source: Common Data Set Section C2"
+    )
+
 
 class LongitudinalTrend(BaseModel):
     """Admissions data for a single year."""
@@ -245,13 +273,9 @@ class LongitudinalTrend(BaseModel):
     yield_rate: float = Field(
         description="[REQUIRED] Percentage of admitted students who enrolled. Example: 42.5"
     )
-    waitlist_offered: Optional[int] = Field(
+    waitlist_stats: Optional[WaitlistDetailedStats] = Field(
         default=None,
-        description="[OPTIONAL] Number of students offered waitlist spot"
-    )
-    waitlist_accepted: Optional[int] = Field(
-        default=None,
-        description="[OPTIONAL] Number of students who accepted off waitlist"
+        description="[REQUIRED] Detailed waitlist statistics. REPLACES flat waitlist fields"
     )
     notes: str = Field(
         default="",
@@ -261,7 +285,7 @@ class LongitudinalTrend(BaseModel):
 
 # ==============================================================================
 # AGENT: AdmittedProfileAgent
-# Responsible for: GPA, Testing, Demographics (including gender breakdown)
+# Responsible for: GPA, Testing, Demographics (includes RaceEthnicity)
 # Sources: Common Data Set Sections C, PrepScholar, Niche, IPEDS
 # ==============================================================================
 
@@ -374,6 +398,19 @@ class GenderBreakdown(BaseModel):
     )
 
 
+class RaceEthnicityStats(BaseModel):
+    """Detailed US Census/IPEDS racial and ethnic breakdown."""
+    white: Optional[float] = Field(default=None)
+    black_african_american: Optional[float] = Field(default=None)
+    hispanic_latino: Optional[float] = Field(default=None)
+    asian: Optional[float] = Field(default=None)
+    native_american_alaskan: Optional[float] = Field(default=None)
+    pacific_islander: Optional[float] = Field(default=None)
+    two_or_more_races: Optional[float] = Field(default=None)
+    unknown: Optional[float] = Field(default=None)
+    non_resident_alien: Optional[float] = Field(default=None, description="International students")
+
+
 class Demographics(BaseModel):
     """Demographic breakdown of admitted students."""
     first_gen_percentage: Optional[float] = Field(
@@ -396,6 +433,14 @@ class Demographics(BaseModel):
         default=None,
         description="[REQUIRED] Gender-based admissions stats. Source: Common Data Set C15, IPEDS"
     )
+    racial_breakdown: Optional[RaceEthnicityStats] = Field(
+        default=None,
+        description="[REQUIRED] Detailed racial breakdown. Source: Common Data Set Section B"
+    )
+    religious_affiliation: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Religious affiliation if applicable. Source: Official About page or CDS Section A"
+    )
 
 
 class AdmittedStudentProfile(BaseModel):
@@ -407,7 +452,7 @@ class AdmittedStudentProfile(BaseModel):
         description="[REQUIRED] Test score statistics"
     )
     demographics: Demographics = Field(
-        description="[REQUIRED] Demographic breakdown including gender"
+        description="[REQUIRED] Demographic breakdown including gender and race"
     )
 
 
@@ -455,6 +500,14 @@ class Major(BaseModel):
         default=[],
         description="[REQUIRED if impacted] High school courses required. Examples: ['Calculus BC', 'Physics C', 'AP CS']"
     )
+    minimum_gpa_to_declare: Optional[float] = Field(
+        default=None,
+        description="[OPTIONAL] Minimum GPA required to switch into this major after enrolling. Source: Department catalog"
+    )
+    weeder_courses: List[str] = Field(
+        default=[],
+        description="[OPTIONAL] Notorious filter courses. Source: Reddit, Student reviews. Example: 'Organic Chemistry (CHEM 35)'"
+    )
     special_requirements: str = Field(
         default="",
         description="[OPTIONAL] Extra requirements. Examples: 'Portfolio required', 'Audition needed'"
@@ -466,6 +519,10 @@ class Major(BaseModel):
     internal_transfer_allowed: bool = Field(
         default=True,
         description="[REQUIRED] Whether internal transfer into this major is allowed"
+    )
+    direct_admit_only: bool = Field(
+        default=False,
+        description="[REQUIRED] If true, NO internal transfers allowed. Source: Official major page"
     )
     internal_transfer_gpa: Optional[float] = Field(
         default=None,
@@ -895,6 +952,52 @@ class ApplicationStrategy(BaseModel):
 
 
 # ==============================================================================
+# AGENT: OutcomesAgent (NEW)
+# Responsible for: Career ROI, Salary, Retention
+# Sources: College Scorecard, PCSC, Official Outcome Reports
+# ==============================================================================
+
+class RetentionStats(BaseModel):
+    """Student retention and graduation rates."""
+    freshman_retention_rate: Optional[float] = Field(
+        default=None,
+        description="[REQUIRED] % of freshmen returning for sophomore year. Source: Common Data Set Section B"
+    )
+    graduation_rate_4_year: Optional[float] = Field(
+        default=None,
+        description="[REQUIRED] 4-year graduation rate. Source: Common Data Set Section B"
+    )
+    graduation_rate_6_year: Optional[float] = Field(
+        default=None,
+        description="[REQUIRED] 6-year graduation rate. Source: Common Data Set Section B"
+    )
+
+
+class CareerOutcomes(BaseModel):
+    """Post-graduation career statistics."""
+    median_earnings_10yr: Optional[int] = Field(
+        default=None,
+        description="[REQUIRED] Median earnings 10 years after entry. Source: College Scorecard"
+    )
+    employment_rate_2yr: Optional[float] = Field(
+        default=None,
+        description="[OPTIONAL] % employed 2 years after graduation"
+    )
+    grad_school_rate: Optional[float] = Field(
+        default=None,
+        description="[OPTIONAL] % continuing to graduate school"
+    )
+    top_employers: List[str] = Field(
+        default=[],
+        description="[REQUIRED] Top companies hiring graduates. Source: Career Center reports, LinkedIn Alumni"
+    )
+    loan_default_rate: Optional[float] = Field(
+        default=None,
+        description="[OPTIONAL] Federal loan default rate"
+    )
+
+
+# ==============================================================================
 # MAIN SCHEMA: UniversityProfile
 # Combines all sections into complete profile
 # ==============================================================================
@@ -916,6 +1019,7 @@ class UniversityProfile(BaseModel):
     - ScholarshipsAgent: financials.scholarships
     - CreditPoliciesAgent: credit_policies
     - StudentInsightsAgent: student_insights
+    - OutcomesAgent: outcomes, student_retention
     """
     id: str = Field(
         alias="_id",
@@ -948,4 +1052,12 @@ class UniversityProfile(BaseModel):
     )
     student_insights: StudentInsights = Field(
         description="[REQUIRED] Crowdsourced tips. AGENT: StudentInsightsAgent"
+    )
+    outcomes: CareerOutcomes = Field(
+        default_factory=CareerOutcomes,
+        description="[REQUIRED] Career ROI stats. AGENT: OutcomesAgent"
+    )
+    student_retention: RetentionStats = Field(
+        default_factory=RetentionStats,
+        description="[REQUIRED] Retention and graduation rates. AGENT: OutcomesAgent"
     )

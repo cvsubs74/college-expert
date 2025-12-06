@@ -124,7 +124,7 @@ admissions_current_agent = LlmAgent(
     description="Researches current admissions cycle statistics.",
     instruction="""Research: {university_name}
 
-SEARCH for: Common Data Set 2024, acceptance rates, test policy, early admission stats.
+SEARCH for: Common Data Set 2024 Section C, acceptance rates, test policy, early admission stats.
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -159,16 +159,27 @@ CRITICAL:
 
 
 # ==============================================================================
-# AGENT 3: Admissions Trends Agent -> LongitudinalTrends
+# AGENT 3: Admissions Trends Agent -> LongitudinalTrends + WaitlistDetailedStats
 # ==============================================================================
 
 admissions_trends_agent = LlmAgent(
     name="AdmissionsTrendsAgent",
     model=MODEL_NAME,
-    description="Researches historical admissions trends over 3-5 years.",
+    description="Researches historical admissions trends and WAITLIST mechanics.",
     instruction="""Research: {university_name}
 
-SEARCH for: admissions statistics 2024-2021, acceptance rate history, yield rates, waitlist data.
+YOU MUST SEARCH for: 
+- Common Data Set Section C2 (WAITLIST data specifically)
+- Admissions statistics 2024-2021
+- Acceptance rate history
+- Yield rates
+
+WAITLIST REQUIREMENTS (The "Black Box"):
+- Find: applicants OFFERED waitlist spots
+- Find: applicants who ACCEPTED waitlist spots  
+- Find: applicants ADMITTED from waitlist
+- CALCULATE: waitlist_admit_rate = (admitted / accepted) * 100
+- Find: whether waitlist is RANKED or unranked
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -183,13 +194,20 @@ OUTPUT JSON with EXACTLY this structure:
     "acceptance_rate_in_state": 30.0,
     "acceptance_rate_out_of_state": 18.0,
     "yield_rate": 23.2,
-    "waitlist_offered": 15000,
-    "waitlist_accepted": 10000,
+    "waitlist_stats": (
+      "year": 2025,
+      "offered_spots": 15000,
+      "accepted_spots": 10000,
+      "admitted_from_waitlist": 2500,
+      "waitlist_admit_rate": 25.0,
+      "is_waitlist_ranked": false
+    ),
     "notes": "Record number of applications"
   )
 ]
 
 Include at least 3-5 years of data.
+If a school HIDES waitlist data, explicitly note "Waitlist data not publicly disclosed" in notes.
 Use null for unknown values. Use ( ) instead of curly braces.
 """,
     tools=[google_search],
@@ -198,16 +216,21 @@ Use null for unknown values. Use ( ) instead of curly braces.
 
 
 # ==============================================================================
-# AGENT 4: Admitted Profile Agent -> AdmittedStudentProfile
+# AGENT 4: Admitted Profile Agent -> AdmittedStudentProfile + RaceEthnicity
 # ==============================================================================
 
 admitted_profile_agent = LlmAgent(
     name="AdmittedProfileAgent",
     model=MODEL_NAME,
-    description="Researches admitted student statistics including GPA, test scores, and demographics.",
+    description="Researches admitted student statistics including GPA, test scores, and FULL demographics.",
     instruction="""Research: {university_name}
 
-SEARCH for: Common Data Set section C, PrepScholar stats, middle 50 scores, demographics, gender breakdown.
+SEARCH for: 
+- Common Data Set Section C (GPA, test scores)
+- Common Data Set Section B2 (RACIAL/ETHNIC breakdown)
+- PrepScholar admitted student stats
+- Niche demographics
+- IPEDS data
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -216,6 +239,8 @@ OUTPUT JSON with EXACTLY this structure:
     "weighted_middle_50": "4.10-4.30",
     "unweighted_middle_50": "3.80-4.00",
     "average_weighted": 4.20,
+    "percentile_25": "3.95" or null,
+    "percentile_75": "4.00" or null,
     "notes": "Most admits have straight A's in honors/AP"
   ),
   "testing": (
@@ -249,10 +274,23 @@ OUTPUT JSON with EXACTLY this structure:
         "note": ""
       ),
       "non_binary": null
-    )
+    ),
+    "racial_breakdown": (
+      "white": 35.0,
+      "black_african_american": 5.0,
+      "hispanic_latino": 22.0,
+      "asian": 30.0,
+      "native_american_alaskan": 0.5,
+      "pacific_islander": 0.3,
+      "two_or_more_races": 6.0,
+      "unknown": 1.2,
+      "non_resident_alien": null
+    ),
+    "religious_affiliation": null
   )
 )
 
+CRITICAL: Get FULL racial breakdown from Common Data Set Section B2 or IPEDS.
 Use null for unknown values. Use ( ) instead of curly braces.
 """,
     tools=[google_search],
@@ -310,16 +348,26 @@ Use ( ) instead of curly braces.
 
 
 # ==============================================================================
-# AGENT 6: Majors Agent -> Majors by College
+# AGENT 6: Majors Agent -> Majors with IMPACTION DETAILS
 # ==============================================================================
 
 majors_agent = LlmAgent(
     name="MajorsAgent",
     model=MODEL_NAME,
-    description="Researches all majors with acceptance rates, prerequisites, and transfer policies.",
+    description="Researches all majors with acceptance rates, prerequisites, WEEDER COURSES, and GPA FLOORS.",
     instruction="""Research: {university_name}
 
-SEARCH for: undergraduate majors list, impacted/capped majors, major-specific acceptance rates, internal transfer policies.
+YOU MUST SEARCH for:
+- Undergraduate majors list
+- Impacted/capped majors lists
+- "transferring into [Major] at [University]" to find HIDDEN PREREQUISITES
+- Major-specific acceptance rates
+- Departmental handbooks for GPA requirements
+
+HIDDEN PREREQUISITES TO FIND:
+- minimum_gpa_to_declare: GPA floor to switch INTO this major after enrolling
+- weeder_courses: Courses that filter out students (e.g., "Organic Chemistry CHEM 140")
+- direct_admit_only: If TRUE, NO internal transfers allowed - must apply as freshman
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -331,12 +379,15 @@ OUTPUT JSON with EXACTLY this structure:
       "is_impacted": true,
       "acceptance_rate": 8.0,
       "average_gpa_admitted": 4.25,
-      "prerequisite_courses": ["Calculus AB/BC", "Physics", "Programming experience"],
+      "prerequisite_courses": ["Calculus BC", "Physics C", "AP CS A"],
+      "minimum_gpa_to_declare": 3.5,
+      "weeder_courses": ["CSE 21 Discrete Math", "CSE 30 Systems Programming"],
       "special_requirements": null,
       "admissions_pathway": "Direct Admit",
       "internal_transfer_allowed": false,
+      "direct_admit_only": true,
       "internal_transfer_gpa": null,
-      "notes": "Extremely competitive, apply directly as freshman"
+      "notes": "Extremely competitive, NO internal transfers"
     ),
     (
       "name": "Mechanical Engineering",
@@ -344,12 +395,15 @@ OUTPUT JSON with EXACTLY this structure:
       "is_impacted": true,
       "acceptance_rate": 12.0,
       "average_gpa_admitted": 4.15,
-      "prerequisite_courses": ["Calculus", "Physics"],
+      "prerequisite_courses": ["Calculus", "Physics", "Chemistry"],
+      "minimum_gpa_to_declare": 3.2,
+      "weeder_courses": ["ENGR 10 Intro to Engineering"],
       "special_requirements": null,
       "admissions_pathway": "Direct Admit",
       "internal_transfer_allowed": true,
-      "internal_transfer_gpa": 3.5,
-      "notes": "Internal transfer possible with high GPA"
+      "direct_admit_only": false,
+      "internal_transfer_gpa": 3.2,
+      "notes": "Internal transfer possible but competitive"
     )
   ],
   "College of Letters and Science": [
@@ -360,17 +414,26 @@ OUTPUT JSON with EXACTLY this structure:
       "acceptance_rate": null,
       "average_gpa_admitted": null,
       "prerequisite_courses": [],
+      "minimum_gpa_to_declare": 2.0,
+      "weeder_courses": ["ECON 100A Microeconomics"],
       "special_requirements": null,
       "admissions_pathway": "Pre-Major",
       "internal_transfer_allowed": true,
-      "internal_transfer_gpa": 2.5,
+      "direct_admit_only": false,
+      "internal_transfer_gpa": 2.0,
       "notes": "Open major, easy to switch into"
     )
   ]
 )
 
 Use EXACT college names from the university.
-Include 10-15 majors per college.
+Include 10-15 majors per college with REAL weeder courses.
+
+ANTI-HALLUCINATION RULES:
+- If you CANNOT FIND minimum_gpa_to_declare from official sources, use null. DO NOT GUESS.
+- If weeder courses are unknown for a major, use empty array []. DO NOT INVENT course names.
+- Only set direct_admit_only: true if the official page explicitly states "no internal transfers".
+
 Use ( ) instead of curly braces.
 """,
     tools=[google_search],
@@ -642,7 +705,8 @@ OUTPUT JSON with EXACTLY this structure:
   "red_flags": [
     "Grade decline senior year",
     "Generic essays that could apply anywhere"
-  ]
+  ],
+  "insights": []
 )
 
 Include 3-5 items per category.
@@ -654,7 +718,68 @@ Use ( ) instead of curly braces.
 
 
 # ==============================================================================
-# PARALLEL RESEARCH GROUP (12 Agents)
+# AGENT 13: Outcomes Agent -> CareerOutcomes + RetentionStats (NEW)
+# ==============================================================================
+
+outcomes_agent = LlmAgent(
+    name="OutcomesAgent",
+    model=MODEL_NAME,
+    description="Determines the financial VALUE of the degree - ROI, earnings, retention.",
+    instruction="""Research: {university_name}
+
+YOU ARE RESPONSIBLE FOR DETERMINING THE FINANCIAL VALUE OF THIS DEGREE.
+
+MANDATORY SOURCES:
+1. College Scorecard: "median earnings 10 years after entry"
+2. Common Data Set Section B: "freshman retention rate", "graduation rates"
+3. Career Center reports: Top employers
+4. LinkedIn Alumni data: Employment outcomes
+
+DO NOT RELY ON ALUMNI BROCHURES - USE OFFICIAL DATA ONLY.
+
+OUTPUT JSON with EXACTLY this structure:
+
+"outcomes": (
+  "median_earnings_10yr": 85000,
+  "employment_rate_2yr": 92.0,
+  "grad_school_rate": 25.0,
+  "top_employers": [
+    "Google",
+    "Apple",
+    "Meta",
+    "Amazon",
+    "Microsoft",
+    "Deloitte",
+    "Goldman Sachs"
+  ],
+  "loan_default_rate": 2.5
+),
+"student_retention": (
+  "freshman_retention_rate": 96.0,
+  "graduation_rate_4_year": 72.0,
+  "graduation_rate_6_year": 91.0
+)
+
+CRITICAL:
+- median_earnings_10yr must be an INTEGER (dollars per year, NOT a float)
+- Rates are PERCENTAGES (e.g., 96.0 not 0.96)
+- Include at least 5-7 top employers
+- Use null for values you cannot find, BUT TRY HARD TO FIND THEM
+
+ANTI-HALLUCINATION RULES:
+- ONLY use College Scorecard for median_earnings_10yr. If not found, use null. DO NOT ESTIMATE.
+- DO NOT use LinkedIn salary estimates, Glassdoor, or Payscale.
+- For top_employers, only list companies mentioned in official Career Center reports or LinkedIn Alumni data.
+
+Use ( ) instead of curly braces.
+""",
+    tools=[google_search],
+    output_key="outcomes_output"
+)
+
+
+# ==============================================================================
+# PARALLEL RESEARCH GROUP (13 Agents)
 # ==============================================================================
 
 research_group = ParallelAgent(
@@ -671,9 +796,10 @@ research_group = ParallelAgent(
         financials_agent,
         scholarships_agent,
         credit_policies_agent,
-        student_insights_agent
+        student_insights_agent,
+        outcomes_agent  # NEW AGENT 13
     ],
-    description="Runs 12 specialized research agents in parallel."
+    description="Runs 13 specialized research agents in parallel."
 )
 
 
@@ -691,47 +817,85 @@ INPUTS FROM SESSION STATE:
 - university_name
 - strategy_output: contains 'metadata', 'strategic_profile'
 - admissions_current_output: contains 'current_status'
-- admissions_trends_output: contains 'longitudinal_trends'
-- admitted_profile_output: contains 'admitted_student_profile'
-- colleges_output: contains 'academic_structure'
-- majors_output: contains 'majors_by_college'
+- admissions_trends_output: contains 'longitudinal_trends' (with waitlist_stats nested)
+- admitted_profile_output: contains 'admitted_student_profile' (with racial_breakdown)
+- colleges_output: contains 'academic_structure' with colleges array (majors = [] empty)
+- majors_output: contains 'majors_by_college' dictionary keyed by college name
 - application_output: contains 'application_process'
 - strategy_tactics_output: contains 'application_strategy'
 - financials_output: contains 'financials'
 - scholarships_output: contains 'scholarships'
 - credit_policies_output: contains 'credit_policies'
 - student_insights_output: contains 'student_insights'
+- outcomes_output: contains 'outcomes' and 'student_retention'
 
-MERGE RULES:
-1. For each college in academic_structure.colleges, find matching key in majors_by_college 
-   and copy the majors array into college.majors
-2. Add scholarships_output.scholarships into financials.scholarships
+=== CRITICAL MERGE RULE FOR MAJORS ===
+You MUST merge majors INTO each college. DO NOT keep majors_by_college as a separate field.
+
+STEP BY STEP:
+1. Take each college from academic_structure.colleges
+2. Find the matching key in majors_by_college (e.g., "Jacobs School of Engineering")
+3. Copy that array INTO the college's "majors" field
+
+EXAMPLE:
+If colleges_output has: 
+  "colleges": [("name": "Jacobs School of Engineering", "majors": []), ...]
+And majors_output has:
+  "majors_by_college": ("Jacobs School of Engineering": [("name": "Computer Science", ...), ...])
+  
+RESULT should be:
+  "colleges": [("name": "Jacobs School of Engineering", "majors": [("name": "Computer Science", ...)])]
+
+DO NOT output majors_by_college as a separate field in academic_structure!
+
+=== OTHER MERGE RULES ===
+2. Add scholarships_output.scholarships INTO financials.scholarships
 3. Create admissions_data object containing current_status, longitudinal_trends, admitted_student_profile
+4. Add outcomes_output.outcomes as top-level "outcomes" field
+5. Add outcomes_output.student_retention as top-level "student_retention" field
 
 OUTPUT with EXACTLY this top-level structure:
 (
   "_id": "university_name_slug",
-  "metadata": (from strategy_output),
-  "strategic_profile": (from strategy_output),
+  "metadata": ...,
+  "strategic_profile": ...,
   "admissions_data": (
-    "current_status": (from admissions_current_output),
-    "longitudinal_trends": (from admissions_trends_output),
-    "admitted_student_profile": (from admitted_profile_output)
+    "current_status": ...,
+    "longitudinal_trends": [...with waitlist_stats nested...],
+    "admitted_student_profile": (...with racial_breakdown...)
   ),
-  "academic_structure": (from colleges_output WITH majors merged in),
-  "application_process": (from application_output),
-  "application_strategy": (from strategy_tactics_output),
-  "financials": (from financials_output WITH scholarships merged in),
-  "credit_policies": (from credit_policies_output),
-  "student_insights": (from student_insights_output)
+  "academic_structure": (
+    "structure_type": "Colleges",
+    "colleges": [
+      (
+        "name": "College Name",
+        "majors": [...MERGED FROM majors_by_college...]
+      )
+    ],
+    "minors_certificates": [...]
+  ),
+  "application_process": ...,
+  "application_strategy": ...,
+  "financials": (...WITH scholarships array...),
+  "credit_policies": ...,
+  "student_insights": ...,
+  "outcomes": ...,
+  "student_retention": ...
 )
 
-CRITICAL RULES:
-- Output ONLY valid JSON with curly braces (convert any ( ) back to curly braces)
-- Use EXACT field names shown above
-- Do NOT invent new fields
-- Do NOT create fields like "majors_by_academic_division" 
-- Majors go INSIDE each college object, not at top level
+=== FORBIDDEN FIELDS (DO NOT CREATE) ===
+- majors_by_college (must be merged into colleges)
+- majors_by_academic_division
+- waitlist_offered / waitlist_accepted (use waitlist_stats object instead)
+
+=== REQUIRED NESTED FIELDS ===
+- longitudinal_trends[].waitlist_stats object
+- demographics.racial_breakdown object
+- majors[].weeder_courses array
+- majors[].minimum_gpa_to_declare number
+- majors[].direct_admit_only boolean
+
+OUTPUT valid JSON with curly braces (convert ( ) to curly braces).
 """,
     output_key="final_profile"
 )
@@ -788,6 +952,10 @@ root_agent = LlmAgent(
 1. Call UniversityNameExtractor to get the university name
 2. Call ResearchPipeline to gather data and save profile
 
-Confirm save and summarize key findings.""",
+Confirm save and summarize key findings including:
+- Acceptance rate and trends
+- Waitlist statistics (conversion rate)
+- Top employers and median earnings (ROI)
+- Retention and graduation rates""",
     tools=[input_tool, research_tool]
 )
