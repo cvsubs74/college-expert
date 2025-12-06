@@ -1,4 +1,3 @@
-
 {
   "_id": "university_of_california_santa_barbara",
   "metadata": {
@@ -6,329 +5,826 @@
     "location": {
       "city": "Santa Barbara",
       "state": "CA",
-      "country": "USA"
+      "type": "Public"
     },
-    "last_updated": "2024-07-30",
+    "last_updated": "2025-12-06",
     "report_source_files": []
   },
   "strategic_profile": {
-    "executive_summary": "The University of California, Santa Barbara (UCSB) is a highly-ranked public research institution recognized as a 'Public Ivy.' It is renowned for its very high research activity, strong academic programs across various disciplines, and a commitment to contributing to the public good and social mobility. UCSB also offers a vibrant student experience, balancing academic rigor with a lively campus culture.",
-    "market_position": "UCSB holds a market position as a 'Public Ivy' and is classified as an 'R1: Doctoral University – Very high research activity.' It stands out as an elite public research university, particularly strong in engineering, sciences, social sciences, and humanities, with a notable reputation for a lively student social scene.",
-    "admissions_philosophy": "While specific undergraduate admissions philosophy for UCSB was not detailed in the provided search results, the University of California system generally employs a holistic review process for undergraduate applicants. For graduate admissions, particularly in programs like Philosophy, the university seeks to develop research potential and provide broad familiarity with philosophical subjects. The graduate division also emphasizes valuing collaboration, discovery across disciplines, and recognizing the critical role of diversity in achieving excellence and innovation.",
+    "executive_summary": "The University of California, Santa Barbara (UCSB) is a leading public research institution recognized for its academic excellence, vibrant social life, and stunning beachfront campus. It consistently ranks among the top public universities nationally and globally, offering a dynamic environment for both intellectual and personal growth.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Holistic review (inferred)",
     "rankings": [
       {
-        "source": "US News & World Report",
-        "overall_rank": "#28 (National Universities, 2025)",
-        "public_private_rank": "#7 (Public Universities, 2022)"
+        "source": "US News",
+        "rank_overall": 41,
+        "rank_category": "National Universities",
+        "rank_in_category": 14,
+        "year": 2026
       },
       {
         "source": "Niche",
-        "overall_grade": "Not explicitly stated (known for specific rankings like #1 Top Party Schools in America)",
-        "public_private_rank": null
+        "rank_overall": null,
+        "rank_category": "Best Public Universities",
+        "rank_in_category": 21,
+        "year": 2025
       },
       {
         "source": "Forbes",
-        "overall_rank": "#42 (Top Colleges, 2026)",
-        "public_private_rank": "#12 (Public Universities, 2026)"
+        "rank_overall": 42,
+        "rank_category": "Top Colleges",
+        "rank_in_category": 12,
+        "year": 2026
       }
     ],
     "analyst_takeaways": [
       {
-        "insight": "Elite Public University Status: UCSB consistently ranks among the top national and public universities, earning it the 'Public Ivy' designation.",
-        "implication": "This strong reputation attracts a high volume of competitive applicants and skilled faculty, reinforcing its position as a leading public institution. It also suggests high-value education for its cost."
+        "category": "Rankings and Reputation",
+        "insight": "UCSB consistently ranks highly across various reputable sources, particularly for public universities and in specific academic fields like physical sciences and engineering.",
+        "implication": "The university maintains a strong national and global reputation, attracting high-caliber students and faculty."
       },
       {
-        "insight": "Research Powerhouse: The university is categorized as an 'R1: Doctoral University – Very high research activity' and receives substantial research funding.",
-        "implication": "UCSB is a hub for innovation and scientific advancement, offering extensive opportunities for graduate and undergraduate research. This drives academic prestige and contributes to its national and global standing."
+        "category": "Student Life",
+        "insight": "UCSB offers a lively and engaged student body with an active outdoor culture, centered around its beachfront location and the nearby social hub of Isla Vista.",
+        "implication": "Prospective students seeking a balance of strong academics and a vibrant social, outdoors-oriented environment will find UCSB particularly appealing."
       },
       {
-        "insight": "Balanced Profile of Academics and Student Life: UCSB achieves high academic rankings while also being recognized for a vibrant social scene, including being ranked as a top party school.",
-        "implication": "This dual reputation appeals to students seeking a comprehensive college experience that combines rigorous academics with ample opportunities for social engagement and extracurricular activities, potentially drawing a diverse student body with varied interests."
-      },
-      {
-        "insight": "Commitment to Social Impact and Diversity: The university demonstrates a focus on social mobility and emphasizes diversity in its admissions processes (especially graduate programs).",
-        "implication": "This commitment can lead to a more inclusive and diverse campus environment, enriching the educational experience and producing graduates who are well-prepared to contribute to a diverse global society. It also aligns with public university missions for broader accessibility."
+        "category": "Research Focus",
+        "insight": "UCSB is a Tier 1 research university with significant funding for sponsored projects, offering extensive undergraduate and graduate research opportunities and strong industry ties.",
+        "implication": "The university is a prime destination for students and faculty interested in cutting-edge research and potential collaborations with corporate partners."
       }
-    ]
+    ],
+    "campus_dynamics": {
+      "social_environment": "UCSB boasts a vibrant and socially engaged student body with a strong outdoor culture, leveraging its beachfront location for activities like surfing and hiking. The campus sponsors numerous social events, including the popular Extravaganza music festival, and is home to over 500 student organizations. The adjacent neighborhood of Isla Vista is known for its social scene with house parties and gatherings, though the university promotes health-conscious norms. There's a strong sense of community, and the campus environment balances academic rigor with a lively, supportive atmosphere.",
+      "transportation_impact": "Bicycles are a predominant mode of transportation, with a significant percentage of undergraduates cycling to campus. The university is recognized as a Platinum Bike-Friendly University. UCSB also actively supports and provides financial contributions to the Santa Barbara Metropolitan Transit District (MTD), ensuring a robust bus system that serves the campus and Isla Vista, offering unlimited rides for students, staff, and faculty on certain lines. Additionally, programs like the Ventura County College Ride Program allow UCSB students to ride public transit buses in Ventura County for free.",
+      "research_impact": "As a Tier 1 research university, UCSB is globally recognized for its impact across various disciplines. It offers extensive research opportunities for both undergraduates and graduates, supported by accessible faculty and ten designated national institutes and centers. The Office of Technology & Industry Alliances manages intellectual property, negotiates agreements with industry partners for research collaboration, and supports campus startups. UCSB's world-class faculty, including Nobel Laureates and National Academy of Engineering members, engage with corporate partners to address technical challenges, fostering strong, long-lived industry partnerships in areas like materials science, quantum sensing, and artificial intelligence."
+    }
   },
   "admissions_data": {
     "current_status": {
-      "overall_acceptance_rate": 27.7,
-      "in_state_acceptance_rate": 32.0,
+      "overall_acceptance_rate": 38.3,
+      "in_state_acceptance_rate": 32.1,
+      "out_of_state_acceptance_rate": 54.8,
+      "international_acceptance_rate": 48.1,
+      "transfer_acceptance_rate": 61.7,
+      "admits_class_size": 42170,
       "is_test_optional": false,
-      "test_policy_details": "Test-blind (UC Santa Barbara no longer uses SAT or ACT scores in admission decisions or for scholarships).",
+      "test_policy_details": "Test Free",
       "early_admission_stats": []
     },
     "longitudinal_trends": [
       {
-        "year": "2023_fall",
-        "applicants": 110876,
-        "admits": 30805,
-        "enrolled": 5043,
-        "acceptance_rate": 27.7
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 110178,
+        "admits_total": 42170,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 38.3,
+        "acceptance_rate_in_state": 32.1,
+        "acceptance_rate_out_of_state": 54.8,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 15958,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 8715,
+          "waitlist_admit_rate": 54.6,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admission data for Fall 2025 is preliminary. Out-of-state acceptance rate seems unusually high and is noted from a third-party source claiming CDS data. Enrolled and yield data are not yet available. Waitlist accepted spots not explicitly stated, rate calculated as admitted/offered. Waitlist is not ranked [cite: 30 in previous output]."
       },
       {
-        "year": "2024_incoming_freshman_class",
-        "applicants": 110266,
-        "admits": 36347,
-        "enrolled": 5008,
-        "acceptance_rate": 33.0
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 110266,
+        "admits_total": 36347,
+        "enrolled_total": 5008,
+        "acceptance_rate_overall": 33.0,
+        "acceptance_rate_in_state": 32.0,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 13.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 15689,
+          "accepted_spots": 9670,
+          "admitted_from_waitlist": 5493,
+          "waitlist_admit_rate": 56.8,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data is from College Confidential forums citing CDS [cite: 28 in previous output]. In-state acceptance rate available, but specific out-of-state rate is not publicly disclosed. Yield rate calculated as enrolled/admits."
       },
       {
-        "year": "2021_2022_applying_class",
-        "applicants": 111006,
-        "admits": 28689,
-        "enrolled": null,
-        "acceptance_rate": 25.8
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 110871,
+        "admits_total": 30804,
+        "enrolled_total": 5043,
+        "acceptance_rate_overall": 27.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 16.4,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 16340,
+          "accepted_spots": 10163,
+          "admitted_from_waitlist": 2793,
+          "waitlist_admit_rate": 27.5,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data is from College Confidential forums citing CDS [cite: 28 in previous output]. Specific in-state and out-of-state acceptance rates are not publicly disclosed. Yield rate calculated as enrolled/admits."
       },
       {
-        "year": "2020_2021_admissions_cycle",
-        "applicants": 89752,
-        "admits": 32842,
-        "enrolled": null,
-        "acceptance_rate": 36.6
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 110995,
+        "admits_total": 28689,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 25.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 14076,
+          "accepted_spots": 9762,
+          "admitted_from_waitlist": 2093,
+          "waitlist_admit_rate": 21.4,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Total undergraduate enrollment for Fall 2022 was 23,460, but first-time freshman enrollment is not explicitly stated. Specific in-state and out-of-state acceptance rates are not publicly disclosed. Waitlist data is from College Confidential forums citing CDS [cite: 28 in previous output]."
       },
       {
-        "year": "2019_2020",
-        "applicants": 93457,
-        "admits": 27626,
-        "enrolled": 4935,
-        "acceptance_rate": 29.6
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 105641,
+        "admits_total": 30824,
+        "enrolled_total": 4886,
+        "acceptance_rate_overall": 29.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 15.9,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 9885,
+          "accepted_spots": 6342,
+          "admitted_from_waitlist": 6103,
+          "waitlist_admit_rate": 96.2,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data for 2021 shows an unusually high admit rate, likely due to the COVID-19 pandemic's impact on enrollment uncertainty [cite: 26 in previous output]. Specific in-state and out-of-state acceptance rates are not publicly disclosed. Yield rate calculated as enrolled/admits."
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "average_weighted_gpa": 4.3,
-        "2020_2021_freshman_average_weighted_gpa": 4.17,
-        "2019_2020_weighted_middle_50_percent": "4.04 - 4.28"
+        "weighted_middle_50": "4.12-4.29",
+        "unweighted_middle_50": "3.80-4.00",
+        "average_weighted": 4.30,
+        "percentile_25": "4.12",
+        "percentile_75": "4.29",
+        "notes": "Most admits have straight A's in honors/AP, with many completing 10+ AP/IB/dual-enrollment courses, especially in math, lab science, and world language level 4."
       },
       "testing": {
-        "sat": {
-          "policy": "Not used for admission decisions or scholarships.",
-          "historical_composite_middle_50_percent": "1230 - 1460",
-          "historical_math_middle_50_percent": "610 - 750",
-          "historical_reading_middle_50_percent": "620 - 710",
-          "historical_average_composite": 1355
-        },
-        "act": {
-          "policy": "Not used for admission decisions or scholarships.",
-          "historical_composite_middle_50_percent": "28 - 34",
-          "historical_english_middle_50_percent": "26 - 34",
-          "historical_math_middle_50_percent": "26 - 31"
-        }
+        "sat_composite_middle_50": null,
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": null,
+        "submission_rate": null,
+        "policy_note": "UCSB is test-free for admission and scholarship decisions. SAT/ACT scores play zero role in admission consideration and are not factored. Scores may be used for course placement after enrollment."
       },
       "demographics": {
-        "first_gen_percentage": {
-          "2023_fall_incoming_students": 36,
-          "2023_fall_entering_transfer_students": 43
+        "first_gen_percentage": 36.0,
+        "legacy_percentage": null,
+        "international_percentage": 8.6,
+        "geographic_breakdown": [
+          {
+            "region": "California",
+            "percentage": 80.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 11.4
+          },
+          {
+            "region": "International",
+            "percentage": 8.6
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 41347,
+            "admits": 11538,
+            "acceptance_rate": 27.9,
+            "note": "Data for Fall 2019 admitted students."
+          },
+          "women": {
+            "applicants": 49961,
+            "admits": 15343,
+            "acceptance_rate": 30.7,
+            "note": "Data for Fall 2019 admitted students."
+          },
+          "non_binary": {
+            "applicants": 2149,
+            "admits": 745,
+            "acceptance_rate": 34.6,
+            "note": "Data for Fall 2019 admitted students."
+          }
         },
-        "legacy_percentage": 0,
-        "geographic_breakdown": {
-          "california_residents_overall_student_body_approx": 76,
-          "2025_fall_admitted_freshmen_non_california_residents": 9
+        "racial_breakdown": {
+          "white": 34.4,
+          "black_african_american": 1.9,
+          "hispanic_latino": 30.4,
+          "asian": 21.5,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 8.6,
+          "unknown": 3.1,
+          "non_resident_alien": 8.6
         },
-        "race_ethnicity_enrolled_2023": {
-          "white": 32.1,
-          "hispanic_or_latino": 24.5,
-          "asian": 17.9,
-          "two_or_more_races": 7.99,
-          "black_or_african_american": 2.17,
-          "american_indian_or_alaska_native": 0.184,
-          "native_hawaiian_or_other_pacific_islander": 0.0767
-        }
+        "religious_affiliation": null
       }
     }
   },
   "academic_structure": {
-    "structure_type": "Colleges/Schools organization",
+    "structure_type": "Colleges",
     "colleges": [
       {
-        "name": "College of Letters & Science",
-        "admissions_model": "Direct Entry",
-        "acceptance_model_details": "Most majors are not selective/impacted. An applicant's intended major is generally not a factor in admission selection. Exceptions include Dance B.A., Dance B.F.A., and Music B.M., which require an audition for admission.",
-        "acceptance_rate_if_different": "Not explicitly different from overall UCSB acceptance rate for most majors.",
-        "number_of_majors": "Over 80 undergraduate majors",
-        "minors_available": "Nearly 40 minors"
+        "name": "College of Letters and Science",
+        "admissions_model": "Undeclared option available for freshmen, but major choice (except Music and Dance) does not affect admission decision; competitive overall admission criteria with a holistic review of academic and non-academic factors.",
+        "acceptance_rate_estimate": 23.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking broad academic exploration, interdisciplinary studies, and flexibility in choosing a major. Strong emphasis on liberal arts education and research opportunities. Those interested in performance-based majors (Music, Dance) will have an audition process.",
+        "housing_profile": "Primarily traditional residence halls (e.g., Anacapa, Santa Cruz, San Miguel, San Nicolas, Santa Rosa) offering a community feel with communal bathrooms, study lounges, and kitchenettes. Some newer apartment-style options exist (e.g., San Joaquin Villages). Living Learning Communities (LLCs) are available and can align with various academic or social themes. Housing aims for a vibrant, social atmosphere.",
+        "student_archetype": "Intellectually curious, diverse in interests (humanities, arts, social sciences, sciences), collaborative, and seeking a balanced academic and social experience in a supportive environment. Many are interested in undergraduate research and value interdisciplinary learning.",
+        "majors": [
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["ECON 1 (Principles of Economics, Micro)", "ECON 2 (Principles of Economics, Macro)", "ECON 5 (Introduction to Economic Statistics) or PSTAT 120A", "ECON 10A (Intermediate Microeconomic Theory)", "MATH 2A-B or 3A-B or 34A-B"],
+            "minimum_gpa_to_declare": 2.85,
+            "weeder_courses": ["ECON 10A Intermediate Microeconomic Theory"],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.85,
+            "notes": "Requires 2.85+ GPA in specific pre-major courses (ECON 1, 2, 10A) taken at a UC. ECON 5 and 10A must be taken at UCSB. Selective major."
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["COMM 1 (Introduction to Communication)", "COMM 87 (Introduction to Statistics)", "COMM 88 (Research Methods)", "COMM 89 (Introduction to Communication Theory)"],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": ["COMM 87 Introduction to Statistics", "COMM 88 Research Methods", "COMM 89 Introduction to Communication Theory"],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Requires 3.0+ GPA in pre-major courses (COMM 1, 87, 88, 89) with no grade lower than C-. Only UC grades factor into pre-major GPA."
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["CHEM 1A-B-C/AL-BL-CL", "CHEM 109A-B-C", "MATH 3A-B (or 34A-B)", "PSTAT 5LS (or 5A)", "MCDB 1A-B", "EEMB 2-3", "MCDB 1LL", "EEMB 2LL/3L", "PHYSICS 6A-B-C"],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": ["CHEM 1A General Chemistry", "CHEM 109A Organic Chemistry", "MCDB 1A Contemporary Biology"],
+            "special_requirements": "AP credit in Biology or Chemistry does not satisfy major preparation requirements. Many upper-division EEMB and all MCDB courses require a C or higher in their prerequisite courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.7,
+            "notes": "Admitted as Pre-Biology. Advancement to full major requires 2.0+ UC GPA in specific preparatory courses. Transfer students into selective biological sciences majors require a 2.7+ major preparation GPA with no grade lower than C."
+          },
+          {
+            "name": "Psychological & Brain Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["PSY 1 (Introduction to Psychology)", "MATH 34A (or 3A or 2A)", "PSTAT 5A (or 5LS or COMM 87)", "PSY 10A (Research Methods in Psych & Brain)", "PSY 10B (Statistical Methods in Psych & Brain)", "CHEM 1A-B (or 2A-B)", "MCDB 6 or 1A and EEMB 7 or 2"],
+            "minimum_gpa_to_declare": 2.7,
+            "weeder_courses": ["PSY 10A Research Methods in Psych & Brain", "PSY 10B Statistical Methods in Psych & Brain", "CHEM 1A General Chemistry"],
+            "special_requirements": "PSY 10A & 10B are only offered at UCSB. AP Psychology is PSY 1, AP Statistics is PSTAT 5, AP Calculus AB is MATH 3A/34A.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.7,
+            "notes": "Admission to full major status requires a 2.7+ UC GPA in Area I courses and 2.0+ UC GPA in Area II courses."
+          },
+          {
+            "name": "Environmental Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["ENV S 1, 2, or 3 (one introductory course)", "Two additional lower-division Preparation for the Major courses"],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "No minimum GPA to declare, but requires good academic standing (2.0+ overall GPA). Relatively easy to switch into."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["Two courses from: English 10, 11, 15, 22, 25, 34NA, 39, 40BA (or 40BB), 50"],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": ["English 10 Introduction to Literary Study"],
+            "special_requirements": "Foreign language requirement (Option 1: 5th quarter proficiency, or Option 2: 3rd quarter proficiency + three upper-division foreign literature in translation courses).",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Requires 2.0+ GPA in overall academic record, overall English major record, and upper division major record."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["MATH 3A-B", "MATH 4A-B", "MATH 6A", "PHYSICS 21-22-23-24-25", "PHYSICS 3L/20AL, 25L"],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": ["PHYSICS 21 Introductory Physics: Mechanics", "PHYSICS 22 Introductory Physics: Fields"],
+            "special_requirements": "Physics 8 strongly recommended if no AP Calculus BC score of 5. PHYS 21 required before change of major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Requires 2.0+ GPA in lower division physics lectures and all upper division physics courses attempted toward the major."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A"],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": ["MATH 3A Calculus with Applications, Part 1", "MATH 4A Linear Algebra with Applications", "MATH 8 Transition to Higher Mathematics"],
+            "special_requirements": "MATH 8 (or equivalent) is a prerequisite for every upper-division Math course. Pass 1 is restricted to full Math Majors.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "notes": "For pre-major, requires 2.5+ GPA in two UCSB Math courses (or 3.3+ GPA if taken elsewhere). Transfer to pre-math requires 2.75+ GPA in specific math courses."
+          },
+          {
+            "name": "Actuarial Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A", "CMPSC 8 (or 9 or 16)"],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": ["MATH 3A Calculus with Applications, Part 1", "MATH 4A Linear Algebra with Applications"],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "notes": "Selective major for transfer students, requiring 2.75+ GPA in specific math and programming courses. Freshman change of major likely follows similar competitive criteria."
+          },
+          {
+            "name": "Statistics and Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A", "CMPSC 8 (or 9 or 16)"],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": ["MATH 3A Calculus with Applications, Part 1", "CMPSC 8 Introduction to Computer Science (or equivalent)"],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "notes": "Selective major for transfer students, requiring 2.75+ GPA in specific math and programming courses. Freshman change of major likely follows similar competitive criteria."
+          }
+        ]
       },
       {
-        "name": "College of Engineering (Robert Mehrabian College of Engineering)",
-        "admissions_model": "Direct Entry, highly selective",
-        "acceptance_model_details": "All majors within the College of Engineering are selective (impacted) and have a limited number of spaces available.",
-        "acceptance_rate_if_different": "Approximately 9% overall for the College of Engineering (as of 2024).",
-        "number_of_majors": "Five undergraduate Bachelor of Science degrees: chemical, computer, electrical, and mechanical engineering, and computer science."
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit to a specific engineering major; highly selective and competitive. Applicants are evaluated based on GPA in college preparatory courses, completion of coursework beyond A-G requirements, and advanced placement/honors courses, especially in science and math.",
+        "acceptance_rate_estimate": 9.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Requires a strong STEM background and demonstrated interest in a specific engineering discipline. Focus on rigorous preparation in math and science. Ideal for ambitious problem-solvers who thrive in a challenging, research-focused, and hands-on learning environment.",
+        "housing_profile": "Students reside in general UCSB housing, which includes traditional residence halls and some newer apartment-style villages. While no specific 'engineering dorm' is mentioned, housing options like San Joaquin Villages offer modern amenities, and the campus environment generally fosters community. There is an emphasis on integrating academic and social life within the broader campus housing system.",
+        "student_archetype": "Ambitious, hard-working, and involved problem-solvers with a strong aptitude for STEM. They are often technology innovators, entrepreneurial, and value hands-on research and practical application. Despite the rigorous academics, many College of Engineering students maintain a good school-life balance.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": 5.0,
+            "average_gpa_admitted": 4.27,
+            "prerequisite_courses": ["Calculus BC", "Physics (7 or 20 series)", "CMPSC 16 (or equivalent)", "CMPSC 24 (or equivalent)", "CMPSC 32 (or equivalent)", "CMPSC 40 (or equivalent)"],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": ["CMPSC 16 Introduction to Computer Science I", "CMPSC 24 Introduction to Computer Science II", "CMPSC 32 Object-Oriented Design and Implementation", "CMPSC 40 Advanced Data Structures"],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "notes": "Extremely competitive. Freshman internal transfer requires minimum 3.5 overall UCSB GPA and 3.5+ in specific CS/ECE courses (first attempt only). Transfer students are direct admit only to their declared engineering major."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["MATH 3A-B", "MATH 4A-B", "MATH 6A-B", "PHYSICS 7A-B", "CHEM 1A-B", "ENGR 3", "ME 10", "ME 14", "ME 17"],
+            "minimum_gpa_to_declare": 3.3,
+            "weeder_courses": ["MATH 3A Calculus with Applications, Part 1", "PHYSICS 7A General Physics, Part 1", "ME 10 Introduction to Mechanical Engineering", "ME 14 Introduction to Solid Mechanics"],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.3,
+            "notes": "Highly competitive for freshman internal transfers; successful students often have above 3.5 core GPA in required courses. Transfer students are direct admit only."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": 9.0,
+            "average_gpa_admitted": 4.40,
+            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A", "PHYSICS 7A-B-C", "ECE 10A/L, 10B/L, 10C/L", "ECE 15A"],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": ["ECE 10A Introduction to Electrical Engineering", "ECE 10B Circuit Analysis I", "PHYSICS 7A General Physics, Part 1"],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "notes": "Competitive for freshman internal transfers (3.0 overall UCSB GPA, 3.5+ in specific ECE/Math courses). Transfer students are direct admit only."
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": 7.0,
+            "average_gpa_admitted": 4.44,
+            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A", "PHYSICS 7A-B-C", "ECE 10A/L, 10B/L, 10C/L", "ECE 15A", "CMPSC 16", "CMPSC 24", "CMPSC 32", "CMPSC 40"],
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": ["ECE 10A Introduction to Electrical Engineering", "CMPSC 16 Introduction to Computer Science I", "CMPSC 24 Introduction to Computer Science II"],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "notes": "Highly competitive for freshman internal transfers (3.5 overall UCSB GPA and 3.5+ in specific CS/ECE courses). Transfer students are direct admit only."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "CHEM 1A-B-C/AL-BL-CL", "CHEM 3A", "CHEM 3B-2AL", "CHEM 3C-2BL", "PHYSICS 7A-B", "CHE 5"],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": ["CHEM 1A General Chemistry", "MATH 3A Calculus with Applications, Part 1", "CHE 5 Introduction to Chemical Engineering"],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Competitive for freshman internal transfers (3.0 overall UCSB GPA, 3.0+ in specific Math/Chemistry courses). Transfer students are direct admit only."
+          }
+        ]
       },
       {
-        "name": "College of Creative Studies (CCS)",
-        "admissions_model": "Direct Entry, highly selective",
-        "acceptance_model_details": "All CCS applicants are required to submit a free supplemental application and additional materials. Designed for self-motivated and independent students with specialized talents or strong passions.",
-        "acceptance_rate_if_different": "Not explicitly stated, but characterized by a very small, highly selective community (less than 400 students total).",
-        "number_of_majors": "Nine majors: Art, Biology, Chemistry & Biochemistry, Computing, Marine Science, Mathematics, Music Composition, Physics, and Writing & Literature."
+        "name": "College of Creative Studies",
+        "admissions_model": "Requires a supplemental application in addition to the UC application; highly competitive and holistic review, often including portfolios, auditions, or letters of intent depending on the major. Seeks self-motivated students passionate about independent work.",
+        "acceptance_rate_estimate": 2.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Best for highly self-motivated, creative, and independent students who want to engage deeply in a specific artistic or scientific field from early in their undergraduate career. Emphasizes original work, direct faculty access, and flexible, student-driven curricula.",
+        "housing_profile": "Students typically reside in general UCSB housing. While there isn't dedicated CCS housing, Living Learning Communities (LLCs) are available and could potentially align with students' creative or academic interests. The overall housing environment is designed to foster community.",
+        "student_archetype": "Highly self-motivated, passionately curious, creative, and independent thinkers who are eager to produce original work and engage in advanced, student-driven studies from an early stage. Often described as a 'graduate school for undergraduates'.",
+        "majors": [
+          {
+            "name": "Art",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["Portfolio review"],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires a supplemental application with a portfolio. 72 studio units and 32 non-studio units for freshmen. Must complete ART 1A Visual Literacy and a 7-Series course.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "notes": "Highly selective. Not accepting change of majors for 25-26 school year for current students. Students apply directly to CCS Art."
+          },
+          {
+            "name": "Computing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["Letter of Intent", "MATH 3A-B", "MATH 4A-B", "MATH 6A", "PSTAT 120A-B", "CMPTGCS 1A-B/1L", "CMPTGCS 2"],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": ["CMPTGCS 1A Introduction to Computer Science with C++", "MATH 3A Calculus with Applications, Part 1"],
+            "special_requirements": "Requires a supplemental application with a letter of intent. Maintain 3.0 GPA in CS courses (2.75 minimum). Upper division requirements are same as COE Computer Science.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "notes": "Highly selective and flexible, accelerated program. Students apply directly to CCS Computing. BS/MS program available."
+          },
+          {
+            "name": "Music Composition",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["Letter of Intent", "Written scores of musical compositions", "Audition (implied by CCS application materials)"],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires a supplemental application with letters of recommendation and written scores of musical compositions.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "notes": "Highly selective. Students apply directly to CCS Music Composition."
+          },
+          {
+            "name": "Writing and Literature",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": ["Letter of Intent", "Writing samples (fiction and/or poetry, critical papers)"],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires a supplemental application with a letter of intent and writing samples (fiction and/or poetry, critical papers).",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "notes": "Highly selective. Students apply directly to CCS Writing and Literature."
+          }
+        ]
       }
     ],
-    "minors_certificates": {
-      "minors_available": "UCSB offers over 50 minors, with the College of Letters & Science alone offering nearly 40 minors.",
-      "examples_of_minors": "Minors are available across various disciplines, often aligning with major offerings in the College of Letters & Science. Students can explore options through the UCSB Majors and Minors webpage."
-    }
+    "minors_certificates": [
+      "American Indian and Indigenous Studies Minor",
+      "Anthropology Minor",
+      "Applied Psychology Minor",
+      "Architecture & Urban History Minor",
+      "Asian American Studies Minor",
+      "Astronomy and Planetary Science Minor",
+      "Black Studies Minor",
+      "Chemistry Minor",
+      "Chicana and Chicano Studies Minor",
+      "Chinese Minor",
+      "Classics Minor",
+      "Comparative Literature Minor",
+      "Earth Science Minor",
+      "Educational Studies Minor",
+      "English Minor",
+      "Feminist Studies Minor",
+      "French Minor",
+      "Game Studies Minor",
+      "German Studies Minor",
+      "History Minor",
+      "Technology Management Program (Certificate)"
+    ]
   },
   "application_process": {
-    "platforms": [
-      "UC Application"
+    "platforms": ["UC Application"],
+    "application_deadlines": [
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Application for Fall 2026 admission. The application filing period is from October 1 to November 30, 2025, with a final deadline of December 1, 2025, at 11:59 PM PST."
+      }
     ],
-    "application_deadlines": {
-      "Early Decision": "N/A (UC system does not offer Early Decision)",
-      "Early Action": "N/A (UC system does not offer Early Action)",
-      "Regular Decision": "October 1 - November 30 (application filing period for fall admission)",
-      "ED2": "N/A",
-      "Scholarship priority deadlines": "March 2 (for FAFSA/California Dream Act Application and Cal Grant GPA Verification Form)"
-    },
-    "supplemental_requirements": {
-      "number_and_type_of_essays": "Four 'Personal Insight Questions' (PIQs) from a choice of eight prompts, each with a 350-word limit. These are short response questions, not essays, and are used to learn new information about the applicant.",
-      "portfolio_requirements": "Required for College of Creative Studies applicants (supplemental application reviewed by faculty).",
-      "audition_requirements": "Required for Dance or Music Performance majors within the College of Letters and Science."
-    },
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": "2025-12-01",
+        "details": "Applicants must answer four of the eight Personal Insight Questions (PIQs). These essays help the admissions committee understand the applicant's qualities, achievements, and experiences."
+      },
+      {
+        "target_program": "Music (Bachelor of Music programs)",
+        "requirement_type": "Audition",
+        "deadline": null,
+        "details": "A major entrance audition is required for applicants seeking admission to Bachelor of Music (BM) programs. For some instruments like Voice and Piano, a prescreening recording is required by November 30th and December 5th, respectively. For Composition, a portfolio is due by January 10th. For other instruments, recorded or live auditions are required, with all forms and prerecorded auditions submitted in lieu of a live audition due by January 10th."
+      },
+      {
+        "target_program": "College of Creative Studies (CCS) - various programs",
+        "requirement_type": "Supplemental Application",
+        "deadline": "2025-12-01",
+        "details": "Applying to CCS typically involves a secondary application in addition to the general UC application. This includes a Letter of Intent for all CCS majors and may require a portfolio (e.g., for Art) or letters of recommendation (e.g., for Biology, Computing, Chemistry & Biochemistry). The CCS application is due by the UC application deadline."
+      }
+    ],
     "holistic_factors": {
-      "primary_factors": [
-        "Academic achievements (rigor of high school courses, GPA, and pattern of achievement over time)",
-        "Personal Insight Questions (PIQs)",
-        "Extracurricular activities (quality over quantity, leadership, consistent involvement, demonstrated motivation, promise, and seriousness of purpose, and any positive changes or impacts made)"
-      ],
-      "secondary_factors": [
-        "Context of opportunities and/or challenges experienced (13 holistic review factors)",
-        "Personal life accomplishments"
-      ],
-      "essay_importance": "Critical/High (Personal Insight Questions are very important for all UC schools; they help the admissions committee understand the applicant and showcase qualities not evident elsewhere).",
-      "demonstrated_interest_policy": "Not considered. UCSB explicitly states they do not look at 'demonstrated interest' (e.g., attending tours, webinars, emailing counselors) in the admission process.",
-      "interview_policy": "Not required or offered for undergraduate admissions. Interviews are mentioned in the context of graduate programs, where they may or may not be part of the process depending on the program.",
-      "legacy_consideration_strength": "Not considered. None of the University of California campuses, including UCSB, consider legacy status in the admissions process.",
-      "first_generation_boost": "Not explicitly stated as a 'boost,' but the holistic review process considers personal life accomplishments and achievements in light of available opportunities and challenges, which can implicitly benefit first-generation students."
+      "primary_factors": ["Course Rigor", "GPA", "Essays (Personal Insight Questions)", "Extracurriculars", "Leadership", "Talents", "Character", "Context of opportunities/challenges"],
+      "secondary_factors": ["Academic accomplishments", "Personal growth", "Commitment to interests", "Motivation", "Resilience", "Intellectual initiative"],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "None",
+      "specific_differentiators": "UCSB utilizes a comprehensive, holistic review process, evaluating applicants' achievements and personal qualities within the context of their opportunities and challenges. They look for intellectual initiative, quantified community impact, authenticity in PIQs, and resilience."
     }
   },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive majors if not set on highly impacted fields like Computer Science or Engineering, as these are very competitive at UCSB.",
+      "Consider applying Undeclared for the College of Letters and Science, as major choice is generally not considered for admission in this college and does not impact admission decisions.",
+      "If interested in engineering, apply directly to an engineering major as switching into the College of Engineering after admission is difficult.",
+      "Research the admit rates and competitiveness of specific majors, especially within STEM, as some bio-related majors also have rigorous prerequisites.",
+      "Be aware that changing majors within the College of Letters and Science is generally easier than changing majors into or within the College of Engineering."
+    ],
+    "college_ranking_tactics": [
+      "Prioritize colleges based on how well their General Education (GE) requirements align with your academic strengths and interests, rather than solely on overall prestige.",
+      "Investigate specific GE requirements for your intended degree (BA vs. BS) and college, as they can vary.",
+      "Consider housing quality and availability; on-campus housing is only guaranteed for the first year, and off-campus options in Isla Vista can be expensive and competitive.",
+      "Look beyond overall rankings and research the strength of specific departments or programs that interest you, as UCSB has strong programs in areas like Physics and some Engineering fields.",
+      "Factor in the undergraduate focus and teaching quality, as some sources suggest UCSB excels in this area compared to other UCs."
+    ],
+    "alternate_major_strategy": "If applying to a highly competitive major, especially within the College of Engineering, list a non-selective alternate major from the College of Letters & Science. For example, if applying to CS in Engineering, list Cognitive Science, Math, or another humanities/social science major in Letters and Science as an alternate. Avoid listing an alternate major in the same department or a similarly competitive field within the same college."
+  },
   "financials": {
-    "tuition_model": "Cohort-based tuition (guaranteed for 4 years for incoming freshmen, subject to UC-wide policy)",
+    "tuition_model": "Tuition Stability Plan",
     "cost_of_attendance_breakdown": {
-      "academic_year": "2025-2026",
+      "academic_year": "2024-2025",
       "in_state": {
-        "tuition_fees": "$14,934",
-        "housing": "$21,975",
-        "total_coa": "$37,902"
+        "tuition": 14436,
+        "total_coa": 43884,
+        "housing": 19623
       },
       "out_of_state": {
-        "tuition_fees": "$52,536",
-        "housing": null,
-        "total_coa": "$67,974"
+        "tuition": 48636,
+        "total_coa": 76458,
+        "supplemental_tuition": 34200
       }
     },
-    "aid_philosophy": {
-      "need_blind": false,
-      "meets_100_percent_need": "The Office of Financial Aid and Scholarships awards students up to the total Cost of Attendance but states they do not have sufficient funds to meet the full demonstrated financial need of non-resident students. For California residents, the Blue and Gold Opportunity Plan covers tuition and fees for families with incomes under $80,000 with sufficient financial need.",
-      "merit_available": true
-    },
+    "aid_philosophy": "Need-Based",
+    "average_need_based_aid": 27324,
+    "average_merit_aid": 10670,
+    "percent_receiving_aid": 57.0,
     "scholarships": [
       {
         "name": "Regents Scholarship",
-        "type": "Merit-based",
-        "amount_range": "$5,000 per year for four years (total $20,000).",
-        "deadlines_application_method": "All freshmen admitted for the fall quarter are considered for the Regents Scholarship based on their UC Application for Admission. No additional information is required. Students are typically notified in March.",
-        "benefits_beyond_money": "Guaranteed housing in university residence halls for the first year (with priority consideration for preferred building/room type in subsequent years), extended borrowing privileges at UC Santa Barbara's Davidson Library, membership in UCSB's Regents Scholars Association (RSA) for leadership, faculty interaction, and academic/social programs, and priority class registration. Scholars must maintain both a quarterly and cumulative GPA of 3.20."
+        "type": "Merit",
+        "amount": "$5,000 per year for four years",
+        "deadline": "Automatic consideration with UC Application for Admission (typically November 30 for Fall admission)",
+        "benefits": "Priority registration, special academic advising, honors housing eligibility, membership in the Regents Scholars Association (RSA).",
+        "application_method": "Automatic Consideration"
       },
       {
         "name": "Chancellor's Scholarship",
-        "type": "Need-based (with academic achievement, leadership, and community service also considered)",
-        "amount_range": "$3,000 annually, renewable for up to three years (total $9,000).",
-        "deadlines_application_method": "There is no application process; recipients are selected internally based on freshman GPA from the admissions application and demonstrated financial need (FAFSA/Dream Application). Limited to students from Santa Barbara, Ventura, Kern, and San Luis Obispo counties.",
-        "benefits_beyond_money": "Opportunities for networking, EOP advisor meetings, and finding community on campus with other first-generation and underrepresented students. Requires maintaining a cumulative 3.0 GPA and quarterly meetings with an EOP counselor."
+        "type": "Merit",
+        "amount": "Varies (highly competitive)",
+        "deadline": "Automatic consideration with UC Application for Admission",
+        "benefits": "Based on academic achievement, leadership, community service, and more.",
+        "application_method": "Automatic Consideration"
       },
       {
-        "name": "UCSB Promise Scholarship",
-        "type": "Need-based (also considering academic achievement)",
-        "amount_range": "$120,000 across four years for incoming freshmen; $60,000 across two years for transfer students.",
-        "deadlines_application_method": "To be eligible, students must be a California resident or AB540 eligible, file a FAFSA or California Dream Act Application by the priority deadline, and show sufficient financial need. Selection is based on a comprehensive review of the admission application, including test scores and grades, as well as financial need.",
-        "benefits_beyond_money": "Not specified in available search results."
+        "name": "UCSB Institutional Grants (Need-Based Aid)",
+        "type": "Need",
+        "amount": "Varies based on FAFSA/California Dream Act Application and demonstrated financial need.",
+        "deadline": "FAFSA or California Dream Act Application priority deadline (March 2 for best consideration).",
+        "benefits": "Financial assistance to cover educational costs.",
+        "application_method": "FAFSA or California Dream Act Application"
       },
       {
         "name": "Departmental Scholarships",
-        "type": "Merit/Need-based (varies by department)",
-        "amount_range": "Varies by department.",
-        "deadlines_application_method": "Various UCSB departments offer scholarships for students majoring in their fields. Specific application methods and deadlines would be found through individual department websites.",
-        "benefits_beyond_money": "Not specified in available search results."
+        "type": "Merit/Need (Varies by department)",
+        "amount": "Varies",
+        "deadline": "Varies by department (check specific departmental websites).",
+        "benefits": "Financial support for students majoring in specific fields.",
+        "application_method": "Separate Application (often through ScholarshipUniverse or department-specific forms)."
+      },
+      {
+        "name": "Duval Scholarship",
+        "type": "Merit/Need (consideration for need)",
+        "amount": "Varies",
+        "deadline": "Typically first week of Spring Quarter (e.g., February 2026 for next application cycle).",
+        "benefits": "For students in the College of Letters and Science Honors Program pursuing a double major.",
+        "application_method": "Separate Application (online Duval Scholarship Application)."
+      },
+      {
+        "name": "Kirby-Jones Scholarship",
+        "type": "Merit/Need (consideration for need)",
+        "amount": "Varies",
+        "deadline": "Typically first week of Spring Quarter.",
+        "benefits": "For students in the College of Letters and Science Honors Program.",
+        "application_method": "Separate Application (online Kirby-Jones Scholarship Application)."
       }
     ]
   },
   "credit_policies": {
-    "philosophy": "UCSB generally grants units for AP and IB exams, which can satisfy graduation requirements, general education requirements, and, in some cases, specific course equivalents. The university aims for a balance of unit credit and placement. There are restrictions against duplicating credit, meaning students will not receive credit for both an exam and an equivalent course. For transfer credit, the focus is on academic coursework from accredited institutions that is comparable to courses offered within the UC system, with specific unit caps and restrictions on course types.",
+    "philosophy": "Moderate",
     "ap_policy": {
-      "general_rule": "Students who earn scores of 3, 4, or 5 on College Board Advanced Placement Examinations taken before high school graduation will receive 2, 4, or 8 units of credit toward graduation at UCSB, provided official scores are submitted to the Office of Admissions.",
-      "exceptions": "A maximum of 8 units each in art studio, English, mathematics, and physics is allowed. Credit will only be awarded once if an AP exam duplicates another exam (e.g., an IB exam in the same subject) or a college course.",
-      "usage": "AP credit can satisfy graduation requirements, general education requirements (e.g., Social Sciences, Culture and Thought, Science, Mathematics, and Technology, Quantitative Relationships, Entry-Level Writing, English Reading and Composition), and specific UCSB course equivalents."
+      "general_rule": "Score of 3+ grants 4 or 8 quarter units for most exams",
+      "exceptions": [
+        "A maximum of 8 units EACH in art studio, English, mathematics, and physics is allowed",
+        "AP Computer Science A awards 8 units for a score of 4 or 5",
+        "Students should not enroll in UCSB courses for which they have received AP credit"
+      ],
+      "usage": "Can satisfy GE requirements and some major prerequisites. AP Exam scores above 3 can allow students to opt out of certain courses."
     },
     "ib_policy": {
-      "hl_vs_sl_treatment": "Only International Baccalaureate (IB) Higher Level (HL) Examinations with a mark of 5 or better, completed before high school graduation, will receive 8 quarter units of credit toward graduation requirements at UCSB. The university does not grant credit for Standard Level (SL) exams.",
-      "diploma_bonus": "Students who earn an IB Diploma score = 30 or above will receive an additional 6 quarter units of credit toward graduation requirements, in addition to the units earned for individual Higher Level exams.",
-      "usage": "IB credit is awarded toward graduation requirements and can be applied to General Education requirements and course equivalents. UC will not award credit for the IB HL Mathematics: Applications and Interpretations exam."
+      "general_rule": "HL exams with 5+ grant 8 quarter units",
+      "diploma_bonus": true,
+      "exceptions": [
+        "No credit for Standard Level (SL) exams",
+        "UC will not award credit for the IB HL Mathematics: Applications and Interpretations exam"
+      ]
     },
     "transfer_articulation": {
-      "tools_used": "UCSB utilizes resources such as the Transferable Course Agreement (TCA) and adheres to the UC-wide Intersegmental General Education Transfer Curriculum (IGETC) for California community college transfers to determine course equivalencies and fulfillment of general education requirements.",
-      "unit_caps_and_restrictions": "UCSB accepts transferable coursework from approved accredited institutions, provided the courses are academic in nature and comparable to those offered in the UC system. A maximum of 105 lower-division quarter units (70 semester units) from non-UC colleges or universities will transfer. Remedial, vocational, or personal enrichment courses do not qualify for transfer credit. Credit will not be granted for courses less advanced than those already completed, nor for courses that duplicate coursework already taken at UCSB or another institution. For California Community College courses, they can only fulfill lower-division unit requirements and are not included in the UC GPA or counted toward academic residency. Official transcripts are required, and the Office of Admissions makes the final determination of transferability."
+      "tools": [
+        "ASSIST.org"
+      ],
+      "restrictions": "A maximum of 105 lower-division quarter units (70 semester units) from non-UC colleges or universities will transfer",
+      "notes": [
+        "Community college course grades do not transfer into the UC GPA",
+        "Courses must be academic in nature and cover the same depth and breadth as courses offered in the UC system",
+        "Credit will not be awarded for courses that duplicate previously completed coursework",
+        "ASSIST.org is the official course transfer and articulation system for California community colleges and universities"
+      ]
     }
   },
   "student_insights": {
-    "what_it_takes": {
-      "common_themes_among_accepted_students": [
-        "Strong academic performance, with an average weighted GPA typically ranging from 4.13 to 4.29, and many admitted students having nearly straight A's in challenging courses.",
-        "Enrollment in rigorous coursework, including AP or IB classes, demonstrating readiness for college-level academics.",
-        "Meaningful extracurricular involvement, including leadership roles, contributions to organizations and communities, and demonstrated dedication to interest areas.",
-        "Authentic and well-crafted Personal Insight Questions (PIQs) that highlight achievements, interests, character traits, and personality.",
-        "A strong 'personal context' that shows how applicants have leveraged opportunities or overcome challenges, as admissions considers achievements in light of available opportunities."
-      ],
-      "unique_qualities_that_stood_out": [
-        "Demonstrated curiosity and dedication in specific interest areas through extracurriculars or academic pursuits.",
-        "Capacity to contribute to the intellectual life at UC, often evidenced by academic accomplishments and engagement.",
-        "Specific talents or skills developed over time, as described in essays.",
-        "Experiences in overcoming significant challenges or educational barriers.",
-        "Contribution to making their school or community a better place."
-      ]
-    },
-    "common_activities": [
-      "Leadership roles in school clubs, community organizations, or sports teams.",
-      "Participation in a wide array of student organizations (over 500 available at UCSB), including academic, cultural, environmental, health & wellness, political, religious, social, and visual & performing arts groups.",
-      "Engagement in community service and civic engagement activities.",
-      "Athletic participation, from intercollegiate sports to recreational activities like surfing, hiking, boating, and running.",
-      "Involvement in Greek life, which offers social, professional, and community service opportunities.",
-      "Potential interest or participation in research, especially given UCSB's strong research focus and facilities like the REEF."
+    "what_it_takes": [
+      "Strong academic record with challenging coursework, with admitted first-year students having an `average weighted GPA of 4.2` and an `average unweighted GPA of 3.93`.",
+      "Minimum `GPA of 3.0` in A-G courses for California residents and `3.4` for non-California residents.",
+      "Demonstrated passion and sustained involvement in 1-2 areas, rather than scattered activities.",
+      "Authentic essays that showcase self-reflection, personal growth, and specific actions.",
+      "Leadership experience and contributions to group efforts over time."
     ],
-    "essay_tips": {
-      "topics_that_worked": [
-        "Describing leadership experiences, illustrating how the applicant positively influenced others or contributed to group efforts.",
-        "Showcasing creative problem-solving, innovative thinking, or artistic expression.",
-        "Elaborating on a greatest talent or skill and detailing its development over time.",
-        "Discussing significant educational opportunities taken advantage of or educational barriers overcome.",
-        "Detailing the most significant challenge faced and the steps taken to overcome it, including its impact on academic achievement.",
-        "Exploring an inspiring academic subject and how that interest was furthered inside and outside the classroom.",
-        "Highlighting contributions to making their school or community a better place.",
-        "Articulating unique qualities that make the applicant a strong candidate beyond what's already stated."
-      ],
-      "writing_style_preferences": [
-        "Authenticity and honesty, allowing personality and passions to shine through.",
-        "Using specific examples from personal, academic, and extracurricular experiences.",
-        "Clarity and conciseness, adhering to the 350-word limit for each of the four Personal Insight Questions (PIQs).",
-        "Demonstrating growth, impact, and self-reflection.",
-        "Showing enthusiasm and drive."
-      ],
-      "things_to_avoid": [
-        "Generic or vague statements that don't provide specific insights into the applicant's experiences or personality.",
-        "Merely restating information already present in other parts of the application without adding new context or reflection.",
-        "Failing to address the prompt directly.",
-        "Exceeding word limits or being overly verbose."
-      ]
-    },
+    "common_activities": [
+      "Leadership roles in school clubs and organizations.",
+      "Community service and positively influencing others.",
+      "Research experience, particularly relevant for College of Creative Studies (CCS) applicants.",
+      "Varsity athletics, which can contribute positively to an application.",
+      "Music or arts involvement, demonstrating a creative side."
+    ],
+    "essay_tips": [
+      "Be specific and direct, connecting your passions and interests to what UCSB and its programs offer.",
+      "Show, don't tell: provide concrete examples of your efforts, actions, and the results, rather than abstract statements.",
+      "Focus on personal growth, the lessons learned from challenges, and how experiences have shaped you.",
+      "Answer specific prompts clearly and honestly, especially for specialized colleges like CCS, where you should describe your passion, preparation, and products in your chosen field.",
+      "Highlight your best qualities and ensure your essay gives admissions officers a clear understanding of who you are."
+    ],
     "red_flags": [
-      "Not meeting the minimum GPA requirements (3.0 for California residents, 3.4 for non-California residents), though accepted students typically have much higher GPAs.",
-      "Lack of challenging coursework, such as a curriculum without AP, IB, or other honors-level classes.",
-      "Absence of meaningful extracurricular activities, leadership roles, or demonstrated commitment to interests outside of academics.",
-        "Generic, uninspired, or poorly written essays that fail to convey the applicant's unique qualities, passions, or experiences.",
-      "A sole focus on academic achievements without any indication of 'personal life accomplishments' or contributions to the community.",
-      "Significant dips in grades, especially in A-G courses during 10th and 11th grade.",
-      "Failing to complete the UC A-G subject requirements with at least a 'C' grade."
+      "Decline in grades during senior year, as a strong academic record is continuously evaluated.",
+      "Generic essays that could apply to any university and do not highlight a specific connection to UCSB.",
+      "Failure to meet the minimum A-G GPA requirements for California (3.0) or non-California (3.4) residents.",
+      "Errors or inaccuracies in self-reported academic history on the application.",
+      "Applying to a highly selective major (e.g., Engineering, Computer Science) without sufficient academic preparation in relevant coursework."
+    ],
+    "insights": [
+      "UCSB evaluates applicants based on 13 comprehensive criteria, with academic profile (GPA, course rigor) and Personal Insight Questions/extracurricular activities being very important.",
+      "The university is highly praised for its stunning campus located directly on the beach, offering a unique and vibrant student life with a balance of academics and social activities.",
+      "Housing availability and affordability in the Santa Barbara area and Isla Vista are frequently mentioned concerns by students.",
+      "Competitive majors, particularly within the College of Engineering and College of Creative Studies, have significantly lower acceptance rates and specific prerequisite requirements.",
+      "Transfer admission to UCSB is heavily driven by an applicant's overall UC transfer GPA and their GPA in courses required for their major."
     ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 74915,
+    "employment_rate_2yr": 90.0,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Amazon",
+      "Apple",
+      "Google",
+      "Meta",
+      "Oracle",
+      "IBM",
+      "Adobe",
+      "EY"
+    ],
+    "loan_default_rate": 2.3
+  },
+  "student_retention": {
+    "freshman_retention_rate": 92.0,
+    "graduation_rate_4_year": 73.0,
+    "graduation_rate_6_year": 85.0
   }
 }

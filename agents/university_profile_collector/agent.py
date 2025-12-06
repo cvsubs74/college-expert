@@ -909,11 +909,32 @@ file_saver_agent = LlmAgent(
     name="FileSaver",
     model=MODEL_NAME,
     description="Saves the final profile to a JSON file.",
-    instruction="""Save the university profile to disk.
+    instruction="""YOU MUST CALL the write_file tool to save the profile. This is mandatory.
 
-Call write_file with:
-- filename: "<slug>.json" (e.g., "stanford_university.json", "uc_san_diego.json")
-- content: JSON string of final_profile from session state (properly formatted with indentation)
+=== STEP 1: Generate filename ===
+Convert the university name to a lowercase slug:
+- Replace spaces with underscores
+- Remove punctuation
+- Examples: "UC San Diego" -> "uc_san_diego.json"
+           "Stanford University" -> "stanford_university.json"
+           "University of California, Berkeley" -> "university_of_california_berkeley.json"
+
+=== STEP 2: Prepare content ===
+Take the complete JSON from {final_profile} and format it with proper indentation.
+
+=== STEP 3: CALL THE TOOL ===
+YOU MUST call write_file with these exact parameters:
+- filename: the slug.json you generated
+- content: the formatted JSON string
+
+=== EXAMPLE TOOL CALL ===
+write_file(filename="uc_san_diego.json", content=<the full JSON string>)
+
+=== CRITICAL ===
+- DO NOT skip this step
+- DO NOT just describe what you would do
+- ACTUALLY CALL the write_file tool
+- After calling, confirm the file was saved successfully
 """,
     tools=[write_file],
     output_key="save_result"

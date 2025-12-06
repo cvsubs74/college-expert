@@ -24,7 +24,7 @@ AGENT MAPPING (13 Agents):
 13. OutcomesAgent -> Career ROI, Retention, Earnings
 """
 
-from typing import List, Optional
+from typing import List, Optional, Union
 from pydantic import BaseModel, Field
 
 
@@ -256,7 +256,8 @@ class LongitudinalTrend(BaseModel):
     admits_total: int = Field(
         description="[REQUIRED] Total students admitted"
     )
-    enrolled_total: int = Field(
+    enrolled_total: Optional[int] = Field(
+        default=None,
         description="[REQUIRED] Total students enrolled (matriculated)"
     )
     acceptance_rate_overall: float = Field(
@@ -270,7 +271,8 @@ class LongitudinalTrend(BaseModel):
         default=None,
         description="[OPTIONAL] Out-of-state acceptance rate for this year"
     )
-    yield_rate: float = Field(
+    yield_rate: Optional[float] = Field(
+        default=None,
         description="[REQUIRED] Percentage of admitted students who enrolled. Example: 42.5"
     )
     waitlist_stats: Optional[WaitlistDetailedStats] = Field(
@@ -291,10 +293,11 @@ class LongitudinalTrend(BaseModel):
 
 class GPAProfile(BaseModel):
     """GPA statistics of admitted students."""
-    weighted_middle_50: str = Field(
+    weighted_middle_50: Optional[str] = Field(
+        default=None,
         description="[REQUIRED] Weighted GPA middle 50% range. Format: 'X.XX-X.XX'. Example: '4.42-4.76'"
     )
-    unweighted_middle_50: str = Field(
+    unweighted_middle_50: Optional[str] = Field(
         default="",
         description="[OPTIONAL] Unweighted GPA middle 50%. Example: '3.85-4.00'"
     )
@@ -318,8 +321,8 @@ class GPAProfile(BaseModel):
 
 class TestingProfile(BaseModel):
     """Standardized test statistics of admitted students."""
-    sat_composite_middle_50: str = Field(
-        default="",
+    sat_composite_middle_50: Optional[str] = Field(
+        default=None,
         description="[REQUIRED] SAT composite middle 50%. Format: 'XXXX-XXXX'. Example: '1400-1530'"
     )
     sat_reading_middle_50: Optional[str] = Field(
@@ -330,8 +333,8 @@ class TestingProfile(BaseModel):
         default=None,
         description="[OPTIONAL] SAT Math section middle 50%"
     )
-    act_composite_middle_50: str = Field(
-        default="",
+    act_composite_middle_50: Optional[str] = Field(
+        default=None,
         description="[REQUIRED] ACT composite middle 50%. Format: 'XX-XX'. Example: '31-35'"
     )
     act_english_middle_50: Optional[str] = Field(
@@ -488,11 +491,11 @@ class Major(BaseModel):
         default=False,
         description="[REQUIRED] Whether major is impacted/capped/selective. True = harder to get into"
     )
-    acceptance_rate: Optional[float] = Field(
+    acceptance_rate: Optional[Union[float, str]] = Field(
         default=None,
-        description="[OPTIONAL] Major-specific acceptance rate if different from overall. Example: 8.5 for CS"
+        description="[OPTIONAL] Major-specific acceptance rate if different from overall. Example: '8.5%'"
     )
-    average_gpa_admitted: Optional[float] = Field(
+    average_gpa_admitted: Optional[Union[float, str]] = Field(
         default=None,
         description="[OPTIONAL] Average GPA of students admitted to this major"
     )
@@ -500,7 +503,7 @@ class Major(BaseModel):
         default=[],
         description="[REQUIRED if impacted] High school courses required. Examples: ['Calculus BC', 'Physics C', 'AP CS']"
     )
-    minimum_gpa_to_declare: Optional[float] = Field(
+    minimum_gpa_to_declare: Optional[Union[float, str]] = Field(
         default=None,
         description="[OPTIONAL] Minimum GPA required to switch into this major after enrolling. Source: Department catalog"
     )
@@ -508,7 +511,7 @@ class Major(BaseModel):
         default=[],
         description="[OPTIONAL] Notorious filter courses. Source: Reddit, Student reviews. Example: 'Organic Chemistry (CHEM 35)'"
     )
-    special_requirements: str = Field(
+    special_requirements: Optional[str] = Field(
         default="",
         description="[OPTIONAL] Extra requirements. Examples: 'Portfolio required', 'Audition needed'"
     )
@@ -524,11 +527,11 @@ class Major(BaseModel):
         default=False,
         description="[REQUIRED] If true, NO internal transfers allowed. Source: Official major page"
     )
-    internal_transfer_gpa: Optional[float] = Field(
+    internal_transfer_gpa: Optional[Union[float, str]] = Field(
         default=None,
         description="[OPTIONAL] Minimum GPA to transfer into this major. Example: 3.5"
     )
-    notes: str = Field(
+    notes: Optional[str] = Field(
         default="",
         description="[OPTIONAL] Additional notes. Example: 'Extremely competitive, consider alternate major'"
     )
@@ -606,7 +609,7 @@ class ApplicationDeadline(BaseModel):
         description="[REQUIRED] Application plan type. Values: 'Early Decision', 'Early Action', "
                     "'Regular Decision', 'ED2', 'Rolling'"
     )
-    date: str = Field(
+    date: Optional[str] = Field(
         description="[REQUIRED] Deadline date. Format: ISO date 'YYYY-MM-DD'. Example: '2024-11-01'"
     )
     is_binding: bool = Field(
@@ -628,7 +631,7 @@ class SupplementalRequirement(BaseModel):
         description="[REQUIRED] Type of requirement. Values: 'Essays', 'Portfolio', 'Audition', "
                     "'Video Introduction', 'Interview', 'Resume'"
     )
-    deadline: str = Field(
+    deadline: Optional[str] = Field(
         default="",
         description="[OPTIONAL] Specific deadline if different from main deadline"
     )
@@ -920,7 +923,7 @@ class StudentInsights(BaseModel):
         description="[REQUIRED] 2-3 things to avoid. "
                     "Examples: ['Mentioning rankings as reason', 'Generic essays', 'No demonstrated interest in major']"
     )
-    insights: List[StudentInsight] = Field(
+    insights: List[Union[StudentInsight, str]] = Field(
         default=[],
         description="[OPTIONAL] Additional sourced insights"
     )

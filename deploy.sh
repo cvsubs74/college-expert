@@ -34,6 +34,7 @@ PROFILE_MANAGER_FUNCTION="profile-manager"
 PROFILE_MANAGER_ES_FUNCTION="profile-manager-es"
 KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
 KNOWLEDGE_BASE_ES_FUNCTION="knowledge-base-manager-es"
+KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION="knowledge-base-manager-universities"
 FRONTEND_SITE_NAME="college-counselor"
 
 # Parse command line arguments
@@ -62,6 +63,7 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "  ${YELLOW}profile-es${NC}  - Deploy Elasticsearch profile manager function"
     echo -e "  ${YELLOW}knowledge-rag${NC} - Deploy RAG knowledge base function"
     echo -e "  ${YELLOW}knowledge-es${NC} - Deploy Elasticsearch knowledge base function"
+    echo -e "  ${YELLOW}knowledge-universities${NC} - Deploy Universities knowledge base function"
     echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions (recommended)"
     echo -e "  ${YELLOW}backend${NC}     - Deploy both agents + all functions (recommended)"
     echo -e "  ${YELLOW}frontend${NC}    - Deploy only frontend"
@@ -401,6 +403,40 @@ deploy_knowledge_base_manager_vertexai() {
     cd ../..
 }
 
+deploy_knowledge_base_manager_universities() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Knowledge Base Manager Universities Function${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    # Check for Elasticsearch credentials
+    if [ -z "$ES_CLOUD_ID" ] || [ -z "$ES_API_KEY" ]; then
+        echo -e "${RED}Error: Elasticsearch credentials not set${NC}"
+        echo -e "${YELLOW}Please set:${NC}"
+        echo -e "  export ES_CLOUD_ID='your-elastic-cloud-id'"
+        echo -e "  export ES_API_KEY='your-elastic-api-key'"
+        exit 1
+    fi
+    
+    cd cloud_functions/knowledge_base_manager_universities
+    gcloud functions deploy $KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION \
+        --gen2 \
+        --runtime=python311 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=knowledge_base_manager_universities_http_entry \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.yaml \
+        --timeout=300s \
+        --memory=512MB \
+        --max-instances=10
+    
+    KNOWLEDGE_BASE_UNIVERSITIES_URL=$(gcloud functions describe $KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Knowledge Base Manager Universities deployed: ${KNOWLEDGE_BASE_UNIVERSITIES_URL}${NC}"
+    cd ../..
+}
+
 deploy_profile_manager_vertexai() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Profile Manager Vertex AI Function${NC}"
@@ -529,6 +565,9 @@ case "$DEPLOY_TARGET" in
     "knowledge-es")
         deploy_knowledge_base_manager_es
         ;;
+    "knowledge-universities")
+        deploy_knowledge_base_manager_universities
+        ;;
     "agent-adk")
         deploy_agent_adk
         ;;
@@ -550,6 +589,7 @@ case "$DEPLOY_TARGET" in
         deploy_profile_manager_es
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
+        deploy_knowledge_base_manager_universities
         deploy_knowledge_base_manager_vertexai
         deploy_profile_manager_vertexai
         ;;
@@ -561,6 +601,7 @@ case "$DEPLOY_TARGET" in
         deploy_profile_manager_es
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
+        deploy_knowledge_base_manager_universities
         deploy_knowledge_base_manager_vertexai
         deploy_profile_manager_vertexai
         ;;
@@ -575,6 +616,7 @@ case "$DEPLOY_TARGET" in
         deploy_profile_manager_es
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
+        deploy_knowledge_base_manager_universities
         deploy_knowledge_base_manager_vertexai
         deploy_profile_manager_vertexai
         deploy_frontend
