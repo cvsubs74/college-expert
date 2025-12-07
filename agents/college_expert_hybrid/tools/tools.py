@@ -1,6 +1,6 @@
 """
 University Knowledge Base Tools - Interface to Knowledge Base Manager Universities Cloud Function
-Provides hybrid search (BM25 + vector) for university profiles.
+Provides semantic search using Elasticsearch's ELSER model for university profiles.
 """
 import os
 import json
@@ -30,12 +30,12 @@ PROFILE_MANAGER_ES_URL = os.environ.get(
 
 def search_universities(
     query: str,
-    search_type: str = "hybrid",
+    search_type: str = "semantic",
     filters: Optional[Dict[str, Any]] = None,
     limit: int = 10
 ) -> Dict[str, Any]:
     """
-    Search universities using hybrid search (BM25 + vector) with optional filters.
+    Search universities using semantic search (ELSER) with optional filters.
     
     IMPORTANT: Use filters when the user specifies criteria like location, acceptance rate,
     or public/private type. Combining filters with semantic search gives the best results.
@@ -48,9 +48,9 @@ def search_universities(
             Examples: "strong computer science program", "business and psychology",
             "top research university", "good financial aid"
             
-        search_type: Search mode - "hybrid" (default), "semantic", or "keyword"
-            - hybrid: Combines BM25 text + vector similarity (RECOMMENDED for most queries)
-            - semantic: Vector similarity only (good for conceptual/vague queries)
+        search_type: Search mode - "semantic" (default), "hybrid", or "keyword"
+            - semantic: ELSER-powered semantic search (RECOMMENDED - best for understanding intent)
+            - hybrid: Combines semantic + BM25 text search (good for mixed queries)
             - keyword: BM25 text only (good for exact name matches)
             
         filters: IMPORTANT - Use these to narrow results when user specifies criteria!
