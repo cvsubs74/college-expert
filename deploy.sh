@@ -668,8 +668,6 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
-        deploy_knowledge_base_manager_vertexai
-        deploy_profile_manager_vertexai
         ;;
     "backend")
         echo -e "${CYAN}Deploying backend (agents + cloud functions)...${NC}"
@@ -681,8 +679,6 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
-        deploy_knowledge_base_manager_vertexai
-        deploy_profile_manager_vertexai
         ;;
     "frontend")
         deploy_frontend
@@ -696,8 +692,6 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
-        deploy_knowledge_base_manager_vertexai
-        deploy_profile_manager_vertexai
         deploy_frontend
         ;;
     *)

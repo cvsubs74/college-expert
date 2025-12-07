@@ -49,19 +49,6 @@ export const APPROACHES = {
       'Advanced filters'
     ],
     bestFor: 'Advanced search features and full control'
-  },
-  vertexai: {
-    id: 'vertexai',
-    name: 'Vertex AI',
-    description: 'ADK RAG with Vertex AI corpora - Advanced semantic search',
-    icon: '🧠',
-    features: [
-      'Vertex AI RAG Engine',
-      'Semantic search',
-      'Agent-based uploads',
-      'User-scoped corpora'
-    ],
-    bestFor: 'Advanced RAG with semantic understanding'
   }
 };
 
