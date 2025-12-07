@@ -36,6 +36,7 @@ PROFILE_MANAGER_ES_FUNCTION="profile-manager-es"
 KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
 KNOWLEDGE_BASE_ES_FUNCTION="knowledge-base-manager-es"
 KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION="knowledge-base-manager-universities"
+UNIVERSITY_COLLECTOR_SERVICE_NAME="university-profile-collector"
 FRONTEND_SITE_NAME="college-counselor"
 
 # Parse command line arguments
@@ -537,6 +538,39 @@ EOF
     echo -e "${GREEN}✓ ADK Agent deployed: ${ADK_AGENT_URL}${NC}"
 }
 
+deploy_university_collector() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying University Profile Collector Agent${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    # Set up environment for University Collector agent
+    cd agents/university_profile_collector
+    cat > .env <<EOF
+GEMINI_API_KEY=${GEMINI_API_KEY}
+GOOGLE_GENAI_USE_VERTEXAI=0
+EOF
+    cd ../..
+    
+    # Deploy University Collector agent
+    adk deploy cloud_run \
+        --project="$PROJECT_ID" \
+        --region="$REGION" \
+        --service_name="$UNIVERSITY_COLLECTOR_SERVICE_NAME" \
+        --allow_origins="*" \
+        --with_ui \
+        agents/university_profile_collector || true
+    
+    gcloud run services add-iam-policy-binding "$UNIVERSITY_COLLECTOR_SERVICE_NAME" \
+        --member="allUsers" \
+        --role="roles/run.invoker" \
+        --region="$REGION" \
+        --platform=managed
+    
+    UNIVERSITY_COLLECTOR_URL=$(gcloud run services describe $UNIVERSITY_COLLECTOR_SERVICE_NAME --region=$REGION --format='value(status.url)')
+    echo -e "${GREEN}✓ University Profile Collector deployed: ${UNIVERSITY_COLLECTOR_URL}${NC}"
+}
+
 deploy_frontend() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Frontend${NC}"
@@ -611,6 +645,9 @@ case "$DEPLOY_TARGET" in
         ;;
     "agent-adk")
         deploy_agent_adk
+        ;;
+    "university-collector")
+        deploy_university_collector
         ;;
     "knowledge-vertexai")
         deploy_knowledge_base_manager_vertexai

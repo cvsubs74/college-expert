@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet } from 'react-router-dom';
 import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon } from '@heroicons/react/24/outline';
 import Profile from './pages/Profile';
-import Analysis from './pages/Analysis';
 import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
 import LandingPage from './pages/LandingPage';
@@ -16,7 +15,7 @@ import './index.css';
 function Navigation() {
   const location = useLocation();
   const { currentUser } = useAuth();
-  
+
   const isActive = (path) => {
     return location.pathname === path;
   };
@@ -41,46 +40,32 @@ function Navigation() {
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link
                 to="/profile"
-                className={`${
-                  isActive('/profile')
-                    ? 'border-primary text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`${isActive('/profile')
+                  ? 'border-primary text-gray-900'
+                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
                 <DocumentTextIcon className="h-5 w-5 mr-2" />
                 Student Profile
               </Link>
               <Link
                 to="/chat"
-                className={`${
-                  isActive('/chat')
-                    ? 'border-primary text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
-              >
-                <BookOpenIcon className="h-5 w-5 mr-2" />
-                College Research
-              </Link>
-              <Link
-                to="/analysis"
-                className={`${
-                  isActive('/analysis')
-                    ? 'border-primary text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`${isActive('/chat')
+                  ? 'border-primary text-gray-900'
+                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
                 <ChatBubbleLeftRightIcon className="h-5 w-5 mr-2" />
-                My College Strategy
+                AI Counselor
               </Link>
               {/* Knowledge Base - Only visible to admin */}
               {currentUser?.email === 'cvsubs@gmail.com' && (
                 <Link
                   to="/knowledge-base"
-                  className={`${
-                    isActive('/knowledge-base')
-                      ? 'border-primary text-gray-900'
-                      : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                  className={`${isActive('/knowledge-base')
+                    ? 'border-primary text-gray-900'
+                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
                 >
                   <BookOpenIcon className="h-5 w-5 mr-2" />
                   Knowledge Base
@@ -93,7 +78,7 @@ function Navigation() {
               <div className="flex items-center space-x-4">
                 {/* Approach Indicator */}
                 <ApproachIndicator />
-                
+
                 <div className="flex items-center space-x-2">
                   {currentUser.photoURL && (
                     <img
@@ -154,7 +139,6 @@ function App() {
             >
               <Route path="/profile" element={<Profile />} />
               <Route path="/chat" element={<Chat />} />
-              <Route path="/analysis" element={<Analysis />} />
               <Route path="/knowledge-base" element={<KnowledgeBase />} />
             </Route>
           </Routes>

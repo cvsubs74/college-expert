@@ -78,7 +78,7 @@
         "cycle_name": "Class of 2028",
         "applications_total": 146000,
         "admits_total": 35661,
-        "enrolled_total": null,
+        "enrolled_total": 0,
         "acceptance_rate_overall": 24.4,
         "acceptance_rate_in_state": null,
         "acceptance_rate_out_of_state": null,
@@ -310,7 +310,9 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "TAG program participant (transfer GPA 3.4). Recommended but not required: four semesters/six quarters including lower-division courses in composition, literature, history, and philosophy. Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in Arts courses and courses toward major requirements with at least two required courses in the chosen major having grades of 'C+' or better.. Film and Media Studies is its own department.",
@@ -392,7 +394,7 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "acceptance_rate": 23.7,
-            "average_gpa_admitted": 4.10,
+            "average_gpa_admitted": 4.1,
             "prerequisite_courses": [
               "One year of general chemistry with laboratory (grades C or better)",
               "One year of organic chemistry with laboratory (grades C or better)",
@@ -1042,7 +1044,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence.",
@@ -1058,7 +1062,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence.",
@@ -1074,7 +1080,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence.",
@@ -1090,7 +1098,10 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses", "One year of study (or equivalent) of either Greek or Latin (for Classical Civilization emphasis)"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses",
+              "One year of study (or equivalent) of either Greek or Latin (for Classical Civilization emphasis)"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence.. Transferring into Classics with no articulated courses at CCCs might be challenging.",
@@ -1106,7 +1117,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence.",
@@ -1122,7 +1135,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence. Offers a Future Teacher Specialization.",
@@ -1138,7 +1153,10 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses", "Completion of two years of language (through the 2C level or equivalent) in a modern European language (French, German, Italian, Portuguese, Russian, or Spanish)"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses",
+              "Completion of two years of language (through the 2C level or equivalent) in a modern European language (French, German, Italian, Portuguese, Russian, or Spanish)"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence. Offers optional specializations in Italian Studies and Russian Studies.",
@@ -1154,7 +1172,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence. Requires choosing two emphases from a list or designing one with an advisor.",
@@ -1170,7 +1190,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence. Offers a Future Teacher Specialization.",
@@ -1186,7 +1208,10 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses", "Lower-division writing requirement"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses",
+              "Lower-division writing requirement"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [
               "LIT JRN 20 (Introduction to Literary Journalism)",
@@ -1205,7 +1230,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence. Offers specializations in Law and Society, and Medicine and Well-Being.",
@@ -1221,9 +1248,13 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two UC transferable English composition courses"],
+            "prerequisite_courses": [
+              "Two UC transferable English composition courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["Spanish Language Series (e.g., SPAN 1A-C, 2A-C)"],
+            "weeder_courses": [
+              "Spanish Language Series (e.g., SPAN 1A-C, 2A-C)"
+            ],
             "special_requirements": "Internal change of major requires a cumulative UC GPA of 2.0, a quarterly GPA of 2.0 in the preceding quarter, and 2.00 GPA in School of Humanities courses and courses completed toward major requirements, with at least two required courses in the chosen major having grades of 'C+' or better. Humanities majors must also complete college-level coursework equivalent to UCI's sixth quarter of study in a language other than English, or equivalent competence.",
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -2012,7 +2043,9 @@
     ]
   },
   "application_process": {
-    "platforms": ["UC Application"],
+    "platforms": [
+      "UC Application"
+    ],
     "application_deadlines": [
       {
         "plan_type": "Early Decision",
@@ -2054,8 +2087,19 @@
       }
     ],
     "holistic_factors": {
-      "primary_factors": ["Course Rigor", "GPA", "Essays", "Extracurriculars", "Talents", "Academic accomplishments in light of life experiences"],
-      "secondary_factors": ["Leadership Roles", "Community Service", "Awards"],
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Extracurriculars",
+        "Talents",
+        "Academic accomplishments in light of life experiences"
+      ],
+      "secondary_factors": [
+        "Leadership Roles",
+        "Community Service",
+        "Awards"
+      ],
       "essay_importance": "Critical",
       "demonstrated_interest": "Not Considered",
       "interview_policy": "Not Offered",
@@ -2154,7 +2198,10 @@
     "philosophy": "Moderate",
     "ap_policy": {
       "general_rule": "Scores of 3, 4, or 5 on College Board AP examinations will receive credit toward graduation at UCI.",
-      "exceptions": ["Credit and usage can vary by subject and score, with some departments offering more credit for higher scores or specific usage. Some AP exams may not be used for certain major degree requirements (e.g., some Social Sciences majors). No university credit is awarded for certain exams (e.g., AP Research, AP Seminar). Students cannot earn units or grade points in courses for which they have been exempted on the basis of AP credit.", "Specific exceptions exist for certain exams and majors; for instance, some Computer Science credit requires higher scores (e.g., Computer Science AB with 4 or 5 for ICS/CSE 21 and 22)."],
+      "exceptions": [
+        "Credit and usage can vary by subject and score, with some departments offering more credit for higher scores or specific usage. Some AP exams may not be used for certain major degree requirements (e.g., some Social Sciences majors). No university credit is awarded for certain exams (e.g., AP Research, AP Seminar). Students cannot earn units or grade points in courses for which they have been exempted on the basis of AP credit.",
+        "Specific exceptions exist for certain exams and majors; for instance, some Computer Science credit requires higher scores (e.g., Computer Science AB with 4 or 5 for ICS/CSE 21 and 22)."
+      ],
       "usage": "Can satisfy GE requirements, some major prerequisites, and elective units, contributing towards total graduation credits."
     },
     "ib_policy": {
@@ -2162,7 +2209,9 @@
       "diploma_bonus": true
     },
     "transfer_articulation": {
-      "tools": ["ASSIST.org"],
+      "tools": [
+        "ASSIST.org"
+      ],
       "restrictions": "UC Irvine will only award up to 70 semester/105 quarter units of lower-division credit from non-UC colleges or universities. After this unit maximum is reached, subject credit may still be awarded. Units from AP, IB, and A-Level examinations are not included in this limitation."
     }
   },

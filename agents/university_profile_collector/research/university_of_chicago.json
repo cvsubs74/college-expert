@@ -1,0 +1,771 @@
+{
+  "_id": "University_of_Chicago",
+  "metadata": {
+    "official_name": "The University of Chicago",
+    "location": {
+      "city": "Chicago",
+      "state": "IL",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Chicago is a prestigious private research university located in Chicago, Illinois, renowned for its rigorous intellectual environment and commitment to critical inquiry. It offers a distinctive core curriculum and abundant research opportunities across various disciplines, attracting bold, creative thinkers globally.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic review, emphasizing intellectual curiosity, critical thinking, and creative expression through unique essay prompts. The admissions committee considers a candidate's entire application, including academic and extracurricular records, essays, letters of recommendation, and test scores, without minimum GPA or test score requirements.",
+    "rankings": [
+      {
+        "source": "US News",
+        "rank_overall": null,
+        "rank_category": "National Universities",
+        "rank_in_category": 6,
+        "year": 2026
+      },
+      {
+        "source": "Niche",
+        "rank_overall": 18,
+        "rank_category": "Best Colleges in America",
+        "rank_in_category": null,
+        "year": 2026
+      },
+      {
+        "source": "Forbes",
+        "rank_overall": 13,
+        "rank_category": "Top Colleges",
+        "rank_in_category": null,
+        "year": 2026
+      }
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Academics",
+        "insight": "Known for its rigorous core curriculum and emphasis on fundamental intellectual inquiry.",
+        "implication": "Students seeking a deeply challenging and inquiry-based education will thrive here, but those preferring a less intense academic environment may find it demanding."
+      },
+      {
+        "category": "Selectivity",
+        "insight": "The acceptance rate is highly selective, around 5%.",
+        "implication": "Applicants need to present a strong, well-rounded application that clearly demonstrates intellectual curiosity and a fit with the university's unique academic culture."
+      },
+      {
+        "category": "Student Experience",
+        "insight": "The university's unique and often quirky essay prompts are a key part of the application, designed to reveal personality and passion for learning.",
+        "implication": "Prospective students should approach essays with creativity and boldness, using them as an opportunity to showcase their authentic intellectual character rather than playing it safe."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "UChicago offers a vibrant social environment with over 400 student organizations, residential Houses that foster strong communities, and opportunities for intramural sports, arts, and comedy. While some sources indicate it is not a 'party school' and the Regenstein Library can be a social hub, a thriving Greek system and departmental parties also exist. The social atmosphere in dorms is highly rated. The campus community is described as friendly and supportive, despite the rigorous academics.",
+      "transportation_impact": "Located in the Hyde Park neighborhood, UChicago provides extensive transportation options including free UGo shuttles, several CTA bus routes (some free with student ID), Divvy bike-sharing discounts, and a Lyft Ride Smart program for nighttime rides. This comprehensive network effectively connects the campus and the surrounding Hyde Park area, as well as providing access to downtown Chicago, mitigating the impact of its urban location on student mobility.",
+      "research_impact": "The University of Chicago is a major research institution, classified with 'very high research activity'. It offers abundant research opportunities for undergraduates across all disciplines, including summer research programs and faculty-mentored projects. The university operates significant research facilities like the Argonne National Laboratory and the Fermi National Accelerator Laboratory. [cite: 22 (from 2022 data)] This strong research focus enriches the academic experience, provides students with key skills, and prepares them for graduate study and diverse careers."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 4.5,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 9.3,
+      "admits_class_size": 1955,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "ED2",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 43612,
+        "admits_total": 1955,
+        "enrolled_total": 1726,
+        "acceptance_rate_overall": 4.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 88.3,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data for the Class of 2029 (Fall 2025 enrollment) is not yet fully released in a Common Data Set. The admissions statistics provided here are for the Class of 2028 (Fall 2024 enrollment), which is the most recent complete data available. The University of Chicago does not disclose waitlist-specific numbers in its Common Data Set submissions."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 38631,
+        "admits_total": 1849,
+        "enrolled_total": 1626,
+        "acceptance_rate_overall": 4.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 87.9,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions statistics are for the Class of 2027 (Fall 2023 enrollment) from the 2023-2024 Common Data Set. The University of Chicago does not disclose waitlist-specific numbers in its Common Data Set submissions."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 37522,
+        "admits_total": 2041,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 5.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions statistics are for the Class of 2026 (Fall 2022 enrollment). The total number of enrolled students for this class was not explicitly found in the available data. The University of Chicago does not disclose waitlist-specific numbers in its Common Data Set submissions."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 37977,
+        "admits_total": 2460,
+        "enrolled_total": 2053,
+        "acceptance_rate_overall": 6.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 83.5,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions statistics are for the Class of 2025 (Fall 2021 enrollment). The University of Chicago does not disclose waitlist-specific numbers in its Common Data Set submissions. [cite: 17 in previous turn, 6]"
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 34400,
+        "admits_total": 2133,
+        "enrolled_total": 1457,
+        "acceptance_rate_overall": 6.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 68.3,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions statistics are for the Class of 2024 (Fall 2020 enrollment). The University of Chicago does not disclose waitlist-specific numbers in its Common Data Set submissions. [cite: 3 in previous turn, 6]"
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.10-4.50",
+        "unweighted_middle_50": "3.65-4.00",
+        "average_weighted": 4.32,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "Most admits have straight A's in honors/AP, with 97% in the top 10% of their graduating class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1510-1560",
+        "sat_reading_middle_50": "740-770",
+        "sat_math_middle_50": "770-800",
+        "act_composite_middle_50": "34-35",
+        "submission_rate": 46.0,
+        "policy_note": "Test-optional with a 'No Harm' policy, meaning scores are only used if they positively affect admission. Submitting scores is encouraged but not required."
+      },
+      "demographics": {
+        "first_gen_percentage": 25.0,
+        "legacy_percentage": null,
+        "international_percentage": 16.0,
+        "geographic_breakdown": [
+          {
+            "region": "Illinois (In-State)",
+            "percentage": 12.0
+          },
+          {
+            "region": "Other US States (Out-of-State)",
+            "percentage": 72.0
+          },
+          {
+            "region": "International (Nonresident Alien)",
+            "percentage": 16.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 17373,
+            "admits": 994,
+            "acceptance_rate": 5.7,
+            "note": ""
+          },
+          "women": {
+            "applicants": 21249,
+            "admits": 855,
+            "acceptance_rate": 4.0,
+            "note": ""
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 31.0,
+          "black_african_american": 7.0,
+          "hispanic_latino": 17.0,
+          "asian": 20.0,
+          "native_american_alaskan": 0.5,
+          "pacific_islander": 0.5,
+          "two_or_more_races": 7.0,
+          "unknown": 2.0,
+          "non_resident_alien": 16.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "The College of the University of Chicago",
+        "admissions_model": "Holistic Review",
+        "acceptance_rate_estimate": 5.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Demonstrate deep intellectual curiosity, a strong academic record, and a genuine interest in a rigorous, interdisciplinary liberal arts education. Emphasize engagement in critical thinking and analytical discourse, particularly through the Core Curriculum.",
+        "housing_profile": "Mandatory for freshmen and sophomores, the residential 'House System' divides students into small, tight-knit communities (average 70 students) within seven residence halls. Each house has unique traditions and fosters strong bonds, offering a mix of traditional and modern dorm options.",
+        "student_archetype": "Intellectually passionate, critical thinkers who thrive on academic rigor, philosophical debate, and questioning assumptions. Often described as quirky or nerdy, but the student body is diverse, including athletes and those interested in various social and cultural activities. They embrace the demanding academic environment.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CMSC 14100 Introduction to Computer Science I",
+              "CMSC 14200 Introduction to Computer Science II",
+              "CMSC 14300 Systems Programming I",
+              "CMSC 14400 Systems Programming II",
+              "Calculus (MATH 15100-15200 or higher sequence)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CMSC 14300 Systems Programming I",
+              "CMSC 14400 Systems Programming II",
+              "CMSC 27100 Discrete Mathematics",
+              "CMSC 27200 Theory of Algorithms"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Students declare major by end of second year. Introductory courses can be highly impacted for registration, making late switching trickier but still doable. No more than two transfer credits (and none for intro sequence) can be applied to the major. BS requires more courses and specific physical science general education."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus (MATH 13100-13200, MATH 15100-15200, or higher sequence)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 20000 The Elements of Economic Analysis I",
+              "ECON 20100 The Elements of Economic Analysis II",
+              "ECON 21010 Principles of Microeconomics",
+              "ECON 21020 Principles of Macroeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Most popular undergraduate major. Generally no restrictions on declaring the major beyond meeting course prerequisites and general College GPA requirements."
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 11100-11200-11300 Comprehensive General Chemistry I-II-III (or Honors sequence CHEM 12100-12200-12300)",
+              "MATH 13100-13200-13300 or MATH 15100-15200-15300 Calculus sequence (two quarters sufficient for some tracks)",
+              "PHYS 12100-12200 General Physics I-II (or higher)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 22000 Organic Chemistry I",
+              "CHEM 22100 Organic Chemistry II",
+              "BIOS 20234 Molecular Biology of the Cell",
+              "BIOS 20235 Biological Systems",
+              "BIOS 20236 Biological Dynamics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Average grade of C or higher in General Chemistry is a prerequisite for Organic Chemistry. Various tracks and specializations are available."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus sequence (e.g., MATH 15100-15200-15300 or MATH 16100-16200-16300 Honors Calculus I-II-III)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 20300 Analysis in Rn I",
+              "MATH 20400 Analysis in Rn II",
+              "MATH 25400 Basic Algebra I",
+              "MATH 25500 Basic Algebra II"
+            ],
+            "special_requirements": "Requires a grade of at least C- in each course used for the major. Honors Analysis (MATH 20700-20800-20900) is highly rigorous.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Offers BA, BS, and combined BA/MS, BS/MS degrees. BA provides more elective freedom, BS requires more emphasis on physical sciences."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "Introductory courses in three of the four fields (American Politics, Comparative Politics, International Relations, Political Theory) which must be taken for quality grades.",
+              "PLSC 22913 Political Science Research Methods"
+            ],
+            "special_requirements": "Requires a substantial paper (BA Thesis or Long Paper). Honors requires 3.6 major GPA, 3.0 overall GPA, and BA thesis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Declaration typically in second year."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYC 20200 Psychological Research Methods",
+              "PSYC 20250 Introduction to Statistical Concepts and Methods (or STAT 22000 Statistical Methods and Applications)"
+            ],
+            "special_requirements": "Completion of a methods course and a statistics course by end of third year. Participation in research is a requirement for the major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "No separate application to declare Psychology as a major."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "General Chemistry sequence (CHEM 10100-10200-11300, CHEM 11100-11200-11300, or Honors CHEM 12100-12200-12300)",
+              "Calculus"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 22000 Organic Chemistry I",
+              "CHEM 22100 Organic Chemistry II",
+              "CHEM 22200 Organic Chemistry III",
+              "CHEM 26100 Physical Chemistry I"
+            ],
+            "special_requirements": "Average grade of C or higher in General Chemistry sequence is prerequisite for Organic Chemistry.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "The BS degree is a more intensive program of study. An ACS-Accredited BS is also available."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus sequence (MATH 15100-15200-15300 or MATH 16100-16200-16300 Honors Calculus I-II-III)",
+              "Introductory Physics sequence (PHYS 13100-13200-13300 or PHYS 14100-14200-14300 Honors Mechanics-E&M-Waves/Optics/Heat)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PHYS 14100 Honors Mechanics (requires >3.0 GPA for entry)",
+              "PHYS 14200 Honors Electricity and Magnetism",
+              "PHYS 18500 Intermediate Classical Mechanics",
+              "PHYS 23410 Quantum Mechanics I"
+            ],
+            "special_requirements": "Requires an average GPA of 2.0 or higher in core physics courses to continue in the program.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "BS degree includes additional courses in electricity and magnetism, quantum mechanics, and experimental physics, well-suited for graduate study in physics."
+          },
+          {
+            "name": "Statistics",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus sequence through Calculus III (MATH 13300, 15300, or 16300)",
+              "Linear Algebra (STAT 24300 Numerical Linear Algebra or MATH 20250 Abstract Linear Algebra)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "STAT 25100 Introduction to Mathematical Probability (or STAT 25150 Probability-A)",
+              "STAT 24400 Statistical Theory and Methods I",
+              "STAT 24500 Statistical Theory and Methods II"
+            ],
+            "special_requirements": "Requires quality grades of at least C+ in STAT 24400-24500 (or C in STAT 24410-24510) and at least C in all other major courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Strong training in mathematics and computation. Students are advised to consult with the Departmental Adviser for Majors."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "HIST 29803 Historiography",
+              "HIST 29800 BA Thesis Seminar I (for Thesis Track)"
+            ],
+            "special_requirements": "Students must take courses in at least two geographic regions and at least one course before 1800 and one after 1800. Honors requires 3.7 major GPA and faculty nomination.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Declaration is ideally no later than the start of the third year. Three tracks available: Thesis, Capstone, and Colloquium."
+          },
+          {
+            "name": "Public Policy Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PBPL 20000 Introduction to Public Policy",
+              "One course in microeconomics (e.g., ECON 20000 or ECON 21010)",
+              "One course in statistics (e.g., STAT 22000)"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Students may declare a major starting in their second year. Offered through the Harris School of Public Policy."
+          },
+          {
+            "name": "English Language and Literature",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ENGL 10000 Close Reading",
+              "ENGL 10100 Critical Inquiry"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "The English major encourages a wide range of literary and critical inquiry. Students are typically encouraged to explore diverse periods and genres."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship and Innovation Minor"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision I",
+        "date": "2025-11-03",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-03",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2026-01-05",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-05",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Two supplemental essays required: a 'Why Us' essay (how UChicago satisfies desire for learning, community, and future) and an Extended Essay (choose from several creative prompts or craft your own). No strict word limits, but 300-600 words recommended for the first essay."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "Essays",
+        "Recommendations",
+        "Academic Achievement"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character/Personal Qualities"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Intellectual curiosity, free-thinking, ability to engage creatively with challenging prompts. UChicago does not offer on-campus or alumni interviews as part of the undergraduate application process; however, applicants have the option to submit a highly recommended two-minute video profile or external interviews (Glimpse or InitialView) in lieu of the video profile."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive major if not set on CS/Engineering",
+      "Consider undeclared for Letters and Science, especially if your desired major is competitive",
+      "Research major-specific admit rates before applying",
+      "Take classes in a wide variety of subjects to explore interests before committing to a major",
+      "Avoid choosing 'undeclared' if you can declare a major to not miss out on potential scholarships tied to specific colleges or majors"
+    ],
+    "college_ranking_tactics": [
+      "Do not solely rely on overall college rankings, as they can be manipulated",
+      "Rank colleges based on opportunities offered by the institution itself, rather than just student caliber metrics",
+      "Consider the quality of the administration and professors as teachers, not just their intelligence",
+      "Evaluate living standards, such as dorm quality and amenities",
+      "Assess campus culture, including whether it's competitive or laid-back, and consider the surrounding area and weather",
+      "Focus on ranking specific departments or majors, as a school's overall high ranking doesn't guarantee a good program in your field"
+    ],
+    "alternate_major_strategy": "If applying to a highly competitive major, list a backup in a different college or a less competitive program within the university. For example, if applying to CS in Engineering, list Cognitive Science in Letters and Science as an alternate. Be aware that some universities only guarantee the review of your first-choice major, and for some, being admitted as 'undeclared' might be an outcome if alternate majors are also competitive or if you're a transfer student."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67446,
+        "total_coa": 94993,
+        "housing": 20061
+      },
+      "out_of_state": {
+        "tuition": 67446,
+        "total_coa": 94993,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 55101,
+    "average_merit_aid": 42948,
+    "percent_receiving_aid": 60.0,
+    "scholarships": [
+      {
+        "name": "University Scholarship",
+        "type": "Merit",
+        "amount": "$5,000 to $15,000 per year",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Recognition for outstanding academic achievements, leadership, and extracurricular excellence. Renewable for four years.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "National Merit Finalist Scholarship",
+        "type": "Merit",
+        "amount": "$2,000 to $5,000 per year",
+        "deadline": "Automatic consideration based on National Merit Scholarship Program",
+        "benefits": "Awarded to National Merit Finalists who select UChicago as their first-choice institution. Renewable for four years.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Odyssey Scholarship Program",
+        "type": "Need",
+        "amount": "Full tuition coverage",
+        "deadline": "During admission application process (for financial aid consideration)",
+        "benefits": "Full tuition, additional $5,000 career development grant, mentorship, financial literacy programs, priority access to career development opportunities, loan-free aid, funding for study abroad, guaranteed paid internships.",
+        "application_method": "Automatic Consideration (based on demonstrated financial need)"
+      },
+      {
+        "name": "UChicago Promise Program (Chicago Public Schools Scholarship)",
+        "type": "Merit/Full Ride",
+        "amount": "Full tuition",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Full tuition scholarship for select graduates of Chicago Public Schools (CPS). Includes funding for study abroad, internships, and professional development. Encourages community engagement and leadership initiatives. Renewable for four years.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Police and Fire Scholarship",
+        "type": "Full Tuition",
+        "amount": "Up to full tuition",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Full-tuition, four-year scholarship for children of active Chicago firefighters and police officers.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "First Phoenix Scholarship",
+        "type": "Merit/First-Generation",
+        "amount": "$20,000 over 4 years",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Awarded exclusively to first-generation college students. Renewable for four years.",
+        "application_method": "Automatic Consideration"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Score of 4+ grants credit for most exams",
+      "exceptions": [
+        "Score of 5 is required for some exams",
+        "AP credits do not count towards the 4200 units needed for graduation",
+        "Cannot be used to accelerate graduation"
+      ],
+      "usage": "Can satisfy general education requirements and some major prerequisites"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with scores of 5+ grant credit; a score of 7 on certain Higher-Level examinations may be required for credit in specific subjects",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "A minimum of 3800 units out of 4200 total units for the degree must be earned through course enrollment at UChicago. Transfer students must complete a minimum of 1800 units (18 courses) by enrollment at UChicago. Transfer students may not be awarded more than 1200 units of transfer credit per academic year of enrollment at a previous institution. Courses must be from an accredited institution and similar in content to UChicago offerings."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with intellectually rigorous and challenging coursework, not just high grades",
+      "Demonstrated passion in specific areas, showing genuine intellectual curiosity and engagement rather than a scattered list of activities",
+      "Authentic essays that reveal personality, self-reflection, and a deep interest in learning, allowing your unique voice to come through",
+      "A clear understanding of UChicago's unique academic culture and how you would contribute to and benefit from it"
+    ],
+    "common_activities": [
+      "Research experience, as UChicago makes these opportunities accessible",
+      "Leadership in school clubs and student organizations",
+      "Community service or mentoring, often through programs that connect with the local community",
+      "Varsity athletics, demonstrating discipline and self-improvement",
+      "Involvement in music or arts, showcasing personal interest and creative expression"
+    ],
+    "essay_tips": [
+      "Be specific about why UChicago, highlighting familiarity with faculty research, traditions, and specific programs or clubs",
+      "Show, don't tell; illustrate your personality and interests through narratives and specific examples, even with seemingly unrelated prompts",
+      "Avoid clichés, especially about loving to learn, and instead delve into specific intellectual curiosities and how UChicago fosters them",
+      "Take advantage of the unusual essay prompts to reveal who you are and tie them back to your interests",
+      "Consider the optional two-minute video profile to make yourself stand out and share your perspective on contributing to UChicago"
+    ],
+    "red_flags": [
+      "Grade decline, especially in senior year, without a compelling explanation",
+      "Generic essays that could apply to any top university, failing to demonstrate specific fit with UChicago's unique culture",
+      "Lack of intellectual curiosity or engagement in challenging subjects",
+      "An application that appears to be a checklist of extracurriculars without genuine passion or depth"
+    ],
+    "insights": [
+      "UChicago emphasizes a holistic review process where no single component determines admission; all aspects of the application are considered",
+      "The admissions committee places a disproportionate emphasis on essays and 'fit' in general, making them crucial for demonstrating your alignment with the school's intellectual environment",
+      "Applying Early Decision (ED) can significantly increase the chances of acceptance, as UChicago has a high ED yield rate",
+      "The 'No Harm' test-optional policy means submitted SAT/ACT scores will only be used if they positively impact an applicant's chance of admission",
+      "Students admitted often appreciate the rigorous academic environment, the Core Curriculum, and the vibrant community that encourages critical thinking and diverse discussions"
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 91885,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 29.0,
+    "top_employers": [
+      "McKinsey & Company",
+      "Bain Capital",
+      "Nike",
+      "Uber",
+      "GAO",
+      "University of Chicago"
+    ],
+    "loan_default_rate": 1.5
+  },
+  "student_retention": {
+    "freshman_retention_rate": 99.0,
+    "graduation_rate_4_year": 86.0,
+    "graduation_rate_6_year": 96.0
+  }
+}

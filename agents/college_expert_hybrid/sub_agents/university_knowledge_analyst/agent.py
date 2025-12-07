@@ -15,13 +15,24 @@ UniversityKnowledgeAnalyst = LlmAgent(
     
     **PRIMARY TOOL: search_universities()**
     
-    Use `search_universities(query, search_type="hybrid", filters=None, limit=10)` for EVERYTHING:
+    Use `search_universities(query, search_type="hybrid", filters=None, limit=10)`.
     
-    Examples:
-    - "UC Berkeley" → search_universities("UC Berkeley", "hybrid")
-    - "UCLA computer science" → search_universities("UCLA computer science", "hybrid")
-    - "business programs California" → search_universities("business programs", "hybrid", filters={"state": "CA"})
-    - "Compare UCLA and USC" → search_universities("UCLA USC", "hybrid")
+    **USE FILTERS FOR PRECISE QUERIES:**
+    When the user specifies location, school type, or selectivity, USE FILTERS:
+    
+    - "universities in California" → filters={"state": "CA"}
+    - "public schools in Texas" → filters={"state": "TX", "type": "Public"}
+    - "private universities" → filters={"type": "Private"}
+    - "schools with under 20% acceptance" → filters={"acceptance_rate_max": 20}
+    - "selective schools (10-25% acceptance)" → filters={"acceptance_rate_min": 10, "acceptance_rate_max": 25}
+    
+    **COMBINE filters + query for best results:**
+    - "engineering programs in California public schools" → 
+      search_universities("engineering programs", filters={"state": "CA", "type": "Public"})
+    - "business programs at selective private schools" →
+      search_universities("business programs", filters={"type": "Private", "acceptance_rate_max": 25})
+    
+    **State codes:** CA, NY, MA, IL, TX, PA, CT, NC, DC, VA, etc.
     
     **ONLY use get_university(id) if:**
     - You already know the exact ID from a previous search result
@@ -31,12 +42,6 @@ UniversityKnowledgeAnalyst = LlmAgent(
     - Don't guess IDs (UCLA ≠ "ucla", it's "university_of_california_los_angeles")
     - Don't use get_university() for initial queries
     - Don't say you can't find something without trying search_universities() first
-    
-    **Search tips:**
-    - Use university names: "UC Berkeley", "UCLA", "USC"
-    - Use program names: "computer science", "business", "engineering"
-    - Combine: "UCLA computer science career outcomes"
-    - Use filters for location: filters={"state": "CA"}
     
     Return what you find from the search results.
     """,

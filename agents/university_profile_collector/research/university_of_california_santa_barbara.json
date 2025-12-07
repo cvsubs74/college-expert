@@ -78,7 +78,7 @@
         "cycle_name": "Class of 2029",
         "applications_total": 110178,
         "admits_total": 42170,
-        "enrolled_total": null,
+        "enrolled_total": 0,
         "acceptance_rate_overall": 38.3,
         "acceptance_rate_in_state": 32.1,
         "acceptance_rate_out_of_state": 54.8,
@@ -138,7 +138,7 @@
         "cycle_name": "Class of 2026",
         "applications_total": 110995,
         "admits_total": 28689,
-        "enrolled_total": null,
+        "enrolled_total": 0,
         "acceptance_rate_overall": 25.8,
         "acceptance_rate_in_state": null,
         "acceptance_rate_out_of_state": null,
@@ -178,7 +178,7 @@
       "gpa": {
         "weighted_middle_50": "4.12-4.29",
         "unweighted_middle_50": "3.80-4.00",
-        "average_weighted": 4.30,
+        "average_weighted": 4.3,
         "percentile_25": "4.12",
         "percentile_75": "4.29",
         "notes": "Most admits have straight A's in honors/AP, with many completing 10+ AP/IB/dual-enrollment courses, especially in math, lab science, and world language level 4."
@@ -262,9 +262,17 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["ECON 1 (Principles of Economics, Micro)", "ECON 2 (Principles of Economics, Macro)", "ECON 5 (Introduction to Economic Statistics) or PSTAT 120A", "ECON 10A (Intermediate Microeconomic Theory)", "MATH 2A-B or 3A-B or 34A-B"],
+            "prerequisite_courses": [
+              "ECON 1 (Principles of Economics, Micro)",
+              "ECON 2 (Principles of Economics, Macro)",
+              "ECON 5 (Introduction to Economic Statistics) or PSTAT 120A",
+              "ECON 10A (Intermediate Microeconomic Theory)",
+              "MATH 2A-B or 3A-B or 34A-B"
+            ],
             "minimum_gpa_to_declare": 2.85,
-            "weeder_courses": ["ECON 10A Intermediate Microeconomic Theory"],
+            "weeder_courses": [
+              "ECON 10A Intermediate Microeconomic Theory"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -278,9 +286,18 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["COMM 1 (Introduction to Communication)", "COMM 87 (Introduction to Statistics)", "COMM 88 (Research Methods)", "COMM 89 (Introduction to Communication Theory)"],
+            "prerequisite_courses": [
+              "COMM 1 (Introduction to Communication)",
+              "COMM 87 (Introduction to Statistics)",
+              "COMM 88 (Research Methods)",
+              "COMM 89 (Introduction to Communication Theory)"
+            ],
             "minimum_gpa_to_declare": 3.0,
-            "weeder_courses": ["COMM 87 Introduction to Statistics", "COMM 88 Research Methods", "COMM 89 Introduction to Communication Theory"],
+            "weeder_courses": [
+              "COMM 87 Introduction to Statistics",
+              "COMM 88 Research Methods",
+              "COMM 89 Introduction to Communication Theory"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -294,9 +311,23 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["CHEM 1A-B-C/AL-BL-CL", "CHEM 109A-B-C", "MATH 3A-B (or 34A-B)", "PSTAT 5LS (or 5A)", "MCDB 1A-B", "EEMB 2-3", "MCDB 1LL", "EEMB 2LL/3L", "PHYSICS 6A-B-C"],
+            "prerequisite_courses": [
+              "CHEM 1A-B-C/AL-BL-CL",
+              "CHEM 109A-B-C",
+              "MATH 3A-B (or 34A-B)",
+              "PSTAT 5LS (or 5A)",
+              "MCDB 1A-B",
+              "EEMB 2-3",
+              "MCDB 1LL",
+              "EEMB 2LL/3L",
+              "PHYSICS 6A-B-C"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["CHEM 1A General Chemistry", "CHEM 109A Organic Chemistry", "MCDB 1A Contemporary Biology"],
+            "weeder_courses": [
+              "CHEM 1A General Chemistry",
+              "CHEM 109A Organic Chemistry",
+              "MCDB 1A Contemporary Biology"
+            ],
             "special_requirements": "AP credit in Biology or Chemistry does not satisfy major preparation requirements. Many upper-division EEMB and all MCDB courses require a C or higher in their prerequisite courses.",
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -310,9 +341,21 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["PSY 1 (Introduction to Psychology)", "MATH 34A (or 3A or 2A)", "PSTAT 5A (or 5LS or COMM 87)", "PSY 10A (Research Methods in Psych & Brain)", "PSY 10B (Statistical Methods in Psych & Brain)", "CHEM 1A-B (or 2A-B)", "MCDB 6 or 1A and EEMB 7 or 2"],
+            "prerequisite_courses": [
+              "PSY 1 (Introduction to Psychology)",
+              "MATH 34A (or 3A or 2A)",
+              "PSTAT 5A (or 5LS or COMM 87)",
+              "PSY 10A (Research Methods in Psych & Brain)",
+              "PSY 10B (Statistical Methods in Psych & Brain)",
+              "CHEM 1A-B (or 2A-B)",
+              "MCDB 6 or 1A and EEMB 7 or 2"
+            ],
             "minimum_gpa_to_declare": 2.7,
-            "weeder_courses": ["PSY 10A Research Methods in Psych & Brain", "PSY 10B Statistical Methods in Psych & Brain", "CHEM 1A General Chemistry"],
+            "weeder_courses": [
+              "PSY 10A Research Methods in Psych & Brain",
+              "PSY 10B Statistical Methods in Psych & Brain",
+              "CHEM 1A General Chemistry"
+            ],
             "special_requirements": "PSY 10A & 10B are only offered at UCSB. AP Psychology is PSY 1, AP Statistics is PSTAT 5, AP Calculus AB is MATH 3A/34A.",
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -326,7 +369,10 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["ENV S 1, 2, or 3 (one introductory course)", "Two additional lower-division Preparation for the Major courses"],
+            "prerequisite_courses": [
+              "ENV S 1, 2, or 3 (one introductory course)",
+              "Two additional lower-division Preparation for the Major courses"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": null,
@@ -342,9 +388,13 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Two courses from: English 10, 11, 15, 22, 25, 34NA, 39, 40BA (or 40BB), 50"],
+            "prerequisite_courses": [
+              "Two courses from: English 10, 11, 15, 22, 25, 34NA, 39, 40BA (or 40BB), 50"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["English 10 Introduction to Literary Study"],
+            "weeder_courses": [
+              "English 10 Introduction to Literary Study"
+            ],
             "special_requirements": "Foreign language requirement (Option 1: 5th quarter proficiency, or Option 2: 3rd quarter proficiency + three upper-division foreign literature in translation courses).",
             "admissions_pathway": "Open Major",
             "internal_transfer_allowed": true,
@@ -358,9 +408,18 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 3A-B", "MATH 4A-B", "MATH 6A", "PHYSICS 21-22-23-24-25", "PHYSICS 3L/20AL, 25L"],
+            "prerequisite_courses": [
+              "MATH 3A-B",
+              "MATH 4A-B",
+              "MATH 6A",
+              "PHYSICS 21-22-23-24-25",
+              "PHYSICS 3L/20AL, 25L"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["PHYSICS 21 Introductory Physics: Mechanics", "PHYSICS 22 Introductory Physics: Fields"],
+            "weeder_courses": [
+              "PHYSICS 21 Introductory Physics: Mechanics",
+              "PHYSICS 22 Introductory Physics: Fields"
+            ],
             "special_requirements": "Physics 8 strongly recommended if no AP Calculus BC score of 5. PHYS 21 required before change of major.",
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -374,9 +433,17 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A"],
+            "prerequisite_courses": [
+              "MATH 3A-B",
+              "MATH 4A",
+              "MATH 6A"
+            ],
             "minimum_gpa_to_declare": 2.5,
-            "weeder_courses": ["MATH 3A Calculus with Applications, Part 1", "MATH 4A Linear Algebra with Applications", "MATH 8 Transition to Higher Mathematics"],
+            "weeder_courses": [
+              "MATH 3A Calculus with Applications, Part 1",
+              "MATH 4A Linear Algebra with Applications",
+              "MATH 8 Transition to Higher Mathematics"
+            ],
             "special_requirements": "MATH 8 (or equivalent) is a prerequisite for every upper-division Math course. Pass 1 is restricted to full Math Majors.",
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -390,9 +457,17 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A", "CMPSC 8 (or 9 or 16)"],
+            "prerequisite_courses": [
+              "MATH 3A-B",
+              "MATH 4A",
+              "MATH 6A",
+              "CMPSC 8 (or 9 or 16)"
+            ],
             "minimum_gpa_to_declare": 2.75,
-            "weeder_courses": ["MATH 3A Calculus with Applications, Part 1", "MATH 4A Linear Algebra with Applications"],
+            "weeder_courses": [
+              "MATH 3A Calculus with Applications, Part 1",
+              "MATH 4A Linear Algebra with Applications"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -406,9 +481,17 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A", "CMPSC 8 (or 9 or 16)"],
+            "prerequisite_courses": [
+              "MATH 3A-B",
+              "MATH 4A",
+              "MATH 6A",
+              "CMPSC 8 (or 9 or 16)"
+            ],
             "minimum_gpa_to_declare": 2.75,
-            "weeder_courses": ["MATH 3A Calculus with Applications, Part 1", "CMPSC 8 Introduction to Computer Science (or equivalent)"],
+            "weeder_courses": [
+              "MATH 3A Calculus with Applications, Part 1",
+              "CMPSC 8 Introduction to Computer Science (or equivalent)"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -433,9 +516,21 @@
             "is_impacted": true,
             "acceptance_rate": 5.0,
             "average_gpa_admitted": 4.27,
-            "prerequisite_courses": ["Calculus BC", "Physics (7 or 20 series)", "CMPSC 16 (or equivalent)", "CMPSC 24 (or equivalent)", "CMPSC 32 (or equivalent)", "CMPSC 40 (or equivalent)"],
+            "prerequisite_courses": [
+              "Calculus BC",
+              "Physics (7 or 20 series)",
+              "CMPSC 16 (or equivalent)",
+              "CMPSC 24 (or equivalent)",
+              "CMPSC 32 (or equivalent)",
+              "CMPSC 40 (or equivalent)"
+            ],
             "minimum_gpa_to_declare": 3.5,
-            "weeder_courses": ["CMPSC 16 Introduction to Computer Science I", "CMPSC 24 Introduction to Computer Science II", "CMPSC 32 Object-Oriented Design and Implementation", "CMPSC 40 Advanced Data Structures"],
+            "weeder_courses": [
+              "CMPSC 16 Introduction to Computer Science I",
+              "CMPSC 24 Introduction to Computer Science II",
+              "CMPSC 32 Object-Oriented Design and Implementation",
+              "CMPSC 40 Advanced Data Structures"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -449,9 +544,24 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 3A-B", "MATH 4A-B", "MATH 6A-B", "PHYSICS 7A-B", "CHEM 1A-B", "ENGR 3", "ME 10", "ME 14", "ME 17"],
+            "prerequisite_courses": [
+              "MATH 3A-B",
+              "MATH 4A-B",
+              "MATH 6A-B",
+              "PHYSICS 7A-B",
+              "CHEM 1A-B",
+              "ENGR 3",
+              "ME 10",
+              "ME 14",
+              "ME 17"
+            ],
             "minimum_gpa_to_declare": 3.3,
-            "weeder_courses": ["MATH 3A Calculus with Applications, Part 1", "PHYSICS 7A General Physics, Part 1", "ME 10 Introduction to Mechanical Engineering", "ME 14 Introduction to Solid Mechanics"],
+            "weeder_courses": [
+              "MATH 3A Calculus with Applications, Part 1",
+              "PHYSICS 7A General Physics, Part 1",
+              "ME 10 Introduction to Mechanical Engineering",
+              "ME 14 Introduction to Solid Mechanics"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -464,10 +574,21 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "acceptance_rate": 9.0,
-            "average_gpa_admitted": 4.40,
-            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A", "PHYSICS 7A-B-C", "ECE 10A/L, 10B/L, 10C/L", "ECE 15A"],
+            "average_gpa_admitted": 4.4,
+            "prerequisite_courses": [
+              "MATH 3A-B",
+              "MATH 4A",
+              "MATH 6A",
+              "PHYSICS 7A-B-C",
+              "ECE 10A/L, 10B/L, 10C/L",
+              "ECE 15A"
+            ],
             "minimum_gpa_to_declare": 3.5,
-            "weeder_courses": ["ECE 10A Introduction to Electrical Engineering", "ECE 10B Circuit Analysis I", "PHYSICS 7A General Physics, Part 1"],
+            "weeder_courses": [
+              "ECE 10A Introduction to Electrical Engineering",
+              "ECE 10B Circuit Analysis I",
+              "PHYSICS 7A General Physics, Part 1"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -481,9 +602,24 @@
             "is_impacted": true,
             "acceptance_rate": 7.0,
             "average_gpa_admitted": 4.44,
-            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "MATH 6A", "PHYSICS 7A-B-C", "ECE 10A/L, 10B/L, 10C/L", "ECE 15A", "CMPSC 16", "CMPSC 24", "CMPSC 32", "CMPSC 40"],
+            "prerequisite_courses": [
+              "MATH 3A-B",
+              "MATH 4A",
+              "MATH 6A",
+              "PHYSICS 7A-B-C",
+              "ECE 10A/L, 10B/L, 10C/L",
+              "ECE 15A",
+              "CMPSC 16",
+              "CMPSC 24",
+              "CMPSC 32",
+              "CMPSC 40"
+            ],
             "minimum_gpa_to_declare": 3.5,
-            "weeder_courses": ["ECE 10A Introduction to Electrical Engineering", "CMPSC 16 Introduction to Computer Science I", "CMPSC 24 Introduction to Computer Science II"],
+            "weeder_courses": [
+              "ECE 10A Introduction to Electrical Engineering",
+              "CMPSC 16 Introduction to Computer Science I",
+              "CMPSC 24 Introduction to Computer Science II"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -497,9 +633,22 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 3A-B", "MATH 4A", "CHEM 1A-B-C/AL-BL-CL", "CHEM 3A", "CHEM 3B-2AL", "CHEM 3C-2BL", "PHYSICS 7A-B", "CHE 5"],
+            "prerequisite_courses": [
+              "MATH 3A-B",
+              "MATH 4A",
+              "CHEM 1A-B-C/AL-BL-CL",
+              "CHEM 3A",
+              "CHEM 3B-2AL",
+              "CHEM 3C-2BL",
+              "PHYSICS 7A-B",
+              "CHE 5"
+            ],
             "minimum_gpa_to_declare": 3.0,
-            "weeder_courses": ["CHEM 1A General Chemistry", "MATH 3A Calculus with Applications, Part 1", "CHE 5 Introduction to Chemical Engineering"],
+            "weeder_courses": [
+              "CHEM 1A General Chemistry",
+              "MATH 3A Calculus with Applications, Part 1",
+              "CHE 5 Introduction to Chemical Engineering"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -524,7 +673,9 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Portfolio review"],
+            "prerequisite_courses": [
+              "Portfolio review"
+            ],
             "minimum_gpa_to_declare": null,
             "weeder_courses": [],
             "special_requirements": "Requires a supplemental application with a portfolio. 72 studio units and 32 non-studio units for freshmen. Must complete ART 1A Visual Literacy and a 7-Series course.",
@@ -540,9 +691,20 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Letter of Intent", "MATH 3A-B", "MATH 4A-B", "MATH 6A", "PSTAT 120A-B", "CMPTGCS 1A-B/1L", "CMPTGCS 2"],
+            "prerequisite_courses": [
+              "Letter of Intent",
+              "MATH 3A-B",
+              "MATH 4A-B",
+              "MATH 6A",
+              "PSTAT 120A-B",
+              "CMPTGCS 1A-B/1L",
+              "CMPTGCS 2"
+            ],
             "minimum_gpa_to_declare": 2.75,
-            "weeder_courses": ["CMPTGCS 1A Introduction to Computer Science with C++", "MATH 3A Calculus with Applications, Part 1"],
+            "weeder_courses": [
+              "CMPTGCS 1A Introduction to Computer Science with C++",
+              "MATH 3A Calculus with Applications, Part 1"
+            ],
             "special_requirements": "Requires a supplemental application with a letter of intent. Maintain 3.0 GPA in CS courses (2.75 minimum). Upper division requirements are same as COE Computer Science.",
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": false,
@@ -556,7 +718,11 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Letter of Intent", "Written scores of musical compositions", "Audition (implied by CCS application materials)"],
+            "prerequisite_courses": [
+              "Letter of Intent",
+              "Written scores of musical compositions",
+              "Audition (implied by CCS application materials)"
+            ],
             "minimum_gpa_to_declare": null,
             "weeder_courses": [],
             "special_requirements": "Requires a supplemental application with letters of recommendation and written scores of musical compositions.",
@@ -572,7 +738,10 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["Letter of Intent", "Writing samples (fiction and/or poetry, critical papers)"],
+            "prerequisite_courses": [
+              "Letter of Intent",
+              "Writing samples (fiction and/or poetry, critical papers)"
+            ],
             "minimum_gpa_to_declare": null,
             "weeder_courses": [],
             "special_requirements": "Requires a supplemental application with a letter of intent and writing samples (fiction and/or poetry, critical papers).",
@@ -610,7 +779,9 @@
     ]
   },
   "application_process": {
-    "platforms": ["UC Application"],
+    "platforms": [
+      "UC Application"
+    ],
     "application_deadlines": [
       {
         "plan_type": "Regular Decision",
@@ -640,8 +811,24 @@
       }
     ],
     "holistic_factors": {
-      "primary_factors": ["Course Rigor", "GPA", "Essays (Personal Insight Questions)", "Extracurriculars", "Leadership", "Talents", "Character", "Context of opportunities/challenges"],
-      "secondary_factors": ["Academic accomplishments", "Personal growth", "Commitment to interests", "Motivation", "Resilience", "Intellectual initiative"],
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays (Personal Insight Questions)",
+        "Extracurriculars",
+        "Leadership",
+        "Talents",
+        "Character",
+        "Context of opportunities/challenges"
+      ],
+      "secondary_factors": [
+        "Academic accomplishments",
+        "Personal growth",
+        "Commitment to interests",
+        "Motivation",
+        "Resilience",
+        "Intellectual initiative"
+      ],
       "essay_importance": "Critical",
       "demonstrated_interest": "Not Considered",
       "interview_policy": "Not Offered",

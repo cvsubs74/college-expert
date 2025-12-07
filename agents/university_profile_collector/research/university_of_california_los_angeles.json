@@ -113,7 +113,7 @@
         "cycle_name": "Class of 2029",
         "applications_total": 145086,
         "admits_total": 13660,
-        "enrolled_total": null,
+        "enrolled_total": 0,
         "acceptance_rate_overall": 9.4,
         "acceptance_rate_in_state": null,
         "acceptance_rate_out_of_state": null,
@@ -193,7 +193,7 @@
         "cycle_name": "Class of 2025",
         "applications_total": 102232,
         "admits_total": 16494,
-        "enrolled_total": null,
+        "enrolled_total": 0,
         "acceptance_rate_overall": 16.1,
         "acceptance_rate_in_state": null,
         "acceptance_rate_out_of_state": null,
@@ -1258,7 +1258,9 @@
     ]
   },
   "application_process": {
-    "platforms": ["UC Application"],
+    "platforms": [
+      "UC Application"
+    ],
     "application_deadlines": [
       {
         "plan_type": "Regular Decision",
@@ -1282,8 +1284,20 @@
       }
     ],
     "holistic_factors": {
-      "primary_factors": ["Course Rigor", "GPA", "Essays (Personal Insight Questions)", "Extracurricular Activities", "Special Talents/Achievements"],
-      "secondary_factors": ["Leadership and Involvement", "Academic Enrichment Programs", "Quality of Senior-Year Program", "Academic Performance Relative to Opportunities", "Recent Academic Improvement"],
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays (Personal Insight Questions)",
+        "Extracurricular Activities",
+        "Special Talents/Achievements"
+      ],
+      "secondary_factors": [
+        "Leadership and Involvement",
+        "Academic Enrichment Programs",
+        "Quality of Senior-Year Program",
+        "Academic Performance Relative to Opportunities",
+        "Recent Academic Improvement"
+      ],
       "essay_importance": "Critical",
       "demonstrated_interest": "Not Considered",
       "interview_policy": "Not Offered",
@@ -1393,7 +1407,10 @@
       "diploma_bonus": false
     },
     "transfer_articulation": {
-      "tools": ["ASSIST.org", "Transferology"],
+      "tools": [
+        "ASSIST.org",
+        "Transferology"
+      ],
       "restrictions": "70 semester or 105 quarter unit cap for community college credits applied toward the degree"
     }
   },

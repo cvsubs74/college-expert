@@ -146,7 +146,7 @@
         "cycle_name": "Class of 2026",
         "applications_total": 64256,
         "admits_total": 8258,
-        "enrolled_total": null,
+        "enrolled_total": 0,
         "acceptance_rate_overall": 12.9,
         "acceptance_rate_in_state": null,
         "acceptance_rate_out_of_state": null,
@@ -265,9 +265,17 @@
             "is_impacted": true,
             "acceptance_rate": 9.0,
             "average_gpa_admitted": 3.79,
-            "prerequisite_courses": ["MATH 125g Calculus I", "PHYS 151Lg Fundamentals of Physics I", "CSCI 103L Introduction to Programming", "CSCI 170 Introduction to Algorithms and Data Structures"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "PHYS 151Lg Fundamentals of Physics I",
+              "CSCI 103L Introduction to Programming",
+              "CSCI 170 Introduction to Algorithms and Data Structures"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["CSCI 170 Introduction to Algorithms and Data Structures", "CSCI 201 Principles of Software Development"],
+            "weeder_courses": [
+              "CSCI 170 Introduction to Algorithms and Data Structures",
+              "CSCI 201 Principles of Software Development"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -281,9 +289,17 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "MATH 126 Calculus II", "PHYS 151Lg Fundamentals of Physics I", "CHEM 105aLg General Chemistry"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "MATH 126 Calculus II",
+              "PHYS 151Lg Fundamentals of Physics I",
+              "CHEM 105aLg General Chemistry"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["MATH 126 Calculus II", "PHYS 152Lg Fundamentals of Physics II"],
+            "weeder_courses": [
+              "MATH 126 Calculus II",
+              "PHYS 152Lg Fundamentals of Physics II"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -297,9 +313,17 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "MATH 126 Calculus II", "PHYS 151Lg Fundamentals of Physics I", "CHEM 105aLg General Chemistry"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "MATH 126 Calculus II",
+              "PHYS 151Lg Fundamentals of Physics I",
+              "CHEM 105aLg General Chemistry"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["MATH 126 Calculus II", "CE 205 Introduction to Civil Engineering"],
+            "weeder_courses": [
+              "MATH 126 Calculus II",
+              "CE 205 Introduction to Civil Engineering"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -313,9 +337,17 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "MATH 126 Calculus II", "PHYS 151Lg Fundamentals of Physics I", "EE 109 Introduction to Electrical Engineering"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "MATH 126 Calculus II",
+              "PHYS 151Lg Fundamentals of Physics I",
+              "EE 109 Introduction to Electrical Engineering"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["EE 109 Introduction to Electrical Engineering", "MATH 229 Calculus III"],
+            "weeder_courses": [
+              "EE 109 Introduction to Electrical Engineering",
+              "MATH 229 Calculus III"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -329,9 +361,16 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "CHEM 105aLg General Chemistry", "BISC 120Lg General Biology: Organismal Biology and Evolution"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "CHEM 105aLg General Chemistry",
+              "BISC 120Lg General Biology: Organismal Biology and Evolution"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["BISC 120Lg General Biology: Organismal Biology and Evolution", "CHEM 105bL General Chemistry"],
+            "weeder_courses": [
+              "BISC 120Lg General Biology: Organismal Biology and Evolution",
+              "CHEM 105bL General Chemistry"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -345,9 +384,17 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "MATH 126 Calculus II", "PHYS 151Lg Fundamentals of Physics I", "CHEM 105aLg General Chemistry"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "MATH 126 Calculus II",
+              "PHYS 151Lg Fundamentals of Physics I",
+              "CHEM 105aLg General Chemistry"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["AME 201 Statics", "MATH 229 Calculus III"],
+            "weeder_courses": [
+              "AME 201 Statics",
+              "MATH 229 Calculus III"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -361,9 +408,17 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "MATH 126 Calculus II", "CHEM 105aLg General Chemistry", "PHYS 151Lg Fundamentals of Physics I"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "MATH 126 Calculus II",
+              "CHEM 105aLg General Chemistry",
+              "PHYS 151Lg Fundamentals of Physics I"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["CHEM 105bL General Chemistry", "CHE 201 Introduction to Chemical Engineering"],
+            "weeder_courses": [
+              "CHEM 105bL General Chemistry",
+              "CHE 201 Introduction to Chemical Engineering"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -377,9 +432,16 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "PHYS 151Lg Fundamentals of Physics I", "CSCI 103L Introduction to Programming"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "PHYS 151Lg Fundamentals of Physics I",
+              "CSCI 103L Introduction to Programming"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["CSCI 170 Introduction to Algorithms and Data Structures", "EE 201 Linear Circuits"],
+            "weeder_courses": [
+              "CSCI 170 Introduction to Algorithms and Data Structures",
+              "EE 201 Linear Circuits"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -393,9 +455,16 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "CHEM 105aLg General Chemistry", "BISC 120Lg General Biology: Organismal Biology and Evolution"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "CHEM 105aLg General Chemistry",
+              "BISC 120Lg General Biology: Organismal Biology and Evolution"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["CE 205 Introduction to Civil Engineering", "ENGR 102 Introduction to Environmental Engineering"],
+            "weeder_courses": [
+              "CE 205 Introduction to Civil Engineering",
+              "ENGR 102 Introduction to Environmental Engineering"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -409,9 +478,16 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "CSCI 103L Introduction to Programming", "ENGR 102 Introduction to Engineering Systems"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "CSCI 103L Introduction to Programming",
+              "ENGR 102 Introduction to Engineering Systems"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["ISE 220 Probability and Statistics for Engineers", "ISE 330 Introduction to Operations Research"],
+            "weeder_courses": [
+              "ISE 220 Probability and Statistics for Engineers",
+              "ISE 330 Introduction to Operations Research"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -436,9 +512,15 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["ECON 203g Principles of Microeconomics", "ECON 205g Principles of Macroeconomics"],
+            "prerequisite_courses": [
+              "ECON 203g Principles of Microeconomics",
+              "ECON 205g Principles of Macroeconomics"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["ECON 303 Intermediate Microeconomic Theory", "ECON 305 Intermediate Macroeconomic Theory"],
+            "weeder_courses": [
+              "ECON 303 Intermediate Microeconomic Theory",
+              "ECON 305 Intermediate Macroeconomic Theory"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Open to all students in good academic standing",
             "internal_transfer_allowed": true,
@@ -452,9 +534,15 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["PSYC 100Lg Introduction to Psychology", "MATH 114x Foundations of Statistics (or equivalent)"],
+            "prerequisite_courses": [
+              "PSYC 100Lg Introduction to Psychology",
+              "MATH 114x Foundations of Statistics (or equivalent)"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["PSYC 274Lg Statistics I", "PSYC 301Lg Research Methods in Psychology"],
+            "weeder_courses": [
+              "PSYC 274Lg Statistics I",
+              "PSYC 301Lg Research Methods in Psychology"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Open to all students in good academic standing",
             "internal_transfer_allowed": true,
@@ -468,9 +556,16 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["BISC 120Lg General Biology: Organismal Biology and Evolution", "CHEM 105aLg General Chemistry", "MATH 125g Calculus I"],
+            "prerequisite_courses": [
+              "BISC 120Lg General Biology: Organismal Biology and Evolution",
+              "CHEM 105aLg General Chemistry",
+              "MATH 125g Calculus I"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["BISC 220Lg General Biology: Cell Biology and Physiology", "CHEM 322aL Organic Chemistry"],
+            "weeder_courses": [
+              "BISC 220Lg General Biology: Cell Biology and Physiology",
+              "CHEM 322aL Organic Chemistry"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Open to all students in good academic standing",
             "internal_transfer_allowed": true,
@@ -484,7 +579,10 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["POSC 100g Introduction to Political Science", "POSC 110g American Government"],
+            "prerequisite_courses": [
+              "POSC 100g Introduction to Political Science",
+              "POSC 110g American Government"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": null,
@@ -500,9 +598,13 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["SOCI 150Lg Introduction to Sociology"],
+            "prerequisite_courses": [
+              "SOCI 150Lg Introduction to Sociology"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["SOCI 315m Data Analysis in Sociology"],
+            "weeder_courses": [
+              "SOCI 315m Data Analysis in Sociology"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Open to all students in good academic standing",
             "internal_transfer_allowed": true,
@@ -516,7 +618,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["WRIT 150 Writing and Critical Reasoning"],
+            "prerequisite_courses": [
+              "WRIT 150 Writing and Critical Reasoning"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": null,
@@ -548,9 +652,15 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["CHEM 105aLg General Chemistry", "MATH 125g Calculus I"],
+            "prerequisite_courses": [
+              "CHEM 105aLg General Chemistry",
+              "MATH 125g Calculus I"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["CHEM 105bL General Chemistry", "CHEM 322aL Organic Chemistry"],
+            "weeder_courses": [
+              "CHEM 105bL General Chemistry",
+              "CHEM 322aL Organic Chemistry"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Open to all students in good academic standing",
             "internal_transfer_allowed": true,
@@ -564,9 +674,15 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["MATH 125g Calculus I", "MATH 126 Calculus II"],
+            "prerequisite_courses": [
+              "MATH 125g Calculus I",
+              "MATH 126 Calculus II"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["MATH 229 Calculus III", "MATH 225g Elementary Multivariable Calculus"],
+            "weeder_courses": [
+              "MATH 229 Calculus III",
+              "MATH 225g Elementary Multivariable Calculus"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Open to all students in good academic standing",
             "internal_transfer_allowed": true,
@@ -580,7 +696,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["IR 210g International Relations: Approaches to Theory and Practice"],
+            "prerequisite_courses": [
+              "IR 210g International Relations: Approaches to Theory and Practice"
+            ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [],
             "special_requirements": null,
@@ -607,9 +725,16 @@
             "is_impacted": true,
             "acceptance_rate": 7.2,
             "average_gpa_admitted": 3.87,
-            "prerequisite_courses": ["ECON 351x Microeconomics for Business", "ECON 352x Macroeconomics for Business", "BUAD 310 or 312 Applied Business Statistics or Statistics & Data Science"],
+            "prerequisite_courses": [
+              "ECON 351x Microeconomics for Business",
+              "ECON 352x Macroeconomics for Business",
+              "BUAD 310 or 312 Applied Business Statistics or Statistics & Data Science"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["BUAD 304 Organizational Behavior", "BUAD 307 Marketing Fundamentals"],
+            "weeder_courses": [
+              "BUAD 304 Organizational Behavior",
+              "BUAD 307 Marketing Fundamentals"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -623,9 +748,16 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["ACCT 201x Accounting Fundamentals", "ECON 351x Microeconomics for Business", "BUAD 310 or 312 Applied Business Statistics or Statistics & Data Science"],
+            "prerequisite_courses": [
+              "ACCT 201x Accounting Fundamentals",
+              "ECON 351x Microeconomics for Business",
+              "BUAD 310 or 312 Applied Business Statistics or Statistics & Data Science"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["ACCT 202x Introductory Managerial Accounting", "ACCT 370x External Financial Reporting Issues"],
+            "weeder_courses": [
+              "ACCT 202x Introductory Managerial Accounting",
+              "ACCT 370x External Financial Reporting Issues"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
@@ -639,7 +771,10 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["PPD 203 Economic Analysis for Public Policy", "ARCH 102a Architectural Design I (or equivalent)"],
+            "prerequisite_courses": [
+              "PPD 203 Economic Analysis for Public Policy",
+              "ARCH 102a Architectural Design I (or equivalent)"
+            ],
             "minimum_gpa_to_declare": null,
             "weeder_courses": [],
             "special_requirements": null,
@@ -698,9 +833,18 @@
             "is_impacted": true,
             "acceptance_rate": 3.0,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["CTPR 285 Lateral Thinking for Filmmaking Practice", "CTPR 290 Cinematic Communication", "CTPR 294 Directing in Documentary, Fiction and New Media", "CTPR 295L Cinematic Arts Laboratory"],
+            "prerequisite_courses": [
+              "CTPR 285 Lateral Thinking for Filmmaking Practice",
+              "CTPR 290 Cinematic Communication",
+              "CTPR 294 Directing in Documentary, Fiction and New Media",
+              "CTPR 295L Cinematic Arts Laboratory"
+            ],
             "minimum_gpa_to_declare": null,
-            "weeder_courses": ["CTPR 294 Directing in Documentary, Fiction and New Media", "CTPR 295L Cinematic Arts Laboratory", "CTPR 310 Intermediate Production"],
+            "weeder_courses": [
+              "CTPR 294 Directing in Documentary, Fiction and New Media",
+              "CTPR 295L Cinematic Arts Laboratory",
+              "CTPR 310 Intermediate Production"
+            ],
             "special_requirements": "Supplemental application with personal statement, writing sample, creative portfolio, video introduction, and media sample. Must be listed as a first-choice major. Minimum grade of C (2.0) in all required and prerequisite courses; failing to achieve this in CTPR 294, 295, and 310 after repeating disqualifies from the program."
           },
           {
@@ -741,7 +885,9 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["CTCS 190g Introduction to Cinema"],
+            "prerequisite_courses": [
+              "CTCS 190g Introduction to Cinema"
+            ],
             "minimum_gpa_to_declare": null,
             "weeder_courses": [],
             "special_requirements": null,
@@ -786,7 +932,10 @@
             "average_gpa_admitted": 3.77,
             "prerequisite_courses": [],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["COMM 301Lg Empirical Research in Communication", "COMM 309 Communication and Technology"],
+            "weeder_courses": [
+              "COMM 301Lg Empirical Research in Communication",
+              "COMM 309 Communication and Technology"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -802,7 +951,10 @@
             "average_gpa_admitted": null,
             "prerequisite_courses": [],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["JOUR 207 Reporting and Writing I", "JOUR 307 Reporting and Writing II"],
+            "weeder_courses": [
+              "JOUR 207 Reporting and Writing I",
+              "JOUR 307 Reporting and Writing II"
+            ],
             "special_requirements": "Minimum four semesters required to complete the major. Statement of Intent required for GPAs below 2.5.",
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
@@ -839,7 +991,9 @@
     ]
   },
   "application_process": {
-    "platforms": ["Common App"],
+    "platforms": [
+      "Common App"
+    ],
     "application_deadlines": [
       {
         "plan_type": "Early Action",
@@ -881,8 +1035,20 @@
       }
     ],
     "holistic_factors": {
-      "primary_factors": ["Course Rigor", "GPA", "Essays", "Recommendations", "Academic Performance"],
-      "secondary_factors": ["Extracurriculars", "Talents", "Character", "Leadership", "Community Involvement"],
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations",
+        "Academic Performance"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character",
+        "Leadership",
+        "Community Involvement"
+      ],
       "essay_importance": "Critical",
       "demonstrated_interest": "Not Considered",
       "interview_policy": "Not Offered",
@@ -989,7 +1155,11 @@
     "philosophy": "Moderate",
     "ap_policy": {
       "general_rule": "USC awards 4 semester units of elective credit for AP examinations with a score of 4 or 5.",
-      "exceptions": ["No credit is awarded for the AP Research component of the capstone program.", "Exams must be taken before you enroll at any two-year or four-year college.", "USC does not award credit for projected scores, partial scores or subscores."],
+      "exceptions": [
+        "No credit is awarded for the AP Research component of the capstone program.",
+        "Exams must be taken before you enroll at any two-year or four-year college.",
+        "USC does not award credit for projected scores, partial scores or subscores."
+      ],
       "usage": "Can satisfy GE requirements and some major prerequisites. Most foreign language exams (taken in Spring 2007 or later) can satisfy USC's third-level foreign language requirement."
     },
     "ib_policy": {
@@ -997,7 +1167,11 @@
       "diploma_bonus": true
     },
     "transfer_articulation": {
-      "tools": ["ASSIST.org", "Articulation Agreements with Community Colleges", "Articulation Histories with Local Four-Year Colleges"],
+      "tools": [
+        "ASSIST.org",
+        "Articulation Agreements with Community Colleges",
+        "Articulation Histories with Local Four-Year Colleges"
+      ],
       "restrictions": "Students may receive a combined maximum of 32 elective units for college courses taken before high school graduation and/or examinations (e.g., AP, IB, or other international exams) taken before matriculation at a two-year or four-year college. USC limits transfer of credit in certain categories, such as 4 units for ESL, PE activity, and music ensemble courses; 8 units for dance; 12 units for PE theory; and 16 units for individual music instruction."
     }
   },

@@ -85,7 +85,7 @@
     "current_status": {
       "overall_acceptance_rate": 42.4,
       "in_state_acceptance_rate": 54.39,
-      "out_of_state_acceptance_rate": 36.20,
+      "out_of_state_acceptance_rate": 36.2,
       "international_acceptance_rate": 33.5,
       "transfer_acceptance_rate": 48.08,
       "admits_class_size": 31247,
@@ -107,10 +107,10 @@
         "cycle_name": "Class of 2029",
         "applications_total": 73742,
         "admits_total": 31247,
-        "enrolled_total": null,
+        "enrolled_total": 0,
         "acceptance_rate_overall": 42.4,
         "acceptance_rate_in_state": 54.39,
-        "acceptance_rate_out_of_state": 36.20,
+        "acceptance_rate_out_of_state": 36.2,
         "yield_rate": 29.0,
         "waitlist_stats": {
           "year": 2025,
@@ -127,7 +127,7 @@
         "cycle_name": "Class of 2028",
         "applications_total": 73742,
         "admits_total": 31247,
-        "enrolled_total": null,
+        "enrolled_total": 0,
         "acceptance_rate_overall": 42.37,
         "acceptance_rate_in_state": null,
         "acceptance_rate_out_of_state": null,
@@ -188,7 +188,7 @@
         "applications_total": 63059,
         "admits_total": 28375,
         "enrolled_total": 8273,
-        "acceptance_rate_overall": 45.00,
+        "acceptance_rate_overall": 45.0,
         "acceptance_rate_in_state": null,
         "acceptance_rate_out_of_state": null,
         "yield_rate": 29.16,
@@ -268,7 +268,7 @@
           "women": {
             "applicants": 28989,
             "admits": 15248,
-            "acceptance_rate": 52.60,
+            "acceptance_rate": 52.6,
             "note": "Data for 2023-2024 academic year."
           },
           "non_binary": null

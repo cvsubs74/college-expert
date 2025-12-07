@@ -1,0 +1,184 @@
+Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.
+⚠️ Elasticsearch/genai not available. Ingestion will be skipped.
+[2025-12-07 09:50:38] 
+============================================================
+[2025-12-07 09:50:38] Starting Top 100 Universities Collection
+[2025-12-07 09:50:38] Parallel workers: 4
+[2025-12-07 09:50:38] ============================================================
+[2025-12-07 09:50:38] Found 129 existing university profiles in research folder.
+[2025-12-07 09:50:38] Skip: Princeton University (already researched)
+[2025-12-07 09:50:38] Skip: Massachusetts Institute of Technology (already researched)
+[2025-12-07 09:50:38] Skip: Harvard University (already researched)
+[2025-12-07 09:50:38] Skip: Stanford University (already researched)
+[2025-12-07 09:50:38] Skip: Yale University (already researched)
+[2025-12-07 09:50:38] Skip: Duke University (already researched)
+[2025-12-07 09:50:38] Skip: California Institute of Technology (already researched)
+[2025-12-07 09:50:38] Skip: Northwestern University (already researched)
+[2025-12-07 09:50:38] Skip: Johns Hopkins University (already researched)
+[2025-12-07 09:50:38] Skip: Columbia University (already researched)
+[2025-12-07 09:50:38] Skip: University of Chicago (already researched)
+[2025-12-07 09:50:38] Skip: University of Pennsylvania (already researched)
+[2025-12-07 09:50:38] Skip: Cornell University (already researched)
+[2025-12-07 09:50:38] Skip: Brown University (already researched)
+[2025-12-07 09:50:38] Skip: Rice University (already researched)
+[2025-12-07 09:50:38] Skip: Dartmouth College (already researched)
+[2025-12-07 09:50:38] Skip: Vanderbilt University (already researched)
+[2025-12-07 09:50:38] Skip: Carnegie Mellon University (already researched)
+[2025-12-07 09:50:38] Skip: Washington University in St. Louis (already researched)
+[2025-12-07 09:50:38] Skip: Emory University (already researched)
+[2025-12-07 09:50:38] Skip: University of Notre Dame (already researched)
+[2025-12-07 09:50:38] Skip: Georgetown University (already researched)
+[2025-12-07 09:50:38] Skip: University of California, Berkeley (already researched)
+[2025-12-07 09:50:38] Skip: University of California, Los Angeles (already researched)
+[2025-12-07 09:50:38] Skip: University of Virginia (already researched)
+[2025-12-07 09:50:38] Skip: University of Michigan, Ann Arbor (already researched)
+[2025-12-07 09:50:38] Skip: University of Southern California (already researched)
+[2025-12-07 09:50:38] Skip: New York University (already researched)
+[2025-12-07 09:50:38] Skip: University of Florida (already researched)
+[2025-12-07 09:50:38] Skip: University of North Carolina at Chapel Hill (already researched)
+[2025-12-07 09:50:38] Skip: Wake Forest University (already researched)
+[2025-12-07 09:50:38] Skip: Tufts University (already researched)
+[2025-12-07 09:50:38] Skip: University of California, San Diego (already researched)
+[2025-12-07 09:50:38] Skip: University of California, Santa Barbara (already researched)
+[2025-12-07 09:50:38] Skip: University of Rochester (already researched)
+[2025-12-07 09:50:38] Skip: Boston College (already researched)
+[2025-12-07 09:50:38] Skip: Georgia Institute of Technology (already researched)
+[2025-12-07 09:50:38] Skip: University of California, Irvine (already researched)
+[2025-12-07 09:50:38] Skip: University of California, Davis (already researched)
+[2025-12-07 09:50:38] Skip: University of Texas at Austin (already researched)
+[2025-12-07 09:50:38] Skip: College of William and Mary (already researched)
+[2025-12-07 09:50:38] Skip: Tulane University (already researched)
+[2025-12-07 09:50:38] Skip: Brandeis University (already researched)
+[2025-12-07 09:50:38] Skip: Case Western Reserve University (already researched)
+[2025-12-07 09:50:38] Skip: University of Wisconsin-Madison (already researched)
+[2025-12-07 09:50:38] Skip: University of Illinois Urbana-Champaign (already researched)
+[2025-12-07 09:50:38] Skip: Purdue University (already researched)
+[2025-12-07 09:50:38] Skip: Villanova University (already researched)
+[2025-12-07 09:50:38] Skip: University of Georgia (already researched)
+[2025-12-07 09:50:38] Skip: Lehigh University (already researched)
+[2025-12-07 09:50:38] Skip: University of Miami (already researched)
+[2025-12-07 09:50:38] Skip: Pepperdine University (already researched)
+[2025-12-07 09:50:38] Skip: Rensselaer Polytechnic Institute (already researched)
+[2025-12-07 09:50:38] Skip: University of Washington (already researched)
+[2025-12-07 09:50:38] Skip: Santa Clara University (already researched)
+[2025-12-07 09:50:38] Skip: University of Maryland, College Park (already researched)
+[2025-12-07 09:50:38] Skip: George Washington University (already researched)
+[2025-12-07 09:50:38] Skip: Syracuse University (already researched)
+[2025-12-07 09:50:38] Skip: University of Pittsburgh (already researched)
+[2025-12-07 09:50:38] Skip: Rutgers University-New Brunswick (already researched)
+[2025-12-07 09:50:38] Skip: University of Connecticut (already researched)
+[2025-12-07 09:50:38] Skip: University of Minnesota Twin Cities (already researched)
+[2025-12-07 09:50:38] Skip: Virginia Tech (already researched)
+[2025-12-07 09:50:38] Skip: Texas A&M University (already researched)
+[2025-12-07 09:50:38] Skip: Fordham University (already researched)
+[2025-12-07 09:50:38] Skip: University of Massachusetts Amherst (already researched)
+[2025-12-07 09:50:38] Skip: Stevens Institute of Technology (already researched)
+[2025-12-07 09:50:38] Skip: University of California, Merced (already researched)
+[2025-12-07 09:50:38] Skip: University of Colorado Boulder (already researched)
+[2025-12-07 09:50:38] Skip: North Carolina State University (already researched)
+[2025-12-07 09:50:38] Skip: University of Delaware (already researched)
+[2025-12-07 09:50:38] Skip: Florida State University (already researched)
+[2025-12-07 09:50:38] Skip: University of Iowa (already researched)
+[2025-12-07 09:50:38] Skip: Southern Methodist University (already researched)
+[2025-12-07 09:50:38] Skip: University of South Florida (already researched)
+[2025-12-07 09:50:38] Skip: University of Denver (already researched)
+[2025-12-07 09:50:38] Skip: University at Buffalo-SUNY (already researched)
+[2025-12-07 09:50:38] Skip: Loyola Marymount University (already researched)
+[2025-12-07 09:50:38] Skip: Chapman University (already researched)
+[2025-12-07 09:50:38] Skip: Michigan State University (already researched)
+[2025-12-07 09:50:38] Skip: American University (already researched)
+[2025-12-07 09:50:38] Skip: Baylor University (already researched)
+[2025-12-07 09:50:38] Skip: Howard University (already researched)
+[2025-12-07 09:50:38] Skip: Illinois Institute of Technology (already researched)
+[2025-12-07 09:50:38] Skip: Marquette University (already researched)
+[2025-12-07 09:50:38] Skip: Auburn University (already researched)
+[2025-12-07 09:50:38] Skip: Drexel University (already researched)
+[2025-12-07 09:50:38] Skip: Gonzaga University (already researched)
+[2025-12-07 09:50:38] Skip: University of Arizona (already researched)
+[2025-12-07 09:50:38] Skip: Creighton University (already researched)
+[2025-12-07 09:50:38] Skip: Temple University (already researched)
+[2025-12-07 09:50:38] Skip: University of San Diego (already researched)
+[2025-12-07 09:50:38] 
+📊 Summary: 92 already done, 8 remaining
+
+[2025-12-07 09:50:38] ⚠️ ES not configured - profiles will NOT be ingested to knowledge base
+[2025-12-07 09:50:38] 
+🚀 Starting research with parallelism=4
+
+[2025-12-07 09:50:38] 
+🔄 Processing batch 1: Boston University, Ohio State University, Northeastern University, Indiana University Bloomington
+[2025-12-07 09:50:38] 
+============================================================
+[2025-12-07 09:50:38] Processing: Boston University
+[2025-12-07 09:50:38] ============================================================
+[2025-12-07 09:50:38] 
+============================================================
+[2025-12-07 09:50:38] Processing: Ohio State University
+[2025-12-07 09:50:38] ============================================================
+[2025-12-07 09:50:38] 
+============================================================
+[2025-12-07 09:50:38] Processing: Northeastern University
+[2025-12-07 09:50:38] ============================================================
+[2025-12-07 09:50:38] 
+============================================================
+[2025-12-07 09:50:38] Processing: Indiana University Bloomington
+[2025-12-07 09:50:38] ============================================================
+[2025-12-07 09:53:37] Research completed for Indiana University Bloomington
+[2025-12-07 09:53:37] Response: The profile for Indiana University Bloomington has been successfully saved to `indiana_university_bloomington.json`.
+
+I am unable to provide a summary of the key findings, including acceptance rate an...
+[2025-12-07 09:53:38] ✓ Profile saved: indiana_university_bloomington.json
+[2025-12-07 09:53:38]   ⚠️ Validation failed: admissions_data.longitudinal_trends.3.applications_total: Input should be a valid integer; admissions_data.longitudinal_trends.3.admits_total: Input should be a valid integer; admissions_data.longitudinal_trends.3.acceptance_rate_overall: Input should be a valid number
+[2025-12-07 09:54:04] Research completed for Northeastern University
+[2025-12-07 09:54:04] Response: The profile for Northeastern University has been successfully saved. I am unable to provide the detailed summary including acceptance rate, waitlist statistics, top employers, median earnings, retenti...
+[2025-12-07 09:54:05] ✓ Profile saved: northeastern_university.json
+[2025-12-07 09:54:05]   ⚠️ Validation failed: admissions_data.admitted_student_profile.demographics.geographic_breakdown: Input should be a valid list
+[2025-12-07 09:54:24] Research completed for Boston University
+[2025-12-07 09:54:24] Response: The Boston University profile has been successfully saved to `boston_university.json`. I am unable to provide a summary of key findings as I do not have access to the research data....
+[2025-12-07 09:54:25] ✓ Profile saved: boston_university.json
+[2025-12-07 09:54:25]   ⚠️ Validation failed: admissions_data.longitudinal_trends.0.waitlist_stats.is_waitlist_ranked: Input should be a valid boolean; admissions_data.longitudinal_trends.1.waitlist_stats.is_waitlist_ranked: Input should be a valid boolean; admissions_data.longitudinal_trends.2.waitlist_stats.is_waitlist_ranked: Input should be a valid boolean
+[2025-12-07 09:55:00] Research completed for Ohio State University
+[2025-12-07 09:55:00] Response: The profile for Ohio State University has been successfully saved. I am unable to provide a summary of the key findings, including acceptance rate and trends, waitlist statistics, top employers and me...
+[2025-12-07 09:55:01] ✓ Profile saved: ohio_state_university.json
+[2025-12-07 09:55:01]   ⚠️ Validation failed: metadata.report_source_files.0: Input should be a valid string; metadata.report_source_files.1: Input should be a valid string; metadata.report_source_files.2: Input should be a valid string
+[2025-12-07 09:55:01] Waiting 5 seconds before next batch...
+[2025-12-07 09:55:06] 
+🔄 Processing batch 2: Pennsylvania State University, Clemson University, Stony Brook University-SUNY, University of Oregon
+[2025-12-07 09:55:06] 
+============================================================
+[2025-12-07 09:55:06] Processing: Pennsylvania State University
+[2025-12-07 09:55:06] ============================================================
+[2025-12-07 09:55:06] 
+============================================================
+[2025-12-07 09:55:06] Processing: Clemson University
+[2025-12-07 09:55:06] ============================================================
+[2025-12-07 09:55:06] 
+============================================================
+[2025-12-07 09:55:06] Processing: Stony Brook University-SUNY
+[2025-12-07 09:55:06] ============================================================
+[2025-12-07 09:55:06] 
+============================================================
+[2025-12-07 09:55:06] Processing: University of Oregon
+[2025-12-07 09:55:06] ============================================================
+[2025-12-07 09:57:40] Research completed for Clemson University
+[2025-12-07 09:57:40] Response: The profile for Clemson University has been successfully saved. I am unable to provide a summary of the key findings, including acceptance rate and trends, waitlist statistics, top employers and media...
+[2025-12-07 09:57:41] ✓ Profile saved: clemson_university.json
+[2025-12-07 09:57:41]   ⚠️ Validation failed: Invalid JSON: Expecting ':' delimiter: line 689 column 9 (char 34394)
+[2025-12-07 09:57:44] Research completed for Stony Brook University-SUNY
+[2025-12-07 09:57:44] Response: The profile for Stony Brook University has been successfully saved. I am unable to provide specific details on acceptance rates, waitlist statistics, top employers, median earnings, retention, or grad...
+[2025-12-07 09:57:45] ✓ Profile saved: stony_brook_university.json
+[2025-12-07 09:57:45]   ⚠️ Validation failed: admissions_data.longitudinal_trends.0.waitlist_stats.is_waitlist_ranked: Input should be a valid boolean
+[2025-12-07 09:58:20] Research completed for Pennsylvania State University
+[2025-12-07 09:58:20] Response: The profile for Pennsylvania State University has been successfully saved. I am unable to provide a summary of the acceptance rate, waitlist statistics, top employers, median earnings, retention, and ...
+[2025-12-07 09:58:21] ✓ Profile saved: pennsylvania_state_university.json
+[2025-12-07 09:58:21]   ⚠️ Validation failed: Invalid JSON: Expecting ',' delimiter: line 59 column 104 (char 2882)
+[2025-12-07 09:58:27] Research completed for University of Oregon
+[2025-12-07 09:58:27] Response: The University of Oregon profile has been successfully saved to `university_of_oregon.json`. I am unable to provide a summary of key findings including acceptance rates, waitlist statistics, top emplo...
+[2025-12-07 09:58:28] ✓ Profile saved: university_of_oregon.json
+[2025-12-07 09:58:28]   ⚠️ Validation failed: admissions_data.longitudinal_trends.0.waitlist_stats.is_waitlist_ranked: Input should be a valid boolean; admissions_data.longitudinal_trends.1.waitlist_stats.is_waitlist_ranked: Input should be a valid boolean; admissions_data.longitudinal_trends.2.waitlist_stats.is_waitlist_ranked: Input should be a valid boolean
+[2025-12-07 09:58:28] 
+============================================================
+[2025-12-07 09:58:28] 🏁 Batch collection complete!
+[2025-12-07 09:58:28]    ✅ Successful: 8
+[2025-12-07 09:58:28]    ❌ Failed: 0
+[2025-12-07 09:58:28] ============================================================

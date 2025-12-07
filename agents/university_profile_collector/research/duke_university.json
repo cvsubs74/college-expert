@@ -1,0 +1,984 @@
+{
+  "_id": "duke_university_slug",
+  "metadata": {
+    "official_name": "Duke University",
+    "location": {
+      "city": "Durham",
+      "state": "North Carolina",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Duke University is an elite private research institution located in Durham, North Carolina, renowned for its strong academics, vibrant campus life, and extensive research opportunities across numerous disciplines. It consistently ranks among the top universities nationally and globally, attracting a diverse and highly motivated student body.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Duke University employs a holistic review process for admissions, considering a strong academic record, standardized test scores (SAT/ACT are required), a compelling personal statement, letters of recommendation, and demonstrated involvement in extracurricular activities and leadership experience.",
+    "rankings": [
+      {
+        "source": "US News",
+        "rank_overall": null,
+        "rank_category": "National Universities",
+        "rank_in_category": 6,
+        "year": 2025
+      },
+      {
+        "source": "Niche",
+        "rank_overall": null,
+        "rank_category": "Overall Grade A+",
+        "rank_in_category": null,
+        "year": 2026
+      },
+      {
+        "source": "Forbes",
+        "rank_overall": 20,
+        "rank_category": "America's Top Colleges",
+        "rank_in_category": null,
+        "year": 2025
+      }
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Duke has a highly selective admissions process with an acceptance rate of approximately 7%.",
+        "implication": "Prospective students need an exceptionally strong academic profile, impactful extracurriculars, and compelling essays to be competitive."
+      },
+      {
+        "category": "Research Emphasis",
+        "insight": "The university places a significant emphasis on research, offering numerous opportunities for undergraduates across various fields, supported by faculty mentorship and dedicated programs.",
+        "implication": "Students interested in research should actively seek out and apply for these programs, which can provide invaluable experience and funding."
+      },
+      {
+        "category": "Campus Culture",
+        "insight": "Duke fosters a 'work hard/play hard' culture with strong school spirit, particularly around athletics, and a vibrant social scene that includes Greek life, though it's not exclusive.",
+        "implication": "New students should be prepared for an academically rigorous environment coupled with a lively social calendar, and explore diverse student organizations to find their community."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Duke's campus social environment is vibrant and active, characterized by a strong sense of community and school spirit, particularly evident in its passionate support for athletics, especially men's basketball (the 'Cameron Crazies'). Freshmen reside together on East Campus, fostering close-knit friendships. While Greek life is present, there are over 400 student organizations offering a wide array of social opportunities outside of the Greek system. The university offers diverse dining options across its campuses, catering to various preferences.",
+      "transportation_impact": "Duke provides comprehensive transportation options, including a free bus system connecting its multiple campuses (West, East, Medical Center) and extending to the wider Durham area via free GoDurham and GoTriangle bus passes for students. Duke Vans offer free evening transportation within a 2.5-mile radius of campus. While many students bring cars for convenience, particularly for off-campus exploration, it is possible to navigate Duke and Durham by walking, cycling, or public transportation. Durham's infrastructure, however, is car-centric, which can make off-campus travel challenging without personal transport.",
+      "research_impact": "Research is a cornerstone of the Duke experience, with extensive opportunities available to undergraduate and graduate students across STEM, health sciences, humanities, and social sciences. The university actively promotes undergraduate research through various programs, assistantships, and funding for independent studies and conference attendance. Notable strengths include biomedical engineering, environmental engineering, neuroscience, and clinical medicine. Faculty members integrate their research expertise into the curriculum, and students can engage in significant hands-on laboratory experience, often culminating in presentations at symposiums."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 4.8,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 4.8,
+      "transfer_acceptance_rate": 3.0,
+      "admits_class_size": 2802,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 6627,
+          "admits": 849,
+          "acceptance_rate": 12.8,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 58698,
+        "admits_total": 2818,
+        "enrolled_total": 1749,
+        "acceptance_rate_overall": 4.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 62.07,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record number of applications. Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 54191,
+        "admits_total": 2790,
+        "enrolled_total": 1739,
+        "acceptance_rate_overall": 5.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 62.33,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 49469,
+        "admits_total": 2948,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 5.96,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 50002,
+        "admits_total": 3085,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 6.17,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 49517,
+        "admits_total": 2854,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 5.76,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 88,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admitted 88 students from waitlist, but full waitlist statistics (offered/accepted) not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.75-4.00",
+        "average_weighted": 4.2,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "Most admits have straight A's in honors/AP. 33.28% of enrolled students have a GPA of 4.0; 31.23% have a GPA between 3.75 and 3.99."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1510-1560",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "34-35",
+        "submission_rate": 50.0,
+        "policy_note": "Test optional but considered if submitted for 2025-26 admissions cycle."
+      },
+      "demographics": {
+        "first_gen_percentage": 12.0,
+        "legacy_percentage": 10.0,
+        "international_percentage": 13.0,
+        "geographic_breakdown": [
+          {
+            "region": "North Carolina",
+            "percentage": 15.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 72.0
+          },
+          {
+            "region": "International",
+            "percentage": 13.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "Male-identifying students make up 47% of the Class of 2028."
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "Female-identifying students make up 53% of the Class of 2028."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 36.0,
+          "black_african_american": 9.0,
+          "hispanic_latino": 11.0,
+          "asian": 22.0,
+          "native_american_alaskan": 1.0,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 7.0,
+          "unknown": 4.0,
+          "non_resident_alien": 11.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools",
+    "colleges": [
+      {
+        "name": "Trinity College of Arts & Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 5.1,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a flexible liberal arts curriculum with opportunities for interdisciplinary exploration across the arts, humanities, natural sciences, and social sciences. Encourages deep thinking within disciplines and broad connections across them.",
+        "housing_profile": "First-year students reside exclusively on East Campus, which features a variety of dormitories (e.g., Randolph, Wannamaker, Giles, Brown, Southgate). Each house on East Campus has a Faculty-in-Residence (FiR) and academic advisors connected to foster community and intellectual engagement. All dorms generally have AC. Upperclassmen live on West Campus quads.",
+        "student_archetype": "Intellectually curious, community-minded, imaginative, and ambitious individuals unafraid to confront complex issues and drive change. Appreciates diverse perspectives and interdisciplinary learning.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COMPSCI 101L (Introduction to Computer Science)",
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "COMPSCI 201 Data Structures and Algorithms",
+              "COMPSCI 250D Computer Architecture",
+              "COMPSCI 330 Introduction to Design and Analysis of Algorithms"
+            ],
+            "special_requirements": "The B.S. typically has more rigorous math and science requirements than the B.A. The Computer Science department is housed in Trinity.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Flexible to switch into within Trinity."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)",
+              "Statistics course (e.g., STA 111, STA 130)",
+              "ECON 101D Economic Principles"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 201D Intermediate Microeconomics I",
+              "ECON 205D Intermediate Microeconomics II (enforced prerequisites)",
+              "ECON 204D Econometrics and Data Science"
+            ],
+            "special_requirements": "B.S. degree requires higher-level math (e.g., MATH 212/219/222). A maximum of two economics transfer credits are accepted.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Prerequisites are enforced for ECON 205D. Students interested in graduate study in economics are urged to develop skills in intermediate calculus, linear algebra, and differential equations."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 101DL (or equivalent)",
+              "BIOLOGY 201L (or equivalent)",
+              "BIOLOGY 202L (or equivalent)",
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)",
+              "PHYSICS 121L (or equivalent)",
+              "PHYSICS 122L (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOLOGY 201L Gateway to Biology: Molecular Biology",
+              "CHEM 201DL Organic Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Flexible to switch into within Trinity."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 101DL (or equivalent)",
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)",
+              "PHYSICS 121L (or equivalent)",
+              "PHYSICS 122L (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 201DL Organic Chemistry I",
+              "CHEM 202D Organic Chemistry II",
+              "CHEM 310 Physical Chemistry (Quantum Chemistry)"
+            ],
+            "special_requirements": "B.S. degree is recommended for students planning graduate study and has more rigorous math (MATH 212) and physical chemistry requirements.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. For Graduation with Distinction, a B average in chemistry courses is required."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHYSICS 161D (or equivalent)",
+              "PHYSICS 162D (or equivalent)",
+              "MATH 122L (or equivalent)",
+              "MATH 212 (Multivariable Calculus)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PHYSICS 161D Fundamentals of Physics I",
+              "PHYSICS 162D Fundamentals of Physics II",
+              "PHYSICS 361 Intermediate Mechanics",
+              "PHYSICS 362 Electricity and Magnetism"
+            ],
+            "special_requirements": "B.S. degree is more rigorous with additional math (Linear Algebra, Differential Equations) and physics courses. Knowing how to program (e.g., COMPSCI 101 level) is recommended.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Flexible to switch into within Trinity."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 101 (or other introductory PSY courses)",
+              "A statistics course"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 101 Introductory Psychology",
+              "PSY 204L & PSY 205L Quantitative Research Methods and Statistics for Psychological Science"
+            ],
+            "special_requirements": "The B.S. degree requires additional foundational courses in biology, chemistry, physics, and mathematics. Early completion of introductory/survey courses, statistics, and laboratory methods is recommended.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Flexible to switch into within Trinity."
+          },
+          {
+            "name": "Neuroscience",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "NEUROSCI 101 (or equivalent)",
+              "NEUROSCI 102 (or equivalent)",
+              "2 NEUROSCI core courses (e.g., 212, 223)",
+              "A statistics course",
+              "CHEM 101DL (or equivalent)",
+              "BIOLOGY 201L (or equivalent)",
+              "PHYSICS 151L (or equivalent)",
+              "MATH 111L (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "NEUROSCI 101 Biological Bases of Behavior",
+              "NEUROSCI 212 Introduction to Cognitive Neuroscience",
+              "NEUROSCI 223 Cellular and Molecular Neurobiology"
+            ],
+            "special_requirements": "Requires 5 foundational courses and 5 elective courses. Foundational courses should be completed before senior year. Co-requisites in chemistry, biology, physics, and math are required.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. A GPA above 3.3 has been mentioned for external admissions, but not for internal declaration."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "POLSCI 130D Introduction to Political Inquiry"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "POLSCI 130D Introduction to Political Inquiry"
+            ],
+            "special_requirements": "Students complete courses from chosen fields of study. At least six Duke courses taught by Duke instructional staff.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Flexible to switch into within Trinity."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "History Gateway Seminar (History 150-199)"
+            ],
+            "special_requirements": "10 history courses, with at least 7 at 200-level or above. Includes a Gateway Seminar and a Senior Capstone Seminar.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Flexible to switch into within Trinity. AP/IB credits do not count towards the major."
+          },
+          {
+            "name": "Public Policy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PUBPOL 155D Introduction to Policy Analysis",
+              "STA 199L Introduction to Data Science and Statistical Thinking (or equivalent)",
+              "PUBPOL 301 Political Analysis for Public Policy"
+            ],
+            "special_requirements": "11 units, including core courses, a statistics course, a history elective, and an internship. All courses must be taken for a letter grade except PUBPOL 155D.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "No prerequisites to declare the major, but advance planning is important due to course flow. Flexible to switch into within Trinity."
+          },
+          {
+            "name": "Global Health",
+            "degree_type": "B.A. (Co-Major)",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "GLHLTH 101 Fundamentals of Global Health",
+              "GLHLTH 371 Research Methods in Global Health",
+              "Statistics course (from approved list)"
+            ],
+            "special_requirements": "Must be combined with another major. Requires 3 core courses, 1 ethics course, 1 statistics course, 3 foundation courses, 3 electives, and an experiential learning activity.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Flexible to add as a co-major within Trinity."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)",
+              "MATH 212 (Multivariable Calculus)",
+              "MATH 221 (Linear Algebra)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 212 Multivariable Calculus",
+              "MATH 221 Linear Algebra and Application",
+              "MATH 401 Algebra",
+              "MATH 431 Real Analysis"
+            ],
+            "special_requirements": "The B.S. degree requires more advanced mathematics courses and is recommended for students planning graduate study.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Flexible to switch into within Trinity. At least half of major/minor courses above 212 should be taken at Duke."
+          },
+          {
+            "name": "Statistical Science",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)",
+              "Linear Algebra (MATH 218 or MATH 221)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "STA 240L Probability for Statistical Inference, Modeling, and Data Analysis",
+              "STA 221L Regression Analysis: Theory and Applications",
+              "STA 332 Statistical Inference"
+            ],
+            "special_requirements": "The B.S. degree has stricter requirements and may include concentrations in Mathematical Statistics or Data Science. Requires core statistics courses and electives from an applied field.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Majors are declared typically by the end of sophomore year. Flexible to switch into within Trinity. STA 199L is a recommended entry point to the major."
+          }
+        ]
+      },
+      {
+        "name": "Pratt School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 5.1,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Suited for ambitious problem-solvers with a strong STEM background. Focuses on hands-on research, critical thinking, and designing innovative solutions to real-world challenges across various engineering disciplines (Biomedical, Civil, Environmental, Electrical & Computer, Mechanical).",
+        "housing_profile": "First-year students live on East Campus with other undergraduates. Upperclassmen reside on West Campus or in apartments like 300 Swift. Features unique residential options such as the SmartHome, a live-in laboratory for engineering students focused on sustainable living, which can be seen as a modern dorm with maker spaces. All dorms generally have AC.",
+        "student_archetype": "Driven, purpose-oriented individuals with a 'can-do grit' eager to tackle global challenges through engineering. Values practical experience, research, and collaborative problem-solving.",
+        "majors": [
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)",
+              "PHYSICS 151L (or equivalent)",
+              "PHYSICS 152L (or equivalent)",
+              "CHEM 101DL (or equivalent)",
+              "BIOLOGY 201L (or equivalent)",
+              "EGR 101L (Design)",
+              "EGR 103L (Computational Methods)",
+              "COMPSCI 201 (Data Structures)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BME 244L Quantitative Physiology with Biostatistical Applications",
+              "EGR 103L Computational Methods in Engineering"
+            ],
+            "special_requirements": "Immersive first-year engineering design, computational thinking, 5 social sciences/humanities courses, 2 life science courses beyond prerequisites. Students can pursue double majors within Pratt or with Trinity.",
+            "admissions_pathway": "Direct Admit to Pratt",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students are admitted to the Pratt School of Engineering and then declare their major. Switching into BME from another Pratt major is common. Transfer from Trinity to Pratt is possible but selective. BME is a rigorous major."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)",
+              "PHYSICS 151L (or equivalent)",
+              "PHYSICS 152L (or equivalent)",
+              "CHEM 101DL (or equivalent)",
+              "EGR 101L (Design)",
+              "EGR 103L (Computational Methods)",
+              "COMPSCI 201 (Data Structures)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CEE 132L Engineering the Planet",
+              "EGR 201L Mechanics of Solids",
+              "CEE 301L Fluid Mechanics"
+            ],
+            "special_requirements": "Students choose a study track: Environmental Engineering & Water Resources or Structural Engineering & Mechanics.",
+            "admissions_pathway": "Direct Admit to Pratt",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students are admitted to the Pratt School of Engineering and then declare their major. Transfer from Trinity to Pratt is possible but selective."
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)",
+              "PHYSICS 151L (or equivalent)",
+              "PHYSICS 152L (or equivalent)",
+              "CHEM 101DL (or equivalent)",
+              "EGR 101L (Design)",
+              "EGR 103L (Computational Methods)",
+              "COMPSCI 201 (Data Structures)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CEE 132L Engineering the Planet",
+              "CEE 301L Fluid Mechanics",
+              "CEE 461L Chemical Processes in Environmental Engineering"
+            ],
+            "special_requirements": "Emphasis on chemistry and bio-science fundamentals with applications to public health engineering.",
+            "admissions_pathway": "Direct Admit to Pratt",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students are admitted to the Pratt School of Engineering and then declare their major. Transfer from Trinity to Pratt is possible but selective."
+          },
+          {
+            "name": "Electrical & Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111L",
+              "MATH 112L",
+              "MATH 212",
+              "MATH 216",
+              "MATH 353 (or equivalents for the math sequence)",
+              "Statistics Elective (e.g., STA 130, MATH 230)",
+              "CHEM 101DL (or equivalent)",
+              "PHYSICS 151L",
+              "PHYSICS 152L (or equivalents)",
+              "BIOLOGY 201L (or equivalent)",
+              "EGR 101L (Design)",
+              "EGR 103L (Computational Methods)",
+              "COMPSCI 201 (Data Structures)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECE 280L Signals and Systems",
+              "ECE 230L Microelectronic Devices and Circuits",
+              "COMPSCI 201 Data Structures and Algorithms"
+            ],
+            "special_requirements": "Five ECE foundation courses (ECE 110L, 230L, 250D, 270DL, 280L), plus concentration electives.",
+            "admissions_pathway": "Direct Admit to Pratt",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students are admitted to the Pratt School of Engineering and then declare their major. Transfer from Trinity to Pratt is possible but selective. The Computer Science department is in Trinity, not Pratt, though ECE majors take CS classes."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111L (or equivalent)",
+              "MATH 112L (or equivalent)",
+              "PHYSICS 151L (or equivalent)",
+              "PHYSICS 152L (or equivalent)",
+              "CHEM 101DL (or equivalent)",
+              "EGR 101L (Design)",
+              "EGR 103L (Computational Methods)",
+              "COMPSCI 201 (Data Structures)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "EGR 103L Computational Methods in Engineering",
+              "EGR 201L Mechanics of Solids",
+              "ME 221L Mechanics of Solids"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit to Pratt",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students are admitted to the Pratt School of Engineering and then declare their major. Transfer from Trinity to Pratt is possible but selective."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "African & African American Studies Minor",
+      "Biology Minor",
+      "Data Science Certificate",
+      "Entrepreneurship Certificate",
+      "Global Health Certificate",
+      "Innovation & Entrepreneurship Graduate & Professional Certificate (also available to undergraduates as a certificate)",
+      "Philosophy, Politics & Economics Certificate",
+      "Digital Intelligence Certificate",
+      "Energy & Environment Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App",
+      "QuestBridge Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2025-11-03",
+        "is_binding": true,
+        "notes": "Binding commitment. Financial aid applications (CSS Profile, FAFSA) due by November 3. Decisions released mid-December."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-05",
+        "is_binding": false,
+        "notes": "Financial aid applications (CSS Profile, FAFSA) due by February 1. Decisions released late March/early April."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "One required 'Why Duke' essay (250 words) and one optional essay (250 words) from four prompts."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Artistic Supplement (Pre-screening recording)",
+        "deadline": "2025-11-03",
+        "details": "Required for Early Decision. Recordings (7-15 minutes, unedited solo performance or composition with score) uploaded via Slideroom."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Artistic Supplement (Pre-screening recording)",
+        "deadline": "2026-01-05",
+        "details": "Required for Regular Decision. Recordings (7-15 minutes, unedited solo performance or composition with score) uploaded via Slideroom."
+      },
+      {
+        "target_program": "All (US high school students)",
+        "requirement_type": "Glimpse Video",
+        "deadline": "2025-11-06",
+        "details": "Optional 60-90 second video for Early Decision applicants to share more about themselves."
+      },
+      {
+        "target_program": "All (US high school students)",
+        "requirement_type": "Glimpse Video",
+        "deadline": "2026-01-16",
+        "details": "Optional 60-90 second video for Regular Decision applicants to share more about themselves."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations",
+        "Extracurricular Activities"
+      ],
+      "secondary_factors": [
+        "Talents",
+        "Character",
+        "Personal Qualities"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Seeking intellectual strengths, love of learning, imagination, open-mindedness, commitment to communities, ambition, curiosity, talent, persistence, energy, and humanity."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive major if not set on CS/Engineering, considering fields like business (excluding finance/accounting specializations), psychology, sociology, history, criminal justice, or political science to potentially ease admission.",
+      "Consider applying as undeclared, especially for Letters and Science programs, as some colleges do not admit by major or allow major declaration in sophomore year.",
+      "Research specific major admit rates and transfer difficulty for 'high-demand' or 'impacted' majors before applying.",
+      "Align your chosen major with your extracurricular activities and essay narratives to create a cohesive 'Admissions Angle'.",
+      "Demonstrate genuine passion for your intended field of study in your application essays."
+    ],
+    "college_ranking_tactics": [
+      "Rank colleges based on the quality of specific departments for your intended major, rather than solely on overall institutional prestige.",
+      "Consider practical aspects like housing quality and living standards when evaluating colleges.",
+      "Look beyond general college ranking websites, which can be uninformative or conflicting, and prioritize individual fit and unique opportunities offered by the institution.",
+      "Evaluate colleges based on the academic opportunities and the quality of administration and professors, rather than just the caliber of admitted students."
+    ],
+    "alternate_major_strategy": "If applying to a highly competitive major like Computer Science or Engineering, list a backup major in a different, less competitive college (e.g., Letters and Science) if the institution considers alternate majors. For example, if applying to CS in Engineering, consider listing Applied Mathematics, Statistics, or Data Science in Letters and Science as an alternate. Note that some institutions only guarantee review of your first-choice major."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 66326,
+        "total_coa": 97241,
+        "housing": 19800
+      },
+      "out_of_state": {
+        "tuition": 66326,
+        "total_coa": 97241,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 62771,
+    "average_merit_aid": 85600,
+    "percent_receiving_aid": 52.0,
+    "scholarships": [
+      {
+        "name": "Robertson Scholars Leadership Program",
+        "type": "Merit",
+        "amount": "Full tuition, room and board, and most mandatory fees for eight semesters",
+        "deadline": "January 15, 2026 (for scholarship application)",
+        "benefits": "Unique access to academic and extracurricular offerings at both Duke and UNC-Chapel Hill, three summers of domestic and international experiences, customized leadership and professional development opportunities, extensive community of scholars and alumni.",
+        "application_method": "Separate application required in addition to the Duke University admissions application."
+      },
+      {
+        "name": "A.B. Duke Memorial Scholars Program",
+        "type": "Merit",
+        "amount": "Full tuition, room and board, and mandatory fees for eight semesters",
+        "deadline": "Automatic consideration with Duke University admission application",
+        "benefits": "Support for intellectually adventurous and curious students, opportunities for program-funded research projects, and funding for domestic and international summer experiences, opportunity to study at Oxford University at no cost the summer before sophomore year.",
+        "application_method": "Automatic consideration based on your application for admission to Duke University."
+      },
+      {
+        "name": "Karsh International Scholars Program",
+        "type": "Merit/Need",
+        "amount": "Full tuition, room and board, mandatory fees, and additional funding for demonstrated financial need, plus funding for three summers for research, unpaid internships, and other academic/career-advancing opportunities.",
+        "deadline": "November 4, 2025 (Early Decision CSS Profile); February 1, 2026 (Regular Decision CSS Profile + FAFSA, if applicable).",
+        "benefits": "Full funding for international undergraduate students, access to generous funding for domestic and international summer experiences, independent research opportunities, leadership development and networking.",
+        "application_method": "Apply to Duke University and indicate financial aid request; submit CSS Profile and FAFSA (if applicable). No separate scholarship application is required."
+      },
+      {
+        "name": "Need-Based Financial Aid/Grants",
+        "type": "Need",
+        "amount": "Varies; Duke meets 100% of demonstrated financial need for admitted U.S. citizens and eligible non-citizens.",
+        "deadline": "November 3rd (Early Decision FAFSA & CSS Profile); February 1st (Regular Decision FAFSA & CSS Profile).",
+        "benefits": "Reduces the cost of attendance through grants and scholarships that do not need to be repaid, may include work-study opportunities and loans.",
+        "application_method": "Submit the Free Application for Federal Student Aid (FAFSA) and the College Scholarship Service (CSS) Profile, along with tax information."
+      },
+      {
+        "name": "B.N. Duke Scholars Program",
+        "type": "Merit",
+        "amount": "Full tuition, room and board, and mandatory fees (similar to other full merit scholarships).",
+        "deadline": "Automatic consideration with Duke University admission application",
+        "benefits": "Supports students from North or South Carolina who excel academically and demonstrate leadership in civic engagement initiatives.",
+        "application_method": "Automatic consideration based on your application for admission to Duke University."
+      },
+      {
+        "name": "Alumni Endowed Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full tuition, room and board, plus funding for research and programs during summers and the school year.",
+        "deadline": "Automatic consideration with Duke University admission application",
+        "benefits": "Recognizes outstanding academic achievement in children or grandchildren of Duke Alumni who demonstrate some financial need.",
+        "application_method": "Automatic consideration based on your application for admission to Duke University."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Score of 4+ generally grants credit, with many subjects requiring a 5.",
+      "exceptions": [
+        "Most math, science, and language courses typically require a score of 5 for credit (e.g., AP Calculus BC, AP Chemistry, most foreign languages), with Latin accepting 4 or 5.",
+        "Statistics AP credit is only for Trinity College students and does not count for Pratt School of Engineering.",
+        "AP English credit does not exempt students from the WRITING 101 requirement.",
+        "Specific requirements apply for Physics credit to count towards majors or engineering degrees."
+      ],
+      "usage": "Can be used for placement into higher-level courses and to satisfy departmental major and minor requirements (as allowed by individual departments). Trinity College students may apply up to 2 elective course credits toward the 34 credits required for graduation. Credits do not fulfill Trinity's 'Areas of Knowledge' requirements."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with a score of 5+ generally grant credit, with specific score requirements varying by subject (e.g., Biology HL requires a 6). Duke accepts Higher Level (HL) exams only.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Academic Dean pre-approval process"
+      ],
+      "restrictions": "No transfer credit for courses taken at junior or community colleges, or for independent study or correspondence/online courses (a COVID-19 exception for Spring 2020-Summer 2021 applied for normally face-to-face online courses). English composition courses and mathematics courses below calculus do not transfer. A grade of C- or better is required. Courses taken prior to the junior year of high school do not transfer. Students transferring *to* Duke may receive up to 17.0 course credits. For matriculated Duke undergraduates, a maximum of 2.0 institutional transfer credits (from other four-year universities) and up to 10 study abroad credits are allowed, with a combined maximum of 10. At least half of the courses for any major, minor, or certificate must be taken at Duke. Transfer grades are not factored into the Duke GPA."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework, including a high GPA and AP/IB courses.",
+      "Demonstrated passion in 1-2 areas, showcasing depth and impact rather than scattered activities.",
+      "Authentic essays that reflect self-reflection and illustrate how the applicant will contribute to Duke's community.",
+      "Strong recommendation letters that provide insight into the applicant's character and classroom performance.",
+      "Community-mindedness and a desire to make a meaningful impact."
+    ],
+    "common_activities": [
+      "Research experience, often at a university or hospital.",
+      "Leadership roles in school clubs and organizations.",
+      "Community service and volunteering.",
+      "Varsity athletics, aligning with Duke's strong sports culture.",
+      "Music or arts involvement, sometimes accompanied by a supplemental portfolio."
+    ],
+    "essay_tips": [
+      "Be specific about 'Why Duke' by mentioning unique programs (e.g., DukeEngage, Bass Connections), specific professors, or courses.",
+      "Show, don't tell; use personal anecdotes to illustrate your personality and fit.",
+      "Focus on what you will bring to the Duke community and how you will leverage its resources to achieve your goals.",
+      "Start essays early and engage in multiple rounds of revision with trusted readers.",
+      "If you have something meaningful to say for 'optional' prompts, write them, as they can provide a personalized perspective."
+    ],
+    "red_flags": [
+      "Generic 'Why Duke' essays that lack specific details or could apply to any university.",
+      "Lack of depth in extracurriculars, indicating a scattered rather than focused passion.",
+      "Significant grade decline, particularly during senior year.",
+      "Essays that fail to reveal the applicant's genuine personality or potential contributions to the university.",
+      "Attempting to be overly 'quirky' or inauthentic for the sake of standing out."
+    ],
+    "insights": [
+      "Duke's admission rate is highly selective, around 7%.",
+      "Admitted students typically have average SAT scores between 1510-1570 or ACT scores of 34-35.",
+      "Applying Early Decision (ED) can offer a statistical advantage in admissions.",
+      "The admissions process scores applicants on multiple categories including curriculum, academics, recommendations, essays, extracurriculars, and test scores.",
+      "While an alumni interview is offered, its impact on the final decision might be marginal."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 108900,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 20.0,
+    "top_employers": [
+      "Google",
+      "Apple",
+      "Microsoft",
+      "Amazon",
+      "Goldman Sachs",
+      "Deloitte",
+      "IBM"
+    ],
+    "loan_default_rate": 0.6
+  },
+  "student_retention": {
+    "freshman_retention_rate": 98.0,
+    "graduation_rate_4_year": 88.0,
+    "graduation_rate_6_year": 96.0
+  }
+}

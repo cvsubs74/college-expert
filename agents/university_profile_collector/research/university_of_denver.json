@@ -1,0 +1,1263 @@
+{
+  "_id": "university_of_denver",
+  "metadata": {
+    "official_name": "University of Denver",
+    "location": {
+      "city": "Denver",
+      "state": "CO",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Denver (DU) is a private research university in Denver, Colorado, known for its rigorous academics, R1 research classification, and a vibrant campus experience. It offers a blend of urban opportunities in Denver with easy access to outdoor recreation in the Rocky Mountains, fostering a comprehensive learning environment for its students.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Admission consideration for freshmen at the University of Denver is primarily based on the quality and number of high school courses attempted, with a preference for a rigorous academic program of study.",
+    "rankings": [
+      {
+        "source": "US News",
+        "rank_overall": null,
+        "rank_category": "National Universities",
+        "rank_in_category": 117,
+        "year": 2026
+      },
+      {
+        "source": "Niche",
+        "rank_overall": null,
+        "rank_category": "Best Colleges for International Relations in America",
+        "rank_in_category": 75,
+        "year": 2025
+      },
+      {
+        "source": "Forbes",
+        "rank_overall": 169,
+        "rank_category": "Top Colleges",
+        "rank_in_category": 169,
+        "year": 2026
+      }
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Research & Academics",
+        "insight": "DU holds an R1 Carnegie Classification, signifying 'very high research spending and doctorate production'. Undergraduate students gain early access to faculty-led research opportunities.",
+        "implication": "Students seeking an institution with strong research emphasis and opportunities for early involvement in scholarly work will find DU particularly appealing, especially in fields like engineering, computer science, sustainability, and international relations."
+      },
+      {
+        "category": "Campus & Social Life",
+        "insight": "The university has a vibrant social environment with over 120 student clubs, active Greek life, and strong NCAA Division I athletics (especially hockey and skiing). First and second-year students are required to live on campus, fostering a close-knit community.",
+        "implication": "Prospective students looking for a traditional, engaging college experience with strong campus spirit, diverse student organizations, and athletic involvement will thrive at DU."
+      },
+      {
+        "category": "Location & Accessibility",
+        "insight": "Located five miles south of downtown Denver, DU offers convenient access to urban resources (internships, cultural events) via a 15-minute light rail ride, while also being close to the Rocky Mountains for outdoor activities.",
+        "implication": "DU provides a unique balance for students desiring both city life and extensive outdoor recreation opportunities, enhancing experiential learning and leisure activities."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of Denver boasts a vibrant and diverse social environment with over 120 student-run clubs and organizations. Greek life is active, and there's a strong emphasis on NCAA Division I athletics, particularly men's hockey and skiing, which contribute significantly to school spirit. Students are required to live on campus for their first two years, contributing to a cohesive community, and campus traditions like the First Snow Celebration further unite the student body.",
+      "transportation_impact": "Campus transportation includes a free, on-demand shuttle service for students, faculty, and staff. Its proximity to downtown Denver, just a 15-minute light rail ride away, offers easy access to internships, networking, concerts, restaurants, and professional sports, integrating city opportunities into student life. Additionally, the university's location provides convenient access to the Rocky Mountains for skiing, hiking, and other outdoor adventures.",
+      "research_impact": "The University of Denver is classified as an R1 Doctoral University, indicating very high research activity and significant research spending. It emphasizes interdisciplinary research, encouraging collaboration across fields to address complex challenges such as climate change, renewable energy, international diplomacy, AI, and mental health. Undergraduates have opportunities for faculty-led research early in their academic careers, and the Office of Research & Sponsored Programs supports the community with funding opportunities, proposal development, and intellectual property management."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 77.3,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 48.8,
+      "transfer_acceptance_rate": 80.4,
+      "admits_class_size": 14519,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 31.0,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 19214,
+        "admits_total": 13679,
+        "enrolled_total": 1458,
+        "acceptance_rate_overall": 71.19,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 10.66,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 626,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 29,
+          "waitlist_admit_rate": 4.6,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist accepted spots and ranking not explicitly disclosed in available data for this year, but a waitlist admit rate of 4.6% for 29 out of 626 offered spots was reported."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 19342,
+        "admits_total": 15024,
+        "enrolled_total": 1638,
+        "acceptance_rate_overall": 77.68,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 10.9,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 500,
+          "accepted_spots": 198,
+          "admitted_from_waitlist": 3,
+          "waitlist_admit_rate": 1.52,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data sourced from University of Denver Common Data Set 2022-2023."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 22694,
+        "admits_total": 14440,
+        "enrolled_total": 1621,
+        "acceptance_rate_overall": 63.63,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 11.23,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 584,
+          "accepted_spots": 164,
+          "admitted_from_waitlist": 35,
+          "waitlist_admit_rate": 21.34,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data sourced from University of Denver Common Data Set 2021-2022."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 0,
+        "admits_total": 0,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 60.67,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 11.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Specific applications, admits, and enrolled numbers for Fall 2020 enrollment (Class of 2025) were not found in direct Common Data Set snippets for the University of Denver. Overall acceptance rate is from historical trends data. A waitlist acceptance rate of 11% was reported for 2020, but detailed numbers (offered/accepted/admitted) are not available."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.6-4.0",
+        "average_weighted": 3.76,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "Academic GPA is considered 'Very Important' in admission decisions. The average GPA is 3.76. [cite: 3 (from previous search)] In 2019, the middle 50% of incoming students had high school GPAs between 3.6 and 4.0, with 25% above 4.0, suggesting most successful applicants have primarily A grades. [cite: 22 (from previous search)]"
+      },
+      "testing": {
+        "sat_composite_middle_50": "1210-1380",
+        "sat_reading_middle_50": "630-710",
+        "sat_math_middle_50": "610-700",
+        "act_composite_middle_50": "28-32",
+        "submission_rate": 27.0,
+        "policy_note": "Test optional, but scores are considered 'Important' for admission and are recommended. [cite: 3 (from previous search), 5 (from previous search), 21 (from previous search)]"
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 3.0,
+        "geographic_breakdown": [
+          {
+            "region": "Colorado (In-State)",
+            "percentage": 28.0
+          },
+          {
+            "region": "Other US States (Out-of-State)",
+            "percentage": 69.0
+          },
+          {
+            "region": "International",
+            "percentage": 3.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 7959,
+            "admits": 5611,
+            "acceptance_rate": 70.5,
+            "note": "Based on 2023-2024 admission data for applicants, admits, and acceptance rates. [cite: 21 (from previous search)]"
+          },
+          "women": {
+            "applicants": 11253,
+            "admits": 8066,
+            "acceptance_rate": 71.68,
+            "note": "Based on 2023-2024 admission data for applicants, admits, and acceptance rates. [cite: 21 (from previous search)]"
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 63.8,
+          "black_african_american": 4.73,
+          "hispanic_latino": 13.4,
+          "asian": 4.08,
+          "native_american_alaskan": 0.486,
+          "pacific_islander": 0.112,
+          "two_or_more_races": 5.21,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges & Schools",
+    "colleges": [
+      {
+        "name": "College of Arts, Humanities & Social Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a broad liberal arts education with flexibility to explore diverse disciplines and develop critical thinking and communication skills. Strong emphasis on making meaningful community contributions.",
+        "housing_profile": "First and second-year students live in general residential halls with opportunities to join Living & Learning Communities (LLCs) or Affinity Housing based on shared interests, which foster academic and social integration. Traditional dorms like Centennial Halls promote a vibrant social atmosphere.",
+        "student_archetype": "Intellectually curious, community-minded, socially engaged, values critical thinking and diverse perspectives, often interested in fields like law, education, politics, and non-profits.",
+        "majors": [
+          {
+            "name": "Anthropology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ANTH 1010 Anthropology: Humankind in Context",
+              "ANTH 1302 Introduction to Archaeology",
+              "ANTH 1303 Introduction to Biological Anthropology",
+              "ANTH 2102 Culture and the Human Experience"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ANTH 2000 Genealogies of Anthropology: Foundations and Futures",
+              "ANTH 3101 Foundations of Cultural Anthropology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Minimum 44 credits in Anthropology, 24 upper-division. Honors requires 3.75 major GPA, 3.30 cumulative GPA, and honors thesis."
+          },
+          {
+            "name": "Art History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "A World Art class"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ARTH 1000-level survey courses",
+              "ARTH 2600 Art History Survey I",
+              "ARTH 2610 Art History Survey II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Minimum 60 credits, including 48 in art history and 12 in studio art. Distinction requires 3.3 major GPA, 3.5 cumulative GPA, and senior paper."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 1020 Economics: A Critical Introduction",
+              "ECON 1030 Introduction to Micro and Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 2020 Intermediate Microeconomics",
+              "ECON 2030 Intermediate Macroeconomics",
+              "ECON 2670 Quantitative Methods"
+            ],
+            "special_requirements": "Strongly recommended to take at least two semesters of calculus.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Minimum 44 credits, including 24 required courses and 20 upper-division electives. Distinction requires 3.5 cumulative GPA, 3.75 major GPA, and honors thesis. MATH 2411 Calculus II or MATH 2421 Calculus III with a B or higher can satisfy ECON 3801."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "A general BA degree is available. Specific requirements would need to be pulled from the English department section of the bulletin."
+          },
+          {
+            "name": "Journalism Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MFJS 2140 Storytelling and Reporting",
+              "MFJS 2240 Multimedia Journalism"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MFJS 2210 Introduction to Media and Culture",
+              "MFJS 2280 Politics and Media"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Minimum 40 credit hours. Distinction requires 3.75 cumulative GPA and 3.8 major GPA. Requires 12 credits in the major and a 3.0 GPA to enroll in certain upper-division courses."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "A general BA degree is available. Specific requirements would need to be pulled from the Philosophy department section of the bulletin."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PLSC 1000 Introduction to American Politics",
+              "PLSC 1110 Comparing Politics around the World",
+              "PLSC 1610 Introduction to Political Thought: Citizenship and Action",
+              "PLSC 1810 Introduction to Law and Society"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PLSC 2011 Logic of Political Inquiry"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Minimum 40 credits, with at least 28 at the 2000 or 3000 level. Distinction requires 3.5 cumulative GPA, 3.7 major GPA, and a senior honors thesis or other approved project."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYC 1001 Introductory Psychology"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYC 2031 Introduction to Cognitive Neuroscience",
+              "PSYC 2310 Statistics for the Social and Behavioral Sciences",
+              "PSYC 3010 Research Methods in Psychological Science"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "BA requires 40 credits, 25 at 2000 or 3000 level. BS requires 45 credits, 25 at 2000 or 3000 level. Distinction requires junior and senior honors research seminars and a research project."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SOCI 1810 Understanding Social Life"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "SOCI 2020 Sociological Classics",
+              "SOCI 2005 Sociological Imagination and Inquiry--Part A",
+              "SOCI 2006 Sociological Imagination and Inquiry--Part B"
+            ],
+            "special_requirements": "Cannot double-major or minor in both Sociology and Criminology. Limited to 60 total credits in SOCI courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Minimum 40 credits, including 20 core and 20 electives. Distinction requires 3.5 major GPA, 3.25 overall GPA, and senior thesis."
+          },
+          {
+            "name": "Theatre",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "THEA 1861 Theatre Imagination",
+              "THEA 1862 How to Read a Play",
+              "THEA 1600 Stagecraft for Theatre",
+              "THEA 1880 Fundamentals of Theatre Design"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "THEA 2870 Acting I",
+              "THEA 2890 Theatre History I"
+            ],
+            "special_requirements": "No audition required to declare.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Minimum 45 credit hours. Distinction is available for students demonstrating significant professional work."
+          }
+        ]
+      },
+      {
+        "name": "College of Natural Sciences & Mathematics",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Suited for students passionate about scientific inquiry and quantitative analysis, seeking hands-on research opportunities and strong faculty mentorship. Offers both intensive science (BS) and broader science (BA) pathways.",
+        "housing_profile": "First and second-year students reside in general residential halls, with options to engage in Living & Learning Communities (LLCs) that may align with STEM interests, promoting peer connections and academic support. Access to learning centers within walking distance for additional academic help.",
+        "student_archetype": "Analytical thinkers, problem-solvers, research-oriented, curious about the physical world, often aiming for careers in science, health professions, or engineering. Values student-centered teaching and collaborative research.",
+        "majors": [
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 1010 Physiological Systems",
+              "CHEM 1010 General Chemistry I",
+              "MATH 1200 Calculus I (or equivalent)"
+            ],
+            "special_requirements": "B.S. requires a chemistry minor, a second minor, and one year each of mathematics and physics. B.A. is more flexible, requiring two quarters of math and one year of chemistry.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Strong emphasis on research opportunities. Options to specialize in cell and molecular biology or ecology and evolutionary biology."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 1010 General Chemistry I",
+              "MATH 1200 Calculus I (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 2451 Organic Chemistry I",
+              "MATH 1952 Calculus II",
+              "PHYS 1211 University Physics I"
+            ],
+            "special_requirements": "Degree provides both breadth and depth for students pursuing careers in science.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Courses cover general chemistry, organic chemistry, quantitative analysis, instrumental analysis, physical chemistry, biochemistry. Prepares for graduate school, health-related programs, or industry."
+          },
+          {
+            "name": "Environmental Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 1010 General Chemistry I",
+              "BIOL 1010 Physiological Systems"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Specific requirements would need to be pulled from the Geography and the Environment department section of the bulletin."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1200 Calculus I (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1952 Calculus II",
+              "MATH 1953 Calculus III"
+            ],
+            "special_requirements": "B.S. is more intensive and better for double majors/minors in other science fields or engineering. B.A. is less intensive for a broader experience.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Emphasizes logical and analytical problem-solving. Good preparation for graduate school or careers in academia, high-tech, finance, government. Concentrations available in Finance and Artificial Intelligence for the B.S."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1951 Calculus I",
+              "MATH 1952 Calculus II",
+              "PHYS 1211 University Physics I",
+              "PHYS 1212 University Physics II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MATH 1953 Calculus III",
+              "PHYS 1213 University Physics III",
+              "PHYS 2711 Intro Experimental Phys Lab I"
+            ],
+            "special_requirements": "High school background in trigonometry, advanced algebra, chemistry, and physics recommended.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Minimum 45 credits (above PHYS 1999) and significant ancillary math and science coursework. Distinction requires 3.25 GPA in Physics and Math, senior thesis, and presentation."
+          }
+        ]
+      },
+      {
+        "name": "Daniels College of Business",
+        "admissions_model": "Secondary Application",
+        "acceptance_rate_estimate": 69.8,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For ambitious students seeking a rigorous, career-focused business education with strong ties to the Denver business community. Requires a secondary application process (cover letter, resume, interview) in addition to general university admission.",
+        "housing_profile": "First and second-year students live in general residential halls, with opportunities to join business-themed Living & Learning Communities (LLCs) which integrate academic and professional development. Some upperclassmen may transition to apartments like Nelson Hall or University Place.",
+        "student_archetype": "Driven, pre-professional, entrepreneurial, values practical skills and networking, seeks individualized attention and mentorship for career success. Often interested in internships and real-world business challenges.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.Acc.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1200 or 1951 (Calculus)",
+              "ECON 1020 (Economics: A Critical Introduction)",
+              "INFO 1010 & INFO 1011 (Intro to Information Technology)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "ACTG 2200 (Financial Accounting)",
+              "ACTG 2300 (Managerial Accounting)",
+              "INFO 1020 & INFO 1021 (Business Analytics and Intro to Programming)"
+            ],
+            "special_requirements": "Dual-degree program (BSAcc + MAcc) available.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Requires a GPA of at least 2.5 in the major."
+          },
+          {
+            "name": "Business Information and Analytics",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1200 or 1951 (Calculus)",
+              "INFO 1010 & INFO 1011 (Intro to Information Technology)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "INFO 1020 & INFO 1021 (Business Analytics and Intro to Programming)"
+            ],
+            "special_requirements": "Seniors apply knowledge and skills to solve real-world problems for a company.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "This major develops fundamental business knowledge and skills."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1200 or 1951 (Calculus)",
+              "ECON 1020 (Economics: A Critical Introduction)",
+              "INFO 1010 & INFO 1011 (Intro to Information Technology)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ACTG 2200 (Financial Accounting)",
+              "FIN 2800 (Foundations of Finance)"
+            ],
+            "special_requirements": "4+1 dual-degree option available (BSBA + Master's in Finance).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "One of the most popular undergraduate majors at DU."
+          },
+          {
+            "name": "Hospitality Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BUS 1440 (Foundations of Business)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Students plan and orchestrate large-scale events.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "This major develops fundamental business knowledge and skills."
+          },
+          {
+            "name": "International Business",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BUS 1440 (Foundations of Business)",
+              "ECON 1020 (Economics: A Critical Introduction)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Foreign language requirement and courses taken at both Daniels and Korbel School.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Interdisciplinary major encompassing business fundamentals, international law and policy, and cultural awareness."
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BUS 1440 (Foundations of Business)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MGMT 2100 (Foundations of Management)"
+            ],
+            "special_requirements": "Tracks in consulting or strategic leadership. 4+1 dual-degree option available (BSBA + Master's in Management).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Focuses on leadership, business ethics, accountability, strategic decision-making, and organizational talent development."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BUS 1440 (Foundations of Business)",
+              "MGMT 2100 (Foundations of Management)",
+              "INFO 1020 (Business Analytics and Intro to Programming)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MKTG 2800 (Foundations of Marketing)"
+            ],
+            "special_requirements": "Required experiential learning component. 4+1 dual-degree option available (BSBA + Master's in Marketing).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Curriculum covers branding, promotion, market research, and strategic marketing planning."
+          },
+          {
+            "name": "Real Estate and the Built Environment",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BUS 1440 (Foundations of Business)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "4+1 dual-degree option available (BSBA + Master's in Real Estate and the Built Environment).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "This major develops fundamental business knowledge and skills."
+          }
+        ]
+      },
+      {
+        "name": "Daniel Felix Ritchie School of Engineering and Computer Science",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "A strong fit for students passionate about innovation, technology, and solving complex problems through hands-on, interdisciplinary collaboration. Does not require a separate application beyond general university admission.",
+        "housing_profile": "First and second-year students live in general residential halls. While no specific dorm is exclusively for engineering, Living & Learning Communities (LLCs) can offer thematic housing related to STEM or innovation, fostering a supportive peer environment. Modern dorms may include maker spaces or technologically-equipped common areas.",
+        "student_archetype": "Innovative, problem-solving, collaborative, technologically adept, seeks experiential learning and research opportunities, and is committed to ethical innovation for the public good.",
+        "majors": [
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1951 Calculus I",
+              "MATH 1952 Calculus II",
+              "PHYS 1211 University Physics I",
+              "ELEC 1000 Introduction to Electrical and Computer Engineering"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "COMP 1671 Introduction to Programming I",
+              "ELEC 2000 Circuits I"
+            ],
+            "special_requirements": "Students combine elements of computer science with electrical and mechanical engineering. Hands-on lab experience is significant.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Focuses on the development of computer hardware and software. Specializations include communications, robotics, embedded systems."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1951 Calculus I",
+              "COMP 1671 Introduction to Programming I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "COMP 1672 Introduction to Programming II",
+              "COMP 2700 Data Structures and Algorithms",
+              "MATH 1952 Calculus II"
+            ],
+            "special_requirements": "B.S. has strong mathematical foundations and includes a math cognate (can be used for a math minor).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Encompasses the theory and techniques of information processing. Electives allow specialization in areas like programming, cybersecurity, game development, AI. Concentrations available in Artificial Intelligence and Cybersecurity for the B.S."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1951 Calculus I",
+              "MATH 1952 Calculus II",
+              "PHYS 1211 University Physics I",
+              "ELEC 1000 Introduction to Electrical and Computer Engineering"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ELEC 2000 Circuits I",
+              "PHYS 1212 University Physics II"
+            ],
+            "special_requirements": "Opportunities to explore robotics, energy, and photonics.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Prepares students to design, develop, test, and supervise manufacturing of electrical equipment. Concentration in Mechatronic Systems available."
+          },
+          {
+            "name": "Game Development",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1951 Calculus I",
+              "COMP 1671 Introduction to Programming I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "COMP 1672 Introduction to Programming II",
+              "MATH 1952 Calculus II"
+            ],
+            "special_requirements": "Requires a minor in mathematics and a second art-related minor.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Blends computer science, mathematics, and creativity. Prepares for careers in game development and collaboration with artists."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1951 Calculus I",
+              "MATH 1952 Calculus II",
+              "PHYS 1211 University Physics I",
+              "ENGR 1000 Introduction to Engineering"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PHYS 1212 University Physics II",
+              "MATH 1953 Calculus III",
+              "ENGR 2000 Statics"
+            ],
+            "special_requirements": "Opportunities for original research early in undergraduate career.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Small classes and dedicated faculty. Collaborations on research in bioengineering, composite materials, atmospheric science."
+          }
+        ]
+      },
+      {
+        "name": "Morgridge College of Education",
+        "admissions_model": "Pre-Major (undergraduate, if applicable)/Rolling Graduate Admissions",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Designed for students committed to driving positive change through education, mental health, and information systems. Strong emphasis on hands-on learning, faculty mentorship, and social equity.",
+        "housing_profile": "Primarily a graduate-focused college, but undergraduate students can participate in combined programs. General undergraduate housing for those pursuing relevant undergraduate degrees. No specific Morgridge housing noted.",
+        "student_archetype": "Compassionate, socially conscious, community-oriented, aspiring educators, counselors, and information professionals who are passionate about learning and making a meaningful impact.",
+        "majors": []
+      },
+      {
+        "name": "Sturm College of Law",
+        "admissions_model": "Highly Selective Graduate",
+        "acceptance_rate_estimate": 46.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For students dedicated to legal careers, valuing experiential learning, practical training, and ethical standards. Ideal for those seeking a balance of academics and real-world legal application. Undergraduate DU students can apply for an accelerated Bachelor/JD program.",
+        "housing_profile": "Primarily serves graduate students. While some graduate housing options may be available, many law students seek off-campus apartments. No specific residential college system for law students is explicitly mentioned.",
+        "student_archetype": "Analytically strong, articulate, ethical, pragmatic, and committed to justice; often focused on client advocacy and a seamless transition into the legal profession.",
+        "majors": []
+      },
+      {
+        "name": "Josef Korbel School of International Studies",
+        "admissions_model": "Holistic Review (Graduate)",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students with global aspirations, seeking a flexible, self-directed curriculum to tackle international challenges, global policy, and human rights. Emphasizes work experience and clear objectives for graduate study.",
+        "housing_profile": "Primarily serves graduate students, who often reside in off-campus apartments in the surrounding Denver area. No specific Korbel School residential facilities are explicitly identified.",
+        "student_archetype": "Globally aware, impactful, passionate about international relations, development, security, and public affairs. Seeks real-world application, diverse perspectives, and strong professional networks.",
+        "majors": []
+      },
+      {
+        "name": "Lamont School of Music",
+        "admissions_model": "Audition/Portfolio & General University Admission",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "A conservatory-level education within a liberal arts environment, ideal for talented and ambitious musicians dedicated to performance, composition, or music scholarship. Requires a supplemental application and a successful audition/portfolio.",
+        "housing_profile": "First and second-year students live in general residential halls. While there isn't dedicated Lamont housing, music students can find community within Living & Learning Communities or by connecting with peers through various campus organizations. Proximity to the Newman Center for the Performing Arts is a plus.",
+        "student_archetype": "Highly skilled, disciplined, creative, collaborative musicians and performing artists who thrive in a multi-genre curriculum and seek extensive performance opportunities.",
+        "majors": [
+          {
+            "name": "Music (Performance)",
+            "degree_type": "B.M.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MUAC 1001 Music Theory I",
+              "MUAC 1002 Music Theory II",
+              "Aural Skills courses"
+            ],
+            "special_requirements": "Audition required for admission and for the minor.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Offers emphasis in classical performance, jazz studies, composition, or recording and production. Internal transfer is possible with an audition."
+          },
+          {
+            "name": "Music (Composition)",
+            "degree_type": "B.M.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MUAC 1001 Music Theory I",
+              "MUAC 1002 Music Theory II",
+              "Aural Skills courses"
+            ],
+            "special_requirements": "Audition required for admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Offers rigorous training in composition, harmony, counterpoint, analysis, conducting, orchestration and digital audio."
+          },
+          {
+            "name": "Music (Jazz Studies)",
+            "degree_type": "B.M.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MUAC 1013 Jazz Theory and Aural Skills I",
+              "MUAC 1014 Jazz Theory and Aural Skills II"
+            ],
+            "special_requirements": "Audition required for admission.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Offers emphasis in jazz studies and commercial music."
+          },
+          {
+            "name": "Music Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Non-auditioned degree emphasizing music academic courses rather than performance.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Provides opportunity to study music through an exciting curriculum with engagement in music's cultural practices and expressive forms."
+          }
+        ]
+      },
+      {
+        "name": "University College",
+        "admissions_model": "Rolling Admissions",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Designed for working professionals and adult learners seeking career-focused education, including various master's degrees, certificates, and online programs for flexibility.",
+        "housing_profile": "Primarily serves non-traditional, often part-time or online, and graduate students. On-campus housing is generally not a primary consideration for this college's student body; most live off-campus.",
+        "student_archetype": "Career-focused, adult learners, working professionals, seeking flexible and accessible education to advance their careers or acquire new skills.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Chemistry Minor",
+      "Environmental Science Minor",
+      "Astrophysics Minor",
+      "Biological Sciences Minor",
+      "Kinesiology & Sport Studies Minor",
+      "Leadership Studies Minor",
+      "Wellness Minor",
+      "Writing Practices Minor",
+      "Data Science & AI Certificate",
+      "Entrepreneurship Certificate",
+      "Research Data Management Certificate (MLIS)",
+      "Early Childhood Special Education Certificate",
+      "Global Health Affairs Certificate (Korbel)",
+      "Homeland Security Certificate (Korbel)",
+      "Humanitarian Assistance Certificate (Korbel)",
+      "Animal Law Certificate (Sturm)",
+      "Constitutional Rights and Remedies Certificate (Sturm)",
+      "Corporate & Commercial Law Certificate (Sturm)",
+      "Environmental and Natural Resources Law Certificate (Sturm)",
+      "Intellectual Property and Technology Law Certificate (Sturm)"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Binding commitment for Early Decision I"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "One Common Application essay required; no additional supplemental essays for general undergraduate admission."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Audition/Portfolio & Supplemental Application",
+        "deadline": null,
+        "details": "Supplemental application from the Lamont School of Music and an audition or portfolio are required. Music applicants must apply for the Regular Decision deadline."
+      },
+      {
+        "target_program": "BFA Programs",
+        "requirement_type": "Portfolio",
+        "deadline": null,
+        "details": "A portfolio is required for BFA programs."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Community Engagement",
+        "Leadership",
+        "Talents"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Optional",
+      "legacy_consideration": "None",
+      "first_gen_boost": "None",
+      "specific_differentiators": "The University of Denver looks for students who demonstrate a passion for diverse learning, engage with their peers and community through various activities, and possess intellectual curiosity and drive."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider less competitive majors like business, psychology, sociology, history, criminal justice, or political science if not set on highly competitive fields.",
+      "If undecided or interested in broad fields, consider applying as undeclared within a college like Letters and Science.",
+      "Research specific major admission rates, as some programs are more impacted than others.",
+      "Take introductory classes before committing to a major to gauge interest and aptitude.",
+      "Prioritize majors that align with long-term career goals and earning potential, considering if graduate school is necessary."
+    ],
+    "college_ranking_tactics": [
+      "Look beyond overall college prestige rankings and evaluate colleges based on specific department or major strengths.",
+      "Consider the quality of student life, including housing, campus culture, and surrounding area, rather than solely academic metrics.",
+      "Be aware that college rankings can be manipulated; seek out independent metrics like graduate job placement or salary outcomes.",
+      "Evaluate the opportunities available at a particular college, such as research, internships, or unique programs, as part of your ranking.",
+      "Assess the quality of administration and teaching staff, not just their academic credentials."
+    ],
+    "alternate_major_strategy": "If applying to a highly competitive major like Computer Science or Engineering, list a backup major in a different college, such as Cognitive Science or Applied Mathematics in Letters and Science, to increase overall admission chances. While some universities only guarantee review of the first-choice major, an alternate provides a secondary pathway for consideration if the primary is not accommodated."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 61398,
+        "total_coa": 83378,
+        "housing": 18593
+      },
+      "out_of_state": {
+        "tuition": 61398,
+        "total_coa": 84141,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "Merit Focused",
+    "average_need_based_aid": 30657,
+    "average_merit_aid": 30008,
+    "percent_receiving_aid": 94.0,
+    "scholarships": [
+      {
+        "name": "Merit Scholarships (General)",
+        "type": "Merit",
+        "amount": "$15,000 - $40,000 per year",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Renewable for four years; may include a $3,000 Residence Hall Grant for on-campus residents",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Chancellor's Scholarship",
+        "type": "Merit",
+        "amount": "$12,000 - $27,000 annually",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Renewable for up to 12 quarters",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Full-Tuition Merit Scholarships (Undergraduate)",
+        "type": "Merit",
+        "amount": "Up to full tuition",
+        "deadline": "Automatic consideration with admission application (early decision typically November 1, regular decision January 15)",
+        "benefits": "Covers tuition costs; competitive award for top applicants",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "DU Educational Grant / Elevate Grant",
+        "type": "Need",
+        "amount": "Varies based on financial need",
+        "deadline": "FAFSA and CSS Profile priority deadlines (must re-apply annually)",
+        "benefits": "Funds applied directly to education costs; amount may change based on financial situation",
+        "application_method": "FAFSA and CSS Profile"
+      },
+      {
+        "name": "Departmental Scholarships",
+        "type": "Merit/Need-based (varies)",
+        "amount": "Varies (over 500 available)",
+        "deadline": "Application opens in early February (for continuing students)",
+        "benefits": "Awarded by academic departments; majority for students in their second, third, or fourth year",
+        "application_method": "Separate Application (DU Departmental Scholarship Application)"
+      },
+      {
+        "name": "Residence Hall Grant",
+        "type": "Merit",
+        "amount": "$3,000",
+        "deadline": "Automatic consideration for merit scholarship recipients living on campus",
+        "benefits": "Pays directly toward tuition costs; for full-time students living in eligible on-campus housing",
+        "application_method": "Automatic Consideration"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Credit is granted for select Advanced Placement (AP) examination scores for courses commonly taught at the first-year level. Official AP exam scores will be considered for both foundational requirements and departmental electives. A maximum of 45 quarter hours can be awarded for all AP and IB credit.",
+      "exceptions": [
+        "Score requirements for credit and placement vary by academic department and exam."
+      ],
+      "usage": "Can satisfy foundational requirements, departmental electives, and some Common Curriculum attributes."
+    },
+    "ib_policy": {
+      "general_rule": "IB credit is granted based on transfer credit policies. For most subjects, credit is only awarded for Higher Level (HL) exams with appropriate scores. For foreign languages, credit is awarded for both Standard Level (SL) and Higher Level (HL) exams. A maximum of 45 quarter hours can be awarded for all AP and IB credit.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "DU's transfer credit search tool (go.du.edu/transfers)",
+        "transfer course guides"
+      ],
+      "restrictions": "A maximum of 135 quarter hours of credit may be transferred in total from any combination of two- and four-year institutions, AP/IB credit, and/or Military credit. A maximum of 96 quarter hours (64 semester hours) can be transferred from two-year institutions. Only courses with a grade of C- (1.7 on a 4-point scale) or better are eligible for transfer. Transfer grades are not included in a student's DU GPA. Pass/fail credits can be transferred only as elective credit, provided the passing grade equals C- or better, and they do not apply to specific degree requirements. The final 45 credits for a degree must be earned at the University of Denver. At least half of the credit hours required for majors and minors must be completed at the University of Denver. Online courses are not categorically restricted but may be refused based on instruction methodologies not equivalent to those at DU."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, including challenging coursework (e.g., 4 years English, 3-4 years math, science, social studies, foreign language).",
+      "Demonstrated passion and excellence in extracurricular activities, showing meaningful involvement beyond just participation.",
+      "Authentic and well-written essays that reveal personal strengths, values, and how you will contribute to the DU community.",
+      "A strong GPA (average accepted weighted GPA for Fall 2025 was 3.79, middle 50% 3.58-4.0 weighted).",
+      "Engagement with the University of Denver, such as meeting with admission counselors or attending visits, demonstrates investment."
+    ],
+    "common_activities": [
+      "Leadership positions in school clubs or organizations.",
+      "Community service and contribution to the community.",
+      "Varsity athletics (especially in sports like skiing and hockey, which are strong at DU).",
+      "Participation in performing arts.",
+      "Taking on new challenges outside the classroom."
+    ],
+    "essay_tips": [
+      "Show, don't tell: Use specific details and anecdotes to illustrate your experiences and qualities.",
+      "Be specific about yourself and what makes you a good asset to the school, rather than just listing DU's programs.",
+      "Use the essay to highlight strengths, values, and passions not evident elsewhere in your application.",
+      "Ensure your essay is proofread for grammar, spelling, and sentence structure, as it reflects academic readiness.",
+      "Focus on a specific trait or experience that has shaped you and reflect on its impact."
+    ],
+    "red_flags": [
+      "Generic essays that could apply to any institution and don't highlight a personal connection to DU.",
+      "Essays that merely tell rather than show the impact of experiences or accomplishments.",
+      "Lack of demonstrated passion or depth in extracurricular involvement.",
+      "Poor grammar, spelling, or sentence structure in essays can indicate a lack of academic seriousness.",
+      "Only focusing on GPA and test scores without showcasing a well-rounded profile."
+    ],
+    "insights": [
+      "DU takes a holistic approach to admissions, considering applicants beyond just grades and test scores.",
+      "While test-optional, submitting strong SAT/ACT scores can be beneficial for both admission and merit scholarships.",
+      "For specific programs like the Daniels College of Business, a secondary application process including a cover letter, resume, and interview may be required.",
+      "The optional supplemental essay (if applying via DU's Pioneer Application) should definitely be utilized to provide more insight into your personality.",
+      "Early Action and Early Decision options are available, with Early Decision being a binding agreement if accepted."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 71155,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 26.7,
+    "top_employers": [
+      "University of Denver",
+      "Deloitte",
+      "KPMG",
+      "Lockheed Martin",
+      "Denver Public School District",
+      "Children's Hospital Colorado",
+      "The Walt Disney Company"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 88.0,
+    "graduation_rate_4_year": 69.0,
+    "graduation_rate_6_year": 78.0
+  }
+}

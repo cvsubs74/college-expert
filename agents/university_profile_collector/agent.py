@@ -4,8 +4,11 @@ import os
 from google.adk.agents import LlmAgent, ParallelAgent, SequentialAgent
 from google.adk.tools import google_search, AgentTool, ToolContext
 
-# Import models for validation reference
-from .model import UniversityProfile
+# Import models for validation reference - support both module and direct execution
+try:
+    from .model import UniversityProfile
+except ImportError:
+    from model import UniversityProfile
 
 # Configure logging
 logger = logging.getLogger(__name__)

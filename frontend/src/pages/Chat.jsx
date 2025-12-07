@@ -13,7 +13,7 @@ import { useAuth } from '../context/AuthContext';
 
 function Chat() {
   const { currentUser } = useAuth();
-  
+
   // Initialize messages from localStorage to prevent clearing on tab switch
   const [messages, setMessages] = useState(() => {
     try {
@@ -24,7 +24,7 @@ function Chat() {
       return [];
     }
   });
-  
+
   const [inputMessage, setInputMessage] = useState('');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(null);
@@ -62,7 +62,7 @@ function Chat() {
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    
+
     if (!inputMessage.trim() || sending) return;
 
     const userMessage = inputMessage.trim();
@@ -81,7 +81,7 @@ function Chat() {
 Question: ${userMessage}`;
 
       let response;
-      
+
       // First message: create session
       if (!sessionId) {
         console.log('[Chat] Creating new session (first message)');
@@ -99,7 +99,7 @@ Question: ${userMessage}`;
 
       // Extract response text and suggested questions
       const { result, suggested_questions } = extractFullResponse(response);
-      
+
       // Update suggested questions
       if (suggested_questions && Array.isArray(suggested_questions)) {
         setSuggestedQuestions(suggested_questions);
@@ -127,7 +127,7 @@ Question: ${userMessage}`;
 
   const handleSuggestedQuestion = async (question) => {
     if (sending) return;
-    
+
     setSending(true);
     setError(null);
 
@@ -142,7 +142,7 @@ Question: ${userMessage}`;
 Question: ${question}`;
 
       let response;
-      
+
       // First message: create session
       if (!sessionId) {
         console.log('[Chat] Creating new session (suggested question - first message)');
@@ -160,7 +160,7 @@ Question: ${question}`;
 
       // Extract response text and suggested questions
       const { result, suggested_questions } = extractFullResponse(response);
-      
+
       // Update suggested questions
       if (suggested_questions && Array.isArray(suggested_questions)) {
         setSuggestedQuestions(suggested_questions);
@@ -178,12 +178,12 @@ Question: ${question}`;
     }
   };
 
-  // Generic suggested questions for initial load
+  // Generic suggested questions for initial load - mix of general and personalized
   const defaultSuggestedQuestions = [
-    "How do colleges evaluate applications holistically?",
-    "What role do standardized test scores play in admissions?",
-    "How important are extracurricular activities in college applications?",
-    "What makes a strong college application essay?"
+    "What universities offer business programs?",
+    "Compare UCLA and UC Berkeley for computer science",
+    "What are my chances at USC?",
+    "Help me build a balanced college list"
   ];
 
   // Display suggested questions - use dynamic ones if available, otherwise defaults
@@ -193,10 +193,10 @@ Question: ${question}`;
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">College Information Chat</h1>
+        <h1 className="text-3xl font-bold text-gray-900">AI Counselor</h1>
         <p className="mt-2 text-gray-600">
-          Ask questions about colleges, admissions requirements, and application strategies. 
-          All answers are based on our curated knowledge base.
+          Ask anything - from general college research to personalized admissions strategy.
+          I'll use your profile when relevant and search my knowledge base to provide tailored guidance.
         </p>
       </div>
 
@@ -207,7 +207,7 @@ Question: ${question}`;
           <div className="ml-3">
             <h3 className="text-sm font-medium text-blue-900">Knowledge Base Powered</h3>
             <p className="mt-1 text-sm text-blue-800">
-              This chat uses our college admissions knowledge base to provide accurate, 
+              This chat uses our college admissions knowledge base to provide accurate,
               research-backed answers. Responses are grounded in expert insights and official data.
             </p>
           </div>
@@ -220,7 +220,7 @@ Question: ${question}`;
         <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
           <div className="flex items-center">
             <ChatBubbleLeftRightIcon className="h-6 w-6 text-primary mr-2" />
-            <h2 className="text-lg font-semibold text-gray-900">Ask About Colleges</h2>
+            <h2 className="text-lg font-semibold text-gray-900">Chat with AI Counselor</h2>
           </div>
           {messages.length > 0 && (
             <button
@@ -239,7 +239,7 @@ Question: ${question}`;
               <SparklesIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
               <h3 className="text-lg font-medium text-gray-900 mb-2">Start a Conversation</h3>
               <p className="text-gray-600 mb-6">Ask any question about college admissions</p>
-              
+
               {/* Suggested Questions */}
               <div className="max-w-2xl mx-auto">
                 <p className="text-sm font-medium text-gray-700 mb-3">💡 Suggested questions:</p>
@@ -252,7 +252,7 @@ Question: ${question}`;
                       'bg-purple-50 border-purple-300 hover:bg-purple-100 hover:border-purple-400 text-purple-900',
                       'bg-orange-50 border-orange-300 hover:bg-orange-100 hover:border-orange-400 text-orange-900'
                     ];
-                    
+
                     return (
                       <button
                         key={index}
@@ -274,11 +274,10 @@ Question: ${question}`;
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-3xl rounded-lg px-4 py-3 ${
-                      message.role === 'user'
-                        ? 'bg-primary text-white'
-                        : 'bg-gray-100 text-gray-900'
-                    }`}
+                    className={`max-w-3xl rounded-lg px-4 py-3 ${message.role === 'user'
+                      ? 'bg-primary text-white'
+                      : 'bg-gray-100 text-gray-900'
+                      }`}
                   >
                     {message.role === 'user' ? (
                       <p className="text-sm">{message.content}</p>
@@ -292,7 +291,7 @@ Question: ${question}`;
                   </div>
                 </div>
               ))}
-              
+
               {sending && (
                 <div className="flex justify-start">
                   <div className="bg-gray-100 rounded-lg px-4 py-3">
@@ -303,7 +302,7 @@ Question: ${question}`;
                   </div>
                 </div>
               )}
-              
+
               {/* Suggested Questions after response */}
               {!sending && suggestedQuestions.length > 0 && messages.length > 0 && (
                 <div className="max-w-4xl">
@@ -317,7 +316,7 @@ Question: ${question}`;
                         'bg-purple-50 border-purple-300 hover:bg-purple-100 hover:border-purple-400 text-purple-900',
                         'bg-orange-50 border-orange-300 hover:bg-orange-100 hover:border-orange-400 text-orange-900'
                       ];
-                      
+
                       return (
                         <button
                           key={index}
@@ -331,7 +330,7 @@ Question: ${question}`;
                   </div>
                 </div>
               )}
-              
+
               <div ref={messagesEndRef} />
             </>
           )}
@@ -351,18 +350,17 @@ Question: ${question}`;
               type="text"
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
-              placeholder="Ask about colleges, admissions, or application strategies..."
+              placeholder="Ask anything - college info, my chances, recommendations..."
               className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
               disabled={sending}
             />
             <button
               type="submit"
               disabled={sending || !inputMessage.trim()}
-              className={`px-6 py-3 rounded-lg flex items-center space-x-2 ${
-                sending || !inputMessage.trim()
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-primary hover:bg-blue-700'
-              } text-white transition-colors`}
+              className={`px-6 py-3 rounded-lg flex items-center space-x-2 ${sending || !inputMessage.trim()
+                ? 'bg-gray-400 cursor-not-allowed'
+                : 'bg-primary hover:bg-blue-700'
+                } text-white transition-colors`}
             >
               {sending ? (
                 <>

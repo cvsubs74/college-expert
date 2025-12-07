@@ -35,37 +35,67 @@ def search_universities(
     limit: int = 10
 ) -> Dict[str, Any]:
     """
-    Search universities using hybrid search (BM25 + vector).
+    Search universities using hybrid search (BM25 + vector) with optional filters.
     
-    This searches the structured university profiles with detailed admissions data,
-    academic programs, career outcomes, and strategic insights.
+    IMPORTANT: Use filters when the user specifies criteria like location, acceptance rate,
+    or public/private type. Combining filters with semantic search gives the best results.
+    
+    This searches structured university profiles with detailed admissions data (SAT/ACT scores,
+    GPA ranges), academic programs, career outcomes, and strategic insights.
     
     Args:
-        query: Natural language search query (e.g., "computer science research California")
+        query: Natural language search query describing what you're looking for.
+            Examples: "strong computer science program", "business and psychology",
+            "top research university", "good financial aid"
+            
         search_type: Search mode - "hybrid" (default), "semantic", or "keyword"
-            - hybrid: Combines BM25 text + vector similarity (best quality)
-            - semantic: Vector similarity only (conceptual matching)
-            - keyword: BM25 text only (exact term matching)
-        filters: Optional filters to narrow results:
-            - state: State abbreviation (e.g., "CA", "IL")
+            - hybrid: Combines BM25 text + vector similarity (RECOMMENDED for most queries)
+            - semantic: Vector similarity only (good for conceptual/vague queries)
+            - keyword: BM25 text only (good for exact name matches)
+            
+        filters: IMPORTANT - Use these to narrow results when user specifies criteria!
+            Available filters:
+            - state: State abbreviation, e.g., "CA", "NY", "IL", "MA", "TX"
             - type: "Public" or "Private"
-            - acceptance_rate_max: Maximum acceptance rate (e.g., 25)
-            - acceptance_rate_min: Minimum acceptance rate
-            - market_position: e.g., "Public Ivy"
+            - acceptance_rate_max: Maximum acceptance rate, e.g., 20 = under 20%
+            - acceptance_rate_min: Minimum acceptance rate, e.g., 10 = above 10%
+            - market_position: e.g., "Public Ivy", "Elite Private"
+            
         limit: Maximum results to return (default: 10)
         
     Returns:
         Dictionary with:
         - success: Boolean indicating success
-        - results: List of university matches with profiles
+        - results: List of university matches, each containing:
+            - university_id, official_name, location, acceptance_rate
+            - profile: Full profile with admissions_data, outcomes, financials, etc.
         - total: Number of results found
         - query: Original query
         
-    Example:
+    EXAMPLES - Use filters for precise queries:
+    
+        # "Find public universities in California with low acceptance rates"
         search_universities(
-            query="top engineering programs California public",
-            search_type="hybrid",
-            filters={"state": "CA", "acceptance_rate_max": 30}
+            query="strong academics",
+            filters={"state": "CA", "type": "Public", "acceptance_rate_max": 25}
+        )
+        
+        # "What are the top private universities in Massachusetts?"
+        search_universities(
+            query="top university",
+            filters={"state": "MA", "type": "Private"}
+        )
+        
+        # "Universities with acceptance rate between 10-25%"
+        search_universities(
+            query="competitive university",
+            filters={"acceptance_rate_min": 10, "acceptance_rate_max": 25}
+        )
+        
+        # "Find schools in New York"
+        search_universities(
+            query="university",
+            filters={"state": "NY"}
         )
     """
     try:

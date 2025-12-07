@@ -1,0 +1,982 @@
+{
+  "_id": "stony_brook_university",
+  "metadata": {
+    "official_name": "Stony Brook University",
+    "location": {
+      "city": "Stony Brook",
+      "state": "NY",
+      "type": "Public"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Stony Brook University is a prominent public research institution on Long Island, known for its strong emphasis on academic excellence and groundbreaking research across various disciplines. It consistently ranks among the top public universities nationally and in New York State.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Holistic review",
+    "rankings": [
+      {
+        "source": "US News",
+        "rank_overall": 58,
+        "rank_category": "National Universities",
+        "rank_in_category": 26,
+        "year": 2025
+      },
+      {
+        "source": "Niche",
+        "rank_overall": null,
+        "rank_category": "Top Public Universities in America",
+        "rank_in_category": 71,
+        "year": 2026
+      },
+      {
+        "source": "Forbes",
+        "rank_overall": 80,
+        "rank_category": "Top Colleges",
+        "rank_in_category": null,
+        "year": 2026
+      }
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Stony Brook has an acceptance rate of 49% and recently welcomed its largest freshman class in history, along with increased enrollment of transfer, Black, Latine, and international students.",
+        "implication": "The university is experiencing growing demand and potentially increasing competitiveness; a strong application highlighting diversity and engagement may be beneficial."
+      },
+      {
+        "category": "Research Focus",
+        "insight": "Designated as an 'R1: Doctoral Universities – Very high research activity' institution, Stony Brook co-manages Brookhaven National Laboratory and excels in STEM fields.",
+        "implication": "Students seeking extensive research opportunities, particularly in science, technology, engineering, and mathematics, will find a robust environment and numerous resources."
+      },
+      {
+        "category": "Campus Experience",
+        "insight": "While offering a vibrant social life with numerous clubs and events, the university is often characterized as a 'commuter school,' which can lead to a quieter campus on weekends.",
+        "implication": "Residential students may need to actively seek out campus activities and connections, while commuters have convenient access and options, though some desire more inclusive event timing."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Stony Brook boasts an active and vibrant campus life with over 400 clubs and organizations, intramural and Division I sports, and a variety of art, music, and cultural events throughout the year. Signature events like the Roth Regatta and Homecoming contribute to campus spirit. However, due to a significant commuter population, some students perceive the campus as quieter on weekends. Forming social connections often relies on active involvement in extracurriculars, and there's a recognized need for more inclusive events to bridge different student groups.",
+      "transportation_impact": "The campus benefits from a comprehensive transportation network including free on-campus SBU Transit shuttles and a Wolf Ride Bike Share program, facilitating movement across its extensive grounds. Off-campus, Suffolk County Transit buses offer local connections, and the Long Island Railroad (LIRR) has a station directly on the north end of campus, providing direct access to Manhattan and other parts of Long Island. This accessibility allows students to engage with the broader Long Island community and New York City, potentially mitigating some of the effects of it being a 'commuter school' by enabling broader social and recreational excursions.",
+      "research_impact": "Stony Brook University is classified as an 'R1: Doctoral Universities – Very high research activity' institution and co-manages the Brookhaven National Laboratory, highlighting its deep commitment to research. The university offers extensive research opportunities for both undergraduate and graduate students, particularly in high-impact STEM fields such as artificial intelligence, microelectronics, biotechnology, bioengineering, quantum information science, and climate and sustainability. With over $244 million in annual research expenditures, Stony Brook fosters strong industry ties through initiatives like the Strategic Partnership for Industrial Resurgence (SPIR), collaborating with over 500 companies in New York State. The university also actively encourages international research collaborations, promoting knowledge creation and enriching learning experiences globally."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 49.05,
+      "in_state_acceptance_rate": 41.6,
+      "out_of_state_acceptance_rate": 61.7,
+      "international_acceptance_rate": 73.08,
+      "transfer_acceptance_rate": 49.36,
+      "admits_class_size": 4042,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 64196,
+        "admits_total": 30929,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 48.2,
+        "acceptance_rate_in_state": 41.6,
+        "acceptance_rate_out_of_state": 61.7,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rates for in-state and out-of-state were also provided for international students at 73% for the Class of 2028."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 55880,
+        "admits_total": 27406,
+        "enrolled_total": 4042,
+        "acceptance_rate_overall": 49.05,
+        "acceptance_rate_in_state": 41.56,
+        "acceptance_rate_out_of_state": 61.68,
+        "yield_rate": 14.75,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 5907,
+          "accepted_spots": 2894,
+          "admitted_from_waitlist": 12,
+          "waitlist_admit_rate": 0.41,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record number of first-year students enrolled. Acceptance rates for in-state and out-of-state calculated from total applicants/admits breakdown."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 50341,
+        "admits_total": 24670,
+        "enrolled_total": 3569,
+        "acceptance_rate_overall": 49.0,
+        "acceptance_rate_in_state": 42.75,
+        "acceptance_rate_out_of_state": 60.6,
+        "yield_rate": 14.47,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3647,
+          "accepted_spots": 1793,
+          "admitted_from_waitlist": 1577,
+          "waitlist_admit_rate": 87.95,
+          "is_waitlist_ranked": false
+        },
+        "notes": "First-time, first-year enrolled total used for 'enrolled_total'. In-state and out-of-state acceptance rates calculated from applicants/admits breakdown from CDS."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 40513,
+        "admits_total": 19908,
+        "enrolled_total": 3342,
+        "acceptance_rate_overall": 49.14,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 16.79,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 4253,
+          "accepted_spots": 2332,
+          "admitted_from_waitlist": 1028,
+          "waitlist_admit_rate": 44.08,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Enrolled total derived from sum of men and women first-time, first-year enrolled from CDS 2022-2023."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 38826,
+        "admits_total": 18659,
+        "enrolled_total": 3416,
+        "acceptance_rate_overall": 48.05,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 18.31,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 5741,
+          "accepted_spots": 2900,
+          "admitted_from_waitlist": 1166,
+          "waitlist_admit_rate": 40.21,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data for this year is based on the Common Data Set 2021-2022. [cite: 14 from previous thought]"
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 37083,
+        "admits_total": 18138,
+        "enrolled_total": 3306,
+        "acceptance_rate_overall": 48.91,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 18.23,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": 4913,
+          "accepted_spots": 2822,
+          "admitted_from_waitlist": 1411,
+          "waitlist_admit_rate": 50.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data for this year is based on the Common Data Set 2020-2021. [cite: 12 from previous thought]"
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.50-4.00",
+        "average_weighted": null,
+        "percentile_25": "3.50",
+        "percentile_75": "4.00",
+        "notes": "Academic GPA and rigor of secondary school record are very important in admission. Most admitted students have strong academic performance with many AP or IB classes. The average unweighted GPA is 4.0."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1330-1470",
+        "sat_reading_middle_50": "640-720",
+        "sat_math_middle_50": "680-770",
+        "act_composite_middle_50": "28-33",
+        "submission_rate": 38.9,
+        "policy_note": "Test optional but considered if submitted. SAT or ACT scores are required for Scholars for Medicine and Scholars for Dental Medicine honors programs."
+      },
+      "demographics": {
+        "first_gen_percentage": 35.9,
+        "legacy_percentage": null,
+        "international_percentage": 10.2,
+        "geographic_breakdown": [],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 22956,
+            "admits": 10593,
+            "acceptance_rate": 46.14,
+            "note": ""
+          },
+          "women": {
+            "applicants": 27368,
+            "admits": 14066,
+            "acceptance_rate": 51.4,
+            "note": ""
+          },
+          "non_binary": {
+            "applicants": 17,
+            "admits": 11,
+            "acceptance_rate": 64.71,
+            "note": "Enrolled non-binary students reported as 0"
+          }
+        },
+        "racial_breakdown": {
+          "white": 24.8,
+          "black_african_american": 6.1,
+          "hispanic_latino": 15.7,
+          "asian": 35.5,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 3.1,
+          "unknown": 4.5,
+          "non_resident_alien": 10.2
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 48.5,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students with broad academic interests or those exploring different fields before committing to a major. Provides a strong foundation across humanities, social sciences, natural sciences, and fine arts.",
+        "housing_profile": "First-year students are often placed in corridor-style communities within the Undergraduate Colleges, based on student interest. Offers a traditional university housing experience with opportunities for community building.",
+        "student_archetype": "Intellectually curious, adaptable, with diverse interests in liberal arts and sciences.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "General Chemistry I & II (CHE 131, CHE 132)",
+              "Organic Chemistry I & II (CHE 321, CHE 322/331)",
+              "Calculus I (MAT 125/131/141 or AMS 151)",
+              "Physics (PHY 121/122 or PHY 131/132)",
+              "Introductory Biology (BIO 201, BIO 202, BIO 203)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHE 131 General Chemistry IB",
+              "CHE 132 General Chemistry II",
+              "BIO 202 Molecular and Cellular Biology",
+              "PHY 121 Physics for the Life Sciences I"
+            ],
+            "special_requirements": "All core and advanced biology courses, and foundational courses in related fields (chemistry, math, physics) must be passed with a letter grade of C or higher.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare specializations (e.g., Developmental Genetics, Ecology and Evolution) before graduating."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A./B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Introductory Psychology (PSY 103)",
+              "Statistics (PSY 201 or equivalent)",
+              "Biology (any one-semester BIO course)",
+              "Philosophy (any one-semester PHI course)",
+              "Social Sciences (any one-semester ANT, HIS, POL, or SOC course except SOC 201/202/POL 201)",
+              "Math (AMS 101, CSE 110, MAT 118 or higher)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSY 201 Statistical Methods in Psychology",
+              "PSY 310 Research and Writing in Psychology"
+            ],
+            "special_requirements": "All courses required for either the B.S. or B.A. degree must be passed with a letter grade of C or higher.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students should meet with a Psychology Department Undergraduate Advisor to review requirements."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Introduction to Microeconomics (ECO 108 or ECO 110)",
+              "Calculus I (MAT 125, 131, 141 or AMS 151)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECO 108 Introduction to Economics",
+              "ECO 320 Economic Statistics",
+              "Calculus I (MAT 131)"
+            ],
+            "special_requirements": "AP economics courses with a score of 4 or higher may count towards the major. Strong math skills are recommended for advanced study (multivariate calculus, linear algebra, statistics, econometrics).",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students can declare the major via a form on SOLAR."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Introduction to Sociology (SOC 105)",
+              "Research Methods (SOC 201)",
+              "Statistical Methods in Sociology (SOC 202 or other allowed statistics course)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "SOC 201 Research Methods",
+              "SOC 202 Statistical Methods in Sociology"
+            ],
+            "special_requirements": "All sociology courses offered in satisfaction of major requirements must be passed with a grade of C or higher. Transfer students must take at least 12 credits in sociology in residence.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "The major requires 39 credits, with 27-30 in sociology courses."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "European history survey (HIS 101 or 102)",
+              "United States history survey (HIS 103 or 104)",
+              "100- or 200-level survey course in a non-U.S./Europe region"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "HIS 301 Reading and Writing History",
+              "HIS 401 Senior Colloquium"
+            ],
+            "special_requirements": "All courses must be taken for a letter grade, and no grade lower than C may be applied toward the major. At least 12 credits in major requirements must be taken at Stony Brook, including HIS 301 and HIS 401.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students must declare a major upon earning 45 credits."
+          },
+          {
+            "name": "Art History and Criticism",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Modern Art (ARH 206)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ARH 206 Modern Art",
+              "ARH 323 History and Methods of Art History (recommended for majors)"
+            ],
+            "special_requirements": "All courses offered for the major must be passed with a letter grade of C or higher. Transfer students must complete a minimum of 12 credits in specific sections at Stony Brook.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "The major requires 36 credits in Art History. The honors program requires a 3.5 GPA in the major."
+          },
+          {
+            "name": "Anthropology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "What Makes Us Human? (ANT 102)",
+              "Archaeology (ANT 104)",
+              "Introduction to Biological Anthropology (ANP 120)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ANT 102 What Makes Us Human?",
+              "ANT 104 Archaeology",
+              "ANP 120 Introduction to Biological Anthropology"
+            ],
+            "special_requirements": "All major courses (including transfer credits) must be passed with a letter grade of C or higher. At least 18 credits must be in upper-division courses (300 level or higher).",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "The program offers four specializations within Anthropology. The honors program requires a 3.5 GPA in anthropology courses."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering and Applied Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Strong background in STEM, especially math and science, is essential. Early application for priority consideration is recommended for specific programs like Computer Science and Data Science.",
+        "housing_profile": "Honors College and Simons STEM Scholars, who often pursue engineering, are housed in suite-style buildings like Yang Hall, part of Living Learning Communities. General housing includes corridor and suite style quads with amenities like fitness centers.",
+        "student_archetype": "Ambitious problem-solvers, science-minded, focused on innovation and research, with a drive for technical excellence.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I (AMS 151 or MAT 131)",
+              "Calculus II (AMS 161 or MAT 132)",
+              "General Physics I (PHY 131/133)",
+              "Introduction to Object-Oriented Programming (CSE 114)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSE 114 Introduction to Object-Oriented Programming",
+              "CSE 215 Foundations of Computer Science",
+              "AMS 210 Applied Linear Algebra"
+            ],
+            "special_requirements": "Admission is highly competitive. Direct admission as a freshman is prioritized. Internal transfer is possible but competitive and not guaranteed.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Specific acceptance rate for the major is not publicly disclosed, but it is considered one of the most competitive programs. Internal transfer requires strong academic performance in foundational STEM courses."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I (AMS 151 or MAT 131)",
+              "Calculus II (AMS 161 or MAT 132)",
+              "Classical Physics I (PHY 131 or PHY 126 or PHY 127)",
+              "One MEC course required for the major taken at Stony Brook",
+              "10+ credits of math, physics, and engineering courses"
+            ],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [
+              "PHY 131 Classical Physics I",
+              "AMS 151 Applied Calculus I",
+              "MEC 260 Engineering Statics",
+              "MEC 262 Engineering Dynamics"
+            ],
+            "special_requirements": "GPA of at least 3.2 in major courses with no more than one grade below B-. No required courses for the major repeated. Admission is competitive and contingent upon program capacity for internal transfers.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "notes": "Applications for internal transfer are reviewed twice a year (Jan 5 for Spring, June 5 for Fall). Meeting requirements does not guarantee acceptance."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus II (AMS 161)",
+              "Classical Physics II (PHY 132/134)",
+              "General Chemistry I & II (CHE 131, CHE 132)",
+              "Fundamentals of Biology: Molecular and Cellular Biology (BIO 202)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "AMS 161 Applied Calculus II",
+              "PHY 132 Classical Physics II",
+              "BIO 202 Fundamentals of Biology: Molecular and Cellular Biology",
+              "CHE 131 General Chemistry IB"
+            ],
+            "special_requirements": "GPA of at least 3.0 in major courses with no more than one grade below B- and a cumulative GPA of 2.5 or greater at Stony Brook for internal transfers. Direct admission based on high school GPA (95/100+) and SAT (1250+/1600) with calculus and physics background.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "All BME courses and technical electives must have a GPA of at least 2.5 to graduate. A grade of C or higher is required in core math, science, and all BME courses."
+          },
+          {
+            "name": "Applied Mathematics and Statistics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus III (AMS 261 or MAT 203)",
+              "Linear Algebra (AMS 210 or MAT 211)",
+              "Introductory Computer Programming (AMS 325, CSE 101/114/130, ESE 124, ESG 111, MEC 102, MAT 331, PHY 277, ISE 108, BME 120, CHE 358)"
+            ],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [
+              "AMS 261 Applied Calculus III",
+              "AMS 210 Applied Linear Algebra"
+            ],
+            "special_requirements": "Either a B- or better in Calculus III and Linear Algebra, or C or better in these two courses and a GPA of 2.8 or higher in them. All courses taken to satisfy lower and upper division major requirements must be passed with a grade of C or higher.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "notes": "Applications for major admission are reviewed twice a year (Jan 5 for Spring, June 5 for Fall)."
+          },
+          {
+            "name": "Chemical and Molecular Engineering",
+            "degree_type": "B.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I (AMS 151)",
+              "Calculus II (AMS 161)",
+              "General Physics I (PHY 131)",
+              "General Chemistry I & II (CHE 131, CHE 132)",
+              "Programming for Engineers (ESG 111)"
+            ],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [
+              "AMS 151 Applied Calculus I",
+              "PHY 131 Classical Physics I",
+              "CHE 131 General Chemistry IB",
+              "CHE 132 General Chemistry II"
+            ],
+            "special_requirements": "Grade of B or higher in all 100-level mathematics, physics, and chemistry courses. Overall GPA of 3.2 with no more than one grade of C+ or lower in any course. All courses for requirements 1-6 must be C or higher, except CME 304 which must be B- or higher.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "notes": "Admission is competitive and contingent upon program capacity for internal transfers."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I (AMS 151 or MAT 131 or MAT 125)",
+              "Classical Physics I (PHY 131 or PHY 125)",
+              "MEC 260 Engineering Statics",
+              "MEC 262 Engineering Dynamics"
+            ],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [
+              "AMS 151 Applied Calculus I",
+              "PHY 131 Classical Physics I",
+              "MEC 260 Engineering Statics"
+            ],
+            "special_requirements": "Completion of at least 10 credits in mathematics, physics, chemistry, and engineering courses. GPA of 3.2 in these courses with no more than one grade below B-. No required courses repeated. Admission is competitive and contingent upon program capacity for internal transfers.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "notes": "Applications for internal transfer are reviewed twice a year (Jan 5 for Spring, June 5 for Fall). Students cannot double major in two BE programs."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I & II (MAT 125, 126, 127 or MAT 131, 132 or AMS 151, 161)",
+              "Classical Physics I & II with Labs (PHY 131/133, 132/134)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PHY 131 Classical Physics I",
+              "PHY 132 Classical Physics II",
+              "MAT 131 Calculus I",
+              "MAT 132 Calculus II"
+            ],
+            "special_requirements": "All courses used to satisfy major requirements must be completed with a grade of C or higher, except a maximum of three courses at the 100- or 200-level may be completed with a grade of C-.",
+            "admissions_pathway": "Open/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "A good amount of mathematics is required, and many students choose to minor or double major in Math or Applied Math."
+          }
+        ]
+      },
+      {
+        "name": "College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Admission to the Business Management major is restricted. Students generally apply after completing foundational coursework. A solid academic record is important.",
+        "housing_profile": "Students reside in a mix of traditional corridor and suite-style quads across campus, fostering a diverse residential experience. Living-learning communities may be an option for some based on academic or honors affiliations.",
+        "student_archetype": "Career-oriented, analytical thinkers, interested in leadership, entrepreneurship, and quantitative analysis.",
+        "majors": [
+          {
+            "name": "Business Management",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Precalculus (MAT 122/123) or higher Calculus",
+              "Introduction to Microeconomics (ECO 110)",
+              "Introduction to Macroeconomics (ECO 111)"
+            ],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [
+              "ECO 110 Introduction to Microeconomics",
+              "ECO 111 Introduction to Macroeconomics",
+              "BUS 215 Introduction to Business Statistics"
+            ],
+            "special_requirements": "Current SBU students not directly admitted require a cumulative GPA of 3.2 or higher to apply. All BUS courses, ECO 108, and MAT 122 must be passed with a grade of C or higher.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "notes": "Qualified freshman and transfer students may be accepted directly. Focus areas available in accounting, finance, operations management, and marketing."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Precalculus (MAT 122/123) or higher Calculus",
+              "Introduction to Microeconomics (ECO 110)",
+              "Introduction to Macroeconomics (ECO 111)"
+            ],
+            "minimum_gpa_to_declare": 3.2,
+            "weeder_courses": [
+              "ACC 210 Financial Accounting",
+              "ACC 214 Managerial Cost Analysis and Applications",
+              "BUS 215 Introduction to Business Statistics"
+            ],
+            "special_requirements": "Current SBU students not directly admitted require a cumulative GPA of 3.2 or higher to apply. All ACC and BUS courses, ECO 110, ECO 111, and MAT 122 must be passed with a grade of C or higher.",
+            "admissions_pathway": "Direct Admit/Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.2,
+            "notes": "The Accounting Major is launching Fall 2026. Prior to that, an Accounting minor was available."
+          }
+        ]
+      },
+      {
+        "name": "School of Marine and Atmospheric Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Benefits from its Long Island location, offering unique research and study opportunities. Good for students passionate about environmental science, oceanography, and meteorology.",
+        "housing_profile": "Housing for first-year students is determined by their Undergraduate College assignment. All undergraduate communities provide a supportive living environment close to academic facilities.",
+        "student_archetype": "Environmentally conscious, research-oriented, drawn to field-based learning and scientific inquiry.",
+        "majors": []
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly selective with specific prerequisite coursework, particularly in the sciences. Strong academic performance in high school is crucial for direct entry programs.",
+        "housing_profile": "While there isn't dedicated nursing housing, students participate in the general residential system which includes quads and apartment complexes, supporting a vibrant campus life.",
+        "student_archetype": "Compassionate, detail-oriented, with a strong commitment to healthcare and patient well-being.",
+        "majors": []
+      },
+      {
+        "name": "School of Social Welfare",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "An upper-division major requiring at least 57 credits and specific prerequisites. First-year applicants are admitted to the College of Arts and Sciences before applying to the major.",
+        "housing_profile": "Undergraduate housing at Stony Brook is part of an initiative to provide a strong first-year experience, with students assigned to communities based on interest. A variety of corridor and suite styles are available.",
+        "student_archetype": "Empathetic, community-focused, dedicated to social justice and helping others.",
+        "majors": []
+      },
+      {
+        "name": "School of Communication and Journalism",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Focuses on preparing students for a dynamic multi-media future. Good for those interested in media, public relations, and journalism.",
+        "housing_profile": "Residential communities across campus offer various styles, including corridor and suite options. The emphasis is on fostering engagement and connections among residents.",
+        "student_archetype": "Articulate, creative, keen observers of current events, with strong communication and storytelling skills.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Asian & Asian American Studies Minor",
+      "Atmospheric and Oceanic Sciences Minor",
+      "Biology Minor",
+      "Business Management Minor",
+      "Chemistry Minor",
+      "Computer Science Minor",
+      "Economics Minor",
+      "English Minor",
+      "Environmental Studies Minor",
+      "Journalism Minor",
+      "Mathematics Minor",
+      "Music Minor",
+      "Philosophy Minor",
+      "Physics Minor",
+      "Political Science Minor",
+      "Psychology Minor",
+      "Sociology Minor",
+      "Sustainability Studies Minor",
+      "Theatre Arts Minor",
+      "Women's and Gender Studies Minor"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "SUNY Application",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding commitment; priority deadline for Honors College, WISE, and University Scholars for Fall 2026."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Final deadline for Scholars for Medicine, Scholars for Dental Medicine, Honors College, WISE, and University Scholars is also January 15."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "Honors College, WISE, University Scholars",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-01",
+        "details": "One brief statement (approximately 250 words) on 'Why you believe you will be a good fit for your preferred honors program.'"
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays (for honors/personal essay)",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character",
+        "Community Involvement",
+        "Leadership"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Stony Brook is a highly selective institution seeking students who demonstrate intellectual curiosity and academic ability to succeed. Applicants are evaluated on a holistic review of academic record (GPA, strength of curriculum) and personal factors including co-curricular/community involvement, leadership, special talents, or interests."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to a less competitive major if your heart isn't set on an impacted field like Computer Science or Engineering, as some schools review applications by major.",
+      "Consider applying as 'undeclared' for colleges within the Letters and Science division, as many universities treat undeclared applicants equally within that college.",
+      "Research major-specific admission rates before applying to understand the competitiveness of your chosen field.",
+      "Choose a major that genuinely aligns with your interests and background to ensure your activities, coursework, and essays present a cohesive and authentic narrative.",
+      "If uncertain, explore different classes in various disciplines in college before declaring a major, as changing majors is often possible."
+    ],
+    "college_ranking_tactics": [
+      "Rank colleges based on factors beyond just prestige, considering elements like GE requirements and specific program quality.",
+      "Evaluate the quality of campus life, including housing, dorms, and general living standards, as part of your ranking decision.",
+      "Prioritize colleges that are a good 'fit' for you, rather than solely relying on external ranking websites which can be uninformative or conflicting.",
+      "Consider factors like the quality of administration and professors, as well as campus culture (e.g., competitive vs. laid-back).",
+      "Build your own ranking system based on criteria important to you, such as academic competitiveness, earnings potential, economic and racial diversity, and net price."
+    ],
+    "alternate_major_strategy": "If applying to a competitive major (e.g., CS in Engineering), list a backup in a less competitive college or a related, less impacted major. For example, if applying to CS in Engineering, list Cognitive Science, Applied Mathematics, or Statistics in Letters and Science as an alternate, as some universities may consider alternate majors if space is available or during waitlist processes, especially if it's not a selective major."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 7070,
+        "total_coa": 33275,
+        "housing": 11740
+      },
+      "out_of_state": {
+        "tuition": 28880,
+        "total_coa": 55085,
+        "supplemental_tuition": 21810
+      }
+    },
+    "aid_philosophy": "Merit Focused",
+    "average_need_based_aid": 10162,
+    "average_merit_aid": 3756,
+    "percent_receiving_aid": 78.0,
+    "scholarships": [
+      {
+        "name": "Merit-Based Scholarships (First-Year)",
+        "type": "Merit",
+        "amount": "Varies (can cover tuition for in-state students)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Financial support for tuition and other educational costs",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "National Merit Scholarship (Stony Brook Institutional Aid)",
+        "type": "Merit",
+        "amount": "$3,000/year for four years (additional $2,000 for finalists naming SBU as top choice)",
+        "deadline": "Notification to university by September 15th (for additional $2,000)",
+        "benefits": "Financial assistance for National Merit Scholars",
+        "application_method": "Automatic Consideration for finalists/semifinalists; additional notification required for top choice award"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Varies (can cover 100% tuition for in-state students)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Significant financial support, often associated with Honors College admission",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Departmental Scholarships",
+        "type": "Merit/Need-based (varies by department)",
+        "amount": "Varies",
+        "deadline": "Varies by department (check Scholarship Universe or department website)",
+        "benefits": "Support for students in specific majors or programs",
+        "application_method": "Varies (often through Scholarship Universe or directly with department)"
+      },
+      {
+        "name": "Scholarships for Disadvantaged Students (SDS) - School of Nursing",
+        "type": "Need-based",
+        "amount": "Up to $30,000 annually (can cover tuition, books, academic and living expenses)",
+        "deadline": "Varies (e.g., July 1st for 2019-2020 funding)",
+        "benefits": "Comprehensive financial support for Master of Science in Nursing students from disadvantaged backgrounds",
+        "application_method": "Separate Application (SDS Application Form and FAFSA)"
+      },
+      {
+        "name": "Federal Pell Grant",
+        "type": "Need",
+        "amount": "Varies based on FAFSA results",
+        "deadline": "FAFSA deadline",
+        "benefits": "Federal grant aid for undergraduate students with exceptional financial need",
+        "application_method": "FAFSA"
+      },
+      {
+        "name": "#YouAreWelcomeHere Scholarship",
+        "type": "Merit/Intercultural",
+        "amount": "$13,430 per year",
+        "deadline": "February (for fall intake)",
+        "benefits": "Support for first-year international students demonstrating leadership and interest in intercultural learning",
+        "application_method": "Separate Application"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for most exams",
+      "exceptions": [
+        "Each academic department determines minimum score for course equivalency",
+        "Maximum of 30 credits accepted by examination (including AP, CLEP, IB)"
+      ],
+      "usage": "Can satisfy GE requirements (SBC/DEC) and some major prerequisites"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5+ grant six credits for year-long courses",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Course Equivalency guide",
+        "Transfer Equivalency Database"
+      ],
+      "restrictions": "Maximum of 84 transfer credits accepted; 36 residency credits required after earning 57 credits; minimum grade of C required for transfer (with some exceptions for SUNY/CUNY AA/AS degrees); almost all community college credits are lower-division."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, with admitted students having an average SAT score between 1320-1490 or an average ACT score of 28-33, and a minimum cumulative GPA of 3.0 for matriculated programs. [3, 9, 25]",
+      "Particular strength and emphasis in STEM fields, making it crucial for applicants to demonstrate interest and experience in these areas. [2, 9, 10]",
+      "Meaningful involvement in extracurricular activities, as seen in admitted profiles that include leadership roles, research, and community service. [16, 22]",
+      "Authentic and well-crafted essays, especially for Honors College and specialized programs. [2, 13, 26]"
+    ],
+    "common_activities": [
+      "Research experience, often alongside faculty, particularly beneficial for those interested in STEM. [15, 22]",
+      "Leadership roles in school clubs and organizations. [16, 22]",
+      "Community service and volunteer work. [16, 22]",
+      "Participation in music, theater, and other arts (ensembles, productions, visual arts showcases). [6, 11]",
+      "Varsity or club sports, and engaging in intramural activities. [11]"
+    ],
+    "essay_tips": [
+      "Be specific about your fit for Stony Brook and any particular honors program or major, discussing how your experiences align with the program's goals. [2, 13]",
+      "Show, don't tell, through specific examples of academic, extracurricular, and life experiences, rather than just listing accomplishments. [2, 7]",
+      "Demonstrate intellectual curiosity and self-reflection, revealing your identity and how challenges have shaped you. [2, 7, 12]",
+      "Tailor essays for specific programs (e.g., Scholars for Medicine/Dental Medicine, Honors, WISE, University Scholar, Simons STEM Scholars, BFA in Creative Writing) as prompts vary. [2]",
+      "Ensure your essay has a 'personal touch' and an authentic voice, rather than trying to sound too 'fancy' or not yourself. [26]"
+    ],
+    "red_flags": [
+      "Missing application deadlines, as submitting early is encouraged and late applications are considered on a space-available basis. [8, 17]",
+      "Applying undecided for a restricted major without researching the specific admission criteria for those programs. [8]",
+      "Submitting generic essays that could apply to any university and do not clearly articulate interest in Stony Brook or a specific program. [8]",
+      "Neglecting to check the application portal and emails for missing documents or additional requests, such as mid-year grades. [17, 21]",
+      "Assuming test-optional policies are universal across all schools or programs without verifying Stony Brook's specific approach. [8]"
+    ],
+    "insights": [
+      "Stony Brook is highly regarded for its rigorous academic environment, especially in STEM fields, and is considered an affordable university with a good return on investment. [9, 10, 24]",
+      "The university has a selective admissions process with an acceptance rate of 49%. [3, 9]",
+      "It is important for students, particularly in large introductory classes, to actively seek out and build relationships with professors for potential recommendation letters. [3, 10]",
+      "Stony Brook can feel like a 'commuter school' on weekends, with a quieter campus, so residential students should plan to actively engage in clubs and activities. [3, 9, 10]",
+      "A strong alumni network, particularly in big tech companies for Computer Science majors, offers valuable career support and referral opportunities. [24]"
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 74502,
+    "employment_rate_2yr": 61.0,
+    "grad_school_rate": 34.0,
+    "top_employers": [
+      "Accenture",
+      "Amazon",
+      "Bloomberg",
+      "Capgemini",
+      "Microsoft",
+      "Goldman Sachs",
+      "IBM",
+      "Oracle",
+      "Citigroup",
+      "Lockheed Martin",
+      "Medtronic",
+      "Memorial Sloan Kettering"
+    ],
+    "loan_default_rate": 2.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 90.0,
+    "graduation_rate_4_year": 66.0,
+    "graduation_rate_6_year": 78.0
+  }
+}

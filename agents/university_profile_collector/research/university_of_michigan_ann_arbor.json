@@ -1,0 +1,998 @@
+{
+  "_id": "university_of_michigan_ann_arbor",
+  "metadata": {
+    "official_name": "University of Michigan-Ann Arbor",
+    "location": {
+      "city": "Ann Arbor",
+      "state": "MI",
+      "type": "Public"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Michigan-Ann Arbor is a highly-ranked public research university known for its rigorous academics, vibrant campus life, and extensive research opportunities. It consistently ranks among the top public universities nationally, attracting a diverse and academically strong student body.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Highly selective and academically focused, considering strong academic backgrounds and a holistic review of applicants.",
+    "rankings": [
+      {
+        "source": "US News",
+        "rank_overall": 20,
+        "rank_category": "National Universities",
+        "rank_in_category": 3,
+        "year": 2026
+      },
+      {
+        "source": "Niche",
+        "rank_overall": 19,
+        "rank_category": "Top Public Universities in America",
+        "rank_in_category": 1,
+        "year": 2026
+      },
+      {
+        "source": "Forbes",
+        "rank_overall": 21,
+        "rank_category": "America's Top Colleges",
+        "rank_in_category": null,
+        "year": 2026
+      }
+    ],
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Michigan has a highly competitive admissions process, with an acceptance rate of 18%.",
+        "implication": "Prospective students need a strong academic record and compelling application materials to be competitive for admission."
+      },
+      {
+        "category": "Academic Excellence",
+        "insight": "Consistently ranked as a top public university and highly in various specialized programs, including business, engineering, and nursing.",
+        "implication": "The university offers strong academic programs across a wide range of disciplines, appealing to students seeking high-quality education in specific fields."
+      },
+      {
+        "category": "Student Experience",
+        "insight": "A vibrant campus social scene with over 1,700 student organizations and strong community emphasis in residence halls.",
+        "implication": "Students have ample opportunities for extracurricular involvement, leadership development, and social integration, contributing to a rich overall college experience."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The University of Michigan boasts a vibrant and engaging social environment, characterized by a vast array of opportunities for student involvement. With over 1,700 registered student-run clubs and organizations, students can find communities based on academic, cultural, recreational, and service interests. A significant portion of students, approximately 20%, participate in Greek life. Most first-year students live on campus, fostering a strong sense of community and providing social and academic support through live-in staff. Ann Arbor is considered one of the nation's best college towns, contributing to a lively arts and culture scene, parks, and restaurants that extend beyond campus activities.",
+      "transportation_impact": "Campus transportation is highly efficient and student-friendly, facilitating easy movement throughout the expansive university and the city of Ann Arbor. The University operates a free 'Blue Bus' system with various fixed routes, connecting different parts of campus, including the Central Campus, North Campus, and Medical Campus. Additionally, students can utilize the Ann Arbor Area Transportation Authority (AAATA 'TheRide') buses for free by showing their student ID, providing access to areas both on and off campus. Evening and late-night transportation options like 'Safe Ride' and 'Ride Home' are also available, ensuring student safety and accessibility after regular bus hours. This robust transportation network reduces the need for personal vehicles for many students, making campus life more accessible and integrated with the wider Ann Arbor community.",
+      "research_impact": "The University of Michigan offers extensive research opportunities that are integral to its academic profile and provide significant hands-on experience for students. A key program is the Undergraduate Research Opportunity Program (UROP), which engages first and second-year students, including transfer students, in research across various disciplines, from engineering and natural sciences to social sciences and humanities. Students can connect with faculty research projects through their professors, the U-M Careers page, and the U-M Student Employment page. Institutions like the Institute for Social Research actively provide projects for student involvement. These opportunities not only enhance students' academic training but also foster relationships with faculty, contribute to real-world knowledge, and can be critical for future academic and career goals."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 15.6,
+      "in_state_acceptance_rate": 39.0,
+      "out_of_state_acceptance_rate": 18.0,
+      "international_acceptance_rate": 15.6,
+      "transfer_acceptance_rate": 34.91,
+      "admits_class_size": 15373,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 22.5,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 109000,
+        "admits_total": 0,
+        "enrolled_total": 8100,
+        "acceptance_rate_overall": 0.0,
+        "acceptance_rate_in_state": 39.0,
+        "acceptance_rate_out_of_state": 18.0,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": 18435,
+          "admitted_from_waitlist": 1663,
+          "waitlist_admit_rate": 9.02,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Preliminary application and enrollment numbers for the 2024-2025 admissions cycle (Fall 2025 enrollment). Specific number of applicants offered waitlist spots not explicitly stated, but 'applicants offered our waitlist in the spring'. General in-state/out-of-state acceptance rates are approximate for recent years."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 98310,
+        "admits_total": 15373,
+        "enrolled_total": 7278,
+        "acceptance_rate_overall": 15.64,
+        "acceptance_rate_in_state": 39.0,
+        "acceptance_rate_out_of_state": 18.0,
+        "yield_rate": 47.34,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 24804,
+          "accepted_spots": 18793,
+          "admitted_from_waitlist": 973,
+          "waitlist_admit_rate": 5.18,
+          "is_waitlist_ranked": false
+        },
+        "notes": "General in-state/out-of-state acceptance rates are approximate for recent years. Yield rate calculated from enrolled/admits. Waitlist data from UMich Office of Undergraduate Admissions and CDS 2024-2025."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 87632,
+        "admits_total": 15722,
+        "enrolled_total": 7466,
+        "acceptance_rate_overall": 17.94,
+        "acceptance_rate_in_state": 39.0,
+        "acceptance_rate_out_of_state": 18.0,
+        "yield_rate": 47.49,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 26898,
+          "accepted_spots": 18575,
+          "admitted_from_waitlist": 983,
+          "waitlist_admit_rate": 5.29,
+          "is_waitlist_ranked": false
+        },
+        "notes": "General in-state/out-of-state acceptance rates are approximate for recent years. Yield rate calculated from enrolled/admits. Waitlist data from UMich Office of Undergraduate Admissions and CDS 2023-2024."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 84289,
+        "admits_total": 14914,
+        "enrolled_total": 7024,
+        "acceptance_rate_overall": 17.69,
+        "acceptance_rate_in_state": 41.0,
+        "acceptance_rate_out_of_state": 19.0,
+        "yield_rate": 47.09,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 21078,
+          "accepted_spots": 15076,
+          "admitted_from_waitlist": 77,
+          "waitlist_admit_rate": 0.51,
+          "is_waitlist_ranked": false
+        },
+        "notes": "In-state/out-of-state acceptance rates are specific to Class of 2022 enrollment (application year 2021) but used here as general for this period. Yield rate calculated from enrolled/admits. Waitlist data from UMich Office of Undergraduate Admissions and CDS 2022-2023."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 79743,
+        "admits_total": 16071,
+        "enrolled_total": 7251,
+        "acceptance_rate_overall": 20.15,
+        "acceptance_rate_in_state": 47.5,
+        "acceptance_rate_out_of_state": 21.9,
+        "yield_rate": 45.12,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 17805,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "In-state/out-of-state acceptance rates specific to 2020-2021 admissions cycle. Yield rate calculated from enrolled/admits. Data for applicants who accepted waitlist spots and those admitted from the waitlist are not publicly disclosed for this specific year, though the number of students offered a waitlist spot is available."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 68767,
+        "admits_total": 17925,
+        "enrolled_total": 6879,
+        "acceptance_rate_overall": 26.06,
+        "acceptance_rate_in_state": 39.0,
+        "acceptance_rate_out_of_state": 18.0,
+        "yield_rate": 38.38,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": 20723,
+          "accepted_spots": 9856,
+          "admitted_from_waitlist": 1248,
+          "waitlist_admit_rate": 12.66,
+          "is_waitlist_ranked": false
+        },
+        "notes": "General in-state/out-of-state acceptance rates are approximate for recent years. Yield rate calculated from enrolled/admits. Waitlist data from CDS 2020-2021."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.80-4.00",
+        "average_weighted": null,
+        "percentile_25": "3.95",
+        "percentile_75": "4.00",
+        "notes": "The University of Michigan calculates GPA on a 4.0 scale after eliminating any weighting from the applicant's high school transcript. 38.8% of enrolled first-year students had a 4.0 GPA, and 54.0% had a GPA between 3.75 and 3.99. The average GPA of enrolled first-year students ranges from 3.9 to 4.0, with 88% having a GPA of 3.75 or higher. Most admits have straight A's in honors/AP level coursework."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1360-1530",
+        "sat_reading_middle_50": "680-750",
+        "sat_math_middle_50": "680-780",
+        "act_composite_middle_50": "31-35",
+        "submission_rate": 54.0,
+        "policy_note": "Test optional but recommended. Test scores are considered in admissions decisions. 54% of enrolled first-year students submitted an SAT score, while 32% submitted an ACT score."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 4.5,
+        "geographic_breakdown": [
+          {
+            "region": "Michigan",
+            "percentage": 51.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 44.5
+          },
+          {
+            "region": "International",
+            "percentage": 4.5
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 43607,
+            "admits": 7007,
+            "acceptance_rate": 16.07,
+            "note": ""
+          },
+          "women": {
+            "applicants": 44025,
+            "admits": 8715,
+            "acceptance_rate": 19.79,
+            "note": ""
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 53.63,
+          "black_african_american": 7.29,
+          "hispanic_latino": 7.29,
+          "asian": 17.27,
+          "native_american_alaskan": 0.18,
+          "pacific_islander": 0.03,
+          "two_or_more_races": 4.87,
+          "unknown": 5.15,
+          "non_resident_alien": 4.29
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools",
+    "colleges": [
+      {
+        "name": "College of Literature, Science, and the Arts (LSA)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 17.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong academic record and diverse interests. Computer Science requires specific request on application due to capacity constraints.",
+        "housing_profile": "Offers various dorm types. The Residential College (RC), a living-learning community, is housed in East Quadrangle, providing a close-knit environment with small classes and interdisciplinary studies. Lloyd Scholars for Writing and the Arts (LSWA) is in Alice Lloyd Hall.",
+        "student_archetype": "Intellectually curious, broad interests, adaptable, can be perceived as 'LS&Play' but also serious depending on major. RC students are known for global curiosity, social justice, and active engagement.",
+        "majors": [
+          {
+            "name": "Computer Science (CS-LSA)",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 115 (Calculus I)",
+              "MATH 116 (Calculus II)",
+              "EECS 183 (Elementary Programming Concepts) or ENGR 101",
+              "EECS 280 (Programming and Data Structures)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "EECS 203 (Discrete Mathematics)",
+              "EECS 280 (Programming and Data Structures)"
+            ],
+            "special_requirements": "Requires 'advance selection' for incoming students. Highly competitive for internal transfers. Students admitted Fall 2023 or later must be selected for the CS major before they can declare. A 2.5 GPA among prerequisite courses (EECS 183/ENGR 101, EECS 280, MATH 115, 116) is historically cited for declaration.",
+            "admissions_pathway": "Direct Admit with Advance Selection (highly restricted internal transfer)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "notes": "Highly competitive, requires advanced selection on initial application. While technically possible to transfer internally, it's extremely difficult due to capacity constraints and limited spots. The 2.5 GPA for declaring from a Reddit thread (2021) suggests a competitive informal minimum."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 101 (Principles of Microeconomics)",
+              "ECON 102 (Principles of Macroeconomics)",
+              "MATH 115 (Calculus I)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 401 (Intermediate Microeconomic Theory)",
+              "ECON 402 (Intermediate Macroeconomic Theory)"
+            ],
+            "special_requirements": "All prerequisite courses (ECON 101, 102, MATH 115) must be completed with a grade of C or better. A 2.0 GPA is required in Economics courses already taken to declare the major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Open major with clear prerequisites and a 2.0 GPA requirement in economics courses for declaration."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYCH 111 (Introduction to Psychology) or PSYCH 112 or PSYCH 114 (Honors Intro to Psychology)",
+              "DATASCI 101 (Introduction to Data Science) or STATS 250 (Intro to Statistics and Data Analysis) or STATS 280 (Honors Intro to Statistics and Data Analysis)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Introductory Psychology course with a C or better; Introductory Statistics course with a C- or better. Completion of online Pre-Major Tutorials. Minimum 2.0 GPA in major prerequisites to declare.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Declaration is straightforward after fulfilling introductory course requirements and maintaining a 2.0 GPA in prerequisites."
+          },
+          {
+            "name": "Biology, Health, and Society (BHS)",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOLOGY 171 (Introductory Biology: Ecology and Evolution)",
+              "BIOLOGY 172/174 (Introductory Biology: Molecular, Cellular, and Developmental)",
+              "BIOLOGY 173 (Introductory Biology Laboratory)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 130 (General Chemistry)",
+              "CHEM 210 (General Chemistry) or equivalent",
+              "BIOLOGY 171 (Introductory Biology: Ecology and Evolution)",
+              "BIOLOGY 172 (Introductory Biology: Molecular, Cellular, and Developmental)"
+            ],
+            "special_requirements": "Introductory biology sequence with a C average or better. Minimum 2.0 GPA in the major. Not permitted to double major with many other biology-related fields.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Declaration requires completion of the introductory biology sequence with a C average and a 2.0 GPA in the major."
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 115 (Calculus I)",
+              "MATH 116 (Calculus II)",
+              "MATH 215 (Multivariable Calculus)",
+              "EECS 183 (Elementary Programming Concepts)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "EECS 280 (Programming and Data Structures)",
+              "DATASCI 306 (Introduction to Data Science)"
+            ],
+            "special_requirements": "Prerequisite courses (EECS 183, MATH 115, 116, 215) must be completed with grades of C or higher. (A 3.4 GPA is required for Honors program).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare after completing prerequisites with a C or higher."
+          },
+          {
+            "name": "Neuroscience",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOLOGY 171 (Introductory Biology: Ecology and Evolution)",
+              "BIOLOGY 172/174 (Introductory Biology: Molecular, Cellular, and Developmental)",
+              "BIOLOGY 173 (Introductory Biology Laboratory)",
+              "CHEM 210 (General Chemistry)",
+              "MATH 115 (Calculus I)",
+              "STATS 250 (Intro to Statistics and Data Analysis) or STATS 280"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 210 (General Chemistry)",
+              "MCDB 322 (Cellular & Molecular Neuroscience) or PSYCH 230 (Intro to Behavioral Neuroscience)"
+            ],
+            "special_requirements": "Introductory biology sequence and CHEM 210 with a 2.0 GPA or better. Not permitted to double major with many other biology-related fields.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Declaration requires completion of introductory biology sequence and CHEM 210 with a 2.0 GPA or better."
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 19.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Requires a strong STEM background and demonstrated problem-solving skills. Computer Science requires specific request on application due to capacity constraints.",
+        "housing_profile": "North Campus dorms like Bursley Hall and Baits II are located near Engineering buildings. The Living ArtsEngine Michigan Learning Community is housed in Bursley Hall. Some students choose to live on Central Campus despite the distance.",
+        "student_archetype": "Ambitious problem-solvers, strong in technical fields, driven by innovation, sometimes stereotyped as rarely seeing the light of day or neglecting personal hygiene.",
+        "majors": [
+          {
+            "name": "Computer Science (CSE)",
+            "degree_type": "B.S.E.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 115 (Calculus I)",
+              "MATH 116 (Calculus II)",
+              "PHYSICS 140/160 (Calculus-Based Physics) or CHEM 130 (General Chemistry)",
+              "ENGR 101 (Intro to Computers & Programming) or EECS 183",
+              "English Composition"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "EECS 203 (Discrete Mathematics)",
+              "EECS 280 (Programming and Data Structures)"
+            ],
+            "special_requirements": "Requires 'advance selection' for incoming students. Internal transfers are highly competitive with limited spots ('Enrolled Discoverers' pathway).",
+            "admissions_pathway": "Direct Admit with Advance Selection (highly restricted internal transfer)",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "notes": "Highly competitive, requires advanced selection on initial application. While technically possible to transfer internally, it's extremely difficult due to capacity constraints and limited spots. General CoE declaration minimum is 2.0 overall GPA and C or better in prerequisites, but in practice, a much higher GPA is needed for competitive internal transfer."
+          },
+          {
+            "name": "Mechanical Engineering (MECHENG)",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 115 (Calculus I)",
+              "MATH 116 (Calculus II)",
+              "MATH 215 (Multivariable Calculus)",
+              "PHYSICS 140/160 (Calculus-Based Physics) or CHEM 130/210 (General Chemistry)",
+              "ENGR 100 or ENGR 101 or ENGR 151"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ME 211 (Introduction to Solid Mechanics)",
+              "ME 235 (Thermodynamics I)",
+              "ME 240 (Introduction to Dynamics and Vibrations)",
+              "EECS 314 (Electrical Circuits, Systems and Applications)"
+            ],
+            "special_requirements": "Completion of at least one full term on U-M Ann Arbor campus. A 'C' or better in any CoE Common Requirement or ME degree requirement prior to declaration.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Declaration is possible after fulfilling specific prerequisites and maintaining a 2.0 overall U-M GPA."
+          },
+          {
+            "name": "Biomedical Engineering (BIOMEDE)",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 115 (Calculus I)",
+              "MATH 116 (Calculus II)",
+              "MATH 215 (Multivariable Calculus)",
+              "PHYSICS 140/160 (Calculus-Based Physics) or CHEM 130 (General Chemistry)",
+              "ENGR 100 or ENGR 101 or ENGR 151"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOMEDE 211 (Circuits and Systems for Biomedical Engineering)",
+              "BIOMEDE 221 (Biophysical Chemistry and Thermodynamics)",
+              "BIOLOGY 171/172 (Introductory Biology)"
+            ],
+            "special_requirements": "Completion of at least one full term on U-M Ann Arbor campus. A 'C-' or better in core math/science courses required for declaration.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Declaration is possible after fulfilling specific prerequisites and maintaining a 2.0 overall U-M GPA."
+          },
+          {
+            "name": "Electrical Engineering (EECS)",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 115 (Calculus I)",
+              "MATH 116 (Calculus II)",
+              "MATH 215 (Multivariable Calculus)",
+              "PHYSICS 140/160 (Calculus-Based Physics) or CHEM 130 (General Chemistry)",
+              "ENGR 101 (Intro to Computers & Programming) or EECS 183"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "EECS 203 (Discrete Mathematics)",
+              "EECS 280 (Programming and Data Structures)",
+              "PHYSICS 240 (General Physics III)"
+            ],
+            "special_requirements": "Completion of at least one full term on U-M Ann Arbor campus. A 'C' or better in math, science lecture, and engineering courses prior to declaration.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Declaration is possible after fulfilling specific prerequisites and maintaining a 2.0 overall U-M GPA."
+          },
+          {
+            "name": "Aerospace Engineering (AEROSP)",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 115 (Calculus I)",
+              "MATH 116 (Calculus II)",
+              "MATH 215 (Multivariable Calculus)",
+              "PHYSICS 140/160 (Calculus-Based Physics) or CHEM 130 (General Chemistry)",
+              "ENGR 100 or ENGR 101 or ENGR 151"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "AERO 205 (Aerospace Engineering Fundamentals)",
+              "MATH 216 (Introduction to Differential Equations)",
+              "PHYSICS 240 (General Physics III)"
+            ],
+            "special_requirements": "Completion of at least one full term on U-M Ann Arbor campus. A 'C' or better in prerequisite math, science, and engineering courses prior to declaration.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Declaration is possible after fulfilling specific prerequisites and maintaining a 2.0 overall U-M GPA."
+          }
+        ]
+      },
+      {
+        "name": "Ross School of Business",
+        "admissions_model": "Direct Admit or Preferred Admit",
+        "acceptance_rate_estimate": 20.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive. Applicants can apply directly as first-years or through a preferred admission pathway (applying to LSA or another unit first). Direct admit rejection results in rejection from the university. Requires strong academics, leadership, and extracurriculars.",
+        "housing_profile": "The Living Business community for first-year BBA students is located in West Quad & Cambridge House. Many students seek off-campus housing close to Ross, particularly south of Hill, west of State, or downtown.",
+        "student_archetype": "Ambitious, professionally focused, strong networkers, often stereotyped as 'Rossholes' or driven by financial success.",
+        "majors": [
+          {
+            "name": "Business Administration (BBA)",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": 9.0,
+            "average_gpa_admitted": 3.9,
+            "prerequisite_courses": [
+              "Calculus",
+              "Microeconomics",
+              "Macroeconomics",
+              "Statistics",
+              "First-Year Writing"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Highly competitive direct admission from high school (9% acceptance rate). Internal transfer (cross-campus) is also highly competitive with an average of 125 admitted students per cycle and typically requires a college GPA well above 3.5. Students may only apply once as an internal transfer.",
+            "admissions_pathway": "Direct Admit (from high school) or Highly Competitive Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "notes": "Ross is highly selective. While internal transfer is possible, it is very competitive. Applicants are encouraged to demonstrate strong academic records and relevant extracurricular involvement."
+          }
+        ]
+      },
+      {
+        "name": "School of Music, Theatre & Dance (SMTD)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Requires an Artistic Profile (audition/portfolio) in addition to the Common Application. Strong academic background is also expected.",
+        "housing_profile": "North Campus dorms like Bursley and Baits II are near SMTD buildings.",
+        "student_archetype": "Passionate, dedicated artists and performers, driven by creative expression, sometimes stereotyped as 'the most annoying theater kid from your high school'.",
+        "majors": []
+      },
+      {
+        "name": "Stamps School of Art & Design",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Requires a strong portfolio (50% of admissions decision) and demonstrated creative thinking and making. Interdisciplinary approach is valued.",
+        "housing_profile": "North Campus housing is common, as the Art & Architecture building is located there.",
+        "student_archetype": "Creative, interdisciplinary, makers, driven by artistic and design expression, sometimes stereotyped as facing high student debt with uncertain career earnings.",
+        "majors": [
+          {
+            "name": "Art & Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Admission is based on portfolio review and academic record. Students are admitted directly to the Stamps School of Art & Design.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students apply directly to the Stamps School of Art & Design. While not a 'declaration' in the traditional sense, cross-campus transfers would involve a portfolio review and meeting Stamps' specific admission criteria. No explicit GPA for internal transfer, but a strong academic record and portfolio are essential."
+          }
+        ]
+      },
+      {
+        "name": "School of Kinesiology",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 23.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Interest in human movement, health sciences, sport management, and/or pre-health professions.",
+        "housing_profile": "No specific Kinesiology-themed housing identified; general on-campus housing options apply.",
+        "student_archetype": "Health-conscious, athletes, interested in physical activity and sport, sometimes stereotyped as seeking an 'easy major'.",
+        "majors": [
+          {
+            "name": "Sport Management",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYCH 111 or PSYCH 112 (Intro to Psychology)",
+              "ENGLISH 125 (Writing and Academic Inquiry)",
+              "ECON 101 (Principles of Economics I)",
+              "MATH 105 (Pre-Calculus) or higher",
+              "STATS 250 (Intro to Statistics and Data Analysis) or SOC 210"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ECON 101 (Principles of Economics I)",
+              "STATS 250 (Intro to Statistics and Data Analysis)"
+            ],
+            "special_requirements": "Advancement to Level 2 (upper-level program) is selective. Students should achieve at least a 3.0 cumulative GPA in their first year to be a competitive applicant.",
+            "admissions_pathway": "Pre-Major, competitive advancement to Level 2",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Students are admitted to the School of Kinesiology and then apply for competitive advancement to the Sport Management major (Level 2) after their first year."
+          }
+        ]
+      },
+      {
+        "name": "Marsal Family School of Education",
+        "admissions_model": "Direct Admit or Preferred Admit",
+        "acceptance_rate_estimate": 17.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Passion for education, social justice, and community engagement. Direct admission available for specific first-year majors (LEAPS and EPP).",
+        "housing_profile": "Students in the LEAPS (Learning, Equity, and Problem Solving for the Public Good) program are required to live at Marygrove in Detroit for their first year as a living-learning community.",
+        "student_archetype": "Dedicated to educational equity and social impact, active in community, sometimes stereotyped for a strong focus on advocacy for teachers.",
+        "majors": []
+      },
+      {
+        "name": "Taubman College of Architecture and Urban Planning",
+        "admissions_model": "Direct Admit or Preferred Admit",
+        "acceptance_rate_estimate": 17.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Interest in designing the built environment, urban issues, and innovative solutions for more just and sustainable communities. Direct admit available for the Bachelor of Science in Urban Technology.",
+        "housing_profile": "The Art & Architecture Building is located on North Campus. No dedicated college-specific housing identified.",
+        "student_archetype": "Creative, visionary, problem-solvers focused on physical spaces, sometimes stereotyped as aspiring 'Frank Lloyd Wrights' or designing mundane structures like gas stations and bathrooms.",
+        "majors": []
+      },
+      {
+        "name": "College of Pharmacy",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 17.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Strong science background and interest in pharmaceutical sciences, drug discovery, or patient care. Direct admission available for the Pharmaceutical Sciences program.",
+        "housing_profile": "A new state-of-the-art College of Pharmacy building is opening in Fall 2025 near central and medical campuses. No dedicated college-specific housing identified, but students may seek housing near the medical campus.",
+        "student_archetype": "Science-focused, detail-oriented, career-driven in healthcare, occasionally stereotyped as only 'dispensing Sudafed'.",
+        "majors": []
+      },
+      {
+        "name": "School of Information",
+        "admissions_model": "Upper-level Admit",
+        "acceptance_rate_estimate": 17.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Students typically apply after enrolling in a first-year unit at UMich. Suited for those interested in data, technology, human-computer interaction, and information management.",
+        "housing_profile": "North Quadrangle houses the U-M School of Information and offers living-learning programs like the Global Scholars Program.",
+        "student_archetype": "Interdisciplinary, tech-savvy, interested in the intersection of people, information, and technology, sometimes stereotyped as struggling to articulate their major.",
+        "majors": []
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 18.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong science background and interest in pharmaceutical sciences, drug discovery, or patient care. Direct admission available for the Pharmaceutical Sciences program.",
+        "housing_profile": "A new state-of-the-art College of Pharmacy building is opening in Fall 2025 near central and medical campuses. No dedicated college-specific housing identified, but students may seek housing near the medical campus.",
+        "student_archetype": "Science-focused, detail-oriented, career-driven in healthcare, occasionally stereotyped as only 'dispensing Sudafed'.",
+        "majors": [
+          {
+            "name": "Bachelor of Science in Nursing (BSN)",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": 18.0,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "English Composition",
+              "Introductory Psychology",
+              "Developmental Psychology",
+              "Organic Biochemistry",
+              "Anatomy and Physiology",
+              "Statistics"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "Organic Biochemistry",
+              "Anatomy and Physiology",
+              "Statistics"
+            ],
+            "special_requirements": "Competitive applicants for transfer typically have a B (3.0) or better in prerequisite courses. Minimum grade of C (2.0) for prerequisite courses to meet transfer requirements.",
+            "admissions_pathway": "Direct Admit (from high school) or Competitive Sophomore Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "The BSN program is highly competitive for both first-year and transfer admissions. Sophomore transfer entry is available and requires strong performance in specific science and psychology prerequisites."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Certificate",
+      "Art and Design Minor",
+      "Business Minor",
+      "Education for Empowerment Minor",
+      "International Minor for Engineers",
+      "Multidisciplinary Design Minor (Engineering)",
+      "Electrical Engineering Minor",
+      "Computer Science Minor (LSA & Engineering)",
+      "Climate and Space Sciences and Engineering Minor",
+      "Environmental Engineering Minor",
+      "Performing Arts Management and Entrepreneurship (PAME) Minor",
+      "Graduate Certificate Program in Musicology",
+      "Graduate Certificate in Arts Entrepreneurship & Leadership"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Binding commitment; new for Fall 2026 applicants. The School of Music, Theatre & Dance (SMTD) does not participate in Early Decision."
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding; decision by late January. The School of Music, Theatre & Dance (SMTD) and Taubman College of Architecture and Urban Planning programs do not participate in Early Action."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Decision by early April. This deadline is for Fall, Spring, and Summer terms."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Two supplemental essays required: 1) How you are prepared to contribute to U-M's goals of developing leaders and citizens (100-300 words). 2) Describe unique qualities attracting you to a specific undergraduate college/school and how the curriculum supports your interests (100-550 words)."
+      },
+      {
+        "target_program": "Ross School of Business",
+        "requirement_type": "Essay",
+        "deadline": null,
+        "details": "Additional 'Business Case Discussion' essay (approx. 500 words) for applicants to the Ross School of Business."
+      },
+      {
+        "target_program": "Music, Theatre & Dance (SMTD)",
+        "requirement_type": "Audition/Artistic Profile",
+        "deadline": "2024-12-01",
+        "details": "Requires an Artistic Profile and pre-screening recordings or portfolios by the December 1 application deadline. Specific audition recordings for some programs (e.g., Jazz) may be due by January 15 or January 30, 2025/2026. SMTD only accepts Regular Decision applicants."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Secondary School Academic Performance (GPA, course rigor, class rank)",
+        "Essays",
+        "Counselor and Teacher Recommendation",
+        "Awards/Honors, Involvement, Leadership, and Service (Extracurriculars)"
+      ],
+      "secondary_factors": [
+        "Educational Environment",
+        "Specific Academic Interests",
+        "Standardized Test Scores (if submitted)"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "None",
+      "specific_differentiators": "The University of Michigan employs an individualized, comprehensive review, seeking intellectually driven, socially engaged students who demonstrate drive, empathy, initiative, and curiosity. They value applicants who challenge the present, enrich the future, and contribute to a vibrant, diverse community. While external demonstrations of interest like visits are not factored, the essays are a critical opportunity to show genuine fit and engagement. The university is a 'First-Gen Forward Institution' and actively supports first-generation students, though this status is not cited as an admissions boost."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Consider applying to the College of Literature, Science, and the Arts (LSA) as undeclared if unsure of a major, as direct application to specific majors within LSA is often not required until later, except for programs like Philosophy, Political Science, and Economics (PPE) or Organizational Studies.",
+      "If aiming for competitive fields like Engineering or Business (Ross), apply directly to those colleges, as transferring between colleges (e.g., LSA to Engineering or Ross) can be difficult or require specific prerequisites and applications after initial admission.",
+      "Research major-specific admit rates and pathways; for instance, LSA is generally considered easier to get into than the College of Engineering.",
+      "Explore \"easier\" majors like Communication Studies, Psychology, or General Studies within LSA if aiming for a less academically rigorous path, though the definition of 'easy' can be subjective and Kinesiology has reportedly become more challenging.",
+      "Evaluate your genuine interest in a major versus perceived career lucrative-ness; it's suggested that maximizing resources and building connections at UMich can lead to success regardless of the major chosen."
+    ],
+    "college_ranking_tactics": [
+      "Rank colleges based on the strength of specific programs you are interested in, not solely on overall university prestige or a single ranking number.",
+      "Consider the ease or difficulty of transferring between different colleges or declaring a competitive major once admitted.",
+      "Factor in the overall student experience, community, and campus environment, as these are often highlighted as significant aspects of the University of Michigan.",
+      "Investigate specific opportunities like undergraduate research or honors programs at different institutions and how accessible they are.",
+      "Look beyond just the academic offerings to aspects like student life, fitness options, and the general culture of the college and its surrounding town."
+    ],
+    "alternate_major_strategy": "If applying to a highly competitive major like Computer Science (CS) in the College of Engineering and facing rejection, research similar computing majors such as Computer Engineering or Data Science within the same college, or explore related fields like Information Science (School of Information) or Cognitive Science in Letters and Science as viable alternatives. These alternatives may allow for cross-campus transfer or offer curricula that can be tailored to be CS-oriented."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 17736,
+        "total_coa": 36932,
+        "housing": 15328
+      },
+      "out_of_state": {
+        "tuition": 60946,
+        "total_coa": 80142,
+        "supplemental_tuition": 43210
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 26860,
+    "average_merit_aid": 19736,
+    "percent_receiving_aid": 55.0,
+    "scholarships": [
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit",
+        "amount": "$1,500 (one-time for freshman year)",
+        "deadline": "Automatic consideration upon admission",
+        "benefits": "Awarded to top Michigan high school graduates",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Stamps Scholarship",
+        "type": "Merit",
+        "amount": "Full cost of attendance (tuition, fees, room, board, books, stipend)",
+        "deadline": "Automatic consideration for admitted first-year undergraduates by February 1",
+        "benefits": "Enhancement funding for study abroad, community service, or research projects (up to $5,000), Stamps Scholars Society membership, exclusive mentorship and networking opportunities",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "LSA Four-Year Renewable Scholarship",
+        "type": "Merit/Need-Based",
+        "amount": "Varies (average $9,000 per academic year, renewable for four years)",
+        "deadline": "April 15 (applications reviewed on a rolling basis, applying early increases chances)",
+        "benefits": "Covers cost of attendance for Fall and Winter terms",
+        "application_method": "Separate Application (after LSA admission, FAFSA and CSS Profile encouraged)"
+      },
+      {
+        "name": "Go Blue Guarantee",
+        "type": "Need-Based",
+        "amount": "Full tuition and mandatory university fees (up to four years)",
+        "deadline": "March 1 (FAFSA and CSS Profile deadline for institutional grants)",
+        "benefits": "Covers tuition and fees for in-state Michigan residents with family incomes up to $125,000 and assets below $125,000. For Nursing/Education students and MSW graduate students who qualified as undergraduates, it can also cover housing and other fees.",
+        "application_method": "Automatic Consideration (by filing FAFSA and CSS Profile)"
+      },
+      {
+        "name": "College of Engineering (CoE) Need- and Merit-Based Scholarships",
+        "type": "Merit/Need-Based",
+        "amount": "Varies",
+        "deadline": "June 1, 2025 (for Fall/Winter 2025-26 academic year)",
+        "benefits": "Available to currently enrolled undergraduates in the College of Engineering, based on academic merit (GPA 3.0+) and/or financial need",
+        "application_method": "Separate Application (online application opens early May each year)"
+      },
+      {
+        "name": "Ross School of Business Scholarships (BBA)",
+        "type": "Merit/Need-Based",
+        "amount": "Varies (average around $7,000, with common awards ranging $7,500 to $15,000)",
+        "deadline": "Automatic consideration based on admission application; FAFSA/CSS Profile by March 1 encouraged for need-based consideration",
+        "benefits": "Financial assistance for BBA students",
+        "application_method": "Automatic Consideration (no separate application for incoming BBA students, FAFSA/CSS Profile for need-based aid)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Credit granted based on individual school/college policies; some accept 3+, most require 4 or 5 for credit",
+      "exceptions": [
+        "Requirements vary significantly by department and school/college",
+        "AP may not be used to fulfill LSA distribution requirements"
+      ],
+      "usage": "Can satisfy general elective credit, language requirements, and major/minor prerequisites"
+    },
+    "ib_policy": {
+      "general_rule": "Only Higher Level (HL) exams with successful scores grant credit",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "University of Michigan Transfer Credit Equivalency Search",
+        "Michigan Transfer Agreement (MTA)"
+      ],
+      "restrictions": "Up to 60 credits may be transferred towards an LSA degree (up to 62 if completing an associate's degree). Only courses with a grade of C or better will be accepted."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework, including a high GPA (average 3.88) and rigorous classes (AP, IB, Honors).",
+      "Demonstrated passion and depth in 1-2 core extracurricular activities, prioritizing quality and contribution over quantity.",
+      "Authentic and specific essays that clearly articulate interest in UMich and chosen major, showcasing unique qualities and self-reflection.",
+      "Strong standardized test scores (average SAT 1350-1530, ACT 31-34), though test-optional is available and can be competitive with a strong overall profile."
+    ],
+    "common_activities": [
+      "Leadership roles in school clubs and organizations.",
+      "Research experience, particularly if related to intended major.",
+      "Community service and involvement.",
+      "Varsity athletics (though not explicitly stated as 'common', UMich has a strong athletic program which suggests student involvement).",
+      "Participation in academic competitions (e.g., math team, energy competitions)."
+    ],
+    "essay_tips": [
+      "Be specific and detailed about what attracts you to the University of Michigan and your chosen College/School, elaborating on particular aspects, programs, and opportunities.",
+      "Show, don't tell: use specific stories and experiences to illustrate your qualities, contributions, and personal growth.",
+      "Address the \"Community\" essay by describing a community you belong to and your place within it, showcasing how your unique qualities would enrich the UMich community.",
+      "Be authentic and vulnerable (if comfortable), sharing experiences that shaped you and demonstrating self-awareness.",
+      "Ensure your essays connect your interests and experiences to your future plans and how Michigan would support them."
+    ],
+    "red_flags": [
+      "Disregarding the importance of essays, mistakenly believing high scores alone guarantee admission.",
+      "Generic essays that lack specificity about the University of Michigan or could apply to any institution.",
+      "Prioritizing quantity over quality in extracurricular activities; admissions counselors look for depth and significant contribution.",
+      "A decline in grades, especially in senior year, or a lack of rigor in coursework.",
+      "Sending too many recommendation letters; only one is generally needed and additional ones do not increase competitiveness."
+    ],
+    "insights": [
+      "University of Michigan admissions are highly selective with an acceptance rate around 18-20%.",
+      "The university values students who will contribute to its diverse and vibrant community, not just academically but also as leaders and citizens.",
+      "Demonstrating genuine interest in Michigan and specific programs is crucial.",
+      "Early Action (non-binding) can provide an earlier decision and often has a higher acceptance rate than Regular Action.",
+      "For in-state students, UMich practices need-blind admissions and meets 100% demonstrated need, but ability to pay is factored for out-of-state applicants."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 153297,
+    "employment_rate_2yr": 95.0,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Microsoft",
+      "Deloitte",
+      "Goldman Sachs",
+      "Ford Motor",
+      "Accenture"
+    ],
+    "loan_default_rate": 1.1
+  },
+  "student_retention": {
+    "freshman_retention_rate": 97.0,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 93.7
+  }
+}

@@ -151,6 +151,7 @@ def create_searchable_text(profile: dict) -> str:
     """Create a rich text representation of the profile for embedding."""
     parts = []
     
+    # University name and basic info
     if 'metadata' in profile:
         meta = profile['metadata']
         parts.append(f"University: {meta.get('official_name', '')}")
@@ -158,6 +159,7 @@ def create_searchable_text(profile: dict) -> str:
             loc = meta['location']
             parts.append(f"Location: {loc.get('city', '')}, {loc.get('state', '')} ({loc.get('type', '')})")
     
+    # Strategic profile - executive summary and philosophy
     if 'strategic_profile' in profile:
         sp = profile['strategic_profile']
         if sp.get('executive_summary'):
@@ -167,13 +169,68 @@ def create_searchable_text(profile: dict) -> str:
         if sp.get('market_position'):
             parts.append(f"Market Position: {sp['market_position']}")
     
+    # Admissions data - comprehensive natural language
     if 'admissions_data' in profile:
         ad = profile['admissions_data']
+        
+        # Current status
         if 'current_status' in ad:
             cs = ad['current_status']
-            parts.append(f"Acceptance Rate: {cs.get('overall_acceptance_rate', 'N/A')}%")
-            parts.append(f"Test Policy: {cs.get('test_policy_details', 'N/A')}")
+            if cs.get('overall_acceptance_rate'):
+                parts.append(f"Acceptance Rate: {cs['overall_acceptance_rate']}% overall")
+            if cs.get('transfer_acceptance_rate'):
+                parts.append(f"Transfer Acceptance Rate: {cs['transfer_acceptance_rate']}%")
+            if cs.get('test_policy_details'):
+                parts.append(f"Test Policy: {cs['test_policy_details']}")
+            if cs.get('is_test_optional'):
+                parts.append("This university is test-optional.")
+        
+        # Admitted student profile - SAT, ACT, GPA
+        if 'admitted_student_profile' in ad:
+            asp = ad['admitted_student_profile']
+            
+            # Testing - SAT and ACT scores
+            if 'testing' in asp:
+                testing = asp['testing']
+                if testing.get('sat_composite_middle_50'):
+                    parts.append(f"SAT Score Middle 50%: {testing['sat_composite_middle_50']}")
+                    parts.append(f"Admitted students typically score between {testing['sat_composite_middle_50']} on the SAT.")
+                if testing.get('sat_math_middle_50'):
+                    parts.append(f"SAT Math Middle 50%: {testing['sat_math_middle_50']}")
+                if testing.get('sat_reading_middle_50'):
+                    parts.append(f"SAT Reading Middle 50%: {testing['sat_reading_middle_50']}")
+                if testing.get('act_composite_middle_50'):
+                    parts.append(f"ACT Score Middle 50%: {testing['act_composite_middle_50']}")
+                    parts.append(f"Admitted students typically score between {testing['act_composite_middle_50']} on the ACT.")
+                if testing.get('submission_rate'):
+                    parts.append(f"Test Submission Rate: {testing['submission_rate']}% of admitted students submitted test scores.")
+                if testing.get('policy_note'):
+                    parts.append(f"Testing Policy Note: {testing['policy_note']}")
+            
+            # GPA
+            if 'gpa' in asp:
+                gpa = asp['gpa']
+                if gpa.get('weighted_middle_50'):
+                    parts.append(f"Weighted GPA Middle 50%: {gpa['weighted_middle_50']}")
+                    parts.append(f"Admitted students typically have a weighted GPA between {gpa['weighted_middle_50']}.")
+                if gpa.get('unweighted_middle_50'):
+                    parts.append(f"Unweighted GPA Middle 50%: {gpa['unweighted_middle_50']}")
+                if gpa.get('average_weighted'):
+                    parts.append(f"Average Weighted GPA: {gpa['average_weighted']}")
+                if gpa.get('notes'):
+                    parts.append(f"GPA Notes: {gpa['notes']}")
+            
+            # Demographics
+            if 'demographics' in asp:
+                demo = asp['demographics']
+                if demo.get('first_gen_percentage'):
+                    parts.append(f"First-Generation Students: {demo['first_gen_percentage']}%")
+                if demo.get('legacy_percentage'):
+                    parts.append(f"Legacy Students: {demo['legacy_percentage']}%")
+                if demo.get('international_percentage'):
+                    parts.append(f"International Students: {demo['international_percentage']}%")
     
+    # Academic structure - colleges and majors
     if 'academic_structure' in profile:
         acs = profile['academic_structure']
         if 'colleges' in acs:
@@ -186,24 +243,48 @@ def create_searchable_text(profile: dict) -> str:
                     if major.get('name'):
                         all_majors.append(major['name'])
             if all_majors:
-                parts.append(f"Majors: {', '.join(all_majors[:20])}")
+                parts.append(f"Majors offered: {', '.join(all_majors[:20])}")
     
+    # Application strategy
     if 'application_strategy' in profile:
         strat = profile['application_strategy']
         if strat.get('alternate_major_strategy'):
-            parts.append(f"Strategy: {strat['alternate_major_strategy']}")
+            parts.append(f"Application Strategy: {strat['alternate_major_strategy']}")
     
+    # Student insights
     if 'student_insights' in profile:
         si = profile['student_insights']
         if si.get('what_it_takes'):
-            parts.append(f"What It Takes: {'; '.join(si['what_it_takes'][:5])}")
+            parts.append(f"What It Takes to Get In: {'; '.join(si['what_it_takes'][:5])}")
+        if si.get('essay_tips'):
+            parts.append(f"Essay Tips: {'; '.join(si['essay_tips'][:3])}")
     
+    # Outcomes - earnings and career
     if 'outcomes' in profile:
         out = profile['outcomes']
         if out.get('median_earnings_10yr'):
-            parts.append(f"Median Earnings (10yr): ${out['median_earnings_10yr']:,}")
+            parts.append(f"Median Earnings 10 Years After Graduation: ${out['median_earnings_10yr']:,}")
+            parts.append(f"Graduates earn a median of ${out['median_earnings_10yr']:,} ten years after completing their degree.")
+        if out.get('employment_rate_2yr'):
+            parts.append(f"Employment Rate 2 Years After Graduation: {out['employment_rate_2yr']}%")
+        if out.get('grad_school_rate'):
+            parts.append(f"Graduate School Rate: {out['grad_school_rate']}% of graduates attend graduate school.")
         if out.get('top_employers'):
-            parts.append(f"Top Employers: {', '.join(out['top_employers'][:5])}")
+            employers = out['top_employers'][:5]
+            parts.append(f"Top Employers: {', '.join(employers)}")
+            parts.append(f"Graduates commonly work at {', '.join(employers)}.")
+        if out.get('loan_default_rate'):
+            parts.append(f"Loan Default Rate: {out['loan_default_rate']}%")
+    
+    # Financials
+    if 'financials' in profile:
+        fin = profile['financials']
+        if fin.get('aid_philosophy'):
+            parts.append(f"Financial Aid Philosophy: {fin['aid_philosophy']}")
+        if fin.get('average_need_based_aid'):
+            parts.append(f"Average Need-Based Aid: ${fin['average_need_based_aid']:,}")
+        if fin.get('percent_receiving_aid'):
+            parts.append(f"Percent Receiving Aid: {fin['percent_receiving_aid']}%")
     
     return "\n".join(parts)
 

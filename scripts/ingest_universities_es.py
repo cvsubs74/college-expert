@@ -91,13 +91,66 @@ def create_searchable_text(profile: dict) -> str:
         if sp.get('market_position'):
             parts.append(f"Market Position: {sp['market_position']}")
     
-    # Admissions data highlights
+    # Admissions data - comprehensive natural language
     if 'admissions_data' in profile:
         ad = profile['admissions_data']
+        
+        # Current status
         if 'current_status' in ad:
             cs = ad['current_status']
-            parts.append(f"Acceptance Rate: {cs.get('overall_acceptance_rate', 'N/A')}%")
-            parts.append(f"Test Policy: {cs.get('test_policy_details', 'N/A')}")
+            if cs.get('overall_acceptance_rate'):
+                parts.append(f"Acceptance Rate: {cs['overall_acceptance_rate']}% overall")
+            if cs.get('transfer_acceptance_rate'):
+                parts.append(f"Transfer Acceptance Rate: {cs['transfer_acceptance_rate']}%")
+            if cs.get('test_policy_details'):
+                parts.append(f"Test Policy: {cs['test_policy_details']}")
+            if cs.get('is_test_optional'):
+                parts.append("This university is test-optional.")
+        
+        # Admitted student profile - SAT, ACT, GPA
+        if 'admitted_student_profile' in ad:
+            asp = ad['admitted_student_profile']
+            
+            # Testing - SAT and ACT scores
+            if 'testing' in asp:
+                testing = asp['testing']
+                if testing.get('sat_composite_middle_50'):
+                    parts.append(f"SAT Score Middle 50%: {testing['sat_composite_middle_50']}")
+                    parts.append(f"Admitted students typically score between {testing['sat_composite_middle_50']} on the SAT.")
+                if testing.get('sat_math_middle_50'):
+                    parts.append(f"SAT Math Middle 50%: {testing['sat_math_middle_50']}")
+                if testing.get('sat_reading_middle_50'):
+                    parts.append(f"SAT Reading Middle 50%: {testing['sat_reading_middle_50']}")
+                if testing.get('act_composite_middle_50'):
+                    parts.append(f"ACT Score Middle 50%: {testing['act_composite_middle_50']}")
+                    parts.append(f"Admitted students typically score between {testing['act_composite_middle_50']} on the ACT.")
+                if testing.get('submission_rate'):
+                    parts.append(f"Test Submission Rate: {testing['submission_rate']}% of admitted students submitted test scores.")
+                if testing.get('policy_note'):
+                    parts.append(f"Testing Policy Note: {testing['policy_note']}")
+            
+            # GPA
+            if 'gpa' in asp:
+                gpa = asp['gpa']
+                if gpa.get('weighted_middle_50'):
+                    parts.append(f"Weighted GPA Middle 50%: {gpa['weighted_middle_50']}")
+                    parts.append(f"Admitted students typically have a weighted GPA between {gpa['weighted_middle_50']}.")
+                if gpa.get('unweighted_middle_50'):
+                    parts.append(f"Unweighted GPA Middle 50%: {gpa['unweighted_middle_50']}")
+                if gpa.get('average_weighted'):
+                    parts.append(f"Average Weighted GPA: {gpa['average_weighted']}")
+                if gpa.get('notes'):
+                    parts.append(f"GPA Notes: {gpa['notes']}")
+            
+            # Demographics
+            if 'demographics' in asp:
+                demo = asp['demographics']
+                if demo.get('first_gen_percentage'):
+                    parts.append(f"First-Generation Students: {demo['first_gen_percentage']}%")
+                if demo.get('legacy_percentage'):
+                    parts.append(f"Legacy Students: {demo['legacy_percentage']}%")
+                if demo.get('international_percentage'):
+                    parts.append(f"International Students: {demo['international_percentage']}%")
     
     # Academic structure - colleges and majors
     if 'academic_structure' in profile:
@@ -114,33 +167,54 @@ def create_searchable_text(profile: dict) -> str:
                     if major.get('name'):
                         all_majors.append(major['name'])
             if all_majors:
-                parts.append(f"Majors: {', '.join(all_majors[:20])}")
+                parts.append(f"Majors offered: {', '.join(all_majors[:20])}")
     
     # Application strategy
     if 'application_strategy' in profile:
         strat = profile['application_strategy']
         if strat.get('alternate_major_strategy'):
-            parts.append(f"Strategy: {strat['alternate_major_strategy']}")
+            parts.append(f"Application Strategy: {strat['alternate_major_strategy']}")
     
     # Student insights
     if 'student_insights' in profile:
         si = profile['student_insights']
         if si.get('what_it_takes'):
-            parts.append(f"What It Takes: {'; '.join(si['what_it_takes'][:5])}")
+            parts.append(f"What It Takes to Get In: {'; '.join(si['what_it_takes'][:5])}")
+        if si.get('essay_tips'):
+            parts.append(f"Essay Tips: {'; '.join(si['essay_tips'][:3])}")
     
-    # Outcomes
+    # Outcomes - earnings and career
     if 'outcomes' in profile:
         out = profile['outcomes']
         if out.get('median_earnings_10yr'):
-            parts.append(f"Median Earnings (10yr): ${out['median_earnings_10yr']:,}")
+            parts.append(f"Median Earnings 10 Years After Graduation: ${out['median_earnings_10yr']:,}")
+            parts.append(f"Graduates earn a median of ${out['median_earnings_10yr']:,} ten years after completing their degree.")
+        if out.get('employment_rate_2yr'):
+            parts.append(f"Employment Rate 2 Years After Graduation: {out['employment_rate_2yr']}%")
+        if out.get('grad_school_rate'):
+            parts.append(f"Graduate School Rate: {out['grad_school_rate']}% of graduates attend graduate school.")
         if out.get('top_employers'):
-            parts.append(f"Top Employers: {', '.join(out['top_employers'][:5])}")
+            employers = out['top_employers'][:5]
+            parts.append(f"Top Employers: {', '.join(employers)}")
+            parts.append(f"Graduates commonly work at {', '.join(employers)}.")
+        if out.get('loan_default_rate'):
+            parts.append(f"Loan Default Rate: {out['loan_default_rate']}%")
+    
+    # Financials
+    if 'financials' in profile:
+        fin = profile['financials']
+        if fin.get('aid_philosophy'):
+            parts.append(f"Financial Aid Philosophy: {fin['aid_philosophy']}")
+        if fin.get('average_need_based_aid'):
+            parts.append(f"Average Need-Based Aid: ${fin['average_need_based_aid']:,}")
+        if fin.get('percent_receiving_aid'):
+            parts.append(f"Percent Receiving Aid: {fin['percent_receiving_aid']}%")
     
     return "\n".join(parts)
 
 
-def create_index_mapping(es_client):
-    """Create the Elasticsearch index with hybrid search mapping."""
+def create_index_mapping(es_client, force_recreate=False):
+    """Create the Elasticsearch index with hybrid search mapping if it doesn't exist."""
     mapping = {
         "settings": {
             "number_of_shards": 1,
@@ -202,10 +276,13 @@ def create_index_mapping(es_client):
         }
     }
     
-    # Delete if exists
     if es_client.indices.exists(index=ES_INDEX_NAME):
-        print(f"🗑️  Deleting existing index '{ES_INDEX_NAME}'...")
-        es_client.indices.delete(index=ES_INDEX_NAME)
+        if force_recreate:
+            print(f"🗑️  Deleting existing index '{ES_INDEX_NAME}'...")
+            es_client.indices.delete(index=ES_INDEX_NAME)
+        else:
+            print(f"✅ Index '{ES_INDEX_NAME}' already exists, keeping existing data")
+            return
     
     # Create index
     print(f"📦 Creating index '{ES_INDEX_NAME}'...")
@@ -213,7 +290,23 @@ def create_index_mapping(es_client):
     print(f"✅ Index created with hybrid search mapping")
 
 
-def ingest_profiles(es_client):
+def get_existing_ids(es_client):
+    """Get list of university IDs already in the index."""
+    if not es_client.indices.exists(index=ES_INDEX_NAME):
+        return set()
+    
+    try:
+        result = es_client.search(
+            index=ES_INDEX_NAME,
+            body={"query": {"match_all": {}}, "_source": False, "size": 1000}
+        )
+        return {hit['_id'] for hit in result['hits']['hits']}
+    except Exception as e:
+        print(f"⚠️ Could not get existing IDs: {e}")
+        return set()
+
+
+def ingest_profiles(es_client, skip_existing=True):
     """Ingest all university profiles into Elasticsearch."""
     json_files = list(RESEARCH_DIR.glob("*.json"))
     
@@ -221,21 +314,34 @@ def ingest_profiles(es_client):
         print(f"❌ No JSON files found in {RESEARCH_DIR}")
         return
     
-    print(f"\n📁 Found {len(json_files)} university profiles to ingest\n")
+    # Get existing IDs if skipping
+    existing_ids = get_existing_ids(es_client) if skip_existing else set()
+    if existing_ids:
+        print(f"📋 Found {len(existing_ids)} existing universities in index")
+    
+    print(f"\n📁 Found {len(json_files)} university profiles to process\n")
     
     success_count = 0
+    skipped_count = 0
     error_count = 0
     
     for json_file in json_files:
         try:
-            print(f"📄 Processing {json_file.name}...")
-            
-            # Load profile
+            # Load profile to get ID
             with open(json_file, 'r', encoding='utf-8') as f:
                 profile = json.load(f)
             
-            # Extract key fields
             university_id = profile.get('_id', json_file.stem)
+            
+            # Skip if already exists
+            if skip_existing and university_id in existing_ids:
+                print(f"⏭️  Skipping {json_file.name} (already indexed)")
+                skipped_count += 1
+                continue
+            
+            print(f"📄 Processing {json_file.name}...")
+            
+            # Extract key fields
             official_name = profile.get('metadata', {}).get('official_name', university_id)
             location = profile.get('metadata', {}).get('location', {})
             
@@ -281,14 +387,23 @@ def ingest_profiles(es_client):
     
     print(f"\n{'='*50}")
     print(f"✅ Successfully indexed: {success_count}")
+    print(f"⏭️  Skipped (already indexed): {skipped_count}")
     print(f"❌ Errors: {error_count}")
     print(f"📊 Total in index: {es_client.count(index=ES_INDEX_NAME)['count']}")
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Ingest university profiles into Elasticsearch")
+    parser.add_argument("--force", action="store_true", help="Force re-ingest all documents, even if they already exist")
+    args = parser.parse_args()
+    
     print("="*60)
     print("🎓 University Profile Elasticsearch Ingestion")
     print("="*60)
+    
+    if args.force:
+        print("⚠️  Force mode enabled - will re-ingest ALL documents")
     
     # Check environment
     missing_vars = []
@@ -319,8 +434,8 @@ def main():
     # Create index
     create_index_mapping(es_client)
     
-    # Ingest profiles
-    ingest_profiles(es_client)
+    # Ingest profiles (skip_existing=False when force mode is on)
+    ingest_profiles(es_client, skip_existing=not args.force)
     
     print("\n🎉 Ingestion complete!")
 
