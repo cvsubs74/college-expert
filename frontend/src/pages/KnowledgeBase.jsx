@@ -36,6 +36,16 @@ function KnowledgeBase() {
   // Get approach display info
   const getApproachInfo = (approach) => {
     switch (approach) {
+      case 'hybrid':
+        return {
+          name: 'Hybrid Search',
+          description: 'Using structured university profiles with BM25 + Vector search',
+          bgClass: 'bg-teal-50',
+          borderClass: 'border-teal-200',
+          dotClass: 'bg-teal-500',
+          textClass: 'text-teal-900',
+          subTextClass: 'text-teal-700'
+        };
       case 'rag':
         return {
           name: 'RAG (Gemini File Search)',

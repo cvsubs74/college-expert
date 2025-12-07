@@ -11,6 +11,19 @@ export const useApproach = () => {
 };
 
 export const APPROACHES = {
+  hybrid: {
+    id: 'hybrid',
+    name: 'Hybrid Search',
+    description: 'BM25 + Vector search on structured university profiles',
+    icon: '🎯',
+    features: [
+      'Structured university profiles',
+      'BM25 + Vector hybrid search',
+      'Admissions, outcomes, strategy data',
+      'Fast semantic search'
+    ],
+    bestFor: 'Comprehensive college research and analysis'
+  },
   rag: {
     id: 'rag',
     name: 'RAG (File Search)',

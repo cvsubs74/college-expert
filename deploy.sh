@@ -30,6 +30,7 @@ PROJECT_ID=${GCP_PROJECT_ID:-"college-counselling-478115"}
 REGION="us-east1"
 RAG_AGENT_SERVICE_NAME="college-expert-rag-agent"
 ES_AGENT_SERVICE_NAME="college-expert-es-agent"
+HYBRID_AGENT_SERVICE_NAME="college-expert-hybrid-agent"
 PROFILE_MANAGER_FUNCTION="profile-manager"
 PROFILE_MANAGER_ES_FUNCTION="profile-manager-es"
 KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
@@ -58,7 +59,8 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "  ${YELLOW}all${NC}         - Deploy everything (both agents + all functions + frontend)"
     echo -e "  ${YELLOW}agent-rag${NC}   - Deploy RAG-based college expert agent"
     echo -e "  ${YELLOW}agent-es${NC}    - Deploy Elasticsearch-based college expert agent"
-    echo -e "  ${YELLOW}agents${NC}      - Deploy both agents (recommended)"
+    echo -e "  ${YELLOW}agent-hybrid${NC} - Deploy Hybrid college expert agent (uses universities KB)"
+    echo -e "  ${YELLOW}agents${NC}      - Deploy all agents (recommended)"
     echo -e "  ${YELLOW}profile-rag${NC}  - Deploy RAG profile manager function"
     echo -e "  ${YELLOW}profile-es${NC}  - Deploy Elasticsearch profile manager function"
     echo -e "  ${YELLOW}knowledge-rag${NC} - Deploy RAG knowledge base function"
@@ -254,10 +256,46 @@ EOF
     echo -e "${GREEN}✓ ES Agent deployed: ${ES_AGENT_URL}${NC}"
 }
 
+deploy_agent_hybrid() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Hybrid Agent${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    # Set up environment for Hybrid agent
+    cd agents/college_expert_hybrid
+    cat > .env << EOF
+GEMINI_API_KEY=${GEMINI_API_KEY}
+KNOWLEDGE_BASE_UNIVERSITIES_URL=https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app
+PROFILE_MANAGER_ES_URL=https://profile-manager-es-pfnwjfp26a-ue.a.run.app
+GOOGLE_GENAI_USE_VERTEXAI=0
+EOF
+    cd ../..
+    
+    # Deploy Hybrid agent from root directory, passing the agent path
+    adk deploy cloud_run \
+        --project="$PROJECT_ID" \
+        --region="$REGION" \
+        --service_name="$HYBRID_AGENT_SERVICE_NAME" \
+        --allow_origins="*" \
+        --with_ui \
+        agents/college_expert_hybrid
+    
+    gcloud run services add-iam-policy-binding "$HYBRID_AGENT_SERVICE_NAME" \
+        --member="allUsers" \
+        --role="roles/run.invoker" \
+        --region="$REGION" \
+        --platform=managed
+    
+    HYBRID_AGENT_URL=$(gcloud run services describe $HYBRID_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)')
+    echo -e "${GREEN}✓ Hybrid Agent deployed: ${HYBRID_AGENT_URL}${NC}"
+}
+
 deploy_agents() {
-    echo -e "${CYAN}Deploying both RAG and ES agents...${NC}"
+    echo -e "${CYAN}Deploying all agents (RAG, ES, Hybrid)...${NC}"
     deploy_agent_rag
     deploy_agent_es
+    deploy_agent_hybrid
 }
 
 deploy_profile_manager_rag() {
@@ -553,6 +591,9 @@ case "$DEPLOY_TARGET" in
     "agents")
         deploy_agents
         ;;
+    "agent-hybrid")
+        deploy_agent_hybrid
+        ;;
     "profile-rag")
         deploy_profile_manager_rag
         ;;
@@ -597,6 +638,7 @@ case "$DEPLOY_TARGET" in
         echo -e "${CYAN}Deploying backend (agents + cloud functions)...${NC}"
         deploy_agents
         deploy_agent_adk
+        deploy_agent_hybrid
         deploy_profile_manager_rag
         deploy_profile_manager_es
         deploy_knowledge_base_manager_rag

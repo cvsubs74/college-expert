@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApproach, APPROACHES } from '../context/ApproachContext';
-import { 
-  AcademicCapIcon, 
+import {
+  AcademicCapIcon,
   CheckCircleIcon,
   ServerIcon,
   CloudIcon,
@@ -17,6 +17,8 @@ const ApproachSelector = () => {
 
   const getApproachIcon = (approachId) => {
     switch (approachId) {
+      case 'hybrid':
+        return <ServerIcon className="h-12 w-12" />;
       case 'rag':
         return <CloudIcon className="h-12 w-12" />;
       case 'elasticsearch':
@@ -54,7 +56,7 @@ const ApproachSelector = () => {
               Choose Your Knowledge Base Approach
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Select how you want the system to search and retrieve college information. 
+              Select how you want the system to search and retrieve college information.
               Each approach has different strengths and capabilities.
             </p>
           </div>
@@ -149,8 +151,8 @@ const ApproachSelector = () => {
                 </h3>
                 <div className="mt-2 text-sm text-blue-700">
                   <p>
-                    Don't worry! You can change your approach at any time from the settings. 
-                    This choice helps us optimize your experience, but you're free to experiment 
+                    Don't worry! You can change your approach at any time from the settings.
+                    This choice helps us optimize your experience, but you're free to experiment
                     with different approaches to find what works best for you.
                   </p>
                 </div>

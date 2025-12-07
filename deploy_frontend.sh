@@ -51,11 +51,18 @@ npm install
 echo -e "${YELLOW}Creating .env file...${NC}"
 cat > .env << EOF
 VITE_API_URL=${VITE_API_URL}
+VITE_RAG_AGENT_URL=${VITE_RAG_AGENT_URL:-https://college-expert-rag-agent-pfnwjfp26a-ue.a.run.app}
+VITE_ES_AGENT_URL=${VITE_ES_AGENT_URL:-https://college-expert-es-agent-pfnwjfp26a-ue.a.run.app}
+VITE_HYBRID_AGENT_URL=${VITE_HYBRID_AGENT_URL:-https://college-expert-hybrid-agent-808989169388.us-east1.run.app}
+VITE_VERTEXAI_AGENT_URL=${VITE_VERTEXAI_AGENT_URL:-https://college-expert-adk-agent-808989169388.us-east1.run.app}
 VITE_PROFILE_MANAGER_URL=${VITE_PROFILE_MANAGER_URL}
 VITE_PROFILE_MANAGER_ES_URL=${VITE_PROFILE_MANAGER_ES_URL}
+VITE_PROFILE_MANAGER_VERTEXAI_URL=${VITE_PROFILE_MANAGER_VERTEXAI_URL:-https://profile-manager-vertexai-pfnwjfp26a-ue.a.run.app}
 VITE_KNOWLEDGE_BASE_URL=${VITE_KNOWLEDGE_BASE_URL}
-VITE_KNOWLEDGE_BASE_APPROACH=${KNOWLEDGE_BASE_APPROACH:-"rag"}
+VITE_KNOWLEDGE_BASE_APPROACH=${VITE_KNOWLEDGE_BASE_APPROACH:-"hybrid"}
 VITE_KNOWLEDGE_BASE_ES_URL=${VITE_KNOWLEDGE_BASE_ES_URL}
+VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL=${VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL:-https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app}
+VITE_KNOWLEDGE_BASE_VERTEXAI_URL=${VITE_KNOWLEDGE_BASE_VERTEXAI_URL:-https://knowledge-base-manager-vertexai-pfnwjfp26a-ue.a.run.app}
 VITE_KNOWLEDGE_BASE_FS_URL=${VITE_KNOWLEDGE_BASE_FS_URL}
 
 # Firebase Configuration
@@ -69,11 +76,13 @@ EOF
 
 echo -e "${GREEN}✓ Environment configured${NC}"
 echo -e "  API URL: ${VITE_API_URL}"
+echo -e "  Hybrid Agent URL: ${VITE_HYBRID_AGENT_URL:-https://college-expert-hybrid-agent-808989169388.us-east1.run.app}"
 echo -e "  Profile Manager URL: ${VITE_PROFILE_MANAGER_URL}"
 echo -e "  Profile Manager ES URL: ${VITE_PROFILE_MANAGER_ES_URL}"
 echo -e "  Knowledge Base URL: ${VITE_KNOWLEDGE_BASE_URL}"
 echo -e "  Knowledge Base ES URL: ${VITE_KNOWLEDGE_BASE_ES_URL}"
-echo -e "  Knowledge Base Approach: ${VITE_KNOWLEDGE_BASE_APPROACH}"
+echo -e "  Knowledge Base Universities URL: ${VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL:-https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app}"
+echo -e "  Knowledge Base Approach: ${VITE_KNOWLEDGE_BASE_APPROACH:-hybrid}"
 echo ""
 
 # Build

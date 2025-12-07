@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApproach } from '../context/ApproachContext';
-import { 
-  CogIcon, 
+import {
+  CogIcon,
   ChevronDownIcon,
   CheckIcon,
   ServerIcon,
@@ -18,6 +18,8 @@ const ApproachIndicator = () => {
 
   const getApproachIcon = (approachId) => {
     switch (approachId) {
+      case 'hybrid':
+        return <ServerIcon className="h-4 w-4" />;
       case 'rag':
         return <CloudIcon className="h-4 w-4" />;
       case 'elasticsearch':

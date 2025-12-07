@@ -3,11 +3,13 @@ import axios from 'axios';
 // Get API base URLs from environment or use defaults
 const RAG_AGENT_URL = import.meta.env.VITE_RAG_AGENT_URL;
 const ES_AGENT_URL = import.meta.env.VITE_ES_AGENT_URL;
+const HYBRID_AGENT_URL = import.meta.env.VITE_HYBRID_AGENT_URL;
 const VERTEXAI_AGENT_URL = import.meta.env.VITE_VERTEXAI_AGENT_URL;
 const VERTEXAI_KNOWLEDGE_BASE_URL = import.meta.env.VITE_KNOWLEDGE_BASE_VERTEXAI_URL;
 const VERTEXAI_PROFILE_MANAGER_URL = import.meta.env.VITE_PROFILE_MANAGER_VERTEXAI_URL;
 const KNOWLEDGE_BASE_URL = import.meta.env.VITE_KNOWLEDGE_BASE_URL;
 const KNOWLEDGE_BASE_ES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_ES_URL;
+const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL;
 const PROFILE_MANAGER_URL = import.meta.env.VITE_PROFILE_MANAGER_URL;
 const PROFILE_MANAGER_ES_URL = import.meta.env.VITE_PROFILE_MANAGER_ES_URL;
 
@@ -17,6 +19,7 @@ const KNOWLEDGE_BASE_APPROACH = import.meta.env.VITE_KNOWLEDGE_BASE_APPROACH || 
 // Get the appropriate agent URL based on approach
 const getAgentUrl = () => {
   const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
+  if (approach === 'hybrid') return HYBRID_AGENT_URL;
   if (approach === 'elasticsearch') return ES_AGENT_URL;
   if (approach === 'vertexai') return VERTEXAI_AGENT_URL;
   return RAG_AGENT_URL;
@@ -25,14 +28,19 @@ const getAgentUrl = () => {
 // Get the app name based on approach
 const getAppName = () => {
   const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
+  if (approach === 'hybrid') return 'college_expert_hybrid';
   if (approach === 'elasticsearch') return 'college_expert_es';
   if (approach === 'vertexai') return 'college_expert_adk';
   return 'college_expert_rag';
 };
 
 // Determine profile manager URL based on approach
+// Note: Hybrid approach uses profile_manager_es for student profiles
 const getProfileManagerUrl = () => {
   const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
+  if (approach === 'hybrid') {
+    return import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
+  }
   if (approach === 'elasticsearch') {
     return import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
   }
@@ -382,6 +390,10 @@ export const extractFullResponse = (sessionData) => {
 // Determine knowledge base URL based on approach
 const getKnowledgeBaseUrl = () => {
   const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
+  if (approach === 'hybrid') {
+    // Hybrid uses the universities knowledge base
+    return import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
+  }
   if (approach === 'elasticsearch') {
     return import.meta.env.VITE_KNOWLEDGE_BASE_ES_URL || 'https://knowledge-base-manager-es-pfnwjfp26a-ue.a.run.app';
   }
@@ -434,10 +446,45 @@ export const uploadKnowledgeBaseDocument = async (file, userId) => {
  * List all documents in the knowledge base
  * Uses the knowledge base manager cloud function
  * Works with all approaches (RAG, Firestore, Elasticsearch) using the same endpoint
+ * Note: Hybrid approach uses universities KB with different response format
  */
 export const listKnowledgeBaseDocuments = async (userId) => {
   try {
+    const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
     const baseUrl = getKnowledgeBaseUrl();
+
+    // Hybrid approach uses universities knowledge base with different endpoint
+    if (approach === 'hybrid') {
+      // Universities KB uses root endpoint and returns 'universities' array
+      const response = await axios.get(baseUrl, {
+        timeout: 60000
+      });
+
+      // Transform universities response to document format for UI compatibility
+      if (response.data.success && response.data.universities) {
+        const documents = response.data.universities.map(uni => ({
+          name: uni.university_id,
+          display_name: uni.official_name,
+          mime_type: 'university/profile',
+          size_bytes: 0,
+          size: 0,
+          create_time: uni.indexed_at,
+          state: 'ACTIVE',
+          location: uni.location,
+          acceptance_rate: uni.acceptance_rate,
+          market_position: uni.market_position
+        }));
+
+        return {
+          success: true,
+          documents: documents,
+          total: response.data.total
+        };
+      }
+      return response.data;
+    }
+
+    // Other approaches use /documents endpoint
     const response = await axios.get(`${baseUrl}/documents`, {
       timeout: 60000,
       params: userId ? { user_id: userId } : {},
@@ -454,10 +501,23 @@ export const listKnowledgeBaseDocuments = async (userId) => {
  * Delete a document from the knowledge base
  * Uses the knowledge base manager cloud function
  * Works with all approaches (RAG, Firestore, Elasticsearch) using the same endpoint
+ * Note: Hybrid approach uses universities KB with DELETE method
  */
 export const deleteKnowledgeBaseDocument = async (documentName, filename, userId) => {
   try {
+    const approach = localStorage.getItem('knowledgeBaseApproach') || KNOWLEDGE_BASE_APPROACH;
     const baseUrl = getKnowledgeBaseUrl();
+
+    // Hybrid approach uses DELETE method with university_id
+    if (approach === 'hybrid') {
+      const response = await axios.delete(baseUrl, {
+        timeout: 60000,
+        data: { university_id: documentName }
+      });
+      return response.data;
+    }
+
+    // Other approaches use POST to /delete endpoint
     const response = await axios.post(`${baseUrl}/delete`, {
       file_name: documentName,
       ...(userId && { user_id: userId })
