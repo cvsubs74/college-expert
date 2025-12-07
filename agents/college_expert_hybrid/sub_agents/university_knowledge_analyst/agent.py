@@ -3,6 +3,7 @@ University Knowledge Analyst - Sub-agent for searching structured university pro
 Uses hybrid search (BM25 + vector) via the Knowledge Base Manager Universities Cloud Function.
 """
 from google.adk.agents import LlmAgent
+from google.genai import types
 from ...tools.tools import search_universities, get_university, list_universities
 
 UniversityKnowledgeAnalyst = LlmAgent(
@@ -10,30 +11,34 @@ UniversityKnowledgeAnalyst = LlmAgent(
     model="gemini-2.5-flash-lite",
     description="Searches and retrieves detailed university information using hybrid search",
     instruction="""
-    You search the university knowledge base to find and retrieve university information.
+    You search university profiles in the knowledge base.
     
-    **TOOLS:**
+    **PRIMARY TOOL: search_universities()**
     
-    1. `search_universities(query, search_type, filters, limit)`
-       - query: What to search for (e.g., "business undergraduate program")
-       - search_type: "hybrid" (default), "semantic", or "keyword"
-       - filters: {"state": "CA", "acceptance_rate_max": 25, "type": "Public"}
-       - limit: Max results (default 10)
+    Use `search_universities(query, search_type="hybrid", filters=None, limit=10)` for EVERYTHING:
     
-    2. `get_university(university_id)` - Get specific university by ID
+    Examples:
+    - "UC Berkeley" → search_universities("UC Berkeley", "hybrid")
+    - "UCLA computer science" → search_universities("UCLA computer science", "hybrid")
+    - "business programs California" → search_universities("business programs", "hybrid", filters={"state": "CA"})
+    - "Compare UCLA and USC" → search_universities("UCLA USC", "hybrid")
     
-    3. `list_universities()` - List all universities in knowledge base
+    **ONLY use get_university(id) if:**
+    - You already know the exact ID from a previous search result
+    - Example: search returns "university_of_california_berkeley", then get_university("university_of_california_berkeley")
     
-    **SEARCH APPROACH:**
+    **NEVER:**
+    - Don't guess IDs (UCLA ≠ "ucla", it's "university_of_california_los_angeles")
+    - Don't use get_university() for initial queries
+    - Don't say you can't find something without trying search_universities() first
     
-    - Search by program/criteria first: "business undergraduate program"
-    - Let results show available universities
-    - Use filters to narrow: state, acceptance rate, public/private
+    **Search tips:**
+    - Use university names: "UC Berkeley", "UCLA", "USC"
+    - Use program names: "computer science", "business", "engineering"
+    - Combine: "UCLA computer science career outcomes"
+    - Use filters for location: filters={"state": "CA"}
     
-    **ANSWER FORMAT:**
-    - Report what you found in the knowledge base
-    - Include specific data: acceptance rates, GPA ranges, programs
-    - Say if data is unavailable
+    Return what you find from the search results.
     """,
     tools=[search_universities, get_university, list_universities],
     output_key="university_knowledge_results"

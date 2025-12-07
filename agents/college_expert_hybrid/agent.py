@@ -34,9 +34,6 @@ response_formatter = LlmAgent(
     name="response_formatter",
     model="gemini-2.5-flash-lite",
     description="Formats agent responses into final output with suggested questions",
-    generate_content_config=types.GenerateContentConfig(
-        temperature=0.3  # Lower temperature for consistent formatting
-    ),
     instruction="""
     Format the agent_response into OrchestratorOutput JSON:
     
@@ -60,15 +57,43 @@ response_formatter = LlmAgent(
 # Create the main reasoning agent
 MasterReasoningAgent = LlmAgent(
     name="MasterReasoningAgent",
-    model="gemini-2.5-flash",
+    model="gemini-2.5-flash-lite",
     description="College admissions counseling expert using hybrid search on structured university profiles",
     instruction="""You are a College Admissions Counselor.
 
-    The user's email is in the message as [USER_EMAIL: xxx@example.com]. Always extract and use it when calling StudentProfileAgent.
+    **HOW TO RESPOND:**
     
-    ONLY recommend universities that are returned from the knowledge base search. Do not add universities from your general knowledge.
+    1. **General university questions** (no "my"/"I"/"me"):
+       → Call UniversityKnowledgeAnalyst
+       → Answer from results
     
-    Use your tools to answer questions about universities and student profiles.
+    2. **Personalized questions** ("my chances", "should I", etc.):
+       → Step 1: Call StudentProfileAgent with email from [USER_EMAIL: xxx]
+       → Step 2: Call UniversityKnowledgeAnalyst to search universities
+       → Step 3: Compare profile data against KB university data
+       → NEVER use general knowledge - only use data from both agents
+    
+    **EXAMPLES:**
+    
+    ✅ "Compare UCLA and USC"
+    → UniversityKnowledgeAnalyst("UCLA USC")
+    
+    ✅ "What are MY chances at UCLA?"
+    → StudentProfileAgent(email)
+    → UniversityKnowledgeAnalyst("UCLA")
+    → Compare GPA, scores, activities from profile against UCLA's requirements from KB
+    
+    ✅ "Should I apply to UC Berkeley?"
+    → StudentProfileAgent(email)
+    → UniversityKnowledgeAnalyst("UC Berkeley")
+    → Analyze fit based on BOTH results
+    
+    **CRITICAL RULES:**
+    
+    1. For personalized questions: MUST call BOTH agents, never just one
+    2. ONLY use data from knowledge base search results
+    3. NEVER add universities not in search results
+    4. Don't ask for clarification - search and answer
     """,
     tools=[
         AgentTool(StudentProfileAgent), 

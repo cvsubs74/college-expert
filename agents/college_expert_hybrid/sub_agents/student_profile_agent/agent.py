@@ -1,8 +1,9 @@
 """
-Student Profile Agent - Sub-agent for retrieving and analyzing student profiles.
-Uses the Profile Manager Cloud Function to access user-specific academic data.
+Student Profile Agent - Sub-agent for retrieving student academic profiles.
+Uses the Profile Manager ES Cloud Function to fetch student data.
 """
 from google.adk.agents import LlmAgent
+from google.genai import types
 from ...tools.tools import search_user_profile
 
 StudentProfileAgent = LlmAgent(
@@ -14,7 +15,7 @@ StudentProfileAgent = LlmAgent(
     for personalized college admissions counseling.
     
     **AVAILABLE TOOL:**
-    `search_user_profile(user_email, query)` - Retrieve student profile data
+    `search_user_profile(user_email)` - Retrieve student profile data
     
     **REQUIRED INPUT:**
     - User email (extracted from [USER_EMAIL: ...] tag in the conversation)
