@@ -57,7 +57,7 @@ def search_universities(
             Available filters:
             - state: State abbreviation, e.g., "CA", "NY", "IL", "MA", "TX"
             - type: "Public" or "Private"
-            - acceptance_rate_max: Maximum acceptance rate, e.g., 20 = under 20%
+            - acceptance_rate_max: Maximum acceptance rate, e.g., 15 = under 15% (USE FOR "low acceptance rate", "selective", "competitive")
             - acceptance_rate_min: Minimum acceptance rate, e.g., 10 = above 10%
             - market_position: e.g., "Public Ivy", "Elite Private"
             
@@ -74,6 +74,12 @@ def search_universities(
         
     EXAMPLES - Use filters for precise queries:
     
+        # "Best universities in California with low acceptance rates" (MUST use acceptance_rate_max!)
+        search_universities(
+            query="best university",
+            filters={"state": "CA", "acceptance_rate_max": 15}
+        )
+        
         # "Find public universities in California with low acceptance rates"
         search_universities(
             query="strong academics",
