@@ -683,4 +683,80 @@ export const deleteVertexAIProfile = async (documentId, userId, displayName) => 
   }
 };
 
+// ============================================
+// College List Management API
+// ============================================
+
+/**
+ * Get user's college list
+ * @param {string} userEmail - User's email
+ * @returns {Promise<{success: boolean, college_list: Array, count: number}>}
+ */
+export const getCollegeList = async (userEmail) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.get(`${baseUrl}/get-college-list`, {
+      params: { user_email: userEmail },
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting college list:', error);
+    throw error;
+  }
+};
+
+/**
+ * Add or remove a college from user's list
+ * @param {string} userEmail - User's email
+ * @param {string} action - 'add' or 'remove'
+ * @param {{id: string, name: string}} university - University object
+ * @param {string} intendedMajor - Student's intended major (optional)
+ * @returns {Promise<{success: boolean, college_list: Array}>}
+ */
+export const updateCollegeList = async (userEmail, action, university, intendedMajor = '') => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/update-college-list`, {
+      user_email: userEmail,
+      action: action,
+      university: university,
+      intended_major: intendedMajor
+    }, {
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error updating college list:', error);
+    throw error;
+  }
+};
+
+/**
+ * Update fit analysis for a college in user's list
+ * @param {string} userEmail - User's email
+ * @param {string} universityId - University ID
+ * @param {Object} fitAnalysis - Fit analysis data
+ * @returns {Promise<{success: boolean}>}
+ */
+export const updateFitAnalysis = async (userEmail, universityId, fitAnalysis) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/update-fit-analysis`, {
+      user_email: userEmail,
+      university_id: universityId,
+      fit_analysis: fitAnalysis
+    }, {
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error updating fit analysis:', error);
+    throw error;
+  }
+};
+
 export default api;

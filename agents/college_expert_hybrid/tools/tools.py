@@ -7,6 +7,8 @@ import json
 import logging
 import requests
 from typing import Dict, List, Any, Optional
+from google import genai
+from google.genai import types
 
 # Configure logging
 logging.basicConfig(
@@ -375,4 +377,840 @@ def search_user_profile(
             "success": False,
             "error": str(e),
             "message": f"Profile search failed: {str(e)}"
+        }
+
+
+# ============================================
+# COLLEGE FIT ANALYSIS TOOL
+# ============================================
+import re
+from datetime import datetime
+
+
+def parse_student_profile_data(profile_content: str) -> Dict[str, Any]:
+    """Extract structured academic data from profile text content."""
+    if not profile_content:
+        return {}
+    
+    content = profile_content if isinstance(profile_content, str) else str(profile_content)
+    
+    def extract_float(pattern, text, default=None):
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            try:
+                return float(match.group(1))
+            except:
+                pass
+        return default
+    
+    def extract_int(pattern, text, default=None):
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            try:
+                return int(match.group(1))
+            except:
+                pass
+        return default
+    
+    # GPA extraction
+    weighted_gpa = extract_float(r'Weighted\s*GPA[:\s]+(\d+\.\d+)', content)
+    if not weighted_gpa:
+        weighted_gpa = extract_float(r'GPA\s*\(Weighted\)[:\s]+(\d+\.\d+)', content)
+    
+    unweighted_gpa = extract_float(r'Unweighted\s*GPA[:\s]+(\d+\.\d+)', content)
+    uc_gpa = extract_float(r'UC\s*(?:Weighted\s*)?GPA[:\s]+(\d+\.\d+)', content)
+    
+    # Test scores
+    sat_score = extract_int(r'SAT[:\s]+(\d{4})', content)
+    act_score = extract_int(r'ACT[:\s]+(\d{2})', content)
+    
+    # AP courses and scores
+    ap_scores = {}
+    ap_pattern = r'AP\s+([A-Za-z\s]+?):\s*(\d)'
+    for match in re.finditer(ap_pattern, content):
+        ap_scores[match.group(1).strip()] = int(match.group(2))
+    
+    ap_count = len(ap_scores)
+    if ap_count == 0:
+        ap_list_match = re.search(r'AP\s+Courses?[:\s]+(.*?)(?:\n\n|\Z)', content, re.DOTALL)
+        if ap_list_match:
+            ap_count = len(re.findall(r'AP\s+[A-Za-z]+', ap_list_match.group(1)))
+    
+    # Intended major
+    major_match = re.search(r'(?:Intended\s+)?Major[:\s]+([^\n,]+)', content, re.IGNORECASE)
+    intended_major = major_match.group(1).strip() if major_match else None
+    
+    # Leadership detection
+    has_leadership = bool(re.search(r'(?:President|Vice President|Captain|Leader|Founder|Director|Chair)', content, re.IGNORECASE))
+    
+    # Awards count
+    awards_section = re.search(r'AWARDS?[:\s]+(.*?)(?:\n\n|\Z)', content, re.DOTALL | re.IGNORECASE)
+    awards_count = len(re.findall(r'\n\s*[-•]', awards_section.group(1))) if awards_section else 0
+    
+    return {
+        'weighted_gpa': weighted_gpa or uc_gpa,
+        'unweighted_gpa': unweighted_gpa,
+        'sat_score': sat_score,
+        'act_score': act_score,
+        'ap_scores': ap_scores,
+        'ap_count': max(ap_count, len(ap_scores)),
+        'intended_major': intended_major,
+        'has_leadership': has_leadership,
+        'awards_count': awards_count
+    }
+
+
+def refine_fit_with_llm(
+    deterministic_result: Dict[str, Any],
+    student_profile: Dict[str, Any],
+    university_data: Dict[str, Any],
+    acceptance_rate: float
+) -> Dict[str, Any]:
+    """
+    Use LLM to refine the fit analysis by considering qualitative factors.
+    
+    Args:
+        deterministic_result: The initial deterministic scoring result
+        student_profile: Student's academic profile data
+        university_data: University profile data
+        acceptance_rate: University's acceptance rate
+        
+    Returns:
+        Refined fit result with adjusted category and AI-generated explanation
+    """
+    try:
+        logger.info(f"[FIT LLM] Starting LLM refinement for {deterministic_result.get('university_name')}")
+        
+        # Apply acceptance rate guardrails first
+        det_category = deterministic_result.get('fit_category', 'REACH')
+        det_percentage = deterministic_result.get('match_percentage', 50)
+        
+        # Guardrails based on acceptance rate
+        max_category = 'SAFETY'
+        if acceptance_rate < 7:
+            max_category = 'SUPER_REACH'
+        elif acceptance_rate < 15:
+            max_category = 'REACH'
+        elif acceptance_rate < 30:
+            max_category = 'TARGET'
+        
+        category_order = ['SUPER_REACH', 'REACH', 'TARGET', 'SAFETY']
+        det_idx = category_order.index(det_category) if det_category in category_order else 0
+        max_idx = category_order.index(max_category)
+        
+        # Cap the category if deterministic is too optimistic
+        if det_idx > max_idx:
+            det_category = max_category
+            logger.info(f"[FIT LLM] Capped category from {deterministic_result.get('fit_category')} to {det_category} due to {acceptance_rate}% acceptance rate")
+        
+        # Prepare context for LLM
+        uni_name = deterministic_result.get('university_name', 'Unknown')
+        factors_text = "\n".join([
+            f"- {f['name']}: {f['score']}/{f['max']} pts - {f['detail']}"
+            for f in deterministic_result.get('factors', [])
+        ])
+        
+        student_summary = f"""
+GPA: Weighted {student_profile.get('weighted_gpa', 'N/A')}, Unweighted {student_profile.get('unweighted_gpa', 'N/A')}
+SAT: {student_profile.get('sat_score', 'N/A')}
+ACT: {student_profile.get('act_score', 'N/A')}
+AP Courses: {student_profile.get('ap_count', 0)} courses with average score {student_profile.get('ap_avg', 'N/A')}
+Activities: {len(student_profile.get('activities', []))} activities
+Awards: {len(student_profile.get('awards', []))} awards
+""".strip()
+        
+        uni_summary = f"""
+University: {uni_name}
+Acceptance Rate: {acceptance_rate}%
+SAT Range: {university_data.get('sat_range', 'N/A')}
+GPA Range: {university_data.get('gpa_range', 'N/A')}
+Type: {university_data.get('type', 'N/A')}
+""".strip()
+
+        prompt = f"""You are an expert college admissions counselor. Analyze this student's fit for {uni_name}.
+
+STUDENT PROFILE:
+{student_summary}
+
+UNIVERSITY DATA:
+{uni_summary}
+
+DETERMINISTIC SCORING RESULT:
+Category: {det_category}
+Match: {det_percentage}%
+Factor Breakdown:
+{factors_text}
+
+TASK:
+1. Review the deterministic scoring against the student profile and university selectivity
+2. Consider that {uni_name} has a {acceptance_rate}% acceptance rate
+3. For highly selective schools (<15%), even strong profiles are typically REACH
+4. Validate or adjust the category: SAFETY (>70% chance), TARGET (40-70%), REACH (15-40%), SUPER_REACH (<15%)
+
+STYLE GUIDELINES for "explanation":
+- **Direct Address**: Speak directly to the student using "You" and "Your" (e.g., "Your GPA is strong...", NOT "The student's GPA...").
+- **Markdown Formatting**: Use **bolding** for key terms, bullet points for lists, and line breaks for readability.
+- **Tone**: Professional, encouraging, but realistic.
+
+Respond in JSON format ONLY:
+{{
+  "final_category": "REACH",
+  "confidence": 85,
+  "adjustment_reason": "Brief reason if category was adjusted, or empty if validated",
+  "explanation": "2-3 paragraph personalized analysis of your fit including: 1) Overall assessment with category and percentage, 2) Key strengths and areas of concern, 3) Specific recommendations for your application. Use Markdown!"
+}}"""
+
+        # Call Gemini
+        client = genai.Client()
+        response = client.models.generate_content(
+            model='gemini-2.5-flash-lite',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.3,
+                response_mime_type="application/json"
+            )
+        )
+        
+        result_text = response.text.strip()
+        logger.info(f"[FIT LLM] Got response from LLM")
+        
+        # Parse JSON response
+        llm_result = json.loads(result_text)
+        
+        final_category = llm_result.get('final_category', det_category).upper()
+        explanation = llm_result.get('explanation', '')
+        adjustment_reason = llm_result.get('adjustment_reason', '')
+        
+        # Ensure category is valid
+        if final_category not in category_order:
+            final_category = det_category
+        
+        # Apply guardrails again to LLM result
+        final_idx = category_order.index(final_category)
+        if final_idx > max_idx:
+            final_category = max_category
+            logger.info(f"[FIT LLM] Re-capped LLM category to {final_category}")
+        
+        logger.info(f"[FIT LLM] Final category: {final_category} (was {deterministic_result.get('fit_category')})")
+        
+        return {
+            "success": True,
+            "final_category": final_category,
+            "explanation": explanation,
+            "adjustment_reason": adjustment_reason,
+            "llm_refined": True
+        }
+        
+    except Exception as e:
+        logger.error(f"[FIT LLM] Error in LLM refinement: {e}")
+        # Fall back to deterministic result
+        return {
+            "success": False,
+            "final_category": deterministic_result.get('fit_category', 'REACH'),
+            "explanation": "",
+            "adjustment_reason": "",
+            "llm_refined": False,
+            "error": str(e)
+        }
+
+
+def parse_test_range(test_string: str) -> tuple:
+    """Parse test score range like '1510-1560' into (min, max)."""
+    if not test_string:
+        return (1200, 1400)
+    try:
+        if '-' in str(test_string):
+            parts = str(test_string).split('-')
+            return (int(parts[0].strip()), int(parts[1].strip()))
+        return (int(test_string), int(test_string))
+    except:
+        return (1200, 1400)
+
+
+def sanitize_for_json(obj):
+    """Ensure all values are JSON-serializable and replace None with appropriate defaults."""
+    if obj is None:
+        return ""
+    if isinstance(obj, dict):
+        return {k: sanitize_for_json(v) for k, v in obj.items() if v is not None}
+    if isinstance(obj, list):
+        return [sanitize_for_json(item) for item in obj if item is not None]
+    if isinstance(obj, (str, int, float, bool)):
+        return obj
+    return str(obj)
+
+
+def get_cached_fit_analysis(user_email: str, university_id: str) -> Dict[str, Any]:
+    """Check if fit analysis already exists in the user's college_list."""
+    try:
+        response = requests.get(
+            f"{PROFILE_MANAGER_ES_URL}/get-college-list",
+            headers={'X-User-Email': user_email},
+            timeout=10
+        )
+        if response.status_code == 200:
+            data = response.json()
+            college_list = data.get('college_list', [])
+            for college in college_list:
+                if college.get('university_id') == university_id:
+                    fit = college.get('fit_analysis')
+                    if fit and fit.get('fit_category'):
+                        logger.info(f"[FIT CACHE] Found cached fit for {university_id}: {fit.get('fit_category')}")
+                        return sanitize_for_json(fit)
+        return {}  # Return empty dict instead of None
+    except Exception as e:
+        logger.warning(f"[FIT CACHE] Failed to check cache: {e}")
+        return {}  # Return empty dict instead of None
+
+
+def store_fit_analysis(user_email: str, university_id: str, fit_analysis: Dict[str, Any]) -> bool:
+    """Store fit analysis result in the user's profile college_list."""
+    try:
+        response = requests.post(
+            f"{PROFILE_MANAGER_ES_URL}/update-fit-analysis",
+            json={
+                'user_email': user_email,
+                'university_id': university_id,
+                'fit_analysis': fit_analysis
+            },
+            headers={'Content-Type': 'application/json'},
+            timeout=15
+        )
+        if response.status_code == 200:
+            logger.info(f"[FIT STORE] Stored fit for {university_id} in profile")
+            return True
+        else:
+            logger.warning(f"[FIT STORE] Failed to store fit: {response.text}")
+            return False
+    except Exception as e:
+        logger.error(f"[FIT STORE] Error storing fit: {e}")
+        return False
+
+
+def calculate_college_fit(
+    user_email: str,
+    university_id: str,
+    intended_major: str = "",
+    force_recalculate: bool = False
+) -> Dict[str, Any]:
+    """
+    Calculate college fit using deterministic 7-factor scoring algorithm.
+    
+    This tool analyzes a student's profile against a university's admission data
+    to determine fit category (Safety, Target, Reach, Super Reach) and provides
+    specific recommendations.
+    
+    The result is automatically stored in the student's profile under their college_list.
+    If a fit analysis already exists and force_recalculate is False, returns the cached result.
+    
+    Args:
+        user_email: Student's email to fetch their profile
+        university_id: University identifier (e.g., "princeton_university", "stanford_university")
+        intended_major: Student's intended major (optional, for major-fit scoring)
+        force_recalculate: If True, recalculate even if cached result exists
+    
+    Returns:
+        Dictionary with:
+        - fit_category: SAFETY, TARGET, REACH, or SUPER_REACH
+        - match_percentage: 0-100 overall match score
+        - factors: List of scoring factors with details
+        - recommendations: Specific improvement suggestions
+    
+    Example:
+        calculate_college_fit(
+            user_email="student@gmail.com",
+            university_id="stanford_university",
+            intended_major="Computer Science"
+        )
+    """
+    logger.info(f"[FIT ANALYSIS] Starting fit calculation for {user_email} -> {university_id}")
+    
+    # Check for cached result first (unless force_recalculate is True)
+    if not force_recalculate:
+        cached_fit = get_cached_fit_analysis(user_email, university_id)
+        if cached_fit.get('fit_category'):  # Check if valid cached result
+            logger.info(f"[FIT ANALYSIS] Returning cached fit for {university_id}")
+            cached_fit['from_cache'] = True
+            cached_fit['success'] = True
+            return cached_fit
+    
+    try:
+        # Step 1: Fetch student profile
+        profile_result = search_user_profile(user_email)
+        logger.info(f"[FIT] Profile result success: {profile_result.get('success')}")
+        logger.info(f"[FIT] Profile result keys: {list(profile_result.keys())}")
+        
+        # search_user_profile returns 'profile_data' not 'content'
+        if not profile_result.get('success') or not profile_result.get('profile_data'):
+            return {
+                "success": False,
+                "error": "Could not fetch student profile",
+                "message": "Please upload your academic profile first"
+            }
+        
+        profile_content = profile_result.get('profile_data', '')
+        student_profile = parse_student_profile_data(profile_content)
+        
+        logger.info(f"[FIT] Parsed profile: GPA={student_profile.get('weighted_gpa')}, SAT={student_profile.get('sat_score')}")
+        
+        # Step 2: Fetch university data
+        university_data = get_university(university_id)
+        logger.info(f"[FIT] University data success: {university_data.get('success')}")
+        logger.info(f"[FIT] University data keys: {list(university_data.keys())}")
+        
+        # get_university returns {success, university}, where university contains the profile
+        if not university_data.get('success') or not university_data.get('university'):
+            return {
+                "success": False,
+                "error": f"University not found: {university_id}",
+                "message": "University data not available in knowledge base"
+            }
+        
+        # The university object contains acceptance_rate at top level and profile key with detailed data
+        university_obj = university_data.get('university', {})
+        uni_profile = university_obj.get('profile', {})
+        
+        logger.info(f"[FIT] University profile keys: {list(uni_profile.keys())[:10] if uni_profile else 'None'}")
+        
+        # Step 3: Calculate comprehensive fit
+        factors = []
+        recommendations = []
+        total_score = 0
+        max_score = 150
+        
+        # Extract admissions data - check multiple possible locations
+        admissions = uni_profile.get('admissions_data', {})
+        if not admissions:
+            admissions = uni_profile.get('admissions', {})
+        
+        current_status = admissions.get('current_status', {})
+        admitted_profile = admissions.get('admitted_student_profile', {})
+        
+        # Check for acceptance rate at multiple levels
+        acceptance_rate = current_status.get('overall_acceptance_rate')
+        if acceptance_rate is None:
+            acceptance_rate = university_obj.get('acceptance_rate', 50)
+        
+        gpa_data = admitted_profile.get('gpa', {})
+        try:
+            uni_gpa_25 = float(str(gpa_data.get('percentile_25', '3.5')).replace('"', ''))
+            uni_gpa_75 = float(str(gpa_data.get('percentile_75', '4.0')).replace('"', ''))
+        except:
+            uni_gpa_25, uni_gpa_75 = 3.5, 4.0
+        
+        testing_data = admitted_profile.get('testing', {})
+        sat_range = testing_data.get('sat_composite_middle_50', '1200-1400')
+        act_range = testing_data.get('act_composite_middle_50', '26-32')
+        
+        student_gpa = student_profile.get('weighted_gpa') or student_profile.get('unweighted_gpa') or 3.5
+        student_sat = student_profile.get('sat_score')
+        student_act = student_profile.get('act_score')
+        ap_count = student_profile.get('ap_count', 0)
+        ap_scores = student_profile.get('ap_scores', {})
+        has_leadership = student_profile.get('has_leadership', False)
+        awards_count = student_profile.get('awards_count', 0)
+        
+        # ============ FACTOR 1: GPA Match (40 points) ============
+        if student_gpa >= uni_gpa_75 + 0.1:
+            gpa_score = 40
+            gpa_detail = f"Your {student_gpa:.2f} exceeds 75th percentile ({uni_gpa_75})"
+        elif student_gpa >= uni_gpa_75:
+            gpa_score = 36
+            gpa_detail = f"Your {student_gpa:.2f} is at 75th percentile"
+        elif student_gpa >= (uni_gpa_25 + uni_gpa_75) / 2:
+            gpa_score = 28
+            gpa_detail = f"Your {student_gpa:.2f} is above median admits"
+        elif student_gpa >= uni_gpa_25:
+            gpa_score = 20
+            gpa_detail = f"Your {student_gpa:.2f} is at 25th percentile"
+        elif student_gpa >= uni_gpa_25 - 0.15:
+            gpa_score = 12
+            gpa_detail = f"Your {student_gpa:.2f} is slightly below typical range"
+        else:
+            gpa_score = 5
+            gpa_detail = f"Your {student_gpa:.2f} is below typical admits"
+            recommendations.append("Focus on strong upward trend in remaining semesters")
+        
+        total_score += gpa_score
+        factors.append({'name': 'GPA Match', 'score': gpa_score, 'max': 40, 'detail': gpa_detail})
+        
+        # ============ FACTOR 2: Test Scores (25 points) ============
+        sat_25, sat_75 = parse_test_range(sat_range)
+        act_25, act_75 = parse_test_range(act_range)
+        
+        test_score = 0
+        test_detail = "No test scores provided"
+        
+        if student_sat:
+            if student_sat >= sat_75:
+                test_score = 25
+                test_detail = f"Your SAT {student_sat} exceeds 75th percentile ({sat_75})"
+            elif student_sat >= (sat_25 + sat_75) / 2:
+                test_score = 20
+                test_detail = f"Your SAT {student_sat} is in middle 50% ({sat_25}-{sat_75})"
+            elif student_sat >= sat_25:
+                test_score = 12
+                test_detail = f"Your SAT {student_sat} is at 25th percentile"
+            else:
+                test_score = 5
+                test_detail = f"Your SAT {student_sat} is below typical range"
+                recommendations.append("Consider retaking SAT to reach middle 50% range")
+        elif student_act:
+            if student_act >= act_75:
+                test_score = 25
+                test_detail = f"Your ACT {student_act} exceeds 75th percentile ({act_75})"
+            elif student_act >= (act_25 + act_75) / 2:
+                test_score = 20
+                test_detail = f"Your ACT {student_act} is in middle 50%"
+            elif student_act >= act_25:
+                test_score = 12
+                test_detail = f"Your ACT {student_act} is at 25th percentile"
+            else:
+                test_score = 5
+                test_detail = f"Your ACT {student_act} is below typical range"
+        else:
+            if current_status.get('is_test_optional'):
+                test_score = 15
+                test_detail = "Test optional - consider submitting if scores are strong"
+            else:
+                test_score = 8
+                recommendations.append("Submit test scores as they are considered")
+        
+        total_score += test_score
+        factors.append({'name': 'Test Scores', 'score': test_score, 'max': 25, 'detail': test_detail})
+        
+        # ============ FACTOR 3: Acceptance Rate (25 points) ============
+        if acceptance_rate >= 60:
+            rate_score = 25
+            rate_detail = f"{acceptance_rate}% acceptance - accessible"
+        elif acceptance_rate >= 40:
+            rate_score = 20
+            rate_detail = f"{acceptance_rate}% acceptance - moderately selective"
+        elif acceptance_rate >= 25:
+            rate_score = 16
+            rate_detail = f"{acceptance_rate}% acceptance - selective"
+        elif acceptance_rate >= 15:
+            rate_score = 12
+            rate_detail = f"{acceptance_rate}% acceptance - highly selective"
+        elif acceptance_rate >= 10:
+            rate_score = 8
+            rate_detail = f"{acceptance_rate}% acceptance - very competitive"
+        elif acceptance_rate >= 5:
+            rate_score = 5
+            rate_detail = f"{acceptance_rate}% acceptance - extremely selective"
+        else:
+            rate_score = 2
+            rate_detail = f"{acceptance_rate}% acceptance - ultra-selective (Ivy-tier)"
+        
+        total_score += rate_score
+        factors.append({'name': 'Acceptance Rate', 'score': rate_score, 'max': 25, 'detail': rate_detail})
+        
+        # ============ FACTOR 4: Course Rigor (20 points) ============
+        ap_course_pts = min(10, ap_count * 1.2)
+        high_scores = sum(1 for s in ap_scores.values() if s >= 4)
+        quality_pts = min(10, high_scores * 2)
+        
+        rigor_score = int(ap_course_pts + quality_pts)
+        rigor_detail = f"{ap_count} AP courses"
+        if high_scores > 0:
+            rigor_detail += f", {high_scores} scores of 4+"
+        
+        if rigor_score < 10 and acceptance_rate < 20:
+            recommendations.append("Consider taking additional AP courses")
+        
+        total_score += rigor_score
+        factors.append({'name': 'Course Rigor', 'score': rigor_score, 'max': 20, 'detail': rigor_detail})
+        
+        # ============ FACTOR 5: Major Fit (15 points) ============
+        major_to_check = intended_major or student_profile.get('intended_major', '')
+        major_score = 8
+        major_detail = "No specific major selected"
+        
+        if major_to_check:
+            academic_structure = uni_profile.get('academic_structure', {})
+            all_majors = []
+            for college in academic_structure.get('colleges', []):
+                for major in college.get('majors', []):
+                    all_majors.append(major.get('name', '').lower())
+            
+            major_lower = major_to_check.lower()
+            
+            if any(major_lower in m for m in all_majors):
+                major_score = 15
+                major_detail = f"{major_to_check} is offered"
+            elif any(m.startswith(major_lower[:4]) for m in all_majors):
+                major_score = 10
+                major_detail = f"Related programs to {major_to_check} available"
+            else:
+                major_score = 5
+                major_detail = f"{major_to_check} may not be directly offered"
+                recommendations.append(f"Verify {major_to_check} availability or consider related majors")
+        
+        total_score += major_score
+        factors.append({'name': 'Major Fit', 'score': major_score, 'max': 15, 'detail': major_detail})
+        
+        # ============ FACTOR 6: Activities (15 points) ============
+        activity_score = 5
+        activity_details = []
+        
+        if has_leadership:
+            activity_score += 4
+            activity_details.append("Leadership experience")
+        if awards_count >= 3:
+            activity_score += 3
+            activity_details.append(f"{awards_count} awards")
+        elif awards_count >= 1:
+            activity_score += 1
+        
+        activity_score = min(15, activity_score)
+        activity_detail = ", ".join(activity_details) if activity_details else "Activities noted"
+        
+        total_score += activity_score
+        factors.append({'name': 'Activities', 'score': activity_score, 'max': 15, 'detail': activity_detail})
+        
+        # ============ FACTOR 7: Early Action Boost (10 points) ============
+        early_stats = current_status.get('early_admission_stats', [])
+        early_score = 0
+        early_detail = "No significant early advantage"
+        
+        for stat in early_stats:
+            early_rate = stat.get('acceptance_rate', 0)
+            plan_type = stat.get('plan_type', '')
+            if early_rate and early_rate > acceptance_rate * 1.5:
+                early_score = 10
+                early_detail = f"{plan_type}: {early_rate}% vs {acceptance_rate}% regular"
+                recommendations.append(f"Apply {plan_type} for higher acceptance rate")
+                break
+            elif early_rate and early_rate > acceptance_rate * 1.2:
+                early_score = 6
+                early_detail = f"{plan_type} offers modest boost ({early_rate}%)"
+                break
+        
+        total_score += early_score
+        factors.append({'name': 'Early Action', 'score': early_score, 'max': 10, 'detail': early_detail})
+        
+        # ============ CALCULATE FINAL CATEGORY ============
+        match_percentage = int((total_score / max_score) * 100)
+        
+        if match_percentage >= 75:
+            fit_category = 'SAFETY'
+        elif match_percentage >= 55:
+            fit_category = 'TARGET'
+        elif match_percentage >= 35:
+            fit_category = 'REACH'
+        else:
+            fit_category = 'SUPER_REACH'
+        
+        if not recommendations:
+            if fit_category == 'SAFETY':
+                recommendations.append("Strong match - focus on compelling essays")
+            elif fit_category == 'TARGET':
+                recommendations.append("Good fit - emphasize unique qualities")
+        
+        # Get university name from multiple sources
+        uni_name = university_obj.get('official_name') or uni_profile.get('metadata', {}).get('official_name') or university_id.replace('_', ' ').title()
+        
+        # Generate detailed explanation
+        explanation_parts = []
+        explanation_parts.append(f"**Overall Assessment: {fit_category}** ({match_percentage}% match)")
+        explanation_parts.append("")
+        explanation_parts.append(f"Based on your academic profile and {uni_name}'s admission data, here's a detailed breakdown:")
+        explanation_parts.append("")
+        
+        # Add factor explanations
+        for factor in factors:
+            score_pct = int((factor['score'] / factor['max']) * 100) if factor['max'] > 0 else 0
+            if score_pct >= 75:
+                strength = "✅ Strong"
+            elif score_pct >= 50:
+                strength = "🟡 Moderate"
+            else:
+                strength = "⚠️ Area for improvement"
+            explanation_parts.append(f"**{factor['name']}** ({factor['score']}/{factor['max']} pts): {strength}")
+            explanation_parts.append(f"  - {factor['detail']}")
+            explanation_parts.append("")
+        
+        # Add category-specific summary
+        if fit_category == 'SAFETY':
+            explanation_parts.append("🟢 **Summary**: Your profile exceeds this school's typical admitted student profile. Strong likelihood of admission with a compelling application.")
+        elif fit_category == 'TARGET':
+            explanation_parts.append("🔵 **Summary**: Your profile aligns well with this school's admitted student profile. Reasonable chance of admission with strong essays and activities.")
+        elif fit_category == 'REACH':
+            explanation_parts.append("🟠 **Summary**: Your profile is below the typical admitted student. You'll need exceptional essays, activities, or other distinguishing factors.")
+        else:
+            explanation_parts.append("🔴 **Summary**: This is a significant reach. Consider strengthening your application with unique experiences, awards, or strong recommendations.")
+        
+        deterministic_explanation = "\n".join(explanation_parts)
+        
+        logger.info(f"[FIT] Deterministic result for {uni_name}: {fit_category} ({match_percentage}%)")
+        
+        # Build preliminary result for LLM refinement
+        preliminary_result = {
+            "fit_category": fit_category,
+            "match_percentage": match_percentage,
+            "university_name": uni_name,
+            "factors": factors,
+        }
+        
+        # Prepare university data for LLM
+        sat_range = 'N/A'
+        gpa_range = 'N/A'
+        uni_type = university_obj.get('location', {}).get('type', 'N/A')
+        
+        try:
+            admissions = uni_profile.get('admissions_data', {}) or uni_profile.get('admissions', {})
+            admitted_profile = admissions.get('admitted_student_profile', {})
+            
+            sat_data = admitted_profile.get('test_scores', {}).get('sat', {})
+            if sat_data:
+                sat_range = f"{sat_data.get('composite_25th', 'N/A')}-{sat_data.get('composite_75th', 'N/A')}"
+            
+            gpa_data = admitted_profile.get('gpa', {})
+            if gpa_data:
+                gpa_range = f"{gpa_data.get('25th_percentile', 'N/A')}-{gpa_data.get('75th_percentile', 'N/A')}"
+        except:
+            pass
+        
+        university_llm_data = {
+            "sat_range": sat_range,
+            "gpa_range": gpa_range,
+            "type": uni_type,
+        }
+        
+        # Call LLM for hybrid refinement
+        llm_result = refine_fit_with_llm(
+            preliminary_result,
+            student_profile,
+            university_llm_data,
+            acceptance_rate
+        )
+        
+        # Use LLM results if successful, otherwise use deterministic
+        if llm_result.get('success') and llm_result.get('llm_refined'):
+            final_category = llm_result.get('final_category', fit_category)
+            final_explanation = llm_result.get('explanation', deterministic_explanation)
+            adjustment_reason = llm_result.get('adjustment_reason', '')
+            is_llm_refined = True
+            logger.info(f"[FIT] LLM refined: {fit_category} -> {final_category}")
+        else:
+            final_category = fit_category
+            final_explanation = deterministic_explanation
+            adjustment_reason = ''
+            is_llm_refined = False
+            logger.info(f"[FIT] Using deterministic result (LLM failed): {final_category}")
+        
+        fit_result = {
+            "success": True,
+            "fit_category": final_category,
+            "match_percentage": match_percentage,
+            "university_name": uni_name,
+            "university_id": university_id,
+            "factors": factors,
+            "recommendations": recommendations[:5],
+            "explanation": final_explanation,
+            "adjustment_reason": adjustment_reason,
+            "llm_refined": is_llm_refined,
+            "deterministic_category": fit_category,
+            "total_score": total_score,
+            "max_score": max_score,
+            "calculated_at": datetime.utcnow().isoformat(),
+            "from_cache": False
+        }
+        
+        # Store the fit result in the user's profile
+        store_fit_analysis(user_email, university_id, fit_result)
+        
+        # Sanitize before returning to ensure ADK compatibility
+        return sanitize_for_json(fit_result)
+        
+    except Exception as e:
+        logger.error(f"[FIT ERROR] {str(e)}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"Fit analysis failed: {str(e)}"
+        }
+
+
+def recalculate_all_fits(user_email: str) -> Dict[str, Any]:
+    """
+    Recalculate fit analysis for all universities in the user's college list.
+    Call this when the user's profile has been updated.
+    
+    Args:
+        user_email: Student's email address
+    
+    Returns:
+        Dictionary with:
+        - success: True if recalculation was successful
+        - updated_count: Number of universities recalculated
+        - fit_results: Dictionary mapping university_id to fit_category
+    
+    Example:
+        recalculate_all_fits(user_email="student@gmail.com")
+    """
+    logger.info(f"[FIT RECALC] Recalculating all fits for {user_email}")
+    
+    try:
+        # Get user's college list
+        response = requests.get(
+            f"{PROFILE_MANAGER_ES_URL}/get-college-list",
+            headers={'X-User-Email': user_email},
+            timeout=10
+        )
+        
+        if response.status_code != 200:
+            return {
+                "success": False,
+                "error": "Failed to fetch college list",
+                "updated_count": 0
+            }
+        
+        data = response.json()
+        college_list = data.get('college_list', [])
+        
+        if not college_list:
+            return {
+                "success": True,
+                "message": "No colleges in list to recalculate",
+                "updated_count": 0,
+                "fit_results": {}
+            }
+        
+        fit_results = {}
+        updated_count = 0
+        
+        for college in college_list:
+            university_id = college.get('university_id')
+            intended_major = college.get('intended_major', '')
+            
+            logger.info(f"[FIT RECALC] Recalculating {university_id}")
+            
+            # Force recalculate by passing force_recalculate=True
+            fit = calculate_college_fit(
+                user_email=user_email,
+                university_id=university_id,
+                intended_major=intended_major,
+                force_recalculate=True
+            )
+            
+            if fit.get('success'):
+                fit_results[university_id] = fit.get('fit_category')
+                updated_count += 1
+        
+        logger.info(f"[FIT RECALC] Completed: {updated_count} universities updated")
+        
+        return {
+            "success": True,
+            "message": f"Recalculated fit for {updated_count} universities",
+            "updated_count": updated_count,
+            "fit_results": fit_results
+        }
+        
+    except Exception as e:
+        logger.error(f"[FIT RECALC ERROR] {str(e)}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"Recalculation failed: {str(e)}"
         }

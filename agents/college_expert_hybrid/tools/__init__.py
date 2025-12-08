@@ -1,5 +1,5 @@
 """Tools package for college expert hybrid agent."""
-from .tools import search_universities, get_university, list_universities, search_user_profile
+from .tools import search_universities, get_university, list_universities, search_user_profile, calculate_college_fit, recalculate_all_fits
 from .logging_utils import log_agent_entry, log_agent_exit
 
 __all__ = [
@@ -7,6 +7,9 @@ __all__ = [
     'get_university', 
     'list_universities',
     'search_user_profile',
+    'calculate_college_fit',
+    'recalculate_all_fits',
     'log_agent_entry',
     'log_agent_exit'
 ]
+

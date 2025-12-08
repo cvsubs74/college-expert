@@ -24,7 +24,8 @@ import {
 } from '@heroicons/react/24/outline';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { startSession, sendMessage, extractFullResponse } from '../services/api';
+import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList } from '../services/api';
+import { useAuth } from '../context/AuthContext';
 
 // API Configuration
 const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL ||
@@ -124,10 +125,18 @@ const transformUniversityData = (apiData) => {
 };
 
 // --- University Card Component ---
-const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick }) => {
+const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick, isInList, onToggleList, fitAnalysis, onAnalyzeFit, isAnalyzing, onShowFitDetails }) => {
     const formatNumber = (num) => {
         if (num === 'N/A' || num === null || num === undefined) return 'N/A';
         return typeof num === 'number' ? num.toLocaleString() : num;
+    };
+
+    // Fit category colors
+    const fitColors = {
+        SAFETY: 'bg-green-100 text-green-800 border-green-300',
+        TARGET: 'bg-blue-100 text-blue-800 border-blue-300',
+        REACH: 'bg-orange-100 text-orange-800 border-orange-300',
+        SUPER_REACH: 'bg-red-100 text-red-800 border-red-300'
     };
 
     return (
@@ -147,7 +156,32 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                             {uni.location.city}, {uni.location.state}
                         </div>
                     </div>
-                    <Badge color={uni.location.type === "Private" ? "purple" : "blue"}>{uni.location.type}</Badge>
+                    <div className="flex flex-col items-end gap-1">
+                        <Badge color={uni.location.type === "Private" ? "purple" : "blue"}>{uni.location.type}</Badge>
+                        {/* Consistent fit status area - always shows something if in list */}
+                        {isInList && (
+                            fitAnalysis ? (
+                                <button
+                                    onClick={(e) => { e.stopPropagation(); onShowFitDetails(fitAnalysis); }}
+                                    className={`px-2 py-1 rounded-full text-xs font-bold border cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap ${fitColors[fitAnalysis.fit_category] || fitColors.TARGET}`}
+                                    title={`${fitAnalysis.match_percentage}% match - Click for details`}
+                                >
+                                    {fitAnalysis.fit_category === 'SUPER_REACH' ? '🎯 Super Reach' :
+                                        fitAnalysis.fit_category === 'REACH' ? '🎯 Reach' :
+                                            fitAnalysis.fit_category === 'TARGET' ? '🎯 Target' :
+                                                '✅ Safety'}
+                                </button>
+                            ) : isAnalyzing ? (
+                                <span className="px-2 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-600 border border-purple-200 animate-pulse whitespace-nowrap">
+                                    ⏳ Analyzing...
+                                </span>
+                            ) : (
+                                <span className="px-2 py-1 rounded-full text-xs font-medium text-green-600 bg-green-50 border border-green-200 whitespace-nowrap">
+                                    ✓ In List
+                                </span>
+                            )
+                        )}
+                    </div>
                 </div>
 
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">{uni.summary}</p>
@@ -198,6 +232,17 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                         {isSelectedForCompare ? 'Added' : 'Compare'}
                         {isSelectedForCompare ? <XMarkIcon className="h-4 w-4" /> : <ScaleIcon className="h-4 w-4" />}
                     </button>
+                    <button
+                        onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
+                        className={`p-2 rounded-lg transition-all hover:scale-105 ${isInList
+                            ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                            }`}
+                        title={isInList ? 'Remove from My List' : 'Add to My List'}
+                    >
+                        {isInList ? '✓' : '+'}
+                    </button>
+                    {/* Fit analysis is now shown in the header area */}
                     {sentiment && sentiment.sentiment !== 'neutral' && (
                         <button
                             onClick={(e) => { e.stopPropagation(); onSentimentClick(sentiment); }}
@@ -367,8 +412,8 @@ const UniversityDetail = ({ uni, onBack, sentiment, deepResearchData, setDeepRes
             {/* Sentiment Banner */}
             {sentiment && sentiment.sentiment !== 'neutral' && (
                 <div className={`p-6 ${sentiment.sentiment === 'positive'
-                        ? 'bg-green-50 border-b-4 border-green-500'
-                        : 'bg-red-50 border-b-4 border-red-500'
+                    ? 'bg-green-50 border-b-4 border-green-500'
+                    : 'bg-red-50 border-b-4 border-red-500'
                     }`}>
                     <div className="flex items-center gap-2 mb-3">
                         <span className="text-2xl">{sentiment.sentiment === 'positive' ? '📈' : '⚠️'}</span>
@@ -752,6 +797,242 @@ const UniversityExplorer = () => {
             console.error('Error saving deep research:', e);
         }
     }, [deepResearchData]);
+
+    // Get current user from auth context
+    const { currentUser } = useAuth();
+
+    // College list management
+    const [myCollegeList, setMyCollegeList] = useState([]);
+    const [collegeListLoading, setCollegeListLoading] = useState(false);
+
+    // Load college list on mount
+    useEffect(() => {
+        const loadCollegeList = async () => {
+            if (!currentUser?.email) return;
+
+            try {
+                setCollegeListLoading(true);
+                const result = await getCollegeList(currentUser.email);
+                if (result.success) {
+                    setMyCollegeList(result.college_list || []);
+                    console.log('[College List] Loaded:', result.college_list?.length || 0, 'colleges');
+                }
+            } catch (err) {
+                console.error('[College List] Error loading:', err);
+            } finally {
+                setCollegeListLoading(false);
+            }
+        };
+
+        loadCollegeList();
+    }, [currentUser]);
+
+    // Toggle college in list (add/remove)
+    const handleToggleCollegeList = async (university) => {
+        if (!currentUser?.email) {
+            console.warn('[College List] No user logged in');
+            return;
+        }
+
+        const isInList = myCollegeList.some(c => c.university_id === university.id);
+        const action = isInList ? 'remove' : 'add';
+
+        try {
+            const result = await updateCollegeList(
+                currentUser.email,
+                action,
+                { id: university.id, name: university.name },
+                '' // intended major - could be passed from profile
+            );
+
+            if (result.success) {
+                setMyCollegeList(result.college_list || []);
+                console.log(`[College List] ${action === 'add' ? 'Added' : 'Removed'}: ${university.name}`);
+
+                // Auto-trigger fit analysis when adding a university
+                if (action === 'add') {
+                    console.log(`[College List] Auto-triggering fit analysis for: ${university.name}`);
+                    // Use setTimeout to allow state to update first
+                    setTimeout(() => {
+                        handleAnalyzeFit(university);
+                    }, 100);
+                }
+            }
+        } catch (err) {
+            console.error('[College List] Error updating:', err);
+        }
+    };
+
+    // Check if university is in user's list
+    const isInCollegeList = (universityId) => {
+        return myCollegeList.some(c => c.university_id === universityId);
+    };
+
+    // Get fit analysis for a university from college list
+    const getCollegeFitAnalysis = (universityId) => {
+        const college = myCollegeList.find(c => c.university_id === universityId);
+        return college?.fit_analysis || null;
+    };
+
+    // State for fit analysis
+    const [analyzingFit, setAnalyzingFit] = useState(null); // university ID being analyzed
+    const [showFitModal, setShowFitModal] = useState(false);
+    const [selectedFitData, setSelectedFitData] = useState(null);
+
+    // Analyze fit for a university
+    const handleAnalyzeFit = async (university) => {
+        if (!currentUser?.email) {
+            console.warn('[Fit Analysis] No user logged in');
+            return;
+        }
+
+        setAnalyzingFit(university.id);
+        console.log(`[Fit Analysis] Starting analysis for ${university.name}`);
+
+        try {
+            // Convert university name to ID format (snake_case)
+            const universityId = university.id || university.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+
+            // Build query that tells agent to use the calculate_college_fit tool
+            const query = `Analyze my fit for ${university.name}. Use the calculate_college_fit tool with university_id="${universityId}" to get the deterministic fit analysis.`;
+
+            // Pass the user email so agent can use it for profile lookup
+            const response = await startSession(query, currentUser.email);
+            const fullResponse = extractFullResponse(response);
+            const resultText = fullResponse.result || fullResponse;
+
+            // Parse the fit analysis from response
+            const fitAnalysis = parseFitAnalysis(resultText, university);
+
+            console.log(`[Fit Analysis] Completed for ${university.name}:`, fitAnalysis.fit_category);
+
+            // Refresh the college list from server to get the stored fit analysis
+            // This ensures we have the latest data including the fit stored in ES
+            try {
+                const refreshResult = await getCollegeList(currentUser.email);
+                if (refreshResult.success) {
+                    setMyCollegeList(refreshResult.college_list || []);
+                    console.log('[Fit Analysis] Refreshed college list from server');
+                }
+            } catch (refreshErr) {
+                console.warn('[Fit Analysis] Could not refresh list, using local update', refreshErr);
+                // Fallback to local update if server refresh fails
+                const updatedList = myCollegeList.map(c => {
+                    if (c.university_id === university.id) {
+                        return { ...c, fit_analysis: fitAnalysis, fit_analyzed_at: new Date().toISOString() };
+                    }
+                    return c;
+                });
+                setMyCollegeList(updatedList);
+            }
+
+        } catch (err) {
+            console.error('[Fit Analysis] Error:', err);
+        } finally {
+            setAnalyzingFit(null);
+        }
+    };
+
+    // Parse fit analysis from agent response
+    const parseFitAnalysis = (responseText, university) => {
+        // First, try to extract structured JSON from the response
+        // The tool returns: {success, fit_category, match_percentage, factors, recommendations, ...}
+        try {
+            // Look for JSON object in the response
+            const jsonMatch = responseText.match(/\{[\s\S]*"fit_category"[\s\S]*\}/);
+            if (jsonMatch) {
+                const jsonData = JSON.parse(jsonMatch[0]);
+                if (jsonData.success && jsonData.fit_category) {
+                    return {
+                        fit_category: jsonData.fit_category.toUpperCase(),
+                        match_percentage: jsonData.match_percentage || 50,
+                        factors: jsonData.factors || [],
+                        recommendations: jsonData.recommendations || [],
+                        explanation: jsonData.explanation || '',
+                        university_name: jsonData.university_name || university.name,
+                        raw_response: responseText
+                    };
+                }
+            }
+        } catch (e) {
+            console.log('[Fit Parser] JSON parsing failed, trying regex', e);
+        }
+
+        // Try to find fit category and percentage in different formats
+        let categoryMatch = responseText.match(/fit[_\s]*category[:\s]*["']?(SAFETY|TARGET|REACH|SUPER_REACH)["']?/i);
+        if (!categoryMatch) {
+            categoryMatch = responseText.match(/\*\*FIT_CATEGORY:\*\*\s*(SAFETY|TARGET|REACH|SUPER_REACH)/i);
+        }
+        if (!categoryMatch) {
+            // Look for category words in context
+            if (responseText.toLowerCase().includes('safety')) categoryMatch = [null, 'SAFETY'];
+            else if (responseText.toLowerCase().includes('target')) categoryMatch = [null, 'TARGET'];
+            else if (responseText.toLowerCase().includes('reach')) categoryMatch = [null, 'REACH'];
+        }
+
+        let percentageMatch = responseText.match(/match[_\s]*percentage[:\s]*(\d+)/i);
+        if (!percentageMatch) {
+            percentageMatch = responseText.match(/\*\*MATCH_PERCENTAGE:\*\*\s*(\d+)/i);
+        }
+        if (!percentageMatch) {
+            percentageMatch = responseText.match(/(\d+)%?\s*match/i);
+        }
+
+        // Extract factors - look for score patterns
+        const factors = [];
+        const factorPatterns = [
+            /GPA[^\n]*?(\d+)\/40/i,
+            /Test[^\n]*?(\d+)\/25/i,
+            /Acceptance[^\n]*?(\d+)\/25/i,
+            /Course[^\n]*?(\d+)\/20/i,
+            /Major[^\n]*?(\d+)\/15/i,
+            /Activit[^\n]*?(\d+)\/15/i,
+            /Early[^\n]*?(\d+)\/10/i
+        ];
+
+        const factorNames = ['GPA Match', 'Test Scores', 'Acceptance Rate', 'Course Rigor', 'Major Fit', 'Activities', 'Early Action'];
+        const factorMax = [40, 25, 25, 20, 15, 15, 10];
+
+        factorPatterns.forEach((pattern, i) => {
+            const match = responseText.match(pattern);
+            if (match) {
+                factors.push({
+                    name: factorNames[i],
+                    score: parseInt(match[1]),
+                    max: factorMax[i],
+                    detail: `Score: ${match[1]}/${factorMax[i]}`
+                });
+            }
+        });
+
+        // Extract recommendations
+        const recommendations = [];
+        const recMatches = responseText.match(/(?:recommend|suggestion|improve)[^\n]*?(?:\n[-•*\d].*)+/gi);
+        if (recMatches) {
+            recMatches.forEach(section => {
+                const lines = section.match(/[-•*\d]\.\s*(.+)/g);
+                if (lines) {
+                    lines.forEach(line => {
+                        const text = line.replace(/^[-•*\d]\.?\s*/, '').trim();
+                        if (text && !recommendations.includes(text)) {
+                            recommendations.push(text);
+                        }
+                    });
+                }
+            });
+        }
+
+        return {
+            fit_category: categoryMatch ? categoryMatch[1].toUpperCase() : 'TARGET',
+            match_percentage: percentageMatch ? parseInt(percentageMatch[1]) : 50,
+            factors: factors.length > 0 ? factors : [
+                { name: 'Analysis', score: 0, max: 100, detail: 'See detailed response below' }
+            ],
+            recommendations: recommendations.length > 0 ? recommendations : ['Review the detailed analysis for recommendations'],
+            raw_response: responseText,
+            university_name: university.name
+        };
+    };
 
     // Fetch universities from API
     useEffect(() => {
@@ -1211,6 +1492,15 @@ const UniversityExplorer = () => {
                                                     setSelectedSentiment(sent);
                                                     setShowSentimentModal(true);
                                                 }}
+                                                isInList={isInCollegeList(uni.id)}
+                                                onToggleList={handleToggleCollegeList}
+                                                fitAnalysis={getCollegeFitAnalysis(uni.id)}
+                                                onAnalyzeFit={handleAnalyzeFit}
+                                                isAnalyzing={analyzingFit === uni.id}
+                                                onShowFitDetails={(fit) => {
+                                                    setSelectedFitData(fit);
+                                                    setShowFitModal(true);
+                                                }}
                                             />
                                         ))
                                     ) : (
@@ -1302,6 +1592,109 @@ const UniversityExplorer = () => {
                             <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                 {selectedSentiment.fullText}
                             </ReactMarkdown>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Fit Analysis Modal */}
+            {showFitModal && selectedFitData && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+                    onClick={() => setShowFitModal(false)}>
+                    <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedFitData.fit_category === 'SAFETY' ? 'border-green-500' :
+                        selectedFitData.fit_category === 'TARGET' ? 'border-blue-500' :
+                            selectedFitData.fit_category === 'REACH' ? 'border-orange-500' :
+                                'border-red-500'
+                        }`}
+                        onClick={(e) => e.stopPropagation()}>
+                        <div className={`p-6 ${selectedFitData.fit_category === 'SAFETY' ? 'bg-green-50' :
+                            selectedFitData.fit_category === 'TARGET' ? 'bg-blue-50' :
+                                selectedFitData.fit_category === 'REACH' ? 'bg-orange-50' :
+                                    'bg-red-50'
+                            }`}>
+                            <div className="flex items-start justify-between">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-3xl">
+                                        {selectedFitData.fit_category === 'SAFETY' ? '✅' :
+                                            selectedFitData.fit_category === 'TARGET' ? '🎯' :
+                                                selectedFitData.fit_category === 'REACH' ? '🔼' : '🚀'}
+                                    </span>
+                                    <div>
+                                        <h3 className={`text-xl font-bold ${selectedFitData.fit_category === 'SAFETY' ? 'text-green-900' :
+                                            selectedFitData.fit_category === 'TARGET' ? 'text-blue-900' :
+                                                selectedFitData.fit_category === 'REACH' ? 'text-orange-900' :
+                                                    'text-red-900'
+                                            }`}>
+                                            {selectedFitData.university_name} - {selectedFitData.fit_category.replace('_', ' ')}
+                                        </h3>
+                                        <p className="text-gray-600 text-sm mt-1">
+                                            {selectedFitData.match_percentage}% Match
+                                        </p>
+                                    </div>
+                                </div>
+                                <button
+                                    onClick={() => setShowFitModal(false)}
+                                    className="text-gray-400 hover:text-gray-600"
+                                >
+                                    <XMarkIcon className="h-6 w-6" />
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="p-6">
+                            {/* Factors Section */}
+                            <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                <SparklesIcon className="h-5 w-5 text-purple-500" />
+                                Fit Factors
+                            </h4>
+                            <div className="space-y-3 mb-6">
+                                {selectedFitData.factors?.map((factor, idx) => (
+                                    <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <div className="flex items-center gap-2">
+                                            <span className={`text-lg font-bold ${factor.score >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                                                {factor.score >= 0 ? '+' : ''}{factor.score}
+                                            </span>
+                                            <span className="font-medium text-gray-700">{factor.name}</span>
+                                        </div>
+                                        <span className="text-sm text-gray-500 max-w-[200px] text-right">{factor.detail}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Recommendations Section */}
+                            <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                <ArrowTrendingUpIcon className="h-5 w-5 text-blue-500" />
+                                Recommendations to Improve
+                            </h4>
+                            <div className="space-y-2">
+                                {selectedFitData.recommendations?.map((rec, idx) => (
+                                    <div key={idx} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+                                        <span className="text-blue-600 font-bold">{idx + 1}.</span>
+                                        <span className="text-gray-700">{rec}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Detailed Explanation Section */}
+                            {selectedFitData.explanation && (
+                                <>
+                                    <h4 className="font-bold text-gray-800 mb-4 mt-6 flex items-center gap-2">
+                                        📋 Detailed Analysis
+                                    </h4>
+                                    <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                        <ReactMarkdown
+                                            className="prose prose-sm max-w-none prose-blue text-gray-700"
+                                            remarkPlugins={[remarkGfm]}
+                                            components={{
+                                                p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+                                                strong: ({ node, ...props }) => <strong className="font-bold text-gray-900" {...props} />
+                                            }}
+                                        >
+                                            {selectedFitData.explanation}
+                                        </ReactMarkdown>
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

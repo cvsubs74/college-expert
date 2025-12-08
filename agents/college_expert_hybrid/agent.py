@@ -6,12 +6,13 @@ Uses the Knowledge Base Manager Universities Cloud Function for fast, accurate u
 import os
 from typing import List
 from google.adk.agents import LlmAgent, SequentialAgent
-from google.adk.tools import AgentTool
+from google.adk.tools import AgentTool, FunctionTool
 from google import genai
 from google.genai import types
 
 # Import logging
 from .tools.logging_utils import log_agent_entry, log_agent_exit
+from .tools.tools import calculate_college_fit, recalculate_all_fits
 from pydantic import BaseModel, Field
 
 # Import sub-agents
@@ -73,8 +74,27 @@ MasterReasoningAgent = LlmAgent(
        → Step 2: Call UniversityKnowledgeAnalyst to search universities
        → Step 3: Compare profile data against KB university data
        → NEVER use general knowledge - only use data from both agents
+    
+    3. **College Fit Analysis** ("analyze fit", "what is my fit", "how do I match", "fit for [university]"):
+       → Call calculate_college_fit tool with:
+         - user_email: Extract from [USER_EMAIL: xxx]
+         - university_id: Convert name to snake_case (e.g., "Stanford" → "stanford_university")
+         - intended_major: Optional, extract if mentioned
+       → The tool automatically:
+         - Returns cached fit if already calculated (saves time)
+         - Stores the result in the user's profile for future reference
+       → Present fit results including:
+         - Fit Category (SAFETY, TARGET, REACH, SUPER_REACH)
+         - Match Percentage
+         - Factor breakdown with scores (GPA, Tests, Acceptance Rate, Course Rigor, Major Fit, Activities, Early Action)
+         - Specific recommendations
+    
+    4. **Profile Updated / Recalculate All Fits** ("I updated my profile", "recalculate fits", "refresh my fit analysis"):
+       → Call recalculate_all_fits(user_email)
+       → This recalculates fit for ALL universities in the user's college list
+       → Present summary of updated fit categories
        
-    3. **Deep/Nuanced Research** ("recent news", "lab details", "student vibe"):
+    5. **Deep/Nuanced Research** ("recent news", "lab details", "student vibe"):
        → Call DeepResearchAgent
        → Use for questions that structured data cannot answer
        → Combine with KB data if relevant
@@ -89,20 +109,31 @@ MasterReasoningAgent = LlmAgent(
     → UniversityKnowledgeAnalyst("UCLA")
     → Compare GPA, scores, activities from profile against UCLA's requirements from KB
     
+    ✅ "Analyze my fit for Princeton"
+    → calculate_college_fit(user_email="user@email.com", university_id="princeton_university")
+    → Present fit category, score breakdown, and recommendations
+    
+    ✅ "I just updated my profile, recalculate my fits"
+    → recalculate_all_fits(user_email="user@email.com")
+    → Present updated fit categories for all universities
+    
     ✅ "What is the vibe of the CS dorms at Berkeley?"
     → DeepResearchAgent("Berkeley CS dorm culture reviews")
     
     **CRITICAL RULES:**
     
     1. For personalized questions: MUST call BOTH agents, never just one
-    2. ONLY use data from knowledge base search results
-    3. NEVER add universities not in search results
-    4. Don't ask for clarification - search and answer
+    2. For fit analysis: ALWAYS use calculate_college_fit tool - it handles caching automatically
+    3. ONLY use data from knowledge base search results
+    4. NEVER add universities not in search results
+    5. Don't ask for clarification - search and answer
     """,
     tools=[
         AgentTool(StudentProfileAgent), 
         AgentTool(UniversityKnowledgeAnalyst),
-        AgentTool(DeepResearchAgent)
+        AgentTool(DeepResearchAgent),
+        FunctionTool(calculate_college_fit),
+        FunctionTool(recalculate_all_fits)
     ],
     output_key="agent_response",
     before_model_callback=log_agent_entry,
