@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet } from 'react-router-dom';
-import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon } from '@heroicons/react/24/outline';
+import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
+import UniversityExplorer from './pages/UniversityExplorer';
 import LandingPage from './pages/LandingPage';
 import ApproachSelector from './pages/ApproachSelector';
+import CultureMatch from './pages/CultureMatch';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import ApproachIndicator from './components/ApproachIndicator';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -57,6 +59,26 @@ function Navigation() {
               >
                 <ChatBubbleLeftRightIcon className="h-5 w-5 mr-2" />
                 AI Counselor
+              </Link>
+              <Link
+                to="/universities"
+                className={`${isActive('/universities')
+                  ? 'border-primary text-gray-900'
+                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+              >
+                <BuildingLibraryIcon className="h-5 w-5 mr-2" />
+                UniInsight
+              </Link>
+              <Link
+                to="/culture-match"
+                className={`${isActive('/culture-match')
+                  ? 'border-primary text-gray-900'
+                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+              >
+                <SparklesIcon className="h-5 w-5 mr-2" />
+                Vibe Match
               </Link>
               {/* Knowledge Base - Only visible to admin */}
               {currentUser?.email === 'cvsubs@gmail.com' && (
@@ -139,6 +161,8 @@ function App() {
             >
               <Route path="/profile" element={<Profile />} />
               <Route path="/chat" element={<Chat />} />
+              <Route path="/universities" element={<UniversityExplorer />} />
+              <Route path="/culture-match" element={<CultureMatch />} />
               <Route path="/knowledge-base" element={<KnowledgeBase />} />
             </Route>
           </Routes>

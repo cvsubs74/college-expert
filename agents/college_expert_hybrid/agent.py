@@ -17,6 +17,7 @@ from pydantic import BaseModel, Field
 # Import sub-agents
 from .sub_agents.student_profile_agent.agent import StudentProfileAgent
 from .sub_agents.university_knowledge_analyst.agent import UniversityKnowledgeAnalyst
+from .sub_agents.deep_research_agent.agent import DeepResearchAgent
 
 # Configure logging
 import logging
@@ -72,6 +73,11 @@ MasterReasoningAgent = LlmAgent(
        → Step 2: Call UniversityKnowledgeAnalyst to search universities
        → Step 3: Compare profile data against KB university data
        → NEVER use general knowledge - only use data from both agents
+       
+    3. **Deep/Nuanced Research** ("recent news", "lab details", "student vibe"):
+       → Call DeepResearchAgent
+       → Use for questions that structured data cannot answer
+       → Combine with KB data if relevant
     
     **EXAMPLES:**
     
@@ -83,10 +89,8 @@ MasterReasoningAgent = LlmAgent(
     → UniversityKnowledgeAnalyst("UCLA")
     → Compare GPA, scores, activities from profile against UCLA's requirements from KB
     
-    ✅ "Should I apply to UC Berkeley?"
-    → StudentProfileAgent(email)
-    → UniversityKnowledgeAnalyst("UC Berkeley")
-    → Analyze fit based on BOTH results
+    ✅ "What is the vibe of the CS dorms at Berkeley?"
+    → DeepResearchAgent("Berkeley CS dorm culture reviews")
     
     **CRITICAL RULES:**
     
@@ -97,7 +101,8 @@ MasterReasoningAgent = LlmAgent(
     """,
     tools=[
         AgentTool(StudentProfileAgent), 
-        AgentTool(UniversityKnowledgeAnalyst)
+        AgentTool(UniversityKnowledgeAnalyst),
+        AgentTool(DeepResearchAgent)
     ],
     output_key="agent_response",
     before_model_callback=log_agent_entry,
