@@ -12,7 +12,7 @@ from google.genai import types
 
 # Import logging
 from .tools.logging_utils import log_agent_entry, log_agent_exit
-from .tools.tools import calculate_college_fit, recalculate_all_fits
+from .tools.tools import calculate_college_fit, recalculate_all_fits, get_college_list, list_valid_university_ids
 from pydantic import BaseModel, Field
 
 # Import sub-agents
@@ -93,11 +93,36 @@ MasterReasoningAgent = LlmAgent(
        → Call recalculate_all_fits(user_email)
        → This recalculates fit for ALL universities in the user's college list
        → Present summary of updated fit categories
+       → Present summary of updated fit categories
        
-    5. **Deep/Nuanced Research** ("recent news", "lab details", "student vibe"):
+       
+    5. **College List Management** ("show my list", "my colleges", "what schools did I save"):
+       → Call get_college_list(user_email) to get the schools and their calculated fit
+       → The response includes fit factors like "GPA Match: 20", "Course Rigor: 16"
+       → Present the list clearly with fit categories
+       
+    6. **Why Questions / Explain Fit** ("why is X a REACH", "why these schools", "explain my fit"):
+       → IMPORTANT: Check the CONVERSATION HISTORY provided in the request - it may contain the college list already
+       → If the list was shown previously in conversation history, use that data directly - DO NOT call get_college_list again
+       → If no prior context, call get_college_list(user_email) first
+       → Call StudentProfileAgent(user_email) to get the student's academic stats
+       → ANSWER the "why" question by comparing:
+         * Student's stats (GPA, SAT/ACT) from StudentProfileAgent
+         * University requirements from knowledge base
+         * Fit factors from the college list response
+       → Example answer: "Berkeley is a REACH because your GPA (3.8) is slightly below their average (3.9), and their 11% acceptance rate makes it highly selective."
+       
+    7. **Deep/Nuanced Research** ("recent news", "lab details", "student vibe"):
        → Call DeepResearchAgent
        → Use for questions that structured data cannot answer
        → Combine with KB data if relevant
+    
+    **UNDERSTANDING CONVERSATION HISTORY:**
+    
+    The user's message may include a "CONVERSATION HISTORY:" section at the start.
+    This contains previous exchanges from the current chat session.
+    USE THIS CONTEXT to understand references like "these colleges" or "my list".
+    Do NOT ask the user to clarify if the answer is in the history.
     
     **EXAMPLES:**
     
@@ -110,12 +135,15 @@ MasterReasoningAgent = LlmAgent(
     → Compare GPA, scores, activities from profile against UCLA's requirements from KB
     
     ✅ "Analyze my fit for Princeton"
+    → FIRST: list_valid_university_ids() to get correct ID format (cached after first call)
+    → Find "princeton_university" in the list
     → calculate_college_fit(user_email="user@email.com", university_id="princeton_university")
     → Present fit category, score breakdown, and recommendations
     
-    ✅ "I just updated my profile, recalculate my fits"
-    → recalculate_all_fits(user_email="user@email.com")
-    → Present updated fit categories for all universities
+    ✅ "Why are these colleges REACH?" (after showing list)
+    → Read CONVERSATION HISTORY to find which colleges were shown
+    → Call StudentProfileAgent(email) if not already loaded
+    → Explain using fit factors from history + profile stats
     
     ✅ "What is the vibe of the CS dorms at Berkeley?"
     → DeepResearchAgent("Berkeley CS dorm culture reviews")
@@ -123,17 +151,24 @@ MasterReasoningAgent = LlmAgent(
     **CRITICAL RULES:**
     
     1. For personalized questions: MUST call BOTH agents, never just one
-    2. For fit analysis: ALWAYS use calculate_college_fit tool - it handles caching automatically
-    3. ONLY use data from knowledge base search results
-    4. NEVER add universities not in search results
-    5. Don't ask for clarification - search and answer
+    2. For fit analysis: FIRST call list_valid_university_ids() to get exact university IDs
+       - NEVER guess or generate university IDs! Use only IDs from the list
+       - Example: "new_york_university" NOT "new_york_university_stern_school"
+       - The list is cached so subsequent calls are instant
+    3. ALWAYS use calculate_college_fit tool - it handles caching automatically
+    4. ONLY use data from knowledge base search results
+    5. NEVER add universities not in search results
+    6. READ CONVERSATION HISTORY before asking for clarification
+    7. When answering "why" questions, ALWAYS provide specific data (GPA, scores, acceptance rates)
     """,
     tools=[
         AgentTool(StudentProfileAgent), 
         AgentTool(UniversityKnowledgeAnalyst),
         AgentTool(DeepResearchAgent),
         FunctionTool(calculate_college_fit),
-        FunctionTool(recalculate_all_fits)
+        FunctionTool(recalculate_all_fits),
+        FunctionTool(get_college_list),
+        FunctionTool(list_valid_university_ids)
     ],
     output_key="agent_response",
     before_model_callback=log_agent_entry,

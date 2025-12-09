@@ -9,6 +9,7 @@ import requests
 from typing import Dict, List, Any, Optional
 from google import genai
 from google.genai import types
+from google.adk.tools import ToolContext  # ADK ToolContext for session state access
 
 # Configure logging
 logging.basicConfig(
@@ -28,6 +29,9 @@ PROFILE_MANAGER_ES_URL = os.environ.get(
     'PROFILE_MANAGER_ES_URL', 
     'https://profile-manager-es-pfnwjfp26a-ue.a.run.app'
 )
+
+# Note: Profile caching is now handled via ADK ToolContext.state['temp:student_profile']
+# for session-scoped data that persists across tool calls within the same agent invocation.
 
 
 def search_universities(
@@ -131,12 +135,34 @@ def search_universities(
         logger.info(f"   URL: {url}")
         logger.info(f"="*60)
         
-        response = requests.post(url, json=data, headers=headers, timeout=30)
-        response.raise_for_status()
+        # Retry logic to handle Elasticsearch cold starts
+        import time
+        max_retries = 3
+        result = None
         
-        result = response.json()
-        logger.info(f"   Response success: {result.get('success')}")
-        logger.info(f"   Results count: {result.get('total', 0)}")
+        for attempt in range(max_retries):
+            try:
+                response = requests.post(url, json=data, headers=headers, timeout=45)  # Increased timeout
+                response.raise_for_status()
+                result = response.json()
+                
+                if result.get("success"):
+                    break  # Success, exit retry loop
+                elif attempt < max_retries - 1:
+                    # If not successful and not last attempt, retry after delay
+                    wait_time = 2 ** attempt  # Exponential backoff: 1s, 2s, 4s
+                    logger.warning(f"   Search attempt {attempt + 1} failed, retrying in {wait_time}s...")
+                    time.sleep(wait_time)
+            except requests.exceptions.Timeout:
+                if attempt < max_retries - 1:
+                    wait_time = 2 ** attempt
+                    logger.warning(f"   Request timeout on attempt {attempt + 1}, retrying in {wait_time}s...")
+                    time.sleep(wait_time)
+                else:
+                    raise
+        
+        logger.info(f"   Response success: {result.get('success') if result else False}")
+        logger.info(f"   Results count: {result.get('total', 0) if result else 0}")
         
         if result.get("success"):
             universities = []
@@ -193,6 +219,94 @@ def search_universities(
             "success": False,
             "error": str(e),
             "message": f"Search failed: {str(e)}"
+        }
+
+
+def list_valid_university_ids(tool_context: ToolContext = None) -> Dict[str, Any]:
+    """
+    Get a list of all valid university IDs in the knowledge base.
+    
+    IMPORTANT: Call this tool BEFORE calculating fit analysis to get the correct
+    university ID format. The agent should NOT guess or generate university IDs - 
+    always use the exact IDs from this list.
+    
+    The result is cached in session state so repeated calls are fast.
+    
+    Returns:
+        Dictionary with:
+        - success: True if retrieved successfully
+        - universities: List of {id, name} objects
+        - total: Number of universities
+        
+    Example Response:
+        {
+            "success": True,
+            "universities": [
+                {"id": "new_york_university", "name": "New York University"},
+                {"id": "stanford_university", "name": "Stanford University"},
+                ...
+            ],
+            "total": 50
+        }
+    """
+    try:
+        logger.info(f"="*60)
+        logger.info(f"📋 TOOL: list_valid_university_ids")
+        logger.info(f"="*60)
+        
+        # Check cache first - use session-scoped key (no temp: prefix) for persistence across turns
+        cache_key = '_cache:valid_university_ids'
+        if tool_context and hasattr(tool_context, 'state'):
+            cached_list = tool_context.state.get(cache_key)
+            if cached_list:
+                logger.info(f"   Using cached university list ({cached_list.get('total', 0)} universities)")
+                return cached_list
+        
+        # Fetch from knowledge base
+        url = f"{KNOWLEDGE_BASE_UNIVERSITIES_URL}/"
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        
+        result = response.json()
+        
+        if result.get("success"):
+            universities = result.get("universities", [])
+            # Create a simplified list with just id and name
+            uni_list = [
+                {
+                    "id": u.get("university_id"),
+                    "name": u.get("official_name")
+                }
+                for u in universities if u.get("university_id")
+            ]
+            
+            response_data = {
+                "success": True,
+                "universities": uni_list,
+                "total": len(uni_list),
+                "message": f"Found {len(uni_list)} universities in knowledge base"
+            }
+            
+            # Cache in session state
+            if tool_context and hasattr(tool_context, 'state'):
+                tool_context.state[cache_key] = response_data
+                logger.info(f"   Cached university list in session state")
+            
+            logger.info(f"   Retrieved {len(uni_list)} universities")
+            return response_data
+        else:
+            return {
+                "success": False,
+                "error": result.get("error", "Failed to list universities"),
+                "universities": []
+            }
+            
+    except Exception as e:
+        logger.error(f"List universities failed: {e}")
+        return {
+            "success": False,
+            "error": str(e),
+            "universities": []
         }
 
 
@@ -290,6 +404,83 @@ def list_universities() -> Dict[str, Any]:
             "success": False,
             "error": str(e),
             "message": f"Failed to list universities: {str(e)}"
+        }
+
+
+def get_college_list(user_email: str) -> Dict[str, Any]:
+    """
+    Retrieve the user's current college list.
+    
+    Args:
+        user_email: The user's email address (e.g., user@gmail.com)
+        
+    Returns:
+        Dictionary with college list items
+    """
+    try:
+        logger.info(f"="*60)
+        logger.info(f"📋 TOOL: get_college_list")
+        logger.info(f"   User Email: {user_email}")
+        logger.info(f"="*60)
+        
+        # Use endpoint directly if available, or fall back to profile search
+        # Based on backend code, it's a separate endpoint: /get-college-list
+        url = f"{PROFILE_MANAGER_ES_URL}/get-college-list"
+        
+        headers = {
+            "Content-Type": "application/json",
+            "X-User-Email": user_email
+        }
+        
+        # Support both GET params and likely POST body in backend
+        params = {"user_email": user_email}
+        
+        response = requests.get(url, params=params, headers=headers, timeout=30)
+        response.raise_for_status()
+        
+        result = response.json()
+        
+        if result.get("success"):
+            college_list = result.get("college_list", [])
+            logger.info(f"   Found {len(college_list)} colleges")
+            
+            # Format list for easy reading
+            formatted_list = []
+            for item in college_list:
+                uni_name = item.get('university_name', 'Unknown University')
+                fit_data = item.get('fit_analysis', {})
+                fit = fit_data.get('fit_category', 'Not Analyzed')
+                
+                # Add key factors if available to explain "Why"
+                factors = fit_data.get('factors', [])
+                factor_summary = ""
+                if factors:
+                    # Get top 2 impactful factors
+                    top_factors = sorted(factors, key=lambda x: abs(x.get('score', 0)), reverse=True)[:2]
+                    factor_strs = [f"{f.get('name')}: {f.get('score')}" for f in top_factors]
+                    factor_summary = f" (Key Factors: {', '.join(factor_strs)})"
+                
+                formatted_list.append(f"- {uni_name} [Fit: {fit}]{factor_summary}")
+            
+            return {
+                "success": True,
+                "college_list": college_list,
+                "formatted_list": "\n".join(formatted_list) if formatted_list else "College list is empty",
+                "count": len(college_list)
+            }
+        else:
+            return {
+                "success": False,
+                "error": result.get("error", "Unknown error"),
+                "message": f"Failed to retrieve college list: {result.get('error')}"
+            }
+            
+    except Exception as e:
+        logger.error(f"Get college list failed: {e}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"Service unavailable: {str(e)}"
         }
 
 
@@ -691,7 +882,8 @@ def calculate_college_fit(
     user_email: str,
     university_id: str,
     intended_major: str = "",
-    force_recalculate: bool = False
+    force_recalculate: bool = False,
+    tool_context: ToolContext = None  # ADK provides this automatically
 ) -> Dict[str, Any]:
     """
     Calculate college fit using deterministic 7-factor scoring algorithm.
@@ -735,10 +927,27 @@ def calculate_college_fit(
             return cached_fit
     
     try:
-        # Step 1: Fetch student profile
-        profile_result = search_user_profile(user_email)
+        # Step 1: Fetch student profile using ADK session state for caching
+        profile_result = None
+        profile_cache_key = '_cache:student_profile'  # Session-scoped (no temp: prefix) for cross-turn persistence
+        
+        # Check if profile is cached in session state
+        if tool_context and hasattr(tool_context, 'state'):
+            cached_profile = tool_context.state.get(profile_cache_key)
+            if cached_profile:
+                logger.info(f"[FIT] Using ADK session-cached profile for {user_email}")
+                profile_result = cached_profile
+        
+        # If not cached, fetch fresh and cache in session state
+        if not profile_result:
+            logger.info(f"[FIT] Fetching fresh profile for {user_email}")
+            profile_result = search_user_profile(user_email)
+            # Cache in ADK session state if context is available
+            if tool_context and hasattr(tool_context, 'state'):
+                tool_context.state[profile_cache_key] = profile_result
+                logger.info(f"[FIT] Cached profile in ADK session state")
+        
         logger.info(f"[FIT] Profile result success: {profile_result.get('success')}")
-        logger.info(f"[FIT] Profile result keys: {list(profile_result.keys())}")
         
         # search_user_profile returns 'profile_data' not 'content'
         if not profile_result.get('success') or not profile_result.get('profile_data'):
@@ -753,10 +962,27 @@ def calculate_college_fit(
         
         logger.info(f"[FIT] Parsed profile: GPA={student_profile.get('weighted_gpa')}, SAT={student_profile.get('sat_score')}")
         
-        # Step 2: Fetch university data
-        university_data = get_university(university_id)
+        # Step 2: Fetch university data (with caching)
+        university_data = None
+        uni_cache_key = f'_cache:uni_{university_id}'  # Session-scoped, cache per university
+        
+        # Check if university data is cached in session state
+        if tool_context and hasattr(tool_context, 'state'):
+            cached_uni = tool_context.state.get(uni_cache_key)
+            if cached_uni:
+                logger.info(f"[FIT] Using ADK session-cached university data for {university_id}")
+                university_data = cached_uni
+        
+        # If not cached, fetch fresh and cache in session state
+        if not university_data:
+            logger.info(f"[FIT] Fetching fresh university data for {university_id}")
+            university_data = get_university(university_id)
+            # Cache in ADK session state if context is available
+            if tool_context and hasattr(tool_context, 'state'):
+                tool_context.state[uni_cache_key] = university_data
+                logger.info(f"[FIT] Cached university data in ADK session state")
+        
         logger.info(f"[FIT] University data success: {university_data.get('success')}")
-        logger.info(f"[FIT] University data keys: {list(university_data.keys())}")
         
         # get_university returns {success, university}, where university contains the profile
         if not university_data.get('success') or not university_data.get('university'):

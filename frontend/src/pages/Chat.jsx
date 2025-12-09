@@ -86,15 +86,18 @@ Question: ${userMessage}`;
       if (!sessionId) {
         console.log('[Chat] Creating new session (first message)');
         response = await startSession(knowledgeBaseQuery, currentUser?.email);
-        // Store session ID for subsequent messages
-        if (response.sessionId) {
-          setSessionId(response.sessionId);
-          console.log('[Chat] Session created:', response.sessionId);
+        // Store session ID for subsequent messages - API returns 'id' not 'sessionId'
+        const newSessionId = response.id || response.sessionId;
+        if (newSessionId) {
+          setSessionId(newSessionId);
+          console.log('[Chat] Session created:', newSessionId);
+        } else {
+          console.error('[Chat] No session ID in response:', response);
         }
       } else {
-        // Subsequent messages: use existing session
+        // Subsequent messages: use existing session, pass history
         console.log('[Chat] Sending message to existing session:', sessionId);
-        response = await sendMessage(sessionId, knowledgeBaseQuery, currentUser?.email);
+        response = await sendMessage(sessionId, knowledgeBaseQuery, currentUser?.email, newMessages);
       }
 
       // Extract response text and suggested questions
@@ -147,15 +150,18 @@ Question: ${question}`;
       if (!sessionId) {
         console.log('[Chat] Creating new session (suggested question - first message)');
         response = await startSession(knowledgeBaseQuery, currentUser?.email);
-        // Store session ID for subsequent messages
-        if (response.sessionId) {
-          setSessionId(response.sessionId);
-          console.log('[Chat] Session created:', response.sessionId);
+        // Store session ID for subsequent messages - API returns 'id' not 'sessionId'
+        const newSessionId = response.id || response.sessionId;
+        if (newSessionId) {
+          setSessionId(newSessionId);
+          console.log('[Chat] Session created:', newSessionId);
+        } else {
+          console.error('[Chat] No session ID in response:', response);
         }
       } else {
-        // Subsequent messages: use existing session
+        // Subsequent messages: use existing session, pass history
         console.log('[Chat] Sending suggested question to existing session:', sessionId);
-        response = await sendMessage(sessionId, knowledgeBaseQuery, currentUser?.email);
+        response = await sendMessage(sessionId, knowledgeBaseQuery, currentUser?.email, newMessages);
       }
 
       // Extract response text and suggested questions

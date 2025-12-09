@@ -137,7 +137,7 @@ export const startSession = async (message, userEmail = null) => {
  * Uses ADK deployment pattern: POST /run
  * Matches integration test pattern
  */
-export const sendMessage = async (sessionId, message, userEmail = null) => {
+export const sendMessage = async (sessionId, message, userEmail = null, history = []) => {
   try {
     console.log('[API] Sending message to session:', sessionId);
 
@@ -151,10 +151,18 @@ export const sendMessage = async (sessionId, message, userEmail = null) => {
     console.log(`[API] Using approach: ${approach}`);
     console.log(`[API] Agent URL: ${agentUrl}`);
 
-    // Prepend user email to message if provided
+    // Construct the full message with explicit context
     let fullMessage = message;
+
+    // Add user email context
     if (userEmail) {
-      fullMessage = `[USER_EMAIL: ${userEmail}]\n\n${message}`;
+      fullMessage = `[USER_EMAIL: ${userEmail}]\n\n${fullMessage}`;
+    }
+
+    // Add conversation history context if provided
+    if (history && history.length > 0) {
+      const historyText = history.map(msg => `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.content}`).join('\n\n');
+      fullMessage = `CONVERSATION HISTORY:\n${historyText}\n\nCURRENT REQUEST:\n${fullMessage}`;
     }
 
     // Send message using ADK /run endpoint - matches integration test
@@ -229,7 +237,7 @@ export const uploadStudentProfile = async (file, userEmail) => {
     // Call the profile manager cloud function with dynamic URL
     const baseUrl = getProfileManagerUrl();
     const response = await axios.post(`${baseUrl}/upload-profile`, formData, {
-      timeout: 60000,
+      timeout: 180000,
       headers: {
         'Content-Type': 'multipart/form-data',
         'X-User-Email': userEmail
@@ -254,7 +262,7 @@ export const listStudentProfiles = async (userEmail) => {
 
     const baseUrl = getProfileManagerUrl();
     const response = await axios.get(`${baseUrl}/list-profiles`, {
-      timeout: 60000,
+      timeout: 180000,
       params: { user_email: userEmail },  // Use user_email and /list-profiles endpoint
       headers: { 'X-User-Email': userEmail }
     });
@@ -273,7 +281,7 @@ export const deleteStudentProfile = async (documentId, userEmail, filename) => {
   try {
     const baseUrl = getProfileManagerUrl();
     const response = await axios.delete(`${baseUrl}/delete-profile`, {
-      timeout: 60000,
+      timeout: 180000,
       data: {
         document_name: documentId,
         user_email: userEmail,
@@ -299,7 +307,7 @@ export const getStudentProfileContent = async (userEmail, filename) => {
       user_email: userEmail,
       filename: filename
     }, {
-      timeout: 60000,
+      timeout: 180000,
       headers: { 'X-User-Email': userEmail }
     });
     return response.data;
@@ -422,7 +430,7 @@ export const uploadKnowledgeBaseDocument = async (file, userId) => {
 
     const baseUrl = getKnowledgeBaseUrl();
     const response = await axios.post(`${baseUrl}/upload-document`, formData, {
-      timeout: 60000,
+      timeout: 180000,
       headers: {
         'Content-Type': 'multipart/form-data',
         ...(userId && { 'X-User-Email': userId })
@@ -486,7 +494,7 @@ export const listKnowledgeBaseDocuments = async (userId) => {
 
     // Other approaches use /documents endpoint
     const response = await axios.get(`${baseUrl}/documents`, {
-      timeout: 60000,
+      timeout: 180000,
       params: userId ? { user_id: userId } : {},
       headers: userId ? { 'X-User-Email': userId } : {}
     });
@@ -511,7 +519,7 @@ export const deleteKnowledgeBaseDocument = async (documentName, filename, userId
     // Hybrid approach uses DELETE method with university_id
     if (approach === 'hybrid') {
       const response = await axios.delete(baseUrl, {
-        timeout: 60000,
+        timeout: 180000,
         data: { university_id: documentName }
       });
       return response.data;
@@ -522,7 +530,7 @@ export const deleteKnowledgeBaseDocument = async (documentName, filename, userId
       file_name: documentName,
       ...(userId && { user_id: userId })
     }, {
-      timeout: 60000,
+      timeout: 180000,
       headers: userId ? { 'X-User-Email': userId } : {}
     });
     return response.data;
@@ -613,7 +621,7 @@ export const listVertexAIDocuments = async (userId) => {
   try {
     const baseUrl = VERTEXAI_KNOWLEDGE_BASE_URL;
     const response = await axios.get(`${baseUrl}/documents`, {
-      timeout: 60000,
+      timeout: 180000,
       params: userId ? { user_id: userId } : {},
       headers: userId ? { 'X-User-Email': userId } : {}
     });
@@ -632,7 +640,7 @@ export const listVertexAIProfiles = async (userId) => {
   try {
     const baseUrl = VERTEXAI_PROFILE_MANAGER_URL;
     const response = await axios.get(`${baseUrl}/profiles`, {
-      timeout: 60000,
+      timeout: 180000,
       params: { user_email: userId },
       headers: { 'X-User-Email': userId }
     });
@@ -653,7 +661,7 @@ export const deleteVertexAIDocument = async (documentName, displayName, userId) 
     const response = await axios.post(`${baseUrl}/delete`, {
       file_name: documentName
     }, {
-      timeout: 60000,
+      timeout: 180000,
       headers: userId ? { 'X-User-Email': userId } : {}
     });
     return response.data;
@@ -673,7 +681,7 @@ export const deleteVertexAIProfile = async (documentId, userId, displayName) => 
     const response = await axios.post(`${baseUrl}/delete`, {
       file_name: documentId
     }, {
-      timeout: 60000,
+      timeout: 180000,
       headers: { 'X-User-Email': userId }
     });
     return response.data;
@@ -697,7 +705,7 @@ export const getCollegeList = async (userEmail) => {
     const baseUrl = getProfileManagerUrl();
     const response = await axios.get(`${baseUrl}/get-college-list`, {
       params: { user_email: userEmail },
-      timeout: 30000,
+      timeout: 180000,
       headers: { 'X-User-Email': userEmail }
     });
     return response.data;
@@ -724,7 +732,7 @@ export const updateCollegeList = async (userEmail, action, university, intendedM
       university: university,
       intended_major: intendedMajor
     }, {
-      timeout: 30000,
+      timeout: 180000,
       headers: { 'X-User-Email': userEmail }
     });
     return response.data;
@@ -749,7 +757,7 @@ export const updateFitAnalysis = async (userEmail, universityId, fitAnalysis) =>
       university_id: universityId,
       fit_analysis: fitAnalysis
     }, {
-      timeout: 30000,
+      timeout: 180000,
       headers: { 'X-User-Email': userEmail }
     });
     return response.data;
