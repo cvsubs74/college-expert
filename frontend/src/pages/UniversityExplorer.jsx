@@ -20,8 +20,10 @@ import {
     ExclamationTriangleIcon,
     SparklesIcon,
     GlobeAltIcon,
-    ArrowsUpDownIcon
+    ArrowsUpDownIcon,
+    StarIcon
 } from '@heroicons/react/24/outline';
+import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList } from '../services/api';
@@ -1347,6 +1349,44 @@ const UniversityExplorer = () => {
             {/* Loading State */}
             {loading && <LoadingSkeleton />}
 
+            {/* Tab Navigation */}
+            {!loading && !error && (
+                <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-1 flex gap-2">
+                    <button
+                        onClick={() => setActiveView('list')}
+                        className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'list'
+                            ? 'bg-blue-600 text-white shadow-sm'
+                            : 'text-gray-600 hover:bg-gray-100'
+                            }`}
+                    >
+                        <BuildingLibraryIcon className="h-5 w-5" />
+                        Browse All
+                    </button>
+                    <button
+                        onClick={() => setActiveView('favorites')}
+                        className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'favorites'
+                            ? 'bg-blue-600 text-white shadow-sm'
+                            : 'text-gray-600 hover:bg-gray-100'
+                            }`}
+                    >
+                        {activeView === 'favorites' ? (
+                            <StarIconSolid className="h-5 w-5" />
+                        ) : (
+                            <StarIcon className="h-5 w-5" />
+                        )}
+                        My Favorites
+                        {myCollegeList.length > 0 && (
+                            <span className={`ml-1 px-2 py-0.5 rounded-full text-xs font-semibold ${activeView === 'favorites'
+                                ? 'bg-white/20 text-white'
+                                : 'bg-blue-100 text-blue-700'
+                                }`}>
+                                {myCollegeList.length}
+                            </span>
+                        )}
+                    </button>
+                </div>
+            )}
+
             {/* Main Content */}
             {!loading && !error && (
                 <>
@@ -1540,6 +1580,80 @@ const UniversityExplorer = () => {
                                     </div>
                                 )}
                             </div>
+                        </div>
+                    )}
+
+                    {activeView === 'favorites' && (
+                        <div className="space-y-6">
+                            {/* Favorites Header */}
+                            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                                            <StarIconSolid className="h-6 w-6 text-yellow-500" />
+                                            My Favorites
+                                        </h2>
+                                        <p className="text-gray-500 text-sm mt-1">
+                                            {myCollegeList.length === 0
+                                                ? "You haven't added any universities yet"
+                                                : `${myCollegeList.length} ${myCollegeList.length === 1 ? 'university' : 'universities'} saved`}
+                                        </p>
+                                    </div>
+                                    {myCollegeList.length > 0 && (
+                                        <button
+                                            onClick={() => setActiveView('list')}
+                                            className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 flex items-center gap-2"
+                                        >
+                                            <BuildingLibraryIcon className="h-4 w-4" />
+                                            Browse More
+                                        </button>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Empty State */}
+                            {myCollegeList.length === 0 && (
+                                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-12 text-center border border-blue-100">
+                                    <div className="max-w-md mx-auto">
+                                        <StarIcon className="h-16 w-16 text-blue-300 mx-auto mb-4" />
+                                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                                            Your favorites list is empty
+                                        </h3>
+                                        <p className="text-gray-600 mb-6">
+                                            Browse universities and click the <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-gray-200 text-gray-700 font-bold text-sm mx-1">+</span> button to add them to your favorites.
+                                        </p>
+                                        <button
+                                            onClick={() => setActiveView('list')}
+                                            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
+                                        >
+                                            <BuildingLibraryIcon className="h-5 w-5" />
+                                            Browse Universities
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Favorites Grid */}
+                            {myCollegeList.length > 0 && (
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {myCollegeList.map((uni) => (
+                                        <UniversityCard
+                                            key={uni.id}
+                                            uni={uni}
+                                            onSelect={() => {
+                                                setSelectedUni(uni);
+                                                setActiveView('detail');
+                                            }}
+                                            onCompare={() => handleCompare(uni)}
+                                            onToggleList={() => handleToggleList(uni)}
+                                            onSentimentClick={handleSentimentClick}
+                                            isInList={true}
+                                            isSelectedForCompare={compareList.some(u => u.id === uni.id)}
+                                            sentiment={sentimentData[uni.id]}
+                                        />
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     )}
 
