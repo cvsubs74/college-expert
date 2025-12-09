@@ -31,6 +31,92 @@ ES_INDEX_NAME = 'knowledgebase_universities'
 RESEARCH_DIR = Path(__file__).parent.parent / "agents" / "university_profile_collector" / "research"
 
 
+# --- University Acronym Mappings ---
+UNIVERSITY_ACRONYMS = {
+    # California Schools
+    "ucb": "University of California Berkeley",
+    "uc berkeley": "University of California Berkeley",
+    "berkeley": "University of California Berkeley",
+    "ucla": "University of California Los Angeles",
+    "ucsd": "University of California San Diego",
+    "uci": "University of California Irvine",
+    "ucsb": "University of California Santa Barbara",
+    "ucsc": "University of California Santa Cruz",
+    "ucr": "University of California Riverside",
+    "ucd": "University of California Davis",
+    "uc davis": "University of California Davis",
+    "usc": "University of Southern California",
+    "caltech": "California Institute of Technology",
+    "cal tech": "California Institute of Technology",
+    "stanford": "Stanford University",
+    
+    # Ivy League
+    "mit": "Massachusetts Institute of Technology",
+    "harvard": "Harvard University",
+    "yale": "Yale University",
+    "princeton": "Princeton University",
+    "columbia": "Columbia University",
+    "penn": "University of Pennsylvania",
+    "upenn": "University of Pennsylvania",
+    "brown": "Brown University",
+    "dartmouth": "Dartmouth College",
+    "cornell": "Cornell University",
+    
+    # Other Top Schools
+    "duke": "Duke University",
+    "northwestern": "Northwestern University",
+    "nyu": "New York University",
+    "stern": "New York University Stern School of Business",
+    "nyu stern": "New York University Stern School of Business",
+    "umich": "University of Michigan",
+    "michigan": "University of Michigan",
+    "ut austin": "University of Texas Austin",
+    "gtech": "Georgia Institute of Technology",
+    "georgia tech": "Georgia Institute of Technology",
+    "cmu": "Carnegie Mellon University",
+    "carnegie mellon": "Carnegie Mellon University",
+}
+
+
+def get_acronyms_for_university(official_name: str) -> list:
+    """Get common acronyms/nicknames for a university based on its official name."""
+    name_lower = official_name.lower()
+    acronyms = []
+    
+    # Check for matches in our acronym mapping (reverse lookup)
+    for acronym, full_name in UNIVERSITY_ACRONYMS.items():
+        if full_name.lower() in name_lower or name_lower in full_name.lower():
+            acronyms.append(acronym.upper())
+    
+    # Also add common patterns
+    if "california" in name_lower and "berkeley" in name_lower:
+        acronyms.extend(["UCB", "UC Berkeley", "Cal", "Berkeley"])
+    elif "california" in name_lower and "los angeles" in name_lower:
+        acronyms.extend(["UCLA", "UC Los Angeles"])
+    elif "california" in name_lower and "san diego" in name_lower:
+        acronyms.extend(["UCSD", "UC San Diego"])
+    elif "california" in name_lower and "irvine" in name_lower:
+        acronyms.extend(["UCI", "UC Irvine"])
+    elif "california" in name_lower and "davis" in name_lower:
+        acronyms.extend(["UCD", "UC Davis"])
+    elif "california" in name_lower and "santa barbara" in name_lower:
+        acronyms.extend(["UCSB", "UC Santa Barbara"])
+    elif "massachusetts institute" in name_lower:
+        acronyms.extend(["MIT"])
+    elif "southern california" in name_lower:
+        acronyms.extend(["USC", "Trojans"])
+    elif "stanford" in name_lower:
+        acronyms.extend(["Stanford", "Cardinal"])
+    elif "georgia" in name_lower and "technology" in name_lower:
+        acronyms.extend(["Georgia Tech", "GT", "GaTech"])
+    elif "carnegie" in name_lower:
+        acronyms.extend(["CMU", "Carnegie Mellon"])
+    elif "new york university" in name_lower:
+        acronyms.extend(["NYU"])
+    
+    return list(set(acronyms))  # Remove duplicates
+
+
 def get_elasticsearch_client():
     """Initialize Elasticsearch client with extended timeout for ELSER inference."""
     if not ES_CLOUD_ID or not ES_API_KEY:
@@ -52,7 +138,14 @@ def create_searchable_text(profile: dict) -> str:
     # University name and basic info
     if 'metadata' in profile:
         meta = profile['metadata']
-        parts.append(f"University: {meta.get('official_name', '')}")
+        official_name = meta.get('official_name', '')
+        parts.append(f"University: {official_name}")
+        
+        # Add known acronyms/nicknames for better searchability
+        acronyms = get_acronyms_for_university(official_name)
+        if acronyms:
+            parts.append(f"Also known as: {', '.join(acronyms)}")
+        
         if 'location' in meta:
             loc = meta['location']
             parts.append(f"Location: {loc.get('city', '')}, {loc.get('state', '')} ({loc.get('type', '')})")

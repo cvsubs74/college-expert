@@ -1,57 +1,95 @@
-# College Expert Hybrid - Evaluation Suite
+# College Expert Hybrid - Modular Evaluation Suite
 
 ## Overview
 
-This directory contains the **LLM-as-Judge** evaluation suite for the `college_expert_hybrid` agent. 
-Instead of exact text matching, Gemini evaluates responses semantically against criteria.
+This directory contains the **LLM-as-Judge** evaluation suite for the `college_expert_hybrid` agent, organized into modular, category-specific test files.
 
-## Test Categories (30 tests)
+## Directory Structure
 
-| Category | Tests | Description |
-|----------|-------|-------------|
-| Basic Interaction | 2 | Greetings, capability questions |
-| General University Info | 6 | Programs, requirements, acceptance rates |
-| Search & Comparison | 5 | University search, comparisons |
-| Personalized Analysis | 6 | Fit analysis with profile data |
-| Strategic Recommendations | 5 | Safety schools, balanced lists, improvement advice |
-| College List | 1 | College list management |
-| Error Handling | 3 | Unknown schools, vague queries |
-| Multi-Turn | 2 | Follow-up questions, context |
+```
+tests/
+├── run_tests.py          # Main CLI test runner
+├── README.md             # This file
+├── core/
+│   ├── __init__.py       # Core infrastructure (EvalCase, judge, agent runner)
+│   └── report.py         # Markdown report generator
+├── categories/
+│   ├── __init__.py       # Category registry
+│   ├── test_basic.py     # Basic interaction tests (2 tests)
+│   ├── test_university_info.py  # University info tests (6 tests)
+│   ├── test_search.py    # Search & comparison tests (5 tests)
+│   ├── test_fit_analysis.py  # Fit analysis tests (6 tests)
+│   ├── test_recommendations.py  # Strategic recommendations (5 tests)
+│   ├── test_error_handling.py   # Error handling tests (6 tests)
+│   └── test_conversations.py    # Multi-turn conversations (5 convos, 21 turns)
+└── reports/              # Generated markdown reports
+```
 
 ## Usage
 
 ```bash
-# Set API key
+# Set API key first
 export GEMINI_API_KEY=$(gcloud secrets versions access latest \
   --secret="gemini-api-key" --project=college-counselling-478115)
 
-# Run all tests
+# Navigate to agents directory
 cd agents/college_counselor/agents
-python college_expert_hybrid/tests/test_llm_judge.py
+
+# Run all tests
+python college_expert_hybrid/tests/run_tests.py
+
+# Run specific category
+python college_expert_hybrid/tests/run_tests.py --category basic
+python college_expert_hybrid/tests/run_tests.py --category fit_analysis
+python college_expert_hybrid/tests/run_tests.py --category conversations
+
+# List available categories
+python college_expert_hybrid/tests/run_tests.py --list
+
+# Quiet mode (less output)
+python college_expert_hybrid/tests/run_tests.py --category all --quiet
+
+# Skip report generation
+python college_expert_hybrid/tests/run_tests.py --no-report
 ```
 
-## How It Works
+## Available Categories
 
-1. **Agent Invocation**: Each test creates a session and sends a query to the deployed agent
-2. **Response Extraction**: Extracts the final text response from agent events
-3. **LLM Judging**: Gemini evaluates if the response meets semantic criteria
-4. **Scoring**: Pass/fail with 0.0-1.0 score per test case
+| Category | Tests | Description |
+|----------|-------|-------------|
+| `basic` | 2 | Greetings, capabilities |
+| `university_info` | 6 | Programs, requirements, acceptance rates |
+| `search` | 5 | University search, comparisons |
+| `fit_analysis` | 6 | Personalized fit analysis |
+| `recommendations` | 5 | Safety schools, balanced lists |
+| `error_handling` | 6 | Unknown schools, edge cases |
+| `conversations` | 5 (21 turns) | Multi-turn context retention |
+| `all` | 35 total | Run everything |
 
-## Example Criteria
+## Reports
 
-```python
-EvalCase(
-    eval_id="fit_harvard",
-    criteria=[
-        "Mentions Harvard University",
-        "Categorizes as REACH or SUPER_REACH",
-        "Mentions low acceptance rate or selectivity",
-        "Provides advice for improving chances",
-    ]
-)
-```
+After running tests, markdown reports are generated in `reports/`:
+- `latest_{category}.md` - Always points to the most recent run
+- `report_{category}_{timestamp}.md` - Historical reports
 
-## Files
+## Adding New Tests
 
-- `test_llm_judge.py` - Comprehensive LLM-as-judge evaluation suite
-- `README.md` - This documentation
+1. Create a new file in `categories/` or add to an existing file
+2. Define tests using `EvalCase` dataclass:
+   ```python
+   from ..core import EvalCase
+   
+   TESTS = [
+       EvalCase(
+           eval_id="my_test",
+           category="My Category",
+           user_query="What is...",
+           expected_intent="Explain...",
+           criteria=[
+               "Mentions X",
+               "Provides Y",
+           ]
+       ),
+   ]
+   ```
+3. Register in `categories/__init__.py`

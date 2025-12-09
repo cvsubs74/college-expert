@@ -15,6 +15,68 @@ from datetime import datetime, timezone
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# --- University Acronym Mappings ---
+UNIVERSITY_ACRONYMS = {
+    # California Schools
+    "ucb": "University of California Berkeley",
+    "uc berkeley": "University of California Berkeley",
+    "berkeley": "University of California Berkeley",
+    "ucla": "University of California Los Angeles",
+    "ucsd": "University of California San Diego",
+    "uci": "University of California Irvine",
+    "ucsb": "University of California Santa Barbara",
+    "ucsc": "University of California Santa Cruz",
+    "ucr": "University of California Riverside",
+    "ucd": "University of California Davis",
+    "uc davis": "University of California Davis",
+    "usc": "University of Southern California",
+    "caltech": "California Institute of Technology",
+    "cal tech": "California Institute of Technology",
+    "stanford": "Stanford University",
+    
+    # Ivy League
+    "mit": "Massachusetts Institute of Technology",
+    "harvard": "Harvard University",
+    "yale": "Yale University",
+    "princeton": "Princeton University",
+    "columbia": "Columbia University",
+    "penn": "University of Pennsylvania",
+    "upenn": "University of Pennsylvania",
+    "brown": "Brown University",
+    "dartmouth": "Dartmouth College",
+    "cornell": "Cornell University",
+    
+    # Other Top Schools
+    "duke": "Duke University",
+    "northwestern": "Northwestern University",
+    "nyu": "New York University",
+    "stern": "New York University Stern School of Business",
+    "nyu stern": "New York University Stern School of Business",
+    "umich": "University of Michigan",
+    "michigan": "University of Michigan",
+    "ut austin": "University of Texas Austin",
+    "gtech": "Georgia Institute of Technology",
+    "georgia tech": "Georgia Institute of Technology",
+    "cmu": "Carnegie Mellon University",
+    "carnegie mellon": "Carnegie Mellon University",
+}
+
+def expand_acronyms(query: str) -> str:
+    """Expand common university acronyms in query to full names."""
+    query_lower = query.lower()
+    
+    # Check for exact matches first (for short acronyms)
+    for acronym, full_name in UNIVERSITY_ACRONYMS.items():
+        # Match if query IS the acronym or contains the acronym as whole word
+        if query_lower == acronym or f" {acronym} " in f" {query_lower} ":
+            # Add full name to query to improve search relevance
+            expanded = query + f" {full_name}"
+            logger.info(f"Expanded acronym '{acronym}' to: {expanded}")
+            return expanded
+    
+    return query
+
+
 # --- Configuration ---
 ES_CLOUD_ID = os.environ.get('ES_CLOUD_ID')
 ES_API_KEY = os.environ.get('ES_API_KEY')
@@ -108,6 +170,45 @@ def ensure_index_exists(es_client):
 
 
 # --- Text Extraction ---
+def get_acronyms_for_university(official_name: str) -> list:
+    """Get common acronyms/nicknames for a university based on its official name."""
+    name_lower = official_name.lower()
+    acronyms = []
+    
+    # Check for matches in our acronym mapping (reverse lookup)
+    for acronym, full_name in UNIVERSITY_ACRONYMS.items():
+        if full_name.lower() in name_lower or name_lower in full_name.lower():
+            acronyms.append(acronym.upper())
+    
+    # Also add common patterns
+    if "california" in name_lower and "berkeley" in name_lower:
+        acronyms.extend(["UCB", "UC Berkeley", "Cal", "Berkeley"])
+    elif "california" in name_lower and "los angeles" in name_lower:
+        acronyms.extend(["UCLA", "UC Los Angeles"])
+    elif "california" in name_lower and "san diego" in name_lower:
+        acronyms.extend(["UCSD", "UC San Diego"])
+    elif "california" in name_lower and "irvine" in name_lower:
+        acronyms.extend(["UCI", "UC Irvine"])
+    elif "california" in name_lower and "davis" in name_lower:
+        acronyms.extend(["UCD", "UC Davis"])
+    elif "california" in name_lower and "santa barbara" in name_lower:
+        acronyms.extend(["UCSB", "UC Santa Barbara"])
+    elif "massachusetts institute" in name_lower:
+        acronyms.extend(["MIT"])
+    elif "southern california" in name_lower:
+        acronyms.extend(["USC", "Trojans"])
+    elif "stanford" in name_lower:
+        acronyms.extend(["Stanford", "Cardinal"])
+    elif "georgia" in name_lower and "technology" in name_lower:
+        acronyms.extend(["Georgia Tech", "GT", "GaTech"])
+    elif "carnegie" in name_lower:
+        acronyms.extend(["CMU", "Carnegie Mellon"])
+    elif "new york university" in name_lower:
+        acronyms.extend(["NYU"])
+    
+    return list(set(acronyms))  # Remove duplicates
+
+
 def create_searchable_text(profile: dict) -> str:
     """Create a rich text representation of the profile for semantic search."""
     parts = []
@@ -115,7 +216,14 @@ def create_searchable_text(profile: dict) -> str:
     # University name and basic info
     if 'metadata' in profile:
         meta = profile['metadata']
-        parts.append(f"University: {meta.get('official_name', '')}")
+        official_name = meta.get('official_name', '')
+        parts.append(f"University: {official_name}")
+        
+        # Add known acronyms/nicknames for better searchability
+        acronyms = get_acronyms_for_university(official_name)
+        if acronyms:
+            parts.append(f"Also known as: {', '.join(acronyms)}")
+        
         if 'location' in meta:
             loc = meta['location']
             parts.append(f"Location: {loc.get('city', '')}, {loc.get('state', '')} ({loc.get('type', '')})")
@@ -262,6 +370,9 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
     try:
         es_client = get_elasticsearch_client()
         
+        # Expand acronyms in query (MIT -> MIT Massachusetts Institute of Technology)
+        expanded_query = expand_acronyms(query)
+        
         # Build filter clauses
         filter_clauses = []
         if filters:
@@ -283,7 +394,7 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                 "query": {
                     "bool": {
                         "must": [
-                            {"match": {"searchable_text": query}}
+                            {"match": {"searchable_text": expanded_query}}
                         ],
                         "filter": filter_clauses
                     }
@@ -297,11 +408,11 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                     "bool": {
                         "should": [
                             # Semantic search on semantic_content (using ELSER)
-                            {"match": {"semantic_content": {"query": query, "boost": 2.0}}},
+                            {"match": {"semantic_content": {"query": expanded_query, "boost": 2.0}}},
                             # BM25 on searchable_text
-                            {"match": {"searchable_text": {"query": query, "boost": 1.0}}},
+                            {"match": {"searchable_text": {"query": expanded_query, "boost": 1.0}}},
                             # Boost exact name matches
-                            {"match": {"official_name": {"query": query, "boost": 3.0}}}
+                            {"match": {"official_name": {"query": expanded_query, "boost": 3.0}}}
                         ],
                         "filter": filter_clauses,
                         "minimum_should_match": 1
@@ -316,15 +427,38 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                 "query": {
                     "bool": {
                         "must": [
-                            {"match": {"semantic_content": query}}
+                            {"match": {"semantic_content": expanded_query}}
                         ],
                         "filter": filter_clauses
                     }
                 }
             }
         
-        logger.info(f"Executing {search_type} search for: {query}")
-        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        logger.info(f"Executing {search_type} search for: {query} (expanded: {expanded_query})")
+        
+        # Retry logic for Elasticsearch cold starts (408 timeout errors)
+        max_retries = 5
+        retry_delay = 2  # seconds
+        last_error = None
+        
+        for attempt in range(max_retries):
+            try:
+                response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+                break  # Success, exit retry loop
+            except Exception as e:
+                last_error = e
+                if "408" in str(e) or "timeout" in str(e).lower():
+                    if attempt < max_retries - 1:
+                        wait_time = retry_delay * (2 ** attempt)  # Exponential backoff: 2s, 4s, 8s, 16s, 32s
+                        logger.warning(f"ES cold start timeout (attempt {attempt + 1}/{max_retries}), retrying in {wait_time}s...")
+                        import time
+                        time.sleep(wait_time)
+                    else:
+                        logger.error(f"ES timeout after {max_retries} attempts: {e}")
+                        raise
+                else:
+                    # Non-timeout error, don't retry
+                    raise
         
         results = []
         for hit in response['hits']['hits']:

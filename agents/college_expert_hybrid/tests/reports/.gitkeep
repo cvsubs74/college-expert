@@ -1,0 +1,7 @@
+# Reports Directory
+
+This directory contains generated markdown test reports.
+
+Reports are automatically generated when running tests:
+- `latest_{category}.md` - Most recent report for each category
+- `report_{category}_{timestamp}.md` - Historical reports
