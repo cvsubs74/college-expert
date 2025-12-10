@@ -8,7 +8,7 @@ from ...tools.tools import search_universities, get_university, list_universitie
 
 UniversityKnowledgeAnalyst = LlmAgent(
     name="UniversityKnowledgeAnalyst",
-    model="gemini-2.5-flash-lite",
+    model="gemini-2.0-flash",
     description="Searches and retrieves detailed university information using hybrid search",
     instruction="""
     You search university profiles in the knowledge base.
@@ -44,6 +44,15 @@ UniversityKnowledgeAnalyst = LlmAgent(
     - Don't say you can't find something without trying search_universities() first
     
     Return what you find from the search results.
+    
+    **CRITICAL OUTPUT RULES:**
+    1. **NO CHATTINESS:** Do NOT ask "Do you want me to provide this info?". Just provide it immediately.
+    2. **DEEP SEARCH:** If the user asks for majors, aid, or research, look deeply into the returned university objects (e.g., `academic_structure`, `financials`, `research` keys). Even if the snippet is short, the full object has data.
+    3. **DATA EXTRACTION:**
+       - "Popular majors" -> Look in `academic_structure` or `popular_majors`.
+       - "Admission reqs" -> Look in `admissions_data`.
+       - "Financial aid" -> Look in `financials`.
+    4. **ID HANDLING:** If the user asks about a university, finding it via search is enough. You don't need to ask the user for an ID.
     """,
     tools=[search_universities, get_university, list_universities],
     output_key="university_knowledge_results"

@@ -11,13 +11,18 @@ import uuid
 from dataclasses import dataclass, field
 from typing import Optional
 from datetime import datetime
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
-# Configure Gemini
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+# Configure Gemini Client
+# We use the new SDK pattern: client = genai.Client(api_key=...)
+try:
+    _eval_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+except Exception as e:
+    print(f"Warning: Failed to initialize GenAI client: {e}")
+    _eval_client = None
 
-# Use a strong model for judging
-JUDGE_MODEL = genai.GenerativeModel("gemini-2.0-flash")
+JUDGE_MODEL_ID = "gemini-2.0-flash"
 
 # Agent configuration
 CLOUD_URL = "https://college-expert-hybrid-agent-808989169388.us-east1.run.app"
@@ -209,10 +214,28 @@ def judge_response(case: EvalCase, actual_response: str) -> EvalResult:
     prompt = create_judge_prompt(case, actual_response)
     
     try:
-        response = JUDGE_MODEL.generate_content(prompt)
+        if _eval_client is None:
+            return EvalResult(
+                eval_id=case.eval_id,
+                category=case.category,
+                passed=False,
+                score=0.0,
+                reasoning="Judge error: GenAI client not initialized (missing API key?)",
+                criteria_met={},
+                response_snippet=actual_response[:200]
+            )
+            
+        response = _eval_client.models.generate_content(
+            model=JUDGE_MODEL_ID,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.1,
+                response_mime_type="application/json"
+            )
+        )
         result_text = response.text.strip()
         
-        # Extract JSON
+        # Extract JSON (SDK might return it directly if mime_type is json, but safety check)
         if "```json" in result_text:
             result_text = result_text.split("```json")[1].split("```")[0]
         elif "```" in result_text:
@@ -287,7 +310,22 @@ Respond ONLY with JSON:
 """
     
     try:
-        response = JUDGE_MODEL.generate_content(prompt)
+        if _eval_client is None:
+             return {
+                "passed": False,
+                "score": 0.0,
+                "reasoning": "Judge error: GenAI client not initialized",
+                "context_maintained": False
+            }
+
+        response = _eval_client.models.generate_content(
+            model=JUDGE_MODEL_ID,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.1,
+                response_mime_type="application/json"
+            )
+        )
         result_text = response.text.strip()
         
         if "```json" in result_text:

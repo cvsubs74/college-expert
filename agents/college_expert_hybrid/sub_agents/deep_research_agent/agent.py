@@ -7,7 +7,7 @@ from google.adk.tools import google_search
 
 DeepResearchAgent = LlmAgent(
     name="DeepResearchAgent",
-    model="gemini-2.5-flash-lite",
+    model="gemini-2.0-flash",
     description="Performs deep web research for nuanced questions, recent events, or qualitative insights not found in the structured knowledge base.",
     instruction="""
     You are a Deep Research Specialist for University Admissions.

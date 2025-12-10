@@ -166,7 +166,8 @@ def search_universities(
         
         if result.get("success"):
             universities = []
-            for uni in result.get("results", []):
+            # API returns "universities" key, not "results"
+            for uni in result.get("universities", result.get("results", [])):
                 profile = uni.get("profile", {})
                 
                 # Extract key information for the agent
@@ -754,7 +755,7 @@ Respond in JSON format ONLY:
         # Call Gemini
         client = genai.Client()
         response = client.models.generate_content(
-            model='gemini-2.5-flash-lite',
+            model='gemini-2.0-flash',
             contents=prompt,
             config=types.GenerateContentConfig(
                 temperature=0.3,
@@ -986,12 +987,33 @@ def calculate_college_fit(
         
         # get_university returns {success, university}, where university contains the profile
         if not university_data.get('success') or not university_data.get('university'):
-            return {
-                "success": False,
-                "error": f"University not found: {university_id}",
-                "message": "University data not available in knowledge base"
-            }
-        
+            # RETRY LOGIC: If ID failed, try to search for the university
+            logger.info(f"[FIT] Direct ID lookup failed for {university_id}. Attempting search recovery...")
+            
+            # Convert ID to search query (e.g., "harvard_university" -> "harvard university")
+            search_query = university_id.replace('_', ' ').replace('slug', '').strip()
+            search_result = search_universities(search_query, limit=1)
+            
+            found_id = None
+            if search_result.get('success') and search_result.get('universities'):
+                first_match = search_result['universities'][0]
+                found_id = first_match.get('university_id')
+                logger.info(f"[FIT] Search recovery found: {found_id} for query '{search_query}'")
+            
+            if found_id and found_id != university_id:
+                # Retry with found ID
+                logger.info(f"[FIT] Retrying with found ID: {found_id}")
+                university_data = get_university(found_id)
+                university_id = found_id  # Update ID for storing later
+            
+            # Check again
+            if not university_data or not university_data.get('success') or not university_data.get('university'):
+                return {
+                    "success": False,
+                    "error": f"University not found: {university_id}",
+                    "message": "University data not available in knowledge base"
+                }
+
         # The university object contains acceptance_rate at top level and profile key with detailed data
         university_obj = university_data.get('university', {})
         uni_profile = university_obj.get('profile', {})
