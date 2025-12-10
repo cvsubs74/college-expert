@@ -36,7 +36,7 @@ PROFILE_MANAGER_ES_URL = os.environ.get(
 
 def search_universities(
     query: str,
-    search_type: str = "semantic",
+    search_type: str = "hybrid",
     filters: Optional[Dict[str, Any]] = None,
     limit: int = 10
 ) -> Dict[str, Any]:
@@ -125,6 +125,63 @@ def search_universities(
         
         if filters:
             data["filters"] = filters
+
+        # --- Acronym Resolution Start ---
+        from .acronyms import ACRONYM_MAP
+        upper_query = query.upper().strip()
+        
+        if upper_query in ACRONYM_MAP:
+            resolved_id = ACRONYM_MAP[upper_query]
+            logger.info(f"🔍 ACRONYM DETECTED: {query} -> {resolved_id}")
+            
+            # Use get_university to fetch the profile directly
+            uni_result = get_university(resolved_id)
+            
+            if uni_result["success"]:
+                 # Wrap it in a search result structure
+                uni_data = uni_result["university"]
+                
+                # Ensure the structure matches search output
+                # get_university returns the full profile object which matches what we extract below
+                # But we need to make sure we format it correctly for the agent
+                
+                # Re-construct the university object as search results have a specific structure
+                # The get_university returns the inner 'university' object directly
+                
+                # IMPORTANT: Detailed info is nested under 'profile' key in the API response
+                uni_profile = uni_data.get("profile", {})
+                
+                formatted_uni = {
+                    "university_id": uni_data.get("university_id"),
+                    "official_name": uni_data.get("official_name"),
+                    "location": uni_data.get("location", {}),
+                    "acceptance_rate": uni_data.get("acceptance_rate"),
+                    "market_position": uni_data.get("market_position"),
+                    "median_earnings_10yr": uni_data.get("median_earnings_10yr"),
+                    "score": 100, # Artificial high score for exact match
+                    
+                    # Key profile sections - Extract from 'profile' sub-dict
+                    "strategic_profile": uni_profile.get("strategic_profile", {}),
+                    "admissions_data": uni_profile.get("admissions_data", {}),
+                    "academic_structure": uni_profile.get("academic_structure", {}),
+                    "application_strategy": uni_profile.get("application_strategy", {}),
+                    "student_insights": uni_profile.get("student_insights", {}),
+                    "outcomes": uni_profile.get("outcomes", {}),
+                    "credit_policies": uni_profile.get("credit_policies", {})
+                }
+                
+                return {
+                    "success": True,
+                    "universities": [formatted_uni],
+                    "total": 1,
+                    "query": query,
+                    "search_type": "acronym_resolution",
+                    "filters": filters,
+                    "message": f"Resolved acronym '{query}' to {uni_data.get('official_name')}"
+                }
+            else:
+                 logger.warning(f"   Acronym {query} resolved to {resolved_id} but fetch failed.")
+        # --- Acronym Resolution End ---
         
         logger.info(f"="*60)
         logger.info(f"🔍 TOOL: search_universities")
@@ -408,17 +465,32 @@ def list_universities() -> Dict[str, Any]:
         }
 
 
-def get_college_list(user_email: str) -> Dict[str, Any]:
+def get_college_list(user_email: str, tool_context: ToolContext = None) -> Dict[str, Any]:
     """
     Retrieve the user's current college list.
     
     Args:
-        user_email: The user's email address (e.g., user@gmail.com)
+        user_email: The user's email address (e.g., user@gmail.com). Pass "auto" to use cached profile.
+        tool_context: ADK ToolContext (injected automatically)
         
     Returns:
         Dictionary with college list items
     """
     try:
+        # Handle "auto" or missing email by checking cache
+        if (not user_email or user_email == "auto") and tool_context and hasattr(tool_context, 'state'):
+            cached_profile = tool_context.state.get('_cache:student_profile')
+            if cached_profile and cached_profile.get('user_email'):
+                user_email = cached_profile.get('user_email')
+                logger.info(f"[get_college_list] Resolved email from cache: {user_email}")
+
+        if not user_email or user_email == "auto":
+             return {
+                "success": False,
+                "error": "Email required",
+                "message": "I couldn't identify your email automatically. Please provide it so I can access your list."
+            }
+
         logger.info(f"="*60)
         logger.info(f"📋 TOOL: get_college_list")
         logger.info(f"   User Email: {user_email}")
@@ -449,7 +521,7 @@ def get_college_list(user_email: str) -> Dict[str, Any]:
             formatted_list = []
             for item in college_list:
                 uni_name = item.get('university_name', 'Unknown University')
-                fit_data = item.get('fit_analysis', {})
+                fit_data = item.get('fit_analysis') or {}
                 fit = fit_data.get('fit_category', 'Not Analyzed')
                 
                 # Add key factors if available to explain "Why"
@@ -918,14 +990,28 @@ def calculate_college_fit(
     """
     logger.info(f"[FIT ANALYSIS] Starting fit calculation for {user_email} -> {university_id}")
     
+    # Handle "auto" or missing email by checking cache
+    if (not user_email or user_email == "auto") and tool_context and hasattr(tool_context, 'state'):
+        cached_profile = tool_context.state.get('_cache:student_profile')
+        if cached_profile and cached_profile.get('user_email'):
+            user_email = cached_profile.get('user_email')
+            logger.info(f"[FIT] Resolved email from cache: {user_email}")
+
     # Check for cached result first (unless force_recalculate is True)
-    if not force_recalculate:
+    if not force_recalculate and user_email and user_email != "auto":
         cached_fit = get_cached_fit_analysis(user_email, university_id)
         if cached_fit.get('fit_category'):  # Check if valid cached result
             logger.info(f"[FIT ANALYSIS] Returning cached fit for {university_id}")
             cached_fit['from_cache'] = True
             cached_fit['success'] = True
             return cached_fit
+            
+    if not user_email or user_email == "auto":
+        return {
+            "success": False,
+            "error": "Email required",
+            "message": "I couldn't identify your email automatically. Please provide it so I can analyze this college."
+        }
     
     try:
         # Step 1: Fetch student profile using ADK session state for caching
@@ -1461,4 +1547,143 @@ def recalculate_all_fits(user_email: str) -> Dict[str, Any]:
             "success": False,
             "error": str(e),
             "message": f"Recalculation failed: {str(e)}"
+        }
+
+def add_to_college_list_api(user_email: str, university: Dict[str, str], intended_major: str = "") -> bool:
+    """Helper to add university to profile via API."""
+    try:
+        response = requests.post(
+            f"{PROFILE_MANAGER_ES_URL}/update-college-list",
+            json={
+                'user_email': user_email,
+                'action': 'add',
+                'university': university,
+                'intended_major': intended_major
+            },
+            headers={'Content-Type': 'application/json'},
+            timeout=15
+        )
+        if response.status_code == 200:
+            logger.info(f"[COLLEGE LIST] Added {university.get('name')} to list")
+            return True
+        else:
+            logger.warning(f"[COLLEGE LIST] Failed to add: {response.text}")
+            return False
+    except Exception as e:
+        logger.error(f"[COLLEGE LIST] Error adding college: {e}")
+        return False
+
+
+def add_college_to_list(
+    user_email: str,
+    college_name: str,
+    intended_major: str = "",
+    tool_context: ToolContext = None
+) -> Dict[str, Any]:
+    """
+    Add a college to the student's list and automatically calculate fit.
+    
+    This tool performs three steps:
+    1. Searches for the exact university to get its ID and official name.
+    2. Adds it to the user's persistent college list.
+    3. Calculates detailed fit analysis immediately.
+    
+    Args:
+        user_email: Student's email (e.g., user@gmail.com). Pass "auto" to use cached profile.
+        college_name: Name of the college to add (e.g., "UCLA", "Stanford")
+        intended_major: (Optional) Intended major for this specific college
+        tool_context: ADK ToolContext (injected automatically)
+        
+    Returns:
+        Dictionary with success status, university details, and fit analysis summary.
+    """
+    logger.info(f"[ADD COLLEGE] Request to add '{college_name}' for {user_email}")
+    
+    try:
+        # Handle "auto" or missing email by checking cache
+        if (not user_email or user_email == "auto") and tool_context and hasattr(tool_context, 'state'):
+            cached_profile = tool_context.state.get('_cache:student_profile')
+            if cached_profile and cached_profile.get('user_email'):
+                user_email = cached_profile.get('user_email')
+                logger.info(f"[add_college_to_list] Resolved email from cache: {user_email}")
+        
+        if not user_email or user_email == "auto":
+             return {
+                "success": False,
+                "error": "Email required",
+                "message": "I couldn't identify your email automatically. Please provide it so I can add this college."
+            }
+            
+        # Step 1: Search for the university
+        search_result = search_universities(college_name, limit=1)
+        
+        if not search_result.get('success') or not search_result.get('universities'):
+            return {
+                "success": False,
+                "error": f"University '{college_name}' not found",
+                "message": f"I couldn't find a university matching '{college_name}'. Please verify the name."
+            }
+            
+        university = search_result['universities'][0]
+        university_id = university.get('university_id')
+        official_name = university.get('official_name')
+        
+        if not university_id:
+            return {
+                "success": False,
+                "error": "Invalid university data found",
+                "message": "Found university but ID was missing."
+            }
+            
+        logger.info(f"[ADD COLLEGE] Identified: {official_name} ({university_id})")
+        
+        # Step 2: Add to profile
+        uni_obj = {
+            "id": university_id,
+            "name": official_name
+        }
+        
+        add_success = add_to_college_list_api(user_email, uni_obj, intended_major)
+        
+        if not add_success:
+            return {
+                "success": False,
+                "error": "Failed to update profile",
+                "message": "I found the university but couldn't add it to your profile list. Please try again."
+            }
+            
+        # Step 3: Calculate Fit
+        # We assume intended_major from args, or fallback to profile default inside calculate_college_fit
+        fit_result = calculate_college_fit(
+            user_email=user_email,
+            university_id=university_id,
+            intended_major=intended_major,
+            force_recalculate=True,
+            tool_context=tool_context
+        )
+        
+        if fit_result.get('success'):
+            return {
+                "success": True,
+                "university_id": university_id,
+                "university_name": official_name,
+                "fit_category": fit_result.get('fit_category'),
+                "match_percentage": fit_result.get('match_percentage'),
+                "message": f"Added {official_name} to your list. It's a **{fit_result.get('fit_category')}** ({fit_result.get('match_percentage')}%) for you."
+            }
+        else:
+             return {
+                "success": True,
+                "university_id": university_id,
+                "university_name": official_name,
+                "warning": "Fit calculation failed",
+                "message": f"Added {official_name} to your list, but couldn't calculate fit right now."
+            }
+            
+    except Exception as e:
+        logger.error(f"[ADD COLLEGE ERROR] {str(e)}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"An error occurred while adding the college: {str(e)}"
         }

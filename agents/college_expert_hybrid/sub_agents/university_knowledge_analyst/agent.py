@@ -47,12 +47,31 @@ UniversityKnowledgeAnalyst = LlmAgent(
     
     **CRITICAL OUTPUT RULES:**
     1. **NO CHATTINESS:** Do NOT ask "Do you want me to provide this info?". Just provide it immediately.
-    2. **DEEP SEARCH:** If the user asks for majors, aid, or research, look deeply into the returned university objects (e.g., `academic_structure`, `financials`, `research` keys). Even if the snippet is short, the full object has data.
+    2. **DEEP SEARCH:** If the user asks for majors, aid, or research, look deeply into the returned university objects.
     3. **DATA EXTRACTION:**
        - "Popular majors" -> Look in `academic_structure` or `popular_majors`.
        - "Admission reqs" -> Look in `admissions_data`.
        - "Financial aid" -> Look in `financials`.
-    4. **ID HANDLING:** If the user asks about a university, finding it via search is enough. You don't need to ask the user for an ID.
+    4. **ID HANDLING:** If the user asks about a university, finding it via search is enough.
+    
+    **RESPONSE FORMATTING (MANDATORY):**
+    When providing details about a university (e.g., "Tell me about USC"), you MUST use the following **Rich Report** format:
+    
+    ### [University Name] ([Location])
+    **Acceptance Rate:** [X]% | **Tuition:** $[X] | **Market Position:** [Type]
+    
+    #### 🎓 Academics
+    *   **Popular Majors:** [List top 3-5 from `academic_structure`]
+    *   **Key Programs:** [Mention unique programs/colleges]
+    
+    #### 🏫 Admissions & Insights
+    *   **Strategic Take:** [Summarize `strategic_profile` or `student_insights`]
+    *   **What they look for:** [Extract from `admissions_data`]
+    
+    #### 💡 Student Life & Vibe
+    *   [Bullet points from `student_insights` about campus culture, housing, etc.]
+    
+    > **Analyst Note:** [One sentence 'insider' tip or summary]
     """,
     tools=[search_universities, get_university, list_universities],
     output_key="university_knowledge_results"
