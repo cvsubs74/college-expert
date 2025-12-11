@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet } from 'react-router-dom';
-import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
 import UniversityExplorer from './pages/UniversityExplorer';
+import MyLaunchpad from './pages/MyLaunchpad';
 import LandingPage from './pages/LandingPage';
 import ApproachSelector from './pages/ApproachSelector';
 import CultureMatch from './pages/CultureMatch';
@@ -79,6 +80,16 @@ function Navigation() {
               >
                 <SparklesIcon className="h-5 w-5 mr-2" />
                 Vibe Match
+              </Link>
+              <Link
+                to="/launchpad"
+                className={`${isActive('/launchpad')
+                  ? 'border-primary text-gray-900'
+                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+              >
+                <RocketLaunchIcon className="h-5 w-5 mr-2" />
+                My Launchpad
               </Link>
               {/* Knowledge Base - Only visible to admin */}
               {currentUser?.email === 'cvsubs@gmail.com' && (
@@ -163,6 +174,7 @@ function App() {
               <Route path="/chat" element={<Chat />} />
               <Route path="/universities" element={<UniversityExplorer />} />
               <Route path="/culture-match" element={<CultureMatch />} />
+              <Route path="/launchpad" element={<MyLaunchpad />} />
               <Route path="/knowledge-base" element={<KnowledgeBase />} />
             </Route>
           </Routes>

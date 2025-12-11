@@ -30,15 +30,270 @@ PROFILE_MANAGER_ES_URL = os.environ.get(
     'https://profile-manager-es-pfnwjfp26a-ue.a.run.app'
 )
 
-# Note: Profile caching is now handled via ADK ToolContext.state['temp:student_profile']
+# Note: Profile caching is now handled via ADK ToolContext.state['_cache:student_profile']
 # for session-scoped data that persists across tool calls within the same agent invocation.
+
+# Cache key for student profile (must match ProfileLoaderAgent)
+PROFILE_CACHE_KEY = '_cache:student_profile'
+
+
+# ============================================================================
+# PROFILE EXTRACTION TOOLS - Clean functions to get student data from cache
+# ============================================================================
+
+def get_student_profile_data(tool_context: ToolContext) -> Dict[str, Any]:
+    """
+    Get the student profile data from cache as markdown.
+    
+    The profile is stored as formatted markdown containing:
+    - Personal information (school, location)
+    - Intended major
+    - Academic summary (GPA, SAT scores)
+    - Course history
+    - Extracurricular activities
+    - Awards & honors
+    - Work experience
+    - Special programs
+    
+    Args:
+        tool_context: ADK ToolContext (injected automatically)
+        
+    Returns:
+        Dictionary with:
+        - success: Whether profile was found
+        - profile_markdown: The complete student profile as markdown
+        - message: Status message
+    """
+    try:
+        cached = tool_context.state.get(PROFILE_CACHE_KEY)
+        if not cached:
+            logger.warning("[get_student_profile_data] No profile in cache (None or empty)")
+            return {
+                "success": False,
+                "error": "No student profile found in cache",
+                "message": "Student profile has not been loaded. Please ensure user email is provided."
+            }
+        
+        docs = cached.get('documents', [])
+        
+        if not docs:
+            logger.warning("[get_student_profile_data] No profile documents in cache")
+            return {
+                "success": False,
+                "error": "No student profile found in cache",
+                "message": "Student profile has not been loaded. Please ensure user email is provided."
+            }
+        
+        first_doc = docs[0]
+        profile_content = first_doc.get('content', '')
+        
+        if not profile_content:
+            logger.warning("[get_student_profile_data] Profile content is empty")
+            return {
+                "success": False,
+                "error": "Profile content is empty",
+                "message": "Student profile exists but has no content."
+            }
+        
+        # Extract student name from markdown if present
+        import re
+        name_match = re.search(r'^#\s*Student Profile:\s*(.+)$', profile_content, re.MULTILINE)
+        student_name = name_match.group(1).strip() if name_match else "Student"
+        
+        logger.info(f"[get_student_profile_data] Found profile: {student_name}, content length: {len(profile_content)}")
+        
+        return {
+            "success": True,
+            "student_name": student_name,
+            "profile_markdown": profile_content,
+            "message": f"Retrieved profile for: {student_name}. Read the markdown below to extract GPA, test scores, activities, etc."
+        }
+    except Exception as e:
+        logger.error(f"[get_student_profile_data] Error: {e}")
+        return {"success": False, "error": str(e)}
+
+
+
+
+
+
+
+
+
+
+# NOTE: Legacy get_student_gpa removed - LLM reads markdown directly
+
+
+
+
+
+
+# NOTE: Legacy get_intended_major and get_test_scores removed - LLM reads markdown directly
+
+
+def update_profile(
+    instruction: str,
+    tool_context: ToolContext
+) -> Dict[str, Any]:
+    """
+    Update the student's profile using natural language instruction.
+    
+    This tool uses LLM to intelligently modify the markdown profile content
+    based on your instruction, then saves it back to the database.
+    
+    Args:
+        instruction: Natural language description of what to update.
+            Examples:
+            - "Update the GPA to 3.95"
+            - "Add a new extracurricular: Chess Club President, 5 hrs/week"
+            - "Change intended major to Computer Science"
+            - "Add AP Biology score of 5"
+            - "Remove the Model UN activity"
+        tool_context: ADK ToolContext (injected automatically)
+        
+    Returns:
+        Dictionary with success status and message
+    """
+    from google import genai
+    from google.genai import types
+    
+    try:
+        logger.info(f"[update_profile] Instruction: {instruction[:100]}...")
+        
+        # Get cached email
+        user_email = tool_context.state.get('_cache:user_email')
+        if not user_email:
+            return {
+                "success": False,
+                "error": "User email not found",
+                "message": "Cannot update profile - user email not cached."
+            }
+        
+        # Get current profile content from cache
+        cached = tool_context.state.get(PROFILE_CACHE_KEY)
+        if not cached:
+            return {
+                "success": False,
+                "error": "No profile found",
+                "message": "Cannot update - no profile loaded. Please upload a profile first."
+            }
+        
+        docs = cached.get('documents', [])
+        if not docs:
+            return {
+                "success": False,
+                "error": "No profile found",
+                "message": "Cannot update - no profile documents found."
+            }
+        
+        current_content = docs[0].get('content', '')
+        if not current_content:
+            return {
+                "success": False,
+                "error": "Empty profile",
+                "message": "Cannot update - profile content is empty."
+            }
+        
+        # Use LLM to update the markdown content
+        gemini_api_key = os.getenv('GEMINI_API_KEY')
+        if not gemini_api_key:
+            return {
+                "success": False,
+                "error": "No API key",
+                "message": "Cannot update - Gemini API key not configured."
+            }
+        
+        client = genai.Client(api_key=gemini_api_key)
+        
+        prompt = f"""You are updating a student profile markdown document.
+
+CURRENT PROFILE:
+{current_content}
+
+UPDATE INSTRUCTION:
+{instruction}
+
+RULES:
+1. Make the requested change in the appropriate section
+2. If adding new content, place it in the most relevant section
+3. Keep all other content unchanged
+4. Maintain the markdown formatting (headers, bullets, bold, etc.)
+5. Return ONLY the updated markdown content, no explanations
+
+Updated markdown:"""
+
+        response = client.models.generate_content(
+            model='gemini-2.0-flash',
+            contents=prompt,
+            config=types.GenerateContentConfig(temperature=0.1)
+        )
+        
+        updated_content = response.text.strip()
+        
+        # Remove any markdown code block wrapper if present
+        if updated_content.startswith('```markdown'):
+            updated_content = updated_content[len('```markdown'):].strip()
+        if updated_content.startswith('```'):
+            updated_content = updated_content[3:].strip()
+        if updated_content.endswith('```'):
+            updated_content = updated_content[:-3].strip()
+        
+        # Update the content in ES via Profile Manager
+        url = f"{PROFILE_MANAGER_ES_URL}/update-profile"
+        
+        es_response = requests.post(
+            url,
+            json={
+                "user_email": user_email,
+                "content": updated_content
+            },
+            headers={"Content-Type": "application/json", "X-User-Email": user_email},
+            timeout=30
+        )
+
+        # Update cache regardless of ES response
+        docs[0]['content'] = updated_content
+        tool_context.state[PROFILE_CACHE_KEY] = cached
+        
+        if es_response.status_code == 200:
+            result = es_response.json()
+            if result.get("success"):
+                logger.info(f"[update_profile] Successfully updated profile")
+                return {
+                    "success": True,
+                    "message": f"Profile updated successfully."
+                }
+        
+        # Even if ES update failed, cache was updated
+        logger.warning(f"[update_profile] ES update may have failed, but local cache updated")
+        return {
+            "success": True,
+            "message": f"Profile updated (cached locally)."
+        }
+            
+    except Exception as e:
+        logger.error(f"[update_profile] Error: {e}")
+        return {"success": False, "error": str(e), "message": f"Error updating profile: {str(e)}"}
+
+
+# Backward compatibility aliases (these call the new unified update_profile function)
+def update_student_profile(field: str, value: str, tool_context: ToolContext) -> Dict[str, Any]:
+    """Deprecated: Use update_profile() instead. Kept for backward compatibility."""
+    return update_profile(f"Update the {field} to: {value}", tool_context)
+
+def update_profile_content(update_type: str, content: str, tool_context: ToolContext) -> Dict[str, Any]:
+    """Deprecated: Use update_profile() instead. Kept for backward compatibility."""
+    return update_profile(f"{update_type.capitalize()} the following: {content}", tool_context)
+
 
 
 def search_universities(
     query: str,
     search_type: str = "hybrid",
     filters: Optional[Dict[str, Any]] = None,
-    limit: int = 10
+    limit: int = 10,
+    exclude_ids: Optional[List[str]] = None,
+    sort_by: str = "relevance"
 ) -> Dict[str, Any]:
     """
     Search universities using semantic search (ELSER) with optional filters.
@@ -68,6 +323,15 @@ def search_universities(
             - market_position: e.g., "Public Ivy", "Elite Private"
             
         limit: Maximum results to return (default: 10)
+        
+        exclude_ids: List of university_ids to exclude from results.
+            Use this to avoid recommending schools already in the user's college list.
+            Example: ["ucsd", "uci", "ucla"]
+            
+        sort_by: Sort order for results (default: "relevance")
+            - "relevance": Sort by search relevance score
+            - "rank": Sort by US News National Universities rank (ascending, best first)
+            - "selectivity": Same as "rank"
         
     Returns:
         Dictionary with:
@@ -104,10 +368,12 @@ def search_universities(
             filters={"acceptance_rate_min": 10, "acceptance_rate_max": 25}
         )
         
-        # "Find schools in New York"
+        # "Find schools in New York, sorted by rank, excluding schools already in my list"
         search_universities(
             query="university",
-            filters={"state": "NY"}
+            filters={"state": "NY"},
+            exclude_ids=["nyu", "columbia_university"],
+            sort_by="rank"
         )
     """
     try:
@@ -120,11 +386,16 @@ def search_universities(
         data = {
             "query": query,
             "search_type": search_type,
-            "limit": limit
+            "limit": limit,
+            "sort_by": sort_by
         }
         
         if filters:
             data["filters"] = filters
+        
+        if exclude_ids:
+            data["exclude_ids"] = exclude_ids
+
 
         # --- Acronym Resolution Start ---
         from .acronyms import ACRONYM_MAP

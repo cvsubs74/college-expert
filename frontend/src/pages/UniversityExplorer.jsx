@@ -237,12 +237,12 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                     <button
                         onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
                         className={`p-2 rounded-lg transition-all hover:scale-105 ${isInList
-                            ? 'bg-green-100 text-green-700 hover:bg-green-200'
-                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                            ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-600'
+                            : 'bg-purple-100 text-purple-700 hover:bg-purple-200'
                             }`}
-                        title={isInList ? 'Remove from My List' : 'Add to My List'}
+                        title={isInList ? 'Remove from Launchpad' : '🚀 Add to My Launchpad'}
                     >
-                        {isInList ? '✓' : '+'}
+                        {isInList ? '✓' : '🚀'}
                     </button>
                     {/* Fit analysis is now shown in the header area */}
                     {sentiment && sentiment.sentiment !== 'neutral' && (
@@ -257,6 +257,75 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                             {sentiment.sentiment === 'positive' ? '📈' : '⚠️'}
                         </button>
                     )}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+// --- Favorite Card Component (for college list items) ---
+const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis }) => {
+    const fitColors = {
+        SAFETY: 'bg-green-100 text-green-800 border-green-300',
+        TARGET: 'bg-blue-100 text-blue-800 border-blue-300',
+        REACH: 'bg-orange-100 text-orange-800 border-orange-300',
+        SUPER_REACH: 'bg-red-100 text-red-800 border-red-300'
+    };
+
+    const fit = fitAnalysis || college.fit_analysis || {};
+    const fitCategory = fit.fit_category || 'TARGET';
+    const matchPercentage = fit.match_percentage;
+
+    return (
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+            <div className="p-5 flex-grow">
+                <div className="flex justify-between items-start mb-3">
+                    <div className="flex-1 min-w-0">
+                        <h3 className="text-lg font-bold text-gray-900 line-clamp-2">
+                            {college.university_name}
+                        </h3>
+                        <div className="flex items-center text-gray-500 text-sm mt-1">
+                            <MapPinIcon className="h-4 w-4 mr-1" />
+                            {college.location || 'Location N/A'}
+                        </div>
+                    </div>
+                    {/* Fit Badge */}
+                    {fit.fit_category && (
+                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold border whitespace-nowrap ${fitColors[fitCategory]}`}>
+                            {fitCategory === 'SUPER_REACH' ? '🎯 Super Reach' :
+                                fitCategory === 'REACH' ? '🎯 Reach' :
+                                    fitCategory === 'TARGET' ? '🎯 Target' :
+                                        '✅ Safety'}
+                            {matchPercentage && ` ${matchPercentage}%`}
+                        </span>
+                    )}
+                </div>
+
+                {/* Fit Analysis Info */}
+                {fit.factors && fit.factors.length > 0 && (
+                    <div className="text-xs text-gray-600 bg-gray-50 rounded p-2 mt-2">
+                        <span className="font-medium text-gray-700">Key Factors: </span>
+                        {fit.factors.slice(0, 3).map(f => f.name || f).join(' • ')}
+                    </div>
+                )}
+            </div>
+
+            {/* Footer */}
+            <div className="p-4 border-t border-gray-100">
+                <div className="flex gap-2">
+                    <button
+                        onClick={() => onViewDetails && onViewDetails(college)}
+                        className="flex-1 bg-blue-600 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-blue-700 flex items-center justify-center gap-1"
+                    >
+                        View Details
+                        <ChevronRightIcon className="h-4 w-4" />
+                    </button>
+                    <button
+                        onClick={() => onRemove(college)}
+                        className="px-4 py-2.5 bg-red-50 text-red-600 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors flex items-center gap-1"
+                    >
+                        <XMarkIcon className="h-4 w-4" />
+                    </button>
                 </div>
             </div>
         </div>
@@ -1636,20 +1705,31 @@ const UniversityExplorer = () => {
                             {/* Favorites Grid */}
                             {myCollegeList.length > 0 && (
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {myCollegeList.map((uni) => (
-                                        <UniversityCard
-                                            key={uni.id}
-                                            uni={uni}
-                                            onSelect={() => {
-                                                setSelectedUni(uni);
+                                    {myCollegeList.map((college) => (
+                                        <FavoriteCard
+                                            key={college.university_id}
+                                            college={college}
+                                            onRemove={(c) => handleToggleCollegeList({
+                                                id: c.university_id,
+                                                name: c.university_name
+                                            })}
+                                            onViewDetails={(c) => {
+                                                // Try to find the full university data, or create minimal version
+                                                const fullUni = universities.find(u => u.id === c.university_id) || {
+                                                    id: c.university_id,
+                                                    name: c.university_name,
+                                                    location: { city: 'N/A', state: 'N/A', type: 'N/A' },
+                                                    summary: 'Loading full details...',
+                                                    rankings: { usNews: 'N/A' },
+                                                    admissions: { acceptanceRate: 'N/A' },
+                                                    financials: {},
+                                                    outcomes: {},
+                                                    majors: []
+                                                };
+                                                setSelectedUni(fullUni);
                                                 setActiveView('detail');
                                             }}
-                                            onCompare={() => handleCompare(uni)}
-                                            onToggleList={() => handleToggleList(uni)}
-                                            onSentimentClick={handleSentimentClick}
-                                            isInList={true}
-                                            isSelectedForCompare={compareList.some(u => u.id === uni.id)}
-                                            sentiment={sentimentData[uni.id]}
+                                            fitAnalysis={college.fit_analysis}
                                         />
                                     ))}
                                 </div>

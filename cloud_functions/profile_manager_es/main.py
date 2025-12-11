@@ -15,8 +15,9 @@ from datetime import datetime
 import json
 import logging
 import io
-from PyPDF2 import PdfReader
+import fitz  # PyMuPDF - better PDF extraction than PyPDF2
 from docx import Document
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -25,18 +26,35 @@ logger = logging.getLogger(__name__)
 # ... (rest of imports and config)
 
 def extract_text_from_file_content(file_content, filename):
-    """Extract text from file content based on extension."""
+    """Extract text from file content based on extension.
+    Uses PyMuPDF (fitz) for PDFs which produces clean, properly formatted text.
+    """
     try:
         file_ext = filename.split('.')[-1].lower() if '.' in filename else ''
         
         if file_ext == 'pdf':
             try:
-                pdf_file = io.BytesIO(file_content)
-                reader = PdfReader(pdf_file)
-                text = ""
-                for page in reader.pages:
-                    text += page.extract_text() + "\n"
+                # Use PyMuPDF (fitz) for better text extraction
+                pdf_doc = fitz.open(stream=file_content, filetype="pdf")
+                text_parts = []
+                
+                for page_num, page in enumerate(pdf_doc):
+                    # Extract text with proper layout preservation
+                    page_text = page.get_text("text")  # "text" mode preserves paragraphs
+                    if page_text.strip():
+                        text_parts.append(page_text)
+                
+                pdf_doc.close()
+                
+                # Join pages with double newlines for clear separation
+                text = "\n\n".join(text_parts)
+                
+                # Clean up any remaining word-per-line formatting issues
+                text = clean_extracted_text(text)
+                
+                logger.info(f"[PDF EXTRACTION] Extracted {len(text)} chars from {filename}")
                 return text
+                
             except Exception as e:
                 logger.error(f"PDF extraction failed: {e}")
                 return None
@@ -48,7 +66,7 @@ def extract_text_from_file_content(file_content, filename):
                 text = ""
                 for paragraph in doc.paragraphs:
                     text += paragraph.text + "\n"
-                return text
+                return clean_extracted_text(text)
             except Exception as e:
                 logger.error(f"DOCX extraction failed: {e}")
                 return None
@@ -64,53 +82,318 @@ def extract_text_from_file_content(file_content, filename):
         logger.error(f"Text extraction failed: {e}")
         return None
 
+
+def clean_extracted_text(text):
+    """
+    Clean up PDF extraction artifacts like word-per-line formatting.
+    Joins fragmented words while preserving intentional paragraph breaks.
+    """
+    if not text:
+        return text
+    
+    lines = text.split('\n')
+    cleaned = []
+    buffer = []
+    
+    for line in lines:
+        stripped = line.strip()
+        
+        if not stripped:
+            # Empty line = paragraph break
+            if buffer:
+                cleaned.append(' '.join(buffer))
+                buffer = []
+            cleaned.append('')
+        elif stripped.startswith('●') or stripped.startswith('•') or stripped.startswith('-') or stripped.startswith('*'):
+            # Bullet point - save buffer and start new line with bullet
+            if buffer:
+                cleaned.append(' '.join(buffer))
+                buffer = []
+            cleaned.append(stripped)
+        elif len(stripped) == 1 or (len(stripped) <= 3 and stripped.isalpha()):
+            # Very short word fragment - likely poorly extracted, add to buffer
+            buffer.append(stripped)
+        elif stripped.endswith(':') or any(stripped.lower().startswith(h) for h in ['grade', 'gpa', 'sat', 'act', 'school', 'major', 'awards', 'activities']):
+            # Section header - save buffer and start new line
+            if buffer:
+                cleaned.append(' '.join(buffer))
+                buffer = []
+            cleaned.append(stripped)
+        else:
+            buffer.append(stripped)
+    
+    # Don't forget remaining buffer
+    if buffer:
+        cleaned.append(' '.join(buffer))
+    
+    # Join and clean up excessive spacing
+    result = '\n'.join(cleaned)
+    result = result.replace('\n\n\n', '\n\n')  # Max 2 newlines
+    
+    return result.strip()
+
+
+
+
+
+# Structured profile schema for Gemini extraction
+STUDENT_PROFILE_SCHEMA = {
+    "personal_info": {
+        "name": "",
+        "ethnicity": "",
+        "school": "",
+        "location": "",
+        "grade": None,
+        "email": "",
+        "phone": ""
+    },
+    "intended_major": "",
+    "academics": {
+        "gpa": {
+            "unweighted": None,
+            "weighted": None,
+            "uc_unweighted": None,
+            "uc_weighted": None
+        },
+        "class_rank": "",
+        "total_semesters": None
+    },
+    "test_scores": {
+        "sat": {"total": None, "math": None, "reading": None},
+        "act": {"composite": None},
+        "ap_exams": []
+    },
+    "courses": [],
+    "extracurriculars": [],
+    "awards": [],
+    "work_experience": [],
+    "special_programs": [],
+    "leadership_roles": []
+}
+
+
 def extract_profile_content_with_gemini(file_content, filename):
-    """Extract structured content from student profile document."""
+    """
+    Extract and format student profile document using Gemini.
+    Converts PDF/DOCX text to clean, well-formatted Markdown.
+    """
     try:
-        # Extract text content
-        content_text = extract_text_from_file_content(file_content, filename)
+        # Extract raw text content from PDF/DOCX
+        raw_text = extract_text_from_file_content(file_content, filename)
         
-        if not content_text:
-            content_text = "Could not extract text from document."
-            
-        # Truncate for summary if needed, but keep full text for indexing
-        summary_text = content_text[:1000]
+        if not raw_text:
+            raw_text = "Could not extract text from document."
+            logger.warning(f"[EXTRACTION] No text extracted from {filename}")
         
-        structured_content = {
-            "student_name": filename.replace('.pdf', '').replace('.txt', '').replace('.docx', ''),
-            "email": "",
-            "phone": "",
-            "address": "",
-            "academic_info": "",
-            "interests": "",
-            "goals": "",
-            "summary": summary_text[:200] if summary_text else "Document processed"
-        }
+        # Use Gemini to convert raw text to clean markdown
+        content_markdown = convert_to_markdown_with_gemini(raw_text, filename)
         
         return {
-            "raw_content": content_text, # Now contains actual extracted text
-            "structured_content": structured_content,
+            "raw_content": raw_text,  # Original extracted text (for search)
+            "content_markdown": content_markdown,  # Clean markdown (for display)
             "filename": filename
         }
             
     except Exception as e:
         logger.error(f"[EXTRACTION ERROR] Failed to extract content: {e}")
         return {
-            "raw_content": "Error processing file",
-            "structured_content": {
-                "student_name": filename,
-                "email": "",
-                "phone": "",
-                "address": "",
-                "academic_info": "",
-                "interests": "",
-                "goals": "",
-                "summary": "Error processing file"
-            },
+            "raw_content": raw_text if 'raw_text' in dir() else "Error processing file",
+            "content_markdown": f"# Student Profile\n\nError processing file: {str(e)}",
             "error": str(e)
         }
 
+
+def convert_to_markdown_with_gemini(raw_text: str, filename: str) -> str:
+    """
+    Use Gemini to convert raw profile text to clean, well-formatted Markdown.
+    """
+    import google.generativeai as genai
+    
+    try:
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            logger.warning("[GEMINI] No API key, returning raw text as markdown")
+            return f"# Student Profile\n\n{raw_text}"
+        
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel('gemini-2.0-flash')
+        
+        prompt = f"""Convert this student profile text into clean, well-formatted Markdown.
+
+RAW TEXT:
+{raw_text[:15000]}
+
+FORMATTING REQUIREMENTS:
+1. Create a clear heading structure with # for main title, ## for sections, ### for subsections
+2. Use these sections (in order):
+   - # Student Profile: [Name]
+   - ## Personal Information (school, location, ethnicity if mentioned)
+   - ## Intended Major
+   - ## Academic Summary (GPA: weighted, unweighted, UC if available)
+   - ## AP Exam Scores (as a bullet list with scores)
+   - ## Course History (organize by grade level 9-12, list courses with grades)
+   - ## Extracurricular Activities (name, years, description, achievements)
+   - ## Awards & Honors
+   - ## Work Experience
+   - ## Special Programs & Certifications
+   - ## Leadership Roles
+3. Use bullet points (-) for lists
+4. Use **bold** for important values like GPA, test scores
+5. Keep descriptions concise but complete
+6. Use emojis sparingly for section headers (📊 for academics, 🏆 for activities, etc.)
+7. Preserve ALL information from the original document
+
+Return ONLY the markdown content, no explanations.
+"""
+
+        response = model.generate_content(prompt)
+        markdown_content = response.text.strip()
+        
+        # Remove any markdown code block wrapper if present
+        if markdown_content.startswith('```markdown'):
+            markdown_content = markdown_content[len('```markdown'):].strip()
+        if markdown_content.startswith('```'):
+            markdown_content = markdown_content[3:].strip()
+        if markdown_content.endswith('```'):
+            markdown_content = markdown_content[:-3].strip()
+        
+        logger.info(f"[GEMINI] Converted profile to markdown ({len(markdown_content)} chars)")
+        return markdown_content
+        
+    except Exception as e:
+        logger.error(f"[GEMINI] Markdown conversion error: {e}")
+        # Fallback: return raw text with basic header
+        return f"# Student Profile\n\n{raw_text}"
+
+
+
+
+def get_empty_profile_schema(filename):
+    """Return empty profile schema with filename as name."""
+    import copy
+    schema = copy.deepcopy(STUDENT_PROFILE_SCHEMA)
+    schema["personal_info"]["name"] = filename.replace('.pdf', '').replace('.txt', '').replace('.docx', '')
+    return schema
+
+
+def extract_structured_profile_with_gemini(content_text: str, filename: str) -> dict:
+    """
+    Use Gemini API to extract structured student profile data from text.
+    """
+    import google.generativeai as genai
+    import copy
+    
+    try:
+        # Configure Gemini
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            logger.warning("[GEMINI] No API key, returning basic structure")
+            return get_empty_profile_schema(filename)
+        
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel('gemini-2.0-flash')
+        
+        # Create extraction prompt
+        prompt = f"""Extract student profile information from this text and return as JSON.
+
+TEXT TO ANALYZE:
+{content_text[:15000]}
+
+EXTRACT THE FOLLOWING FIELDS (return valid JSON only, no markdown):
+{{
+  "personal_info": {{
+    "name": "student's name",
+    "ethnicity": "ethnicity if mentioned",
+    "school": "high school name",
+    "location": "city, state",
+    "grade": 12,
+    "email": "",
+    "phone": ""
+  }},
+  "intended_major": "intended college major",
+  "academics": {{
+    "gpa": {{
+      "unweighted": 3.72,
+      "weighted": 4.23,
+      "uc_unweighted": 3.69,
+      "uc_weighted": 4.375
+    }},
+    "class_rank": "",
+    "total_semesters": 43
+  }},
+  "test_scores": {{
+    "sat": {{"total": null, "math": null, "reading": null}},
+    "act": {{"composite": null}},
+    "ap_exams": [
+      {{"subject": "AP Psychology", "score": 5}},
+      {{"subject": "AP Calculus BC", "score": 5, "subscore": "AB: 5"}}
+    ]
+  }},
+  "courses": [
+    {{"grade_level": 9, "name": "English", "type": "Regular", "semester1_grade": "A", "semester2_grade": "A"}},
+    {{"grade_level": 10, "name": "AP World History", "type": "AP", "semester1_grade": "B", "semester2_grade": "B"}}
+  ],
+  "extracurriculars": [
+    {{
+      "name": "Future Business Leaders of America",
+      "category": "Club",
+      "grades": "9-12",
+      "hours_per_week": null,
+      "role": "Member",
+      "description": "description here",
+      "achievements": ["1st in Bay Section", "5th in States"]
+    }}
+  ],
+  "awards": [
+    {{"name": "FBLA 1st in Bay Section", "grade": 10, "description": ""}}
+  ],
+  "work_experience": [
+    {{"employer": "KA Academy", "role": "Teacher Assistant", "grades": "9-11", "hours_per_week": 2, "description": ""}}
+  ],
+  "special_programs": [
+    {{"name": "Economics for Leaders Summer Program", "grade": 11, "description": "U of Washington"}}
+  ],
+  "leadership_roles": ["General Leadership grade 10-12", "President of CRY Club"]
+}}
+
+IMPORTANT:
+- Extract ALL courses listed with their grades
+- Extract ALL extracurricular activities
+- Extract ALL AP exam scores
+- Return ONLY valid JSON, no explanations
+- Use null for missing numeric values
+- Use empty string for missing text values
+"""
+
+        response = model.generate_content(prompt)
+        response_text = response.text.strip()
+        
+        # Clean up response - remove markdown code blocks if present
+        if response_text.startswith('```'):
+            lines = response_text.split('\n')
+            response_text = '\n'.join(lines[1:-1] if lines[-1].startswith('```') else lines[1:])
+        
+        # Parse JSON response
+        structured = json.loads(response_text)
+        
+        logger.info(f"[GEMINI] Successfully extracted structured profile for {filename}")
+        logger.info(f"[GEMINI] Found {len(structured.get('courses', []))} courses, "
+                   f"{len(structured.get('extracurriculars', []))} activities, "
+                   f"{len(structured.get('awards', []))} awards")
+        
+        return structured
+        
+    except json.JSONDecodeError as e:
+        logger.error(f"[GEMINI] JSON parse error: {e}")
+        logger.error(f"[GEMINI] Response was: {response_text[:500] if 'response_text' in dir() else 'N/A'}")
+        return get_empty_profile_schema(filename)
+    except Exception as e:
+        logger.error(f"[GEMINI] Extraction error: {e}")
+        return get_empty_profile_schema(filename)
+
+
 # Get configuration from environment variables
+
 ES_CLOUD_ID = os.getenv("ES_CLOUD_ID")
 ES_API_KEY = os.getenv("ES_API_KEY")
 ES_INDEX_NAME = os.getenv("ES_INDEX_NAME", "student_profiles")
@@ -154,34 +437,43 @@ def get_storage_path(user_id, filename):
     sanitized_id = user_id.replace('@', '_').replace('.', '_').lower()
     return f"profiles/{sanitized_id}/{filename}"
 
-def index_student_profile(user_id, filename, content, metadata):
-    """Index student profile in Elasticsearch."""
+def index_student_profile(user_id, filename, content_markdown, metadata=None):
+    """Index student profile in Elasticsearch.
+    Stores clean markdown content in the content field with minimal metadata.
+    
+    Args:
+        user_id: User's email
+        filename: Original filename
+        content_markdown: Clean markdown content (from Gemini)
+        metadata: Optional minimal metadata (filename, upload time, gcs_url later)
+    """
     try:
         client = get_elasticsearch_client()
         
-        # Generate document ID
+        # Generate document ID based on user + filename
         import hashlib
-        doc_content = f"{user_id}_{filename}_{content[:100]}"
+        doc_content = f"{user_id}_{filename}"
         document_id = hashlib.sha256(doc_content.encode()).hexdigest()
         
-        # Create document - match knowledge base manager ES structure
+        # Create minimal document - just content and essential metadata
         document = {
             "document_id": document_id,
-            "user_id": user_id,  # Use user_id like knowledge base manager ES
+            "user_id": user_id,
             "filename": filename,
-            "file_name": filename,  # Add both for frontend compatibility
-            "content": content,
-            "metadata": metadata,
+            "content": content_markdown,  # Clean markdown for search and display
             "indexed_at": datetime.utcnow().isoformat(),
-            "upload_date": datetime.utcnow().isoformat(),  # Add upload_date for frontend
-            "file_size": len(content),
             "file_type": filename.split('.')[-1] if '.' in filename else 'unknown'
         }
         
-        # Index document
+        # Add optional GCS URL to metadata if provided (for future use)
+        if metadata and metadata.get('gcs_url'):
+            document['gcs_url'] = metadata.get('gcs_url')
+        
+        # Index document (upsert - replace if exists)
         response = client.index(index=ES_INDEX_NAME, id=document_id, body=document)
         
         logger.info(f"[ES] Indexed profile {document_id} for user {user_id}")
+        logger.info(f"[ES] Content: {len(content_markdown)} chars")
         return {
             "success": True,
             "document_id": document_id,
@@ -195,6 +487,8 @@ def index_student_profile(user_id, filename, content, metadata):
             "error": str(e)
         }
 
+
+
 def search_student_profiles(user_id, query_text="", size=10, from_index=0):
     """Search student profiles for a user."""
     try:
@@ -207,10 +501,11 @@ def search_student_profiles(user_id, query_text="", size=10, from_index=0):
             must_conditions.append({
                 "multi_match": {
                     "query": query_text,
-                    "fields": ["content", "filename", "metadata.extracted_data"],
+                    "fields": ["content", "filename"],
                     "type": "best_fields"
                 }
             })
+
             
         search_body = {
             "size": size,
@@ -592,8 +887,29 @@ def calculate_comprehensive_fit(student_profile, university_data, intended_major
     
     gpa_data = admitted_profile.get('gpa', {})
     uni_gpa_range = gpa_data.get('unweighted_middle_50', '3.5-3.9')
-    uni_gpa_25 = float(gpa_data.get('percentile_25', '3.5').replace('"', ''))
-    uni_gpa_75 = float(gpa_data.get('percentile_75', '4.0').replace('"', ''))
+    
+    # Safe extraction with null checks - handle range values like '3.25-3.49'
+    def safe_parse_float(val, default):
+        """Parse a float, handling None, ranges, and quoted strings."""
+        if val is None:
+            return default
+        val_str = str(val).replace('"', '').strip()
+        if '-' in val_str:
+            # Take the midpoint of a range
+            try:
+                parts = val_str.split('-')
+                return (float(parts[0]) + float(parts[1])) / 2
+            except:
+                return default
+        try:
+            return float(val_str)
+        except:
+            return default
+    
+    pct_25_raw = gpa_data.get('percentile_25', '3.5')
+    pct_75_raw = gpa_data.get('percentile_75', '4.0')
+    uni_gpa_25 = safe_parse_float(pct_25_raw, 3.5)
+    uni_gpa_75 = safe_parse_float(pct_75_raw, 4.0)
     
     testing_data = admitted_profile.get('testing', {})
     sat_range = testing_data.get('sat_composite_middle_50', '1200-1400')
@@ -1205,7 +1521,460 @@ def handle_recalculate_all_fits(request):
         }, 500)
 
 
+# ============================================
+# PRE-COMPUTED FIT MATRIX ENDPOINTS
+# ============================================
+
+KNOWLEDGE_BASE_UNIVERSITIES_URL = os.getenv(
+    "KNOWLEDGE_BASE_UNIVERSITIES_URL",
+    "https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app"
+)
+
+
+def fetch_all_universities():
+    """Fetch all universities from the knowledge base."""
+    try:
+        response = requests.get(f"{KNOWLEDGE_BASE_UNIVERSITIES_URL}?action=list", timeout=30)
+        data = response.json()
+        
+        if data.get('success'):
+            return data.get('universities', [])
+        else:
+            logger.error(f"[KB] Failed to fetch universities: {data.get('error')}")
+            return []
+    except Exception as e:
+        logger.error(f"[KB] Error fetching universities: {e}")
+        return []
+
+
+def fetch_university_profile(university_id):
+    """Fetch full university profile from knowledge base."""
+    try:
+        response = requests.get(
+            f"{KNOWLEDGE_BASE_UNIVERSITIES_URL}?university_id={university_id}",
+            timeout=30
+        )
+        data = response.json()
+        
+        if data.get('success'):
+            return data.get('university', {})
+        return None
+    except Exception as e:
+        logger.error(f"[KB] Error fetching university {university_id}: {e}")
+        return None
+
+
+def handle_compute_all_fits(request):
+    """
+    Compute fit analysis for ALL universities in the knowledge base and store in profile.
+    This pre-computes fits so that Smart Discovery can use simple filtering.
+    
+    POST /compute-all-fits
+    {
+        "user_email": "student@gmail.com"
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "computed": 100,
+        "fits_computed_at": "2024-12-10T22:00:00Z"
+    }
+    """
+    try:
+        data = request.get_json() or {}
+        user_id = data.get('user_email') or data.get('user_id')
+        
+        if not user_id:
+            user_id = request.headers.get('X-User-Email')
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User email is required'}, 400)
+        
+        logger.info(f"[COMPUTE_ALL_FITS] Starting for user {user_id}")
+        
+        es_client = get_elasticsearch_client()
+        
+        # Step 1: Get student profile
+        search_body = {
+            "size": 1,
+            "query": {"term": {"user_id.keyword": user_id}},
+            "sort": [{"indexed_at": {"order": "desc"}}]
+        }
+        
+        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        
+        if response['hits']['total']['value'] == 0:
+            return add_cors_headers({
+                'success': False,
+                'error': 'No profile found for user. Please upload a profile first.'
+            }, 404)
+        
+        doc_id = response['hits']['hits'][0]['_id']
+        profile_source = response['hits']['hits'][0]['_source']
+        profile_content = profile_source.get('content', '')
+        
+        # Parse student profile for fit calculations
+        student_profile = parse_student_profile(profile_content)
+        logger.info(f"[COMPUTE_ALL_FITS] Parsed profile: GPA={student_profile.get('weighted_gpa')}, SAT={student_profile.get('sat_score')}")
+        
+        # Step 2: Fetch all universities from KB
+        universities = fetch_all_universities()
+        logger.info(f"[COMPUTE_ALL_FITS] Found {len(universities)} universities")
+        
+        if not universities:
+            return add_cors_headers({
+                'success': False,
+                'error': 'Could not fetch universities from knowledge base'
+            }, 500)
+        
+        # Step 3: Compute fit for each university
+        computed_fits = {}
+        computed_count = 0
+        error_count = 0
+        
+        for uni_summary in universities:
+            university_id = uni_summary.get('university_id')
+            
+            try:
+                # Fetch full profile for this university
+                uni_profile = fetch_university_profile(university_id)
+                
+                if not uni_profile:
+                    logger.warning(f"[COMPUTE_ALL_FITS] Could not fetch profile for {university_id}")
+                    error_count += 1
+                    continue
+                
+                # Get the nested profile data
+                profile_data = uni_profile.get('profile', uni_profile)
+                
+                # Calculate fit using existing algorithm
+                fit_analysis = calculate_comprehensive_fit(student_profile, profile_data, '')
+                
+                # Store computed fit
+                computed_fits[university_id] = {
+                    'fit_category': fit_analysis.get('fit_category', 'UNKNOWN'),
+                    'match_score': fit_analysis.get('match_percentage', 0),
+                    'university_name': uni_summary.get('official_name', university_id),
+                    'location': uni_summary.get('location', {}),
+                    'acceptance_rate': uni_summary.get('acceptance_rate'),
+                    'us_news_rank': uni_summary.get('us_news_rank'),
+                    'market_position': uni_summary.get('market_position'),
+                    'computed_at': datetime.utcnow().isoformat()
+                }
+                
+                computed_count += 1
+                
+                if computed_count % 20 == 0:
+                    logger.info(f"[COMPUTE_ALL_FITS] Progress: {computed_count}/{len(universities)}")
+                    
+            except Exception as e:
+                logger.error(f"[COMPUTE_ALL_FITS] Error computing fit for {university_id}: {e}")
+                error_count += 1
+        
+        # Step 4: Store computed_fits in profile document as JSON string (avoids ES field limit)
+        fits_computed_at = datetime.utcnow().isoformat()
+        
+        es_client.update(
+            index=ES_INDEX_NAME,
+            id=doc_id,
+            body={
+                "doc": {
+                    "computed_fits_json": json.dumps(computed_fits),  # Store as JSON string
+                    "fits_computed_at": fits_computed_at
+                }
+            }
+        )
+        
+        logger.info(f"[COMPUTE_ALL_FITS] Completed for {user_id}: {computed_count} computed, {error_count} errors")
+        
+        return add_cors_headers({
+            'success': True,
+            'computed': computed_count,
+            'errors': error_count,
+            'total_universities': len(universities),
+            'fits_computed_at': fits_computed_at,
+            'message': f'Computed fit for {computed_count} universities'
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[COMPUTE_ALL_FITS ERROR] {str(e)}", exc_info=True)
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to compute fits: {str(e)}'
+        }, 500)
+
+
+def handle_get_fits(request):
+    """
+    Get pre-computed fits for a user with optional filtering.
+    
+    POST /get-fits
+    {
+        "user_email": "student@gmail.com",
+        "filters": {
+            "category": "SAFETY",      // Optional: SAFETY, TARGET, REACH, SUPER_REACH
+            "state": "CA",             // Optional: state filter
+            "exclude_ids": ["ucsd"]    // Optional: exclude these ids
+        },
+        "limit": 10,
+        "sort_by": "rank"              // "rank" or "match_score"
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "results": [...],
+        "fits_computed_at": "...",
+        "total": 45
+    }
+    """
+    try:
+        data = request.get_json() or {}
+        user_id = data.get('user_email') or data.get('user_id')
+        filters = data.get('filters', {})
+        limit = data.get('limit', 20)
+        sort_by = data.get('sort_by', 'rank')
+        
+        if not user_id:
+            user_id = request.headers.get('X-User-Email')
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User email is required'}, 400)
+        
+        es_client = get_elasticsearch_client()
+        
+        # Find user's profile
+        search_body = {
+            "size": 1,
+            "query": {"term": {"user_id.keyword": user_id}},
+            "_source": ["computed_fits_json", "computed_fits", "fits_computed_at"],
+            "sort": [{"indexed_at": {"order": "desc"}}]
+        }
+        
+        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        
+        if response['hits']['total']['value'] == 0:
+            return add_cors_headers({
+                'success': False,
+                'error': 'No profile found for user'
+            }, 404)
+        
+        source = response['hits']['hits'][0]['_source']
+        fits_computed_at = source.get('fits_computed_at')
+        
+        # Try new JSON format first, fall back to old object format
+        computed_fits_json = source.get('computed_fits_json')
+        if computed_fits_json:
+            computed_fits = json.loads(computed_fits_json)
+        else:
+            computed_fits = source.get('computed_fits', {})
+        
+        # Check if fits have been computed
+        if not computed_fits:
+            return add_cors_headers({
+                'success': False,
+                'error': 'College fits not yet computed. Please wait or trigger computation.',
+                'fits_ready': False
+            }, 200)
+        
+        # Apply filters
+        results = []
+        category_filter = filters.get('category', '').upper() if filters.get('category') else None
+        state_filter = filters.get('state', '').upper() if filters.get('state') else None
+        exclude_ids = filters.get('exclude_ids', [])
+        
+        for uni_id, fit in computed_fits.items():
+            # Apply exclusion
+            if uni_id in exclude_ids:
+                continue
+            
+            # Apply category filter
+            if category_filter and fit.get('fit_category', '').upper() != category_filter:
+                continue
+            
+            # Apply state filter
+            location = fit.get('location', {})
+            if state_filter and location.get('state', '').upper() != state_filter:
+                continue
+            
+            # Add to results
+            results.append({
+                'university_id': uni_id,
+                **fit
+            })
+        
+        # Sort results
+        if sort_by == 'rank':
+            results.sort(key=lambda x: x.get('us_news_rank') or 999)
+        elif sort_by == 'match_score':
+            results.sort(key=lambda x: x.get('match_score', 0), reverse=True)
+        else:
+            # Default: sort by fit category priority, then rank
+            category_priority = {'SAFETY': 1, 'TARGET': 2, 'REACH': 3, 'SUPER_REACH': 4, 'UNKNOWN': 5}
+            results.sort(key=lambda x: (
+                category_priority.get(x.get('fit_category', 'UNKNOWN'), 5),
+                x.get('us_news_rank') or 999
+            ))
+        
+        # Apply limit
+        total_results = len(results)
+        results = results[:limit]
+        
+        return add_cors_headers({
+            'success': True,
+            'results': results,
+            'total': total_results,
+            'returned': len(results),
+            'fits_ready': True,
+            'fits_computed_at': fits_computed_at,
+            'filters_applied': filters
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[GET_FITS ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to get fits: {str(e)}'
+        }, 500)
+
+
+def handle_update_profile(request):
+    """Update the student's profile content directly.
+    Expects the caller (agent) to provide the complete updated content.
+    """
+    try:
+        data = request.get_json()
+        if not data:
+            return add_cors_headers({'error': 'No data provided'}, 400)
+        
+        user_id = data.get('user_id') or data.get('user_email')
+        content = data.get('content')  # Full updated markdown content
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User ID is required'}, 400)
+        if not content:
+            return add_cors_headers({'error': 'Content is required'}, 400)
+        
+        es_client = get_elasticsearch_client()
+        
+        # Find user's profile document
+        search_body = {
+            "size": 1,
+            "query": {"term": {"user_id.keyword": user_id}},
+            "sort": [{"indexed_at": {"order": "desc"}}]
+        }
+        
+        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        
+        if response['hits']['total']['value'] == 0:
+            return add_cors_headers({'error': 'No profile found for user'}, 404)
+        
+        doc_id = response['hits']['hits'][0]['_id']
+        
+        # Update the content field directly
+        es_client.update(
+            index=ES_INDEX_NAME,
+            id=doc_id,
+            body={
+                "doc": {
+                    "content": content,
+                    "content_updated_at": datetime.utcnow().isoformat()
+                }
+            }
+        )
+        
+        logger.info(f"[UPDATE_PROFILE] Updated content for user {user_id}")
+        return add_cors_headers({
+            'success': True,
+            'message': 'Successfully updated profile'
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[UPDATE_PROFILE ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to update profile: {str(e)}'
+        }, 500)
+
+
+
+
+def handle_update_profile_content(request):
+    """Update the raw content section of the student's profile."""
+    try:
+        data = request.get_json()
+        if not data:
+            return add_cors_headers({'error': 'No data provided'}, 400)
+        
+        user_id = data.get('user_id') or data.get('user_email')
+        update_type = data.get('update_type')  # 'append', 'replace', 'remove'
+        content = data.get('content')
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User ID is required'}, 400)
+        if not update_type:
+            return add_cors_headers({'error': 'Update type is required'}, 400)
+        if not content:
+            return add_cors_headers({'error': 'Content is required'}, 400)
+        
+        es_client = get_elasticsearch_client()
+        
+        # Find user's profile document
+        search_body = {
+            "size": 1,
+            "query": {"term": {"user_id.keyword": user_id}},
+            "sort": [{"indexed_at": {"order": "desc"}}]
+        }
+        
+        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        
+        if response['hits']['total']['value'] == 0:
+            return add_cors_headers({'error': 'No profile found for user'}, 404)
+        
+        doc_id = response['hits']['hits'][0]['_id']
+        current_doc = response['hits']['hits'][0]['_source']
+        current_content = current_doc.get('content', '')
+        
+        # Apply update based on type
+        if update_type == 'append':
+            new_content = f"{current_content}\n\n{content}"
+        elif update_type == 'replace':
+            new_content = content
+        elif update_type == 'remove':
+            new_content = current_content.replace(content, '')
+        else:
+            return add_cors_headers({'error': 'Update type must be append, replace, or remove'}, 400)
+        
+        # Update document
+        es_client.update(
+            index=ES_INDEX_NAME,
+            id=doc_id,
+            body={
+                "doc": {
+                    "content": new_content,
+                    "content_updated_at": datetime.utcnow().isoformat()
+                }
+            }
+        )
+        
+        logger.info(f"[UPDATE_CONTENT] {update_type} content for user {user_id}")
+        return add_cors_headers({
+            'success': True,
+            'update_type': update_type,
+            'message': f'Successfully {update_type}ed content'
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[UPDATE_CONTENT ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to update content: {str(e)}'
+        }, 500)
+
+
 # --- CORS Headers ---
+
 def add_cors_headers(response, status_code=200):
     """Add CORS headers to response and return proper format."""
     if isinstance(response, dict):
@@ -1272,19 +2041,16 @@ def profile_manager_es_http_entry(request):
                 file_content = file.read()
                 filename = file.filename
                 
-                # Extract structured content
+                # Extract and convert to markdown using Gemini
                 extracted_content = extract_profile_content_with_gemini(file_content, filename)
+                content_markdown = extracted_content.get('content_markdown', '')
                 
-                # Create metadata
-                metadata = {
-                    "filename": filename,
-                    "user_id": user_id,  # Use user_id like knowledge base manager ES
-                    "extracted_data": extracted_content,
-                    "extraction_timestamp": datetime.utcnow().isoformat()
-                }
+                if not content_markdown:
+                    # Fallback to raw content if markdown conversion failed
+                    content_markdown = extracted_content.get('raw_content', 'Error: Could not extract content')
                 
-                # Index in Elasticsearch
-                result = index_student_profile(user_id, filename, extracted_content['raw_content'], metadata)
+                # Index in Elasticsearch with just the markdown content
+                result = index_student_profile(user_id, filename, content_markdown)
                 
                 if result["success"]:
                     return add_cors_headers(result, 200)
@@ -1297,6 +2063,7 @@ def profile_manager_es_http_entry(request):
                     'success': False,
                     'error': f'Upload failed: {str(e)}'
                 }, 500)
+
         
         # --- SEARCH ROUTE ---
         elif resource_type == 'search' and request.method == 'POST':
@@ -1342,8 +2109,27 @@ def profile_manager_es_http_entry(request):
         elif resource_type == 'recalculate-fits':
             return handle_recalculate_all_fits(request)
         
+        # --- PRE-COMPUTED FIT MATRIX ROUTES ---
+        elif resource_type == 'compute-all-fits' and request.method == 'POST':
+            return handle_compute_all_fits(request)
+        
+        elif resource_type == 'get-fits' and request.method == 'POST':
+            return handle_get_fits(request)
+        
+        # --- PROFILE UPDATE ROUTES ---
+        elif resource_type == 'update-profile' and request.method == 'POST':
+            return handle_update_profile(request)
+        
+        elif resource_type == 'update-profile-content' and request.method == 'POST':
+            return handle_update_profile_content(request)
+        
+        # --- SEARCH USER PROFILE (for agent tools) ---
+        elif resource_type == 'search-user-profile' and request.method == 'POST':
+            return handle_search(request)
+        
         else:
             return add_cors_headers({'error': 'Not Found'}, 404)
+
             
     except Exception as e:
         logger.error(f"[PROFILE_ES ERROR] {str(e)}")

@@ -102,13 +102,13 @@ def get_elasticsearch_client():
     """Initialize Elasticsearch client with extended timeout for ELSER inference."""
     if not ES_CLOUD_ID or not ES_API_KEY:
         raise ValueError("Elasticsearch credentials not configured")
-    # Increase timeout for ELSER inference processing
+    # Increase timeout for ELSER inference processing (cold starts can take 30-60s)
     return Elasticsearch(
         cloud_id=ES_CLOUD_ID, 
         api_key=ES_API_KEY,
-        request_timeout=120,
+        request_timeout=180,
         retry_on_timeout=True,
-        max_retries=3
+        max_retries=5
     )
 
 
@@ -159,6 +159,7 @@ def ensure_index_exists(es_client):
                     "test_policy": {"type": "keyword"},
                     "market_position": {"type": "keyword"},
                     "median_earnings_10yr": {"type": "float"},
+                    "us_news_rank": {"type": "integer"},  # For sorting by ranking
                     "profile": {"type": "object", "enabled": False},
                     "indexed_at": {"type": "date"},
                     "last_updated": {"type": "date"}
@@ -323,6 +324,14 @@ def ingest_university(profile: dict) -> dict:
         median_earnings = profile.get('outcomes', {}).get('median_earnings_10yr')
         last_updated = profile.get('metadata', {}).get('last_updated')
         
+        # Extract US News National Universities rank
+        us_news_rank = None
+        rankings = profile.get('strategic_profile', {}).get('rankings', [])
+        for ranking in rankings:
+            if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
+                us_news_rank = ranking.get('rank_overall')
+                break
+        
         doc = {
             "university_id": university_id,
             "official_name": official_name,
@@ -333,10 +342,12 @@ def ingest_university(profile: dict) -> dict:
             "test_policy": test_policy,
             "market_position": market_position,
             "median_earnings_10yr": median_earnings,
+            "us_news_rank": us_news_rank,  # For sorting by rank
             "profile": profile,
             "indexed_at": datetime.now(timezone.utc).isoformat(),
             "last_updated": last_updated
         }
+
         
         es_client.index(index=ES_INDEX_NAME, id=university_id, document=doc)
         logger.info(f"Indexed university: {official_name}")
@@ -354,7 +365,7 @@ def ingest_university(profile: dict) -> dict:
 
 
 # --- Search Universities ---
-def search_universities(query: str, limit: int = 10, filters: dict = None, search_type: str = "semantic") -> dict:
+def search_universities(query: str, limit: int = 10, filters: dict = None, search_type: str = "semantic", exclude_ids: list = None, sort_by: str = "relevance") -> dict:
     """
     Search universities using semantic_text field.
     
@@ -366,7 +377,11 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
         limit: Maximum results to return
         filters: Optional filters (e.g., {"state": "CA", "acceptance_rate_max": 30})
         search_type: "semantic" (default), "keyword", or "hybrid"
+        exclude_ids: List of university_ids to exclude from results (for avoiding duplicates)
+        sort_by: Sort order - "relevance" (default), "selectivity" (by acceptance_rate ASC), 
+                 "acceptance_rate" (same as selectivity)
     """
+
     try:
         es_client = get_elasticsearch_client()
         
@@ -387,6 +402,12 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
             if filters.get('market_position'):
                 filter_clauses.append({"term": {"market_position": filters['market_position']}})
         
+        # Exclude specific university IDs (for avoiding duplicates in recommendations)
+        must_not_clauses = []
+        if exclude_ids and len(exclude_ids) > 0:
+            must_not_clauses.append({"terms": {"university_id": exclude_ids}})
+            logger.info(f"Excluding {len(exclude_ids)} universities from search: {exclude_ids[:5]}...")
+        
         if search_type == "keyword":
             # BM25 text search only on searchable_text field
             search_body = {
@@ -396,7 +417,8 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                         "must": [
                             {"match": {"searchable_text": expanded_query}}
                         ],
-                        "filter": filter_clauses
+                        "filter": filter_clauses,
+                        "must_not": must_not_clauses
                     }
                 }
             }
@@ -415,6 +437,7 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                             {"match": {"official_name": {"query": expanded_query, "boost": 3.0}}}
                         ],
                         "filter": filter_clauses,
+                        "must_not": must_not_clauses,
                         "minimum_should_match": 1
                     }
                 }
@@ -429,16 +452,27 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                         "must": [
                             {"match": {"semantic_content": expanded_query}}
                         ],
-                        "filter": filter_clauses
+                        "filter": filter_clauses,
+                        "must_not": must_not_clauses
                     }
                 }
             }
         
+        # Add sorting by US News rank if requested (lower rank = better)
+        if sort_by in ["rank", "us_news_rank", "selectivity"]:
+            search_body["sort"] = [
+                {"us_news_rank": {"order": "asc", "missing": "_last"}},  # Nulls last
+                {"_score": {"order": "desc"}}  # Secondary sort by relevance
+            ]
+            logger.info(f"Sorting by US News rank (ascending)")
+        
         logger.info(f"Executing {search_type} search for: {query} (expanded: {expanded_query})")
+
         
         # Retry logic for Elasticsearch cold starts (408 timeout errors)
+        # ELSER model can take 30-60s to warm up on first request
         max_retries = 5
-        retry_delay = 2  # seconds
+        retry_delay = 5  # seconds (base delay, exponentially increases)
         last_error = None
         
         for attempt in range(max_retries):
@@ -640,7 +674,9 @@ def knowledge_base_manager_universities_http_entry(req):
                 limit = data.get('limit', 10)
                 filters = data.get('filters', {})
                 search_type = data.get('search_type', 'semantic')  # Default to semantic
-                result = search_universities(query, limit, filters, search_type)
+                exclude_ids = data.get('exclude_ids', [])  # List of university_ids to exclude
+                sort_by = data.get('sort_by', 'relevance')  # "relevance", "rank", "selectivity"
+                result = search_universities(query, limit, filters, search_type, exclude_ids, sort_by)
                 return add_cors_headers(result)
             
             # Ingest request (expects a profile object)

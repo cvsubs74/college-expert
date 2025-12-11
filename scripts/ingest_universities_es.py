@@ -335,6 +335,7 @@ def create_index_mapping(es_client, force_recreate=False):
                 "test_policy": {"type": "keyword"},
                 "market_position": {"type": "keyword"},
                 "median_earnings_10yr": {"type": "float"},
+                "us_news_rank": {"type": "integer"},  # For sorting by ranking
                 
                 # Full profile stored as nested object
                 "profile": {"type": "object", "enabled": False},
@@ -427,6 +428,17 @@ def ingest_profiles(es_client, skip_existing=True):
             median_earnings = profile.get('outcomes', {}).get('median_earnings_10yr')
             last_updated = profile.get('metadata', {}).get('last_updated')
             
+            # Extract US News National Universities rank for sorting
+            us_news_rank = None
+            rankings = profile.get('strategic_profile', {}).get('rankings', [])
+            for ranking in rankings:
+                if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
+                    us_news_rank = ranking.get('rank_overall')
+                    break
+            
+            if us_news_rank:
+                print(f"  📊 US News Rank: #{us_news_rank}")
+            
             # Build document - semantic_content will be auto-embedded by ELSER
             doc = {
                 "university_id": university_id,
@@ -438,6 +450,7 @@ def ingest_profiles(es_client, skip_existing=True):
                 "test_policy": test_policy,
                 "market_position": market_position,
                 "median_earnings_10yr": median_earnings,
+                "us_news_rank": us_news_rank,  # For sorting by rank
                 "profile": profile,
                 "indexed_at": datetime.now(timezone.utc).isoformat(),
                 "last_updated": last_updated

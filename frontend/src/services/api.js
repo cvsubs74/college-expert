@@ -105,15 +105,17 @@ export const startSession = async (message, userEmail = null) => {
 
     console.log('[API] Creating new session...');
 
-    // Step 1: Create session with simple message (like integration test)
+    // Step 1: Create session with simple message - use plain string to avoid contamination
     const sessionResponse = await axios.post(
       `${agentUrl}/apps/${appName}/users/user/sessions`,
-      { user_input: "Hello" },
+      '{"user_input":"Hello"}',
       {
         timeout: 300000,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        transformRequest: [(data) => data]
       }
     );
+
 
     console.log('[API] Session created:', sessionResponse.data);
 
@@ -165,26 +167,42 @@ export const sendMessage = async (sessionId, message, userEmail = null, history 
       fullMessage = `CONVERSATION HISTORY:\n${historyText}\n\nCURRENT REQUEST:\n${fullMessage}`;
     }
 
-    // Send message using ADK /run endpoint - matches integration test
-    const requestData = {
-      app_name: appName,
-      user_id: "user",
-      session_id: sessionId,
-      new_message: {
-        parts: [{
-          text: fullMessage
-        }]
-      }
+
+    // Helper function to safely escape a string for JSON
+    // Note: Only escape common characters. \b and \f are regex special chars that would corrupt text.
+    const escapeForJson = (str) => {
+      return str
+        .replace(/\\/g, '\\\\')
+        .replace(/"/g, '\\"')
+        .replace(/\n/g, '\\n')
+        .replace(/\r/g, '\\r')
+        .replace(/\t/g, '\\t');
     };
+
+
+    // Build the request manually with proper escaping
+    const escapedAppName = escapeForJson(String(appName || ''));
+    const escapedSessionId = escapeForJson(String(sessionId || ''));
+    const escapedMessage = escapeForJson(String(fullMessage || ''));
+
+    const requestBody = `{"app_name":"${escapedAppName}","user_id":"user","session_id":"${escapedSessionId}","new_message":{"parts":[{"text":"${escapedMessage}"}]}}`;
+
+    console.log('[API] Session ID being used:', sessionId);
+    console.log('[API] Sending sanitized request to:', `${agentUrl}/run`);
+    console.log('[API] Message length:', fullMessage.length);
+    console.log('[API] Request body first 200 chars:', requestBody.substring(0, 200));
 
     const response = await axios.post(
       `${agentUrl}/run`,
-      requestData,
+      requestBody,
       {
         timeout: 300000,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        transformRequest: [(data) => data]
       }
     );
+
+
 
     console.log('[API] Response received:', response.data);
 
@@ -316,6 +334,62 @@ export const getStudentProfileContent = async (userEmail, filename) => {
     throw error;
   }
 };
+
+/**
+ * Fetch the complete user profile directly from Profile Manager ES
+ * Returns both raw content and structured data (JSON) for display
+ * @param {string} userEmail - User's email address
+ * @returns {object} Profile data with content and structuredData fields
+ */
+export const fetchUserProfile = async (userEmail) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    console.log(`[API] Fetching profile for ${userEmail} from ${baseUrl}`);
+
+    const response = await axios.post(`${baseUrl}/search`, {
+      user_email: userEmail,
+      query: 'student profile',
+      size: 1
+    }, {
+      timeout: 60000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+
+    if (response.data?.success && response.data?.documents?.length > 0) {
+      const doc = response.data.documents[0];
+      // Content is nested inside doc.document
+      const innerDoc = doc.document || doc;
+      const content = innerDoc.content || doc.content || '';
+      const metadata = innerDoc.metadata || doc.metadata || {};
+
+      console.log(`[API] Profile found, content length: ${content.length}`);
+
+      return {
+        success: true,
+        content: content,  // Clean markdown (for both search and display)
+        metadata: metadata,
+        filename: metadata?.filename || doc.display_name || 'profile'
+      };
+    }
+
+    return {
+      success: false,
+      error: 'No profile found',
+      content: ''
+    };
+  } catch (error) {
+    console.error('Error fetching user profile:', error);
+    throw error;
+  }
+};
+
+
+
+
+
 
 /**
  * Extract text content and suggested questions from the agent's response
@@ -767,4 +841,79 @@ export const updateFitAnalysis = async (userEmail, universityId, fitAnalysis) =>
   }
 };
 
+// ============================================
+// Pre-computed Fit Matrix API
+// ============================================
+
+/**
+ * Compute fit analysis for ALL universities and store in profile
+ * This should be called after profile upload (runs in background)
+ * @param {string} userEmail - User's email
+ * @returns {Promise<{success: boolean, computed: number, fits_computed_at: string}>}
+ */
+export const computeAllFits = async (userEmail) => {
+  try {
+    console.log(`[API] Computing all fits for ${userEmail}...`);
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/compute-all-fits`, {
+      user_email: userEmail
+    }, {
+      timeout: 300000,  // 5 min timeout - this takes a while (100 universities)
+      headers: { 'X-User-Email': userEmail }
+    });
+    console.log(`[API] Computed fits:`, response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error computing all fits:', error);
+    // Don't throw - this is a background operation
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Get pre-computed fits with optional filtering
+ * @param {string} userEmail - User's email
+ * @param {Object} filters - Optional filters: { category, state, exclude_ids }
+ * @param {number} limit - Max results to return
+ * @param {string} sortBy - Sort order: "rank" or "match_score"
+ * @returns {Promise<{success: boolean, results: Array, total: number, fits_ready: boolean}>}
+ */
+export const getPrecomputedFits = async (userEmail, filters = {}, limit = 20, sortBy = 'rank') => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/get-fits`, {
+      user_email: userEmail,
+      filters: filters,
+      limit: limit,
+      sort_by: sortBy
+    }, {
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting pre-computed fits:', error);
+    throw error;
+  }
+};
+
+/**
+ * Check if fits are ready for a user
+ * @param {string} userEmail - User's email
+ * @returns {Promise<{ready: boolean, fits_computed_at: string|null}>}
+ */
+export const checkFitsReady = async (userEmail) => {
+  try {
+    const result = await getPrecomputedFits(userEmail, {}, 1);
+    return {
+      ready: result.fits_ready === true,
+      computed_at: result.fits_computed_at || null,
+      total: result.total || 0
+    };
+  } catch (error) {
+    return { ready: false, computed_at: null, total: 0 };
+  }
+};
+
 export default api;
+
