@@ -8,7 +8,7 @@ from ...tools.tools import search_user_profile
 
 StudentProfileAgent = LlmAgent(
     name="StudentProfileAgent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash-lite",
     description="Retrieves and analyzes student academic profiles for personalized admissions analysis",
     instruction="""
     You are a student profile analyst. Your job is to retrieve and analyze student academic profiles

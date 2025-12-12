@@ -22,7 +22,7 @@ except Exception as e:
     print(f"Warning: Failed to initialize GenAI client: {e}")
     _eval_client = None
 
-JUDGE_MODEL_ID = "gemini-2.0-flash"
+JUDGE_MODEL_ID = "gemini-2.5-flash-lite"
 
 # Agent configuration
 CLOUD_URL = "https://college-expert-hybrid-agent-808989169388.us-east1.run.app"

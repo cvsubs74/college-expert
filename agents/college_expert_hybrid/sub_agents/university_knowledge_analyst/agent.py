@@ -8,7 +8,7 @@ from ...tools.tools import search_universities, get_university, list_universitie
 
 UniversityKnowledgeAnalyst = LlmAgent(
     name="UniversityKnowledgeAnalyst",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash-lite",
     description="Searches and retrieves detailed university information using hybrid search",
     instruction="""
     You search university profiles in the knowledge base.

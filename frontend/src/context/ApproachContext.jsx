@@ -53,21 +53,25 @@ export const APPROACHES = {
 };
 
 export const ApproachProvider = ({ children }) => {
-  const [selectedApproach, setSelectedApproach] = useState('rag');
-  const [isApproachSelected, setIsApproachSelected] = useState(false);
+  const [selectedApproach, setSelectedApproach] = useState('hybrid');
+  const [isApproachSelected, setIsApproachSelected] = useState(true);
 
-  // Load saved approach from localStorage on mount
+  // Load saved approach from localStorage on mount (default to hybrid if not set)
   useEffect(() => {
     const savedApproach = localStorage.getItem('knowledgeBaseApproach');
     const approachSelected = localStorage.getItem('approachSelected');
 
     if (savedApproach && APPROACHES[savedApproach]) {
       setSelectedApproach(savedApproach);
+    } else {
+      // Default to hybrid if no saved approach
+      setSelectedApproach('hybrid');
+      localStorage.setItem('knowledgeBaseApproach', 'hybrid');
     }
 
-    if (approachSelected === 'true') {
-      setIsApproachSelected(true);
-    }
+    // Always mark as selected (no need for selector page)
+    setIsApproachSelected(true);
+    localStorage.setItem('approachSelected', 'true');
   }, []);
 
   const selectApproach = (approach) => {

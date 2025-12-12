@@ -223,7 +223,7 @@ RULES:
 Updated markdown:"""
 
         response = client.models.generate_content(
-            model='gemini-2.0-flash',
+            model='gemini-2.5-flash-lite',
             contents=prompt,
             config=types.GenerateContentConfig(temperature=0.1)
         )
@@ -1098,7 +1098,7 @@ Respond in JSON format ONLY:
         # Call Gemini
         client = genai.Client()
         response = client.models.generate_content(
-            model='gemini-2.0-flash',
+            model='gemini-2.5-flash-lite',
             contents=prompt,
             config=types.GenerateContentConfig(
                 temperature=0.3,
@@ -1145,6 +1145,102 @@ Respond in JSON format ONLY:
             "explanation": "",
             "adjustment_reason": "",
             "llm_refined": False,
+            "error": str(e)
+        }
+
+
+def justify_fit_with_llm(
+    fit_category: str,
+    match_percentage: int,
+    student_profile: Dict[str, Any],
+    university_data: Dict[str, Any]
+) -> Dict[str, Any]:
+    """
+    Generate an LLM explanation that JUSTIFIES a pre-computed fit category.
+    
+    Unlike refine_fit_with_llm, this does NOT allow the LLM to change the category.
+    It only generates a personalized explanation for WHY the student has this fit.
+    
+    Args:
+        fit_category: Pre-computed category (SAFETY, TARGET, REACH, SUPER_REACH)
+        match_percentage: Pre-computed match score (0-100)
+        student_profile: Student's academic profile
+        university_data: University data
+        
+    Returns:
+        Dictionary with explanation maintaining the original category
+    """
+    try:
+        uni_name = university_data.get('official_name') or university_data.get('name', 'University')
+        acceptance_rate = university_data.get('acceptance_rate', 50)
+        
+        student_summary = f"""
+GPA: Weighted {student_profile.get('weighted_gpa', 'N/A')}, Unweighted {student_profile.get('unweighted_gpa', 'N/A')}
+SAT: {student_profile.get('sat_score', 'N/A')}
+ACT: {student_profile.get('act_score', 'N/A')}
+AP Courses: {student_profile.get('ap_count', 0)} courses
+Activities: {len(student_profile.get('activities', []))} activities
+""".strip()
+
+        prompt = f"""You are an expert college admissions counselor. Generate a personalized explanation for this student's fit at {uni_name}.
+
+IMPORTANT: The fit category has ALREADY been calculated as **{fit_category}** with a {match_percentage}% match.
+You must JUSTIFY this category, not recalculate or change it.
+
+STUDENT PROFILE:
+{student_summary}
+
+UNIVERSITY DATA:
+University: {uni_name}
+Acceptance Rate: {acceptance_rate}%
+US News Rank: {university_data.get('us_news_rank', 'N/A')}
+
+FIT RESULT (DO NOT CHANGE):
+Category: {fit_category}
+Match: {match_percentage}%
+
+TASK: Write a 2-3 paragraph personalized explanation that JUSTIFIES why this student's fit is {fit_category}.
+
+STYLE GUIDELINES:
+- **Direct Address**: Speak directly to the student using "You" and "Your"
+- **Markdown Formatting**: Use **bolding** for key terms, bullet points for lists
+- **Tone**: Professional, encouraging, but realistic
+- Focus on explaining WHY this category makes sense given their profile
+
+Respond in JSON format ONLY:
+{{
+  "explanation": "Your personalized 2-3 paragraph explanation here. Use Markdown!"
+}}"""
+
+        client = genai.Client()
+        response = client.models.generate_content(
+            model='gemini-2.5-flash-lite',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.3,
+                response_mime_type="application/json"
+            )
+        )
+        
+        result_text = response.text.strip()
+        llm_result = json.loads(result_text)
+        
+        return {
+            "success": True,
+            "fit_category": fit_category,  # Keep original - no changes allowed
+            "match_percentage": match_percentage,
+            "explanation": llm_result.get('explanation', ''),
+            "llm_justified": True
+        }
+        
+    except Exception as e:
+        logger.error(f"[FIT JUSTIFY] Error: {e}")
+        return {
+            "success": False,
+            "fit_category": fit_category,
+            "match_percentage": match_percentage,
+            "explanation": f"Based on our analysis, {uni_name} is a **{fit_category}** school for you with a {match_percentage}% match.",
+            "llm_justified": False,
             "error": str(e)
         }
 
@@ -1197,6 +1293,46 @@ def get_cached_fit_analysis(user_email: str, university_id: str) -> Dict[str, An
         logger.warning(f"[FIT CACHE] Failed to check cache: {e}")
         return {}  # Return empty dict instead of None
 
+
+def get_precomputed_fit(user_email: str, university_id: str) -> Dict[str, Any]:
+    """
+    Get pre-computed fit for a specific university from the college_fits field.
+    
+    This returns the fit that was pre-computed when the student uploaded their profile,
+    without re-running the expensive calculation.
+    """
+    try:
+        response = requests.post(
+            f"{PROFILE_MANAGER_ES_URL}/get-fits",
+            headers={'Content-Type': 'application/json'},
+            json={
+                'user_email': user_email,
+                'limit': 200  # Get all fits
+            },
+            timeout=10
+        )
+        if response.status_code == 200:
+            data = response.json()
+            if data.get('fits_ready'):
+                # Find the specific university in the results
+                for fit_result in data.get('results', []):
+                    if fit_result.get('university_id') == university_id:
+                        logger.info(f"[PRE-COMPUTED FIT] Found for {university_id}: {fit_result.get('fit_category')}")
+                        return {
+                            'success': True,
+                            'fit_category': fit_result.get('fit_category', 'TARGET'),
+                            'match_percentage': fit_result.get('match_score', 50),
+                            'university_name': fit_result.get('university_name'),
+                            'acceptance_rate': fit_result.get('acceptance_rate'),
+                            'us_news_rank': fit_result.get('us_news_rank'),
+                            'pre_computed': True,
+                            'computed_at': fit_result.get('computed_at')
+                        }
+                logger.info(f"[PRE-COMPUTED FIT] Not found for {university_id} in {len(data.get('results', []))} results")
+        return {'success': False, 'fits_ready': data.get('fits_ready', False) if response.status_code == 200 else False}
+    except Exception as e:
+        logger.warning(f"[PRE-COMPUTED FIT] Failed to get: {e}")
+        return {'success': False}
 
 def store_fit_analysis(user_email: str, university_id: str, fit_analysis: Dict[str, Any]) -> bool:
     """Store fit analysis result in the user's profile college_list."""
@@ -1270,6 +1406,23 @@ def calculate_college_fit(
 
     # Check for cached result first (unless force_recalculate is True)
     if not force_recalculate and user_email and user_email != "auto":
+        # First, check pre-computed fits (from profile upload)
+        precomputed = get_precomputed_fit(user_email, university_id)
+        if precomputed.get('success') and precomputed.get('fit_category'):
+            logger.info(f"[FIT ANALYSIS] Using pre-computed fit for {university_id}: {precomputed.get('fit_category')}")
+            return {
+                'success': True,
+                'fit_category': precomputed.get('fit_category'),
+                'match_percentage': precomputed.get('match_percentage'),
+                'university_name': precomputed.get('university_name'),
+                'pre_computed': True,
+                'computed_at': precomputed.get('computed_at'),
+                'factors': [],  # Pre-computed doesn't include factors breakdown
+                'recommendations': [],
+                'from_cache': True
+            }
+        
+        # Fall back to college_list cached fit
         cached_fit = get_cached_fit_analysis(user_email, university_id)
         if cached_fit.get('fit_category'):  # Check if valid cached result
             logger.info(f"[FIT ANALYSIS] Returning cached fit for {university_id}")

@@ -915,5 +915,54 @@ export const checkFitsReady = async (userEmail) => {
   }
 };
 
+/**
+ * Get fits filtered by category (for Smart Discovery quick actions)
+ * @param {string} userEmail - User's email
+ * @param {string} category - Fit category: SAFETY, TARGET, REACH, SUPER_REACH (or null for all)
+ * @param {string} state - State filter (e.g., "CA") or null
+ * @param {Array<string>} excludeIds - University IDs to exclude
+ * @param {number} limit - Max results
+ * @returns {Promise<{success: boolean, results: Array, total: number}>}
+ */
+export const getFitsByCategory = async (userEmail, category = null, state = null, excludeIds = [], limit = 10) => {
+  const filters = {};
+  if (category) filters.category = category;
+  if (state) filters.state = state;
+  if (excludeIds && excludeIds.length > 0) filters.exclude_ids = excludeIds;
+
+  return getPrecomputedFits(userEmail, filters, limit, 'rank');
+};
+
+/**
+ * Check if fit recomputation is needed (based on profile changes)
+ * @param {string} userEmail - User's email
+ * @returns {Promise<{needs_recomputation: boolean, reason: string|null, changes: array}>}
+ */
+export const checkFitRecomputationNeeded = async (userEmail) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/search`, {
+      user_id: userEmail
+    }, {
+      headers: { 'X-User-Email': userEmail }
+    });
+
+    if (response.data.success && response.data.profiles?.length > 0) {
+      const profile = response.data.profiles[0];
+      return {
+        needs_recomputation: profile.needs_fit_recomputation === true,
+        reason: profile.last_change_reason || null,
+        changes: profile.last_change_details || [],
+        profile_updated_at: profile.profile_updated_at || null,
+        fits_computed_at: profile.fits_computed_at || null
+      };
+    }
+    return { needs_recomputation: false, reason: null, changes: [] };
+  } catch (error) {
+    console.error('Error checking fit recomputation status:', error);
+    return { needs_recomputation: false, reason: null, changes: [] };
+  }
+};
+
 export default api;
 

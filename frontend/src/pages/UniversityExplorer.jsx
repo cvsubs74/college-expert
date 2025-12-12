@@ -26,8 +26,9 @@ import {
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList } from '../services/api';
+import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits } from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import FitBreakdownPanel from '../components/FitBreakdownPanel';
 
 // API Configuration
 const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL ||
@@ -118,7 +119,8 @@ const transformUniversityData = (apiData) => {
             medianEarnings: outcomes.median_earnings_10yr || apiData.median_earnings_10yr || 'N/A',
             topEmployers: outcomes.top_employers || []
         },
-        summary: strategic.executive_summary || 'No summary available.',
+        // Use top-level summary from ES (AI-generated) first, fallback to profile executive_summary
+        summary: apiData.summary || strategic.executive_summary || 'No summary available.',
         majors: majors.length > 0 ? majors : ['Information not available'],
         marketPosition: apiData.market_position || strategic.market_position || 'N/A',
         // Keep full profile for detail view
@@ -160,29 +162,26 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                     </div>
                     <div className="flex flex-col items-end gap-1">
                         <Badge color={uni.location.type === "Private" ? "purple" : "blue"}>{uni.location.type}</Badge>
-                        {/* Consistent fit status area - always shows something if in list */}
-                        {isInList && (
-                            fitAnalysis ? (
-                                <button
-                                    onClick={(e) => { e.stopPropagation(); onShowFitDetails(fitAnalysis); }}
-                                    className={`px-2 py-1 rounded-full text-xs font-bold border cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap ${fitColors[fitAnalysis.fit_category] || fitColors.TARGET}`}
-                                    title={`${fitAnalysis.match_percentage}% match - Click for details`}
-                                >
-                                    {fitAnalysis.fit_category === 'SUPER_REACH' ? '🎯 Super Reach' :
-                                        fitAnalysis.fit_category === 'REACH' ? '🎯 Reach' :
-                                            fitAnalysis.fit_category === 'TARGET' ? '🎯 Target' :
-                                                '✅ Safety'}
-                                </button>
-                            ) : isAnalyzing ? (
-                                <span className="px-2 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-600 border border-purple-200 animate-pulse whitespace-nowrap">
-                                    ⏳ Analyzing...
-                                </span>
-                            ) : (
-                                <span className="px-2 py-1 rounded-full text-xs font-medium text-green-600 bg-green-50 border border-green-200 whitespace-nowrap">
-                                    ✓ In List
-                                </span>
-                            )
-                        )}
+                        {/* Show fit badge if analysis available (from pre-computed or list) */}
+                        {fitAnalysis ? (
+                            <span
+                                className={`px-2 py-1 rounded-full text-xs font-bold border whitespace-nowrap ${fitColors[fitAnalysis.fit_category] || fitColors.TARGET}`}
+                                title={`${fitAnalysis.match_percentage}% match`}
+                            >
+                                {fitAnalysis.fit_category === 'SUPER_REACH' ? '🎯 Super Reach' :
+                                    fitAnalysis.fit_category === 'REACH' ? '🎯 Reach' :
+                                        fitAnalysis.fit_category === 'TARGET' ? '🎯 Target' :
+                                            '✅ Safety'}
+                            </span>
+                        ) : isAnalyzing ? (
+                            <span className="px-2 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-600 border border-purple-200 animate-pulse whitespace-nowrap">
+                                ⏳ Analyzing...
+                            </span>
+                        ) : isInList ? (
+                            <span className="px-2 py-1 rounded-full text-xs font-medium text-green-600 bg-green-50 border border-green-200 whitespace-nowrap">
+                                ✓ In List
+                            </span>
+                        ) : null}
                     </div>
                 </div>
 
@@ -301,8 +300,20 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis }) => {
                     )}
                 </div>
 
+                {/* Fit Explanation (from LLM justification) */}
+                {fit.explanation && (
+                    <div className="text-sm text-gray-600 bg-blue-50 rounded p-3 mt-2 border border-blue-100">
+                        <span className="font-medium text-blue-700 block mb-1">✨ Why This Fit:</span>
+                        <div className="prose prose-sm max-w-none prose-blue">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                {fit.explanation}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
+                )}
+
                 {/* Fit Analysis Info */}
-                {fit.factors && fit.factors.length > 0 && (
+                {fit.factors && fit.factors.length > 0 && !fit.explanation && (
                     <div className="text-xs text-gray-600 bg-gray-50 rounded p-2 mt-2">
                         <span className="font-medium text-gray-700">Key Factors: </span>
                         {fit.factors.slice(0, 3).map(f => f.name || f).join(' • ')}
@@ -450,7 +461,7 @@ const ComparisonView = ({ universities, onRemove }) => {
 };
 
 // --- University Detail Component ---
-const UniversityDetail = ({ uni, onBack, sentiment, deepResearchData, setDeepResearchData }) => {
+const UniversityDetail = ({ uni, onBack, sentiment }) => {
     if (!uni) return null;
 
     const formatNumber = (num) => {
@@ -476,7 +487,9 @@ const UniversityDetail = ({ uni, onBack, sentiment, deepResearchData, setDeepRes
                         </span>
                     </div>
                     <h1 className="text-3xl md:text-4xl font-bold mb-2">{uni.name}</h1>
-                    <p className="text-blue-100 text-lg max-w-3xl">{uni.summary}</p>
+                    {uni.market_position && (
+                        <p className="text-blue-100 text-lg font-medium">{uni.market_position}</p>
+                    )}
                 </div>
             </div>
 
@@ -683,18 +696,20 @@ const UniversityDetail = ({ uni, onBack, sentiment, deepResearchData, setDeepRes
                     </div>
                 </div>
 
-                {/* Deep Dive Research Section */}
-                <DeepDiveSection
-                    universityId={uni.id}
-                    universityName={uni.name}
-                    cachedResearch={deepResearchData[uni.id]}
-                    onResearchUpdate={(id, result) => {
-                        setDeepResearchData(prev => ({
-                            ...prev,
-                            [id]: result
-                        }));
-                    }}
-                />
+                {/* University Overview Section */}
+                {uni.summary && (
+                    <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <SparklesIcon className="h-5 w-5 text-purple-600" />
+                            University Overview
+                        </h2>
+                        <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                {uni.summary.replace(/^#{1,3}\s*University Overview\s*\n*/i, '')}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
+                )}
 
             </div>
         </div>
@@ -702,85 +717,9 @@ const UniversityDetail = ({ uni, onBack, sentiment, deepResearchData, setDeepRes
 };
 
 // --- Deep Dive Research Component ---
-const DeepDiveSection = ({ universityId, universityName, cachedResearch, onResearchUpdate }) => {
-    const [isResearching, setIsResearching] = useState(false);
-    const [error, setError] = useState(null);
 
-    const handleDeepDive = async () => {
-        setIsResearching(true);
-        setError(null);
 
-        try {
-            // Craft a deep research query
-            const query = `Deep research on ${universityName}: Tell me about recent news, notable research labs and professors, campus culture and student life, specific program strengths, and any unique opportunities or hidden gems that prospective students should know about. IMPORTANT: Provide all source URLs from your search results at the end.`;
 
-            // Start session and send the message in one call
-            const response = await startSession(query);
-
-            // Extract the full response
-            const fullResponse = extractFullResponse(response);
-            const resultText = fullResponse.result || fullResponse;
-
-            // Cache the result
-            onResearchUpdate(universityId, resultText);
-        } catch (err) {
-            console.error('Deep research failed:', err);
-            setError('Failed to complete research. Please try again.');
-        } finally {
-            setIsResearching(false);
-        }
-    };
-
-    return (
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-6 border border-purple-200">
-            <div className="flex items-start justify-between mb-4">
-                <div>
-                    <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                        <SparklesIcon className="h-5 w-5 text-purple-600" />
-                        Deep Dive Research
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-1">
-                        Get detailed insights beyond the basic stats
-                    </p>
-                </div>
-            </div>
-
-            {!cachedResearch && (
-                <button
-                    onClick={handleDeepDive}
-                    disabled={isResearching}
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
-                >
-                    {isResearching ? (
-                        <>
-                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                            Researching...
-                        </>
-                    ) : (
-                        <>
-                            <MagnifyingGlassIcon className="h-5 w-5" />
-                            Research This University
-                        </>
-                    )}
-                </button>
-            )}
-
-            {error && (
-                <div className="mt-4 bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 text-sm">
-                    {error}
-                </div>
-            )}
-
-            {cachedResearch && (
-                <div className="prose prose-sm max-w-none">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {cachedResearch}
-                    </ReactMarkdown>
-                </div>
-            )}
-        </div>
-    );
-};
 
 // --- Loading Skeleton ---
 const LoadingSkeleton = () => (
@@ -815,11 +754,13 @@ const UniversityExplorer = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedType, setSelectedType] = useState("All");
     const [selectedState, setSelectedState] = useState("All");
+    const [selectedFitCategory, setSelectedFitCategory] = useState("All");
     const [maxAcceptance, setMaxAcceptance] = useState(100);
 
     const [activeView, setActiveView] = useState("list");
     const [selectedUni, setSelectedUni] = useState(null);
     const [comparisonList, setComparisonList] = useState([]);
+    const [recomputingFits, setRecomputingFits] = useState(false);
 
     // Pagination and sorting
     const [currentPage, setCurrentPage] = useState(0);
@@ -876,7 +817,11 @@ const UniversityExplorer = () => {
     const [myCollegeList, setMyCollegeList] = useState([]);
     const [collegeListLoading, setCollegeListLoading] = useState(false);
 
-    // Load college list on mount
+    // Pre-computed fits for ALL universities (from college_fits field)
+    const [precomputedFits, setPrecomputedFits] = useState({});
+    const [fitsLoading, setFitsLoading] = useState(false);
+
+    // Load college list and pre-computed fits on mount
     useEffect(() => {
         const loadCollegeList = async () => {
             if (!currentUser?.email) return;
@@ -895,7 +840,52 @@ const UniversityExplorer = () => {
             }
         };
 
+        const loadPrecomputedFits = async () => {
+            if (!currentUser?.email) return;
+
+            try {
+                setFitsLoading(true);
+
+                // First, check if recomputation is needed
+                const recomputeStatus = await checkFitRecomputationNeeded(currentUser.email);
+                if (recomputeStatus.needs_recomputation) {
+                    console.log('[Pre-computed Fits] Recomputation needed:', recomputeStatus.reason);
+                    setRecomputingFits(true);
+
+                    // Trigger recomputation
+                    await computeAllFits(currentUser.email);
+                    setRecomputingFits(false);
+                }
+
+                // Fetch all pre-computed fits (no filtering, get all)
+                const result = await getPrecomputedFits(currentUser.email, {}, 500, 'rank');
+                if (result.success && result.results) {
+                    // Convert array to object keyed by university_id for quick lookup
+                    const fitsMap = {};
+                    result.results.forEach(fit => {
+                        /* fit mapping updated */
+                        fitsMap[fit.university_id] = {
+                            fit_category: fit.fit_category,
+                            match_percentage: fit.match_score,
+                            university_name: fit.university_name,
+                            explanation: fit.explanation,
+                            factors: fit.factors,
+                            recommendations: fit.recommendations
+                        };
+                    });
+                    setPrecomputedFits(fitsMap);
+                    console.log('[Pre-computed Fits] Loaded:', Object.keys(fitsMap).length, 'fits');
+                }
+            } catch (err) {
+                console.error('[Pre-computed Fits] Error loading:', err);
+                setRecomputingFits(false);
+            } finally {
+                setFitsLoading(false);
+            }
+        };
+
         loadCollegeList();
+        loadPrecomputedFits();
     }, [currentUser]);
 
     // Toggle college in list (add/remove)
@@ -939,8 +929,13 @@ const UniversityExplorer = () => {
         return myCollegeList.some(c => c.university_id === universityId);
     };
 
-    // Get fit analysis for a university from college list
+    // Get fit analysis for a university - prioritize pre-computed fits
     const getCollegeFitAnalysis = (universityId) => {
+        // First check pre-computed fits (covers ALL universities)
+        if (precomputedFits[universityId]) {
+            return precomputedFits[universityId];
+        }
+        // Fall back to college list (for universities added before fits were computed)
         const college = myCollegeList.find(c => c.university_id === universityId);
         return college?.fit_analysis || null;
     };
@@ -1175,9 +1170,21 @@ const UniversityExplorer = () => {
                 acceptanceRate === null ||
                 acceptanceRate <= maxAcceptance;
 
-            return matchesSearch && matchesType && matchesState && matchesAcceptance;
+            // Fit category filter - uses precomputedFits if available
+            let matchesFitCategory = true;
+            if (selectedFitCategory !== "All") {
+                const fitData = precomputedFits[uni.id];
+                if (fitData) {
+                    matchesFitCategory = fitData.fit_category === selectedFitCategory;
+                } else {
+                    // If no fit data for this uni, don't match when filtering by category
+                    matchesFitCategory = false;
+                }
+            }
+
+            return matchesSearch && matchesType && matchesState && matchesAcceptance && matchesFitCategory;
         });
-    }, [universities, searchTerm, selectedType, selectedState, maxAcceptance]);
+    }, [universities, searchTerm, selectedType, selectedState, maxAcceptance, selectedFitCategory, precomputedFits]);
 
     // Sort filtered universities
     const sortedUniversities = useMemo(() => {
@@ -1215,7 +1222,7 @@ const UniversityExplorer = () => {
     // Reset page when filters change
     useEffect(() => {
         setCurrentPage(0);
-    }, [searchTerm, selectedType, selectedState, maxAcceptance, sortBy]);
+    }, [searchTerm, selectedType, selectedState, maxAcceptance, sortBy, selectedFitCategory]);
 
     // Parse sentiment from research response
     const parseSentiment = (responseText) => {
@@ -1233,6 +1240,20 @@ const UniversityExplorer = () => {
 
         // Remove HEADLINE marker and the headline itself
         cleanedText = cleanedText.replace(/\*\*HEADLINE:\*\*\s*.+?(?=\n\n)/i, '');
+
+        // Remove source/citation links (often hallucinated by LLM)
+        // Matches patterns like [Source](http://...), [1](http://...), (Source: http://...)
+        cleanedText = cleanedText.replace(/\[([^\]]+)\]\(https?:\/\/[^\)]+\)/gi, '$1');
+        cleanedText = cleanedText.replace(/\(Source:?\s*https?:\/\/[^\)]+\)/gi, '');
+        // Remove standalone URLs (on their own line or inline)
+        cleanedText = cleanedText.replace(/^https?:\/\/\S+$/gim, '');
+        cleanedText = cleanedText.replace(/https?:\/\/\S+/gi, '');
+        // Remove "Sources:" section at the end (with various formats)
+        cleanedText = cleanedText.replace(/\n\*\*Sources?:?\*\*[\s\S]*$/i, '');
+        cleanedText = cleanedText.replace(/\nSources?:\s*\n[\s\S]*$/i, '');
+        cleanedText = cleanedText.replace(/\nSources?:?[\s\S]*$/i, '');
+        // Remove any remaining empty lines with just whitespace
+        cleanedText = cleanedText.replace(/\n\s*\n\s*\n/g, '\n\n');
 
         // Clean up extra whitespace
         cleanedText = cleanedText.trim();
@@ -1380,6 +1401,24 @@ const UniversityExplorer = () => {
 
     return (
         <div className="space-y-6">
+            {/* Recomputation Banner */}
+            {recomputingFits && (
+                <div className="bg-purple-100 border-l-4 border-purple-500 text-purple-700 p-4 rounded shadow-sm" role="alert">
+                    <div className="flex items-center">
+                        <div className="py-1">
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-purple-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p className="font-bold">Updating your matches</p>
+                            <p className="text-sm">We noticed changes in your profile. Recalculating your fit scores for all universities...</p>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* Header */}
             <div className="flex items-center justify-between">
                 <div>
@@ -1391,6 +1430,7 @@ const UniversityExplorer = () => {
                         Explore and compare top universities
                     </p>
                 </div>
+                /* add recalculate button */
                 <button
                     onClick={handleRefresh}
                     disabled={loading}
@@ -1398,6 +1438,42 @@ const UniversityExplorer = () => {
                 >
                     <ArrowPathIcon className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
                     Refresh
+                </button>
+                <button
+                    onClick={async () => {
+                        if (!currentUser?.email) return;
+                        setRecomputingFits(true);
+                        try {
+                            await computeAllFits(currentUser.email);
+                            // Reload fits after short delay
+                            setTimeout(async () => {
+                                const result = await getPrecomputedFits(currentUser.email, {}, 500, 'rank');
+                                if (result.success && result.results) {
+                                    const fitsMap = {};
+                                    result.results.forEach(fit => {
+                                        fitsMap[fit.university_id] = {
+                                            fit_category: fit.fit_category,
+                                            match_percentage: fit.match_score,
+                                            university_name: fit.university_name,
+                                            explanation: fit.explanation,
+                                            factors: fit.factors,
+                                            recommendations: fit.recommendations
+                                        };
+                                    });
+                                    setPrecomputedFits(fitsMap);
+                                }
+                                setRecomputingFits(false);
+                            }, 3000);
+                        } catch (e) {
+                            console.error("Recalculate failed", e);
+                            setRecomputingFits(false);
+                        }
+                    }}
+                    disabled={recomputingFits}
+                    className="flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-lg text-purple-700 hover:bg-purple-100 disabled:opacity-50"
+                >
+                    <ArrowPathIcon className={`h-4 w-4 ${recomputingFits ? 'animate-spin' : ''}`} />
+                    {recomputingFits ? 'Recalculating...' : 'Recalculate Fits'}
                 </button>
             </div>
 
@@ -1485,7 +1561,7 @@ const UniversityExplorer = () => {
                                 </div>
 
                                 {/* Filter Controls */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                                     <div className="space-y-1">
                                         <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Type</label>
                                         <select
@@ -1528,6 +1604,21 @@ const UniversityExplorer = () => {
                                             onChange={(e) => setMaxAcceptance(Number(e.target.value))}
                                             className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                                         />
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Fit Category</label>
+                                        <select
+                                            value={selectedFitCategory}
+                                            onChange={(e) => setSelectedFitCategory(e.target.value)}
+                                            className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                        >
+                                            <option value="All">All Fit Categories</option>
+                                            <option value="SAFETY">🛡️ Safety</option>
+                                            <option value="TARGET">🎯 Target</option>
+                                            <option value="REACH">🔼 Reach</option>
+                                            <option value="SUPER_REACH">🚀 Super Reach</option>
+                                        </select>
                                     </div>
 
                                     <div className="space-y-1">
@@ -1747,153 +1838,158 @@ const UniversityExplorer = () => {
                         />
                     )}
                 </>
-            )}
+            )
+            }
 
             {/* Sentiment Modal */}
-            {showSentimentModal && selectedSentiment && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-                    onClick={() => setShowSentimentModal(false)}>
-                    <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedSentiment.sentiment === 'positive' ? 'border-green-500' : 'border-red-500'
-                        }`}
-                        onClick={(e) => e.stopPropagation()}>
-                        <div className={`p-6 ${selectedSentiment.sentiment === 'positive' ? 'bg-green-50' : 'bg-red-50'
-                            }`}>
-                            <div className="flex items-start justify-between">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-3xl">
-                                        {selectedSentiment.sentiment === 'positive' ? '📈' : '⚠️'}
-                                    </span>
-                                    <div>
-                                        <h3 className={`text-xl font-bold ${selectedSentiment.sentiment === 'positive' ? 'text-green-900' : 'text-red-900'
-                                            }`}>
-                                            {selectedSentiment.sentiment === 'positive' ? 'Positive News' : 'Important Alert'}
-                                        </h3>
-                                        <p className={`text-sm mt-1 ${selectedSentiment.sentiment === 'positive' ? 'text-green-700' : 'text-red-700'
-                                            }`}>
-                                            {selectedSentiment.headline}
-                                        </p>
+            {
+                showSentimentModal && selectedSentiment && (
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+                        onClick={() => setShowSentimentModal(false)}>
+                        <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedSentiment.sentiment === 'positive' ? 'border-green-500' : 'border-red-500'
+                            }`}
+                            onClick={(e) => e.stopPropagation()}>
+                            <div className={`p-6 ${selectedSentiment.sentiment === 'positive' ? 'bg-green-50' : 'bg-red-50'
+                                }`}>
+                                <div className="flex items-start justify-between">
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-3xl">
+                                            {selectedSentiment.sentiment === 'positive' ? '📈' : '⚠️'}
+                                        </span>
+                                        <div>
+                                            <h3 className={`text-xl font-bold ${selectedSentiment.sentiment === 'positive' ? 'text-green-900' : 'text-red-900'
+                                                }`}>
+                                                {selectedSentiment.sentiment === 'positive' ? 'Positive News' : 'Important Alert'}
+                                            </h3>
+                                            <p className={`text-sm mt-1 ${selectedSentiment.sentiment === 'positive' ? 'text-green-700' : 'text-red-700'
+                                                }`}>
+                                                {selectedSentiment.headline}
+                                            </p>
+                                        </div>
                                     </div>
+                                    <button
+                                        onClick={() => setShowSentimentModal(false)}
+                                        className="text-gray-400 hover:text-gray-600"
+                                    >
+                                        <XMarkIcon className="h-6 w-6" />
+                                    </button>
                                 </div>
-                                <button
-                                    onClick={() => setShowSentimentModal(false)}
-                                    className="text-gray-400 hover:text-gray-600"
-                                >
-                                    <XMarkIcon className="h-6 w-6" />
-                                </button>
+                            </div>
+                            <div className="p-6 prose prose-sm max-w-none">
+                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                    {selectedSentiment.fullText}
+                                </ReactMarkdown>
                             </div>
                         </div>
-                        <div className="p-6 prose prose-sm max-w-none">
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                {selectedSentiment.fullText}
-                            </ReactMarkdown>
-                        </div>
                     </div>
-                </div>
-            )}
+                )
+            }
 
             {/* Fit Analysis Modal */}
-            {showFitModal && selectedFitData && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-                    onClick={() => setShowFitModal(false)}>
-                    <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedFitData.fit_category === 'SAFETY' ? 'border-green-500' :
-                        selectedFitData.fit_category === 'TARGET' ? 'border-blue-500' :
-                            selectedFitData.fit_category === 'REACH' ? 'border-orange-500' :
-                                'border-red-500'
-                        }`}
-                        onClick={(e) => e.stopPropagation()}>
-                        <div className={`p-6 ${selectedFitData.fit_category === 'SAFETY' ? 'bg-green-50' :
-                            selectedFitData.fit_category === 'TARGET' ? 'bg-blue-50' :
-                                selectedFitData.fit_category === 'REACH' ? 'bg-orange-50' :
-                                    'bg-red-50'
-                            }`}>
-                            <div className="flex items-start justify-between">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-3xl">
-                                        {selectedFitData.fit_category === 'SAFETY' ? '✅' :
-                                            selectedFitData.fit_category === 'TARGET' ? '🎯' :
-                                                selectedFitData.fit_category === 'REACH' ? '🔼' : '🚀'}
-                                    </span>
-                                    <div>
-                                        <h3 className={`text-xl font-bold ${selectedFitData.fit_category === 'SAFETY' ? 'text-green-900' :
-                                            selectedFitData.fit_category === 'TARGET' ? 'text-blue-900' :
-                                                selectedFitData.fit_category === 'REACH' ? 'text-orange-900' :
-                                                    'text-red-900'
-                                            }`}>
-                                            {selectedFitData.university_name} - {selectedFitData.fit_category.replace('_', ' ')}
-                                        </h3>
-                                        <p className="text-gray-600 text-sm mt-1">
-                                            {selectedFitData.match_percentage}% Match
-                                        </p>
-                                    </div>
-                                </div>
-                                <button
-                                    onClick={() => setShowFitModal(false)}
-                                    className="text-gray-400 hover:text-gray-600"
-                                >
-                                    <XMarkIcon className="h-6 w-6" />
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="p-6">
-                            {/* Factors Section */}
-                            <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
-                                <SparklesIcon className="h-5 w-5 text-purple-500" />
-                                Fit Factors
-                            </h4>
-                            <div className="space-y-3 mb-6">
-                                {selectedFitData.factors?.map((factor, idx) => (
-                                    <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                        <div className="flex items-center gap-2">
-                                            <span className={`text-lg font-bold ${factor.score >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                                                {factor.score >= 0 ? '+' : ''}{factor.score}
-                                            </span>
-                                            <span className="font-medium text-gray-700">{factor.name}</span>
+            {
+                showFitModal && selectedFitData && (
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+                        onClick={() => setShowFitModal(false)}>
+                        <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedFitData.fit_category === 'SAFETY' ? 'border-green-500' :
+                            selectedFitData.fit_category === 'TARGET' ? 'border-blue-500' :
+                                selectedFitData.fit_category === 'REACH' ? 'border-orange-500' :
+                                    'border-red-500'
+                            }`}
+                            onClick={(e) => e.stopPropagation()}>
+                            <div className={`p-6 ${selectedFitData.fit_category === 'SAFETY' ? 'bg-green-50' :
+                                selectedFitData.fit_category === 'TARGET' ? 'bg-blue-50' :
+                                    selectedFitData.fit_category === 'REACH' ? 'bg-orange-50' :
+                                        'bg-red-50'
+                                }`}>
+                                <div className="flex items-start justify-between">
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-3xl">
+                                            {selectedFitData.fit_category === 'SAFETY' ? '✅' :
+                                                selectedFitData.fit_category === 'TARGET' ? '🎯' :
+                                                    selectedFitData.fit_category === 'REACH' ? '🔼' : '🚀'}
+                                        </span>
+                                        <div>
+                                            <h3 className={`text-xl font-bold ${selectedFitData.fit_category === 'SAFETY' ? 'text-green-900' :
+                                                selectedFitData.fit_category === 'TARGET' ? 'text-blue-900' :
+                                                    selectedFitData.fit_category === 'REACH' ? 'text-orange-900' :
+                                                        'text-red-900'
+                                                }`}>
+                                                {selectedFitData.university_name} - {selectedFitData.fit_category.replace('_', ' ')}
+                                            </h3>
+                                            <p className="text-gray-600 text-sm mt-1">
+                                                {selectedFitData.match_percentage}% Match
+                                            </p>
                                         </div>
-                                        <span className="text-sm text-gray-500 max-w-[200px] text-right">{factor.detail}</span>
                                     </div>
-                                ))}
+                                    <button
+                                        onClick={() => setShowFitModal(false)}
+                                        className="text-gray-400 hover:text-gray-600"
+                                    >
+                                        <XMarkIcon className="h-6 w-6" />
+                                    </button>
+                                </div>
                             </div>
 
-                            {/* Recommendations Section */}
-                            <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
-                                <ArrowTrendingUpIcon className="h-5 w-5 text-blue-500" />
-                                Recommendations to Improve
-                            </h4>
-                            <div className="space-y-2">
-                                {selectedFitData.recommendations?.map((rec, idx) => (
-                                    <div key={idx} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
-                                        <span className="text-blue-600 font-bold">{idx + 1}.</span>
-                                        <span className="text-gray-700">{rec}</span>
-                                    </div>
-                                ))}
-                            </div>
+                            <div className="p-6">
+                                {/* Factors Section */}
+                                <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                    <SparklesIcon className="h-5 w-5 text-purple-500" />
+                                    Fit Factors
+                                </h4>
+                                <div className="space-y-3 mb-6">
+                                    {selectedFitData.factors?.map((factor, idx) => (
+                                        <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                            <div className="flex items-center gap-2">
+                                                <span className={`text-lg font-bold ${factor.score >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                                                    {factor.score >= 0 ? '+' : ''}{factor.score}
+                                                </span>
+                                                <span className="font-medium text-gray-700">{factor.name}</span>
+                                            </div>
+                                            <span className="text-sm text-gray-500 max-w-[200px] text-right">{factor.detail}</span>
+                                        </div>
+                                    ))}
+                                </div>
 
-                            {/* Detailed Explanation Section */}
-                            {selectedFitData.explanation && (
-                                <>
-                                    <h4 className="font-bold text-gray-800 mb-4 mt-6 flex items-center gap-2">
-                                        📋 Detailed Analysis
-                                    </h4>
-                                    <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                                        <ReactMarkdown
-                                            className="prose prose-sm max-w-none prose-blue text-gray-700"
-                                            remarkPlugins={[remarkGfm]}
-                                            components={{
-                                                p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
-                                                strong: ({ node, ...props }) => <strong className="font-bold text-gray-900" {...props} />
-                                            }}
-                                        >
-                                            {selectedFitData.explanation}
-                                        </ReactMarkdown>
-                                    </div>
-                                </>
-                            )}
+                                {/* Recommendations Section */}
+                                <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                    <ArrowTrendingUpIcon className="h-5 w-5 text-blue-500" />
+                                    Recommendations to Improve
+                                </h4>
+                                <div className="space-y-2">
+                                    {selectedFitData.recommendations?.map((rec, idx) => (
+                                        <div key={idx} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+                                            <span className="text-blue-600 font-bold">{idx + 1}.</span>
+                                            <span className="text-gray-700">{rec}</span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Detailed Explanation Section */}
+                                {selectedFitData.explanation && (
+                                    <>
+                                        <h4 className="font-bold text-gray-800 mb-4 mt-6 flex items-center gap-2">
+                                            📋 Detailed Analysis
+                                        </h4>
+                                        <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                            <ReactMarkdown
+                                                className="prose prose-sm max-w-none prose-blue text-gray-700"
+                                                remarkPlugins={[remarkGfm]}
+                                                components={{
+                                                    p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+                                                    strong: ({ node, ...props }) => <strong className="font-bold text-gray-900" {...props} />
+                                                }}
+                                            >
+                                                {selectedFitData.explanation}
+                                            </ReactMarkdown>
+                                        </div>
+                                    </>
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )
+            }
+        </div >
     );
 };
 

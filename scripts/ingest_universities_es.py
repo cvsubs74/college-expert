@@ -24,11 +24,22 @@ except ImportError as e:
     print("Run: pip install elasticsearch")
     sys.exit(1)
 
+try:
+    import google.generativeai as genai
+except ImportError:
+    print("❌ Missing dependency: google-generativeai")
+    print("Run: pip install google-generativeai")
+    sys.exit(1)
+
+import time
+
+
 # Configuration
 ES_CLOUD_ID = os.environ.get('ES_CLOUD_ID')
 ES_API_KEY = os.environ.get('ES_API_KEY')
 ES_INDEX_NAME = 'knowledgebase_universities'
 RESEARCH_DIR = Path(__file__).parent.parent / "agents" / "university_profile_collector" / "research"
+GEMINI_MODEL = "gemini-2.0-flash-lite-preview-02-05"
 
 
 # --- University Acronym Mappings ---
@@ -129,6 +140,150 @@ def get_elasticsearch_client():
         retry_on_timeout=True,
         max_retries=3
     )
+
+
+def setup_gemini():
+    """Initialize Gemini model."""
+    api_key = os.environ.get('GEMINI_API_KEY')
+    if not api_key:
+        print("⚠️ GEMINI_API_KEY not found. Summaries will be template-based.")
+        return None
+    genai.configure(api_key=api_key)
+    return genai.GenerativeModel(GEMINI_MODEL)
+
+
+def generate_llm_summary(model, profile: dict) -> str:
+    """Generate detailed summary using Gemini."""
+    if not model:
+        return None
+
+    uni_name = profile.get('metadata', {}).get('official_name', 'University')
+    
+    # Create a string representation of the profile for the LLM
+    profile_str = json.dumps(profile, default=str)
+    
+    prompt = f"You are an expert college counselor.\n" \
+             f"Create a comprehensive, engaging, and detailed sectional summary for **{uni_name}**.\n" \
+             f"Use the provided JSON profile data as the complete source. Do not rely on external knowledge not present in the data.\n\n" \
+             f"Structure the summary in Markdown with the following sections:\n\n" \
+             f"### University Overview\n" \
+             f"(A brief intro about location, size, and prestige)\n\n" \
+             f"### Academic Excellence\n" \
+             f"(Key colleges, majors, and academic reputation)\n\n" \
+             f"### Campus Life & Culture\n" \
+             f"(Student life, traditions, and atmosphere)\n\n" \
+             f"### Admissions & Financials\n" \
+             f"(Selectivity, key stats, cost, and aid)\n\n" \
+             f"### Why {uni_name} Stands Out\n" \
+             f"(Unique value proposition)\n\n" \
+             f"Keep the tone professional yet inviting for prospective students.\n" \
+             f"Total length should be around 400-500 words. Use bullet points where appropriate for readability.\n\n" \
+             f"PROFILE DATA:\n{profile_str}"
+    
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        print(f"  ⚠️ Gemini generation error: {e}")
+        return None
+
+
+def create_template_summary(profile: dict) -> str:
+    """Create a concise summary of the university for display in details view."""
+    parts = []
+    
+    # Basic info
+    meta = profile.get('metadata', {})
+    official_name = meta.get('official_name', 'This university')
+    location = meta.get('location', {})
+    city = location.get('city', '')
+    state = location.get('state', '')
+    uni_type = location.get('type', 'university')
+    
+    # Admissions data
+    admissions = profile.get('admissions_data', {})
+    current_status = admissions.get('current_status', {})
+    acceptance_rate = current_status.get('overall_acceptance_rate')
+    test_policy = current_status.get('test_policy_details', 'standard testing')
+    
+    # Rankings
+    strategic = profile.get('strategic_profile', {})
+    market_position = strategic.get('market_position', '')
+    us_news_rank = None
+    for ranking in strategic.get('rankings', []):
+        if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
+            us_news_rank = ranking.get('rank_in_category') or ranking.get('rank_overall')
+            break
+    
+    # Build overview paragraph
+    overview = f"**{official_name}** is a {uni_type.lower()} university"
+    if city and state:
+        overview += f" located in {city}, {state}"
+    if us_news_rank:
+        overview += f", ranked #{us_news_rank} in US News National Universities"
+    if acceptance_rate:
+        overview += f" with a {acceptance_rate}% acceptance rate"
+    if test_policy:
+        overview += f" and a {test_policy.lower()} testing policy"
+    overview += "."
+    parts.append(overview)
+    
+    # Admissions paragraph
+    admitted = admissions.get('admitted_student_profile', {})
+    testing = admitted.get('testing', {})
+    gpa_data = admitted.get('gpa', {})
+    
+    admissions_parts = []
+    if testing.get('sat_composite_middle_50'):
+        admissions_parts.append(f"SAT middle 50%: {testing['sat_composite_middle_50']}")
+    if testing.get('act_composite_middle_50'):
+        admissions_parts.append(f"ACT middle 50%: {testing['act_composite_middle_50']}")
+    if gpa_data.get('weighted_middle_50'):
+        admissions_parts.append(f"GPA middle 50%: {gpa_data['weighted_middle_50']}")
+    
+    early = current_status.get('early_admission_stats', [])
+    if early:
+        early_info = early[0]
+        admissions_parts.append(f"{early_info.get('plan_type', 'Early')} acceptance rate: {early_info.get('acceptance_rate')}%")
+    
+    if admissions_parts:
+        parts.append("**Admissions:** " + ". ".join(admissions_parts) + ".")
+    
+    # Academics paragraph
+    academic = profile.get('academic_structure', {})
+    colleges = academic.get('colleges', [])
+    if colleges:
+        college_names = [c.get('name', '') for c in colleges[:4] if c.get('name')]
+        if college_names:
+            academics_text = f"**Academics:** The university comprises {len(colleges)} colleges/schools"
+            if college_names:
+                academics_text += f" including {', '.join(college_names)}"
+            if market_position:
+                academics_text += f". {market_position}"
+            parts.append(academics_text + ".")
+    
+    # Outcomes paragraph  
+    outcomes = profile.get('outcomes', {})
+    outcomes_parts = []
+    if outcomes.get('median_earnings_10yr'):
+        outcomes_parts.append(f"median earnings of ${outcomes['median_earnings_10yr']:,} ten years after graduation")
+    if outcomes.get('employment_rate_2yr'):
+        outcomes_parts.append(f"{outcomes['employment_rate_2yr']}% employment rate within 2 years")
+    if outcomes.get('grad_school_rate'):
+        outcomes_parts.append(f"{outcomes['grad_school_rate']}% pursue graduate studies")
+    if outcomes.get('top_employers'):
+        employers = outcomes['top_employers'][:3]
+        outcomes_parts.append(f"top employers include {', '.join(employers)}")
+    
+    if outcomes_parts:
+        parts.append("**Outcomes:** Graduates have " + ", ".join(outcomes_parts) + ".")
+    
+    # Executive summary if available
+    exec_summary = strategic.get('executive_summary')
+    if exec_summary and len(exec_summary) < 300:
+        parts.append(f"**Profile:** {exec_summary}")
+    
+    return "\n\n".join(parts)
 
 
 def create_searchable_text(profile: dict) -> str:
@@ -337,6 +492,9 @@ def create_index_mapping(es_client, force_recreate=False):
                 "median_earnings_10yr": {"type": "float"},
                 "us_news_rank": {"type": "integer"},  # For sorting by ranking
                 
+                # Pre-computed summary for details view
+                "summary": {"type": "text"},
+                
                 # Full profile stored as nested object
                 "profile": {"type": "object", "enabled": False},
                 
@@ -377,7 +535,7 @@ def get_existing_ids(es_client):
         return set()
 
 
-def ingest_profiles(es_client, skip_existing=True):
+def ingest_profiles(es_client, model=None, skip_existing=True):
     """Ingest all university profiles into Elasticsearch."""
     json_files = list(RESEARCH_DIR.glob("*.json"))
     
@@ -433,11 +591,23 @@ def ingest_profiles(es_client, skip_existing=True):
             rankings = profile.get('strategic_profile', {}).get('rankings', [])
             for ranking in rankings:
                 if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
-                    us_news_rank = ranking.get('rank_overall')
+                    # Use rank_in_category as primary (most profiles have this), fall back to rank_overall
+                    us_news_rank = ranking.get('rank_in_category') or ranking.get('rank_overall')
                     break
             
             if us_news_rank:
                 print(f"  📊 US News Rank: #{us_news_rank}")
+            
+            # Generate summary (try LLM first, fall back to template)
+            university_summary = generate_llm_summary(model, profile) if model else None
+            
+            if university_summary:
+                print(f"  ✨ Generated AI summary ({len(university_summary)} chars)")
+                # Rate limiting for LLM
+                time.sleep(1)
+            else:
+                university_summary = create_template_summary(profile)
+                print(f"  📄 Generated template summary ({len(university_summary)} chars)")
             
             # Build document - semantic_content will be auto-embedded by ELSER
             doc = {
@@ -446,6 +616,7 @@ def ingest_profiles(es_client, skip_existing=True):
                 "location": location,
                 "semantic_content": searchable_text,  # ELSER will embed this automatically
                 "searchable_text": searchable_text,   # Keep for BM25 fallback
+                "summary": university_summary,        # Pre-computed summary for details
                 "acceptance_rate": acceptance_rate,
                 "test_policy": test_policy,
                 "market_position": market_position,
@@ -502,14 +673,24 @@ def main():
     
     # Initialize client
     print("\n🔌 Connecting to Elasticsearch...")
+    # Initialize clients
+    print("\n🔌 Connecting to Elasticsearch...")
     es_client = get_elasticsearch_client()
+    print("✅ Connected to Elasticsearch")
+
+    print("\n🤖 Initializing Gemini...")
+    model = setup_gemini()
+    if model:
+        print(f"✅ Gemini model ready: {GEMINI_MODEL}")
+    else:
+        print("⚠️ Gemini not configured (missing key). Will use templates.")
     print("✅ Connected to Elasticsearch")
     
     # Create index with semantic_text mapping
     create_index_mapping(es_client, force_recreate=args.force)
     
-    # Ingest profiles (skip_existing=False when force mode is on)
-    ingest_profiles(es_client, skip_existing=not args.force)
+    # Ingest profiles
+    ingest_profiles(es_client, model=model, skip_existing=not args.force)
     
     print("\n🎉 Ingestion complete!")
     print("\n📝 Note: semantic_text fields use Elasticsearch's built-in ELSER model.")

@@ -35,89 +35,10 @@ export const Badge = ({ children, color }) => {
     );
 };
 
-// --- Deep Dive Research Component ---
-export const DeepDiveSection = ({ universityId, universityName, cachedResearch, onResearchUpdate }) => {
-    const [isResearching, setIsResearching] = useState(false);
-    const [error, setError] = useState(null);
 
-    const handleDeepDive = async () => {
-        setIsResearching(true);
-        setError(null);
-
-        try {
-            // Craft a deep research query
-            const query = `Deep research on ${universityName}: Tell me about recent news, notable research labs and professors, campus culture and student life, specific program strengths, and any unique opportunities or hidden gems that prospective students should know about. IMPORTANT: Provide all source URLs from your search results at the end.`;
-
-            // Start session and send the message in one call
-            const response = await startSession(query);
-
-            // Extract the full response
-            const fullResponse = extractFullResponse(response);
-            const resultText = fullResponse.result || fullResponse;
-
-            // Cache the result
-            onResearchUpdate(universityId, resultText);
-        } catch (err) {
-            console.error('Deep research failed:', err);
-            setError('Failed to complete research. Please try again.');
-        } finally {
-            setIsResearching(false);
-        }
-    };
-
-    return (
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-6 border border-purple-200">
-            <div className="flex items-start justify-between mb-4">
-                <div>
-                    <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                        <SparklesIcon className="h-5 w-5 text-purple-600" />
-                        Deep Dive Research
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-1">
-                        Get detailed insights beyond the basic stats
-                    </p>
-                </div>
-            </div>
-
-            {!cachedResearch && (
-                <button
-                    onClick={handleDeepDive}
-                    disabled={isResearching}
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
-                >
-                    {isResearching ? (
-                        <>
-                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                            Researching...
-                        </>
-                    ) : (
-                        <>
-                            <MagnifyingGlassIcon className="h-5 w-5" />
-                            Research This University
-                        </>
-                    )}
-                </button>
-            )}
-
-            {error && (
-                <div className="mt-4 bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 text-sm">
-                    {error}
-                </div>
-            )}
-
-            {cachedResearch && (
-                <div className="prose prose-sm max-w-none">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {cachedResearch}
-                    </ReactMarkdown>
-                </div>
-            )}
-        </div>
-    );
-};
 
 // --- University Detail Component ---
-export const UniversityDetail = ({ uni, onBack, sentiment, deepResearchData, setDeepResearchData, fitAnalysis }) => {
+export const UniversityDetail = ({ uni, onBack, sentiment, fitAnalysis }) => {
     if (!uni) return null;
 
     const formatNumber = (num) => {
@@ -161,7 +82,9 @@ export const UniversityDetail = ({ uni, onBack, sentiment, deepResearchData, set
                         )}
                     </div>
                     <h1 className="text-3xl md:text-4xl font-bold mb-2">{uni.name || uni.university_name}</h1>
-                    <p className="text-blue-100 text-lg max-w-3xl">{uni.summary || 'No summary available.'}</p>
+                    {uni.market_position && (
+                        <p className="text-blue-100 text-lg font-medium">{uni.market_position}</p>
+                    )}
                 </div>
             </div>
 
@@ -412,22 +335,20 @@ export const UniversityDetail = ({ uni, onBack, sentiment, deepResearchData, set
                     </div>
                 </div>
 
-                {/* Deep Dive Research Section */}
-                <div className="mt-8">
-                    <DeepDiveSection
-                        universityId={uni.id || uni.university_id}
-                        universityName={uni.name || uni.university_name}
-                        cachedResearch={deepResearchData?.[uni.id || uni.university_id]}
-                        onResearchUpdate={(id, result) => {
-                            if (setDeepResearchData) {
-                                setDeepResearchData(prev => ({
-                                    ...prev,
-                                    [id]: result
-                                }));
-                            }
-                        }}
-                    />
-                </div>
+                {/* University Overview Section */}
+                {(uni.summary || uni.description) && (
+                    <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <SparklesIcon className="h-5 w-5 text-purple-600" />
+                            University Overview
+                        </h2>
+                        <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                {uni.summary || uni.description}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
+                )}
 
             </div>
         </div>

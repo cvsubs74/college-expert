@@ -45,7 +45,7 @@ class OrchestratorOutput(BaseModel):
 # Create response formatter
 response_formatter = LlmAgent(
     name="response_formatter",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash-lite",
     description="Formats agent responses into final output with suggested questions",
     instruction="""
     Format the agent_response into OrchestratorOutput JSON:
@@ -71,7 +71,7 @@ profile_loader = ProfileLoaderAgent()
 
 MasterReasoningAgent = LlmAgent(
     name="MasterReasoningAgent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash-lite",
     description="College admissions counseling expert using hybrid search on structured university profiles",
     instruction="""You are a College Admissions Counselor with access to a university knowledge base.
 

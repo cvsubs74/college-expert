@@ -5,8 +5,10 @@ import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
 import UniversityExplorer from './pages/UniversityExplorer';
 import MyLaunchpad from './pages/MyLaunchpad';
+import FitVisualizer from './pages/FitVisualizer';
 import LandingPage from './pages/LandingPage';
-import ApproachSelector from './pages/ApproachSelector';
+// ApproachSelector hidden - defaulting to Hybrid
+// import ApproachSelector from './pages/ApproachSelector';
 import CultureMatch from './pages/CultureMatch';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import ApproachIndicator from './components/ApproachIndicator';
@@ -109,8 +111,7 @@ function Navigation() {
           <div className="flex items-center">
             {currentUser && (
               <div className="flex items-center space-x-4">
-                {/* Approach Indicator */}
-                <ApproachIndicator />
+                {/* Approach Indicator hidden - using Hybrid by default */}
 
                 <div className="flex items-center space-x-2">
                   {currentUser.photoURL && (
@@ -159,8 +160,8 @@ function App() {
             {/* Public route */}
             <Route path="/" element={<LandingPage />} />
 
-            {/* Approach selector (can be accessed both before and after login) */}
-            <Route path="/select-approach" element={<ApproachSelector />} />
+            {/* Approach selector hidden - defaulting to Hybrid */}
+            {/* <Route path="/select-approach" element={<ApproachSelector />} /> */}
 
             {/* Protected routes */}
             <Route
@@ -175,6 +176,7 @@ function App() {
               <Route path="/universities" element={<UniversityExplorer />} />
               <Route path="/culture-match" element={<CultureMatch />} />
               <Route path="/launchpad" element={<MyLaunchpad />} />
+              <Route path="/fit-visualizer" element={<FitVisualizer />} />
               <Route path="/knowledge-base" element={<KnowledgeBase />} />
             </Route>
           </Routes>

@@ -17,6 +17,7 @@ import logging
 import io
 import fitz  # PyMuPDF - better PDF extraction than PyPDF2
 from docx import Document
+import google.generativeai as genai
 
 
 # Configure logging
@@ -136,40 +137,7 @@ def clean_extracted_text(text):
 
 
 
-# Structured profile schema for Gemini extraction
-STUDENT_PROFILE_SCHEMA = {
-    "personal_info": {
-        "name": "",
-        "ethnicity": "",
-        "school": "",
-        "location": "",
-        "grade": None,
-        "email": "",
-        "phone": ""
-    },
-    "intended_major": "",
-    "academics": {
-        "gpa": {
-            "unweighted": None,
-            "weighted": None,
-            "uc_unweighted": None,
-            "uc_weighted": None
-        },
-        "class_rank": "",
-        "total_semesters": None
-    },
-    "test_scores": {
-        "sat": {"total": None, "math": None, "reading": None},
-        "act": {"composite": None},
-        "ap_exams": []
-    },
-    "courses": [],
-    "extracurriculars": [],
-    "awards": [],
-    "work_experience": [],
-    "special_programs": [],
-    "leadership_roles": []
-}
+
 
 
 def extract_profile_content_with_gemini(file_content, filename):
@@ -216,7 +184,7 @@ def convert_to_markdown_with_gemini(raw_text: str, filename: str) -> str:
             return f"# Student Profile\n\n{raw_text}"
         
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.0-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash-lite')
         
         prompt = f"""Convert this student profile text into clean, well-formatted Markdown.
 
@@ -266,130 +234,68 @@ Return ONLY the markdown content, no explanations.
         return f"# Student Profile\n\n{raw_text}"
 
 
-
-
-def get_empty_profile_schema(filename):
-    """Return empty profile schema with filename as name."""
-    import copy
-    schema = copy.deepcopy(STUDENT_PROFILE_SCHEMA)
-    schema["personal_info"]["name"] = filename.replace('.pdf', '').replace('.txt', '').replace('.docx', '')
-    return schema
-
-
-def extract_structured_profile_with_gemini(content_text: str, filename: str) -> dict:
+def evaluate_profile_change_impact(old_content: str, new_content: str) -> dict:
     """
-    Use Gemini API to extract structured student profile data from text.
+    Use LLM to determine if profile changes would affect college fit calculations.
+    Returns: {"should_recompute": bool, "reason": str, "changes_detected": []}
     """
-    import google.generativeai as genai
-    import copy
-    
     try:
-        # Configure Gemini
-        api_key = os.getenv("GEMINI_API_KEY")
-        if not api_key:
-            logger.warning("[GEMINI] No API key, returning basic structure")
-            return get_empty_profile_schema(filename)
+        genai.configure(api_key=GEMINI_API_KEY)
+        model = genai.GenerativeModel('gemini-2.5-flash-lite')
         
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.0-flash')
-        
-        # Create extraction prompt
-        prompt = f"""Extract student profile information from this text and return as JSON.
+        prompt = f"""You are a college admissions expert. Compare these two student profile versions and determine if the changes would affect college fit/match calculations.
 
-TEXT TO ANALYZE:
-{content_text[:15000]}
+CHANGES THAT WOULD AFFECT FIT (should_recompute = true):
+- GPA (weighted/unweighted) changes
+- SAT/ACT score changes or additions
+- Class rank changes
+- Intended major or field of study changes
+- State residency changes
+- High school type changes
 
-EXTRACT THE FOLLOWING FIELDS (return valid JSON only, no markdown):
-{{
-  "personal_info": {{
-    "name": "student's name",
-    "ethnicity": "ethnicity if mentioned",
-    "school": "high school name",
-    "location": "city, state",
-    "grade": 12,
-    "email": "",
-    "phone": ""
-  }},
-  "intended_major": "intended college major",
-  "academics": {{
-    "gpa": {{
-      "unweighted": 3.72,
-      "weighted": 4.23,
-      "uc_unweighted": 3.69,
-      "uc_weighted": 4.375
-    }},
-    "class_rank": "",
-    "total_semesters": 43
-  }},
-  "test_scores": {{
-    "sat": {{"total": null, "math": null, "reading": null}},
-    "act": {{"composite": null}},
-    "ap_exams": [
-      {{"subject": "AP Psychology", "score": 5}},
-      {{"subject": "AP Calculus BC", "score": 5, "subscore": "AB: 5"}}
-    ]
-  }},
-  "courses": [
-    {{"grade_level": 9, "name": "English", "type": "Regular", "semester1_grade": "A", "semester2_grade": "A"}},
-    {{"grade_level": 10, "name": "AP World History", "type": "AP", "semester1_grade": "B", "semester2_grade": "B"}}
-  ],
-  "extracurriculars": [
-    {{
-      "name": "Future Business Leaders of America",
-      "category": "Club",
-      "grades": "9-12",
-      "hours_per_week": null,
-      "role": "Member",
-      "description": "description here",
-      "achievements": ["1st in Bay Section", "5th in States"]
-    }}
-  ],
-  "awards": [
-    {{"name": "FBLA 1st in Bay Section", "grade": 10, "description": ""}}
-  ],
-  "work_experience": [
-    {{"employer": "KA Academy", "role": "Teacher Assistant", "grades": "9-11", "hours_per_week": 2, "description": ""}}
-  ],
-  "special_programs": [
-    {{"name": "Economics for Leaders Summer Program", "grade": 11, "description": "U of Washington"}}
-  ],
-  "leadership_roles": ["General Leadership grade 10-12", "President of CRY Club"]
-}}
+CHANGES THAT WOULD NOT AFFECT FIT (should_recompute = false):
+- Spelling/grammar corrections
+- Formatting changes
+- Activity or extracurricular descriptions
+- Essay content updates
+- Leadership role descriptions
+- Award descriptions (unless academic GPA-related)
 
-IMPORTANT:
-- Extract ALL courses listed with their grades
-- Extract ALL extracurricular activities
-- Extract ALL AP exam scores
-- Return ONLY valid JSON, no explanations
-- Use null for missing numeric values
-- Use empty string for missing text values
+OLD PROFILE (first 2000 chars):
+{old_content[:2000]}
+
+NEW PROFILE (first 2000 chars):
+{new_content[:2000]}
+
+Respond ONLY with valid JSON (no markdown):
+{{"should_recompute": true or false, "reason": "one sentence explanation", "changes_detected": ["list of specific changes found"]}}
 """
-
+        
         response = model.generate_content(prompt)
         response_text = response.text.strip()
         
         # Clean up response - remove markdown code blocks if present
         if response_text.startswith('```'):
-            lines = response_text.split('\n')
-            response_text = '\n'.join(lines[1:-1] if lines[-1].startswith('```') else lines[1:])
+            response_text = response_text.split('```')[1]
+            if response_text.startswith('json'):
+                response_text = response_text[4:]
+        response_text = response_text.strip()
         
-        # Parse JSON response
-        structured = json.loads(response_text)
+        result = json.loads(response_text)
+        logger.info(f"[PROFILE_CHANGE] Evaluation result: {result}")
+        return result
         
-        logger.info(f"[GEMINI] Successfully extracted structured profile for {filename}")
-        logger.info(f"[GEMINI] Found {len(structured.get('courses', []))} courses, "
-                   f"{len(structured.get('extracurriculars', []))} activities, "
-                   f"{len(structured.get('awards', []))} awards")
-        
-        return structured
-        
-    except json.JSONDecodeError as e:
-        logger.error(f"[GEMINI] JSON parse error: {e}")
-        logger.error(f"[GEMINI] Response was: {response_text[:500] if 'response_text' in dir() else 'N/A'}")
-        return get_empty_profile_schema(filename)
     except Exception as e:
-        logger.error(f"[GEMINI] Extraction error: {e}")
-        return get_empty_profile_schema(filename)
+        logger.error(f"[PROFILE_CHANGE] LLM evaluation error: {e}")
+        # Default to not recomputing on error (safe fallback)
+        return {
+            "should_recompute": False,
+            "reason": f"Evaluation failed: {str(e)}",
+            "changes_detected": []
+        }
+
+
+
 
 
 # Get configuration from environment variables
@@ -399,6 +305,14 @@ ES_API_KEY = os.getenv("ES_API_KEY")
 ES_INDEX_NAME = os.getenv("ES_INDEX_NAME", "student_profiles")
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET_NAME", "college-counselling-478115-student-profiles")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# Configure Gemini API
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
+
+
+
+
 
 # Initialize GCS client
 storage_client = storage.Client()
@@ -714,10 +628,103 @@ UNIVERSITIES_INDEX = os.getenv("UNIVERSITIES_INDEX", "universities")
 import re
 
 def parse_student_profile(profile_content):
-    """Extract structured academic data from profile text content."""
+    """
+    Extract structured academic data from profile text content using LLM.
+    Falls back to regex if LLM fails, but LLM handles varied formats better.
+    """
     if not profile_content:
         return {}
     
+    content = profile_content if isinstance(profile_content, str) else str(profile_content)
+    
+    # Try LLM-based extraction first (handles varied formats)
+    try:
+        llm_result = parse_student_profile_llm(content)
+        if llm_result and (llm_result.get('weighted_gpa') or llm_result.get('unweighted_gpa') or llm_result.get('sat_score')):
+            logger.info(f"[PROFILE PARSE] LLM extraction successful: GPA={llm_result.get('weighted_gpa')}, SAT={llm_result.get('sat_score')}")
+            return llm_result
+    except Exception as e:
+        logger.warning(f"[PROFILE PARSE] LLM extraction failed, falling back to regex: {e}")
+    
+    # Fallback to regex-based extraction
+    return parse_student_profile_regex(content)
+
+
+def parse_student_profile_llm(profile_content):
+    """
+    Use Gemini to extract structured data from any student profile format.
+    More robust than regex for varied profile formats.
+    """
+    try:
+        import google.generativeai as genai
+        
+        # Configure Gemini
+        api_key = os.environ.get('GEMINI_API_KEY')
+        if not api_key:
+            logger.warning("[PROFILE PARSE LLM] No GEMINI_API_KEY found")
+            return None
+        
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel('gemini-2.0-flash-lite')
+        
+        prompt = f"""Extract the following fields from this student profile. 
+Return ONLY valid JSON with these exact keys (use null for missing values):
+
+{{
+  "weighted_gpa": <float or null>,
+  "unweighted_gpa": <float or null>,
+  "uc_gpa": <float or null>,
+  "sat_score": <integer or null>,
+  "act_score": <integer or null>,
+  "ap_count": <integer>,
+  "ap_scores": {{}},
+  "intended_major": <string or null>,
+  "has_leadership": <boolean>,
+  "awards_count": <integer>,
+  "activities_count": <integer>,
+  "test_optional": <boolean - true if no test scores mentioned>
+}}
+
+STUDENT PROFILE:
+{profile_content[:4000]}
+
+Return ONLY the JSON object, no markdown formatting."""
+
+        response = model.generate_content(prompt)
+        response_text = response.text.strip()
+        
+        # Clean up response - remove markdown code blocks if present
+        if response_text.startswith('```'):
+            lines = response_text.split('\n')
+            response_text = '\n'.join(lines[1:-1] if lines[-1] == '```' else lines[1:])
+        
+        result = json.loads(response_text)
+        
+        # Normalize the result
+        return {
+            'weighted_gpa': result.get('weighted_gpa') or result.get('uc_gpa'),
+            'unweighted_gpa': result.get('unweighted_gpa'),
+            'sat_score': result.get('sat_score'),
+            'act_score': result.get('act_score'),
+            'ap_scores': result.get('ap_scores', {}),
+            'ap_count': result.get('ap_count', 0),
+            'intended_major': result.get('intended_major'),
+            'has_leadership': result.get('has_leadership', False),
+            'awards_count': result.get('awards_count', 0),
+            'activities_count': result.get('activities_count', 0),
+            'test_optional': result.get('test_optional', False)
+        }
+        
+    except json.JSONDecodeError as e:
+        logger.error(f"[PROFILE PARSE LLM] JSON parse error: {e}")
+        return None
+    except Exception as e:
+        logger.error(f"[PROFILE PARSE LLM] Error: {e}")
+        return None
+
+
+def parse_student_profile_regex(profile_content):
+    """Fallback regex-based extraction for structured profiles."""
     content = profile_content if isinstance(profile_content, str) else str(profile_content)
     
     def extract_float(pattern, text, default=None):
@@ -804,7 +811,8 @@ def parse_student_profile(profile_content):
         'intended_major': intended_major,
         'has_leadership': has_leadership,
         'awards_count': awards_count,
-        'activities_count': activities_count
+        'activities_count': activities_count,
+        'test_optional': sat_score is None and act_score is None
     }
 
 
@@ -840,329 +848,150 @@ def fetch_university_data(university_id):
         return None
 
 
-def parse_gpa_range(gpa_string):
-    """Parse GPA range like '3.90-4.00' into (min, max)."""
-    if not gpa_string:
-        return (3.5, 4.0)  # Default
+
+
+
+def calculate_fit_with_llm(student_profile_text, university_data, intended_major=''):
+    """
+    Calculate fit using PURE LLM reasoning.
+    Analyzes the full student profile text against the university data.
+    """
+    import time
     
     try:
-        if '-' in str(gpa_string):
-            parts = str(gpa_string).split('-')
-            return (float(parts[0].strip()), float(parts[1].strip()))
-        return (float(gpa_string), float(gpa_string))
-    except:
-        return (3.5, 4.0)
+        # DEBUG: Log the actual student profile text being analyzed
+        logger.info(f"[LLM_FIT] Student profile text length: {len(student_profile_text)} chars")
+        if len(student_profile_text) < 100:
+            logger.warning(f"[LLM_FIT] ALERT: Profile text is very short! Content: {student_profile_text}")
+        else:
+            logger.info(f"[LLM_FIT] Profile preview: {student_profile_text[:300]}...")
+        
+        # Extract university details
+        uni_metadata = university_data.get('metadata', {})
+        uni_name = uni_metadata.get('official_name', 'University')
+        
+        admissions = university_data.get('admissions_data', {})
+        current_status = admissions.get('current_status', {})
+        acceptance_rate = current_status.get('overall_acceptance_rate', 50)
+        
+        # Prepare university summary for prompt (limit size)
+        uni_summary = json.dumps({
+            "name": uni_name,
+            "location": university_data.get('location', {}),
+            "acceptance_rate": acceptance_rate,
+            "admitted_profile": admissions.get('admitted_student_profile', {}),
+            "academic_structure": university_data.get('academic_structure', {}).get('colleges', [])[:5]  # Limit colleges
+        }, default=str)[:2000]  # Cap university data size
+        
+        prompt = f"""You are an Expert College Admissions Counselor. Analyze the fit between this student and university.
 
+**STUDENT PROFILE:**
+{student_profile_text}
+Intended Major: {intended_major or 'Undecided'}
 
-def parse_test_range(test_string):
-    """Parse test score range like '1510-1560' into (min, max)."""
-    if not test_string:
-        return (1200, 1400)  # Default
-    
-    try:
-        if '-' in str(test_string):
-            parts = str(test_string).split('-')
-            return (int(parts[0].strip()), int(parts[1].strip()))
-        return (int(test_string), int(test_string))
-    except:
-        return (1200, 1400)
+**UNIVERSITY DATA:**
+{uni_summary}
 
+**YOUR TASK:**
+Determine the student's admission chances and fit categorization based on a HOLISTIC review. 
+Consider GPA, test scores, course rigor, extracurriculars, leadership, and major fit.
 
-def calculate_comprehensive_fit(student_profile, university_data, intended_major=''):
-    """
-    Calculate comprehensive fit score using 7 factors.
-    Returns fit_category, match_percentage, factors breakdown, and recommendations.
-    """
-    factors = []
-    recommendations = []
-    total_score = 0
-    max_score = 150
-    
-    # Extract university admissions data
-    admissions = university_data.get('admissions_data', {})
-    current_status = admissions.get('current_status', {})
-    admitted_profile = admissions.get('admitted_student_profile', {})
-    
-    acceptance_rate = current_status.get('overall_acceptance_rate', 50)
-    
-    gpa_data = admitted_profile.get('gpa', {})
-    uni_gpa_range = gpa_data.get('unweighted_middle_50', '3.5-3.9')
-    
-    # Safe extraction with null checks - handle range values like '3.25-3.49'
-    def safe_parse_float(val, default):
-        """Parse a float, handling None, ranges, and quoted strings."""
-        if val is None:
-            return default
-        val_str = str(val).replace('"', '').strip()
-        if '-' in val_str:
-            # Take the midpoint of a range
+**CATEGORIZATION RULES:**
+- **SAFETY** (>85% chance): Student significantly exceeds averages, admission is highly likely.
+- **TARGET** (60-84% chance): Student matches averages, good chance but not guaranteed.
+- **REACH** (30-59% chance): Student is slightly below averages OR the school is selective (<20%).
+- **SUPER_REACH** (<30% chance): Student is well below averages OR school is highly selective (<10%).
+- *CRITICAL*: Ivy League and equivalents (<10% acceptance) are ALWAYS REACH or SUPER_REACH.
+
+**OUTPUT FORMAT:**
+Return ONLY a valid JSON object (no markdown, no explanation outside JSON):
+{{
+  "match_percentage": <integer 0-100>,
+  "fit_category": "<SAFETY|TARGET|REACH|SUPER_REACH>",
+  "explanation": "<Detailed 4-5 sentence analysis of why this fits, citing specific student strengths vs school profile>",
+  "factors": [
+    {{ "name": "Academic", "score": <0-40>, "max": 40, "detail": "<brief note>" }},
+    {{ "name": "Holistic", "score": <0-30>, "max": 30, "detail": "<brief note>" }},
+    {{ "name": "Major Fit", "score": <0-15>, "max": 15, "detail": "<brief note>" }},
+    {{ "name": "Rigor", "score": <0-15>, "max": 15, "detail": "<brief note>" }}
+  ],
+  "recommendations": ["<rec 1>", "<rec 2>", "<rec 3>"]
+}}"""
+
+        # Call Gemini with retry logic
+        max_retries = 2
+        for attempt in range(max_retries + 1):
             try:
-                parts = val_str.split('-')
-                return (float(parts[0]) + float(parts[1])) / 2
-            except:
-                return default
-        try:
-            return float(val_str)
-        except:
-            return default
-    
-    pct_25_raw = gpa_data.get('percentile_25', '3.5')
-    pct_75_raw = gpa_data.get('percentile_75', '4.0')
-    uni_gpa_25 = safe_parse_float(pct_25_raw, 3.5)
-    uni_gpa_75 = safe_parse_float(pct_75_raw, 4.0)
-    
-    testing_data = admitted_profile.get('testing', {})
-    sat_range = testing_data.get('sat_composite_middle_50', '1200-1400')
-    act_range = testing_data.get('act_composite_middle_50', '26-32')
-    
-    # Get student data
-    student_gpa = student_profile.get('weighted_gpa') or student_profile.get('unweighted_gpa') or 3.5
-    student_sat = student_profile.get('sat_score')
-    student_act = student_profile.get('act_score')
-    ap_count = student_profile.get('ap_count', 0)
-    ap_scores = student_profile.get('ap_scores', {})
-    has_leadership = student_profile.get('has_leadership', False)
-    awards_count = student_profile.get('awards_count', 0)
-    
-    # ============================================
-    # FACTOR 1: GPA Match (40 points)
-    # ============================================
-    if student_gpa >= uni_gpa_75 + 0.1:
-        gpa_score = 40
-        gpa_detail = f"Your {student_gpa:.2f} exceeds 75th percentile ({uni_gpa_75})"
-    elif student_gpa >= uni_gpa_75:
-        gpa_score = 36
-        gpa_detail = f"Your {student_gpa:.2f} is at 75th percentile"
-    elif student_gpa >= (uni_gpa_25 + uni_gpa_75) / 2:
-        gpa_score = 28
-        gpa_detail = f"Your {student_gpa:.2f} is above median admits"
-    elif student_gpa >= uni_gpa_25:
-        gpa_score = 20
-        gpa_detail = f"Your {student_gpa:.2f} is at 25th percentile"
-    elif student_gpa >= uni_gpa_25 - 0.15:
-        gpa_score = 12
-        gpa_detail = f"Your {student_gpa:.2f} is slightly below typical range"
-    else:
-        gpa_score = 5
-        gpa_detail = f"Your {student_gpa:.2f} is below typical admits"
-        recommendations.append("Focus on strong upward trend in remaining semesters")
-    
-    total_score += gpa_score
-    factors.append({'name': 'GPA Match', 'score': gpa_score, 'max': 40, 'detail': gpa_detail})
-    
-    # ============================================
-    # FACTOR 2: Test Scores (25 points)
-    # ============================================
-    sat_25, sat_75 = parse_test_range(sat_range)
-    act_25, act_75 = parse_test_range(act_range)
-    
-    test_score = 0
-    test_detail = "No test scores provided"
-    
-    if student_sat:
-        if student_sat >= sat_75:
-            test_score = 25
-            test_detail = f"Your SAT {student_sat} exceeds 75th percentile ({sat_75})"
-        elif student_sat >= (sat_25 + sat_75) / 2:
-            test_score = 20
-            test_detail = f"Your SAT {student_sat} is in middle 50% ({sat_25}-{sat_75})"
-        elif student_sat >= sat_25:
-            test_score = 12
-            test_detail = f"Your SAT {student_sat} is at 25th percentile"
-        else:
-            test_score = 5
-            test_detail = f"Your SAT {student_sat} is below typical range"
-            recommendations.append("Consider retaking SAT to reach middle 50% range")
-    
-    elif student_act:
-        if student_act >= act_75:
-            test_score = 25
-            test_detail = f"Your ACT {student_act} exceeds 75th percentile ({act_75})"
-        elif student_act >= (act_25 + act_75) / 2:
-            test_score = 20
-            test_detail = f"Your ACT {student_act} is in middle 50%"
-        elif student_act >= act_25:
-            test_score = 12
-            test_detail = f"Your ACT {student_act} is at 25th percentile"
-        else:
-            test_score = 5
-            test_detail = f"Your ACT {student_act} is below typical range"
-    else:
-        # Test optional consideration
-        if current_status.get('is_test_optional'):
-            test_score = 15
-            test_detail = "Test optional - consider submitting if scores are strong"
-        else:
-            test_score = 8
-            recommendations.append("Submit test scores as they are considered")
-    
-    total_score += test_score
-    factors.append({'name': 'Test Scores', 'score': test_score, 'max': 25, 'detail': test_detail})
-    
-    # ============================================
-    # FACTOR 3: Acceptance Rate (25 points)
-    # ============================================
-    if acceptance_rate >= 60:
-        rate_score = 25
-        rate_detail = f"{acceptance_rate}% acceptance - accessible"
-    elif acceptance_rate >= 40:
-        rate_score = 20
-        rate_detail = f"{acceptance_rate}% acceptance - moderately selective"
-    elif acceptance_rate >= 25:
-        rate_score = 16
-        rate_detail = f"{acceptance_rate}% acceptance - selective"
-    elif acceptance_rate >= 15:
-        rate_score = 12
-        rate_detail = f"{acceptance_rate}% acceptance - highly selective"
-    elif acceptance_rate >= 10:
-        rate_score = 8
-        rate_detail = f"{acceptance_rate}% acceptance - very competitive"
-    elif acceptance_rate >= 5:
-        rate_score = 5
-        rate_detail = f"{acceptance_rate}% acceptance - extremely selective"
-    else:
-        rate_score = 2
-        rate_detail = f"{acceptance_rate}% acceptance - ultra-selective (Ivy-tier)"
-    
-    total_score += rate_score
-    factors.append({'name': 'Acceptance Rate', 'score': rate_score, 'max': 25, 'detail': rate_detail})
-    
-    # ============================================
-    # FACTOR 4: Course Rigor (20 points)
-    # ============================================
-    ap_course_pts = min(10, ap_count * 1.2)
-    
-    # Quality of AP scores
-    high_scores = sum(1 for s in ap_scores.values() if s >= 4)
-    perfect_scores = sum(1 for s in ap_scores.values() if s == 5)
-    quality_pts = min(10, high_scores * 2 + perfect_scores * 1)
-    
-    rigor_score = int(ap_course_pts + quality_pts)
-    rigor_detail = f"{ap_count} AP courses"
-    if high_scores > 0:
-        rigor_detail += f", {high_scores} scores of 4+"
-    
-    if rigor_score < 10 and acceptance_rate < 20:
-        recommendations.append("Consider taking additional AP courses to strengthen application")
-    
-    total_score += rigor_score
-    factors.append({'name': 'Course Rigor', 'score': rigor_score, 'max': 20, 'detail': rigor_detail})
-    
-    # ============================================
-    # FACTOR 5: Major Fit (15 points)
-    # ============================================
-    major_to_check = intended_major or student_profile.get('intended_major', '')
-    major_score = 8  # Default - neutral
-    major_detail = "No specific major selected"
-    
-    if major_to_check:
-        # Check if major is available
-        academic_structure = university_data.get('academic_structure', {})
-        colleges = academic_structure.get('colleges', [])
-        
-        all_majors = []
-        for college in colleges:
-            for major in college.get('majors', []):
-                all_majors.append(major.get('name', '').lower())
-        
-        major_lower = major_to_check.lower()
-        
-        if any(major_lower in m for m in all_majors):
-            major_score = 15
-            major_detail = f"{major_to_check} is offered"
-        elif any(related in m for m in all_majors for related in [major_lower[:4], major_lower.split()[0].lower()]):
-            major_score = 10
-            major_detail = f"Related programs to {major_to_check} available"
-        else:
-            major_score = 5
-            major_detail = f"{major_to_check} may not be directly offered"
-            recommendations.append(f"Verify {major_to_check} is available or consider related majors")
-    
-    total_score += major_score
-    factors.append({'name': 'Major Fit', 'score': major_score, 'max': 15, 'detail': major_detail})
-    
-    # ============================================
-    # FACTOR 6: Activity Alignment (15 points)
-    # ============================================
-    activity_score = 5  # Base
-    activity_details = []
-    
-    if has_leadership:
-        activity_score += 4
-        activity_details.append("Leadership experience")
-    
-    if awards_count >= 3:
-        activity_score += 3
-        activity_details.append(f"{awards_count} awards")
-    elif awards_count >= 1:
-        activity_score += 1
-        activity_details.append(f"{awards_count} award(s)")
-    
-    # Cap at max and ensure positive
-    activity_score = min(15, activity_score)
-    activity_detail = ", ".join(activity_details) if activity_details else "Activities noted"
-    
-    if activity_score < 8 and acceptance_rate < 20:
-        recommendations.append("Highlight unique achievements and leadership roles in essays")
-    
-    total_score += activity_score
-    factors.append({'name': 'Activities', 'score': activity_score, 'max': 15, 'detail': activity_detail})
-    
-    # ============================================
-    # FACTOR 7: Early Action Boost (10 points)
-    # ============================================
-    early_stats = current_status.get('early_admission_stats', [])
-    early_score = 0
-    early_detail = "No significant early advantage"
-    
-    for stat in early_stats:
-        early_rate = stat.get('acceptance_rate', 0)
-        plan_type = stat.get('plan_type', '')
-        if early_rate and early_rate > acceptance_rate * 1.5:
-            early_score = 10
-            early_detail = f"{plan_type}: {early_rate}% vs {acceptance_rate}% regular"
-            recommendations.append(f"Apply {plan_type} for significantly higher acceptance rate")
-            break
-        elif early_rate and early_rate > acceptance_rate * 1.2:
-            early_score = 6
-            early_detail = f"{plan_type} offers modest boost ({early_rate}%)"
-            break
-    
-    total_score += early_score
-    factors.append({'name': 'Early Action', 'score': early_score, 'max': 10, 'detail': early_detail})
-    
-    # ============================================
-    # CALCULATE FINAL CATEGORY
-    # ============================================
-    match_percentage = int((total_score / max_score) * 100)
-    
-    if match_percentage >= 75:
-        fit_category = 'SAFETY'
-    elif match_percentage >= 55:
-        fit_category = 'TARGET'
-    elif match_percentage >= 35:
-        fit_category = 'REACH'
-    else:
-        fit_category = 'SUPER_REACH'
-    
-    # Add default recommendation if none
-    if not recommendations:
-        if fit_category == 'SAFETY':
-            recommendations.append("Strong match - focus on compelling essays and demonstrated interest")
-        elif fit_category == 'TARGET':
-            recommendations.append("Good fit - emphasize unique qualities in application")
-    
-    # Get university name
-    uni_name = university_data.get('metadata', {}).get('official_name', 'University')
-    
-    return {
-        'fit_category': fit_category,
-        'match_percentage': match_percentage,
-        'factors': factors,
-        'recommendations': recommendations[:5],  # Limit to 5
-        'university_name': uni_name,
-        'calculated_at': datetime.utcnow().isoformat()
-    }
+                model = genai.GenerativeModel("gemini-2.0-flash-exp")
+                response = model.generate_content(prompt)
+                
+                # Parse output
+                response_text = response.text.strip()
+                
+                # Remove markdown code blocks if present
+                if response_text.startswith('```'):
+                    lines = response_text.split('\n')
+                    # Find the JSON content between ``` markers
+                    start_idx = 1 if lines[0].startswith('```') else 0
+                    end_idx = len(lines) - 1 if lines[-1] == '```' else len(lines)
+                    response_text = '\n'.join(lines[start_idx:end_idx])
+                    if response_text.startswith('json'):
+                        response_text = response_text[4:].strip()
+                
+                result = json.loads(response_text)
+                
+                # Validate required fields
+                if 'fit_category' not in result or 'match_percentage' not in result:
+                    raise ValueError("Missing required fields in LLM response")
+                
+                # Ensure fit_category is valid
+                valid_categories = ['SAFETY', 'TARGET', 'REACH', 'SUPER_REACH']
+                if result['fit_category'] not in valid_categories:
+                    result['fit_category'] = 'REACH'  # Default to REACH if invalid
+                
+                # Add university name and timestamp
+                result['university_name'] = uni_name
+                result['calculated_at'] = datetime.utcnow().isoformat()
+                
+                logger.info(f"[LLM_FIT] {uni_name}: {result['fit_category']} ({result['match_percentage']}%)")
+                return result
+                
+            except json.JSONDecodeError as je:
+                logger.warning(f"[LLM_FIT] JSON parse error (attempt {attempt+1}): {str(je)[:100]}")
+                if attempt < max_retries:
+                    time.sleep(0.5)  # Brief pause before retry
+                    continue
+                raise
+            except Exception as e:
+                if "429" in str(e) or "quota" in str(e).lower():
+                    logger.warning(f"[LLM_FIT] Rate limited, waiting... (attempt {attempt+1})")
+                    time.sleep(2 ** attempt)  # Exponential backoff
+                    continue
+                raise
+
+    except Exception as e:
+        logger.error(f"[LLM_FIT_ERROR] {uni_name if 'uni_name' in dir() else 'Unknown'}: {str(e)}")
+        # Return a sensible fallback based on acceptance rate
+        fallback_category = 'REACH'
+        if acceptance_rate and acceptance_rate < 15:
+            fallback_category = 'SUPER_REACH'
+        elif acceptance_rate and acceptance_rate > 50:
+            fallback_category = 'TARGET'
+            
+        return {
+            "fit_category": fallback_category,
+            "match_percentage": 50,
+            "explanation": f"Analysis unavailable. Based on {acceptance_rate}% acceptance rate, categorized as {fallback_category}.",
+            "factors": [
+                {"name": "Academic", "score": 20, "max": 40, "detail": "Unable to analyze"},
+                {"name": "Holistic", "score": 15, "max": 30, "detail": "Unable to analyze"},
+                {"name": "Major Fit", "score": 8, "max": 15, "detail": "Unable to analyze"},
+                {"name": "Rigor", "score": 7, "max": 15, "detail": "Unable to analyze"}
+            ],
+            "recommendations": ["Complete profile for accurate analysis"],
+            "university_name": university_data.get('metadata', {}).get('official_name', 'University'),
+            "calculated_at": datetime.utcnow().isoformat()
+        }
 
 
 def calculate_fit_for_college(user_id, university_id, intended_major=''):
@@ -1206,8 +1035,8 @@ def calculate_fit_for_college(user_id, university_id, intended_major=''):
                 'calculated_at': datetime.utcnow().isoformat()
             }
         
-        # Calculate comprehensive fit
-        fit_analysis = calculate_comprehensive_fit(student_profile, university_data, intended_major)
+        # Calculate comprehensive fit using PURE LLM reasoning
+        fit_analysis = calculate_fit_with_llm(profile_content, university_data, intended_major)
         
         logger.info(f"[FIT] Calculated fit for {user_id} -> {university_id}: {fit_analysis['fit_category']} ({fit_analysis['match_percentage']}%)")
         
@@ -1269,9 +1098,49 @@ def handle_update_college_list(request):
                     'college_list': college_list
                 }, 200)
             
-            # Calculate fit analysis automatically
-            logger.info(f"[FIT] Auto-calculating fit for {university['id']}")
-            fit_analysis = calculate_fit_for_college(user_id, university['id'], intended_major)
+            # Look up pre-computed fit from college_fits (no recalculation needed!)
+            logger.info(f"[FIT] Looking up pre-computed fit for {university['id']}")
+            fit_analysis = None
+            college_fits = {}
+            college_fits_updated = False
+            
+            # Get pre-computed fits from profile
+            college_fits_raw = current_doc.get('college_fits')
+            if college_fits_raw:
+                try:
+                    if isinstance(college_fits_raw, str):
+                        college_fits = json.loads(college_fits_raw)
+                    else:
+                        college_fits = college_fits_raw
+                    
+                    # Look up this university's pre-computed fit
+                    precomputed = college_fits.get(university['id'])
+                    if precomputed:
+                        fit_category = precomputed.get('fit_category', 'TARGET')
+                        match_score = precomputed.get('match_score', 50)
+                        
+                        fit_analysis = {
+                            'fit_category': fit_category,
+                            'match_percentage': match_score,
+                            'university_name': precomputed.get('university_name', university.get('name')),
+                            'factors': precomputed.get('factors', []),
+                            'recommendations': precomputed.get('recommendations', []),
+                            'pre_computed': True,
+                            'computed_at': precomputed.get('computed_at')
+                        }
+                        
+                        # Check if explanation exists
+                        existing_explanation = precomputed.get('explanation')
+                        fit_analysis['explanation'] = existing_explanation or "Fit analysis provided by UniInsight."
+                        
+                        logger.info(f"[FIT] Using pre-computed fit: {fit_analysis['fit_category']} ({fit_analysis['match_percentage']}%)")
+                except Exception as e:
+                    logger.error(f"[FIT] Error parsing college_fits: {e}")
+            
+            # Fallback: if no pre-computed fit, do on-demand calculation
+            if not fit_analysis:
+                logger.info(f"[FIT] No pre-computed fit found, calculating on-demand for {university['id']}")
+                fit_analysis = calculate_fit_for_college(user_id, university['id'], intended_major)
             
             # Add new college with fit analysis
             new_entry = {
@@ -1282,6 +1151,18 @@ def handle_update_college_list(request):
                 'fit_analysis': fit_analysis
             }
             college_list.append(new_entry)
+            
+            # If we updated college_fits with explanation, save it back
+            if college_fits_updated:
+                es_client.update(
+                    index=ES_INDEX_NAME,
+                    id=doc_id,
+                    body={
+                        "doc": {
+                            "college_fits": json.dumps(college_fits)
+                        }
+                    }
+                )
             
         elif action == 'remove':
             college_list = [c for c in college_list if c.get('university_id') != university['id']]
@@ -1614,6 +1495,10 @@ def handle_compute_all_fits(request):
         profile_source = response['hits']['hits'][0]['_source']
         profile_content = profile_source.get('content', '')
         
+        # DEBUG: Log profile content details
+        logger.info(f"[COMPUTE_ALL_FITS] Profile content length: {len(profile_content)} chars")
+        logger.info(f"[COMPUTE_ALL_FITS] Profile preview (first 500 chars): {profile_content[:500]}")
+        
         # Parse student profile for fit calculations
         student_profile = parse_student_profile(profile_content)
         logger.info(f"[COMPUTE_ALL_FITS] Parsed profile: GPA={student_profile.get('weighted_gpa')}, SAT={student_profile.get('sat_score')}")
@@ -1648,14 +1533,18 @@ def handle_compute_all_fits(request):
                 # Get the nested profile data
                 profile_data = uni_profile.get('profile', uni_profile)
                 
-                # Calculate fit using existing algorithm
-                fit_analysis = calculate_comprehensive_fit(student_profile, profile_data, '')
+                # Calculate fit using PURE LLM reasoning
+                fit_analysis = calculate_fit_with_llm(profile_content, uni_profile, '')
                 
                 # Store computed fit
                 computed_fits[university_id] = {
                     'fit_category': fit_analysis.get('fit_category', 'UNKNOWN'),
-                    'match_score': fit_analysis.get('match_percentage', 0),
+                    'match_percentage': fit_analysis.get('match_percentage', 0),  # CHANGED match_score to match_percentage for consistency
+                    'match_score': fit_analysis.get('match_percentage', 0),       # Keep match_score for backwards compatibility
                     'university_name': uni_summary.get('official_name', university_id),
+                    'explanation': fit_analysis.get('explanation', ''),
+                    'factors': fit_analysis.get('factors', []),
+                    'recommendations': fit_analysis.get('recommendations', []),
                     'location': uni_summary.get('location', {}),
                     'acceptance_rate': uni_summary.get('acceptance_rate'),
                     'us_news_rank': uni_summary.get('us_news_rank'),
@@ -1680,8 +1569,9 @@ def handle_compute_all_fits(request):
             id=doc_id,
             body={
                 "doc": {
-                    "computed_fits_json": json.dumps(computed_fits),  # Store as JSON string
-                    "fits_computed_at": fits_computed_at
+                    "college_fits": json.dumps(computed_fits),  # Store as JSON string
+                    "fits_computed_at": fits_computed_at,
+                    "needs_fit_recomputation": False  # Clear the flag after computing
                 }
             }
         )
@@ -1748,7 +1638,7 @@ def handle_get_fits(request):
         search_body = {
             "size": 1,
             "query": {"term": {"user_id.keyword": user_id}},
-            "_source": ["computed_fits_json", "computed_fits", "fits_computed_at"],
+            "_source": ["college_fits", "fits_computed_at"],
             "sort": [{"indexed_at": {"order": "desc"}}]
         }
         
@@ -1763,12 +1653,16 @@ def handle_get_fits(request):
         source = response['hits']['hits'][0]['_source']
         fits_computed_at = source.get('fits_computed_at')
         
-        # Try new JSON format first, fall back to old object format
-        computed_fits_json = source.get('computed_fits_json')
-        if computed_fits_json:
-            computed_fits = json.loads(computed_fits_json)
+        # college_fits is stored as JSON string to avoid ES field limit
+        computed_fits_raw = source.get('college_fits')
+        if computed_fits_raw:
+            # Parse JSON string if it's a string, otherwise use as-is (backward compat)
+            if isinstance(computed_fits_raw, str):
+                computed_fits = json.loads(computed_fits_raw)
+            else:
+                computed_fits = computed_fits_raw
         else:
-            computed_fits = source.get('computed_fits', {})
+            computed_fits = {}
         
         # Check if fits have been computed
         if not computed_fits:
@@ -1946,23 +1840,43 @@ def handle_update_profile_content(request):
         else:
             return add_cors_headers({'error': 'Update type must be append, replace, or remove'}, 400)
         
+        # Evaluate if changes affect fit calculations using LLM
+        needs_fit_recomputation = False
+        change_evaluation = {}
+        
+        if current_content and new_content != current_content:
+            logger.info(f"[UPDATE_CONTENT] Evaluating profile changes for fit impact...")
+            change_evaluation = evaluate_profile_change_impact(current_content, new_content)
+            needs_fit_recomputation = change_evaluation.get('should_recompute', False)
+            logger.info(f"[UPDATE_CONTENT] Fit recomputation needed: {needs_fit_recomputation}")
+        
+        # Build update document
+        update_doc = {
+            "content": new_content,
+            "content_updated_at": datetime.utcnow().isoformat(),
+            "profile_updated_at": datetime.utcnow().isoformat()
+        }
+        
+        # Set recomputation flag if LLM determined it's needed
+        if needs_fit_recomputation:
+            update_doc["needs_fit_recomputation"] = True
+            update_doc["last_change_reason"] = change_evaluation.get('reason', 'Unknown')
+            update_doc["last_change_details"] = change_evaluation.get('changes_detected', [])
+        
         # Update document
         es_client.update(
             index=ES_INDEX_NAME,
             id=doc_id,
-            body={
-                "doc": {
-                    "content": new_content,
-                    "content_updated_at": datetime.utcnow().isoformat()
-                }
-            }
+            body={"doc": update_doc}
         )
         
         logger.info(f"[UPDATE_CONTENT] {update_type} content for user {user_id}")
         return add_cors_headers({
             'success': True,
             'update_type': update_type,
-            'message': f'Successfully {update_type}ed content'
+            'message': f'Successfully {update_type}ed content',
+            'needs_fit_recomputation': needs_fit_recomputation,
+            'change_evaluation': change_evaluation
         }, 200)
         
     except Exception as e:

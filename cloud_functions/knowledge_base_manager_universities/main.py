@@ -160,6 +160,7 @@ def ensure_index_exists(es_client):
                     "market_position": {"type": "keyword"},
                     "median_earnings_10yr": {"type": "float"},
                     "us_news_rank": {"type": "integer"},  # For sorting by ranking
+                    "summary": {"type": "text"},  # Pre-computed summary for details view
                     "profile": {"type": "object", "enabled": False},
                     "indexed_at": {"type": "date"},
                     "last_updated": {"type": "date"}
@@ -208,6 +209,99 @@ def get_acronyms_for_university(official_name: str) -> list:
         acronyms.extend(["NYU"])
     
     return list(set(acronyms))  # Remove duplicates
+
+
+def create_university_summary(profile: dict) -> str:
+    """Create a concise summary of the university for display in details view."""
+    parts = []
+    
+    # Basic info
+    meta = profile.get('metadata', {})
+    official_name = meta.get('official_name', 'This university')
+    location = meta.get('location', {})
+    city = location.get('city', '')
+    state = location.get('state', '')
+    uni_type = location.get('type', 'university')
+    
+    # Admissions data
+    admissions = profile.get('admissions_data', {})
+    current_status = admissions.get('current_status', {})
+    acceptance_rate = current_status.get('overall_acceptance_rate')
+    test_policy = current_status.get('test_policy_details', 'standard testing')
+    
+    # Rankings
+    strategic = profile.get('strategic_profile', {})
+    market_position = strategic.get('market_position', '')
+    us_news_rank = None
+    for ranking in strategic.get('rankings', []):
+        if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
+            us_news_rank = ranking.get('rank_in_category') or ranking.get('rank_overall')
+            break
+    
+    # Build overview paragraph
+    overview = f"**{official_name}** is a {uni_type.lower()} university"
+    if city and state:
+        overview += f" located in {city}, {state}"
+    if us_news_rank:
+        overview += f", ranked #{us_news_rank} in US News National Universities"
+    if acceptance_rate:
+        overview += f" with a {acceptance_rate}% acceptance rate"
+    if test_policy:
+        overview += f" and a {test_policy.lower()} testing policy"
+    overview += "."
+    parts.append(overview)
+    
+    # Admissions paragraph
+    admitted = admissions.get('admitted_student_profile', {})
+    testing = admitted.get('testing', {})
+    gpa_data = admitted.get('gpa', {})
+    
+    admissions_parts = []
+    if testing.get('sat_composite_middle_50'):
+        admissions_parts.append(f"SAT middle 50%: {testing['sat_composite_middle_50']}")
+    if testing.get('act_composite_middle_50'):
+        admissions_parts.append(f"ACT middle 50%: {testing['act_composite_middle_50']}")
+    if gpa_data.get('weighted_middle_50'):
+        admissions_parts.append(f"GPA middle 50%: {gpa_data['weighted_middle_50']}")
+    
+    early = current_status.get('early_admission_stats', [])
+    if early:
+        early_info = early[0]
+        admissions_parts.append(f"{early_info.get('plan_type', 'Early')} acceptance rate: {early_info.get('acceptance_rate')}%")
+    
+    if admissions_parts:
+        parts.append("**Admissions:** " + ". ".join(admissions_parts) + ".")
+    
+    # Academics paragraph
+    academic = profile.get('academic_structure', {})
+    colleges = academic.get('colleges', [])
+    if colleges:
+        college_names = [c.get('name', '') for c in colleges[:4] if c.get('name')]
+        if college_names:
+            academics_text = f"**Academics:** The university comprises {len(colleges)} colleges/schools"
+            if college_names:
+                academics_text += f" including {', '.join(college_names)}"
+            if market_position:
+                academics_text += f". {market_position}"
+            parts.append(academics_text + ".")
+    
+    # Outcomes paragraph  
+    outcomes = profile.get('outcomes', {})
+    outcomes_parts = []
+    if outcomes.get('median_earnings_10yr'):
+        outcomes_parts.append(f"median earnings of ${outcomes['median_earnings_10yr']:,} ten years after graduation")
+    if outcomes.get('employment_rate_2yr'):
+        outcomes_parts.append(f"{outcomes['employment_rate_2yr']}% employment rate within 2 years")
+    if outcomes.get('grad_school_rate'):
+        outcomes_parts.append(f"{outcomes['grad_school_rate']}% pursue graduate studies")
+    if outcomes.get('top_employers'):
+        employers = outcomes['top_employers'][:3]
+        outcomes_parts.append(f"top employers include {', '.join(employers)}")
+    
+    if outcomes_parts:
+        parts.append("**Outcomes:** Graduates have " + ", ".join(outcomes_parts) + ".")
+    
+    return "\n\n".join(parts)
 
 
 def create_searchable_text(profile: dict) -> str:
@@ -329,8 +423,12 @@ def ingest_university(profile: dict) -> dict:
         rankings = profile.get('strategic_profile', {}).get('rankings', [])
         for ranking in rankings:
             if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
-                us_news_rank = ranking.get('rank_overall')
+                # Use rank_in_category as primary (most profiles have this), fall back to rank_overall
+                us_news_rank = ranking.get('rank_in_category') or ranking.get('rank_overall')
                 break
+        
+        # Generate pre-computed summary for details view
+        university_summary = create_university_summary(profile)
         
         doc = {
             "university_id": university_id,
@@ -338,6 +436,7 @@ def ingest_university(profile: dict) -> dict:
             "location": location,
             "semantic_content": searchable_text,  # ELSER auto-embeds this
             "searchable_text": searchable_text,
+            "summary": university_summary,  # Pre-computed summary for details
             "acceptance_rate": acceptance_rate,
             "test_policy": test_policy,
             "market_position": market_position,
@@ -504,6 +603,7 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                 "acceptance_rate": source.get('acceptance_rate'),
                 "market_position": source.get('market_position'),
                 "median_earnings_10yr": source.get('median_earnings_10yr'),
+                "summary": source.get('summary'),  # AI-generated detailed summary
                 "score": hit['_score'],
                 "profile": source.get('profile')
             })
@@ -543,7 +643,7 @@ def list_universities() -> dict:
                 "size": 200,
                 "query": {"match_all": {}},
                 "_source": ["university_id", "official_name", "location", "acceptance_rate", 
-                           "market_position", "indexed_at", "last_updated"]
+                           "market_position", "us_news_rank", "summary", "indexed_at", "last_updated"]
             }
         )
         
@@ -556,6 +656,8 @@ def list_universities() -> dict:
                 "location": source.get('location'),
                 "acceptance_rate": source.get('acceptance_rate'),
                 "market_position": source.get('market_position'),
+                "us_news_rank": source.get('us_news_rank'),
+                "summary": source.get('summary'),
                 "indexed_at": source.get('indexed_at'),
                 "last_updated": source.get('last_updated')
             })

@@ -11,11 +11,14 @@ import {
     SparklesIcon,
     LightBulbIcon,
     PlusCircleIcon,
-    XMarkIcon
+    XMarkIcon,
+    AcademicCapIcon
 } from '@heroicons/react/24/outline';
-import { getCollegeList, updateCollegeList, startSession, extractFullResponse } from '../services/api';
+import { getCollegeList, updateCollegeList, startSession, extractFullResponse, checkFitRecomputationNeeded, computeAllFits, getFitsByCategory, getPrecomputedFits } from '../services/api';
 import { useAuth } from '../context/AuthContext';
-import { UniversityDetail } from '../components/UniversityComponents';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import FitBreakdownPanel from '../components/FitBreakdownPanel';
 
 // Fit category configuration
 const FIT_CATEGORIES = {
@@ -118,17 +121,11 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails }) => {
                     </div>
                 </div>
 
-                {/* Key Factors */}
-                {fitAnalysis.key_factors && fitAnalysis.key_factors.length > 0 && (
-                    <div className="text-xs text-gray-600 bg-gray-50 rounded p-2">
-                        <span className="font-medium text-gray-700">Key Factors: </span>
-                        {fitAnalysis.key_factors.slice(0, 3).join(' • ')}
-                    </div>
-                )}
-                {fitAnalysis.factors && fitAnalysis.factors.length > 0 && !fitAnalysis.key_factors && (
-                    <div className="text-xs text-gray-600 bg-gray-50 rounded p-2">
-                        <span className="font-medium text-gray-700">Key Factors: </span>
-                        {fitAnalysis.factors.slice(0, 3).map(f => f.name || f).join(' • ')}
+                {/* LLM Explanation (if available) - brief version */}
+                {fitAnalysis.explanation && (
+                    <div className="text-sm text-gray-600 bg-blue-50 rounded p-3 border border-blue-100">
+                        <span className="font-medium text-blue-700">✨ Why This Fit: </span>
+                        <span className="line-clamp-2">{fitAnalysis.explanation}</span>
                     </div>
                 )}
             </div>
@@ -138,10 +135,9 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails }) => {
                 <div className="flex gap-2">
                     <button
                         onClick={() => onViewDetails && onViewDetails(college)}
-                        className="flex-1 bg-white border border-gray-300 text-gray-700 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 flex items-center justify-center gap-1"
+                        className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-lg text-sm font-medium hover:from-indigo-600 hover:to-purple-700 flex items-center justify-center gap-1 shadow-sm"
                     >
-                        View Details
-                        <ArrowTrendingUpIcon className="h-4 w-4" />
+                        📊 Fit Analysis
                     </button>
                     <button
                         onClick={() => onRemove(college)}
@@ -194,6 +190,271 @@ const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetail
                         />
                     ))
                 )}
+            </div>
+        </div>
+    );
+};
+
+// Detailed Fit Analysis Component (shown when clicking "Details" on a college)
+const FitAnalysisDetail = ({ college, onBack }) => {
+    const fitAnalysis = college.fit_analysis || {};
+    const fitCategory = fitAnalysis.fit_category || 'TARGET';
+    const matchScore = fitAnalysis.match_percentage || fitAnalysis.match_score || 50;
+    const config = FIT_CATEGORIES[fitCategory] || FIT_CATEGORIES.TARGET;
+
+    // Get explanation or generate a default one
+    const explanation = fitAnalysis.explanation ||
+        `Based on your academic profile, ${college.university_name} is a ${fitCategory.replace('_', ' ').toLowerCase()} school for you with a ${matchScore}% match score.`;
+
+    // Use real factors from backend if available, otherwise use defaults
+    const backendFactors = fitAnalysis.factors || [];
+
+    // Get the { currentUser } = useAuth() to fetch profile
+    const { currentUser } = useAuth();
+    const [studentProfile, setStudentProfile] = useState(null);
+
+    // Fetch student profile
+    useEffect(() => {
+        if (currentUser?.email) {
+            fetch(`https://profile-manager-es-pfnwjfp26a-ue.a.run.app/get-profile?user_email=${encodeURIComponent(currentUser.email)}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.profile) {
+                        setStudentProfile(data.profile);
+                    }
+                })
+                .catch(err => console.error('Failed to fetch profile:', err));
+        }
+    }, [currentUser]);
+
+
+    // Map backend factors to display format with icons
+    const getFactorIcon = (name) => {
+        const iconMap = {
+            'GPA Match': '📚',
+            'Test Scores': '📝',
+            'Selectivity Context': '🎯',
+            'Course Rigor': '📈',
+            'Major Fit': '🎓',
+            'Activities': '🏆',
+            'Early Action': '⏰'
+        };
+        return iconMap[name] || '📊';
+    };
+
+    // Convert backend factors to display format
+    const scoreBreakdown = backendFactors.length > 0
+        ? backendFactors
+            .filter(f => f.max > 0) // Skip display-only factors like Selectivity Context
+            .map(factor => ({
+                category: factor.name,
+                score: factor.max > 0 ? Math.round((factor.score / factor.max) * 100) : 0,
+                rawScore: factor.score,
+                maxScore: factor.max,
+                description: factor.detail || `${factor.name} score`,
+                icon: getFactorIcon(factor.name)
+            }))
+        : [
+            // Fallback to estimated scores if no backend factors
+            {
+                category: 'Academic Match',
+                score: Math.min(matchScore + 10, 100),
+                description: 'GPA and test scores compared to admitted student profile',
+                icon: '📚'
+            },
+            {
+                category: 'Selectivity Fit',
+                score: matchScore,
+                description: 'Your competitiveness relative to acceptance rate',
+                icon: '🎯'
+            },
+            {
+                category: 'Program Strength',
+                score: Math.max(matchScore - 5, 0),
+                description: 'Alignment with your intended major/field',
+                icon: '🔬'
+            }
+        ];
+
+    // Get selectivity context for display (not part of score)
+    const selectivityFactor = backendFactors.find(f => f.name === 'Selectivity Context');
+    const selectivityDetail = selectivityFactor?.detail || null;
+
+    // Recommendations based on fit category
+    const getRecommendations = () => {
+        switch (fitCategory) {
+            case 'SUPER_REACH':
+                return [
+                    'Focus on exceptional essays that showcase unique perspectives and experiences',
+                    'Highlight leadership and significant achievements in extracurriculars',
+                    'Consider applying Early Decision if this is your top choice',
+                    'Prepare supplemental materials like portfolios if applicable',
+                    'Secure recommendation letters from teachers who know you exceptionally well'
+                ];
+            case 'REACH':
+                return [
+                    'Craft compelling essays that differentiate you from other applicants',
+                    'Demonstrate genuine interest through campus visits or virtual events',
+                    'Highlight any unique talents or experiences that set you apart',
+                    'Consider Early Action if available for a potential admissions boost',
+                    'Ensure you have strong letters of recommendation'
+                ];
+            case 'TARGET':
+                return [
+                    'Present a well-rounded application with solid essays',
+                    'Show demonstrated interest through campus engagement',
+                    'Highlight how you will contribute to the campus community',
+                    'Research specific programs and mention them in supplements',
+                    'Maintain your current academic performance through senior year'
+                ];
+            case 'SAFETY':
+                return [
+                    'Do not slack on your application - treat it with care',
+                    'Research specific programs and opportunities that excite you',
+                    'Visit campus to ensure it is the right fit beyond academics',
+                    'Look into honors programs or scholarships you may qualify for',
+                    'Consider this school genuinely - it could be a great match'
+                ];
+            default:
+                return ['Continue building a strong application'];
+        }
+    };
+
+    const recommendations = getRecommendations();
+
+    return (
+        <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+            {/* Header */}
+            <div className={`${config.headerBg} px-6 py-4 border-b ${config.borderColor}`}>
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                        <button
+                            onClick={onBack}
+                            className="p-2 hover:bg-white/50 rounded-lg transition-colors"
+                        >
+                            ← Back
+                        </button>
+                        <div>
+                            <h2 className="text-xl font-bold text-gray-900">{college.university_name}</h2>
+                            <p className="text-sm text-gray-600 flex items-center gap-1">
+                                <MapPinIcon className="h-4 w-4" />
+                                {college.location || 'Location N/A'}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="text-right">
+                        <span className={`px-4 py-2 rounded-full text-sm font-bold ${config.headerBg} ${config.textColor} border ${config.borderColor}`}>
+                            {config.emoji} {config.label}
+                        </span>
+                        <p className="text-2xl font-bold text-gray-900 mt-2">{matchScore}% Match</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 space-y-6">
+                {/* University Overview (from pre-computed summary) */}
+                {college.summary && (
+                    <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                        <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                            <AcademicCapIcon className="h-5 w-5 text-gray-600" />
+                            University Overview
+                        </h3>
+                        <div className="prose prose-sm max-w-none text-gray-700">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                {college.summary}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
+                )}
+
+                {/* Fit Explanation */}
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border border-blue-100">
+                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                        <SparklesIcon className="h-5 w-5 text-blue-600" />
+                        Why This Fit Category?
+                    </h3>
+                    <div className="text-gray-700 prose prose-sm max-w-none">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {explanation}
+                        </ReactMarkdown>
+                    </div>
+                </div>
+
+
+                {/* Score Breakdown */}
+                <div>
+                    <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                        <ChartBarIcon className="h-5 w-5 text-purple-600" />
+                        Score Breakdown (Fair Mode - 100pt Scale)
+                    </h3>
+
+                    {/* Selectivity Context Badge */}
+                    {selectivityDetail && (
+                        <div className="mb-4 px-4 py-2 bg-slate-100 rounded-lg border border-slate-200 flex items-center gap-2">
+                            <span className="text-lg">🏛️</span>
+                            <span className="text-sm text-slate-700"><strong>School Selectivity:</strong> {selectivityDetail}</span>
+                        </div>
+                    )}
+
+                    <div className="space-y-4">
+                        {scoreBreakdown.map((item, idx) => (
+                            <div key={idx} className="bg-gray-50 rounded-lg p-4">
+                                <div className="flex justify-between items-center mb-2">
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-lg">{item.icon}</span>
+                                        <span className="font-medium text-gray-900">{item.category}</span>
+                                    </div>
+                                    <div className="text-right">
+                                        <span className={`font-bold ${item.score >= 70 ? 'text-green-600' : item.score >= 50 ? 'text-yellow-600' : 'text-red-600'}`}>
+                                            {item.score}%
+                                        </span>
+                                        {item.rawScore !== undefined && (
+                                            <span className="text-xs text-gray-400 ml-1">
+                                                ({item.rawScore}/{item.maxScore} pts)
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                                    <div
+                                        className={`h-2 rounded-full transition-all duration-300 ${item.score >= 70 ? 'bg-green-500' : item.score >= 50 ? 'bg-yellow-500' : 'bg-red-500'}`}
+                                        style={{ width: `${item.score}%` }}
+                                    ></div>
+                                </div>
+                                <p className="text-sm text-gray-500">{item.description}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Fair Mode Explanation */}
+                    <div className="mt-4 p-3 bg-indigo-50 rounded-lg border border-indigo-100">
+                        <p className="text-xs text-indigo-700">
+                            <strong>Fair Mode:</strong> Your match score is calculated based on academic factors only.
+                            School selectivity is used as a ceiling for the category (not to reduce your score).
+                        </p>
+                    </div>
+                </div>
+
+                {/* Recommendations */}
+                <div>
+                    <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                        <LightBulbIcon className="h-5 w-5 text-amber-600" />
+                        Recommendations to Strengthen Your Application
+                    </h3>
+                    <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
+                        <ul className="space-y-3">
+                            {recommendations.map((rec, idx) => (
+                                <li key={idx} className="flex gap-3">
+                                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-200 text-amber-800 flex items-center justify-center text-sm font-medium">
+                                        {idx + 1}
+                                    </span>
+                                    <span className="text-gray-700">{rec}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -364,13 +625,18 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
             }
 
             // Try Format 3: Just a university name on its own line (contains "University", "College", etc.)
+            // But skip category header lines like "Safety Schools", "Target Schools", "Reach Schools"
+            const isCategoryHeader = /^[\s\*\-#]*(?:safety|target|reach|super.?reach)\s+schools?[\s:]*$/i.test(line);
+            if (isCategoryHeader) continue;
+
             const uniNameMatch = line.match(/^[\s\-\*\d\.]*\**([A-Z][A-Za-z\s&]+(?:University|College|Institute|MIT|UCLA|USC|Caltech|Stanford|Princeton|Harvard|Yale)[\w\s]*)\**[\s\-:,]*(.*)/i);
             if (uniNameMatch && uniNameMatch[1].length > 5 && uniNameMatch[1].length < 80) {
                 const universityName = uniNameMatch[1].replace(/\*+/g, '').trim();
                 const rest = uniNameMatch[2] || '';
 
-                // Check if this looks like a university name (not a description)
-                if (!/^\s*(is|are|has|the|a|an|this)\s/i.test(universityName)) {
+                // Check if this looks like a university name (not a description or category header)
+                if (!/^\s*(is|are|has|the|a|an|this)\s/i.test(universityName) &&
+                    !/^(safety|target|reach)\s+schools?$/i.test(universityName)) {
                     let fitCategory = 'TARGET';
                     if (/safety/i.test(rest) || /safety/i.test(line)) fitCategory = 'SAFETY';
                     else if (/super.?reach/i.test(rest) || /super.?reach/i.test(line)) fitCategory = 'SUPER_REACH';
@@ -439,6 +705,60 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
         } catch (err) {
             console.error('[Smart Discovery] Error:', err);
             setError('Failed to get recommendations. Please try again.');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    // Optimized quick filter handler - uses direct API calls instead of LLM
+    // Much faster (1s vs 5-10s) and more reliable for predefined filters
+    const handleQuickFilter = async (category = null, state = null) => {
+        setIsLoading(true);
+        setError(null);
+        setRecommendations([]);
+
+        try {
+            if (!currentUser?.email) {
+                setError('Please log in to use this feature.');
+                return;
+            }
+
+            // Get existing college IDs to exclude
+            const existingIds = [];
+            Object.values(categorizedColleges).forEach(colleges => {
+                colleges.forEach(c => {
+                    if (c.university_id) existingIds.push(c.university_id);
+                });
+            });
+
+            console.log(`[Smart Discovery] Quick filter: category=${category}, state=${state}, excluding ${existingIds.length} existing colleges`);
+
+            // Direct API call - much faster than LLM
+            const result = await getFitsByCategory(currentUser.email, category, state, existingIds, 8);
+
+            if (result.success && result.results?.length > 0) {
+                // Transform API results to recommendation format
+                const recs = result.results.map((fit, idx) => ({
+                    id: fit.university_id || `rec-${idx}`,
+                    name: fit.university_name || fit.official_name || 'Unknown',
+                    fitCategory: fit.fit_category,
+                    matchScore: fit.match_percentage || 0,
+                    reason: `${fit.fit_category?.replace('_', ' ')} school with ${fit.match_percentage}% match`,
+                    selected: true
+                }));
+                setRecommendations(recs);
+                // Auto-select all
+                const allSelected = {};
+                recs.forEach(r => { allSelected[r.id] = true; });
+                setSelectedRecs(allSelected);
+            } else if (result.results?.length === 0) {
+                setError(`No additional ${category || 'matching'} schools found. Try a different filter or use the AI-powered discovery.`);
+            } else {
+                setError('Failed to load recommendations. Please try again.');
+            }
+        } catch (err) {
+            console.error('[Smart Discovery] Quick filter error:', err);
+            setError('Failed to load recommendations. Please try again.');
         } finally {
             setIsLoading(false);
         }
@@ -602,25 +922,28 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                                 ⚖️ Balanced List
                             </button>
                             <button
-                                onClick={() => handleGetRecommendations("Find me safety schools where I have a very strong chance of admission based on my GPA and test scores")}
+                                onClick={() => handleQuickFilter('SAFETY', null)}
                                 disabled={isLoading}
                                 className="px-3 py-1.5 bg-white border border-green-200 text-green-700 rounded-full text-sm font-medium hover:bg-green-50 transition-colors disabled:opacity-50"
+                                title="Fast: Uses pre-computed fits"
                             >
-                                🛡️ More Safety Schools
+                                🛡️ More Safety Schools ⚡
                             </button>
                             <button
-                                onClick={() => handleGetRecommendations("Recommend target schools where my profile is a good match for admission and academic programs")}
+                                onClick={() => handleQuickFilter('TARGET', null)}
                                 disabled={isLoading}
                                 className="px-3 py-1.5 bg-white border border-blue-200 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-50 transition-colors disabled:opacity-50"
+                                title="Fast: Uses pre-computed fits"
                             >
-                                ✅ More Target Schools
+                                ✅ More Target Schools ⚡
                             </button>
                             <button
-                                onClick={() => handleGetRecommendations("Find reach schools including top-ranked universities where I could be competitive based on my profile")}
+                                onClick={() => handleQuickFilter('REACH', null)}
                                 disabled={isLoading}
                                 className="px-3 py-1.5 bg-white border border-orange-200 text-orange-700 rounded-full text-sm font-medium hover:bg-orange-50 transition-colors disabled:opacity-50"
+                                title="Fast: Uses pre-computed fits"
                             >
-                                🎯 More Reach Schools
+                                🎯 More Reach Schools ⚡
                             </button>
                             <button
                                 onClick={() => handleGetRecommendations("Find schools with strong programs for my intended major that match my academic profile")}
@@ -630,11 +953,12 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                                 📚 Strong in My Major
                             </button>
                             <button
-                                onClick={() => handleGetRecommendations("Find universities in California that match my profile")}
+                                onClick={() => handleQuickFilter(null, 'California')}
                                 disabled={isLoading}
                                 className="px-3 py-1.5 bg-white border border-amber-200 text-amber-700 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors disabled:opacity-50"
+                                title="Fast: Uses pre-computed fits"
                             >
-                                🌴 California Schools
+                                🌴 California Schools ⚡
                             </button>
                         </div>
                     </div>
@@ -850,6 +1174,7 @@ const MyLaunchpad = () => {
     const [removingId, setRemovingId] = useState(null);
     const [selectedUniversity, setSelectedUniversity] = useState(null);
     const [deepResearchData, setDeepResearchData] = useState({});
+    const [recomputingFits, setRecomputingFits] = useState(false);
 
     // Fetch college list
     const fetchCollegeList = async () => {
@@ -859,15 +1184,64 @@ const MyLaunchpad = () => {
         setError(null);
 
         try {
-            const result = await getCollegeList(currentUser.email);
-            if (result.success) {
-                setCollegeList(result.college_list || []);
+            // Check for recomputation first
+            if (!recomputingFits) {
+                const recomputeStatus = await checkFitRecomputationNeeded(currentUser.email);
+                if (recomputeStatus.needs_recomputation) {
+                    console.log('[Launchpad] Recomputation needed:', recomputeStatus.reason);
+                    setRecomputingFits(true);
+
+                    // Trigger recomputation
+                    await computeAllFits(currentUser.email);
+                    setRecomputingFits(false);
+                }
+            }
+
+            // Fetch both college list and precomputed fits
+            const [listResult, fitsResult] = await Promise.all([
+                getCollegeList(currentUser.email),
+                getPrecomputedFits(currentUser.email)
+            ]);
+
+            if (listResult.success) {
+                let colleges = listResult.college_list || [];
+
+                // Merge precomputed fits into college list (precomputed takes priority)
+                if (fitsResult.success && fitsResult.results) {
+                    const fitsMap = {};
+                    fitsResult.results.forEach(fit => {
+                        fitsMap[fit.university_id] = {
+                            fit_category: fit.fit_category,
+                            match_percentage: fit.match_percentage || fit.match_score,
+                            match_score: fit.match_percentage || fit.match_score,
+                            explanation: fit.explanation,
+                            factors: fit.factors || [],
+                            recommendations: fit.recommendations || []
+                        };
+                    });
+
+                    // Merge precomputed fits into college list items
+                    colleges = colleges.map(college => {
+                        const precomputed = fitsMap[college.university_id];
+                        if (precomputed) {
+                            return {
+                                ...college,
+                                fit_analysis: precomputed  // Override with fresh precomputed data
+                            };
+                        }
+                        return college;
+                    });
+                    console.log('[Launchpad] Merged precomputed fits for', Object.keys(fitsMap).length, 'universities');
+                }
+
+                setCollegeList(colleges);
             } else {
-                setError(result.error || 'Failed to load college list');
+                setError(listResult.error || 'Failed to load college list');
             }
         } catch (err) {
             console.error('Error fetching college list:', err);
             setError('Unable to load your college list. Please try again.');
+            setRecomputingFits(false);
         } finally {
             setLoading(false);
         }
@@ -1006,6 +1380,23 @@ const MyLaunchpad = () => {
 
     return (
         <div className="space-y-6">
+            {/* Recomputation Banner */}
+            {recomputingFits && (
+                <div className="bg-purple-100 border-l-4 border-purple-500 text-purple-700 p-4 rounded shadow-sm" role="alert">
+                    <div className="flex items-center">
+                        <div className="py-1">
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-purple-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p className="font-bold">Updating your matches</p>
+                            <p className="text-sm">We noticed changes in your profile. Recalculating your fit scores for all universities...</p>
+                        </div>
+                    </div>
+                </div>
+            )}
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
@@ -1059,29 +1450,9 @@ const MyLaunchpad = () => {
             {/* Detail View (when a university is selected) */}
             {selectedUniversity && (
                 <div className="mt-6">
-                    <UniversityDetail
-                        uni={{
-                            id: selectedUniversity.university_id,
-                            name: selectedUniversity.university_name,
-                            university_id: selectedUniversity.university_id,
-                            university_name: selectedUniversity.university_name,
-                            location: selectedUniversity.location ? {
-                                city: selectedUniversity.location.split(',')[0]?.trim() || 'N/A',
-                                state: selectedUniversity.location.split(',')[1]?.trim() || 'N/A',
-                                type: 'N/A'
-                            } : { city: 'N/A', state: 'N/A', type: 'N/A' },
-                            summary: 'View full details in UniInsight for complete information.',
-                            rankings: { usNews: 'N/A', forbes: 'N/A' },
-                            admissions: { acceptanceRate: 'N/A', gpa: 'N/A', testPolicy: 'N/A' },
-                            financials: {},
-                            outcomes: {},
-                            majors: []
-                        }}
+                    <FitAnalysisDetail
+                        college={selectedUniversity}
                         onBack={() => setSelectedUniversity(null)}
-                        sentiment={null}
-                        deepResearchData={deepResearchData}
-                        setDeepResearchData={setDeepResearchData}
-                        fitAnalysis={selectedUniversity.fit_analysis}
                     />
                 </div>
             )}

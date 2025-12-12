@@ -45,7 +45,7 @@ def perform_deep_research(topic: str) -> Dict[str, Any]:
         """
 
         response = client.models.generate_content(
-            model="gemini-2.0-flash-exp", # Using a strong model for research
+            model="gemini-2.5-flash-lite", # Using a strong model for research
             contents=prompt,
             tools=[types.Tool(google_search=types.GoogleSearch())]
         )
