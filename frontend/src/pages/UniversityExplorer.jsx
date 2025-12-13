@@ -80,16 +80,15 @@ const transformUniversityData = (apiData) => {
         });
     }
 
-    // Extract rankings
-    let usNewsRank = 'N/A';
+    // Use pre-extracted US News rank from backend API (already parsed during ingest)
+    // Backend extracts from strategic_profile.rankings[] with proper fallback logic
+    const usNewsRank = apiData.us_news_rank || 'N/A';
+
+    // Forbes rank: extract from nested array only if needed (not pre-extracted by backend)
     let forbesRank = 'N/A';
-
     if (Array.isArray(strategic.rankings)) {
-        const usNewsObj = strategic.rankings.find(r => r.source === "US News");
-        if (usNewsObj) usNewsRank = usNewsObj.rank_overall || 'N/A';
-
         const forbesObj = strategic.rankings.find(r => r.source === "Forbes");
-        if (forbesObj) forbesRank = forbesObj.rank_overall || 'N/A';
+        if (forbesObj) forbesRank = forbesObj.rank_overall || forbesObj.rank_in_category || 'N/A';
     }
 
     return {
@@ -145,8 +144,8 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
 
     return (
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
-            <div className="p-6 flex-grow">
-                <div className="flex justify-between items-start mb-4">
+            <div className="p-4 flex-grow">
+                <div className="flex justify-between items-start mb-3">
                     <div>
                         <h3
                             onClick={() => onSelect(uni)}
@@ -185,9 +184,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                     </div>
                 </div>
 
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">{uni.summary}</p>
-
-                <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="grid grid-cols-2 gap-2 text-sm">
                     <div className="bg-gray-50 p-2 rounded">
                         <div className="text-gray-500 text-xs">Acceptance</div>
                         <div className="font-semibold text-gray-900">
@@ -461,12 +458,19 @@ const ComparisonView = ({ universities, onRemove }) => {
 };
 
 // --- University Detail Component ---
-const UniversityDetail = ({ uni, onBack, sentiment }) => {
+const UniversityDetail = ({ uni, onBack, sentiment, fitAnalysis }) => {
     if (!uni) return null;
 
     const formatNumber = (num) => {
         if (num === 'N/A' || num === null || num === undefined) return 'N/A';
         return typeof num === 'number' ? num.toLocaleString() : num;
+    };
+
+    const fitColors = {
+        SAFETY: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-800', badge: 'bg-green-100' },
+        TARGET: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-800', badge: 'bg-blue-100' },
+        REACH: { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-800', badge: 'bg-orange-100' },
+        SUPER_REACH: { bg: 'bg-red-50', border: 'border-red-200', text: 'text-red-800', badge: 'bg-red-100' }
     };
 
     return (
@@ -522,6 +526,72 @@ const UniversityDetail = ({ uni, onBack, sentiment }) => {
                             </ReactMarkdown>
                         </div>
                     </details>
+                </div>
+            )}
+
+            {/* Fit Analysis Section */}
+            {fitAnalysis && (
+                <div className={`p-6 ${fitColors[fitAnalysis.fit_category]?.bg || 'bg-blue-50'} border-b border-gray-200`}>
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                            <span className="text-2xl">✨</span>
+                            <h3 className="text-xl font-bold text-gray-900">Your Fit Analysis</h3>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            {fitAnalysis.match_percentage && (
+                                <span className="text-2xl font-bold text-gray-800">{fitAnalysis.match_percentage}% Match</span>
+                            )}
+                            <span className={`px-3 py-1.5 rounded-full text-sm font-bold border ${fitColors[fitAnalysis.fit_category]?.badge || 'bg-blue-100'} ${fitColors[fitAnalysis.fit_category]?.text || 'text-blue-800'}`}>
+                                {fitAnalysis.fit_category === 'SUPER_REACH' ? '🎯 Super Reach' :
+                                    fitAnalysis.fit_category === 'REACH' ? '🎯 Reach' :
+                                        fitAnalysis.fit_category === 'TARGET' ? '🎯 Target' :
+                                            '✅ Safety'}
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Explanation */}
+                    {fitAnalysis.explanation && (
+                        <div className="bg-white rounded-lg p-4 mb-4 border border-gray-200">
+                            <div className="prose prose-sm max-w-none text-gray-700">
+                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                    {fitAnalysis.explanation}
+                                </ReactMarkdown>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Factors */}
+                    {fitAnalysis.factors && fitAnalysis.factors.length > 0 && (
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            {fitAnalysis.factors.filter(f => f.max > 0).map((factor, idx) => (
+                                <div key={idx} className="bg-white rounded-lg p-3 border border-gray-200">
+                                    <div className="text-xs text-gray-500 mb-1">{factor.name}</div>
+                                    <div className="flex items-center gap-2">
+                                        <div className="flex-1 bg-gray-200 rounded-full h-2">
+                                            <div
+                                                className="bg-blue-600 h-2 rounded-full transition-all"
+                                                style={{ width: `${(factor.score / factor.max) * 100}%` }}
+                                            ></div>
+                                        </div>
+                                        <span className="text-sm font-semibold text-gray-700">{factor.score}/{factor.max}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    {/* Recommendations */}
+                    {fitAnalysis.recommendations && fitAnalysis.recommendations.length > 0 && (
+                        <div className="mt-4 bg-white rounded-lg p-4 border border-gray-200">
+                            <h4 className="font-semibold text-gray-800 mb-2">💡 Recommendations</h4>
+                            <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                {fitAnalysis.recommendations.map((rec, idx) => (
+                                    <li key={idx}>{rec}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
             )}
 
@@ -870,7 +940,11 @@ const UniversityExplorer = () => {
                             university_name: fit.university_name,
                             explanation: fit.explanation,
                             factors: fit.factors,
-                            recommendations: fit.recommendations
+                            recommendations: fit.recommendations,
+                            us_news_rank: fit.us_news_rank,
+                            location: fit.location,
+                            acceptance_rate: fit.acceptance_rate,
+                            market_position: fit.market_position
                         };
                     });
                     setPrecomputedFits(fitsMap);
@@ -909,15 +983,7 @@ const UniversityExplorer = () => {
             if (result.success) {
                 setMyCollegeList(result.college_list || []);
                 console.log(`[College List] ${action === 'add' ? 'Added' : 'Removed'}: ${university.name}`);
-
-                // Auto-trigger fit analysis when adding a university
-                if (action === 'add') {
-                    console.log(`[College List] Auto-triggering fit analysis for: ${university.name}`);
-                    // Use setTimeout to allow state to update first
-                    setTimeout(() => {
-                        handleAnalyzeFit(university);
-                    }, 100);
-                }
+                // Note: No auto-trigger needed - precomputed fits already have the analysis
             }
         } catch (err) {
             console.error('[College List] Error updating:', err);
@@ -929,9 +995,10 @@ const UniversityExplorer = () => {
         return myCollegeList.some(c => c.university_id === universityId);
     };
 
-    // Get fit analysis for a university - prioritize pre-computed fits
+    // Get fit analysis for a university - prioritize pre-computed fits (has current profile data)
     const getCollegeFitAnalysis = (universityId) => {
-        // First check pre-computed fits (covers ALL universities)
+        // First check pre-computed fits - these are recomputed when profile changes
+        // so they always have the most accurate, up-to-date analysis
         if (precomputedFits[universityId]) {
             return precomputedFits[universityId];
         }
@@ -1430,7 +1497,6 @@ const UniversityExplorer = () => {
                         Explore and compare top universities
                     </p>
                 </div>
-                /* add recalculate button */
                 <button
                     onClick={handleRefresh}
                     disabled={loading}
@@ -1561,7 +1627,7 @@ const UniversityExplorer = () => {
                                 </div>
 
                                 {/* Filter Controls */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
                                     <div className="space-y-1">
                                         <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Type</label>
                                         <select
@@ -1602,7 +1668,7 @@ const UniversityExplorer = () => {
                                             max="100"
                                             value={maxAcceptance}
                                             onChange={(e) => setMaxAcceptance(Number(e.target.value))}
-                                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-2"
                                         />
                                     </div>
 
@@ -1622,9 +1688,7 @@ const UniversityExplorer = () => {
                                     </div>
 
                                     <div className="space-y-1">
-                                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide flex items-center gap-1">
-                                            <ArrowsUpDownIcon className="h-3 w-3" /> Sort By
-                                        </label>
+                                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Sort By</label>
                                         <select
                                             value={sortBy}
                                             onChange={(e) => setSortBy(e.target.value)}
@@ -1820,7 +1884,7 @@ const UniversityExplorer = () => {
                                                 setSelectedUni(fullUni);
                                                 setActiveView('detail');
                                             }}
-                                            fitAnalysis={college.fit_analysis}
+                                            fitAnalysis={getCollegeFitAnalysis(college.university_id)}
                                         />
                                     ))}
                                 </div>
@@ -1835,6 +1899,7 @@ const UniversityExplorer = () => {
                             sentiment={sentimentData[selectedUni.id]}
                             deepResearchData={deepResearchData}
                             setDeepResearchData={setDeepResearchData}
+                            fitAnalysis={getCollegeFitAnalysis(selectedUni.id)}
                         />
                     )}
                 </>

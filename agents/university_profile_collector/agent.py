@@ -59,10 +59,10 @@ Output ONLY the university name (e.g., 'Stanford University'). No other text."""
 strategy_agent = LlmAgent(
     name="StrategyAgent",
     model=MODEL_NAME,
-    description="Researches university rankings, market position, and campus dynamics.",
+    description="Researches university ranking, market position, and campus dynamics.",
     instruction="""Research the university: {university_name}
 
-SEARCH for: rankings (US News, Niche, Forbes), admissions philosophy, campus social life, transportation, research opportunities.
+SEARCH for: US News National Universities ranking 2026, admissions philosophy, campus social life, transportation, research opportunities.
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -80,22 +80,7 @@ OUTPUT JSON with EXACTLY this structure:
   "executive_summary": "2-3 sentence overview of the university",
   "market_position": "Public Ivy" or "Hidden Gem" or "Elite Private" etc,
   "admissions_philosophy": "Holistic review" or "Numbers-focused" or "Test-free" etc,
-  "rankings": [
-    (
-      "source": "US News",
-      "rank_overall": 35,
-      "rank_category": "National Universities",
-      "rank_in_category": 10,
-      "year": 2025
-    ),
-    (
-      "source": "Niche",
-      "rank_overall": null,
-      "rank_category": "Best Public Universities",
-      "rank_in_category": 8,
-      "year": 2025
-    )
-  ],
+  "us_news_rank": 15,
   "analyst_takeaways": [
     (
       "category": "Selectivity",
@@ -110,7 +95,11 @@ OUTPUT JSON with EXACTLY this structure:
   )
 )
 
-CRITICAL: Use EXACTLY these field names. Use ( ) instead of curly braces in your output.
+CRITICAL: 
+- us_news_rank must be the US News National Universities ranking (integer).
+- Search for the latest 2026 ranking specifically.
+- Use EXACTLY these field names. 
+- Use ( ) instead of curly braces in your output.
 """,
     tools=[google_search],
     output_key="strategy_output"

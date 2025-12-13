@@ -14,36 +14,6 @@
     "executive_summary": "The University of Oregon is a public research university located in Eugene, Oregon, known for its strong academic programs, vibrant campus life, and significant research contributions. It offers over 300 undergraduate and 80 graduate programs, emphasizing critical thinking and global engagement.",
     "market_position": "Public Research University",
     "admissions_philosophy": "Holistic review and test-optional for undergraduate applicants. The university considers factors such as strength of high school coursework, academic and extracurricular interests, unique talents, personality, and an optional essay.",
-    "rankings": [
-      {
-        "source": "US News",
-        "rank_overall": null,
-        "rank_category": "National Universities",
-        "rank_in_category": 98,
-        "year": 2024
-      },
-      {
-        "source": "Niche",
-        "rank_overall": 392,
-        "rank_category": "Best Colleges in America",
-        "rank_in_category": null,
-        "year": 2026
-      },
-      {
-        "source": "Niche",
-        "rank_overall": null,
-        "rank_category": "Top Public Universities in America",
-        "rank_in_category": 176,
-        "year": 2026
-      },
-      {
-        "source": "Forbes",
-        "rank_overall": 187,
-        "rank_category": "Top Colleges",
-        "rank_in_category": null,
-        "year": 2026
-      }
-    ],
     "analyst_takeaways": [
       {
         "category": "Selectivity",
@@ -60,7 +30,8 @@
       "social_environment": "The campus offers a lively social environment with over 250-400 student organizations and clubs, fostering community engagement and a sense of belonging. Sports, particularly football, play a significant role in campus culture. Living on campus is encouraged and offers academic and social benefits through Academic Residential Communities.",
       "transportation_impact": "Getting around campus is easy, primarily on foot. Students benefit from free access to the Lane Transit District (LTD) bus system, including the EmX rapid transit line, for travel within Eugene and Springfield. Biking is also a popular and supported mode of transportation, and Duck Rides provide night transportation services.",
       "research_impact": "The University of Oregon is a Tier 1 national public research university, actively engaged in advancing knowledge across diverse fields. Its Office of the Vice President for Research and Innovation (OVPRI) supports numerous research centers, funding opportunities, and technology transfer initiatives, driving economic development through partnerships with investors and industry. Undergraduate students have hands-on research opportunities through programs like the Undergraduate Research Opportunity Program (UROP) and various fellowships."
-    }
+    },
+    "us_news_rank": 98
   },
   "admissions_data": {
     "current_status": {
@@ -1095,7 +1066,7 @@
     },
     "transfer_articulation": {
       "tools": [
-        "Transfer Equivalency Database (TES®)",
+        "Transfer Equivalency Database (TES\u00ae)",
         "Transferology"
       ],
       "restrictions": "Only 124 credits from junior or community colleges will be counted toward the total number of credits required for the degree (of this only 90 credits may be transferred from an international junior college)"

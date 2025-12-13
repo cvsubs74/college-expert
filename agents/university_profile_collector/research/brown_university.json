@@ -38,29 +38,6 @@
     "executive_summary": "Brown University is an elite private Ivy League institution known for its distinctive Open Curriculum, fostering deep intellectual curiosity, creativity, and individuality among its students. It emphasizes high-impact research, exceptional teaching, and a strong sense of community within a vibrant urban setting.",
     "market_position": "Elite Private",
     "admissions_philosophy": "Brown's admissions philosophy, particularly evident in its graduate programs, seeks promising individuals with the ability to engage in original philosophical work, demonstrating persistence, openness to constructive criticism, and a diversity of perspectives. While specific undergraduate philosophy isn't explicitly detailed in the provided search, the university's overall culture suggests a holistic review valuing intellectual curiosity and individual contribution.",
-    "rankings": [
-      {
-        "source": "US News",
-        "rank_overall": null,
-        "rank_category": "National Universities",
-        "rank_in_category": 13,
-        "year": 2026
-      },
-      {
-        "source": "Niche",
-        "rank_overall": null,
-        "rank_category": "Best Colleges in America (Overall Grade)",
-        "rank_in_category": null,
-        "year": 2026
-      },
-      {
-        "source": "Forbes",
-        "rank_overall": 18,
-        "rank_category": "America's Top Colleges",
-        "rank_in_category": null,
-        "year": 2026
-      }
-    ],
     "analyst_takeaways": [
       {
         "category": "Academics",
@@ -81,8 +58,9 @@
     "campus_dynamics": {
       "social_environment": "Brown University fosters a strong, inclusive community credited to its Open Curriculum and a shared appreciation for diverse perspectives. With over 500 student organizations, there are ample opportunities to pursue interests and discover new passions, leading to a stimulating social life. The campus on College Hill offers a classic New England college experience, while the vibrant city of Providence provides an eclectic backdrop with an innovative arts scene, exceptional culinary offerings, and cultural activities. The party scene is described as 'fine' and more open than Greek-led state schools, with students often described as talented yet humble.",
       "transportation_impact": "Brown provides robust transportation options that facilitate campus life and connection to the wider city and region. The Brown University Shuttle (BUS) offers safety-oriented transportation around campus and to downtown Providence, with a 'Brown onCall' service for point-to-point rides in areas not covered by regular routes. Students, faculty, and staff can ride any RIPTA (Rhode Island Public Transit Authority) bus or trolley statewide for free with their Brown ID, enhancing accessibility to Providence and beyond. The proximity to the Boston Commuter Rail also connects the community to Boston. These services reduce the reliance on personal vehicles and integrate the campus with the local urban environment.",
-      "research_impact": "Research is a central pillar of Brown University, with a strong emphasis on advancing knowledge and discovery. Researchers, including students and faculty, engage in pioneering, high-impact work across a broad spectrum of disciplines, from health and medicine (e.g., cancer treatment, Alzheimer's, addiction) to science, technology, engineering, social sciences, and humanities (e.g., AI, computational neuroscience, international economics). The university actively supports faculty and student collaboration on research projects, including through programs like the Summer Research – Early Identification Programs (SR-EIP) and internal funding opportunities, aiming to generate real solutions and set the stage for future breakthroughs."
-    }
+      "research_impact": "Research is a central pillar of Brown University, with a strong emphasis on advancing knowledge and discovery. Researchers, including students and faculty, engage in pioneering, high-impact work across a broad spectrum of disciplines, from health and medicine (e.g., cancer treatment, Alzheimer's, addiction) to science, technology, engineering, social sciences, and humanities (e.g., AI, computational neuroscience, international economics). The university actively supports faculty and student collaboration on research projects, including through programs like the Summer Research \u2013 Early Identification Programs (SR-EIP) and internal funding opportunities, aiming to generate real solutions and set the stage for future breakthroughs."
+    },
+    "us_news_rank": 13
   },
   "admissions_data": {
     "current_status": {
@@ -816,7 +794,10 @@
     "minors_certificates": []
   },
   "application_process": {
-    "platforms": ["Common App", "Coalition App"],
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
     "application_deadlines": [
       {
         "plan_type": "Early Decision",
@@ -888,8 +869,22 @@
       }
     ],
     "holistic_factors": {
-      "primary_factors": ["Rigor of Secondary School Record", "Academic GPA", "Application Essay", "Recommendations", "Character/Personal Qualities", "Talent/Ability"],
-      "secondary_factors": ["Class Rank", "Extracurricular Activities", "Volunteer Work", "Work Experience", "Geographical Residence", "State Residency"],
+      "primary_factors": [
+        "Rigor of Secondary School Record",
+        "Academic GPA",
+        "Application Essay",
+        "Recommendations",
+        "Character/Personal Qualities",
+        "Talent/Ability"
+      ],
+      "secondary_factors": [
+        "Class Rank",
+        "Extracurricular Activities",
+        "Volunteer Work",
+        "Work Experience",
+        "Geographical Residence",
+        "State Residency"
+      ],
       "essay_importance": "Critical",
       "demonstrated_interest": "Not Considered",
       "interview_policy": "Not Offered",
@@ -1021,7 +1016,7 @@
       "Be specific about why Brown and how you would utilize its unique Open Curriculum.",
       "Show, don't tell, using anecdotes and vivid imagery to convey your personality and passions.",
       "Connect your experiences and background to potential contributions to the Brown community.",
-      "Avoid clichés and generic statements; aim for originality and genuine self-expression.",
+      "Avoid clich\u00e9s and generic statements; aim for originality and genuine self-expression.",
       "Demonstrate intellectual curiosity and how you'd explore unfamiliar topics within the Open Curriculum."
     ],
     "red_flags": [

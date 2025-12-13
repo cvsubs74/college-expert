@@ -77,28 +77,6 @@ class AnalystTakeaway(BaseModel):
     )
 
 
-class RankingInfo(BaseModel):
-    """Ranking from a specific source."""
-    source: str = Field(
-        description="[REQUIRED] Ranking source. Examples: 'US News', 'Niche', 'Forbes', 'WSJ'"
-    )
-    rank_overall: Optional[int] = Field(
-        default=None,
-        description="[OPTIONAL] Overall national rank. Source: Search 'site:usnews.com {university} ranking'"
-    )
-    rank_category: Optional[str] = Field(
-        default=None,
-        description="[OPTIONAL] Category ranked in. Examples: 'Public Universities', 'National Universities'"
-    )
-    rank_in_category: Optional[int] = Field(
-        default=None,
-        description="[OPTIONAL] Rank within the category. Example: 5 (for #5 public university)"
-    )
-    year: Optional[int] = Field(
-        default=None,
-        description="[OPTIONAL] Ranking year. Example: 2025"
-    )
-
 
 class CampusDynamics(BaseModel):
     """Campus culture, transportation, and research environment."""
@@ -127,9 +105,9 @@ class StrategicProfile(BaseModel):
     admissions_philosophy: str = Field(
         description="[REQUIRED] How they evaluate applicants. Examples: 'Holistic review', 'Numbers-focused', 'Test-free pioneer'"
     )
-    rankings: List[RankingInfo] = Field(
-        default=[],
-        description="[REQUIRED] At least 2-3 rankings from different sources (US News, Niche, Forbes)"
+    us_news_rank: Optional[int] = Field(
+        default=None,
+        description="[REQUIRED] US News National Universities ranking. Source: Search 'site:usnews.com {university} ranking'. Example: 15"
     )
     analyst_takeaways: List[AnalystTakeaway] = Field(
         default=[],

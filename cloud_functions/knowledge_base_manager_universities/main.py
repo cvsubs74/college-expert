@@ -232,11 +232,15 @@ def create_university_summary(profile: dict) -> str:
     # Rankings
     strategic = profile.get('strategic_profile', {})
     market_position = strategic.get('market_position', '')
-    us_news_rank = None
-    for ranking in strategic.get('rankings', []):
-        if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
-            us_news_rank = ranking.get('rank_in_category') or ranking.get('rank_overall')
-            break
+    # First check for the new simple us_news_rank field
+    us_news_rank = strategic.get('us_news_rank')
+    
+    # Fallback to extracting from rankings array if not present
+    if us_news_rank is None:
+        for ranking in strategic.get('rankings', []):
+            if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
+                us_news_rank = ranking.get('rank_overall') or ranking.get('rank_in_category')
+                break
     
     # Build overview paragraph
     overview = f"**{official_name}** is a {uni_type.lower()} university"
@@ -419,13 +423,17 @@ def ingest_university(profile: dict) -> dict:
         last_updated = profile.get('metadata', {}).get('last_updated')
         
         # Extract US News National Universities rank
-        us_news_rank = None
-        rankings = profile.get('strategic_profile', {}).get('rankings', [])
-        for ranking in rankings:
-            if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
-                # Use rank_in_category as primary (most profiles have this), fall back to rank_overall
-                us_news_rank = ranking.get('rank_in_category') or ranking.get('rank_overall')
-                break
+        # First check for the new simple us_news_rank field
+        strategic = profile.get('strategic_profile', {})
+        us_news_rank = strategic.get('us_news_rank')
+        
+        # Fallback to extracting from rankings array if not present
+        if us_news_rank is None:
+            rankings = strategic.get('rankings', [])
+            for ranking in rankings:
+                if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
+                    us_news_rank = ranking.get('rank_overall') or ranking.get('rank_in_category')
+                    break
         
         # Generate pre-computed summary for details view
         university_summary = create_university_summary(profile)
@@ -603,7 +611,8 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                 "acceptance_rate": source.get('acceptance_rate'),
                 "market_position": source.get('market_position'),
                 "median_earnings_10yr": source.get('median_earnings_10yr'),
-                "summary": source.get('summary'),  # AI-generated detailed summary
+                "us_news_rank": source.get('us_news_rank'),
+                "summary": source.get('summary'),
                 "score": hit['_score'],
                 "profile": source.get('profile')
             })
