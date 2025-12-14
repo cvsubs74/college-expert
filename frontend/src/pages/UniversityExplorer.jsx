@@ -91,8 +91,12 @@ const transformUniversityData = (apiData) => {
         if (forbesObj) forbesRank = forbesObj.rank_overall || forbesObj.rank_in_category || 'N/A';
     }
 
+    // Normalize university_id: remove _slug suffix if present (KB uses _slug, fits don't)
+    const rawId = apiData.university_id || profile._id || '';
+    const normalizedId = rawId.replace(/_slug$/, '');
+
     return {
-        id: apiData.university_id || profile._id,
+        id: normalizedId,
         name: apiData.official_name || metadata.official_name || 'Unknown',
         shortName: metadata.official_name?.split(' ').slice(0, 3).join(' ') || apiData.official_name,
         location: apiData.location || metadata.location || { city: 'N/A', state: 'N/A', type: 'N/A' },
