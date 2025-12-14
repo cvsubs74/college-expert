@@ -587,7 +587,7 @@ const UniversityDetail = ({ uni, onBack, sentiment, fitAnalysis }) => {
                             <h4 className="font-semibold text-gray-800 mb-2">💡 Recommendations</h4>
                             <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                                 {fitAnalysis.recommendations.map((rec, idx) => (
-                                    <li key={idx}>{rec}</li>
+                                    <li key={idx}>{typeof rec === 'object' ? rec.action : rec}</li>
                                 ))}
                             </ul>
                         </div>
@@ -1962,9 +1962,17 @@ const UniversityExplorer = () => {
                                 </h4>
                                 <div className="space-y-2">
                                     {selectedFitData.recommendations?.map((rec, idx) => (
-                                        <div key={idx} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
-                                            <span className="text-blue-600 font-bold">{idx + 1}.</span>
-                                            <span className="text-gray-700">{rec}</span>
+                                        <div key={idx} className="flex flex-col gap-2 p-4 bg-blue-50 rounded-lg">
+                                            <div className="flex items-start gap-3">
+                                                <span className="text-blue-600 font-bold">{idx + 1}.</span>
+                                                <span className="text-gray-700">{typeof rec === 'object' ? rec.action : rec}</span>
+                                            </div>
+                                            {typeof rec === 'object' && rec.addresses_gap && (
+                                                <div className="ml-7 flex flex-wrap gap-2 text-xs">
+                                                    <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full">Addresses: {rec.addresses_gap}</span>
+                                                    {rec.timeline && <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">Timeline: {rec.timeline}</span>}
+                                                </div>
+                                            )}
                                         </div>
                                     ))}
                                 </div>
