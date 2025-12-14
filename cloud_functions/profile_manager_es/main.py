@@ -4,13 +4,15 @@ Handles upload, list, and delete operations for student profiles.
 """
 
 import os
+import re
 import tempfile
 import time
 import requests
 import functions_framework
 from flask import jsonify, request
 from google.cloud import storage
-from elasticsearch import Elasticsearch
+from elasticsearch import Elasticsearch, NotFoundError
+import hashlib
 from datetime import datetime
 import json
 import logging
@@ -302,9 +304,14 @@ Respond ONLY with valid JSON (no markdown):
 
 ES_CLOUD_ID = os.getenv("ES_CLOUD_ID")
 ES_API_KEY = os.getenv("ES_API_KEY")
-ES_INDEX_NAME = os.getenv("ES_INDEX_NAME", "student_profiles")
+ES_INDEX_NAME = os.getenv("ES_INDEX_NAME", "student_profiles")  # Legacy - kept for migration
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET_NAME", "college-counselling-478115-student-profiles")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# New separated indices (v2 architecture)
+ES_PROFILES_INDEX = os.getenv("ES_PROFILES_INDEX", "student_profiles_v2")
+ES_LIST_ITEMS_INDEX = os.getenv("ES_LIST_ITEMS_INDEX", "student_college_list")
+ES_FITS_INDEX = os.getenv("ES_FITS_INDEX", "student_college_fits")
 
 # Configure Gemini API
 if GEMINI_API_KEY:
@@ -312,6 +319,35 @@ if GEMINI_API_KEY:
 
 
 
+def normalize_university_id(university_id):
+    """
+    Normalize university ID to ensure consistent matching between indices.
+    Handles variations like:
+    - 'the_ohio_state_university' -> 'ohio_state_university'
+    - 'rutgers_university-new_brunswick' -> 'rutgers_university_new_brunswick'
+    - 'university_of_minnesota_twin_cities_slug' -> 'university_of_minnesota_twin_cities'
+    """
+    if not university_id:
+        return ''
+    
+    normalized = university_id.lower().strip()
+    
+    # Remove leading 'the_'
+    if normalized.startswith('the_'):
+        normalized = normalized[4:]
+    
+    # Remove trailing '_slug'
+    if normalized.endswith('_slug'):
+        normalized = normalized[:-5]
+    
+    # Replace hyphens with underscores
+    normalized = normalized.replace('-', '_')
+    
+    # Remove any double underscores
+    while '__' in normalized:
+        normalized = normalized.replace('__', '_')
+    
+    return normalized
 
 
 # Initialize GCS client
@@ -620,34 +656,32 @@ def delete_student_profile(document_id):
 
 
 # ============================================
-# DETERMINISTIC FIT ANALYSIS ENGINE
+# FIT ANALYSIS ENGINE
 # ============================================
 
-UNIVERSITIES_INDEX = os.getenv("UNIVERSITIES_INDEX", "universities")
-
-import re
+# Note: 're' imported at module level
 
 def parse_student_profile(profile_content):
     """
     Extract structured academic data from profile text content using LLM.
-    Falls back to regex if LLM fails, but LLM handles varied formats better.
+    Pure LLM-based extraction - no fallback to regex.
     """
     if not profile_content:
         return {}
     
     content = profile_content if isinstance(profile_content, str) else str(profile_content)
     
-    # Try LLM-based extraction first (handles varied formats)
+    # Use LLM-based extraction (handles varied formats better)
     try:
         llm_result = parse_student_profile_llm(content)
-        if llm_result and (llm_result.get('weighted_gpa') or llm_result.get('unweighted_gpa') or llm_result.get('sat_score')):
+        if llm_result:
             logger.info(f"[PROFILE PARSE] LLM extraction successful: GPA={llm_result.get('weighted_gpa')}, SAT={llm_result.get('sat_score')}")
             return llm_result
     except Exception as e:
-        logger.warning(f"[PROFILE PARSE] LLM extraction failed, falling back to regex: {e}")
+        logger.error(f"[PROFILE PARSE] LLM extraction failed: {e}")
     
-    # Fallback to regex-based extraction
-    return parse_student_profile_regex(content)
+    # Return empty dict if LLM fails (no fallback)
+    return {}
 
 
 def parse_student_profile_llm(profile_content):
@@ -665,7 +699,7 @@ def parse_student_profile_llm(profile_content):
             return None
         
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.0-flash-lite')
+        model = genai.GenerativeModel('gemini-2.5-flash-lite')
         
         prompt = f"""Extract the following fields from this student profile. 
 Return ONLY valid JSON with these exact keys (use null for missing values):
@@ -723,140 +757,27 @@ Return ONLY the JSON object, no markdown formatting."""
         return None
 
 
-def parse_student_profile_regex(profile_content):
-    """Fallback regex-based extraction for structured profiles."""
-    content = profile_content if isinstance(profile_content, str) else str(profile_content)
-    
-    def extract_float(pattern, text, default=None):
-        match = re.search(pattern, text, re.IGNORECASE)
-        if match:
-            try:
-                return float(match.group(1))
-            except:
-                pass
-        return default
-    
-    def extract_int(pattern, text, default=None):
-        match = re.search(pattern, text, re.IGNORECASE)
-        if match:
-            try:
-                return int(match.group(1))
-            except:
-                pass
-        return default
-    
-    # GPA extraction - try multiple patterns
-    weighted_gpa = extract_float(r'Weighted\s*GPA[:\s]+(\d+\.\d+)', content)
-    if not weighted_gpa:
-        weighted_gpa = extract_float(r'GPA\s*\(Weighted\)[:\s]+(\d+\.\d+)', content)
-    
-    unweighted_gpa = extract_float(r'Unweighted\s*GPA[:\s]+(\d+\.\d+)', content)
-    if not unweighted_gpa:
-        unweighted_gpa = extract_float(r'GPA\s*\(Unweighted\)[:\s]+(\d+\.\d+)', content)
-    
-    uc_gpa = extract_float(r'UC\s*(?:Weighted\s*)?GPA[:\s]+(\d+\.\d+)', content)
-    
-    # Test scores
-    sat_score = extract_int(r'SAT[:\s]+(\d{4})', content)
-    if not sat_score:
-        sat_score = extract_int(r'SAT\s*(?:Score)?[:\s]+(\d{4})', content)
-    
-    act_score = extract_int(r'ACT[:\s]+(\d{2})', content)
-    if not act_score:
-        act_score = extract_int(r'ACT\s*(?:Score)?[:\s]+(\d{2})', content)
-    
-    # AP courses and scores
-    ap_scores = {}
-    ap_pattern = r'AP\s+([A-Za-z\s]+?):\s*(\d)'
-    for match in re.finditer(ap_pattern, content):
-        course_name = match.group(1).strip()
-        score = int(match.group(2))
-        ap_scores[course_name] = score
-    
-    # Count total AP courses mentioned
-    ap_count = len(ap_scores)
-    if ap_count == 0:
-        # Try alternate pattern
-        ap_list_match = re.search(r'AP\s+Courses?[:\s]+(.*?)(?:\n\n|\Z)', content, re.DOTALL)
-        if ap_list_match:
-            ap_text = ap_list_match.group(1)
-            ap_count = len(re.findall(r'AP\s+[A-Za-z]+', ap_text))
-    
-    # Intended major
-    major_match = re.search(r'(?:Intended\s+)?Major[:\s]+([^\n,]+)', content, re.IGNORECASE)
-    intended_major = major_match.group(1).strip() if major_match else None
-    
-    # Leadership detection
-    has_leadership = bool(re.search(r'(?:President|Vice President|Captain|Leader|Founder|Director|Chair)', content, re.IGNORECASE))
-    
-    # Awards detection
-    awards_section = re.search(r'AWARDS?[:\s]+(.*?)(?:\n\n|\Z)', content, re.DOTALL | re.IGNORECASE)
-    awards_count = 0
-    if awards_section:
-        awards_count = len(re.findall(r'\n\s*[-•]', awards_section.group(1)))
-    
-    # Activity count
-    activities_section = re.search(r'(?:ACTIVITIES|CLUBS)[:\s]+(.*?)(?:\n\n|\Z)', content, re.DOTALL | re.IGNORECASE)
-    activities_count = 0
-    if activities_section:
-        activities_count = len(re.findall(r'\n\s*[-•]', activities_section.group(1)))
-    
-    return {
-        'weighted_gpa': weighted_gpa or uc_gpa,
-        'unweighted_gpa': unweighted_gpa,
-        'sat_score': sat_score,
-        'act_score': act_score,
-        'ap_scores': ap_scores,
-        'ap_count': ap_count if ap_count > 0 else len(ap_scores),
-        'intended_major': intended_major,
-        'has_leadership': has_leadership,
-        'awards_count': awards_count,
-        'activities_count': activities_count,
-        'test_optional': sat_score is None and act_score is None
-    }
-
-
-def fetch_university_data(university_id):
-    """Fetch university admission data from the universities knowledge base."""
-    try:
-        client = get_elasticsearch_client()
-        
-        # Search for university by ID
-        search_body = {
-            "size": 1,
-            "query": {
-                "bool": {
-                    "should": [
-                        {"term": {"_id": university_id}},
-                        {"term": {"university_id.keyword": university_id}},
-                        {"match": {"metadata.official_name": university_id.replace("_", " ")}}
-                    ]
-                }
-            }
-        }
-        
-        response = client.search(index=UNIVERSITIES_INDEX, body=search_body)
-        
-        if response['hits']['total']['value'] > 0:
-            return response['hits']['hits'][0]['_source']
-        
-        logger.warning(f"[FIT] University not found: {university_id}")
-        return None
-        
-    except Exception as e:
-        logger.error(f"[FIT] Error fetching university data: {e}")
-        return None
-
-
-
-
-
 def calculate_fit_with_llm(student_profile_text, university_data, intended_major=''):
     """
-    Calculate fit using PURE LLM reasoning.
-    Analyzes the full student profile text against the university data.
+    Calculate fit using comprehensive LLM reasoning with selectivity override rules.
+    Acts as an expert private college admissions counselor with 20+ years experience.
     """
-    import time
+    # Note: time imported at module level
+    
+    # Handle None university_data
+    if university_data is None:
+        logger.error("[LLM_FIT] university_data is None!")
+        return {
+            "fit_category": "REACH",
+            "match_percentage": 50,
+            "explanation": "Unable to analyze - university data not available.",
+            "factors": [],
+            "recommendations": ["Try refreshing the university data"],
+            "university_name": "Unknown",
+            "calculated_at": datetime.utcnow().isoformat(),
+            "selectivity_tier": "UNKNOWN",
+            "acceptance_rate": 0
+        }
     
     try:
         # DEBUG: Log the actual student profile text being analyzed
@@ -866,24 +787,74 @@ def calculate_fit_with_llm(student_profile_text, university_data, intended_major
         else:
             logger.info(f"[LLM_FIT] Profile preview: {student_profile_text[:300]}...")
         
-        # Extract university details
-        uni_metadata = university_data.get('metadata', {})
-        uni_name = uni_metadata.get('official_name', 'University')
+        # Extract university details - handle both nested (profile.metadata) and flat structures
+        # The API returns: university.profile.metadata and university.profile.admissions_data
+        profile_data = university_data.get('profile', university_data)  # Fall back to university_data if no profile key
         
-        admissions = university_data.get('admissions_data', {})
+        # Get university name - try nested structure first, then flat
+        uni_metadata = profile_data.get('metadata', {})
+        uni_name = uni_metadata.get('official_name') or university_data.get('official_name', 'University')
+        
+        # Get acceptance rate - try nested structure first, then flat
+        admissions = profile_data.get('admissions_data', {})
         current_status = admissions.get('current_status', {})
-        acceptance_rate = current_status.get('overall_acceptance_rate', 50)
+        acceptance_rate = current_status.get('overall_acceptance_rate')
+        
+        # Fallback to top-level acceptance_rate if nested not found
+        if acceptance_rate is None:
+            acceptance_rate = university_data.get('acceptance_rate', 50)
+        
+        # Ensure acceptance_rate is a number
+        if isinstance(acceptance_rate, str):
+            try:
+                acceptance_rate = float(acceptance_rate.replace('%', ''))
+            except:
+                acceptance_rate = 50
+        
+        # Convert to float if needed
+        try:
+            acceptance_rate = float(acceptance_rate)
+        except (TypeError, ValueError):
+            acceptance_rate = 50
+        
+        # Get admitted student profile for comparison
+        admitted_profile = admissions.get('admitted_student_profile', {})
+        
+        # DEBUG: Log what we extracted
+        logger.info(f"[LLM_FIT] University: {uni_name}, Acceptance Rate: {acceptance_rate}%, Selectivity will be: {'ULTRA_SELECTIVE' if acceptance_rate < 8 else 'HIGHLY_SELECTIVE' if acceptance_rate < 15 else 'SELECTIVE'}")
         
         # Prepare university summary for prompt (limit size)
         uni_summary = json.dumps({
             "name": uni_name,
-            "location": university_data.get('location', {}),
+            "location": university_data.get('location', profile_data.get('location', {})),
             "acceptance_rate": acceptance_rate,
-            "admitted_profile": admissions.get('admitted_student_profile', {}),
-            "academic_structure": university_data.get('academic_structure', {}).get('colleges', [])[:5]  # Limit colleges
-        }, default=str)[:2000]  # Cap university data size
+            "admitted_profile": admitted_profile,
+            "academic_structure": profile_data.get('academic_structure', {}).get('colleges', [])[:5]
+        }, default=str)[:2500]
         
-        prompt = f"""You are an Expert College Admissions Counselor. Analyze the fit between this student and university.
+        # Determine selectivity tier and category floor
+        if acceptance_rate < 8:
+            selectivity_tier = "ULTRA_SELECTIVE"
+            category_floor = "SUPER_REACH"
+            selectivity_note = "This is an ULTRA-SELECTIVE school (<8% acceptance). Even perfect applicants are often rejected. MINIMUM category is SUPER_REACH."
+        elif acceptance_rate < 15:
+            selectivity_tier = "HIGHLY_SELECTIVE"
+            category_floor = "REACH"
+            selectivity_note = "This is a HIGHLY SELECTIVE school (8-15% acceptance). Even strong applicants face uncertain outcomes. MINIMUM category is REACH."
+        elif acceptance_rate < 25:
+            selectivity_tier = "VERY_SELECTIVE"
+            category_floor = "TARGET"
+            selectivity_note = "This is a VERY SELECTIVE school (15-25% acceptance). Strong applicants have reasonable chances."
+        elif acceptance_rate < 40:
+            selectivity_tier = "SELECTIVE"
+            category_floor = None
+            selectivity_note = "This is a SELECTIVE school (25-40% acceptance). Standard competitive admissions."
+        else:
+            selectivity_tier = "ACCESSIBLE"
+            category_floor = None
+            selectivity_note = "This is an ACCESSIBLE school (>40% acceptance). Strong students are very likely admitted."
+        
+        prompt = f"""You are a private college admissions counselor with 20+ years of experience placing students at Ivy League and top-50 universities. You have deep knowledge of how selective admissions works and understand that even excellent students face rejection at highly selective schools.
 
 **STUDENT PROFILE:**
 {student_profile_text}
@@ -892,37 +863,74 @@ Intended Major: {intended_major or 'Undecided'}
 **UNIVERSITY DATA:**
 {uni_summary}
 
+**SELECTIVITY CONTEXT:**
+Acceptance Rate: {acceptance_rate}%
+Selectivity Tier: {selectivity_tier}
+{selectivity_note}
+
+**SCORING FRAMEWORK:**
+
+1. **ACADEMIC STRENGTH (40 points max)**
+   - GPA vs admitted student profile: 0-20 points
+     * GPA > school's 75th percentile → 18-20 points
+     * GPA at school's 50th percentile → 12-14 points
+     * GPA at school's 25th percentile → 6-8 points
+     * GPA below 25th percentile → 0-5 points
+   - Test Scores (SAT/ACT): 0-12 points
+   - Course Rigor (AP/IB/Honors count): 0-8 points
+
+2. **HOLISTIC PROFILE (30 points max)**
+   - Extracurricular depth & impact: 0-12 points
+   - Leadership positions & scope: 0-8 points
+   - Awards & recognition: 0-5 points
+   - Unique factors (first-gen, hooks): 0-5 points
+
+3. **MAJOR FIT (15 points max)**
+   - Major availability & strength: 0-8 points
+   - Related activities/demonstrated interest: 0-4 points
+   - Clarity of academic goals: 0-3 points
+
+4. **SELECTIVITY ADJUSTMENT (-15 to +5)**
+   - <8% acceptance: -15 points (SUPER_REACH floor)
+   - 8-15% acceptance: -10 points (REACH floor)
+   - 15-25% acceptance: -5 points
+   - 25-40% acceptance: 0 points
+   - >40% acceptance: +5 points (SAFETY possible)
+
+**CATEGORY ASSIGNMENT (after selectivity adjustment):**
+- **SAFETY** (score 75-100): Student significantly exceeds averages AND acceptance rate >40%
+- **TARGET** (score 55-74): Student matches averages AND acceptance rate >25%
+- **REACH** (score 35-54): Student slightly below averages OR acceptance rate 10-25%
+- **SUPER_REACH** (score 0-34): Student below averages OR acceptance rate <10%
+
+**CRITICAL RULES:**
+1. Schools with <8% acceptance CANNOT be SAFETY or TARGET for ANY student
+2. Schools with 8-15% acceptance CANNOT be SAFETY for ANY student
+3. If student profile lacks GPA or test scores, they cannot qualify for SAFETY at any school
+4. Always cite specific data from the student profile (actual GPA, actual activities)
+
 **YOUR TASK:**
-Determine the student's admission chances and fit categorization based on a HOLISTIC review. 
-Consider GPA, test scores, course rigor, extracurriculars, leadership, and major fit.
+Analyze this student's fit for {uni_name}. Be realistic about chances at selective schools.
 
-**CATEGORIZATION RULES:**
-- **SAFETY** (>85% chance): Student significantly exceeds averages, admission is highly likely.
-- **TARGET** (60-84% chance): Student matches averages, good chance but not guaranteed.
-- **REACH** (30-59% chance): Student is slightly below averages OR the school is selective (<20%).
-- **SUPER_REACH** (<30% chance): Student is well below averages OR school is highly selective (<10%).
-- *CRITICAL*: Ivy League and equivalents (<10% acceptance) are ALWAYS REACH or SUPER_REACH.
-
-**OUTPUT FORMAT:**
-Return ONLY a valid JSON object (no markdown, no explanation outside JSON):
+**OUTPUT FORMAT - Return ONLY valid JSON:**
 {{
   "match_percentage": <integer 0-100>,
   "fit_category": "<SAFETY|TARGET|REACH|SUPER_REACH>",
-  "explanation": "<Detailed 4-5 sentence analysis of why this fits, citing specific student strengths vs school profile>",
+  "explanation": "<5-6 sentence analysis: Start with the category justification citing acceptance rate. Then mention 2-3 specific student strengths from their profile. Then acknowledge any gaps or concerns. End with what could strengthen the application.>",
   "factors": [
-    {{ "name": "Academic", "score": <0-40>, "max": 40, "detail": "<brief note>" }},
-    {{ "name": "Holistic", "score": <0-30>, "max": 30, "detail": "<brief note>" }},
-    {{ "name": "Major Fit", "score": <0-15>, "max": 15, "detail": "<brief note>" }},
-    {{ "name": "Rigor", "score": <0-15>, "max": 15, "detail": "<brief note>" }}
+    {{ "name": "Academic", "score": <0-40>, "max": 40, "detail": "<cite actual GPA/scores from profile>" }},
+    {{ "name": "Holistic", "score": <0-30>, "max": 30, "detail": "<cite specific activities/leadership>" }},
+    {{ "name": "Major Fit", "score": <0-15>, "max": 15, "detail": "<major availability assessment>" }},
+    {{ "name": "Selectivity", "score": <-15 to +5>, "max": 5, "detail": "<{acceptance_rate}% acceptance rate impact>" }}
   ],
-  "recommendations": ["<rec 1>", "<rec 2>", "<rec 3>"]
+  "recommendations": ["<specific actionable rec 1>", "<specific actionable rec 2>", "<specific actionable rec 3>"]
 }}"""
 
         # Call Gemini with retry logic
         max_retries = 2
         for attempt in range(max_retries + 1):
             try:
-                model = genai.GenerativeModel("gemini-2.0-flash-exp")
+                model = genai.GenerativeModel("gemini-2.5-flash-lite")
                 response = model.generate_content(prompt)
                 
                 # Parse output
@@ -931,7 +939,6 @@ Return ONLY a valid JSON object (no markdown, no explanation outside JSON):
                 # Remove markdown code blocks if present
                 if response_text.startswith('```'):
                     lines = response_text.split('\n')
-                    # Find the JSON content between ``` markers
                     start_idx = 1 if lines[0].startswith('```') else 0
                     end_idx = len(lines) - 1 if lines[-1] == '```' else len(lines)
                     response_text = '\n'.join(lines[start_idx:end_idx])
@@ -944,53 +951,74 @@ Return ONLY a valid JSON object (no markdown, no explanation outside JSON):
                 if 'fit_category' not in result or 'match_percentage' not in result:
                     raise ValueError("Missing required fields in LLM response")
                 
-                # Ensure fit_category is valid
+                # === POST-PROCESSING: SELECTIVITY OVERRIDE ===
+                original_category = result['fit_category']
+                
+                # Apply selectivity floor - this CANNOT be overridden
+                if category_floor == "SUPER_REACH" and original_category in ['SAFETY', 'TARGET', 'REACH']:
+                    result['fit_category'] = 'SUPER_REACH'
+                    logger.info(f"[LLM_FIT] Selectivity override: {original_category} -> SUPER_REACH (acceptance rate {acceptance_rate}%)")
+                elif category_floor == "REACH" and original_category in ['SAFETY', 'TARGET']:
+                    result['fit_category'] = 'REACH'
+                    logger.info(f"[LLM_FIT] Selectivity override: {original_category} -> REACH (acceptance rate {acceptance_rate}%)")
+                elif category_floor == "TARGET" and original_category == 'SAFETY':
+                    result['fit_category'] = 'TARGET'
+                    logger.info(f"[LLM_FIT] Selectivity override: {original_category} -> TARGET (acceptance rate {acceptance_rate}%)")
+                
+                # Validate category is in allowed list
                 valid_categories = ['SAFETY', 'TARGET', 'REACH', 'SUPER_REACH']
                 if result['fit_category'] not in valid_categories:
-                    result['fit_category'] = 'REACH'  # Default to REACH if invalid
+                    result['fit_category'] = 'REACH'
                 
-                # Add university name and timestamp
+                # Add metadata
                 result['university_name'] = uni_name
                 result['calculated_at'] = datetime.utcnow().isoformat()
+                result['selectivity_tier'] = selectivity_tier
+                result['acceptance_rate'] = acceptance_rate
                 
-                logger.info(f"[LLM_FIT] {uni_name}: {result['fit_category']} ({result['match_percentage']}%)")
+                logger.info(f"[LLM_FIT] {uni_name}: {result['fit_category']} ({result['match_percentage']}%) - Selectivity: {selectivity_tier}")
                 return result
                 
             except json.JSONDecodeError as je:
                 logger.warning(f"[LLM_FIT] JSON parse error (attempt {attempt+1}): {str(je)[:100]}")
                 if attempt < max_retries:
-                    time.sleep(0.5)  # Brief pause before retry
+                    time.sleep(0.5)
                     continue
                 raise
             except Exception as e:
                 if "429" in str(e) or "quota" in str(e).lower():
                     logger.warning(f"[LLM_FIT] Rate limited, waiting... (attempt {attempt+1})")
-                    time.sleep(2 ** attempt)  # Exponential backoff
+                    time.sleep(2 ** attempt)
                     continue
                 raise
 
     except Exception as e:
         logger.error(f"[LLM_FIT_ERROR] {uni_name if 'uni_name' in dir() else 'Unknown'}: {str(e)}")
-        # Return a sensible fallback based on acceptance rate
-        fallback_category = 'REACH'
-        if acceptance_rate and acceptance_rate < 15:
+        # Return a sensible fallback based on acceptance rate with proper selectivity floor
+        if acceptance_rate < 8:
             fallback_category = 'SUPER_REACH'
-        elif acceptance_rate and acceptance_rate > 50:
+        elif acceptance_rate < 15:
+            fallback_category = 'REACH'
+        elif acceptance_rate < 40:
             fallback_category = 'TARGET'
+        else:
+            fallback_category = 'SAFETY'
             
         return {
             "fit_category": fallback_category,
             "match_percentage": 50,
-            "explanation": f"Analysis unavailable. Based on {acceptance_rate}% acceptance rate, categorized as {fallback_category}.",
+            "explanation": f"Detailed analysis unavailable. Based on {acceptance_rate}% acceptance rate ({selectivity_tier if 'selectivity_tier' in dir() else 'unknown selectivity'}), categorized as {fallback_category}.",
             "factors": [
-                {"name": "Academic", "score": 20, "max": 40, "detail": "Unable to analyze"},
-                {"name": "Holistic", "score": 15, "max": 30, "detail": "Unable to analyze"},
-                {"name": "Major Fit", "score": 8, "max": 15, "detail": "Unable to analyze"},
-                {"name": "Rigor", "score": 7, "max": 15, "detail": "Unable to analyze"}
+                {"name": "Academic", "score": 20, "max": 40, "detail": "Unable to fully analyze"},
+                {"name": "Holistic", "score": 15, "max": 30, "detail": "Unable to fully analyze"},
+                {"name": "Major Fit", "score": 8, "max": 15, "detail": "Unable to fully analyze"},
+                {"name": "Selectivity", "score": 0, "max": 5, "detail": f"{acceptance_rate}% acceptance rate"}
             ],
             "recommendations": ["Complete profile for accurate analysis"],
             "university_name": university_data.get('metadata', {}).get('official_name', 'University'),
-            "calculated_at": datetime.utcnow().isoformat()
+            "calculated_at": datetime.utcnow().isoformat(),
+            "selectivity_tier": selectivity_tier if 'selectivity_tier' in dir() else "UNKNOWN",
+            "acceptance_rate": acceptance_rate
         }
 
 
@@ -1021,8 +1049,16 @@ def calculate_fit_for_college(user_id, university_id, intended_major=''):
         # Parse student profile
         student_profile = parse_student_profile(profile_content)
         
-        # Fetch university data
-        university_data = fetch_university_data(university_id)
+        # Fetch university data via KB API (has correct data structure with acceptance_rate)
+        university_data = fetch_university_profile(university_id)
+        
+        if university_data:
+            # Log the acceptance rate for debugging
+            profile_data = university_data.get('profile', university_data)
+            admissions = profile_data.get('admissions_data', {})
+            current_status = admissions.get('current_status', {})
+            acc_rate = current_status.get('overall_acceptance_rate') or university_data.get('acceptance_rate', 'N/A')
+            logger.info(f"[FIT] Fetched university {university_id}: acceptance_rate={acc_rate}%")
         
         if not university_data:
             logger.warning(f"[FIT] University data not found: {university_id}")
@@ -1048,7 +1084,7 @@ def calculate_fit_for_college(user_id, university_id, intended_major=''):
 
 
 def handle_update_college_list(request):
-    """Add or remove a college from user's college list."""
+    """Add or remove a college from user's college list (new v2 architecture)."""
     try:
         data = request.get_json()
         if not data:
@@ -1068,118 +1104,60 @@ def handle_update_college_list(request):
         
         es_client = get_elasticsearch_client()
         
-        # Find user's profile document
-        search_body = {
-            "size": 1,
-            "query": {
-                "term": {"user_id.keyword": user_id}
-            },
-            "sort": [{"indexed_at": {"order": "desc"}}]
-        }
+        # Normalize university ID for consistent matching with fits
+        original_uni_id = university['id']
+        normalized_uni_id = normalize_university_id(original_uni_id)
         
-        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
-        
-        if response['hits']['total']['value'] == 0:
-            return add_cors_headers({'error': 'No profile found for user'}, 404)
-        
-        doc_id = response['hits']['hits'][0]['_id']
-        current_doc = response['hits']['hits'][0]['_source']
-        
-        # Get current college list or initialize empty
-        college_list = current_doc.get('college_list', [])
+        # Generate unique document ID for this user+university pair
+        email_hash = hashlib.md5(user_id.encode()).hexdigest()[:8]
+        doc_id = f"{email_hash}_{normalized_uni_id}"
         
         if action == 'add':
-            # Check if already in list
-            existing = next((c for c in college_list if c.get('university_id') == university['id']), None)
-            if existing:
-                return add_cors_headers({
-                    'success': True,
-                    'message': 'College already in list',
-                    'college_list': college_list
-                }, 200)
+            # Check if already exists
+            try:
+                existing = es_client.get(index=ES_LIST_ITEMS_INDEX, id=doc_id)
+                if existing:
+                    # Already in list - return current list
+                    return add_cors_headers({
+                        'success': True,
+                        'message': 'College already in list',
+                        'college_list': get_user_college_list(es_client, user_id)
+                    }, 200)
+            except NotFoundError:
+                pass  # Document doesn't exist, proceed to create
+            except Exception as e:
+                logger.warning(f"[LIST] Unexpected error checking document: {e}")
             
-            # Look up pre-computed fit from college_fits (no recalculation needed!)
-            logger.info(f"[FIT] Looking up pre-computed fit for {university['id']}")
-            fit_analysis = None
-            college_fits = {}
-            college_fits_updated = False
+            # If intended_major not provided, extract from user's profile
+            if not intended_major:
+                intended_major = get_intended_major_from_profile(es_client, user_id)
+                logger.info(f"[LIST] Auto-populated intended_major from profile: {intended_major}")
             
-            # Get pre-computed fits from profile
-            college_fits_raw = current_doc.get('college_fits')
-            if college_fits_raw:
-                try:
-                    if isinstance(college_fits_raw, str):
-                        college_fits = json.loads(college_fits_raw)
-                    else:
-                        college_fits = college_fits_raw
-                    
-                    # Look up this university's pre-computed fit
-                    precomputed = college_fits.get(university['id'])
-                    if precomputed:
-                        fit_category = precomputed.get('fit_category', 'TARGET')
-                        match_score = precomputed.get('match_score', 50)
-                        
-                        fit_analysis = {
-                            'fit_category': fit_category,
-                            'match_percentage': match_score,
-                            'university_name': precomputed.get('university_name', university.get('name')),
-                            'factors': precomputed.get('factors', []),
-                            'recommendations': precomputed.get('recommendations', []),
-                            'pre_computed': True,
-                            'computed_at': precomputed.get('computed_at')
-                        }
-                        
-                        # Check if explanation exists
-                        existing_explanation = precomputed.get('explanation')
-                        fit_analysis['explanation'] = existing_explanation or "Fit analysis provided by UniInsight."
-                        
-                        logger.info(f"[FIT] Using pre-computed fit: {fit_analysis['fit_category']} ({fit_analysis['match_percentage']}%)")
-                except Exception as e:
-                    logger.error(f"[FIT] Error parsing college_fits: {e}")
-            
-            # Fallback: if no pre-computed fit, do on-demand calculation
-            if not fit_analysis:
-                logger.info(f"[FIT] No pre-computed fit found, calculating on-demand for {university['id']}")
-                fit_analysis = calculate_fit_for_college(user_id, university['id'], intended_major)
-            
-            # Add new college with fit analysis
-            new_entry = {
-                'university_id': university['id'],
+            # Create new list item document with normalized ID
+            list_doc = {
+                'user_email': user_id,
+                'university_id': normalized_uni_id,  # Use normalized ID for matching with fits
                 'university_name': university.get('name', ''),
+                'status': 'favorites',
                 'added_at': datetime.utcnow().isoformat(),
-                'intended_major': intended_major,
-                'fit_analysis': fit_analysis
+                'updated_at': datetime.utcnow().isoformat(),
+                'intended_major': intended_major
             }
-            college_list.append(new_entry)
             
-            # If we updated college_fits with explanation, save it back
-            if college_fits_updated:
-                es_client.update(
-                    index=ES_INDEX_NAME,
-                    id=doc_id,
-                    body={
-                        "doc": {
-                            "college_fits": json.dumps(college_fits)
-                        }
-                    }
-                )
+            es_client.index(index=ES_LIST_ITEMS_INDEX, id=doc_id, body=list_doc, refresh=True)
+            logger.info(f"[LIST] Added {university['id']} for {user_id} with major: {intended_major}")
             
         elif action == 'remove':
-            college_list = [c for c in college_list if c.get('university_id') != university['id']]
+            # Delete the document
+            try:
+                es_client.delete(index=ES_LIST_ITEMS_INDEX, id=doc_id, refresh=True)
+                logger.info(f"[LIST] Removed {university['id']} for {user_id}")
+            except Exception as e:
+                logger.warning(f"[LIST] Document not found or already deleted: {e}")
         
-        # Update document with new college list
-        es_client.update(
-            index=ES_INDEX_NAME,
-            id=doc_id,
-            body={
-                "doc": {
-                    "college_list": college_list,
-                    "college_list_updated_at": datetime.utcnow().isoformat()
-                }
-            }
-        )
+        # Fetch updated college list
+        college_list = get_user_college_list(es_client, user_id)
         
-        logger.info(f"[ES] Updated college list for user {user_id}: {action} {university['id']}")
         return add_cors_headers({
             'success': True,
             'action': action,
@@ -1196,8 +1174,148 @@ def handle_update_college_list(request):
         }, 500)
 
 
+def get_user_college_list(es_client, user_id):
+    """Helper to fetch user's college list from the new index."""
+    search_body = {
+        "size": 500,
+        "query": {"term": {"user_email": user_id}},
+        "sort": [{"added_at": {"order": "desc"}}]
+    }
+    response = es_client.search(index=ES_LIST_ITEMS_INDEX, body=search_body)
+    
+    college_list = []
+    for hit in response['hits']['hits']:
+        item = hit['_source']
+        college_list.append({
+            'university_id': item.get('university_id'),
+            'university_name': item.get('university_name'),
+            'status': item.get('status', 'favorites'),
+            'added_at': item.get('added_at'),
+            'intended_major': item.get('intended_major')
+        })
+    return college_list
+
+
+def get_intended_major_from_profile(es_client, user_id):
+    """Extract intended major from user's profile content (markdown)."""
+    try:
+        # Search for user's profile in the legacy index to get content
+        search_body = {
+            "size": 1,
+            "query": {"term": {"user_id.keyword": user_id}},
+            "_source": ["content"],
+            "sort": [{"indexed_at": {"order": "desc"}}]
+        }
+        
+        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        
+        if response['hits']['total']['value'] == 0:
+            return ''
+        
+        content = response['hits']['hits'][0]['_source'].get('content', '')
+        
+        # Parse intended major from markdown content
+        # Look for patterns like "## Intended Major\n*   Business" or "Intended Major: Business"
+        patterns = [
+            r'##\s*Intended\s+Major\s*\n+\*?\s*(.+?)(?:\n|$)',  # Markdown header format
+            r'Intended\s+Major[:\s]+(.+?)(?:\n|$)',  # Simple label format
+            r'\*+Intended\s+Major\*+[:\s]+(.+?)(?:\n|$)',  # Bold format
+        ]
+        
+        for pattern in patterns:
+            match = re.search(pattern, content, re.IGNORECASE)
+            if match:
+                major = match.group(1).strip()
+                # Clean up common formatting
+                major = major.strip('*').strip()
+                if major:
+                    logger.info(f"[PROFILE] Found intended_major: {major}")
+                    return major
+        
+        return ''
+    except Exception as e:
+        logger.error(f"[PROFILE] Error extracting intended_major: {e}")
+        return ''
+
+
+def handle_bulk_remove_colleges(request):
+    """
+    Remove multiple colleges from user's college list at once.
+    
+    POST /bulk-remove-colleges
+    {
+        "user_email": "student@gmail.com",
+        "university_ids": ["harvard_university_slug", "mit_slug", "stanford_slug"]
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "removed_count": 3,
+        "remaining_count": 5,
+        "college_list": [...]
+    }
+    """
+    try:
+        data = request.get_json()
+        if not data:
+            return add_cors_headers({'error': 'No data provided'}, 400)
+        
+        user_id = data.get('user_id') or data.get('user_email')
+        university_ids = data.get('university_ids', [])
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User ID is required'}, 400)
+        if not university_ids or not isinstance(university_ids, list):
+            return add_cors_headers({'error': 'university_ids must be a non-empty array'}, 400)
+        
+        logger.info(f"[BULK_REMOVE] Removing {len(university_ids)} colleges for user {user_id}")
+        
+        es_client = get_elasticsearch_client()
+        
+        # Normalize all university IDs for consistent matching
+        normalized_ids = [normalize_university_id(uid) for uid in university_ids]
+        
+        # Generate doc IDs and delete each document
+        email_hash = hashlib.md5(user_id.encode()).hexdigest()[:8]
+        removed_count = 0
+        
+        for normalized_id in normalized_ids:
+            doc_id = f"{email_hash}_{normalized_id}"
+            try:
+                es_client.delete(index=ES_LIST_ITEMS_INDEX, id=doc_id, refresh=False)
+                removed_count += 1
+                logger.info(f"[BULK_REMOVE] Deleted {normalized_id}")
+            except Exception as e:
+                logger.warning(f"[BULK_REMOVE] Could not delete {normalized_id}: {e}")
+        
+        # Refresh the index
+        es_client.indices.refresh(index=ES_LIST_ITEMS_INDEX)
+        
+        # Get updated college list
+        college_list = get_user_college_list(es_client, user_id)
+        
+        logger.info(f"[BULK_REMOVE] Removed {removed_count} colleges for user {user_id}")
+        
+        return add_cors_headers({
+            'success': True,
+            'removed_count': removed_count,
+            'remaining_count': len(college_list),
+            'college_list': college_list,
+            'message': f'Removed {removed_count} colleges from list'
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[BULK_REMOVE ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to remove colleges: {str(e)}'
+        }, 500)
+
+
+
 def handle_get_college_list(request):
-    """Get user's college list."""
+    """Get user's college list from the new separated index."""
     try:
         # Support both GET params and POST body
         if request.method == 'GET':
@@ -1214,32 +1332,34 @@ def handle_get_college_list(request):
         
         es_client = get_elasticsearch_client()
         
-        # Find user's profile document
+        # Query the new separated list items index
         search_body = {
-            "size": 1,
+            "size": 500,  # Support up to 500 universities in list
             "query": {
-                "term": {"user_id.keyword": user_id}
+                "term": {"user_email": user_id}
             },
-            "_source": ["college_list", "college_list_updated_at"],
-            "sort": [{"indexed_at": {"order": "desc"}}]
+            "sort": [{"added_at": {"order": "desc"}}]
         }
         
-        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        response = es_client.search(index=ES_LIST_ITEMS_INDEX, body=search_body)
         
-        if response['hits']['total']['value'] == 0:
-            return add_cors_headers({
-                'success': True,
-                'college_list': [],
-                'message': 'No profile found, returning empty list'
-            }, 200)
-        
-        source = response['hits']['hits'][0]['_source']
-        college_list = source.get('college_list', [])
+        # Convert individual docs to list items
+        college_list = []
+        for hit in response['hits']['hits']:
+            item = hit['_source']
+            college_list.append({
+                'university_id': item.get('university_id'),
+                'university_name': item.get('university_name'),
+                'status': item.get('status', 'favorites'),
+                'order': item.get('order'),
+                'added_at': item.get('added_at'),
+                'intended_major': item.get('intended_major'),
+                'notes': item.get('student_notes')
+            })
         
         return add_cors_headers({
             'success': True,
             'college_list': college_list,
-            'updated_at': source.get('college_list_updated_at'),
             'count': len(college_list)
         }, 200)
         
@@ -1315,6 +1435,64 @@ def handle_update_fit_analysis(request):
         return add_cors_headers({
             'success': False,
             'error': f'Failed to update fit analysis: {str(e)}'
+        }, 500)
+
+
+def handle_compute_single_fit(request):
+    """
+    Compute fit analysis for a single university without adding it to the college list.
+    
+    POST /compute-single-fit
+    {
+        "user_email": "student@gmail.com",
+        "university_id": "harvard_university_slug"
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "university_id": "harvard_university_slug",
+        "university_name": "Harvard University",
+        "fit_analysis": {...}
+    }
+    """
+    try:
+        data = request.get_json() or {}
+        user_id = data.get('user_email') or data.get('user_id')
+        university_id = data.get('university_id')
+        intended_major = data.get('intended_major', '')
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User email is required'}, 400)
+        if not university_id:
+            return add_cors_headers({'error': 'University ID is required'}, 400)
+        
+        logger.info(f"[COMPUTE_SINGLE_FIT] Computing fit for {university_id} for user {user_id}")
+        
+        # Call the existing calculate_fit_for_college function
+        fit_analysis = calculate_fit_for_college(user_id, university_id, intended_major)
+        
+        if not fit_analysis:
+            return add_cors_headers({
+                'success': False,
+                'error': 'Failed to compute fit analysis',
+                'university_id': university_id
+            }, 500)
+        
+        logger.info(f"[COMPUTE_SINGLE_FIT] Result: {fit_analysis.get('fit_category')} ({fit_analysis.get('match_percentage')}%)")
+        
+        return add_cors_headers({
+            'success': True,
+            'university_id': university_id,
+            'university_name': fit_analysis.get('university_name', university_id),
+            'fit_analysis': fit_analysis
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[COMPUTE_SINGLE_FIT ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to compute fit: {str(e)}'
         }, 500)
 
 
@@ -1428,43 +1606,82 @@ def fetch_all_universities():
         return []
 
 
-def fetch_university_profile(university_id):
-    """Fetch full university profile from knowledge base."""
-    try:
-        response = requests.get(
-            f"{KNOWLEDGE_BASE_UNIVERSITIES_URL}?university_id={university_id}",
-            timeout=30
-        )
-        data = response.json()
-        
-        if data.get('success'):
-            return data.get('university', {})
-        return None
-    except Exception as e:
-        logger.error(f"[KB] Error fetching university {university_id}: {e}")
-        return None
+def fetch_university_profile(university_id, max_retries=3):
+    """Fetch full university profile from knowledge base with retry logic."""
+    # Note: time imported at module level
+    
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(
+                f"{KNOWLEDGE_BASE_UNIVERSITIES_URL}?university_id={university_id}",
+                timeout=30
+            )
+            data = response.json()
+            
+            if data.get('success'):
+                return data.get('university', {})
+            
+            # If not found, don't retry
+            if 'NotFoundError' in str(data.get('error', '')):
+                logger.warning(f"[KB] University not found: {university_id}")
+                return None
+                
+            return None
+            
+        except requests.exceptions.SSLError as e:
+            logger.warning(f"[KB] SSL error fetching {university_id} (attempt {attempt+1}/{max_retries}): {e}")
+            if attempt < max_retries - 1:
+                time.sleep(1 * (attempt + 1))  # Exponential backoff: 1s, 2s, 3s
+                continue
+            logger.error(f"[KB] Max retries exceeded for {university_id}")
+            return None
+            
+        except requests.exceptions.RequestException as e:
+            logger.warning(f"[KB] Request error fetching {university_id} (attempt {attempt+1}/{max_retries}): {e}")
+            if attempt < max_retries - 1:
+                time.sleep(1 * (attempt + 1))
+                continue
+            logger.error(f"[KB] Max retries exceeded for {university_id}")
+            return None
+            
+        except Exception as e:
+            logger.error(f"[KB] Unexpected error fetching university {university_id}: {e}")
+            return None
+    
+    return None
 
 
 def handle_compute_all_fits(request):
     """
-    Compute fit analysis for ALL universities in the knowledge base and store in profile.
-    This pre-computes fits so that Smart Discovery can use simple filtering.
+    Compute fit analysis for universities in batches.
+    Supports incremental processing to avoid timeouts.
     
     POST /compute-all-fits
     {
-        "user_email": "student@gmail.com"
+        "user_email": "student@gmail.com",
+        "batch_size": 10,      // Optional, default 10
+        "offset": 0            // Optional, default 0
     }
     
     Returns:
     {
         "success": true,
-        "computed": 100,
+        "computed": 10,
+        "offset": 0,
+        "batch_size": 10,
+        "total_universities": 100,
+        "has_more": true,
+        "next_offset": 10,
         "fits_computed_at": "2024-12-10T22:00:00Z"
     }
+    
+    Client can orchestrate batches by calling with increasing offsets until has_more is false.
     """
     try:
         data = request.get_json() or {}
         user_id = data.get('user_email') or data.get('user_id')
+        batch_size = data.get('batch_size', 10)  # Default 10 universities per batch
+        offset = data.get('offset', 0)  # Starting offset
         
         if not user_id:
             user_id = request.headers.get('X-User-Email')
@@ -1472,7 +1689,13 @@ def handle_compute_all_fits(request):
         if not user_id:
             return add_cors_headers({'error': 'User email is required'}, 400)
         
-        logger.info(f"[COMPUTE_ALL_FITS] Starting for user {user_id}")
+        # Validate batch_size
+        if batch_size < 1:
+            batch_size = 1
+        elif batch_size > 50:
+            batch_size = 50  # Cap at 50 to prevent timeouts
+        
+        logger.info(f"[COMPUTE_ALL_FITS] Starting batch for user {user_id}: offset={offset}, batch_size={batch_size}")
         
         es_client = get_elasticsearch_client()
         
@@ -1495,30 +1718,46 @@ def handle_compute_all_fits(request):
         profile_source = response['hits']['hits'][0]['_source']
         profile_content = profile_source.get('content', '')
         
-        # DEBUG: Log profile content details
-        logger.info(f"[COMPUTE_ALL_FITS] Profile content length: {len(profile_content)} chars")
-        logger.info(f"[COMPUTE_ALL_FITS] Profile preview (first 500 chars): {profile_content[:500]}")
-        
-        # Parse student profile for fit calculations
-        student_profile = parse_student_profile(profile_content)
-        logger.info(f"[COMPUTE_ALL_FITS] Parsed profile: GPA={student_profile.get('weighted_gpa')}, SAT={student_profile.get('sat_score')}")
+        # Get existing computed fits (to merge with new batch)
+        existing_fits_json = profile_source.get('college_fits', '{}')
+        try:
+            existing_fits = json.loads(existing_fits_json) if existing_fits_json else {}
+        except:
+            existing_fits = {}
         
         # Step 2: Fetch all universities from KB
-        universities = fetch_all_universities()
-        logger.info(f"[COMPUTE_ALL_FITS] Found {len(universities)} universities")
+        all_universities = fetch_all_universities()
+        total_universities = len(all_universities)
         
-        if not universities:
+        if not all_universities:
             return add_cors_headers({
                 'success': False,
                 'error': 'Could not fetch universities from knowledge base'
             }, 500)
         
-        # Step 3: Compute fit for each university
-        computed_fits = {}
+        # Step 3: Get the batch to process
+        batch_universities = all_universities[offset:offset + batch_size]
+        
+        if not batch_universities:
+            # No more universities to process
+            return add_cors_headers({
+                'success': True,
+                'computed': 0,
+                'offset': offset,
+                'batch_size': batch_size,
+                'total_universities': total_universities,
+                'has_more': False,
+                'message': 'All universities already processed'
+            }, 200)
+        
+        logger.info(f"[COMPUTE_ALL_FITS] Processing batch: {len(batch_universities)} universities (offset {offset})")
+        
+        # Step 4: Compute fit for each university in batch
+        batch_fits = {}
         computed_count = 0
         error_count = 0
         
-        for uni_summary in universities:
+        for uni_summary in batch_universities:
             university_id = uni_summary.get('university_id')
             
             try:
@@ -1530,17 +1769,14 @@ def handle_compute_all_fits(request):
                     error_count += 1
                     continue
                 
-                # Get the nested profile data
-                profile_data = uni_profile.get('profile', uni_profile)
-                
                 # Calculate fit using PURE LLM reasoning
                 fit_analysis = calculate_fit_with_llm(profile_content, uni_profile, '')
                 
                 # Store computed fit
-                computed_fits[university_id] = {
+                fit_result = {
                     'fit_category': fit_analysis.get('fit_category', 'UNKNOWN'),
-                    'match_percentage': fit_analysis.get('match_percentage', 0),  # CHANGED match_score to match_percentage for consistency
-                    'match_score': fit_analysis.get('match_percentage', 0),       # Keep match_score for backwards compatibility
+                    'match_percentage': fit_analysis.get('match_percentage', 0),
+                    'match_score': fit_analysis.get('match_percentage', 0),
                     'university_name': uni_summary.get('official_name', university_id),
                     'explanation': fit_analysis.get('explanation', ''),
                     'factors': fit_analysis.get('factors', []),
@@ -1552,39 +1788,61 @@ def handle_compute_all_fits(request):
                     'computed_at': datetime.utcnow().isoformat()
                 }
                 
+                batch_fits[university_id] = fit_result
                 computed_count += 1
                 
-                if computed_count % 20 == 0:
-                    logger.info(f"[COMPUTE_ALL_FITS] Progress: {computed_count}/{len(universities)}")
+                logger.info(f"[COMPUTE_ALL_FITS] [{offset + computed_count}/{total_universities}] {uni_summary.get('official_name', university_id)} -> {fit_analysis.get('fit_category')}")
+                
+                # Small delay to prevent API rate limiting
+                time.sleep(0.5)
                     
             except Exception as e:
                 logger.error(f"[COMPUTE_ALL_FITS] Error computing fit for {university_id}: {e}")
                 error_count += 1
         
-        # Step 4: Store computed_fits in profile document as JSON string (avoids ES field limit)
+        # Step 5: Write each fit as individual document to ES_FITS_INDEX (new v2 architecture)
+        email_hash = hashlib.md5(user_id.encode()).hexdigest()[:8]
         fits_computed_at = datetime.utcnow().isoformat()
         
-        es_client.update(
-            index=ES_INDEX_NAME,
-            id=doc_id,
-            body={
-                "doc": {
-                    "college_fits": json.dumps(computed_fits),  # Store as JSON string
-                    "fits_computed_at": fits_computed_at,
-                    "needs_fit_recomputation": False  # Clear the flag after computing
-                }
+        for university_id, fit_result in batch_fits.items():
+            doc_id = f"{email_hash}_{university_id}"
+            fit_doc = {
+                'user_email': user_id,
+                'university_id': university_id,
+                'university_name': fit_result.get('university_name'),
+                'computed_at': fits_computed_at,
+                'fit_category': fit_result.get('fit_category'),
+                'match_score': fit_result.get('match_score'),
+                'explanation': fit_result.get('explanation'),
+                'factors': fit_result.get('factors', []),
+                'recommendations': fit_result.get('recommendations', []),
+                'acceptance_rate': fit_result.get('acceptance_rate'),
+                'us_news_rank': fit_result.get('us_news_rank'),
+                'location': fit_result.get('location'),
+                'market_position': fit_result.get('market_position')
             }
-        )
+            es_client.index(index=ES_FITS_INDEX, id=doc_id, body=fit_doc)
         
-        logger.info(f"[COMPUTE_ALL_FITS] Completed for {user_id}: {computed_count} computed, {error_count} errors")
+        logger.info(f"[COMPUTE_ALL_FITS] Saved {len(batch_fits)} fits to ES_FITS_INDEX")
+        
+        # Calculate if there are more batches
+        next_offset = offset + batch_size
+        has_more = next_offset < total_universities
+        
+        logger.info(f"[COMPUTE_ALL_FITS] Batch complete: {computed_count} computed, {error_count} errors, has_more={has_more}")
         
         return add_cors_headers({
             'success': True,
             'computed': computed_count,
             'errors': error_count,
-            'total_universities': len(universities),
+            'offset': offset,
+            'batch_size': batch_size,
+            'total_universities': total_universities,
+            'total_computed': len(batch_fits),
+            'has_more': has_more,
+            'next_offset': next_offset if has_more else None,
             'fits_computed_at': fits_computed_at,
-            'message': f'Computed fit for {computed_count} universities'
+            'message': f'Computed fit for {computed_count} universities (batch {offset // batch_size + 1})'
         }, 200)
         
     except Exception as e:
@@ -1597,7 +1855,7 @@ def handle_compute_all_fits(request):
 
 def handle_get_fits(request):
     """
-    Get pre-computed fits for a user with optional filtering.
+    Get pre-computed fits for a user from the new separated fits index.
     
     POST /get-fits
     {
@@ -1610,20 +1868,12 @@ def handle_get_fits(request):
         "limit": 10,
         "sort_by": "rank"              // "rank" or "match_score"
     }
-    
-    Returns:
-    {
-        "success": true,
-        "results": [...],
-        "fits_computed_at": "...",
-        "total": 45
-    }
     """
     try:
         data = request.get_json() or {}
         user_id = data.get('user_email') or data.get('user_id')
         filters = data.get('filters', {})
-        limit = data.get('limit', 20)
+        limit = data.get('limit', 500)  # Default to all fits
         sort_by = data.get('sort_by', 'rank')
         
         if not user_id:
@@ -1634,94 +1884,97 @@ def handle_get_fits(request):
         
         es_client = get_elasticsearch_client()
         
-        # Find user's profile
+        # Build query for the fits index
+        must_clauses = [{"term": {"user_email": user_id}}]
+        
+        # Apply filters directly in ES query
+        category_filter = filters.get('category', '').upper() if filters.get('category') else None
+        if category_filter:
+            must_clauses.append({"term": {"fit_category": category_filter}})
+        
+        exclude_ids = filters.get('exclude_ids', [])
+        must_not_clauses = []
+        if exclude_ids:
+            # Normalize exclude IDs for consistent matching
+            normalized_exclude_ids = [normalize_university_id(uid) for uid in exclude_ids]
+            must_not_clauses.append({"terms": {"university_id": normalized_exclude_ids}})
+        
+        # If state filter is present, fetch more to account for client-side filtering
+        state_filter_present = bool(filters.get('state'))
+        fetch_size = limit * 10 if state_filter_present else limit  # Fetch more to filter client-side
+        
         search_body = {
-            "size": 1,
-            "query": {"term": {"user_id.keyword": user_id}},
-            "_source": ["college_fits", "fits_computed_at"],
-            "sort": [{"indexed_at": {"order": "desc"}}]
+            "size": min(fetch_size, 200),  # Cap at 200 to avoid excessive fetches
+            "query": {
+                "bool": {
+                    "must": must_clauses,
+                    "must_not": must_not_clauses
+                }
+            }
         }
         
-        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        # Add sort
+        if sort_by == 'rank':
+            search_body["sort"] = [{"us_news_rank": {"order": "asc", "missing": "_last"}}]
+        elif sort_by == 'match_score':
+            search_body["sort"] = [{"match_score": {"order": "desc"}}]
         
-        if response['hits']['total']['value'] == 0:
-            return add_cors_headers({
-                'success': False,
-                'error': 'No profile found for user'
-            }, 404)
+        response = es_client.search(index=ES_FITS_INDEX, body=search_body)
         
-        source = response['hits']['hits'][0]['_source']
-        fits_computed_at = source.get('fits_computed_at')
-        
-        # college_fits is stored as JSON string to avoid ES field limit
-        computed_fits_raw = source.get('college_fits')
-        if computed_fits_raw:
-            # Parse JSON string if it's a string, otherwise use as-is (backward compat)
-            if isinstance(computed_fits_raw, str):
-                computed_fits = json.loads(computed_fits_raw)
-            else:
-                computed_fits = computed_fits_raw
-        else:
-            computed_fits = {}
-        
-        # Check if fits have been computed
-        if not computed_fits:
-            return add_cors_headers({
-                'success': False,
-                'error': 'College fits not yet computed. Please wait or trigger computation.',
-                'fits_ready': False
-            }, 200)
-        
-        # Apply filters
+        # Convert ES hits to results
         results = []
-        category_filter = filters.get('category', '').upper() if filters.get('category') else None
-        state_filter = filters.get('state', '').upper() if filters.get('state') else None
-        exclude_ids = filters.get('exclude_ids', [])
-        
-        for uni_id, fit in computed_fits.items():
-            # Apply exclusion
-            if uni_id in exclude_ids:
-                continue
+        for hit in response['hits']['hits']:
+            fit = hit['_source']
             
-            # Apply category filter
-            if category_filter and fit.get('fit_category', '').upper() != category_filter:
-                continue
+            # Apply state filter (if present, do client-side since location is nested)
+            state_filter = filters.get('state', '').upper() if filters.get('state') else None
+            if state_filter:
+                location = fit.get('location', {})
+                state_value = location.get('state', '').upper()
+                # Handle common abbreviation variations
+                state_abbrev_map = {
+                    'CALIFORNIA': 'CA', 'CA': 'CA',
+                    'NEW YORK': 'NY', 'NY': 'NY',
+                    'MASSACHUSETTS': 'MA', 'MA': 'MA',
+                    'TEXAS': 'TX', 'TX': 'TX',
+                    'FLORIDA': 'FL', 'FL': 'FL',
+                    'PENNSYLVANIA': 'PA', 'PA': 'PA',
+                    'OHIO': 'OH', 'OH': 'OH',
+                    'WASHINGTON': 'WA', 'WA': 'WA',
+                    'NORTH CAROLINA': 'NC', 'NC': 'NC',
+                    'NEW JERSEY': 'NJ', 'NJ': 'NJ',
+                    'COLORADO': 'CO', 'CO': 'CO',
+                    'NEBRASKA': 'NE', 'NE': 'NE',
+                }
+                normalized_filter = state_abbrev_map.get(state_filter, state_filter)
+                normalized_value = state_abbrev_map.get(state_value, state_value)
+                if normalized_value != normalized_filter:
+                    continue
             
-            # Apply state filter
-            location = fit.get('location', {})
-            if state_filter and location.get('state', '').upper() != state_filter:
-                continue
-            
-            # Add to results
             results.append({
-                'university_id': uni_id,
-                **fit
+                'university_id': normalize_university_id(fit.get('university_id')),  # Normalized for matching
+                'university_name': fit.get('university_name'),
+                'fit_category': fit.get('fit_category'),
+                'match_score': fit.get('match_score'),
+                'explanation': fit.get('explanation'),
+                'factors': fit.get('factors', []),
+                'recommendations': fit.get('recommendations', []),
+                'acceptance_rate': fit.get('acceptance_rate'),
+                'us_news_rank': fit.get('us_news_rank'),
+                'location': fit.get('location'),
+                'market_position': fit.get('market_position'),
+                'computed_at': fit.get('computed_at')
             })
         
-        # Sort results
-        if sort_by == 'rank':
-            results.sort(key=lambda x: x.get('us_news_rank') or 999)
-        elif sort_by == 'match_score':
-            results.sort(key=lambda x: x.get('match_score', 0), reverse=True)
-        else:
-            # Default: sort by fit category priority, then rank
-            category_priority = {'SAFETY': 1, 'TARGET': 2, 'REACH': 3, 'SUPER_REACH': 4, 'UNKNOWN': 5}
-            results.sort(key=lambda x: (
-                category_priority.get(x.get('fit_category', 'UNKNOWN'), 5),
-                x.get('us_news_rank') or 999
-            ))
-        
-        # Apply limit
-        total_results = len(results)
+        # Apply limit after filtering (important when state filter expands fetch size)
         results = results[:limit]
         
         return add_cors_headers({
             'success': True,
             'results': results,
-            'total': total_results,
+            'total': response['hits']['total']['value'],
             'returned': len(results),
-            'fits_ready': True,
-            'fits_computed_at': fits_computed_at,
+            'fits_ready': len(results) > 0,
             'filters_applied': filters
         }, 200)
         
@@ -2014,6 +2267,9 @@ def profile_manager_es_http_entry(request):
         elif resource_type == 'update-college-list' and request.method == 'POST':
             return handle_update_college_list(request)
         
+        elif resource_type == 'bulk-remove-colleges' and request.method == 'POST':
+            return handle_bulk_remove_colleges(request)
+        
         elif resource_type == 'get-college-list':
             return handle_get_college_list(request)
         
@@ -2026,6 +2282,9 @@ def profile_manager_es_http_entry(request):
         # --- PRE-COMPUTED FIT MATRIX ROUTES ---
         elif resource_type == 'compute-all-fits' and request.method == 'POST':
             return handle_compute_all_fits(request)
+        
+        elif resource_type == 'compute-single-fit' and request.method == 'POST':
+            return handle_compute_single_fit(request)
         
         elif resource_type == 'get-fits' and request.method == 'POST':
             return handle_get_fits(request)

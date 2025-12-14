@@ -14,7 +14,7 @@ import {
     XMarkIcon,
     AcademicCapIcon
 } from '@heroicons/react/24/outline';
-import { getCollegeList, updateCollegeList, startSession, extractFullResponse, checkFitRecomputationNeeded, computeAllFits, getFitsByCategory, getPrecomputedFits } from '../services/api';
+import { getCollegeList, updateCollegeList, checkFitRecomputationNeeded, computeAllFits, getFitsByCategory, getPrecomputedFits, getBalancedList } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -65,7 +65,7 @@ const FIT_CATEGORIES = {
 };
 
 // College Card Component for Launchpad - matches UniInsight style
-const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails }) => {
+const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelected, onToggleSelect, selectionMode }) => {
     const fitAnalysis = college.fit_analysis || {};
     const fitCategory = fitAnalysis.fit_category || 'TARGET';
     const matchPercentage = fitAnalysis.match_percentage || null;
@@ -87,8 +87,18 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails }) => {
     return (
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
             <div className="p-5 flex-grow">
-                {/* Header */}
+                {/* Header with optional checkbox */}
                 <div className="flex justify-between items-start mb-3">
+                    {selectionMode && (
+                        <div className="mr-3 flex-shrink-0">
+                            <input
+                                type="checkbox"
+                                checked={isSelected}
+                                onChange={() => onToggleSelect(college.university_id)}
+                                className="h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 cursor-pointer"
+                            />
+                        </div>
+                    )}
                     <div className="flex-1 min-w-0">
                         <h3 className="text-lg font-bold text-gray-900 line-clamp-2" title={college.university_name}>
                             {college.university_name}
@@ -154,7 +164,7 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails }) => {
 };
 
 // Category Column Component
-const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetails }) => {
+const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetails, selectedColleges, onToggleSelect, selectionMode }) => {
     const config = FIT_CATEGORIES[category] || FIT_CATEGORIES.TARGET;
 
     return (
@@ -187,6 +197,9 @@ const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetail
                             onRemove={onRemove}
                             isRemoving={removingId === college.university_id}
                             onViewDetails={onViewDetails}
+                            isSelected={selectedColleges.has(college.university_id)}
+                            onToggleSelect={onToggleSelect}
+                            selectionMode={selectionMode}
                         />
                     ))
                 )}
@@ -460,44 +473,50 @@ const FitAnalysisDetail = ({ college, onBack }) => {
     );
 };
 
-// Recommendation Card Component
-const RecommendationCard = ({ recommendation, onAdd, isAdding }) => {
+// Recommendation Card Component - Selectable with checkbox
+const RecommendationCard = ({ recommendation, isSelected, onToggleSelect }) => {
     const fitCategory = recommendation.fit_category || 'TARGET';
     const categoryConfig = FIT_CATEGORIES[fitCategory] || FIT_CATEGORIES.TARGET;
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 hover:shadow-md transition-all">
+        <div
+            onClick={() => onToggleSelect(recommendation.id)}
+            className={`bg-white rounded-xl shadow-sm border-2 p-4 cursor-pointer transition-all ${isSelected
+                ? 'border-purple-500 ring-2 ring-purple-200 shadow-md'
+                : 'border-gray-200 hover:border-purple-300 hover:shadow-md'
+                }`}
+        >
             <div className="flex justify-between items-start mb-2">
-                <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-gray-900 truncate">{recommendation.name}</h4>
-                    <div className="flex items-center text-gray-500 text-xs mt-0.5">
-                        <MapPinIcon className="h-3 w-3 mr-1" />
-                        <span>{recommendation.location || 'Location N/A'}</span>
+                <div className="flex items-center gap-3 flex-1 min-w-0">
+                    {/* Checkbox */}
+                    <div className={`flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center ${isSelected
+                        ? 'bg-purple-600 border-purple-600'
+                        : 'border-gray-300'
+                        }`}>
+                        {isSelected && (
+                            <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                        )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-gray-900 truncate">{recommendation.name}</h4>
+                        <div className="flex items-center text-gray-500 text-xs mt-0.5">
+                            <MapPinIcon className="h-3 w-3 mr-1" />
+                            <span>{recommendation.location || 'Location N/A'}</span>
+                        </div>
                     </div>
                 </div>
                 <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${categoryConfig.headerBg} ${categoryConfig.textColor}`}>
                     {categoryConfig.emoji} {categoryConfig.label}
                 </span>
             </div>
-            <p className="text-sm text-gray-600 mb-3 line-clamp-2">{recommendation.reason}</p>
-            <button
-                type="button"
-                onClick={(e) => { e.preventDefault(); e.stopPropagation(); onAdd(recommendation); }}
-                disabled={isAdding}
-                className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium hover:bg-purple-200 transition-colors disabled:opacity-50"
-            >
-                {isAdding ? (
-                    <>
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-purple-700"></div>
-                        Adding...
-                    </>
-                ) : (
-                    <>
-                        <PlusCircleIcon className="h-4 w-4" />
-                        Add to Launchpad
-                    </>
-                )}
-            </button>
+            <div className="ml-8">
+                <p className="text-sm text-gray-600 line-clamp-2">{recommendation.reason}</p>
+                <div className="mt-2 text-xs text-gray-500">
+                    Match: <span className="font-semibold text-purple-600">{recommendation.matchScore}%</span>
+                </div>
+            </div>
         </div>
     );
 };
@@ -737,15 +756,16 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
             const result = await getFitsByCategory(currentUser.email, category, state, existingIds, 8);
 
             if (result.success && result.results?.length > 0) {
-                // Transform API results to recommendation format
+                // Transform API results to recommendation format and sort by match score descending
                 const recs = result.results.map((fit, idx) => ({
                     id: fit.university_id || `rec-${idx}`,
                     name: fit.university_name || fit.official_name || 'Unknown',
-                    fitCategory: fit.fit_category,
+                    fit_category: fit.fit_category,
                     matchScore: fit.match_percentage || 0,
+                    location: fit.location ? `${fit.location.city}, ${fit.location.state}` : null,
                     reason: `${fit.fit_category?.replace('_', ' ')} school with ${fit.match_percentage}% match`,
                     selected: true
-                }));
+                })).sort((a, b) => b.matchScore - a.matchScore);
                 setRecommendations(recs);
                 // Auto-select all
                 const allSelected = {};
@@ -764,11 +784,70 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
         }
     };
 
-    // Auto-trigger with initialPrompt on first render
+    // Get balanced list (safety + target + reach) via direct API calls
+    const handleQuickBalancedList = async () => {
+        setIsLoading(true);
+        setError(null);
+        setRecommendations([]);
+
+        try {
+            if (!currentUser?.email) {
+                setError('Please log in to use this feature.');
+                return;
+            }
+
+            // Get existing college IDs to exclude
+            const existingIds = [];
+            Object.values(categorizedColleges).forEach(colleges => {
+                colleges.forEach(c => {
+                    if (c.university_id) existingIds.push(c.university_id);
+                });
+            });
+
+            console.log(`[Smart Discovery] Getting balanced list, excluding ${existingIds.length} existing colleges`);
+
+            // Call new API function - fetches 3 categories in parallel
+            const result = await getBalancedList(currentUser.email, existingIds);
+
+            if (result.success && result.results?.length > 0) {
+                // Transform to recommendation format and sort by match score descending
+                const recs = result.results.map((fit, idx) => ({
+                    id: fit.university_id || `rec-${idx}`,
+                    name: fit.university_name || fit.official_name || 'Unknown',
+                    fit_category: fit.fit_category,
+                    matchScore: fit.match_percentage || 0,
+                    location: fit.location ? `${fit.location.city}, ${fit.location.state}` : null,
+                    reason: `${fit.fit_category?.replace('_', ' ')} school with ${fit.match_percentage}% match`,
+                    selected: true
+                })).sort((a, b) => b.matchScore - a.matchScore);
+                setRecommendations(recs);
+
+                // Auto-select all
+                const allSelected = {};
+                recs.forEach(r => { allSelected[r.id] = true; });
+                setSelectedRecs(allSelected);
+
+                console.log(`[Smart Discovery] Balanced list: ${result.breakdown.safety} safety, ${result.breakdown.target} target, ${result.breakdown.reach} reach`);
+            } else if (result.results?.length === 0) {
+                setError('No additional schools found for a balanced list. Try adding different filters or use AI-powered discovery.');
+            } else {
+                setError('Failed to load balanced list. Please try again.');
+            }
+        } catch (err) {
+            console.error('[Smart Discovery] Balanced list error:', err);
+            setError('Failed to load balanced list. Please try again.');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+
+    // Auto-open panel when initialPrompt is provided (but don't auto-fetch)
     useEffect(() => {
         if (initialPrompt && !hasAutoTriggered && currentUser?.email) {
             setHasAutoTriggered(true);
-            handleGetRecommendations(`[USER_EMAIL: ${currentUser.email}]\n\n${initialPrompt}`);
+            setIsOpen(true);  // Just open the panel, don't auto-fetch
+            // Let user click the buttons to fetch recommendations
         }
     }, [initialPrompt, hasAutoTriggered, currentUser]);
 
@@ -811,11 +890,11 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
         let addedCount = 0;
         for (const rec of toAdd) {
             try {
-                // Use updateCollegeList API directly
+                // Use updateCollegeList API directly with the correct university_id
                 const result = await updateCollegeList(
                     currentUser.email,
                     'add',
-                    { id: rec.name.toLowerCase().replace(/\s+/g, '_'), name: rec.name },
+                    { id: rec.id, name: rec.name },  // rec.id already contains the correct university_id
                     '' // intended major
                 );
 
@@ -915,11 +994,12 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                         </label>
                         <div className="flex flex-wrap gap-2">
                             <button
-                                onClick={() => handleGetRecommendations("Build me a balanced college list with safety, target, and reach schools that match my academic profile")}
+                                onClick={() => handleQuickBalancedList()}
                                 disabled={isLoading}
                                 className="px-3 py-1.5 bg-white border border-purple-200 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-50 transition-colors disabled:opacity-50"
+                                title="Fast: Uses pre-computed fits"
                             >
-                                ⚖️ Balanced List
+                                ⚖️ Balanced List ⚡
                             </button>
                             <button
                                 onClick={() => handleQuickFilter('SAFETY', null)}
@@ -946,11 +1026,12 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                                 🎯 More Reach Schools ⚡
                             </button>
                             <button
-                                onClick={() => handleGetRecommendations("Find schools with strong programs for my intended major that match my academic profile")}
+                                onClick={() => handleQuickFilter(null, null)}
                                 disabled={isLoading}
                                 className="px-3 py-1.5 bg-white border border-indigo-200 text-indigo-700 rounded-full text-sm font-medium hover:bg-indigo-50 transition-colors disabled:opacity-50"
+                                title="Fast: Uses pre-computed fits"
                             >
-                                📚 Strong in My Major
+                                📚 Best Matches ⚡
                             </button>
                             <button
                                 onClick={() => handleQuickFilter(null, 'California')}
@@ -979,12 +1060,12 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
 
                     {/* Get Recommendations Button */}
                     <button
-                        onClick={handleGetRecommendations}
+                        onClick={handleQuickBalancedList}
                         disabled={isLoading}
                         className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg disabled:opacity-50 mb-4"
                     >
                         <SparklesIcon className="h-5 w-5" />
-                        {recommendations.length > 0 ? 'Get More Recommendations' : 'Get AI Recommendations'}
+                        {recommendations.length > 0 ? 'Get More Recommendations ⚡' : 'Get Smart Recommendations ⚡'}
                     </button>
 
 
@@ -1003,7 +1084,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                         <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 text-sm mb-4">
                             {error}
                             <button
-                                onClick={handleGetRecommendations}
+                                onClick={handleQuickBalancedList}
                                 className="ml-2 underline hover:no-underline"
                             >
                                 Try again
@@ -1027,27 +1108,18 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                                 </button>
                             </div>
 
-                            {/* List with checkboxes */}
-                            <div className="bg-white rounded-lg border border-gray-200 divide-y divide-gray-100">
+                            {/* Card Grid - Consistent with Quick Start */}
+                            <p className="text-sm text-gray-500 mb-3">
+                                Click to select schools, then add to your launchpad
+                            </p>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {recommendations.map(rec => (
-                                    <label key={rec.id} className="p-3 flex items-center gap-3 cursor-pointer hover:bg-gray-50">
-                                        <input
-                                            type="checkbox"
-                                            checked={!!selectedRecs[rec.id]}
-                                            onChange={() => toggleSelection(rec.id)}
-                                            className="h-4 w-4 text-green-600 rounded border-gray-300 focus:ring-green-500"
-                                        />
-                                        <div className="flex-1">
-                                            <span className="font-medium text-gray-900">{rec.name}</span>
-                                            <span className="ml-2 text-xs text-gray-500">{rec.location}</span>
-                                        </div>
-                                        <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${rec.fit_category === 'SAFETY' ? 'bg-green-100 text-green-700' :
-                                            rec.fit_category === 'TARGET' ? 'bg-blue-100 text-blue-700' :
-                                                'bg-orange-100 text-orange-700'
-                                            }`}>
-                                            {rec.fit_category}
-                                        </span>
-                                    </label>
+                                    <RecommendationCard
+                                        key={rec.id}
+                                        recommendation={rec}
+                                        isSelected={!!selectedRecs[rec.id]}
+                                        onToggleSelect={toggleSelection}
+                                    />
                                 ))}
                             </div>
 
@@ -1076,11 +1148,11 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             </button>
 
                             <button
-                                onClick={handleGetRecommendations}
+                                onClick={handleQuickBalancedList}
                                 disabled={isAddingAll}
                                 className="w-full text-sm text-purple-600 hover:text-purple-800 font-medium disabled:opacity-50"
                             >
-                                ↻ Get different recommendations
+                                ↻ Get different recommendations ⚡
                             </button>
                         </div>
                     )}
@@ -1098,7 +1170,7 @@ const EmptyState = ({ onQuickStart }) => {
             emoji: '⚖️',
             title: 'Build a Balanced List',
             description: 'Get a mix of safety, target, and reach schools based on your profile',
-            prompt: 'Build me a balanced college list with 2 safety schools, 3 target schools, and 2 reach schools that match my academic profile and interests.',
+            action: 'balanced',
             color: 'from-purple-600 to-blue-600'
         },
         {
@@ -1106,7 +1178,7 @@ const EmptyState = ({ onQuickStart }) => {
             emoji: '🛡️',
             title: 'Find Safety Schools',
             description: 'Schools where you\'re likely to be admitted',
-            prompt: 'Find me 5 good safety schools where I have a strong chance of admission based on my academic profile.',
+            action: 'SAFETY',
             color: 'from-green-600 to-emerald-600'
         },
         {
@@ -1114,16 +1186,16 @@ const EmptyState = ({ onQuickStart }) => {
             emoji: '🎯',
             title: 'Find Reach Schools',
             description: 'Ambitious choices to aim high',
-            prompt: 'Find me 5 reach and super-reach schools that would be ambitious but possible based on my profile.',
+            action: 'REACH',
             color: 'from-orange-600 to-red-600'
         },
         {
-            id: 'top20',
-            emoji: '🏆',
-            title: 'Top 20 Schools For Me',
-            description: 'Best-ranked schools that fit your profile',
-            prompt: 'Find me schools from the US News Top 50 that best match my academic profile and interests.',
-            color: 'from-yellow-600 to-orange-600'
+            id: 'target',
+            emoji: '✅',
+            title: 'Find Target Schools',
+            description: 'Schools where you have good chances',
+            action: 'TARGET',
+            color: 'from-blue-600 to-indigo-600'
         }
     ];
 
@@ -1142,7 +1214,7 @@ const EmptyState = ({ onQuickStart }) => {
                 {quickStartOptions.map((option) => (
                     <button
                         key={option.id}
-                        onClick={() => onQuickStart(option.prompt)}
+                        onClick={() => onQuickStart(option.action)}
                         className={`p-4 rounded-xl text-left transition-all hover:scale-105 hover:shadow-lg bg-gradient-to-br ${option.color} text-white`}
                     >
                         <div className="text-2xl mb-2">{option.emoji}</div>
@@ -1176,6 +1248,11 @@ const MyLaunchpad = () => {
     const [deepResearchData, setDeepResearchData] = useState({});
     const [recomputingFits, setRecomputingFits] = useState(false);
 
+    // Multi-select state for bulk removal
+    const [selectedColleges, setSelectedColleges] = useState(new Set());
+    const [selectionMode, setSelectionMode] = useState(false);
+    const [bulkRemoving, setBulkRemoving] = useState(false);
+
     // Fetch college list
     const fetchCollegeList = async () => {
         if (!currentUser?.email) return;
@@ -1200,7 +1277,7 @@ const MyLaunchpad = () => {
             // Fetch both college list and precomputed fits
             const [listResult, fitsResult] = await Promise.all([
                 getCollegeList(currentUser.email),
-                getPrecomputedFits(currentUser.email)
+                getPrecomputedFits(currentUser.email, {}, 200)  // Increased limit to get all fits for college list merge
             ]);
 
             if (listResult.success) {
@@ -1283,13 +1360,154 @@ const MyLaunchpad = () => {
         }
     };
 
-    // Quick-start handler - triggers Smart Discovery with preset prompt
+    // Quick-start handler - directly calls API based on action
     const [quickStartPrompt, setQuickStartPrompt] = useState(null);
-    const handleQuickStart = (prompt) => {
-        setQuickStartPrompt(prompt);
-        // Redirect to show the normal view with Smart Discovery open
-        // This is a bit of a hack - we'll render normally and let SmartDiscoveryPanel auto-trigger
+    const [quickStartLoading, setQuickStartLoading] = useState(false);
+    const [quickStartRecommendations, setQuickStartRecommendations] = useState([]);
+    const [quickStartSelected, setQuickStartSelected] = useState({});  // {id: true/false}
+    const [quickStartAdding, setQuickStartAdding] = useState(false);
+
+    // Toggle selection of a quick start recommendation
+    const toggleQuickStartSelection = (id) => {
+        setQuickStartSelected(prev => ({ ...prev, [id]: !prev[id] }));
     };
+
+    // Confirm and add all selected quick start recommendations
+    const handleQuickStartConfirm = async () => {
+        const selectedRecs = quickStartRecommendations.filter(r => quickStartSelected[r.id]);
+        if (selectedRecs.length === 0) return;
+
+        setQuickStartAdding(true);
+        try {
+            // Add all selected colleges
+            for (const rec of selectedRecs) {
+                console.log(`[Quick Start] Adding: ${rec.name} as ${rec.fit_category}`);
+                await updateCollegeList(currentUser.email, 'add', { id: rec.id, name: rec.name }, '');
+            }
+            // Clear quick start state and refresh college list
+            setQuickStartPrompt(null);
+            setQuickStartRecommendations([]);
+            setQuickStartSelected({});
+            fetchCollegeList();
+        } catch (err) {
+            console.error('[Quick Start] Error adding colleges:', err);
+        } finally {
+            setQuickStartAdding(false);
+        }
+    };
+
+    const handleQuickStart = async (action) => {
+        if (!currentUser?.email) return;
+
+        setQuickStartLoading(true);
+        setQuickStartPrompt(action);  // This triggers the special view
+
+        try {
+            // Get existing college IDs to exclude
+            const existingIds = collegeList.map(c => c.university_id).filter(Boolean);
+            console.log(`[Quick Start] Action: ${action}, excluding ${existingIds.length} existing colleges`);
+
+            let result;
+
+            if (action === 'balanced') {
+                result = await getBalancedList(currentUser.email, existingIds);
+            } else if (action === 'REACH') {
+                // For REACH, also include SUPER_REACH schools
+                const [reachResult, superReachResult] = await Promise.all([
+                    getFitsByCategory(currentUser.email, 'REACH', null, existingIds, 10),
+                    getFitsByCategory(currentUser.email, 'SUPER_REACH', null, existingIds, 5)
+                ]);
+                const combined = [
+                    ...(reachResult.results || []),
+                    ...(superReachResult.results || [])
+                ];
+                result = { success: true, results: combined };
+            } else {
+                // SAFETY or TARGET
+                result = await getFitsByCategory(currentUser.email, action, null, existingIds, 10);
+            }
+
+            if (result.success && result.results?.length > 0) {
+                // Transform to recommendation format and sort by match score descending
+                const recs = result.results.map((fit, idx) => ({
+                    id: fit.university_id || `rec-${idx}`,
+                    name: fit.university_name || fit.official_name || 'Unknown',
+                    fit_category: fit.fit_category,
+                    matchScore: fit.match_percentage || fit.match_score || 0,
+                    location: fit.location ? `${fit.location.city}, ${fit.location.state}` : null,
+                    reason: `${fit.fit_category?.replace('_', ' ')} school with ${fit.match_percentage || fit.match_score || 0}% match`,
+                    selected: true
+                })).sort((a, b) => b.matchScore - a.matchScore);  // Sort by match score descending
+                setQuickStartRecommendations(recs);
+                console.log(`[Quick Start] Loaded ${recs.length} recommendations`);
+            }
+        } catch (err) {
+            console.error('[Quick Start] Error:', err);
+        } finally {
+            setQuickStartLoading(false);
+        }
+    };
+
+    // Toggle selection of a college
+    const toggleSelection = (universityId) => {
+        setSelectedColleges(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(universityId)) {
+                newSet.delete(universityId);
+            } else {
+                newSet.add(universityId);
+            }
+            return newSet;
+        });
+    };
+
+    // Select all / Deselect all
+    const toggleSelectAll = () => {
+        if (selectedColleges.size === collegeList.length) {
+            setSelectedColleges(new Set());
+        } else {
+            setSelectedColleges(new Set(collegeList.map(c => c.university_id)));
+        }
+    };
+
+    // Bulk remove selected colleges
+    const handleBulkRemove = async () => {
+        if (selectedColleges.size === 0) return;
+
+        const confirmRemove = window.confirm(
+            `Are you sure you want to remove ${selectedColleges.size} college${selectedColleges.size > 1 ? 's' : ''} from your list?`
+        );
+
+        if (!confirmRemove) return;
+
+        setBulkRemoving(true);
+        try {
+            const response = await fetch(`${import.meta.env.VITE_PROFILE_MANAGER_ES_URL}/bulk-remove-colleges`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    user_email: currentUser.email,
+                    university_ids: Array.from(selectedColleges)
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setCollegeList(data.college_list || []);
+                setSelectedColleges(new Set());
+                setSelectionMode(false);
+            } else {
+                setError(data.error || 'Failed to remove colleges');
+            }
+        } catch (err) {
+            console.error('Bulk remove error:', err);
+            setError('Failed to remove colleges');
+        } finally {
+            setBulkRemoving(false);
+        }
+    };
+
 
     // Categorize colleges by fit
     const categorizedColleges = useMemo(() => {
@@ -1348,7 +1566,7 @@ const MyLaunchpad = () => {
         return <EmptyState onQuickStart={handleQuickStart} />;
     }
 
-    // If quick-start was triggered, show a special view with Smart Discovery
+    // If quick-start was triggered, show recommendations directly (no SmartDiscoveryPanel needed)
     if (totalColleges === 0 && quickStartPrompt) {
         return (
             <div className="space-y-6">
@@ -1357,20 +1575,66 @@ const MyLaunchpad = () => {
                         <RocketLaunchIcon className="h-7 w-7 text-purple-600" />
                         Building Your College List
                     </h1>
-                    <p className="text-gray-500 mt-2">Finding the best schools for your profile...</p>
+                    <p className="text-gray-500 mt-2">
+                        {quickStartLoading ? 'Finding the best schools for your profile...' : `Found ${quickStartRecommendations.length} schools for you!`}
+                    </p>
                 </div>
-                <SmartDiscoveryPanel
-                    currentUser={currentUser}
-                    categorizedColleges={categorizedColleges}
-                    onCollegeAdded={() => {
-                        setQuickStartPrompt(null);
-                        fetchCollegeList();
-                    }}
-                    initialPrompt={quickStartPrompt}
-                />
+
+                {/* Loading State */}
+                {quickStartLoading && (
+                    <div className="flex justify-center py-8">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
+                    </div>
+                )}
+
+                {/* Recommendations Grid - Card View with Selection */}
+                {!quickStartLoading && quickStartRecommendations.length > 0 && (
+                    <>
+                        <p className="text-sm text-gray-500 text-center mb-2">
+                            Click to select schools, then add to your launchpad
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {quickStartRecommendations.map((rec) => (
+                                <RecommendationCard
+                                    key={rec.id}
+                                    recommendation={rec}
+                                    isSelected={!!quickStartSelected[rec.id]}
+                                    onToggleSelect={toggleQuickStartSelection}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Selection Summary and Confirm Button */}
+                        {Object.values(quickStartSelected).filter(Boolean).length > 0 && (
+                            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center items-center">
+                                <span className="text-sm text-gray-600">
+                                    {Object.values(quickStartSelected).filter(Boolean).length} school(s) selected
+                                </span>
+                                <button
+                                    onClick={handleQuickStartConfirm}
+                                    disabled={quickStartAdding}
+                                    className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg disabled:opacity-50 flex items-center gap-2"
+                                >
+                                    {quickStartAdding ? (
+                                        <>
+                                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                                            Adding...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <PlusCircleIcon className="h-5 w-5" />
+                                            Add to Launchpad
+                                        </>
+                                    )}
+                                </button>
+                            </div>
+                        )}
+                    </>
+                )}
+
                 <button
-                    onClick={() => setQuickStartPrompt(null)}
-                    className="w-full text-gray-500 hover:text-gray-700 text-sm"
+                    onClick={() => { setQuickStartPrompt(null); setQuickStartRecommendations([]); setQuickStartSelected({}); }}
+                    className="w-full text-gray-500 hover:text-gray-700 text-sm mt-4"
                 >
                     ← Back to options
                 </button>
@@ -1412,6 +1676,49 @@ const MyLaunchpad = () => {
                             </span>
                         )}
                     </p>
+                </div>
+
+                {/* Selection Mode Controls */}
+                <div className="flex items-center gap-2">
+                    {selectionMode ? (
+                        <>
+                            <button
+                                onClick={toggleSelectAll}
+                                className="px-3 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
+                            >
+                                {selectedColleges.size === collegeList.length ? 'Deselect All' : 'Select All'}
+                            </button>
+                            <button
+                                onClick={handleBulkRemove}
+                                disabled={selectedColleges.size === 0 || bulkRemoving}
+                                className="px-3 py-2 text-sm bg-red-600 hover:bg-red-700 disabled:bg-gray-300 text-white rounded-lg transition-colors flex items-center gap-2"
+                            >
+                                {bulkRemoving ? (
+                                    <ArrowPathIcon className="h-4 w-4 animate-spin" />
+                                ) : (
+                                    <TrashIcon className="h-4 w-4" />
+                                )}
+                                Remove ({selectedColleges.size})
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setSelectionMode(false);
+                                    setSelectedColleges(new Set());
+                                }}
+                                className="px-3 py-2 text-sm text-gray-500 hover:text-gray-700"
+                            >
+                                Cancel
+                            </button>
+                        </>
+                    ) : (
+                        <button
+                            onClick={() => setSelectionMode(true)}
+                            className="px-3 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center gap-2"
+                        >
+                            <TrashIcon className="h-4 w-4" />
+                            Bulk Remove
+                        </button>
+                    )}
                 </div>
                 <button
                     onClick={fetchCollegeList}
@@ -1467,6 +1774,9 @@ const MyLaunchpad = () => {
                         onRemove={handleRemove}
                         removingId={removingId}
                         onViewDetails={(college) => setSelectedUniversity(college)}
+                        selectedColleges={selectedColleges}
+                        onToggleSelect={toggleSelection}
+                        selectionMode={selectionMode}
                     />
                     <CategoryColumn
                         category="TARGET"
@@ -1474,6 +1784,9 @@ const MyLaunchpad = () => {
                         onRemove={handleRemove}
                         removingId={removingId}
                         onViewDetails={(college) => setSelectedUniversity(college)}
+                        selectedColleges={selectedColleges}
+                        onToggleSelect={toggleSelection}
+                        selectionMode={selectionMode}
                     />
                     <CategoryColumn
                         category="SAFETY"
@@ -1481,6 +1794,9 @@ const MyLaunchpad = () => {
                         onRemove={handleRemove}
                         removingId={removingId}
                         onViewDetails={(college) => setSelectedUniversity(college)}
+                        selectedColleges={selectedColleges}
+                        onToggleSelect={toggleSelection}
+                        selectionMode={selectionMode}
                     />
                 </div>
             )}

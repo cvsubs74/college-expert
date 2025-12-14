@@ -13,14 +13,7 @@ from google.genai import types
 # Import logging
 from .tools.logging_utils import log_agent_entry, log_agent_exit
 from .tools.tools import (
-    calculate_college_fit, 
-    get_college_list, 
-    list_valid_university_ids, 
-    add_college_to_list,
-    # Profile tool - returns full markdown content
-    get_student_profile_data,
-    # Profile update tool - single natural language interface
-    update_profile
+    list_valid_university_ids  # Keep simple utility function
 )
 
 from pydantic import BaseModel, Field
@@ -30,6 +23,9 @@ from .sub_agents.student_profile_agent.agent import StudentProfileAgent
 from .sub_agents.university_knowledge_analyst.agent import UniversityKnowledgeAnalyst
 from .sub_agents.deep_research_agent.agent import DeepResearchAgent
 from .sub_agents.profile_preloader_agent.agent import ProfileLoaderAgent
+# New sub-agents with structured outputs
+from .sub_agents.fit_analysis_agent import FitAnalysisAgent
+from .sub_agents.college_list_agent import CollegeListAgent
 
 # Configure logging
 import logging
@@ -73,82 +69,78 @@ MasterReasoningAgent = LlmAgent(
     name="MasterReasoningAgent",
     model="gemini-2.5-flash-lite",
     description="College admissions counseling expert using hybrid search on structured university profiles",
-    instruction="""You are a College Admissions Counselor with access to a university knowledge base.
+    instruction="""You are a College Admissions Counselor with access to specialized sub-agents.
 
-**PROFILE ACCESS:**
-The student's profile is pre-loaded as formatted markdown. Use this tool to access it:
+**AVAILABLE SUB-AGENTS:**
 
-1. **get_student_profile_data()** → Returns the complete student profile as markdown
-   - Contains: GPA, SAT/ACT scores, intended major, courses, extracurriculars, awards
-   - Read the markdown directly to extract any information you need
-   - DO NOT ask the user for this information - it's all in the profile!
+1. **FitAnalysisAgent** → Get pre-computed fit analysis for a university
+   - Input: university_id or university_name
+   - Output: fit_category (SAFETY/TARGET/REACH/SUPER_REACH), match_percentage, factors
+   - Use for: "What's my fit for MIT?", "Analyze my chances at Stanford"
+   - CRITICAL: This always retrieves PRE-COMPUTED fits - never recalculates
 
-**PROFILE UPDATES:**
-When the student asks to update their profile:
+2. **CollegeListAgent** → Manage student's college list
+   - Operations: GET (show list), ADD (add university), REMOVE (remove university)
+   - Output: Structured college list with university_id, university_name, status
+   - Use for: "Show my list", "Add Harvard", "Remove UCLA"
 
-2. **update_profile(instruction)** → Update anything in the profile using natural language
-   Examples:
-   - update_profile("Update the GPA to 3.95")
-   - update_profile("Add a new extracurricular: Chess Club President")
-   - update_profile("Change intended major to Computer Science")
-   - update_profile("Add AP Biology score of 5")
+3. **StudentProfileAgent** → Get student academic profile
+   - Output: GPA, test scores, intended major, activities, awards
+   - Use for: All personalized analysis
+   - CRITICAL: NEVER ask user for this data - always fetch from profile
 
-**CRITICAL: NEVER ask the user for profile information - use get_student_profile_data() instead!**
+4. **UniversityKnowledgeAnalyst** → Search university knowledge base
+   - Input: University name or search criteria
+   - Output: University details, programs, admission stats, rankings
+   - Use for: "Tell me about MIT", "Find schools with strong CS programs"
+
+5. **DeepResearchAgent** → Web research for culture, vibe, recent news
+   - Use for: "What's the culture like at Stanford?", "Recent news about UCLA"
 
 **HOW TO ANSWER:**
 
-1. **University Questions** → Search KB using UniversityKnowledgeAnalyst
+1. **University Questions** → UniversityKnowledgeAnalyst
    - If found: Answer with KB data
-   - If NOT found: Say "I don't have [university] in my knowledge base" and offer alternatives
+   - If NOT found: Say "I don't have [university] in my knowledge base"
 
-2. **Personalized Questions** ("my chances", "should I apply", "based on my profile"):
-   → Call get_student_profile_data() to get full profile markdown
-   → Read GPA, SAT scores, major directly from the markdown
-   → Search university with UniversityKnowledgeAnalyst
-   → Compare profile data to university requirements
+2. **Personalized Questions** ("my chances", "should I apply"):
+   - Call StudentProfileAgent to get profile
+   - Call UniversityKnowledgeAnalyst to get university data
+   - Call FitAnalysisAgent to get pre-computed fit
+   - Present combined analysis
 
 3. **Fit Analysis** ("analyze fit", "my fit for X"):
-   → Call get_student_profile_data() to get the student's intended major and stats
-   → Search university first with UniversityKnowledgeAnalyst
-   → Use calculate_college_fit with the student's intended major
-   → Present category, percentage, factor breakdown
+   - Call FitAnalysisAgent with university_id
+   - Present fit_category, match_percentage, and factors
+   - Explain recommendations
 
-4. **College List** → get_college_list(email="auto")
+4. **College List Operations**:
+   - GET: Call CollegeListAgent
+   - ADD: Call CollegeListAgent with university details
+   - REMOVE: Call CollegeListAgent with university_id
 
-5. **Add to List** → add_college_to_list(email="auto", university_name, major)
+5. **Recommendations** ("build a list", "find safety schools"):
+   - Call StudentProfileAgent for context
+   - Call FitAnalysisAgent for relevant fit categories
+   - Present structured recommendations
 
-6. **Recommendations** ("build a list", "find safety schools", "recommend colleges"):
-   → Call get_student_profile_data() to get GPA, test scores, intended major from markdown
-   → Search relevant universities with UniversityKnowledgeAnalyst
-   → Compare profile metrics to university admission data
-   → DO NOT ask for more information - read it from the profile markdown!
+6. **Deep Research** (culture, vibe, recent news) → DeepResearchAgent
 
-7. **Deep Research** ("vibe", "culture", "recent news") → DeepResearchAgent
-
-8. **Profile Updates** ("update my GPA", "change my major", "add this activity"):
-   → Use update_profile(instruction) with a clear description of the change
-   → Confirm the update was successful
-
-**RULES:**
-- ALWAYS call profile tools to get student data - NEVER ask the user
-- If a profile tool returns "not found", use reasonable defaults
-- Acronyms work! MIT, UCLA, UCB, USC are all searchable
-- NEVER ask clarifying questions for recommendations - just search and provide results
+**CRITICAL RULES:**
+- NEVER try to calculate or recompute fits - ALWAYS use FitAnalysisAgent (pre-computed)
+- NEVER ask user for profile data - ALWAYS use StudentProfileAgent
+- For recommendations: Use FitAnalysisAgent to filter by category, NOT general search
+- Sub-agents return structured outputs - parse them correctly
 """,
 
     tools=[
-        # Profile tool - returns full markdown content
-        FunctionTool(get_student_profile_data),
-        # Profile update tool - natural language interface
-        FunctionTool(update_profile),
-        # Sub-agents
+        # Sub-agents with structured outputs
+        AgentTool(FitAnalysisAgent),
+        AgentTool(CollegeListAgent),
         AgentTool(StudentProfileAgent), 
         AgentTool(UniversityKnowledgeAnalyst),
         AgentTool(DeepResearchAgent),
-        # College list tools
-        FunctionTool(calculate_college_fit),
-        FunctionTool(get_college_list),
-        FunctionTool(add_college_to_list),
+        # Simple utility function
         FunctionTool(list_valid_university_ids)
     ],
     output_key="agent_response",

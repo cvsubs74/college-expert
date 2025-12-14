@@ -830,7 +830,6 @@ const UniversityExplorer = () => {
     const [activeView, setActiveView] = useState("list");
     const [selectedUni, setSelectedUni] = useState(null);
     const [comparisonList, setComparisonList] = useState([]);
-    const [recomputingFits, setRecomputingFits] = useState(false);
 
     // Pagination and sorting
     const [currentPage, setCurrentPage] = useState(0);
@@ -1468,23 +1467,7 @@ const UniversityExplorer = () => {
 
     return (
         <div className="space-y-6">
-            {/* Recomputation Banner */}
-            {recomputingFits && (
-                <div className="bg-purple-100 border-l-4 border-purple-500 text-purple-700 p-4 rounded shadow-sm" role="alert">
-                    <div className="flex items-center">
-                        <div className="py-1">
-                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-purple-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <p className="font-bold">Updating your matches</p>
-                            <p className="text-sm">We noticed changes in your profile. Recalculating your fit scores for all universities...</p>
-                        </div>
-                    </div>
-                </div>
-            )}
+
 
             {/* Header */}
             <div className="flex items-center justify-between">
@@ -1497,50 +1480,7 @@ const UniversityExplorer = () => {
                         Explore and compare top universities
                     </p>
                 </div>
-                <button
-                    onClick={handleRefresh}
-                    disabled={loading}
-                    className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50"
-                >
-                    <ArrowPathIcon className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
-                    Refresh
-                </button>
-                <button
-                    onClick={async () => {
-                        if (!currentUser?.email) return;
-                        setRecomputingFits(true);
-                        try {
-                            await computeAllFits(currentUser.email);
-                            // Reload fits after short delay
-                            setTimeout(async () => {
-                                const result = await getPrecomputedFits(currentUser.email, {}, 500, 'rank');
-                                if (result.success && result.results) {
-                                    const fitsMap = {};
-                                    result.results.forEach(fit => {
-                                        fitsMap[fit.university_id] = {
-                                            fit_category: fit.fit_category,
-                                            match_percentage: fit.match_score,
-                                            university_name: fit.university_name,
-                                            explanation: fit.explanation,
-                                            factors: fit.factors,
-                                            recommendations: fit.recommendations
-                                        };
-                                    });
-                                    setPrecomputedFits(fitsMap);
-                                }
-                                setRecomputingFits(false);
-                            }, 3000);
-                        } catch (e) {
-                            console.error("Recalculate failed", e);
-                            setRecomputingFits(false);
-                        }
-                    }}
-                    disabled={recomputingFits}
-                    className="flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-lg text-purple-700 hover:bg-purple-100 disabled:opacity-50"
-                >
-                    <ArrowPathIcon className={`h-4 w-4 ${recomputingFits ? 'animate-spin' : ''}`} />
-                    {recomputingFits ? 'Recalculating...' : 'Recalculate Fits'}
-                </button>
+
             </div>
 
             {/* Error State */}

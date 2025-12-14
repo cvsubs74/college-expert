@@ -934,6 +934,51 @@ export const getFitsByCategory = async (userEmail, category = null, state = null
 };
 
 /**
+ * Get a balanced college list with safety, target, and reach schools
+ * Fetches multiple categories in parallel for optimal performance
+ * @param {string} userEmail - User's email
+ * @param {Array<string>} excludeIds - University IDs to exclude
+ * @returns {Promise<{success: boolean, results: Array, total: number, breakdown: Object}>}
+ */
+export const getBalancedList = async (userEmail, excludeIds = []) => {
+  try {
+    // Fetch fits for each category in parallel
+    const [safetyResult, targetResult, reachResult] = await Promise.all([
+      getFitsByCategory(userEmail, 'SAFETY', null, excludeIds, 3),
+      getFitsByCategory(userEmail, 'TARGET', null, excludeIds, 4),
+      getFitsByCategory(userEmail, 'REACH', null, excludeIds, 3)
+    ]);
+
+    // Merge results
+    const balanced = [
+      ...(safetyResult.results || []),
+      ...(targetResult.results || []),
+      ...(reachResult.results || [])
+    ];
+
+    return {
+      success: true,
+      results: balanced,
+      total: balanced.length,
+      breakdown: {
+        safety: safetyResult.results?.length || 0,
+        target: targetResult.results?.length || 0,
+        reach: reachResult.results?.length || 0
+      }
+    };
+  } catch (error) {
+    console.error('Error getting balanced list:', error);
+    return {
+      success: false,
+      error: error.message,
+      results: [],
+      total: 0
+    };
+  }
+};
+
+
+/**
  * Check if fit recomputation is needed (based on profile changes)
  * @param {string} userEmail - User's email
  * @returns {Promise<{needs_recomputation: boolean, reason: string|null, changes: array}>}
