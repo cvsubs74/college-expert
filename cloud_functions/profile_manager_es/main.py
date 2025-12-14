@@ -823,14 +823,37 @@ def calculate_fit_with_llm(student_profile_text, university_data, intended_major
         # DEBUG: Log what we extracted
         logger.info(f"[LLM_FIT] University: {uni_name}, Acceptance Rate: {acceptance_rate}%, Selectivity will be: {'ULTRA_SELECTIVE' if acceptance_rate < 8 else 'HIGHLY_SELECTIVE' if acceptance_rate < 15 else 'SELECTIVE'}")
         
-        # Prepare university summary for prompt (limit size)
+        # Prepare expanded university summary for better recommendations
+        # Include unique programs, application tips, and what the school values
+        academic_structure = profile_data.get('academic_structure', {})
+        application_strategy = profile_data.get('application_strategy', {})
+        unique_programs = profile_data.get('unique_opportunities', {})
+        
+        # Get majors list for the intended major context
+        majors_list = []
+        for college in academic_structure.get('colleges', [])[:5]:
+            majors_list.extend(college.get('majors', [])[:3])
+        
         uni_summary = json.dumps({
             "name": uni_name,
             "location": university_data.get('location', profile_data.get('location', {})),
             "acceptance_rate": acceptance_rate,
             "admitted_profile": admitted_profile,
-            "academic_structure": profile_data.get('academic_structure', {}).get('colleges', [])[:5]
-        }, default=str)[:2500]
+            "us_news_rank": university_data.get('us_news_rank', profile_data.get('metadata', {}).get('us_news_rank')),
+            "academic_colleges": [c.get('name', '') for c in academic_structure.get('colleges', [])[:6]],
+            "sample_majors": majors_list[:10],
+            "unique_programs": {
+                "research_opportunities": unique_programs.get('research_opportunities', [])[:3],
+                "special_programs": unique_programs.get('special_programs', [])[:3],
+                "study_abroad": unique_programs.get('study_abroad', {})
+            },
+            "application_notes": {
+                "early_decision_available": application_strategy.get('early_decision_available', False),
+                "supplemental_essays": application_strategy.get('supplemental_essays', [])[:2],
+                "interview_policy": application_strategy.get('interview_policy', 'Unknown'),
+                "what_they_value": application_strategy.get('what_we_look_for', [])[:5]
+            }
+        }, default=str)[:4000]  # Increased limit for richer context
         
         # Determine selectivity tier and category floor
         if acceptance_rate < 8:
@@ -912,18 +935,60 @@ Selectivity Tier: {selectivity_tier}
 **YOUR TASK:**
 Analyze this student's fit for {uni_name}. Be realistic about chances at selective schools.
 
+**RECOMMENDATION GENERATION PROCESS:**
+Before generating recommendations, you MUST:
+1. Identify the student's TOP 2 GAPS (factors where score is lowest percentage of max)
+2. Review the university's unique_programs, academic_colleges, and what_they_value
+3. Each recommendation MUST:
+   - Address a specific gap from factor analysis
+   - Reference a specific program, resource, or opportunity at {uni_name}
+   - Be actionable with a clear timeline (e.g., "before application deadline", "in senior year")
+
+**EXAMPLE HIGH-QUALITY RECOMMENDATIONS:**
+- WEAK: "Highlight leadership in essays" (too generic)
+- STRONG: "In your 'Why {uni_name}' essay, connect your FBLA State Competition success to {uni_name}'s [specific business program], mentioning the [specific opportunity like a venture lab or internship program]"
+- WEAK: "Improve test scores" (not actionable)
+- STRONG: "Consider submitting AP Business scores to demonstrate quantitative skills, as {uni_name}'s business program emphasizes analytical abilities"
+
 **OUTPUT FORMAT - Return ONLY valid JSON:**
 {{
   "match_percentage": <integer 0-100>,
   "fit_category": "<SAFETY|TARGET|REACH|SUPER_REACH>",
   "explanation": "<5-6 sentence analysis: Start with the category justification citing acceptance rate. Then mention 2-3 specific student strengths from their profile. Then acknowledge any gaps or concerns. End with what could strengthen the application.>",
   "factors": [
-    {{ "name": "Academic", "score": <0-40>, "max": 40, "detail": "<cite actual GPA/scores from profile>" }},
-    {{ "name": "Holistic", "score": <0-30>, "max": 30, "detail": "<cite specific activities/leadership>" }},
-    {{ "name": "Major Fit", "score": <0-15>, "max": 15, "detail": "<major availability assessment>" }},
+    {{ "name": "Academic", "score": <0-40>, "max": 40, "detail": "<cite actual GPA/scores from profile vs school's admitted profile>" }},
+    {{ "name": "Holistic", "score": <0-30>, "max": 30, "detail": "<cite specific activities/leadership from profile>" }},
+    {{ "name": "Major Fit", "score": <0-15>, "max": 15, "detail": "<assess major availability at {uni_name} and student's demonstrated interest>" }},
     {{ "name": "Selectivity", "score": <-15 to +5>, "max": 5, "detail": "<{acceptance_rate}% acceptance rate impact>" }}
   ],
-  "recommendations": ["<specific actionable rec 1>", "<specific actionable rec 2>", "<specific actionable rec 3>"]
+  "gap_analysis": {{
+    "primary_gap": "<name of factor with lowest % score and why>",
+    "secondary_gap": "<name of second lowest % score factor and why>",
+    "student_strengths": ["<specific strength 1>", "<specific strength 2>"]
+  }},
+  "recommendations": [
+    {{
+      "action": "<specific, actionable recommendation>",
+      "addresses_gap": "<which factor this improves: Academic|Holistic|Major Fit>",
+      "school_specific_context": "<how this connects to {uni_name}'s specific programs/values>",
+      "timeline": "<when to do this: before application|during senior year|in essays|etc>",
+      "impact": "<how this strengthens the application>"
+    }},
+    {{
+      "action": "<specific, actionable recommendation>",
+      "addresses_gap": "<which factor this improves>",
+      "school_specific_context": "<how this connects to {uni_name}>",
+      "timeline": "<when to do this>",
+      "impact": "<how this strengthens the application>"
+    }},
+    {{
+      "action": "<specific, actionable recommendation>",
+      "addresses_gap": "<which factor this improves>",
+      "school_specific_context": "<how this connects to {uni_name}>",
+      "timeline": "<when to do this>",
+      "impact": "<how this strengthens the application>"
+    }}
+  ]
 }}"""
 
         # Call Gemini with retry logic
@@ -1781,6 +1846,7 @@ def handle_compute_all_fits(request):
                     'explanation': fit_analysis.get('explanation', ''),
                     'factors': fit_analysis.get('factors', []),
                     'recommendations': fit_analysis.get('recommendations', []),
+                    'gap_analysis': fit_analysis.get('gap_analysis', {}),  # NEW: Include gap analysis
                     'location': uni_summary.get('location', {}),
                     'acceptance_rate': uni_summary.get('acceptance_rate'),
                     'us_news_rank': uni_summary.get('us_news_rank'),
@@ -1806,16 +1872,28 @@ def handle_compute_all_fits(request):
         
         for university_id, fit_result in batch_fits.items():
             doc_id = f"{email_hash}_{university_id}"
+            
+            # Serialize complex nested objects as JSON strings for ES compatibility
+            recommendations = fit_result.get('recommendations', [])
+            if isinstance(recommendations, list) and len(recommendations) > 0 and isinstance(recommendations[0], dict):
+                recommendations_json = json.dumps(recommendations)
+            else:
+                recommendations_json = json.dumps(recommendations) if recommendations else '[]'
+            
+            gap_analysis = fit_result.get('gap_analysis', {})
+            gap_analysis_json = json.dumps(gap_analysis) if gap_analysis else '{}'
+            
             fit_doc = {
                 'user_email': user_id,
                 'university_id': university_id,
                 'university_name': fit_result.get('university_name'),
                 'computed_at': fits_computed_at,
                 'fit_category': fit_result.get('fit_category'),
-                'match_score': fit_result.get('match_score'),
+                'match_score': fit_result.get('match_percentage', fit_result.get('match_score')),
                 'explanation': fit_result.get('explanation'),
                 'factors': fit_result.get('factors', []),
-                'recommendations': fit_result.get('recommendations', []),
+                'recommendations': recommendations_json,  # Stored as JSON string
+                'gap_analysis': gap_analysis_json,  # Stored as JSON string
                 'acceptance_rate': fit_result.get('acceptance_rate'),
                 'us_news_rank': fit_result.get('us_news_rank'),
                 'location': fit_result.get('location'),
@@ -1951,6 +2029,22 @@ def handle_get_fits(request):
                 if normalized_value != normalized_filter:
                     continue
             
+            # Parse recommendations - may be JSON string (new format) or array (old format)
+            recommendations = fit.get('recommendations', [])
+            if isinstance(recommendations, str):
+                try:
+                    recommendations = json.loads(recommendations)
+                except json.JSONDecodeError:
+                    recommendations = []
+            
+            # Parse gap_analysis - may be JSON string (new format) or dict (old format)
+            gap_analysis = fit.get('gap_analysis', {})
+            if isinstance(gap_analysis, str):
+                try:
+                    gap_analysis = json.loads(gap_analysis)
+                except json.JSONDecodeError:
+                    gap_analysis = {}
+            
             results.append({
                 'university_id': normalize_university_id(fit.get('university_id')),  # Normalized for matching
                 'university_name': fit.get('university_name'),
@@ -1958,7 +2052,8 @@ def handle_get_fits(request):
                 'match_score': fit.get('match_score'),
                 'explanation': fit.get('explanation'),
                 'factors': fit.get('factors', []),
-                'recommendations': fit.get('recommendations', []),
+                'recommendations': recommendations,
+                'gap_analysis': gap_analysis,
                 'acceptance_rate': fit.get('acceptance_rate'),
                 'us_news_rank': fit.get('us_news_rank'),
                 'location': fit.get('location'),
