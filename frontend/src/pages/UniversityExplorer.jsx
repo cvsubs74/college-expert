@@ -91,9 +91,13 @@ const transformUniversityData = (apiData) => {
         if (forbesObj) forbesRank = forbesObj.rank_overall || forbesObj.rank_in_category || 'N/A';
     }
 
-    // Normalize university_id: remove _slug suffix if present (KB uses _slug, fits don't)
+    // Normalize university_id: KB uses various formats (mixed case, hyphens, _slug suffix)
+    // Fits use: lowercase with underscores (e.g., university_of_florida)
     const rawId = apiData.university_id || profile._id || '';
-    const normalizedId = rawId.replace(/_slug$/, '');
+    const normalizedId = rawId
+        .toLowerCase()                    // Convert to lowercase
+        .replace(/_slug$/, '')            // Remove _slug suffix
+        .replace(/[-\s]+/g, '_');         // Replace hyphens and spaces with underscores
 
     return {
         id: normalizedId,

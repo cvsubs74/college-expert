@@ -343,6 +343,9 @@ def normalize_university_id(university_id):
     # Replace hyphens with underscores
     normalized = normalized.replace('-', '_')
     
+    # Replace spaces with underscores (for IDs like 'auburn university')
+    normalized = normalized.replace(' ', '_')
+    
     # Remove any double underscores
     while '__' in normalized:
         normalized = normalized.replace('__', '_')
