@@ -13,12 +13,12 @@ from google.adk.agents import BaseAgent
 from google.adk.agents.invocation_context import InvocationContext
 from google.adk.events import Event
 
-from ...tools.tools import search_user_profile
+from ...tools.tools import get_structured_profile
 
 logger = logging.getLogger(__name__)
 
-# Cache keys - keep it simple, cache raw response as-is
-CACHE_KEY_PROFILE = '_cache:student_profile'    # Full raw response from search_user_profile (preserves all data)
+# Cache keys
+CACHE_KEY_PROFILE = '_cache:student_profile'    # Structured profile data
 CACHE_KEY_EMAIL = '_cache:user_email'           # User email for quick lookup
 
 
@@ -121,32 +121,21 @@ class ProfileLoaderAgent(BaseAgent):
                 else:
                     logger.info(f"[{self.name}] Profile already cached (no documents)")
             else:
-                # Fetch and cache the profile AS-IS from cloud function
-                logger.info(f"[{self.name}] Fetching profile for {user_email}...")
+                # Fetch and cache the profile
+                logger.info(f"[{self.name}] Fetching structured profile for {user_email}...")
                 try:
-                    raw_profile = search_user_profile(user_email)
+                    result = get_structured_profile(user_email)
                     
-                    if raw_profile and raw_profile.get('success'):
-                        # Cache the ENTIRE response as-is - preserves ALL data
-                        ctx.session.state[CACHE_KEY_PROFILE] = raw_profile
+                    if result.get('success'):
+                        # Cache the profile data
+                        ctx.session.state[CACHE_KEY_PROFILE] = result
                         
-                        # Log what we got for debugging
-                        documents = raw_profile.get('documents', [])
-                        logger.info(f"[{self.name}] Profile cached! Found {len(documents)} documents")
-                        
-                        if documents:
-                            first_doc = documents[0]
-                            metadata = first_doc.get('metadata', {})
-                            extracted = metadata.get('extracted_data', {})
-                            structured = extracted.get('structured_content', {})
-                            
-                            logger.info(f"[{self.name}] Cached data includes:")
-                            logger.info(f"   - content length: {len(first_doc.get('content', ''))}")
-                            logger.info(f"   - metadata keys: {list(metadata.keys())}")
-                            logger.info(f"   - structured_content keys: {list(structured.keys())}")
-                            logger.info(f"   - student_name: {structured.get('student_name', 'N/A')}")
+                        profile = result.get('profile', {})
+                        logger.info(f"[{self.name}] Profile cached! Student: {profile.get('name', 'N/A')}")
+                        logger.info(f"   - GPA: {profile.get('gpa_weighted', 'N/A')}")
+                        logger.info(f"   - Courses: {len(profile.get('courses', []))}")
                     else:
-                        logger.warning(f"[{self.name}] Failed to fetch profile: {raw_profile}")
+                        logger.warning(f"[{self.name}] Failed to fetch profile: {result.get('error')}")
                 except Exception as e:
                     logger.error(f"[{self.name}] Error fetching profile: {e}", exc_info=True)
         else:

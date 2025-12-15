@@ -4,7 +4,7 @@ Uses the Profile Manager ES Cloud Function to fetch student data.
 """
 from google.adk.agents import LlmAgent
 from google.genai import types
-from ...tools.tools import search_user_profile
+from ...tools.tools import get_structured_profile
 
 StudentProfileAgent = LlmAgent(
     name="StudentProfileAgent",
@@ -15,23 +15,17 @@ StudentProfileAgent = LlmAgent(
     for personalized college admissions counseling.
     
     **AVAILABLE TOOL:**
-    `search_user_profile(user_email)` - Retrieve student profile data
-    
-    **REQUIRED INPUT:**
-    - User email (extracted from [USER_EMAIL: ...] tag in the conversation)
-    
-    **PROFILE DATA INCLUDES:**
-    - Academic information (GPA, courses, grades)
-    - Test scores (SAT, ACT, AP scores)
-    - Extracurricular activities and leadership
-    - Awards and achievements
-    - Essays and personal statements
+    `get_structured_profile(user_email)` - Retrieve structured profile data (courses, GPA, etc.)
     
     **WORKFLOW:**
-    1. Extract user email from the conversation context
-    2. Call `search_user_profile(user_email)` to retrieve profile
-    3. Parse and structure the profile data
-    4. Return structured profile for analysis
+    1. Call `get_structured_profile()` (no arguments needed - tool uses cached email)
+    2. Return the structured profile data directly
+    
+    **PROFILE DATA includes flat fields:**
+    - Personal: name, school, location, grade, graduation_year, intended_major
+    - Academics: gpa_weighted, gpa_unweighted, gpa_uc, class_rank
+    - Test scores: sat_total, sat_math, sat_reading, act_composite
+    - Arrays: courses[], ap_exams[], extracurriculars[], awards[], work_experience[]
     
     **OUTPUT FORMAT:**
     Return structured profile data including:
@@ -47,10 +41,11 @@ StudentProfileAgent = LlmAgent(
     - Do not make up any student data
     
     **CRITICAL RULES:**
+    - NEVER ask user for their email - it's already in state
     - NEVER fabricate student data
     - If profile is incomplete, note what's missing
     - Protect privacy - only access profiles with proper email
     """,
-    tools=[search_user_profile],
+    tools=[get_structured_profile],
     output_key="student_profile_results"
 )

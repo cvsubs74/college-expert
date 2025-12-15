@@ -9,7 +9,8 @@ import FitVisualizer from './pages/FitVisualizer';
 import LandingPage from './pages/LandingPage';
 // ApproachSelector hidden - defaulting to Hybrid
 // import ApproachSelector from './pages/ApproachSelector';
-import CultureMatch from './pages/CultureMatch';
+// CultureMatch removed - Vibe Match feature disabled
+// import CultureMatch from './pages/CultureMatch';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import ApproachIndicator from './components/ApproachIndicator';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -34,21 +35,23 @@ function Navigation() {
   };
 
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-200">
+    <nav className="bg-white/90 backdrop-blur-sm shadow-sm border-b border-amber-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <AcademicCapIcon className="h-8 w-8 text-primary" />
-              <span className="ml-2 text-xl font-bold text-gray-900">College Counselor</span>
+              <div className="p-1.5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
+                <SparklesIcon className="h-6 w-6 text-white" />
+              </div>
+              <span className="ml-2 text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Nova</span>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div className="hidden sm:ml-8 sm:flex sm:space-x-6">
               <Link
                 to="/profile"
                 className={`${isActive('/profile')
-                  ? 'border-primary text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                  ? 'border-amber-500 text-gray-900'
+                  : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
+                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
               >
                 <DocumentTextIcon className="h-5 w-5 mr-2" />
                 Student Profile
@@ -56,9 +59,9 @@ function Navigation() {
               <Link
                 to="/chat"
                 className={`${isActive('/chat')
-                  ? 'border-primary text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                  ? 'border-amber-500 text-gray-900'
+                  : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
+                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
               >
                 <ChatBubbleLeftRightIcon className="h-5 w-5 mr-2" />
                 AI Counselor
@@ -66,29 +69,19 @@ function Navigation() {
               <Link
                 to="/universities"
                 className={`${isActive('/universities')
-                  ? 'border-primary text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                  ? 'border-amber-500 text-gray-900'
+                  : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
+                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
               >
                 <BuildingLibraryIcon className="h-5 w-5 mr-2" />
                 UniInsight
               </Link>
               <Link
-                to="/culture-match"
-                className={`${isActive('/culture-match')
-                  ? 'border-primary text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
-              >
-                <SparklesIcon className="h-5 w-5 mr-2" />
-                Vibe Match
-              </Link>
-              <Link
                 to="/launchpad"
                 className={`${isActive('/launchpad')
-                  ? 'border-primary text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                  ? 'border-amber-500 text-gray-900'
+                  : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
+                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
               >
                 <RocketLaunchIcon className="h-5 w-5 mr-2" />
                 My Launchpad
@@ -98,9 +91,9 @@ function Navigation() {
                 <Link
                   to="/knowledge-base"
                   className={`${isActive('/knowledge-base')
-                    ? 'border-primary text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                    ? 'border-amber-500 text-gray-900'
+                    : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
+                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
                 >
                   <BookOpenIcon className="h-5 w-5 mr-2" />
                   Knowledge Base
@@ -118,14 +111,14 @@ function Navigation() {
                     <img
                       src={currentUser.photoURL}
                       alt={currentUser.displayName}
-                      className="h-8 w-8 rounded-full"
+                      className="h-8 w-8 rounded-full ring-2 ring-amber-100"
                     />
                   )}
-                  <span className="text-sm text-gray-700">{currentUser.displayName}</span>
+                  <span className="text-sm text-gray-700 font-medium">{currentUser.displayName}</span>
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
+                  className="inline-flex items-center px-3 py-2 border border-gray-200 text-sm font-medium rounded-xl text-gray-700 hover:bg-amber-50 hover:border-amber-200 transition-colors"
                 >
                   <ArrowRightOnRectangleIcon className="h-5 w-5 mr-1" />
                   Sign Out
@@ -142,7 +135,7 @@ function Navigation() {
 // Layout component for protected routes
 function AppLayout() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-orange-50">
       <Navigation />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Outlet />
@@ -174,7 +167,6 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/chat" element={<Chat />} />
               <Route path="/universities" element={<UniversityExplorer />} />
-              <Route path="/culture-match" element={<CultureMatch />} />
               <Route path="/launchpad" element={<MyLaunchpad />} />
               <Route path="/fit-visualizer" element={<FitVisualizer />} />
               <Route path="/knowledge-base" element={<KnowledgeBase />} />

@@ -21,7 +21,12 @@ import {
     SparklesIcon,
     GlobeAltIcon,
     ArrowsUpDownIcon,
-    StarIcon
+    StarIcon,
+    CalendarIcon,
+    LightBulbIcon,
+    FlagIcon,
+    CheckCircleIcon,
+    ChartBarIcon
 } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
@@ -29,6 +34,12 @@ import remarkGfm from 'remark-gfm';
 import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import FitBreakdownPanel from '../components/FitBreakdownPanel';
+import FitAnalysisModal from '../components/FitAnalysisModal';
+import UniversityProfilePage from '../components/UniversityProfilePage';
+import {
+    TabOverview, TabAcademics, TabAdmissions,
+    TabFinancials, TabCampus, TabOutcomes
+} from '../components/UniversityDetailTabs';
 
 // API Configuration
 const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL ||
@@ -151,13 +162,13 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+        <div className="bg-white rounded-2xl shadow-lg shadow-amber-50 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="p-4 flex-grow">
                 <div className="flex justify-between items-start mb-3">
                     <div>
                         <h3
                             onClick={() => onSelect(uni)}
-                            className="text-lg font-bold text-gray-900 cursor-pointer hover:text-blue-600 line-clamp-2"
+                            className="text-lg font-bold text-gray-900 cursor-pointer hover:text-amber-600 line-clamp-2"
                             title={uni.name}
                         >
                             {uni.name}
@@ -193,7 +204,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div className="bg-gray-50 p-2 rounded">
+                    <div className="bg-amber-50 p-2 rounded-xl">
                         <div className="text-gray-500 text-xs">Acceptance</div>
                         <div className="font-semibold text-gray-900">
                             {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}%` : 'N/A'}
@@ -211,7 +222,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                             {uni.rankings.usNews !== 'N/A' ? `#${uni.rankings.usNews}` : 'N/A'}
                         </div>
                     </div>
-                    <div className="bg-gray-50 p-2 rounded">
+                    <div className="bg-amber-50 p-2 rounded-xl">
                         <div className="text-gray-500 text-xs">Median Earnings</div>
                         <div className="font-semibold text-gray-900">
                             {uni.outcomes.medianEarnings !== 'N/A' ? `$${formatNumber(uni.outcomes.medianEarnings)}` : 'N/A'}
@@ -230,9 +241,9 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                     </button>
                     <button
                         onClick={() => onCompare(uni)}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-colors ${isSelectedForCompare
-                            ? 'bg-blue-600 text-white hover:bg-blue-700'
-                            : 'bg-blue-50 text-blue-700 hover:bg-blue-100'
+                        className={`flex-1 py-2 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-colors ${isSelectedForCompare
+                            ? 'bg-amber-500 text-white hover:bg-amber-600'
+                            : 'bg-amber-50 text-amber-700 hover:bg-amber-100'
                             }`}
                     >
                         {isSelectedForCompare ? 'Added' : 'Compare'}
@@ -261,6 +272,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                             {sentiment.sentiment === 'positive' ? '📈' : '⚠️'}
                         </button>
                     )}
+                    {/* Fit Analysis Button - Removed, now shown in details page */}
                 </div>
             </div>
         </div>
@@ -281,7 +293,7 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis }) => {
     const matchPercentage = fit.match_percentage;
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+        <div className="bg-white rounded-2xl shadow-lg shadow-amber-50 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="p-5 flex-grow">
                 <div className="flex justify-between items-start mb-3">
                     <div className="flex-1 min-w-0">
@@ -331,7 +343,7 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis }) => {
                 <div className="flex gap-2">
                     <button
                         onClick={() => onViewDetails && onViewDetails(college)}
-                        className="flex-1 bg-blue-600 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-blue-700 flex items-center justify-center gap-1"
+                        className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2.5 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200"
                     >
                         View Details
                         <ChevronRightIcon className="h-4 w-4" />
@@ -467,328 +479,102 @@ const ComparisonView = ({ universities, onRemove }) => {
 
 // --- University Detail Component ---
 const UniversityDetail = ({ uni, onBack, sentiment, fitAnalysis }) => {
+    const [activeTab, setActiveTab] = useState('overview');
+    const [isFitModalOpen, setIsFitModalOpen] = useState(false);
+
     if (!uni) return null;
 
-    const formatNumber = (num) => {
-        if (num === 'N/A' || num === null || num === undefined) return 'N/A';
-        return typeof num === 'number' ? num.toLocaleString() : num;
-    };
-
-    const fitColors = {
-        SAFETY: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-800', badge: 'bg-green-100' },
-        TARGET: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-800', badge: 'bg-blue-100' },
-        REACH: { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-800', badge: 'bg-orange-100' },
-        SUPER_REACH: { bg: 'bg-red-50', border: 'border-red-200', text: 'text-red-800', badge: 'bg-red-100' }
-    };
+    const tabs = [
+        { id: 'overview', label: 'Overview', icon: SparklesIcon },
+        { id: 'academics', label: 'Academics', icon: AcademicCapIcon },
+        { id: 'admissions', label: 'Admissions', icon: CheckCircleIcon },
+        { id: 'financials', label: 'Cost & Aid', icon: CurrencyDollarIcon },
+        { id: 'campus', label: 'Campus Life', icon: MapPinIcon },
+        { id: 'outcomes', label: 'Outcomes', icon: ChartBarIcon },
+    ];
 
     return (
-        <div className="bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden flex flex-col min-h-screen">
+            <FitAnalysisModal
+                isOpen={isFitModalOpen}
+                onClose={() => setIsFitModalOpen(false)}
+                fitAnalysis={fitAnalysis}
+                uniName={uni.name}
+            />
+
             {/* Header */}
             <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-8 text-white relative">
                 <button
                     onClick={onBack}
-                    className="absolute top-6 left-6 p-2 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur-sm transition-colors"
+                    className="absolute top-6 left-6 p-2 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur-sm transition-colors text-white"
                 >
                     <ArrowLeftIcon className="h-5 w-5" />
                 </button>
-                <div className="mt-8">
-                    <div className="flex flex-wrap gap-2 mb-3">
-                        <Badge color="white">{uni.location.type}</Badge>
-                        <span className="bg-blue-800/50 px-2 py-1 rounded-full text-xs flex items-center gap-1">
-                            <MapPinIcon className="h-3 w-3" /> {uni.location.city}, {uni.location.state}
-                        </span>
-                    </div>
-                    <h1 className="text-3xl md:text-4xl font-bold mb-2">{uni.name}</h1>
-                    {uni.market_position && (
+                <div className="mt-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                    <div>
+                        <div className="flex flex-wrap gap-2 mb-3">
+                            <span className="px-2 py-1 rounded-full text-xs font-semibold bg-white/20 text-white backdrop-blur-sm">{uni.location.type}</span>
+                            <span className="bg-blue-800/50 px-2 py-1 rounded-full text-xs flex items-center gap-1 text-white">
+                                <MapPinIcon className="h-3 w-3" /> {uni.location.city}, {uni.location.state}
+                            </span>
+                        </div>
+                        <h1 className="text-3xl md:text-5xl font-bold mb-2">{uni.name}</h1>
                         <p className="text-blue-100 text-lg font-medium">{uni.market_position}</p>
+                    </div>
+
+                    {/* Primary Action */}
+                    {fitAnalysis ? (
+                        <button
+                            onClick={() => setIsFitModalOpen(true)}
+                            className="bg-white text-blue-900 px-6 py-3 rounded-lg font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2 animate-pulse-slow"
+                        >
+                            <SparklesIcon className="h-5 w-5 text-yellow-500" />
+                            View Fit Analysis
+                        </button>
+                    ) : (
+                        <div className="hidden md:block">
+                            {/* Placeholder if needed */}
+                        </div>
                     )}
                 </div>
             </div>
 
-            {/* Sentiment Banner */}
-            {sentiment && sentiment.sentiment !== 'neutral' && (
-                <div className={`p-6 ${sentiment.sentiment === 'positive'
-                    ? 'bg-green-50 border-b-4 border-green-500'
-                    : 'bg-red-50 border-b-4 border-red-500'
-                    }`}>
-                    <div className="flex items-center gap-2 mb-3">
-                        <span className="text-2xl">{sentiment.sentiment === 'positive' ? '📈' : '⚠️'}</span>
-                        <h3 className={`text-lg font-bold ${sentiment.sentiment === 'positive' ? 'text-green-900' : 'text-red-900'
-                            }`}>
-                            {sentiment.sentiment === 'positive' ? 'Recent Positive News' : 'Recent Alert'}
-                        </h3>
-                    </div>
-                    <p className={`text-sm mb-4 ${sentiment.sentiment === 'positive' ? 'text-green-800' : 'text-red-800'
-                        }`}>
-                        {sentiment.headline}
-                    </p>
-                    <details className="text-sm">
-                        <summary className={`cursor-pointer font-medium ${sentiment.sentiment === 'positive' ? 'text-green-700 hover:text-green-900' : 'text-red-700 hover:text-red-900'
-                            }`}>
-                            ▸ View Full Details
-                        </summary>
-                        <div className={`mt-4 p-4 rounded-lg prose prose-sm max-w-none ${sentiment.sentiment === 'positive' ? 'bg-white text-gray-700' : 'bg-white text-gray-700'
-                            }`}>
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                {sentiment.fullText}
-                            </ReactMarkdown>
-                        </div>
-                    </details>
-                </div>
-            )}
+            {/* Tabs Navigation */}
+            <div className="border-b border-gray-200 px-6 sticky top-0 bg-white z-20 overflow-x-auto">
+                <nav className="flex space-x-8" aria-label="Tabs">
+                    {tabs.map((tab) => {
+                        const Icon = tab.icon;
+                        const isActive = activeTab === tab.id;
+                        return (
+                            <button
+                                key={tab.id}
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`
+                                    group inline-flex items-center gap-2 py-4 border-b-2 font-medium text-sm whitespace-nowrap transition-all outline-none
+                                    ${isActive
+                                        ? 'border-blue-500 text-blue-600'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                    }
+                                `}
+                            >
+                                <Icon className={`h-5 w-5 ${isActive ? 'text-blue-500' : 'text-gray-400 group-hover:text-gray-500'}`} />
+                                {tab.label}
+                            </button>
+                        );
+                    })}
+                </nav>
+            </div>
 
-            {/* Fit Analysis Section */}
-            {fitAnalysis && (
-                <div className={`p-6 ${fitColors[fitAnalysis.fit_category]?.bg || 'bg-blue-50'} border-b border-gray-200`}>
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                            <span className="text-2xl">✨</span>
-                            <h3 className="text-xl font-bold text-gray-900">Your Fit Analysis</h3>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            {fitAnalysis.match_percentage && (
-                                <span className="text-2xl font-bold text-gray-800">{fitAnalysis.match_percentage}% Match</span>
-                            )}
-                            <span className={`px-3 py-1.5 rounded-full text-sm font-bold border ${fitColors[fitAnalysis.fit_category]?.badge || 'bg-blue-100'} ${fitColors[fitAnalysis.fit_category]?.text || 'text-blue-800'}`}>
-                                {fitAnalysis.fit_category === 'SUPER_REACH' ? '🎯 Super Reach' :
-                                    fitAnalysis.fit_category === 'REACH' ? '🎯 Reach' :
-                                        fitAnalysis.fit_category === 'TARGET' ? '🎯 Target' :
-                                            '✅ Safety'}
-                            </span>
-                        </div>
-                    </div>
+            {/* Content Area */}
+            <div className="p-6 md:p-8 bg-gray-50 flex-grow min-h-[500px]">
+                {activeTab === 'overview' && <TabOverview uni={uni} sentiment={sentiment} />}
+                {activeTab === 'academics' && <TabAcademics uni={uni} />}
+                {activeTab === 'admissions' && <TabAdmissions uni={uni} />}
+                {activeTab === 'financials' && <TabFinancials uni={uni} />}
+                {activeTab === 'campus' && <TabCampus uni={uni} />}
+                {activeTab === 'outcomes' && <TabOutcomes uni={uni} />}
 
-                    {/* Explanation */}
-                    {fitAnalysis.explanation && (
-                        <div className="bg-white rounded-lg p-4 mb-4 border border-gray-200">
-                            <div className="prose prose-sm max-w-none text-gray-700">
-                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                    {fitAnalysis.explanation}
-                                </ReactMarkdown>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Factors */}
-                    {fitAnalysis.factors && fitAnalysis.factors.length > 0 && (
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                            {fitAnalysis.factors.filter(f => f.max > 0).map((factor, idx) => (
-                                <div key={idx} className="bg-white rounded-lg p-3 border border-gray-200">
-                                    <div className="text-xs text-gray-500 mb-1">{factor.name}</div>
-                                    <div className="flex items-center gap-2">
-                                        <div className="flex-1 bg-gray-200 rounded-full h-2">
-                                            <div
-                                                className="bg-blue-600 h-2 rounded-full transition-all"
-                                                style={{ width: `${(factor.score / factor.max) * 100}%` }}
-                                            ></div>
-                                        </div>
-                                        <span className="text-sm font-semibold text-gray-700">{factor.score}/{factor.max}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-
-                    {/* Recommendations */}
-                    {fitAnalysis.recommendations && fitAnalysis.recommendations.length > 0 && (
-                        <div className="mt-4 bg-white rounded-lg p-4 border border-gray-200">
-                            <h4 className="font-semibold text-gray-800 mb-2">💡 Recommendations</h4>
-                            <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                {fitAnalysis.recommendations.map((rec, idx) => (
-                                    <li key={idx}>{typeof rec === 'object' ? rec.action : rec}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                </div>
-            )}
-
-            <div className="p-6 md:p-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Main Info Column */}
-                    <div className="md:col-span-2 space-y-8">
-
-                        {/* Stats Grid */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                            <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
-                                <div className="text-blue-600 mb-1"><TrophyIcon className="h-5 w-5" /></div>
-                                <div className="text-2xl font-bold text-gray-900">
-                                    {uni.rankings.usNews !== 'N/A' ? `#${uni.rankings.usNews}` : 'N/A'}
-                                </div>
-                                <div className="text-xs text-gray-500 uppercase tracking-wide">US News Rank</div>
-                            </div>
-                            <div className="p-4 bg-green-50 rounded-xl border border-green-100">
-                                <div className="text-green-600 mb-1"><UsersIcon className="h-5 w-5" /></div>
-                                <div className="text-2xl font-bold text-gray-900">
-                                    {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}%` : 'N/A'}
-                                </div>
-                                <div className="text-xs text-gray-500 uppercase tracking-wide">Acceptance</div>
-                            </div>
-                            <div className="p-4 bg-purple-50 rounded-xl border border-purple-100">
-                                <div className="text-purple-600 mb-1"><BookOpenIcon className="h-5 w-5" /></div>
-                                <div className="text-2xl font-bold text-gray-900">{uni.admissions.gpa}</div>
-                                <div className="text-xs text-gray-500 uppercase tracking-wide">Avg GPA</div>
-                            </div>
-                            <div className="p-4 bg-orange-50 rounded-xl border border-orange-100">
-                                <div className="text-orange-600 mb-1"><ArrowTrendingUpIcon className="h-5 w-5" /></div>
-                                <div className="text-2xl font-bold text-gray-900">
-                                    {uni.outcomes.medianEarnings !== 'N/A'
-                                        ? `$${Math.round(uni.outcomes.medianEarnings / 1000)}k`
-                                        : 'N/A'}
-                                </div>
-                                <div className="text-xs text-gray-500 uppercase tracking-wide">Median Pay</div>
-                            </div>
-                        </div>
-
-                        {/* Admissions Section */}
-                        <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                <AcademicCapIcon className="h-5 w-5 text-blue-600" /> Admissions Profile
-                            </h2>
-                            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <div>
-                                        <h3 className="text-sm font-semibold text-gray-700 mb-2">Test Policy</h3>
-                                        <p className="text-gray-600">{uni.admissions.testPolicy}</p>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-sm font-semibold text-gray-700 mb-2">Selectivity</h3>
-                                        {uni.admissions.acceptanceRate !== 'N/A' && (
-                                            <>
-                                                <div className="w-full bg-gray-200 rounded-full h-2.5 mb-1">
-                                                    <div
-                                                        className="bg-blue-600 h-2.5 rounded-full"
-                                                        style={{ width: `${100 - uni.admissions.acceptanceRate}%` }}
-                                                    ></div>
-                                                </div>
-                                                <p className="text-xs text-gray-500">
-                                                    {uni.admissions.acceptanceRate < 15
-                                                        ? "Extremely Selective"
-                                                        : uni.admissions.acceptanceRate < 30
-                                                            ? "Very Selective"
-                                                            : "Selective"}
-                                                </p>
-                                            </>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* Popular Majors */}
-                        <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                <BuildingLibraryIcon className="h-5 w-5 text-blue-600" /> Popular Majors
-                            </h2>
-                            <div className="flex flex-wrap gap-2">
-                                {uni.majors.map((major, idx) => {
-                                    const colors = [
-                                        'bg-blue-100 text-blue-800 border-blue-300',
-                                        'bg-green-100 text-green-800 border-green-300',
-                                        'bg-purple-100 text-purple-800 border-purple-300',
-                                        'bg-amber-100 text-amber-800 border-amber-300',
-                                        'bg-pink-100 text-pink-800 border-pink-300',
-                                        'bg-indigo-100 text-indigo-800 border-indigo-300'
-                                    ];
-                                    const colorClass = colors[idx % colors.length];
-                                    return (
-                                        <span
-                                            key={idx}
-                                            className={`border px-4 py-2 rounded-lg shadow-sm hover:shadow transition-all font-medium ${colorClass}`}
-                                        >
-                                            {major}
-                                        </span>
-                                    );
-                                })}
-                            </div>
-                        </section>
-                    </div>
-
-                    {/* Sidebar */}
-                    <div className="space-y-6">
-
-                        {/* Financials Widget */}
-                        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-                            <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                <CurrencyDollarIcon className="h-5 w-5 text-green-600" /> Costs & Aid
-                            </h2>
-                            <div className="space-y-4">
-                                <div>
-                                    <div className="flex justify-between text-sm mb-1">
-                                        <span className="text-gray-600">In-State Tuition</span>
-                                        <span className="font-semibold">
-                                            {uni.financials.inStateTuition !== 'N/A' ? `$${formatNumber(uni.financials.inStateTuition)}` : 'N/A'}
-                                        </span>
-                                    </div>
-                                    <div className="flex justify-between text-sm mb-1">
-                                        <span className="text-gray-600">Out-of-State</span>
-                                        <span className="font-semibold">
-                                            {uni.financials.outStateTuition !== 'N/A' ? `$${formatNumber(uni.financials.outStateTuition)}` : 'N/A'}
-                                        </span>
-                                    </div>
-                                    <div className="pt-3 mt-3 border-t border-gray-100 space-y-2">
-                                        <div className="flex justify-between text-sm">
-                                            <span className="text-gray-600">COA (In-State)</span>
-                                            <span className="font-semibold text-blue-700">
-                                                {uni.financials.inStateCOA !== 'N/A' ? `$${formatNumber(uni.financials.inStateCOA)}` : 'N/A'}
-                                            </span>
-                                        </div>
-                                        <div className="flex justify-between text-sm">
-                                            <span className="text-gray-600">COA (Out-of-State)</span>
-                                            <span className="font-semibold text-blue-700">
-                                                {uni.financials.outStateCOA !== 'N/A' ? `$${formatNumber(uni.financials.outStateCOA)}` : 'N/A'}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Outcomes Widget */}
-                        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-sm p-6 text-white">
-                            <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                                <BriefcaseIcon className="h-5 w-5 text-blue-400" /> Career Outcomes
-                            </h2>
-                            <div className="mb-6">
-                                <div className="text-3xl font-bold text-green-400 mb-1">
-                                    {uni.outcomes.medianEarnings !== 'N/A'
-                                        ? `$${formatNumber(uni.outcomes.medianEarnings)}`
-                                        : 'N/A'}
-                                </div>
-                                <div className="text-sm text-gray-400">Median 10yr Earnings</div>
-                            </div>
-                            {uni.outcomes.topEmployers && uni.outcomes.topEmployers.length > 0 && (
-                                <div>
-                                    <h3 className="text-xs font-semibold uppercase text-gray-500 mb-3 tracking-wider">Top Employers</h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {uni.outcomes.topEmployers.slice(0, 5).map((emp, i) => (
-                                            <span key={i} className="bg-gray-700/50 text-gray-200 text-xs px-2 py-1 rounded">
-                                                {emp}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
-                    </div>
-                </div>
-
-                {/* University Overview Section */}
-                {uni.summary && (
-                    <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                            <SparklesIcon className="h-5 w-5 text-purple-600" />
-                            University Overview
-                        </h2>
-                        <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                {uni.summary.replace(/^#{1,3}\s*University Overview\s*\n*/i, '')}
-                            </ReactMarkdown>
-                        </div>
-                    </div>
-                )}
-
+                <div className="h-12"></div>
             </div>
         </div>
     );
@@ -947,7 +733,18 @@ const UniversityExplorer = () => {
                             university_name: fit.university_name,
                             explanation: fit.explanation,
                             factors: fit.factors,
-                            recommendations: fit.recommendations,
+                            // Core recommendations
+                            recommendations: typeof fit.recommendations === 'string' ? JSON.parse(fit.recommendations) : (fit.recommendations || []),
+                            gap_analysis: typeof fit.gap_analysis === 'string' ? JSON.parse(fit.gap_analysis) : (fit.gap_analysis || {}),
+                            // Rich new fields
+                            essay_angles: typeof fit.essay_angles === 'string' ? JSON.parse(fit.essay_angles) : (fit.essay_angles || []),
+                            application_timeline: typeof fit.application_timeline === 'string' ? JSON.parse(fit.application_timeline) : (fit.application_timeline || {}),
+                            scholarship_matches: typeof fit.scholarship_matches === 'string' ? JSON.parse(fit.scholarship_matches) : (fit.scholarship_matches || []),
+                            test_strategy: typeof fit.test_strategy === 'string' ? JSON.parse(fit.test_strategy) : (fit.test_strategy || {}),
+                            major_strategy: typeof fit.major_strategy === 'string' ? JSON.parse(fit.major_strategy) : (fit.major_strategy || {}),
+                            demonstrated_interest_tips: typeof fit.demonstrated_interest_tips === 'string' ? JSON.parse(fit.demonstrated_interest_tips) : (fit.demonstrated_interest_tips || []),
+                            red_flags_to_avoid: typeof fit.red_flags_to_avoid === 'string' ? JSON.parse(fit.red_flags_to_avoid) : (fit.red_flags_to_avoid || []),
+                            // Metadata
                             us_news_rank: fit.us_news_rank,
                             location: fit.location,
                             acceptance_rate: fit.acceptance_rate,
@@ -1476,541 +1273,555 @@ const UniversityExplorer = () => {
     return (
         <div className="space-y-6">
 
-
-            {/* Header */}
-            <div className="flex items-center justify-between">
-                <div>
-                    <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                        <BuildingLibraryIcon className="h-7 w-7 text-blue-600" />
-                        UniInsight
-                    </h1>
-                    <p className="text-gray-500 mt-1">
-                        Explore and compare top universities
-                    </p>
-                </div>
-
-            </div>
-
-            {/* Error State */}
-            {error && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center gap-3">
-                    <ExclamationTriangleIcon className="h-5 w-5 text-red-500" />
-                    <span className="text-red-700">{error}</span>
-                    <button
-                        onClick={handleRefresh}
-                        className="ml-auto text-red-600 hover:text-red-800 font-medium"
-                    >
-                        Retry
-                    </button>
-                </div>
+            {/* Full-Page University Profile View */}
+            {activeView === 'detail' && selectedUni && (
+                <UniversityProfilePage
+                    university={selectedUni}
+                    fitAnalysis={getCollegeFitAnalysis(selectedUni.id)}
+                    onBack={handleBack}
+                />
             )}
 
-            {/* Loading State */}
-            {loading && <LoadingSkeleton />}
-
-            {/* Tab Navigation */}
-            {!loading && !error && (
-                <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-1 flex gap-2">
-                    <button
-                        onClick={() => setActiveView('list')}
-                        className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'list'
-                            ? 'bg-blue-600 text-white shadow-sm'
-                            : 'text-gray-600 hover:bg-gray-100'
-                            }`}
-                    >
-                        <BuildingLibraryIcon className="h-5 w-5" />
-                        Browse All
-                    </button>
-                    <button
-                        onClick={() => setActiveView('favorites')}
-                        className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'favorites'
-                            ? 'bg-blue-600 text-white shadow-sm'
-                            : 'text-gray-600 hover:bg-gray-100'
-                            }`}
-                    >
-                        {activeView === 'favorites' ? (
-                            <StarIconSolid className="h-5 w-5" />
-                        ) : (
-                            <StarIcon className="h-5 w-5" />
-                        )}
-                        My Favorites
-                        {myCollegeList.length > 0 && (
-                            <span className={`ml-1 px-2 py-0.5 rounded-full text-xs font-semibold ${activeView === 'favorites'
-                                ? 'bg-white/20 text-white'
-                                : 'bg-blue-100 text-blue-700'
-                                }`}>
-                                {myCollegeList.length}
-                            </span>
-                        )}
-                    </button>
-                </div>
-            )}
-
-            {/* Main Content */}
-            {!loading && !error && (
-                <>
-                    {activeView === 'list' && (
-                        <div className="space-y-6">
-                            {/* Filters */}
-                            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                                <div className="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center mb-6">
-                                    <div>
-                                        <h2 className="text-lg font-semibold text-gray-900">Find Your Perfect University</h2>
-                                        <p className="text-gray-500 text-sm">Compare admission stats, costs, and outcomes</p>
-                                    </div>
-
-                                    {/* Search Bar */}
-                                    <div className="relative w-full md:w-80">
-                                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                            <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-                                        </div>
-                                        <input
-                                            type="text"
-                                            className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
-                                            placeholder="Search by name..."
-                                            value={searchTerm}
-                                            onChange={(e) => setSearchTerm(e.target.value)}
-                                        />
-                                    </div>
+            {/* Main List/Favorites View */}
+            {activeView !== 'detail' && (
+                <>            {/* Header */}
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                                <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
+                                    <BuildingLibraryIcon className="h-6 w-6 text-white" />
                                 </div>
-
-                                {/* Filter Controls */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
-                                    <div className="space-y-1">
-                                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Type</label>
-                                        <select
-                                            value={selectedType}
-                                            onChange={(e) => setSelectedType(e.target.value)}
-                                            className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
-                                        >
-                                            <option value="All">All Types</option>
-                                            <option value="Public">Public</option>
-                                            <option value="Private">Private</option>
-                                        </select>
-                                    </div>
-
-                                    <div className="space-y-1">
-                                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Location</label>
-                                        <select
-                                            value={selectedState}
-                                            onChange={(e) => setSelectedState(e.target.value)}
-                                            className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
-                                        >
-                                            <option value="All">All States</option>
-                                            {uniqueStates.map(state => (
-                                                <option key={state} value={state}>{state}</option>
-                                            ))}
-                                        </select>
-                                    </div>
-
-                                    <div className="space-y-1">
-                                        <div className="flex justify-between">
-                                            <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-                                                Max Acceptance Rate
-                                            </label>
-                                            <span className="text-xs font-bold text-blue-600">{maxAcceptance}%</span>
-                                        </div>
-                                        <input
-                                            type="range"
-                                            min="0"
-                                            max="100"
-                                            value={maxAcceptance}
-                                            onChange={(e) => setMaxAcceptance(Number(e.target.value))}
-                                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-2"
-                                        />
-                                    </div>
-
-                                    <div className="space-y-1">
-                                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Fit Category</label>
-                                        <select
-                                            value={selectedFitCategory}
-                                            onChange={(e) => setSelectedFitCategory(e.target.value)}
-                                            className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
-                                        >
-                                            <option value="All">All Fit Categories</option>
-                                            <option value="SAFETY">🛡️ Safety</option>
-                                            <option value="TARGET">🎯 Target</option>
-                                            <option value="REACH">🔼 Reach</option>
-                                            <option value="SUPER_REACH">🚀 Super Reach</option>
-                                        </select>
-                                    </div>
-
-                                    <div className="space-y-1">
-                                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Sort By</label>
-                                        <select
-                                            value={sortBy}
-                                            onChange={(e) => setSortBy(e.target.value)}
-                                            className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
-                                        >
-                                            <option value="usNews">US News Rank</option>
-                                            <option value="acceptance">Acceptance Rate</option>
-                                            <option value="tuition">Tuition (Low to High)</option>
-                                            <option value="name">Name (A-Z)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Comparison Section */}
-                            {comparisonList.length > 0 && (
-                                <ComparisonView
-                                    universities={comparisonList}
-                                    onRemove={handleCompareToggle}
-                                />
-                            )}
-
-                            {/* Grid Results with Carousel */}
-                            <div className="relative">
-                                {/* Carousel Navigation */}
-                                {totalPages > 1 && (
-                                    <div className="flex items-center justify-between mb-4">
-                                        <p className="text-sm text-gray-600">
-                                            Showing {currentPage * CARDS_PER_PAGE + 1}-{Math.min((currentPage + 1) * CARDS_PER_PAGE, sortedUniversities.length)} of {sortedUniversities.length} universities
-                                        </p>
-                                        <div className="flex items-center gap-2">
-                                            <button
-                                                onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
-                                                disabled={currentPage === 0}
-                                                className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
-                                            >
-                                                <ChevronLeftIcon className="h-5 w-5" />
-                                            </button>
-                                            <span className="text-sm font-medium text-gray-700 min-w-[80px] text-center">
-                                                Page {currentPage + 1} of {totalPages}
-                                            </span>
-                                            <button
-                                                onClick={() => setCurrentPage(p => Math.min(totalPages - 1, p + 1))}
-                                                disabled={currentPage >= totalPages - 1}
-                                                className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
-                                            >
-                                                <ChevronRightIcon className="h-5 w-5" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                )}
-
-                                {/* Cards Grid */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {paginatedUniversities.length > 0 ? (
-                                        paginatedUniversities.map(uni => (
-                                            <UniversityCard
-                                                key={uni.id}
-                                                uni={uni}
-                                                onSelect={handleSelectUni}
-                                                onCompare={handleCompareToggle}
-                                                isSelectedForCompare={comparisonList.some(u => u.id === uni.id)}
-                                                sentiment={sentimentData[uni.id]}
-                                                onSentimentClick={(sent) => {
-                                                    setSelectedSentiment(sent);
-                                                    setShowSentimentModal(true);
-                                                }}
-                                                isInList={isInCollegeList(uni.id)}
-                                                onToggleList={handleToggleCollegeList}
-                                                fitAnalysis={getCollegeFitAnalysis(uni.id)}
-                                                onAnalyzeFit={handleAnalyzeFit}
-                                                isAnalyzing={analyzingFit === uni.id}
-                                                onShowFitDetails={(fit) => {
-                                                    setSelectedFitData(fit);
-                                                    setShowFitModal(true);
-                                                }}
-                                            />
-                                        ))
-                                    ) : (
-                                        <div className="col-span-full py-12 text-center text-gray-500 bg-white rounded-xl border border-dashed border-gray-300">
-                                            <FunnelIcon className="h-12 w-12 mx-auto mb-4 text-gray-300" />
-                                            <p className="text-lg font-medium">No universities found matching your criteria.</p>
-                                            <button
-                                                onClick={() => {
-                                                    setSearchTerm("");
-                                                    setSelectedType("All");
-                                                    setSelectedState("All");
-                                                    setMaxAcceptance(100);
-                                                }}
-                                                className="mt-4 text-blue-600 font-medium hover:underline"
-                                            >
-                                                Clear all filters
-                                            </button>
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Bottom Carousel Navigation */}
-                                {totalPages > 1 && paginatedUniversities.length > 0 && (
-                                    <div className="flex justify-center mt-6">
-                                        <div className="flex items-center gap-1">
-                                            {Array.from({ length: totalPages }, (_, i) => (
-                                                <button
-                                                    key={i}
-                                                    onClick={() => setCurrentPage(i)}
-                                                    className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentPage
-                                                        ? 'bg-blue-600 w-6'
-                                                        : 'bg-gray-300 hover:bg-gray-400'
-                                                        }`}
-                                                />
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                                UniInsight
+                            </h1>
+                            <p className="text-gray-500 mt-1">
+                                Explore and compare top universities
+                            </p>
                         </div>
-                    )}
 
-                    {activeView === 'favorites' && (
-                        <div className="space-y-6">
-                            {/* Favorites Header */}
-                            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                                            <StarIconSolid className="h-6 w-6 text-yellow-500" />
-                                            My Favorites
-                                        </h2>
-                                        <p className="text-gray-500 text-sm mt-1">
-                                            {myCollegeList.length === 0
-                                                ? "You haven't added any universities yet"
-                                                : `${myCollegeList.length} ${myCollegeList.length === 1 ? 'university' : 'universities'} saved`}
-                                        </p>
-                                    </div>
-                                    {myCollegeList.length > 0 && (
-                                        <button
-                                            onClick={() => setActiveView('list')}
-                                            className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 flex items-center gap-2"
-                                        >
-                                            <BuildingLibraryIcon className="h-4 w-4" />
-                                            Browse More
-                                        </button>
-                                    )}
-                                </div>
-                            </div>
-
-                            {/* Empty State */}
-                            {myCollegeList.length === 0 && (
-                                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-12 text-center border border-blue-100">
-                                    <div className="max-w-md mx-auto">
-                                        <StarIcon className="h-16 w-16 text-blue-300 mx-auto mb-4" />
-                                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                                            Your favorites list is empty
-                                        </h3>
-                                        <p className="text-gray-600 mb-6">
-                                            Browse universities and click the <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-gray-200 text-gray-700 font-bold text-sm mx-1">+</span> button to add them to your favorites.
-                                        </p>
-                                        <button
-                                            onClick={() => setActiveView('list')}
-                                            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
-                                        >
-                                            <BuildingLibraryIcon className="h-5 w-5" />
-                                            Browse Universities
-                                        </button>
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Favorites Grid */}
-                            {myCollegeList.length > 0 && (
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {myCollegeList.map((college) => (
-                                        <FavoriteCard
-                                            key={college.university_id}
-                                            college={college}
-                                            onRemove={(c) => handleToggleCollegeList({
-                                                id: c.university_id,
-                                                name: c.university_name
-                                            })}
-                                            onViewDetails={(c) => {
-                                                // Try to find the full university data, or create minimal version
-                                                const fullUni = universities.find(u => u.id === c.university_id) || {
-                                                    id: c.university_id,
-                                                    name: c.university_name,
-                                                    location: { city: 'N/A', state: 'N/A', type: 'N/A' },
-                                                    summary: 'Loading full details...',
-                                                    rankings: { usNews: 'N/A' },
-                                                    admissions: { acceptanceRate: 'N/A' },
-                                                    financials: {},
-                                                    outcomes: {},
-                                                    majors: []
-                                                };
-                                                setSelectedUni(fullUni);
-                                                setActiveView('detail');
-                                            }}
-                                            fitAnalysis={getCollegeFitAnalysis(college.university_id)}
-                                        />
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    )}
-
-                    {activeView === 'detail' && selectedUni && (
-                        <UniversityDetail
-                            uni={selectedUni}
-                            onBack={handleBack}
-                            sentiment={sentimentData[selectedUni.id]}
-                            deepResearchData={deepResearchData}
-                            setDeepResearchData={setDeepResearchData}
-                            fitAnalysis={getCollegeFitAnalysis(selectedUni.id)}
-                        />
-                    )}
-                </>
-            )
-            }
-
-            {/* Sentiment Modal */}
-            {
-                showSentimentModal && selectedSentiment && (
-                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-                        onClick={() => setShowSentimentModal(false)}>
-                        <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedSentiment.sentiment === 'positive' ? 'border-green-500' : 'border-red-500'
-                            }`}
-                            onClick={(e) => e.stopPropagation()}>
-                            <div className={`p-6 ${selectedSentiment.sentiment === 'positive' ? 'bg-green-50' : 'bg-red-50'
-                                }`}>
-                                <div className="flex items-start justify-between">
-                                    <div className="flex items-center gap-3">
-                                        <span className="text-3xl">
-                                            {selectedSentiment.sentiment === 'positive' ? '📈' : '⚠️'}
-                                        </span>
-                                        <div>
-                                            <h3 className={`text-xl font-bold ${selectedSentiment.sentiment === 'positive' ? 'text-green-900' : 'text-red-900'
-                                                }`}>
-                                                {selectedSentiment.sentiment === 'positive' ? 'Positive News' : 'Important Alert'}
-                                            </h3>
-                                            <p className={`text-sm mt-1 ${selectedSentiment.sentiment === 'positive' ? 'text-green-700' : 'text-red-700'
-                                                }`}>
-                                                {selectedSentiment.headline}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <button
-                                        onClick={() => setShowSentimentModal(false)}
-                                        className="text-gray-400 hover:text-gray-600"
-                                    >
-                                        <XMarkIcon className="h-6 w-6" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="p-6 prose prose-sm max-w-none">
-                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                    {selectedSentiment.fullText}
-                                </ReactMarkdown>
-                            </div>
-                        </div>
                     </div>
-                )
-            }
 
-            {/* Fit Analysis Modal */}
-            {
-                showFitModal && selectedFitData && (
-                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-                        onClick={() => setShowFitModal(false)}>
-                        <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedFitData.fit_category === 'SAFETY' ? 'border-green-500' :
-                            selectedFitData.fit_category === 'TARGET' ? 'border-blue-500' :
-                                selectedFitData.fit_category === 'REACH' ? 'border-orange-500' :
-                                    'border-red-500'
-                            }`}
-                            onClick={(e) => e.stopPropagation()}>
-                            <div className={`p-6 ${selectedFitData.fit_category === 'SAFETY' ? 'bg-green-50' :
-                                selectedFitData.fit_category === 'TARGET' ? 'bg-blue-50' :
-                                    selectedFitData.fit_category === 'REACH' ? 'bg-orange-50' :
-                                        'bg-red-50'
-                                }`}>
-                                <div className="flex items-start justify-between">
-                                    <div className="flex items-center gap-3">
-                                        <span className="text-3xl">
-                                            {selectedFitData.fit_category === 'SAFETY' ? '✅' :
-                                                selectedFitData.fit_category === 'TARGET' ? '🎯' :
-                                                    selectedFitData.fit_category === 'REACH' ? '🔼' : '🚀'}
-                                        </span>
-                                        <div>
-                                            <h3 className={`text-xl font-bold ${selectedFitData.fit_category === 'SAFETY' ? 'text-green-900' :
-                                                selectedFitData.fit_category === 'TARGET' ? 'text-blue-900' :
-                                                    selectedFitData.fit_category === 'REACH' ? 'text-orange-900' :
-                                                        'text-red-900'
-                                                }`}>
-                                                {selectedFitData.university_name} - {selectedFitData.fit_category.replace('_', ' ')}
-                                            </h3>
-                                            <p className="text-gray-600 text-sm mt-1">
-                                                {selectedFitData.match_percentage}% Match
-                                            </p>
+                    {/* Error State */}
+                    {error && (
+                        <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center gap-3">
+                            <ExclamationTriangleIcon className="h-5 w-5 text-red-500" />
+                            <span className="text-red-700">{error}</span>
+                            <button
+                                onClick={handleRefresh}
+                                className="ml-auto text-red-600 hover:text-red-800 font-medium"
+                            >
+                                Retry
+                            </button>
+                        </div>
+                    )}
+
+                    {/* Loading State */}
+                    {loading && <LoadingSkeleton />}
+
+                    {/* Tab Navigation */}
+                    {!loading && !error && (
+                        <div className="bg-white rounded-2xl shadow-lg shadow-amber-100 border border-gray-100 p-1.5 flex gap-2">
+                            <button
+                                onClick={() => setActiveView('list')}
+                                className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'list'
+                                    ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-200'
+                                    : 'text-gray-600 hover:bg-amber-50'
+                                    }`}
+                            >
+                                <BuildingLibraryIcon className="h-5 w-5" />
+                                Browse All
+                            </button>
+                            <button
+                                onClick={() => setActiveView('favorites')}
+                                className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'favorites'
+                                    ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-200'
+                                    : 'text-gray-600 hover:bg-amber-50'
+                                    }`}
+                            >
+                                {activeView === 'favorites' ? (
+                                    <StarIconSolid className="h-5 w-5" />
+                                ) : (
+                                    <StarIcon className="h-5 w-5" />
+                                )}
+                                My Favorites
+                                {myCollegeList.length > 0 && (
+                                    <span className={`ml-1 px-2 py-0.5 rounded-full text-xs font-semibold ${activeView === 'favorites'
+                                        ? 'bg-white/20 text-white'
+                                        : 'bg-amber-100 text-amber-700'
+                                        }`}>
+                                        {myCollegeList.length}
+                                    </span>
+                                )}
+                            </button>
+                        </div>
+                    )}
+
+                    {/* Main Content */}
+                    {!loading && !error && (
+                        <>
+                            {activeView === 'list' && (
+                                <div className="space-y-6">
+                                    {/* Filters */}
+                                    <div className="bg-white rounded-2xl p-6 shadow-lg shadow-amber-50 border border-gray-100">
+                                        <div className="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center mb-6">
+                                            <div>
+                                                <h2 className="text-lg font-semibold text-gray-900">Find Your Perfect University</h2>
+                                                <p className="text-gray-500 text-sm">Compare admission stats, costs, and outcomes</p>
+                                            </div>
+
+                                            {/* Search Bar */}
+                                            <div className="relative w-full md:w-80">
+                                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                                                </div>
+                                                <input
+                                                    type="text"
+                                                    className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-sm"
+                                                    placeholder="Search by name..."
+                                                    value={searchTerm}
+                                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Filter Controls */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+                                            <div className="space-y-1">
+                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Type</label>
+                                                <select
+                                                    value={selectedType}
+                                                    onChange={(e) => setSelectedType(e.target.value)}
+                                                    className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                                >
+                                                    <option value="All">All Types</option>
+                                                    <option value="Public">Public</option>
+                                                    <option value="Private">Private</option>
+                                                </select>
+                                            </div>
+
+                                            <div className="space-y-1">
+                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Location</label>
+                                                <select
+                                                    value={selectedState}
+                                                    onChange={(e) => setSelectedState(e.target.value)}
+                                                    className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                                >
+                                                    <option value="All">All States</option>
+                                                    {uniqueStates.map(state => (
+                                                        <option key={state} value={state}>{state}</option>
+                                                    ))}
+                                                </select>
+                                            </div>
+
+                                            <div className="space-y-1">
+                                                <div className="flex justify-between">
+                                                    <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                                                        Max Acceptance Rate
+                                                    </label>
+                                                    <span className="text-xs font-bold text-blue-600">{maxAcceptance}%</span>
+                                                </div>
+                                                <input
+                                                    type="range"
+                                                    min="0"
+                                                    max="100"
+                                                    value={maxAcceptance}
+                                                    onChange={(e) => setMaxAcceptance(Number(e.target.value))}
+                                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-2"
+                                                />
+                                            </div>
+
+                                            <div className="space-y-1">
+                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Fit Category</label>
+                                                <select
+                                                    value={selectedFitCategory}
+                                                    onChange={(e) => setSelectedFitCategory(e.target.value)}
+                                                    className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                                >
+                                                    <option value="All">All Fit Categories</option>
+                                                    <option value="SAFETY">🛡️ Safety</option>
+                                                    <option value="TARGET">🎯 Target</option>
+                                                    <option value="REACH">🔼 Reach</option>
+                                                    <option value="SUPER_REACH">🚀 Super Reach</option>
+                                                </select>
+                                            </div>
+
+                                            <div className="space-y-1">
+                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Sort By</label>
+                                                <select
+                                                    value={sortBy}
+                                                    onChange={(e) => setSortBy(e.target.value)}
+                                                    className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                                >
+                                                    <option value="usNews">US News Rank</option>
+                                                    <option value="acceptance">Acceptance Rate</option>
+                                                    <option value="tuition">Tuition (Low to High)</option>
+                                                    <option value="name">Name (A-Z)</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <button
-                                        onClick={() => setShowFitModal(false)}
-                                        className="text-gray-400 hover:text-gray-600"
-                                    >
-                                        <XMarkIcon className="h-6 w-6" />
-                                    </button>
-                                </div>
-                            </div>
 
-                            <div className="p-6">
-                                {/* Factors Section */}
-                                <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
-                                    <SparklesIcon className="h-5 w-5 text-purple-500" />
-                                    Fit Factors
-                                </h4>
-                                <div className="space-y-3 mb-6">
-                                    {selectedFitData.factors?.map((factor, idx) => (
-                                        <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                            <div className="flex items-center gap-2">
-                                                <span className={`text-lg font-bold ${factor.score >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                                                    {factor.score >= 0 ? '+' : ''}{factor.score}
-                                                </span>
-                                                <span className="font-medium text-gray-700">{factor.name}</span>
-                                            </div>
-                                            <span className="text-sm text-gray-500 max-w-[200px] text-right">{factor.detail}</span>
-                                        </div>
-                                    ))}
-                                </div>
+                                    {/* Comparison Section */}
+                                    {comparisonList.length > 0 && (
+                                        <ComparisonView
+                                            universities={comparisonList}
+                                            onRemove={handleCompareToggle}
+                                        />
+                                    )}
 
-                                {/* Recommendations Section */}
-                                <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
-                                    <ArrowTrendingUpIcon className="h-5 w-5 text-blue-500" />
-                                    Recommendations to Improve
-                                </h4>
-                                <div className="space-y-2">
-                                    {selectedFitData.recommendations?.map((rec, idx) => (
-                                        <div key={idx} className="flex flex-col gap-2 p-4 bg-blue-50 rounded-lg">
-                                            <div className="flex items-start gap-3">
-                                                <span className="text-blue-600 font-bold">{idx + 1}.</span>
-                                                <span className="text-gray-700">{typeof rec === 'object' ? rec.action : rec}</span>
+                                    {/* Grid Results with Carousel */}
+                                    <div className="relative">
+                                        {/* Carousel Navigation */}
+                                        {totalPages > 1 && (
+                                            <div className="flex items-center justify-between mb-4">
+                                                <p className="text-sm text-gray-600">
+                                                    Showing {currentPage * CARDS_PER_PAGE + 1}-{Math.min((currentPage + 1) * CARDS_PER_PAGE, sortedUniversities.length)} of {sortedUniversities.length} universities
+                                                </p>
+                                                <div className="flex items-center gap-2">
+                                                    <button
+                                                        onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
+                                                        disabled={currentPage === 0}
+                                                        className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
+                                                    >
+                                                        <ChevronLeftIcon className="h-5 w-5" />
+                                                    </button>
+                                                    <span className="text-sm font-medium text-gray-700 min-w-[80px] text-center">
+                                                        Page {currentPage + 1} of {totalPages}
+                                                    </span>
+                                                    <button
+                                                        onClick={() => setCurrentPage(p => Math.min(totalPages - 1, p + 1))}
+                                                        disabled={currentPage >= totalPages - 1}
+                                                        className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
+                                                    >
+                                                        <ChevronRightIcon className="h-5 w-5" />
+                                                    </button>
+                                                </div>
                                             </div>
-                                            {typeof rec === 'object' && rec.addresses_gap && (
-                                                <div className="ml-7 flex flex-wrap gap-2 text-xs">
-                                                    <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full">Addresses: {rec.addresses_gap}</span>
-                                                    {rec.timeline && <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">Timeline: {rec.timeline}</span>}
+                                        )}
+
+                                        {/* Cards Grid */}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                            {paginatedUniversities.length > 0 ? (
+                                                paginatedUniversities.map(uni => (
+                                                    <UniversityCard
+                                                        key={uni.id}
+                                                        uni={uni}
+                                                        onSelect={handleSelectUni}
+                                                        onCompare={handleCompareToggle}
+                                                        isSelectedForCompare={comparisonList.some(u => u.id === uni.id)}
+                                                        sentiment={sentimentData[uni.id]}
+                                                        onSentimentClick={(sent) => {
+                                                            setSelectedSentiment(sent);
+                                                            setShowSentimentModal(true);
+                                                        }}
+                                                        isInList={isInCollegeList(uni.id)}
+                                                        onToggleList={handleToggleCollegeList}
+                                                        fitAnalysis={getCollegeFitAnalysis(uni.id)}
+                                                        onAnalyzeFit={handleAnalyzeFit}
+                                                        isAnalyzing={analyzingFit === uni.id}
+                                                        onShowFitDetails={(fit) => {
+                                                            setSelectedFitData(fit);
+                                                            setShowFitModal(true);
+                                                        }}
+                                                    />
+                                                ))
+                                            ) : (
+                                                <div className="col-span-full py-12 text-center text-gray-500 bg-white rounded-xl border border-dashed border-gray-300">
+                                                    <FunnelIcon className="h-12 w-12 mx-auto mb-4 text-gray-300" />
+                                                    <p className="text-lg font-medium">No universities found matching your criteria.</p>
+                                                    <button
+                                                        onClick={() => {
+                                                            setSearchTerm("");
+                                                            setSelectedType("All");
+                                                            setSelectedState("All");
+                                                            setMaxAcceptance(100);
+                                                        }}
+                                                        className="mt-4 text-blue-600 font-medium hover:underline"
+                                                    >
+                                                        Clear all filters
+                                                    </button>
                                                 </div>
                                             )}
                                         </div>
-                                    ))}
-                                </div>
 
-                                {/* Detailed Explanation Section */}
-                                {selectedFitData.explanation && (
-                                    <>
-                                        <h4 className="font-bold text-gray-800 mb-4 mt-6 flex items-center gap-2">
-                                            📋 Detailed Analysis
-                                        </h4>
-                                        <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                                            <ReactMarkdown
-                                                className="prose prose-sm max-w-none prose-blue text-gray-700"
-                                                remarkPlugins={[remarkGfm]}
-                                                components={{
-                                                    p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
-                                                    strong: ({ node, ...props }) => <strong className="font-bold text-gray-900" {...props} />
-                                                }}
-                                            >
-                                                {selectedFitData.explanation}
-                                            </ReactMarkdown>
+                                        {/* Bottom Carousel Navigation */}
+                                        {totalPages > 1 && paginatedUniversities.length > 0 && (
+                                            <div className="flex justify-center mt-6">
+                                                <div className="flex items-center gap-1">
+                                                    {Array.from({ length: totalPages }, (_, i) => (
+                                                        <button
+                                                            key={i}
+                                                            onClick={() => setCurrentPage(i)}
+                                                            className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentPage
+                                                                ? 'bg-blue-600 w-6'
+                                                                : 'bg-gray-300 hover:bg-gray-400'
+                                                                }`}
+                                                        />
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+
+                            {activeView === 'favorites' && (
+                                <div className="space-y-6">
+                                    {/* Favorites Header */}
+                                    <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                                        <div className="flex items-center justify-between">
+                                            <div>
+                                                <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                                                    <StarIconSolid className="h-6 w-6 text-yellow-500" />
+                                                    My Favorites
+                                                </h2>
+                                                <p className="text-gray-500 text-sm mt-1">
+                                                    {myCollegeList.length === 0
+                                                        ? "You haven't added any universities yet"
+                                                        : `${myCollegeList.length} ${myCollegeList.length === 1 ? 'university' : 'universities'} saved`}
+                                                </p>
+                                            </div>
+                                            {myCollegeList.length > 0 && (
+                                                <button
+                                                    onClick={() => setActiveView('list')}
+                                                    className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 flex items-center gap-2"
+                                                >
+                                                    <BuildingLibraryIcon className="h-4 w-4" />
+                                                    Browse More
+                                                </button>
+                                            )}
                                         </div>
-                                    </>
-                                )}
+                                    </div>
+
+                                    {/* Empty State */}
+                                    {myCollegeList.length === 0 && (
+                                        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-12 text-center border border-blue-100">
+                                            <div className="max-w-md mx-auto">
+                                                <StarIcon className="h-16 w-16 text-blue-300 mx-auto mb-4" />
+                                                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                                                    Your favorites list is empty
+                                                </h3>
+                                                <p className="text-gray-600 mb-6">
+                                                    Browse universities and click the <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-gray-200 text-gray-700 font-bold text-sm mx-1">+</span> button to add them to your favorites.
+                                                </p>
+                                                <button
+                                                    onClick={() => setActiveView('list')}
+                                                    className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
+                                                >
+                                                    <BuildingLibraryIcon className="h-5 w-5" />
+                                                    Browse Universities
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Favorites Grid */}
+                                    {myCollegeList.length > 0 && (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                            {myCollegeList.map((college) => (
+                                                <FavoriteCard
+                                                    key={college.university_id}
+                                                    college={college}
+                                                    onRemove={(c) => handleToggleCollegeList({
+                                                        id: c.university_id,
+                                                        name: c.university_name
+                                                    })}
+                                                    onViewDetails={(c) => {
+                                                        // Try to find the full university data, or create minimal version
+                                                        const fullUni = universities.find(u => u.id === c.university_id) || {
+                                                            id: c.university_id,
+                                                            name: c.university_name,
+                                                            location: { city: 'N/A', state: 'N/A', type: 'N/A' },
+                                                            summary: 'Loading full details...',
+                                                            rankings: { usNews: 'N/A' },
+                                                            admissions: { acceptanceRate: 'N/A' },
+                                                            financials: {},
+                                                            outcomes: {},
+                                                            majors: []
+                                                        };
+                                                        setSelectedUni(fullUni);
+                                                        setActiveView('detail');
+                                                    }}
+                                                    fitAnalysis={getCollegeFitAnalysis(college.university_id)}
+                                                />
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {activeView === 'detail' && selectedUni && (
+                                <UniversityDetail
+                                    uni={selectedUni}
+                                    onBack={handleBack}
+                                    sentiment={sentimentData[selectedUni.id]}
+                                    deepResearchData={deepResearchData}
+                                    setDeepResearchData={setDeepResearchData}
+                                    fitAnalysis={getCollegeFitAnalysis(selectedUni.id)}
+                                />
+                            )}
+                        </>
+                    )
+                    }
+
+                    {/* Sentiment Modal */}
+                    {
+                        showSentimentModal && selectedSentiment && (
+                            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+                                onClick={() => setShowSentimentModal(false)}>
+                                <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedSentiment.sentiment === 'positive' ? 'border-green-500' : 'border-red-500'
+                                    }`}
+                                    onClick={(e) => e.stopPropagation()}>
+                                    <div className={`p-6 ${selectedSentiment.sentiment === 'positive' ? 'bg-green-50' : 'bg-red-50'
+                                        }`}>
+                                        <div className="flex items-start justify-between">
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-3xl">
+                                                    {selectedSentiment.sentiment === 'positive' ? '📈' : '⚠️'}
+                                                </span>
+                                                <div>
+                                                    <h3 className={`text-xl font-bold ${selectedSentiment.sentiment === 'positive' ? 'text-green-900' : 'text-red-900'
+                                                        }`}>
+                                                        {selectedSentiment.sentiment === 'positive' ? 'Positive News' : 'Important Alert'}
+                                                    </h3>
+                                                    <p className={`text-sm mt-1 ${selectedSentiment.sentiment === 'positive' ? 'text-green-700' : 'text-red-700'
+                                                        }`}>
+                                                        {selectedSentiment.headline}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <button
+                                                onClick={() => setShowSentimentModal(false)}
+                                                className="text-gray-400 hover:text-gray-600"
+                                            >
+                                                <XMarkIcon className="h-6 w-6" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="p-6 prose prose-sm max-w-none">
+                                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                            {selectedSentiment.fullText}
+                                        </ReactMarkdown>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                )
-            }
-        </div >
+                        )
+                    }
+
+                    {/* Fit Analysis Modal */}
+                    {
+                        showFitModal && selectedFitData && (
+                            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+                                onClick={() => setShowFitModal(false)}>
+                                <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedFitData.fit_category === 'SAFETY' ? 'border-green-500' :
+                                    selectedFitData.fit_category === 'TARGET' ? 'border-blue-500' :
+                                        selectedFitData.fit_category === 'REACH' ? 'border-orange-500' :
+                                            'border-red-500'
+                                    }`}
+                                    onClick={(e) => e.stopPropagation()}>
+                                    <div className={`p-6 ${selectedFitData.fit_category === 'SAFETY' ? 'bg-green-50' :
+                                        selectedFitData.fit_category === 'TARGET' ? 'bg-blue-50' :
+                                            selectedFitData.fit_category === 'REACH' ? 'bg-orange-50' :
+                                                'bg-red-50'
+                                        }`}>
+                                        <div className="flex items-start justify-between">
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-3xl">
+                                                    {selectedFitData.fit_category === 'SAFETY' ? '✅' :
+                                                        selectedFitData.fit_category === 'TARGET' ? '🎯' :
+                                                            selectedFitData.fit_category === 'REACH' ? '🔼' : '🚀'}
+                                                </span>
+                                                <div>
+                                                    <h3 className={`text-xl font-bold ${selectedFitData.fit_category === 'SAFETY' ? 'text-green-900' :
+                                                        selectedFitData.fit_category === 'TARGET' ? 'text-blue-900' :
+                                                            selectedFitData.fit_category === 'REACH' ? 'text-orange-900' :
+                                                                'text-red-900'
+                                                        }`}>
+                                                        {selectedFitData.university_name} - {(selectedFitData.fit_category || '').replace('_', ' ')}
+                                                    </h3>
+                                                    <p className="text-gray-600 text-sm mt-1">
+                                                        {selectedFitData.match_percentage}% Match
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <button
+                                                onClick={() => setShowFitModal(false)}
+                                                className="text-gray-400 hover:text-gray-600"
+                                            >
+                                                <XMarkIcon className="h-6 w-6" />
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="p-6">
+                                        {/* Factors Section */}
+                                        <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                            <SparklesIcon className="h-5 w-5 text-purple-500" />
+                                            Fit Factors
+                                        </h4>
+                                        <div className="space-y-3 mb-6">
+                                            {selectedFitData.factors?.map((factor, idx) => (
+                                                <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                                    <div className="flex items-center gap-2">
+                                                        <span className={`text-lg font-bold ${factor.score >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                                                            {factor.score >= 0 ? '+' : ''}{factor.score}
+                                                        </span>
+                                                        <span className="font-medium text-gray-700">{factor.name}</span>
+                                                    </div>
+                                                    <span className="text-sm text-gray-500 max-w-[200px] text-right">{factor.detail}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        {/* Recommendations Section */}
+                                        <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                            <ArrowTrendingUpIcon className="h-5 w-5 text-blue-500" />
+                                            Recommendations to Improve
+                                        </h4>
+                                        <div className="space-y-2">
+                                            {selectedFitData.recommendations?.map((rec, idx) => (
+                                                <div key={idx} className="flex flex-col gap-2 p-4 bg-blue-50 rounded-lg">
+                                                    <div className="flex items-start gap-3">
+                                                        <span className="text-blue-600 font-bold">{idx + 1}.</span>
+                                                        <span className="text-gray-700">{typeof rec === 'object' ? rec.action : rec}</span>
+                                                    </div>
+                                                    {typeof rec === 'object' && rec.addresses_gap && (
+                                                        <div className="ml-7 flex flex-wrap gap-2 text-xs">
+                                                            <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full">Addresses: {rec.addresses_gap}</span>
+                                                            {rec.timeline && <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">Timeline: {rec.timeline}</span>}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        {/* Detailed Explanation Section */}
+                                        {selectedFitData.explanation && (
+                                            <>
+                                                <h4 className="font-bold text-gray-800 mb-4 mt-6 flex items-center gap-2">
+                                                    📋 Detailed Analysis
+                                                </h4>
+                                                <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                                    <ReactMarkdown
+                                                        className="prose prose-sm max-w-none prose-blue text-gray-700"
+                                                        remarkPlugins={[remarkGfm]}
+                                                        components={{
+                                                            p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+                                                            strong: ({ node, ...props }) => <strong className="font-bold text-gray-900" {...props} />
+                                                        }}
+                                                    >
+                                                        {selectedFitData.explanation}
+                                                    </ReactMarkdown>
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                </>
+            )}
+        </div>
     );
 };
 

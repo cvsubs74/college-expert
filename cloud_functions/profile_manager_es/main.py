@@ -145,7 +145,7 @@ def clean_extracted_text(text):
 def extract_profile_content_with_gemini(file_content, filename):
     """
     Extract and format student profile document using Gemini.
-    Converts PDF/DOCX text to clean, well-formatted Markdown.
+    Converts PDF/DOCX text to clean, well-formatted Markdown AND structured JSON.
     """
     try:
         # Extract raw text content from PDF/DOCX
@@ -158,9 +158,13 @@ def extract_profile_content_with_gemini(file_content, filename):
         # Use Gemini to convert raw text to clean markdown
         content_markdown = convert_to_markdown_with_gemini(raw_text, filename)
         
+        # Also extract structured profile for visual display (ProfileViewCard)
+        structured_profile = extract_structured_profile_with_gemini(raw_text)
+        
         return {
             "raw_content": raw_text,  # Original extracted text (for search)
             "content_markdown": content_markdown,  # Clean markdown (for display)
+            "structured_profile": structured_profile,  # Structured JSON (for ProfileViewCard)
             "filename": filename
         }
             
@@ -169,6 +173,7 @@ def extract_profile_content_with_gemini(file_content, filename):
         return {
             "raw_content": raw_text if 'raw_text' in dir() else "Error processing file",
             "content_markdown": f"# Student Profile\n\nError processing file: {str(e)}",
+            "structured_profile": None,
             "error": str(e)
         }
 
@@ -234,6 +239,131 @@ Return ONLY the markdown content, no explanations.
         logger.error(f"[GEMINI] Markdown conversion error: {e}")
         # Fallback: return raw text with basic header
         return f"# Student Profile\n\n{raw_text}"
+
+
+def extract_structured_profile_with_gemini(raw_text: str) -> dict:
+    """
+    Extract complete structured profile from raw text using Gemini.
+    Returns FLATTENED JSON with top-level fields for ES indexing.
+    """
+    import google.generativeai as genai
+    
+    try:
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            logger.warning("[GEMINI] No API key, returning empty structured profile")
+            return None
+        
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel('gemini-2.5-flash')
+        
+        prompt = f"""Extract ALL information from this student profile into structured JSON.
+Be thorough - extract EVERY piece of information present. Use null for missing fields.
+
+STUDENT PROFILE TEXT:
+{raw_text[:20000]}
+
+REQUIRED JSON SCHEMA (FLAT structure - all fields at top level):
+{{
+  "name": "student's full name or null",
+  "school": "high school name or null",
+  "location": "city, state or null",
+  "grade": integer 9-12 or null,
+  "graduation_year": integer or null,
+  "intended_major": "primary intended major or null",
+  
+  "gpa_weighted": float or null,
+  "gpa_unweighted": float or null,
+  "gpa_uc": float or null,
+  "class_rank": "e.g. '15/400' or null",
+  
+  "sat_total": integer or null,
+  "sat_math": integer or null,
+  "sat_reading": integer or null,
+  "act_composite": integer or null,
+  
+  "ap_exams": [
+    {{"subject": "AP Subject Name", "score": integer 1-5}}
+  ],
+  "courses": [
+    {{
+      "name": "course name",
+      "type": "AP" or "Honors" or "IB" or "Regular",
+      "grade_level": integer 9-12,
+      "semester1_grade": "A" or "B+" etc or null,
+      "semester2_grade": "A" or "B+" etc or null
+    }}
+  ],
+  "extracurriculars": [
+    {{
+      "name": "activity name",
+      "role": "position/role or null",
+      "description": "brief description or null",
+      "grades": "e.g. '9-12' or '11-12'",
+      "hours_per_week": integer or null,
+      "achievements": ["achievement 1", "achievement 2"]
+    }}
+  ],
+  "leadership_roles": ["role 1", "role 2"],
+  "special_programs": [
+    {{"name": "program name", "description": "description or null", "grade": integer or null}}
+  ],
+  "awards": [
+    {{"name": "award name", "grade": integer or null, "description": "description or null"}}
+  ],
+  "work_experience": [
+    {{
+      "employer": "company/organization name",
+      "role": "job title",
+      "grades": "e.g. '10-11'",
+      "hours_per_week": integer or null,
+      "description": "job description or null"
+    }}
+  ]
+}}
+
+EXTRACTION RULES:
+1. Extract EVERY activity, course, award mentioned - don't summarize
+2. For AP exams, include ALL subjects and scores found
+3. For courses, categorize type based on name (AP Physics = "AP", Honors English = "Honors")
+4. Parse grades like "A/A-" as semester1_grade: "A", semester2_grade: "A-"
+5. For activities without hours, estimate based on involvement level or use null
+6. Include ALL leadership positions in BOTH extracurriculars and leadership_roles
+7. Return ONLY valid JSON, no markdown formatting or explanation
+
+Return ONLY the JSON object."""
+
+        response = model.generate_content(prompt)
+        response_text = response.text.strip()
+        
+        # Clean up response - remove markdown code blocks if present
+        if response_text.startswith('```'):
+            lines = response_text.split('\n')
+            start_idx = 1 if lines[0].startswith('```') else 0
+            end_idx = len(lines) - 1 if lines[-1] == '```' else len(lines)
+            response_text = '\n'.join(lines[start_idx:end_idx])
+            if response_text.startswith('json'):
+                response_text = response_text[4:].strip()
+        
+        profile = json.loads(response_text)
+        
+        # Ensure arrays exist (flattened structure)
+        array_keys = ['courses', 'extracurriculars', 'leadership_roles', 'special_programs', 'awards', 'work_experience', 'ap_exams']
+        for key in array_keys:
+            if key not in profile or profile[key] is None:
+                profile[key] = []
+        
+        logger.info(f"[GEMINI] Extracted flattened profile: {len(profile.get('extracurriculars', []))} activities, {len(profile.get('awards', []))} awards")
+        return profile
+        
+    except json.JSONDecodeError as e:
+        logger.error(f"[GEMINI] JSON parse error in structured extraction: {e}")
+        logger.error(f"[GEMINI] Response was: {response_text[:500]}...")
+        return None
+    except Exception as e:
+        logger.error(f"[GEMINI] Structured extraction error: {e}")
+        return None
+
 
 
 def evaluate_profile_change_impact(old_content: str, new_content: str) -> dict:
@@ -304,12 +434,11 @@ Respond ONLY with valid JSON (no markdown):
 
 ES_CLOUD_ID = os.getenv("ES_CLOUD_ID")
 ES_API_KEY = os.getenv("ES_API_KEY")
-ES_INDEX_NAME = os.getenv("ES_INDEX_NAME", "student_profiles")  # Legacy - kept for migration
+ES_INDEX_NAME = os.getenv("ES_INDEX_NAME", "student_profiles")  # Main index for student profiles
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET_NAME", "college-counselling-478115-student-profiles")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-# New separated indices (v2 architecture)
-ES_PROFILES_INDEX = os.getenv("ES_PROFILES_INDEX", "student_profiles_v2")
+# Separate indices for college list and fit analysis
 ES_LIST_ITEMS_INDEX = os.getenv("ES_LIST_ITEMS_INDEX", "student_college_list")
 ES_FITS_INDEX = os.getenv("ES_FITS_INDEX", "student_college_fits")
 
@@ -390,43 +519,71 @@ def get_storage_path(user_id, filename):
     sanitized_id = user_id.replace('@', '_').replace('.', '_').lower()
     return f"profiles/{sanitized_id}/{filename}"
 
-def index_student_profile(user_id, filename, content_markdown, metadata=None):
-    """Index student profile in Elasticsearch.
-    Stores clean markdown content in the content field with minimal metadata.
+def index_student_profile(user_id, filename, content_markdown, metadata=None, profile_data=None):
+    """Index student profile in Elasticsearch with FLATTENED schema.
+    All profile fields stored at top level for direct access.
     
     Args:
         user_id: User's email
         filename: Original filename
         content_markdown: Clean markdown content (from Gemini)
         metadata: Optional minimal metadata (filename, upload time, gcs_url later)
+        profile_data: Flattened profile JSON (from extract_structured_profile_with_gemini)
     """
     try:
         client = get_elasticsearch_client()
         
-        # Generate document ID based on user + filename
+        # Use user_id as document ID (one profile per user)
+        # This ensures upsert behavior - later uploads replace earlier ones
         import hashlib
-        doc_content = f"{user_id}_{filename}"
-        document_id = hashlib.sha256(doc_content.encode()).hexdigest()
+        document_id = hashlib.sha256(user_id.encode()).hexdigest()
         
-        # Create minimal document - just content and essential metadata
+        # Core document fields
         document = {
-            "document_id": document_id,
             "user_id": user_id,
-            "filename": filename,
-            "content": content_markdown,  # Clean markdown for search and display
             "indexed_at": datetime.utcnow().isoformat(),
-            "file_type": filename.split('.')[-1] if '.' in filename else 'unknown'
+            "raw_content": content_markdown,  # Keep original markdown for reference
+            "original_filename": filename,
         }
         
-        # Add optional GCS URL to metadata if provided (for future use)
-        if metadata and metadata.get('gcs_url'):
-            document['gcs_url'] = metadata.get('gcs_url')
+        # Spread flattened profile data at top level
+        if profile_data:
+            # Personal info
+            document["name"] = profile_data.get("name")
+            document["school"] = profile_data.get("school")
+            document["location"] = profile_data.get("location")
+            document["grade"] = profile_data.get("grade")
+            document["graduation_year"] = profile_data.get("graduation_year")
+            document["intended_major"] = profile_data.get("intended_major")
+            
+            # Academics
+            document["gpa_weighted"] = profile_data.get("gpa_weighted")
+            document["gpa_unweighted"] = profile_data.get("gpa_unweighted")
+            document["gpa_uc"] = profile_data.get("gpa_uc")
+            document["class_rank"] = profile_data.get("class_rank")
+            
+            # Test scores
+            document["sat_total"] = profile_data.get("sat_total")
+            document["sat_math"] = profile_data.get("sat_math")
+            document["sat_reading"] = profile_data.get("sat_reading")
+            document["act_composite"] = profile_data.get("act_composite")
+            
+            # Arrays
+            document["ap_exams"] = profile_data.get("ap_exams", [])
+            document["courses"] = profile_data.get("courses", [])
+            document["extracurriculars"] = profile_data.get("extracurriculars", [])
+            document["leadership_roles"] = profile_data.get("leadership_roles", [])
+            document["special_programs"] = profile_data.get("special_programs", [])
+            document["awards"] = profile_data.get("awards", [])
+            document["work_experience"] = profile_data.get("work_experience", [])
+            
+            logger.info(f"[ES] Including flattened profile with {len(document.get('extracurriculars', []))} activities")
         
         # Index document (upsert - replace if exists)
         response = client.index(index=ES_INDEX_NAME, id=document_id, body=document)
         
         logger.info(f"[ES] Indexed profile {document_id} for user {user_id}")
-        logger.info(f"[ES] Content: {len(content_markdown)} chars")
+        logger.info(f"[ES] Fields: name={document.get('name')}, gpa={document.get('gpa_weighted')}, sat={document.get('sat_total')}")
         return {
             "success": True,
             "document_id": document_id,
@@ -439,6 +596,7 @@ def index_student_profile(user_id, filename, content_markdown, metadata=None):
             "success": False,
             "error": str(e)
         }
+
 
 
 
@@ -636,6 +794,97 @@ def handle_get_content(request):
             'error': f'Get content failed: {str(e)}'
         }, 500)
 
+
+def handle_get_structured_profile(request):
+    """Get profile data for visual display in ProfileViewCard.
+    
+    Returns FLAT profile fields directly from ES document.
+    All fields (name, gpa_weighted, sat_total, courses, etc.) are at the top level.
+    """
+    try:
+        user_id = request.args.get('user_email') or request.args.get('user_id')
+        
+        if not user_id:
+            user_id = request.headers.get('X-User-Email')
+        
+        if not user_id:
+            return add_cors_headers({'success': False, 'error': 'User email is required'}, 400)
+        
+        # Search for user's most recent profile
+        es_client = get_elasticsearch_client()
+        
+        search_body = {
+            "size": 1,
+            "query": {
+                "bool": {
+                    "must": [
+                        {"term": {"user_id.keyword": user_id}}
+                    ]
+                }
+            },
+            "sort": [{"indexed_at": {"order": "desc"}}]
+        }
+        
+        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        
+        if response['hits']['total']['value'] > 0:
+            hit = response['hits']['hits'][0]
+            source = hit['_source']
+            
+            # Build flat profile response - all fields at top level
+            profile = {
+                # Personal
+                "name": source.get("name"),
+                "school": source.get("school"),
+                "location": source.get("location"),
+                "grade": source.get("grade"),
+                "graduation_year": source.get("graduation_year"),
+                "intended_major": source.get("intended_major"),
+                
+                # Academics
+                "gpa_weighted": source.get("gpa_weighted"),
+                "gpa_unweighted": source.get("gpa_unweighted"),
+                "gpa_uc": source.get("gpa_uc"),
+                "class_rank": source.get("class_rank"),
+                
+                # Test scores
+                "sat_total": source.get("sat_total"),
+                "sat_math": source.get("sat_math"),
+                "sat_reading": source.get("sat_reading"),
+                "act_composite": source.get("act_composite"),
+                
+                # Arrays
+                "ap_exams": source.get("ap_exams", []),
+                "courses": source.get("courses", []),
+                "extracurriculars": source.get("extracurriculars", []),
+                "leadership_roles": source.get("leadership_roles", []),
+                "special_programs": source.get("special_programs", []),
+                "awards": source.get("awards", []),
+                "work_experience": source.get("work_experience", [])
+            }
+            
+            logger.info(f"[GET_PROFILE] Returning flat profile for {user_id}")
+            return add_cors_headers({
+                'success': True,
+                'profile': profile,
+                'filename': source.get('original_filename')
+            }, 200)
+        
+        else:
+            # No profile found
+            return add_cors_headers({
+                'success': False,
+                'error': 'No profile found for user',
+                'profile': None
+            }, 404)
+            
+    except Exception as e:
+        logger.error(f"[GET_PROFILE ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Get profile failed: {str(e)}'
+        }, 500)
+
 def delete_student_profile(document_id):
     """Delete student profile from Elasticsearch."""
     try:
@@ -826,37 +1075,36 @@ def calculate_fit_with_llm(student_profile_text, university_data, intended_major
         # DEBUG: Log what we extracted
         logger.info(f"[LLM_FIT] University: {uni_name}, Acceptance Rate: {acceptance_rate}%, Selectivity will be: {'ULTRA_SELECTIVE' if acceptance_rate < 8 else 'HIGHLY_SELECTIVE' if acceptance_rate < 15 else 'SELECTIVE'}")
         
-        # Prepare expanded university summary for better recommendations
-        # Include unique programs, application tips, and what the school values
+        # Pass FULL university profile to LLM for comprehensive recommendations
+        # This enables 8-category recommendations: essays, timeline, scholarships, test strategy, etc.
         academic_structure = profile_data.get('academic_structure', {})
         application_strategy = profile_data.get('application_strategy', {})
-        unique_programs = profile_data.get('unique_opportunities', {})
         
-        # Get majors list for the intended major context
-        majors_list = []
-        for college in academic_structure.get('colleges', [])[:5]:
-            majors_list.extend(college.get('majors', [])[:3])
-        
-        uni_summary = json.dumps({
+        uni_profile_full = json.dumps({
             "name": uni_name,
-            "location": university_data.get('location', profile_data.get('location', {})),
+            "location": university_data.get('location', profile_data.get('metadata', {}).get('location', {})),
             "acceptance_rate": acceptance_rate,
             "admitted_profile": admitted_profile,
             "us_news_rank": university_data.get('us_news_rank', profile_data.get('metadata', {}).get('us_news_rank')),
-            "academic_colleges": [c.get('name', '') for c in academic_structure.get('colleges', [])[:6]],
-            "sample_majors": majors_list[:10],
-            "unique_programs": {
-                "research_opportunities": unique_programs.get('research_opportunities', [])[:3],
-                "special_programs": unique_programs.get('special_programs', [])[:3],
-                "study_abroad": unique_programs.get('study_abroad', {})
-            },
-            "application_notes": {
-                "early_decision_available": application_strategy.get('early_decision_available', False),
-                "supplemental_essays": application_strategy.get('supplemental_essays', [])[:2],
-                "interview_policy": application_strategy.get('interview_policy', 'Unknown'),
-                "what_they_value": application_strategy.get('what_we_look_for', [])[:5]
-            }
-        }, default=str)[:4000]  # Increased limit for richer context
+            # Full academic structure with all majors
+            "academic_structure": academic_structure,
+            # Full application process with deadlines, essay prompts, holistic factors
+            "application_process": profile_data.get('application_process', {}),
+            # Full application strategy with tactics
+            "application_strategy": application_strategy,
+            # Full financial data including scholarships
+            "financials": profile_data.get('financials', {}),
+            # Student insights: essay tips, red flags, what it takes
+            "student_insights": profile_data.get('student_insights', {}),
+            # Strategic profile with analyst takeaways
+            "strategic_profile": profile_data.get('strategic_profile', {}),
+            # Outcomes data
+            "outcomes": profile_data.get('outcomes', {}),
+            # Credit policies for AP/IB strategy
+            "credit_policies": profile_data.get('credit_policies', {})
+        }, default=str)
+        
+        logger.info(f"[LLM_FIT] Full profile size: {len(uni_profile_full)} chars (~{len(uni_profile_full)//4} tokens)")
         
         # Determine selectivity tier and category floor
         if acceptance_rate < 8:
@@ -886,8 +1134,8 @@ def calculate_fit_with_llm(student_profile_text, university_data, intended_major
 {student_profile_text}
 Intended Major: {intended_major or 'Undecided'}
 
-**UNIVERSITY DATA:**
-{uni_summary}
+**COMPLETE UNIVERSITY DATA (use this for all recommendations):**
+{uni_profile_full}
 
 **SELECTIVITY CONTEXT:**
 Acceptance Rate: {acceptance_rate}%
@@ -938,58 +1186,145 @@ Selectivity Tier: {selectivity_tier}
 **YOUR TASK:**
 Analyze this student's fit for {uni_name}. Be realistic about chances at selective schools.
 
-**RECOMMENDATION GENERATION PROCESS:**
-Before generating recommendations, you MUST:
-1. Identify the student's TOP 2 GAPS (factors where score is lowest percentage of max)
-2. Review the university's unique_programs, academic_colleges, and what_they_value
-3. Each recommendation MUST:
-   - Address a specific gap from factor analysis
-   - Reference a specific program, resource, or opportunity at {uni_name}
-   - Be actionable with a clear timeline (e.g., "before application deadline", "in senior year")
+**8-CATEGORY COMPREHENSIVE RECOMMENDATION SYSTEM:**
+You have access to COMPLETE university data. Generate recommendations across ALL 8 categories:
 
-**EXAMPLE HIGH-QUALITY RECOMMENDATIONS:**
-- WEAK: "Highlight leadership in essays" (too generic)
-- STRONG: "In your 'Why {uni_name}' essay, connect your FBLA State Competition success to {uni_name}'s [specific business program], mentioning the [specific opportunity like a venture lab or internship program]"
-- WEAK: "Improve test scores" (not actionable)
-- STRONG: "Consider submitting AP Business scores to demonstrate quantitative skills, as {uni_name}'s business program emphasizes analytical abilities"
+**CATEGORY 1: ESSAY ANGLES** (use application_process.supplemental_requirements and student_insights.essay_tips)
+- Generate 2-3 specific essay angles for this student
+- Reference ACTUAL essay prompts from the school if available
+- Connect specific student experiences to specific school values/programs
+
+**CATEGORY 2: APPLICATION TIMELINE** (use application_process.application_deadlines)
+- Recommend which plan (ED/EA/RD) based on student's competitiveness
+- Include financial aid deadlines from financials
+- Provide key preparation milestones
+
+**CATEGORY 3: SCHOLARSHIP MATCHES** (use financials.scholarships)
+- Identify scholarships this student might qualify for
+- Match based on student's GPA, activities, and demographics
+- Include deadlines and application methods
+
+**CATEGORY 4: TEST STRATEGY** (use admissions_data.admitted_student_profile.testing)
+- Compare student's scores to school's middle 50%
+- Recommend submit/don't submit based on competitive position
+- Include school's test submission rate for context
+
+**CATEGORY 5: MAJOR STRATEGY** (use academic_structure.colleges[].majors[])
+- Find student's intended major in the data
+- Check if impacted, prerequisites, internal transfer difficulty
+- Recommend backup major if appropriate
+
+**CATEGORY 6: DEMONSTRATED INTEREST** (use application_process.holistic_factors.demonstrated_interest)
+- If school tracks interest, give specific tactics
+- Include interview policy guidance
+- Mention any optional elements that show commitment
+
+**CATEGORY 7: RED FLAGS TO AVOID** (use student_insights.red_flags)
+- Customize school-specific warnings to this student
+- What mistakes would hurt THIS student's application
+
+**CATEGORY 8: TOP STRATEGIC RECOMMENDATIONS** (synthesize all analysis)
+- 3 most impactful actions this student should take
+- Each must address a gap and reference school-specific context
 
 **OUTPUT FORMAT - Return ONLY valid JSON:**
 {{
   "match_percentage": <integer 0-100>,
   "fit_category": "<SAFETY|TARGET|REACH|SUPER_REACH>",
-  "explanation": "<5-6 sentence analysis: Start with the category justification citing acceptance rate. Then mention 2-3 specific student strengths from their profile. Then acknowledge any gaps or concerns. End with what could strengthen the application.>",
+  "explanation": "<5-6 sentence analysis: Start with category justification citing acceptance rate. Mention 2-3 specific student strengths. Acknowledge gaps. End with what could strengthen the application.>",
   "factors": [
     {{ "name": "Academic", "score": <0-40>, "max": 40, "detail": "<cite actual GPA/scores from profile vs school's admitted profile>" }},
     {{ "name": "Holistic", "score": <0-30>, "max": 30, "detail": "<cite specific activities/leadership from profile>" }},
-    {{ "name": "Major Fit", "score": <0-15>, "max": 15, "detail": "<assess major availability at {uni_name} and student's demonstrated interest>" }},
+    {{ "name": "Major Fit", "score": <0-15>, "max": 15, "detail": "<assess major availability and student's demonstrated interest>" }},
     {{ "name": "Selectivity", "score": <-15 to +5>, "max": 5, "detail": "<{acceptance_rate}% acceptance rate impact>" }}
   ],
   "gap_analysis": {{
     "primary_gap": "<name of factor with lowest % score and why>",
     "secondary_gap": "<name of second lowest % score factor and why>",
-    "student_strengths": ["<specific strength 1>", "<specific strength 2>"]
+    "student_strengths": ["<specific strength 1>", "<specific strength 2>", "<specific strength 3>"]
   }},
+  "essay_angles": [
+    {{
+      "essay_prompt": "<actual essay prompt from school if available, or 'Why Us' / 'Personal Statement'>",
+      "angle": "<specific angle for this student to take>",
+      "student_hook": "<specific experience from their profile to highlight>",
+      "school_hook": "<specific program/value/resource at {uni_name} to reference>",
+      "word_limit": <word limit if known, or null>,
+      "tip": "<relevant tip from student_insights.essay_tips if available>"
+    }}
+  ],
+  "application_timeline": {{
+    "recommended_plan": "<Early Decision I|Early Decision II|Early Action|Regular Decision|Rolling>",
+    "deadline": "<date in YYYY-MM-DD format>",
+    "is_binding": <true|false>,
+    "rationale": "<why this plan is best for this student's profile and circumstances>",
+    "financial_aid_deadline": "<date if different from app deadline>",
+    "key_milestones": [
+      "<milestone 1 with date, e.g., 'Request teacher recs by October 1'>",
+      "<milestone 2 with date>",
+      "<milestone 3 with date>"
+    ]
+  }},
+  "scholarship_matches": [
+    {{
+      "name": "<scholarship name from financials.scholarships>",
+      "amount": "<amount or range>",
+      "deadline": "<deadline or 'automatic consideration'>",
+      "match_reason": "<why this student qualifies - cite specific profile elements>",
+      "application_method": "<how to apply>"
+    }}
+  ],
+  "test_strategy": {{
+    "recommendation": "<Submit|Don't Submit|Consider Submitting>",
+    "student_sat": <student's SAT if available, or null>,
+    "student_act": <student's ACT if available, or null>,
+    "school_sat_middle_50": "<e.g., 1340-1500>",
+    "school_act_middle_50": "<e.g., 30-33>",
+    "school_submission_rate": <percentage of applicants who submit>,
+    "student_score_position": "<above|in|below> middle 50%",
+    "rationale": "<explanation of why submit or not>"
+  }},
+  "major_strategy": {{
+    "intended_major": "<student's intended major>",
+    "is_available": <true|false>,
+    "college_within_university": "<which college/school offers this major>",
+    "is_impacted": <true|false|unknown>,
+    "acceptance_rate_estimate": <if available, or null>,
+    "prerequisites_met": "<assessment of whether student has needed courses>",
+    "backup_major": "<recommended alternative major at this school>",
+    "internal_transfer_difficulty": "<easy|moderate|difficult|unknown>",
+    "strategic_tip": "<from application_strategy.major_selection_tactics if relevant>"
+  }},
+  "demonstrated_interest_tips": [
+    "<specific tactic 1 based on school's DI tracking>",
+    "<specific tactic 2>",
+    "<specific tactic 3>"
+  ],
+  "red_flags_to_avoid": [
+    "<specific red flag from student_insights.red_flags customized to this student>",
+    "<another relevant red flag>"
+  ],
   "recommendations": [
     {{
       "action": "<specific, actionable recommendation>",
       "addresses_gap": "<which factor this improves: Academic|Holistic|Major Fit>",
-      "school_specific_context": "<how this connects to {uni_name}'s specific programs/values>",
+      "school_specific_context": "<how this connects to {uni_name}'s specific programs/values/resources>",
       "timeline": "<when to do this: before application|during senior year|in essays|etc>",
       "impact": "<how this strengthens the application>"
     }},
     {{
-      "action": "<specific, actionable recommendation>",
-      "addresses_gap": "<which factor this improves>",
-      "school_specific_context": "<how this connects to {uni_name}>",
-      "timeline": "<when to do this>",
-      "impact": "<how this strengthens the application>"
+      "action": "<second most important recommendation>",
+      "addresses_gap": "<which factor>",
+      "school_specific_context": "<school-specific connection>",
+      "timeline": "<when>",
+      "impact": "<outcome>"
     }},
     {{
-      "action": "<specific, actionable recommendation>",
-      "addresses_gap": "<which factor this improves>",
-      "school_specific_context": "<how this connects to {uni_name}>",
-      "timeline": "<when to do this>",
-      "impact": "<how this strengthens the application>"
+      "action": "<third most important recommendation>",
+      "addresses_gap": "<which factor>",
+      "school_specific_context": "<school-specific connection>",
+      "timeline": "<when>",
+      "impact": "<outcome>"
     }}
   ]
 }}"""
@@ -998,7 +1333,7 @@ Before generating recommendations, you MUST:
         max_retries = 2
         for attempt in range(max_retries + 1):
             try:
-                model = genai.GenerativeModel("gemini-2.5-flash-lite")
+                model = genai.GenerativeModel("gemini-2.5-flash")
                 response = model.generate_content(prompt)
                 
                 # Parse output
@@ -1678,43 +2013,40 @@ def fetch_university_profile(university_id, max_retries=3):
     """Fetch full university profile from knowledge base with retry logic."""
     # Note: time imported at module level
     
-    for attempt in range(max_retries):
-        try:
-            response = requests.get(
-                f"{KNOWLEDGE_BASE_UNIVERSITIES_URL}?university_id={university_id}",
-                timeout=30
-            )
-            data = response.json()
-            
-            if data.get('success'):
-                return data.get('university', {})
-            
-            # If not found, don't retry
-            if 'NotFoundError' in str(data.get('error', '')):
-                logger.warning(f"[KB] University not found: {university_id}")
-                return None
+    # KB API typically requires _slug suffix. Prioritize trying that.
+    candidate_ids = []
+    if not university_id.endswith('_slug'):
+        candidate_ids.append(f"{university_id}_slug")
+    candidate_ids.append(university_id)
+    
+    for uid in candidate_ids:
+        for attempt in range(max_retries):
+            try:
+                response = requests.get(
+                    f"{KNOWLEDGE_BASE_UNIVERSITIES_URL}?university_id={uid}",
+                    timeout=30
+                )
+                data = response.json()
                 
-            return None
-            
-        except requests.exceptions.SSLError as e:
-            logger.warning(f"[KB] SSL error fetching {university_id} (attempt {attempt+1}/{max_retries}): {e}")
-            if attempt < max_retries - 1:
-                time.sleep(1 * (attempt + 1))  # Exponential backoff: 1s, 2s, 3s
-                continue
-            logger.error(f"[KB] Max retries exceeded for {university_id}")
-            return None
-            
-        except requests.exceptions.RequestException as e:
-            logger.warning(f"[KB] Request error fetching {university_id} (attempt {attempt+1}/{max_retries}): {e}")
-            if attempt < max_retries - 1:
-                time.sleep(1 * (attempt + 1))
-                continue
-            logger.error(f"[KB] Max retries exceeded for {university_id}")
-            return None
-            
-        except Exception as e:
-            logger.error(f"[KB] Unexpected error fetching university {university_id}: {e}")
-            return None
+                if data.get('success'):
+                    uni_data = data.get('university')
+                    if uni_data:  # Ensure it's not empty
+                        return uni_data
+                
+                # If 404/not found, break retry loop and try next candidate ID
+                if 'NotFoundError' in str(data.get('error', '')) or not data.get('success'):
+                    logger.warning(f"[KB] University not found: {uid}")
+                    break
+                    
+            except requests.exceptions.RequestException as e:
+                logger.warning(f"[KB] Error fetching {uid} (attempt {attempt+1}/{max_retries}): {e}")
+                if attempt < max_retries - 1:
+                    time.sleep(1)
+                    continue
+                
+            except Exception as e:
+                logger.error(f"[KB] Unexpected error fetching {uid}: {e}")
+                break
     
     return None
 
@@ -1840,7 +2172,7 @@ def handle_compute_all_fits(request):
                 # Calculate fit using PURE LLM reasoning
                 fit_analysis = calculate_fit_with_llm(profile_content, uni_profile, '')
                 
-                # Store computed fit
+                # Store computed fit with all 8 categories
                 fit_result = {
                     'fit_category': fit_analysis.get('fit_category', 'UNKNOWN'),
                     'match_percentage': fit_analysis.get('match_percentage', 0),
@@ -1848,8 +2180,17 @@ def handle_compute_all_fits(request):
                     'university_name': uni_summary.get('official_name', university_id),
                     'explanation': fit_analysis.get('explanation', ''),
                     'factors': fit_analysis.get('factors', []),
+                    'gap_analysis': fit_analysis.get('gap_analysis', {}),
+                    # 8 new recommendation categories
                     'recommendations': fit_analysis.get('recommendations', []),
-                    'gap_analysis': fit_analysis.get('gap_analysis', {}),  # NEW: Include gap analysis
+                    'essay_angles': fit_analysis.get('essay_angles', []),
+                    'application_timeline': fit_analysis.get('application_timeline', {}),
+                    'scholarship_matches': fit_analysis.get('scholarship_matches', []),
+                    'test_strategy': fit_analysis.get('test_strategy', {}),
+                    'major_strategy': fit_analysis.get('major_strategy', {}),
+                    'demonstrated_interest_tips': fit_analysis.get('demonstrated_interest_tips', []),
+                    'red_flags_to_avoid': fit_analysis.get('red_flags_to_avoid', []),
+                    # Metadata
                     'location': uni_summary.get('location', {}),
                     'acceptance_rate': uni_summary.get('acceptance_rate'),
                     'us_news_rank': uni_summary.get('us_news_rank'),
@@ -1876,15 +2217,13 @@ def handle_compute_all_fits(request):
         for university_id, fit_result in batch_fits.items():
             doc_id = f"{email_hash}_{university_id}"
             
-            # Serialize complex nested objects as JSON strings for ES compatibility
-            recommendations = fit_result.get('recommendations', [])
-            if isinstance(recommendations, list) and len(recommendations) > 0 and isinstance(recommendations[0], dict):
-                recommendations_json = json.dumps(recommendations)
-            else:
-                recommendations_json = json.dumps(recommendations) if recommendations else '[]'
-            
-            gap_analysis = fit_result.get('gap_analysis', {})
-            gap_analysis_json = json.dumps(gap_analysis) if gap_analysis else '{}'
+            # Serialize all complex nested objects as JSON strings for ES compatibility
+            def serialize_field(value, default='[]'):
+                if value is None:
+                    return default
+                if isinstance(value, (dict, list)):
+                    return json.dumps(value)
+                return str(value)
             
             fit_doc = {
                 'user_email': user_id,
@@ -1895,8 +2234,18 @@ def handle_compute_all_fits(request):
                 'match_score': fit_result.get('match_percentage', fit_result.get('match_score')),
                 'explanation': fit_result.get('explanation'),
                 'factors': fit_result.get('factors', []),
-                'recommendations': recommendations_json,  # Stored as JSON string
-                'gap_analysis': gap_analysis_json,  # Stored as JSON string
+                # Core recommendations - serialized as JSON strings
+                'recommendations': serialize_field(fit_result.get('recommendations', []), '[]'),
+                'gap_analysis': serialize_field(fit_result.get('gap_analysis', {}), '{}'),
+                # 8 new recommendation categories - all serialized as JSON strings
+                'essay_angles': serialize_field(fit_result.get('essay_angles', []), '[]'),
+                'application_timeline': serialize_field(fit_result.get('application_timeline', {}), '{}'),
+                'scholarship_matches': serialize_field(fit_result.get('scholarship_matches', []), '[]'),
+                'test_strategy': serialize_field(fit_result.get('test_strategy', {}), '{}'),
+                'major_strategy': serialize_field(fit_result.get('major_strategy', {}), '{}'),
+                'demonstrated_interest_tips': serialize_field(fit_result.get('demonstrated_interest_tips', []), '[]'),
+                'red_flags_to_avoid': serialize_field(fit_result.get('red_flags_to_avoid', []), '[]'),
+                # Metadata
                 'acceptance_rate': fit_result.get('acceptance_rate'),
                 'us_news_rank': fit_result.get('us_news_rank'),
                 'location': fit_result.get('location'),
@@ -2048,6 +2397,16 @@ def handle_get_fits(request):
                 except json.JSONDecodeError:
                     gap_analysis = {}
             
+            # Helper to parse JSON string fields for all 8 categories
+            def parse_json_field(field_name, default):
+                value = fit.get(field_name, default)
+                if isinstance(value, str):
+                    try:
+                        return json.loads(value)
+                    except json.JSONDecodeError:
+                        return default
+                return value if value is not None else default
+            
             results.append({
                 'university_id': normalize_university_id(fit.get('university_id')),  # Normalized for matching
                 'university_name': fit.get('university_name'),
@@ -2057,6 +2416,15 @@ def handle_get_fits(request):
                 'factors': fit.get('factors', []),
                 'recommendations': recommendations,
                 'gap_analysis': gap_analysis,
+                # 8 new recommendation categories
+                'essay_angles': parse_json_field('essay_angles', []),
+                'application_timeline': parse_json_field('application_timeline', {}),
+                'scholarship_matches': parse_json_field('scholarship_matches', []),
+                'test_strategy': parse_json_field('test_strategy', {}),
+                'major_strategy': parse_json_field('major_strategy', {}),
+                'demonstrated_interest_tips': parse_json_field('demonstrated_interest_tips', []),
+                'red_flags_to_avoid': parse_json_field('red_flags_to_avoid', []),
+                # Metadata
                 'acceptance_rate': fit.get('acceptance_rate'),
                 'us_news_rank': fit.get('us_news_rank'),
                 'location': fit.get('location'),
@@ -2085,8 +2453,14 @@ def handle_get_fits(request):
 
 
 def handle_update_profile(request):
-    """Update the student's profile content directly.
-    Expects the caller (agent) to provide the complete updated content.
+    """Update the student's profile content and structured JSON.
+    
+    Updates BOTH:
+    - content: The markdown representation
+    - structured_profile: The JSON for ProfileViewCard display
+    
+    Expects the caller (agent) to provide the complete updated markdown content.
+    The structured_profile is automatically re-extracted from the updated content.
     """
     try:
         data = request.get_json()
@@ -2117,22 +2491,45 @@ def handle_update_profile(request):
         
         doc_id = response['hits']['hits'][0]['_id']
         
-        # Update the content field directly
+        # Re-extract structured profile from updated content
+        logger.info(f"[UPDATE_PROFILE] Re-extracting structured profile for {user_id}")
+        structured_profile = None
+        extraction_error = None
+        try:
+            structured_profile = extract_structured_profile_with_gemini(content)
+            logger.info(f"[UPDATE_PROFILE] Extracted structured profile with {len(structured_profile.get('extracurriculars', []))} activities")
+        except Exception as extract_err:
+            extraction_error = str(extract_err)
+            logger.warning(f"[UPDATE_PROFILE] Could not extract structured profile: {extract_err}")
+        
+        # Build update document - always update content, optionally update structured_profile
+        update_doc = {
+            "content": content,
+            "content_updated_at": datetime.utcnow().isoformat()
+        }
+        
+        if structured_profile:
+            update_doc["structured_profile"] = structured_profile
+        
+        # Update both fields in ES
         es_client.update(
             index=ES_INDEX_NAME,
             id=doc_id,
-            body={
-                "doc": {
-                    "content": content,
-                    "content_updated_at": datetime.utcnow().isoformat()
-                }
-            }
+            body={"doc": update_doc}
         )
         
-        logger.info(f"[UPDATE_PROFILE] Updated content for user {user_id}")
+        # Build response message based on what was updated
+        if structured_profile:
+            message = 'Successfully updated profile (content and structured data)'
+        else:
+            message = 'Updated profile content, but structured data could not be refreshed'
+        
+        logger.info(f"[UPDATE_PROFILE] Updated content + structured_profile for user {user_id}")
         return add_cors_headers({
             'success': True,
-            'message': 'Successfully updated profile'
+            'message': message,
+            'structured_profile_updated': structured_profile is not None,
+            'extraction_error': extraction_error
         }, 200)
         
     except Exception as e:
@@ -2142,6 +2539,175 @@ def handle_update_profile(request):
             'error': f'Failed to update profile: {str(e)}'
         }, 500)
 
+
+def handle_update_structured_field(request):
+    """Update a specific field in the structured_profile JSON directly.
+    
+    This is the SAFE way to update profile fields - no risk of data loss.
+    
+    Expected request body:
+    {
+        "user_email": "user@example.com",
+        "field_path": "test_scores.sat.total",  # Dot-notation path
+        "value": 1500,  # New value (any JSON type)
+        "operation": "set"  # Optional: "set", "append", "remove" (default: "set")
+    }
+    """
+    
+    # SECURITY: Allowlist of valid FLAT field paths (no nested paths)
+    ALLOWED_FIELD_PATHS = {
+        # Scalar fields (set operation)
+        "gpa_weighted",
+        "gpa_unweighted", 
+        "gpa_uc",
+        "class_rank",
+        "sat_total",
+        "sat_math",
+        "sat_reading",
+        "act_composite",
+        "intended_major",
+        "name",
+        "school",
+        "location",
+        "grade",
+        "graduation_year",
+        # Array fields (append/remove operations)
+        "extracurriculars",
+        "awards",
+        "courses",
+        "leadership_roles",
+        "special_programs",
+        "work_experience",
+        "ap_exams"
+    }
+    
+    # Type coercion map for data integrity (flat field names)
+    TYPE_COERCION = {
+        "gpa_weighted": float,
+        "gpa_unweighted": float,
+        "gpa_uc": float,
+        "sat_total": int,
+        "sat_math": int,
+        "sat_reading": int,
+        "act_composite": int,
+        "graduation_year": int,
+        "grade": int,
+    }
+    
+    try:
+        data = request.get_json()
+        if not data:
+            return add_cors_headers({'error': 'No data provided'}, 400)
+        
+        user_id = data.get('user_id') or data.get('user_email')
+        field_path = data.get('field_path')
+        value = data.get('value')
+        operation = data.get('operation', 'set')  # set, append, remove
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User ID is required'}, 400)
+        if not field_path:
+            return add_cors_headers({'error': 'Field path is required'}, 400)
+        if value is None and operation == 'set':
+            return add_cors_headers({'error': 'Value is required for set operation'}, 400)
+        
+        # SECURITY: Validate field path against allowlist
+        if field_path not in ALLOWED_FIELD_PATHS:
+            logger.warning(f"[UPDATE_STRUCTURED_FIELD] Rejected invalid field path: {field_path}")
+            return add_cors_headers({
+                'error': f'Invalid field path: {field_path}',
+                'allowed_paths': list(ALLOWED_FIELD_PATHS)
+            }, 400)
+        
+        # Type coercion for scalar values
+        if field_path in TYPE_COERCION and value is not None:
+            try:
+                value = TYPE_COERCION[field_path](value)
+            except (ValueError, TypeError) as e:
+                return add_cors_headers({
+                    'error': f'Invalid value type for {field_path}',
+                    'message': f'Expected {TYPE_COERCION[field_path].__name__}, got {type(value).__name__}'
+                }, 400)
+        
+        # Validate operation
+        if operation not in ('set', 'append', 'remove'):
+            return add_cors_headers({'error': f'Invalid operation: {operation}'}, 400)
+        
+        es_client = get_elasticsearch_client()
+        
+        # Find user's profile document
+        search_body = {
+            "size": 1,
+            "query": {"term": {"user_id.keyword": user_id}},
+            "sort": [{"indexed_at": {"order": "desc"}}]
+        }
+        
+        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        
+        if response['hits']['total']['value'] == 0:
+            return add_cors_headers({'error': 'No profile found for user'}, 404)
+        
+        doc = response['hits']['hits'][0]
+        doc_id = doc['_id']
+        doc_source = doc['_source']
+        
+        # Get old value (flat field - direct access)
+        old_value = doc_source.get(field_path)
+        
+        # Prepare update based on operation
+        if operation == 'set':
+            new_value = value
+        elif operation == 'append':
+            # Append to array
+            current_array = doc_source.get(field_path, [])
+            if not isinstance(current_array, list):
+                current_array = [current_array] if current_array else []
+            current_array.append(value)
+            new_value = current_array
+        elif operation == 'remove':
+            # Remove from array
+            current_array = doc_source.get(field_path, [])
+            if isinstance(current_array, list):
+                if isinstance(value, dict) and 'name' in value:
+                    # Match by name for dict items
+                    new_value = [item for item in current_array 
+                                if not (isinstance(item, dict) and item.get('name') == value.get('name'))]
+                else:
+                    new_value = [item for item in current_array if item != value]
+            else:
+                new_value = current_array
+        else:
+            return add_cors_headers({'error': f'Unknown operation: {operation}'}, 400)
+        
+        # Update ES with the flat field directly
+        es_client.update(
+            index=ES_INDEX_NAME,
+            id=doc_id,
+            body={
+                "doc": {
+                    field_path: new_value,
+                    "updated_at": datetime.utcnow().isoformat()
+                }
+            }
+        )
+        
+        logger.info(f"[UPDATE_STRUCTURED_FIELD] Updated {field_path}: {old_value} -> {value} for {user_id}")
+        
+        return add_cors_headers({
+            'success': True,
+            'message': f'Successfully updated {field_path}',
+            'field_path': field_path,
+            'old_value': old_value,
+            'new_value': value,
+            'operation': operation
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[UPDATE_STRUCTURED_FIELD ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to update field: {str(e)}'
+        }, 500)
 
 
 
@@ -2309,13 +2875,19 @@ def profile_manager_es_http_entry(request):
                 # Extract and convert to markdown using Gemini
                 extracted_content = extract_profile_content_with_gemini(file_content, filename)
                 content_markdown = extracted_content.get('content_markdown', '')
+                structured_profile = extracted_content.get('structured_profile')  # New: structured JSON
                 
                 if not content_markdown:
                     # Fallback to raw content if markdown conversion failed
                     content_markdown = extracted_content.get('raw_content', 'Error: Could not extract content')
                 
-                # Index in Elasticsearch with just the markdown content
-                result = index_student_profile(user_id, filename, content_markdown)
+                # Index in Elasticsearch with markdown AND flattened profile data
+                result = index_student_profile(
+                    user_id, 
+                    filename, 
+                    content_markdown,
+                    profile_data=structured_profile
+                )
                 
                 if result["success"]:
                     return add_cors_headers(result, 200)
@@ -2361,6 +2933,10 @@ def profile_manager_es_http_entry(request):
         elif resource_type == 'get-profile-content' and request.method == 'POST':
             return handle_get_content(request)
         
+        # --- GET STRUCTURED PROFILE (for ProfileViewCard) ---
+        elif resource_type == 'get-profile' and request.method == 'GET':
+            return handle_get_structured_profile(request)
+        
         # --- COLLEGE LIST ROUTES ---
         elif resource_type == 'update-college-list' and request.method == 'POST':
             return handle_update_college_list(request)
@@ -2393,6 +2969,9 @@ def profile_manager_es_http_entry(request):
         
         elif resource_type == 'update-profile-content' and request.method == 'POST':
             return handle_update_profile_content(request)
+        
+        elif resource_type == 'update-structured-field' and request.method == 'POST':
+            return handle_update_structured_field(request)
         
         # --- SEARCH USER PROFILE (for agent tools) ---
         elif resource_type == 'search-user-profile' and request.method == 'POST':

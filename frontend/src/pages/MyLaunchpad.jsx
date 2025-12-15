@@ -85,7 +85,7 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+        <div className="bg-white rounded-2xl shadow-lg shadow-amber-50 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="p-5 flex-grow">
                 {/* Header with optional checkbox */}
                 <div className="flex justify-between items-start mb-3">
@@ -117,7 +117,7 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
 
                 {/* Stats Grid - similar to UniInsight */}
                 <div className="grid grid-cols-2 gap-2 text-sm mb-3">
-                    <div className="bg-gray-50 p-2 rounded">
+                    <div className="bg-amber-50 p-2 rounded-xl">
                         <div className="text-gray-500 text-xs">Fit Category</div>
                         <div className={`font-semibold ${categoryConfig.textColor}`}>
                             {categoryConfig.label}
@@ -145,7 +145,7 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
                 <div className="flex gap-2">
                     <button
                         onClick={() => onViewDetails && onViewDetails(college)}
-                        className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-lg text-sm font-medium hover:from-indigo-600 hover:to-purple-700 flex items-center justify-center gap-1 shadow-sm"
+                        className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200"
                     >
                         📊 Fit Analysis
                     </button>
@@ -293,47 +293,9 @@ const FitAnalysisDetail = ({ college, onBack }) => {
     const selectivityFactor = backendFactors.find(f => f.name === 'Selectivity Context');
     const selectivityDetail = selectivityFactor?.detail || null;
 
-    // Recommendations based on fit category
-    const getRecommendations = () => {
-        switch (fitCategory) {
-            case 'SUPER_REACH':
-                return [
-                    'Focus on exceptional essays that showcase unique perspectives and experiences',
-                    'Highlight leadership and significant achievements in extracurriculars',
-                    'Consider applying Early Decision if this is your top choice',
-                    'Prepare supplemental materials like portfolios if applicable',
-                    'Secure recommendation letters from teachers who know you exceptionally well'
-                ];
-            case 'REACH':
-                return [
-                    'Craft compelling essays that differentiate you from other applicants',
-                    'Demonstrate genuine interest through campus visits or virtual events',
-                    'Highlight any unique talents or experiences that set you apart',
-                    'Consider Early Action if available for a potential admissions boost',
-                    'Ensure you have strong letters of recommendation'
-                ];
-            case 'TARGET':
-                return [
-                    'Present a well-rounded application with solid essays',
-                    'Show demonstrated interest through campus engagement',
-                    'Highlight how you will contribute to the campus community',
-                    'Research specific programs and mention them in supplements',
-                    'Maintain your current academic performance through senior year'
-                ];
-            case 'SAFETY':
-                return [
-                    'Do not slack on your application - treat it with care',
-                    'Research specific programs and opportunities that excite you',
-                    'Visit campus to ensure it is the right fit beyond academics',
-                    'Look into honors programs or scholarships you may qualify for',
-                    'Consider this school genuinely - it could be a great match'
-                ];
-            default:
-                return ['Continue building a strong application'];
-        }
-    };
-
-    const recommendations = getRecommendations();
+    // Use actual recommendations from backend fit analysis if available
+    // This provides personalized, specific action items based on the student's actual gaps
+    const recommendations = fitAnalysis.recommendations || [];
 
     return (
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
@@ -449,25 +411,31 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                     </div>
                 </div>
 
-                {/* Recommendations */}
-                <div>
-                    <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        <LightBulbIcon className="h-5 w-5 text-amber-600" />
-                        Recommendations to Strengthen Your Application
-                    </h3>
-                    <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
-                        <ul className="space-y-3">
+                {/* Action Plan - Personalized Recommendations */}
+                {recommendations.length > 0 && (
+                    <div>
+                        <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                            <LightBulbIcon className="h-5 w-5 text-amber-600" />
+                            Action Plan to Strengthen Your Application
+                        </h3>
+                        <div className="space-y-2">
                             {recommendations.map((rec, idx) => (
-                                <li key={idx} className="flex gap-3">
-                                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-200 text-amber-800 flex items-center justify-center text-sm font-medium">
-                                        {idx + 1}
-                                    </span>
-                                    <span className="text-gray-700">{rec}</span>
-                                </li>
+                                <div key={idx} className="flex flex-col gap-2 p-4 bg-blue-50 rounded-lg">
+                                    <div className="flex items-start gap-3">
+                                        <span className="text-blue-600 font-bold">{idx + 1}.</span>
+                                        <span className="text-gray-700">{typeof rec === 'object' ? rec.action : rec}</span>
+                                    </div>
+                                    {typeof rec === 'object' && rec.addresses_gap && (
+                                        <div className="ml-7 flex flex-wrap gap-2 text-xs">
+                                            <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full">Addresses: {rec.addresses_gap}</span>
+                                            {rec.timeline && <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">Timeline: {rec.timeline}</span>}
+                                        </div>
+                                    )}
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </div>
     );
@@ -1538,7 +1506,7 @@ const MyLaunchpad = () => {
         return (
             <div className="flex items-center justify-center min-h-[400px]">
                 <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto mb-4"></div>
                     <p className="text-gray-500">Loading your college list...</p>
                 </div>
             </div>
@@ -1572,7 +1540,9 @@ const MyLaunchpad = () => {
             <div className="space-y-6">
                 <div className="text-center py-6">
                     <h1 className="text-2xl font-bold text-gray-900 flex items-center justify-center gap-3">
-                        <RocketLaunchIcon className="h-7 w-7 text-purple-600" />
+                        <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
+                            <RocketLaunchIcon className="h-6 w-6 text-white" />
+                        </div>
                         Building Your College List
                     </h1>
                     <p className="text-gray-500 mt-2">
@@ -1583,7 +1553,7 @@ const MyLaunchpad = () => {
                 {/* Loading State */}
                 {quickStartLoading && (
                     <div className="flex justify-center py-8">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500"></div>
                     </div>
                 )}
 
@@ -1613,7 +1583,7 @@ const MyLaunchpad = () => {
                                 <button
                                     onClick={handleQuickStartConfirm}
                                     disabled={quickStartAdding}
-                                    className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg disabled:opacity-50 flex items-center gap-2"
+                                    className="px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl font-medium hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200 disabled:opacity-50 flex items-center gap-2"
                                 >
                                     {quickStartAdding ? (
                                         <>
@@ -1665,7 +1635,9 @@ const MyLaunchpad = () => {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                        <RocketLaunchIcon className="h-7 w-7 text-purple-600" />
+                        <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
+                            <RocketLaunchIcon className="h-6 w-6 text-white" />
+                        </div>
                         My Launchpad
                     </h1>
                     <p className="text-gray-500 mt-1">

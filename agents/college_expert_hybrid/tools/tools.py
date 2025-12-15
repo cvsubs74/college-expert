@@ -131,159 +131,179 @@ def get_student_profile_data(tool_context: ToolContext) -> Dict[str, Any]:
 # NOTE: Legacy get_intended_major and get_test_scores removed - LLM reads markdown directly
 
 
-def update_profile(
-    instruction: str,
-    tool_context: ToolContext
+
+# ============================================================================
+# SIMPLIFIED PROFILE UPDATE - Let ADK agent LLM handle parsing
+# No manual Gemini calls, no state machine - just a simple tool
+# ============================================================================
+
+def update_profile_field(
+    field_name: str,
+    value: Any,
+    operation: str = "set",
+    tool_context: ToolContext = None
 ) -> Dict[str, Any]:
     """
-    Update the student's profile using natural language instruction.
+    Update a specific field in the student's profile.
     
-    This tool uses LLM to intelligently modify the markdown profile content
-    based on your instruction, then saves it back to the database.
+    The calling agent's LLM will parse user intent and call this with structured parameters.
+    No additional parsing needed - just execute the update.
     
     Args:
-        instruction: Natural language description of what to update.
-            Examples:
-            - "Update the GPA to 3.95"
-            - "Add a new extracurricular: Chess Club President, 5 hrs/week"
-            - "Change intended major to Computer Science"
-            - "Add AP Biology score of 5"
-            - "Remove the Model UN activity"
+        field_name: The profile field to update. Valid fields:
+            - Scalars (use operation="set"): 
+              name, school, gpa_weighted, gpa_unweighted, gpa_uc,
+              sat_total, sat_math, sat_reading, act_composite, 
+              intended_major, graduation_year
+            - Arrays (use operation="append" or "remove"):
+              courses, ap_exams, extracurriculars, awards, work_experience
+              
+        value: The value to set, append, or remove.
+            - For scalar fields (set): a single value (number, string)
+            - For array fields (append): a dict with item properties
+            - For array fields (remove): a dict with at least the "name" field to match, e.g.:
+              * courses: {"name": "AP Biology"}
+              * ap_exams: {"subject": "Biology"}  
+              * extracurriculars: {"name": "Chess Club"}
+              * awards: {"name": "National Merit"}
+              * work_experience: {"employer": "Local Store"}
+              
+        operation: "set" for scalar fields, "append" or "remove" for arrays
+        
         tool_context: ADK ToolContext (injected automatically)
         
     Returns:
-        Dictionary with success status and message
+        dict: {"success": true/false, "message": "..."}
+        
+    Examples:
+        - update_profile_field("gpa_weighted", 3.95, "set") - Update GPA
+        - update_profile_field("sat_total", 1520, "set") - Update SAT
+        - update_profile_field("courses", {"name": "AP Biology", "semester1_grade": "A", "grade_level": 10}, "append") - Add course
+        - update_profile_field("courses", {"name": "AP Biology"}, "remove") - Remove course
+        - update_profile_field("ap_exams", {"subject": "Biology", "score": 5}, "append") - Add AP exam
+        - update_profile_field("ap_exams", {"subject": "Biology"}, "remove") - Remove AP exam
     """
-    from google import genai
-    from google.genai import types
+    import requests
+    
+    # Get user email from state
+    user_email = tool_context.state.get('_cache:user_email') if tool_context else None
+    
+    if not user_email:
+        logger.error("[update_profile_field] No user email in state")
+        return {
+            "success": False,
+            "error": "not_logged_in",
+            "message": "Cannot update profile - please log in first."
+        }
+    
+    logger.info(f"[update_profile_field] field={field_name}, value={value}, op={operation}, user={user_email}")
+    
+    # Validate field name
+    valid_scalar_fields = [
+        "name", "school", "gpa_weighted", "gpa_unweighted", "gpa_uc",
+        "sat_total", "sat_math", "sat_reading", "act_composite",
+        "intended_major", "graduation_year", "location", "grade"
+    ]
+    valid_array_fields = [
+        "courses", "ap_exams", "extracurriculars", "awards", 
+        "work_experience", "leadership_roles", "special_programs"
+    ]
+    
+    if field_name not in valid_scalar_fields + valid_array_fields:
+        return {
+            "success": False,
+            "error": "invalid_field",
+            "message": f"Unknown field: {field_name}. Valid fields: {', '.join(valid_scalar_fields + valid_array_fields)}"
+        }
+    
+    # Validate operation
+    if field_name in valid_array_fields and operation not in ("append", "remove"):
+        operation = "append"  # Auto-correct for arrays (default to append)
+    elif field_name in valid_scalar_fields and operation != "set":
+        operation = "set"  # Auto-correct for scalars
+    
+    # Call backend API directly
+    url = f"{PROFILE_MANAGER_ES_URL}/update-structured-field"
     
     try:
-        logger.info(f"[update_profile] Instruction: {instruction[:100]}...")
-        
-        # Get cached email
-        user_email = tool_context.state.get('_cache:user_email')
-        if not user_email:
-            return {
-                "success": False,
-                "error": "User email not found",
-                "message": "Cannot update profile - user email not cached."
-            }
-        
-        # Get current profile content from cache
-        cached = tool_context.state.get(PROFILE_CACHE_KEY)
-        if not cached:
-            return {
-                "success": False,
-                "error": "No profile found",
-                "message": "Cannot update - no profile loaded. Please upload a profile first."
-            }
-        
-        docs = cached.get('documents', [])
-        if not docs:
-            return {
-                "success": False,
-                "error": "No profile found",
-                "message": "Cannot update - no profile documents found."
-            }
-        
-        current_content = docs[0].get('content', '')
-        if not current_content:
-            return {
-                "success": False,
-                "error": "Empty profile",
-                "message": "Cannot update - profile content is empty."
-            }
-        
-        # Use LLM to update the markdown content
-        gemini_api_key = os.getenv('GEMINI_API_KEY')
-        if not gemini_api_key:
-            return {
-                "success": False,
-                "error": "No API key",
-                "message": "Cannot update - Gemini API key not configured."
-            }
-        
-        client = genai.Client(api_key=gemini_api_key)
-        
-        prompt = f"""You are updating a student profile markdown document.
-
-CURRENT PROFILE:
-{current_content}
-
-UPDATE INSTRUCTION:
-{instruction}
-
-RULES:
-1. Make the requested change in the appropriate section
-2. If adding new content, place it in the most relevant section
-3. Keep all other content unchanged
-4. Maintain the markdown formatting (headers, bullets, bold, etc.)
-5. Return ONLY the updated markdown content, no explanations
-
-Updated markdown:"""
-
-        response = client.models.generate_content(
-            model='gemini-2.5-flash-lite',
-            contents=prompt,
-            config=types.GenerateContentConfig(temperature=0.1)
-        )
-        
-        updated_content = response.text.strip()
-        
-        # Remove any markdown code block wrapper if present
-        if updated_content.startswith('```markdown'):
-            updated_content = updated_content[len('```markdown'):].strip()
-        if updated_content.startswith('```'):
-            updated_content = updated_content[3:].strip()
-        if updated_content.endswith('```'):
-            updated_content = updated_content[:-3].strip()
-        
-        # Update the content in ES via Profile Manager
-        url = f"{PROFILE_MANAGER_ES_URL}/update-profile"
-        
-        es_response = requests.post(
+        response = requests.post(
             url,
             json={
                 "user_email": user_email,
-                "content": updated_content
+                "field_path": field_name,
+                "value": value,
+                "operation": operation
             },
-            headers={"Content-Type": "application/json", "X-User-Email": user_email},
+            headers={
+                "Content-Type": "application/json",
+                "X-User-Email": user_email
+            },
             timeout=30
         )
-
-        # Update cache regardless of ES response
-        docs[0]['content'] = updated_content
-        tool_context.state[PROFILE_CACHE_KEY] = cached
         
-        if es_response.status_code == 200:
-            result = es_response.json()
+        logger.info(f"[update_profile_field] Backend response: {response.status_code}")
+        
+        if response.status_code == 200:
+            result = response.json()
             if result.get("success"):
-                logger.info(f"[update_profile] Successfully updated profile")
+                # Format success message based on field type and operation
+                if field_name in valid_array_fields:
+                    item_name = value.get("name") or value.get("subject") or value.get("employer") or str(value)
+                    action_verb = "Removed from" if operation == "remove" else "Added to"
+                    return {
+                        "success": True,
+                        "message": f"✓ {action_verb} {field_name}: {item_name}",
+                        "field": field_name,
+                        "value": value,
+                        "operation": operation
+                    }
+                else:
+                    return {
+                        "success": True,
+                        "message": f"✓ Updated {field_name} to {value}",
+                        "field": field_name,
+                        "value": value
+                    }
+            else:
                 return {
-                    "success": True,
-                    "message": f"Profile updated successfully."
+                    "success": False,
+                    "error": result.get("error", "unknown"),
+                    "message": f"Update failed: {result.get('message', result.get('error', 'Unknown error'))}"
                 }
-        
-        # Even if ES update failed, cache was updated
-        logger.warning(f"[update_profile] ES update may have failed, but local cache updated")
-        return {
-            "success": True,
-            "message": f"Profile updated (cached locally)."
-        }
+        else:
+            error_text = response.text[:200] if response.text else "No response"
+            logger.error(f"[update_profile_field] Backend error: {response.status_code} - {error_text}")
+            return {
+                "success": False,
+                "error": f"backend_error_{response.status_code}",
+                "message": f"Backend error: {response.status_code}"
+            }
             
+    except requests.exceptions.Timeout:
+        logger.error("[update_profile_field] Request timeout")
+        return {"success": False, "error": "timeout", "message": "Request timed out. Please try again."}
+    except requests.exceptions.ConnectionError as e:
+        logger.error(f"[update_profile_field] Connection error: {e}")
+        return {"success": False, "error": "connection_error", "message": "Could not connect to backend."}
     except Exception as e:
-        logger.error(f"[update_profile] Error: {e}")
-        return {"success": False, "error": str(e), "message": f"Error updating profile: {str(e)}"}
+        logger.error(f"[update_profile_field] Unexpected error: {e}")
+        return {"success": False, "error": str(e), "message": f"Error: {str(e)}"}
 
 
-# Backward compatibility aliases (these call the new unified update_profile function)
-def update_student_profile(field: str, value: str, tool_context: ToolContext) -> Dict[str, Any]:
-    """Deprecated: Use update_profile() instead. Kept for backward compatibility."""
-    return update_profile(f"Update the {field} to: {value}", tool_context)
-
-def update_profile_content(update_type: str, content: str, tool_context: ToolContext) -> Dict[str, Any]:
-    """Deprecated: Use update_profile() instead. Kept for backward compatibility."""
-    return update_profile(f"{update_type.capitalize()} the following: {content}", tool_context)
+# Backward compatibility - map old function name to new
+def update_profile(instruction: str, tool_context: ToolContext) -> Dict[str, Any]:
+    """
+    DEPRECATED: Use update_profile_field() instead.
+    
+    This wrapper exists for backward compatibility but should not be used.
+    The agent should call update_profile_field() directly with structured parameters.
+    """
+    logger.warning("[update_profile] Deprecated function called. Agent should use update_profile_field() instead.")
+    return {
+        "success": False,
+        "error": "deprecated",
+        "message": "Please use update_profile_field() with structured parameters instead."
+    }
 
 
 
@@ -825,6 +845,113 @@ def get_college_list(user_email: str, tool_context: ToolContext = None) -> Dict[
             "success": False,
             "error": str(e),
             "message": f"Service unavailable: {str(e)}"
+        }
+
+
+def get_structured_profile(
+    user_email: Optional[str] = None,
+    tool_context: ToolContext = None
+) -> Dict[str, Any]:
+    """
+    Get structured profile data directly from Elasticsearch document.
+    
+    This calls the /get-profile endpoint which returns FLAT profile fields:
+    - Personal: name, school, location, grade, graduation_year, intended_major
+    - Academics: gpa_weighted, gpa_unweighted, gpa_uc, class_rank
+    - Test scores: sat_total, sat_math, sat_reading, act_composite
+    - Arrays: courses[], ap_exams[], extracurriculars[], awards[], work_experience[]
+    
+    Use this tool for questions about the student's profile like:
+    - "What courses did I take in 10th grade?"
+    - "What's my GPA?"
+    - "Show my extracurriculars"
+    - "Summarize my profile"
+    
+    Args:
+        user_email: Optional - if not provided, uses cached email from state
+        tool_context: ADK ToolContext (injected automatically)
+        
+    Returns:
+        Dictionary with all profile fields or error message
+    """
+    try:
+        # 1. Resolve User Email
+        if not user_email and tool_context:
+            user_email = tool_context.state.get('_cache:user_email')
+        
+        if not user_email:
+            return {
+                "success": False,
+                "error": "No user email available",
+                "message": "User not logged in or email not found in session"
+            }
+            
+        logger.info(f"="*60)
+        logger.info(f"📋 TOOL: get_structured_profile")
+        logger.info(f"   User Email: {user_email}")
+        
+        # 2. Check Cache First
+        if tool_context:
+            cached_profile = tool_context.state.get('_cache:student_profile')
+            # Check if we have valid cached data
+            if cached_profile and cached_profile.get('success') and cached_profile.get('profile'):
+                logger.info("   🎯 Found profile in cache! Returning cached data.")
+                logger.info(f"="*60)
+                return cached_profile
+        
+        # 3. Fetch from API (Cache Miss)
+        logger.info("   ⚠️ Cache miss - calling Profile Manager API")
+        logger.info(f"="*60)
+        
+        url = f"{PROFILE_MANAGER_ES_URL}/get-profile"
+        
+        response = requests.get(
+            url,
+            params={"user_email": user_email},
+            headers={
+                "Content-Type": "application/json",
+                "X-User-Email": user_email
+            },
+            timeout=30
+        )
+        
+        result = response.json()
+        logger.info(f"   Response success: {result.get('success')}")
+        
+        if result.get("success") and result.get("profile"):
+            profile = result["profile"]
+            
+            # Log what we found
+            logger.info(f"   Name: {profile.get('name', 'N/A')}")
+            logger.info(f"   GPA: {profile.get('gpa_weighted', 'N/A')}")
+            logger.info(f"   Courses count: {len(profile.get('courses', []))}")
+            logger.info(f"   AP Exams count: {len(profile.get('ap_exams', []))}")
+            
+            return {
+                "success": True,
+                "profile": profile,
+                "message": f"Found profile for {user_email}"
+            }
+        else:
+            return {
+                "success": False,
+                "error": result.get("error", "No profile found"),
+                "message": "No profile data found. User may need to set up their profile."
+            }
+            
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Get structured profile request failed: {e}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"Profile service unavailable: {str(e)}"
+        }
+    except Exception as e:
+        logger.error(f"Get structured profile failed: {e}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"Failed to get profile: {str(e)}"
         }
 
 

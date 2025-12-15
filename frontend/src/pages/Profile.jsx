@@ -9,6 +9,7 @@ import {
   deleteStudentProfile,
   getStudentProfileContent,
   fetchUserProfile,
+  fetchStructuredProfile,
   uploadVertexAIProfile,
   listVertexAIProfiles,
   deleteVertexAIProfile,
@@ -16,6 +17,7 @@ import {
   extractFullResponse,
   computeAllFits
 } from '../services/api';
+import ProfileViewCard from '../components/ProfileViewCard';
 
 import {
   DocumentArrowUpIcon,
@@ -53,6 +55,7 @@ function Profile() {
   // New state for tabs, profile view, and chat
   const [activeTab, setActiveTab] = useState('view'); // 'view' | 'chat' | 'files'
   const [profileMarkdown, setProfileMarkdown] = useState('');
+  const [structuredProfile, setStructuredProfile] = useState(null);
   const [loadingProfile, setLoadingProfile] = useState(false);
   const [chatMessages, setChatMessages] = useState([]);
   const [chatInput, setChatInput] = useState('');
@@ -173,11 +176,15 @@ function Profile() {
 
     setLoadingProfile(true);
     try {
-      // Fetch profile directly from Profile Manager ES
-      const profileData = await fetchUserProfile(currentUser.email);
+      // Fetch structured profile first (for visual display)
+      const structuredData = await fetchStructuredProfile(currentUser.email);
+      if (structuredData.success && structuredData.profile) {
+        setStructuredProfile(structuredData.profile);
+      }
 
+      // Also fetch markdown for chat/AI editing
+      const profileData = await fetchUserProfile(currentUser.email);
       if (profileData.success && profileData.content) {
-        // Content IS the markdown - display directly
         setProfileMarkdown(profileData.content);
       } else {
         setProfileMarkdown('# No Profile Found\n\nPlease upload a profile document to get started.');
@@ -208,23 +215,27 @@ function Profile() {
 
 
 
-  // Format structured profile data as markdown
+  // Format structured profile data as markdown - Uses FLAT profile fields
   const formatStructuredProfileAsMarkdown = (data) => {
-    const pi = data.personal_info || {};
-    const acad = data.academics || {};
-    const gpa = acad.gpa || {};
-    const ts = data.test_scores || {};
-    const sat = ts.sat || {};
-    const act = ts.act || {};
+    // Flat fields - direct access
+    const name = data.name || 'Unknown';
+    const school = data.school;
+    const location = data.location;
+    const grade = data.grade;
+    const gpaWeighted = data.gpa_weighted;
+    const gpaUnweighted = data.gpa_unweighted;
+    const satTotal = data.sat_total;
+    const satMath = data.sat_math;
+    const satReading = data.sat_reading;
+    const actComposite = data.act_composite;
 
-    let md = `# Student Profile: ${pi.name || 'Unknown'}\n\n`;
+    let md = `# Student Profile: ${name}\n\n`;
 
     // Personal Info
     md += `## 👤 Personal Information\n`;
-    md += `- **School**: ${pi.school || 'Not specified'}\n`;
-    md += `- **Location**: ${pi.location || 'Not specified'}\n`;
-    if (pi.grade) md += `- **Grade**: ${pi.grade}\n`;
-    if (pi.ethnicity) md += `- **Ethnicity**: ${pi.ethnicity}\n`;
+    md += `- **School**: ${school || 'Not specified'}\n`;
+    md += `- **Location**: ${location || 'Not specified'}\n`;
+    if (grade) md += `- **Grade**: ${grade}\n`;
     md += `\n`;
 
     // Intended Major
@@ -232,26 +243,25 @@ function Profile() {
       md += `## 🎯 Intended Major\n${data.intended_major}\n\n`;
     }
 
-    // Academics
+    // Academics - Using flat field names
     md += `## 📊 Academic Information\n`;
     md += `### GPA\n`;
-    if (gpa.weighted) md += `- **Weighted GPA**: ${gpa.weighted}\n`;
-    if (gpa.unweighted) md += `- **Unweighted GPA**: ${gpa.unweighted}\n`;
-    if (gpa.uc_weighted) md += `- **UC Weighted GPA**: ${gpa.uc_weighted}\n`;
-    if (gpa.uc_unweighted) md += `- **UC Unweighted GPA**: ${gpa.uc_unweighted}\n`;
-    if (acad.total_semesters) md += `- **Total Semesters**: ${acad.total_semesters}\n`;
+    if (gpaWeighted) md += `- **Weighted GPA**: ${gpaWeighted}\n`;
+    if (gpaUnweighted) md += `- **Unweighted GPA**: ${gpaUnweighted}\n`;
+    if (data.gpa_uc) md += `- **UC GPA**: ${data.gpa_uc}\n`;
     md += `\n`;
 
-    // Test Scores
-    if (sat.total || act.composite || (ts.ap_exams && ts.ap_exams.length > 0)) {
+    // Test Scores - Using flat field names
+    const apExams = data.ap_exams || [];
+    if (satTotal || actComposite || apExams.length > 0) {
       md += `### Test Scores\n`;
-      if (sat.total) md += `- **SAT Total**: ${sat.total}${sat.math ? ` (Math: ${sat.math}, Reading: ${sat.reading})` : ''}\n`;
-      if (act.composite) md += `- **ACT Composite**: ${act.composite}\n`;
+      if (satTotal) md += `- **SAT Total**: ${satTotal}${satMath ? ` (Math: ${satMath}, Reading: ${satReading})` : ''}\n`;
+      if (actComposite) md += `- **ACT Composite**: ${actComposite}\n`;
 
-      if (ts.ap_exams && ts.ap_exams.length > 0) {
+      if (apExams.length > 0) {
         md += `\n**AP Exams:**\n`;
-        ts.ap_exams.forEach(ap => {
-          md += `- ${ap.subject}: **${ap.score}**${ap.subscore ? ` (${ap.subscore})` : ''}\n`;
+        apExams.forEach(ap => {
+          md += `- ${ap.subject}: **${ap.score}**\n`;
         });
       }
       md += `\n`;
@@ -646,34 +656,36 @@ If this is a question about my profile, answer based on my profile data.`;
 
   return (
     <div className="space-y-8">
-      {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Student Profile</h1>
-        <p className="mt-2 text-gray-600">
-          Upload your academic profile, transcript, and extracurricular information. This will be used for your admissions analysis.
-        </p>
+      {/* Hero Header - Subtle light background with accent */}
+      <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center shadow-md">
+              <UserCircleIcon className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-gray-900">Student Profile</h1>
+              <p className="mt-0.5 text-sm text-gray-500 max-w-lg">
+                Upload your academic profile, transcript, and activities for personalized analysis.
+              </p>
+            </div>
+          </div>
 
-        {/* Approach Indicator */}
-        <div className={`mt-4 inline-flex items-center px-4 py-2 rounded-lg border ${approachInfo.bgClass} ${approachInfo.borderClass}`}>
-          <div className={`w-2 h-2 rounded-full mr-3 ${approachInfo.dotClass}`}></div>
-          <div>
-            <div className={`text-sm font-semibold ${approachInfo.textClass}`}>
-              {approachInfo.name}
-            </div>
-            <div className={`text-xs font-medium ${approachInfo.subTextClass}`}>
-              {approachInfo.description}
-            </div>
+          {/* Approach Indicator Badge */}
+          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-lg">
+            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+            <span className="text-xs font-medium text-amber-800">{approachInfo.name}</span>
           </div>
         </div>
       </div>
 
       {/* Tab Navigation */}
-      <div className="bg-white shadow rounded-lg p-1 flex gap-1">
+      <div className="bg-white rounded-2xl p-1.5 flex gap-1 border border-gray-200 shadow-sm">
         <button
           onClick={() => setActiveTab('view')}
-          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-all ${activeTab === 'view'
-            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-            : 'text-gray-600 hover:bg-gray-100'
+          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium transition-all ${activeTab === 'view'
+            ? 'bg-amber-600 text-white shadow-md'
+            : 'text-gray-600 hover:bg-amber-50'
             }`}
         >
           <EyeIcon className="h-5 w-5" />
@@ -681,9 +693,9 @@ If this is a question about my profile, answer based on my profile data.`;
         </button>
         <button
           onClick={() => setActiveTab('chat')}
-          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-all ${activeTab === 'chat'
-            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-            : 'text-gray-600 hover:bg-gray-100'
+          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium transition-all ${activeTab === 'chat'
+            ? 'bg-amber-600 text-white shadow-md'
+            : 'text-gray-600 hover:bg-amber-50'
             }`}
         >
           <ChatBubbleLeftRightIcon className="h-5 w-5" />
@@ -691,9 +703,9 @@ If this is a question about my profile, answer based on my profile data.`;
         </button>
         <button
           onClick={() => setActiveTab('files')}
-          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-all ${activeTab === 'files'
-            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-            : 'text-gray-600 hover:bg-gray-100'
+          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium transition-all ${activeTab === 'files'
+            ? 'bg-amber-600 text-white shadow-md'
+            : 'text-gray-600 hover:bg-amber-50'
             }`}
         >
           <DocumentArrowUpIcon className="h-5 w-5" />
@@ -703,16 +715,18 @@ If this is a question about my profile, answer based on my profile data.`;
 
       {/* View Profile Tab */}
       {activeTab === 'view' && (
-        <div className="bg-white shadow rounded-lg p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
-              <UserCircleIcon className="h-6 w-6 text-purple-600" />
+        <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-3">
+              <div className="p-2 bg-gray-100 rounded-xl">
+                <UserCircleIcon className="h-5 w-5 text-gray-600" />
+              </div>
               Your Profile
             </h2>
             <button
               onClick={loadProfileMarkdown}
               disabled={loadingProfile}
-              className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-purple-600 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
             >
               <ArrowPathIcon className={`h-4 w-4 ${loadingProfile ? 'animate-spin' : ''}`} />
               Refresh
@@ -720,12 +734,16 @@ If this is a question about my profile, answer based on my profile data.`;
           </div>
 
           {loadingProfile ? (
-            <div className="flex items-center justify-center py-12">
-              <ArrowPathIcon className="h-8 w-8 text-purple-600 animate-spin" />
-              <span className="ml-3 text-gray-500">Loading your profile...</span>
+            <div className="flex flex-col items-center justify-center py-16">
+              <div className="p-4 bg-gray-100 rounded-full mb-4">
+                <ArrowPathIcon className="h-8 w-8 text-gray-500 animate-spin" />
+              </div>
+              <span className="text-gray-600 font-medium">Loading your profile...</span>
             </div>
+          ) : structuredProfile ? (
+            <ProfileViewCard profileData={structuredProfile} />
           ) : (
-            <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-800">
+            <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-800 bg-white rounded-xl p-6 shadow-sm">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {profileMarkdown || '# No Profile Data\n\nUpload a profile document or click "Refresh" to load your profile.'}
               </ReactMarkdown>
@@ -736,14 +754,16 @@ If this is a question about my profile, answer based on my profile data.`;
 
       {/* Chat Tab */}
       {activeTab === 'chat' && (
-        <div className="bg-white shadow rounded-lg flex flex-col h-[600px]">
+        <div className="bg-white shadow-sm rounded-2xl flex flex-col h-[600px] border border-gray-200">
           {/* Chat Header */}
-          <div className="p-4 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
-              <SparklesIcon className="h-6 w-6 text-purple-600" />
+          <div className="p-4 border-b border-gray-100">
+            <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-3">
+              <div className="p-2 bg-gray-100 rounded-xl">
+                <SparklesIcon className="h-5 w-5 text-gray-600" />
+              </div>
               Edit Profile with AI
             </h2>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-gray-500 mt-1 ml-12">
               Tell me what to update in your profile. Example: "Update my GPA to 3.9" or "Add robotics club to activities"
             </p>
           </div>
@@ -752,14 +772,16 @@ If this is a question about my profile, answer based on my profile data.`;
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {chatMessages.length === 0 ? (
               <div className="text-center py-8 text-gray-400">
-                <ChatBubbleLeftRightIcon className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                <p>Start a conversation to edit your profile</p>
+                <div className="p-4 bg-gray-100 rounded-2xl inline-block mb-4">
+                  <ChatBubbleLeftRightIcon className="h-10 w-10 text-gray-500" />
+                </div>
+                <p className="text-gray-600">Start a conversation to edit your profile</p>
                 <div className="mt-4 flex flex-wrap gap-2 justify-center">
                   {['Update my GPA to 3.85', 'Add SAT score: 1480', 'Add tennis to activities', 'Change intended major to Computer Science'].map(suggestion => (
                     <button
                       key={suggestion}
                       onClick={() => setChatInput(suggestion)}
-                      className="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm hover:bg-purple-100 transition-colors"
+                      className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 border border-gray-200 transition-colors"
                     >
                       {suggestion}
                     </button>
@@ -773,9 +795,9 @@ If this is a question about my profile, answer based on my profile data.`;
                   className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] p-3 rounded-lg ${msg.role === 'user'
-                      ? 'bg-purple-600 text-white rounded-br-sm'
-                      : 'bg-gray-100 text-gray-800 rounded-bl-sm'
+                    className={`max-w-[80%] p-3 rounded-2xl ${msg.role === 'user'
+                      ? 'bg-gray-900 text-white'
+                      : 'bg-gray-50 text-gray-800 border border-gray-200'
                       }`}
                   >
                     {msg.role === 'assistant' ? (
@@ -793,8 +815,8 @@ If this is a question about my profile, answer based on my profile data.`;
             )}
             {isSending && (
               <div className="flex justify-start">
-                <div className="bg-gray-100 p-3 rounded-lg rounded-bl-sm">
-                  <div className="flex items-center gap-2 text-gray-500">
+                <div className="bg-gray-100 p-3 rounded-2xl border border-gray-200">
+                  <div className="flex items-center gap-2 text-gray-600">
                     <ArrowPathIcon className="h-4 w-4 animate-spin" />
                     <span>Thinking...</span>
                   </div>
@@ -805,7 +827,7 @@ If this is a question about my profile, answer based on my profile data.`;
           </div>
 
           {/* Chat Input */}
-          <div className="p-4 border-t border-gray-200">
+          <div className="p-4 border-t border-gray-100 bg-gray-50">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -813,13 +835,13 @@ If this is a question about my profile, answer based on my profile data.`;
                 onChange={(e) => setChatInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSendMessage()}
                 placeholder="Tell me what to update..."
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="flex-1 px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white"
                 disabled={isSending}
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!chatInput.trim() || isSending}
-                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
               >
                 <PaperAirplaneIcon className="h-5 w-5" />
               </button>
@@ -833,19 +855,24 @@ If this is a question about my profile, answer based on my profile data.`;
         <>
 
           {/* Upload Section */}
-          <div className="bg-white shadow rounded-lg p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Upload Profile</h2>
+          <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <div className="p-1.5 bg-gray-100 rounded-lg">
+                <DocumentArrowUpIcon className="h-5 w-5 text-gray-600" />
+              </div>
+              Upload Profile
+            </h2>
 
             <div className="space-y-4">
               {/* File Input */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-600 mb-2">
                   Select Files (PDF, DOCX, TXT) - Multiple files supported
                 </label>
                 <div className="flex items-center space-x-4">
-                  <label className="flex-1 flex items-center justify-center px-6 py-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary hover:bg-gray-50 transition-colors">
+                  <label className="flex-1 flex items-center justify-center px-6 py-6 border-2 border-dashed border-gray-300 rounded-2xl cursor-pointer hover:border-gray-400 hover:bg-gray-50 transition-colors">
                     <div className="text-center">
-                      <DocumentArrowUpIcon className="mx-auto h-12 w-12 text-gray-400" />
+                      <DocumentArrowUpIcon className="mx-auto h-10 w-10 text-gray-400" />
                       <p className="mt-2 text-sm text-gray-600">
                         {selectedFiles.length > 0
                           ? `${selectedFiles.length} file(s) selected`
@@ -920,9 +947,9 @@ If this is a question about my profile, answer based on my profile data.`;
               <button
                 onClick={handleUpload}
                 disabled={selectedFiles.length === 0 || uploading}
-                className={`w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-white shadow-sm ${selectedFiles.length === 0 || uploading
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary'
+                className={`w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white ${selectedFiles.length === 0 || uploading
+                  ? 'bg-gray-300 cursor-not-allowed'
+                  : 'bg-gray-900 hover:bg-gray-800'
                   } transition-all duration-200`}
               >
                 {uploading ? (
@@ -971,9 +998,12 @@ If this is a question about my profile, answer based on my profile data.`;
             </div>
 
             {/* Guidelines */}
-            <div className="mt-6 p-4 bg-blue-50 rounded-md">
-              <h3 className="text-sm font-medium text-blue-900 mb-2">What to Include:</h3>
-              <ul className="text-sm text-blue-800 space-y-1 list-disc list-inside">
+            <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
+              <h3 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                <SparklesIcon className="h-4 w-4 text-gray-500" />
+                What to Include:
+              </h3>
+              <ul className="text-sm text-gray-600 space-y-1.5 list-disc list-inside">
                 <li>Complete transcript with courses, grades, and course levels (Regular, Honors, AP, IB)</li>
                 <li>Standardized test scores (SAT, ACT, AP tests)</li>
                 <li>Extracurricular activities and leadership roles</li>
@@ -985,22 +1015,25 @@ If this is a question about my profile, answer based on my profile data.`;
           </div>
 
           {/* Existing Profiles */}
-          <div className="bg-white shadow rounded-lg p-6">
+          <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
             <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center space-x-4">
-                <h2 className="text-xl font-semibold text-gray-900">Your Profiles</h2>
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-gray-100 rounded-xl">
+                  <DocumentTextIcon className="h-5 w-5 text-gray-600" />
+                </div>
+                <h2 className="text-lg font-semibold text-gray-900">Your Profiles</h2>
                 {selectedProfiles.length > 0 && (
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
                     {selectedProfiles.length} selected
                   </span>
                 )}
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center gap-2">
                 {selectedProfiles.length > 0 && (
                   <button
                     onClick={handleBulkDelete}
                     disabled={deleting}
-                    className="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 disabled:opacity-50"
+                    className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-xl text-white bg-red-500 hover:bg-red-600 disabled:opacity-50"
                   >
                     <TrashIcon className="h-4 w-4 mr-2" />
                     {deleting ? 'Deleting...' : `Delete ${selectedProfiles.length} `}
@@ -1009,23 +1042,28 @@ If this is a question about my profile, answer based on my profile data.`;
                 <button
                   onClick={loadProfiles}
                   disabled={loading}
-                  className="flex items-center px-3 py-2 text-sm text-gray-700 hover:text-primary transition-colors"
+                  className="flex items-center px-3 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors bg-white border border-gray-200 rounded-xl hover:border-gray-300"
                 >
-                  <ArrowPathIcon className={`h - 4 w - 4 mr - 1 ${loading ? 'animate-spin' : ''} `} />
+                  <ArrowPathIcon className={`h-4 w-4 mr-1 ${loading ? 'animate-spin' : ''}`} />
                   Refresh
                 </button>
               </div>
             </div>
 
             {loading ? (
-              <div className="text-center py-8">
-                <ArrowPathIcon className="h-8 w-8 text-gray-400 animate-spin mx-auto" />
-                <p className="mt-2 text-sm text-gray-500">Loading profiles...</p>
+              <div className="text-center py-12">
+                <div className="p-4 bg-gray-100 rounded-full inline-block mb-3">
+                  <ArrowPathIcon className="h-8 w-8 text-gray-500 animate-spin" />
+                </div>
+                <p className="text-sm text-gray-500">Loading profiles...</p>
               </div>
             ) : profiles.length === 0 ? (
-              <div className="text-center py-8">
-                <DocumentTextIcon className="h-12 w-12 text-gray-400 mx-auto" />
-                <p className="mt-2 text-sm text-gray-500">No profiles uploaded yet</p>
+              <div className="text-center py-12">
+                <div className="p-4 bg-gray-100 rounded-full inline-block mb-3">
+                  <DocumentTextIcon className="h-10 w-10 text-gray-400" />
+                </div>
+                <p className="text-sm text-gray-500">No profiles uploaded yet</p>
+                <p className="text-xs text-gray-400 mt-1">Upload your first profile above</p>
               </div>
             ) : (
               <>
@@ -1036,7 +1074,7 @@ If this is a question about my profile, answer based on my profile data.`;
                         type="checkbox"
                         checked={selectedProfiles.length === profiles.length}
                         onChange={toggleSelectAll}
-                        className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                        className="h-4 w-4 text-gray-900 border-gray-300 rounded focus:ring-gray-500"
                       />
                       <span className="text-sm font-medium text-gray-700">
                         Select All
@@ -1050,8 +1088,8 @@ If this is a question about my profile, answer based on my profile data.`;
                     return (
                       <div
                         key={index}
-                        className={`flex items - center justify - between p - 4 border rounded - lg transition - colors ${isSelected ? 'border-primary bg-blue-50' : 'border-gray-200 hover:bg-gray-50'
-                          } `}
+                        className={`flex items-center justify-between p-4 border rounded-xl transition-all ${isSelected ? 'border-gray-400 bg-gray-50' : 'border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                          }`}
                       >
                         <div className="flex items-center space-x-3 flex-1">
                           <input

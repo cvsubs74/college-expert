@@ -207,12 +207,12 @@ Question: ${question}`;
       </div>
 
       {/* Info Banner */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
         <div className="flex">
-          <InformationCircleIcon className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+          <InformationCircleIcon className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
           <div className="ml-3">
-            <h3 className="text-sm font-medium text-blue-900">Knowledge Base Powered</h3>
-            <p className="mt-1 text-sm text-blue-800">
+            <h3 className="text-sm font-medium text-amber-900">Knowledge Base Powered</h3>
+            <p className="mt-1 text-sm text-amber-800">
               This chat uses our college admissions knowledge base to provide accurate,
               research-backed answers. Responses are grounded in expert insights and official data.
             </p>
@@ -221,17 +221,19 @@ Question: ${question}`;
       </div>
 
       {/* Chat Container */}
-      <div className="bg-white shadow rounded-lg flex flex-col" style={{ height: '600px' }}>
+      <div className="bg-white shadow-lg shadow-amber-100 rounded-2xl flex flex-col border border-gray-100" style={{ height: '600px' }}>
         {/* Chat Header */}
-        <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+        <div className="px-6 py-4 border-b border-amber-100 flex items-center justify-between">
           <div className="flex items-center">
-            <ChatBubbleLeftRightIcon className="h-6 w-6 text-primary mr-2" />
+            <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl mr-3">
+              <ChatBubbleLeftRightIcon className="h-5 w-5 text-white" />
+            </div>
             <h2 className="text-lg font-semibold text-gray-900">Chat with AI Counselor</h2>
           </div>
           {messages.length > 0 && (
             <button
               onClick={handleNewChat}
-              className="text-sm text-gray-600 hover:text-primary transition-colors"
+              className="text-sm text-gray-600 hover:text-amber-600 font-medium transition-colors"
             >
               New Chat
             </button>
@@ -242,7 +244,9 @@ Question: ${question}`;
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
           {messages.length === 0 ? (
             <div className="text-center py-12">
-              <SparklesIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+              <div className="p-4 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl inline-block mb-4">
+                <SparklesIcon className="h-10 w-10 text-amber-600" />
+              </div>
               <h3 className="text-lg font-medium text-gray-900 mb-2">Start a Conversation</h3>
               <p className="text-gray-600 mb-6">Ask any question about college admissions</p>
 
@@ -253,17 +257,17 @@ Question: ${question}`;
                   {displayedQuestions.map((question, index) => {
                     // Color code buttons based on index
                     const colorClasses = [
-                      'bg-blue-50 border-blue-300 hover:bg-blue-100 hover:border-blue-400 text-blue-900',
-                      'bg-green-50 border-green-300 hover:bg-green-100 hover:border-green-400 text-green-900',
-                      'bg-purple-50 border-purple-300 hover:bg-purple-100 hover:border-purple-400 text-purple-900',
-                      'bg-orange-50 border-orange-300 hover:bg-orange-100 hover:border-orange-400 text-orange-900'
+                      'bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-300 text-amber-900',
+                      'bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300 text-emerald-900',
+                      'bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-300 text-blue-900',
+                      'bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-300 text-purple-900'
                     ];
 
                     return (
                       <button
                         key={index}
                         onClick={() => handleSuggestedQuestion(question)}
-                        className={`text-left px-4 py-3 rounded-lg text-sm transition-colors border ${colorClasses[index % 4]}`}
+                        className={`text-left px-4 py-3 rounded-xl text-sm transition-all border hover:-translate-y-0.5 ${colorClasses[index % 4]}`}
                       >
                         {question}
                       </button>
@@ -280,9 +284,9 @@ Question: ${question}`;
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-3xl rounded-lg px-4 py-3 ${message.role === 'user'
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-100 text-gray-900'
+                    className={`max-w-3xl rounded-2xl px-4 py-3 ${message.role === 'user'
+                      ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md'
+                      : 'bg-gray-50 text-gray-900 border border-gray-100'
                       }`}
                   >
                     {message.role === 'user' ? (
@@ -300,10 +304,10 @@ Question: ${question}`;
 
               {sending && (
                 <div className="flex justify-start">
-                  <div className="bg-gray-100 rounded-lg px-4 py-3">
+                  <div className="bg-amber-50 rounded-2xl px-4 py-3 border border-amber-100">
                     <div className="flex items-center space-x-2">
-                      <ArrowPathIcon className="h-4 w-4 text-gray-600 animate-spin" />
-                      <span className="text-sm text-gray-600">Thinking...</span>
+                      <ArrowPathIcon className="h-4 w-4 text-amber-600 animate-spin" />
+                      <span className="text-sm text-amber-700">Thinking...</span>
                     </div>
                   </div>
                 </div>
@@ -317,17 +321,17 @@ Question: ${question}`;
                     {suggestedQuestions.slice(0, 4).map((question, index) => {
                       // Color code buttons based on index
                       const colorClasses = [
-                        'bg-blue-50 border-blue-300 hover:bg-blue-100 hover:border-blue-400 text-blue-900',
-                        'bg-green-50 border-green-300 hover:bg-green-100 hover:border-green-400 text-green-900',
-                        'bg-purple-50 border-purple-300 hover:bg-purple-100 hover:border-purple-400 text-purple-900',
-                        'bg-orange-50 border-orange-300 hover:bg-orange-100 hover:border-orange-400 text-orange-900'
+                        'bg-amber-50 border-amber-200 hover:bg-amber-100 hover:border-amber-300 text-amber-900',
+                        'bg-emerald-50 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300 text-emerald-900',
+                        'bg-blue-50 border-blue-200 hover:bg-blue-100 hover:border-blue-300 text-blue-900',
+                        'bg-purple-50 border-purple-200 hover:bg-purple-100 hover:border-purple-300 text-purple-900'
                       ];
 
                       return (
                         <button
                           key={index}
                           onClick={() => handleSuggestedQuestion(question)}
-                          className={`text-left px-4 py-3 rounded-lg text-sm transition-colors border ${colorClasses[index % 4]}`}
+                          className={`text-left px-4 py-3 rounded-xl text-sm transition-all border hover:-translate-y-0.5 ${colorClasses[index % 4]}`}
                         >
                           {question}
                         </button>
@@ -350,23 +354,23 @@ Question: ${question}`;
         )}
 
         {/* Input Area */}
-        <div className="px-6 py-4 border-t border-gray-200">
+        <div className="px-6 py-4 border-t border-amber-100 bg-amber-50/50">
           <form onSubmit={handleSendMessage} className="flex space-x-3">
             <input
               type="text"
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               placeholder="Ask anything - college info, my chances, recommendations..."
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+              className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:ring-amber-500 focus:border-amber-500 bg-white"
               disabled={sending}
             />
             <button
               type="submit"
               disabled={sending || !inputMessage.trim()}
-              className={`px-6 py-3 rounded-lg flex items-center space-x-2 ${sending || !inputMessage.trim()
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-primary hover:bg-blue-700'
-                } text-white transition-colors`}
+              className={`px-6 py-3 rounded-xl flex items-center space-x-2 transition-all ${sending || !inputMessage.trim()
+                ? 'bg-gray-300 cursor-not-allowed'
+                : 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 shadow-lg shadow-amber-200'
+                } text-white`}
             >
               {sending ? (
                 <>
@@ -385,13 +389,13 @@ Question: ${question}`;
       </div>
 
       {/* Tips */}
-      <div className="bg-gray-50 rounded-lg p-4">
-        <h3 className="text-sm font-medium text-gray-900 mb-2">Tips for better answers:</h3>
-        <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
-          <li>Be specific about the college or topic you're asking about</li>
-          <li>Ask one question at a time for clearer responses</li>
-          <li>All answers are based on our knowledge base - if information isn't available, we'll let you know</li>
-          <li>You can ask follow-up questions to dive deeper into any topic</li>
+      <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+        <h3 className="text-sm font-semibold text-gray-900 mb-3">💡 Tips for better answers:</h3>
+        <ul className="text-sm text-gray-600 space-y-2">
+          <li className="flex items-start gap-2"><span className="text-amber-500">•</span>Be specific about the college or topic you're asking about</li>
+          <li className="flex items-start gap-2"><span className="text-amber-500">•</span>Ask one question at a time for clearer responses</li>
+          <li className="flex items-start gap-2"><span className="text-amber-500">•</span>All answers are based on our knowledge base - if information isn't available, we'll let you know</li>
+          <li className="flex items-start gap-2"><span className="text-amber-500">•</span>You can ask follow-up questions to dive deeper into any topic</li>
         </ul>
       </div>
     </div>

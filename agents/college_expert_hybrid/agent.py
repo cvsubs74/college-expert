@@ -13,7 +13,7 @@ from google.genai import types
 # Import logging
 from .tools.logging_utils import log_agent_entry, log_agent_exit
 from .tools.tools import (
-    list_valid_university_ids  # Keep simple utility function
+    list_valid_university_ids  # Utility function
 )
 
 from pydantic import BaseModel, Field
@@ -26,6 +26,7 @@ from .sub_agents.profile_preloader_agent.agent import ProfileLoaderAgent
 # New sub-agents with structured outputs
 from .sub_agents.fit_analysis_agent import FitAnalysisAgent
 from .sub_agents.college_list_agent import CollegeListAgent
+from .sub_agents.profile_update_agent.agent import ProfileUpdateAgent
 
 # Configure logging
 import logging
@@ -49,12 +50,51 @@ response_formatter = LlmAgent(
     1. **result**: Copy agent_response AS-IS (don't modify)
     2. **suggested_questions**: Generate 4 relevant follow-up questions
     
-    **Question Rules:**
-    - Only mention universities that appear in agent_response
-    - Mix general and specific questions
-    - For greetings: use general questions about admissions
-    - For analysis: suggest comparisons or next steps
-    - Return as array of strings
+    **CRITICAL: Questions must be STUDENT-FOCUSED, not AI-focused**
+    
+    **BAD Examples (AI-meta, avoid these)**:
+    - "Can you confirm if X was removed?" (checking AI's work)
+    - "What other courses would you like to add or remove?" (too generic)
+    - "Would you like to review your entire course list?" (asking about data review)
+    
+    **GOOD Examples (student/college planning focus)**:
+    - "What colleges should I target with my current GPA?" (actionable planning)
+    - "How can I strengthen my extracurriculars for top schools?" (improvement strategy)
+    - "Should I take more AP courses senior year?" (academic planning)
+    - "What's my fit for UC Berkeley?" (specific college assessment)
+    
+    **Question Rules by Context**:
+    
+    1. **Profile Updates** (GPA, courses, activities added/removed):
+       - Suggest fit analysis impact: "How does this change affect my fit for [university]?"
+       - Academic strategy: "What other courses would boost my application?"
+       - College targeting: "What reach schools should I consider now?"
+       - Timeline planning: "When should I take my next SAT to improve my score?"
+    
+    2. **Fit Analysis** (for specific university):
+       - Compare similar schools: "How does [university] compare to [similar university]?"
+       - Gap filling: "What can I do to improve my chances at [university]?"
+       - Alternative suggestions: "What similar schools should I also consider?"
+       - Early decision: "Should I apply Early Decision to [university]?"
+    
+    3. **University Information**:
+       - Fit check: "What's my fit for [university]?"
+       - Program details: "What makes [university's] [major] program special?"
+       - Comparison: "How does [university] compare to [peer university]?"
+       - Application strategy: "What's the best application strategy for [university]?"
+    
+    4. **Greetings/General**:
+       - "What colleges match my profile?"
+       - "How can I improve my college applications?"
+       - "Show me my college list progress"
+       - "What reach schools should I target?"
+    
+    **ALWAYS**:
+    - Focus on college planning, applications, or academic strategy
+    - Make questions actionable and specific
+    - Only mention universities from agent_response
+    - Never ask the student to verify AI's work
+    - Think: "What would help them get into college?" not "What would help me verify my output?"
     """,
     output_schema=OrchestratorOutput,
     output_key="formatted_output",
@@ -73,58 +113,65 @@ MasterReasoningAgent = LlmAgent(
 
 **AVAILABLE SUB-AGENTS:**
 
-1. **FitAnalysisAgent** → Get pre-computed fit analysis for a university
+1. **ProfileUpdateAgent** → Updates student profile (GPA, test scores, activities)
+   - Use for: "Update my GPA to 3.9", "Add Tennis activity", "Change major to CS"
+   - Delegate ALL update requests to this agent immediately.
+
+2. **FitAnalysisAgent** → Get pre-computed fit analysis for a university
    - Input: university_id or university_name
    - Output: fit_category (SAFETY/TARGET/REACH/SUPER_REACH), match_percentage, factors
    - Use for: "What's my fit for MIT?", "Analyze my chances at Stanford"
    - CRITICAL: This always retrieves PRE-COMPUTED fits - never recalculates
 
-2. **CollegeListAgent** → Manage student's college list
+3. **CollegeListAgent** → Manage student's college list
    - Operations: GET (show list), ADD (add university), REMOVE (remove university)
    - Output: Structured college list with university_id, university_name, status
    - Use for: "Show my list", "Add Harvard", "Remove UCLA"
 
-3. **StudentProfileAgent** → Get student academic profile
+4. **StudentProfileAgent** → Get student academic profile
    - Output: GPA, test scores, intended major, activities, awards
    - Use for: All personalized analysis
    - CRITICAL: NEVER ask user for this data - always fetch from profile
 
-4. **UniversityKnowledgeAnalyst** → Search university knowledge base
+5. **UniversityKnowledgeAnalyst** → Search university knowledge base
    - Input: University name or search criteria
    - Output: University details, programs, admission stats, rankings
    - Use for: "Tell me about MIT", "Find schools with strong CS programs"
 
-5. **DeepResearchAgent** → Web research for culture, vibe, recent news
+6. **DeepResearchAgent** → Web research for culture, vibe, recent news
    - Use for: "What's the culture like at Stanford?", "Recent news about UCLA"
 
 **HOW TO ANSWER:**
 
-1. **University Questions** → UniversityKnowledgeAnalyst
+1. **Profile Updates** → ProfileUpdateAgent
+   - If user asks to change/update/add to their profile, ALWAYS call ProfileUpdateAgent.
+
+2. **University Questions** → UniversityKnowledgeAnalyst
    - If found: Answer with KB data
    - If NOT found: Say "I don't have [university] in my knowledge base"
 
-2. **Personalized Questions** ("my chances", "should I apply"):
+3. **Personalized Questions** ("my chances", "should I apply"):
    - Call StudentProfileAgent to get profile
    - Call UniversityKnowledgeAnalyst to get university data
    - Call FitAnalysisAgent to get pre-computed fit
    - Present combined analysis
 
-3. **Fit Analysis** ("analyze fit", "my fit for X"):
+4. **Fit Analysis** ("analyze fit", "my fit for X"):
    - Call FitAnalysisAgent with university_id
    - Present fit_category, match_percentage, and factors
    - Explain recommendations
 
-4. **College List Operations**:
+5. **College List Operations**:
    - GET: Call CollegeListAgent
    - ADD: Call CollegeListAgent with university details
    - REMOVE: Call CollegeListAgent with university_id
 
-5. **Recommendations** ("build a list", "find safety schools"):
+6. **Recommendations** ("build a list", "find safety schools"):
    - Call StudentProfileAgent for context
    - Call FitAnalysisAgent for relevant fit categories
    - Present structured recommendations
 
-6. **Deep Research** (culture, vibe, recent news) → DeepResearchAgent
+7. **Deep Research** (culture, vibe, recent news) → DeepResearchAgent
 
 **CRITICAL RULES:**
 - NEVER try to calculate or recompute fits - ALWAYS use FitAnalysisAgent (pre-computed)
@@ -135,12 +182,13 @@ MasterReasoningAgent = LlmAgent(
 
     tools=[
         # Sub-agents with structured outputs
+        AgentTool(ProfileUpdateAgent),
         AgentTool(FitAnalysisAgent),
         AgentTool(CollegeListAgent),
         AgentTool(StudentProfileAgent), 
         AgentTool(UniversityKnowledgeAnalyst),
         AgentTool(DeepResearchAgent),
-        # Simple utility function
+        # Utility functions
         FunctionTool(list_valid_university_ids)
     ],
     output_key="agent_response",

@@ -386,6 +386,50 @@ export const fetchUserProfile = async (userEmail) => {
   }
 };
 
+/**
+ * Fetch structured profile data (JSON) for visual display
+ * Uses the /get-profile endpoint which returns parsed JSON structure
+ * @param {string} userEmail - User's email address
+ * @returns {object} Structured profile data with fields like personal_info, academics, etc.
+ */
+export const fetchStructuredProfile = async (userEmail) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    console.log(`[API] Fetching structured profile for ${userEmail}`);
+
+    const response = await axios.get(`${baseUrl}/get-profile`, {
+      params: { user_email: userEmail },
+      timeout: 60000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+
+    if (response.data?.success && response.data?.profile) {
+      console.log(`[API] Structured profile found`);
+      return {
+        success: true,
+        profile: response.data.profile
+      };
+    }
+
+    return {
+      success: false,
+      error: 'No profile found',
+      profile: null
+    };
+  } catch (error) {
+    console.error('Error fetching structured profile:', error);
+    // Don't throw - return error state for graceful handling
+    return {
+      success: false,
+      error: error.message,
+      profile: null
+    };
+  }
+};
+
 
 
 
