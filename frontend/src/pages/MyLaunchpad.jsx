@@ -14,7 +14,7 @@ import {
     XMarkIcon,
     AcademicCapIcon
 } from '@heroicons/react/24/outline';
-import { getCollegeList, updateCollegeList, checkFitRecomputationNeeded, computeAllFits, getFitsByCategory, getPrecomputedFits, getBalancedList } from '../services/api';
+import { getCollegeList, updateCollegeList, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, getFitsByCategory, getPrecomputedFits, getBalancedList } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -869,6 +869,16 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                 if (result.success) {
                     addedCount++;
                     console.log(`[Smart Discovery] Added: ${rec.name}`);
+
+                    // Trigger lazy fit computation for this university (don't await - run in background)
+                    console.log(`[Smart Discovery] Computing fit for: ${rec.name}`);
+                    computeSingleFit(currentUser.email, rec.id).then(fitResult => {
+                        if (fitResult.success) {
+                            console.log(`[Smart Discovery] Fit computed for ${rec.name}: ${fitResult.fit_analysis?.fit_category}`);
+                        } else {
+                            console.warn(`[Smart Discovery] Fit computation failed for ${rec.name}`);
+                        }
+                    });
                 } else {
                     console.error(`[Smart Discovery] Failed to add ${rec.name}:`, result.error);
                 }

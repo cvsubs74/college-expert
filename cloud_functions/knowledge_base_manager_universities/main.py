@@ -15,6 +15,40 @@ from datetime import datetime, timezone
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
+# --- Soft Fit Category Computation ---
+def compute_soft_fit_category(acceptance_rate) -> str:
+    """
+    Compute soft fit category based purely on acceptance rate.
+    This is a preliminary fit category computed at ingest time.
+    
+    Categories:
+    - SUPER_REACH: < 8% acceptance rate (Ivies, Stanford, MIT)
+    - REACH: 8-15% acceptance rate
+    - TARGET: 15-30% acceptance rate
+    - LIKELY: 30-50% acceptance rate
+    - SAFETY: > 50% acceptance rate
+    """
+    if acceptance_rate is None:
+        return "UNKNOWN"
+    
+    try:
+        rate = float(acceptance_rate)
+    except (TypeError, ValueError):
+        return "UNKNOWN"
+    
+    if rate < 8:
+        return "SUPER_REACH"
+    elif rate < 15:
+        return "REACH"
+    elif rate < 30:
+        return "TARGET"
+    elif rate < 50:
+        return "LIKELY"
+    else:
+        return "SAFETY"
+
+
 # --- University Acronym Mappings ---
 UNIVERSITY_ACRONYMS = {
     # California Schools
@@ -160,6 +194,7 @@ def ensure_index_exists(es_client):
                     "market_position": {"type": "keyword"},
                     "median_earnings_10yr": {"type": "float"},
                     "us_news_rank": {"type": "integer"},  # For sorting by ranking
+                    "soft_fit_category": {"type": "keyword"},  # Pre-computed fit category based on acceptance rate
                     "summary": {"type": "text"},  # Pre-computed summary for details view
                     "profile": {"type": "object", "enabled": False},
                     "indexed_at": {"type": "date"},
@@ -438,6 +473,10 @@ def ingest_university(profile: dict) -> dict:
         # Generate pre-computed summary for details view
         university_summary = create_university_summary(profile)
         
+        # Compute soft fit category based on acceptance rate (for lazy fit computation)
+        soft_fit_category = compute_soft_fit_category(acceptance_rate)
+        logger.info(f"Soft fit category for {official_name}: {soft_fit_category} (acceptance rate: {acceptance_rate}%)")
+        
         doc = {
             "university_id": university_id,
             "official_name": official_name,
@@ -446,6 +485,7 @@ def ingest_university(profile: dict) -> dict:
             "searchable_text": searchable_text,
             "summary": university_summary,  # Pre-computed summary for details
             "acceptance_rate": acceptance_rate,
+            "soft_fit_category": soft_fit_category,  # Pre-computed fit category
             "test_policy": test_policy,
             "market_position": market_position,
             "median_earnings_10yr": median_earnings,
@@ -609,6 +649,7 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                 "official_name": source.get('official_name'),
                 "location": source.get('location'),
                 "acceptance_rate": source.get('acceptance_rate'),
+                "soft_fit_category": source.get('soft_fit_category'),  # Include soft fit
                 "market_position": source.get('market_position'),
                 "median_earnings_10yr": source.get('median_earnings_10yr'),
                 "us_news_rank": source.get('us_news_rank'),
@@ -664,6 +705,7 @@ def list_universities() -> dict:
                 "official_name": source.get('official_name'),
                 "location": source.get('location'),
                 "acceptance_rate": source.get('acceptance_rate'),
+                "soft_fit_category": source.get('soft_fit_category'),  # Include soft fit
                 "market_position": source.get('market_position'),
                 "us_news_rank": source.get('us_news_rank'),
                 "summary": source.get('summary'),

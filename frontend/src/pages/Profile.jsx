@@ -15,7 +15,7 @@ import {
   deleteVertexAIProfile,
   startSession,
   extractFullResponse,
-  computeAllFits
+  recomputeLaunchpadFits
 } from '../services/api';
 import ProfileViewCard from '../components/ProfileViewCard';
 import ProfileBuilder from '../components/ProfileBuilder';
@@ -229,6 +229,16 @@ function Profile() {
     // Always reload profile data for all tabs to sync
     await loadProfileMarkdown();
     console.log('[Profile] refreshAll completed');
+
+    // Trigger recomputation of fits for Launchpad universities (runs in background)
+    if (currentUser?.email) {
+      console.log('[Profile] Triggering Launchpad fit recomputation...');
+      recomputeLaunchpadFits(currentUser.email).then(result => {
+        if (result.success) {
+          console.log(`[Profile] Recomputed ${result.recomputed} Launchpad fits`);
+        }
+      });
+    }
   };
 
 
@@ -506,17 +516,11 @@ If this is a question about my profile, answer based on my profile data.`;
       // Refresh all profile data
       await refreshAll();
 
-      // Trigger fit computation in background if at least one upload succeeded
-      if (successCount > 0 && currentUser?.email) {
-        console.log('[Profile] Triggering fit computation for all universities...');
-        // Don't await - let it run in background
-        computeAllFits(currentUser.email).then(result => {
-          if (result.success) {
-            console.log(`[Profile] Fit computation complete: ${result.computed} universities`);
-          } else {
-            console.warn('[Profile] Fit computation failed:', result.error);
-          }
-        });
+      // NOTE: Fits are now computed lazily when universities are added to Launchpad
+      // This saves significant LLM costs by only computing fits for universities
+      // the student is actually interested in
+      if (successCount > 0) {
+        console.log('[Profile] Upload complete - fits will be computed when universities are added to Launchpad');
       }
     } catch (err) {
       console.error('Upload error:', err);

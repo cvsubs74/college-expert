@@ -955,6 +955,32 @@ export const computeAllFits = async (userEmail) => {
 };
 
 /**
+ * Compute fit analysis for a SINGLE university (lazy fit computation)
+ * Called when a university is added to the Launchpad
+ * @param {string} userEmail - User's email
+ * @param {string} universityId - University ID to compute fit for
+ * @returns {Promise<{success: boolean, fit: object}>}
+ */
+export const computeSingleFit = async (userEmail, universityId) => {
+  try {
+    console.log(`[API] Computing single fit for ${userEmail} - ${universityId}...`);
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/compute-single-fit`, {
+      user_email: userEmail,
+      university_id: universityId
+    }, {
+      timeout: 60000,  // 1 min timeout for single university
+      headers: { 'X-User-Email': userEmail }
+    });
+    console.log(`[API] Computed single fit:`, response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error computing single fit:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+/**
  * Get pre-computed fits with optional filtering
  * @param {string} userEmail - User's email
  * @param {Object} filters - Optional filters: { category, state, exclude_ids }
@@ -978,6 +1004,49 @@ export const getPrecomputedFits = async (userEmail, filters = {}, limit = 20, so
   } catch (error) {
     console.error('Error getting pre-computed fits:', error);
     throw error;
+  }
+};
+
+/**
+ * Recompute fits for all universities in user's Launchpad
+ * Called when profile is updated to refresh fit analyses
+ * @param {string} userEmail - User's email
+ * @returns {Promise<{success: boolean, recomputed: number}>}
+ */
+export const recomputeLaunchpadFits = async (userEmail) => {
+  try {
+    console.log(`[API] Recomputing Launchpad fits for ${userEmail}...`);
+
+    // First, get the user's college list
+    const listResult = await getCollegeList(userEmail);
+    if (!listResult.success || !listResult.colleges || listResult.colleges.length === 0) {
+      console.log('[API] No universities in Launchpad, skipping recomputation');
+      return { success: true, recomputed: 0 };
+    }
+
+    // Recompute fits for each university in the Launchpad (in parallel, limited)
+    const universities = listResult.colleges;
+    console.log(`[API] Recomputing fits for ${universities.length} Launchpad universities`);
+
+    let recomputed = 0;
+    // Process in batches of 3 to avoid overwhelming the backend
+    for (let i = 0; i < universities.length; i += 3) {
+      const batch = universities.slice(i, i + 3);
+      const promises = batch.map(uni =>
+        computeSingleFit(userEmail, uni.university_id).catch(err => {
+          console.warn(`[API] Failed to recompute fit for ${uni.university_id}:`, err);
+          return { success: false };
+        })
+      );
+      const results = await Promise.all(promises);
+      recomputed += results.filter(r => r.success).length;
+    }
+
+    console.log(`[API] Recomputed ${recomputed}/${universities.length} Launchpad fits`);
+    return { success: true, recomputed };
+  } catch (error) {
+    console.error('Error recomputing Launchpad fits:', error);
+    return { success: false, error: error.message };
   }
 };
 
