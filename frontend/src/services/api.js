@@ -430,8 +430,48 @@ export const fetchStructuredProfile = async (userEmail) => {
   }
 };
 
+/**
+ * Update a specific field in the structured profile
+ * Uses the /update-structured-field endpoint for safe field-level updates
+ * @param {string} userEmail - User's email address
+ * @param {string} fieldPath - The field to update (e.g., 'gpa_weighted', 'courses')
+ * @param {any} value - The new value
+ * @param {string} operation - 'set', 'append', or 'remove' (default: 'set')
+ * @returns {object} Result with success status
+ */
+export const updateProfileField = async (userEmail, fieldPath, value, operation = 'set') => {
+  try {
+    const url = `${PROFILE_MANAGER_ES_URL}/update-structured-field`;
+    console.log(`[API] Updating profile field: ${fieldPath} with operation: ${operation}`);
 
+    const response = await axios.post(url, {
+      user_email: userEmail,
+      field_path: fieldPath,
+      value: value,
+      operation: operation
+    });
 
+    if (response.data.success) {
+      console.log(`[API] Successfully updated ${fieldPath}`);
+      return {
+        success: true,
+        message: response.data.message || 'Field updated successfully'
+      };
+    } else {
+      console.error(`[API] Failed to update ${fieldPath}:`, response.data.error);
+      return {
+        success: false,
+        error: response.data.error || 'Update failed'
+      };
+    }
+  } catch (error) {
+    console.error(`[API] Error updating profile field ${fieldPath}:`, error);
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+};
 
 
 

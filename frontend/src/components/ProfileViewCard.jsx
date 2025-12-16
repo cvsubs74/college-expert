@@ -23,12 +23,12 @@ const TabButton = ({ id, label, icon: Icon, isActive, onClick }) => {
     return (
         <button
             onClick={() => onClick(id)}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all ${isActive
+            className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-all ${isActive
                 ? 'bg-amber-600 text-white shadow-md'
                 : 'text-gray-600 hover:bg-amber-50'
                 }`}
         >
-            <Icon className="h-5 w-5" />
+            <Icon className="h-4 w-4" />
             <span className="hidden sm:inline">{label}</span>
         </button>
     );

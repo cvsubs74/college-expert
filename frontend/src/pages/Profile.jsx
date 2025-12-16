@@ -18,6 +18,8 @@ import {
   computeAllFits
 } from '../services/api';
 import ProfileViewCard from '../components/ProfileViewCard';
+import ProfileBuilder from '../components/ProfileBuilder';
+import GuidedInterview from '../components/GuidedInterview';
 
 import {
   DocumentArrowUpIcon,
@@ -53,7 +55,7 @@ function Profile() {
   const [deleting, setDeleting] = useState(false);
 
   // New state for tabs, profile view, and chat
-  const [activeTab, setActiveTab] = useState('view'); // 'view' | 'chat' | 'files'
+  const [activeTab, setActiveTab] = useState('files'); // 'view' | 'files' | 'form' | 'guided' | 'chat'
   const [profileMarkdown, setProfileMarkdown] = useState('');
   const [structuredProfile, setStructuredProfile] = useState(null);
   const [loadingProfile, setLoadingProfile] = useState(false);
@@ -123,11 +125,30 @@ function Profile() {
 
   const approachInfo = getApproachInfo(knowledgeBaseApproach);
 
+  // Handle gateway selection
+  const handleGatewaySelect = (method) => {
+    if (method === 'upload' || method === 'form') {
+      // Both upload and form now go to the unified ProfileBuilder
+      setActiveTab('edit');
+    } else if (method === 'chat') {
+      setActiveTab('chat');
+      // Add initial message for help mode
+      setChatMessages(prev => [...prev, {
+        role: 'model',
+        text: `Hi ${currentUser?.displayName || 'there'}! I'm here to help you with your profile. What would you like help with today?`
+      }]);
+    }
+  };
+
+  // Check if profile is empty (no structured data AND no uploaded files)
+  const isProfileEmpty = !loadingProfile && !structuredProfile && profiles.length === 0;
+
   useEffect(() => {
     if (currentUser?.email) {
       loadProfiles();
+      loadProfileMarkdown();
     }
-  }, [currentUser, knowledgeBaseApproach]); // Added knowledgeBaseApproach to dependencies
+  }, [currentUser, knowledgeBaseApproach]);
 
   const loadProfiles = async () => {
     if (!currentUser?.email) {
@@ -203,12 +224,10 @@ function Profile() {
     // Clear existing data to force visible refresh
     setProfiles([]);
     setProfileMarkdown('');
-    // Reload profiles
+    // Reload all data
     await loadProfiles();
-    // If we're on the view tab, also reload markdown
-    if (activeTab === 'view') {
-      await loadProfileMarkdown();
-    }
+    // Always reload profile data for all tabs to sync
+    await loadProfileMarkdown();
     console.log('[Profile] refreshAll completed');
   };
 
@@ -671,568 +690,626 @@ If this is a question about my profile, answer based on my profile data.`;
             </div>
           </div>
 
-          {/* Approach Indicator Badge */}
-          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-lg">
-            <div className="w-2 h-2 rounded-full bg-green-500"></div>
-            <span className="text-xs font-medium text-amber-800">{approachInfo.name}</span>
-          </div>
+          {/* Approach badge removed - keeping UI clean */}
         </div>
       </div>
 
-      {/* Tab Navigation */}
-      <div className="bg-white rounded-2xl p-1.5 flex gap-1 border border-gray-200 shadow-sm">
+      {/* Tab Navigation - Always visible */}
+      <div className="flex border-b border-gray-200 mb-6 overflow-x-auto">
+        {/* View Profile - Only show if there's data */}
+        {!isProfileEmpty && (
+          <button
+            onClick={() => setActiveTab('view')}
+            className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'view'
+              ? 'border-indigo-600 text-indigo-600'
+              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+          >
+            <UserCircleIcon className="h-5 w-5" />
+            View Profile
+          </button>
+        )}
+
         <button
-          onClick={() => setActiveTab('view')}
-          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium transition-all ${activeTab === 'view'
-            ? 'bg-amber-600 text-white shadow-md'
-            : 'text-gray-600 hover:bg-amber-50'
+          onClick={() => setActiveTab('files')}
+          className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'files'
+            ? 'border-indigo-600 text-indigo-600'
+            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
         >
-          <EyeIcon className="h-5 w-5" />
-          View Profile
+          <DocumentTextIcon className="h-5 w-5" />
+          Upload Documents
         </button>
+
+        <button
+          onClick={() => setActiveTab('form')}
+          className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'form'
+            ? 'border-indigo-600 text-indigo-600'
+            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+        >
+          <PencilSquareIcon className="h-5 w-5" />
+          Manual Entry
+        </button>
+
+        <button
+          onClick={() => setActiveTab('guided')}
+          className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'guided'
+            ? 'border-purple-600 text-purple-600'
+            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+        >
+          <SparklesIcon className="h-5 w-5" />
+          Take Assessment
+        </button>
+
         <button
           onClick={() => setActiveTab('chat')}
-          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium transition-all ${activeTab === 'chat'
-            ? 'bg-amber-600 text-white shadow-md'
-            : 'text-gray-600 hover:bg-amber-50'
+          className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'chat'
+            ? 'border-indigo-600 text-indigo-600'
+            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
         >
           <ChatBubbleLeftRightIcon className="h-5 w-5" />
-          Edit with AI
-        </button>
-        <button
-          onClick={() => setActiveTab('files')}
-          className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium transition-all ${activeTab === 'files'
-            ? 'bg-amber-600 text-white shadow-md'
-            : 'text-gray-600 hover:bg-amber-50'
-            }`}
-        >
-          <DocumentArrowUpIcon className="h-5 w-5" />
-          Upload Files
+          Ask & Update
         </button>
       </div>
 
-      {/* View Profile Tab */}
-      {activeTab === 'view' && (
-        <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-3">
-              <div className="p-2 bg-gray-100 rounded-xl">
-                <UserCircleIcon className="h-5 w-5 text-gray-600" />
-              </div>
-              Your Profile
-            </h2>
-            <button
-              onClick={loadProfileMarkdown}
-              disabled={loadingProfile}
-              className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
-            >
-              <ArrowPathIcon className={`h-4 w-4 ${loadingProfile ? 'animate-spin' : ''}`} />
-              Refresh
-            </button>
-          </div>
+      {/* Content Area */}
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 min-h-[600px]">
 
-          {loadingProfile ? (
-            <div className="flex flex-col items-center justify-center py-16">
-              <div className="p-4 bg-gray-100 rounded-full mb-4">
-                <ArrowPathIcon className="h-8 w-8 text-gray-500 animate-spin" />
-              </div>
-              <span className="text-gray-600 font-medium">Loading your profile...</span>
-            </div>
-          ) : structuredProfile ? (
-            <ProfileViewCard profileData={structuredProfile} />
-          ) : (
-            <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-800 bg-white rounded-xl p-6 shadow-sm">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {profileMarkdown || '# No Profile Data\n\nUpload a profile document or click "Refresh" to load your profile.'}
-              </ReactMarkdown>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Chat Tab */}
-      {activeTab === 'chat' && (
-        <div className="bg-white shadow-sm rounded-2xl flex flex-col h-[600px] border border-gray-200">
-          {/* Chat Header */}
-          <div className="p-4 border-b border-gray-100">
-            <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-3">
-              <div className="p-2 bg-gray-100 rounded-xl">
-                <SparklesIcon className="h-5 w-5 text-gray-600" />
-              </div>
-              Edit Profile with AI
-            </h2>
-            <p className="text-sm text-gray-500 mt-1 ml-12">
-              Tell me what to update in your profile. Example: "Update my GPA to 3.9" or "Add robotics club to activities"
-            </p>
-          </div>
-
-          {/* Chat Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {chatMessages.length === 0 ? (
-              <div className="text-center py-8 text-gray-400">
-                <div className="p-4 bg-gray-100 rounded-2xl inline-block mb-4">
-                  <ChatBubbleLeftRightIcon className="h-10 w-10 text-gray-500" />
+        {/* VIEW TAB */}
+        {activeTab === 'view' && (
+          <div className="p-6">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-3">
+                <div className="p-2 bg-gray-100 rounded-xl">
+                  <UserCircleIcon className="h-5 w-5 text-gray-600" />
                 </div>
-                <p className="text-gray-600">Start a conversation to edit your profile</p>
-                <div className="mt-4 flex flex-wrap gap-2 justify-center">
-                  {['Update my GPA to 3.85', 'Add SAT score: 1480', 'Add tennis to activities', 'Change intended major to Computer Science'].map(suggestion => (
-                    <button
-                      key={suggestion}
-                      onClick={() => setChatInput(suggestion)}
-                      className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 border border-gray-200 transition-colors"
-                    >
-                      {suggestion}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              chatMessages.map((msg, idx) => (
-                <div
-                  key={idx}
-                  className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                >
-                  <div
-                    className={`max-w-[80%] p-3 rounded-2xl ${msg.role === 'user'
-                      ? 'bg-gray-900 text-white'
-                      : 'bg-gray-50 text-gray-800 border border-gray-200'
-                      }`}
-                  >
-                    {msg.role === 'assistant' ? (
-                      <div className="prose prose-sm max-w-none prose-p:text-gray-800 prose-p:my-1">
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                          {msg.content}
-                        </ReactMarkdown>
-                      </div>
-                    ) : (
-                      <p>{msg.content}</p>
-                    )}
-                  </div>
-                </div>
-              ))
-            )}
-            {isSending && (
-              <div className="flex justify-start">
-                <div className="bg-gray-100 p-3 rounded-2xl border border-gray-200">
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <ArrowPathIcon className="h-4 w-4 animate-spin" />
-                    <span>Thinking...</span>
-                  </div>
-                </div>
-              </div>
-            )}
-            <div ref={chatEndRef} />
-          </div>
-
-          {/* Chat Input */}
-          <div className="p-4 border-t border-gray-100 bg-gray-50">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={chatInput}
-                onChange={(e) => setChatInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSendMessage()}
-                placeholder="Tell me what to update..."
-                className="flex-1 px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white"
-                disabled={isSending}
-              />
+                Your Profile
+              </h2>
               <button
-                onClick={handleSendMessage}
-                disabled={!chatInput.trim() || isSending}
-                className="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                onClick={loadProfileMarkdown}
+                disabled={loadingProfile}
+                className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
               >
-                <PaperAirplaneIcon className="h-5 w-5" />
+                <ArrowPathIcon className={`h-4 w-4 ${loadingProfile ? 'animate-spin' : ''}`} />
+                Refresh
               </button>
             </div>
-          </div>
-        </div>
-      )}
 
-      {/* Files Tab - Original Upload Section */}
-      {activeTab === 'files' && (
-        <>
-
-          {/* Upload Section */}
-          <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-              <div className="p-1.5 bg-gray-100 rounded-lg">
-                <DocumentArrowUpIcon className="h-5 w-5 text-gray-600" />
+            {loadingProfile ? (
+              <div className="flex flex-col items-center justify-center py-16">
+                <div className="p-4 bg-gray-100 rounded-full mb-4">
+                  <ArrowPathIcon className="h-8 w-8 text-gray-500 animate-spin" />
+                </div>
+                <span className="text-gray-600 font-medium">Loading your profile...</span>
               </div>
-              Upload Profile
-            </h2>
+            ) : structuredProfile ? (
+              <ProfileViewCard profileData={structuredProfile} />
+            ) : (
+              <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-800 bg-white rounded-xl p-6 shadow-sm">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {profileMarkdown || '# No Profile Data\n\nUpload a profile document or click "Refresh" to load your profile.'}
+                </ReactMarkdown>
+              </div>
+            )}
+          </div>
+        )}
 
-            <div className="space-y-4">
-              {/* File Input */}
-              <div>
-                <label className="block text-sm font-medium text-gray-600 mb-2">
-                  Select Files (PDF, DOCX, TXT) - Multiple files supported
-                </label>
-                <div className="flex items-center space-x-4">
-                  <label className="flex-1 flex items-center justify-center px-6 py-6 border-2 border-dashed border-gray-300 rounded-2xl cursor-pointer hover:border-gray-400 hover:bg-gray-50 transition-colors">
-                    <div className="text-center">
-                      <DocumentArrowUpIcon className="mx-auto h-10 w-10 text-gray-400" />
-                      <p className="mt-2 text-sm text-gray-600">
-                        {selectedFiles.length > 0
-                          ? `${selectedFiles.length} file(s) selected`
-                          : 'Click to select files'}
-                      </p>
-                      {selectedFiles.length > 0 && (
-                        <p className="mt-1 text-xs text-gray-500">
-                          {selectedFiles.map(f => f.name).join(', ')}
-                        </p>
+        {/* FORM TAB (Questionnaire only) */}
+        {activeTab === 'form' && (
+          <div className="p-4">
+            <ProfileBuilder profile={structuredProfile} onProfileUpdate={loadProfileMarkdown} />
+          </div>
+        )}
+
+        {/* GUIDED TAB (AI asks questions based on missing fields) */}
+        {activeTab === 'guided' && (
+          <GuidedInterview profile={structuredProfile} onProfileUpdate={loadProfileMarkdown} />
+        )}
+
+        {/* Chat Tab */}
+        {activeTab === 'chat' && (
+          <div className="bg-white shadow-sm rounded-2xl flex flex-col h-[600px] border border-gray-200">
+            {/* Chat Header */}
+            <div className="p-4 border-b border-gray-100">
+              <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-3">
+                <div className="p-2 bg-gray-100 rounded-xl">
+                  <SparklesIcon className="h-5 w-5 text-gray-600" />
+                </div>
+                Edit Profile with AI
+              </h2>
+              <p className="text-sm text-gray-500 mt-1 ml-12">
+                Tell me what to update in your profile. Example: "Update my GPA to 3.9" or "Add robotics club to activities"
+              </p>
+            </div>
+
+            {/* Chat Messages */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+              {chatMessages.length === 0 ? (
+                <div className="text-center py-8 text-gray-400">
+                  <div className="p-4 bg-gray-100 rounded-2xl inline-block mb-4">
+                    <ChatBubbleLeftRightIcon className="h-10 w-10 text-gray-500" />
+                  </div>
+                  <p className="text-gray-600">Start a conversation to edit your profile</p>
+                  <div className="mt-4 flex flex-wrap gap-2 justify-center">
+                    {['Update my GPA to 3.85', 'Add SAT score: 1480', 'Add tennis to activities', 'Change intended major to Computer Science'].map(suggestion => (
+                      <button
+                        key={suggestion}
+                        onClick={() => setChatInput(suggestion)}
+                        className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 border border-gray-200 transition-colors"
+                      >
+                        {suggestion}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                chatMessages.map((msg, idx) => (
+                  <div
+                    key={idx}
+                    className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-[80%] p-3 rounded-2xl ${msg.role === 'user'
+                        ? 'bg-gray-900 text-white'
+                        : 'bg-gray-50 text-gray-800 border border-gray-200'
+                        }`}
+                    >
+                      {msg.role === 'assistant' ? (
+                        <div className="prose prose-sm max-w-none prose-p:text-gray-800 prose-p:my-1">
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {msg.content}
+                          </ReactMarkdown>
+                        </div>
+                      ) : (
+                        <p>{msg.content}</p>
                       )}
                     </div>
-                    <input
-                      id="file-upload"
-                      type="file"
-                      className="hidden"
-                      accept=".pdf,.docx,.txt,.doc"
-                      onChange={handleFileSelect}
-                      multiple
-                    />
-                  </label>
-                </div>
-              </div>
-
-              {/* Selected Files List */}
-              {selectedFiles.length > 0 && (
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Selected Files:</h3>
-                  <ul className="space-y-2">
-                    {selectedFiles.map((file, index) => (
-                      <li key={index} className="flex items-center justify-between text-sm">
-                        <span className="text-gray-900">{file.name}</span>
-                        <span className="text-gray-500">{formatFileSize(file.size)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  </div>
+                ))
               )}
-
-              {/* Upload Progress */}
-              {Object.keys(uploadProgress).length > 0 && (
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Upload Progress:</h3>
-                  <ul className="space-y-2">
-                    {Object.entries(uploadProgress).map(([filename, progress]) => (
-                      <li key={filename} className="flex items-center justify-between text-sm">
-                        <span className="text-gray-900">{filename}</span>
-                        {progress.status === 'uploading' && (
-                          <span className="flex items-center text-blue-600">
-                            <ArrowPathIcon className="h-4 w-4 mr-1 animate-spin" />
-                            Uploading...
-                          </span>
-                        )}
-                        {progress.status === 'success' && (
-                          <span className="flex items-center text-green-600">
-                            <CheckCircleIcon className="h-4 w-4 mr-1" />
-                            Success
-                          </span>
-                        )}
-                        {progress.status === 'error' && (
-                          <span className="flex items-center text-red-600">
-                            <XCircleIcon className="h-4 w-4 mr-1" />
-                            Failed
-                          </span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Upload Button */}
-              <button
-                onClick={handleUpload}
-                disabled={selectedFiles.length === 0 || uploading}
-                className={`w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white ${selectedFiles.length === 0 || uploading
-                  ? 'bg-gray-300 cursor-not-allowed'
-                  : 'bg-gray-900 hover:bg-gray-800'
-                  } transition-all duration-200`}
-              >
-                {uploading ? (
-                  <>
-                    <ArrowPathIcon className="h-5 w-5 mr-2 animate-spin" />
-                    Uploading {selectedFiles.length} file(s)...
-                  </>
-                ) : (
-                  <>
-                    <DocumentArrowUpIcon className="h-5 w-5 mr-2" />
-                    Upload {selectedFiles.length > 0 ? `${selectedFiles.length} ` : ''}Profile(s)
-                  </>
-                )}
-              </button>
-
-              {/* Status Messages */}
-              {uploadStatus && (
-                <div className={`p-4 rounded-lg border ${uploadStatus.type === 'success' ? 'bg-green-50 border-green-200' :
-                  uploadStatus.type === 'warning' ? 'bg-yellow-50 border-yellow-200' : 'bg-red-50 border-red-200'
-                  }`}>
-                  <div className="flex items-start">
-                    {uploadStatus.type === 'success' ? (
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
-                    ) : uploadStatus.type === 'warning' ? (
-                      <CheckCircleIcon className="h-5 w-5 text-yellow-500 mt-0.5" />
-                    ) : (
-                      <XCircleIcon className="h-5 w-5 text-red-500 mt-0.5" />
-                    )}
-                    <p className={`ml-3 text-sm font-medium ${uploadStatus.type === 'success' ? 'text-green-800' :
-                      uploadStatus.type === 'warning' ? 'text-yellow-800' : 'text-red-800'
-                      }`}>
-                      {uploadStatus.message}
-                    </p>
+              {isSending && (
+                <div className="flex justify-start">
+                  <div className="bg-gray-100 p-3 rounded-2xl border border-gray-200">
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <ArrowPathIcon className="h-4 w-4 animate-spin" />
+                      <span>Thinking...</span>
+                    </div>
                   </div>
                 </div>
               )}
-
-              {error && (
-                <div className="p-4 rounded-md bg-red-50">
-                  <div className="flex">
-                    <XCircleIcon className="h-5 w-5 text-red-400" />
-                    <p className="ml-3 text-sm text-red-800">{error}</p>
-                  </div>
-                </div>
-              )}
+              <div ref={chatEndRef} />
             </div>
 
-            {/* Guidelines */}
-            <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <h3 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
-                <SparklesIcon className="h-4 w-4 text-gray-500" />
-                What to Include:
-              </h3>
-              <ul className="text-sm text-gray-600 space-y-1.5 list-disc list-inside">
-                <li>Complete transcript with courses, grades, and course levels (Regular, Honors, AP, IB)</li>
-                <li>Standardized test scores (SAT, ACT, AP tests)</li>
-                <li>Extracurricular activities and leadership roles</li>
-                <li>Awards and honors</li>
-                <li>Personal statement or essay (optional)</li>
-                <li>Any other relevant academic information</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Existing Profiles */}
-          <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-gray-100 rounded-xl">
-                  <DocumentTextIcon className="h-5 w-5 text-gray-600" />
-                </div>
-                <h2 className="text-lg font-semibold text-gray-900">Your Profiles</h2>
-                {selectedProfiles.length > 0 && (
-                  <span className="text-sm text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
-                    {selectedProfiles.length} selected
-                  </span>
-                )}
-              </div>
-              <div className="flex items-center gap-2">
-                {selectedProfiles.length > 0 && (
-                  <button
-                    onClick={handleBulkDelete}
-                    disabled={deleting}
-                    className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-xl text-white bg-red-500 hover:bg-red-600 disabled:opacity-50"
-                  >
-                    <TrashIcon className="h-4 w-4 mr-2" />
-                    {deleting ? 'Deleting...' : `Delete ${selectedProfiles.length} `}
-                  </button>
-                )}
+            {/* Chat Input */}
+            <div className="p-4 border-t border-gray-100 bg-gray-50">
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={chatInput}
+                  onChange={(e) => setChatInput(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSendMessage()}
+                  placeholder="Tell me what to update..."
+                  className="flex-1 px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white"
+                  disabled={isSending}
+                />
                 <button
-                  onClick={loadProfiles}
-                  disabled={loading}
-                  className="flex items-center px-3 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors bg-white border border-gray-200 rounded-xl hover:border-gray-300"
+                  onClick={handleSendMessage}
+                  disabled={!chatInput.trim() || isSending}
+                  className="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
-                  <ArrowPathIcon className={`h-4 w-4 mr-1 ${loading ? 'animate-spin' : ''}`} />
-                  Refresh
+                  <PaperAirplaneIcon className="h-5 w-5" />
                 </button>
               </div>
             </div>
+          </div>
+        )}
 
-            {loading ? (
-              <div className="text-center py-12">
-                <div className="p-4 bg-gray-100 rounded-full inline-block mb-3">
-                  <ArrowPathIcon className="h-8 w-8 text-gray-500 animate-spin" />
+        {/* Files Tab - Original Upload Section */}
+        {activeTab === 'files' && (
+          <>
+
+            {/* Upload Section */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <h2 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                <div className="p-1.5 bg-indigo-100 rounded-lg">
+                  <DocumentArrowUpIcon className="h-5 w-5 text-indigo-600" />
                 </div>
-                <p className="text-sm text-gray-500">Loading profiles...</p>
-              </div>
-            ) : profiles.length === 0 ? (
-              <div className="text-center py-12">
-                <div className="p-4 bg-gray-100 rounded-full inline-block mb-3">
-                  <DocumentTextIcon className="h-10 w-10 text-gray-400" />
+                Upload Your Documents
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Upload any documents that showcase your achievements. Our AI will automatically extract relevant information to build your profile.
+              </p>
+
+              {/* Document Types */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                <div className="flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-lg">
+                  <span>📄</span> Transcripts
                 </div>
-                <p className="text-sm text-gray-500">No profiles uploaded yet</p>
-                <p className="text-xs text-gray-400 mt-1">Upload your first profile above</p>
+                <div className="flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-lg">
+                  <span>🏆</span> Award Certificates
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-lg">
+                  <span>📝</span> Resumes
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-lg">
+                  <span>🤝</span> Volunteer Records
+                </div>
               </div>
-            ) : (
-              <>
-                {profiles.length > 0 && (
-                  <div className="mb-3 pb-3 border-b border-gray-200">
-                    <label className="flex items-center space-x-2 cursor-pointer">
+
+              <div className="space-y-4">
+                {/* File Input */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-600 mb-2">
+                    Select Files (PDF, DOCX, TXT) - Multiple files supported
+                  </label>
+                  <div className="flex items-center space-x-4">
+                    <label className="flex-1 flex items-center justify-center px-6 py-6 border-2 border-dashed border-gray-300 rounded-2xl cursor-pointer hover:border-gray-400 hover:bg-gray-50 transition-colors">
+                      <div className="text-center">
+                        <DocumentArrowUpIcon className="mx-auto h-10 w-10 text-gray-400" />
+                        <p className="mt-2 text-sm text-gray-600">
+                          {selectedFiles.length > 0
+                            ? `${selectedFiles.length} file(s) selected`
+                            : 'Click to select files'}
+                        </p>
+                        {selectedFiles.length > 0 && (
+                          <p className="mt-1 text-xs text-gray-500">
+                            {selectedFiles.map(f => f.name).join(', ')}
+                          </p>
+                        )}
+                      </div>
                       <input
-                        type="checkbox"
-                        checked={selectedProfiles.length === profiles.length}
-                        onChange={toggleSelectAll}
-                        className="h-4 w-4 text-gray-900 border-gray-300 rounded focus:ring-gray-500"
+                        id="file-upload"
+                        type="file"
+                        className="hidden"
+                        accept=".pdf,.docx,.txt,.doc"
+                        onChange={handleFileSelect}
+                        multiple
                       />
-                      <span className="text-sm font-medium text-gray-700">
-                        Select All
-                      </span>
                     </label>
                   </div>
+                </div>
+
+                {/* Selected Files List */}
+                {selectedFiles.length > 0 && (
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <h3 className="text-sm font-medium text-gray-700 mb-2">Selected Files:</h3>
+                    <ul className="space-y-2">
+                      {selectedFiles.map((file, index) => (
+                        <li key={index} className="flex items-center justify-between text-sm">
+                          <span className="text-gray-900">{file.name}</span>
+                          <span className="text-gray-500">{formatFileSize(file.size)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
-                <div className="space-y-3">
-                  {profiles.map((profile, index) => {
-                    const isSelected = selectedProfiles.some(p => p.name === profile.name);
-                    return (
-                      <div
-                        key={index}
-                        className={`flex items-center justify-between p-4 border rounded-xl transition-all ${isSelected ? 'border-gray-400 bg-gray-50' : 'border-gray-200 hover:bg-gray-50 hover:border-gray-300'
-                          }`}
-                      >
-                        <div className="flex items-center space-x-3 flex-1">
-                          <input
-                            type="checkbox"
-                            checked={isSelected}
-                            onChange={() => toggleProfileSelection(profile)}
-                            className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
-                          />
-                          <DocumentTextIcon className="h-8 w-8 text-primary flex-shrink-0" />
-                          <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-gray-900 truncate">
-                              {profile.display_name || profile.name}
-                            </p>
-                            <p className="text-xs text-gray-500">
-                              {formatFileSize(profile.size_bytes)} • {formatDate(profile.create_time)}
-                            </p>
-                            {profile.state && (
-                              <span className={`inline - flex items - center px - 2 py - 0.5 rounded text - xs font - medium ${profile.state === 'ACTIVE' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                                } `}>
-                                {profile.state}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <button
-                            onClick={() => handlePreview(profile)}
-                            className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors"
-                            title="Preview document"
-                          >
-                            <EyeIcon className="h-5 w-5" />
-                          </button>
-                          <button
-                            onClick={() => handleDelete(profile.id, profile.display_name)}
-                            className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-md transition-colors"
-                            title="Delete profile"
-                          >
-                            <TrashIcon className="h-5 w-5" />
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </>
-            )}
-          </div>
 
-          {/* Preview Modal */}
-          {previewDocument && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-              <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
-                {/* Modal Header */}
-                <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                  <h3 className="text-xl font-semibold text-gray-900">Document Preview</h3>
-                  <button
-                    onClick={closePreview}
-                    className="text-gray-400 hover:text-gray-600 transition-colors"
-                  >
-                    <XMarkIcon className="h-6 w-6" />
-                  </button>
-                </div>
+                {/* Upload Progress */}
+                {Object.keys(uploadProgress).length > 0 && (
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <h3 className="text-sm font-medium text-gray-700 mb-2">Upload Progress:</h3>
+                    <ul className="space-y-2">
+                      {Object.entries(uploadProgress).map(([filename, progress]) => (
+                        <li key={filename} className="flex items-center justify-between text-sm">
+                          <span className="text-gray-900">{filename}</span>
+                          {progress.status === 'uploading' && (
+                            <span className="flex items-center text-blue-600">
+                              <ArrowPathIcon className="h-4 w-4 mr-1 animate-spin" />
+                              Uploading...
+                            </span>
+                          )}
+                          {progress.status === 'success' && (
+                            <span className="flex items-center text-green-600">
+                              <CheckCircleIcon className="h-4 w-4 mr-1" />
+                              Success
+                            </span>
+                          )}
+                          {progress.status === 'error' && (
+                            <span className="flex items-center text-red-600">
+                              <XCircleIcon className="h-4 w-4 mr-1" />
+                              Failed
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-                {/* Modal Body */}
-                <div className="flex-1 overflow-y-auto p-6">
-                  <div className="space-y-4">
-                    {/* Document Info */}
-                    <div className="bg-gray-50 rounded-lg p-4">
-                      <h4 className="text-sm font-semibold text-gray-700 mb-3">Document Information</h4>
-                      <dl className="space-y-2">
-                        <div className="flex justify-between">
-                          <dt className="text-sm text-gray-600">Name:</dt>
-                          <dd className="text-sm font-medium text-gray-900">{previewDocument.display_name || previewDocument.name}</dd>
-                        </div>
-                        <div className="flex justify-between">
-                          <dt className="text-sm text-gray-600">Size:</dt>
-                          <dd className="text-sm font-medium text-gray-900">{formatFileSize(previewDocument.size_bytes)}</dd>
-                        </div>
-                        <div className="flex justify-between">
-                          <dt className="text-sm text-gray-600">Uploaded:</dt>
-                          <dd className="text-sm font-medium text-gray-900">{formatDate(previewDocument.create_time)}</dd>
-                        </div>
-                      </dl>
-                    </div>
+                {/* Upload Button */}
+                <button
+                  onClick={handleUpload}
+                  disabled={selectedFiles.length === 0 || uploading}
+                  className={`w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white ${selectedFiles.length === 0 || uploading
+                    ? 'bg-gray-300 cursor-not-allowed'
+                    : 'bg-gray-900 hover:bg-gray-800'
+                    } transition-all duration-200`}
+                >
+                  {uploading ? (
+                    <>
+                      <ArrowPathIcon className="h-5 w-5 mr-2 animate-spin" />
+                      Uploading {selectedFiles.length} file(s)...
+                    </>
+                  ) : (
+                    <>
+                      <DocumentArrowUpIcon className="h-5 w-5 mr-2" />
+                      Upload {selectedFiles.length > 0 ? `${selectedFiles.length} ` : ''}Profile(s)
+                    </>
+                  )}
+                </button>
 
-                    {/* Document Content */}
-                    <div className="bg-white border border-gray-200 rounded-lg p-4">
-                      <h4 className="text-sm font-semibold text-gray-700 mb-3">Document Content</h4>
-                      {loadingContent ? (
-                        <div className="flex items-center justify-center py-8">
-                          <ArrowPathIcon className="h-6 w-6 animate-spin text-gray-400" />
-                          <span className="ml-2 text-sm text-gray-500">Loading content...</span>
-                        </div>
-                      ) : pdfUrl && !pdfError ? (
-                        <div className="space-y-4">
-                          <div className="bg-gray-50 rounded p-4">
-                            <iframe
-                              src={pdfUrl}
-                              className="w-full h-[600px] border-0 rounded"
-                              title="PDF Preview"
-                              onError={() => setPdfError('Failed to load PDF')}
-                            />
-                          </div>
-                          <div className="flex justify-center">
-                            <a
-                              href={pdfUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-sm text-blue-600 hover:text-blue-800 underline"
-                            >
-                              Open in new tab
-                            </a>
-                          </div>
-                        </div>
-                      ) : pdfError ? (
-                        <div className="bg-red-50 border border-red-200 rounded p-4">
-                          <p className="text-sm text-red-800">{pdfError}</p>
-                        </div>
-                      ) : previewContent ? (
-                        <div className="bg-gray-50 rounded p-4 max-h-96 overflow-y-auto">
-                          <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono">{previewContent}</pre>
-                        </div>
+                {/* Status Messages */}
+                {uploadStatus && (
+                  <div className={`p-4 rounded-lg border ${uploadStatus.type === 'success' ? 'bg-green-50 border-green-200' :
+                    uploadStatus.type === 'warning' ? 'bg-yellow-50 border-yellow-200' : 'bg-red-50 border-red-200'
+                    }`}>
+                    <div className="flex items-start">
+                      {uploadStatus.type === 'success' ? (
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+                      ) : uploadStatus.type === 'warning' ? (
+                        <CheckCircleIcon className="h-5 w-5 text-yellow-500 mt-0.5" />
                       ) : (
-                        <p className="text-sm text-gray-500">Content not available</p>
+                        <XCircleIcon className="h-5 w-5 text-red-500 mt-0.5" />
                       )}
+                      <p className={`ml-3 text-sm font-medium ${uploadStatus.type === 'success' ? 'text-green-800' :
+                        uploadStatus.type === 'warning' ? 'text-yellow-800' : 'text-red-800'
+                        }`}>
+                        {uploadStatus.message}
+                      </p>
                     </div>
                   </div>
-                </div>
+                )}
 
-                {/* Modal Footer */}
-                <div className="flex items-center justify-end space-x-3 p-6 border-t border-gray-200">
+                {error && (
+                  <div className="p-4 rounded-md bg-red-50">
+                    <div className="flex">
+                      <XCircleIcon className="h-5 w-5 text-red-400" />
+                      <p className="ml-3 text-sm text-red-800">{error}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Guidelines */}
+              <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
+                <h3 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                  <SparklesIcon className="h-4 w-4 text-gray-500" />
+                  What to Include:
+                </h3>
+                <ul className="text-sm text-gray-600 space-y-1.5 list-disc list-inside">
+                  <li>Complete transcript with courses, grades, and course levels (Regular, Honors, AP, IB)</li>
+                  <li>Standardized test scores (SAT, ACT, AP tests)</li>
+                  <li>Extracurricular activities and leadership roles</li>
+                  <li>Awards and honors</li>
+                  <li>Personal statement or essay (optional)</li>
+                  <li>Any other relevant academic information</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Existing Profiles */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-gray-100 rounded-xl">
+                    <DocumentTextIcon className="h-5 w-5 text-gray-600" />
+                  </div>
+                  <h2 className="text-lg font-semibold text-gray-900">Your Documents</h2>
+                  {selectedProfiles.length > 0 && (
+                    <span className="text-sm text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
+                      {selectedProfiles.length} selected
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  {selectedProfiles.length > 0 && (
+                    <button
+                      onClick={handleBulkDelete}
+                      disabled={deleting}
+                      className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-xl text-white bg-red-500 hover:bg-red-600 disabled:opacity-50"
+                    >
+                      <TrashIcon className="h-4 w-4 mr-2" />
+                      {deleting ? 'Deleting...' : `Delete ${selectedProfiles.length} `}
+                    </button>
+                  )}
                   <button
-                    onClick={closePreview}
-                    className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                    onClick={loadProfiles}
+                    disabled={loading}
+                    className="flex items-center px-3 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors bg-white border border-gray-200 rounded-xl hover:border-gray-300"
                   >
-                    Close
+                    <ArrowPathIcon className={`h-4 w-4 mr-1 ${loading ? 'animate-spin' : ''}`} />
+                    Refresh
                   </button>
                 </div>
               </div>
+
+              {loading ? (
+                <div className="text-center py-12">
+                  <div className="p-4 bg-gray-100 rounded-full inline-block mb-3">
+                    <ArrowPathIcon className="h-8 w-8 text-gray-500 animate-spin" />
+                  </div>
+                  <p className="text-sm text-gray-500">Loading profiles...</p>
+                </div>
+              ) : profiles.length === 0 ? (
+                <div className="text-center py-12">
+                  <div className="p-4 bg-gray-100 rounded-full inline-block mb-3">
+                    <DocumentTextIcon className="h-10 w-10 text-gray-400" />
+                  </div>
+                  <p className="text-sm text-gray-500">No profiles uploaded yet</p>
+                  <p className="text-xs text-gray-400 mt-1">Upload your first profile above</p>
+                </div>
+              ) : (
+                <>
+                  {profiles.length > 0 && (
+                    <div className="mb-3 pb-3 border-b border-gray-200">
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={selectedProfiles.length === profiles.length}
+                          onChange={toggleSelectAll}
+                          className="h-4 w-4 text-gray-900 border-gray-300 rounded focus:ring-gray-500"
+                        />
+                        <span className="text-sm font-medium text-gray-700">
+                          Select All
+                        </span>
+                      </label>
+                    </div>
+                  )}
+                  <div className="space-y-3">
+                    {profiles.map((profile, index) => {
+                      const isSelected = selectedProfiles.some(p => p.name === profile.name);
+                      return (
+                        <div
+                          key={index}
+                          className={`flex items-center justify-between p-4 border rounded-xl transition-all ${isSelected ? 'border-gray-400 bg-gray-50' : 'border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                            }`}
+                        >
+                          <div className="flex items-center space-x-3 flex-1">
+                            <input
+                              type="checkbox"
+                              checked={isSelected}
+                              onChange={() => toggleProfileSelection(profile)}
+                              className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                            />
+                            <DocumentTextIcon className="h-8 w-8 text-primary flex-shrink-0" />
+                            <div className="flex-1 min-w-0">
+                              <p className="text-sm font-medium text-gray-900 truncate">
+                                {profile.display_name || profile.name}
+                              </p>
+                              <p className="text-xs text-gray-500">
+                                {formatFileSize(profile.size_bytes)} • {formatDate(profile.create_time)}
+                              </p>
+                              {profile.state && (
+                                <span className={`inline - flex items - center px - 2 py - 0.5 rounded text - xs font - medium ${profile.state === 'ACTIVE' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                                  } `}>
+                                  {profile.state}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <button
+                              onClick={() => handlePreview(profile)}
+                              className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-md transition-colors"
+                              title="Preview document"
+                            >
+                              <EyeIcon className="h-5 w-5" />
+                            </button>
+                            <button
+                              onClick={() => handleDelete(profile.id, profile.display_name)}
+                              className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-md transition-colors"
+                              title="Delete profile"
+                            >
+                              <TrashIcon className="h-5 w-5" />
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
             </div>
-          )}
-        </>
-      )}
+
+            {/* Preview Modal */}
+            {previewDocument && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+                <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+                  {/* Modal Header */}
+                  <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                    <h3 className="text-xl font-semibold text-gray-900">Document Preview</h3>
+                    <button
+                      onClick={closePreview}
+                      className="text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      <XMarkIcon className="h-6 w-6" />
+                    </button>
+                  </div>
+
+                  {/* Modal Body */}
+                  <div className="flex-1 overflow-y-auto p-6">
+                    <div className="space-y-4">
+                      {/* Document Info */}
+                      <div className="bg-gray-50 rounded-lg p-4">
+                        <h4 className="text-sm font-semibold text-gray-700 mb-3">Document Information</h4>
+                        <dl className="space-y-2">
+                          <div className="flex justify-between">
+                            <dt className="text-sm text-gray-600">Name:</dt>
+                            <dd className="text-sm font-medium text-gray-900">{previewDocument.display_name || previewDocument.name}</dd>
+                          </div>
+                          <div className="flex justify-between">
+                            <dt className="text-sm text-gray-600">Size:</dt>
+                            <dd className="text-sm font-medium text-gray-900">{formatFileSize(previewDocument.size_bytes)}</dd>
+                          </div>
+                          <div className="flex justify-between">
+                            <dt className="text-sm text-gray-600">Uploaded:</dt>
+                            <dd className="text-sm font-medium text-gray-900">{formatDate(previewDocument.create_time)}</dd>
+                          </div>
+                        </dl>
+                      </div>
+
+                      {/* Document Content */}
+                      <div className="bg-white border border-gray-200 rounded-lg p-4">
+                        <h4 className="text-sm font-semibold text-gray-700 mb-3">Document Content</h4>
+                        {loadingContent ? (
+                          <div className="flex items-center justify-center py-8">
+                            <ArrowPathIcon className="h-6 w-6 animate-spin text-gray-400" />
+                            <span className="ml-2 text-sm text-gray-500">Loading content...</span>
+                          </div>
+                        ) : pdfUrl && !pdfError ? (
+                          <div className="space-y-4">
+                            <div className="bg-gray-50 rounded p-4">
+                              <iframe
+                                src={pdfUrl}
+                                className="w-full h-[600px] border-0 rounded"
+                                title="PDF Preview"
+                                onError={() => setPdfError('Failed to load PDF')}
+                              />
+                            </div>
+                            <div className="flex justify-center">
+                              <a
+                                href={pdfUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm text-blue-600 hover:text-blue-800 underline"
+                              >
+                                Open in new tab
+                              </a>
+                            </div>
+                          </div>
+                        ) : pdfError ? (
+                          <div className="bg-red-50 border border-red-200 rounded p-4">
+                            <p className="text-sm text-red-800">{pdfError}</p>
+                          </div>
+                        ) : previewContent ? (
+                          <div className="bg-gray-50 rounded p-4 max-h-96 overflow-y-auto">
+                            <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono">{previewContent}</pre>
+                          </div>
+                        ) : (
+                          <p className="text-sm text-gray-500">Content not available</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Modal Footer */}
+                  <div className="flex items-center justify-end space-x-3 p-6 border-t border-gray-200">
+                    <button
+                      onClick={closePreview}
+                      className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 }

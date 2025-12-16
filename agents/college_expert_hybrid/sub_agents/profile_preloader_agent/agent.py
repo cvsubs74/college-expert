@@ -113,13 +113,12 @@ class ProfileLoaderAgent(BaseAgent):
             cached_profile = ctx.session.state.get(CACHE_KEY_PROFILE)
             
             if cached_profile:
-                # Profile already cached - just log what we have
-                docs = cached_profile.get('documents', [])
-                if docs:
-                    meta = docs[0].get('metadata', {}).get('extracted_data', {}).get('structured_content', {})
-                    logger.info(f"[{self.name}] Profile already cached. Student: {meta.get('student_name', 'N/A')}")
+                # Profile already cached - log what we have
+                if cached_profile.get('success') and cached_profile.get('profile'):
+                    profile = cached_profile.get('profile', {})
+                    logger.info(f"[{self.name}] Profile already cached. Student: {profile.get('name', 'N/A')}")
                 else:
-                    logger.info(f"[{self.name}] Profile already cached (no documents)")
+                    logger.info(f"[{self.name}] Profile already cached (empty or failed)")
             else:
                 # Fetch and cache the profile
                 logger.info(f"[{self.name}] Fetching structured profile for {user_email}...")
