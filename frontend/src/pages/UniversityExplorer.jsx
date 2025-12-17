@@ -31,8 +31,9 @@ import {
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits } from '../services/api';
+import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit } from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { usePayment } from '../context/PaymentContext';
 import FitBreakdownPanel from '../components/FitBreakdownPanel';
 import FitAnalysisModal from '../components/FitAnalysisModal';
 import UniversityProfilePage from '../components/UniversityProfilePage';
@@ -141,6 +142,8 @@ const transformUniversityData = (apiData) => {
         summary: apiData.summary || strategic.executive_summary || 'No summary available.',
         majors: majors.length > 0 ? majors : ['Information not available'],
         marketPosition: apiData.market_position || strategic.market_position || 'N/A',
+        // Soft fit category (acceptance-rate based, computed at ingest)
+        softFitCategory: apiData.soft_fit_category || null,
         // Keep full profile for detail view
         fullProfile: profile
     };
@@ -153,7 +156,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
         return typeof num === 'number' ? num.toLocaleString() : num;
     };
 
-    // Fit category colors
+    // Fit category colors - 4 standard categories
     const fitColors = {
         SAFETY: 'bg-green-100 text-green-800 border-green-300',
         TARGET: 'bg-blue-100 text-blue-800 border-blue-300',
@@ -162,13 +165,13 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg shadow-amber-50 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+        <div className="bg-white rounded-2xl shadow-lg shadow-amber-50 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden">
             <div className="p-4 flex-grow">
                 <div className="flex justify-between items-start mb-3">
                     <div>
                         <h3
                             onClick={() => onSelect(uni)}
-                            className="text-lg font-bold text-gray-900 cursor-pointer hover:text-amber-600 line-clamp-2"
+                            className="text-lg font-bold cursor-pointer line-clamp-2 text-gray-900 hover:text-amber-600"
                             title={uni.name}
                         >
                             {uni.name}
@@ -180,7 +183,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                     </div>
                     <div className="flex flex-col items-end gap-1">
                         <Badge color={uni.location.type === "Private" ? "purple" : "blue"}>{uni.location.type}</Badge>
-                        {/* Show fit badge if analysis available (from pre-computed or list) */}
+                        {/* Show fit badge: computed fit > analyzing > soft fit > in list */}
                         {fitAnalysis ? (
                             <span
                                 className={`px-2 py-1 rounded-full text-xs font-bold border whitespace-nowrap ${fitColors[fitAnalysis.fit_category] || fitColors.TARGET}`}
@@ -194,6 +197,16 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                         ) : isAnalyzing ? (
                             <span className="px-2 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-600 border border-purple-200 animate-pulse whitespace-nowrap">
                                 ⏳ Analyzing...
+                            </span>
+                        ) : uni.softFitCategory ? (
+                            <span
+                                className={`px-2 py-1 rounded-full text-xs font-medium border whitespace-nowrap ${fitColors[uni.softFitCategory] || 'bg-gray-100 text-gray-600 border-gray-300'}`}
+                                title="Based on acceptance rate. Add to Launchpad for personalized fit."
+                            >
+                                {uni.softFitCategory === 'SUPER_REACH' ? '🎯 Super Reach' :
+                                    uni.softFitCategory === 'REACH' ? '🎯 Reach' :
+                                        uni.softFitCategory === 'TARGET' ? '🎯 Target' :
+                                            '✅ Safety'}
                             </span>
                         ) : isInList ? (
                             <span className="px-2 py-1 rounded-full text-xs font-medium text-green-600 bg-green-50 border border-green-200 whitespace-nowrap">
@@ -235,7 +248,7 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                 <div className="flex gap-3">
                     <button
                         onClick={() => onSelect(uni)}
-                        className="flex-1 bg-white border border-gray-300 text-gray-700 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 flex items-center justify-center gap-2"
+                        className="flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
                     >
                         Details <ChevronRightIcon className="h-4 w-4" />
                     </button>
@@ -251,15 +264,14 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                     </button>
                     <button
                         onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
-                        className={`p-2 rounded-lg transition-all hover:scale-105 ${isInList
-                            ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-600'
-                            : 'bg-purple-100 text-purple-700 hover:bg-purple-200'
+                        className={`p-2 rounded-lg transition-all ${isInList
+                            ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-600 hover:scale-105'
+                            : 'bg-purple-100 text-purple-700 hover:bg-purple-200 hover:scale-105'
                             }`}
                         title={isInList ? 'Remove from Launchpad' : '🚀 Add to My Launchpad'}
                     >
                         {isInList ? '✓' : '🚀'}
                     </button>
-                    {/* Fit analysis is now shown in the header area */}
                     {sentiment && sentiment.sentiment !== 'neutral' && (
                         <button
                             onClick={(e) => { e.stopPropagation(); onSentimentClick(sentiment); }}
@@ -272,7 +284,6 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                             {sentiment.sentiment === 'positive' ? '📈' : '⚠️'}
                         </button>
                     )}
-                    {/* Fit Analysis Button - Removed, now shown in details page */}
                 </div>
             </div>
         </div>
@@ -280,7 +291,12 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
 };
 
 // --- Favorite Card Component (for college list items) ---
-const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis }) => {
+const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis, fullUniversityData }) => {
+    const formatNumber = (num) => {
+        if (num === 'N/A' || num === null || num === undefined) return 'N/A';
+        return typeof num === 'number' ? num.toLocaleString() : num;
+    };
+
     const fitColors = {
         SAFETY: 'bg-green-100 text-green-800 border-green-300',
         TARGET: 'bg-blue-100 text-blue-800 border-blue-300',
@@ -292,9 +308,17 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis }) => {
     const fitCategory = fit.fit_category || 'TARGET';
     const matchPercentage = fit.match_percentage;
 
+    // Use full university data if available, otherwise use what's in college object
+    const uni = fullUniversityData || {};
+    const acceptanceRate = uni.admissions?.acceptanceRate || college.acceptance_rate || 'N/A';
+    const tuition = uni.financials?.inStateTuition || college.tuition || 'N/A';
+    const rank = uni.rankings?.usNews || college.rank || 'N/A';
+    const earnings = uni.outcomes?.medianEarnings || 'N/A';
+    const location = uni.location ? `${uni.location.city}, ${uni.location.state}` : (college.location || 'Location N/A');
+
     return (
         <div className="bg-white rounded-2xl shadow-lg shadow-amber-50 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-            <div className="p-5 flex-grow">
+            <div className="p-4 flex-grow">
                 <div className="flex justify-between items-start mb-3">
                     <div className="flex-1 min-w-0">
                         <h3 className="text-lg font-bold text-gray-900 line-clamp-2">
@@ -302,7 +326,7 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis }) => {
                         </h3>
                         <div className="flex items-center text-gray-500 text-sm mt-1">
                             <MapPinIcon className="h-4 w-4 mr-1" />
-                            {college.location || 'Location N/A'}
+                            {location}
                         </div>
                     </div>
                     {/* Fit Badge */}
@@ -317,23 +341,39 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis }) => {
                     )}
                 </div>
 
-                {/* Fit Explanation (from LLM justification) */}
-                {fit.explanation && (
-                    <div className="text-sm text-gray-600 bg-blue-50 rounded p-3 mt-2 border border-blue-100">
-                        <span className="font-medium text-blue-700 block mb-1">✨ Why This Fit:</span>
-                        <div className="prose prose-sm max-w-none prose-blue">
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                {fit.explanation}
-                            </ReactMarkdown>
+                {/* Stats Grid - Same as UniversityCard */}
+                <div className="grid grid-cols-2 gap-2 text-sm mb-3">
+                    <div className="bg-amber-50 p-2 rounded-xl">
+                        <div className="text-gray-500 text-xs">Acceptance</div>
+                        <div className="font-semibold text-gray-900">
+                            {acceptanceRate !== 'N/A' ? `${acceptanceRate}%` : 'N/A'}
                         </div>
                     </div>
-                )}
+                    <div className="bg-gray-50 p-2 rounded">
+                        <div className="text-gray-500 text-xs">Tuition</div>
+                        <div className="font-semibold text-gray-900">
+                            {tuition !== 'N/A' ? `$${formatNumber(tuition)}` : 'N/A'}
+                        </div>
+                    </div>
+                    <div className="bg-gray-50 p-2 rounded">
+                        <div className="text-gray-500 text-xs">US News Rank</div>
+                        <div className="font-semibold text-gray-900">
+                            {rank !== 'N/A' ? `#${rank}` : 'N/A'}
+                        </div>
+                    </div>
+                    <div className="bg-amber-50 p-2 rounded-xl">
+                        <div className="text-gray-500 text-xs">Median Earnings</div>
+                        <div className="font-semibold text-gray-900">
+                            {earnings !== 'N/A' ? `$${formatNumber(earnings)}` : 'N/A'}
+                        </div>
+                    </div>
+                </div>
 
-                {/* Fit Analysis Info */}
-                {fit.factors && fit.factors.length > 0 && !fit.explanation && (
-                    <div className="text-xs text-gray-600 bg-gray-50 rounded p-2 mt-2">
-                        <span className="font-medium text-gray-700">Key Factors: </span>
-                        {fit.factors.slice(0, 3).map(f => f.name || f).join(' • ')}
+                {/* Fit Explanation (from LLM justification) - condensed */}
+                {fit.explanation && (
+                    <div className="text-xs text-gray-600 bg-blue-50 rounded p-2 border border-blue-100 line-clamp-2">
+                        <span className="font-medium text-blue-700">✨ </span>
+                        {fit.explanation.substring(0, 100)}...
                     </div>
                 )}
             </div>
@@ -343,14 +383,14 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis }) => {
                 <div className="flex gap-2">
                     <button
                         onClick={() => onViewDetails && onViewDetails(college)}
-                        className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2.5 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200"
+                        className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200"
                     >
                         View Details
                         <ChevronRightIcon className="h-4 w-4" />
                     </button>
                     <button
                         onClick={() => onRemove(college)}
-                        className="px-4 py-2.5 bg-red-50 text-red-600 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors flex items-center gap-1"
+                        className="px-4 py-2 bg-red-50 text-red-600 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors flex items-center gap-1"
                     >
                         <XMarkIcon className="h-4 w-4" />
                     </button>
@@ -500,6 +540,7 @@ const UniversityDetail = ({ uni, onBack, sentiment, fitAnalysis }) => {
                 onClose={() => setIsFitModalOpen(false)}
                 fitAnalysis={fitAnalysis}
                 uniName={uni.name}
+                softFitCategory={uni.softFitCategory}
             />
 
             {/* Header */}
@@ -611,6 +652,7 @@ const LoadingSkeleton = () => (
 
 // --- Main App Component ---
 const UniversityExplorer = () => {
+    const { collegesAvailable, consumeCredit, promptUpgrade, canExploreUniversities } = usePayment();
     const [universities, setUniversities] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -767,6 +809,9 @@ const UniversityExplorer = () => {
     }, [currentUser]);
 
     // Toggle college in list (add/remove)
+    // Track which university is having fit computed
+    const [computingFitFor, setComputingFitFor] = useState(null);
+
     const handleToggleCollegeList = async (university) => {
         if (!currentUser?.email) {
             console.warn('[College List] No user logged in');
@@ -775,6 +820,12 @@ const UniversityExplorer = () => {
 
         const isInList = myCollegeList.some(c => c.university_id === university.id);
         const action = isInList ? 'remove' : 'add';
+
+        // Check college slot limit when adding
+        if (action === 'add' && collegesAvailable <= 0) {
+            promptUpgrade('college_slots', 'You\'ve used all your college slots');
+            return;
+        }
 
         try {
             const result = await updateCollegeList(
@@ -787,7 +838,39 @@ const UniversityExplorer = () => {
             if (result.success) {
                 setMyCollegeList(result.college_list || []);
                 console.log(`[College List] ${action === 'add' ? 'Added' : 'Removed'}: ${university.name}`);
-                // Note: No auto-trigger needed - precomputed fits already have the analysis
+
+                // Consume a college slot credit on add
+                if (action === 'add') {
+                    consumeCredit('college_slots', university.id);
+                    setComputingFitFor(university.id);
+                    console.log(`[Fit] Computing fit for ${university.name}...`);
+
+                    try {
+                        const fitResult = await computeSingleFit(currentUser.email, university.id);
+                        console.log(`[Fit] Computed: ${university.name} -> ${fitResult?.fit_analysis?.fit_category || 'N/A'}`);
+
+                        // Refresh precomputed fits to get the new fit
+                        const fitsResult = await getPrecomputedFits(currentUser.email, {}, 500, 'rank');
+                        if (fitsResult.success && fitsResult.results) {
+                            const fitsMap = {};
+                            fitsResult.results.forEach(fit => {
+                                fitsMap[fit.university_id] = {
+                                    fit_category: fit.fit_category,
+                                    match_percentage: fit.match_score,
+                                    university_name: fit.university_name,
+                                    explanation: fit.explanation,
+                                    factors: fit.factors
+                                };
+                            });
+                            setPrecomputedFits(fitsMap);
+                            console.log(`[Fit] Refreshed fits: ${Object.keys(fitsMap).length} total`);
+                        }
+                    } catch (fitErr) {
+                        console.error('[Fit] Error computing fit:', fitErr);
+                    } finally {
+                        setComputingFitFor(null);
+                    }
+                }
             }
         } catch (err) {
             console.error('[College List] Error updating:', err);
@@ -1041,14 +1124,17 @@ const UniversityExplorer = () => {
                 acceptanceRate === null ||
                 acceptanceRate <= maxAcceptance;
 
-            // Fit category filter - uses precomputedFits if available
+            // Fit category filter - uses precomputedFits if available, falls back to softFitCategory
             let matchesFitCategory = true;
             if (selectedFitCategory !== "All") {
                 const fitData = precomputedFits[uni.id];
                 if (fitData) {
                     matchesFitCategory = fitData.fit_category === selectedFitCategory;
+                } else if (uni.softFitCategory) {
+                    // Fall back to soft fit category from university data
+                    matchesFitCategory = uni.softFitCategory === selectedFitCategory;
                 } else {
-                    // If no fit data for this uni, don't match when filtering by category
+                    // No fit data at all - don't match when filtering by category
                     matchesFitCategory = false;
                 }
             }
@@ -1083,12 +1169,16 @@ const UniversityExplorer = () => {
     }, [filteredUniversities, sortBy]);
 
     // Paginated universities
-    const paginatedUniversities = useMemo(() => {
-        const start = currentPage * CARDS_PER_PAGE;
-        return sortedUniversities.slice(start, start + CARDS_PER_PAGE);
-    }, [sortedUniversities, currentPage]);
+    // For free tier (no explorer access), show all universities on first page
+    // This lets them see all cards but with locked buttons beyond first 3
+    const effectiveCardsPerPage = canExploreUniversities ? CARDS_PER_PAGE : sortedUniversities.length || 1;
 
-    const totalPages = Math.ceil(sortedUniversities.length / CARDS_PER_PAGE);
+    const paginatedUniversities = useMemo(() => {
+        const start = currentPage * effectiveCardsPerPage;
+        return sortedUniversities.slice(start, start + effectiveCardsPerPage);
+    }, [sortedUniversities, currentPage, effectiveCardsPerPage]);
+
+    const totalPages = canExploreUniversities ? Math.ceil(sortedUniversities.length / CARDS_PER_PAGE) : 1;
 
     // Reset page when filters change
     useEffect(() => {
@@ -1200,7 +1290,12 @@ const UniversityExplorer = () => {
     };
 
     // Auto-scan visible universities on page change
+    // DISABLED: This was making too many API calls. Users can manually scan with button.
     useEffect(() => {
+        // Feature disabled - return early
+        return;
+
+        /* Original code - kept for reference
         if (scanningBatch || paginatedUniversities.length === 0) {
             console.log('[Auto-Scan] Skipped:', { scanningBatch, universitiesCount: paginatedUniversities.length });
             return;
@@ -1214,6 +1309,7 @@ const UniversityExplorer = () => {
         }, 1000);
 
         return () => clearTimeout(timer);
+        */
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentPage, scanningBatch, sentimentData]);
 
@@ -1316,6 +1412,19 @@ const UniversityExplorer = () => {
 
                     {/* Loading State */}
                     {loading && <LoadingSkeleton />}
+
+                    {/* Fit Computation Status Bar */}
+                    {computingFitFor && (
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-4 flex items-center gap-3 mb-4 animate-pulse">
+                            <div className="h-5 w-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+                            <span className="text-blue-700 font-medium">
+                                Computing personalized fit analysis...
+                            </span>
+                            <span className="text-blue-500 text-sm">
+                                This may take a few seconds
+                            </span>
+                        </div>
+                    )}
 
                     {/* Tab Navigation */}
                     {!loading && !error && (
@@ -1501,29 +1610,31 @@ const UniversityExplorer = () => {
                                         {/* Cards Grid */}
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                             {paginatedUniversities.length > 0 ? (
-                                                paginatedUniversities.map(uni => (
-                                                    <UniversityCard
-                                                        key={uni.id}
-                                                        uni={uni}
-                                                        onSelect={handleSelectUni}
-                                                        onCompare={handleCompareToggle}
-                                                        isSelectedForCompare={comparisonList.some(u => u.id === uni.id)}
-                                                        sentiment={sentimentData[uni.id]}
-                                                        onSentimentClick={(sent) => {
-                                                            setSelectedSentiment(sent);
-                                                            setShowSentimentModal(true);
-                                                        }}
-                                                        isInList={isInCollegeList(uni.id)}
-                                                        onToggleList={handleToggleCollegeList}
-                                                        fitAnalysis={getCollegeFitAnalysis(uni.id)}
-                                                        onAnalyzeFit={handleAnalyzeFit}
-                                                        isAnalyzing={analyzingFit === uni.id}
-                                                        onShowFitDetails={(fit) => {
-                                                            setSelectedFitData(fit);
-                                                            setShowFitModal(true);
-                                                        }}
-                                                    />
-                                                ))
+                                                paginatedUniversities.map((uni) => {
+                                                    return (
+                                                        <UniversityCard
+                                                            key={uni.id}
+                                                            uni={uni}
+                                                            onSelect={handleSelectUni}
+                                                            onCompare={handleCompareToggle}
+                                                            isSelectedForCompare={comparisonList.some(u => u.id === uni.id)}
+                                                            sentiment={sentimentData[uni.id]}
+                                                            onSentimentClick={(sent) => {
+                                                                setSelectedSentiment(sent);
+                                                                setShowSentimentModal(true);
+                                                            }}
+                                                            isInList={isInCollegeList(uni.id)}
+                                                            onToggleList={handleToggleCollegeList}
+                                                            fitAnalysis={getCollegeFitAnalysis(uni.id)}
+                                                            onAnalyzeFit={handleAnalyzeFit}
+                                                            isAnalyzing={analyzingFit === uni.id}
+                                                            onShowFitDetails={(fit) => {
+                                                                setSelectedFitData(fit);
+                                                                setShowFitModal(true);
+                                                            }}
+                                                        />
+                                                    );
+                                                })
                                             ) : (
                                                 <div className="col-span-full py-12 text-center text-gray-500 bg-white rounded-xl border border-dashed border-gray-300">
                                                     <FunnelIcon className="h-12 w-12 mx-auto mb-4 text-gray-300" />
@@ -1617,33 +1728,38 @@ const UniversityExplorer = () => {
                                     {/* Favorites Grid */}
                                     {myCollegeList.length > 0 && (
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                            {myCollegeList.map((college) => (
-                                                <FavoriteCard
-                                                    key={college.university_id}
-                                                    college={college}
-                                                    onRemove={(c) => handleToggleCollegeList({
-                                                        id: c.university_id,
-                                                        name: c.university_name
-                                                    })}
-                                                    onViewDetails={(c) => {
-                                                        // Try to find the full university data, or create minimal version
-                                                        const fullUni = universities.find(u => u.id === c.university_id) || {
+                                            {myCollegeList.map((college) => {
+                                                // Find full university data to pass to card
+                                                const fullUni = universities.find(u => u.id === college.university_id);
+                                                return (
+                                                    <FavoriteCard
+                                                        key={college.university_id}
+                                                        college={college}
+                                                        fullUniversityData={fullUni}
+                                                        onRemove={(c) => handleToggleCollegeList({
                                                             id: c.university_id,
-                                                            name: c.university_name,
-                                                            location: { city: 'N/A', state: 'N/A', type: 'N/A' },
-                                                            summary: 'Loading full details...',
-                                                            rankings: { usNews: 'N/A' },
-                                                            admissions: { acceptanceRate: 'N/A' },
-                                                            financials: {},
-                                                            outcomes: {},
-                                                            majors: []
-                                                        };
-                                                        setSelectedUni(fullUni);
-                                                        setActiveView('detail');
-                                                    }}
-                                                    fitAnalysis={getCollegeFitAnalysis(college.university_id)}
-                                                />
-                                            ))}
+                                                            name: c.university_name
+                                                        })}
+                                                        onViewDetails={(c) => {
+                                                            // Try to find the full university data, or create minimal version
+                                                            const uniData = fullUni || {
+                                                                id: c.university_id,
+                                                                name: c.university_name,
+                                                                location: { city: 'N/A', state: 'N/A', type: 'N/A' },
+                                                                summary: 'Loading full details...',
+                                                                rankings: { usNews: 'N/A' },
+                                                                admissions: { acceptanceRate: 'N/A' },
+                                                                financials: {},
+                                                                outcomes: {},
+                                                                majors: []
+                                                            };
+                                                            setSelectedUni(uniData);
+                                                            setActiveView('detail');
+                                                        }}
+                                                        fitAnalysis={getCollegeFitAnalysis(college.university_id)}
+                                                    />
+                                                );
+                                            })}
                                         </div>
                                     )}
                                 </div>

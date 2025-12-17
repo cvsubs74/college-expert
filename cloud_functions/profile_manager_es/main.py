@@ -833,13 +833,13 @@ def handle_get_structured_profile(request):
             
             # Build flat profile response - all fields at top level
             profile = {
-                # Personal
-                "name": source.get("name"),
-                "school": source.get("school"),
-                "location": source.get("location"),
-                "grade": source.get("grade"),
+                # Personal - support both onboarding and legacy fields
+                "name": source.get("student_name") or source.get("name"),
+                "school": source.get("high_school") or source.get("school"),
+                "location": source.get("state") or source.get("location"),
+                "grade": source.get("grade_level") or source.get("grade"),
                 "graduation_year": source.get("graduation_year"),
-                "intended_major": source.get("intended_major"),
+                "intended_major": source.get("intended_majors") or source.get("intended_major"),
                 
                 # Academics
                 "gpa_weighted": source.get("gpa_weighted"),
@@ -848,19 +848,29 @@ def handle_get_structured_profile(request):
                 "class_rank": source.get("class_rank"),
                 
                 # Test scores
-                "sat_total": source.get("sat_total"),
+                "sat_total": source.get("sat_composite") or source.get("sat_total"),
                 "sat_math": source.get("sat_math"),
                 "sat_reading": source.get("sat_reading"),
                 "act_composite": source.get("act_composite"),
                 
                 # Arrays
                 "ap_exams": source.get("ap_exams", []),
+                "ap_courses_count": source.get("ap_courses_count"),
                 "courses": source.get("courses", []),
                 "extracurriculars": source.get("extracurriculars", []),
                 "leadership_roles": source.get("leadership_roles", []),
                 "special_programs": source.get("special_programs", []),
                 "awards": source.get("awards", []),
-                "work_experience": source.get("work_experience", [])
+                "work_experience": source.get("work_experience", []),
+                
+                # Onboarding-specific fields
+                "top_activity": source.get("top_activity"),
+                "activity_type": source.get("activity_type"),
+                "preferred_locations": source.get("preferred_locations", []),
+                "school_size_preference": source.get("school_size_preference"),
+                "campus_type_preference": source.get("campus_type_preference"),
+                "onboarding_status": source.get("onboarding_status"),
+                "onboarding_completed_at": source.get("onboarding_completed_at")
             }
             
             logger.info(f"[GET_PROFILE] Returning flat profile for {user_id}")
@@ -912,6 +922,92 @@ def delete_student_profile(document_id):
 # ============================================
 
 # Note: 're' imported at module level
+
+def build_profile_content_from_fields(profile_doc):
+    """
+    Build profile content text from flat ES fields.
+    Used when profile was created via onboarding (no raw 'content' field).
+    """
+    lines = ["Student Profile Summary\n"]
+    
+    # Personal info
+    name = profile_doc.get('student_name') or profile_doc.get('name')
+    school = profile_doc.get('high_school') or profile_doc.get('school')
+    grade = profile_doc.get('grade_level') or profile_doc.get('grade')
+    state = profile_doc.get('state') or profile_doc.get('location')
+    
+    if name:
+        lines.append(f"Name: {name}")
+    if school:
+        lines.append(f"High School: {school}")
+    if grade:
+        lines.append(f"Grade: {grade}")
+    if state:
+        lines.append(f"State: {state}")
+    
+    # GPA
+    gpa_weighted = profile_doc.get('gpa_weighted')
+    gpa_unweighted = profile_doc.get('gpa_unweighted')
+    gpa_uc = profile_doc.get('gpa_uc')
+    
+    if gpa_weighted:
+        lines.append(f"Weighted GPA: {gpa_weighted}")
+    if gpa_unweighted:
+        lines.append(f"Unweighted GPA: {gpa_unweighted}")
+    if gpa_uc:
+        lines.append(f"UC GPA: {gpa_uc}")
+    
+    # Test scores
+    sat_total = profile_doc.get('sat_composite') or profile_doc.get('sat_total')
+    act_composite = profile_doc.get('act_composite')
+    
+    if sat_total:
+        lines.append(f"SAT Score: {sat_total}")
+    if act_composite:
+        lines.append(f"ACT Score: {act_composite}")
+    
+    # Coursework
+    ap_count = profile_doc.get('ap_courses_count')
+    ap_exams = profile_doc.get('ap_exams', [])
+    courses = profile_doc.get('courses', [])
+    
+    if ap_count:
+        lines.append(f"AP/IB Courses: {ap_count}")
+    if ap_exams:
+        exam_list = ', '.join([f"{e.get('subject', 'Unknown')} ({e.get('score', 'N/A')})" for e in ap_exams[:5]])
+        lines.append(f"AP Exams: {exam_list}")
+    if courses:
+        course_list = ', '.join([c.get('name', str(c)) if isinstance(c, dict) else str(c) for c in courses[:10]])
+        lines.append(f"Courses: {course_list}")
+    
+    # Extracurriculars
+    extracurriculars = profile_doc.get('extracurriculars', [])
+    top_activity = profile_doc.get('top_activity')
+    
+    if top_activity:
+        lines.append(f"Top Activity: {top_activity}")
+    if extracurriculars:
+        ec_list = ', '.join([e.get('activity', str(e)) if isinstance(e, dict) else str(e) for e in extracurriculars[:5]])
+        lines.append(f"Activities: {ec_list}")
+    
+    # Intended major
+    intended_majors = profile_doc.get('intended_majors') or profile_doc.get('intended_major')
+    if intended_majors:
+        if isinstance(intended_majors, list):
+            lines.append(f"Intended Major(s): {', '.join(intended_majors)}")
+        else:
+            lines.append(f"Intended Major: {intended_majors}")
+    
+    # Awards
+    awards = profile_doc.get('awards', [])
+    if awards:
+        award_list = ', '.join([a.get('name', str(a)) if isinstance(a, dict) else str(a) for a in awards[:5]])
+        lines.append(f"Awards: {award_list}")
+    
+    content = '\n'.join(lines)
+    logger.info(f"[PROFILE BUILDER] Built profile content: {len(content)} chars, {len(lines)} lines")
+    return content
+
 
 def parse_student_profile(profile_content):
     """
@@ -1449,6 +1545,11 @@ def calculate_fit_for_college(user_id, university_id, intended_major=''):
         profile_doc = response['hits']['hits'][0]['_source']
         profile_content = profile_doc.get('content', '')
         
+        # If content is empty (e.g., onboarding profiles), build from flat fields
+        if not profile_content or len(profile_content.strip()) < 50:
+            logger.info(f"[FIT] Building profile content from flat fields for {user_id}")
+            profile_content = build_profile_content_from_fields(profile_doc)
+        
         # Parse student profile
         student_profile = parse_student_profile(profile_content)
         
@@ -1843,12 +1944,13 @@ def handle_update_fit_analysis(request):
 
 def handle_compute_single_fit(request):
     """
-    Compute fit analysis for a single university without adding it to the college list.
+    Compute fit analysis for a single university with caching.
     
     POST /compute-single-fit
     {
         "user_email": "student@gmail.com",
-        "university_id": "harvard_university_slug"
+        "university_id": "harvard_university_slug",
+        "force_recompute": false  // Optional: force recomputation even if cached
     }
     
     Returns:
@@ -1856,7 +1958,8 @@ def handle_compute_single_fit(request):
         "success": true,
         "university_id": "harvard_university_slug",
         "university_name": "Harvard University",
-        "fit_analysis": {...}
+        "fit_analysis": {...},
+        "from_cache": true/false
     }
     """
     try:
@@ -1864,15 +1967,70 @@ def handle_compute_single_fit(request):
         user_id = data.get('user_email') or data.get('user_id')
         university_id = data.get('university_id')
         intended_major = data.get('intended_major', '')
+        force_recompute = data.get('force_recompute', False)
         
         if not user_id:
             return add_cors_headers({'error': 'User email is required'}, 400)
         if not university_id:
             return add_cors_headers({'error': 'University ID is required'}, 400)
         
-        logger.info(f"[COMPUTE_SINGLE_FIT] Computing fit for {university_id} for user {user_id}")
+        logger.info(f"[COMPUTE_SINGLE_FIT] Request for {university_id} for user {user_id}, force={force_recompute}")
         
-        # Call the existing calculate_fit_for_college function
+        es_client = get_elasticsearch_client()
+        email_hash = hashlib.md5(user_id.encode()).hexdigest()[:8]
+        doc_id = f"{email_hash}_{university_id}"
+        
+        # Check cache first (unless force_recompute is True)
+        if not force_recompute:
+            try:
+                cached = es_client.get(index=ES_FITS_INDEX, id=doc_id)
+                cached_fit = cached['_source']
+                logger.info(f"[COMPUTE_SINGLE_FIT] Cache HIT for {university_id}")
+                
+                # Deserialize JSON string fields back to objects
+                def deserialize_field(value, default):
+                    if value is None:
+                        return default
+                    if isinstance(value, str):
+                        try:
+                            return json.loads(value)
+                        except:
+                            return value
+                    return value
+                
+                fit_analysis = {
+                    'university_id': cached_fit.get('university_id'),
+                    'university_name': cached_fit.get('university_name'),
+                    'fit_category': cached_fit.get('fit_category'),
+                    'match_percentage': cached_fit.get('match_score'),
+                    'explanation': cached_fit.get('explanation'),
+                    'factors': cached_fit.get('factors', []),
+                    'recommendations': deserialize_field(cached_fit.get('recommendations'), []),
+                    'gap_analysis': deserialize_field(cached_fit.get('gap_analysis'), {}),
+                    'essay_angles': deserialize_field(cached_fit.get('essay_angles'), []),
+                    'application_timeline': deserialize_field(cached_fit.get('application_timeline'), {}),
+                    'scholarship_matches': deserialize_field(cached_fit.get('scholarship_matches'), []),
+                    'test_strategy': deserialize_field(cached_fit.get('test_strategy'), {}),
+                    'major_strategy': deserialize_field(cached_fit.get('major_strategy'), {}),
+                    'demonstrated_interest_tips': deserialize_field(cached_fit.get('demonstrated_interest_tips'), []),
+                    'red_flags_to_avoid': deserialize_field(cached_fit.get('red_flags_to_avoid'), []),
+                    'computed_at': cached_fit.get('computed_at')
+                }
+                
+                return add_cors_headers({
+                    'success': True,
+                    'university_id': university_id,
+                    'university_name': fit_analysis.get('university_name', university_id),
+                    'fit_analysis': fit_analysis,
+                    'from_cache': True
+                }, 200)
+                
+            except Exception as e:
+                # Cache miss or error - proceed to compute
+                logger.info(f"[COMPUTE_SINGLE_FIT] Cache MISS for {university_id}: {e}")
+        
+        # Compute fit analysis (LLM call)
+        logger.info(f"[COMPUTE_SINGLE_FIT] Computing fit for {university_id}")
         fit_analysis = calculate_fit_for_college(user_id, university_id, intended_major)
         
         if not fit_analysis:
@@ -1884,11 +2042,50 @@ def handle_compute_single_fit(request):
         
         logger.info(f"[COMPUTE_SINGLE_FIT] Result: {fit_analysis.get('fit_category')} ({fit_analysis.get('match_percentage')}%)")
         
+        # Save to cache (ES_FITS_INDEX)
+        def serialize_field(value, default='[]'):
+            if value is None:
+                return default
+            if isinstance(value, (dict, list)):
+                return json.dumps(value)
+            return str(value)
+        
+        fit_doc = {
+            'user_email': user_id,
+            'university_id': university_id,
+            'university_name': fit_analysis.get('university_name'),
+            'computed_at': datetime.utcnow().isoformat(),
+            'fit_category': fit_analysis.get('fit_category'),
+            'match_score': fit_analysis.get('match_percentage', fit_analysis.get('match_score')),
+            'explanation': fit_analysis.get('explanation'),
+            'factors': fit_analysis.get('factors', []),
+            'recommendations': serialize_field(fit_analysis.get('recommendations', []), '[]'),
+            'gap_analysis': serialize_field(fit_analysis.get('gap_analysis', {}), '{}'),
+            'essay_angles': serialize_field(fit_analysis.get('essay_angles', []), '[]'),
+            'application_timeline': serialize_field(fit_analysis.get('application_timeline', {}), '{}'),
+            'scholarship_matches': serialize_field(fit_analysis.get('scholarship_matches', []), '[]'),
+            'test_strategy': serialize_field(fit_analysis.get('test_strategy', {}), '{}'),
+            'major_strategy': serialize_field(fit_analysis.get('major_strategy', {}), '{}'),
+            'demonstrated_interest_tips': serialize_field(fit_analysis.get('demonstrated_interest_tips', []), '[]'),
+            'red_flags_to_avoid': serialize_field(fit_analysis.get('red_flags_to_avoid', []), '[]'),
+            'acceptance_rate': fit_analysis.get('acceptance_rate'),
+            'us_news_rank': fit_analysis.get('us_news_rank'),
+            'location': fit_analysis.get('location'),
+            'market_position': fit_analysis.get('market_position')
+        }
+        
+        try:
+            es_client.index(index=ES_FITS_INDEX, id=doc_id, body=fit_doc)
+            logger.info(f"[COMPUTE_SINGLE_FIT] Saved to cache: {doc_id}")
+        except Exception as e:
+            logger.warning(f"[COMPUTE_SINGLE_FIT] Failed to cache fit: {e}")
+        
         return add_cors_headers({
             'success': True,
             'university_id': university_id,
             'university_name': fit_analysis.get('university_name', university_id),
-            'fit_analysis': fit_analysis
+            'fit_analysis': fit_analysis,
+            'from_cache': False
         }, 200)
         
     except Exception as e:
@@ -2118,6 +2315,11 @@ def handle_compute_all_fits(request):
         profile_source = response['hits']['hits'][0]['_source']
         profile_content = profile_source.get('content', '')
         
+        # If content is empty (e.g., onboarding profiles), build from flat fields
+        if not profile_content or len(profile_content.strip()) < 50:
+            logger.info(f"[COMPUTE_ALL_FITS] Building profile content from flat fields for {user_id}")
+            profile_content = build_profile_content_from_fields(profile_source)
+        
         # Get existing computed fits (to merge with new batch)
         existing_fits_json = profile_source.get('college_fits', '{}')
         try:
@@ -2125,15 +2327,43 @@ def handle_compute_all_fits(request):
         except:
             existing_fits = {}
         
-        # Step 2: Fetch all universities from KB
-        all_universities = fetch_all_universities()
-        total_universities = len(all_universities)
+        # Step 2: Get universities from USER'S COLLEGE LIST (from separate index)
+        # The college list is stored in ES_LIST_ITEMS_INDEX, not in the profile doc
+        list_search_body = {
+            "size": 500,
+            "query": {"term": {"user_email": user_id}},
+            "sort": [{"added_at": {"order": "desc"}}]
+        }
         
-        if not all_universities:
+        list_response = es_client.search(index=ES_LIST_ITEMS_INDEX, body=list_search_body)
+        
+        if list_response['hits']['total']['value'] == 0:
             return add_cors_headers({
-                'success': False,
-                'error': 'Could not fetch universities from knowledge base'
-            }, 500)
+                'success': True,
+                'computed': 0,
+                'total_universities': 0,
+                'has_more': False,
+                'message': 'No universities in college list. Add universities first.'
+            }, 200)
+        
+        # Build list of universities to compute fits for
+        all_universities = []
+        for hit in list_response['hits']['hits']:
+            item = hit['_source']
+            uni_id = item.get('university_id')
+            uni_name = item.get('university_name', uni_id)
+            if uni_id:
+                all_universities.append({
+                    'university_id': uni_id,
+                    'official_name': uni_name,
+                    'location': item.get('location', {}),
+                    'acceptance_rate': item.get('acceptance_rate'),
+                    'us_news_rank': item.get('us_news_rank'),
+                    'market_position': item.get('market_position')
+                })
+        
+        total_universities = len(all_universities)
+        logger.info(f"[COMPUTE_ALL_FITS] Found {total_universities} universities in user's college list")
         
         # Step 3: Get the batch to process
         batch_universities = all_universities[offset:offset + batch_size]
@@ -2710,6 +2940,250 @@ def handle_update_structured_field(request):
         }, 500)
 
 
+def handle_save_onboarding_profile(request):
+    """
+    Save onboarding wizard data to user's profile.
+    Creates or updates the structured profile with onboarding data.
+    """
+    try:
+        data = request.get_json()
+        if not data:
+            return add_cors_headers({'error': 'No data provided'}, 400)
+        
+        user_id = data.get('user_email') or data.get('user_id')
+        profile_data = data.get('profile_data', {})
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User email is required'}, 400)
+        
+        logger.info(f"[SAVE_ONBOARDING] Saving onboarding profile for {user_id}")
+        
+        es_client = get_elasticsearch_client()
+        
+        # Check if profile already exists
+        search_body = {
+            "size": 1,
+            "query": {"term": {"user_id.keyword": user_id}},
+            "sort": [{"indexed_at": {"order": "desc"}}]
+        }
+        
+        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        
+        # Flatten onboarding data for direct field storage
+        flat_fields = {
+            'onboarding_status': profile_data.get('onboarding_status', 'completed'),
+            'onboarding_completed_at': profile_data.get('onboarding_completed_at', datetime.utcnow().isoformat()),
+        }
+        
+        # Student info
+        if 'student_info' in profile_data:
+            si = profile_data['student_info']
+            flat_fields['student_name'] = si.get('name', '')
+            flat_fields['grade_level'] = si.get('grade', '')  # Use grade_level to avoid ES mapping conflict
+            flat_fields['high_school'] = si.get('high_school', '')
+            flat_fields['state'] = si.get('state', '')
+        
+        # Academic profile
+        if 'academic_profile' in profile_data:
+            ap = profile_data['academic_profile']
+            if ap.get('gpa', {}).get('weighted'):
+                flat_fields['gpa_weighted'] = float(ap['gpa']['weighted'])
+            
+            # Safely handle test_scores which may have null sat/act
+            test_scores = ap.get('test_scores') or {}
+            sat_data = test_scores.get('sat') or {}
+            act_data = test_scores.get('act') or {}
+            
+            if sat_data.get('composite'):
+                flat_fields['sat_composite'] = int(sat_data['composite'])
+            if act_data.get('composite'):
+                flat_fields['act_composite'] = int(act_data['composite'])
+            
+            flat_fields['ap_courses_count'] = ap.get('ap_courses', 0)
+        
+        # Interests
+        if 'interests' in profile_data:
+            interests = profile_data['interests']
+            flat_fields['intended_majors'] = interests.get('intended_majors', [])
+            flat_fields['top_activity'] = interests.get('top_activity', '')
+            flat_fields['activity_type'] = interests.get('activity_type', '')
+        
+        # Preferences
+        if 'preferences' in profile_data:
+            prefs = profile_data['preferences']
+            flat_fields['preferred_locations'] = prefs.get('preferred_locations', [])
+            flat_fields['school_size_preference'] = prefs.get('school_size', '')
+            flat_fields['campus_type_preference'] = prefs.get('campus_type', '')
+        
+        # Set flag to trigger fit recomputation on next Launchpad visit
+        flat_fields['needs_fit_recomputation'] = True
+        flat_fields['last_change_reason'] = 'Profile created/updated via onboarding'
+        flat_fields['profile_updated_at'] = datetime.utcnow().isoformat()
+        flat_fields['updated_at'] = datetime.utcnow().isoformat()
+        
+        if response['hits']['total']['value'] > 0:
+            # Update existing profile
+            doc_id = response['hits']['hits'][0]['_id']
+            es_client.update(
+                index=ES_INDEX_NAME,
+                id=doc_id,
+                body={"doc": flat_fields}
+            )
+            logger.info(f"[SAVE_ONBOARDING] Updated existing profile for {user_id}")
+        else:
+            # Create new profile document
+            new_doc = {
+                'user_id': user_id,
+                'display_name': f"Onboarding Profile - {user_id}",
+                'indexed_at': datetime.utcnow().isoformat(),
+                'content': f"Profile created via onboarding wizard for {profile_data.get('student_info', {}).get('name', user_id)}",
+                **flat_fields
+            }
+            es_client.index(index=ES_INDEX_NAME, body=new_doc)
+            logger.info(f"[SAVE_ONBOARDING] Created new profile for {user_id}")
+        
+        return add_cors_headers({
+            'success': True,
+            'message': 'Onboarding profile saved successfully',
+            'user_email': user_id
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[SAVE_ONBOARDING ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to save onboarding profile: {str(e)}'
+        }, 500)
+
+
+def handle_reset_all_profile(request):
+    """
+    Reset all profile data for a user.
+    Deletes: profile document, all fit analyses, and optionally the college list.
+    
+    POST /reset-all-profile
+    {
+        "user_email": "student@gmail.com",
+        "delete_college_list": true  // Optional - also delete college list
+    }
+    """
+    try:
+        data = request.get_json() or {}
+        user_id = data.get('user_email') or data.get('user_id')
+        delete_college_list = data.get('delete_college_list', False)
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User email is required'}, 400)
+        
+        logger.info(f"[RESET_ALL_PROFILE] Starting reset for {user_id}")
+        
+        es_client = get_elasticsearch_client()
+        deleted_counts = {
+            'profile': 0,
+            'fits': 0,
+            'college_list': 0
+        }
+        
+        # 1. Delete user's profile document(s)
+        try:
+            delete_query = {
+                "query": {"term": {"user_id.keyword": user_id}}
+            }
+            profile_result = es_client.delete_by_query(index=ES_INDEX_NAME, body=delete_query)
+            deleted_counts['profile'] = profile_result.get('deleted', 0)
+            logger.info(f"[RESET_ALL_PROFILE] Deleted {deleted_counts['profile']} profile documents")
+        except Exception as e:
+            logger.warning(f"[RESET_ALL_PROFILE] Error deleting profile: {e}")
+        
+        # 2. Delete all fit analyses
+        try:
+            # Fits have user_email field stored - use term query
+            fits_query = {
+                "query": {"term": {"user_email.keyword": user_id}}
+            }
+            fits_result = es_client.delete_by_query(index=ES_FITS_INDEX, body=fits_query)
+            deleted_counts['fits'] = fits_result.get('deleted', 0)
+            logger.info(f"[RESET_ALL_PROFILE] Deleted {deleted_counts['fits']} fit analyses")
+        except Exception as e:
+            logger.warning(f"[RESET_ALL_PROFILE] Error deleting fits: {e}")
+        
+        # 3. Optionally delete college list
+        if delete_college_list:
+            try:
+                list_query = {
+                    "query": {"term": {"user_email": user_id}}
+                }
+                list_result = es_client.delete_by_query(index=ES_LIST_ITEMS_INDEX, body=list_query)
+                deleted_counts['college_list'] = list_result.get('deleted', 0)
+                logger.info(f"[RESET_ALL_PROFILE] Deleted {deleted_counts['college_list']} college list items")
+            except Exception as e:
+                logger.warning(f"[RESET_ALL_PROFILE] Error deleting college list: {e}")
+        
+        logger.info(f"[RESET_ALL_PROFILE] Reset complete for {user_id}: {deleted_counts}")
+        
+        return add_cors_headers({
+            'success': True,
+            'deleted': deleted_counts,
+            'message': f"Profile reset complete. Deleted {deleted_counts['profile']} profile(s), {deleted_counts['fits']} fits, {deleted_counts['college_list']} college list items."
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[RESET_ALL_PROFILE ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Reset failed: {str(e)}'
+        }, 500)
+
+
+def handle_check_fit_recomputation(request):
+    """
+    Check if user's profile has needs_fit_recomputation flag set.
+    
+    GET /check-fit-recomputation?user_email=student@gmail.com
+    """
+    try:
+        user_id = request.args.get('user_email') or request.args.get('user_id')
+        
+        if not user_id:
+            data = request.get_json() or {}
+            user_id = data.get('user_email') or data.get('user_id')
+        
+        if not user_id:
+            return add_cors_headers({'error': 'User email is required'}, 400)
+        
+        es_client = get_elasticsearch_client()
+        
+        search_body = {
+            "size": 1,
+            "query": {"term": {"user_id.keyword": user_id}},
+            "_source": ["needs_fit_recomputation", "profile_updated_at"]
+        }
+        
+        response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+        
+        if response['hits']['total']['value'] == 0:
+            return add_cors_headers({
+                'success': True,
+                'needs_recomputation': False,
+                'reason': 'No profile found'
+            }, 200)
+        
+        profile = response['hits']['hits'][0]['_source']
+        needs_recomputation = profile.get('needs_fit_recomputation', False)
+        
+        return add_cors_headers({
+            'success': True,
+            'needs_recomputation': needs_recomputation,
+            'profile_updated_at': profile.get('profile_updated_at')
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[CHECK_FIT_RECOMP ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': str(e)
+        }, 500)
+
 
 def handle_update_profile_content(request):
     """Update the raw content section of the student's profile."""
@@ -2890,6 +3364,31 @@ def profile_manager_es_http_entry(request):
                 )
                 
                 if result["success"]:
+                    # Include list of extracted fields for frontend display
+                    extracted_fields = []
+                    if structured_profile:
+                        if structured_profile.get('gpa'):
+                            extracted_fields.append('GPA')
+                        if structured_profile.get('sat_composite') or structured_profile.get('sat_total'):
+                            extracted_fields.append('SAT')
+                        if structured_profile.get('act_composite'):
+                            extracted_fields.append('ACT')
+                        if structured_profile.get('activities'):
+                            extracted_fields.append('Activities')
+                        if structured_profile.get('awards') or structured_profile.get('honors'):
+                            extracted_fields.append('Awards')
+                        if structured_profile.get('courses') or structured_profile.get('ap_courses'):
+                            extracted_fields.append('Courses')
+                        if structured_profile.get('intended_major') or structured_profile.get('intended_majors'):
+                            extracted_fields.append('Major')
+                        if structured_profile.get('student_name') or structured_profile.get('name'):
+                            extracted_fields.append('Name')
+                        if structured_profile.get('grade_level') or structured_profile.get('grade'):
+                            extracted_fields.append('Grade')
+                        if structured_profile.get('high_school') or structured_profile.get('school'):
+                            extracted_fields.append('School')
+                    
+                    result['extracted_fields'] = extracted_fields
                     return add_cors_headers(result, 200)
                 else:
                     return add_cors_headers(result, 500)
@@ -2976,6 +3475,18 @@ def profile_manager_es_http_entry(request):
         # --- SEARCH USER PROFILE (for agent tools) ---
         elif resource_type == 'search-user-profile' and request.method == 'POST':
             return handle_search(request)
+        
+        # --- ONBOARDING ROUTES ---
+        elif resource_type == 'save-onboarding-profile' and request.method == 'POST':
+            return handle_save_onboarding_profile(request)
+        
+        # --- RESET ALL PROFILE DATA ---
+        elif resource_type == 'reset-all-profile' and request.method == 'POST':
+            return handle_reset_all_profile(request)
+        
+        # --- CHECK FIT RECOMPUTATION NEEDED ---
+        elif resource_type == 'check-fit-recomputation':
+            return handle_check_fit_recomputation(request)
         
         else:
             return add_cors_headers({'error': 'Not Found'}, 404)

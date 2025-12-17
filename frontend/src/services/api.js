@@ -315,6 +315,27 @@ export const deleteStudentProfile = async (documentId, userEmail, filename) => {
 };
 
 /**
+ * Reset all profile data - clears profile, fit analyses, and optionally college list
+ * Use for complete profile reset / fresh start
+ */
+export const resetAllProfile = async (userEmail, deleteCollegeList = false) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/reset-all-profile`, {
+      user_email: userEmail,
+      delete_college_list: deleteCollegeList
+    }, {
+      timeout: 180000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error resetting profile:', error);
+    throw error;
+  }
+};
+
+/**
  * Get student profile document content for preview
  * Uses the profile manager cloud function
  */
@@ -473,6 +494,89 @@ export const updateProfileField = async (userEmail, fieldPath, value, operation 
   }
 };
 
+/**
+ * Save onboarding profile data
+ * Saves the collected onboarding data directly to the structured profile
+ * @param {string} userEmail - User's email address
+ * @param {object} onboardingData - Onboarding form data
+ * @returns {object} Result with success status
+ */
+export const saveOnboardingProfile = async (userEmail, onboardingData) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    console.log(`[API] Saving onboarding profile for ${userEmail}`);
+
+    // Save onboarding data as initial profile
+    const response = await axios.post(`${baseUrl}/save-onboarding-profile`, {
+      user_email: userEmail,
+      profile_data: onboardingData
+    }, {
+      timeout: 30000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+
+    console.log(`[API] Onboarding profile saved:`, response.data);
+    return response.data;
+  } catch (error) {
+    console.error('[API] Error saving onboarding profile:', error);
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+};
+
+/**
+ * Check onboarding status for a user
+ * Returns whether user has completed or skipped onboarding
+ * @param {string} userEmail - User's email address
+ * @returns {object} { hasProfile: boolean, onboardingStatus: string }
+ */
+export const checkOnboardingStatus = async (userEmail) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    console.log(`[API] Checking onboarding status for ${userEmail}`);
+
+    // Fetch the structured profile to check onboarding_status
+    const response = await axios.get(`${baseUrl}/get-profile`, {
+      params: { user_email: userEmail },
+      timeout: 15000,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': userEmail
+      }
+    });
+
+    if (response.data?.success && response.data?.profile) {
+      const profile = response.data.profile;
+      const onboardingStatus = profile.onboarding_status || null;
+
+      return {
+        hasProfile: true,
+        onboardingStatus: onboardingStatus,
+        needsOnboarding: !onboardingStatus || onboardingStatus === 'in_progress'
+      };
+    }
+
+    // No profile found - definitely needs onboarding
+    return {
+      hasProfile: false,
+      onboardingStatus: null,
+      needsOnboarding: true
+    };
+  } catch (error) {
+    console.error('[API] Error checking onboarding status:', error);
+    // On error, assume needs onboarding (safer default)
+    return {
+      hasProfile: false,
+      onboardingStatus: null,
+      needsOnboarding: true
+    };
+  }
+};
 
 
 /**
@@ -955,24 +1059,26 @@ export const computeAllFits = async (userEmail) => {
 };
 
 /**
- * Compute fit analysis for a SINGLE university (lazy fit computation)
+ * Compute fit analysis for a SINGLE university (lazy fit computation with caching)
  * Called when a university is added to the Launchpad
  * @param {string} userEmail - User's email
  * @param {string} universityId - University ID to compute fit for
- * @returns {Promise<{success: boolean, fit: object}>}
+ * @param {boolean} forceRecompute - If true, bypass cache and force LLM recomputation
+ * @returns {Promise<{success: boolean, fit_analysis: object, from_cache: boolean}>}
  */
-export const computeSingleFit = async (userEmail, universityId) => {
+export const computeSingleFit = async (userEmail, universityId, forceRecompute = false) => {
   try {
-    console.log(`[API] Computing single fit for ${userEmail} - ${universityId}...`);
+    console.log(`[API] Computing single fit for ${userEmail} - ${universityId} (force=${forceRecompute})...`);
     const baseUrl = getProfileManagerUrl();
     const response = await axios.post(`${baseUrl}/compute-single-fit`, {
       user_email: userEmail,
-      university_id: universityId
+      university_id: universityId,
+      force_recompute: forceRecompute
     }, {
       timeout: 60000,  // 1 min timeout for single university
       headers: { 'X-User-Email': userEmail }
     });
-    console.log(`[API] Computed single fit:`, response.data);
+    console.log(`[API] Computed single fit (from_cache=${response.data.from_cache}):`, response.data);
     return response.data;
   } catch (error) {
     console.error('Error computing single fit:', error);
@@ -1030,10 +1136,11 @@ export const recomputeLaunchpadFits = async (userEmail) => {
 
     let recomputed = 0;
     // Process in batches of 3 to avoid overwhelming the backend
+    // forceRecompute=true because profile changed and we need fresh analysis
     for (let i = 0; i < universities.length; i += 3) {
       const batch = universities.slice(i, i + 3);
       const promises = batch.map(uni =>
-        computeSingleFit(userEmail, uni.university_id).catch(err => {
+        computeSingleFit(userEmail, uni.university_id, true).catch(err => {  // force=true for profile update
           console.warn(`[API] Failed to recompute fit for ${uni.university_id}:`, err);
           return { success: false };
         })

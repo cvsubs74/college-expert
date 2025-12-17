@@ -67,6 +67,7 @@ const FIT_CATEGORIES = {
 // College Card Component for Launchpad - matches UniInsight style
 const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelected, onToggleSelect, selectionMode }) => {
     const fitAnalysis = college.fit_analysis || {};
+    const hasFitAnalysis = fitAnalysis && fitAnalysis.fit_category; // Only true if we have actual fit data
     const fitCategory = fitAnalysis.fit_category || 'TARGET';
     const matchPercentage = fitAnalysis.match_percentage || null;
     const categoryConfig = FIT_CATEGORIES[fitCategory] || FIT_CATEGORIES.TARGET;
@@ -108,28 +109,43 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
                             <span className="truncate">{college.location || 'Location N/A'}</span>
                         </div>
                     </div>
-                    {/* Fit Badge */}
-                    <span className={`px-2.5 py-1 rounded-full text-xs font-bold border whitespace-nowrap ${fitColors[fitCategory] || fitColors.TARGET}`}>
-                        {categoryConfig.emoji} {categoryConfig.label}
-                        {matchPercentage && ` ${matchPercentage}%`}
-                    </span>
+                    {/* Fit Badge - only show if we have actual fit analysis */}
+                    {hasFitAnalysis ? (
+                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold border whitespace-nowrap ${fitColors[fitCategory] || fitColors.TARGET}`}>
+                            {categoryConfig.emoji} {categoryConfig.label}
+                            {matchPercentage && ` ${matchPercentage}%`}
+                        </span>
+                    ) : (
+                        <span className="px-2.5 py-1 rounded-full text-xs font-medium border whitespace-nowrap bg-gray-100 text-gray-500 border-gray-200">
+                            Pending
+                        </span>
+                    )}
                 </div>
 
-                {/* Stats Grid - similar to UniInsight */}
-                <div className="grid grid-cols-2 gap-2 text-sm mb-3">
-                    <div className="bg-amber-50 p-2 rounded-xl">
-                        <div className="text-gray-500 text-xs">Fit Category</div>
-                        <div className={`font-semibold ${categoryConfig.textColor}`}>
-                            {categoryConfig.label}
+                {/* Stats Grid - only show if we have fit analysis */}
+                {hasFitAnalysis ? (
+                    <div className="grid grid-cols-2 gap-2 text-sm mb-3">
+                        <div className="bg-amber-50 p-2 rounded-xl">
+                            <div className="text-gray-500 text-xs">Fit Category</div>
+                            <div className={`font-semibold ${categoryConfig.textColor}`}>
+                                {categoryConfig.label}
+                            </div>
+                        </div>
+                        <div className="bg-gray-50 p-2 rounded">
+                            <div className="text-gray-500 text-xs">Match Score</div>
+                            <div className="font-semibold text-gray-900">
+                                {matchPercentage ? `${matchPercentage}%` : 'N/A'}
+                            </div>
                         </div>
                     </div>
-                    <div className="bg-gray-50 p-2 rounded">
-                        <div className="text-gray-500 text-xs">Match Score</div>
-                        <div className="font-semibold text-gray-900">
-                            {matchPercentage ? `${matchPercentage}%` : 'N/A'}
+                ) : (
+                    <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-3">
+                        <div className="text-amber-800 text-sm flex items-center gap-2">
+                            <SparklesIcon className="h-4 w-4" />
+                            <span>Upload your profile to get personalized fit analysis</span>
                         </div>
                     </div>
-                </div>
+                )}
 
                 {/* LLM Explanation (if available) - brief version */}
                 {fitAnalysis.explanation && (
@@ -147,7 +163,7 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
                         onClick={() => onViewDetails && onViewDetails(college)}
                         className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200"
                     >
-                        📊 Fit Analysis
+                        {hasFitAnalysis ? '📊 Fit Analysis' : '📝 Add Profile'}
                     </button>
                     <button
                         onClick={() => onRemove(college)}

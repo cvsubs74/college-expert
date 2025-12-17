@@ -4,15 +4,20 @@ import {
   PaperAirplaneIcon,
   ArrowPathIcon,
   InformationCircleIcon,
-  SparklesIcon
+  SparklesIcon,
+  LockClosedIcon
 } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { startSession, sendMessage, extractFullResponse } from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { usePayment } from '../context/PaymentContext';
 
 function Chat() {
   const { currentUser } = useAuth();
+  const { aiMessagesAvailable, aiMessagesLimit, consumeAiMessage, promptUpgrade, isFreeTier, hasActiveSubscription } = usePayment();
 
   // Initialize messages from localStorage to prevent clearing on tab switch
   const [messages, setMessages] = useState(() => {
@@ -65,6 +70,12 @@ function Chat() {
 
     if (!inputMessage.trim() || sending) return;
 
+    // Check message limit (unless unlimited)
+    if (aiMessagesAvailable !== 'unlimited' && aiMessagesAvailable <= 0) {
+      promptUpgrade('ai_messages', 'You\'ve used all your AI counselor messages');
+      return;
+    }
+
     const userMessage = inputMessage.trim();
     setInputMessage('');
     setSending(true);
@@ -110,6 +121,9 @@ Question: ${userMessage}`;
 
       // Add assistant response to chat
       setMessages([...newMessages, { role: 'assistant', content: result }]);
+
+      // Consume a message credit (local tracking)
+      consumeAiMessage();
     } catch (err) {
       console.error('Error sending message:', err);
       setError('Failed to send message. Please try again.');
@@ -199,25 +213,53 @@ Question: ${question}`;
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">AI Counselor</h1>
+        <h1 className="text-3xl font-bold text-gray-900">My Advisor</h1>
         <p className="mt-2 text-gray-600">
           Ask anything - from general college research to personalized admissions strategy.
           I'll use your profile when relevant and search my knowledge base to provide tailored guidance.
         </p>
       </div>
 
-      {/* Info Banner */}
-      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
-        <div className="flex">
-          <InformationCircleIcon className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-          <div className="ml-3">
-            <h3 className="text-sm font-medium text-amber-900">Knowledge Base Powered</h3>
-            <p className="mt-1 text-sm text-amber-800">
-              This chat uses our college admissions knowledge base to provide accurate,
-              research-backed answers. Responses are grounded in expert insights and official data.
-            </p>
+      {/* Monthly Usage Indicator */}
+      <div className="flex items-center justify-between bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <ChatBubbleLeftRightIcon className="h-5 w-5 text-amber-500" />
+            <span className="text-sm font-medium text-gray-700">Monthly Messages</span>
           </div>
+          {hasActiveSubscription ? (
+            <span className="px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full">
+              ✨ {aiMessagesAvailable}/{aiMessagesLimit}
+            </span>
+          ) : (
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
+                <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className={`h-full rounded-full transition-all ${aiMessagesAvailable <= 5 ? 'bg-red-500' :
+                      aiMessagesAvailable <= 10 ? 'bg-amber-500' : 'bg-green-500'
+                      }`}
+                    style={{ width: `${(aiMessagesAvailable / aiMessagesLimit) * 100}%` }}
+                  />
+                </div>
+                <span className={`text-sm font-bold ${aiMessagesAvailable <= 5 ? 'text-red-600' :
+                  aiMessagesAvailable <= 10 ? 'text-amber-600' : 'text-gray-700'
+                  }`}>
+                  {aiMessagesAvailable}/{aiMessagesLimit}
+                </span>
+              </div>
+              {aiMessagesAvailable <= 10 && (
+                <Link
+                  to="/pricing"
+                  className="px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full hover:from-amber-400 hover:to-orange-400 transition-all"
+                >
+                  Upgrade →
+                </Link>
+              )}
+            </div>
+          )}
         </div>
+        <span className="text-xs text-gray-400">Resets monthly</span>
       </div>
 
       {/* Chat Container */}
@@ -228,7 +270,7 @@ Question: ${question}`;
             <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl mr-3">
               <ChatBubbleLeftRightIcon className="h-5 w-5 text-white" />
             </div>
-            <h2 className="text-lg font-semibold text-gray-900">Chat with AI Counselor</h2>
+            <h2 className="text-lg font-semibold text-gray-900">Ask me anything about colleges</h2>
           </div>
           {messages.length > 0 && (
             <button
@@ -293,7 +335,7 @@ Question: ${question}`;
                       <p className="text-sm">{message.content}</p>
                     ) : (
                       <div className="prose prose-sm max-w-none prose-blue">
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
                           {message.content}
                         </ReactMarkdown>
                       </div>

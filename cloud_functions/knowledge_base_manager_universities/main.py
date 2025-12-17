@@ -22,11 +22,10 @@ def compute_soft_fit_category(acceptance_rate) -> str:
     Compute soft fit category based purely on acceptance rate.
     This is a preliminary fit category computed at ingest time.
     
-    Categories:
-    - SUPER_REACH: < 8% acceptance rate (Ivies, Stanford, MIT)
-    - REACH: 8-15% acceptance rate
-    - TARGET: 15-30% acceptance rate
-    - LIKELY: 30-50% acceptance rate
+    Categories (4 standard categories):
+    - SUPER_REACH: < 10% acceptance rate (Ivies, Stanford, MIT, etc.)
+    - REACH: 10-25% acceptance rate
+    - TARGET: 25-50% acceptance rate
     - SAFETY: > 50% acceptance rate
     """
     if acceptance_rate is None:
@@ -37,14 +36,12 @@ def compute_soft_fit_category(acceptance_rate) -> str:
     except (TypeError, ValueError):
         return "UNKNOWN"
     
-    if rate < 8:
+    if rate < 10:
         return "SUPER_REACH"
-    elif rate < 15:
+    elif rate < 25:
         return "REACH"
-    elif rate < 30:
-        return "TARGET"
     elif rate < 50:
-        return "LIKELY"
+        return "TARGET"
     else:
         return "SAFETY"
 
@@ -692,8 +689,8 @@ def list_universities() -> dict:
             body={
                 "size": 200,
                 "query": {"match_all": {}},
-                "_source": ["university_id", "official_name", "location", "acceptance_rate", 
-                           "market_position", "us_news_rank", "summary", "indexed_at", "last_updated"]
+            "_source": ["university_id", "official_name", "location", "acceptance_rate", "soft_fit_category",
+                       "market_position", "us_news_rank", "summary", "indexed_at", "last_updated"]
             }
         )
         

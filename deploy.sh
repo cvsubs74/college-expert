@@ -36,6 +36,7 @@ PROFILE_MANAGER_ES_FUNCTION="profile-manager-es"
 KNOWLEDGE_BASE_FUNCTION="knowledge-base-manager"
 KNOWLEDGE_BASE_ES_FUNCTION="knowledge-base-manager-es"
 KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION="knowledge-base-manager-universities"
+PAYMENT_MANAGER_FUNCTION="payment-manager"
 UNIVERSITY_COLLECTOR_SERVICE_NAME="university-profile-collector"
 FRONTEND_SITE_NAME="college-counselor"
 
@@ -67,6 +68,7 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "  ${YELLOW}knowledge-rag${NC} - Deploy RAG knowledge base function"
     echo -e "  ${YELLOW}knowledge-es${NC} - Deploy Elasticsearch knowledge base function"
     echo -e "  ${YELLOW}knowledge-universities${NC} - Deploy Universities knowledge base function"
+    echo -e "  ${YELLOW}payment${NC}     - Deploy Payment manager function (Stripe integration)"
     echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions (recommended)"
     echo -e "  ${YELLOW}backend${NC}     - Deploy both agents + all functions (recommended)"
     echo -e "  ${YELLOW}frontend${NC}    - Deploy only frontend"
@@ -501,6 +503,57 @@ deploy_profile_manager_vertexai() {
     cd ../..
 }
 
+deploy_payment_manager() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Payment Manager Function (Stripe)${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    # Check for Stripe credentials from Secret Manager
+    STRIPE_SECRET_KEY=$(gcloud secrets versions access latest --secret=stripe-secret-key --project=$PROJECT_ID 2>/dev/null || echo "")
+    STRIPE_WEBHOOK_SECRET=$(gcloud secrets versions access latest --secret=stripe-webhook-secret --project=$PROJECT_ID 2>/dev/null || echo "")
+    
+    if [ -z "$STRIPE_SECRET_KEY" ]; then
+        echo -e "${YELLOW}⚠ Stripe credentials not found in Secret Manager${NC}"
+        echo -e "${YELLOW}  Using placeholder - payments will not work until configured${NC}"
+        echo -e "${YELLOW}  To configure, run:${NC}"
+        echo -e "    gcloud secrets create stripe-secret-key --project=$PROJECT_ID"
+        echo -e "    echo -n 'sk_test_YOUR_KEY' | gcloud secrets versions add stripe-secret-key --data-file=-"
+        STRIPE_SECRET_KEY="sk_test_placeholder"
+    fi
+    
+    cd cloud_functions/payment_manager
+    
+    # Create deploy-time env.yaml with substituted values (from persistent env.yaml template)
+    cp env.yaml env.deploy.yaml
+    sed -i.bak \
+        -e "s|\${STRIPE_SECRET_KEY}|${STRIPE_SECRET_KEY}|g" \
+        -e "s|\${STRIPE_WEBHOOK_SECRET}|${STRIPE_WEBHOOK_SECRET}|g" \
+        -e "s|\${ES_API_KEY}|${ES_API_KEY}|g" \
+        env.deploy.yaml
+    rm -f env.deploy.yaml.bak
+    
+    gcloud functions deploy $PAYMENT_MANAGER_FUNCTION \
+        --gen2 \
+        --runtime=python312 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=payment_manager \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.deploy.yaml \
+        --timeout=60s \
+        --memory=256MB \
+        --max-instances=10
+    
+    PAYMENT_MANAGER_URL=$(gcloud functions describe $PAYMENT_MANAGER_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ Payment Manager deployed: ${PAYMENT_MANAGER_URL}${NC}"
+    
+    # Clean up deploy-time env file (contains secrets)
+    rm -f env.deploy.yaml
+    
+    cd ../..
+}
 
 deploy_agent_adk() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
@@ -655,6 +708,9 @@ case "$DEPLOY_TARGET" in
     "profile-vertexai")
         deploy_profile_manager_vertexai
         ;;
+    "payment")
+        deploy_payment_manager
+        ;;
     "vertexai")
         echo -e "${CYAN}Deploying Vertex AI backend (cloud functions + agent)...${NC}"
         deploy_knowledge_base_manager_vertexai
@@ -668,6 +724,7 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
+        deploy_payment_manager
         ;;
     "backend")
         echo -e "${CYAN}Deploying backend (agents + cloud functions)...${NC}"
@@ -692,6 +749,7 @@ case "$DEPLOY_TARGET" in
         deploy_knowledge_base_manager_rag
         deploy_knowledge_base_manager_es
         deploy_knowledge_base_manager_universities
+        deploy_payment_manager
         deploy_frontend
         ;;
     *)

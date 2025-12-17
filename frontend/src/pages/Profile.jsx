@@ -15,7 +15,8 @@ import {
   deleteVertexAIProfile,
   startSession,
   extractFullResponse,
-  recomputeLaunchpadFits
+  recomputeLaunchpadFits,
+  resetAllProfile
 } from '../services/api';
 import ProfileViewCard from '../components/ProfileViewCard';
 import ProfileBuilder from '../components/ProfileBuilder';
@@ -53,6 +54,11 @@ function Profile() {
   const [pdfError, setPdfError] = useState(null);
   const [selectedProfiles, setSelectedProfiles] = useState([]);
   const [deleting, setDeleting] = useState(false);
+
+  // Reset profile modal state
+  const [showResetModal, setShowResetModal] = useState(false);
+  const [resetting, setResetting] = useState(false);
+  const [resetOptions, setResetOptions] = useState({ deleteCollegeList: false });
 
   // New state for tabs, profile view, and chat
   const [activeTab, setActiveTab] = useState('files'); // 'view' | 'files' | 'form' | 'guided' | 'chat'
@@ -453,12 +459,26 @@ If this is a question about my profile, answer based on my profile data.`;
     setUploadProgress({});
 
     try {
-      // Upload all files in parallel
+      // Upload all files in parallel with progressive status updates
       const uploadPromises = selectedFiles.map(async (file, index) => {
         try {
+          // Phase 1: Uploading (0-30%)
           setUploadProgress(prev => ({
             ...prev,
-            [file.name]: { status: 'uploading', progress: 0 }
+            [file.name]: { status: 'uploading', progress: 10 }
+          }));
+
+          // Simulate upload progress
+          await new Promise(r => setTimeout(r, 200));
+          setUploadProgress(prev => ({
+            ...prev,
+            [file.name]: { status: 'uploading', progress: 30 }
+          }));
+
+          // Phase 2: Processing (30-60%)
+          setUploadProgress(prev => ({
+            ...prev,
+            [file.name]: { status: 'processing', progress: 40 }
           }));
 
           // Use Vertex AI upload for vertexai approach
@@ -469,12 +489,30 @@ If this is a question about my profile, answer based on my profile data.`;
             response = await uploadStudentProfile(file, currentUser.email);
           }
 
+          // Phase 3: Extracting profile data (60-90%)
+          setUploadProgress(prev => ({
+            ...prev,
+            [file.name]: { status: 'extracting', progress: 70 }
+          }));
+
+          await new Promise(r => setTimeout(r, 300));
+          setUploadProgress(prev => ({
+            ...prev,
+            [file.name]: { status: 'extracting', progress: 85 }
+          }));
+
           if (response.success) {
+            // Phase 4: Complete (100%)
+            const extractedFields = response.extracted_fields || response.extractedFields || [];
             setUploadProgress(prev => ({
               ...prev,
-              [file.name]: { status: 'success', progress: 100 }
+              [file.name]: {
+                status: 'success',
+                progress: 100,
+                extractedFields: extractedFields
+              }
             }));
-            return { success: true, filename: file.name };
+            return { success: true, filename: file.name, extractedFields };
           } else {
             setUploadProgress(prev => ({
               ...prev,
@@ -551,6 +589,8 @@ If this is a question about my profile, answer based on my profile data.`;
           type: 'success',
           message: `Successfully deleted ${displayName} `
         });
+        // Small delay to ensure ES has indexed the deletion
+        await new Promise(resolve => setTimeout(resolve, 500));
         await refreshAll();
       } else {
         setError(response.message || 'Failed to delete profile');
@@ -593,6 +633,8 @@ If this is a question about my profile, answer based on my profile data.`;
       }
 
       setSelectedProfiles([]);
+      // Small delay to ensure ES has indexed all deletions
+      await new Promise(resolve => setTimeout(resolve, 500));
       await refreshAll();
     } catch (err) {
       console.error('Bulk delete error:', err);
@@ -676,6 +718,112 @@ If this is a question about my profile, answer based on my profile data.`;
     setPdfUrl(null);
     setPdfError(null);
   };
+
+  // Handle complete profile reset
+  const handleResetProfile = async () => {
+    if (!currentUser?.email) return;
+
+    setResetting(true);
+    try {
+      const result = await resetAllProfile(currentUser.email, resetOptions.deleteCollegeList);
+      if (result.success) {
+        setUploadStatus({
+          type: 'success',
+          message: result.message || 'Profile reset complete'
+        });
+        setShowResetModal(false);
+        setResetOptions({ deleteCollegeList: false });
+        // Small delay for ES consistency
+        await new Promise(resolve => setTimeout(resolve, 500));
+        await refreshAll();
+        // Clear local state
+        setProfiles([]);
+        setProfileMarkdown('');
+        setStructuredProfile(null);
+      } else {
+        setError(result.error || 'Failed to reset profile');
+      }
+    } catch (err) {
+      console.error('Reset profile error:', err);
+      setError('Failed to reset profile. Please try again.');
+    } finally {
+      setResetting(false);
+    }
+  };
+
+  // Reset Profile Modal
+  const ResetProfileModal = () => (
+    showResetModal && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
+          <div className="p-6 border-b border-gray-100">
+            <h3 className="text-xl font-bold text-red-600 flex items-center gap-2">
+              <TrashIcon className="h-6 w-6" />
+              Reset All Profile Data
+            </h3>
+          </div>
+
+          <div className="p-6 space-y-4">
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <p className="text-red-800 text-sm font-medium">
+                This action will permanently delete:
+              </p>
+              <ul className="mt-2 text-red-700 text-sm list-disc list-inside space-y-1">
+                <li>All uploaded profile documents</li>
+                <li>Your onboarding profile data</li>
+                <li>All computed fit analyses</li>
+              </ul>
+            </div>
+
+            <label className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
+              <input
+                type="checkbox"
+                checked={resetOptions.deleteCollegeList}
+                onChange={(e) => setResetOptions(prev => ({ ...prev, deleteCollegeList: e.target.checked }))}
+                className="h-4 w-4 text-red-600 rounded border-gray-300 focus:ring-red-500"
+              />
+              <span className="text-sm text-gray-700">
+                Also delete my college list (Launchpad)
+              </span>
+            </label>
+
+            <p className="text-gray-500 text-sm">
+              You will need to re-complete onboarding after resetting.
+            </p>
+          </div>
+
+          <div className="p-6 bg-gray-50 flex gap-3 justify-end">
+            <button
+              onClick={() => {
+                setShowResetModal(false);
+                setResetOptions({ deleteCollegeList: false });
+              }}
+              className="px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleResetProfile}
+              disabled={resetting}
+              className="px-4 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"
+            >
+              {resetting ? (
+                <>
+                  <ArrowPathIcon className="h-4 w-4 animate-spin" />
+                  Resetting...
+                </>
+              ) : (
+                <>
+                  <TrashIcon className="h-4 w-4" />
+                  Reset Everything
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  );
 
   return (
     <div className="space-y-8">
@@ -772,14 +920,25 @@ If this is a question about my profile, answer based on my profile data.`;
                 </div>
                 Your Profile
               </h2>
-              <button
-                onClick={loadProfileMarkdown}
-                disabled={loadingProfile}
-                className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
-              >
-                <ArrowPathIcon className={`h-4 w-4 ${loadingProfile ? 'animate-spin' : ''}`} />
-                Refresh
-              </button>
+              <div className="flex gap-2">
+                <button
+                  onClick={loadProfileMarkdown}
+                  disabled={loadingProfile}
+                  className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
+                >
+                  <ArrowPathIcon className={`h-4 w-4 ${loadingProfile ? 'animate-spin' : ''}`} />
+                  Refresh
+                </button>
+                {!isProfileEmpty && (
+                  <button
+                    onClick={() => setShowResetModal(true)}
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:text-red-700 rounded-lg border border-red-200 hover:border-red-300 hover:bg-red-50 transition-colors"
+                  >
+                    <TrashIcon className="h-4 w-4" />
+                    Reset Profile
+                  </button>
+                )}
+              </div>
             </div>
 
             {loadingProfile ? (
@@ -968,7 +1127,7 @@ If this is a question about my profile, answer based on my profile data.`;
                         id="file-upload"
                         type="file"
                         className="hidden"
-                        accept=".pdf,.docx,.txt,.doc"
+                        accept=".pdf,.docx,.txt,.doc,.md,.markdown"
                         onChange={handleFileSelect}
                         multiple
                       />
@@ -991,35 +1150,80 @@ If this is a question about my profile, answer based on my profile data.`;
                   </div>
                 )}
 
-                {/* Upload Progress */}
+                {/* Upload Progress with Visual Bars */}
                 {Object.keys(uploadProgress).length > 0 && (
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <h3 className="text-sm font-medium text-gray-700 mb-2">Upload Progress:</h3>
-                    <ul className="space-y-2">
+                    <h3 className="text-sm font-medium text-gray-700 mb-3">Processing Documents:</h3>
+                    <div className="space-y-3">
                       {Object.entries(uploadProgress).map(([filename, progress]) => (
-                        <li key={filename} className="flex items-center justify-between text-sm">
-                          <span className="text-gray-900">{filename}</span>
-                          {progress.status === 'uploading' && (
-                            <span className="flex items-center text-blue-600">
-                              <ArrowPathIcon className="h-4 w-4 mr-1 animate-spin" />
-                              Uploading...
+                        <div key={filename} className="space-y-1">
+                          <div className="flex items-center justify-between text-sm">
+                            <span className="text-gray-900 font-medium truncate max-w-[200px]" title={filename}>
+                              {filename}
                             </span>
-                          )}
-                          {progress.status === 'success' && (
-                            <span className="flex items-center text-green-600">
-                              <CheckCircleIcon className="h-4 w-4 mr-1" />
-                              Success
+                            <span className={`flex items-center text-xs font-medium ${progress.status === 'uploading' ? 'text-blue-600' :
+                              progress.status === 'processing' ? 'text-amber-600' :
+                                progress.status === 'extracting' ? 'text-purple-600' :
+                                  progress.status === 'success' ? 'text-green-600' :
+                                    'text-red-600'
+                              }`}>
+                              {progress.status === 'uploading' && (
+                                <>
+                                  <ArrowPathIcon className="h-3 w-3 mr-1 animate-spin" />
+                                  Uploading... {progress.progress}%
+                                </>
+                              )}
+                              {progress.status === 'processing' && (
+                                <>
+                                  <ArrowPathIcon className="h-3 w-3 mr-1 animate-spin" />
+                                  Processing... {progress.progress}%
+                                </>
+                              )}
+                              {progress.status === 'extracting' && (
+                                <>
+                                  <SparklesIcon className="h-3 w-3 mr-1 animate-pulse" />
+                                  Extracting profile data... {progress.progress}%
+                                </>
+                              )}
+                              {progress.status === 'success' && (
+                                <>
+                                  <CheckCircleIcon className="h-3 w-3 mr-1" />
+                                  Complete
+                                </>
+                              )}
+                              {progress.status === 'error' && (
+                                <>
+                                  <XCircleIcon className="h-3 w-3 mr-1" />
+                                  Failed
+                                </>
+                              )}
                             </span>
+                          </div>
+                          {/* Progress Bar */}
+                          <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div
+                              className={`h-full rounded-full transition-all duration-300 ${progress.status === 'uploading' ? 'bg-blue-500' :
+                                progress.status === 'processing' ? 'bg-amber-500' :
+                                  progress.status === 'extracting' ? 'bg-purple-500' :
+                                    progress.status === 'success' ? 'bg-green-500' :
+                                      'bg-red-500'
+                                }`}
+                              style={{ width: `${progress.progress || 0}%` }}
+                            />
+                          </div>
+                          {/* Error message if present */}
+                          {progress.error && (
+                            <p className="text-xs text-red-500 mt-1">{progress.error}</p>
                           )}
-                          {progress.status === 'error' && (
-                            <span className="flex items-center text-red-600">
-                              <XCircleIcon className="h-4 w-4 mr-1" />
-                              Failed
-                            </span>
+                          {/* Extracted fields summary */}
+                          {progress.extractedFields && progress.extractedFields.length > 0 && (
+                            <p className="text-xs text-green-600 mt-1">
+                              ✓ Extracted: {progress.extractedFields.join(', ')}
+                            </p>
                           )}
-                        </li>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
 
@@ -1314,6 +1518,9 @@ If this is a question about my profile, answer based on my profile data.`;
           </>
         )}
       </div>
+
+      {/* Reset Profile Modal */}
+      <ResetProfileModal />
     </div>
   );
 }

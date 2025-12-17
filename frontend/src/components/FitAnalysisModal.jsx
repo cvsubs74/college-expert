@@ -9,13 +9,19 @@ import {
     ExclamationTriangleIcon,
     LightBulbIcon,
     PencilSquareIcon,
-    FlagIcon
+    FlagIcon,
+    UserCircleIcon,
+    ArrowRightIcon,
+    RocketLaunchIcon
 } from '@heroicons/react/24/outline';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { useNavigate } from 'react-router-dom';
 
-const FitAnalysisModal = ({ isOpen, onClose, fitAnalysis, uniName }) => {
-    if (!isOpen || !fitAnalysis) return null;
+const FitAnalysisModal = ({ isOpen, onClose, fitAnalysis, uniName, softFitCategory }) => {
+    const navigate = useNavigate();
+
+    if (!isOpen) return null;
 
     const printAnalysis = () => {
         window.print();
@@ -27,6 +33,73 @@ const FitAnalysisModal = ({ isOpen, onClose, fitAnalysis, uniName }) => {
         REACH: { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-800', badge: 'bg-orange-100' },
         SUPER_REACH: { bg: 'bg-red-50', border: 'border-red-200', text: 'text-red-800', badge: 'bg-red-100' }
     };
+
+    // Empty state when no fit analysis computed
+    if (!fitAnalysis) {
+        const softConfig = softFitCategory ? fitColors[softFitCategory] : null;
+
+        return (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden">
+                    <div className="flex items-center justify-between p-6 border-b border-gray-100">
+                        <h2 className="text-xl font-bold text-gray-900">Fit Analysis</h2>
+                        <button
+                            onClick={onClose}
+                            className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
+                        >
+                            <XMarkIcon className="h-5 w-5" />
+                        </button>
+                    </div>
+
+                    <div className="p-8 text-center">
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 mb-4">
+                            <UserCircleIcon className="h-8 w-8 text-amber-500" />
+                        </div>
+
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                            Personalized Analysis for {uniName}
+                        </h3>
+
+                        {softFitCategory && (
+                            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 ${softConfig?.bg} ${softConfig?.border} border`}>
+                                <span className={`text-sm font-medium ${softConfig?.text}`}>
+                                    Fit: {softFitCategory === 'SUPER_REACH' ? 'Super Reach' :
+                                        softFitCategory === 'REACH' ? 'Reach' :
+                                            softFitCategory === 'TARGET' ? 'Target' : 'Safety'}
+                                </span>
+                                <span className="text-xs text-gray-500">(based on acceptance rate)</span>
+                            </div>
+                        )}
+
+                        <p className="text-gray-600 mb-6 max-w-sm mx-auto">
+                            To get a detailed, personalized fit analysis, complete your profile and add this university to your Launchpad.
+                        </p>
+
+                        <div className="flex flex-col gap-3">
+                            <button
+                                onClick={() => { onClose(); navigate('/profile'); }}
+                                className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl shadow-lg shadow-amber-200 hover:shadow-xl transition-all"
+                            >
+                                Complete Profile
+                                <ArrowRightIcon className="h-4 w-4" />
+                            </button>
+                            <button
+                                onClick={() => { onClose(); navigate('/launchpad'); }}
+                                className="flex items-center justify-center gap-2 px-6 py-2.5 text-gray-600 hover:text-gray-800 font-medium transition-colors"
+                            >
+                                <RocketLaunchIcon className="h-4 w-4" />
+                                Go to Launchpad
+                            </button>
+                        </div>
+
+                        <p className="text-xs text-gray-400 mt-6">
+                            Deep fit analysis uses AI to compare your profile against university requirements, majors, culture, and more.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     const categoryConfig = fitColors[fitAnalysis.fit_category] || fitColors.TARGET;
 
