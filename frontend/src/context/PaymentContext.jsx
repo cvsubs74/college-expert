@@ -1,12 +1,48 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
-import { getUserPurchases, checkAccess, useCredit } from '../services/paymentService';
+import { getUserPurchases } from '../services/paymentService';
 
 const PaymentContext = createContext();
 
-// Constants for free tier
-const FREE_AI_MESSAGES_LIMIT = 30;  // Per month
-const FREE_FIT_ANALYSIS_CREDITS = 3;  // Total forever
+// =============================================================================
+// TIER DEFINITIONS
+// =============================================================================
+export const TIERS = {
+    FREE: 'free',
+    PRO: 'pro',
+    ELITE: 'elite'
+};
+
+// Tier feature limits
+const TIER_FEATURES = {
+    [TIERS.FREE]: {
+        aiMessagesLimit: 10,           // 10 messages per month
+        canAccessLaunchpad: false,     // No launchpad access
+        canAnalyzeFit: false,          // No fit analysis
+        hasFullFitAnalysis: false,     // N/A
+        canDeepResearch: false,        // No deep research
+        price: 0,
+        label: 'Free'
+    },
+    [TIERS.PRO]: {
+        aiMessagesLimit: 30,           // 30 messages per month
+        canAccessLaunchpad: true,      // Full launchpad access
+        canAnalyzeFit: true,           // Basic fit analysis
+        hasFullFitAnalysis: false,     // No recommendations/advanced features
+        canDeepResearch: false,        // No deep research
+        price: 99,
+        label: 'Pro'
+    },
+    [TIERS.ELITE]: {
+        aiMessagesLimit: 50,           // 50 messages per month
+        canAccessLaunchpad: true,      // Full launchpad access
+        canAnalyzeFit: true,           // Full fit analysis
+        hasFullFitAnalysis: true,      // Includes recommendations, essay angles, etc.
+        canDeepResearch: true,         // Full deep research
+        price: 199,
+        label: 'Elite'
+    }
+};
 
 // Helper to get current month key for localStorage
 const getMonthKey = () => {
@@ -30,13 +66,12 @@ export const PaymentProvider = ({ children }) => {
     const [upgradeReason, setUpgradeReason] = useState('');
     const [upgradeFeature, setUpgradeFeature] = useState('');
 
-    // Monthly message tracking with localStorage
+    // Monthly message tracking with localStorage (for free tier)
     const [monthlyMessagesUsed, setMonthlyMessagesUsed] = useState(() => {
         try {
             const stored = localStorage.getItem('monthlyMessagesUsed');
             if (stored) {
                 const data = JSON.parse(stored);
-                // Check if it's from this month
                 if (data.month === getMonthKey()) {
                     return data.count;
                 }
@@ -47,16 +82,6 @@ export const PaymentProvider = ({ children }) => {
         }
     });
 
-    // Fit analysis tracking with localStorage (persists forever)
-    const [fitAnalysesUsed, setFitAnalysesUsed] = useState(() => {
-        try {
-            const stored = localStorage.getItem('fitAnalysesUsed');
-            return stored ? JSON.parse(stored) : [];
-        } catch {
-            return [];
-        }
-    });
-
     // Save monthly messages to localStorage when it changes
     useEffect(() => {
         localStorage.setItem('monthlyMessagesUsed', JSON.stringify({
@@ -64,11 +89,6 @@ export const PaymentProvider = ({ children }) => {
             count: monthlyMessagesUsed
         }));
     }, [monthlyMessagesUsed]);
-
-    // Save fit analyses to localStorage when it changes
-    useEffect(() => {
-        localStorage.setItem('fitAnalysesUsed', JSON.stringify(fitAnalysesUsed));
-    }, [fitAnalysesUsed]);
 
     // Fetch purchases on user change
     useEffect(() => {
@@ -96,94 +116,82 @@ export const PaymentProvider = ({ children }) => {
         }
     }, [currentUser?.email]);
 
-    // Check if user has an active subscription
-    const hasActiveSubscription = purchases?.subscription_active || false;
-
-    // Calculate AI messages available
-    const aiMessagesLimit = hasActiveSubscription
-        ? (purchases?.ai_messages_limit || 100)
-        : FREE_AI_MESSAGES_LIMIT;
-    const aiMessagesUsed = hasActiveSubscription
-        ? (purchases?.ai_messages_used || 0)
-        : monthlyMessagesUsed;
-    const aiMessagesAvailable = Math.max(0, aiMessagesLimit - aiMessagesUsed);
-
-    // Calculate fit analysis credits
-    const fitAnalysisCredits = hasActiveSubscription
-        ? (purchases?.fit_analysis_credits || 3) + (purchases?.college_slots_purchased || 0)
-        : FREE_FIT_ANALYSIS_CREDITS;
-    const fitAnalysisUsed = hasActiveSubscription
-        ? (purchases?.fit_analysis_used || 0)
-        : fitAnalysesUsed.length;
-    const fitAnalysisAvailable = Math.max(0, fitAnalysisCredits - fitAnalysisUsed);
-
-    // Analyze a college (consume fit credit)
-    const canAnalyzeCollege = useCallback((collegeId) => {
-        // If already analyzed, can view for free
-        if (hasActiveSubscription) {
-            const analyzed = purchases?.analyzed_colleges || [];
-            if (analyzed.includes(collegeId)) return true;
-        } else {
-            if (fitAnalysesUsed.includes(collegeId)) return true;
+    // =============================================================================
+    // DETERMINE USER'S TIER
+    // =============================================================================
+    const getUserTier = useCallback(() => {
+        if (!purchases?.subscription_active) {
+            return TIERS.FREE;
         }
-
-        // Check if credits available
-        return fitAnalysisAvailable > 0;
-    }, [hasActiveSubscription, purchases, fitAnalysesUsed, fitAnalysisAvailable]);
-
-    const consumeFitAnalysis = useCallback((collegeId) => {
-        // Check if already analyzed
-        if (hasActiveSubscription) {
-            const analyzed = purchases?.analyzed_colleges || [];
-            if (analyzed.includes(collegeId)) return true;
-        } else {
-            if (fitAnalysesUsed.includes(collegeId)) return true;
+        // Check subscription plan from backend
+        const plan = purchases?.subscription_plan?.toLowerCase() || '';
+        if (plan.includes('elite')) {
+            return TIERS.ELITE;
         }
-
-        // Check credits
-        if (fitAnalysisAvailable <= 0) {
-            promptUpgrade('fit_analysis', 'You\'ve used all your fit analysis credits');
-            return false;
+        if (plan.includes('pro')) {
+            return TIERS.PRO;
         }
+        // Default to PRO if has active subscription but unclear plan
+        return TIERS.PRO;
+    }, [purchases]);
 
-        // Consume credit
-        if (!hasActiveSubscription) {
-            setFitAnalysesUsed(prev => [...prev, collegeId]);
-        }
-        // For subscribed users, the backend tracks this
+    const currentTier = getUserTier();
+    const tierFeatures = TIER_FEATURES[currentTier];
 
-        return true;
-    }, [hasActiveSubscription, purchases, fitAnalysesUsed, fitAnalysisAvailable]);
+    // =============================================================================
+    // FEATURE ACCESS HELPERS
+    // =============================================================================
 
-    // Consume an AI message
-    const consumeAiMessage = useCallback(() => {
-        if (aiMessagesAvailable <= 0) {
-            promptUpgrade('ai_messages', 'You\'ve used all your monthly messages');
-            return false;
-        }
+    // Can access Launchpad?
+    const canAccessLaunchpad = tierFeatures.canAccessLaunchpad;
 
-        if (!hasActiveSubscription) {
-            setMonthlyMessagesUsed(prev => prev + 1);
-        }
-        // For subscribed users, backend tracks this
+    // Can analyze fit?
+    const canAnalyzeFit = tierFeatures.canAnalyzeFit;
 
-        return true;
-    }, [aiMessagesAvailable, hasActiveSubscription]);
+    // Has full fit analysis (with recommendations)?
+    const hasFullFitAnalysis = tierFeatures.hasFullFitAnalysis;
 
-    // Show upgrade modal with reason
+    // Can do deep research?
+    const canDeepResearch = tierFeatures.canDeepResearch;
+
+    // =============================================================================
+    // AI MESSAGE TRACKING
+    // =============================================================================
+    const aiMessagesLimit = tierFeatures.aiMessagesLimit;
+    const aiMessagesUsed = currentTier === TIERS.FREE ? monthlyMessagesUsed : 0;
+    const aiMessagesAvailable = aiMessagesLimit === 'unlimited'
+        ? 'unlimited'
+        : Math.max(0, aiMessagesLimit - aiMessagesUsed);
+
+    // =============================================================================
+    // UPGRADE PROMPT
+    // =============================================================================
     const promptUpgrade = useCallback((feature, reason) => {
         setUpgradeFeature(feature);
         setUpgradeReason(reason);
         setShowUpgradeModal(true);
     }, []);
 
-    // Close upgrade modal
     const closeUpgradeModal = useCallback(() => {
         setShowUpgradeModal(false);
         setUpgradeReason('');
         setUpgradeFeature('');
     }, []);
 
+    // Consume an AI message
+    const consumeAiMessage = useCallback(() => {
+        if (aiMessagesAvailable <= 0) {
+            promptUpgrade('ai_messages', 'You\'ve used all your monthly messages. Upgrade for more!');
+            return false;
+        }
+
+        setMonthlyMessagesUsed(prev => prev + 1);
+        return true;
+    }, [aiMessagesAvailable, promptUpgrade]);
+
+    // =============================================================================
+    // CONTEXT VALUE
+    // =============================================================================
     const value = {
         // State
         purchases,
@@ -192,34 +200,36 @@ export const PaymentProvider = ({ children }) => {
         upgradeReason,
         upgradeFeature,
 
-        // Subscription status
-        hasActiveSubscription,
-        subscriptionPlan: purchases?.subscription_plan || null,
+        // Current Tier
+        currentTier,
+        tierLabel: tierFeatures.label,
+
+        // Tier checks
+        isFreeTier: currentTier === TIERS.FREE,
+        isPro: currentTier === TIERS.PRO,
+        isElite: currentTier === TIERS.ELITE,
+        hasActiveSubscription: currentTier !== TIERS.FREE,
+
+        // Feature access
+        canAccessLaunchpad,
+        canAnalyzeFit,
+        hasFullFitAnalysis,
+        canDeepResearch,
 
         // AI Messages
         aiMessagesLimit,
         aiMessagesUsed,
         aiMessagesAvailable,
 
-        // Fit Analysis
-        fitAnalysisCredits,
-        fitAnalysisUsed,
-        fitAnalysisAvailable,
-        analyzedColleges: hasActiveSubscription
-            ? (purchases?.analyzed_colleges || [])
-            : fitAnalysesUsed,
-
-        // Computed
-        isFreeTier: !hasActiveSubscription,
-        isPro: hasActiveSubscription,
-
         // Actions
         fetchPurchases,
         consumeAiMessage,
-        canAnalyzeCollege,
-        consumeFitAnalysis,
         promptUpgrade,
         closeUpgradeModal,
+
+        // Tier definitions (for pricing page)
+        TIERS,
+        TIER_FEATURES,
     };
 
     return (

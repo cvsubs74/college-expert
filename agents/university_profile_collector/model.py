@@ -509,6 +509,18 @@ class Major(BaseModel):
         default=None,
         description="[OPTIONAL] Minimum GPA to transfer into this major. Example: 3.5"
     )
+    curriculum: Optional[dict] = Field(
+        default=None,
+        description="[OPTIONAL] Major curriculum structure. Source: Official department catalog. "
+                    "Format: {'core_courses': ['CS 101 Intro to Programming', 'CS 201 Data Structures'], "
+                    "'electives': ['CS 310 Machine Learning', 'CS 320 Databases'], "
+                    "'total_units': 120, 'major_units': 60}"
+    )
+    notable_professors: List[str] = Field(
+        default=[],
+        description="[OPTIONAL] Notable faculty members who teach in this major. Source: Department website, "
+                    "RateMyProfessors. Format: ['Dr. Jane Smith (Machine Learning)', 'Prof. John Doe (Algorithms)']"
+    )
     notes: Optional[str] = Field(
         default="",
         description="[OPTIONAL] Additional notes. Example: 'Extremely competitive, consider alternate major'"

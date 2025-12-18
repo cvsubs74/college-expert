@@ -19,7 +19,7 @@ import logging
 import io
 import fitz  # PyMuPDF - better PDF extraction than PyPDF2
 from docx import Document
-import google.generativeai as genai
+from google import genai
 
 
 # Configure logging
@@ -182,16 +182,13 @@ def convert_to_markdown_with_gemini(raw_text: str, filename: str) -> str:
     """
     Use Gemini to convert raw profile text to clean, well-formatted Markdown.
     """
-    import google.generativeai as genai
-    
     try:
         api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
             logger.warning("[GEMINI] No API key, returning raw text as markdown")
             return f"# Student Profile\n\n{raw_text}"
         
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.5-flash-lite')
+        client = genai.Client(api_key=api_key)
         
         prompt = f"""Convert this student profile text into clean, well-formatted Markdown.
 
@@ -221,7 +218,10 @@ FORMATTING REQUIREMENTS:
 Return ONLY the markdown content, no explanations.
 """
 
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model='gemini-2.0-flash',
+            contents=prompt
+        )
         markdown_content = response.text.strip()
         
         # Remove any markdown code block wrapper if present
@@ -246,16 +246,13 @@ def extract_structured_profile_with_gemini(raw_text: str) -> dict:
     Extract complete structured profile from raw text using Gemini.
     Returns FLATTENED JSON with top-level fields for ES indexing.
     """
-    import google.generativeai as genai
-    
     try:
         api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
             logger.warning("[GEMINI] No API key, returning empty structured profile")
             return None
         
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.5-flash')
+        client = genai.Client(api_key=api_key)
         
         prompt = f"""Extract ALL information from this student profile into structured JSON.
 Be thorough - extract EVERY piece of information present. Use null for missing fields.
@@ -331,9 +328,19 @@ EXTRACTION RULES:
 6. Include ALL leadership positions in BOTH extracurriculars and leadership_roles
 7. Return ONLY valid JSON, no markdown formatting or explanation
 
+TRANSCRIPT-SPECIFIC RULES (IMPORTANT):
+8. Look for "Cumulative" GPA - use cumulative weighted GPA for gpa_weighted, cumulative unweighted for gpa_unweighted
+9. Extract EVERY course from ALL grade levels (9, 10, 11, 12) - parse markdown tables if present
+10. For class rank, look for patterns like "1 of 487" or "15/400" - format as "1/487"
+11. Extract graduation year from "Expected Graduation" or class year
+12. Look for AP exam SCORES (1-5) separate from AP courses - scores are typically listed with year or after course tables
+
 Return ONLY the JSON object."""
 
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model='gemini-2.0-flash',
+            contents=prompt
+        )
         response_text = response.text.strip()
         
         # Clean up response - remove markdown code blocks if present
@@ -353,7 +360,14 @@ Return ONLY the JSON object."""
             if key not in profile or profile[key] is None:
                 profile[key] = []
         
-        logger.info(f"[GEMINI] Extracted flattened profile: {len(profile.get('extracurriculars', []))} activities, {len(profile.get('awards', []))} awards")
+        # Enhanced logging for debugging
+        logger.info(f"[GEMINI] Extracted flattened profile:")
+        logger.info(f"  - Name: {profile.get('name')}, School: {profile.get('school')}")
+        logger.info(f"  - GPA weighted: {profile.get('gpa_weighted')}, unweighted: {profile.get('gpa_unweighted')}")
+        logger.info(f"  - SAT: {profile.get('sat_total')}, ACT: {profile.get('act_composite')}")
+        logger.info(f"  - Class rank: {profile.get('class_rank')}, Grad year: {profile.get('graduation_year')}")
+        logger.info(f"  - Courses: {len(profile.get('courses', []))}, AP exams: {len(profile.get('ap_exams', []))}")
+        logger.info(f"  - Activities: {len(profile.get('extracurriculars', []))}, Awards: {len(profile.get('awards', []))}")
         return profile
         
     except json.JSONDecodeError as e:
@@ -372,8 +386,7 @@ def evaluate_profile_change_impact(old_content: str, new_content: str) -> dict:
     Returns: {"should_recompute": bool, "reason": str, "changes_detected": []}
     """
     try:
-        genai.configure(api_key=GEMINI_API_KEY)
-        model = genai.GenerativeModel('gemini-2.5-flash-lite')
+        client = genai.Client(api_key=GEMINI_API_KEY)
         
         prompt = f"""You are a college admissions expert. Compare these two student profile versions and determine if the changes would affect college fit/match calculations.
 
@@ -403,7 +416,10 @@ Respond ONLY with valid JSON (no markdown):
 {{"should_recompute": true or false, "reason": "one sentence explanation", "changes_detected": ["list of specific changes found"]}}
 """
         
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model='gemini-2.0-flash',
+            contents=prompt
+        )
         response_text = response.text.strip()
         
         # Clean up response - remove markdown code blocks if present
@@ -442,9 +458,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 ES_LIST_ITEMS_INDEX = os.getenv("ES_LIST_ITEMS_INDEX", "student_college_list")
 ES_FITS_INDEX = os.getenv("ES_FITS_INDEX", "student_college_fits")
 
-# Configure Gemini API
-if GEMINI_API_KEY:
-    genai.configure(api_key=GEMINI_API_KEY)
+# Note: genai.Client is created per-request in each function
 
 
 
@@ -522,6 +536,7 @@ def get_storage_path(user_id, filename):
 def index_student_profile(user_id, filename, content_markdown, metadata=None, profile_data=None):
     """Index student profile in Elasticsearch with FLATTENED schema.
     All profile fields stored at top level for direct access.
+    MERGES data from multiple uploads instead of replacing.
     
     Args:
         user_id: User's email
@@ -534,52 +549,111 @@ def index_student_profile(user_id, filename, content_markdown, metadata=None, pr
         client = get_elasticsearch_client()
         
         # Use user_id as document ID (one profile per user)
-        # This ensures upsert behavior - later uploads replace earlier ones
         import hashlib
         document_id = hashlib.sha256(user_id.encode()).hexdigest()
+        
+        # Fetch existing profile to merge with
+        existing_profile = {}
+        try:
+            existing_doc = client.get(index=ES_INDEX_NAME, id=document_id)
+            existing_profile = existing_doc.get('_source', {})
+            logger.info(f"[ES] Found existing profile for {user_id}, will merge data")
+        except Exception as e:
+            logger.info(f"[ES] No existing profile for {user_id}, creating new")
+        
+        # Helper function to merge values (prefer non-null new values)
+        def merge_scalar(old_val, new_val):
+            return new_val if new_val is not None else old_val
+        
+        # Helper function to merge arrays (combine and deduplicate)
+        def merge_arrays(old_arr, new_arr, key_field='name'):
+            if not old_arr:
+                return new_arr or []
+            if not new_arr:
+                return old_arr or []
+            # Combine arrays, deduplicating by key field
+            merged = list(old_arr)
+            existing_keys = set()
+            for item in old_arr:
+                if isinstance(item, dict):
+                    existing_keys.add(item.get(key_field, '').lower())
+                else:
+                    existing_keys.add(str(item).lower())
+            for item in new_arr:
+                if isinstance(item, dict):
+                    key = item.get(key_field, '').lower()
+                else:
+                    key = str(item).lower()
+                if key not in existing_keys:
+                    merged.append(item)
+            return merged
+        
+        # Append to raw content (track all uploaded files)
+        existing_content = existing_profile.get('raw_content', '')
+        raw_content = existing_content
+        if content_markdown:
+            if existing_content:
+                raw_content = f"{existing_content}\n\n---\n\n{content_markdown}"
+            else:
+                raw_content = content_markdown
+        
+        # Track all uploaded filenames
+        existing_filenames = existing_profile.get('uploaded_files', [])
+        if filename and filename not in existing_filenames:
+            existing_filenames.append(filename)
         
         # Core document fields
         document = {
             "user_id": user_id,
             "indexed_at": datetime.utcnow().isoformat(),
-            "raw_content": content_markdown,  # Keep original markdown for reference
+            "raw_content": raw_content,
             "original_filename": filename,
+            "uploaded_files": existing_filenames,
         }
         
-        # Spread flattened profile data at top level
+        # Merge flattened profile data
         if profile_data:
-            # Personal info
-            document["name"] = profile_data.get("name")
-            document["school"] = profile_data.get("school")
-            document["location"] = profile_data.get("location")
-            document["grade"] = profile_data.get("grade")
-            document["graduation_year"] = profile_data.get("graduation_year")
-            document["intended_major"] = profile_data.get("intended_major")
+            # Personal info - merge scalars (prefer new non-null values)
+            document["name"] = merge_scalar(existing_profile.get("name"), profile_data.get("name"))
+            document["school"] = merge_scalar(existing_profile.get("school"), profile_data.get("school"))
+            document["location"] = merge_scalar(existing_profile.get("location"), profile_data.get("location"))
+            document["grade"] = merge_scalar(existing_profile.get("grade"), profile_data.get("grade"))
+            document["graduation_year"] = merge_scalar(existing_profile.get("graduation_year"), profile_data.get("graduation_year"))
+            document["intended_major"] = merge_scalar(existing_profile.get("intended_major"), profile_data.get("intended_major"))
             
-            # Academics
-            document["gpa_weighted"] = profile_data.get("gpa_weighted")
-            document["gpa_unweighted"] = profile_data.get("gpa_unweighted")
-            document["gpa_uc"] = profile_data.get("gpa_uc")
-            document["class_rank"] = profile_data.get("class_rank")
+            # Academics - merge scalars
+            document["gpa_weighted"] = merge_scalar(existing_profile.get("gpa_weighted"), profile_data.get("gpa_weighted"))
+            document["gpa_unweighted"] = merge_scalar(existing_profile.get("gpa_unweighted"), profile_data.get("gpa_unweighted"))
+            document["gpa_uc"] = merge_scalar(existing_profile.get("gpa_uc"), profile_data.get("gpa_uc"))
+            document["class_rank"] = merge_scalar(existing_profile.get("class_rank"), profile_data.get("class_rank"))
             
-            # Test scores
-            document["sat_total"] = profile_data.get("sat_total")
-            document["sat_math"] = profile_data.get("sat_math")
-            document["sat_reading"] = profile_data.get("sat_reading")
-            document["act_composite"] = profile_data.get("act_composite")
+            # Test scores - merge scalars
+            document["sat_total"] = merge_scalar(existing_profile.get("sat_total"), profile_data.get("sat_total"))
+            document["sat_math"] = merge_scalar(existing_profile.get("sat_math"), profile_data.get("sat_math"))
+            document["sat_reading"] = merge_scalar(existing_profile.get("sat_reading"), profile_data.get("sat_reading"))
+            document["act_composite"] = merge_scalar(existing_profile.get("act_composite"), profile_data.get("act_composite"))
             
-            # Arrays
-            document["ap_exams"] = profile_data.get("ap_exams", [])
-            document["courses"] = profile_data.get("courses", [])
-            document["extracurriculars"] = profile_data.get("extracurriculars", [])
-            document["leadership_roles"] = profile_data.get("leadership_roles", [])
-            document["special_programs"] = profile_data.get("special_programs", [])
-            document["awards"] = profile_data.get("awards", [])
-            document["work_experience"] = profile_data.get("work_experience", [])
+            # Arrays - MERGE instead of replace
+            document["ap_exams"] = merge_arrays(existing_profile.get("ap_exams", []), profile_data.get("ap_exams", []), "subject")
+            document["courses"] = merge_arrays(existing_profile.get("courses", []), profile_data.get("courses", []), "name")
+            document["extracurriculars"] = merge_arrays(existing_profile.get("extracurriculars", []), profile_data.get("extracurriculars", []), "name")
+            document["leadership_roles"] = list(set(existing_profile.get("leadership_roles", []) + profile_data.get("leadership_roles", [])))
+            document["special_programs"] = merge_arrays(existing_profile.get("special_programs", []), profile_data.get("special_programs", []), "name")
+            document["awards"] = merge_arrays(existing_profile.get("awards", []), profile_data.get("awards", []), "name")
+            document["work_experience"] = merge_arrays(existing_profile.get("work_experience", []), profile_data.get("work_experience", []), "employer")
             
-            logger.info(f"[ES] Including flattened profile with {len(document.get('extracurriculars', []))} activities")
+            logger.info(f"[ES] Merged profile: {len(document.get('extracurriculars', []))} activities, {len(document.get('awards', []))} awards")
+        else:
+            # Preserve existing data if no new profile_data
+            for key in ['name', 'school', 'location', 'grade', 'graduation_year', 'intended_major',
+                       'gpa_weighted', 'gpa_unweighted', 'gpa_uc', 'class_rank',
+                       'sat_total', 'sat_math', 'sat_reading', 'act_composite',
+                       'ap_exams', 'courses', 'extracurriculars', 'leadership_roles',
+                       'special_programs', 'awards', 'work_experience']:
+                if key in existing_profile:
+                    document[key] = existing_profile[key]
         
-        # Index document (upsert - replace if exists)
+        # Index document
         response = client.index(index=ES_INDEX_NAME, id=document_id, body=document)
         
         logger.info(f"[ES] Indexed profile {document_id} for user {user_id}")
@@ -1038,16 +1112,13 @@ def parse_student_profile_llm(profile_content):
     More robust than regex for varied profile formats.
     """
     try:
-        import google.generativeai as genai
-        
-        # Configure Gemini
+        # Configure Gemini using new google.genai SDK
         api_key = os.environ.get('GEMINI_API_KEY')
         if not api_key:
             logger.warning("[PROFILE PARSE LLM] No GEMINI_API_KEY found")
             return None
         
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.5-flash-lite')
+        client = genai.Client(api_key=api_key)
         
         prompt = f"""Extract the following fields from this student profile. 
 Return ONLY valid JSON with these exact keys (use null for missing values):
@@ -1072,7 +1143,10 @@ STUDENT PROFILE:
 
 Return ONLY the JSON object, no markdown formatting."""
 
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model='gemini-2.0-flash',
+            contents=prompt
+        )
         response_text = response.text.strip()
         
         # Clean up response - remove markdown code blocks if present
@@ -1427,10 +1501,13 @@ You have access to COMPLETE university data. Generate recommendations across ALL
 
         # Call Gemini with retry logic
         max_retries = 2
+        client = genai.Client(api_key=GEMINI_API_KEY)
         for attempt in range(max_retries + 1):
             try:
-                model = genai.GenerativeModel("gemini-2.5-flash")
-                response = model.generate_content(prompt)
+                response = client.models.generate_content(
+                    model='gemini-2.0-flash',
+                    contents=prompt
+                )
                 
                 # Parse output
                 response_text = response.text.strip()
@@ -3135,6 +3212,282 @@ def handle_reset_all_profile(request):
         }, 500)
 
 
+# ============================================
+# FIT INFOGRAPHIC GENERATION
+# ============================================
+
+# GCS bucket for fit infographic images
+FIT_IMAGES_BUCKET = os.getenv("FIT_IMAGES_BUCKET", "college-strategy-fit-images")
+
+def generate_fit_infographic_prompt(fit_data: dict, student_name: str, university_name: str) -> str:
+    """Build a detailed prompt for Gemini image generation based on fit data."""
+    
+    fit_category = fit_data.get('fit_category', 'TARGET')
+    match_score = fit_data.get('match_score', fit_data.get('match_percentage', 70))
+    
+    # Parse factors for strengths
+    factors = fit_data.get('factors', [])
+    strengths = []
+    improvements = []
+    
+    for factor in factors:
+        if isinstance(factor, dict):
+            name = factor.get('name', '')
+            score = factor.get('score', 0)
+            max_score = factor.get('max_score', 100)
+            if max_score > 0 and (score / max_score) >= 0.7:
+                strengths.append(name)
+            elif max_score > 0 and (score / max_score) < 0.5:
+                improvements.append(name)
+    
+    # Parse recommendations for action plan
+    recommendations = fit_data.get('recommendations', [])
+    if isinstance(recommendations, str):
+        try:
+            recommendations = json.loads(recommendations)
+        except:
+            recommendations = []
+    action_items = recommendations[:3] if recommendations else []
+    
+    # University stats
+    acceptance_rate = fit_data.get('acceptance_rate', 'N/A')
+    us_news_rank = fit_data.get('us_news_rank', 'N/A')
+    location = fit_data.get('location', 'USA')
+    
+    prompt = f"""Create a professional college fit infographic for a student named "{student_name}" applying to "{university_name}".
+
+DESIGN STYLE:
+- Clean, modern infographic design with a professional color scheme
+- Use a dashboard/scorecard layout
+- Include visual icons and charts
+- Make it visually appealing and easy to read
+
+CONTENT TO INCLUDE:
+
+1. HEADER:
+   - Title: "{student_name}'s Path to {university_name}"
+   - Subtitle: "Understanding Your Fit & Action Plan"
+
+2. MATCH SCORE (center/prominent):
+   - Display "{match_score}%" in a large gauge/dial meter
+   - Category badge: "{fit_category}" (use green for SAFETY, yellow for TARGET, orange for REACH, red for SUPER REACH)
+
+3. UNIVERSITY INFO BOX (top right):
+   - "{university_name}"
+   - Location: {location}
+   - Acceptance Rate: {acceptance_rate}%
+   - US News Rank: #{us_news_rank}
+
+4. YOUR STRENGTHS SECTION (left column, green theme):
+   {chr(10).join([f"   - {s}" for s in strengths]) if strengths else "   - Strong Academic Profile"}
+
+5. AREAS FOR IMPROVEMENT SECTION (center column, orange/yellow theme):
+   {chr(10).join([f"   - {i}" for i in improvements]) if improvements else "   - Continue building extracurriculars"}
+
+6. ACTION PLAN SECTION (right column, blue theme):
+   {chr(10).join([f"   Step {i+1}: {a}" for i, a in enumerate(action_items)]) if action_items else "   Step 1: Research the university\n   Step 2: Visit campus if possible\n   Step 3: Prepare application essays"}
+
+7. FOOTER:
+   - Overall recommendation summary based on the {fit_category} category
+
+Create this as a single, complete infographic image with all sections clearly visible. Use professional fonts and clean iconography. The design should be suitable for printing or digital display.
+"""
+    
+    return prompt
+
+
+def handle_generate_fit_infographic(request):
+    """
+    Generate a fit infographic image using Gemini and store in GCS.
+    
+    POST /generate-fit-image
+    {
+        "user_email": "student@gmail.com",
+        "university_id": "stanford_university",
+        "force_regenerate": false  // Optional: force regeneration even if cached
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "university_id": "stanford_university",
+        "infographic_url": "https://storage.googleapis.com/...",
+        "from_cache": true/false
+    }
+    """
+    try:
+        data = request.get_json() or {}
+        user_email = data.get('user_email') or data.get('user_id')
+        university_id = data.get('university_id')
+        force_regenerate = data.get('force_regenerate', False)
+        
+        if not user_email:
+            return add_cors_headers({'error': 'User email is required'}, 400)
+        if not university_id:
+            return add_cors_headers({'error': 'University ID is required'}, 400)
+        
+        logger.info(f"[GENERATE_FIT_IMAGE] Request for {university_id} for user {user_email}, force={force_regenerate}")
+        
+        es_client = get_elasticsearch_client()
+        email_hash = hashlib.md5(user_email.encode()).hexdigest()[:8]
+        doc_id = f"{email_hash}_{university_id}"
+        
+        # Check cache first (unless force_regenerate is True)
+        if not force_regenerate:
+            try:
+                cached = es_client.get(index=ES_FITS_INDEX, id=doc_id)
+                cached_fit = cached['_source']
+                infographic_url = cached_fit.get('infographic_url')
+                
+                if infographic_url:
+                    logger.info(f"[GENERATE_FIT_IMAGE] Cache HIT - returning existing URL: {infographic_url}")
+                    return add_cors_headers({
+                        'success': True,
+                        'university_id': university_id,
+                        'university_name': cached_fit.get('university_name', university_id),
+                        'infographic_url': infographic_url,
+                        'from_cache': True
+                    }, 200)
+                    
+            except Exception as e:
+                logger.info(f"[GENERATE_FIT_IMAGE] No cached URL found: {e}")
+        
+        # Fetch fit data from ES
+        try:
+            fit_doc = es_client.get(index=ES_FITS_INDEX, id=doc_id)
+            fit_data = fit_doc['_source']
+        except Exception as e:
+            logger.error(f"[GENERATE_FIT_IMAGE] Fit data not found: {e}")
+            return add_cors_headers({
+                'success': False,
+                'error': 'Fit analysis not found. Please compute fit first.',
+                'university_id': university_id
+            }, 404)
+        
+        # Get student name from profile
+        student_name = "Student"
+        try:
+            profile_query = {
+                "size": 1,
+                "query": {"term": {"user_id.keyword": user_email}},
+                "_source": ["student_name", "name"]
+            }
+            profile_result = es_client.search(index=ES_INDEX_NAME, body=profile_query)
+            if profile_result['hits']['total']['value'] > 0:
+                profile = profile_result['hits']['hits'][0]['_source']
+                student_name = profile.get('student_name') or profile.get('name') or "Student"
+        except Exception as e:
+            logger.warning(f"[GENERATE_FIT_IMAGE] Could not fetch student name: {e}")
+        
+        university_name = fit_data.get('university_name', university_id.replace('_', ' ').title())
+        
+        # Build the prompt
+        prompt = generate_fit_infographic_prompt(fit_data, student_name, university_name)
+        logger.info(f"[GENERATE_FIT_IMAGE] Generated prompt for {university_name}")
+        
+        # Call Gemini image generation
+        try:
+            from google import genai
+            
+            client = genai.Client(api_key=GEMINI_API_KEY)
+            
+            response = client.models.generate_content(
+                model="gemini-2.0-flash-exp",
+                contents=[prompt],
+                config={
+                    "response_modalities": ["TEXT", "IMAGE"]
+                }
+            )
+            
+            # Extract image from response
+            image_data = None
+            for part in response.candidates[0].content.parts:
+                if hasattr(part, 'inline_data') and part.inline_data:
+                    image_data = part.inline_data.data
+                    break
+            
+            if not image_data:
+                logger.error("[GENERATE_FIT_IMAGE] No image data in response")
+                return add_cors_headers({
+                    'success': False,
+                    'error': 'Failed to generate image - no image data returned',
+                    'university_id': university_id
+                }, 500)
+            
+            logger.info(f"[GENERATE_FIT_IMAGE] Got image data, size: {len(image_data)} bytes")
+            
+        except Exception as e:
+            logger.error(f"[GENERATE_FIT_IMAGE] Gemini API error: {str(e)}")
+            return add_cors_headers({
+                'success': False,
+                'error': f'Image generation failed: {str(e)}',
+                'university_id': university_id
+            }, 500)
+        
+        # Upload to GCS
+        try:
+            storage_client = storage.Client()
+            bucket = storage_client.bucket(FIT_IMAGES_BUCKET)
+            
+            # Create blob path: {email_hash}/{university_id}.png
+            blob_path = f"{email_hash}/{university_id}.png"
+            blob = bucket.blob(blob_path)
+            
+            # Upload the image
+            import base64
+            if isinstance(image_data, str):
+                image_bytes = base64.b64decode(image_data)
+            else:
+                image_bytes = image_data
+            
+            blob.upload_from_string(image_bytes, content_type='image/png')
+            
+            # Make the blob publicly readable
+            blob.make_public()
+            
+            infographic_url = blob.public_url
+            logger.info(f"[GENERATE_FIT_IMAGE] Uploaded to GCS: {infographic_url}")
+            
+        except Exception as e:
+            logger.error(f"[GENERATE_FIT_IMAGE] GCS upload error: {str(e)}")
+            return add_cors_headers({
+                'success': False,
+                'error': f'Failed to upload image: {str(e)}',
+                'university_id': university_id
+            }, 500)
+        
+        # Update ES with the URL
+        try:
+            es_client.update(
+                index=ES_FITS_INDEX,
+                id=doc_id,
+                body={
+                    "doc": {
+                        "infographic_url": infographic_url,
+                        "infographic_generated_at": datetime.utcnow().isoformat()
+                    }
+                }
+            )
+            logger.info(f"[GENERATE_FIT_IMAGE] Updated ES with infographic URL")
+        except Exception as e:
+            logger.warning(f"[GENERATE_FIT_IMAGE] Failed to update ES: {e}")
+        
+        return add_cors_headers({
+            'success': True,
+            'university_id': university_id,
+            'university_name': university_name,
+            'infographic_url': infographic_url,
+            'from_cache': False
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[GENERATE_FIT_IMAGE ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to generate infographic: {str(e)}'
+        }, 500)
+
+
 def handle_check_fit_recomputation(request):
     """
     Check if user's profile has needs_fit_recomputation flag set.
@@ -3461,6 +3814,10 @@ def profile_manager_es_http_entry(request):
         
         elif resource_type == 'get-fits' and request.method == 'POST':
             return handle_get_fits(request)
+        
+        # --- FIT INFOGRAPHIC GENERATION ---
+        elif resource_type == 'generate-fit-image' and request.method == 'POST':
+            return handle_generate_fit_infographic(request)
         
         # --- PROFILE UPDATE ROUTES ---
         elif resource_type == 'update-profile' and request.method == 'POST':

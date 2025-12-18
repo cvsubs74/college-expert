@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     SparklesIcon,
     CheckIcon,
-    ChatBubbleLeftRightIcon,
+    XMarkIcon,
     RocketLaunchIcon,
-    ShieldCheckIcon,
     ArrowRightIcon,
     AcademicCapIcon,
-    ChartBarIcon,
-    PlusIcon
+    StarIcon,
+    LightBulbIcon
 } from '@heroicons/react/24/outline';
 import { signInWithGoogle } from '../services/authService';
 import { useAuth } from '../context/AuthContext';
@@ -18,38 +17,97 @@ import { usePayment } from '../context/PaymentContext';
 const PricingPage = () => {
     const navigate = useNavigate();
     const { currentUser } = useAuth();
-    const { hasActiveSubscription } = usePayment();
-    const [billingPeriod, setBillingPeriod] = useState('annual');
+    const { currentTier, TIERS } = usePayment();
 
-    const handleGetStarted = async () => {
+    const handleGetStarted = async (tier) => {
         try {
             if (!currentUser) {
                 await signInWithGoogle();
             }
-            navigate('/profile');
+            if (tier === 'free') {
+                navigate('/profile');
+            } else {
+                // TODO: Implement Stripe checkout for Pro/Elite
+                navigate('/profile');
+            }
         } catch (error) {
             console.error('Failed to sign in', error);
         }
     };
 
-    const handleStartTrial = async () => {
-        try {
-            if (!currentUser) {
-                await signInWithGoogle();
-            }
-            // TODO: Implement trial checkout with Stripe
-            navigate('/profile');
-        } catch (error) {
-            console.error('Failed to start trial', error);
+    const tiers = [
+        {
+            id: 'free',
+            name: 'Free',
+            price: '$0',
+            period: 'forever',
+            description: 'Explore universities and plan your journey',
+            icon: AcademicCapIcon,
+            gradient: 'from-gray-500 to-gray-600',
+            borderColor: 'border-gray-200',
+            bgColor: 'bg-white',
+            popular: false,
+            features: [
+                { text: 'Browse all 150+ universities', included: true },
+                { text: '10 AI chat messages/month', included: true },
+                { text: 'View soft fit badges', included: true },
+                { text: 'Basic profile builder', included: true },
+                { text: 'Launchpad (college list)', included: false },
+                { text: 'Personalized fit analysis', included: false },
+                { text: 'Recommendations & strategy', included: false },
+                { text: 'Deep research', included: false },
+            ],
+            cta: 'Start Free',
+            ctaStyle: 'bg-gray-900 text-white hover:bg-gray-800'
+        },
+        {
+            id: 'pro',
+            name: 'Pro',
+            price: '$99',
+            period: '/year',
+            description: 'Full access to Launchpad and fit analysis',
+            icon: RocketLaunchIcon,
+            gradient: 'from-amber-500 to-orange-500',
+            borderColor: 'border-amber-400',
+            bgColor: 'bg-white',
+            popular: true,
+            features: [
+                { text: 'Everything in Free', included: true, highlight: true },
+                { text: '30 AI chat messages/month', included: true },
+                { text: 'Full Launchpad access', included: true },
+                { text: 'Basic fit analysis with scores', included: true },
+                { text: 'Fit category breakdown', included: true },
+                { text: 'Recommendations & essay tips', included: false },
+                { text: 'Scholarship matching', included: false },
+                { text: 'Deep research', included: false },
+            ],
+            cta: 'Get Pro',
+            ctaStyle: 'bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 shadow-lg shadow-amber-200'
+        },
+        {
+            id: 'elite',
+            name: 'Elite',
+            price: '$199',
+            period: '/year',
+            description: 'Complete guidance with deep insights',
+            icon: StarIcon,
+            gradient: 'from-purple-500 to-indigo-600',
+            borderColor: 'border-purple-400',
+            bgColor: 'bg-white',
+            popular: false,
+            features: [
+                { text: 'Everything in Pro', included: true, highlight: true },
+                { text: '50 AI chat messages/month', included: true },
+                { text: 'Full fit analysis with recommendations', included: true },
+                { text: 'Personalized essay angles', included: true },
+                { text: 'Scholarship matching', included: true },
+                { text: 'Application timeline strategies', included: true },
+                { text: 'Deep university research', included: true },
+                { text: 'Priority support', included: true },
+            ],
+            cta: 'Get Elite',
+            ctaStyle: 'bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:from-purple-400 hover:to-indigo-500 shadow-lg shadow-purple-200'
         }
-    };
-
-    // Add-on college slot packs
-    const addonPacks = [
-        { count: 1, price: 9, perCollege: 9.00 },
-        { count: 3, price: 20, perCollege: 6.67, savings: 7 },
-        { count: 5, price: 29, perCollege: 5.80, savings: 16 },
-        { count: 10, price: 49, perCollege: 4.90, savings: 41 },
     ];
 
     return (
@@ -66,11 +124,8 @@ const PricingPage = () => {
                         </span>
                     </a>
                     <div className="flex items-center gap-4">
-                        <a href="/contact" className="text-gray-600 hover:text-amber-600 font-medium transition-colors">
-                            Contact
-                        </a>
                         <button
-                            onClick={handleGetStarted}
+                            onClick={() => handleGetStarted('free')}
                             className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-full hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200"
                         >
                             {currentUser ? 'Go to Dashboard' : 'Get Started Free'}
@@ -83,241 +138,126 @@ const PricingPage = () => {
                 {/* Hero */}
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                        Your Dream College
-                        <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent"> Is Within Reach</span>
+                        Simple, Transparent
+                        <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent"> Pricing</span>
                     </h1>
                     <p className="text-xl text-gray-600 mb-6">
-                        AI-powered guidance that helps you navigate college admissions with confidence
+                        Choose the plan that fits your college admissions journey
                     </p>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium border border-green-200">
-                        <ShieldCheckIcon className="h-4 w-4" />
-                        30-day free trial • Cancel anytime
-                    </div>
-                </div>
-
-                {/* Billing Toggle */}
-                <div className="flex justify-center mb-12">
-                    <div className="inline-flex items-center p-1.5 bg-gray-100 rounded-full">
-                        <button
-                            onClick={() => setBillingPeriod('monthly')}
-                            className={`px-6 py-2.5 rounded-full font-medium transition-all ${billingPeriod === 'monthly'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
-                                }`}
-                        >
-                            Monthly
-                        </button>
-                        <button
-                            onClick={() => setBillingPeriod('annual')}
-                            className={`px-6 py-2.5 rounded-full font-medium transition-all flex items-center gap-2 ${billingPeriod === 'annual'
-                                ? 'bg-white text-gray-900 shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
-                                }`}
-                        >
-                            Annual
-                            <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-bold rounded-full">
-                                Save 45%
-                            </span>
-                        </button>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium border border-amber-200">
+                        <LightBulbIcon className="h-4 w-4" />
+                        All plans are annual — one simple payment
                     </div>
                 </div>
 
                 {/* Pricing Cards */}
-                <section className="max-w-5xl mx-auto mb-20">
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {/* Free Tier */}
-                        <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="p-3 bg-gray-100 rounded-xl">
-                                    <AcademicCapIcon className="h-6 w-6 text-gray-600" />
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-gray-900">Free</h3>
-                                    <p className="text-gray-500 text-sm">Get started exploring</p>
-                                </div>
-                            </div>
+                <section className="max-w-6xl mx-auto mb-20">
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {tiers.map((tier) => {
+                            const Icon = tier.icon;
+                            const isCurrentTier = currentTier === tier.id;
 
-                            <div className="flex items-baseline gap-2 mb-6">
-                                <span className="text-4xl font-bold text-gray-900">$0</span>
-                                <span className="text-gray-500">/month</span>
-                            </div>
-
-                            <ul className="space-y-3 mb-8">
-                                {[
-                                    'Browse all 150+ universities',
-                                    '30 AI messages per month',
-                                    '3 fit analysis credits',
-                                    'Basic profile builder',
-                                    'Save to Launchpad'
-                                ].map((feature, idx) => (
-                                    <li key={idx} className="flex items-start gap-3 text-gray-600">
-                                        <CheckIcon className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span>{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <button
-                                onClick={handleGetStarted}
-                                className="w-full py-3 bg-gray-900 text-white rounded-xl font-semibold hover:bg-gray-800 transition-all"
-                            >
-                                {currentUser ? 'You\'re on Free' : 'Start Free'}
-                            </button>
-                        </div>
-
-                        {/* Pro Tier */}
-                        <div className="relative bg-white rounded-3xl p-8 border-2 border-amber-400 shadow-xl shadow-amber-100">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-bold rounded-full shadow-lg">
-                                RECOMMENDED
-                            </div>
-
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="p-3 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl">
-                                    <RocketLaunchIcon className="h-6 w-6 text-amber-600" />
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-gray-900">Pro</h3>
-                                    <p className="text-gray-500 text-sm">Full counseling experience</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-baseline gap-2 mb-2">
-                                {billingPeriod === 'annual' ? (
-                                    <>
-                                        <span className="text-4xl font-bold text-gray-900">$99</span>
-                                        <span className="text-gray-500">/year</span>
-                                        <span className="text-gray-400 line-through text-lg">$180</span>
-                                    </>
-                                ) : (
-                                    <>
-                                        <span className="text-4xl font-bold text-gray-900">$15</span>
-                                        <span className="text-gray-500">/month</span>
-                                    </>
-                                )}
-                            </div>
-                            {billingPeriod === 'annual' && (
-                                <p className="text-green-600 text-sm font-medium mb-4">
-                                    Just $8.25/month, billed annually
-                                </p>
-                            )}
-
-                            <ul className="space-y-3 mb-8">
-                                {[
-                                    'Everything in Free, plus:',
-                                    '100 AI messages per month',
-                                    '3 fit analysis credits included',
-                                    'Personalized strategy recommendations',
-                                    'Deadline tracking & reminders',
-                                    'In-depth university insights'
-                                ].map((feature, idx) => (
-                                    <li key={idx} className={`flex items-start gap-3 ${idx === 0 ? 'text-amber-600 font-medium' : 'text-gray-600'}`}>
-                                        <CheckIcon className={`h-5 w-5 flex-shrink-0 mt-0.5 ${idx === 0 ? 'text-amber-500' : 'text-green-500'}`} />
-                                        <span>{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <button
-                                onClick={handleStartTrial}
-                                className="w-full py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl font-semibold hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200 flex items-center justify-center gap-2"
-                            >
-                                Start 30-Day Free Trial
-                                <ArrowRightIcon className="h-4 w-4" />
-                            </button>
-                            <p className="text-center text-gray-500 text-sm mt-3">
-                                No charge for 30 days • Cancel anytime
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Add-on Packs */}
-                <section className="max-w-4xl mx-auto mb-20">
-                    <div className="text-center mb-10">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">Need More Fit Analyses?</h2>
-                        <p className="text-lg text-gray-600">
-                            Get detailed AI-powered fit analysis for additional colleges
-                        </p>
-                    </div>
-
-                    <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="p-3 bg-purple-100 rounded-xl">
-                                <ChartBarIcon className="h-6 w-6 text-purple-600" />
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-bold text-gray-900">College Slot Packs</h3>
-                                <p className="text-gray-500 text-sm">One-time purchase, never expires</p>
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                            {addonPacks.map((pack, idx) => (
+                            return (
                                 <div
-                                    key={idx}
-                                    className={`relative p-4 rounded-2xl border-2 text-center cursor-pointer transition-all hover:shadow-md ${pack.count === 5
-                                        ? 'border-purple-400 bg-purple-50'
-                                        : 'border-gray-200 hover:border-purple-200'
-                                        }`}
+                                    key={tier.id}
+                                    className={`relative ${tier.bgColor} rounded-3xl p-8 border-2 ${tier.borderColor} ${tier.popular ? 'shadow-xl shadow-amber-100' : 'shadow-sm'
+                                        } transition-all hover:shadow-lg`}
                                 >
-                                    {pack.count === 5 && (
-                                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-purple-500 text-white text-xs font-bold rounded-full">
+                                    {/* Popular Badge */}
+                                    {tier.popular && (
+                                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-bold rounded-full shadow-lg">
                                             BEST VALUE
                                         </div>
                                     )}
-                                    <div className="flex items-center justify-center gap-1 mb-2">
-                                        <PlusIcon className="h-4 w-4 text-purple-600" />
-                                        <span className="text-2xl font-bold text-gray-900">{pack.count}</span>
-                                    </div>
-                                    <p className="text-gray-500 text-sm mb-2">
-                                        {pack.count === 1 ? 'college' : 'colleges'}
-                                    </p>
-                                    <p className="text-xl font-bold text-gray-900">${pack.price}</p>
-                                    <p className="text-gray-500 text-xs">
-                                        ${pack.perCollege.toFixed(2)}/each
-                                    </p>
-                                    {pack.savings && (
-                                        <p className="text-green-600 text-xs font-medium mt-1">
-                                            Save ${pack.savings}
-                                        </p>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
 
-                        <div className="bg-gray-50 rounded-xl p-4 text-center">
-                            <p className="text-gray-600 text-sm">
-                                <span className="font-medium">Each fit analysis includes:</span> Admission probability, gap analysis,
-                                comparison to admitted students, and personalized action items
-                            </p>
-                        </div>
+                                    {/* Header */}
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className={`p-3 bg-gradient-to-br ${tier.gradient} rounded-xl shadow-lg`}>
+                                            <Icon className="h-6 w-6 text-white" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-gray-900">{tier.name}</h3>
+                                            <p className="text-gray-500 text-sm">{tier.description}</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Price */}
+                                    <div className="flex items-baseline gap-1 mb-6">
+                                        <span className="text-4xl font-bold text-gray-900">{tier.price}</span>
+                                        <span className="text-gray-500">{tier.period}</span>
+                                    </div>
+
+                                    {/* Features */}
+                                    <ul className="space-y-3 mb-8">
+                                        {tier.features.map((feature, idx) => (
+                                            <li
+                                                key={idx}
+                                                className={`flex items-start gap-3 ${feature.included ? 'text-gray-700' : 'text-gray-400'
+                                                    } ${feature.highlight ? 'font-medium text-amber-600' : ''}`}
+                                            >
+                                                {feature.included ? (
+                                                    <CheckIcon className={`h-5 w-5 flex-shrink-0 mt-0.5 ${feature.highlight ? 'text-amber-500' : 'text-green-500'
+                                                        }`} />
+                                                ) : (
+                                                    <XMarkIcon className="h-5 w-5 flex-shrink-0 mt-0.5 text-gray-300" />
+                                                )}
+                                                <span>{feature.text}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    {/* CTA Button */}
+                                    <button
+                                        onClick={() => handleGetStarted(tier.id)}
+                                        disabled={isCurrentTier}
+                                        className={`w-full py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${isCurrentTier
+                                            ? 'bg-gray-100 text-gray-500 cursor-default'
+                                            : tier.ctaStyle
+                                            }`}
+                                    >
+                                        {isCurrentTier ? 'Current Plan' : tier.cta}
+                                        {!isCurrentTier && <ArrowRightIcon className="h-4 w-4" />}
+                                    </button>
+                                </div>
+                            );
+                        })}
                     </div>
                 </section>
 
                 {/* Comparison Table */}
-                <section className="max-w-4xl mx-auto mb-20">
+                <section className="max-w-5xl mx-auto mb-20">
                     <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Compare Plans</h2>
 
-                    <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
-                        <div className="grid grid-cols-3 bg-gray-50 border-b border-gray-200">
-                            <div className="p-4 font-medium text-gray-700">Feature</div>
-                            <div className="p-4 font-medium text-gray-700 text-center">Free</div>
-                            <div className="p-4 font-medium text-amber-600 text-center bg-amber-50">Pro</div>
-                        </div>
-                        {[
-                            { feature: 'Browse Universities', free: 'All 150+', pro: 'All 150+' },
-                            { feature: 'AI Messages', free: '30/month', pro: '100/month' },
-                            { feature: 'Fit Analysis Credits', free: '3 total', pro: '3 + add-ons' },
-                            { feature: 'Strategy Recommendations', free: 'Basic', pro: 'Personalized' },
-                            { feature: 'Deadline Tracking', free: '—', pro: '✓' },
-                            { feature: 'University Insights', free: 'Basic', pro: 'In-depth' },
-                        ].map((row, idx) => (
-                            <div key={idx} className="grid grid-cols-3 border-b border-gray-100 last:border-b-0">
-                                <div className="p-4 text-gray-600">{row.feature}</div>
-                                <div className="p-4 text-center text-gray-600">{row.free}</div>
-                                <div className="p-4 text-center text-gray-900 bg-amber-50/50 font-medium">{row.pro}</div>
-                            </div>
-                        ))}
+                    <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden overflow-x-auto">
+                        <table className="w-full text-sm">
+                            <thead>
+                                <tr className="bg-gray-50 border-b border-gray-200">
+                                    <th className="p-4 text-left font-medium text-gray-700 w-1/3">Feature</th>
+                                    <th className="p-4 text-center font-medium text-gray-700">Free</th>
+                                    <th className="p-4 text-center font-medium text-amber-600 bg-amber-50">Pro $99</th>
+                                    <th className="p-4 text-center font-medium text-purple-600 bg-purple-50">Elite $199</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {[
+                                    { feature: 'Browse Universities', free: '✓ All 150+', pro: '✓ All 150+', elite: '✓ All 150+' },
+                                    { feature: 'AI Chat Messages', free: '10/month', pro: '30/month', elite: '50/month' },
+                                    { feature: 'Launchpad Access', free: '—', pro: '✓ Full', elite: '✓ Full' },
+                                    { feature: 'Fit Analysis', free: '—', pro: '✓ Basic', elite: '✓ Full + Recs' },
+                                    { feature: 'Essay Angles & Tips', free: '—', pro: '—', elite: '✓' },
+                                    { feature: 'Scholarship Matching', free: '—', pro: '—', elite: '✓' },
+                                    { feature: 'Application Timeline', free: '—', pro: '—', elite: '✓' },
+                                    { feature: 'Deep Research', free: '—', pro: '—', elite: '✓' },
+                                ].map((row, idx) => (
+                                    <tr key={idx} className="border-b border-gray-100 last:border-b-0">
+                                        <td className="p-4 text-gray-700 font-medium">{row.feature}</td>
+                                        <td className="p-4 text-center text-gray-600">{row.free}</td>
+                                        <td className="p-4 text-center text-gray-900 bg-amber-50/50">{row.pro}</td>
+                                        <td className="p-4 text-center text-gray-900 bg-purple-50/50 font-medium">{row.elite}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                 </section>
 
@@ -327,20 +267,20 @@ const PricingPage = () => {
                     <div className="space-y-4">
                         {[
                             {
-                                q: 'How does the 30-day free trial work?',
-                                a: 'You get full Pro access for 30 days. We\'ll ask for a credit card upfront, but you won\'t be charged until day 31. Cancel anytime before that — no questions asked.'
+                                q: 'Why annual-only pricing?',
+                                a: 'College admissions is a journey that takes months. Annual pricing lets us keep costs low while giving you time to explore, apply, and succeed without worrying about monthly fees.'
                             },
                             {
-                                q: 'What happens when I run out of fit analyses?',
-                                a: 'You can purchase additional college slot packs at any time. These never expire and give you deep AI analysis for more schools.'
+                                q: 'What\'s the difference between Basic and Full fit analysis?',
+                                a: 'Basic (Pro) shows your fit category, match percentage, and key factors. Full (Elite) adds personalized recommendations, essay angles, scholarship matches, timeline strategies, and detailed gap analysis.'
                             },
                             {
-                                q: 'Can I switch from monthly to annual?',
-                                a: 'Absolutely! Upgrade to annual anytime and save 45%. Your remaining monthly balance is applied to the annual plan.'
+                                q: 'Can I upgrade from Pro to Elite?',
+                                a: 'Absolutely! You can upgrade anytime. Just pay the difference between plans, prorated for the remaining time in your subscription.'
                             },
                             {
-                                q: 'Do AI messages roll over?',
-                                a: 'AI message limits reset at the start of each billing period. We designed generous limits so you shouldn\'t run out, but you can always upgrade if needed.'
+                                q: 'What is Deep Research?',
+                                a: 'Elite members get AI-powered deep research that analyzes university-specific insights, recent news, faculty opportunities, and strategic angles beyond standard admissions data.'
                             },
                         ].map((faq, idx) => (
                             <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-200">

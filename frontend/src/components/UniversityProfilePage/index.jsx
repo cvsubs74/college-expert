@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useAuth } from '../../context/AuthContext';
+import { generateFitInfographic } from '../../services/api';
 import {
     ArrowLeftIcon,
     AcademicCapIcon,
@@ -11,11 +13,15 @@ import {
     TrophyIcon,
     CheckCircleIcon,
     ExclamationTriangleIcon,
+    ArrowPathIcon,
+    PhotoIcon,
     CalendarIcon,
     DocumentTextIcon,
-    ChartBarIcon
+    ChartBarIcon,
+    FilmIcon
 } from '@heroicons/react/24/outline';
 import { StarIcon } from '@heroicons/react/24/solid';
+import MediaGallery from '../MediaGallery';
 
 // ============================================================================
 // HERO SECTION
@@ -222,6 +228,7 @@ const TabNavigation = ({ activeTab, setActiveTab, tabs }) => {
         </div>
     );
 };
+
 
 // ============================================================================
 // TAB CONTENT COMPONENTS
@@ -722,17 +729,373 @@ const FitAnalysisTab = ({ fitAnalysis }) => {
 };
 
 // ============================================================================
+// DETAILS TAB - Combines Media + All University Info
+// ============================================================================
+const DetailsTab = ({ university }) => {
+    return (
+        <div className="space-y-8">
+            {/* Media Gallery at Top */}
+            {university?.media && (university.media.infographics?.length > 0 || university.media.videos?.length > 0) && (
+                <MediaGallery media={university.media} />
+            )}
+
+            {/* Campus Life Section */}
+            <div className="border-t border-gray-200 pt-8">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-lg">
+                    <HomeIcon className="h-5 w-5 text-purple-600" />
+                    Campus Life
+                </h3>
+                <CampusLifeTab university={university} />
+            </div>
+
+            {/* Academics Section */}
+            <div className="border-t border-gray-200 pt-8">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-lg">
+                    <AcademicCapIcon className="h-5 w-5 text-indigo-600" />
+                    Academics
+                </h3>
+                <AcademicsTab university={university} />
+            </div>
+
+            {/* Admissions Section */}
+            <div className="border-t border-gray-200 pt-8">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-lg">
+                    <BuildingLibraryIcon className="h-5 w-5 text-green-600" />
+                    Admissions
+                </h3>
+                <AdmissionsTab university={university} />
+            </div>
+
+            {/* Financials Section */}
+            <div className="border-t border-gray-200 pt-8">
+                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-lg">
+                    <CurrencyDollarIcon className="h-5 w-5 text-amber-600" />
+                    Financials & Scholarships
+                </h3>
+                <FinancialsTab university={university} />
+            </div>
+        </div>
+    );
+};
+
+// ============================================================================
+// UPDATED FIT ANALYSIS TAB - Now includes AI-generated infographic + action items
+// ============================================================================
+const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
+    const { currentUser } = useAuth();
+    const [infographicUrl, setInfographicUrl] = useState(null);
+    const [isGenerating, setIsGenerating] = useState(false);
+    const [generationError, setGenerationError] = useState(null);
+
+    // Generate infographic on mount if not already cached
+    const handleGenerateInfographic = useCallback(async (forceRegenerate = false) => {
+        if (!currentUser?.email || !university?.id) {
+            console.log('[Infographic] Missing user or university ID');
+            return;
+        }
+
+        setIsGenerating(true);
+        setGenerationError(null);
+
+        try {
+            const universityId = university.id || university.name?.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+            console.log(`[Infographic] Generating for ${universityId}...`);
+
+            const result = await generateFitInfographic(currentUser.email, universityId, forceRegenerate);
+
+            if (result.success && result.infographic_url) {
+                setInfographicUrl(result.infographic_url);
+                console.log(`[Infographic] Generated (cached=${result.from_cache}):`, result.infographic_url);
+            } else {
+                setGenerationError(result.error || 'Failed to generate infographic');
+            }
+        } catch (err) {
+            console.error('[Infographic] Error:', err);
+            setGenerationError(err.message || 'Failed to generate infographic');
+        } finally {
+            setIsGenerating(false);
+        }
+    }, [currentUser?.email, university?.id, university?.name]);
+
+    // Auto-generate on mount
+    useEffect(() => {
+        if (fitAnalysis && currentUser?.email && university?.id && !infographicUrl && !isGenerating) {
+            handleGenerateInfographic(false);
+        }
+    }, [fitAnalysis, currentUser?.email, university?.id]);
+
+    if (!fitAnalysis) {
+        return (
+            <div className="text-center py-12 text-gray-400">
+                <SparklesIcon className="h-12 w-12 mx-auto mb-3 opacity-50" />
+                <p>No fit analysis available. Upload your profile to get personalized insights!</p>
+            </div>
+        );
+    }
+
+    const factors = fitAnalysis.factors || [];
+    const essayAngles = fitAnalysis.essay_angles || [];
+    const timeline = fitAnalysis.application_timeline || {};
+    const scholarshipMatches = fitAnalysis.scholarship_matches || [];
+    const redFlags = fitAnalysis.red_flags_to_avoid || [];
+    const recommendations = fitAnalysis.recommendations || [];
+    const gapAnalysis = fitAnalysis.gap_analysis || {};
+
+    return (
+        <div className="space-y-8">
+            {/* Fit Infographic Section */}
+            <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 rounded-2xl overflow-hidden border border-purple-100 shadow-sm">
+                {infographicUrl ? (
+                    // Display the generated infographic
+                    <div className="relative">
+                        <img
+                            src={infographicUrl}
+                            alt={`Fit Analysis Infographic for ${university?.name || 'University'}`}
+                            className="w-full h-auto max-h-[700px] object-contain bg-white"
+                        />
+                        {/* Regenerate button overlay */}
+                        <div className="absolute bottom-4 right-4">
+                            <button
+                                onClick={() => handleGenerateInfographic(true)}
+                                disabled={isGenerating}
+                                className="flex items-center gap-2 px-4 py-2 bg-white/90 hover:bg-white text-purple-700 rounded-lg shadow-lg transition-all text-sm font-medium backdrop-blur-sm"
+                            >
+                                <ArrowPathIcon className={`h-4 w-4 ${isGenerating ? 'animate-spin' : ''}`} />
+                                {isGenerating ? 'Regenerating...' : 'Regenerate'}
+                            </button>
+                        </div>
+                    </div>
+                ) : isGenerating ? (
+                    // Loading state
+                    <div className="p-12 text-center">
+                        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg animate-pulse">
+                            <PhotoIcon className="h-10 w-10 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Generating Your Personalized Infographic...</h3>
+                        <p className="text-gray-600 max-w-md mx-auto mb-4">
+                            Our AI is creating a visual representation of your fit analysis. This may take 15-30 seconds.
+                        </p>
+                        <div className="flex justify-center">
+                            <div className="flex items-center gap-2 text-purple-600">
+                                <ArrowPathIcon className="h-5 w-5 animate-spin" />
+                                <span className="text-sm font-medium">Creating infographic...</span>
+                            </div>
+                        </div>
+                    </div>
+                ) : generationError ? (
+                    // Error state
+                    <div className="p-8 text-center">
+                        <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <ExclamationTriangleIcon className="h-8 w-8 text-red-500" />
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">Could not generate infographic</h3>
+                        <p className="text-gray-600 text-sm mb-4">{generationError}</p>
+                        <button
+                            onClick={() => handleGenerateInfographic(true)}
+                            className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors text-sm font-medium"
+                        >
+                            Try Again
+                        </button>
+                    </div>
+                ) : (
+                    // Initial placeholder (waiting for auto-generate)
+                    <div className="p-8 text-center">
+                        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <SparklesIcon className="h-10 w-10 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Your Personal Fit Infographic</h3>
+                        <p className="text-gray-600 max-w-md mx-auto">
+                            {currentUser?.email
+                                ? 'Click below to generate your personalized fit infographic.'
+                                : 'Sign in to generate your personalized fit infographic.'}
+                        </p>
+                        <div className="mt-6 flex items-center justify-center gap-4 mb-6">
+                            <div className="text-center">
+                                <div className="text-4xl font-bold text-purple-600">{fitAnalysis.match_percentage || 0}%</div>
+                                <div className="text-sm text-gray-500">Match Score</div>
+                            </div>
+                            <div className="w-px h-12 bg-gray-200"></div>
+                            <div className="text-center">
+                                <div className="text-2xl font-bold text-indigo-600">{(fitAnalysis.fit_category || 'N/A').replace('_', ' ')}</div>
+                                <div className="text-sm text-gray-500">Category</div>
+                            </div>
+                        </div>
+                        {currentUser?.email && (
+                            <button
+                                onClick={() => handleGenerateInfographic(false)}
+                                disabled={isGenerating}
+                                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl transition-all font-medium shadow-lg shadow-purple-200"
+                            >
+                                <PhotoIcon className="h-5 w-5 inline mr-2" />
+                                Generate Infographic
+                            </button>
+                        )}
+                    </div>
+                )}
+            </div>
+
+            {/* Action Plan Cards */}
+            {recommendations.length > 0 && (
+                <div>
+                    <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-lg">
+                        <LightBulbIcon className="h-5 w-5 text-purple-600" />
+                        Your Action Plan
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {recommendations.slice(0, 3).map((rec, idx) => (
+                            <div key={idx} className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <div className="flex items-start gap-3">
+                                    <span className="flex-shrink-0 w-8 h-8 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold text-sm">
+                                        {idx + 1}
+                                    </span>
+                                    <div className="flex-1">
+                                        <p className="text-gray-800 font-medium text-sm leading-relaxed">
+                                            {typeof rec === 'string' ? rec : rec.action}
+                                        </p>
+                                        {rec.timeline && (
+                                            <div className="flex items-center gap-1 mt-2 text-xs text-gray-500">
+                                                <CalendarIcon className="h-3 w-3" />
+                                                {rec.timeline}
+                                            </div>
+                                        )}
+                                        {rec.addresses_gap && (
+                                            <span className="inline-block mt-2 px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs font-medium">
+                                                Addresses: {rec.addresses_gap}
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* Gaps & Strengths */}
+            {(gapAnalysis.primary_gap || gapAnalysis.student_strengths) && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-red-50 rounded-xl p-4 border border-red-100">
+                        <h3 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
+                            <ExclamationTriangleIcon className="h-5 w-5" />
+                            Areas to Address
+                        </h3>
+                        <ul className="space-y-1 text-sm text-red-700">
+                            {gapAnalysis.primary_gap && <li>• <strong>Primary:</strong> {gapAnalysis.primary_gap}</li>}
+                            {gapAnalysis.secondary_gap && <li>• <strong>Secondary:</strong> {gapAnalysis.secondary_gap}</li>}
+                        </ul>
+                    </div>
+                    <div className="bg-green-50 rounded-xl p-4 border border-green-100">
+                        <h3 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                            <CheckCircleIcon className="h-5 w-5" />
+                            Your Strengths
+                        </h3>
+                        <ul className="space-y-1 text-sm text-green-700">
+                            {(gapAnalysis.student_strengths || []).slice(0, 3).map((s, i) => (
+                                <li key={i}>• {s}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            )}
+
+            {/* Factor Breakdown */}
+            {factors.length > 0 && (
+                <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                    <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                        <ChartBarIcon className="h-5 w-5 text-purple-500" />
+                        Fit Factor Breakdown
+                    </h3>
+                    <div className="space-y-4">
+                        {factors.map((factor, idx) => (
+                            <div key={idx}>
+                                <div className="flex justify-between items-center mb-1">
+                                    <span className="font-medium text-gray-700">{factor.name}</span>
+                                    <span className={`font-bold ${factor.score >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                                        {factor.score >= 0 ? '+' : ''}{factor.score}/{factor.max}
+                                    </span>
+                                </div>
+                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                    <div
+                                        className={`h-2 rounded-full ${factor.score >= 0 ? 'bg-green-500' : 'bg-red-500'}`}
+                                        style={{ width: `${Math.abs(factor.score) / Math.abs(factor.max) * 100}%` }}
+                                    ></div>
+                                </div>
+                                <p className="text-sm text-gray-500 mt-1">{factor.detail}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* Essay Angles */}
+            {essayAngles.length > 0 && (
+                <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                    <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                        <DocumentTextIcon className="h-5 w-5 text-blue-500" />
+                        Essay Strategies
+                    </h3>
+                    <div className="space-y-3">
+                        {essayAngles.map((essay, idx) => (
+                            <div key={idx} className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                                {essay.essay_prompt && (
+                                    <p className="text-sm text-blue-800 font-medium mb-2">"{essay.essay_prompt}"</p>
+                                )}
+                                <p className="text-sm text-gray-700"><strong>Angle:</strong> {essay.angle}</p>
+                                {essay.student_hook && <p className="text-sm text-gray-600 mt-1"><strong>Your hook:</strong> {essay.student_hook}</p>}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* Application Timeline */}
+            {timeline.recommended_plan && (
+                <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                    <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                        <CalendarIcon className="h-5 w-5 text-orange-500" />
+                        Recommended Application Plan
+                    </h3>
+                    <div className="flex items-center gap-4 p-4 bg-orange-50 rounded-lg">
+                        <div className="text-4xl font-bold text-orange-600">{timeline.recommended_plan}</div>
+                        <div>
+                            <p className="text-sm text-gray-700">{timeline.rationale}</p>
+                            {timeline.deadline && <p className="text-sm text-orange-600 font-medium mt-1">Deadline: {timeline.deadline}</p>}
+                            {timeline.is_binding && <span className="inline-block mt-1 px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs">Binding</span>}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Red Flags */}
+            {redFlags.length > 0 && (
+                <div className="bg-red-50 rounded-xl p-5 border border-red-100">
+                    <h3 className="font-semibold text-red-800 mb-3 flex items-center gap-2">
+                        <ExclamationTriangleIcon className="h-5 w-5" />
+                        Red Flags to Avoid
+                    </h3>
+                    <ul className="space-y-2">
+                        {redFlags.map((flag, idx) => (
+                            <li key={idx} className="text-sm text-red-700 flex items-start gap-2">
+                                <span className="text-red-500">⚠️</span>
+                                {flag}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+        </div>
+    );
+};
+
+// ============================================================================
 // MAIN COMPONENT
 // ============================================================================
 const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
-    const [activeTab, setActiveTab] = useState('fit');
+    const [activeTab, setActiveTab] = useState('details');
 
     const tabs = [
+        { id: 'details', label: 'University Details', icon: BuildingLibraryIcon },
         { id: 'fit', label: 'Your Fit Analysis', icon: SparklesIcon },
-        { id: 'campus', label: 'Campus Life', icon: HomeIcon },
-        { id: 'academics', label: 'Academics', icon: AcademicCapIcon },
-        { id: 'admissions', label: 'Admissions', icon: BuildingLibraryIcon },
-        { id: 'financials', label: 'Financials', icon: CurrencyDollarIcon },
     ];
 
     if (!university) return null;
@@ -755,19 +1118,13 @@ const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                     <HeroSection university={university} fitAnalysis={fitAnalysis} />
 
-                    {/* Action Center - Above the fold */}
-                    <ActionCenter fitAnalysis={fitAnalysis} />
-
-                    {/* Tab Navigation */}
+                    {/* Tab Navigation - Only 2 Tabs */}
                     <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
 
                     {/* Tab Content */}
                     <div className="p-6 min-h-[400px]">
-                        {activeTab === 'campus' && <CampusLifeTab university={university} />}
-                        {activeTab === 'academics' && <AcademicsTab university={university} />}
-                        {activeTab === 'admissions' && <AdmissionsTab university={university} />}
-                        {activeTab === 'financials' && <FinancialsTab university={university} />}
-                        {activeTab === 'fit' && <FitAnalysisTab fitAnalysis={fitAnalysis} />}
+                        {activeTab === 'details' && <DetailsTab university={university} />}
+                        {activeTab === 'fit' && <UpdatedFitAnalysisTab fitAnalysis={fitAnalysis} university={university} />}
                     </div>
                 </div>
             </div>
@@ -776,3 +1133,4 @@ const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
 };
 
 export default UniversityProfilePage;
+

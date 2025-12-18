@@ -1,0 +1,441 @@
+{
+  "_id": "university_of_california_san_diego",
+  "metadata": {
+    "official_name": "University of California, San Diego",
+    "location": {
+      "city": "La Jolla",
+      "state": "CA",
+      "type": "Public"
+    },
+    "last_updated": "2025-05-25",
+    "report_source_files": [
+      "https://admission.universityofcalifornia.edu/campuses-majors/san-diego/",
+      "https://ir.ucsd.edu/stats/undergrad/common-data-set.html",
+      "https://collegescorecard.ed.gov/school/?110680-University-of-California-San-Diego",
+      "https://fas.ucsd.edu/types/scholarships/entering-freshmen.html"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "UC San Diego is a premier public research university located on the Pacific coast, renowned for its STEM prowess, particularly in biology, engineering, and oceanography. The university operates a unique 'Oxford-style' residential college system where undergraduates belong to one of eight distinct colleges, each with its own general education requirements and culture, creating smaller communities within the large research institution. It is consistently ranked among the top public universities globally and is a member of the prestigious Association of American Universities.",
+    "market_position": "Public Ivy / Research Powerhouse",
+    "admissions_philosophy": "Holistic review with emphasis on academic achievement in context; Test-free (does not consider SAT/ACT)",
+    "us_news_rank": 29,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The acceptance rate for the Class of 2029 (Fall 2025) stands at approximately 28.4%, with in-state applicants facing a highly competitive 24.7% rate compared to 39.4% for out-of-state students.",
+        "implication": "California residents face stiffer competition than non-residents; applicants must maximize GPA and course rigor as test scores are not considered."
+      },
+      {
+        "category": "Academic",
+        "insight": "As of Spring 2025, the School of Biological Sciences has removed 'capped' status from its majors, making them open to all admitted students, while Engineering, Data Science, and Public Health remain selective 'capped' majors.",
+        "implication": "Applicants interested in Biology no longer need to fear being locked out of the major, but Engineering and Data Science applicants must present elite academic profiles to secure direct admission."
+      },
+      {
+        "category": "Culture",
+        "insight": "The 8-College System dictates General Education requirements and housing but not major selection; students must rank colleges on the UC application.",
+        "implication": "Applicants must research college philosophies (e.g., Revelle's rigorous humanities vs. Muir's flexibility) to rank them strategically based on fit and AP credit utility."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Social life is decentralized across the eight residential colleges, leading to a reputation for being quieter ('UC Socially Dead') compared to sports-heavy schools, though the beach location and active Greek life provide outlets.",
+      "transportation_impact": "The Blue Line Trolley extension now connects the campus directly to downtown San Diego and the border, significantly improving student mobility and access to off-campus housing/internships.",
+      "research_impact": "Undergraduate research is a cornerstone of the UCSD experience, with massive funding ($1.7B+) and structured programs like the Regents Scholars Research Initiative (RSRI) and The Basement incubator."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 28.41,
+      "in_state_acceptance_rate": 24.69,
+      "out_of_state_acceptance_rate": 39.37,
+      "international_acceptance_rate": 30.58,
+      "transfer_acceptance_rate": 52.7,
+      "admits_class_size": 38846,
+      "is_test_optional": false,
+      "test_policy_details": "Test-free: SAT/ACT scores are not considered for admission or scholarship decisions.",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "2024-2025 (Class of 2029)",
+        "applications_total": 136728,
+        "admits_total": 38846,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 28.4,
+        "yield_rate": null,
+        "waitlist_stats": null,
+        "notes": "Slight increase in acceptance rate from previous year."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "2023-2024 (Class of 2028)",
+        "applications_total": 134444,
+        "admits_total": 35984,
+        "enrolled_total": 7341,
+        "acceptance_rate_overall": 26.8,
+        "yield_rate": 20.4,
+        "waitlist_stats": null,
+        "notes": "In-state acceptance rate was approx 26%."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "2022-2023 (Class of 2027)",
+        "applications_total": 130835,
+        "admits_total": 32061,
+        "enrolled_total": 7007,
+        "acceptance_rate_overall": 24.8,
+        "yield_rate": 21.6,
+        "waitlist_stats": null,
+        "notes": "Significant drop in acceptance rate from 2021."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "2021-2022 (Class of 2026)",
+        "applications_total": 131229,
+        "admits_total": 31102,
+        "enrolled_total": null,
+        "acceptance_rate_overall": 23.7,
+        "yield_rate": null,
+        "waitlist_stats": null,
+        "notes": "Lowest acceptance rate in recent history."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.10 - 4.28",
+        "unweighted_middle_50": null,
+        "average_weighted": 4.2,
+        "notes": "GPA is based on UC-approved A-G courses in 10th and 11th grade, capped at 8 extra points for weighted calculation."
+      },
+      "testing": {
+        "sat_composite_middle_50": "N/A",
+        "act_composite_middle_50": "N/A",
+        "submission_rate": 0.0,
+        "policy_note": "UCSD is test-free and will not review scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 37.0,
+        "legacy_percentage": null,
+        "international_percentage": 11.8,
+        "geographic_breakdown": [
+          "California Residents: ~65%",
+          "Out of State: ~23%",
+          "International: ~12%"
+        ],
+        "gender_breakdown": {
+          "Men": 43.0,
+          "Women": 57.0
+        },
+        "racial_breakdown": {
+          "Asian": 34.3,
+          "Hispanic/Latino": 25.2,
+          "White": 18.2,
+          "International": 11.8,
+          "Black/African American": 1.8
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools",
+    "colleges": [
+      {
+        "name": "Jacobs School of Engineering",
+        "admissions_model": "Direct Admit / Capped",
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Must select an engineering major as first choice. Extremely competitive; requires near-perfect GPA and advanced math/science coursework.",
+        "housing_profile": "N/A (Housing determined by Residential College)",
+        "student_archetype": "Innovators, quantitative problem solvers",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "BS",
+            "is_impacted": true,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Bioengineering",
+            "degree_type": "BS",
+            "is_impacted": true,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "BS",
+            "is_impacted": true,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false
+          }
+        ]
+      },
+      {
+        "name": "School of Biological Sciences",
+        "admissions_model": "Open",
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Previously capped, now open as of Spring 2025. Excellent for pre-med and research-focused students.",
+        "housing_profile": "N/A",
+        "student_archetype": "Future researchers, medical professionals",
+        "majors": [
+          {
+            "name": "General Biology",
+            "degree_type": "BS",
+            "is_impacted": false,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Human Biology",
+            "degree_type": "BS",
+            "is_impacted": false,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false
+          }
+        ]
+      },
+      {
+        "name": "Halıcıoğlu Data Science Institute",
+        "admissions_model": "Capped",
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "High demand major; requires strong math background.",
+        "housing_profile": "N/A",
+        "student_archetype": "Data analysts, statisticians",
+        "majors": [
+          {
+            "name": "Data Science",
+            "degree_type": "BS",
+            "is_impacted": true,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false
+          }
+        ]
+      },
+      {
+        "name": "School of Physical Sciences",
+        "admissions_model": "Mixed",
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Physics is capped; Chemistry and Math are generally open.",
+        "housing_profile": "N/A",
+        "student_archetype": "Theoretical thinkers",
+        "majors": [
+          {
+            "name": "Physics",
+            "degree_type": "BS",
+            "is_impacted": true,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "BS",
+            "is_impacted": false,
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false
+          }
+        ]
+      },
+      {
+        "name": "Herbert Wertheim School of Public Health",
+        "admissions_model": "Capped",
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Impacted major requiring screening courses for transfer.",
+        "housing_profile": "N/A",
+        "student_archetype": "Community health advocates",
+        "majors": [
+          {
+            "name": "Public Health",
+            "degree_type": "BS",
+            "is_impacted": true,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Business",
+      "Entrepreneurship and Innovation",
+      "Design",
+      "Film Studies",
+      "Marine Science"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "UC Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-11-30",
+        "is_binding": false,
+        "notes": "Application filing period is Oct 1 - Nov 30. No Early Action/Decision."
+      }
+    ],
+    "supplemental_requirements": [
+      "UC Personal Insight Questions (4 of 8)",
+      "College Ranking (Rank 1-8)"
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "GPA (Weighted/Capped)",
+        "Course Rigor (AP/IB/Honors)",
+        "Personal Insight Questions"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Talent/Ability",
+        "First-Generation Status",
+        "Geographic Location"
+      ],
+      "essay_importance": "Very Important",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Considered",
+      "legacy_consideration": "Not Considered",
+      "first_gen_boost": "Considered"
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "If applying to Engineering, Data Science, or Public Health, list it as first choice.",
+      "Select an uncapped major as an alternate to ensure admission to the university if denied from the capped major.",
+      "Biology is no longer capped, so it is a safer choice than in previous years."
+    ],
+    "college_ranking_tactics": [
+      "Rank colleges based on General Education overlap with your major (e.g., Revelle has heavy GE reqs, Muir is flexible).",
+      "Consider AP credit policies; some colleges accept more APs for GE credit than others.",
+      "Consider housing location and philosophy (e.g., Eleanor Roosevelt focuses on international understanding)."
+    ],
+    "alternate_major_strategy": "Crucial for capped majors. If you apply to a capped major and are not selected, you may be admitted to your alternate major if it is uncapped. If you select 'Undeclared' as alternate, you will be admitted as Undeclared."
+  },
+  "financials": {
+    "tuition_model": "Tuition Stability Plan (Tuition stays flat for up to 6 years for undergraduates)",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 15788,
+        "total_coa": 41932
+      },
+      "out_of_state": {
+        "tuition": 47676,
+        "total_coa": 73820
+      }
+    },
+    "aid_philosophy": "Need-based aid focus for residents; limited merit aid. Blue and Gold Opportunity Plan covers tuition for CA families earning <$80k.",
+    "scholarships": [
+      {
+        "name": "Regents Scholarship",
+        "type": "Merit-based",
+        "amount": "$20,000 ($5,000/year)",
+        "benefits": "Priority enrollment, guaranteed housing, faculty mentorship, research opportunities.",
+        "application_method": "Automatic consideration with UC Application"
+      },
+      {
+        "name": "Chancellor's Scholarship",
+        "type": "Merit-based",
+        "amount": "$20,000 ($5,000/year)",
+        "benefits": "Leadership program, peer mentoring.",
+        "application_method": "Automatic consideration with UC Application"
+      },
+      {
+        "name": "Chancellor's Associates Scholars Program (CASP)",
+        "type": "Need/Merit",
+        "amount": "$10,000/year + Loan-free aid",
+        "benefits": "Essentially a full ride for eligible local/first-gen students; includes academic support.",
+        "application_method": "Nomination/Automatic review of FAFSA/GPA"
+      },
+      {
+        "name": "Jacobs School of Engineering Scholarship",
+        "type": "Merit-based",
+        "amount": "Full Tuition and Fees",
+        "benefits": "Membership in IDEA Scholars program.",
+        "application_method": "Selected from admitted engineering students"
+      },
+      {
+        "name": "Triton Achievement Scholarship",
+        "type": "Merit/Character",
+        "amount": "Varies",
+        "benefits": "Recognizes personal qualities and academic record.",
+        "application_method": "Automatic consideration"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous with AP/IB credits for unit requirements, but application to GE requirements varies significantly by Residential College.",
+    "ap_policy": {
+      "general_rule": "Score of 3, 4, or 5 grants elective units.",
+      "exceptions": [
+        "Some colleges (e.g., Revelle) limit use of APs for GE requirements."
+      ],
+      "usage": "Can be used for placement, elective units, and some major/GE requirements depending on the college."
+    },
+    "ib_policy": {
+      "general_rule": "Score of 5, 6, or 7 on HL exams grants 8 units.",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST.org"
+      ],
+      "restrictions": "Transfer Major Preparation is mandatory for capped majors."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "High GPA (4.0+ weighted) in rigorous courses.",
+      "Strong PIQs showing leadership, resilience, or creativity.",
+      "Alignment with UCSD's research and innovation ethos."
+    ],
+    "common_activities": [
+      "Research internships",
+      "Robotics/Engineering clubs",
+      "Community service",
+      "Surfing/Beach activities"
+    ],
+    "essay_tips": [
+      "Avoid creative writing fluff; be direct and factual about achievements.",
+      "Highlight specific contributions to community or intellectual vitality.",
+      "Connect personal experiences to future academic goals."
+    ],
+    "red_flags": [
+      "Generic essays that could apply to any school.",
+      "Low math/science grades for STEM applicants.",
+      "Ignoring the college ranking section of the application."
+    ],
+    "insights": [
+      "The 'UC Socially Dead' stereotype is exaggerated but reflects the lack of a football team and the decentralized college system.",
+      "Students often bond more with their specific college than the university as a whole.",
+      "Having a car is less necessary now with the Blue Line trolley."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 84943,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Qualcomm",
+      "Illumina",
+      "Google",
+      "Amazon",
+      "Northrop Grumman",
+      "General Atomics"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 94.0,
+    "graduation_rate_4_year": 75.0,
+    "graduation_rate_6_year": 88.0
+  }
+}

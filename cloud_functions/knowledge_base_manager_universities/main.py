@@ -404,12 +404,34 @@ def create_searchable_text(profile: dict) -> str:
             if college_names:
                 parts.append(f"Colleges: {', '.join(college_names[:10])}")
             all_majors = []
+            all_courses = []
+            all_professors = []
             for college in acs['colleges']:
                 for major in college.get('majors', []):
                     if major.get('name'):
                         all_majors.append(major['name'])
+                    # Extract curriculum courses
+                    curriculum = major.get('curriculum')
+                    if curriculum:
+                        core_courses = curriculum.get('core_courses', [])
+                        electives = curriculum.get('electives', [])
+                        for course in core_courses[:5]:  # Limit per major
+                            if course and course not in all_courses:
+                                all_courses.append(course)
+                        for course in electives[:3]:
+                            if course and course not in all_courses:
+                                all_courses.append(course)
+                    # Extract notable professors
+                    professors = major.get('notable_professors', [])
+                    for prof in professors:
+                        if prof and prof not in all_professors:
+                            all_professors.append(prof)
             if all_majors:
                 parts.append(f"Majors offered: {', '.join(all_majors[:20])}")
+            if all_courses:
+                parts.append(f"Courses: {', '.join(all_courses[:30])}")
+            if all_professors:
+                parts.append(f"Notable Professors: {', '.join(all_professors[:15])}")
     
     # Outcomes
     if 'outcomes' in profile:
@@ -474,6 +496,9 @@ def ingest_university(profile: dict) -> dict:
         soft_fit_category = compute_soft_fit_category(acceptance_rate)
         logger.info(f"Soft fit category for {official_name}: {soft_fit_category} (acceptance rate: {acceptance_rate}%)")
         
+        # Extract media field for easy access (infographics, slides, videos)
+        media = profile.get('media')
+        
         doc = {
             "university_id": university_id,
             "official_name": official_name,
@@ -487,6 +512,7 @@ def ingest_university(profile: dict) -> dict:
             "market_position": market_position,
             "median_earnings_10yr": median_earnings,
             "us_news_rank": us_news_rank,  # For sorting by rank
+            "media": media,  # Visual content (infographics, slides, videos)
             "profile": profile,
             "indexed_at": datetime.now(timezone.utc).isoformat(),
             "last_updated": last_updated
@@ -651,6 +677,7 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                 "median_earnings_10yr": source.get('median_earnings_10yr'),
                 "us_news_rank": source.get('us_news_rank'),
                 "summary": source.get('summary'),
+                "media": source.get('media'),  # Visual content
                 "score": hit['_score'],
                 "profile": source.get('profile')
             })
@@ -690,7 +717,7 @@ def list_universities() -> dict:
                 "size": 200,
                 "query": {"match_all": {}},
             "_source": ["university_id", "official_name", "location", "acceptance_rate", "soft_fit_category",
-                       "market_position", "us_news_rank", "summary", "indexed_at", "last_updated"]
+                       "market_position", "us_news_rank", "summary", "media", "indexed_at", "last_updated"]
             }
         )
         
@@ -706,6 +733,7 @@ def list_universities() -> dict:
                 "market_position": source.get('market_position'),
                 "us_news_rank": source.get('us_news_rank'),
                 "summary": source.get('summary'),
+                "media": source.get('media'),  # Visual content
                 "indexed_at": source.get('indexed_at'),
                 "last_updated": source.get('last_updated')
             })

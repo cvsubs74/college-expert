@@ -1087,6 +1087,35 @@ export const computeSingleFit = async (userEmail, universityId, forceRecompute =
 };
 
 /**
+ * Generate fit infographic image using Gemini AI
+ * Creates a personalized visual infographic for the student's fit analysis
+ * @param {string} userEmail - User's email
+ * @param {string} universityId - University ID to generate infographic for
+ * @param {boolean} forceRegenerate - If true, bypass cache and regenerate image
+ * @returns {Promise<{success: boolean, infographic_url: string, from_cache: boolean}>}
+ */
+export const generateFitInfographic = async (userEmail, universityId, forceRegenerate = false) => {
+  try {
+    console.log(`[API] Generating fit infographic for ${userEmail} - ${universityId} (force=${forceRegenerate})...`);
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/generate-fit-image`, {
+      user_email: userEmail,
+      university_id: universityId,
+      force_regenerate: forceRegenerate
+    }, {
+      timeout: 120000,  // 2 min timeout for image generation
+      headers: { 'X-User-Email': userEmail }
+    });
+    console.log(`[API] Generated infographic (from_cache=${response.data.from_cache}):`, response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error generating fit infographic:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+
+/**
  * Get pre-computed fits with optional filtering
  * @param {string} userEmail - User's email
  * @param {Object} filters - Optional filters: { category, state, exclude_ids }

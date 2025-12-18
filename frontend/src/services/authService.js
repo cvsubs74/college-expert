@@ -3,6 +3,11 @@ import { auth, googleProvider } from '../firebase';
 
 export const signInWithGoogle = async () => {
   try {
+    // Force account selection prompt every time
+    googleProvider.setCustomParameters({
+      prompt: 'select_account'
+    });
+
     const result = await signInWithPopup(auth, googleProvider);
     // The signed-in user info.
     const user = result.user;

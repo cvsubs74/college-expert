@@ -28,7 +28,7 @@ import {
     CheckCircleIcon,
     ChartBarIcon
 } from '@heroicons/react/24/outline';
-import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
+import { StarIcon as StarIconSolid, FilmIcon } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit } from '../services/api';
@@ -41,6 +41,8 @@ import {
     TabOverview, TabAcademics, TabAdmissions,
     TabFinancials, TabCampus, TabOutcomes
 } from '../components/UniversityDetailTabs';
+import MediaGallery from '../components/MediaGallery';
+import UniversityDetailPage from '../components/UniversityDetailPage';
 
 // API Configuration
 const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL ||
@@ -144,6 +146,8 @@ const transformUniversityData = (apiData) => {
         marketPosition: apiData.market_position || strategic.market_position || 'N/A',
         // Soft fit category (acceptance-rate based, computed at ingest)
         softFitCategory: apiData.soft_fit_category || null,
+        // Visual content (infographics, slides, videos)
+        media: apiData.media || null,
         // Keep full profile for detail view
         fullProfile: profile
     };
@@ -245,16 +249,28 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
             </div>
 
             <div className="p-4 border-t border-gray-100">
-                <div className="flex gap-3">
+                <div className="flex gap-2 mb-2">
                     <button
                         onClick={() => onSelect(uni)}
-                        className="flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
+                        className="flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
                     >
                         Details <ChevronRightIcon className="h-4 w-4" />
                     </button>
                     <button
+                        onClick={() => onShowFitDetails && onShowFitDetails(fitAnalysis)}
+                        disabled={!fitAnalysis}
+                        className={`flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-colors ${fitAnalysis
+                                ? 'bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:from-purple-600 hover:to-indigo-700 shadow-md hover:shadow-lg'
+                                : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                            }`}
+                    >
+                        <SparklesIcon className="h-4 w-4" /> Fit Analysis
+                    </button>
+                </div>
+                <div className="flex gap-2">
+                    <button
                         onClick={() => onCompare(uni)}
-                        className={`flex-1 py-2 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-colors ${isSelectedForCompare
+                        className={`flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-colors ${isSelectedForCompare
                             ? 'bg-amber-500 text-white hover:bg-amber-600'
                             : 'bg-amber-50 text-amber-700 hover:bg-amber-100'
                             }`}
@@ -264,13 +280,16 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                     </button>
                     <button
                         onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
+                        disabled={!isInList && uni.isLimitReached}
                         className={`p-2 rounded-lg transition-all ${isInList
                             ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-600 hover:scale-105'
-                            : 'bg-purple-100 text-purple-700 hover:bg-purple-200 hover:scale-105'
+                            : uni.isLimitReached
+                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                : 'bg-purple-100 text-purple-700 hover:bg-purple-200 hover:scale-105'
                             }`}
-                        title={isInList ? 'Remove from Launchpad' : '🚀 Add to My Launchpad'}
+                        title={isInList ? 'Remove from Launchpad' : (uni.isLimitReached ? 'Upgrade to add more colleges' : '🚀 Add to My Launchpad')}
                     >
-                        {isInList ? '✓' : '🚀'}
+                        {isInList ? '✓' : (uni.isLimitReached ? '🔒' : '🚀')}
                     </button>
                     {sentiment && sentiment.sentiment !== 'neutral' && (
                         <button
@@ -526,6 +545,7 @@ const UniversityDetail = ({ uni, onBack, sentiment, fitAnalysis }) => {
 
     const tabs = [
         { id: 'overview', label: 'Overview', icon: SparklesIcon },
+        { id: 'media', label: 'Visual Guide', icon: FilmIcon },
         { id: 'academics', label: 'Academics', icon: AcademicCapIcon },
         { id: 'admissions', label: 'Admissions', icon: CheckCircleIcon },
         { id: 'financials', label: 'Cost & Aid', icon: CurrencyDollarIcon },
@@ -609,6 +629,7 @@ const UniversityDetail = ({ uni, onBack, sentiment, fitAnalysis }) => {
             {/* Content Area */}
             <div className="p-6 md:p-8 bg-gray-50 flex-grow min-h-[500px]">
                 {activeTab === 'overview' && <TabOverview uni={uni} sentiment={sentiment} />}
+                {activeTab === 'media' && <MediaGallery media={uni.media} />}
                 {activeTab === 'academics' && <TabAcademics uni={uni} />}
                 {activeTab === 'admissions' && <TabAdmissions uni={uni} />}
                 {activeTab === 'financials' && <TabFinancials uni={uni} />}
@@ -652,7 +673,7 @@ const LoadingSkeleton = () => (
 
 // --- Main App Component ---
 const UniversityExplorer = () => {
-    const { collegesAvailable, consumeCredit, promptUpgrade, canExploreUniversities } = usePayment();
+    const { canAccessLaunchpad, isFreeTier, promptUpgrade } = usePayment();
     const [universities, setUniversities] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -821,9 +842,9 @@ const UniversityExplorer = () => {
         const isInList = myCollegeList.some(c => c.university_id === university.id);
         const action = isInList ? 'remove' : 'add';
 
-        // Check college slot limit when adding
-        if (action === 'add' && collegesAvailable <= 0) {
-            promptUpgrade('college_slots', 'You\'ve used all your college slots');
+        // Free tier users cannot add to launchpad
+        if (action === 'add' && !canAccessLaunchpad) {
+            promptUpgrade('launchpad', 'Upgrade to Pro to add colleges to your Launchpad');
             return;
         }
 
@@ -839,9 +860,8 @@ const UniversityExplorer = () => {
                 setMyCollegeList(result.college_list || []);
                 console.log(`[College List] ${action === 'add' ? 'Added' : 'Removed'}: ${university.name}`);
 
-                // Consume a college slot credit on add
+                // Compute fit on add
                 if (action === 'add') {
-                    consumeCredit('college_slots', university.id);
                     setComputingFitFor(university.id);
                     console.log(`[Fit] Computing fit for ${university.name}...`);
 
@@ -1168,17 +1188,13 @@ const UniversityExplorer = () => {
         return sorted;
     }, [filteredUniversities, sortBy]);
 
-    // Paginated universities
-    // For free tier (no explorer access), show all universities on first page
-    // This lets them see all cards but with locked buttons beyond first 3
-    const effectiveCardsPerPage = canExploreUniversities ? CARDS_PER_PAGE : sortedUniversities.length || 1;
-
+    // Paginated universities - all tiers can browse
     const paginatedUniversities = useMemo(() => {
-        const start = currentPage * effectiveCardsPerPage;
-        return sortedUniversities.slice(start, start + effectiveCardsPerPage);
-    }, [sortedUniversities, currentPage, effectiveCardsPerPage]);
+        const start = currentPage * CARDS_PER_PAGE;
+        return sortedUniversities.slice(start, start + CARDS_PER_PAGE);
+    }, [sortedUniversities, currentPage]);
 
-    const totalPages = canExploreUniversities ? Math.ceil(sortedUniversities.length / CARDS_PER_PAGE) : 1;
+    const totalPages = Math.ceil(sortedUniversities.length / CARDS_PER_PAGE);
 
     // Reset page when filters change
     useEffect(() => {
@@ -1611,10 +1627,12 @@ const UniversityExplorer = () => {
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                             {paginatedUniversities.length > 0 ? (
                                                 paginatedUniversities.map((uni) => {
+                                                    // Free tier users cannot add to launchpad
+                                                    const isLimitReached = !canAccessLaunchpad;
                                                     return (
                                                         <UniversityCard
                                                             key={uni.id}
-                                                            uni={uni}
+                                                            uni={{ ...uni, isLimitReached }}
                                                             onSelect={handleSelectUni}
                                                             onCompare={handleCompareToggle}
                                                             isSelectedForCompare={comparisonList.some(u => u.id === uni.id)}
@@ -1766,12 +1784,10 @@ const UniversityExplorer = () => {
                             )}
 
                             {activeView === 'detail' && selectedUni && (
-                                <UniversityDetail
+                                <UniversityDetailPage
                                     uni={selectedUni}
                                     onBack={handleBack}
                                     sentiment={sentimentData[selectedUni.id]}
-                                    deepResearchData={deepResearchData}
-                                    setDeepResearchData={setDeepResearchData}
                                     fitAnalysis={getCollegeFitAnalysis(selectedUni.id)}
                                 />
                             )}

@@ -4,15 +4,15 @@ import { StarIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { usePayment } from '../context/PaymentContext';
 
 /**
- * TierBadge - Shows user's current tier and credits
+ * TierBadge - Shows user's current tier
  * Displays in the navigation/header area
  */
 const TierBadge = () => {
     const {
+        currentTier,
         isFreeTier,
         isPro,
-        collegesAvailable,
-        fitAnalysisAvailable,
+        isElite,
         aiMessagesAvailable,
         loading
     } = usePayment();
@@ -21,6 +21,17 @@ const TierBadge = () => {
         return (
             <div className="px-3 py-1.5 bg-gray-100 rounded-full animate-pulse">
                 <span className="text-xs text-gray-400">Loading...</span>
+            </div>
+        );
+    }
+
+    if (isElite) {
+        return (
+            <div className="flex items-center gap-2">
+                <span className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-800 text-xs font-bold rounded-full border border-purple-200">
+                    <StarIcon className="h-3.5 w-3.5 mr-1" />
+                    ELITE
+                </span>
             </div>
         );
     }
@@ -36,18 +47,14 @@ const TierBadge = () => {
         );
     }
 
-    // Free tier - show remaining credits
+    // Free tier - show remaining messages and upgrade button
     return (
         <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 rounded-full border border-gray-200">
                 <span className="text-xs font-medium text-gray-600">Free</span>
                 <span className="text-gray-300">|</span>
                 <span className="text-xs text-gray-500">
-                    {collegesAvailable} colleges
-                </span>
-                <span className="text-gray-300">|</span>
-                <span className="text-xs text-gray-500">
-                    {aiMessagesAvailable === 'unlimited' ? '∞' : aiMessagesAvailable} msgs
+                    {aiMessagesAvailable === 'unlimited' ? '∞' : aiMessagesAvailable} msgs left
                 </span>
             </div>
             <Link

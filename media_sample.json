@@ -1,0 +1,62 @@
+{
+    "description": "Sample media configuration for a university. Add this to your university's ES data or API response.",
+    "example_university_id": "stanford_university",
+    "media": {
+        "infographics": [
+            {
+                "id": "overview",
+                "title": "Stanford at a Glance",
+                "url": "https://storage.googleapis.com/college-counselor-media/universities/stanford_university/infographics/overview.png"
+            },
+            {
+                "id": "admissions",
+                "title": "Admissions Breakdown 2024",
+                "url": "https://storage.googleapis.com/college-counselor-media/universities/stanford_university/infographics/admissions.png"
+            },
+            {
+                "id": "outcomes",
+                "title": "Career Outcomes & ROI",
+                "url": "https://storage.googleapis.com/college-counselor-media/universities/stanford_university/infographics/outcomes.png"
+            }
+        ],
+        "slides": [
+            {
+                "id": "strategic_analysis",
+                "title": "Strategic Deep Dive: Why Stanford?",
+                "url": "https://storage.googleapis.com/college-counselor-media/universities/stanford_university/slides/strategic_analysis.pdf",
+                "pages": 15
+            }
+        ],
+        "videos": [
+            {
+                "id": "overview",
+                "title": "2-Minute Stanford Overview",
+                "url": "https://storage.googleapis.com/college-counselor-media/universities/stanford_university/videos/overview.mp4",
+                "thumbnail": "https://storage.googleapis.com/college-counselor-media/universities/stanford_university/videos/overview_thumb.png",
+                "duration": "2:15"
+            }
+        ]
+    },
+    "upload_instructions": {
+        "bucket": "gs://college-counselor-media",
+        "structure": "universities/{university_id}/{type}/{filename}",
+        "types": [
+            "infographics",
+            "slides",
+            "videos"
+        ],
+        "supported_formats": {
+            "infographics": [
+                ".png",
+                ".jpg"
+            ],
+            "slides": [
+                ".pdf"
+            ],
+            "videos": [
+                ".mp4"
+            ]
+        },
+        "upload_command": "gcloud storage cp <local_file> gs://college-counselor-media/universities/<university_id>/<type>/<filename>"
+    }
+}

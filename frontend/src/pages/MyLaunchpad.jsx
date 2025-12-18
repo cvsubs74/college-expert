@@ -16,50 +16,52 @@ import {
 } from '@heroicons/react/24/outline';
 import { getCollegeList, updateCollegeList, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, getFitsByCategory, getPrecomputedFits, getBalancedList } from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { usePayment } from '../context/PaymentContext';
+import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import FitBreakdownPanel from '../components/FitBreakdownPanel';
 
-// Fit category configuration
+// Fit category configuration - Uses warm amber-based tones consistent with app theme
 const FIT_CATEGORIES = {
     REACH: {
         label: 'Reach',
         emoji: '🎯',
-        color: 'orange',
-        bgGradient: 'from-orange-50 to-amber-50',
-        borderColor: 'border-orange-200',
-        headerBg: 'bg-orange-100',
-        textColor: 'text-orange-700',
+        color: 'amber',
+        bgGradient: 'from-amber-50 to-orange-50',
+        borderColor: 'border-amber-300',
+        headerBg: 'bg-amber-100',
+        textColor: 'text-amber-700',
         description: 'Challenging admits'
     },
     SUPER_REACH: {
         label: 'Super Reach',
         emoji: '🌟',
-        color: 'red',
-        bgGradient: 'from-red-50 to-pink-50',
-        borderColor: 'border-red-200',
-        headerBg: 'bg-red-100',
-        textColor: 'text-red-700',
+        color: 'rose',
+        bgGradient: 'from-rose-50 to-orange-50',
+        borderColor: 'border-rose-300',
+        headerBg: 'bg-rose-100',
+        textColor: 'text-rose-700',
         description: 'Dream schools'
     },
     TARGET: {
         label: 'Target',
         emoji: '✅',
-        color: 'blue',
-        bgGradient: 'from-blue-50 to-indigo-50',
-        borderColor: 'border-blue-200',
-        headerBg: 'bg-blue-100',
-        textColor: 'text-blue-700',
+        color: 'orange',
+        bgGradient: 'from-orange-50 to-amber-50',
+        borderColor: 'border-orange-300',
+        headerBg: 'bg-orange-100',
+        textColor: 'text-orange-700',
         description: 'Good match'
     },
     SAFETY: {
         label: 'Safety',
         emoji: '🛡️',
-        color: 'green',
-        bgGradient: 'from-green-50 to-emerald-50',
-        borderColor: 'border-green-200',
-        headerBg: 'bg-green-100',
-        textColor: 'text-green-700',
+        color: 'emerald',
+        bgGradient: 'from-emerald-50 to-amber-50',
+        borderColor: 'border-emerald-300',
+        headerBg: 'bg-emerald-100',
+        textColor: 'text-emerald-700',
         description: 'Likely admits'
     }
 };
@@ -72,12 +74,12 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
     const matchPercentage = fitAnalysis.match_percentage || null;
     const categoryConfig = FIT_CATEGORIES[fitCategory] || FIT_CATEGORIES.TARGET;
 
-    // Fit category colors matching UniInsight
+    // Fit category colors matching the warm amber theme
     const fitColors = {
-        SAFETY: 'bg-green-100 text-green-800 border-green-300',
-        TARGET: 'bg-blue-100 text-blue-800 border-blue-300',
-        REACH: 'bg-orange-100 text-orange-800 border-orange-300',
-        SUPER_REACH: 'bg-red-100 text-red-800 border-red-300'
+        SAFETY: 'bg-emerald-100 text-emerald-800 border-emerald-300',
+        TARGET: 'bg-orange-100 text-orange-800 border-orange-300',
+        REACH: 'bg-amber-100 text-amber-800 border-amber-300',
+        SUPER_REACH: 'bg-rose-100 text-rose-800 border-rose-300'
     };
 
     const formatNumber = (num) => {
@@ -96,7 +98,7 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
                                 type="checkbox"
                                 checked={isSelected}
                                 onChange={() => onToggleSelect(college.university_id)}
-                                className="h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 cursor-pointer"
+                                className="h-5 w-5 text-orange-600 rounded border-gray-300 focus:ring-orange-500 cursor-pointer"
                             />
                         </div>
                     )}
@@ -149,7 +151,7 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
 
                 {/* LLM Explanation (if available) - brief version */}
                 {fitAnalysis.explanation && (
-                    <div className="text-sm text-gray-600 bg-blue-50 rounded p-3 border border-blue-100">
+                    <div className="text-sm text-gray-600 bg-blue-50 rounded p-3 border border-amber-100">
                         <span className="font-medium text-blue-700">✨ Why This Fit: </span>
                         <span className="line-clamp-2">{fitAnalysis.explanation}</span>
                     </div>
@@ -360,9 +362,9 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                 )}
 
                 {/* Fit Explanation */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border border-blue-100">
+                <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-lg p-4 border border-amber-100">
                     <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                        <SparklesIcon className="h-5 w-5 text-blue-600" />
+                        <SparklesIcon className="h-5 w-5 text-orange-600" />
                         Why This Fit Category?
                     </h3>
                     <div className="text-gray-700 prose prose-sm max-w-none">
@@ -376,7 +378,7 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                 {/* Score Breakdown */}
                 <div>
                     <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        <ChartBarIcon className="h-5 w-5 text-purple-600" />
+                        <ChartBarIcon className="h-5 w-5 text-amber-600" />
                         Score Breakdown (Fair Mode - 100pt Scale)
                     </h3>
 
@@ -419,8 +421,8 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                     </div>
 
                     {/* Fair Mode Explanation */}
-                    <div className="mt-4 p-3 bg-indigo-50 rounded-lg border border-indigo-100">
-                        <p className="text-xs text-indigo-700">
+                    <div className="mt-4 p-3 bg-orange-50 rounded-lg border border-orange-100">
+                        <p className="text-xs text-orange-700">
                             <strong>Fair Mode:</strong> Your match score is calculated based on academic factors only.
                             School selectivity is used as a ceiling for the category (not to reduce your score).
                         </p>
@@ -438,12 +440,12 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                             {recommendations.map((rec, idx) => (
                                 <div key={idx} className="flex flex-col gap-2 p-4 bg-blue-50 rounded-lg">
                                     <div className="flex items-start gap-3">
-                                        <span className="text-blue-600 font-bold">{idx + 1}.</span>
+                                        <span className="text-orange-600 font-bold">{idx + 1}.</span>
                                         <span className="text-gray-700">{typeof rec === 'object' ? rec.action : rec}</span>
                                     </div>
                                     {typeof rec === 'object' && rec.addresses_gap && (
                                         <div className="ml-7 flex flex-wrap gap-2 text-xs">
-                                            <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full">Addresses: {rec.addresses_gap}</span>
+                                            <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">Addresses: {rec.addresses_gap}</span>
                                             {rec.timeline && <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">Timeline: {rec.timeline}</span>}
                                         </div>
                                     )}
@@ -466,7 +468,7 @@ const RecommendationCard = ({ recommendation, isSelected, onToggleSelect }) => {
         <div
             onClick={() => onToggleSelect(recommendation.id)}
             className={`bg-white rounded-xl shadow-sm border-2 p-4 cursor-pointer transition-all ${isSelected
-                ? 'border-purple-500 ring-2 ring-purple-200 shadow-md'
+                ? 'border-amber-500 ring-2 ring-amber-200 shadow-md'
                 : 'border-gray-200 hover:border-purple-300 hover:shadow-md'
                 }`}
         >
@@ -474,7 +476,7 @@ const RecommendationCard = ({ recommendation, isSelected, onToggleSelect }) => {
                 <div className="flex items-center gap-3 flex-1 min-w-0">
                     {/* Checkbox */}
                     <div className={`flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center ${isSelected
-                        ? 'bg-purple-600 border-purple-600'
+                        ? 'bg-amber-600 border-amber-600'
                         : 'border-gray-300'
                         }`}>
                         {isSelected && (
@@ -498,7 +500,7 @@ const RecommendationCard = ({ recommendation, isSelected, onToggleSelect }) => {
             <div className="ml-8">
                 <p className="text-sm text-gray-600 line-clamp-2">{recommendation.reason}</p>
                 <div className="mt-2 text-xs text-gray-500">
-                    Match: <span className="font-semibold text-purple-600">{recommendation.matchScore}%</span>
+                    Match: <span className="font-semibold text-amber-600">{recommendation.matchScore}%</span>
                 </div>
             </div>
         </div>
@@ -933,21 +935,21 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
         if (targetCount < 2) {
             return { status: 'warning', message: '💡 Add more target schools', color: 'text-amber-600' };
         }
-        return { status: 'info', message: '🎯 Getting balanced...', color: 'text-blue-600' };
+        return { status: 'info', message: '🎯 Getting balanced...', color: 'text-orange-600' };
     };
 
     const balanceStatus = getBalanceStatus();
 
     return (
-        <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl border border-purple-200 overflow-hidden">
+        <div className="bg-gradient-to-r from-amber-50 to-blue-50 rounded-xl border border-amber-200 overflow-hidden">
             {/* Header - Always visible */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-purple-100/50 transition-colors"
+                className="w-full px-6 py-4 flex items-center justify-between hover:bg-amber-100/50 transition-colors"
             >
                 <div className="flex items-center gap-3">
-                    <div className="p-2 bg-purple-100 rounded-lg">
-                        <LightBulbIcon className="h-6 w-6 text-purple-600" />
+                    <div className="p-2 bg-amber-100 rounded-lg">
+                        <LightBulbIcon className="h-6 w-6 text-amber-600" />
                     </div>
                     <div className="text-left">
                         <h3 className="font-bold text-gray-900">Smart Discovery</h3>
@@ -955,16 +957,16 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
-                    <span className="text-sm text-purple-600 font-medium">
+                    <span className="text-sm text-amber-600 font-medium">
                         {isOpen ? 'Close' : 'Find More Schools'}
                     </span>
-                    <XMarkIcon className={`h-5 w-5 text-purple-600 transition-transform ${isOpen ? 'rotate-0' : 'rotate-45'}`} />
+                    <XMarkIcon className={`h-5 w-5 text-amber-600 transition-transform ${isOpen ? 'rotate-0' : 'rotate-45'}`} />
                 </div>
             </button>
 
             {/* Expanded Content */}
             {isOpen && (
-                <div className="px-6 pb-6 pt-2 border-t border-purple-200">
+                <div className="px-6 pb-6 pt-2 border-t border-amber-200">
                     {/* List Balance Summary */}
                     <div className="flex gap-4 mb-4 text-sm">
                         <div className="flex items-center gap-1">
@@ -990,7 +992,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             <button
                                 onClick={() => handleQuickBalancedList()}
                                 disabled={isLoading}
-                                className="px-3 py-1.5 bg-white border border-purple-200 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-50 transition-colors disabled:opacity-50"
+                                className="px-3 py-1.5 bg-white border border-amber-200 text-amber-700 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors disabled:opacity-50"
                                 title="Fast: Uses pre-computed fits"
                             >
                                 ⚖️ Balanced List ⚡
@@ -1022,7 +1024,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             <button
                                 onClick={() => handleQuickFilter(null, null)}
                                 disabled={isLoading}
-                                className="px-3 py-1.5 bg-white border border-indigo-200 text-indigo-700 rounded-full text-sm font-medium hover:bg-indigo-50 transition-colors disabled:opacity-50"
+                                className="px-3 py-1.5 bg-white border border-orange-200 text-orange-700 rounded-full text-sm font-medium hover:bg-orange-50 transition-colors disabled:opacity-50"
                                 title="Fast: Uses pre-computed fits"
                             >
                                 📚 Best Matches ⚡
@@ -1047,7 +1049,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             value={preferences}
                             onChange={(e) => setPreferences(e.target.value)}
                             placeholder="E.g., Prefer East Coast schools, want a large campus with strong research programs, need good financial aid, interested in business/psychology programs..."
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-none"
                             rows={2}
                         />
                     </div>
@@ -1056,7 +1058,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                     <button
                         onClick={handleQuickBalancedList}
                         disabled={isLoading}
-                        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg disabled:opacity-50 mb-4"
+                        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-xl font-medium hover:from-amber-700 hover:to-blue-700 transition-all shadow-lg disabled:opacity-50 mb-4"
                     >
                         <SparklesIcon className="h-5 w-5" />
                         {recommendations.length > 0 ? 'Get More Recommendations ⚡' : 'Get Smart Recommendations ⚡'}
@@ -1067,7 +1069,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                     {/* Loading State */}
                     {isLoading && (
                         <div className="text-center py-8">
-                            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-purple-600 mx-auto mb-3"></div>
+                            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-amber-600 mx-auto mb-3"></div>
                             <p className="text-gray-600">Analyzing your profile and finding schools...</p>
                             <p className="text-sm text-gray-400 mt-1">This may take a few seconds</p>
                         </div>
@@ -1091,12 +1093,12 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
                                 <h4 className="font-semibold text-gray-800 flex items-center gap-2">
-                                    <SparklesIcon className="h-4 w-4 text-purple-600" />
+                                    <SparklesIcon className="h-4 w-4 text-amber-600" />
                                     Recommended For You ({recommendations.length} schools)
                                 </h4>
                                 <button
                                     onClick={toggleSelectAll}
-                                    className="text-sm text-blue-600 hover:text-blue-800"
+                                    className="text-sm text-orange-600 hover:text-blue-800"
                                 >
                                     {getSelectedRecs().length === recommendations.length ? 'Deselect All' : 'Select All'}
                                 </button>
@@ -1144,7 +1146,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             <button
                                 onClick={handleQuickBalancedList}
                                 disabled={isAddingAll}
-                                className="w-full text-sm text-purple-600 hover:text-purple-800 font-medium disabled:opacity-50"
+                                className="w-full text-sm text-amber-600 hover:text-purple-800 font-medium disabled:opacity-50"
                             >
                                 ↻ Get different recommendations ⚡
                             </button>
@@ -1156,77 +1158,180 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
     );
 };
 
-// Empty State Component with Quick-Start Options
+// Empty State Component - Modern, Engaging Design
 const EmptyState = ({ onQuickStart }) => {
+    const [hoveredOption, setHoveredOption] = useState(null);
+
     const quickStartOptions = [
         {
             id: 'balanced',
-            emoji: '⚖️',
-            title: 'Build a Balanced List',
-            description: 'Get a mix of safety, target, and reach schools based on your profile',
+            icon: '⚖️',
+            title: 'Smart Balanced List',
+            description: 'AI picks the perfect mix of safety, target, and reach schools tailored to your profile',
             action: 'balanced',
-            color: 'from-purple-600 to-blue-600'
+            gradient: 'from-amber-500 via-orange-500 to-rose-500',
+            highlight: 'Most Popular'
         },
         {
             id: 'safety',
-            emoji: '🛡️',
-            title: 'Find Safety Schools',
-            description: 'Schools where you\'re likely to be admitted',
+            icon: '🛡️',
+            title: 'Safety Schools',
+            description: 'Schools where you have strong admission chances',
             action: 'SAFETY',
-            color: 'from-green-600 to-emerald-600'
-        },
-        {
-            id: 'reach',
-            emoji: '🎯',
-            title: 'Find Reach Schools',
-            description: 'Ambitious choices to aim high',
-            action: 'REACH',
-            color: 'from-orange-600 to-red-600'
+            gradient: 'from-emerald-500 to-teal-500',
+            highlight: null
         },
         {
             id: 'target',
-            emoji: '✅',
-            title: 'Find Target Schools',
-            description: 'Schools where you have good chances',
+            icon: '✅',
+            title: 'Target Schools',
+            description: 'Schools that match your academic profile well',
             action: 'TARGET',
-            color: 'from-blue-600 to-indigo-600'
+            gradient: 'from-orange-500 to-amber-500',
+            highlight: null
+        },
+        {
+            id: 'reach',
+            icon: '🚀',
+            title: 'Reach Schools',
+            description: 'Ambitious choices that push your limits',
+            action: 'REACH',
+            gradient: 'from-rose-500 to-pink-500',
+            highlight: null
         }
     ];
 
-    return (
-        <div className="text-center py-12 px-4">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-purple-100 to-blue-100 mb-6">
-                <RocketLaunchIcon className="h-10 w-10 text-purple-600" />
-            </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Build Your College List</h2>
-            <p className="text-gray-600 max-w-md mx-auto mb-8">
-                Let AI help you discover the right schools based on your profile
-            </p>
+    const steps = [
+        { num: '1', text: 'Choose how to start', icon: '👆' },
+        { num: '2', text: 'AI analyzes your profile', icon: '🤖' },
+        { num: '3', text: 'Review & add schools', icon: '✨' }
+    ];
 
-            {/* Quick Start Options Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
-                {quickStartOptions.map((option) => (
-                    <button
-                        key={option.id}
-                        onClick={() => onQuickStart(option.action)}
-                        className={`p-4 rounded-xl text-left transition-all hover:scale-105 hover:shadow-lg bg-gradient-to-br ${option.color} text-white`}
-                    >
-                        <div className="text-2xl mb-2">{option.emoji}</div>
-                        <h3 className="font-bold text-lg mb-1">{option.title}</h3>
-                        <p className="text-sm text-white/80">{option.description}</p>
-                    </button>
+    return (
+        <div className="min-h-[70vh] flex flex-col items-center justify-center px-4 py-8">
+            {/* Hero Section */}
+            <div className="text-center mb-10">
+                {/* Animated Rocket Icon */}
+                <div className="relative inline-block mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+                    <div className="relative p-5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl shadow-amber-200">
+                        <RocketLaunchIcon className="h-12 w-12 text-white" />
+                    </div>
+                </div>
+
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                    Launch Your College Journey
+                </h1>
+                <p className="text-lg text-gray-600 max-w-xl mx-auto">
+                    Our AI will find the perfect schools for you based on your academic profile, interests, and goals.
+                </p>
+            </div>
+
+            {/* How It Works - Steps */}
+            <div className="flex items-center justify-center gap-2 md:gap-6 mb-10 flex-wrap">
+                {steps.map((step, idx) => (
+                    <div key={step.num} className="flex items-center gap-2 md:gap-4">
+                        <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-full shadow-sm border border-gray-100">
+                            <span className="w-6 h-6 flex items-center justify-center bg-amber-100 text-amber-700 rounded-full text-xs font-bold">
+                                {step.num}
+                            </span>
+                            <span className="text-sm text-gray-600 hidden sm:inline">{step.text}</span>
+                            <span className="text-lg">{step.icon}</span>
+                        </div>
+                        {idx < steps.length - 1 && (
+                            <div className="text-gray-300 hidden md:block">→</div>
+                        )}
+                    </div>
                 ))}
             </div>
 
-            <div className="text-gray-400 text-sm mb-4">— or —</div>
+            {/* Quick Start Cards */}
+            <div className="w-full max-w-4xl mb-10 space-y-4">
+                {/* Featured Card - Full Width */}
+                <button
+                    onClick={() => onQuickStart(quickStartOptions[0].action)}
+                    onMouseEnter={() => setHoveredOption(quickStartOptions[0].id)}
+                    onMouseLeave={() => setHoveredOption(null)}
+                    className="group relative overflow-hidden rounded-2xl p-6 text-left transition-all duration-300 transform hover:scale-[1.01] hover:shadow-2xl w-full"
+                >
+                    <div className={`absolute inset-0 bg-gradient-to-br ${quickStartOptions[0].gradient} opacity-90`}></div>
+                    <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                    <div className="relative z-10">
+                        <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full mb-3 border border-white/30">
+                            ⭐ {quickStartOptions[0].highlight}
+                        </span>
+                        <div className="flex items-start gap-4">
+                            <span className="text-4xl">{quickStartOptions[0].icon}</span>
+                            <div className="flex-1">
+                                <h3 className="text-xl font-bold text-white mb-2 group-hover:underline underline-offset-2">
+                                    {quickStartOptions[0].title}
+                                </h3>
+                                <p className="text-white/90 text-sm leading-relaxed">
+                                    {quickStartOptions[0].description}
+                                </p>
+                            </div>
+                            <div className="text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all">→</div>
+                        </div>
+                    </div>
+                </button>
 
+                {/* 3 Category Cards - Equal Width Row */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {quickStartOptions.slice(1).map((option) => (
+                        <button
+                            key={option.id}
+                            onClick={() => onQuickStart(option.action)}
+                            onMouseEnter={() => setHoveredOption(option.id)}
+                            onMouseLeave={() => setHoveredOption(null)}
+                            className="group relative overflow-hidden rounded-2xl p-5 text-left transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl h-full"
+                        >
+                            {/* Background Gradient */}
+                            <div className={`absolute inset-0 bg-gradient-to-br ${option.gradient} opacity-90`}></div>
+
+                            {/* Glassmorphism overlay */}
+                            <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
+
+                            {/* Animated shimmer effect on hover */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+
+                            {/* Content - Vertical Layout for smaller cards */}
+                            <div className="relative z-10 flex flex-col items-start h-full">
+                                <span className="text-3xl mb-3">{option.icon}</span>
+                                <h3 className="text-lg font-bold text-white mb-1 group-hover:underline underline-offset-2">
+                                    {option.title}
+                                </h3>
+                                <p className="text-white/80 text-xs leading-relaxed flex-1">
+                                    {option.description}
+                                </p>
+                            </div>
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            {/* Divider */}
+            <div className="flex items-center gap-4 mb-8 w-full max-w-xs">
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent to-gray-200"></div>
+                <span className="text-gray-400 text-sm font-medium">or explore manually</span>
+                <div className="flex-1 h-px bg-gradient-to-l from-transparent to-gray-200"></div>
+            </div>
+
+            {/* Manual Browse Button */}
             <a
                 href="/universities"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-all"
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-2xl font-semibold hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 transition-all shadow-sm hover:shadow-lg"
             >
-                <SparklesIcon className="h-5 w-5" />
-                Browse Universities Manually
+                <SparklesIcon className="h-5 w-5 text-amber-500" />
+                Browse All Universities
+                <span className="text-gray-400 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">→</span>
             </a>
+
+            {/* Trust indicator */}
+            <p className="mt-8 text-sm text-gray-400 flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                150+ universities analyzed and ready to match
+            </p>
         </div>
     );
 };
@@ -1234,6 +1339,7 @@ const EmptyState = ({ onQuickStart }) => {
 // Main Component
 const MyLaunchpad = () => {
     const { currentUser } = useAuth();
+    const { canAccessLaunchpad, isFreeTier, hasFullFitAnalysis, canDeepResearch } = usePayment();
     const [collegeList, setCollegeList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -1245,6 +1351,36 @@ const MyLaunchpad = () => {
     // Multi-select state for bulk removal
     const [selectedColleges, setSelectedColleges] = useState(new Set());
     const [selectionMode, setSelectionMode] = useState(false);
+
+    // Gate: Free tier users cannot access Launchpad
+    if (isFreeTier) {
+        return (
+            <div className="min-h-[60vh] flex flex-col items-center justify-center px-4 py-12">
+                <div className="max-w-lg mx-auto text-center">
+                    <div className="relative inline-block mb-6">
+                        <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+                        <div className="relative p-5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl shadow-amber-200">
+                            <RocketLaunchIcon className="h-12 w-12 text-white" />
+                        </div>
+                    </div>
+                    <h1 className="text-3xl font-bold text-gray-900 mb-4">Unlock Your Launchpad</h1>
+                    <p className="text-lg text-gray-600 mb-8">
+                        Build your personalized college list, get AI-powered fit analysis, and track your applications—all in one place.
+                    </p>
+                    <Link
+                        to="/pricing"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-2xl hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200"
+                    >
+                        <SparklesIcon className="h-5 w-5" />
+                        Upgrade to Pro — $99/year
+                    </Link>
+                    <p className="mt-4 text-sm text-gray-500">
+                        Or <Link to="/universities" className="text-amber-600 hover:underline">continue exploring universities</Link>
+                    </p>
+                </div>
+            </div>
+        );
+    }
     const [bulkRemoving, setBulkRemoving] = useState(false);
 
     // Fetch college list
@@ -1642,10 +1778,10 @@ const MyLaunchpad = () => {
         <div className="space-y-6">
             {/* Recomputation Banner */}
             {recomputingFits && (
-                <div className="bg-purple-100 border-l-4 border-purple-500 text-purple-700 p-4 rounded shadow-sm" role="alert">
+                <div className="bg-amber-100 border-l-4 border-amber-500 text-amber-700 p-4 rounded shadow-sm" role="alert">
                     <div className="flex items-center">
                         <div className="py-1">
-                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-purple-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-amber-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
