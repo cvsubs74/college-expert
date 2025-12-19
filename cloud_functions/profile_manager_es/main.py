@@ -20,6 +20,8 @@ import io
 import fitz  # PyMuPDF - better PDF extraction than PyPDF2
 from docx import Document
 from google import genai
+from google.genai import types
+from PIL import Image
 
 
 # Configure logging
@@ -457,6 +459,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 # Separate indices for college list and fit analysis
 ES_LIST_ITEMS_INDEX = os.getenv("ES_LIST_ITEMS_INDEX", "student_college_list")
 ES_FITS_INDEX = os.getenv("ES_FITS_INDEX", "student_college_fits")
+ES_CREDITS_INDEX = os.getenv("ES_CREDITS_INDEX", "user_credits")
 
 # Note: genai.Client is created per-request in each function
 
@@ -532,6 +535,281 @@ def get_storage_path(user_id, filename):
     # Sanitize email for path
     sanitized_id = user_id.replace('@', '_').replace('.', '_').lower()
     return f"profiles/{sanitized_id}/{filename}"
+
+
+# ============== CREDIT MANAGEMENT ==============
+
+FREE_TIER_CREDITS = 3
+PRO_TIER_CREDITS = 50
+CREDIT_PACK_SIZE = 50
+CREDIT_PACK_PRICE = 10.00  # $10 for 50 credits
+
+def get_user_credits(user_id: str) -> dict:
+    """Get user's credit balance and tier info.
+    
+    Returns:
+        {
+            "user_id": "...",
+            "tier": "free" | "pro",
+            "credits_total": 50,
+            "credits_used": 12,
+            "credits_remaining": 38,
+            "subscription_active": true/false,
+            "subscription_expires": "..."
+        }
+    """
+    try:
+        client = get_elasticsearch_client()
+        import hashlib
+        doc_id = hashlib.sha256(user_id.encode()).hexdigest()
+        
+        try:
+            result = client.get(index=ES_CREDITS_INDEX, id=doc_id)
+            return result['_source']
+        except Exception:
+            # No credits record - initialize as free tier
+            return initialize_user_credits(user_id, "free")
+    except Exception as e:
+        logger.error(f"[CREDITS] Error getting credits for {user_id}: {e}")
+        return {
+            "user_id": user_id,
+            "tier": "free",
+            "credits_total": FREE_TIER_CREDITS,
+            "credits_used": 0,
+            "credits_remaining": FREE_TIER_CREDITS,
+            "subscription_active": False
+        }
+
+def initialize_user_credits(user_id: str, tier: str = "free") -> dict:
+    """Initialize credit record for new user."""
+    try:
+        client = get_elasticsearch_client()
+        import hashlib
+        doc_id = hashlib.sha256(user_id.encode()).hexdigest()
+        
+        credits = FREE_TIER_CREDITS if tier == "free" else PRO_TIER_CREDITS
+        
+        doc = {
+            "user_id": user_id,
+            "tier": tier,
+            "credits_total": credits,
+            "credits_used": 0,
+            "credits_remaining": credits,
+            "subscription_active": tier == "pro",
+            "subscription_expires": None,
+            "purchase_history": [],
+            "created_at": datetime.utcnow().isoformat(),
+            "updated_at": datetime.utcnow().isoformat()
+        }
+        
+        client.index(index=ES_CREDITS_INDEX, id=doc_id, body=doc)
+        logger.info(f"[CREDITS] Initialized {tier} tier for {user_id} with {credits} credits")
+        return doc
+    except Exception as e:
+        logger.error(f"[CREDITS] Error initializing credits: {e}")
+        raise
+
+def check_credits_available(user_id: str, credits_needed: int = 1) -> dict:
+    """Check if user has enough credits.
+    
+    Returns:
+        {
+            "has_credits": true/false,
+            "credits_remaining": 38,
+            "credits_needed": 1
+        }
+    """
+    credits = get_user_credits(user_id)
+    remaining = credits.get("credits_remaining", 0)
+    
+    return {
+        "has_credits": remaining >= credits_needed,
+        "credits_remaining": remaining,
+        "credits_needed": credits_needed,
+        "tier": credits.get("tier", "free")
+    }
+
+def deduct_credit(user_id: str, credit_count: int = 1, reason: str = "fit_analysis") -> dict:
+    """Deduct credit(s) from user's balance.
+    
+    Returns:
+        {
+            "success": true/false,
+            "credits_remaining": 37,
+            "credits_deducted": 1,
+            "reason": "fit_analysis"
+        }
+    """
+    try:
+        client = get_elasticsearch_client()
+        import hashlib
+        doc_id = hashlib.sha256(user_id.encode()).hexdigest()
+        
+        # Get current balance
+        credits = get_user_credits(user_id)
+        remaining = credits.get("credits_remaining", 0)
+        
+        if remaining < credit_count:
+            return {
+                "success": False,
+                "error": "insufficient_credits",
+                "credits_remaining": remaining,
+                "credits_needed": credit_count
+            }
+        
+        # Update balance
+        new_remaining = remaining - credit_count
+        new_used = credits.get("credits_used", 0) + credit_count
+        
+        client.update(
+            index=ES_CREDITS_INDEX,
+            id=doc_id,
+            body={
+                "doc": {
+                    "credits_used": new_used,
+                    "credits_remaining": new_remaining,
+                    "updated_at": datetime.utcnow().isoformat()
+                }
+            }
+        )
+        
+        logger.info(f"[CREDITS] Deducted {credit_count} from {user_id}. Remaining: {new_remaining}")
+        return {
+            "success": True,
+            "credits_remaining": new_remaining,
+            "credits_deducted": credit_count,
+            "reason": reason
+        }
+    except Exception as e:
+        logger.error(f"[CREDITS] Error deducting credit: {e}")
+        return {"success": False, "error": str(e)}
+
+def add_credits(user_id: str, credit_count: int, source: str = "credit_pack") -> dict:
+    """Add credits to user's balance (from pack purchase or subscription).
+    
+    Returns:
+        {
+            "success": true/false,
+            "credits_added": 50,
+            "credits_remaining": 88,
+            "source": "credit_pack"
+        }
+    """
+    try:
+        client = get_elasticsearch_client()
+        import hashlib
+        doc_id = hashlib.sha256(user_id.encode()).hexdigest()
+        
+        # Get or create credit record
+        credits = get_user_credits(user_id)
+        
+        new_total = credits.get("credits_total", 0) + credit_count
+        new_remaining = credits.get("credits_remaining", 0) + credit_count
+        
+        # Add to purchase history
+        history = credits.get("purchase_history", [])
+        history.append({
+            "date": datetime.utcnow().isoformat(),
+            "source": source,
+            "credits": credit_count
+        })
+        
+        client.update(
+            index=ES_CREDITS_INDEX,
+            id=doc_id,
+            body={
+                "doc": {
+                    "credits_total": new_total,
+                    "credits_remaining": new_remaining,
+                    "purchase_history": history,
+                    "updated_at": datetime.utcnow().isoformat()
+                }
+            },
+            upsert={
+                "user_id": user_id,
+                "tier": "free",
+                "credits_total": credit_count,
+                "credits_used": 0,
+                "credits_remaining": credit_count,
+                "subscription_active": False,
+                "purchase_history": history,
+                "created_at": datetime.utcnow().isoformat(),
+                "updated_at": datetime.utcnow().isoformat()
+            }
+        )
+        
+        logger.info(f"[CREDITS] Added {credit_count} to {user_id}. New balance: {new_remaining}")
+        return {
+            "success": True,
+            "credits_added": credit_count,
+            "credits_remaining": new_remaining,
+            "source": source
+        }
+    except Exception as e:
+        logger.error(f"[CREDITS] Error adding credits: {e}")
+        return {"success": False, "error": str(e)}
+
+def upgrade_to_pro(user_id: str, subscription_expires: str = None) -> dict:
+    """Upgrade user to Pro tier with 50 credits."""
+    try:
+        client = get_elasticsearch_client()
+        import hashlib
+        doc_id = hashlib.sha256(user_id.encode()).hexdigest()
+        
+        # Get existing credits (don't lose them)
+        existing = get_user_credits(user_id)
+        existing_remaining = existing.get("credits_remaining", 0)
+        
+        # Add Pro credits to existing balance
+        new_remaining = existing_remaining + PRO_TIER_CREDITS
+        new_total = existing.get("credits_total", 0) + PRO_TIER_CREDITS
+        
+        history = existing.get("purchase_history", [])
+        history.append({
+            "date": datetime.utcnow().isoformat(),
+            "source": "pro_subscription",
+            "credits": PRO_TIER_CREDITS
+        })
+        
+        client.update(
+            index=ES_CREDITS_INDEX,
+            id=doc_id,
+            body={
+                "doc": {
+                    "tier": "pro",
+                    "credits_total": new_total,
+                    "credits_remaining": new_remaining,
+                    "subscription_active": True,
+                    "subscription_expires": subscription_expires,
+                    "purchase_history": history,
+                    "updated_at": datetime.utcnow().isoformat()
+                }
+            },
+            upsert={
+                "user_id": user_id,
+                "tier": "pro",
+                "credits_total": PRO_TIER_CREDITS,
+                "credits_used": 0,
+                "credits_remaining": PRO_TIER_CREDITS,
+                "subscription_active": True,
+                "subscription_expires": subscription_expires,
+                "purchase_history": history,
+                "created_at": datetime.utcnow().isoformat(),
+                "updated_at": datetime.utcnow().isoformat()
+            }
+        )
+        
+        logger.info(f"[CREDITS] Upgraded {user_id} to Pro. Credits: {new_remaining}")
+        return {
+            "success": True,
+            "tier": "pro",
+            "credits_remaining": new_remaining
+        }
+    except Exception as e:
+        logger.error(f"[CREDITS] Error upgrading to pro: {e}")
+        return {"success": False, "error": str(e)}
+
+# ============== END CREDIT MANAGEMENT ==============
 
 def index_student_profile(user_id, filename, content_markdown, metadata=None, profile_data=None):
     """Index student profile in Elasticsearch with FLATTENED schema.
@@ -2053,11 +2331,24 @@ def handle_compute_single_fit(request):
         
         logger.info(f"[COMPUTE_SINGLE_FIT] Request for {university_id} for user {user_id}, force={force_recompute}")
         
+        # Check credits before computing (skip for cache hits, handled below)
+        skip_credit_check = data.get('skip_credit_check', False)  # For internal/batch calls
+        credit_check = check_credits_available(user_id, 1)
+        if not credit_check['has_credits'] and not skip_credit_check:
+            return add_cors_headers({
+                'success': False,
+                'error': 'insufficient_credits',
+                'message': 'You need more credits to run fit analysis',
+                'credits_remaining': credit_check['credits_remaining'],
+                'upgrade_required': True
+            }, 402)  # 402 Payment Required
+        
         es_client = get_elasticsearch_client()
         email_hash = hashlib.md5(user_id.encode()).hexdigest()[:8]
         doc_id = f"{email_hash}_{university_id}"
         
         # Check cache first (unless force_recompute is True)
+        # Cache hits are FREE - no credit deducted
         if not force_recompute:
             try:
                 cached = es_client.get(index=ES_FITS_INDEX, id=doc_id)
@@ -2116,6 +2407,12 @@ def handle_compute_single_fit(request):
                 'error': 'Failed to compute fit analysis',
                 'university_id': university_id
             }, 500)
+        
+        # Deduct credit AFTER successful computation (cache miss)
+        if not skip_credit_check:
+            deduct_result = deduct_credit(user_id, 1, f"fit_analysis_{university_id}")
+            if not deduct_result['success']:
+                logger.warning(f"[CREDITS] Failed to deduct credit for {user_id}: {deduct_result}")
         
         logger.info(f"[COMPUTE_SINGLE_FIT] Result: {fit_analysis.get('fit_category')} ({fit_analysis.get('match_percentage')}%)")
         
@@ -3222,75 +3519,42 @@ FIT_IMAGES_BUCKET = os.getenv("FIT_IMAGES_BUCKET", "college-strategy-fit-images"
 def generate_fit_infographic_prompt(fit_data: dict, student_name: str, university_name: str) -> str:
     """Build a detailed prompt for Gemini image generation based on fit data."""
     
-    fit_category = fit_data.get('fit_category', 'TARGET')
-    match_score = fit_data.get('match_score', fit_data.get('match_percentage', 70))
+    # Build complete fit data JSON for the prompt
+    clean_data = {
+        "student_name": student_name,
+        "university_name": university_name,
+        "fit_category": fit_data.get('fit_category', 'TARGET'),
+        "match_score": fit_data.get('match_score', fit_data.get('match_percentage', 70)),
+        "explanation": fit_data.get('explanation', ''),
+        "factors": fit_data.get('factors', []),
+        "recommendations": fit_data.get('recommendations', []),
+        "gap_analysis": fit_data.get('gap_analysis', ''),
+        "acceptance_rate": fit_data.get('acceptance_rate', 'N/A'),
+        "us_news_rank": fit_data.get('us_news_rank', 'N/A'),
+        "location": fit_data.get('location', {}),
+        "market_position": fit_data.get('market_position', '')
+    }
     
-    # Parse factors for strengths
-    factors = fit_data.get('factors', [])
-    strengths = []
-    improvements = []
-    
-    for factor in factors:
-        if isinstance(factor, dict):
-            name = factor.get('name', '')
-            score = factor.get('score', 0)
-            max_score = factor.get('max_score', 100)
-            if max_score > 0 and (score / max_score) >= 0.7:
-                strengths.append(name)
-            elif max_score > 0 and (score / max_score) < 0.5:
-                improvements.append(name)
-    
-    # Parse recommendations for action plan
-    recommendations = fit_data.get('recommendations', [])
-    if isinstance(recommendations, str):
+    # Parse gap_analysis if it's a string
+    if isinstance(clean_data.get('gap_analysis'), str):
         try:
-            recommendations = json.loads(recommendations)
+            clean_data['gap_analysis'] = json.loads(clean_data['gap_analysis'])
         except:
-            recommendations = []
-    action_items = recommendations[:3] if recommendations else []
+            pass
     
-    # University stats
-    acceptance_rate = fit_data.get('acceptance_rate', 'N/A')
-    us_news_rank = fit_data.get('us_news_rank', 'N/A')
-    location = fit_data.get('location', 'USA')
+    # Parse recommendations if it's a string 
+    if isinstance(clean_data.get('recommendations'), str):
+        try:
+            clean_data['recommendations'] = json.loads(clean_data['recommendations'])
+        except:
+            pass
     
-    prompt = f"""Create a professional college fit infographic for a student named "{student_name}" applying to "{university_name}".
+    fit_json = json.dumps(clean_data, indent=2)
+    
+    # Simple prompt that works well with Gemini image generation
+    prompt = f"""Create an infographic for the content below. This should be focused more on where the student stands in terms of admission chances into the school, the reasons and what action items the student needs to take to improve his/her chances.
 
-DESIGN STYLE:
-- Clean, modern infographic design with a professional color scheme
-- Use a dashboard/scorecard layout
-- Include visual icons and charts
-- Make it visually appealing and easy to read
-
-CONTENT TO INCLUDE:
-
-1. HEADER:
-   - Title: "{student_name}'s Path to {university_name}"
-   - Subtitle: "Understanding Your Fit & Action Plan"
-
-2. MATCH SCORE (center/prominent):
-   - Display "{match_score}%" in a large gauge/dial meter
-   - Category badge: "{fit_category}" (use green for SAFETY, yellow for TARGET, orange for REACH, red for SUPER REACH)
-
-3. UNIVERSITY INFO BOX (top right):
-   - "{university_name}"
-   - Location: {location}
-   - Acceptance Rate: {acceptance_rate}%
-   - US News Rank: #{us_news_rank}
-
-4. YOUR STRENGTHS SECTION (left column, green theme):
-   {chr(10).join([f"   - {s}" for s in strengths]) if strengths else "   - Strong Academic Profile"}
-
-5. AREAS FOR IMPROVEMENT SECTION (center column, orange/yellow theme):
-   {chr(10).join([f"   - {i}" for i in improvements]) if improvements else "   - Continue building extracurriculars"}
-
-6. ACTION PLAN SECTION (right column, blue theme):
-   {chr(10).join([f"   Step {i+1}: {a}" for i, a in enumerate(action_items)]) if action_items else "   Step 1: Research the university\n   Step 2: Visit campus if possible\n   Step 3: Prepare application essays"}
-
-7. FOOTER:
-   - Overall recommendation summary based on the {fit_category} category
-
-Create this as a single, complete infographic image with all sections clearly visible. Use professional fonts and clean iconography. The design should be suitable for printing or digital display.
+{fit_json}
 """
     
     return prompt
@@ -3385,36 +3649,37 @@ def handle_generate_fit_infographic(request):
         prompt = generate_fit_infographic_prompt(fit_data, student_name, university_name)
         logger.info(f"[GENERATE_FIT_IMAGE] Generated prompt for {university_name}")
         
-        # Call Gemini image generation
+        # Call Gemini image generation (Nano Banana Pro)
         try:
-            from google import genai
-            
             client = genai.Client(api_key=GEMINI_API_KEY)
             
             response = client.models.generate_content(
-                model="gemini-2.0-flash-exp",
+                model="gemini-3-pro-image-preview",  # Nano Banana Pro
                 contents=[prompt],
-                config={
-                    "response_modalities": ["TEXT", "IMAGE"]
-                }
+                config=types.GenerateContentConfig(
+                    response_modalities=["IMAGE"],
+                    candidate_count=1
+                )
             )
             
             # Extract image from response
             image_data = None
             for part in response.candidates[0].content.parts:
-                if hasattr(part, 'inline_data') and part.inline_data:
+                if part.inline_data:
                     image_data = part.inline_data.data
                     break
             
             if not image_data:
-                logger.error("[GENERATE_FIT_IMAGE] No image data in response")
+                logger.error("[GENERATE_FIT_IMAGE] Gemini Pro did not return an image")
                 return add_cors_headers({
                     'success': False,
-                    'error': 'Failed to generate image - no image data returned',
+                    'error': 'Gemini Pro did not return an image. Check API logs.',
                     'university_id': university_id
                 }, 500)
             
-            logger.info(f"[GENERATE_FIT_IMAGE] Got image data, size: {len(image_data)} bytes")
+            # Verify image health
+            Image.open(io.BytesIO(image_data)).verify()
+            logger.info(f"[GENERATE_FIT_IMAGE] Got valid image data, size: {len(image_data)} bytes")
             
         except Exception as e:
             logger.error(f"[GENERATE_FIT_IMAGE] Gemini API error: {str(e)}")
@@ -3429,8 +3694,8 @@ def handle_generate_fit_infographic(request):
             storage_client = storage.Client()
             bucket = storage_client.bucket(FIT_IMAGES_BUCKET)
             
-            # Create blob path: {email_hash}/{university_id}.png
-            blob_path = f"{email_hash}/{university_id}.png"
+            # Create blob path with timestamp: {email_hash}/{university_id}_{timestamp}.png
+            blob_path = f"{email_hash}/{university_id}_{int(time.time())}.png"
             blob = bucket.blob(blob_path)
             
             # Upload the image
@@ -3485,6 +3750,193 @@ def handle_generate_fit_infographic(request):
         return add_cors_headers({
             'success': False,
             'error': f'Failed to generate infographic: {str(e)}'
+        }, 500)
+
+
+def handle_generate_fit_infographic_data(request):
+    """
+    Generate structured infographic data using Gemini with structured output.
+    Returns JSON that the frontend can render as a beautiful infographic component.
+    
+    POST /generate-fit-infographic-data
+    {
+        "user_email": "student@gmail.com",
+        "university_id": "stanford_university"
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "infographic_data": {
+            "title": "...",
+            "subtitle": "...",
+            "themeColor": "amber",
+            "matchScore": 68,
+            "fitCategory": "REACH",
+            "universityInfo": {...},
+            "strengths": [...],
+            "improvements": [...],
+            "actionPlan": [...],
+            "conclusion": "..."
+        }
+    }
+    """
+    try:
+        if request.method == 'OPTIONS':
+            return add_cors_headers({}, 200)
+        
+        data = request.get_json() if request.is_json else {}
+        user_email = data.get('user_email') or request.args.get('user_email')
+        university_id = data.get('university_id') or request.args.get('university_id')
+        
+        if not user_email or not university_id:
+            return add_cors_headers({
+                'success': False,
+                'error': 'user_email and university_id are required'
+            }, 400)
+        
+        sanitized_email = sanitize_email_for_storage(user_email)
+        doc_id = f"{sanitized_email}_{university_id}"
+        
+        # Get fit data from ES
+        try:
+            fit_doc = es_client.get(index=ES_FITS_INDEX, id=doc_id)
+            fit_data = fit_doc['_source']
+        except NotFoundError:
+            return add_cors_headers({
+                'success': False,
+                'error': 'Fit analysis not found. Please run fit analysis first.'
+            }, 404)
+        
+        # Get student name from profile
+        student_name = "Student"
+        try:
+            profile_doc = es_client.get(index=ES_PROFILES_INDEX, id=sanitized_email)
+            if profile_doc['found']:
+                profile = profile_doc['_source']
+                student_name = profile.get('student_name') or profile.get('name') or "Student"
+        except Exception as e:
+            logger.warning(f"[GENERATE_FIT_DATA] Could not fetch student name: {e}")
+        
+        university_name = fit_data.get('university_name', university_id.replace('_', ' ').title())
+        
+        # Parse factors for structured output
+        factors = fit_data.get('factors', [])
+        strengths = []
+        improvements = []
+        
+        for factor in factors:
+            if isinstance(factor, dict):
+                name = factor.get('name', '')
+                score = factor.get('score', 0)
+                max_score = factor.get('max', factor.get('max_score', 100))
+                detail = factor.get('detail', '')
+                
+                factor_info = {
+                    "name": name,
+                    "score": score,
+                    "maxScore": max_score,
+                    "percentage": round((score / max_score * 100) if max_score > 0 else 0),
+                    "detail": detail
+                }
+                
+                if max_score > 0 and (score / max_score) >= 0.6:
+                    strengths.append(factor_info)
+                else:
+                    improvements.append(factor_info)
+        
+        # Parse recommendations
+        recommendations = fit_data.get('recommendations', [])
+        if isinstance(recommendations, str):
+            try:
+                recommendations = json.loads(recommendations)
+            except:
+                recommendations = []
+        
+        action_plan = []
+        for i, rec in enumerate(recommendations[:3]):
+            if isinstance(rec, dict):
+                action_plan.append({
+                    "step": i + 1,
+                    "action": rec.get('action', ''),
+                    "addressesGap": rec.get('addresses_gap', ''),
+                    "timeline": rec.get('timeline', ''),
+                    "impact": rec.get('impact', '')
+                })
+            elif isinstance(rec, str):
+                action_plan.append({
+                    "step": i + 1,
+                    "action": rec,
+                    "addressesGap": "",
+                    "timeline": "",
+                    "impact": ""
+                })
+        
+        # Parse gap analysis
+        gap_analysis = fit_data.get('gap_analysis', {})
+        if isinstance(gap_analysis, str):
+            try:
+                gap_analysis = json.loads(gap_analysis)
+            except:
+                gap_analysis = {}
+        
+        # Build structured infographic data
+        fit_category = fit_data.get('fit_category', 'TARGET')
+        
+        # Map fit category to theme color
+        theme_colors = {
+            'SAFETY': 'emerald',
+            'TARGET': 'amber',
+            'REACH': 'orange',
+            'SUPER_REACH': 'rose'
+        }
+        
+        location = fit_data.get('location', {})
+        if isinstance(location, str):
+            location_str = location
+        else:
+            location_str = f"{location.get('city', '')}, {location.get('state', '')}"
+        
+        infographic_data = {
+            "title": f"{student_name}'s Path to {university_name}",
+            "subtitle": "Understanding Your Fit & Action Plan",
+            "themeColor": theme_colors.get(fit_category, 'amber'),
+            "matchScore": fit_data.get('match_score', fit_data.get('match_percentage', 70)),
+            "fitCategory": fit_category,
+            "explanation": fit_data.get('explanation', ''),
+            "universityInfo": {
+                "name": university_name,
+                "location": location_str,
+                "acceptanceRate": fit_data.get('acceptance_rate', 'N/A'),
+                "usNewsRank": fit_data.get('us_news_rank', 'N/A'),
+                "marketPosition": fit_data.get('market_position', '')
+            },
+            "strengths": strengths,
+            "improvements": improvements,
+            "actionPlan": action_plan,
+            "gapAnalysis": {
+                "primaryGap": gap_analysis.get('primary_gap', ''),
+                "secondaryGap": gap_analysis.get('secondary_gap', ''),
+                "studentStrengths": gap_analysis.get('student_strengths', [])
+            },
+            "conclusion": f"Based on your profile, {university_name} is classified as a {fit_category} school. " + 
+                         (fit_data.get('explanation', '')[:200] + "..." if len(fit_data.get('explanation', '')) > 200 else fit_data.get('explanation', ''))
+        }
+        
+        logger.info(f"[GENERATE_FIT_DATA] Generated infographic data for {university_name}")
+        
+        return add_cors_headers({
+            'success': True,
+            'university_id': university_id,
+            'university_name': university_name,
+            'infographic_data': infographic_data
+        }, 200)
+        
+    except Exception as e:
+        logger.error(f"[GENERATE_FIT_DATA ERROR] {str(e)}")
+        return add_cors_headers({
+            'success': False,
+            'error': f'Failed to generate infographic data: {str(e)}'
         }, 500)
 
 
@@ -3819,6 +4271,9 @@ def profile_manager_es_http_entry(request):
         elif resource_type == 'generate-fit-image' and request.method == 'POST':
             return handle_generate_fit_infographic(request)
         
+        elif resource_type == 'generate-fit-infographic-data' and request.method in ['GET', 'POST']:
+            return handle_generate_fit_infographic_data(request)
+        
         # --- PROFILE UPDATE ROUTES ---
         elif resource_type == 'update-profile' and request.method == 'POST':
             return handle_update_profile(request)
@@ -3844,6 +4299,61 @@ def profile_manager_es_http_entry(request):
         # --- CHECK FIT RECOMPUTATION NEEDED ---
         elif resource_type == 'check-fit-recomputation':
             return handle_check_fit_recomputation(request)
+        
+        # --- CREDITS MANAGEMENT ---
+        elif resource_type == 'get-credits':
+            user_email = request.args.get('user_email') or request.headers.get('X-User-Email')
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            credits = get_user_credits(user_email)
+            return add_cors_headers({'success': True, 'credits': credits}, 200)
+        
+        elif resource_type == 'check-credits' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            credits_needed = data.get('credits_needed', 1)
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            result = check_credits_available(user_email, credits_needed)
+            return add_cors_headers({'success': True, **result}, 200)
+        
+        elif resource_type == 'deduct-credit' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            credit_count = data.get('credit_count', 1)
+            reason = data.get('reason', 'fit_analysis')
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            result = deduct_credit(user_email, credit_count, reason)
+            return add_cors_headers(result, 200 if result['success'] else 400)
+        
+        elif resource_type == 'add-credits' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            credit_count = data.get('credit_count', CREDIT_PACK_SIZE)
+            source = data.get('source', 'credit_pack')
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            result = add_credits(user_email, credit_count, source)
+            return add_cors_headers(result, 200 if result['success'] else 500)
+        
+        elif resource_type == 'upgrade-to-pro' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            subscription_expires = data.get('subscription_expires')
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            result = upgrade_to_pro(user_email, subscription_expires)
+            return add_cors_headers(result, 200 if result['success'] else 500)
         
         else:
             return add_cors_headers({'error': 'Not Found'}, 404)

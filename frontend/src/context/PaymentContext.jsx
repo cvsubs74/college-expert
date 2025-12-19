@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
 import { getUserPurchases } from '../services/paymentService';
+import { getUserCredits } from '../services/api';
 
 const PaymentContext = createContext();
 
@@ -66,6 +67,18 @@ export const PaymentProvider = ({ children }) => {
     const [upgradeReason, setUpgradeReason] = useState('');
     const [upgradeFeature, setUpgradeFeature] = useState('');
 
+    // Credits state
+    const [credits, setCredits] = useState({
+        tier: 'free',
+        credits_remaining: 3,
+        credits_total: 3,
+        credits_used: 0,
+        subscription_active: false
+    });
+    const [creditsLoading, setCreditsLoading] = useState(true);
+    const [showCreditsModal, setShowCreditsModal] = useState(false);
+    const [creditsModalFeature, setCreditsModalFeature] = useState('fit analysis');
+
     // Monthly message tracking with localStorage (for free tier)
     const [monthlyMessagesUsed, setMonthlyMessagesUsed] = useState(() => {
         try {
@@ -90,13 +103,16 @@ export const PaymentProvider = ({ children }) => {
         }));
     }, [monthlyMessagesUsed]);
 
-    // Fetch purchases on user change
+    // Fetch purchases and credits on user change
     useEffect(() => {
         if (currentUser?.email) {
             fetchPurchases();
+            fetchCredits();
         } else {
             setPurchases(null);
+            setCredits({ tier: 'free', credits_remaining: 3, credits_total: 3, credits_used: 0 });
             setLoading(false);
+            setCreditsLoading(false);
         }
     }, [currentUser?.email]);
 
@@ -113,6 +129,22 @@ export const PaymentProvider = ({ children }) => {
             console.error('Error fetching purchases:', error);
         } finally {
             setLoading(false);
+        }
+    }, [currentUser?.email]);
+
+    const fetchCredits = useCallback(async () => {
+        if (!currentUser?.email) return;
+
+        setCreditsLoading(true);
+        try {
+            const result = await getUserCredits(currentUser.email);
+            if (result.success && result.credits) {
+                setCredits(result.credits);
+            }
+        } catch (error) {
+            console.error('Error fetching credits:', error);
+        } finally {
+            setCreditsLoading(false);
         }
     }, [currentUser?.email]);
 
@@ -192,6 +224,13 @@ export const PaymentProvider = ({ children }) => {
     // =============================================================================
     // CONTEXT VALUE
     // =============================================================================
+
+    // Derived credits values
+    const creditsRemaining = credits?.credits_remaining ?? 0;
+    const creditsTier = credits?.tier ?? 'free';
+    const hasCredits = creditsRemaining > 0;
+    const canRunFitAnalysis = hasCredits;
+
     const value = {
         // State
         purchases,
@@ -206,7 +245,7 @@ export const PaymentProvider = ({ children }) => {
 
         // Tier checks
         isFreeTier: currentTier === TIERS.FREE,
-        isPro: currentTier === TIERS.PRO,
+        isPro: currentTier === TIERS.PRO || creditsTier === 'pro',
         isElite: currentTier === TIERS.ELITE,
         hasActiveSubscription: currentTier !== TIERS.FREE,
 
@@ -220,6 +259,24 @@ export const PaymentProvider = ({ children }) => {
         aiMessagesLimit,
         aiMessagesUsed,
         aiMessagesAvailable,
+
+        // Credits
+        credits,
+        creditsRemaining,
+        creditsTier,
+        creditsLoading,
+        hasCredits,
+        canRunFitAnalysis,
+        fetchCredits,
+
+        // Credits Modal
+        showCreditsModal,
+        creditsModalFeature,
+        promptCreditsUpgrade: (feature = 'fit analysis') => {
+            setCreditsModalFeature(feature);
+            setShowCreditsModal(true);
+        },
+        closeCreditsModal: () => setShowCreditsModal(false),
 
         // Actions
         fetchPurchases,

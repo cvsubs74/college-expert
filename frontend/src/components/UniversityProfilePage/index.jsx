@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { generateFitInfographic } from '../../services/api';
+import { generateFitInfographic, checkCredits, deductCredit } from '../../services/api';
 import {
     ArrowLeftIcon,
     AcademicCapIcon,
@@ -779,19 +779,64 @@ const DetailsTab = ({ university }) => {
 };
 
 // ============================================================================
-// UPDATED FIT ANALYSIS TAB - Now includes AI-generated infographic + action items
+// UPDATED FIT ANALYSIS TAB - Uses Nano Banana Pro AI-generated infographic images
 // ============================================================================
 const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
     const { currentUser } = useAuth();
     const [infographicUrl, setInfographicUrl] = useState(null);
     const [isGenerating, setIsGenerating] = useState(false);
     const [generationError, setGenerationError] = useState(null);
+    const [hasCredits, setHasCredits] = useState(false); // Default to false - hide regenerate until confirmed
+    const [creditsRemaining, setCreditsRemaining] = useState(0);
+
+    // Check credits on mount
+    useEffect(() => {
+        const checkUserCredits = async () => {
+            if (currentUser?.email) {
+                console.log('[Credits] Checking credits for:', currentUser.email);
+                const result = await checkCredits(currentUser.email, 1);
+                console.log('[Credits] Result:', result);
+                const hasCreds = result.has_credits === true;
+                setHasCredits(hasCreds);
+                setCreditsRemaining(result.credits_remaining || 0);
+                console.log('[Credits] hasCredits set to:', hasCreds, 'remaining:', result.credits_remaining);
+            }
+        };
+        checkUserCredits();
+    }, [currentUser?.email]);
 
     // Generate infographic on mount if not already cached
+    // forceRegenerate = true costs 1 credit (regeneration)
+    // forceRegenerate = false is free (initial load or cached)
     const handleGenerateInfographic = useCallback(async (forceRegenerate = false) => {
         if (!currentUser?.email || !university?.id) {
             console.log('[Infographic] Missing user or university ID');
             return;
+        }
+
+        // If regenerating (forceRegenerate=true), check and deduct credits first
+        if (forceRegenerate) {
+            const creditCheck = await checkCredits(currentUser.email, 1);
+            if (!creditCheck.has_credits) {
+                setGenerationError('Insufficient credits. Regenerating an infographic costs 1 credit.');
+                return;
+            }
+
+            // Confirm with user
+            const confirmed = window.confirm(
+                'Regenerating the infographic will use 1 credit. Continue?'
+            );
+            if (!confirmed) {
+                return;
+            }
+
+            // Deduct credit before regeneration
+            const deductResult = await deductCredit(currentUser.email, 1, 'infographic_regeneration');
+            if (!deductResult.success) {
+                setGenerationError('Failed to deduct credit. Please try again.');
+                return;
+            }
+            console.log(`[Infographic] Deducted 1 credit. Remaining: ${deductResult.credits_remaining}`);
         }
 
         setIsGenerating(true);
@@ -799,7 +844,7 @@ const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
 
         try {
             const universityId = university.id || university.name?.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
-            console.log(`[Infographic] Generating for ${universityId}...`);
+            console.log(`[Infographic] Generating for ${universityId} (force=${forceRegenerate})...`);
 
             const result = await generateFitInfographic(currentUser.email, universityId, forceRegenerate);
 
@@ -843,26 +888,36 @@ const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
 
     return (
         <div className="space-y-8">
-            {/* Fit Infographic Section */}
+            {/* Fit Infographic Section - Uses Nano Banana Pro AI */}
             <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 rounded-2xl overflow-hidden border border-purple-100 shadow-sm">
                 {infographicUrl ? (
-                    // Display the generated infographic
-                    <div className="relative">
+                    // Display the generated infographic with regenerate link below
+                    <div>
                         <img
                             src={infographicUrl}
                             alt={`Fit Analysis Infographic for ${university?.name || 'University'}`}
-                            className="w-full h-auto max-h-[700px] object-contain bg-white"
+                            className="w-full h-auto max-h-[800px] object-contain bg-white"
                         />
-                        {/* Regenerate button overlay */}
-                        <div className="absolute bottom-4 right-4">
-                            <button
-                                onClick={() => handleGenerateInfographic(true)}
-                                disabled={isGenerating}
-                                className="flex items-center gap-2 px-4 py-2 bg-white/90 hover:bg-white text-purple-700 rounded-lg shadow-lg transition-all text-sm font-medium backdrop-blur-sm"
-                            >
-                                <ArrowPathIcon className={`h-4 w-4 ${isGenerating ? 'animate-spin' : ''}`} />
-                                {isGenerating ? 'Regenerating...' : 'Regenerate'}
-                            </button>
+                        {/* Regenerate section - show action or purchase prompt based on credits */}
+                        <div className="flex justify-end p-3 bg-gray-50 border-t border-gray-100">
+                            {hasCredits ? (
+                                <button
+                                    onClick={() => handleGenerateInfographic(true)}
+                                    disabled={isGenerating}
+                                    className="flex items-center gap-1 text-sm text-purple-600 hover:text-purple-800 transition-colors disabled:opacity-50"
+                                >
+                                    <ArrowPathIcon className={`h-4 w-4 ${isGenerating ? 'animate-spin' : ''}`} />
+                                    {isGenerating ? 'Regenerating...' : 'Regenerate (1 credit)'}
+                                </button>
+                            ) : (
+                                <a
+                                    href="/pricing"
+                                    className="flex items-center gap-1 text-sm text-amber-600 hover:text-amber-700 transition-colors"
+                                >
+                                    <CurrencyDollarIcon className="h-4 w-4" />
+                                    Purchase credits to regenerate
+                                </a>
+                            )}
                         </div>
                     </div>
                 ) : isGenerating ? (
@@ -873,7 +928,7 @@ const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">Generating Your Personalized Infographic...</h3>
                         <p className="text-gray-600 max-w-md mx-auto mb-4">
-                            Our AI is creating a visual representation of your fit analysis. This may take 15-30 seconds.
+                            Our AI (Nano Banana Pro) is creating a high-resolution visual report. This may take 15-30 seconds.
                         </p>
                         <div className="flex justify-center">
                             <div className="flex items-center gap-2 text-purple-600">

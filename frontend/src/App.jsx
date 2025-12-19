@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Outlet } from 'react-router-dom';
 import { AcademicCapIcon, DocumentTextIcon, ChartBarIcon, ChatBubbleLeftRightIcon, ArrowRightOnRectangleIcon, BookOpenIcon, BuildingLibraryIcon, SparklesIcon, RocketLaunchIcon, StarIcon } from '@heroicons/react/24/outline';
+import CreditsBadge from './components/CreditsBadge';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
@@ -118,6 +119,7 @@ function Navigation() {
                   )}
                   <span className="text-sm text-gray-700 font-medium">{currentUser.displayName}</span>
                 </div>
+                <CreditsBadge compact />
                 <button
                   onClick={handleLogout}
                   className="inline-flex items-center px-3 py-2 border border-gray-200 text-sm font-medium rounded-xl text-gray-700 hover:bg-amber-50 hover:border-amber-200 transition-colors"

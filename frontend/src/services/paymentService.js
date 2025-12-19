@@ -190,8 +190,14 @@ const getDefaultAccess = (feature) => {
 
 /**
  * Product definitions (mirrors backend)
+ * Updated with new credits-based pricing model
  */
 export const PRODUCTS = {
+    // New Credits-Based Pricing
+    pro_annual: { name: 'Pro Annual', price: 99, type: 'subscription', credits: 50, description: '50 credits + priority support' },
+    credit_pack_50: { name: '50 Credit Pack', price: 10, type: 'one_time', credits: 50, description: 'Add 50 fit analysis credits' },
+
+    // Legacy products
     explorer_pass: { name: 'Explorer Pass', price: 29, type: 'one_time' },
     college_1: { name: '1 College', price: 9, type: 'one_time' },
     college_5: { name: '5 Colleges', price: 39, type: 'one_time', savings: 6 },

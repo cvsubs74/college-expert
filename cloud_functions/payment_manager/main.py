@@ -51,47 +51,32 @@ STRIPE_PRICES = {
     'addon_3_colleges': 'price_1SfBO8Ifpb0uVZkCJgHqELLf',    # $20
     'addon_5_colleges': 'price_1SfBO8Ifpb0uVZkCUtd6xh7o',    # $29
     'addon_10_colleges': 'price_1SfBO8Ifpb0uVZkCZhG9slEP',   # $49
+    
+    # Credit Packs
+    'credit_pack_10': 'price_1SfBO8Ifpb0uVZkCZhG9slEP',  # $5 for 10 credits (using placeholder)
 }
 
 # Product details for display and fulfillment
 PRODUCTS = {
     'subscription_monthly': {
         'name': 'CollegeAI Monthly',
-        'price': 1500,
+        'price': 1500,  # $15
         'type': 'subscription',
         'interval': 'month',
-        'grants': {'access_full': True, 'ai_messages': 100, 'fit_analysis': 3}
+        'grants': {'access_full': True, 'ai_messages': -1, 'fit_analysis': 20}  # -1 = unlimited chat
     },
     'subscription_annual': {
-        'name': 'CollegeAI Annual',
-        'price': 9900,
+        'name': 'CollegeAI Season Pass',
+        'price': 9900,  # $99
         'type': 'subscription',
         'interval': 'year',
-        'grants': {'access_full': True, 'ai_messages': 100, 'fit_analysis': 3}
+        'grants': {'access_full': True, 'ai_messages': -1, 'fit_analysis': 150}  # -1 = unlimited chat
     },
-    'addon_1_college': {
-        'name': '+1 College Slot',
-        'price': 900,
+    'credit_pack_10': {
+        'name': '10 Credit Pack',
+        'price': 900,  # $9
         'type': 'addon',
-        'grants': {'college_slots': 1}
-    },
-    'addon_3_colleges': {
-        'name': '+3 College Slots',
-        'price': 2000,
-        'type': 'addon',
-        'grants': {'college_slots': 3}
-    },
-    'addon_5_colleges': {
-        'name': '+5 College Slots',
-        'price': 2900,
-        'type': 'addon',
-        'grants': {'college_slots': 5}
-    },
-    'addon_10_colleges': {
-        'name': '+10 College Slots',
-        'price': 4900,
-        'type': 'addon',
-        'grants': {'college_slots': 10}
+        'grants': {'fit_analysis': 10}
     },
 }
 
@@ -231,9 +216,10 @@ def handle_create_checkout(request, user_id):
                 'setup_required': True
             }, 503)
         
-        # Create checkout session
-        success_url = f"{request.host_url}payment-success?session_id={{CHECKOUT_SESSION_ID}}"
-        cancel_url = f"{request.host_url}pricing"
+        # Create checkout session - redirect to frontend, not backend
+        FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://college-strategy.web.app')
+        success_url = f"{FRONTEND_URL}/payment-success?session_id={{CHECKOUT_SESSION_ID}}"
+        cancel_url = f"{FRONTEND_URL}/pricing"
         
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],

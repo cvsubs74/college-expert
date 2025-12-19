@@ -14,13 +14,15 @@ import {
     XMarkIcon,
     AcademicCapIcon
 } from '@heroicons/react/24/outline';
-import { getCollegeList, updateCollegeList, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, getFitsByCategory, getPrecomputedFits, getBalancedList } from '../services/api';
+import { getCollegeList, updateCollegeList, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, getFitsByCategory, getPrecomputedFits, getBalancedList, generateFitInfographic } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import FitBreakdownPanel from '../components/FitBreakdownPanel';
+import CreditsBadge from '../components/CreditsBadge';
+import CreditsUpgradeModal from '../components/CreditsUpgradeModal';
 
 // Fit category configuration - Uses warm amber-based tones consistent with app theme
 const FIT_CATEGORIES = {
@@ -165,7 +167,7 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
                         onClick={() => onViewDetails && onViewDetails(college)}
                         className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200"
                     >
-                        {hasFitAnalysis ? '📊 Fit Analysis' : '📝 Add Profile'}
+                        📋 View Details
                     </button>
                     <button
                         onClick={() => onRemove(college)}
@@ -515,6 +517,7 @@ const SmartDiscoveryPanel = ({ currentUser, categorizedColleges, onCollegeAdded,
     const [error, setError] = useState(null);
     const [hasAutoTriggered, setHasAutoTriggered] = useState(false);
     const [preferences, setPreferences] = useState('');
+    const [processingColleges, setProcessingColleges] = useState({}); // Track colleges being analyzed: { id: 'fit' | 'infographic' | 'done' }
 
     // Analyze current list balance
     const listAnalysis = useMemo(() => {
@@ -866,6 +869,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
     };
 
     // Add selected recommendations using direct API calls
+    // Generates fit analysis + infographic for each college
     const handleAddSelected = async () => {
         const toAdd = getSelectedRecs();
         if (!currentUser?.email || toAdd.length === 0) return;
@@ -888,13 +892,35 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                     addedCount++;
                     console.log(`[Smart Discovery] Added: ${rec.name}`);
 
-                    // Trigger lazy fit computation for this university (don't await - run in background)
+                    // Track processing status: 'fit' stage
+                    setProcessingColleges(prev => ({ ...prev, [rec.id]: 'fit' }));
+
+                    // Trigger fit computation (don't await - run in background)
                     console.log(`[Smart Discovery] Computing fit for: ${rec.name}`);
-                    computeSingleFit(currentUser.email, rec.id).then(fitResult => {
+                    computeSingleFit(currentUser.email, rec.id).then(async fitResult => {
                         if (fitResult.success) {
                             console.log(`[Smart Discovery] Fit computed for ${rec.name}: ${fitResult.fit_analysis?.fit_category}`);
+
+                            // After fit, generate infographic
+                            setProcessingColleges(prev => ({ ...prev, [rec.id]: 'infographic' }));
+                            console.log(`[Smart Discovery] Generating infographic for: ${rec.name}`);
+
+                            try {
+                                const infographicResult = await generateFitInfographic(currentUser.email, rec.id, false);
+                                if (infographicResult.success) {
+                                    console.log(`[Smart Discovery] Infographic generated for ${rec.name}`);
+                                } else {
+                                    console.warn(`[Smart Discovery] Infographic generation failed for ${rec.name}`);
+                                }
+                            } catch (err) {
+                                console.warn(`[Smart Discovery] Infographic error for ${rec.name}:`, err);
+                            }
+
+                            // Mark as done
+                            setProcessingColleges(prev => ({ ...prev, [rec.id]: 'done' }));
                         } else {
                             console.warn(`[Smart Discovery] Fit computation failed for ${rec.name}`);
+                            setProcessingColleges(prev => ({ ...prev, [rec.id]: 'error' }));
                         }
                     });
                 } else {
@@ -1150,6 +1176,42 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             >
                                 ↻ Get different recommendations ⚡
                             </button>
+
+                            {/* Processing Status Banner */}
+                            {Object.entries(processingColleges).filter(([_, status]) => status !== 'done').length > 0 && (
+                                <div className="mt-4 p-3 bg-purple-50 border border-purple-200 rounded-xl">
+                                    <div className="flex items-center gap-2 text-purple-700 mb-2">
+                                        <ArrowPathIcon className="h-4 w-4 animate-spin" />
+                                        <span className="text-sm font-medium">Generating analysis...</span>
+                                    </div>
+                                    <div className="space-y-1">
+                                        {Object.entries(processingColleges).map(([id, status]) => (
+                                            status !== 'done' && (
+                                                <div key={id} className="text-xs text-purple-600 flex items-center gap-2">
+                                                    {status === 'fit' && (
+                                                        <>
+                                                            <SparklesIcon className="h-3 w-3" />
+                                                            <span>Computing fit analysis...</span>
+                                                        </>
+                                                    )}
+                                                    {status === 'infographic' && (
+                                                        <>
+                                                            <SparklesIcon className="h-3 w-3" />
+                                                            <span>Generating infographic...</span>
+                                                        </>
+                                                    )}
+                                                    {status === 'error' && (
+                                                        <>
+                                                            <ExclamationCircleIcon className="h-3 w-3 text-red-500" />
+                                                            <span className="text-red-600">Analysis failed</span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            )
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>
@@ -1339,7 +1401,7 @@ const EmptyState = ({ onQuickStart }) => {
 // Main Component
 const MyLaunchpad = () => {
     const { currentUser } = useAuth();
-    const { canAccessLaunchpad, isFreeTier, hasFullFitAnalysis, canDeepResearch } = usePayment();
+    const { canAccessLaunchpad, isFreeTier, hasFullFitAnalysis, canDeepResearch, creditsRemaining, showCreditsModal, closeCreditsModal, creditsModalFeature, promptCreditsUpgrade, fetchCredits } = usePayment();
     const [collegeList, setCollegeList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -1351,36 +1413,6 @@ const MyLaunchpad = () => {
     // Multi-select state for bulk removal
     const [selectedColleges, setSelectedColleges] = useState(new Set());
     const [selectionMode, setSelectionMode] = useState(false);
-
-    // Gate: Free tier users cannot access Launchpad
-    if (isFreeTier) {
-        return (
-            <div className="min-h-[60vh] flex flex-col items-center justify-center px-4 py-12">
-                <div className="max-w-lg mx-auto text-center">
-                    <div className="relative inline-block mb-6">
-                        <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
-                        <div className="relative p-5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl shadow-amber-200">
-                            <RocketLaunchIcon className="h-12 w-12 text-white" />
-                        </div>
-                    </div>
-                    <h1 className="text-3xl font-bold text-gray-900 mb-4">Unlock Your Launchpad</h1>
-                    <p className="text-lg text-gray-600 mb-8">
-                        Build your personalized college list, get AI-powered fit analysis, and track your applications—all in one place.
-                    </p>
-                    <Link
-                        to="/pricing"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-2xl hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200"
-                    >
-                        <SparklesIcon className="h-5 w-5" />
-                        Upgrade to Pro — $99/year
-                    </Link>
-                    <p className="mt-4 text-sm text-gray-500">
-                        Or <Link to="/universities" className="text-amber-600 hover:underline">continue exploring universities</Link>
-                    </p>
-                </div>
-            </div>
-        );
-    }
     const [bulkRemoving, setBulkRemoving] = useState(false);
 
     // Fetch college list
@@ -1810,6 +1842,10 @@ const MyLaunchpad = () => {
                             </span>
                         )}
                     </p>
+                    {/* Credit Balance Display */}
+                    <div className="mt-2">
+                        <CreditsBadge showTier={true} />
+                    </div>
                 </div>
 
                 {/* Selection Mode Controls */}
@@ -1934,6 +1970,14 @@ const MyLaunchpad = () => {
                     />
                 </div>
             )}
+
+            {/* Credits Upgrade Modal */}
+            <CreditsUpgradeModal
+                isOpen={showCreditsModal}
+                onClose={closeCreditsModal}
+                creditsRemaining={creditsRemaining}
+                feature={creditsModalFeature}
+            />
         </div>
     );
 };

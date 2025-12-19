@@ -43,6 +43,7 @@ import {
 } from '../components/UniversityDetailTabs';
 import MediaGallery from '../components/MediaGallery';
 import UniversityDetailPage from '../components/UniversityDetailPage';
+import CreditsUpgradeModal from '../components/CreditsUpgradeModal';
 
 // API Configuration
 const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL ||
@@ -252,19 +253,9 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                 <div className="flex gap-2 mb-2">
                     <button
                         onClick={() => onSelect(uni)}
-                        className="flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                        className="flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-colors shadow-md"
                     >
-                        Details <ChevronRightIcon className="h-4 w-4" />
-                    </button>
-                    <button
-                        onClick={() => onShowFitDetails && onShowFitDetails(fitAnalysis)}
-                        disabled={!fitAnalysis}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-colors ${fitAnalysis
-                                ? 'bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:from-purple-600 hover:to-indigo-700 shadow-md hover:shadow-lg'
-                                : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                            }`}
-                    >
-                        <SparklesIcon className="h-4 w-4" /> Fit Analysis
+                        View Details <ChevronRightIcon className="h-4 w-4" />
                     </button>
                 </div>
                 <div className="flex gap-2">
@@ -583,20 +574,6 @@ const UniversityDetail = ({ uni, onBack, sentiment, fitAnalysis }) => {
                         <p className="text-blue-100 text-lg font-medium">{uni.market_position}</p>
                     </div>
 
-                    {/* Primary Action */}
-                    {fitAnalysis ? (
-                        <button
-                            onClick={() => setIsFitModalOpen(true)}
-                            className="bg-white text-blue-900 px-6 py-3 rounded-lg font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2 animate-pulse-slow"
-                        >
-                            <SparklesIcon className="h-5 w-5 text-yellow-500" />
-                            View Fit Analysis
-                        </button>
-                    ) : (
-                        <div className="hidden md:block">
-                            {/* Placeholder if needed */}
-                        </div>
-                    )}
                 </div>
             </div>
 
@@ -673,7 +650,7 @@ const LoadingSkeleton = () => (
 
 // --- Main App Component ---
 const UniversityExplorer = () => {
-    const { canAccessLaunchpad, isFreeTier, promptUpgrade } = usePayment();
+    const { canAccessLaunchpad, isFreeTier, promptUpgrade, promptCreditsUpgrade, creditsRemaining, showCreditsModal, closeCreditsModal, creditsModalFeature } = usePayment();
     const [universities, setUniversities] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -842,10 +819,21 @@ const UniversityExplorer = () => {
         const isInList = myCollegeList.some(c => c.university_id === university.id);
         const action = isInList ? 'remove' : 'add';
 
-        // Free tier users cannot add to launchpad
-        if (action === 'add' && !canAccessLaunchpad) {
-            promptUpgrade('launchpad', 'Upgrade to Pro to add colleges to your Launchpad');
-            return;
+        // Free tier: 3 colleges maximum, PERMANENT (no removal)
+        const FREE_TIER_MAX_COLLEGES = 3;
+        const isFreeTier = !canAccessLaunchpad;
+
+        if (isFreeTier) {
+            // Block removal for free tier - colleges are permanent
+            if (action === 'remove') {
+                alert('Free tier colleges are permanent. Upgrade to Pro to modify your list.');
+                return;
+            }
+            // Block adding if already at limit
+            if (action === 'add' && myCollegeList.length >= FREE_TIER_MAX_COLLEGES) {
+                promptCreditsUpgrade('adding more colleges (free tier limit: 3 permanent colleges)');
+                return;
+            }
         }
 
         try {
@@ -867,6 +855,14 @@ const UniversityExplorer = () => {
 
                     try {
                         const fitResult = await computeSingleFit(currentUser.email, university.id);
+
+                        // Handle insufficient credits (402 response)
+                        if (fitResult.insufficientCredits) {
+                            console.warn('[Fit] Insufficient credits for fit analysis');
+                            promptCreditsUpgrade('fit analysis');
+                            return;
+                        }
+
                         console.log(`[Fit] Computed: ${university.name} -> ${fitResult?.fit_analysis?.fit_category || 'N/A'}`);
 
                         // Refresh precomputed fits to get the new fit
@@ -1480,6 +1476,28 @@ const UniversityExplorer = () => {
                         </div>
                     )}
 
+                    {/* Free Tier Warning Banner */}
+                    {!canAccessLaunchpad && currentUser && (
+                        <div className="mb-4 p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl">
+                            <div className="flex items-start gap-3">
+                                <div className="p-2 bg-amber-100 rounded-lg">
+                                    <span className="text-xl">⚠️</span>
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-amber-800">Free Tier: {myCollegeList.length}/3 Colleges Selected</h4>
+                                    <p className="text-amber-700 text-sm mt-1">
+                                        You can add up to <strong>3 colleges</strong> to your list. This selection is <strong>permanent</strong> and cannot be changed on the free tier.
+                                        {myCollegeList.length >= 3 && (
+                                            <span className="block mt-1 text-amber-600">
+                                                <strong>You've reached your limit!</strong> Upgrade to Pro for unlimited colleges + 50 credits.
+                                            </span>
+                                        )}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
                     {/* Main Content */}
                     {!loading && !error && (
                         <>
@@ -1627,8 +1645,9 @@ const UniversityExplorer = () => {
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                             {paginatedUniversities.length > 0 ? (
                                                 paginatedUniversities.map((uni) => {
-                                                    // Free tier users cannot add to launchpad
-                                                    const isLimitReached = !canAccessLaunchpad;
+                                                    // Free tier: limit reached when 3 colleges already added (and this uni not in list)
+                                                    const isInList = isInCollegeList(uni.id);
+                                                    const isLimitReached = !canAccessLaunchpad && !isInList && myCollegeList.length >= 3;
                                                     return (
                                                         <UniversityCard
                                                             key={uni.id}
@@ -1953,6 +1972,14 @@ const UniversityExplorer = () => {
                     }
                 </>
             )}
+
+            {/* Credits Upgrade Modal */}
+            <CreditsUpgradeModal
+                isOpen={showCreditsModal}
+                onClose={closeCreditsModal}
+                creditsRemaining={creditsRemaining}
+                feature={creditsModalFeature}
+            />
         </div>
     );
 };

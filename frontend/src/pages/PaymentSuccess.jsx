@@ -6,20 +6,43 @@ import {
     ArrowRightIcon
 } from '@heroicons/react/24/outline';
 import { usePayment } from '../context/PaymentContext';
+import { useAuth } from '../context/AuthContext';
+import { addUserCredits } from '../services/api';
 
 const PaymentSuccess = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
-    const { fetchPurchases } = usePayment();
+    const { fetchPurchases, refreshCredits } = usePayment();
+    const { currentUser } = useAuth();
     const [loading, setLoading] = useState(true);
+    const [creditsAdded, setCreditsAdded] = useState(0);
 
     const sessionId = searchParams.get('session_id');
 
     useEffect(() => {
-        // Refresh purchases after successful payment
+        // Refresh purchases and add credits after successful payment
         const refreshData = async () => {
             try {
+                // First, fetch the purchase info
                 await fetchPurchases();
+
+                // Add credits to user's profile-manager-es account
+                // Default to 50 credits for Pro subscription / credit pack
+                if (currentUser?.email) {
+                    console.log('[PaymentSuccess] Adding credits for user:', currentUser.email);
+                    const result = await addUserCredits(currentUser.email, 50, 'payment_purchase');
+                    if (result.success) {
+                        console.log('[PaymentSuccess] Credits added:', result.credits_added);
+                        setCreditsAdded(result.credits_added || 50);
+                    } else {
+                        console.warn('[PaymentSuccess] Failed to add credits:', result.error);
+                    }
+
+                    // Refresh credits in context
+                    if (refreshCredits) {
+                        await refreshCredits();
+                    }
+                }
             } catch (error) {
                 console.error('Error refreshing purchases:', error);
             } finally {
@@ -32,7 +55,7 @@ const PaymentSuccess = () => {
         } else {
             setLoading(false);
         }
-    }, [sessionId, fetchPurchases]);
+    }, [sessionId, fetchPurchases, currentUser?.email, refreshCredits]);
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-orange-50 flex items-center justify-center px-6">

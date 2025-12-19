@@ -1081,6 +1081,17 @@ export const computeSingleFit = async (userEmail, universityId, forceRecompute =
     console.log(`[API] Computed single fit (from_cache=${response.data.from_cache}):`, response.data);
     return response.data;
   } catch (error) {
+    // Check for 402 Payment Required (insufficient credits)
+    if (error.response?.status === 402) {
+      console.warn('[API] Insufficient credits for fit analysis');
+      return {
+        success: false,
+        error: 'insufficient_credits',
+        insufficientCredits: true,
+        creditsRemaining: error.response?.data?.credits_remaining ?? 0,
+        message: error.response?.data?.message || 'You need more credits to run fit analysis'
+      };
+    }
     console.error('Error computing single fit:', error);
     return { success: false, error: error.message };
   }
@@ -1110,6 +1121,34 @@ export const generateFitInfographic = async (userEmail, universityId, forceRegen
     return response.data;
   } catch (error) {
     console.error('Error generating fit infographic:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+
+/**
+ * Get structured infographic data for frontend rendering
+ * Returns JSON that can be rendered as a beautiful native component (no image generation)
+ * @param {string} userEmail - User's email
+ * @param {string} universityId - University ID to get infographic data for
+ * @returns {Promise<{success: boolean, infographic_data: Object}>}
+ */
+export const getFitInfographicData = async (userEmail, universityId) => {
+  try {
+    console.log(`[API] Getting fit infographic data for ${userEmail} - ${universityId}...`);
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.get(`${baseUrl}/generate-fit-infographic-data`, {
+      params: {
+        user_email: userEmail,
+        university_id: universityId
+      },
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    console.log(`[API] Got infographic data:`, response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error getting fit infographic data:', error);
     return { success: false, error: error.message };
   }
 };
@@ -1297,6 +1336,145 @@ export const checkFitRecomputationNeeded = async (userEmail) => {
     return { needs_recomputation: false, reason: null, changes: [] };
   }
 };
+
+
+// ============== CREDITS API ==============
+
+/**
+ * Get user's credit balance and tier info
+ * @param {string} userEmail - User's email
+ * @returns {Promise<{success: boolean, credits: object}>}
+ */
+export const getUserCredits = async (userEmail) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.get(`${baseUrl}/get-credits`, {
+      params: { user_email: userEmail },
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting user credits:', error);
+    return {
+      success: false,
+      error: error.message,
+      credits: {
+        tier: 'free',
+        credits_remaining: 0,
+        credits_total: 0
+      }
+    };
+  }
+};
+
+/**
+ * Check if user has enough credits for an operation
+ * @param {string} userEmail - User's email
+ * @param {number} creditsNeeded - Number of credits required
+ * @returns {Promise<{has_credits: boolean, credits_remaining: number}>}
+ */
+export const checkCredits = async (userEmail, creditsNeeded = 1) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/check-credits`, {
+      user_email: userEmail,
+      credits_needed: creditsNeeded
+    }, {
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error checking credits:', error);
+    return {
+      success: false,
+      has_credits: false,
+      credits_remaining: 0,
+      error: error.message
+    };
+  }
+};
+
+/**
+ * Upgrade user to Pro tier (called after Stripe payment success)
+ * @param {string} userEmail - User's email
+ * @param {string} subscriptionExpires - Expiration date ISO string
+ * @returns {Promise<{success: boolean, tier: string, credits_remaining: number}>}
+ */
+export const upgradeToPro = async (userEmail, subscriptionExpires) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/upgrade-to-pro`, {
+      user_email: userEmail,
+      subscription_expires: subscriptionExpires
+    }, {
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error upgrading to Pro:', error);
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+};
+
+/**
+ * Add credits to user's balance (called after credit pack purchase)
+ * @param {string} userEmail - User's email
+ * @param {number} creditCount - Number of credits to add
+ * @param {string} source - Source of credits (e.g., 'credit_pack')
+ * @returns {Promise<{success: boolean, credits_added: number, credits_remaining: number}>}
+ */
+export const addUserCredits = async (userEmail, creditCount, source = 'credit_pack') => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/add-credits`, {
+      user_email: userEmail,
+      credit_count: creditCount,
+      source: source
+    }, {
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error adding credits:', error);
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+};
+
+/**
+ * Deduct credits from user's balance
+ * @param {string} userEmail - User's email
+ * @param {number} creditCount - Number of credits to deduct (default 1)
+ * @param {string} reason - Reason for deduction (e.g., 'fit_analysis', 'infographic_regeneration')
+ * @returns {Promise<{success: boolean, credits_remaining: number}>}
+ */
+export const deductCredit = async (userEmail, creditCount = 1, reason = 'infographic_regeneration') => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/deduct-credit`, {
+      user_email: userEmail,
+      credit_count: creditCount,
+      reason: reason
+    }, {
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error deducting credits:', error);
+    return {
+      success: false,
+      error: error.message,
+      credits_remaining: 0
+    };
+  }
+};
+
+// ============== END CREDITS API ==============
 
 export default api;
 
