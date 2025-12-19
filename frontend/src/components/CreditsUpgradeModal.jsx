@@ -68,8 +68,8 @@ const CreditsUpgradeModal = ({ isOpen, onClose, creditsRemaining = 0, feature = 
                                     <SparklesIcon className="w-6 h-6 text-purple-600" />
                                 </div>
                                 <div className="flex-1">
-                                    <div className="font-semibold text-gray-900">Upgrade to Pro</div>
-                                    <div className="text-sm text-gray-500">50 credits + unlimited colleges</div>
+                                    <div className="font-semibold text-gray-900">Season Pass</div>
+                                    <div className="text-sm text-gray-500">150 credits/year + unlimited AI</div>
                                 </div>
                                 <div className="text-right">
                                     <div className="font-bold text-purple-600">$99</div>
@@ -87,7 +87,7 @@ const CreditsUpgradeModal = ({ isOpen, onClose, creditsRemaining = 0, feature = 
                                 </div>
                                 <div className="flex-1">
                                     <div className="font-semibold text-gray-900">Buy Credit Pack</div>
-                                    <div className="text-sm text-gray-500">50 credits for analysis</div>
+                                    <div className="text-sm text-gray-500">10 credits (never expire)</div>
                                 </div>
                                 <div className="text-right">
                                     <div className="font-bold text-amber-600">$10</div>

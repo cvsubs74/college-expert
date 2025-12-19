@@ -1,0 +1,340 @@
+{
+  "_id": "duquesne_university",
+  "university_name": "Duquesne University",
+  "last_updated": "2025-12-19",
+  "report_source_files": [
+    "https://www.duq.edu/news/2025/09/national-rankings-highlight-academic-excellence.php",
+    "https://www.usnews.com/best-colleges/duquesne-university-3258",
+    "https://datausa.io/profile/university/duquesne-university"
+  ],
+  "strategic_profile": {
+    "executive_summary": "Founded in 1878, Duquesne is the only Spiritan university in the United States, blending a rigorous private research environment with a deep-seated commitment to social justice and community service. It is recognized as an R2 doctoral university with high research activity, particularly in health sciences and law.",
+    "market_position": "Hidden Gem",
+    "admissions_philosophy": "Holistic review",
+    "us_news_rank": 169,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Acceptance rates have shown volatility, dropping from roughly 87% to 79% in a single cycle due to a 14% surge in application volume.",
+        "implication": "Applicants should focus on demonstrating alignment with the university's service-oriented mission to stand out in a growing pool."
+      },
+      {
+        "category": "Testing Policy",
+        "insight": "The university remains test-optional for all programs through 2026, including high-demand health professions.",
+        "implication": "Strong GPA and leadership experience can effectively compensate for absent test scores under their holistic model."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The social scene is defined by a strong 'service-first' culture and a significant commuter presence, balanced by an active Greek life and a 'self-contained' hilltop campus.",
+      "transportation_impact": "Campus life is heavily influenced by the 'UPass' program and South Side shuttles, facilitating a seamless connection between the urban campus and Pittsburgh’s business districts.",
+      "research_impact": "With R2 status and recent $1.5M+ grants in nanoparticle and transplantation research, the university leverages its location near UPMC and the Pittsburgh 'Tech Hub' for industry-integrated undergraduate research."
+    }
+  },
+  "admissions_current": {
+    "overall_acceptance_rate": 83.6,
+    "in_state_acceptance_rate": 85.0,
+    "out_of_state_acceptance_rate": 86.1,
+    "international_acceptance_rate": 63.5,
+    "transfer_acceptance_rate": 72.0,
+    "admits_class_size": 10773,
+    "is_test_optional": true,
+    "test_policy_details": "Test Optional",
+    "early_admission_stats": [
+      {
+        "plan_type": "EA",
+        "applications": null,
+        "admits": null,
+        "acceptance_rate": null,
+        "class_fill_percentage": null
+      }
+    ]
+  },
+  "admissions_trends": [
+    {
+      "year": 2025,
+      "cycle_name": "Class of 2029",
+      "applications_total": 13000,
+      "enrolled_total": 1500,
+      "waitlist_stats": {
+        "year": 2025,
+        "is_waitlist_ranked": false
+      },
+      "notes": "Preliminary data; applications were a university record for domestic first-year students."
+    },
+    {
+      "year": 2024,
+      "cycle_name": "Class of 2028",
+      "applications_total": 12893,
+      "admits_total": 10773,
+      "enrolled_total": 1441,
+      "acceptance_rate_overall": 83.6,
+      "yield_rate": 13.4,
+      "waitlist_stats": {
+        "year": 2024,
+        "offered_spots": 560,
+        "accepted_spots": 537,
+        "admitted_from_waitlist": 183,
+        "waitlist_admit_rate": 34.1,
+        "is_waitlist_ranked": false
+      }
+    }
+  ],
+  "admitted_student_profile": {
+    "gpa": {
+      "weighted_middle_50": "3.60-4.10",
+      "unweighted_middle_50": "3.50-4.00",
+      "average_weighted": 3.82,
+      "percentile_25": "3.50",
+      "percentile_75": "4.00",
+      "notes": "Roughly 61% of enrollees ranked in the top 25% of their high school class."
+    },
+    "testing": {
+      "sat_composite_middle_50": "1190-1330",
+      "sat_reading_middle_50": "600-670",
+      "sat_math_middle_50": "580-670",
+      "act_composite_middle_50": "26-32",
+      "submission_rate": 25.0,
+      "policy_note": "Duquesne is test-optional for most programs."
+    },
+    "demographics": {
+      "first_gen_percentage": 30.0,
+      "international_percentage": 4.0,
+      "geographic_breakdown": [
+        {
+          "region": "Pennsylvania",
+          "percentage": 58.0
+        },
+        {
+          "region": "Out-of-State",
+          "percentage": 38.0
+        },
+        {
+          "region": "International",
+          "percentage": 4.0
+        }
+      ],
+      "gender_breakdown": {
+        "men": {
+          "acceptance_rate": 76.1
+        },
+        "women": {
+          "acceptance_rate": 80.5
+        }
+      },
+      "racial_breakdown": {
+        "white": 78.6,
+        "black_african_american": 4.9,
+        "hispanic_latino": 4.5,
+        "asian": 3.6,
+        "native_american_alaskan": 0.2,
+        "pacific_islander": 0.1,
+        "two_or_more_races": 3.5,
+        "unknown": 4.6
+      },
+      "religious_affiliation": "Catholic (Spiritan tradition); approximately 50% of students identify as Catholic."
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges and Schools",
+    "colleges": [
+      {
+        "name": "McAnulty College of Liberal Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 79.0,
+        "is_restricted_or_capped": false,
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "curriculum": {
+              "total_units": 120,
+              "major_units": 36
+            }
+          },
+          {
+            "name": "Theology",
+            "degree_type": "B.A.",
+            "is_impacted": false
+          }
+        ]
+      },
+      {
+        "name": "School of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 55.0,
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "curriculum": {
+              "total_units": 134,
+              "major_units": 90
+            }
+          }
+        ]
+      },
+      {
+        "name": "School of Pharmacy",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 45.0,
+        "is_restricted_or_capped": true,
+        "majors": [
+          {
+            "name": "Pharmacy",
+            "degree_type": "Pharm.D.",
+            "is_impacted": true,
+            "curriculum": {
+              "total_units": 180,
+              "major_units": 64
+            }
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Business Analytics Minor",
+      "Cybersecurity Certificate",
+      "Pre-Medical Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition with Scoir",
+      "Duquesne Future Focused Application"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-15",
+        "is_binding": false
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-15",
+        "is_binding": false
+      },
+      {
+        "plan_type": "Physician Assistant Studies",
+        "date": "2024-11-15",
+        "is_binding": false
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Personal Statement",
+        "details": "Highly recommended for scholarship consideration."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Audition/Portfolio",
+        "deadline": "2025-03-01"
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Academic Achievement"
+      ],
+      "secondary_factors": [
+        "Leadership Potential",
+        "Extracurriculars",
+        "Character"
+      ],
+      "essay_importance": "Moderate",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate"
+    }
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 48986,
+        "total_coa": 70847,
+        "housing": 16374
+      },
+      "out_of_state": {
+        "tuition": 48986,
+        "total_coa": 70847
+      }
+    },
+    "aid_philosophy": "Merit Focused",
+    "average_need_based_aid": 28599,
+    "average_merit_aid": 22090,
+    "percent_receiving_aid": 100.0
+  },
+  "scholarships": [
+    {
+      "name": "Spirit of Excellence",
+      "type": "Merit",
+      "amount": "Full-tuition",
+      "deadline": "2026-01-15"
+    },
+    {
+      "name": "STEM Scholars",
+      "type": "Merit (STEM)",
+      "amount": "Full-tuition",
+      "deadline": "2026-01-15"
+    },
+    {
+      "name": "Spirit of Community",
+      "type": "Merit/Need",
+      "amount": "100% of Need",
+      "deadline": "2026-01-15"
+    }
+  ],
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Scores of 3 or higher grant credit",
+      "usage": "Applies toward Bridges core curriculum"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 5-7 typically awarded credit",
+      "diploma_bonus": true
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "GPA 3.7+ for competitive programs",
+      "Alignment with Spiritan values (servant leadership)",
+      "Strong standardized scores if not test-optional"
+    ],
+    "red_flags": [
+      "GPA below 3.0",
+      "Essays that ignore Catholic identity",
+      "Lack of community service commitment"
+    ],
+    "insights": [
+      "Faculty is exceptionally supportive",
+      "Campus is a 'secluded bubble' in downtown Pittsburgh",
+      "Strict attendance policies (often 80%+)"
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 65100,
+    "employment_rate_2yr": 95.0,
+    "grad_school_rate": 23.0,
+    "top_employers": [
+      "PNC Financial Services",
+      "BNY Mellon",
+      "UPMC",
+      "Deloitte"
+    ],
+    "loan_default_rate": 2.8
+  },
+  "student_retention": {
+    "freshman_retention_rate": 86.0,
+    "graduation_rate_4_year": 67.0,
+    "graduation_rate_6_year": 77.0
+  }
+}

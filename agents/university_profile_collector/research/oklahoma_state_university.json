@@ -1,0 +1,353 @@
+{
+  "university_profile": {
+    "_id": "oklahoma_state_university",
+    "metadata": {
+      "official_name": "Oklahoma State University",
+      "location": {
+        "city": "Stillwater",
+        "state": "Oklahoma",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": []
+    },
+    "strategic_profile": {
+      "executive_summary": "Oklahoma State University is a premier public land-grant research institution (R1) recognized for its leadership in engineering, agricultural sciences, and aerospace research. It is distinguished by its 'Cowboy Code' culture and a commitment to balancing high-tier academic quality with broad accessibility.",
+      "market_position": "Public Land-Grant Powerhouse",
+      "admissions_philosophy": "Assured & Holistic",
+      "us_news_rank": 198,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "The acceptance rate for the 2024-2025 cycle increased to 75.04%, continuing a four-year upward trend.",
+          "implication": "Admission is increasingly accessible for students meeting the university's assured academic benchmarks (GPA 3.0+)."
+        },
+        {
+          "category": "Value and ROI",
+          "insight": "Ranked as the #1 best value public university in Oklahoma for 2026 by U.S. News & Report.",
+          "implication": "Exceptional ROI potential, particularly for veterans and out-of-state students receiving need-based aid."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Defined by 'America's Greatest Homecoming' celebration and a tight-knit 'Cowboy family' atmosphere centered on school spirit and athletic tradition.",
+        "transportation_impact": "Campus life is enhanced by 'The Bus' fixed-route system and the 'BOB' shuttle, which provides critical connectivity between the Stillwater and Tulsa campuses.",
+        "research_impact": "Maintains R1 status with over $226 million in R&D expenditures, leading innovations in aerospace through the OAIRE institute and sustainable agricultural technologies."
+      }
+    },
+    "admissions": {
+      "current_status": {
+        "overall_acceptance_rate": 75.0,
+        "in_state_acceptance_rate": null,
+        "out_of_state_acceptance_rate": null,
+        "international_acceptance_rate": 12.7,
+        "transfer_acceptance_rate": 53.0,
+        "admits_class_size": 5184,
+        "is_test_optional": true,
+        "is_test_blind": false,
+        "test_policy_details": "Test Optional; scores recommended for scholarships.",
+        "early_admission_stats": null
+      },
+      "longitudinal_trends": [
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 24910,
+          "admits_total": 18693,
+          "enrolled_total": 4945,
+          "acceptance_rate_overall": 75.0,
+          "acceptance_rate_in_state": null,
+          "acceptance_rate_out_of_state": null,
+          "yield_rate": 26.5,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Admission waitlist not utilized for undergraduate applicants. Domestic applicant acceptance rate was 78.8%."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 19612,
+          "admits_total": 13911,
+          "enrolled_total": 5061,
+          "acceptance_rate_overall": 70.9,
+          "acceptance_rate_in_state": null,
+          "acceptance_rate_out_of_state": null,
+          "yield_rate": 36.4,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Significant growth in applicant pool compared to previous cycles."
+        },
+        {
+          "year": 2022,
+          "cycle_name": "Class of 2026",
+          "applications_total": 16336,
+          "admits_total": 11538,
+          "enrolled_total": 4327,
+          "acceptance_rate_overall": 70.6,
+          "acceptance_rate_in_state": null,
+          "acceptance_rate_out_of_state": null,
+          "yield_rate": 37.5,
+          "waitlist_stats": {
+            "year": 2022,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Yield rates remained stable during this cycle."
+        }
+      ],
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": null,
+          "unweighted_middle_50": "3.25-3.90",
+          "average_weighted": null,
+          "percentile_25": "3.25",
+          "percentile_75": "3.85",
+          "notes": "OSU uses the highest cumulative GPA (weighted or unweighted) for admission; approx 45% of students have 3.75+."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1040-1240",
+          "sat_reading_middle_50": "530-630",
+          "sat_math_middle_50": "510-620",
+          "act_composite_middle_50": "20-27",
+          "submission_rate": 88.0,
+          "policy_note": "Test-optional for admission; however, scores are recommended for merit-based scholarships."
+        },
+        "demographics": {
+          "first_gen_percentage": 22.5,
+          "legacy_percentage": null,
+          "international_percentage": 5.9,
+          "geographic_breakdown": [
+            { "region": "Oklahoma", "percentage": 65.2 },
+            { "region": "Other US States", "percentage": 33.3 },
+            { "region": "International", "percentage": 1.5 }
+          ],
+          "gender_breakdown": {
+            "men": {
+              "applicants": 10828,
+              "admits": 8177,
+              "acceptance_rate": 75.5
+            },
+            "women": {
+              "applicants": 14082,
+              "admits": 10516,
+              "acceptance_rate": 74.7
+            },
+            "non_binary": 0.0
+          },
+          "racial_breakdown": {
+            "white": 63.7,
+            "black_african_american": 4.1,
+            "hispanic_latino": 9.0,
+            "asian": 2.2,
+            "native_american_alaskan": 4.5,
+            "pacific_islander": 0.1,
+            "two_or_more_races": 10.4,
+            "unknown": 0.1,
+            "non_resident_alien": 5.9
+          },
+          "religious_affiliation": null
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "Ferguson College of Agriculture",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 71.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Values hands-on experience and a community-oriented mindset; strong fit for students with a background in 4-H or FFA.",
+          "housing_profile": "Village CASNR; houses the 'Freshmen in Transition' (FIT) Living Learning Program.",
+          "student_archetype": "The Community-Minded Aggie.",
+          "majors": [
+            { "name": "Animal Science", "degree_type": "B.S.A.G.", "is_impacted": false, "prerequisite_courses": ["CHEM 1314", "BIOL 1114"], "minimum_gpa_to_declare": 2.0, "weeder_courses": ["ANSI 1124"], "admissions_pathway": "Direct Admit", "internal_transfer_allowed": true },
+            { "name": "Agricultural Economics", "degree_type": "B.S.A.G.", "is_impacted": false, "prerequisite_courses": ["MATH 1513"], "minimum_gpa_to_declare": 2.0, "weeder_courses": ["AGEC 1113"], "admissions_pathway": "Direct Admit", "internal_transfer_allowed": true }
+          ]
+        },
+        {
+          "name": "College of Arts and Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 71.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Generally open, but creative majors like acting and music require a separate audition.",
+          "housing_profile": "Specialized LLPs in various halls: Psychology House and Media House.",
+          "student_archetype": "The Intellectually Curious Scholar.",
+          "majors": [
+            { "name": "Computer Science", "degree_type": "B.S.", "is_impacted": false, "prerequisite_courses": ["MATH 1513", "MATH 1813"], "minimum_gpa_to_declare": 2.0, "weeder_courses": ["MATH 2144", "CS 1113", "CS 2133"], "admissions_pathway": "Direct Admit", "internal_transfer_allowed": true },
+            { "name": "Biology", "degree_type": "B.S.", "is_impacted": false, "prerequisite_courses": ["CHEM 1314", "MATH 1513"], "minimum_gpa_to_declare": 2.0, "weeder_courses": ["BIOL 1114", "CHEM 3053"], "admissions_pathway": "Direct Admit", "internal_transfer_allowed": true }
+          ]
+        },
+        {
+          "name": "College of Engineering, Architecture and Technology (CEAT)",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 65.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Rigorous STEM requirements; Architecture uses a 'Professional School' model.",
+          "housing_profile": "Parker Hall; features a dedicated makerspace.",
+          "student_archetype": "The Technical Problem-Solver.",
+          "majors": [
+            { "name": "Mechanical Engineering", "degree_type": "B.S.M.E.", "is_impacted": true, "prerequisite_courses": ["MATH 2144", "MATH 2153", "PHYS 2014", "CHEM 1414"], "minimum_gpa_to_declare": 2.5, "weeder_courses": ["ENSC 2113", "ENSC 2123"], "admissions_pathway": "Pre-Major", "internal_transfer_allowed": true },
+            { "name": "Architecture", "degree_type": "B.Arch.", "is_impacted": true, "prerequisite_courses": ["MATH 2114", "PHYS 1114", "ENSC 2113"], "minimum_gpa_to_declare": 2.8, "weeder_courses": ["ARCH 1216", "ARCH 2116"], "admissions_pathway": "Pre-Major", "internal_transfer_allowed": true }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Data Science Minor",
+        "Equine Enterprise Management Certificate",
+        "Entrepreneurship Minor",
+        "eSports Undergraduate Certificate",
+        "Geographic Information Systems Certificate",
+        "Ethical Leadership Certificate",
+        "Food Safety Certificate",
+        "Aerospace Security Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": ["Common App", "OSU Application Portal"],
+      "application_deadlines": [
+        {
+          "plan_type": "Rolling Admission",
+          "date": "2025-07-01",
+          "is_binding": false,
+          "notes": "Final date for Fall term, though early application is encouraged for priority."
+        },
+        {
+          "plan_type": "Early Opportunity Scholarship Deadline",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Priority deadline for early scholarship consideration."
+        },
+        {
+          "plan_type": "Priority Scholarship Deadline",
+          "date": "2025-02-01",
+          "is_binding": false,
+          "notes": "Submit all application materials by this date for full scholarship consideration."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "Holistic Review Applicants",
+          "requirement_type": "Essays",
+          "details": "Required for students who do not meet 'Assured Admission' criteria."
+        },
+        {
+          "target_program": "Honors College",
+          "requirement_type": "Supplemental Essays",
+          "deadline": "2025-02-01",
+          "details": "Three specific prompts required regarding extracurriculars and personal growth."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": ["Course Rigor", "GPA", "Class Rank", "Test Scores"],
+        "secondary_factors": ["Essays", "Recommendations", "Extracurriculars", "Character"],
+        "essay_importance": "Important",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "Considered",
+        "first_gen_boost": "Considered",
+        "specific_differentiators": "OSU uses a split evaluation: 'Assured Admission' (stats) and 'Comprehensive Review' (60% cognitive/40% non-cognitive)."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to the Ferguson College of Agriculture or College of Arts and Sciences if borderline for Engineering (CEAT)",
+        "Utilize the University Exploratory Studies program to secure admission before declaring a competitive major",
+        "Meet 'Assured Admission' benchmarks (3.0+ GPA and 24 ACT/1160 SAT) to bypass holistic review entirely",
+        "Apply early to the Architecture program due to limited studio space."
+      ],
+      "college_ranking_tactics": [
+        "Prioritize 'Living Learning Communities' (LLCs) in housing applications",
+        "Rank the Exploration LLC highly if undecided",
+        "Select colleges based on scholarship availability (e.g., Spears or Ferguson)",
+        "Consider the Honors College for priority enrollment."
+      ],
+      "alternate_major_strategy": "If applying to CEAT, the alternate path is the 'Science and Technology Exploration' (STEP) program."
+    },
+    "financials": {
+      "tuition_model": "Tuition Stability Plan",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 13920,
+          "total_coa": 33700,
+          "housing": 11230
+        },
+        "out_of_state": {
+          "tuition": 29440,
+          "total_coa": 49220,
+          "supplemental_tuition": 15520
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 10257,
+      "average_merit_aid": 6377,
+      "percent_receiving_aid": 81.0,
+      "scholarships": [
+        { "name": "Oklahoma State Regents Academic Scholars Program", "type": "Merit", "amount": "Up to $55,900", "deadline": "2025-02-01", "benefits": "Full tuition waiver, cash stipend", "application_method": "Automatic" },
+        { "name": "National Merit Scholarship", "type": "Merit", "amount": "Up to $152,500", "deadline": "2025-02-01", "benefits": "Full tuition waiver", "application_method": "Finalist status" },
+        { "name": "President's Distinguished Scholarship", "type": "Merit", "amount": "$10,000", "deadline": "2025-02-01", "benefits": "Competitive cash award", "application_method": "Automatic" },
+        { "name": "CEAT Scholars Program", "type": "Departmental", "amount": "$20,000", "deadline": "2024-11-01", "benefits": "Enrichment activities", "application_method": "Separate Application" },
+        { "name": "President's Leadership Council Scholarship", "type": "Merit/Leadership", "amount": "$1,500", "deadline": "2025-02-01", "benefits": "Leadership development", "application_method": "Separate Application" },
+        { "name": "Cowboy Covenant", "type": "Need", "amount": "$4,000", "deadline": "Varies", "benefits": "Pairs with Oklahoma's Promise", "application_method": "FAFSA" },
+        { "name": "International Achievement Freshman Scholarship", "type": "Merit", "amount": "Up to $56,000", "deadline": "2025-01-10", "benefits": "Cash scholarship", "application_method": "Separate Application" }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for most exams",
+        "exceptions": ["Native speakers lower-division limit", "AP Research/Seminar elective credit"],
+        "usage": "Satisfies GE and prerequisites"
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with 5+ grant credit",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": ["Transfer Equivalency Self-Service"],
+        "restrictions": "60 unit cap for CC; 30-hour residence requirement"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Meeting 'Assured Admission' criteria",
+        "Applying by Nov 1 for priority aid",
+        "A balanced profile showing potential",
+        "Demonstrated 'Cowboy grit' for a large school environment"
+      ],
+      "common_activities": ["Greek life", "Ag/Technical clubs", "Intramural sports", "Homecoming traditions"],
+      "essay_tips": ["Focus on sincerity", "Write for scholarship readers", "Highlight personal growth", "Show fit with the Cowboy Family"],
+      "red_flags": ["Missing priority deadlines", "Generic essays", "Lack of high school involvement"],
+      "insights": ["Admissions are accessible, but top merit aid is competitive.", "Stillwater is a true college town environment.", "School pride is exceptionally high."]
+    },
+    "outcomes": {
+      "career_outcomes": {
+        "median_earnings_10yr": 53300,
+        "employment_rate_2yr": 86.0,
+        "grad_school_rate": 19.0,
+        "top_employers": ["Paycom", "Boeing", "Walmart", "Halliburton", "Northrop Grumman"],
+        "loan_default_rate": 7.0
+      },
+      "retention_rates": {
+        "freshman_retention_rate": 84.8,
+        "graduation_rate_4_year": 49.0,
+        "graduation_rate_6_year": 66.2
+      }
+    }
+  }
+}

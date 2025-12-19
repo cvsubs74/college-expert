@@ -1,0 +1,406 @@
+{
+  "university_profile": {
+    "_id": "university_of_new_hampshire",
+    "metadata": {
+      "official_name": "University of New Hampshire",
+      "location": {
+        "city": "Durham",
+        "state": "NH",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "unh.edu",
+        "usnews.com",
+        "research.com",
+        "niche.com"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "The University of New Hampshire (UNH) is a flagship public research university and a prestigious land-, sea-, and space-grant institution. Classified with the Carnegie R1 status for very high research activity, it serves as the primary academic and economic engine for the state of New Hampshire.",
+      "market_position": "Public Ivy",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 111,
+      "analyst_takeaways": [
+        {
+          "category": "Research Value Proposition",
+          "insight": "UNH maintains its Carnegie R1 status—the highest tier of research—while maintaining a relatively accessible acceptance rate near 87%.",
+          "implication": "It represents a high-value target for students who want elite research opportunities without the hyper-competitive admissions bottleneck of other top-100 institutions."
+        },
+        {
+          "category": "Geographic Integration",
+          "insight": "The campus is positioned at a crossroads between the White Mountains, the Atlantic Ocean, and Boston.",
+          "implication": "Students can leverage diverse ecosystems for research and recreation, making it an attractive destination for environmental science and outdoor-focused demographics."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Described as a vibrant community with a 'Top Party School' reputation, UNH balances high-energy social life with traditional New England aesthetics and a strong Greek life presence.",
+        "transportation_impact": "A national model for sustainable transport, the campus features a dedicated Amtrak Downeaster station and the free Wildcat Transit system, drastically reducing the necessity for student-owned vehicles and providing direct access to Boston and Portland.",
+        "research_impact": "As a top-tier research hub, UNH holds extensive NASA partnerships for space exploration and is a global leader in marine and environmental science, highlighted by the massive annual Undergraduate Research Conference (URC) that involves nearly 2,000 students."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 88.2,
+      "in_state_acceptance_rate": 86.1,
+      "out_of_state_acceptance_rate": 88.8,
+      "international_acceptance_rate": 85.8,
+      "transfer_acceptance_rate": 87.6,
+      "admits_class_size": 2605,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": []
+    },
+    "admissions_longitudinal": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 21175,
+        "admits_total": 18667,
+        "enrolled_total": 2803,
+        "acceptance_rate_overall": 88.1,
+        "acceptance_rate_in_state": 0.0,
+        "acceptance_rate_out_of_state": 0.0,
+        "yield_rate": 15.0,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed. UNH confirms waitlist use for high-demand programs like Nursing."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 20887,
+        "admits_total": 18144,
+        "enrolled_total": 2607,
+        "acceptance_rate_overall": 86.9,
+        "acceptance_rate_in_state": 87.7,
+        "acceptance_rate_out_of_state": 86.7,
+        "yield_rate": 14.4,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "Not specified",
+        "unweighted_middle_50": "3.50-3.80",
+        "average_weighted": 3.65,
+        "percentile_25": 3.4,
+        "percentile_75": 3.85,
+        "notes": "Average high school GPA for the 2024 incoming class was 3.65."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1310",
+        "sat_reading_middle_50": "570-670",
+        "sat_math_middle_50": "550-650",
+        "act_composite_middle_50": "26-31",
+        "submission_rate": 30.5,
+        "policy_note": "Test-optional for most programs; 2024 median SAT score was 1208."
+      },
+      "demographics": {
+        "first_gen_percentage": 19.0,
+        "legacy_percentage": 0.0,
+        "international_percentage": 4.0,
+        "geographic_breakdown": [
+          { "region": "New Hampshire", "percentage": 46.0 },
+          { "region": "Massachusetts", "percentage": 30.0 },
+          { "region": "Connecticut", "percentage": 6.0 },
+          { "region": "Maine", "percentage": 4.0 },
+          { "region": "Other US States", "percentage": 10.0 },
+          { "region": "International", "percentage": 4.0 }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 8730,
+            "admits": 7454,
+            "acceptance_rate": 85.4,
+            "note": "Based on 2024 reporting."
+          },
+          "women": {
+            "applicants": 12445,
+            "admits": 11213,
+            "acceptance_rate": 90.1,
+            "note": "Based on 2024 reporting."
+          },
+          "non_binary": {
+            "applicants": 0,
+            "admits": 0,
+            "acceptance_rate": 0.0,
+            "note": "Not reported"
+          }
+        },
+        "racial_breakdown": {
+          "white": 82.2,
+          "black_african_american": 1.0,
+          "hispanic_latino": 4.1,
+          "asian": 2.6,
+          "native_american_alaskan": 0.04,
+          "pacific_islander": 0.01,
+          "two_or_more_races": 2.4,
+          "unknown": 4.25,
+          "non_resident_alien": 3.4
+        },
+        "religious_affiliation": "Not specified"
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "Peter T. Paul College of Business and Economics",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 67.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Strong emphasis on business mathematics; FIRE program interest recommended.",
+          "housing_profile": "Stoke Hall is typical for first-year business students.",
+          "student_archetype": "Ambitious and networking-focused professionals.",
+          "majors": [
+            {
+              "name": "Business Administration",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 67.0,
+              "average_gpa_admitted": 3.64,
+              "prerequisite_courses": ["ECON 401", "ECON 402", "ADMN 410", "MATH 422"],
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": ["ADMN 510", "ECON 401"],
+              "special_requirements": "3.0 cumulative and Paul College GPA required.",
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "core_courses": ["ADMN 403", "ADMN 410", "ADMN 502", "ADMN 503", "ADMN 510", "ECON 401", "ECON 402"],
+                "electives": ["FIN 601", "MKTG 630", "MGT 614", "DS 775"],
+                "total_units": 128,
+                "major_units": 64
+              },
+              "notable_professors": ["Dr. Lucy Gilson"],
+              "notes": "Options in Accounting, Finance, Marketing."
+            }
+          ]
+        },
+        {
+          "name": "College of Engineering and Physical Sciences (CEPS)",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 65.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires rigorous prep in calculus and lab sciences.",
+          "housing_profile": "Handler Hall and SERCs.",
+          "student_archetype": "Innovative problem-solvers.",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 65.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": ["MATH 425"],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": ["CS 415", "CS 416"],
+              "special_requirements": "Internal transfer requires foundational science with C or better.",
+              "admissions_pathway": "Direct Admit / Internal Transfer",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": ["CS 415", "CS 416", "CS 420", "CS 515", "CS 520", "MATH 425"],
+                "electives": ["CS 750", "CS 725"],
+                "total_units": 128,
+                "major_units": 72
+              },
+              "notable_professors": ["Arvind Narayan"],
+              "notes": "Restricted core course repeats."
+            }
+          ]
+        },
+        {
+          "name": "College of Health and Human Services (CHHS)",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 20.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Nursing is highly competitive; strong biology/chemistry needed.",
+          "housing_profile": "ACE seminars in Upper or Lower Quads.",
+          "student_archetype": "Compassionate future caregivers.",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 19.0,
+              "average_gpa_admitted": 3.7,
+              "prerequisite_courses": ["BMS 507", "PSYC 401"],
+              "minimum_gpa_to_declare": 3.2,
+              "weeder_courses": ["BMS 507", "BMS 508"],
+              "special_requirements": "Restricted clinical space; internal deadline March 1.",
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 3.2,
+              "curriculum": {
+                "core_courses": ["NURS 500", "NURS 504", "NURS 516", "NURS 611", "BMS 507"],
+                "electives": ["HMP 540", "PSYC 581"],
+                "total_units": 128,
+                "major_units": 88
+              },
+              "notable_professors": ["Dr. Gene Harkless"],
+              "notes": "Extremely competitive."
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Data Science Minor",
+        "Entrepreneurship Minor",
+        "Sustainability Dual Major"
+      ]
+    },
+    "application_process": {
+      "platforms": ["Common App"],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Action",
+          "date": "2024-11-15",
+          "is_binding": false,
+          "notes": "Non-binding; priority for Nursing."
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-02-01",
+          "is_binding": false,
+          "notes": "Decision by end of March."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Essays",
+          "deadline": null,
+          "details": "Only standard Common App statement necessary."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": ["Course Rigor", "Academic GPA"],
+        "secondary_factors": ["Recommendations", "Application Essay", "Extracurriculars"],
+        "essay_importance": "Moderate",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "None",
+        "first_gen_boost": "Minimal",
+        "specific_differentiators": "Prioritizes intellectual curiosity and community contribution."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply Early Action for restricted programs.",
+        "Ensure senior year includes Pre-Calculus for STEM/Business."
+      ],
+      "college_ranking_tactics": [
+        "Prioritize CEPS and Paul College as they are harder to transfer into later."
+      ],
+      "alternate_major_strategy": "List a less competitive related field for your second choice."
+    },
+    "financials": {
+      "tuition_model": "Tuition Stability Plan",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 15520,
+          "total_coa": 38440,
+          "housing": 18238
+        },
+        "out_of_state": {
+          "tuition": 36170,
+          "total_coa": 59090,
+          "supplemental_tuition": 20650
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 12400,
+      "average_merit_aid": 11375,
+      "percent_receiving_aid": 88.0
+    },
+    "scholarships": [
+      {
+        "name": "Trustee's Scholarship",
+        "type": "Merit",
+        "amount": "Up to $20,000 per year",
+        "deadline": "2025-02-01",
+        "benefits": "Renewable for 4 years.",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Granite Guarantee",
+        "type": "Need-Based",
+        "amount": "Covers full tuition",
+        "deadline": "2025-03-01",
+        "benefits": "For Pell-eligible NH residents.",
+        "application_method": "FAFSA"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for most exams.",
+        "exceptions": [
+          "No credit for AP Research/Seminar"
+        ],
+        "usage": "Satisfies GE requirements."
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with 5-7 grant 8 credits.",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "UNH Transfer Database"
+        ],
+        "restrictions": "96 unit cap for bachelor's degrees."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "B to B+ average in core subjects."
+      ],
+      "common_activities": [
+        "Varsity or club sports."
+      ],
+      "essay_tips": [
+        "Be authentic and write in your own voice."
+      ],
+      "red_flags": [
+        "Senior year grade decline (senioritis)."
+      ],
+      "insights": [
+        "Nursing/Engineering are significantly more competitive."
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 66479,
+      "employment_rate_2yr": 77.0,
+      "grad_school_rate": 16.0,
+      "top_employers": [
+        "Liberty Mutual Insurance",
+        "BAE Systems"
+      ],
+      "loan_default_rate": 2.2,
+      "student_retention": {
+        "freshman_retention_rate": 86.0,
+        "graduation_rate_4_year": 69.0,
+        "graduation_rate_6_year": 78.0
+      }
+    }
+  }
+}

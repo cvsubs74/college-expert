@@ -156,6 +156,13 @@ function Profile() {
     }
   }, [currentUser, knowledgeBaseApproach]);
 
+  // Auto-switch to Upload Documents tab when no profile exists
+  useEffect(() => {
+    if (!loadingProfile && !loading && isProfileEmpty && activeTab === 'view') {
+      setActiveTab('files');
+    }
+  }, [loadingProfile, loading, isProfileEmpty, activeTab]);
+
   const loadProfiles = async () => {
     if (!currentUser?.email) {
       setError('User not authenticated');

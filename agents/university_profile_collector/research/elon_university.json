@@ -1,0 +1,637 @@
+{
+  "university_profile": {
+    "_id": "elon_university",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://www.elon.edu/u/about/rankings-and-recognition/",
+      "https://www.elon.edu/u/news/2025/09/23/elon-university-again-named-best-in-the-nation-for-undergraduate-teaching/"
+    ],
+    "metadata": {
+      "official_name": "Elon University",
+      "location": {
+        "city": "Elon",
+        "state": "NC",
+        "type": "Private"
+      }
+    },
+    "strategic_profile": {
+      "executive_summary": "Elon University is a private national university renowned for its leadership in experiential learning and high-impact educational practices. It consistently holds the #1 national ranking for undergraduate teaching and provides a high-engagement residential campus experience.",
+      "market_position": "Experiential Learning Powerhouse",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 117,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "The acceptance rate has stabilized around 66-67%, but selectivity is increasing in specific honors and fellows programs.",
+          "implication": "Applicants should apply via Early Action to leverage a significantly higher acceptance rate (estimated at 70%) compared to Regular Decision."
+        },
+        {
+          "category": "Institutional Reputation",
+          "insight": "Elon ranks #1 in the nation for undergraduate teaching for the fifth consecutive year, outperforming Ivy League peers in this metric.",
+          "implication": "Prospective students prioritizing faculty mentorship and classroom engagement over research prestige should view Elon as a primary target."
+        },
+        {
+          "category": "Financial Strategy",
+          "insight": "The university is actively working to improve social mobility rankings by increasing Pell Grant recipient enrollment and scholarship availability.",
+          "implication": "Middle-to-lower income applicants may find improved aid packages as Elon seeks to broaden its socioeconomic diversity."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A highly active residential culture with over 200 organizations; Greek life and service-oriented groups (like the Kernodle Center) define much of the social landscape.",
+        "transportation_impact": "The campus utilizes the eco-friendly 'BioBus' system and a partnership with local Link Transit, making the surrounding Burlington area highly accessible without a personal vehicle.",
+        "research_impact": "A national leader in undergraduate research (ranked #8), supported by the Lumen Prize ($20,000 awards) and dedicated forums like SURF, fostering close faculty-student collaboration."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 66.4,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 55.0,
+      "admits_class_size": 12012,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 88.0,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 73.2,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "admissions_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 18557,
+        "admits_total": 11740,
+        "enrolled_total": 1333,
+        "acceptance_rate_overall": 63.3,
+        "yield_rate": 11.4,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist outcomes for Class of 2029 not yet fully disclosed in official CDS reports."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 18105,
+        "admits_total": 12012,
+        "enrolled_total": 1607,
+        "acceptance_rate_overall": 66.3,
+        "yield_rate": 13.4,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 3984,
+          "accepted_spots": 815,
+          "admitted_from_waitlist": 101,
+          "waitlist_admit_rate": 12.4,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions dean stated waitlist is unranked; decisions are based on institutional needs."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 18791,
+        "admits_total": 12649,
+        "enrolled_total": 2084,
+        "acceptance_rate_overall": 67.3,
+        "yield_rate": 16.5,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 4072,
+          "accepted_spots": 832,
+          "admitted_from_waitlist": 109,
+          "waitlist_admit_rate": 13.1,
+          "is_waitlist_ranked": false
+        }
+      }
+    ],
+    "admitted_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.90-4.30",
+        "unweighted_middle_50": "3.65-3.85",
+        "average_weighted": 4.13,
+        "notes": "Academic rigor (Honors/AP/IB) is highly prioritized in the review process."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1160-1320",
+        "sat_reading_middle_50": "580-670",
+        "sat_math_middle_50": "540-650",
+        "act_composite_middle_50": "25-30",
+        "submission_rate": 32.0,
+        "policy_note": "Test-optional since 2021. Approximately 32% of applicants submitted SAT scores and 21% submitted ACT scores for the 2023-2024 cycle."
+      },
+      "demographics": {
+        "first_gen_percentage": 12.0,
+        "international_percentage": 2.44,
+        "geographic_breakdown": [
+          {
+            "region": "North Carolina",
+            "percentage": 16.2
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 83.8
+          },
+          {
+            "region": "Top States",
+            "percentage": null,
+            "note": "MA, NY, NJ, MD, VA"
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "acceptance_rate": 64.9,
+            "note": "6735 applicants, 4372 admits. Men represent approximately 41% of enrollment."
+          },
+          "women": {
+            "acceptance_rate": 67.2,
+            "note": "11368 applicants, 7638 admits. Women represent approximately 59% of enrollment."
+          }
+        },
+        "racial_breakdown": {
+          "white": 77.4,
+          "black_african_american": 5.66,
+          "hispanic_latino": 6.92,
+          "asian": 2.33,
+          "native_american_alaskan": 0.15,
+          "pacific_islander": 0.01,
+          "two_or_more_races": 2.37,
+          "unknown": 2.72,
+          "non_resident_alien": 2.44
+        },
+        "religious_affiliation": "Nonsectarian (historic ties to United Church of Christ)"
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Schools",
+      "colleges": [
+        {
+          "name": "Elon College, the College of Arts and Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 66.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Perfect for students who value a broad liberal arts foundation and interdisciplinary study. Candidates should emphasize their desire for undergraduate research and global engagement.",
+          "housing_profile": "Global Neighborhood (internationally focused) and Historic Neighborhood (classic campus feel near academic buildings).",
+          "student_archetype": "The Intellectually Curious Explorer",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "weeder_courses": [
+                "PSY 2970 Experimental Research Methods and Statistics",
+                "PSY 3970 Nonexperimental Research Methods and Statistics"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "PSY 1000 Introduction to Psychology",
+                  "PSY 2100 Lifespan Development",
+                  "PSY 2200 Social Psychology",
+                  "PSY 2300 Cognitive Psychology",
+                  "PSY 2400 Behavioral Neuroscience",
+                  "PSY 2970 Experimental Research Methods and Statistics",
+                  "PSY 3970 Nonexperimental Research Methods and Statistics",
+                  "PSY 4970 Empirical Research Seminar"
+                ],
+                "total_units": 132,
+                "major_units": 48
+              },
+              "notes": "One of the largest majors at Elon; offers a double major elective waiver of 4 units."
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "weeder_courses": [
+                "CHM 2110 Organic Chemistry I",
+                "BIO 2212 Principles of Genetics"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "BIO 1112/1113 Introductory Cell Biology and Lab",
+                  "BIO 1514 Biodiversity",
+                  "BIO 2512/2513 Introductory Population Biology and Lab",
+                  "BIO 2212/2213 Principles of Genetics and Lab",
+                  "CHM 1110 General Chemistry I",
+                  "CHM 1120 General Chemistry II",
+                  "STS 2120 Statistics in Application"
+                ],
+                "total_units": 132,
+                "major_units": 64
+              },
+              "notes": "Offers tracks in Integrative Biology, Foundations for Medical Science, and Biotechnology."
+            },
+            {
+              "name": "Political Science",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S."
+            },
+            {
+              "name": "Acting",
+              "degree_type": "B.F.A.",
+              "special_requirements": "Audition and interview required."
+            },
+            {
+              "name": "Engineering",
+              "degree_type": "B.S.",
+              "weeder_courses": [
+                "EGR 1220 Engineering Computing"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Martha and Spencer Love School of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 66.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Seeks students with an entrepreneurial mindset and strong leadership potential. Applicants should highlight interest in high-tech facilities and global partnerships.",
+          "housing_profile": "The Colonnades Neighborhood, which often hosts the Business Fellows and Innovation Scholars LLCs.",
+          "student_archetype": "The Ambitious Leader",
+          "majors": [
+            {
+              "name": "Finance",
+              "degree_type": "B.S.B.A.",
+              "weeder_courses": [
+                "ACC 2010 Principles of Accounting",
+                "FIN 3430 Principles of Finance"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "ACC 2010 Principles of Accounting",
+                  "BUS 1110 Gateway to Business",
+                  "FIN 3430 Principles of Finance",
+                  "FIN 4120 Investments",
+                  "FIN 4130 Advanced Managerial Finance"
+                ],
+                "total_units": 132,
+                "major_units": 73
+              }
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.S.B.A.",
+              "weeder_courses": [
+                "ACC 2010 Principles of Accounting",
+                "ECO 1110 Principles of Economics"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "ACC 2010 Principles of Accounting",
+                  "BUS 1110 Gateway to Business",
+                  "MKT 3110 Principles of Marketing",
+                  "MKT 4140 Marketing Research",
+                  "BUS 4650 Strategic Management"
+                ],
+                "total_units": 132,
+                "major_units": 73
+              }
+            },
+            {
+              "name": "International Business",
+              "degree_type": "B.S.B.A.",
+              "special_requirements": "Requires a study abroad experience."
+            }
+          ]
+        },
+        {
+          "name": "School of Communications",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 66.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Highly competitive within Elon; students should showcase a portfolio or history of creative content creation or sport management interest.",
+          "housing_profile": "Historic Neighborhood, conveniently located near the McEwen School of Communications facilities.",
+          "student_archetype": "The Creative Storyteller",
+          "majors": [
+            {
+              "name": "Strategic Communications",
+              "degree_type": "B.A.",
+              "weeder_courses": [
+                "COM 1100 Media Writing",
+                "STC 3120 Strategic Writing"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "COM 1000 Communications in a Global Age",
+                  "JOU 1100 News Writing and Reporting",
+                  "STC 2520 Foundations of Strategic Communications",
+                  "STC 4520 Strategic Campaigns"
+                ],
+                "total_units": 132,
+                "major_units": 58
+              },
+              "notes": "The most popular major at Elon; highly regarded for its national accreditation."
+            },
+            {
+              "name": "Media Analytics",
+              "degree_type": "B.A.",
+              "weeder_courses": [
+                "MEA 3100 Media Analytics II"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dr. Jo Watts Williams School of Education",
+          "admissions_model": "Pre-Major",
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Students enter as 'Pre-Education' and must apply for formal admission after maintaining a 2.7+ GPA.",
+          "housing_profile": "East Neighborhood or Danieley Neighborhood.",
+          "student_archetype": "The Equity-Minded Educator",
+          "majors": []
+        },
+        {
+          "name": "School of Health Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 60.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "The 4-year BSN program is a direct-entry model with specific SAT/ACT requirements (1100+/22+).",
+          "housing_profile": "Danieley Neighborhood or Station at Mill Point.",
+          "student_archetype": "The Compassionate Healer",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.N.",
+              "special_requirements": "Direct-entry program; requires 3.0 GPA to maintain enrollment.",
+              "weeder_courses": [
+                "BIO 1112 Cell Biology",
+                "NRS 3200 Pathophysiology/Pharmacology"
+              ]
+            },
+            {
+              "name": "Exercise Science",
+              "degree_type": "B.S."
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Accounting Minor",
+        "Adventure Based Learning Minor",
+        "African & African-American Studies Minor",
+        "Business Administration Minor",
+        "Coaching Minor",
+        "Communications Minor",
+        "Computer Science Minor",
+        "Criminal Justice Studies Minor",
+        "Data Science Minor",
+        "Entrepreneurship & Innovation Minor",
+        "Environmental Education Minor",
+        "Global Film and Cultures Minor",
+        "Human Services Studies Minor",
+        "Jewish Studies Minor",
+        "Leadership Studies Minor",
+        "Middle East Studies Minor",
+        "Neuroscience Minor",
+        "Peace and Conflict Studies Minor",
+        "Professional Sales Minor",
+        "Public Health Studies Minor",
+        "Women\u2019s, Gender, and Sexualities Studies Minor",
+        "Interfaith Studies Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Elon University Application (Acorn)"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Decision",
+          "date": "2024-11-01",
+          "is_binding": true,
+          "notes": "Notification by Dec 1."
+        },
+        {
+          "plan_type": "Early Action",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Notification by Dec 20."
+        },
+        {
+          "plan_type": "Early Decision II",
+          "date": "2025-01-15",
+          "is_binding": true,
+          "notes": "Notification by Feb 10."
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-01-10",
+          "is_binding": false,
+          "notes": "Final deadline; notification by March 20."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Short Answer",
+          "details": "Identity response (200 words), 'Top 5' unique list (150 words), and 'Perfect Playlist' (3 songs)."
+        },
+        {
+          "target_program": "Honors and Fellows Programs",
+          "requirement_type": "Programmatic Essay",
+          "deadline": "2024-11-10",
+          "details": "Separate application including a 750-word essay on leadership or an academic project."
+        },
+        {
+          "target_program": "Music / Performing Arts",
+          "requirement_type": "Audition",
+          "details": "Audition or portfolio required for talent-based admission."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Course Rigor",
+          "GPA",
+          "Application Essay"
+        ],
+        "secondary_factors": [
+          "Leadership",
+          "Extracurriculars",
+          "Service",
+          "Talents",
+          "Recommendations"
+        ],
+        "essay_importance": "High",
+        "demonstrated_interest": "Important",
+        "interview_policy": "Recommended",
+        "legacy_consideration": "Moderate",
+        "first_gen_boost": "Moderate",
+        "specific_differentiators": "Focus on experiential learning, community contribution, and global perspective. Admission is test-optional for most programs except Nursing."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply as 'Undeclared' in Elon College to leverage high acceptance rate without secondary school hurdles of Nursing or Education.",
+        "Submit SAT/ACT ONLY for Nursing program (minimum 1100 SAT/22 ACT).",
+        "Utilize Early Decision for a significant statistical advantage; ED rates are markedly higher for competitive majors like Finance.",
+        "Apply directly to Fellows programs (Business, Communications, Honors) if GPA is 3.8+ for prioritized housing and travel grants.",
+        "Explicitly mention interest in 'The Elon Experiences' to align with the school's primary ranking focus."
+      ],
+      "college_ranking_tactics": [
+        "Rank Love School of Business for top-40 undergraduate business outcomes and professional development.",
+        "Prioritize School of Communications for its unique accredited status and required internship program.",
+        "Evaluate programs based on 'First-Year Experiences' and 'Learning Communities' (LLCs), where Elon ranks #1.",
+        "Consider Global Education Center ranking for majors like International Business."
+      ],
+      "alternate_major_strategy": "If applying to Performing Arts, list Arts Administration or Drama & Theatre Studies as backup. For Nursing, list Exercise Science or Public Health to stay on a pre-health track."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 46958,
+          "total_coa": 65443,
+          "housing": 16284
+        },
+        "out_of_state": {
+          "tuition": 46958,
+          "total_coa": 65443,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Need-Blind",
+      "average_need_based_aid": 18000,
+      "average_merit_aid": 12355,
+      "percent_receiving_aid": 70.0
+    },
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$8,000 \u2013 $12,000 annually",
+        "benefits": "Renewable for four years based on academic performance",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Elon Engagement Scholarship",
+        "type": "Merit",
+        "amount": "$5,000 annually plus $2,000 grant",
+        "benefits": "One-time $2,000 grant for an Elon Experience project",
+        "application_method": "Admissions Application"
+      },
+      {
+        "name": "Honors Fellows (William R. Kenan, Jr.)",
+        "type": "Merit",
+        "amount": "Full tuition",
+        "deadline": "2025-11-10",
+        "benefits": "Priority registration, honors housing, $1,000 study abroad grant, research stipends",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "Odyssey Program Scholarship",
+        "type": "Need/Merit",
+        "amount": "$25,000 - $30,000 annually",
+        "deadline": "2026-01-12",
+        "benefits": "Covers full demonstrated need; includes $4,000 Global Study grant",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "Elon College Fellows",
+        "type": "Merit",
+        "amount": "$8,000 annually",
+        "deadline": "2025-11-10",
+        "benefits": "Faculty mentoring, $1,000 Global Study grant, research assistantships",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "International Scholar Award",
+        "type": "Merit",
+        "amount": "$5,000 \u2013 $10,000 annually",
+        "application_method": "Automatic Consideration"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Strict",
+      "ap_policy": {
+        "general_rule": "Score of 4 or better required for credit in most subjects",
+        "usage": "Credits satisfy Core Curriculum and major prerequisites",
+        "notes": "No credit awarded for AP Seminar, Research, or scores of 3 or below."
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with score of 5 or higher grant 4 units",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transfer Course Equivalencies Database",
+          "Transferology"
+        ],
+        "restrictions": "65 unit cap for community college; 60 unit residency requirement at Elon"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Significant demonstrated interest through visits and info sessions",
+        "Strong academic rigor with focus on core subjects and high class standing",
+        "Evidence of leadership potential and alignment with 'Elon Experiences'",
+        "Applying Early Decision (ED) for a significant boost in commitment value"
+      ],
+      "common_activities": [
+        "Undergraduate research conducted alongside faculty mentors",
+        "Community service (Elon Volunteers!, Habitat for Humanity)",
+        "Global studies/Study abroad (ranked #1)",
+        "Leadership roles in Greek life (37% participation) or student government"
+      ],
+      "essay_tips": [
+        "Be hyper-specific in the 150-word 'Why Elon' prompt by naming distinct centers or traditions",
+        "Use the 'Top 5' list to showcase personality rather than academic repeats",
+        "Focus the identity essay on how your background influences daily actions",
+        "Choose Spotify songs reflecting different facets of your character"
+      ],
+      "red_flags": [
+        "Lack of demonstrated interest; Elon tracks engagement closely",
+        "Generic 'Why Elon' essays focusing only on campus beauty",
+        "Senior year academic decline or lack of 12th-grade rigor",
+        "Essays suggesting heavy use of AI or overly polished adult editing"
+      ],
+      "insights": [
+        "Highly social and community-centric culture with heavy faculty mentorship",
+        "Students not interested in hands-on learning may feel out of place",
+        "Significant Northeast regional vibe within the student body",
+        "The School of Communications and Love School of Business are the most competitive programs"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 64200,
+      "employment_rate_2yr": 95.0,
+      "grad_school_rate": 17.0,
+      "top_employers": [
+        "Ernst & Young",
+        "Deloitte",
+        "PwC",
+        "JPMorgan Chase & Co.",
+        "Fidelity Investments",
+        "Wells Fargo",
+        "Microsoft",
+        "BlackRock"
+      ],
+      "loan_default_rate": 0.9,
+      "student_retention": {
+        "freshman_retention_rate": 90.4,
+        "graduation_rate_4_year": 79.0,
+        "graduation_rate_6_year": 83.0
+      }
+    }
+  }
+}

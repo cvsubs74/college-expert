@@ -1,0 +1,557 @@
+{
+  "university_profile": {
+    "_id": "stony_brook_university_suny",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://www.stonybrook.edu/news/",
+      "https://www.usnews.com/best-colleges/stony-brook-suny-2838",
+      "https://www.sbstatesman.com/"
+    ],
+    "metadata": {
+      "official_name": "Stony Brook University-SUNY",
+      "location": {
+        "city": "Stony Brook",
+        "state": "NY",
+        "type": "Public"
+      },
+      "us_news_rank": 59,
+      "market_position": "Public Flagship"
+    },
+    "strategic_profile": {
+      "executive_summary": "Stony Brook University is a premier public research institution and a designated flagship of the SUNY system, recognized for its heavy emphasis on STEM and healthcare. As a member of the Association of American Universities (AAU), it balances academic rigor with a commitment to social mobility and affordable excellence.",
+      "admissions_philosophy": "Holistic review",
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Stony Brook reached its highest application volume in history for the 2025-2026 cycle, reflecting a sharp rise in prestige.",
+          "implication": "Applicants should focus on rigorous STEM prep and early action to mitigate the impacts of record-breaking applicant pools."
+        },
+        {
+          "category": "Social Mobility",
+          "insight": "The university consistently ranks in the top 15 nationally for social mobility, outperforming many elite private peers.",
+          "implication": "The school is an ideal choice for high-achieving students seeking a high return on investment (ROI) with low debt."
+        },
+        {
+          "category": "Research Tier",
+          "insight": "Direct management of Brookhaven National Lab provides unique access to quantum science and nuclear physics research.",
+          "implication": "Undergraduates in physics and engineering have research opportunities typically reserved for graduate students elsewhere."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "The atmosphere is academically focused and highly diverse, though often described as a 'commuter-heavy' campus with quieter weekends compared to traditional college towns.",
+        "transportation_impact": "An on-campus Long Island Rail Road (LIRR) station provides direct access to Manhattan, facilitating internships and weekend travel but contributing to a transient weekend population.",
+        "research_impact": "Strong industry and federal ties through the New York Climate Exchange and Brookhaven National Laboratory drive a culture of innovation and high-tech job placement in the region."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 49.04,
+      "in_state_acceptance_rate": 41.5,
+      "out_of_state_acceptance_rate": 61.0,
+      "international_acceptance_rate": 73.4,
+      "transfer_acceptance_rate": 49.36,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 0,
+          "admits": 0,
+          "acceptance_rate": 0.0,
+          "class_fill_percentage": 0.0,
+          "is_binding": false
+        }
+      ]
+    },
+    "admissions_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 64196,
+        "admits_total": 30929,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 48.2,
+        "notes": "Record number of applications for the first-year class; finalized enrollment and waitlist stats pending official CDS publication."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 55879,
+        "admits_total": 27380,
+        "enrolled_total": 4042,
+        "acceptance_rate_overall": 49.0,
+        "acceptance_rate_in_state": 41.6,
+        "acceptance_rate_out_of_state": 61.7,
+        "yield_rate": 14.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 5907,
+          "accepted_spots": 2894,
+          "admitted_from_waitlist": 12,
+          "waitlist_admit_rate": 0.41,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate plummeted to near zero as the university exceeded enrollment targets."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 50435,
+        "admits_total": 24713,
+        "enrolled_total": 3569,
+        "acceptance_rate_overall": 49.0,
+        "yield_rate": 14.4,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3647,
+          "accepted_spots": 2130,
+          "admitted_from_waitlist": 1577,
+          "waitlist_admit_rate": 74.04,
+          "is_waitlist_ranked": false
+        }
+      }
+    ],
+    "admitted_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.10-4.40",
+        "unweighted_middle_50": "3.80-4.00",
+        "average_weighted": 4.25,
+        "percentile_25": "3.75",
+        "percentile_75": "4.00",
+        "notes": "Middle 50% high school GPA on a 100-point scale is 90-96."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1340-1480",
+        "sat_reading_middle_50": "650-730",
+        "sat_math_middle_50": "680-770",
+        "act_composite_middle_50": "29-33",
+        "submission_rate": 34.0,
+        "policy_note": "Test-optional for all applicants; scores are considered if submitted but not required."
+      },
+      "demographics": {
+        "first_gen_percentage": 35.9,
+        "international_percentage": 10.2,
+        "geographic_breakdown": [
+          {
+            "region": "New York",
+            "percentage": 83.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 6.8
+          },
+          {
+            "region": "International",
+            "percentage": 10.2
+          }
+        ],
+        "gender_breakdown": {
+          "men": 45.6,
+          "women": 54.4,
+          "non_binary": 0.0
+        },
+        "racial_breakdown": {
+          "white": 24.8,
+          "black_african_american": 6.1,
+          "hispanic_latino": 15.7,
+          "asian": 35.5,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.04,
+          "two_or_more_races": 3.1,
+          "unknown": 4.5,
+          "non_resident_alien": 10.2
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges and Schools",
+      "colleges": [
+        {
+          "name": "College of Engineering and Applied Sciences (CEAS)",
+          "admissions_model": "Direct Admit or Pre-Major",
+          "acceptance_rate_estimate": 25.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Extremely competitive; requires a near-perfect math/science profile. Students not directly admitted may be placed in the Area of Interest (AOI) program, which guarantees major entry only if specific GPA benchmarks are met.",
+          "student_archetype": "High-achieving STEM 'grinders' and research-focused innovators.",
+          "housing_profile": "First-year students are often in the Information and Technology Studies (ITS) quad (Mendelsohn); Honors typically reside in Yang Hall.",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.2,
+              "weeder_courses": [
+                "CSE 214",
+                "CSE 215"
+              ]
+            },
+            {
+              "name": "Applied Mathematics and Statistics",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.8,
+              "weeder_courses": [
+                "AMS 261",
+                "AMS 310"
+              ]
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.E.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.2,
+              "weeder_courses": [
+                "MEC 260"
+              ]
+            },
+            {
+              "name": "Biomedical Engineering",
+              "degree_type": "B.E.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.2,
+              "weeder_courses": [
+                "BME 212"
+              ]
+            },
+            {
+              "name": "Civil Engineering",
+              "degree_type": "B.E.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.2
+            },
+            {
+              "name": "Information Systems",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.0
+            }
+          ]
+        },
+        {
+          "name": "College of Arts and Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 49.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "The university's largest unit. Ideal for pre-med students due to proximity to the University Hospital.",
+          "student_archetype": "Intellectually diverse students ranging from pre-med types to creative arts enthusiasts.",
+          "housing_profile": "Freshmen assigned to one of six thematic Undergraduate Colleges based on interest.",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "PSY 201",
+                "PSY 310"
+              ]
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "BIO 202",
+                "BIO 204",
+                "CHE 131"
+              ]
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "ECO 108",
+                "ECO 303"
+              ]
+            },
+            {
+              "name": "Chemistry",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "CHE 321"
+              ]
+            },
+            {
+              "name": "Physics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "PHY 131"
+              ]
+            },
+            {
+              "name": "Political Science",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Sociology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "English",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "History",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Mathematics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "MAT 132"
+              ]
+            },
+            {
+              "name": "Linguistics",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            }
+          ]
+        },
+        {
+          "name": "College of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 35.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Admissions look for leadership potential and a strong quantitative foundation. Freshmen are directly admitted.",
+          "student_archetype": "Career-oriented, entrepreneurial-minded students focused on ROI.",
+          "housing_profile": "Typically integrated within the Leadership and Service (LDS) quad (H-Quad).",
+          "majors": [
+            {
+              "name": "Business Management",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.2,
+              "weeder_courses": [
+                "ACC 210",
+                "BUS 330"
+              ]
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.2,
+              "weeder_courses": [
+                "ACC 310"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Schools of Health Professions, Nursing, and Social Welfare",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 15.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Primarily upper-division programs. Freshmen admitted for prerequisites before applying to the clinical year.",
+          "student_archetype": "Clinical-focused, high-discipline pre-professionals.",
+          "housing_profile": "Upper-division students often move to West Apartments or Chávez/Tubman Halls.",
+          "majors": [
+            {
+              "name": "Health Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "HAN 312"
+              ]
+            },
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 10.0,
+              "minimum_gpa_to_declare": 2.8,
+              "weeder_courses": [
+                "HNI 310",
+                "HNI 370"
+              ]
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Digital Arts Minor",
+        "Geospatial Science Minor",
+        "Nanotechnology Studies Minor",
+        "Teacher Preparation Certificate",
+        "Professional Writing Minor",
+        "Entrepreneurship Certificate",
+        "Health Communication Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "SUNY App",
+        "Coalition App"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Action",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Non-binding; priority for Honors"
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-01-15",
+          "is_binding": false,
+          "notes": "Materials must be received by this date for Fall 2026 consideration"
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "Honors Programs",
+          "requirement_type": "Supplemental Essay",
+          "details": "~250 words"
+        },
+        {
+          "target_program": "Scholars for Medicine",
+          "requirement_type": "Specialized Essay",
+          "details": "Up to 650 words"
+        },
+        {
+          "target_program": "Creative Writing (BFA)",
+          "requirement_type": "Portfolio",
+          "details": "10-15 page writing sample"
+        },
+        {
+          "target_program": "Music",
+          "requirement_type": "Audition",
+          "details": "Pre-screening video recording required by Dec 10"
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Course Rigor",
+          "GPA",
+          "Application Essay",
+          "Standardized Test Scores (Optional)"
+        ],
+        "secondary_factors": [
+          "Recommendations",
+          "Extracurriculars",
+          "Character",
+          "Talent/Ability"
+        ],
+        "essay_importance": "Critical",
+        "demonstrated_interest": "Considered",
+        "interview_policy": "Not Offered"
+      }
+    },
+    "strategy_tactics": {
+      "major_selection_tactics": [
+        "Apply directly to tech majors; internal transfer into CS is nearly impossible from outside CEAS.",
+        "Out-of-state applicants have a higher acceptance rate (61% vs 41.5%).",
+        "Avoid the 'Biology' trap for pre-med; use a Liberal Arts major to protect GPA."
+      ],
+      "alternate_major_strategy": "If applying to CS, list ISE or AMS as an alternate to stay within the Engineering college."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 10931,
+          "housing": 18196,
+          "total_coa": 33275
+        },
+        "out_of_state": {
+          "tuition": 32741,
+          "supplemental_tuition": 21810,
+          "total_coa": 55085
+        }
+      },
+      "aid_philosophy": "Need-Blind",
+      "percent_receiving_aid": 78.0,
+      "scholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "type": "Merit",
+          "amount": "Up to full in-state tuition",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Honors College Scholarship",
+          "type": "Merit",
+          "benefits": "Priority registration, housing",
+          "application_method": "Honors College Application"
+        },
+        {
+          "name": "Provost Scholarship",
+          "type": "Merit",
+          "amount": "$2,000 - $8,500 per year",
+          "application_method": "Automatic Consideration"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Moderate",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit; 4 or 5 often required for direct equivalency",
+        "usage": "Can satisfy SBC requirements and major prerequisites"
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with scores of 5+ grant 6 credits each"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Rigorous STEM background for Engineering/CS",
+        "Self-motivation for large research environment",
+        "GPA in 3.6-4.0 range"
+      ],
+      "essay_tips": [
+        "Articulate alignment with specific career goals for Honors tracks",
+        "Use an authentic voice; avoid 'tale of hubris'",
+        "Correct spelling of university name is mandatory"
+      ],
+      "red_flags": [
+        "Spelling errors in university name",
+        "Generic essays listing resume activities",
+        "Grade decline in senior year"
+      ],
+      "insights": [
+        "Intro STEM classes are massive (300+ students)",
+        "Strong commuter culture; weekends can be quiet",
+        "Abundant research requires assertive outreach"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 74502,
+      "employment_rate_2yr": 61.0,
+      "grad_school_rate": 34.0,
+      "loan_default_rate": 2.7,
+      "top_employers": [
+        "Northwell Health",
+        "Amazon",
+        "Microsoft",
+        "Google",
+        "Brookhaven National Laboratory"
+      ],
+      "retention_and_graduation": {
+        "freshman_retention_rate": 89.8,
+        "graduation_rate_4_year": 66.0,
+        "graduation_rate_6_year": 78.0
+      }
+    }
+  }
+}

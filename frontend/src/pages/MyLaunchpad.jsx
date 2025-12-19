@@ -23,6 +23,10 @@ import remarkGfm from 'remark-gfm';
 import FitBreakdownPanel from '../components/FitBreakdownPanel';
 import CreditsBadge from '../components/CreditsBadge';
 import CreditsUpgradeModal from '../components/CreditsUpgradeModal';
+import FitChatWidget from '../components/FitChatWidget';
+import FitInfographicView from '../components/FitInfographicView';
+import FitAnalysisPage from '../components/FitAnalysisPage';
+import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 
 // Fit category configuration - Uses warm amber-based tones consistent with app theme
 const FIT_CATEGORIES = {
@@ -69,10 +73,11 @@ const FIT_CATEGORIES = {
 };
 
 // College Card Component for Launchpad - matches UniInsight style
-const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelected, onToggleSelect, selectionMode }) => {
+const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelected, onToggleSelect, selectionMode, onOpenChat }) => {
     const fitAnalysis = college.fit_analysis || {};
     const hasFitAnalysis = fitAnalysis && fitAnalysis.fit_category; // Only true if we have actual fit data
-    const fitCategory = fitAnalysis.fit_category || 'TARGET';
+    // Use fit_analysis category first, then fallback to soft_fit_category (pre-computed based on acceptance rate)
+    const fitCategory = fitAnalysis.fit_category || college.soft_fit_category || 'TARGET';
     const matchPercentage = fitAnalysis.match_percentage || null;
     const categoryConfig = FIT_CATEGORIES[fitCategory] || FIT_CATEGORIES.TARGET;
 
@@ -160,23 +165,33 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
                 )}
             </div>
 
-            {/* Footer with action buttons - matches UniInsight */}
-            <div className="p-4 border-t border-gray-100">
+            {/* Footer with action buttons */}
+            <div className="p-3 border-t border-gray-100">
                 <div className="flex gap-2">
                     <button
                         onClick={() => onViewDetails && onViewDetails(college)}
-                        className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200"
+                        className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 px-3 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200 whitespace-nowrap"
+                        title="View your fit analysis for this university"
                     >
-                        📋 View Details
+                        📊 Fit Analysis
                     </button>
                     <button
                         onClick={() => onRemove(college)}
                         disabled={isRemoving}
-                        className="px-4 py-2 bg-red-50 text-red-600 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors disabled:opacity-50 flex items-center gap-1"
+                        className="px-3 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors disabled:opacity-50 flex items-center justify-center"
+                        title="Remove from list"
                     >
                         <TrashIcon className="h-4 w-4" />
-                        {isRemoving ? '...' : 'Remove'}
                     </button>
+                    {onOpenChat && (
+                        <button
+                            onClick={() => onOpenChat(college)}
+                            className="px-3 py-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors flex items-center justify-center"
+                            title="Ask AI about your fit"
+                        >
+                            <ChatBubbleLeftRightIcon className="h-4 w-4" />
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
@@ -184,7 +199,7 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
 };
 
 // Category Column Component
-const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetails, selectedColleges, onToggleSelect, selectionMode }) => {
+const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetails, selectedColleges, onToggleSelect, selectionMode, onOpenChat }) => {
     const config = FIT_CATEGORIES[category] || FIT_CATEGORIES.TARGET;
 
     return (
@@ -220,6 +235,7 @@ const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetail
                             isSelected={selectedColleges.has(college.university_id)}
                             onToggleSelect={onToggleSelect}
                             selectionMode={selectionMode}
+                            onOpenChat={onOpenChat}
                         />
                     ))
                 )}
@@ -231,7 +247,8 @@ const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetail
 // Detailed Fit Analysis Component (shown when clicking "Details" on a college)
 const FitAnalysisDetail = ({ college, onBack }) => {
     const fitAnalysis = college.fit_analysis || {};
-    const fitCategory = fitAnalysis.fit_category || 'TARGET';
+    // Use fit_analysis category first, then fallback to soft_fit_category (pre-computed based on acceptance rate)
+    const fitCategory = fitAnalysis.fit_category || college.soft_fit_category || 'TARGET';
     const matchScore = fitAnalysis.match_percentage || fitAnalysis.match_score || 50;
     const config = FIT_CATEGORIES[fitCategory] || FIT_CATEGORIES.TARGET;
 
@@ -242,21 +259,56 @@ const FitAnalysisDetail = ({ college, onBack }) => {
     // Use real factors from backend if available, otherwise use defaults
     const backendFactors = fitAnalysis.factors || [];
 
+    // Helper to parse JSON strings (some fields are stored as JSON strings in ES)
+    const parseJsonField = (field) => {
+        if (!field) return null;
+        if (typeof field === 'object') return field;
+        try {
+            return JSON.parse(field);
+        } catch (e) {
+            return null;
+        }
+    };
+
+    // Extract all rich data from fit analysis
+    const essayAngles = parseJsonField(fitAnalysis.essay_angles) || [];
+    const applicationTimeline = parseJsonField(fitAnalysis.application_timeline);
+    const scholarshipMatches = parseJsonField(fitAnalysis.scholarship_matches) || [];
+    const testStrategy = parseJsonField(fitAnalysis.test_strategy);
+    const majorStrategy = parseJsonField(fitAnalysis.major_strategy);
+    const demonstratedInterestTips = parseJsonField(fitAnalysis.demonstrated_interest_tips) || [];
+    const redFlagsToAvoid = parseJsonField(fitAnalysis.red_flags_to_avoid) || [];
+    const gapAnalysis = parseJsonField(fitAnalysis.gap_analysis);
+
+
     // Get the { currentUser } = useAuth() to fetch profile
     const { currentUser } = useAuth();
     const [studentProfile, setStudentProfile] = useState(null);
+    const [profileLoading, setProfileLoading] = useState(true);
+    const [profileExists, setProfileExists] = useState(false);
 
     // Fetch student profile
     useEffect(() => {
         if (currentUser?.email) {
+            setProfileLoading(true);
             fetch(`https://profile-manager-es-pfnwjfp26a-ue.a.run.app/get-profile?user_email=${encodeURIComponent(currentUser.email)}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.success && data.profile) {
                         setStudentProfile(data.profile);
+                        setProfileExists(true);
+                    } else {
+                        setProfileExists(false);
                     }
                 })
-                .catch(err => console.error('Failed to fetch profile:', err));
+                .catch(err => {
+                    console.error('Failed to fetch profile:', err);
+                    setProfileExists(false);
+                })
+                .finally(() => setProfileLoading(false));
+        } else {
+            setProfileLoading(false);
+            setProfileExists(false);
         }
     }, [currentUser]);
 
@@ -317,6 +369,106 @@ const FitAnalysisDetail = ({ college, onBack }) => {
     // This provides personalized, specific action items based on the student's actual gaps
     const recommendations = fitAnalysis.recommendations || [];
 
+    // Prepare infographic data from fit analysis
+    const infographicData = {
+        title: `Your Fit Analysis: ${college.university_name}`,
+        subtitle: `Personalized assessment based on your academic profile`,
+        themeColor: fitCategory === 'SAFETY' ? 'emerald' : fitCategory === 'TARGET' ? 'amber' : fitCategory === 'REACH' ? 'orange' : 'rose',
+        matchScore: matchScore,
+        fitCategory: fitCategory,
+        explanation: explanation,
+        universityInfo: {
+            name: college.university_name,
+            location: college.location,
+            acceptanceRate: college.acceptance_rate,
+            usNewsRank: college.us_news_rank
+        },
+        strengths: scoreBreakdown.filter(f => f.score > 70).map(f => ({
+            name: f.category || f.name,
+            score: f.score,
+            maxScore: 100,
+            percentage: f.score,
+            detail: f.description
+        })),
+        improvements: scoreBreakdown.filter(f => f.score <= 70).map(f => ({
+            name: f.category || f.name,
+            score: f.score,
+            maxScore: 100,
+            percentage: f.score,
+            detail: f.description
+        })),
+        actionPlan: recommendations.slice(0, 3).map((rec, idx) => ({
+            step: idx + 1,
+            action: typeof rec === 'object' ? rec.action : rec,
+            timeline: typeof rec === 'object' ? rec.timeline : null
+        })),
+        gapAnalysis: fitAnalysis.gap_analysis,
+        conclusion: fitAnalysis.conclusion || `With the right focus on improvement areas, ${college.university_name} is a ${fitCategory.replace('_', ' ').toLowerCase()} choice for your profile.`
+    };
+
+    // Show loading while checking profile
+    if (profileLoading) {
+        return (
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden p-8">
+                <div className="flex items-center justify-center gap-3 text-gray-500">
+                    <ArrowPathIcon className="h-6 w-6 animate-spin" />
+                    <span>Loading your profile...</span>
+                </div>
+            </div>
+        );
+    }
+
+    // Show profile required banner if no profile exists
+    if (!profileExists) {
+        return (
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                {/* Header */}
+                <div className={`${config.headerBg} px-6 py-4 border-b ${config.borderColor}`}>
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <button
+                                onClick={onBack}
+                                className="p-2 hover:bg-white/50 rounded-lg transition-colors"
+                            >
+                                ← Back
+                            </button>
+                            <div>
+                                <h2 className="text-xl font-bold text-gray-900">{college.university_name}</h2>
+                                <p className="text-sm text-gray-600 flex items-center gap-1">
+                                    <MapPinIcon className="h-4 w-4" />
+                                    {college.location || 'Location N/A'}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Profile Required Banner */}
+                <div className="p-8">
+                    <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200 rounded-xl p-8 text-center">
+                        <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <ExclamationCircleIcon className="h-8 w-8 text-amber-600" />
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                            Create Your Profile First
+                        </h3>
+                        <p className="text-gray-600 mb-6 max-w-md mx-auto">
+                            To see your personalized fit analysis for {college.university_name},
+                            we need to know about your academic profile, test scores, and activities.
+                        </p>
+                        <Link
+                            to="/profile"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl font-semibold hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg"
+                        >
+                            <SparklesIcon className="h-5 w-5" />
+                            Create Your Profile
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
             {/* Header */}
@@ -348,20 +500,8 @@ const FitAnalysisDetail = ({ college, onBack }) => {
 
             {/* Content */}
             <div className="p-6 space-y-6">
-                {/* University Overview (from pre-computed summary) */}
-                {college.summary && (
-                    <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
-                        <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                            <AcademicCapIcon className="h-5 w-5 text-gray-600" />
-                            University Overview
-                        </h3>
-                        <div className="prose prose-sm max-w-none text-gray-700">
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                {college.summary}
-                            </ReactMarkdown>
-                        </div>
-                    </div>
-                )}
+                {/* Visual Infographic */}
+                <FitInfographicView data={infographicData} />
 
                 {/* Fit Explanation */}
                 <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-lg p-4 border border-amber-100">
@@ -454,6 +594,208 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                )}
+
+                {/* Gap Analysis Section */}
+                {gapAnalysis && (gapAnalysis.primary_gap || gapAnalysis.secondary_gap || (gapAnalysis.student_strengths && gapAnalysis.student_strengths.length > 0)) && (
+                    <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg p-4 border border-orange-200">
+                        <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            🔍 Gap Analysis
+                        </h3>
+                        <div className="grid md:grid-cols-2 gap-4">
+                            {/* Gaps */}
+                            <div className="space-y-3">
+                                {gapAnalysis.primary_gap && (
+                                    <div className="bg-white rounded-lg p-3 border border-orange-100">
+                                        <div className="text-xs font-medium text-orange-700 mb-1">Primary Gap</div>
+                                        <p className="text-sm text-gray-700">{gapAnalysis.primary_gap}</p>
+                                    </div>
+                                )}
+                                {gapAnalysis.secondary_gap && (
+                                    <div className="bg-white rounded-lg p-3 border border-amber-100">
+                                        <div className="text-xs font-medium text-amber-700 mb-1">Secondary Gap</div>
+                                        <p className="text-sm text-gray-700">{gapAnalysis.secondary_gap}</p>
+                                    </div>
+                                )}
+                            </div>
+                            {/* Strengths */}
+                            {gapAnalysis.student_strengths && gapAnalysis.student_strengths.length > 0 && (
+                                <div className="bg-white rounded-lg p-3 border border-emerald-100">
+                                    <div className="text-xs font-medium text-emerald-700 mb-2">Your Strengths</div>
+                                    <ul className="space-y-1">
+                                        {gapAnalysis.student_strengths.map((strength, idx) => (
+                                            <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                                                <span className="text-emerald-500">✓</span>
+                                                <span>{strength}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
+
+                {/* Essay Strategy Section */}
+                {essayAngles.length > 0 && (
+                    <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg p-4 border border-purple-200">
+                        <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                            ✍️ Essay Strategy
+                        </h3>
+                        <div className="space-y-4">
+                            {essayAngles.map((essay, idx) => (
+                                <div key={idx} className="bg-white rounded-lg p-4 border border-purple-100">
+                                    <div className="flex items-start justify-between mb-2">
+                                        <h4 className="font-medium text-purple-900">{essay.essay_prompt}</h4>
+                                        {essay.word_limit && <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded">{essay.word_limit} words</span>}
+                                    </div>
+                                    <p className="text-sm text-gray-700 mb-2">{essay.angle}</p>
+                                    <div className="flex flex-wrap gap-2 text-xs">
+                                        {essay.student_hook && <span className="px-2 py-1 bg-purple-50 text-purple-700 rounded">Your Hook: {essay.student_hook}</span>}
+                                        {essay.school_hook && <span className="px-2 py-1 bg-indigo-50 text-indigo-700 rounded">School Hook: {essay.school_hook}</span>}
+                                    </div>
+                                    {essay.tip && <p className="text-xs text-gray-500 mt-2 italic">💡 Tip: {essay.tip}</p>}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Application Timeline Section */}
+                {applicationTimeline && (
+                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-4 border border-blue-200">
+                        <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            📅 Application Timeline
+                        </h3>
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <div className="text-sm font-medium text-blue-800 mb-1">Recommended Plan</div>
+                                <div className="flex items-center gap-2">
+                                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">{applicationTimeline.recommended_plan}</span>
+                                    {applicationTimeline.is_binding && <span className="text-xs text-red-600 font-medium">Binding</span>}
+                                </div>
+                                <p className="text-xs text-gray-600 mt-2">{applicationTimeline.rationale}</p>
+                            </div>
+                            <div>
+                                <div className="text-sm font-medium text-blue-800 mb-1">Key Dates</div>
+                                <div className="space-y-1 text-sm">
+                                    {applicationTimeline.deadline && <div>📌 Deadline: <span className="font-medium">{applicationTimeline.deadline}</span></div>}
+                                    {applicationTimeline.financial_aid_deadline && <div>💰 FA Deadline: <span className="font-medium">{applicationTimeline.financial_aid_deadline}</span></div>}
+                                </div>
+                            </div>
+                        </div>
+                        {applicationTimeline.key_milestones && applicationTimeline.key_milestones.length > 0 && (
+                            <div className="mt-3 pt-3 border-t border-blue-100">
+                                <div className="text-sm font-medium text-blue-800 mb-2">Key Milestones</div>
+                                <div className="flex flex-wrap gap-2">
+                                    {applicationTimeline.key_milestones.map((milestone, idx) => (
+                                        <span key={idx} className="px-2 py-1 bg-white border border-blue-200 rounded text-xs text-gray-700">{milestone}</span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                {/* Scholarship Matches Section */}
+                {scholarshipMatches.length > 0 && (
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200">
+                        <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            💰 Scholarship Matches
+                        </h3>
+                        <div className="space-y-3">
+                            {scholarshipMatches.map((scholarship, idx) => (
+                                <div key={idx} className="bg-white rounded-lg p-3 border border-green-100">
+                                    <div className="flex items-start justify-between">
+                                        <h4 className="font-medium text-green-900">{scholarship.name}</h4>
+                                        <span className="text-sm font-bold text-green-700">{scholarship.amount}</span>
+                                    </div>
+                                    <p className="text-xs text-gray-600 mt-1">{scholarship.match_reason}</p>
+                                    <div className="flex flex-wrap gap-2 mt-2 text-xs">
+                                        {scholarship.deadline && <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded">Deadline: {scholarship.deadline}</span>}
+                                        {scholarship.application_method && <span className="px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded">{scholarship.application_method}</span>}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Test & Major Strategy Section */}
+                {(testStrategy || majorStrategy) && (
+                    <div className="grid md:grid-cols-2 gap-4">
+                        {testStrategy && (
+                            <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg p-4 border border-amber-200">
+                                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                                    📝 Test Strategy
+                                </h3>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className={`px-3 py-1 rounded-full font-bold text-sm ${testStrategy.recommendation === 'Submit' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}`}>
+                                        {testStrategy.recommendation}
+                                    </span>
+                                    {testStrategy.student_score_position && <span className="text-xs text-gray-500">Score Position: {testStrategy.student_score_position}</span>}
+                                </div>
+                                <p className="text-xs text-gray-600">{testStrategy.rationale}</p>
+                                <div className="mt-2 text-xs text-gray-500 space-y-1">
+                                    {testStrategy.student_act && <div>Your ACT: {testStrategy.student_act}</div>}
+                                    {testStrategy.student_sat && <div>Your SAT: {testStrategy.student_sat}</div>}
+                                    {testStrategy.school_act_middle_50 && <div>School ACT: {testStrategy.school_act_middle_50}</div>}
+                                    {testStrategy.school_sat_middle_50 && <div>School SAT: {testStrategy.school_sat_middle_50}</div>}
+                                </div>
+                            </div>
+                        )}
+                        {majorStrategy && (
+                            <div className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg p-4 border border-teal-200">
+                                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                                    🎓 Major Strategy
+                                </h3>
+                                <div className="space-y-2 text-sm">
+                                    <div><span className="text-gray-500">Intended:</span> <span className="font-medium">{majorStrategy.intended_major}</span></div>
+                                    {majorStrategy.backup_major && <div><span className="text-gray-500">Backup:</span> <span className="font-medium">{majorStrategy.backup_major}</span></div>}
+                                    {majorStrategy.college_within_university && <div><span className="text-gray-500">College:</span> <span className="text-xs">{majorStrategy.college_within_university}</span></div>}
+                                </div>
+                                {majorStrategy.strategic_tip && (
+                                    <p className="text-xs text-teal-700 mt-2 p-2 bg-teal-100 rounded">💡 {majorStrategy.strategic_tip}</p>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                {/* Tips & Red Flags Section */}
+                {(demonstratedInterestTips.length > 0 || redFlagsToAvoid.length > 0) && (
+                    <div className="grid md:grid-cols-2 gap-4">
+                        {demonstratedInterestTips.length > 0 && (
+                            <div className="bg-gradient-to-r from-indigo-50 to-violet-50 rounded-lg p-4 border border-indigo-200">
+                                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                                    💡 Demonstrated Interest Tips
+                                </h3>
+                                <ul className="space-y-2 text-sm">
+                                    {demonstratedInterestTips.map((tip, idx) => (
+                                        <li key={idx} className="flex items-start gap-2 text-gray-700">
+                                            <span className="text-indigo-500">✓</span>
+                                            <span>{tip}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                        {redFlagsToAvoid.length > 0 && (
+                            <div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-lg p-4 border border-red-200">
+                                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                                    ⚠️ Red Flags to Avoid
+                                </h3>
+                                <ul className="space-y-2 text-sm">
+                                    {redFlagsToAvoid.map((flag, idx) => (
+                                        <li key={idx} className="flex items-start gap-2 text-gray-700">
+                                            <span className="text-red-500">✗</span>
+                                            <span>{flag}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                     </div>
                 )}
             </div>
@@ -1415,6 +1757,32 @@ const MyLaunchpad = () => {
     const [selectionMode, setSelectionMode] = useState(false);
     const [bulkRemoving, setBulkRemoving] = useState(false);
 
+    // Chat widget state
+    const [chatCollege, setChatCollege] = useState(null);
+    const [isChatOpen, setIsChatOpen] = useState(false);
+
+    // Fit Analysis Modal state
+    const [fitModalCollege, setFitModalCollege] = useState(null);
+    const [isFitModalOpen, setIsFitModalOpen] = useState(false);
+
+    const handleOpenChat = (college) => {
+        setChatCollege(college);
+        setIsChatOpen(true);
+    };
+
+    const handleCloseChat = () => {
+        setIsChatOpen(false);
+    };
+
+    const handleOpenFitModal = (college) => {
+        setFitModalCollege(college);
+        setIsFitModalOpen(true);
+    };
+
+    const handleCloseFitModal = () => {
+        setIsFitModalOpen(false);
+    };
+
     // Fetch college list
     const fetchCollegeList = async () => {
         if (!currentUser?.email) return;
@@ -1681,7 +2049,11 @@ const MyLaunchpad = () => {
         };
 
         collegeList.forEach(college => {
-            const fitCategory = college.fit_analysis?.fit_category || 'TARGET';
+            // Use fit_analysis category first, then fallback to soft_fit_category from university data
+            // soft_fit_category is pre-computed based on acceptance rate
+            const fitCategory = college.fit_analysis?.fit_category
+                || college.soft_fit_category
+                || 'TARGET';
             if (categories[fitCategory]) {
                 categories[fitCategory].push(college);
             } else {
@@ -1924,46 +2296,57 @@ const MyLaunchpad = () => {
                 onCollegeAdded={fetchCollegeList}
             />
 
-            {/* Detail View (when a university is selected) */}
-            {selectedUniversity && (
-                <div className="mt-6">
-                    <FitAnalysisDetail
-                        college={selectedUniversity}
-                        onBack={() => setSelectedUniversity(null)}
-                    />
-                </div>
+            {/* Full-Page Fit Analysis View (no tabs, just fit analysis) */}
+            {fitModalCollege && (
+                <FitAnalysisPage
+                    college={fitModalCollege}
+                    onBack={handleCloseFitModal}
+                />
             )}
 
-            {/* Three-Column Layout (hidden when viewing details) */}
-            {!selectedUniversity && (
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    {/* Combine Super Reach + Reach into one column */}
+            {/* Four-Column Layout (hidden when viewing full-page fit analysis) */}
+            {!fitModalCollege && (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {/* Reach Column */}
                     <CategoryColumn
                         category="REACH"
-                        colleges={[...categorizedColleges.SUPER_REACH, ...categorizedColleges.REACH]}
+                        colleges={categorizedColleges.REACH}
                         onRemove={handleRemove}
                         removingId={removingId}
-                        onViewDetails={(college) => setSelectedUniversity(college)}
+                        onViewDetails={handleOpenFitModal}
                         selectedColleges={selectedColleges}
                         onToggleSelect={toggleSelection}
                         selectionMode={selectionMode}
                     />
+                    {/* Super Reach Column */}
+                    <CategoryColumn
+                        category="SUPER_REACH"
+                        colleges={categorizedColleges.SUPER_REACH}
+                        onRemove={handleRemove}
+                        removingId={removingId}
+                        onViewDetails={handleOpenFitModal}
+                        selectedColleges={selectedColleges}
+                        onToggleSelect={toggleSelection}
+                        selectionMode={selectionMode}
+                    />
+                    {/* Target Column */}
                     <CategoryColumn
                         category="TARGET"
                         colleges={categorizedColleges.TARGET}
                         onRemove={handleRemove}
                         removingId={removingId}
-                        onViewDetails={(college) => setSelectedUniversity(college)}
+                        onViewDetails={handleOpenFitModal}
                         selectedColleges={selectedColleges}
                         onToggleSelect={toggleSelection}
                         selectionMode={selectionMode}
                     />
+                    {/* Safety Column */}
                     <CategoryColumn
                         category="SAFETY"
                         colleges={categorizedColleges.SAFETY}
                         onRemove={handleRemove}
                         removingId={removingId}
-                        onViewDetails={(college) => setSelectedUniversity(college)}
+                        onViewDetails={handleOpenFitModal}
                         selectedColleges={selectedColleges}
                         onToggleSelect={toggleSelection}
                         selectionMode={selectionMode}
@@ -1977,6 +2360,32 @@ const MyLaunchpad = () => {
                 onClose={closeCreditsModal}
                 creditsRemaining={creditsRemaining}
                 feature={creditsModalFeature}
+            />
+
+            {/* Floating Chat Button - Fixed to bottom-right */}
+            {collegeList.length > 0 && (
+                <div className="fixed bottom-6 right-6 z-40">
+                    <button
+                        onClick={() => {
+                            // Open chat for the first college or the selected one
+                            const targetCollege = fitModalCollege || collegeList[0];
+                            handleOpenChat(targetCollege);
+                        }}
+                        className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl hover:from-indigo-400 hover:to-purple-500 transition-all group"
+                    >
+                        <ChatBubbleLeftRightIcon className="h-5 w-5" />
+                        <span className="font-medium">Ask AI About Fit</span>
+                        <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                    </button>
+                </div>
+            )}
+
+            {/* Fit Chat Widget */}
+            <FitChatWidget
+                universityId={chatCollege?.university_id}
+                universityName={chatCollege?.university_name}
+                isOpen={isChatOpen}
+                onClose={handleCloseChat}
             />
         </div>
     );

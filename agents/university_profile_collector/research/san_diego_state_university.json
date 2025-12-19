@@ -1,0 +1,985 @@
+{
+  "_id": "san_diego_state_university",
+  "metadata": {
+    "official_name": "San Diego State University",
+    "location": {
+      "city": "San Diego",
+      "state": "CA",
+      "type": "Public"
+    },
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://www.sdsu.edu/admissions",
+      "https://www.usnews.com/best-colleges/sdsu-1151"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "San Diego State University (SDSU) is a leading public research institution and the oldest higher education center in San Diego. Recently designated as an R1 Doctoral University, it balances a high-energy campus culture with a rapidly expanding research portfolio exceeding $230M in annual funding.",
+    "market_position": "Elite Public",
+    "admissions_philosophy": "Comprehensive/Holistic review",
+    "us_news_rank": 117,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Acceptance rates have tightened significantly to approximately 34%, with over 100,000 applications annually.",
+        "implication": "Applicants must demonstrate high academic rigor; the university has transitioned to a test-free policy, placing higher weight on GPA and local area priority."
+      },
+      {
+        "category": "Institutional Growth",
+        "insight": "Attained R1 'Very High Research Activity' status in 2025.",
+        "implication": "Expect increased prestige and more robust opportunities for undergraduate research and STEM funding."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Known for a vibrant 'party school' reputation alongside top-tier Greek life and highly competitive NCAA Division I athletics (Aztecs).",
+      "transportation_impact": "Primarily a commuter campus with 85% of students living off-site, though the SDSU Transit Center and Green Line trolley have increased sustainable transit usage to over 15% for local students.",
+      "research_impact": "Strong focus on urban sustainability, public health, and transportation through initiatives like the Active Transportation Research center and the new Mission Valley innovation district."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 36.0,
+      "in_state_acceptance_rate": 30.8,
+      "out_of_state_acceptance_rate": 87.1,
+      "international_acceptance_rate": 56.9,
+      "transfer_acceptance_rate": 53.5,
+      "admits_class_size": 6629,
+      "is_test_optional": true,
+      "test_policy_details": "Test Blind",
+      "early_admission_stats": null
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 90509,
+        "admits_total": 32561,
+        "enrolled_total": 6629,
+        "acceptance_rate_overall": 35.98,
+        "acceptance_rate_in_state": 31.0,
+        "acceptance_rate_out_of_state": 45.0,
+        "yield_rate": 20.36,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 10520,
+          "accepted_spots": 4802,
+          "admitted_from_waitlist": 1804,
+          "waitlist_admit_rate": 37.57,
+          "is_waitlist_ranked": false
+        },
+        "notes": "SDSU reached a record high in waitlist admissions for the 2024 cycle. Acceptance rate for in-state residents remains significantly more competitive than out-of-state."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 83190,
+        "admits_total": 28433,
+        "enrolled_total": 6095,
+        "acceptance_rate_overall": 34.18,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 21.44,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 8646,
+          "accepted_spots": 4096,
+          "admitted_from_waitlist": 869,
+          "waitlist_admit_rate": 21.22,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions were slightly more selective than the previous year, with a significant pull from the waitlist to meet enrollment targets."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 77000,
+        "admits_total": 30261,
+        "enrolled_total": 6514,
+        "acceptance_rate_overall": 39.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 21.53,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 8585,
+          "accepted_spots": 3993,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Due to over-enrollment, SDSU did not admit any students from the waitlist in the 2022 cycle."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 67660,
+        "admits_total": 25646,
+        "enrolled_total": 5236,
+        "acceptance_rate_overall": 37.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 20.42,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 6917,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 326,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admission rate was approximately 4.7% based on total offers. Precise number of students who accepted a place on the waitlist is not publicly disclosed for this year."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.90-4.25",
+        "unweighted_middle_50": "3.75-4.00",
+        "average_weighted": 4.06,
+        "percentile_25": "3.86",
+        "percentile_75": "4.00",
+        "notes": "GPA is the most critical factor in SDSU's admission process. The average GPA for enrollees is approximately 3.84, while admitted students typically average above 4.0 weighted."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1340",
+        "sat_reading_middle_50": "560-670",
+        "sat_math_middle_50": "560-670",
+        "act_composite_middle_50": "22-29",
+        "submission_rate": null,
+        "policy_note": "SDSU is currently test-blind for admissions; SAT/ACT scores are not considered in the application review but may be used for placement after enrollment."
+      },
+      "demographics": {
+        "first_gen_percentage": 52.0,
+        "legacy_percentage": null,
+        "international_percentage": 5.4,
+        "geographic_breakdown": [
+          {
+            "region": "California",
+            "percentage": 84.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 10.6
+          },
+          {
+            "region": "International",
+            "percentage": 5.4
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 33900,
+            "admits": 11000,
+            "acceptance_rate": 32.4,
+            "note": "Based on historical 41% male applicant pool distribution."
+          },
+          "women": {
+            "applicants": 49200,
+            "admits": 17433,
+            "acceptance_rate": 35.4,
+            "note": "Based on historical 59% female applicant pool distribution."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 33.6,
+          "black_african_american": 3.7,
+          "hispanic_latino": 35.6,
+          "asian": 12.9,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.3,
+          "two_or_more_races": 6.7,
+          "unknown": 4.0,
+          "non_resident_alien": 3.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Fowler College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 32.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Focus on early networking and business communication; students must maintain a 2.9+ GPA in 9 'Preparation for the Major' courses to advance to upper-division status.",
+        "housing_profile": "Business Residential Learning Community (RLC) typically housed in Zura Hall; features proximity to the 'STAR' academic centers.",
+        "student_archetype": "Aspiring Corporate Leaders and Entrepreneurs",
+        "majors": [
+          {
+            "name": "Business Administration - Finance",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": 34.0,
+            "average_gpa_admitted": 3.85,
+            "prerequisite_courses": [
+              "MATH 120 Calculus for Business",
+              "ACCTG 201 Financial Accounting",
+              "ECON 101 Macroeconomics",
+              "ECON 102 Microeconomics"
+            ],
+            "minimum_gpa_to_declare": 2.9,
+            "weeder_courses": [
+              "BA 323 Fundamentals of Finance",
+              "ACCTG 202 Managerial Accounting"
+            ],
+            "special_requirements": "Minimum grade of C in all 9 pre-major courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.9,
+            "curriculum": {
+              "core_courses": [
+                "FIN 321 Managerial Economics",
+                "FIN 325 Intermediate Finance",
+                "FIN 327 Investments",
+                "FIN 329 International Business Finance",
+                "BA 350 Management and Organizational Behavior",
+                "BA 370 Marketing"
+              ],
+              "electives": [
+                "FIN 421 Portfolio Management",
+                "FIN 431 Real Estate Finance",
+                "FIN 585 Estate Planning"
+              ],
+              "total_units": 120,
+              "major_units": 23
+            },
+            "notable_professors": [
+              "Dr. Kamal Haddad (Finance Theory)",
+              "Dr. Martina Musteen (International Business)",
+              "Dr. Steven Gill (Taxation/Accounting)"
+            ],
+            "notes": "Internal transfer requires 2.9 overall GPA and C or better in all pre-major prep."
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACCTG 201",
+              "ECON 101"
+            ],
+            "minimum_gpa_to_declare": 2.9,
+            "weeder_courses": [
+              "ACCTG 326 Intermediate Financial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.9,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Damon Fleming (Accounting Ethics)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 25.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "High performance in calculus and physics is critical; preference is given to applicants with strong STEM coursework in high school.",
+        "housing_profile": "STEM Residential Learning Community often located in Zura Hall, offering maker spaces and group tutoring.",
+        "student_archetype": "Practical Problem-Solvers and Tech Innovators",
+        "majors": [
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": 35.0,
+            "average_gpa_admitted": 3.9,
+            "prerequisite_courses": [
+              "MATH 150 Calculus I",
+              "MATH 151 Calculus II",
+              "PHYS 195 Physics I",
+              "PHYS 196 Physics II",
+              "CHEM 202 General Chemistry for Engineers"
+            ],
+            "minimum_gpa_to_declare": 2.7,
+            "weeder_courses": [
+              "M E 200 Statics",
+              "M E 220 Dynamics",
+              "PHYS 196 Principles of Physics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.7,
+            "curriculum": {
+              "core_courses": [
+                "M E 190 Computer-Aided Design",
+                "M E 200 Statics",
+                "M E 304 Mechanics of Materials",
+                "M E 314 Engineering Design: Mechanical Components",
+                "M E 350 Thermodynamics",
+                "M E 360 Fluids Engineering",
+                "M E 452 Principles of Heat Transfer",
+                "M E 490W Engineering Design: Senior Project"
+              ],
+              "electives": [
+                "M E 520 Mechanical Vibrations",
+                "M E 532 Robot Modeling and Control",
+                "M E 580 Biomechanics",
+                "M E 543 Powder-Based Manufacturing"
+              ],
+              "total_units": 120,
+              "major_units": 42
+            },
+            "notable_professors": [
+              "Dr. Eugene Olevsky (Dean of Engineering)",
+              "Dr. John Abraham (Combustion and Energy Systems)",
+              "Dr. Karen May-Newman (Bioengineering)"
+            ],
+            "notes": "Highly impacted; cumulative GPA of 2.7 required to move from pre-major to major."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 150",
+              "MATH 151",
+              "CHEM 200"
+            ],
+            "minimum_gpa_to_declare": 2.1,
+            "weeder_courses": [
+              "CIV E 225 Mechanics of Materials",
+              "CIV E 160 Statistical Methods"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.1,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Robert Dowell (Structural Engineering)",
+              "Dr. Janusz Supernak (Transportation)"
+            ]
+          },
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 150",
+              "MATH 151",
+              "PHYS 195",
+              "PHYS 196"
+            ],
+            "minimum_gpa_to_declare": 2.7,
+            "weeder_courses": [
+              "A E 280 Methods of Analysis",
+              "A E 200 Statics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.7,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Ping Lu (Guidance and Control)",
+              "Dr. Joseph Katz (Aerodynamics)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "College of Health and Human Services",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 5.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "The Nursing program is a rare 'Direct Entry' exception and is the most competitive on campus; other majors require strict GPA thresholds in science prerequisites.",
+        "housing_profile": "Health and Healing RLC, which connects students with health-professional mentors and wellness-focused activities.",
+        "student_archetype": "Compassionate Clinicians and Public Health Advocates",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": 1.5,
+            "average_gpa_admitted": 4.15,
+            "prerequisite_courses": [
+              "Intermediate Algebra",
+              "Biology with Lab",
+              "Chemistry with Lab"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 102 General, Organic, and Biological Chemistry",
+              "NURS 202 Fundamentals of Nursing"
+            ],
+            "special_requirements": "Minimum grade of B in all science prerequisites. TEAS exam required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "curriculum": {
+              "core_courses": [
+                "NURS 200 Medical Terminology",
+                "NURS 202 Fundamentals of Nursing",
+                "NURS 300 Pharmacology",
+                "NURS 307 Nursing Care of Adults",
+                "NURS 400 Nursing Research",
+                "NURS 415 Community Health Nursing"
+              ],
+              "electives": [],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Sonja Pruitt-Lord (Speech and Language)",
+              "Dr. Giang Pham (Research Dean)"
+            ],
+            "notes": "Internal transfers are strictly forbidden; must be admitted as a freshman Nursing major."
+          },
+          {
+            "name": "Public Health",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 100",
+              "CHEM 100",
+              "STAT 119"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "PH 290 Health Professions and the American Health System"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Jerel Calzo (Behavioral Health)",
+              "Dr. Corinne McDaniels-Davidson (Public Health Institute Director)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "College of Professional Studies and Fine Arts",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 35.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly disciplinary-diverse; performance-based majors (Music, Dance, Theatre) require successful auditions or portfolios in addition to general admission.",
+        "housing_profile": "Visual and Performing Arts RLC; often housed in Maya/Olmeca or Tenochca Hall near the Performing Arts District.",
+        "student_archetype": "Creative Professionals and Media Strategists",
+        "majors": [
+          {
+            "name": "Criminal Justice",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": 30.0,
+            "average_gpa_admitted": 3.75,
+            "prerequisite_courses": [
+              "POL S 102 Intro to Am Govt",
+              "SOC 101 Intro to Sociology",
+              "Elementary Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [
+              "CJ 300 Crime, Law, and Justice",
+              "SOC 201 Research Methods"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "CJ 300 Crime, Law and Justice",
+                "CJ 301 Law in Society",
+                "CJ 302 Crime and Behavior",
+                "CJ 540 Planning and Evaluation",
+                "POL S 102 American Government",
+                "SOC 101 Principles of Sociology"
+              ],
+              "electives": [
+                "CJ 510 Contemporary Issues in Law Enforcement",
+                "CJ 310 Law and Social Control",
+                "CJ 520 Comparative Criminal Justice Systems"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Timothy C. Brown (Criminological Theory)",
+              "Dr. Roddrick Colvin (Public Policy/Law Enforcement)",
+              "Dr. Audrey Beck (Demography/Social Inequalities)"
+            ],
+            "notes": "One of the top ranked criminal justice programs in the U.S."
+          },
+          {
+            "name": "Journalism",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "JMS 200",
+              "ECON 101"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "JMS 210 Media Writing and Reporting"
+            ],
+            "special_requirements": "Passing grade on Spelling, Punctuation, and Grammar (SPG) test.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": null,
+            "notable_professors": [
+              "Dr. Temple Northup (Media Effects)",
+              "Dr. Amy Schmitz-Weiss (Digital Journalism)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "College of Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 34.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Research-heavy focus; students should seek early involvement in labs and maintain high GPAs in core biology and chemistry sequences.",
+        "housing_profile": "Science Residential Learning Community featuring specialized academic support for rigorous laboratory courses.",
+        "student_archetype": "Detail-Oriented Researchers and Pre-Med Scholars",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": 39.6,
+            "average_gpa_admitted": 4.04,
+            "prerequisite_courses": [
+              "MATH 150 Calculus I",
+              "MATH 151 Calculus II",
+              "MATH 245 Discrete Math",
+              "PHYS 195 Physics I"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CS 210 Data Structures",
+              "CS 240 Computer Organization",
+              "MATH 245 Discrete Math"
+            ],
+            "special_requirements": "C or better in all preparation courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "curriculum": {
+              "core_courses": [
+                "CS 150 Introductory Computer Programming",
+                "CS 160 Intermediate Computer Programming",
+                "CS 210 Data Structures",
+                "CS 240 Computer Organization",
+                "CS 370 Computer Architecture",
+                "CS 460 Algorithms",
+                "CS 480 Operating Systems",
+                "STAT 550 Applied Probability"
+              ],
+              "electives": [
+                "CS 530 Systems Programming",
+                "CS 549 Machine Learning",
+                "CS 574 Computer Security",
+                "CS 583 3D Game Programming"
+              ],
+              "total_units": 120,
+              "major_units": 34
+            },
+            "notable_professors": [
+              "Dr. Shangping Ren (Department Chair, Real-time Systems)",
+              "Dr. Robert Beverly (Cybersecurity)",
+              "Dr. Joann Qiongna Chen (Differential Privacy)"
+            ],
+            "notes": "Internal transfers are possible but competitive; 3.0+ GPA recommended."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": 34.0,
+            "average_gpa_admitted": 3.9,
+            "prerequisite_courses": [
+              "PSY 101 Intro Psych",
+              "BIOL 100 General Biology",
+              "PSY 280 Statistical Methods"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "PSY 280 Statistical Methods in Psychology",
+              "PSY 260 Physiological Psychology"
+            ],
+            "special_requirements": "Neuroscience emphasis requires 3.00 minimum GPA.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "curriculum": {
+              "core_courses": [
+                "PSY 101 Introductory Psychology",
+                "PSY 201 Academic and Career Opportunities in Psych",
+                "PSY 211 Introduction to Cognitive Psychology",
+                "PSY 230 Developmental Psychology",
+                "PSY 260 Introduction to Physiological Psychology",
+                "PSY 280 Statistical Methods in Psychology"
+              ],
+              "electives": [
+                "PSY 350 Psychopathology",
+                "PSY 360 Behavioral Neuroscience",
+                "PSY 319 Industrial and Organizational Psychology"
+              ],
+              "total_units": 120,
+              "major_units": 36
+            },
+            "notable_professors": [
+              "Dr. Paul E. Gilbert (Neuropsychology)",
+              "Dr. Linda Gallo (Health Psychology)",
+              "Dr. Aaron Blashill (Eating Disorders/LGBTQ+ Health)"
+            ],
+            "notes": "Most popular major at SDSU. Two additional emphases available: I/O and Neuroscience."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.84,
+            "prerequisite_courses": [
+              "BIOL 203 Cell & Molecular Biology",
+              "CHEM 200 General Chemistry",
+              "MATH 124 Calculus"
+            ],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [
+              "CHEM 232 Organic Chemistry",
+              "BIOL 203 Principles of Cell and Molecular Biology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.8,
+            "curriculum": {
+              "core_courses": [
+                "BIOL 203 Principles of Cell and Molecular Biology",
+                "BIOL 204 Principles of Organismal Biology",
+                "BIOL 215 Biostatistics",
+                "BIOL 351 Genetics",
+                "BIOL 352 Evolution",
+                "BIOL 366 Cell Biology",
+                "CHEM 365 Fundamentals of Biochemistry"
+              ],
+              "electives": [
+                "BIOL 350 General Microbiology",
+                "BIOL 462 Zoology",
+                "BIOL 597 Undergraduate Research"
+              ],
+              "total_units": 120,
+              "major_units": 44
+            },
+            "notable_professors": [
+              "Dr. Kevin Hovel (Marine Ecology)",
+              "Dr. Walter Oechel (Climate Change)",
+              "Dr. Rulon Clark (Reptile Behavior)"
+            ],
+            "notes": "Requires 2.80 cumulative GPA for admission to the major."
+          }
+        ]
+      },
+      {
+        "name": "College of Arts and Letters",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 40.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong emphasis on interdisciplinary studies and global perspectives; ideal for students interested in social justice and humanities.",
+        "housing_profile": "Often associated with the 'Discover San Diego State' RLC which focuses on campus integration and cultural exploration.",
+        "student_archetype": "Social Justice Advocates and Global Citizens",
+        "majors": []
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 38.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Primarily focused on Liberal Studies for future teachers; requires early field experience and passing basic skills tests for credentialing pathways.",
+        "housing_profile": "Future Educators RLC, providing early exposure to teaching environments and professional development.",
+        "student_archetype": "Dedicated Mentors and Pedagogy Experts",
+        "majors": []
+      },
+      {
+        "name": "Weber Honors College",
+        "admissions_model": "Lottery",
+        "acceptance_rate_estimate": 15.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Requires a separate application; emphasizes interdisciplinary 'honors' seminars and small class sizes within the larger university.",
+        "housing_profile": "Exclusive Honors Residential Learning Community in Zura Hall, considered one of the most desirable dorms on campus.",
+        "student_archetype": "Intellectually Curious Overachievers",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Entrepreneurship Minor",
+      "Leadership Minor",
+      "Health Communication Certificate",
+      "International Business Minor",
+      "Sustainability Minor",
+      "Digital Media Certificate",
+      "Public Law Minor"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Cal State Apply"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "Standard filing period for Fall 2026; typically runs Oct 1 - Dec 1."
+      },
+      {
+        "plan_type": "Early Consideration (International)",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "International students applying by this date receive early spring notification."
+      },
+      {
+        "plan_type": "Regular Decision (International)",
+        "date": "2026-04-01",
+        "is_binding": false,
+        "notes": "Rolling basis for international applicants after the early deadline."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "No supplemental essays or personal statements are required for general undergraduate admission."
+      },
+      {
+        "target_program": "Music, Dance, Theatre Arts",
+        "requirement_type": "Audition",
+        "deadline": "2025-12-01",
+        "details": "Applicants must apply by the Dec 1 deadline and will be contacted for departmental auditions."
+      },
+      {
+        "target_program": "Educational Opportunity Program (EOP)",
+        "requirement_type": "Essays/Recommendations",
+        "deadline": "2026-01-15",
+        "details": "Requires separate responses to personal questions and two recommendations."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "GPA",
+        "Course Rigor (A-G Requirements)"
+      ],
+      "secondary_factors": [
+        "Major Preparation",
+        "Local Admission Area",
+        "Life Obstacles",
+        "College Prep Program Participation"
+      ],
+      "essay_importance": "None",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Admission is heavily data-driven, focusing on academic performance in 'impacted' majors and providing priority to students within the SDSU local service area."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Avoid 'impacted' heavyweights like Nursing (5% admit rate) and CS unless your CSU GPA is 4.0+",
+      "Apply to 'easier' majors such as Religious Studies, Anthropology, or Women's Studies for higher entry probability",
+      "Utilize the 'Undeclared' major option if your GPA is mid-range, as it often has a higher admit rate (~45%) than specialized STEM fields",
+      "Research 'Pre-Major' requirements beforehand; all students are admitted as Pre-Majors and must hit a secondary GPA/course threshold to officially declare",
+      "Prioritize majors in the College of Arts and Letters if you aim to switch into Business later, as GE overlaps are significant"
+    ],
+    "college_ranking_tactics": [
+      "Apply to the SDSU Imperial Valley campus if your GPA is below 3.5, as it is significantly less competitive than the main San Diego campus",
+      "Target the Weber Honors College if your unweighted GPA is 3.7+ to gain priority registration and access to the 'nicest' dorm (Zura Hall)",
+      "Rank Residential Learning Communities (RLCs) based on your major to live with peers in the same 'Pre-Major' track for study groups",
+      "Select 'Main Campus' only if you are prepared for the two-year mandatory on-campus housing requirement for non-local students",
+      "Leverage 'Local Area' status if you graduated from a high school south of SR-56 for a significant point boost in the admission ranking"
+    ],
+    "alternate_major_strategy": "If applying to a highly competitive major like Nursing, list Public Health or Biology as your alternate choice. These majors share nearly identical lower-division prerequisites (anatomy, chemistry, microbiology), allowing you to complete your 'Pre-Nursing' requirements while technically enrolled in a less competitive program, facilitating a future internal transfer or post-grad nursing application."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 8728,
+        "total_coa": 36090,
+        "housing": 23030
+      },
+      "out_of_state": {
+        "tuition": 21328,
+        "total_coa": 48690,
+        "supplemental_tuition": 12600
+      }
+    },
+    "aid_philosophy": "Need-Blind",
+    "average_need_based_aid": 12441,
+    "average_merit_aid": 3811,
+    "percent_receiving_aid": 55.0,
+    "scholarships": [
+      {
+        "name": "Presidential Scholars Program",
+        "type": "Merit",
+        "amount": "Up to $40,000 over 4 years",
+        "deadline": "Invitation-only (Dec-March)",
+        "benefits": "Guaranteed admission to Weber Honors College, personal advising, guaranteed on-campus housing, study abroad placement assistance",
+        "application_method": "Invitation-Only Application"
+      },
+      {
+        "name": "SDSU Merit Scholarship",
+        "type": "Merit",
+        "amount": "$7,500 - $10,000 per year",
+        "deadline": "2026-02-13",
+        "benefits": "Prestigious award for local SDSU admissions-area students with minimum 4.32 GPA",
+        "application_method": "Invitation-Only Application"
+      },
+      {
+        "name": "SDSU OOS Academic Award Scholarship Program",
+        "type": "Merit",
+        "amount": "Varies by tier (Presidential, Excellence, Distinction)",
+        "deadline": "Automatic consideration",
+        "benefits": "Targeted at highly qualified non-resident (out-of-state) students",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Weber Honors College Scholarship",
+        "type": "Merit",
+        "amount": "$1,000 - $7,500 per year",
+        "deadline": "2026-05-01 (Intent to enroll deadline)",
+        "benefits": "Exclusive to students accepted into the Weber Honors College cohort",
+        "application_method": "Aztec Scholarships Portal"
+      },
+      {
+        "name": "SDSU First-Gen Achievement Scholarship",
+        "type": "Merit",
+        "amount": "$5,000+ per year",
+        "deadline": "Invitation-only (March)",
+        "benefits": "Supports high-achieving first-generation students from California",
+        "application_method": "Invitation-Only Application"
+      },
+      {
+        "name": "International First-Year Student Advantage Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "deadline": "Automatic consideration",
+        "benefits": "Offered to a limited number of international students with strong academic records",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Deborah Boyce Endowed Fowler College of Business Scholarship",
+        "type": "Need-Based",
+        "amount": "Varies",
+        "deadline": "2025-09-05",
+        "benefits": "Support for business majors with demonstrated financial need",
+        "application_method": "Aztec Scholarships Portal / FAFSA"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for most exams",
+      "exceptions": [
+        "AP Seminar and Research typically grant elective credit rather than specific course equivalents",
+        "Higher scores (4 or 5) may be required for specific course equivalents in Math and Computer Science"
+      ],
+      "usage": "Can satisfy GE requirements (including 'Golden Four') and major preparation prerequisites"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with a score of 4+ grant 6 units of credit",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "ASSIST.org",
+        "Transferology"
+      ],
+      "restrictions": "70 unit cap for community college credits; 30 unit cap for other exams (excluding AP/IB)"
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "High GPA (average admitted student has a 4.0+ CSU weighted GPA) with strong course rigor",
+      "Competitive performance in 'A-G' requirements, especially in math and science for STEM majors",
+      "Strategic major selection, as high-demand programs like Nursing and CS are significantly more selective",
+      "Local priority status for students graduating from high schools within the SDSU service area"
+    ],
+    "common_activities": [
+      "Leadership roles in school clubs or student government",
+      "Extensive community service (highly valued for scholarship applications)",
+      "Participation in college-readiness programs like AVID or EOP",
+      "Dual enrollment at local community colleges to demonstrate academic maturity",
+      "Involvement in varsity athletics or performing arts"
+    ],
+    "essay_tips": [
+      "Focus on the Weber Honors College essay if applying (typically a 500-word limit)",
+      "Clearly articulate how your background prepares you for the rigor of your specific major",
+      "Use the 'Special Consideration' section to detail any life obstacles or hardships overcome",
+      "Avoid clichés about San Diego’s weather or beach culture; focus on academic and career goals"
+    ],
+    "red_flags": [
+      "Significant grade decline during senior year (admissions are frequently rescinded for D or F grades)",
+      "Misreporting grades or self-reporting courses that are later dropped without notice",
+      "Generic or AI-generated essays for program-specific applications (Honors, Nursing)",
+      "Failing to meet the strict November 30th application deadline"
+    ],
+    "insights": [
+      "SDSU is currently test-blind for admissions, meaning SAT/ACT scores are not used for the entry decision",
+      "Out-of-state students often see slightly higher acceptance rates as the university looks to diversify",
+      "Student reviews emphasize that while it's a 'party school,' the academic workload in upper-division courses is intense",
+      "Campus housing is extremely limited, so applying for the housing license early is critical after admission"
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 63296,
+    "employment_rate_2yr": 92.0,
+    "grad_school_rate": 17.0,
+    "top_employers": [
+      "Amazon",
+      "Meta",
+      "Google",
+      "Microsoft",
+      "Salesforce",
+      "Qualcomm",
+      "Deloitte",
+      "Apple"
+    ],
+    "loan_default_rate": 2.9
+  },
+  "student_retention": {
+    "freshman_retention_rate": 94.0,
+    "graduation_rate_4_year": 57.0,
+    "graduation_rate_6_year": 78.3
+  }
+}

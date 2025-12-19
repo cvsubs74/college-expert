@@ -1,0 +1,443 @@
+{
+  "university_profile": {
+    "_id": "university_of_la_verne",
+    "metadata": {
+      "official_name": "University of La Verne",
+      "location": {
+        "city": "La Verne",
+        "state": "CA",
+        "type": "Private"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "US News & World Report Best Colleges 2026",
+        "U.S. Department of Education College Scorecard",
+        "University of La Verne Office of Institutional Research",
+        "Campus Activities Board (CAB) Programming Reports"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "Founded in 1891, the University of La Verne is a private, nonprofit institution in Southern California recognized as a federally designated Hispanic-Serving Institution (HSI). It emphasizes a liberal arts foundation integrated with professional preparation, ethical reasoning, and community engagement across its primary colleges.",
+      "market_position": "Regional Hispanic-Serving Private",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 213,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "The acceptance rate dropped from approximately 76% in 2020 to 48.5% in recent competitive cycles, though it remains volatile year-over-year.",
+          "implication": "Applicants should utilize Early Action pathways to navigate increasing selectivity and secure institutional aid."
+        },
+        {
+          "category": "Diversity & Funding",
+          "insight": "Strong focus on STEM equity evidenced by Howard Hughes Medical Institute (HHMI) and Keck Foundation grants.",
+          "implication": "High-value opportunities exist for first-generation and underrepresented students in research immersion programs (CUREs)."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Life is centered around the Abraham Campus Center and 'Sneaky Park,' with a strong emphasis on multicultural clubs and student-led programming through the Campus Activities Board (CAB). The social scene is largely influenced by its NCAA Division III 'Leopard' athletics and Greek life.",
+        "transportation_impact": "A high commuter population (approx. 65%) creates a 'suitcase campus' dynamic on weekends; the university utilizes a real-time shuttle app and integrated mobile platform to bridge the gap for students traveling from the wider Los Angeles/Inland Empire area.",
+        "research_impact": "Research is driven by the La Verne Academy, focusing on faculty-student collaboration in fields like AI (bolstered by a $1M Fletcher Jones Foundation grant) and wildfire detection technology at the Neher Montana Field Research Station."
+      }
+    },
+    "admissions_status": {
+      "overall_acceptance_rate": 71.2,
+      "in_state_acceptance_rate": 0.0,
+      "out_of_state_acceptance_rate": 0.0,
+      "international_acceptance_rate": 0.0,
+      "transfer_acceptance_rate": 0.0,
+      "admits_class_size": 5060,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": []
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 10813,
+        "admits_total": 5242,
+        "enrolled_total": 646,
+        "acceptance_rate_overall": 48.5,
+        "yield_rate": 12.3,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "A significant surge in applications occurred this cycle, resulting in a notably lower acceptance rate compared to previous years."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 6171,
+        "admits_total": 4537,
+        "enrolled_total": 632,
+        "acceptance_rate_overall": 73.5,
+        "yield_rate": 13.9,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.30-3.65",
+        "unweighted_middle_50": "3.10-3.50",
+        "average_weighted": 3.49,
+        "percentile_25": 3.3,
+        "percentile_75": 3.65,
+        "notes": "University typically admits students with a 'B' average; roughly 34% of admitted students have a GPA of 3.75 or higher."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1003-1325",
+        "sat_reading_middle_50": "510-650",
+        "sat_math_middle_50": "460-652",
+        "act_composite_middle_50": "18-25",
+        "submission_rate": 24.0,
+        "policy_note": "Test-optional for most programs; scores are considered if submitted."
+      },
+      "demographics": {
+        "first_gen_percentage": 44.0,
+        "legacy_percentage": 0.0,
+        "international_percentage": 4.27,
+        "geographic_breakdown": [
+          {
+            "region": "California",
+            "percentage": 91.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 8.0
+          },
+          {
+            "region": "International",
+            "percentage": 1.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 4021,
+            "admits": 1832,
+            "acceptance_rate": 45.6,
+            "note": "Based on Fall 2023 data."
+          },
+          "women": {
+            "applicants": 6789,
+            "admits": 3408,
+            "acceptance_rate": 50.2,
+            "note": "Women represent ~63% of the total applicant pool."
+          },
+          "non_binary": {
+            "applicants": 0,
+            "admits": 0,
+            "acceptance_rate": 0.0,
+            "note": "Data not publicly provided"
+          }
+        },
+        "racial_breakdown": {
+          "white": 17.3,
+          "black_african_american": 7.8,
+          "hispanic_latino": 59.1,
+          "asian": 5.5,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.3,
+          "two_or_more_races": 3.5,
+          "unknown": 2.0,
+          "non_resident_alien": 4.3
+        },
+        "religious_affiliation": "Church of the Brethren (Historical/Affiliated)"
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "College of Arts and Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 48.5,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Ideal for students seeking a values-based liberal arts education with faculty mentorship.",
+          "housing_profile": "Traditional living in Citrus Hall (freshmen) or 'The Oaks'.",
+          "student_archetype": "Intellectually curious and socially conscious learners.",
+          "majors": [
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "prerequisite_courses": [
+                "CHEM 201",
+                "CHEM 202",
+                "MATH 105"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "BIOL 310",
+                "CHEM 311"
+              ],
+              "special_requirements": "Requires completion of two CURE classes.",
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "BIOL 201",
+                  "BIOL 202",
+                  "BIOL 310",
+                  "BIOL 311",
+                  "BIOL 323",
+                  "BIOL 378",
+                  "BIOL 381",
+                  "BIOL 499"
+                ],
+                "electives": [
+                  "BIOL 302",
+                  "BIOL 314",
+                  "BIOL 343",
+                  "BIOL 344"
+                ],
+                "total_units": 128,
+                "major_units": 78
+              },
+              "notable_professors": [
+                "Dr. Tatiana Tatarinova",
+                "Dr. Christine Broussard"
+              ],
+              "notes": "Maintains the Neher Montana Research Station."
+            }
+          ]
+        },
+        {
+          "name": "College of Business and Public Management",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 48.5,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Strong for career-driven students looking for networking in Greater LA.",
+          "housing_profile": "Suite-style living in Vista La Verne preferred by upperclassmen.",
+          "student_archetype": "Ambitious future leaders and networking-focused professionals.",
+          "majors": [
+            {
+              "name": "Business Administration",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "prerequisite_courses": [
+                "ACCT 201",
+                "ECON 220",
+                "BUS 270"
+              ],
+              "minimum_gpa_to_declare": 2.75,
+              "weeder_courses": [
+                "BUS 330",
+                "BUS 270"
+              ],
+              "special_requirements": "Grade of C or better in all prerequisite courses.",
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.75,
+              "curriculum": {
+                "core_courses": [
+                  "BUS 330",
+                  "BUS 343",
+                  "BUS 347",
+                  "BUS 360",
+                  "BUS 410",
+                  "BUS 496",
+                  "MGMT 300",
+                  "MGMT 459"
+                ],
+                "electives": [
+                  "BUS 331",
+                  "BUS 466",
+                  "MGMT 455"
+                ],
+                "total_units": 128,
+                "major_units": 78
+              },
+              "notable_professors": [
+                "Dr. Emmeline de Pillis (Dean)",
+                "Dr. Keeok Park"
+              ],
+              "notes": "Most popular major; offers 4+1 MBA/MSDA options."
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Data Science Minor",
+        "Entrepreneurship Certificate",
+        "Cybersecurity Certificate",
+        "Latinx & Latin American Studies Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "La Verne Application",
+        "Coalition on Scoir"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Priority Fall (Freshman)",
+          "date": "2025-02-01",
+          "is_binding": false,
+          "notes": "Primary consideration for merit scholarships."
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "Rolling",
+          "is_binding": false,
+          "notes": "Applications accepted until term begins."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Personal Statement",
+          "deadline": null,
+          "details": "Minimum 250 words answering Common App or internal prompts."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Course Rigor",
+          "GPA",
+          "Personal Statement",
+          "Recommendations"
+        ],
+        "secondary_factors": [
+          "Extracurriculars",
+          "Leadership",
+          "Character"
+        ],
+        "essay_importance": "High",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "None",
+        "first_gen_boost": "Strong",
+        "specific_differentiators": "As an HSI, values community engagement and first-gen success."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply as 'Undeclared' to maximize admission odds (~20% enter this way)",
+        "Apply to 4+1 programs early to secure a faster track to a Master's"
+      ],
+      "college_ranking_tactics": [
+        "Rank the College of Business higher for data analytics tracks",
+        "Prioritize LaFetra College of Education for evening cohort options"
+      ],
+      "alternate_major_strategy": "List 'Undeclared' or a related Humanities major as an alternate if targeting competitive STEM fields."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 49700,
+          "total_coa": 70288,
+          "housing": 15322
+        },
+        "out_of_state": {
+          "tuition": 49700,
+          "total_coa": 70288,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 16360,
+      "average_merit_aid": 24781,
+      "percent_receiving_aid": 97.0
+    },
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Up to full tuition",
+        "deadline": "Rolling (Priority: Feb 1)",
+        "benefits": "Renewable for 4 years with 3.0 GPA",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Performance Scholarship",
+        "type": "Talent/Merit",
+        "amount": "$31,000 per year",
+        "deadline": "2026-02-27",
+        "benefits": "Available in Art, Music, Theatre, and Communications",
+        "application_method": "Supplemental Application and Audition/Portfolio"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit (up to 44 hours).",
+        "exceptions": [
+          "AP Music Theory used for placement only",
+          "Calculus requires 4+ for MATH 201 equivalency"
+        ],
+        "usage": "Applies toward LVGE, major prerequisites, or electives."
+      },
+      "ib_policy": {
+        "general_rule": "Score of 4+ grants credit (~4 units per exam).",
+        "diploma_bonus": true
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transfer Articulation Portal (TAP)",
+          "ASSIST.org"
+        ],
+        "restrictions": "Max 88 semester hours; minimum grade of C- required."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Competitive GPA (3.0+) with consistent core subject performance",
+        "Alignment with community service and civic engagement values"
+      ],
+      "common_activities": [
+        "Local community service",
+        "NCAA Division III Athletics",
+        "Leadership in niche clubs"
+      ],
+      "essay_tips": [
+        "Be highly reflective: explain the 'why' behind experiences",
+        "Showcase commitment to diversity and small-campus community contribution"
+      ],
+      "red_flags": [
+        "Noticeable grade decline in senior year",
+        "Generic essays lacking personal connection to campus"
+      ],
+      "insights": [
+        "Niche Direct Admissions partnership accepts students based on Niche profiles",
+        "Test-optional strategy still uses scores for honors program benchmarks"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 52700,
+      "employment_rate_2yr": 92.0,
+      "grad_school_rate": 15.0,
+      "top_employers": [
+        "The Walt Disney Company",
+        "Kaiser Permanente",
+        "Amazon",
+        "Boeing",
+        "Deloitte"
+      ],
+      "loan_default_rate": 4.0,
+      "student_retention": {
+        "freshman_retention_rate": 76.0,
+        "graduation_rate_4_year": 55.0,
+        "graduation_rate_6_year": 65.0
+      }
+    }
+  }
+}

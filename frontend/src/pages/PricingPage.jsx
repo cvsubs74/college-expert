@@ -58,7 +58,7 @@ const PricingPage = () => {
             bestFor: 'Sophomores & Juniors exploring options',
             features: [
                 { text: '3 fit analysis credits', included: true, highlight: true },
-                { text: 'AI counselor (20 messages/month)', included: true },
+                { text: 'Chat with AI on university pages', included: true },
                 { text: 'Browse 150+ university profiles', included: true },
                 { text: 'Build your student profile', included: true },
             ],
@@ -78,7 +78,7 @@ const PricingPage = () => {
             bestFor: 'Students building their college list',
             features: [
                 { text: '20 fit analyses/month', included: true, highlight: true },
-                { text: 'Unlimited AI counselor access', included: true },
+                { text: 'Unlimited AI chat on all universities', included: true },
                 { text: 'Compare schools side-by-side', included: true },
                 { text: 'Cancel anytime, no commitment', included: true },
             ],
@@ -101,7 +101,7 @@ const PricingPage = () => {
             bestFor: 'Seniors applying this year',
             features: [
                 { text: '150 fit analyses for the year', included: true, highlight: true },
-                { text: 'Unlimited AI counselor access', included: true },
+                { text: 'Unlimited AI chat on all universities', included: true },
                 { text: 'Covers entire application season', included: true },
                 { text: 'Priority support when you need it', included: true },
             ],

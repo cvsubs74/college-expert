@@ -1,0 +1,526 @@
+{
+  "university_profile": {
+    "_id": "hofstra_university",
+    "metadata": {
+      "official_name": "Hofstra University",
+      "location": {
+        "city": "Hempstead",
+        "state": "NY",
+        "type": "Private"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "https://www.hofstra.edu",
+        "https://www.usnews.com/best-colleges/hofstra-university-2856",
+        "https://greaterlongisland.com/long-island-schools-earn-high-marks-in-u-s-news-2026-best-colleges-study/",
+        "https://www.newsday.com/long-island/education/us-news-world-report-college-rankings-stony-brook-hofstra-adelphi-s8f6a9p1"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "Hofstra University is a private research institution in Hempstead, New York, known for its small class sizes and its role as the only university to host three consecutive U.S. presidential debates. It integrates liberal arts with professional schools in medicine, law, and engineering, leveraging its proximity to New York City for high-impact experiential learning.",
+      "market_position": "Mid-tier National Research University (R2)",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 183,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Hofstra rose 13 spots in the 2026 US News rankings to #183, up from #196 in 2025.",
+          "implication": "The university is gaining momentum in national prestige metrics, though it remains accessible with an acceptance rate hovering around 68-71%."
+        },
+        {
+          "category": "Market Position",
+          "insight": "Only one of three New York metro area universities with schools of engineering, medicine, and law.",
+          "implication": "Provides a distinct 'one-stop' professional branding that appeals to career-oriented students looking for New York industry ties."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "The campus has a high commuter population (approx. 59%), which can lead to quieter weekends; however, it hosts 200+ clubs and 21 Division I athletic teams to foster on-campus engagement.",
+        "transportation_impact": "A dedicated free shuttle service connects students to the Long Island Rail Road (LIRR) and local malls, making the 25-mile trip to Manhattan a core part of the student social and internship experience.",
+        "research_impact": "Maintains R2 Carnegie classification with significant industry partnerships, notably the Zucker School of Medicine at Hofstra/Northwell and a research collaboration with Cold Spring Harbor Laboratory."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 68.09,
+      "international_acceptance_rate": 5.31,
+      "transfer_acceptance_rate": 42.19,
+      "admits_class_size": 17035,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "admissions_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 25021,
+        "admits_total": 17035,
+        "enrolled_total": 1763,
+        "acceptance_rate_overall": 68.08,
+        "yield_rate": 10.35,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 267,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 23,
+          "waitlist_admit_rate": 8.61,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data disclosed for the first time in recent years."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 22890,
+        "admits_total": 16157,
+        "enrolled_total": 1593,
+        "acceptance_rate_overall": 70.59,
+        "yield_rate": 9.86
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 23577,
+        "admits_total": 16346,
+        "enrolled_total": 1520,
+        "acceptance_rate_overall": 69.33,
+        "yield_rate": 9.30
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 24886,
+        "admits_total": 16862,
+        "enrolled_total": 1600,
+        "acceptance_rate_overall": 67.76,
+        "yield_rate": 9.49
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.50-4.30",
+        "average_weighted": 3.8,
+        "notes": "The average high school GPA for the Class of 2028 was 3.8; scholarship recipients typically range from 3.2 to 4.3+ weighted."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1270-1450",
+        "sat_reading_middle_50": "620-700",
+        "sat_math_middle_50": "610-700",
+        "act_composite_middle_50": "28-33",
+        "submission_rate": 26.0,
+        "policy_note": "Hofstra is test-optional for most programs, though scores are required for home-schooled and some international applicants."
+      },
+      "demographics": {
+        "first_gen_percentage": 33.3,
+        "international_percentage": 6.3,
+        "geographic_breakdown": [
+          {
+            "region": "New York State",
+            "percentage": 67.0
+          },
+          {
+            "region": "Out of State",
+            "percentage": 29.0
+          },
+          {
+            "region": "International",
+            "percentage": 4.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 9015,
+            "admits": 6096,
+            "acceptance_rate": 67.6
+          },
+          "women": {
+            "applicants": 13873,
+            "admits": 10060,
+            "acceptance_rate": 72.5
+          }
+        },
+        "racial_breakdown": {
+          "white": 43.0,
+          "black_african_american": 9.0,
+          "hispanic_latino": 18.0,
+          "asian": 15.0,
+          "native_american_alaskan": 0.5,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 7.0,
+          "unknown": 3.4,
+          "non_resident_alien": 4.0
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges and Schools",
+      "colleges": [
+        {
+          "name": "Hofstra College of Liberal Arts and Sciences (HCLAS)",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 68.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Holistic review with emphasis on high school grade trends and rigor; students should demonstrate intellectual curiosity and potential for community contribution.",
+          "housing_profile": "First-year students often reside in Stuyvesant Hall (traditional) or The Netherlands (suites).",
+          "student_archetype": "Versatile thinkers and curious explorers across the humanities and sciences",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "weeder_courses": [
+                "PSY 040 Statistics",
+                "PSY 141 Research Methods and Design"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "PSY 001 Introduction to Psychology",
+                  "PSY 040 Statistics",
+                  "PSY 141 Research Methods and Design",
+                  "PSY 190-199 Research Seminar"
+                ],
+                "total_units": 124,
+                "major_units": 33
+              },
+              "notable_professors": [
+                "Dr. William C. Sanderson",
+                "Dr. Phyllis S. Ohr",
+                "Dr. Mun Yee Kwan"
+              ]
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "weeder_courses": [
+                "BIOL 112 Animal Form and Function",
+                "CHEM 003 General Chemistry I"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "BIOL 112 Animal Form and Function",
+                  "BIOL 113 Cell Biology and Genetics",
+                  "CHEM 003A General Chemistry I",
+                  "CHEM 004A General Chemistry II"
+                ],
+                "total_units": 124,
+                "major_units": 40
+              }
+            }
+          ]
+        },
+        {
+          "name": "Frank G. Zarb School of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 60.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Focus on leadership and motivation; strong performance in mathematics is a plus for competitive programs like Finance.",
+          "housing_profile": "Often located near South Campus for easy access to the Zarb School's high-tech facilities.",
+          "student_archetype": "Ambitious corporate climbers and entrepreneurs looking for NYC proximity",
+          "majors": [
+            {
+              "name": "Marketing",
+              "degree_type": "B.B.A.",
+              "weeder_courses": [
+                "ACCT 101 Financial Accounting",
+                "BAN 001 Business Statistics"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "MKT 101 Principles of Marketing",
+                  "MKT 124 Consumer Behavior",
+                  "MKT 144 Research",
+                  "MKT 175 Strategy"
+                ],
+                "total_units": 120,
+                "major_units": 24
+              }
+            },
+            {
+              "name": "Finance",
+              "degree_type": "B.B.A.",
+              "weeder_courses": [
+                "FIN 110 Fundamentals of Corporate Finance",
+                "ACCT 101 Financial Accounting"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "FIN 101 Intro Markets",
+                  "FIN 110 Corp Finance",
+                  "FIN 132 Investments",
+                  "FIN 160 Policy"
+                ],
+                "total_units": 120,
+                "major_units": 24
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fred DeMatteis School of Engineering and Applied Science",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 55.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires a strong foundation in STEM; students should highlight hands-on project experience.",
+          "student_archetype": "Practical problem-solvers and tech-driven innovators",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "weeder_courses": [
+                "CSC 015 Fundamentals of CS I",
+                "CSC 016 Fundamentals of CS II"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "CSC 014 Discrete",
+                  "CSC 110 Architecture",
+                  "CSC 112 OS",
+                  "CSC 120 Algorithms",
+                  "CSC 197A/B Design"
+                ],
+                "total_units": 124,
+                "major_units": 58
+              }
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Business Analytics Minor",
+        "Cybersecurity Foundations Certificate",
+        "Data Science and Machine Learning Minor",
+        "Entrepreneurship Minor",
+        "Neuroscience Minor",
+        "Post-Baccalaureate Premedical Studies Certificate",
+        "Civic Engagement Minor",
+        "Forensic Science Minor",
+        "Sustainability Studies Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Hofstra Online Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Action I",
+          "date": "2024-11-15",
+          "is_binding": false,
+          "notes": "Non-binding; priority scholarship consideration"
+        },
+        {
+          "plan_type": "Early Action II",
+          "date": "2024-12-15",
+          "is_binding": false,
+          "notes": "Non-binding"
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "Rolling",
+          "is_binding": false,
+          "notes": "Applications reviewed on a rolling basis; February 1 is recommended"
+        },
+        {
+          "plan_type": "Special Programs (BS-BA/MD)",
+          "date": "2025-01-15",
+          "is_binding": false,
+          "notes": "Deadline for the Hofstra 4+4 program"
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Personal Statement",
+          "details": "The Common App personal statement is required/strongly recommended for a holistic review."
+        },
+        {
+          "target_program": "Music, Theatre, Dance",
+          "requirement_type": "Audition",
+          "details": "Performance-based programs require a scheduled audition or pre-screening recording."
+        },
+        {
+          "target_program": "Studio Art, Design",
+          "requirement_type": "Portfolio",
+          "details": "Digital portfolio submission required for talent-based consideration."
+        },
+        {
+          "target_program": "NOAH/PALS",
+          "requirement_type": "Interview",
+          "deadline": "2025-02-01",
+          "details": "Mandatory interview for special support programs."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Course Rigor",
+          "Academic GPA",
+          "Application Essay",
+          "Recommendations"
+        ],
+        "secondary_factors": [
+          "Extracurricular Activities",
+          "Talent/Ability",
+          "Character/Personal Qualities",
+          "Work Experience"
+        ],
+        "essay_importance": "Critical",
+        "demonstrated_interest": "Considered",
+        "interview_policy": "Recommended",
+        "legacy_consideration": "Considered",
+        "first_gen_boost": "Considered",
+        "specific_differentiators": "Hofstra identifies as a 'First-Gen Forward' institution and emphasizes 'intellectual curiosity' and 'motivation to succeed'."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Avoid applying directly to 'Direct Entry' PA or BS/MD programs if stats are not elite",
+        "Apply to a general major in the College of Liberal Arts to take advantage of the 71% acceptance rate",
+        "Leverage the test-optional policy if SAT/ACT scores fall below the Honors average (1393)",
+        "Submit Early Action (Nov 15) to maximize merit scholarship priority before funding is depleted",
+        "Emphasize 'demonstrated interest' through campus visits and email interactions"
+      ],
+      "college_ranking_tactics": [
+        "Opt into the Rabinowitz Honors College for priority registration and NYC cultural excursions",
+        "Rank the Zarb School of Business higher if aiming for the 5-year BBA/MBA pathway",
+        "Prioritize the DeMatteis School for Engineering if interested in co-op work programs",
+        "Choose the Lawrence Herbert School of Communication for proximity to NYC media internships"
+      ],
+      "alternate_major_strategy": "If you are not competitive for the highly selective Physician Assistant or BS/MD programs, list a standard Biology or Health Science major as your primary choice. Because Hofstra has a liberal internal transfer policy, you can transition into specialized tracks after matriculation."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 57660,
+          "total_coa": 78792,
+          "housing": 18082
+        },
+        "out_of_state": {
+          "tuition": 57660,
+          "total_coa": 78792,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 31427,
+      "average_merit_aid": 27293,
+      "percent_receiving_aid": 94.0,
+      "scholarships": [
+        {
+          "name": "Trustee’s Scholarship",
+          "type": "Merit",
+          "amount": "Full Tuition",
+          "deadline": "2025-11-15",
+          "benefits": "Highest merit award, renewable for 4 years",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Presidential Scholarship",
+          "type": "Merit",
+          "amount": "$31,000 - $35,000 per year",
+          "benefits": "Typical GPAs of 3.9-4.3",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Provost’s Scholarship",
+          "type": "Merit",
+          "amount": "$27,000 - $29,000 per year",
+          "benefits": "Renewable award based on holistic review",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Hofstra University Assistance Grant",
+          "type": "Need",
+          "amount": "Up to $3,000 per year",
+          "deadline": "FAFSA priority",
+          "benefits": "Need-based gift aid",
+          "application_method": "FAFSA"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Scores of 3 or higher grant credit for most exams, including English, History, and Biology",
+        "exceptions": [
+          "Computer Science A and Principles require a score of 4 or higher",
+          "AP Research and Seminar are not listed for automatic credit"
+        ],
+        "usage": "Credits apply toward Liberal Arts Distribution (GE) requirements."
+      },
+      "ib_policy": {
+        "general_rule": "Credit is awarded for HL and SL exams, typically requiring a score of 5 or higher",
+        "diploma_bonus": true
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Hofstra Transfer Credit Equivalency Guide",
+          "Transferology",
+          "Articulation Agreements"
+        ],
+        "restrictions": "Maximum of 64 transfer credits from community colleges; 30-credit residency requirement"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Rigorous high school curriculum with Honors, AP, or IB coursework",
+        "A solid GPA (typically 3.6–3.8) with a trajectory showing academic improvement",
+        "Demonstrated depth and leadership in 2-3 core extracurricular areas",
+        "Strong interest in experiential learning and professional development"
+      ],
+      "common_activities": [
+        "Research projects or academic clusters",
+        "Internships taking advantage of proximity to New York City",
+        "Division I athletics or intramural sports",
+        "Campus media and arts (e.g., WRHU radio)",
+        "Leadership in student government or community service"
+      ],
+      "essay_tips": [
+        "Specific mention of Hofstra-only resources like the Zarb School of Business",
+        "Use an 'authentic voice' rather than trying to sound overly formal",
+        "Connect your personal trajectory to NYC/Long Island opportunities",
+        "Focus on the 'lesson learned' from a story"
+      ],
+      "red_flags": [
+        "Regurgitating your resume in the main essay",
+        "Generic 'Why Hofstra' responses",
+        "Excessive use of a thesaurus",
+        "Focusing on the university's prestige rather than specific fit"
+      ],
+      "insights": [
+        "Hofstra is often a 'target' for high-achievers looking for strong scholarships.",
+        "The Honors College (RHC) is significantly more selective.",
+        "Highly involved students report a much more vibrant social experience."
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 69039,
+      "employment_rate_2yr": 92.0,
+      "grad_school_rate": 42.0,
+      "top_employers": [
+        "Northwell Health",
+        "PwC",
+        "Deloitte",
+        "Goldman Sachs",
+        "JPMorgan Chase",
+        "ABC News",
+        "The Walt Disney Company",
+        "IBM",
+        "Google"
+      ],
+      "student_retention": {
+        "freshman_retention_rate": 84.0,
+        "graduation_rate_4_year": 59.0,
+        "graduation_rate_6_year": 69.0
+      }
+    }
+  }
+}

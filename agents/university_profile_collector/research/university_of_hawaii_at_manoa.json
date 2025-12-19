@@ -1,0 +1,435 @@
+{
+  "university_profile": {
+    "_id": "university_of_hawaii_at_manoa",
+    "university_name": "University of Hawaiʻi at Mānoa",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "U.S. News & World Report 2026 Best Colleges Rankings",
+      "University of Hawaiʻi System News (2025)",
+      "Forbes Top Colleges 2026",
+      "UH Mānoa Office of Admissions Data",
+      "Common Data Set (2021-2024)"
+    ],
+    "strategic_profile": {
+      "executive_summary": "As the flagship of the University of Hawaiʻi system, UH Mānoa is a premier R1 research institution known for its global leadership in oceanography, astronomy, and tropical sciences. It provides an affordable, multicultural education that integrates traditional Hawaiian learning with cutting-edge environmental research.",
+      "market_position": "Flagship Public",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 169,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "The overall acceptance rate has climbed to approximately 86.6% for the 2025 cycle, signaling a shift toward higher accessibility compared to previous years.",
+          "implication": "Prospective students have a high probability of admission if they meet basic academic thresholds, particularly for out-of-state applicants."
+        },
+        {
+          "category": "In-State Advantage",
+          "insight": "Hawaiʻi residents are offered guaranteed admission with a 3.2 cumulative GPA and completion of standard course requirements.",
+          "implication": "Local students can treat the university as a reliable 'safety' school while benefiting from significantly lower tuition rates."
+        },
+        {
+          "category": "Programmatic Strength",
+          "insight": "UH Mānoa is a land-, sea-, space-, and sun-grant institution, a rare quadruple distinction.",
+          "implication": "Students in STEM, particularly Earth and Marine sciences, have access to research resources that rival Ivy League institutions."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "One of the most ethnically diverse campuses in the U.S., social life is shaped by a multicultural 'commuter-plus' vibe, with strong emphasis on local culture, surfing, and Division I athletics (Rainbow Warriors).",
+        "transportation_impact": "Severe parking shortages make it a high-reliance commuter campus for the 25,000 daily visitors; students heavily utilize the integrated 'TheBus' pass and on-campus 'Rainbow Shuttle' to navigate the dense urban setting.",
+        "research_impact": "With over $570 million in annual extramural funding, research is the campus's primary economic and academic driver, offering undergraduates rare opportunities for mentored fieldwork in unique Pacific ecosystems."
+      }
+    },
+    "admissions": {
+      "current": {
+        "overall_acceptance_rate": 88.0,
+        "in_state_acceptance_rate": 90.0,
+        "out_of_state_acceptance_rate": 87.6,
+        "international_acceptance_rate": 76.2,
+        "transfer_acceptance_rate": 79.4,
+        "admits_class_size": 3319,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional; scores are only used if they benefit the applicant ('Do No Harm' policy).",
+        "early_admission_stats": []
+      },
+      "trends": [
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 16722,
+          "admits_total": 14481,
+          "enrolled_total": 0,
+          "acceptance_rate_overall": 86.6,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Acceptance rate saw a significant increase to 86.6% according to preliminary 2024 cycle reports. Historical CDS indicates no waitlist policy."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 19211,
+          "admits_total": 13388,
+          "enrolled_total": 3056,
+          "acceptance_rate_overall": 69.7,
+          "yield_rate": 22.8,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Common Data Set Section C2 indicates the university does not maintain a freshman waitlist."
+        }
+      ],
+      "admitted_profile": {
+        "gpa": {
+          "unweighted_middle_50": "3.49-4.04",
+          "average_weighted": 3.69,
+          "percentile_25": "3.49",
+          "percentile_75": "4.04",
+          "notes": "Admissions are holistic, but a cumulative GPA of 3.2+ generally guarantees admission for Hawaii residents. Roughly 49% of admitted students have a GPA of 3.75 or higher."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1130-1350",
+          "sat_reading_middle_50": "530-640",
+          "sat_math_middle_50": "540-650",
+          "act_composite_middle_50": "21-29",
+          "submission_rate": 2.0,
+          "policy_note": "Test-optional for most programs; however, scores are recommended for certain competitive majors and scholarship consideration."
+        },
+        "demographics": {
+          "first_gen_percentage": 50.0,
+          "international_percentage": 6.17,
+          "geographic_breakdown": [
+            {
+              "region": "Hawaii (In-State)",
+              "percentage": 62.0
+            },
+            {
+              "region": "Other US States",
+              "percentage": 31.0
+            },
+            {
+              "region": "International",
+              "percentage": 7.0
+            }
+          ],
+          "gender_breakdown": {
+            "men": {
+              "applicants": 5763,
+              "admits": 4017,
+              "acceptance_rate": 69.7
+            },
+            "women": {
+              "applicants": 13256,
+              "admits": 9239,
+              "acceptance_rate": 69.7
+            },
+            "non_binary": null
+          },
+          "racial_breakdown": {
+            "white": 21.6,
+            "black_african_american": 1.4,
+            "hispanic_latino": 12.5,
+            "asian": 30.5,
+            "native_american_alaskan": 0.2,
+            "pacific_islander": 3.0,
+            "two_or_more_races": 24.0,
+            "unknown": 0.8,
+            "non_resident_alien": 6.0
+          }
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges and Schools",
+      "colleges": [
+        {
+          "name": "Shidler College of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 15.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires high GPA and test scores for the Freshman Direct Admit Program (DAP); emphasizes leadership and professional networking.",
+          "housing_profile": "Hale Aloha Lokelani features a dedicated Residential Learning Program (RLP) for business students.",
+          "student_archetype": "Ambitious networkers and corporate-minded professionals",
+          "majors": [
+            {
+              "name": "Finance",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5,
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "weeder_courses": [
+                "ACC 200 Intro to Accounting I",
+                "BUS 250 Applied Calculus"
+              ]
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5,
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "weeder_courses": [
+                "ACC 200 Intro to Accounting I"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "College of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 45.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires a secondary review of math and science readiness; B or better in Calculus and Physics is preferred.",
+          "housing_profile": "Engineering-specific Residential Learning Program provides peer mentoring and maker-space access.",
+          "student_archetype": "Hands-on problem solvers and STEM enthusiasts",
+          "majors": [
+            {
+              "name": "Civil Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.0,
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "weeder_courses": [
+                "PHYS 170 General Physics I",
+                "MATH 242 Calculus II",
+                "CEE 270 Applied Mechanics I"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Nancy Atmospera-Walch School of Nursing",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 4.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Extreme selectivity for High School Direct Entry (DEN); prioritizes healthcare experience and top-tier academic performance.",
+          "housing_profile": "Often housed in freshman residence halls with cohort-based study groups.",
+          "student_archetype": "Compassionate, high-achieving healthcare leaders",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 10.0,
+              "minimum_gpa_to_declare": 3.0,
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "weeder_courses": [
+                "PHYL 141 Human Anatomy & Physiology I",
+                "MICR 130 General Microbiology"
+              ],
+              "special_requirements": "Requires TEAS exam with minimum 78% overall score; two-step application process (NCAS)."
+            }
+          ]
+        },
+        {
+          "name": "College of Natural Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Ideal for students seeking research opportunities in unique Pacific ecosystems.",
+          "housing_profile": "Hale Aloha Mokihana hosts the Natural Sciences Residential Learning Program.",
+          "student_archetype": "Scientific researchers and nature enthusiasts",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0,
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "weeder_courses": [
+                "ICS 211 Intro to Computer Science II",
+                "MATH 241 Calculus I"
+              ],
+              "special_requirements": "Requires B or better in ICS 111 and ICS 211 to advance."
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Data Science Minor",
+        "Entrepreneurship Certificate",
+        "Peace Studies Minor",
+        "Marine Biology Minor",
+        "Sustainable Tourism Certificate",
+        "Agribusiness Management Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "University of Hawaii System Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Fall Priority",
+          "date": "2025-01-05",
+          "is_binding": false,
+          "notes": "Recommended for scholarship and financial aid consideration."
+        },
+        {
+          "plan_type": "Fall Regular",
+          "date": "2025-04-01",
+          "is_binding": false,
+          "notes": "Late applications may be accepted until June 2 on a space-available basis."
+        },
+        {
+          "plan_type": "Spring Priority",
+          "date": "2024-09-01",
+          "is_binding": false,
+          "notes": "Final Spring deadline is October 1."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Course Rigor",
+          "GPA"
+        ],
+        "secondary_factors": [
+          "Application Essay",
+          "Recommendations",
+          "Extracurriculars",
+          "Talent/Ability",
+          "State Residency"
+        ],
+        "essay_importance": "Moderate",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "None",
+        "first_gen_boost": "None",
+        "specific_differentiators": "Guaranteed admission for Hawaii residents with a 3.2+ cumulative GPA. Operates a 'Do No Harm' test-optional policy."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply as 'Undeclared' or to a liberal arts major like Marketing to ensure general admission if your stats are borderline.",
+        "Utilize the High School Direct Entry (HSDE) route for Nursing if you have a 3.9+ GPA to bypass the 'competitive as hell' traditional pre-nursing route.",
+        "Check if you qualify for the Western Undergraduate Exchange (WUE) before selecting a major."
+      ],
+      "college_ranking_tactics": [
+        "Select the College of Engineering to automatically waive the mandatory two-year Hawaiian/Second Language requirement.",
+        "Prioritize Shidler College of Business specifically for its nationally ranked International Business program if seeking mainland prestige.",
+        "Choose SOEST (School of Ocean and Earth Science and Technology) for high-tier research opportunities."
+      ],
+      "alternate_major_strategy": "If rejected from Computer Science, apply to Creative Media (ACM) which offers technical tracks like Game Dev and VR, or Management Information Systems (MIS) in the Shidler College. For Nursing rejects, Kapi'olani Community College offers a high-quality RN program with a smoother internal transfer path to UHM later."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 12186,
+          "total_coa": 32331,
+          "housing": 15216
+        },
+        "out_of_state": {
+          "tuition": 34218,
+          "total_coa": 54363,
+          "supplemental_tuition": 22032
+        }
+      },
+      "aid_philosophy": "Need-Blind",
+      "average_need_based_aid": 12102,
+      "average_merit_aid": 13240,
+      "percent_receiving_aid": 79.0,
+      "scholarships": [
+        {
+          "name": "Regents Scholarship",
+          "type": "Merit",
+          "amount": "Full tuition, $4,000 annual stipend, and $2,000 travel grant",
+          "deadline": "2025-01-15",
+          "benefits": "Honors Program membership, personalized advising, priority registration",
+          "application_method": "Supplemental Application (New Warrior Scholarships)"
+        },
+        {
+          "name": "Presidential Scholarship",
+          "type": "Merit",
+          "amount": "Full tuition for 2 years, $4,000 annual stipend, and $2,000 travel grant",
+          "deadline": "2025-03-15",
+          "benefits": "Honors Program membership, priority registration, travel support",
+          "application_method": "Supplemental Application (Upper-level Program)"
+        },
+        {
+          "name": "Manoa Academic Merit Scholarship",
+          "type": "Merit",
+          "amount": "$8,000 to $16,000 over 4 years",
+          "deadline": "2025-01-05",
+          "benefits": "Renewable award for high-achieving incoming freshmen",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "State of Hawaiʻi B Plus Scholarship",
+          "type": "Need/Merit",
+          "amount": "Up to $2,000 per year",
+          "deadline": "2025-02-01",
+          "benefits": "Renewable for up to four years for public HS graduates",
+          "application_method": "FAFSA and High School Transcript"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for most exams, including common electives.",
+        "exceptions": [
+          "Calculus AB: Score of 3 yields no credit (only placement); 4-5 needed for credit",
+          "English Language/Literature: Score of 4-5 required for ENG 100 credit",
+          "AP Seminar: Score of 4-5 required for ENG 100 credit"
+        ],
+        "usage": "Can satisfy General Education (Foundations and Diversification) and major prerequisites"
+      },
+      "ib_policy": {
+        "general_rule": "Higher Level (HL) exams with scores of 5+ generally grant credit (some subjects like Economics accept 4)",
+        "diploma_bonus": false
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Minimum 3.2 cumulative GPA for guaranteed admission (Hawaii residents)",
+        "Mid-range GPA between 3.5 and 4.0 for competitive out-of-state applicants",
+        "Completion of specific core units: 4 English, 3 Math (including Algebra II), and 3 Science"
+      ],
+      "essay_tips": [
+        "Avoid the 'beach cliché'; connect the location to your specific academic goals",
+        "Highlight a 'Sense of Place' and how you will contribute to the diverse campus community",
+        "Be sincere—admissions values an authentic voice over a perfectly polished, generic one"
+      ],
+      "red_flags": [
+        "The 'Checkbox Fallacy'—having many shallow activities with no clear focus",
+        "Failing to disclose all previous post-secondary enrollment/credits",
+        "Missing the March 1st priority deadline for financial aid and scholarships"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 57624,
+      "employment_rate_2yr": 93.5,
+      "grad_school_rate": 30.0,
+      "top_employers": [
+        "Amazon",
+        "Deloitte",
+        "Ernst & Young (EY)",
+        "Hawaiian Airlines",
+        "NOAA",
+        "State of Hawaiʻi",
+        "U.S. Navy"
+      ],
+      "loan_default_rate": 0.0,
+      "student_retention": {
+        "freshman_retention_rate": 80.0,
+        "graduation_rate_4_year": 41.1,
+        "graduation_rate_6_year": 62.6
+      }
+    }
+  }
+}

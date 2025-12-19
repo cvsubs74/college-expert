@@ -1,0 +1,921 @@
+{
+  "university_profile": {
+    "_id": "university_of_arkansas",
+    "metadata": {
+      "official_name": "University of Arkansas",
+      "location": {
+        "city": "Fayetteville",
+        "state": "Arkansas",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "https://www.uark.edu",
+        "https://news.uark.edu/articles/71890/u-of-a-moves-up-in-national-rankings-sets-records-for-enrollment-student-success-and-research",
+        "https://www.usnews.com/best-colleges/university-of-arkansas-1108"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "The University of Arkansas is the flagship public land-grant research university of the Arkansas System, known for its high-tier research output and deep ties to the corporate giants of Northwest Arkansas. It serves as a regional leader in supply chain management and business through the Sam M. Walton College of Business.",
+      "market_position": "Public Flagship Research University",
+      "admissions_philosophy": "Holistic review with a test-optional pathway for admission; however, standardized test scores remain critical for competitive merit-based scholarship consideration.",
+      "us_news_rank": 173,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Acceptance rates have hovered around 72-74% despite record-breaking applicant pools, indicating a strategic push for growth while maintaining consistent standards.",
+          "implication": "Applicants should focus on GPA rigor, as the university is increasingly leveraging its 'Public Ivy' reputation to attract high-achieving out-of-state students."
+        },
+        {
+          "category": "Industry Integration",
+          "insight": "The university's Sam M. Walton College of Business maintains an unparalleled relationship with Walmart, Tyson Foods, and J.B. Hunt.",
+          "implication": "Students in supply chain and logistics gain a significant hiring advantage through regional internships and industry-sponsored research centers."
+        },
+        {
+          "category": "Enrollment Growth",
+          "insight": "Total enrollment has recently surpassed 33,000, setting successive records for the largest freshman classes in school history.",
+          "implication": "Housing and parking demand is at a critical peak; students should apply for on-campus housing as early as possible."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Defined by a high-energy 'SEC' culture, the campus features a dominant Greek life (over 30% participation) and a storied athletic tradition centered on the Arkansas Razorbacks and the iconic 'Hog Call.'",
+        "transportation_impact": "The fare-free 'Razorback Transit' bus system is vital for navigating the hilly Fayetteville campus; however, rapid enrollment growth has led to severe parking shortages, prompting the construction of a new 1,700-space garage slated for 2027.",
+        "research_impact": "As a Carnegie R1 institution, the university conducts over $180M in annual research, with significant global impact in agriculture, sustainable logistics, and retail data science."
+      }
+    },
+    "admissions": {
+      "current": {
+        "overall_acceptance_rate": 78.0,
+        "in_state_acceptance_rate": null,
+        "out_of_state_acceptance_rate": null,
+        "international_acceptance_rate": null,
+        "transfer_acceptance_rate": 54.5,
+        "admits_class_size": 6616,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "applications": null,
+            "admits": null,
+            "acceptance_rate": 80.5,
+            "class_fill_percentage": null
+          }
+        ]
+      },
+      "trends": [
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 28873,
+          "admits_total": 22519,
+          "enrolled_total": 6616,
+          "acceptance_rate_overall": 78.0,
+          "acceptance_rate_in_state": 82.1,
+          "acceptance_rate_out_of_state": 76.4,
+          "yield_rate": 29.4,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Waitlist data not publicly disclosed for this cycle; university states it admits students based on space availability."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 28186,
+          "admits_total": 20202,
+          "enrolled_total": 6337,
+          "acceptance_rate_overall": 71.7,
+          "acceptance_rate_in_state": null,
+          "acceptance_rate_out_of_state": null,
+          "yield_rate": 31.4,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Significant increase in application volume; waitlist statistics remain undisclosed."
+        },
+        {
+          "year": 2022,
+          "cycle_name": "Class of 2026",
+          "applications_total": 26207,
+          "admits_total": 20695,
+          "enrolled_total": 7096,
+          "acceptance_rate_overall": 79.0,
+          "acceptance_rate_in_state": null,
+          "acceptance_rate_out_of_state": null,
+          "yield_rate": 34.3,
+          "waitlist_stats": {
+            "year": 2022,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Waitlist data not provided in institutional reports."
+        },
+        {
+          "year": 2021,
+          "cycle_name": "Class of 2025",
+          "applications_total": 21462,
+          "admits_total": 17743,
+          "enrolled_total": 6063,
+          "acceptance_rate_overall": 82.7,
+          "acceptance_rate_in_state": null,
+          "acceptance_rate_out_of_state": null,
+          "yield_rate": 34.2,
+          "waitlist_stats": {
+            "year": 2021,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Common Data Set indicates no waitlist was utilized for this cycle."
+        }
+      ],
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": null,
+          "unweighted_middle_50": null,
+          "average_weighted": 3.79,
+          "percentile_25": null,
+          "percentile_75": 4.0,
+          "notes": "The average high school GPA for the Fall 2023 freshman class was 3.79, with 34.56% of the class entering with a 4.0 GPA or higher."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1050-1220",
+          "sat_reading_middle_50": "520-620",
+          "sat_math_middle_50": "510-600",
+          "act_composite_middle_50": "21-28",
+          "submission_rate": 77.0,
+          "policy_note": "University of Arkansas is test-optional for admission, though test scores are often required for specific merit-based scholarships."
+        },
+        "demographics": {
+          "first_gen_percentage": 25.0,
+          "legacy_percentage": null,
+          "international_percentage": 3.6,
+          "geographic_breakdown": [
+            {
+              "region": "Arkansas",
+              "percentage": 49.9
+            },
+            {
+              "region": "Texas",
+              "percentage": 29.7
+            },
+            {
+              "region": "Other US States",
+              "percentage": 16.8
+            },
+            {
+              "region": "International",
+              "percentage": 3.6
+            }
+          ],
+          "gender_breakdown": {
+            "men": {
+              "applicants": 11656,
+              "admits": 7968,
+              "acceptance_rate": 68.4,
+              "note": "Based on Fall 2023 freshman application cycle data."
+            },
+            "women": {
+              "applicants": 16529,
+              "admits": 12233,
+              "acceptance_rate": 74.0,
+              "note": "Based on Fall 2023 freshman application cycle data."
+            },
+            "non_binary": null
+          },
+          "racial_breakdown": {
+            "white": 71.9,
+            "black_african_american": 4.1,
+            "hispanic_latino": 10.3,
+            "asian": 2.8,
+            "native_american_alaskan": 0.8,
+            "pacific_islander": 0.1,
+            "two_or_more_races": 4.4,
+            "unknown": 1.8,
+            "non_resident_alien": 3.7
+          },
+          "religious_affiliation": null
+        }
+      },
+      "application_process": {
+        "platforms": [
+          "Common App",
+          "Razorback Portal"
+        ],
+        "application_deadlines": [
+          {
+            "plan_type": "Priority Admission",
+            "date": "2024-11-01",
+            "is_binding": false,
+            "notes": "Priority consideration for scholarships, housing, and orientation."
+          },
+          {
+            "plan_type": "Regular Decision",
+            "date": "2025-08-01",
+            "is_binding": false,
+            "notes": "Final application deadline for Fall 2025 semester."
+          },
+          {
+            "plan_type": "Spring Admission",
+            "date": "2024-12-15",
+            "is_binding": false,
+            "notes": "Deadline for Spring 2025 enrollment."
+          }
+        ],
+        "supplemental_requirements": [
+          {
+            "target_program": "General Admission",
+            "requirement_type": "Optional",
+            "deadline": null,
+            "details": "No personal essay or letters of recommendation are required for general admission."
+          },
+          {
+            "target_program": "Scholarships & Honors College",
+            "requirement_type": "Essays",
+            "deadline": "2024-11-15",
+            "details": "Required for merit-based awards. Prompts include an influential invention, an inspiring artist, or a community service reflection."
+          },
+          {
+            "target_program": "Music",
+            "requirement_type": "Audition",
+            "deadline": "Varies",
+            "details": "Audition required for admission to the music department and for scholarship consideration."
+          }
+        ],
+        "holistic_factors": {
+          "primary_factors": [
+            "GPA",
+            "Course Rigor"
+          ],
+          "secondary_factors": [
+            "Test Scores",
+            "Grade Trends",
+            "Family Background"
+          ],
+          "essay_importance": "Low",
+          "demonstrated_interest": "Not Considered",
+          "interview_policy": "Not Offered",
+          "legacy_consideration": "Minimal",
+          "first_gen_boost": "Minimal",
+          "specific_differentiators": "Admission is heavily academic-based; the university uses a weighted 4.0 scale for AP/IB courses and offers test-optional pathways for students with a 3.2+ GPA."
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "Fulbright College of Arts and Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 74.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "As the largest college, it serves as the academic core. Students should emphasize a desire for a broad liberal arts foundation or specific research interests in the humanities or natural sciences.",
+          "housing_profile": "Diverse options including Hotz Honors Hall for high-achievers and traditional halls like Humphreys and Yocum.",
+          "student_archetype": "The 'Holistic Thinker'—intellectually curious students ranging from aspiring scientists to social activists and artists.",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": null,
+              "average_gpa_admitted": null,
+              "prerequisite_courses": [
+                "General Psychology"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "PSYC 20103 Statistics for Psychologists",
+                "PSYC 30703 Research Methods"
+              ],
+              "special_requirements": "Requires a C or better in all 34 hours of major coursework.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "PSYC 20003 General Psychology",
+                  "PSYC 20103 Introduction to Statistics for Psychologists",
+                  "PSYC 21201 Careers in Psychology",
+                  "PSYC 30703 Research Methods",
+                  "PSYC 40803 Advanced Research"
+                ],
+                "electives": [
+                  "PSYC 30103 Social Psychology",
+                  "PSYC 30203 Abnormal Psychology",
+                  "PSYC 30503 Psychology of Personality",
+                  "PSYC 41203 Biopsychology"
+                ],
+                "total_units": 120,
+                "major_units": 34
+              },
+              "notable_professors": [
+                "Dr. James Lampinen (Department Chair, Forensic Psychology)",
+                "Dr. Douglas Behrend (Developmental Psychology)",
+                "Dr. Ana Bridges (Clinical Science, Hispanic Mental Health)"
+              ],
+              "notes": "One of the largest majors in the university; graduates often enter social services or HR."
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": null,
+              "average_gpa_admitted": null,
+              "prerequisite_courses": [
+                "University Chemistry I",
+                "Calculus I"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "CHEM 36053 Organic Chemistry I",
+                "BIOL 23373 General Genetics"
+              ],
+              "special_requirements": "Requires a grade of C or better in all Biology core courses.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "BIOL 10104 Biology for Majors",
+                  "BIOL 25473 Cell Biology",
+                  "BIOL 23373 General Genetics",
+                  "BIOL 30473 Evolutionary Biology",
+                  "BIOL 38773 General Ecology",
+                  "CHEM 36053 Organic Chemistry I",
+                  "PHYS 20103 College Physics I"
+                ],
+                "electives": [
+                  "BIOL 42303 Comparative Physiology",
+                  "BIOL 43103 Molecular Cell Biology",
+                  "BIOL 4800V Special Topics",
+                  "BIOL 20003 General Microbiology"
+                ],
+                "total_units": 120,
+                "major_units": 42
+              },
+              "notable_professors": [
+                "Dr. Tameka Bailey (Cancer Research)",
+                "Dr. Steven Beaupre (Physiological Ecology)",
+                "Dr. J.D. Willson (Herpetology)"
+              ],
+              "notes": "Strongly recommended for Pre-Med students; provides extensive laboratory experience."
+            }
+          ]
+        },
+        {
+          "name": "Sam M. Walton College of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Direct admission for those admitted to the university. Students enter a 'Pre-Business' core for the first two years. Strong networking interest with NWA-based Fortune 500s (Walmart, Tyson, JB Hunt) is key.",
+          "housing_profile": "Strongly connected to the Business Living Learning Community (LLC) often housed in Founders Hall.",
+          "student_archetype": "The 'Corporate Catalyst'—ambitious, career-driven, and highly involved in professional development and networking.",
+          "majors": [
+            {
+              "name": "Marketing",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "acceptance_rate": null,
+              "average_gpa_admitted": null,
+              "prerequisite_courses": [
+                "Finite Mathematics",
+                "Survey of Calculus",
+                "Accounting I"
+              ],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "ACCT 20103 Accounting Principles I",
+                "ECON 20103 Principles of Macroeconomics"
+              ],
+              "special_requirements": "Students are classified as 'Pre-Business' until the 34-hour pre-business core is completed with a 2.50 GPA and C or better in all courses.",
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": [
+                  "MKTG 34303 Introduction to Marketing",
+                  "MKTG 35503 Consumer Behavior",
+                  "MKTG 36303 Marketing Research",
+                  "MKTG 48503 Marketing Management",
+                  "WCOB 10303 Data Analysis and Interpretation",
+                  "BLAW 20003 Legal Environment of Business",
+                  "SEVI 30103 Strategic Management"
+                ],
+                "electives": [
+                  "MKTG 42303 Integrated Marketing Communications",
+                  "MKTG 43403 Selling and Sales Management",
+                  "MKTG 38303 Digital Marketing",
+                  "MKTG 46303 Global Marketing"
+                ],
+                "total_units": 120,
+                "major_units": 21
+              },
+              "notable_professors": [
+                "Dr. Judith Anne Garretson Folse (Department Chair, Walmart Chair)",
+                "Dr. Jeff Murray (Consumer Culture Theory)",
+                "Dr. Molly Jensen (Marketing Education)"
+              ],
+              "notes": "Most popular major at the university."
+            },
+            {
+              "name": "Finance",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "acceptance_rate": null,
+              "average_gpa_admitted": null,
+              "prerequisite_courses": [
+                "Accounting II",
+                "Finite Math"
+              ],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "ACCT 20203 Accounting Principles II",
+                "FINN 30103 Financial Analysis"
+              ],
+              "special_requirements": "Completion of ACCT 20203 is specifically required for Finance majors to declare.",
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": [
+                  "FINN 30103 Financial Analysis",
+                  "FINN 30503 Financial Markets and Institutions",
+                  "FINN 31003 Financial Modeling",
+                  "FINN 37003 International Finance",
+                  "ACCT 20103 Principles of Accounting I",
+                  "ECON 20203 Principles of Microeconomics"
+                ],
+                "electives": [
+                  "FINN 31303 Commercial Banking",
+                  "FINN 41203 Valuing New Ventures",
+                  "FINN 39303 Real Estate Principles",
+                  "FINN 43103 Advanced Commercial Banking"
+                ],
+                "total_units": 120,
+                "major_units": 36
+              },
+              "notable_professors": [
+                "Dr. Alexey Malakhov (Department Chair, Investment Management)",
+                "Dr. Timothy Yeager (Banking and Monetary Policy)",
+                "Dr. Craig Rennie (Garrison Financial Institute Director)"
+              ],
+              "notes": "Offers concentrations in Banking, Financial Analytics, Real Estate, and Risk Management."
+            }
+          ]
+        },
+        {
+          "name": "College of Engineering",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 65.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "All freshmen enter the First-Year Engineering Program (FEP) to build a math foundation. Readiness for Calculus I is essential for staying on the four-year track.",
+          "housing_profile": "Engineering-focused floors in halls like Maple Hill, featuring proximity to labs and study groups.",
+          "student_archetype": "The 'Pragmatic Innovator'—collaborative problem-solvers who spend late nights in the Bell Engineering Center.",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.C.S.",
+              "is_impacted": false,
+              "acceptance_rate": null,
+              "average_gpa_admitted": null,
+              "prerequisite_courses": [
+                "Calculus I",
+                "University Chemistry I"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "MATH 24004 Calculus I",
+                "CSCE 20004 Programming Foundations I",
+                "PHYS 20304 University Physics I"
+              ],
+              "special_requirements": "Requires a grade of C or better in all core CSCE courses to progress.",
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "CSCE 20004 Programming Foundations I",
+                  "CSCE 20104 Programming Foundations II",
+                  "CSCE 21104 Digital Design",
+                  "CSCE 22104 Computer Organization",
+                  "CSCE 31903 Programming Paradigms",
+                  "CSCE 35103 Software Engineering",
+                  "CSCE 36103 Operating Systems",
+                  "CSCE 41303 Algorithms",
+                  "CSCE 49603 Senior Capstone I"
+                ],
+                "electives": [
+                  "CSCE 46103 Artificial Intelligence",
+                  "CSCE 42603 Advanced Data Structures",
+                  "CSCE 50703 Data Mining",
+                  "CSCE 44303 Cryptography"
+                ],
+                "total_units": 120,
+                "major_units": 74
+              },
+              "notable_professors": [
+                "Dr. Jia Di (Department Chair, Hardware Security)",
+                "Dr. David Andrews (Multi-core Systems)",
+                "Dr. Qinghua Li (Cybersecurity)",
+                "Dr. Matthew Patitz (Self-Assembly, Nanotechnology)"
+              ],
+              "notes": "Administered under the CSCE department; heavily focused on C++ and Unix environments."
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.M.E.",
+              "is_impacted": false,
+              "acceptance_rate": null,
+              "average_gpa_admitted": null,
+              "prerequisite_courses": [
+                "Calculus I",
+                "Physics I"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "MEEG 20103 Dynamics",
+                "MEEG 23003 Introduction to Thermodynamics"
+              ],
+              "special_requirements": null,
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": null,
+              "notable_professors": [],
+              "notes": "Strong focus on hands-on design and energy systems."
+            }
+          ]
+        },
+        {
+          "name": "Fay Jones School of Architecture and Design",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 35.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Highly competitive with limited studio space (approx. 120 spots). Early application (by Nov 15) and strong HS GPA/Test scores are critical for invitation.",
+          "housing_profile": "Adohi Hall is a primary hub, featuring modern sustainable design and dedicated creative/maker spaces.",
+          "student_archetype": "The 'Studio Savant'—deeply dedicated creatives known for living in the studio and obsessing over design details.",
+          "majors": [
+            {
+              "name": "Architecture",
+              "degree_type": "B.Arch.",
+              "is_impacted": true,
+              "acceptance_rate": null,
+              "average_gpa_admitted": null,
+              "prerequisite_courses": [
+                "College Algebra",
+                "General Physics I"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "ARCH 10105 Design I",
+                "ARCH 10205 Design II"
+              ],
+              "special_requirements": "A professional 5-year degree. Admission to the 'Professional Program' occurs after the 3rd year based on a faculty review of portfolio and GPA.",
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": null,
+              "notable_professors": [
+                "Marlon Blackwell (AIA Gold Medal Winner)",
+                "John Folan (Department Head, Community Design)"
+              ],
+              "notes": "The program is ranked top 20 nationally. International study (Rome or Mexico) is required."
+            }
+          ]
+        },
+        {
+          "name": "College of Education and Health Professions",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 50.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Majors like Nursing are highly restricted. Students start as 'Pre-Nursing' and must maintain a 3.5+ GPA and high TEAS scores for clinical admission.",
+          "housing_profile": "Traditional housing with many students involved in Health/Nursing LLCs for peer support.",
+          "student_archetype": "The 'Compassionate Professional'—service-oriented students dedicated to clinical excellence or educational leadership.",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.N.",
+              "is_impacted": true,
+              "acceptance_rate": 30.0,
+              "average_gpa_admitted": 3.8,
+              "prerequisite_courses": [
+                "Microbiology",
+                "Anatomy",
+                "Human Physiology",
+                "University Chemistry I"
+              ],
+              "minimum_gpa_to_declare": 3.5,
+              "weeder_courses": [
+                "BIOL 24003 Human Anatomy",
+                "BIOL 24103 Human Physiology",
+                "CHEM 12103 Fundamentals of Chemistry"
+              ],
+              "special_requirements": "Separate application required for clinical placement. Must score 70+ on ATI TEAS and complete the Casper Situational Judgment Test.",
+              "admissions_pathway": "Competitive Admit",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 3.5,
+              "curriculum": {
+                "core_courses": [
+                  "NURS 33103 Health Assessment",
+                  "NURS 34202 Nursing Concepts: Foundations",
+                  "NURS 36304 Nursing Concepts: Adult Health I",
+                  "NURS 41504 Nursing Concepts: Mental Health",
+                  "NURS 42603 Nursing Concepts: Leadership",
+                  "BIOL 20003 General Microbiology"
+                ],
+                "electives": [
+                  "NURS 40103 Special Topics in Nursing",
+                  "PBHL 11003 Personal Health and Wellness"
+                ],
+                "total_units": 120,
+                "major_units": 62
+              },
+              "notable_professors": [
+                "Dr. Jessie Casida (Executive Director)",
+                "Dr. Nan Smith-Blair (Critical Care Research)",
+                "Dr. Kelly Johnson (Public Health Nursing)"
+              ],
+              "notes": "The clinical portion is highly competitive and restricted by seat availability."
+            }
+          ]
+        },
+        {
+          "name": "Dale Bumpers College of Agricultural, Food and Life Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 75.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Ideal for students interested in the business of food, environmental stewardship, or veterinary sciences. Practical experience on the university farm is a staple.",
+          "housing_profile": "Community-style halls with a strong sense of camaraderie and shared agricultural interests.",
+          "student_archetype": "The 'Steward of the Land'—practical, hands-on learners interested in sustainability and the global food supply chain.",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Data Science Minor",
+        "Innovation and Entrepreneurship Minor",
+        "Equine Management Micro-Certificate",
+        "Blockchain Enterprise Systems Minor",
+        "Geospatial Technologies Certificate",
+        "Global Studies Minor",
+        "Outdoor Leadership Minor",
+        "Strategic Media Skills Micro-Certificate",
+        "Supply Chain Management Minor",
+        "STEM Education Certificate of Proficiency"
+      ]
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to the First-Year Engineering Program (FEP) if interested in CS or Engineering, as all freshmen start here before declaring a specific discipline in the spring.",
+        "Declare a 'hard' major like Architecture early, as these programs have strict cohort-based sequences and are harder to switch into late.",
+        "Avoid the highly competitive Nursing (BSN) major if your GPA is below a 3.8, and consider entering through a related science major to complete prerequisites first.",
+        "Opt for Fulbright College of Arts and Sciences if you are undecided, as it offers the most flexible transfer pathways into other colleges later.",
+        "Research the 'Pre-Business' core requirements for the Walton School of Business to ensure you can meet the 2.5+ GPA threshold required to move into upper-division courses."
+      ],
+      "college_ranking_tactics": [
+        "Select Fulbright College for Economics if you prefer a Bachelor of Arts with foreign language requirements over the heavy mathematics and business core of Walton.",
+        "Rank the Honors College as a top priority to secure Hotz Hall housing and the earliest possible course registration window.",
+        "Prioritize the Walton School of Business if professional networking with Northwest Arkansas giants like Walmart, Tyson, and JB Hunt is your main goal.",
+        "Consider the College of Education and Health Professions for its specific Living Learning Communities (LLCs) which offer better proximity to clinical resources.",
+        "Evaluate the College of Engineering based on its laptop requirement and lab access, which are more intensive than other internal colleges."
+      ],
+      "alternate_major_strategy": "If applying to a highly selective program like Nursing or the Walton School of Business, list an alternate major in the Fulbright College of Arts and Sciences (such as Biology or Economics BA). This ensures general admission to the university while allowing you to complete state-mandated general education requirements and attempt an internal transfer after proving your GPA on campus."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 9748,
+          "total_coa": 30008,
+          "housing": 13290
+        },
+        "out_of_state": {
+          "tuition": 28772,
+          "total_coa": 49032,
+          "supplemental_tuition": 19024
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 7593,
+      "average_merit_aid": 5229,
+      "percent_receiving_aid": 81.0,
+      "scholarships": [
+        {
+          "name": "Bodenhamer Fellowship",
+          "type": "Merit/Full Ride",
+          "amount": "$80,000 over 4 years ($20,000/year)",
+          "deadline": "2025-02-01",
+          "benefits": "Covers tuition, fees, books, room and board; includes a summer trip to Washington, D.C., and specialized faculty mentoring",
+          "application_method": "Separate Application (Honors College)"
+        },
+        {
+          "name": "Chancellor's Merit Scholarship",
+          "type": "Merit",
+          "amount": "$12,000 per year + NRTA",
+          "deadline": "2024-11-15 (Priority)",
+          "benefits": "Automatic awarding of the New Arkansan Non-Resident Tuition Award (NRTA) for out-of-state students",
+          "application_method": "Automatic Consideration (for National Merit Finalists)"
+        },
+        {
+          "name": "Chancellor's Scholarship",
+          "type": "Merit",
+          "amount": "$10,000 per year",
+          "deadline": "2025-02-01",
+          "benefits": "Renewable for 4 years (5 years for Architecture); includes priority registration and honors housing eligibility",
+          "application_method": "General Scholarship Application"
+        },
+        {
+          "name": "Silas Hunt Distinguished Scholarship",
+          "type": "Merit/Leadership",
+          "amount": "Up to $8,000 per year",
+          "deadline": "2025-02-01",
+          "benefits": "Mentoring programs and leadership development opportunities for students from underrepresented communities",
+          "application_method": "General Scholarship Application"
+        },
+        {
+          "name": "Advance Arkansas Scholarship",
+          "type": "Need-Based",
+          "amount": "$4,000 per year",
+          "deadline": "2025-02-01",
+          "benefits": "Preference given to first-generation college students from Arkansas with high academic potential",
+          "application_method": "General Scholarship Application + FAFSA"
+        },
+        {
+          "name": "New Arkansan Non-Resident Tuition Award (NRTA)",
+          "type": "Merit",
+          "amount": "$9,500 - $17,000 per year (Tuition Discount)",
+          "deadline": "2025-02-01",
+          "benefits": "Pays 70% to 90% of the difference between in-state and out-of-state tuition; automatic for high-achieving non-residents",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Arkansas Governor's Distinguished Scholarship",
+          "type": "Merit",
+          "amount": "$10,000 per year",
+          "deadline": "2025-03-01",
+          "benefits": "State-funded award that can be stacked with UA institutional scholarships to cover a full ride",
+          "application_method": "SAMS (State of Arkansas Application)"
+        }
+      ]
+    },
+    "scholarships": [
+      {
+        "name": "Bodenhamer Fellowship",
+        "type": "Merit/Full Ride",
+        "amount": "$80,000 over 4 years ($20,000/year)",
+        "deadline": "2025-02-01",
+        "benefits": "Covers tuition, fees, books, room and board; includes a summer trip to Washington, D.C., and specialized faculty mentoring",
+        "application_method": "Separate Application (Honors College)"
+      },
+      {
+        "name": "Chancellor's Merit Scholarship",
+        "type": "Merit",
+        "amount": "$12,000 per year + NRTA",
+        "deadline": "2024-11-15 (Priority)",
+        "benefits": "Automatic awarding of the New Arkansan Non-Resident Tuition Award (NRTA) for out-of-state students",
+        "application_method": "Automatic Consideration (for National Merit Finalists)"
+      },
+      {
+        "name": "Chancellor's Scholarship",
+        "type": "Merit",
+        "amount": "$10,000 per year",
+        "deadline": "2025-02-01",
+        "benefits": "Renewable for 4 years (5 years for Architecture); includes priority registration and honors housing eligibility",
+        "application_method": "General Scholarship Application"
+      },
+      {
+        "name": "Silas Hunt Distinguished Scholarship",
+        "type": "Merit/Leadership",
+        "amount": "Up to $8,000 per year",
+        "deadline": "2025-02-01",
+        "benefits": "Mentoring programs and leadership development opportunities for students from underrepresented communities",
+        "application_method": "General Scholarship Application"
+      },
+      {
+        "name": "Advance Arkansas Scholarship",
+        "type": "Need-Based",
+        "amount": "$4,000 per year",
+        "deadline": "2025-02-01",
+        "benefits": "Preference given to first-generation college students from Arkansas with high academic potential",
+        "application_method": "General Scholarship Application + FAFSA"
+      },
+      {
+        "name": "New Arkansan Non-Resident Tuition Award (NRTA)",
+        "type": "Merit",
+        "amount": "$9,500 - $17,000 per year (Tuition Discount)",
+        "deadline": "2025-02-01",
+        "benefits": "Pays 70% to 90% of the difference between in-state and out-of-state tuition; automatic for high-achieving non-residents",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Arkansas Governor's Distinguished Scholarship",
+        "type": "Merit",
+        "amount": "$10,000 per year",
+        "deadline": "2025-03-01",
+        "benefits": "State-funded award that can be stacked with UA institutional scholarships to cover a full ride",
+        "application_method": "SAMS (State of Arkansas Application)"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Scores of 3 or higher grant credit for most exams, per Arkansas Department of Higher Education (ADHE) guidelines.",
+        "exceptions": [
+          "AP Statistics is capped at a maximum of 3 credit hours",
+          "Higher scores (4 or 5) may be required for specific honors-level course equivalents or additional credit hours in subjects like Art History and Chemistry",
+          "Credit for preceding courses in a sequence is only granted if the student completes the subsequent course at UA with a grade of C or higher"
+        ],
+        "usage": "Satisfies University Core (General Education) requirements and specific major prerequisites."
+      },
+      "ib_policy": {
+        "general_rule": "Credit is awarded for both Higher Level (HL) and some Standard Level (SL) exams with scores typically ranging from 4-7.",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transfer Course Equivalency Guide",
+          "Arkansas Course Transfer System (ACTS)",
+          "Transfer Planning Guide"
+        ],
+        "restrictions": "General transfer requires a grade of C or better; students may petition to transfer up to 6 hours of D grades. Arkansas Act 182 guarantees full credit transfer for students with an Associate of Arts or Science from Arkansas public institutions."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A 3.2+ GPA to qualify for the test-optional pathway or a 20+ ACT for standardized admission",
+        "Evidence of an upward grade trend if early high school performance was inconsistent",
+        "Competitive stats for out-of-state applicants (particularly from TX and MO) due to high demand",
+        "Specific preparation for the Walton College of Business, such as involvement in DECA"
+      ],
+      "common_activities": [
+        "Greek Life participation (highly prevalent in campus social culture)",
+        "DECA or FBLA leadership, especially for business-intent students",
+        "Community service through local schools or non-profits",
+        "Intramural sports and University Recreation (UREC) programs",
+        "Membership in one of the 300+ Registered Student Organizations (RSOs)"
+      ],
+      "essay_tips": [
+        "Focus on personal growth and unique traits rather than a checklist of awards",
+        "Tailor scholarship-specific essays to highlight clear career goals and community impact",
+        "Use a strong 'hook' in the introduction to distinguish your story from generic narratives",
+        "Avoid the 'sympathy trap'—if discussing hardship, focus on the lesson learned rather than just the trauma"
+      ],
+      "red_flags": [
+        "ACT scores below 15, which typically result in rejection or mandatory remedial courses",
+        "Generic essays that do not reference specific University of Arkansas programs or values",
+        "Late applications (post-November) that result in poor housing options and missed scholarship priority",
+        "A declining grade trend in senior year without a proactive statement of interest to explain it"
+      ],
+      "insights": [
+        "Applying the summer before senior year (starting in July) is vital for top-tier housing and scholarships",
+        "The Northwest Arkansas Community College (NWACC) transfer route is a popular and effective way to gain entry if initial stats are low",
+        "The Honors College is significantly more rigorous than standard Gen-Ed courses and requires a dedicated academic focus",
+        "Out-of-state recruitment is aggressive, but some competitive programs maintain high bars for non-residents"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 54417,
+      "employment_rate_2yr": 93.0,
+      "grad_school_rate": 21.2,
+      "top_employers": [
+        "Walmart",
+        "Tyson Foods",
+        "J.B. Hunt Transport",
+        "PricewaterhouseCoopers (PwC)",
+        "Lockheed Martin",
+        "Dillard's",
+        "Enterprise"
+      ],
+      "loan_default_rate": 4.9,
+      "student_retention": {
+        "freshman_retention_rate": 86.4,
+        "graduation_rate_4_year": 41.7,
+        "graduation_rate_6_year": 70.5
+      }
+    }
+  }
+}

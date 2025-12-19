@@ -31,9 +31,10 @@ import {
 import { StarIcon as StarIconSolid, FilmIcon } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit } from '../services/api';
+import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, generateFitInfographic } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
+import { useToast } from '../components/Toast';
 import FitBreakdownPanel from '../components/FitBreakdownPanel';
 import FitAnalysisModal from '../components/FitAnalysisModal';
 import UniversityProfilePage from '../components/UniversityProfilePage';
@@ -44,6 +45,8 @@ import {
 import MediaGallery from '../components/MediaGallery';
 import UniversityDetailPage from '../components/UniversityDetailPage';
 import CreditsUpgradeModal from '../components/CreditsUpgradeModal';
+import UniversityChatWidget from '../components/UniversityChatWidget';
+import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 
 // API Configuration
 const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL ||
@@ -155,7 +158,7 @@ const transformUniversityData = (apiData) => {
 };
 
 // --- University Card Component ---
-const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick, isInList, onToggleList, fitAnalysis, onAnalyzeFit, isAnalyzing, onShowFitDetails }) => {
+const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick, isInList, onToggleList, fitAnalysis, onAnalyzeFit, isAnalyzing, onShowFitDetails, onOpenChat }) => {
     const formatNumber = (num) => {
         if (num === 'N/A' || num === null || num === undefined) return 'N/A';
         return typeof num === 'number' ? num.toLocaleString() : num;
@@ -294,6 +297,13 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                             {sentiment.sentiment === 'positive' ? '📈' : '⚠️'}
                         </button>
                     )}
+                    <button
+                        onClick={(e) => { e.stopPropagation(); onOpenChat(uni); }}
+                        className="p-2 rounded-lg bg-indigo-100 text-indigo-700 hover:bg-indigo-200 hover:scale-105 transition-all"
+                        title="Ask AI about this university"
+                    >
+                        <ChatBubbleLeftRightIcon className="h-4 w-4" />
+                    </button>
                 </div>
             </div>
         </div>
@@ -651,6 +661,7 @@ const LoadingSkeleton = () => (
 // --- Main App Component ---
 const UniversityExplorer = () => {
     const { canAccessLaunchpad, isFreeTier, promptUpgrade, promptCreditsUpgrade, creditsRemaining, showCreditsModal, closeCreditsModal, creditsModalFeature } = usePayment();
+    const toast = useToast();
     const [universities, setUniversities] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -723,6 +734,19 @@ const UniversityExplorer = () => {
     // Pre-computed fits for ALL universities (from college_fits field)
     const [precomputedFits, setPrecomputedFits] = useState({});
     const [fitsLoading, setFitsLoading] = useState(false);
+
+    // Chat widget state
+    const [chatUniversity, setChatUniversity] = useState(null);
+    const [isChatOpen, setIsChatOpen] = useState(false);
+
+    const handleOpenChat = (uni) => {
+        setChatUniversity(uni);
+        setIsChatOpen(true);
+    };
+
+    const handleCloseChat = () => {
+        setIsChatOpen(false);
+    };
 
     // Load college list and pre-computed fits on mount
     useEffect(() => {
@@ -853,6 +877,9 @@ const UniversityExplorer = () => {
                     setComputingFitFor(university.id);
                     console.log(`[Fit] Computing fit for ${university.name}...`);
 
+                    // Show loading toast
+                    const loadingToastId = toast.loading('Generating Fit Analysis...', `Analyzing ${university.name}`);
+
                     try {
                         const fitResult = await computeSingleFit(currentUser.email, university.id);
 
@@ -864,6 +891,18 @@ const UniversityExplorer = () => {
                         }
 
                         console.log(`[Fit] Computed: ${university.name} -> ${fitResult?.fit_analysis?.fit_category || 'N/A'}`);
+
+                        // Generate infographic in the background (don't block)
+                        console.log(`[Infographic] Generating for ${university.name}...`);
+                        generateFitInfographic(currentUser.email, university.id, false)
+                            .then(result => {
+                                if (result.success) {
+                                    console.log(`[Infographic] Generated for ${university.name} (cached=${result.from_cache})`);
+                                } else {
+                                    console.warn('[Infographic] Failed:', result.error);
+                                }
+                            })
+                            .catch(err => console.error('[Infographic] Error:', err));
 
                         // Refresh precomputed fits to get the new fit
                         const fitsResult = await getPrecomputedFits(currentUser.email, {}, 500, 'rank');
@@ -883,8 +922,12 @@ const UniversityExplorer = () => {
                         }
                     } catch (fitErr) {
                         console.error('[Fit] Error computing fit:', fitErr);
+                        toast.remove(loadingToastId);
+                        toast.error('Error Computing Fit', fitErr.message || 'Please try again');
                     } finally {
                         setComputingFitFor(null);
+                        toast.remove(loadingToastId);
+                        toast.success('Fit Analysis Ready!', `${university.name} added to Launchpad`);
                     }
                 }
             }
@@ -1669,6 +1712,7 @@ const UniversityExplorer = () => {
                                                                 setSelectedFitData(fit);
                                                                 setShowFitModal(true);
                                                             }}
+                                                            onOpenChat={handleOpenChat}
                                                         />
                                                     );
                                                 })
@@ -1979,6 +2023,14 @@ const UniversityExplorer = () => {
                 onClose={closeCreditsModal}
                 creditsRemaining={creditsRemaining}
                 feature={creditsModalFeature}
+            />
+
+            {/* University Chat Widget */}
+            <UniversityChatWidget
+                universityId={chatUniversity?.id}
+                universityName={chatUniversity?.name}
+                isOpen={isChatOpen}
+                onClose={handleCloseChat}
             />
         </div>
     );

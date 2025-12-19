@@ -292,6 +292,13 @@ EOF
     
     HYBRID_AGENT_URL=$(gcloud run services describe $HYBRID_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)')
     echo -e "${GREEN}✓ Hybrid Agent deployed: ${HYBRID_AGENT_URL}${NC}"
+    
+    # Set min-instances to prevent cold starts
+    echo -e "${YELLOW}Setting min-instances=1 for Hybrid Agent...${NC}"
+    gcloud run services update $HYBRID_AGENT_SERVICE_NAME \
+        --region=$REGION \
+        --min-instances=1
+    echo -e "${GREEN}✓ Hybrid Agent min-instances set to 1${NC}"
 }
 
 deploy_agents() {
@@ -353,6 +360,7 @@ deploy_profile_manager_es() {
         --env-vars-file=env.yaml \
         --timeout=540s \
         --memory=1024MB \
+        --min-instances=1 \
         --max-instances=10
     
     PROFILE_MANAGER_ES_URL=$(gcloud functions describe $PROFILE_MANAGER_ES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
@@ -471,6 +479,7 @@ deploy_knowledge_base_manager_universities() {
         --env-vars-file=env.yaml \
         --timeout=300s \
         --memory=512MB \
+        --min-instances=1 \
         --max-instances=10
     
     KNOWLEDGE_BASE_UNIVERSITIES_URL=$(gcloud functions describe $KNOWLEDGE_BASE_UNIVERSITIES_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')

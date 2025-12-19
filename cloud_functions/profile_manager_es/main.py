@@ -2174,7 +2174,7 @@ def handle_bulk_remove_colleges(request):
 
 
 def handle_get_college_list(request):
-    """Get user's college list from the new separated index."""
+    """Get user's college list from the new separated index, enriched with university data."""
     try:
         # Support both GET params and POST body
         if request.method == 'GET':
@@ -2202,18 +2202,76 @@ def handle_get_college_list(request):
         
         response = es_client.search(index=ES_LIST_ITEMS_INDEX, body=search_body)
         
-        # Convert individual docs to list items
-        college_list = []
+        # Collect all university IDs from the list
+        university_ids = []
+        list_items = []
         for hit in response['hits']['hits']:
             item = hit['_source']
+            uni_id = item.get('university_id')
+            if uni_id:
+                university_ids.append(uni_id)
+            list_items.append(item)
+        
+        # Fetch university data from knowledge base to get soft_fit_category, etc.
+        university_data = {}
+        if university_ids:
+            try:
+                # Multi-get from university knowledge base index
+                uni_response = es_client.search(
+                    index='knowledgebase_universities',
+                    body={
+                        "size": len(university_ids),
+                        "query": {
+                            "terms": {"university_id": university_ids}
+                        },
+                        "_source": ["university_id", "official_name", "location", "acceptance_rate", 
+                                   "soft_fit_category", "us_news_rank", "summary"]
+                    }
+                )
+                for hit in uni_response['hits']['hits']:
+                    uni = hit['_source']
+                    university_data[uni.get('university_id')] = {
+                        'location': uni.get('location', {}),
+                        'acceptance_rate': uni.get('acceptance_rate'),
+                        'soft_fit_category': uni.get('soft_fit_category'),
+                        'us_news_rank': uni.get('us_news_rank'),
+                        'summary': uni.get('summary')
+                    }
+                logger.info(f"[GET_COLLEGE_LIST] Enriched {len(university_data)} universities with KB data")
+            except Exception as e:
+                logger.warning(f"[GET_COLLEGE_LIST] Could not fetch university KB data: {e}")
+        
+        # Convert individual docs to list items, enriched with university data
+        college_list = []
+        for item in list_items:
+            uni_id = item.get('university_id')
+            uni_info = university_data.get(uni_id, {})
+            
+            # Format location string
+            location = uni_info.get('location', {})
+            location_str = None
+            if location:
+                city = location.get('city', '')
+                state = location.get('state', '')
+                if city and state:
+                    location_str = f"{city}, {state}"
+                elif state:
+                    location_str = state
+            
             college_list.append({
-                'university_id': item.get('university_id'),
+                'university_id': uni_id,
                 'university_name': item.get('university_name'),
                 'status': item.get('status', 'favorites'),
                 'order': item.get('order'),
                 'added_at': item.get('added_at'),
                 'intended_major': item.get('intended_major'),
-                'notes': item.get('student_notes')
+                'notes': item.get('student_notes'),
+                # Enriched fields from knowledge base
+                'location': location_str,
+                'acceptance_rate': uni_info.get('acceptance_rate'),
+                'soft_fit_category': uni_info.get('soft_fit_category'),
+                'us_news_rank': uni_info.get('us_news_rank'),
+                'summary': uni_info.get('summary')
             })
         
         return add_cors_headers({
@@ -2885,6 +2943,175 @@ def handle_compute_all_fits(request):
             'success': False,
             'error': f'Failed to compute fits: {str(e)}'
         }, 500)
+
+
+# --- Fit Chat with Context Injection ---
+def fit_chat(user_id: str, university_id: str, question: str, conversation_history: list = None) -> dict:
+    """
+    Chat about a specific fit analysis using profile + fit data as context.
+    Uses gemini-2.5-flash-lite with context injection.
+    
+    Args:
+        user_id: The user's email
+        university_id: The university ID to chat about
+        question: User's question
+        conversation_history: List of {role, content} dicts for context
+    
+    Returns:
+        dict with answer and updated conversation history
+    """
+    try:
+        if conversation_history is None:
+            conversation_history = []
+        
+        es_client = get_elasticsearch_client()
+        
+        # Load user profile
+        profile_query = {
+            "query": {"term": {"user_id": user_id}},
+            "size": 1
+        }
+        profile_response = es_client.search(index=ES_INDEX_NAME, body=profile_query)
+        
+        if profile_response['hits']['total']['value'] == 0:
+            return {
+                "success": False,
+                "error": "User profile not found"
+            }
+        
+        user_profile = profile_response['hits']['hits'][0]['_source']
+        
+        # Load fit analysis for this university
+        normalized_uni_id = normalize_university_id(university_id)
+        fit_query = {
+            "query": {
+                "bool": {
+                    "must": [
+                        {"term": {"user_email": user_id}},
+                        {"term": {"university_id": normalized_uni_id}}
+                    ]
+                }
+            },
+            "size": 1
+        }
+        fit_response = es_client.search(index=ES_FITS_INDEX, body=fit_query)
+        
+        if fit_response['hits']['total']['value'] == 0:
+            return {
+                "success": False,
+                "error": f"No fit analysis found for {university_id}"
+            }
+        
+        fit_data = fit_response['hits']['hits'][0]['_source']
+        university_name = fit_data.get('university_name', university_id)
+        
+        # Build context with profile and fit data
+        # Extract key profile fields
+        profile_summary = {
+            "gpa": user_profile.get("gpa"),
+            "sat_score": user_profile.get("sat_score"),
+            "act_score": user_profile.get("act_score"),
+            "intended_major": user_profile.get("intended_major"),
+            "activities": user_profile.get("activities", []),
+            "awards": user_profile.get("awards", []),
+            "grade_level": user_profile.get("grade_level"),
+        }
+        
+        # Extract key fit fields
+        fit_summary = {
+            "university_name": university_name,
+            "fit_category": fit_data.get("fit_category"),
+            "match_score": fit_data.get("match_score"),
+            "acceptance_rate": fit_data.get("acceptance_rate"),
+            "us_news_rank": fit_data.get("us_news_rank"),
+            "gap_analysis": fit_data.get("gap_analysis"),
+            "recommendations": fit_data.get("recommendations"),
+            "detailed_analysis": fit_data.get("detailed_analysis"),
+        }
+        
+        profile_json = json.dumps(profile_summary, indent=2, default=str)
+        fit_json = json.dumps(fit_summary, indent=2, default=str)
+        
+        system_prompt = f"""You are a college admissions advisor helping a student understand their fit with {university_name}. Answer questions using ONLY the data provided below.
+
+STUDENT PROFILE:
+{profile_json}
+
+FIT ANALYSIS FOR {university_name}:
+{fit_json}
+
+RULES:
+- Base answers on the fit analysis data above
+- Explain factors affecting the fit score
+- Give actionable advice when asked
+- Be encouraging but realistic
+- Format responses in markdown when helpful
+- If information is not in the data, say so honestly
+"""
+        
+        # Build conversation for Gemini
+        contents = []
+        
+        # Add system context as first user message
+        contents.append(types.Content(
+            role="user",
+            parts=[types.Part(text=system_prompt)]
+        ))
+        contents.append(types.Content(
+            role="model",
+            parts=[types.Part(text=f"I'm ready to help you understand your fit with {university_name}. What would you like to know?")]
+        ))
+        
+        # Add conversation history
+        for msg in conversation_history:
+            role = "user" if msg.get("role") == "user" else "model"
+            contents.append(types.Content(
+                role=role,
+                parts=[types.Part(text=msg.get("content", ""))]
+            ))
+        
+        # Add current question
+        contents.append(types.Content(
+            role="user",
+            parts=[types.Part(text=question)]
+        ))
+        
+        # Call Gemini
+        client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+        response = client.models.generate_content(
+            model="gemini-2.5-flash-lite",
+            contents=contents,
+            config=types.GenerateContentConfig(
+                temperature=0.7,
+                max_output_tokens=1024
+            )
+        )
+        
+        answer = response.text
+        
+        # Update history
+        updated_history = conversation_history + [
+            {"role": "user", "content": question},
+            {"role": "assistant", "content": answer}
+        ]
+        
+        logger.info(f"Fit chat for {user_id}/{university_id}: question='{question[:50]}...', answer_length={len(answer)}")
+        
+        return {
+            "success": True,
+            "answer": answer,
+            "conversation_history": updated_history,
+            "university_name": university_name,
+            "university_id": university_id,
+            "fit_category": fit_data.get("fit_category")
+        }
+        
+    except Exception as e:
+        logger.error(f"Fit chat failed: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
 
 
 def handle_get_fits(request):
@@ -4354,6 +4581,22 @@ def profile_manager_es_http_entry(request):
             
             result = upgrade_to_pro(user_email, subscription_expires)
             return add_cors_headers(result, 200 if result['success'] else 500)
+        
+        # --- FIT CHAT (Context Injection) ---
+        elif resource_type == 'fit-chat' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            question = data.get('question', '')
+            history = data.get('conversation_history', [])
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            if not university_id or not question:
+                return add_cors_headers({'success': False, 'error': 'university_id and question required'}, 400)
+            
+            result = fit_chat(user_email, university_id, question, history)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
         
         else:
             return add_cors_headers({'error': 'Not Found'}, 404)

@@ -1,0 +1,223 @@
+{
+  "university_profile": {
+    "_id": "colorado_state_university",
+    "university_name": "Colorado State University",
+    "last_updated": "2025-12-19",
+    "report_source_files": [],
+    "strategic_profile": {
+      "executive_summary": "Colorado State University (CSU) is a leading public land-grant research institution known for its world-tier programs in veterinary medicine, agriculture, and atmospheric science. It balances a high-access mission with elite Carnegie R1 research status, situated in a city consistently ranked among the best places to live in the U.S.",
+      "market_position": "Land-Grant Research Powerhouse",
+      "admissions_philosophy": "Holistic review with high-access focus",
+      "us_news_rank": 151,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity and Access",
+          "insight": "CSU maintains a consistently high acceptance rate of approximately 88-90% despite rising application volumes.",
+          "implication": "It remains an 'A+ school for B students,' offering top-tier research resources to a broader academic profile than more selective peers."
+        },
+        {
+          "category": "Ranking Trend",
+          "insight": "The university's 2026 US News rank shifted to 151 from 148 in the previous year.",
+          "implication": "While a slight numerical dip, CSU remains in the top tier of public universities, though it faces increasing competition from other R1 institutions in outcome-based metrics."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "CSU offers a vibrant, community-focused atmosphere in Fort Collins, characterized by a high degree of inclusivity and a strong culture of outdoor recreation and school spirit.",
+        "transportation_impact": "The university is a national leader in sustainable transportation, boasting a 'Platinum' STARS rating; campus life is heavily centered on a massive bicycle-friendly infrastructure and the 'Transfort' city-wide transit system.",
+        "research_impact": "With annual research expenditures exceeding $400 million, CSU ranks in the top 10% of universities for R&D; research is deeply integrated with local industry through CSU Ventures, particularly in clean energy and life sciences."
+      }
+    },
+    "admissions": {
+      "current": {
+        "overall_acceptance_rate": 88.54,
+        "in_state_acceptance_rate": 0.0,
+        "out_of_state_acceptance_rate": 0.0,
+        "international_acceptance_rate": 90.0,
+        "transfer_acceptance_rate": 63.59,
+        "admits_class_size": 34057,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "applications": 27432,
+            "admits": 25468,
+            "acceptance_rate": 92.8,
+            "class_fill_percentage": 0.0
+          }
+        ]
+      },
+      "trends": [
+        {
+          "year": 2024,
+          "cycle_name": "Fall 2024",
+          "applications_total": 38520,
+          "admits_total": 34118,
+          "enrolled_total": 5485,
+          "acceptance_rate_overall": 88.6,
+          "yield_rate": 16.1,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Colorado State University does not typically utilize a waitlist for undergraduate admissions."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Fall 2023",
+          "applications_total": 36616,
+          "admits_total": 32805,
+          "enrolled_total": 5282,
+          "acceptance_rate_overall": 89.6,
+          "yield_rate": 16.1,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          }
+        }
+      ],
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": "3.60-4.10",
+          "unweighted_middle_50": "3.31-4.04",
+          "average_weighted": 3.9,
+          "percentile_25": "3.31",
+          "percentile_75": "4.04",
+          "notes": "Median high school GPA for the Fall 2024 incoming class was 3.71."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1080-1290",
+          "sat_reading_middle_50": "550-650",
+          "sat_math_middle_50": "530-640",
+          "act_composite_middle_50": "23-29",
+          "submission_rate": 43.0,
+          "policy_note": "Test-optional for most programs; scores are considered if submitted."
+        },
+        "demographics": {
+          "first_gen_percentage": 27.0,
+          "legacy_percentage": 0.0,
+          "international_percentage": 4.5,
+          "geographic_breakdown": [
+            { "region": "Colorado", "percentage": 65.0 },
+            { "region": "California", "percentage": 7.0 },
+            { "region": "Texas", "percentage": 4.0 },
+            { "region": "Other US States", "percentage": 19.5 },
+            { "region": "International", "percentage": 4.5 }
+          ],
+          "gender_breakdown": {
+            "men": { "applicants": 16770, "admits": 14533, "acceptance_rate": 86.6 },
+            "women": { "applicants": 21608, "admits": 19500, "acceptance_rate": 90.2 },
+            "non_binary": { "applicants": 0, "admits": 0, "acceptance_rate": 0.0 }
+          },
+          "racial_breakdown": {
+            "white": 68.0,
+            "black_african_american": 2.5,
+            "hispanic_latino": 14.4,
+            "asian": 3.1,
+            "native_american_alaskan": 0.5,
+            "pacific_islander": 0.1,
+            "two_or_more_races": 4.7,
+            "unknown": 1.2,
+            "non_resident_alien": 5.5
+          }
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "College of Business",
+          "admissions_model": "Direct Admit",
+          "is_restricted_or_capped": true,
+          "majors": [
+            {
+              "name": "Business Administration",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.0,
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0
+            }
+          ]
+        },
+        {
+          "name": "Walter Scott, Jr. College of Engineering",
+          "admissions_model": "Direct Admit",
+          "is_restricted_or_capped": true,
+          "majors": [
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5,
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.5
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Data Science Minor",
+        "Agricultural Business Minor",
+        "Entrepreneurship Certificate",
+        "Sustainability Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": ["Common App"],
+      "application_deadlines": [
+        { "plan_type": "Early Action", "date": "2024-11-15", "is_binding": false, "notes": "Non-binding; recommended for full scholarship consideration" },
+        { "plan_type": "Early Action (International)", "date": "2024-12-01", "is_binding": false, "notes": "Non-binding" },
+        { "plan_type": "Regular Decision", "date": "2025-01-15", "is_binding": false, "notes": "Final date for full scholarship consideration" }
+      ],
+      "supplemental_requirements": [
+        { "target_program": "All", "requirement_type": "Common App Personal Statement", "deadline": "Same as application", "details": "Standard 250-650 word essay required for all applicants." },
+        { "target_program": "Music & Dance", "requirement_type": "Audition", "deadline": "Varies by department", "details": "Audition or portfolio required for admission to specific performing arts majors." }
+      ],
+      "holistic_factors": {
+        "primary_factors": ["Course Rigor", "Academic GPA"],
+        "secondary_factors": ["Application Essay", "Extracurriculars", "Talent", "Character"],
+        "essay_importance": "Important",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "Considered",
+        "first_gen_boost": "Strong"
+      }
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": { "tuition": 13774, "total_coa": 35722, "housing": 17508 },
+        "out_of_state": { "tuition": 32734, "total_coa": 56372, "supplemental_tuition": 18960 }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 12538,
+      "average_merit_aid": 5327,
+      "percent_receiving_aid": 60.0
+    },
+    "scholarships": [
+      { "name": "Monfort Scholarship", "type": "Merit", "amount": "Full ride", "deadline": "2025-02-01", "application_method": "Admission Application + CSUSA" },
+      { "name": "Green and Gold Scholarship", "type": "Merit", "amount": "Up to $16,000 per year", "deadline": "2025-01-15", "application_method": "Automatic Consideration" },
+      { "name": "Western Undergraduate Exchange (WUE)", "type": "Merit", "amount": "Approx. $11,500/year savings", "deadline": "2025-01-15", "application_method": "Automatic Consideration" },
+      { "name": "University Honors Program Scholarship", "type": "Merit", "amount": "$4,000 over 4 years", "deadline": "2025-05-01", "application_method": "Honors Program Application" },
+      { "name": "Presidential Scholarship (Non-Resident)", "type": "Merit", "amount": "$9,000 per year", "deadline": "2025-01-15", "application_method": "Automatic Consideration" }
+    ],
+    "outcomes": {
+      "earnings_stats": { "median_earnings_10yr": 60543 },
+      "employment_stats": { "employment_rate_2yr": 79.0, "grad_school_rate": 17.0 },
+      "top_employers": ["Amazon", "Deloitte", "Lockheed Martin", "Charles Schwab", "KPMG"],
+      "retention_graduation": { "freshman_retention_rate": 85.6, "graduation_rate_4_year": 47.0, "graduation_rate_6_year": 70.0 },
+      "loan_default_rate": 3.1
+    }
+  }
+}

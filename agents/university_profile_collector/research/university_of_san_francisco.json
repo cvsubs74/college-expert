@@ -1,0 +1,808 @@
+{
+  "university_profile": {
+    "_id": "university_of_san_francisco",
+    "university_name": "University of San Francisco",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "US News & World Report 2026 Best Colleges",
+      "University of San Francisco Admissions Portal",
+      "USF Transportation & Parking Services"
+    ],
+    "metadata": {
+      "official_name": "University of San Francisco",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA",
+        "type": "Private"
+      }
+    },
+    "strategic_profile": {
+      "executive_summary": "The University of San Francisco is a private Jesuit institution located in the heart of the city, known for its commitment to social justice, 'cura personalis' (care for the whole person), and a diverse student body.",
+      "market_position": "Elite Private",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 110,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Acceptance rates have tightened significantly, moving from roughly 70% to approximately 51% in recent cycles due to record application volumes.",
+          "implication": "Applicants should focus heavily on the personal essay to demonstrate alignment with Jesuit values to stand out in a growing pool."
+        },
+        {
+          "category": "Flexibility",
+          "insight": "The university remains firmly committed to a test-optional policy initiated in 2020.",
+          "implication": "Strong GPA and extracurricular leadership are now the primary determinants of admission success."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Urban-integrated and socially conscious; social life is often decentralized, with students utilizing the entire city of San Francisco as their campus rather than relying on traditional Greek life or on-campus parties.",
+        "transportation_impact": "High student mobility due to the 'Muni' pass included in tuition, which grants unlimited access to city buses and light rail, reducing the need for cars and extending the social scene across the Bay Area.",
+        "research_impact": "Strong focus on undergraduate research and fabrication through 'The Innovation Hive' and specialized centers like the Jesuit Foundation, emphasizing projects with tangible social or community benefits."
+      }
+    },
+    "current_status": {
+      "overall_acceptance_rate": 61.7,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 55.1,
+      "admits_class_size": 15358,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 82.0,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "EA",
+          "applications": 85,
+          "admits": 42,
+          "acceptance_rate": 49.4,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "admissions_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 24888,
+        "admits_total": 15358,
+        "enrolled_total": 1322,
+        "acceptance_rate_overall": 61.7,
+        "yield_rate": 8.6,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": 1327,
+          "admitted_from_waitlist": 364,
+          "waitlist_admit_rate": 27.4,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Selectivity remained consistent with historical averages despite a slight decline in yield."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 25709,
+        "admits_total": 13052,
+        "enrolled_total": 1426,
+        "acceptance_rate_overall": 50.8,
+        "yield_rate": 10.9,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": 3239,
+          "admitted_from_waitlist": 403,
+          "waitlist_admit_rate": 12.4,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Marked increase in waitlist pool size compared to previous years."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 23103,
+        "admits_total": 16444,
+        "enrolled_total": 1808,
+        "acceptance_rate_overall": 71.2,
+        "yield_rate": 11.0,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": 711,
+          "admitted_from_waitlist": 26,
+          "waitlist_admit_rate": 3.7,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist activity was exceptionally low with only a 3.7% admit rate."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 22372,
+        "admits_total": 15816,
+        "enrolled_total": 1740,
+        "acceptance_rate_overall": 70.7,
+        "yield_rate": 11.0,
+        "waitlist_stats": {
+          "year": 2021,
+          "waitlist_admit_rate": 7.2,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist admit rate reported at 7.2%."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 21477,
+        "admits_total": 15099,
+        "acceptance_rate_overall": 70.3,
+        "waitlist_stats": {
+          "year": 2020,
+          "waitlist_admit_rate": 39.8,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist usage peaked significantly in 2020 due to pandemic-related enrollment uncertainty."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.40-3.85",
+        "average_weighted": 3.62,
+        "percentile_25": "3.35",
+        "percentile_75": "3.88",
+        "notes": "Average high school GPA is 3.62 (unweighted). Approximately 45% of admitted students possess a GPA of 3.75 or higher."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1210-1390",
+        "sat_reading_middle_50": "610-690",
+        "sat_math_middle_50": "600-700",
+        "act_composite_middle_50": "26-31",
+        "submission_rate": 15.0,
+        "policy_note": "Test optional. Standardized test scores are considered if submitted but are not required for admission or merit scholarship consideration."
+      },
+      "demographics": {
+        "first_gen_percentage": 40.9,
+        "legacy_percentage": null,
+        "international_percentage": 12.5,
+        "geographic_breakdown": [
+          {
+            "region": "California",
+            "percentage": 58.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 32.0
+          },
+          {
+            "region": "International",
+            "percentage": 10.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 8588,
+            "admits": 5098,
+            "acceptance_rate": 59.4,
+            "note": "2024 admissions cycle data."
+          },
+          "women": {
+            "applicants": 15958,
+            "admits": 9993,
+            "acceptance_rate": 62.6,
+            "note": "2024 admissions cycle data."
+          },
+          "non_binary": {
+            "applicants": 321,
+            "admits": 257,
+            "acceptance_rate": 80.0,
+            "note": "Reported as 'Another Gender' in 2024 CDS/IPEDS reporting."
+          }
+        },
+        "racial_breakdown": {
+          "white": 23.9,
+          "black_african_american": 6.7,
+          "hispanic_latino": 21.8,
+          "asian": 21.6,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.4,
+          "two_or_more_races": 8.2,
+          "unknown": 4.7,
+          "non_resident_alien": 12.5
+        },
+        "religious_affiliation": "Jesuit Catholic"
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Schools and Colleges",
+      "colleges": [
+        {
+          "name": "College of Arts and Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Focus your application on the 'Cura Personalis' (care for the whole person) philosophy. Demonstrate a commitment to social justice and community engagement, as USF values students who aim to 'Change the World from Here.' For Engineering applicants, ensure high proficiency in Mathematics, specifically through Precalculus or higher.",
+          "housing_profile": "Traditional residence halls featuring robust Living-Learning Communities (LLCs) such as the St. Ignatius Institute (spiritual exploration) and the Marshall-Riley LLC (Black American history and intellectual tradition).",
+          "student_archetype": "The Socially Conscious Scholar: Intellectually curious students who are deeply engaged in activism, diverse cultural exchange, and interdisciplinary research.",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "curriculum": {
+                "total_units": 128,
+                "major_units": 48,
+                "core_courses": [
+                  "PSYC 101 General Psychology",
+                  "PSYC 260 Psychological Statistics",
+                  "RHET 203 Writing in Psychology",
+                  "PSYC 265 Research Design",
+                  "PSYC 270 Biological Psychology"
+                ]
+              },
+              "notable_professors": [
+                "Dr. Kevin Chun",
+                "Dr. Violet Cheung",
+                "Dr. Saera Khan"
+              ],
+              "notes": "One of the most popular majors; features a research-heavy foundational core."
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "curriculum": {
+                "total_units": 128,
+                "major_units": 66,
+                "core_courses": [
+                  "BIOL 105 General Biology I",
+                  "BIOL 106 General Biology II",
+                  "BIOL 212 Cell Physiology",
+                  "BIOL 310 Genetics",
+                  "BIOL 414 Evolution",
+                  "BIOL 490 Undergraduate Seminar"
+                ]
+              },
+              "notable_professors": [
+                "Dr. Jennifer Dever",
+                "Dr. Christina Tzagarakis-Foster",
+                "Dr. Nicole Thometz"
+              ],
+              "notes": "Strongly prepares students for medical/dental school; strict grade repeat policy."
+            },
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "curriculum": {
+                "total_units": 128,
+                "major_units": 52,
+                "core_courses": [
+                  "CS 110 Intro to CS I",
+                  "CS 112 Intro to CS II",
+                  "CS 272 Software Development",
+                  "CS 221 C and Systems Programming",
+                  "CS 245 Intermediate Data Structures & Algorithms",
+                  "MATH 201 Discrete Math",
+                  "MATH 202 Linear Algebra & Probability"
+                ]
+              },
+              "notable_professors": [
+                "Dr. Greg Benson",
+                "Dr. David Wolber",
+                "Dr. Sophie Engel"
+              ],
+              "notes": "Located in a tech hub with high emphasis on project-based learning and AI integration."
+            },
+            {
+              "name": "Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "curriculum": {
+                "total_units": 128,
+                "major_units": 80,
+                "core_courses": [
+                  "ENGR 100 Becoming an Engineer",
+                  "ENGR 110 Project & Design I",
+                  "ENGR 201 Diff Eq & Systems Modeling",
+                  "ENGR 210 Project and Design II",
+                  "ENGR 410 Capstone I",
+                  "MATH 109/110 Calculus I & II"
+                ]
+              },
+              "notable_professors": [
+                "Dr. Karen Francis",
+                "Dr. Hana Bizek"
+              ],
+              "notes": "A relatively new, project-based program seeking ABET accreditation."
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "curriculum": {
+                "total_units": 128,
+                "major_units": 48,
+                "core_courses": [
+                  "ECON 111 Principles of Microeconomics",
+                  "ECON 112 Principles of Macroeconomics",
+                  "ECON 311 Intermediate Microeconomics",
+                  "ECON 312 Intermediate Macroeconomics",
+                  "ECON 320 Econometrics"
+                ]
+              },
+              "notable_professors": [
+                "Dr. Jesse Anttila-Hughes",
+                "Dr. Alessandra Cassar",
+                "Dr. Bruce Wydick"
+              ],
+              "notes": "Heavily analytical; offers 4+1 accelerated Master's pathways."
+            },
+            {
+              "name": "Kinesiology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "curriculum": {
+                "total_units": 128,
+                "major_units": 52,
+                "core_courses": [
+                  "KIN 120 Intro to Kinesiology",
+                  "KIN 220 Anatomical Kinesiology",
+                  "KIN 300 Motor Development",
+                  "KIN 310 Exercise Physiology",
+                  "KIN 350 Biomechanics",
+                  "KIN 410 Research Seminar"
+                ]
+              },
+              "notable_professors": [
+                "Dr. Karen Francis",
+                "Dr. Shannon Siegel",
+                "Dr. Julia Orri"
+              ],
+              "notes": "Highly integrated with Pre-Health advising for Physical Therapy pathways."
+            },
+            {
+              "name": "Architecture",
+              "degree_type": "B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Chemistry",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "notes": "ACS Certified available."
+            },
+            {
+              "name": "Communication Studies",
+              "degree_type": "B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Environmental Science",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "International Studies",
+              "degree_type": "B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Mathematics",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Physics",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Sociology",
+              "degree_type": "B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "History",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "notable_professors": [
+                "Dr. Taymiya Zaman"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "School of Management",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 65.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Highlight entrepreneurial initiative and a 'business for good' mindset. USF Management seeks students who want to leverage San Francisco's tech and finance hubs to build ethical, purpose-driven enterprises.",
+          "housing_profile": "Students often reside in first-year halls like Hayes-Healy or Gillson, with access to professional-themed LLCs that facilitate networking and site visits to Bay Area companies.",
+          "student_archetype": "The Purpose-Driven Entrepreneur: Ambitious, networking-savvy students who view business as a tool for creating equitable global change.",
+          "majors": [
+            {
+              "name": "Management",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "curriculum": {
+                "total_units": 128,
+                "major_units": 60,
+                "core_courses": [
+                  "ECON 111 Principles of Microeconomics",
+                  "ECON 112 Principles of Macroeconomics",
+                  "ACCT 201 Financial Accounting",
+                  "ACCT 202 Managerial Accounting",
+                  "BUS 301 Financial Management",
+                  "BUS 302 Marketing Principles",
+                  "BUS 401 Senior Core Capstone"
+                ]
+              },
+              "notable_professors": [
+                "Dr. Richard Stackman",
+                "Dr. Kevin Lo",
+                "Dr. Linda Henderson"
+              ],
+              "notes": "The primary business major; accredited by AACSB."
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.S.B.A.",
+              "notable_professors": [
+                "Dr. Fernando Comiran"
+              ]
+            },
+            {
+              "name": "Business Analytics",
+              "degree_type": "B.S.B.A.",
+              "notable_professors": [
+                "Dr. Vijay Mehrotra",
+                "Dr. Shivani Shukla"
+              ],
+              "notes": "Highly quantitative STEM-designated business major."
+            },
+            {
+              "name": "Finance",
+              "degree_type": "B.S.B.A.",
+              "notable_professors": [
+                "Dr. Frank Ohara"
+              ]
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.S.B.A.",
+              "notable_professors": [
+                "Dr. Anthony Patino"
+              ]
+            },
+            {
+              "name": "Entrepreneurship & Innovation",
+              "degree_type": "B.S.B.A.",
+              "notable_professors": [
+                "Dr. J.P. Allen"
+              ]
+            },
+            {
+              "name": "International Business",
+              "degree_type": "B.S.B.A.",
+              "notable_professors": [
+                "Dr. Rebekah Dibble"
+              ]
+            },
+            {
+              "name": "Hospitality Management",
+              "degree_type": "B.S.B.A."
+            },
+            {
+              "name": "Management (BAM)",
+              "degree_type": "B.A.",
+              "notes": "Adult degree completion program; requires 60 prior units."
+            }
+          ]
+        },
+        {
+          "name": "School of Nursing and Health Professions",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 16.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Extremely selective. Applicants must complete Chemistry in high school and demonstrate a high GPA (typically 4.0+). Note that USF does not allow students admitted to other majors to transfer into the Nursing program later; you must be admitted directly as a first-year.",
+          "housing_profile": "Heavily integrated into LLCs in Toler Hall, where students take common courses and participate in clinical prep workshops together.",
+          "student_archetype": "The Compassionate Professional: High-achieving, disciplined students with a profound commitment to healthcare equity and hands-on clinical service.",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.N.",
+              "is_impacted": true,
+              "acceptance_rate": 16.0,
+              "average_gpa_admitted": 4.09,
+              "curriculum": {
+                "total_units": 128,
+                "major_units": 84,
+                "core_courses": [
+                  "NURS 110 Intro to Professional Nursing",
+                  "NURS 221 Foundations of Nursing Practice",
+                  "NURS 320 Medical Surgical Nursing I",
+                  "NURS 410 Psychiatric Mental Health Nursing",
+                  "NURS 440 Community & Public Health Nursing",
+                  "BIOL 113 Anatomy",
+                  "BIOL 115 Physiology",
+                  "BIOL 134 Microbiology"
+                ]
+              },
+              "notable_professors": [
+                "Dr. Eileen Fung",
+                "Dr. Dhara Meghani"
+              ],
+              "notes": "Extremely competitive. If you are admitted to USF for any other major, you cannot switch into Nursing later."
+            },
+            {
+              "name": "Public Health",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "curriculum": {
+                "total_units": 128,
+                "major_units": 44,
+                "core_courses": [
+                  "MPH 100 Intro to Public Health",
+                  "MPH 200 Epidemiology",
+                  "MPH 300 Social & Behavioral Health",
+                  "MPH 400 Environmental Health"
+                ]
+              },
+              "notes": "Often chosen by students interested in health policy or administration."
+            }
+          ]
+        },
+        {
+          "name": "School of Education",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 75.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Best fit for students pursuing the Dual Degree in Teacher Preparation. Emphasize experience in tutoring, youth mentorship, or educational advocacy in urban settings.",
+          "housing_profile": "Primarily shares housing with the College of Arts and Sciences, often utilizing Nagle Hall due to its proximity to the Education building.",
+          "student_archetype": "The Future Educator: Empathic leaders dedicated to transformative pedagogy and social equity within the classroom.",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Jewish Studies and Social Justice Minor",
+        "Public Service and Community Engagement Minor",
+        "Entrepreneurship & Innovation Minor",
+        "Data Science Minor",
+        "Urban Agriculture Minor",
+        "Asia Pacific Studies Certificate",
+        "Professional Communication Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Coalition App",
+        "USF Direct Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Decision I",
+          "date": "2024-11-01",
+          "is_binding": true,
+          "notes": "Binding commitment for fall intake."
+        },
+        {
+          "plan_type": "Early Action",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Non-binding early notification."
+        },
+        {
+          "plan_type": "Early Decision II",
+          "date": "2025-01-15",
+          "is_binding": true,
+          "notes": "Binding second-round commitment."
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-01-15",
+          "is_binding": false,
+          "notes": "Final fall application deadline."
+        },
+        {
+          "plan_type": "Spring Admission",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Regular decision deadline for spring term."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Essays",
+          "details": "USF does not require a supplemental essay for most majors beyond the Common App personal statement."
+        },
+        {
+          "target_program": "Nursing",
+          "requirement_type": "Short Answer",
+          "details": "One required 200-word response: 'What will be your responsibility to others as a Jesuit-educated, BSN professional registered nurse?'"
+        },
+        {
+          "target_program": "St. Ignatius Institute",
+          "requirement_type": "Living Learning Community Application",
+          "details": "Additional short answer questions required for applicants to this specific program."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Course Rigor",
+          "GPA",
+          "Application Essay"
+        ],
+        "secondary_factors": [
+          "Extracurriculars",
+          "Talent/Ability",
+          "Character/Personal Qualities"
+        ],
+        "essay_importance": "Critical",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "None",
+        "first_gen_boost": "Moderate",
+        "specific_differentiators": "Emphasis on 'cura personalis' (care for the whole person) and the Jesuit mission of social justice and community service."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Avoid the Nursing major unless you are certain and have a 3.9+ GPA; it is direct-entry only with a strict no-internal-transfer policy.",
+        "Apply to the College of Arts and Sciences as 'Undeclared' to maximize general admission odds if stats are borderline.",
+        "Incorporate the Jesuit value of 'Cura Personalis' (care for the whole person) into your supplemental essay.",
+        "Check specific math prerequisites for the School of Engineering; applicants without Precalculus are often redirected.",
+        "Consider the Sacramento campus for Nursing if open to living outside of SF."
+      ],
+      "alternate_major_strategy": "If applying to the highly selective Nursing program, list Kinesiology or Public Health as your alternate major. For Computer Science applicants, selecting Data Science or Mathematics as an alternate is recommended."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 59920,
+          "total_coa": 84784,
+          "housing": 13934
+        },
+        "out_of_state": {
+          "tuition": 59920,
+          "total_coa": 84784,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 36120,
+      "average_merit_aid": 22332,
+      "percent_receiving_aid": 98.0,
+      "scholarships": [
+        {
+          "name": "University Scholarship",
+          "type": "Merit",
+          "amount": "$37,000 per year",
+          "application_method": "Automatic Consideration",
+          "benefits": "Renewable for four years; applies to tuition only"
+        },
+        {
+          "name": "Presidential Scholarship",
+          "type": "Merit",
+          "amount": "$35,000 per year",
+          "application_method": "Automatic Consideration",
+          "benefits": "Awarded to high-achieving first-year students; renewable based on GPA"
+        },
+        {
+          "name": "Black Scholars Program (Full-Tuition)",
+          "type": "Merit/Leadership",
+          "amount": "Full Tuition",
+          "application_method": "Separate Application (by invitation)",
+          "benefits": "Mentorship, community leadership training, and full tuition coverage"
+        },
+        {
+          "name": "Charles E. Cross Award",
+          "type": "Merit (Institutional)",
+          "amount": "$5,000 per year",
+          "application_method": "Automatic Consideration",
+          "benefits": "Exclusively for graduates of Catholic or Jesuit high schools"
+        },
+        {
+          "name": "Araoz Nursing Scholarship",
+          "type": "Merit (Program-Specific)",
+          "amount": "$25,000 per year",
+          "application_method": "Automatic Consideration",
+          "benefits": "Dedicated to students admitted to the Hilltop first-year nursing program"
+        },
+        {
+          "name": "University Tuition Grant",
+          "type": "Need-Based",
+          "amount": "Varies (Average ~$28,000)",
+          "application_method": "FAFSA or CA Dream Act",
+          "benefits": "Helps bridge the gap between merit aid and the full cost of tuition"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Scores of 3 or higher grant credit for most exams",
+        "exceptions": [
+          "Score of 4 or higher required for English Language, Calculus, Biology, Chemistry, US History, European History, and World History",
+          "Biology major credit for BIOL 105/106 requires a score of 5 and departmental petition"
+        ],
+        "usage": "Satisfies USF Core Curriculum (GE) requirements and some major prerequisites"
+      },
+      "ib_policy": {
+        "general_rule": "10 semester units awarded for each Higher Level (HL) exam with a score of 4 or higher",
+        "diploma_bonus": false,
+        "usage": "Credits apply toward core requirements and elective units; no credit is awarded for Standard Level (SL) exams"
+      },
+      "transfer_articulation": {
+        "tools": [
+          "USF Transfer Credit Evaluator",
+          "Internal Articulation Agreements"
+        ],
+        "restrictions": "44-unit residency requirement (minimum of 44 units must be completed at USF); residency requirement limits total transferable units to roughly 84 out of 128"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A strong academic record in college-prep courses (4 years English, 3 years Math/Social Science)",
+        "Specific prerequisites: Precalculus for Engineering and Chemistry for Nursing applicants",
+        "Evidence of self-reflection and a commitment to 'cura personalis' (care for the whole person)",
+        "Alignment with Jesuit values of social justice and community responsibility",
+        "Competitive GPA (middle 50% often falls in the 3.61 unweighted range)"
+      ],
+      "common_activities": [
+        "Community service projects focused on urban social issues",
+        "Clinical or volunteer experience (highly prioritized for Nursing and Pre-med tracks)",
+        "Leadership in identity-based or cultural student organizations",
+        "Internships leveraging the San Francisco/Bay Area tech and business ecosystem"
+      ],
+      "essay_tips": [
+        "Explicitly connect your personal goals to USF’s mission of 'changing the world from here'",
+        "Emphasize diversity and how your unique background contributes to the campus community",
+        "Focus on quality over quantity in the extracurricular prompt; deep commitment to one area is preferred",
+        "Show self-awareness by discussing a specific moment of growth or a challenge you've overcome"
+      ],
+      "red_flags": [
+        "Describing USF as a 'safety school' in communication or essays",
+        "Generic essays that fail to mention the school’s specific Jesuit identity or SF location",
+        "Lack of rigor in core STEM subjects for students applying to Nursing or Engineering",
+        "Treating community service as a checkbox rather than a genuine interest"
+      ],
+      "insights": [
+        "The campus culture is described as 'mature' and integrated into the city; don't expect a secluded 'college town' feel",
+        "Financial aid can be a major hurdle; tuition is high and living in San Francisco adds significant cost",
+        "Small class sizes foster very close relationships with professors",
+        "For Pre-meds, the proximity to UCSF provides clinical opportunities that are less competitive than at larger publics"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 89812,
+      "employment_rate_2yr": 81.0,
+      "grad_school_rate": 13.0,
+      "top_employers": [
+        "Apple",
+        "Deloitte",
+        "Salesforce",
+        "Tesla",
+        "Meta",
+        "Genentech",
+        "Kaiser Permanente",
+        "UCSF Medical Center"
+      ],
+      "loan_default_rate": 2.1,
+      "retention_data": {
+        "freshman_retention_rate": 83.2,
+        "graduation_rate_4_year": 63.6,
+        "graduation_rate_6_year": 71.0
+      }
+    }
+  }
+}

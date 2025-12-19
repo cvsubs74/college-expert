@@ -1,0 +1,695 @@
+{
+  "university_profile": {
+    "_id": "yeshiva_university",
+    "metadata": {
+      "official_name": "Yeshiva University",
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "type": "Private"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": []
+    },
+    "strategic_profile": {
+      "executive_summary": "Yeshiva University is the world's premier Jewish institution of higher learning, uniquely integrating rigorous secular academic study with traditional Torah scholarship (Torah Umaddah). It operates multiple campuses across New York City, offering a close-knit environment for undergraduate and graduate students.",
+      "market_position": "Elite Private",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 84,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "YU has seen a dramatic rise in honors applications and record-breaking enrollment in recent years.",
+          "implication": "Applicants should consider Early Decision to maximize chances for competitive honors programs."
+        },
+        {
+          "category": "Ranking Momentum",
+          "insight": "The university jumped 14 spots to #84 in the 2026 National Universities list.",
+          "implication": "Improving peer assessments and outcome metrics suggest a strengthening national brand beyond its niche market."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Social life is deeply rooted in Jewish values, featuring gender-separated undergraduate campuses and vibrant religious programming, including extensive Shabbat events and student-led Hanukkah concerts.",
+        "transportation_impact": "An inter-campus shuttle system connects the Wilf (Washington Heights) and Beren (Midtown) campuses, allowing students to access specialized libraries and facilities across the city.",
+        "research_impact": "Despite its small undergraduate size, YU maintains significant research output with over 18,000 publications and strong ties to industries through its Katz School of Science and Health and Sy Syms School of Business."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 55.62,
+      "in_state_acceptance_rate": 0.0,
+      "out_of_state_acceptance_rate": 0.0,
+      "international_acceptance_rate": 0.0,
+      "transfer_acceptance_rate": 100.0,
+      "admits_class_size": 926,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 98,
+          "admits": 98,
+          "acceptance_rate": 100.0,
+          "class_fill_percentage": 21.0
+        }
+      ]
+    },
+    "admissions_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 1665,
+        "admits_total": 926,
+        "enrolled_total": 566,
+        "acceptance_rate_overall": 55.6,
+        "acceptance_rate_in_state": 0.0,
+        "acceptance_rate_out_of_state": 0.0,
+        "yield_rate": 61.1,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate hit a multi-year low as selectivity increased; Waitlist not traditionally used for general admission."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 1713,
+        "admits_total": 1092,
+        "enrolled_total": 646,
+        "acceptance_rate_overall": 63.7,
+        "acceptance_rate_in_state": 0.0,
+        "acceptance_rate_out_of_state": 0.0,
+        "yield_rate": 59.2,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist not traditionally used; late applications are considered on a space-available basis."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.65-3.85",
+        "unweighted_middle_50": "3.40-3.60",
+        "average_weighted": 3.75,
+        "percentile_25": "3.40",
+        "percentile_75": "3.60",
+        "notes": "Honors program admits typically maintain a GPA of 3.80 (94/100) or higher. Admission is holistic with an interview requirement."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1340-1500",
+        "sat_reading_middle_50": "670-740",
+        "sat_math_middle_50": "670-770",
+        "act_composite_middle_50": "29-32",
+        "submission_rate": 22.0,
+        "policy_note": "Test-optional for general admission but recommended for honors and scholarship consideration."
+      },
+      "demographics": {
+        "first_gen_percentage": 0.0,
+        "legacy_percentage": 0.0,
+        "international_percentage": 8.0,
+        "geographic_breakdown": [
+          {
+            "region": "New York",
+            "percentage": 34.0
+          },
+          {
+            "region": "Out of State",
+            "percentage": 58.0
+          },
+          {
+            "region": "International",
+            "percentage": 8.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 858,
+            "admits": 478,
+            "acceptance_rate": 55.7,
+            "note": "Undergraduate men primarily attend the Wilf Campus."
+          },
+          "women": {
+            "applicants": 807,
+            "admits": 448,
+            "acceptance_rate": 55.5,
+            "note": "Undergraduate women primarily attend the Beren Campus."
+          },
+          "non_binary": 0.0
+        },
+        "racial_breakdown": {
+          "white": 53.6,
+          "black_african_american": 0.2,
+          "hispanic_latino": 2.0,
+          "asian": 0.1,
+          "native_american_alaskan": 0.04,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 0.6,
+          "unknown": 35.7,
+          "non_resident_alien": 7.7
+        },
+        "religious_affiliation": "Jewish (Modern Orthodox)"
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "Yeshiva College",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 63.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Ideal for men seeking a rigorous dual curriculum of liberal arts and intensive Torah study; values the 'Torah Umadda' philosophy of synthesizing secular and religious knowledge.",
+          "housing_profile": "Located on the Wilf Campus in Washington Heights; primarily traditional dorms (Rubin, Morgenstern, Muss Halls) within walking distance of academic buildings and the main Beit Midrash.",
+          "student_archetype": "Intellectually curious scholars balancing traditional Jewish learning with secular academic pursuits.",
+          "majors": [
+            {
+              "name": "Biology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 0.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "High School Algebra",
+                "Trigonometry"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "BIO 1011 Principles of Biology I",
+                "CHE 1213 Organic Chemistry"
+              ],
+              "special_requirements": "Pre-health students must maintain contact with the YU pre-health advisor.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "BIO 1011R/L Principles of Biology 1 (Lecture & Lab)",
+                  "BIO 1012R/L Principles of Biology 2 (Lecture & Lab)",
+                  "CHE 1045R General Chemistry 1",
+                  "CHE 1046R General Chemistry 2",
+                  "CHE 1047L General Chemistry Lab",
+                  "MAT 1412 Calculus I"
+                ],
+                "electives": [
+                  "BIO 3207 Cell Biology",
+                  "BIO 3513 Genetics",
+                  "BIO 3521 Molecular Biology",
+                  "BIO 3230 Immunology"
+                ],
+                "total_units": 128,
+                "major_units": 44
+              },
+              "notable_professors": [
+                "Dr. Josefa Steinhauer (Genetics/Development)",
+                "Dr. James Camara (Pre-Health Advisor)"
+              ],
+              "notes": "Extremely popular for Pre-Med students; high placement rate into medical schools."
+            },
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": 0.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "MAT 1412 Calculus I"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "COM 1320 Data Structures",
+                "COM 2545 Algorithms"
+              ],
+              "special_requirements": "B.S. track requires a strict 8-semester residency on campus.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "COM 1300 Intro to Computer Science",
+                  "COM 1310 Math for Computer Science",
+                  "COM 1320 Data Structures",
+                  "COM 2113 Computer Organization",
+                  "COM 2545 Intro to Algorithms",
+                  "COM 3610 Operating Systems",
+                  "MAT 2105 Linear Algebra"
+                ],
+                "electives": [
+                  "COM 3800 Distributed Systems",
+                  "COM 3580 Machine Learning",
+                  "COM 3760 Artificial Intelligence",
+                  "COM 3920 Applied Data Science"
+                ],
+                "total_units": 128,
+                "major_units": 74
+              },
+              "notable_professors": [
+                "Professor Judah Diament (Director, CS Program)",
+                "Dr. Avraham Leff (Application Performance)"
+              ],
+              "notes": "Offers tracks in Distributed Systems and Artificial Intelligence; industry advisory board from Google/Amazon."
+            },
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 0.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "PSY 1010 Introductory Psychology"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "PSY 2100C Experimental Psychology"
+              ],
+              "special_requirements": "Not specified",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "PSY 1010 Intro to Psychology",
+                  "PSY 1021 Statistics for Psychology",
+                  "PSY 1110 Developmental Psychology",
+                  "PSY 2100C Experimental Psychology",
+                  "PSY 2150 Cognitive Psychology",
+                  "PSY 3105 Social Psychology",
+                  "PSY 3804 Psychobiology"
+                ],
+                "electives": [
+                  "PSY 2414 Abnormal Psychology",
+                  "PSY 3800 Personality",
+                  "PSY 2430 Clinical Psychology",
+                  "PSY 4931 Death and Dying"
+                ],
+                "total_units": 128,
+                "major_units": 38
+              },
+              "notable_professors": [
+                "Dr. Jenny Isaacs (Department Chair)",
+                "Dr. William Arsenio"
+              ],
+              "notes": "Integrates with Ferkauf Graduate School for research opportunities."
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 0.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "MAT 1412 Calculus I"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "ECO 1101 Intermediate Microeconomics"
+              ],
+              "special_requirements": "Not specified",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "ECO 1010 Principles of Economics",
+                  "STA 1021 Intro to Statistics",
+                  "ECO 1101 Intermediate Microeconomics",
+                  "ECO 1201 Intermediate Macroeconomics",
+                  "ECO 1421 Econometrics"
+                ],
+                "electives": [
+                  "ECO 1177 Game Theory",
+                  "ECO 1221 Money and Banking",
+                  "ECO 1701 International Economics",
+                  "ECO 2601 Financial Economics"
+                ],
+                "total_units": 128,
+                "major_units": 34
+              },
+              "notable_professors": [
+                "Professor James Kahn (Department Chair)",
+                "Dr. Ran Shao (Resource Allocation)"
+              ],
+              "notes": "Offers a Mathematical Economics track for students targeting PhD programs or quantitative finance."
+            }
+          ]
+        },
+        {
+          "name": "Stern College for Women",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 63.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "A strong fit for women looking for a nurturing, Modern Orthodox environment with high success rates in placing students into top-tier medical and graduate programs.",
+          "housing_profile": "Located on the Beren Campus in Midtown Manhattan; includes a mix of traditional residence halls and apartment-style units (Brookdale, Schottenstein, and 36th Street) spread across several city blocks.",
+          "student_archetype": "Ambitious, community-oriented women committed to excellence in the sciences, arts, and Jewish studies.",
+          "majors": [
+            {
+              "name": "Biology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 0.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "CHEM 1045 General Chemistry"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "BIOL 1011 Principles of Biology I"
+              ],
+              "special_requirements": "Not specified",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "BIOL 1011C Principles I (Lecture & Lab)",
+                  "BIOL 1012C Principles II (Lecture & Lab)",
+                  "CHEM 1045R Gen Chem I",
+                  "CHEM 1046R Gen Chem II",
+                  "CHEM 1047L Gen Chem Lab"
+                ],
+                "electives": [
+                  "BIOL 3207C Cell Biology",
+                  "BIOL 3513C Genetics",
+                  "BIOL 3750 Medical Biochemistry",
+                  "BIOL 4023 Microbiology"
+                ],
+                "total_units": 128,
+                "major_units": 43
+              },
+              "notable_professors": [
+                "Dr. Alyssa Schuck (Chair)",
+                "Dr. Harvey Babich"
+              ],
+              "notes": "Offers a Neuroscience track in collaboration with the Psychology department."
+            }
+          ]
+        },
+        {
+          "name": "Sy Syms School of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 63.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Best for students prioritizing professional preparation and business ethics; emphasizes leadership and entrepreneurial spirit within a Jewish values framework.",
+          "housing_profile": "Operates on both Wilf (men) and Beren (women) campuses; students utilize the respective residential systems of their primary campus.",
+          "student_archetype": "Values-grounded future business leaders and innovative entrepreneurs.",
+          "majors": [
+            {
+              "name": "Accounting",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": 0.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "IDS 1010 Mathematics for Business"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "ACC 1001 Accounting Principles I",
+                "IDS 1131 Business Statistics"
+              ],
+              "special_requirements": "Requires completion of the 'Three Semester Required Sequence' (TSRS) of core business classes.",
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "ACC 1001 Principles I",
+                  "ACC 1002 Principles II",
+                  "BLW 2021 Ethical & Legal Environment of Business",
+                  "FIN 1001 Principles of Finance",
+                  "IDS 1020 Intro to Information Systems",
+                  "MAN 1020 Principles of Strategy",
+                  "MAR 1001 Principles of Marketing"
+                ],
+                "electives": [
+                  "ACC 2403 Intermediate Accounting",
+                  "ACC 3201 Cost Accounting",
+                  "TAX 6124 Federal Income Tax",
+                  "ACC 3601 Auditing"
+                ],
+                "total_units": 128,
+                "major_units": 33
+              },
+              "notable_professors": [
+                "Dr. Noam Wasserman (Dean)",
+                "Debra Pine (Assistant Dean)"
+              ],
+              "notes": "Highly ranked; students target the 150-credit CPA track via a combined MS program."
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "American Studies Minor",
+        "Architecture Minor",
+        "Business Analytics Minor",
+        "Cybersecurity Certificate",
+        "Data Analytics and Visualization Certificate",
+        "Jewish Education Minor",
+        "Public Health Minor",
+        "Real Estate Minor",
+        "Strategy and Entrepreneurship Minor",
+        "Women’s Studies Minor",
+        "AI for Business Certificate",
+        "Project Management Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Yeshiva University Online Application (apply.yu.edu)"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Decision (Honors)",
+          "date": "2025-11-02",
+          "is_binding": true,
+          "notes": "Typically binding for students who receive a scholarship of $20,000 or more."
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2026-02-02",
+          "is_binding": false,
+          "notes": "Includes General Admission and Regular Honors consideration."
+        },
+        {
+          "plan_type": "Spring Admission",
+          "date": "2025-11-17",
+          "is_binding": false,
+          "notes": "For students starting in the spring semester."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Personal Essay",
+          "deadline": "2026-02-02",
+          "details": "500–750 words. Options: 'Hakarat Hatov' (a thank-you letter) or 'How I intend to change the world.'"
+        },
+        {
+          "target_program": "All",
+          "requirement_type": "Short Answers",
+          "deadline": "2026-02-02",
+          "details": "Pick 3 prompts (25 words each) focusing on character, resilience, and joy."
+        },
+        {
+          "target_program": "Honors Programs",
+          "requirement_type": "Additional Essays",
+          "deadline": "2025-11-02",
+          "details": "Choice of 'Autobiography page 613' or 'Challenge to core belief' (750–1000 words); Sy Syms Honors requires a separate argumentative essay."
+        },
+        {
+          "target_program": "All",
+          "requirement_type": "Resume/Activity List",
+          "deadline": "2026-02-02",
+          "details": "Required document detailing extracurriculars, internships, and community involvement."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Academic GPA",
+          "Course Rigor",
+          "Interview",
+          "Character/Personal Qualities"
+        ],
+        "secondary_factors": [
+          "Standardized Tests (Required for Honors)",
+          "Extracurriculars",
+          "Recommendations"
+        ],
+        "essay_importance": "Critical",
+        "demonstrated_interest": "Important",
+        "interview_policy": "Required",
+        "legacy_consideration": "Minimal",
+        "first_gen_boost": "Moderate",
+        "specific_differentiators": "Focuses on 'dual curriculum' readiness (secular and Jewish studies) and a student's fit for a values-driven community."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to a Liberal Arts major in Yeshiva College or Stern if unsure about business, as internal transfers to Sy Syms are common but require specific GPA thresholds.",
+        "Leverage the 'Shaped Major' option to create a custom interdisciplinary track (e.g., Psychobiology) to stand out from the high volume of standard Biology/Pre-med applicants.",
+        "Mention interest in 'Pathways Programs' (accelerated BA/MA) in your application to demonstrate long-term commitment to YU's graduate schools like Katz or Ferkauf.",
+        "If your stats are slightly below the 3.4 GPA median, avoid highly competitive 'Pre-Health' tracks initially and opt for a Humanities major to emphasize your 'character and leadership' fit."
+      ],
+      "college_ranking_tactics": [
+        "Choose Sy Syms over Yeshiva College/Stern only if you prefer a business-heavy core; Syms has more rigid professional requirements compared to the broader Liberal Arts core.",
+        "Rank the Honors Program as a priority if you have an SAT above 1400, as it offers significant merit aid and specialized mentorship that traditional tracks lack.",
+        "Evaluate the campus location (Wilf for men, Beren for women) based on proximity to your intended industry internships, as Beren (Midtown) is closer to finance/fashion hubs.",
+        "Prioritize the 'Early Decision' track if YU is your top choice; the university relies heavily on yield and often gives a boost to students who commit to the dual-curriculum lifestyle early."
+      ],
+      "alternate_major_strategy": "Since YU allows students to remain undeclared until sophomore year, use the 'Why YU' essay to focus on your fit for the specific college (e.g., Stern) rather than a rigid major. If applying to a competitive field like Finance, list a liberal arts major as an alternate to secure admission to the university first, then utilize the 'Shaped Major' process or a minor to customize your degree after matriculation."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 51800,
+          "total_coa": 74200,
+          "housing": 15750
+        },
+        "out_of_state": {
+          "tuition": 51800,
+          "total_coa": 74200,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Need-Blind",
+      "average_need_based_aid": 46523,
+      "average_merit_aid": 24960,
+      "percent_receiving_aid": 87.0
+    },
+    "scholarships": [
+      {
+        "name": "Distinguished Honors Scholarship",
+        "type": "Merit",
+        "amount": "Up to $25,000 per year",
+        "deadline": "2025-11-01 (Early Decision)",
+        "benefits": "Enriched course of study, faculty mentoring, honors seminars, and special events",
+        "application_method": "Apply to YU Honors Program (Early Decision only for scholarship eligibility)"
+      },
+      {
+        "name": "Straus Scholars Program",
+        "type": "Merit",
+        "amount": "Up to $25,000 per year",
+        "deadline": "2025-01-01",
+        "benefits": "Unique interdisciplinary courses, mentorship, networking, and research internships",
+        "application_method": "Separate Application (requires YU Honors acceptance)"
+      },
+      {
+        "name": "Leadership Scholars",
+        "type": "Merit/Leadership",
+        "amount": "Up to $25,000 per year",
+        "deadline": "2025-11-01 (Early Decision)",
+        "benefits": "Leadership training, career development workshops, and networking opportunities",
+        "application_method": "Additional Application or invitation after Honors acceptance"
+      },
+      {
+        "name": "Lieberman-Mitzner Center Scholarship",
+        "type": "Merit/Service",
+        "amount": "Up to $25,000 per year",
+        "deadline": "2025-11-01 (Early Decision)",
+        "benefits": "Training in public service and advocacy, mentorship, and policy-focused programming",
+        "application_method": "Apply through YU Honors Program"
+      },
+      {
+        "name": "Anne Scheiber Honors Scholarship",
+        "type": "Merit/Need",
+        "amount": "Up to $25,000 per year",
+        "deadline": "2025-02-01 (FAFSA deadline)",
+        "benefits": "Supports women at Stern College intending to study medicine or natural sciences",
+        "application_method": "FAFSA and YU Honors Application"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Moderate",
+      "ap_policy": {
+        "general_rule": "Score of 4 or 5 earns credit for most exams",
+        "exceptions": [
+          "Score of 5 required for Computer Science A and Physics",
+          "No credit for AP Research or Seminar",
+          "Max 9 credits total for college-level courses taken while in high school",
+          "Max 6 credits of AP work may be applied toward a major"
+        ],
+        "usage": "Can satisfy General Education (Core) requirements and some major prerequisites"
+      },
+      "ib_policy": {
+        "general_rule": "Higher Level (HL) exams with a score of 6 or 7 grant credit",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Internal Pre-approved Course Lists"
+        ],
+        "restrictions": "Strict 84-credit residency requirement (limiting transfers to approximately 44 credits); Courses from community colleges and online institutions are frequently restricted or not accepted"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A strong academic record with a typical GPA of 85 (B average) or higher, with 3.5+ being competitive for honors",
+        "Commitment to a demanding dual curriculum balancing secular college studies with intensive Jewish studies",
+        "Evidence of intellectual curiosity and a history of taking honors or AP coursework where available",
+        "A successful mandatory interview where you demonstrate maturity and professional presentation"
+      ],
+      "common_activities": [
+        "Community service or 'Chessed' projects focused on the Jewish community or social justice",
+        "Leadership roles in religious youth groups such as BBYO, NCSY, or CTeen",
+        "Participation in varsity athletics (NCAA Division III) or school-wide student government",
+        "Internships or research experience, particularly for science and business-track students",
+        "Torah study or religious learning programs, often including a gap year in Israel"
+      ],
+      "essay_tips": [
+        "For the 'Hakarat Hatov' prompt, write a sincere thank-you letter that focuses on specific growth rather than just listing achievements",
+        "Be specific about why the dual-curriculum environment is the right fit for your personal and religious goals",
+        "Use 1-3 vivid anecdotes to 'show' your character rather than trying to summarize your entire life story",
+        "Reflect on a moment of failure or a challenged core belief with humility and a clear plan for future growth"
+      ],
+      "red_flags": [
+        "Treating the mandatory interview too casually; admissions officers view it as a critical professional assessment",
+        "Submitting a generic essay that doesn't mention the school's unique religious or cultural mission",
+        "Lack of rigor in senior year coursework, even if previous grades were strong",
+        "Failing to demonstrate a clear interest in both the secular and Judaic components of the education"
+      ],
+      "insights": [
+        "YU has an exceptionally high yield rate because many applicants apply specifically for its unique Modern Orthodox niche",
+        "Male and female undergraduate students attend separate campuses (Washington Heights and Midtown) with limited daily interaction",
+        "The admissions process is holistic, meaning they are often willing to overlook lower test scores if your community impact and character are exceptional",
+        "Students often use YU as a 'religious safety' or top choice when they want an Ivy-level network within a Torah-observant environment"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 71353,
+      "employment_rate_2yr": 97.6,
+      "grad_school_rate": 39.9,
+      "top_employers": [
+        "Goldman Sachs",
+        "Morgan Stanley",
+        "Deloitte",
+        "PwC",
+        "Google",
+        "Amazon",
+        "Bank of America"
+      ],
+      "loan_default_rate": 2.0
+    },
+    "student_retention": {
+      "freshman_retention_rate": 93.0,
+      "graduation_rate_4_year": 79.0,
+      "graduation_rate_6_year": 85.0
+    }
+  }
+}

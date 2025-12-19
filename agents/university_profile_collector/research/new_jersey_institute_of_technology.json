@@ -1,0 +1,630 @@
+{
+  "university_profile": {
+    "_id": "new_jersey_institute_of_technology",
+    "metadata": {
+      "official_name": "New Jersey Institute of Technology",
+      "location": {
+        "city": "Newark",
+        "state": "NJ",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "https://www.njit.edu/news/njit-rises-no-80-us-news-national-university-rankings",
+        "https://www.njit.edu/admissions/admission-requirements",
+        "https://www.njit.edu/strategicplan/"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "NJIT is a premier public polytechnic research university and an R1 institution known as New Jersey's 'Innovation Nexus.' It serves as a critical engine for the state's economy, producing one-third of New Jersey's engineers and scientists while maintaining a strong commitment to social mobility and high return on investment.",
+      "market_position": "Public Polytechnic Leader",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 80,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "The acceptance rate has tightened from approximately 70.5% in 2023 to 65% for the 2024-2025 cycle.",
+          "implication": "Increasing demand for STEM programs means applicants should emphasize rigorous math and science coursework to remain competitive."
+        },
+        {
+          "category": "Test Policy",
+          "insight": "NJIT remains test-optional for Fall 2025 and 2026, excluding the Honors College.",
+          "implication": "Students with strong GPAs but lower test scores can lead with their academic record, though submitting high STEM scores is still recommended for scholarship consideration."
+        },
+        {
+          "category": "ROI and Outcomes",
+          "insight": "NJIT is ranked #1 in NJ for alumni salary and #25 nationally by the Wall Street Journal.",
+          "implication": "The university is a high-value alternative to more expensive private polytechnics, offering elite industry outcomes at a public price point."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A STEM-focused culture with a large commuter population (approx. 75%) that is becoming more residentially vibrant through new housing and the 'Innovation Nexus' initiative. Social life is centered around professional organizations, technical clubs, and Highlander athletics.",
+        "transportation_impact": "Highly connected urban campus; proximity to Newark Penn Station and discounted NJ Transit passes facilitate a fluid 'commuter-plus' lifestyle, allowing students easy access to internships in NYC and Jersey City.",
+        "research_impact": "As an R1 institution with over $160 million in annual research expenditures, NJIT integrates students into high-impact fields like AI ($50M+ in annual funding), biotechnology, and sustainable infrastructure through its NJ Innovation Institute (NJII)."
+      }
+    },
+    "admissions_overview": {
+      "current_status": {
+        "overall_acceptance_rate": 65.1,
+        "in_state_acceptance_rate": 70.5,
+        "out_of_state_acceptance_rate": null,
+        "international_acceptance_rate": 44.6,
+        "transfer_acceptance_rate": 66.9,
+        "admits_class_size": 10156,
+        "is_test_optional": true,
+        "test_policy_details": "Test-optional for Fall 2025 and 2026, excluding the Honors College and Accelerated Programs.",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "applications": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "class_fill_percentage": 21.0
+          }
+        ]
+      },
+      "admissions_trends": [
+        {
+          "year": 2025,
+          "cycle_name": "Class of 2029",
+          "applications_total": null,
+          "admits_total": null,
+          "enrolled_total": null,
+          "acceptance_rate_overall": null,
+          "waitlist_stats": {
+            "year": 2025,
+            "offered_spots": null,
+            "is_waitlist_ranked": true
+          },
+          "notes": "Admissions cycle currently in progress."
+        },
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 15607,
+          "admits_total": 10156,
+          "enrolled_total": 1746,
+          "acceptance_rate_overall": 65.1,
+          "yield_rate": 17.2,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 3621,
+            "admitted_from_waitlist": 827,
+            "is_waitlist_ranked": true
+          },
+          "notes": "Significant increase in waitlist movement compared to previous years."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 13993,
+          "admits_total": 9359,
+          "enrolled_total": 1635,
+          "acceptance_rate_overall": 66.9,
+          "acceptance_rate_in_state": 70.5,
+          "yield_rate": 17.5,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": 2668,
+            "accepted_spots": 363,
+            "admitted_from_waitlist": 331,
+            "waitlist_admit_rate": 91.2,
+            "is_waitlist_ranked": true
+          },
+          "notes": "Waitlist admit rate is exceptionally high among those who chose to remain on the list."
+        },
+        {
+          "year": 2022,
+          "cycle_name": "Class of 2026",
+          "applications_total": 13010,
+          "admits_total": 8587,
+          "enrolled_total": 1587,
+          "acceptance_rate_overall": 66.0,
+          "yield_rate": 18.5,
+          "waitlist_stats": {
+            "year": 2022,
+            "admitted_from_waitlist": 34,
+            "is_waitlist_ranked": true
+          }
+        },
+        {
+          "year": 2021,
+          "cycle_name": "Class of 2025",
+          "applications_total": 11578,
+          "admits_total": 8005,
+          "enrolled_total": 1374,
+          "acceptance_rate_overall": 69.1,
+          "yield_rate": 17.2,
+          "waitlist_stats": {
+            "year": 2021,
+            "is_waitlist_ranked": true
+          }
+        }
+      ]
+    },
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.80-4.10",
+        "unweighted_middle_50": "3.50-3.75",
+        "average_weighted": 3.73,
+        "percentile_25": "3.50",
+        "percentile_75": "3.90",
+        "notes": "Honors College admits typically average a 3.95 unweighted GPA. General admits average 3.70+."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1220-1460",
+        "sat_reading_middle_50": "590-710",
+        "sat_math_middle_50": "620-760",
+        "act_composite_middle_50": "25-32",
+        "submission_rate": 43.0,
+        "policy_note": "Test-optional for most programs; higher ranges typical for engineering and computing majors."
+      },
+      "demographics": {
+        "first_gen_percentage": 31.0,
+        "legacy_percentage": null,
+        "international_percentage": 4.8,
+        "geographic_breakdown": [
+          {
+            "region": "New Jersey",
+            "percentage": 90.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 5.2
+          },
+          {
+            "region": "International",
+            "percentage": 4.8
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 10080,
+            "admits": 6301,
+            "acceptance_rate": 62.5
+          },
+          "women": {
+            "applicants": 5527,
+            "admits": 3855,
+            "acceptance_rate": 69.8
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 28.5,
+          "black_african_american": 8.6,
+          "hispanic_latino": 21.7,
+          "asian": 20.3,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 3.0,
+          "unknown": 6.7,
+          "non_resident_alien": 11.1
+        },
+        "religious_affiliation": null
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges and Schools",
+      "colleges": [
+        {
+          "name": "Newark College of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 60.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Strong math and science preparation (calculus, physics, and chemistry) is essential. Highlighting hands-on project experience is highly recommended.",
+          "housing_profile": "Traditional and suite-style; Cypress Hall features a dedicated Engineering floor for first-year networking.",
+          "student_archetype": "Practical makers and technical problem-solvers",
+          "majors": [
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.7,
+              "prerequisite_courses": [
+                "Calculus I",
+                "Calculus II",
+                "Physics I",
+                "Physics II"
+              ],
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": [
+                "MECH 237 Strength of Materials",
+                "ME 315 Stress Analysis",
+                "MATH 112 Calculus II"
+              ],
+              "admissions_pathway": "Direct Admit / Internal Transfer",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "core_courses": [
+                  "FED 101 Fundamentals of Engineering Design",
+                  "ME 215 Engineering Materials",
+                  "ME 311 Thermodynamics I",
+                  "ME 407 Heat Transfer"
+                ],
+                "electives": [
+                  "ME 430 Computer-Aided Design",
+                  "ME 408 Mechanical Systems Design II"
+                ],
+                "total_units": 120,
+                "major_units": 78
+              },
+              "notable_professors": [
+                "Dr. Zhiming Ji",
+                "Dr. Shawn Chester",
+                "Dr. Dibakar Datta"
+              ],
+              "notes": "Math sequence is the primary barrier for graduation."
+            },
+            {
+              "name": "Civil Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.5,
+              "prerequisite_courses": [
+                "Calculus I",
+                "Chemistry I",
+                "Physics I"
+              ],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "MECH 235 Statics",
+                "CE 332 Structural Analysis",
+                "MATH 112 Calculus II"
+              ],
+              "admissions_pathway": "Direct Admit / Internal Transfer",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": [
+                  "CE 200 Surveying",
+                  "CE 320 Fluid Mechanics",
+                  "CE 341 Geotechnical Engineering",
+                  "CE 494 Civil Engineering Design I"
+                ],
+                "total_units": 120,
+                "major_units": 82
+              },
+              "notable_professors": [
+                "Dr. Taha Marhaba",
+                "Dr. Michel Boufadel"
+              ],
+              "notes": "Strong focus on professional licensure (FE Exam preparation)."
+            },
+            {
+              "name": "Biomedical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.8,
+              "prerequisite_courses": [
+                "Calculus I",
+                "Biology I",
+                "Chemistry I"
+              ],
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": [
+                "BME 210 Computing for BME",
+                "MATH 222 Differential Equations"
+              ],
+              "admissions_pathway": "Direct Admit / Internal Transfer",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "notable_professors": [
+                "Dr. Bryan Pfister",
+                "Dr. Tara Alvarez"
+              ],
+              "notes": "Strongly recommended for pre-med students."
+            },
+            {
+              "name": "General Engineering",
+              "degree_type": "N/A",
+              "is_impacted": false,
+              "admissions_pathway": "Direct Admit",
+              "notes": "Gateway major for first-year students to declare specific engineering disciplines later."
+            }
+          ]
+        },
+        {
+          "name": "Ying Wu College of Computing",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 55.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Highly competitive. demonstrate coding proficiency or interest in emerging technologies like AI and Data Science.",
+          "housing_profile": "General residence halls; Maple Hall favored for proximity to tech labs and esports lounge.",
+          "student_archetype": "Tech-savvy data analysts and software innovators",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.8,
+              "prerequisite_courses": [
+                "Calculus I",
+                "AP Computer Science (preferred)"
+              ],
+              "minimum_gpa_to_declare": 3.2,
+              "weeder_courses": [
+                "CS 280 Programming Language Concepts",
+                "CS 288 Intensive Programming in Linux",
+                "MATH 112 Calculus II"
+              ],
+              "admissions_pathway": "Direct Admit / Internal Transfer",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "core_courses": [
+                  "CS 113 Intro to CS I",
+                  "CS 241 Foundations of CS I",
+                  "CS 435 Advanced Data Structures",
+                  "CS 491 Senior Project"
+                ],
+                "total_units": 120,
+                "major_units": 72
+              },
+              "notable_professors": [
+                "Dr. Guiling Wang",
+                "Dr. Ali Mili",
+                "Dr. Cristian Borcea"
+              ],
+              "notes": "NJIT's most popular major; CS 288 is notoriously difficult."
+            },
+            {
+              "name": "Information Technology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.4,
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "IT 114 Advanced Programming Concepts",
+                "IT 202 Internet Applications"
+              ],
+              "admissions_pathway": "Direct Admit / Internal Transfer",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": [
+                  "IT 101 Intro to IT",
+                  "IT 120 Intro to Network Tech",
+                  "IT 491 Senior Capstone"
+                ],
+                "total_units": 120,
+                "major_units": 60
+              },
+              "notes": "Often chosen by students seeking a more applied, less math-heavy path than CS."
+            }
+          ]
+        },
+        {
+          "name": "Albert Dorman Honors College",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 15.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires a separate application and standardized test scores (average SAT 1475+). Focus on leadership and research.",
+          "housing_profile": "Exclusive access to Martinson Hall (formerly Honors Hall) with on-site dining and private labs.",
+          "student_archetype": "High-achieving, service-oriented global leaders",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Artificial Intelligence Minor",
+        "Data Analytics Minor",
+        "Innovation and Entrepreneurship Minor",
+        "Cybersecurity Minor",
+        "Forensic Science Minor",
+        "Global Studies Minor",
+        "FinTech Graduate Certificate",
+        "IT Administration and Security Certificate",
+        "Digital Design Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Action I",
+          "date": "2024-11-15",
+          "is_binding": false,
+          "notes": "Priority consideration for scholarships and Honors College."
+        },
+        {
+          "plan_type": "Early Action II",
+          "date": "2024-12-15",
+          "is_binding": false
+        },
+        {
+          "plan_type": "Accelerated Programs",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Deadline for BS/MD, BS/DDS, and other accelerated tracks."
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-03-01",
+          "is_binding": false,
+          "notes": "Rolling admission; Honors College priority Feb 1."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Essays",
+          "details": "Common App Personal Statement only for general admission."
+        },
+        {
+          "target_program": "Honors College",
+          "requirement_type": "Supplemental Essay",
+          "details": "One required essay (max 400 words) regarding community service and leadership."
+        },
+        {
+          "target_program": "Accelerated Programs",
+          "requirement_type": "Supplemental Essay",
+          "details": "One required essay (max 400 words) explaining interest in the professional field."
+        },
+        {
+          "target_program": "Architecture and Design",
+          "requirement_type": "Portfolio",
+          "details": "Digital portfolio required via SlideRoom."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Academic GPA",
+          "Rigor of Record",
+          "Standardized Test Scores (Optional for 2025)",
+          "Essay"
+        ],
+        "secondary_factors": [
+          "Recommendations",
+          "Extracurriculars",
+          "Character"
+        ],
+        "essay_importance": "High",
+        "demonstrated_interest": "Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "None",
+        "first_gen_boost": "Moderate",
+        "specific_differentiators": "Emphasis on performance in STEM subjects (Math/Science) and upward trends in grades."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to IT or IS instead of CS if SAT/GPA stats are lower; programs are within the same college but less selective.",
+        "Choose 'General Engineering' if undecided to avoid competitive caps early on.",
+        "Target newer or niche majors like Cyberpsychology for potentially higher admit rates.",
+        "Consider the 'Joint Admissions' path via NJ Community Colleges if grades are below 3.0."
+      ],
+      "college_ranking_tactics": [
+        "Prioritize Ying Wu College over NCE for software careers to avoid more rigorous physics/engineering cores.",
+        "Select Martin Tuchman School of Management for a STEM environment with a lower math admission bar.",
+        "Rank Jordan Hu College for pre-professional tracks like Biochemistry."
+      ],
+      "alternate_major_strategy": "List a backup major in a different school (e.g., Business Data Information Systems for CS applicants) to increase overall admission chances."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 19974,
+          "total_coa": 45024,
+          "housing": 16450
+        },
+        "out_of_state": {
+          "tuition": 37664,
+          "total_coa": 62714,
+          "supplemental_tuition": 17690
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 16885,
+      "average_merit_aid": 14887,
+      "percent_receiving_aid": 92.0,
+      "scholarships": [
+        {
+          "name": "Regents Scholarship",
+          "type": "Merit",
+          "amount": "$40,000 over 4 years",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Albert Dorman Honors College Scholarship",
+          "type": "Merit",
+          "amount": "Up to full ride",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "Faculty Scholarship",
+          "type": "Merit",
+          "amount": "Up to full tuition",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Presidential Scholarship (Transfer)",
+          "type": "Merit",
+          "amount": "Waiver of out-of-state fee (~$15,000/yr)",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Governor's Urban Scholarship",
+          "type": "Need/Merit",
+          "amount": "$1,000 per year",
+          "application_method": "FAFSA & State HESAA"
+        },
+        {
+          "name": "NJIT Institutional Grant",
+          "type": "Need",
+          "amount": "$1,000 to $10,000 per year",
+          "application_method": "FAFSA"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Moderate",
+      "ap_policy": {
+        "general_rule": "Scores of 4 or 5 required for core STEM/English; 3 accepted for certain electives.",
+        "exceptions": [
+          "No credit for AP CS Principles",
+          "AP CS A requires 4 or 5 for CS 113 credit"
+        ],
+        "usage": "Satisfies GER and fundamental major prerequisites."
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with score of 5 or higher grant credit.",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "NJ Transfer",
+          "Highlander Pipeline"
+        ],
+        "restrictions": "Minimum of 33 upper-division credits must be completed at NJIT."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Solid academic foundation in high-level math and science",
+        "Self-discipline to manage intensive technical workloads",
+        "Competitive stats for Honors (1500+ SAT / 4.0 GPA)"
+      ],
+      "essay_tips": [
+        "Be straightforward and descriptive",
+        "Focus on what you specifically offer and how you'll use NJIT resources",
+        "Avoid general cliches like 'I want to help people' without specific context"
+      ],
+      "red_flags": [
+        "Essays that quote the university's mission statement back to them",
+        "Decline in grades during senior year",
+        "Lack of prerequisites for demanding CS/Engineering tracks"
+      ],
+      "insights": [
+        "Top-value school for ROI",
+        "Core math and science classes are notoriously difficult 'weed-out' courses",
+        "Proximity to NYC provides significant advantages for tech internships",
+        "Transferring from community college is a common and viable path"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 84276,
+      "employment_rate_2yr": 85.0,
+      "grad_school_rate": 12.4,
+      "top_employers": [
+        "Amazon",
+        "Apple",
+        "Google",
+        "Microsoft",
+        "Meta",
+        "Deloitte",
+        "Johnson & Johnson"
+      ],
+      "loan_default_rate": 0.0,
+      "student_retention": {
+        "freshman_retention_rate": 89.5,
+        "graduation_rate_4_year": 27.0,
+        "graduation_rate_6_year": 72.0
+      }
+    }
+  }
+}

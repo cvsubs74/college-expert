@@ -1,0 +1,404 @@
+{
+  "university_profile": {
+    "_id": "university_of_tulsa",
+    "university_name": "University of Tulsa",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://utulsa.edu/news/rankings-2026",
+      "https://www.usnews.com/best-colleges/university-of-tulsa-3185",
+      "https://research.com/u/university-of-tulsa"
+    ],
+    "metadata": {
+      "official_name": "University of Tulsa",
+      "location": {
+        "city": "Tulsa",
+        "state": "OK",
+        "type": "Private"
+      }
+    },
+    "strategic_profile": {
+      "executive_summary": "The University of Tulsa is a private, student-centered research university renowned for its world-class programs in petroleum engineering and cybersecurity. It blends a robust liberal arts foundation with high-tier professional studies and a remarkably low 9:1 student-to-faculty ratio.",
+      "market_position": "Hidden Gem",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 158,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Acceptance rates tightened from approximately 75% in 2022 to 58% for the 2025-2026 cycle.",
+          "implication": "Increased interest and rising academic profiles of applicants mean students should leverage Early Action or Early Decision to stand out."
+        },
+        {
+          "category": "Specialization",
+          "insight": "Maintains the #1 private doctoral program for petroleum engineering and a top-tier cybersecurity hub.",
+          "implication": "STEM applicants have access to industry-funded research consortia usually reserved for much larger institutions."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A tight-knit, 'personable' atmosphere characterized by small class sizes where professors often provide direct mentorship.",
+        "transportation_impact": "The university provides free MetroLink transit stickers to all students, effectively expanding the social and professional footprint of the campus into the greater Tulsa area.",
+        "research_impact": "As a top 100 private research institution, UTulsa hosts dozens of joint industry projects (JIPs) and the Tulsa Undergraduate Research Challenge (TURC) for early-career involvement."
+      }
+    },
+    "current_status": {
+      "overall_acceptance_rate": 61.5,
+      "international_acceptance_rate": 58.0,
+      "admits_class_size": 3150,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 0,
+          "admits": 0,
+          "acceptance_rate": 0,
+          "class_fill_percentage": 0
+        },
+        {
+          "plan_type": "EA",
+          "applications": 0,
+          "admits": 0,
+          "acceptance_rate": 0,
+          "class_fill_percentage": 0
+        }
+      ]
+    },
+    "admissions_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 5121,
+        "admits_total": 3150,
+        "enrolled_total": 733,
+        "acceptance_rate_overall": 61.5,
+        "yield_rate": 23.3,
+        "waitlist_stats": {
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not used or not publicly disclosed for general freshman admission."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 6631,
+        "admits_total": 3845,
+        "enrolled_total": 592,
+        "acceptance_rate_overall": 58.0,
+        "yield_rate": 15.4,
+        "notes": "Acceptance rate hit a record low for the institution this cycle."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 6510,
+        "admits_total": 4503,
+        "enrolled_total": 680,
+        "acceptance_rate_overall": 69.2,
+        "yield_rate": 15.1,
+        "notes": "Waitlist data not used or not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.40-3.72",
+        "unweighted_middle_50": "3.21-3.86",
+        "average_weighted": 3.56,
+        "percentile_25": "3.21",
+        "percentile_75": "3.86",
+        "notes": "Admitted students typically maintain a strong B+ to A- average; competitive programs like Engineering often see averages above 4.0."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1150-1490",
+        "sat_reading_middle_50": "590-740",
+        "sat_math_middle_50": "560-750",
+        "act_composite_middle_50": "24-33",
+        "submission_rate": 54.0,
+        "policy_note": "Test-optional for the 2024-2025 cycle, though submission is encouraged for merit scholarship consideration."
+      },
+      "demographics": {
+        "first_gen_percentage": 23.0,
+        "international_percentage": 11.0,
+        "geographic_breakdown": [
+          { "region": "Oklahoma", "percentage": 53.0 },
+          { "region": "Other US States", "percentage": 43.0 },
+          { "region": "International", "percentage": 4.0 }
+        ],
+        "gender_breakdown": {
+          "men": { "applicants": 2224, "admits": 1562, "acceptance_rate": 70.2 },
+          "women": { "applicants": 2864, "admits": 1577, "acceptance_rate": 55.1 },
+          "non_binary": { "applicants": 33, "admits": 11, "acceptance_rate": 33.3 }
+        },
+        "racial_breakdown": {
+          "white": 51.3,
+          "black_african_american": 7.0,
+          "hispanic_latino": 10.7,
+          "asian": 5.6,
+          "native_american_alaskan": 3.0,
+          "pacific_islander": 0.2,
+          "two_or_more_races": 8.5,
+          "unknown": 4.3,
+          "non_resident_alien": 9.4
+        },
+        "religious_affiliation": "Historically Presbyterian (USA), now nondenominational; student body includes 36% Protestant and 14% Catholic identities."
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "Henry Kendall College of Arts & Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Perfect for students seeking a traditional liberal arts foundation with high flexibility for interdisciplinary study.",
+          "housing_profile": "Often reside in Lottie Jane Mabee or John Mabee; many participate in the FYRE LLC in LaFortune House.",
+          "student_archetype": "The Renaissance Soul—intellectually curious, involved in multiple clubs, and passionate about social impact.",
+          "majors": [
+            { "name": "Psychology", "degree_type": "B.A.", "is_impacted": false, "notes": "B.A. track requires 4 semesters of a foreign language; must earn a B in foundations." },
+            { "name": "Political Science", "degree_type": "B.A.", "is_impacted": false, "notes": "AP credits are not accepted; must complete a 12-hour minor." },
+            { "name": "Sociology", "degree_type": "B.A." },
+            { "name": "Anthropology", "degree_type": "B.A." },
+            { "name": "English & Creative Writing", "degree_type": "B.A." },
+            { "name": "History", "degree_type": "B.A." },
+            { "name": "Media Studies", "degree_type": "B.A." },
+            { "name": "Film Studies", "degree_type": "B.A." },
+            { "name": "Philosophy", "degree_type": "B.A." },
+            { "name": "Arts, Culture, and Entertainment Management", "degree_type": "B.A." },
+            { "name": "Music", "degree_type": "B.A.", "special_requirements": "Audition required." }
+          ]
+        },
+        {
+          "name": "Collins College of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 65.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Strong choice for students prioritizing career placement; utilizes a job placement guarantee.",
+          "housing_profile": "Mix of traditional halls and modern apartments like Mayo Village.",
+          "student_archetype": "The Aspiring Executive—professional, networking-focused, and pragmatic.",
+          "majors": [
+            { "name": "Finance", "degree_type": "B.S.B.A.", "notes": "Opportunities to manage an $8 million real-money student investment fund." },
+            { "name": "Accounting", "degree_type": "B.S.B.A.", "notes": "100% placement rate for graduates." },
+            { "name": "Management", "degree_type": "B.S.B.A." },
+            { "name": "Marketing", "degree_type": "B.S.B.A." },
+            { "name": "Energy Management", "degree_type": "B.S.B.A." },
+            { "name": "Computer Information Systems", "degree_type": "B.S.B.A." },
+            { "name": "International Business & Language", "degree_type": "B.S.B.A." },
+            { "name": "Economics", "degree_type": "B.S.B.A." }
+          ]
+        },
+        {
+          "name": "College of Engineering & Computer Science",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 55.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Highly competitive for Petroleum Engineering and Cyber Security.",
+          "housing_profile": "Frequent residents of the Gaming LLC in Fisher Suites or Brown Village.",
+          "student_archetype": "The Technical Pioneer—highly focused on research and innovative problem-solving.",
+          "majors": [
+            { "name": "Petroleum Engineering", "degree_type": "B.S.P.E.", "is_impacted": true, "notes": "Ranked #1 private doctoral program; requires 2.5 GPA in foundation courses." },
+            { "name": "Computer Science", "degree_type": "B.S.C.S.", "notes": "100% placement rate for graduates." },
+            { "name": "Mechanical Engineering", "degree_type": "B.S.M.E.", "notes": "Features an interdisciplinary design capstone." },
+            { "name": "Chemical Engineering", "degree_type": "B.S.Ch.E." },
+            { "name": "Electrical Engineering", "degree_type": "B.S.E.E." },
+            { "name": "Computer Engineering", "degree_type": "B.S.Com.E." },
+            { "name": "Cyber Security", "degree_type": "B.S.Cy.S." },
+            { "name": "Data Science", "degree_type": "B.S.D.S." },
+            { "name": "Engineering Physics", "degree_type": "B.S.E.P." }
+          ]
+        },
+        {
+          "name": "Oxley College of Health & Natural Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 60.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Nursing is highly competitive; maintain a high GPA in prerequisite sciences.",
+          "housing_profile": "Centrally located near science labs; utilizes FYRE community.",
+          "student_archetype": "The Clinical Compass—dedicated, service-oriented, and disciplined.",
+          "majors": [
+            { "name": "Nursing", "degree_type": "B.S.N.", "is_impacted": true, "notes": "95% NCLEX first-time pass rate; separate application required." },
+            { "name": "Biology", "degree_type": "B.S.B.S.", "notes": "Features a Pre-Med Option with specific cluster requirements." },
+            { "name": "Exercise & Sports Science", "degree_type": "B.S.E.S.S." },
+            { "name": "Speech-Language Pathology", "degree_type": "B.S.S.P." },
+            { "name": "Biochemistry", "degree_type": "B.S.B." },
+            { "name": "Chemistry", "degree_type": "B.A." },
+            { "name": "Geosciences", "degree_type": "B.S.G.S." },
+            { "name": "Physics", "degree_type": "B.S." },
+            { "name": "Integrated Health Care Studies", "degree_type": "B.S.", "notes": "New 2025 strategic entry point for pre-health tracks." },
+            { "name": "Sports Leadership", "degree_type": "B.A." }
+          ]
+        },
+        {
+          "name": "Honors College",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 25.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires a separate application focusing on critical thinking and classical texts.",
+          "housing_profile": "Required residence in the Honors Suites at Hardesty Hall for first-year students.",
+          "student_archetype": "The Scholar-Leader—philosophical, loves 'great books,' and seeks deep intellectual community.",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Classical Studies Certificate",
+        "Artificial Intelligence (AI) Minor",
+        "Cyber Security Minor",
+        "Data Science Minor",
+        "Innovation, Change and Entrepreneurship Minor",
+        "Cannabis Studies Minor",
+        "Museum Studies Minor",
+        "Energy Transition Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": ["Common App", "UTulsa Application"],
+      "application_deadlines": [
+        { "plan_type": "Early Decision", "date": "2024-11-01", "is_binding": true, "notes": "Binding; notifications by Dec 15." },
+        { "plan_type": "Early Action I", "date": "2024-11-01", "is_binding": false, "notes": "Non-binding; notifications by Dec 15." },
+        { "plan_type": "Priority Regular Decision", "date": "2025-01-15", "is_binding": false, "notes": "Priority for full scholarships." },
+        { "plan_type": "Early Action II", "date": "2025-02-01", "is_binding": false, "notes": "Non-binding; notifications by Feb 15." },
+        { "plan_type": "Rolling Admission", "date": "2025-08-01", "is_binding": false, "notes": "Evaluated continuously after Feb 16." }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Essays",
+          "details": "Five optional but encouraged prompts: Why UTulsa, Extracurriculars, Contribution, Time Outside School, and Additional Info."
+        },
+        {
+          "target_program": "Music",
+          "requirement_type": "Audition",
+          "deadline": "2025-03-15",
+          "details": "Mandatory for music majors and scholarship consideration."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": ["GPA", "Course Rigor", "Academic Accomplishments"],
+        "secondary_factors": ["Extracurriculars", "Character", "Letters of Recommendation", "Talents"],
+        "essay_importance": "High",
+        "demonstrated_interest": "Important",
+        "interview_policy": "Recommended",
+        "specific_differentiators": "Heavy emphasis on intellectual curiosity; 'Talk with Tulsa' interviews are highly encouraged."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to the new 'Integrative Healthcare Studies' major as a strategic entry point for pre-health tracks.",
+        "Target 'niche' liberal arts programs like Anthropology or Philosophy which the current administration is aggressively funding.",
+        "Avoid applying directly to Petroleum Engineering if test scores are below the 75th percentile.",
+        "Utilize the 'Direct Admissions' partnership via Niche if your profile matches the 3.0+ GPA criteria."
+      ],
+      "college_ranking_tactics": [
+        "Prioritize the Honors College for admission into 'Hardesty Hall' premier housing.",
+        "Rank the Kendall College of Arts and Sciences higher if seeking maximum flexibility in GE requirements.",
+        "Consider the Oxley College for a balance of small class sizes and high placement rates (96%+)."
+      ],
+      "alternate_major_strategy": "If applying to high-demand STEM programs, list 'Mathematics' or 'Integrative Healthcare' as an alternate to enter a less impacted pool."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": { "tuition": 48340, "total_coa": 73685, "housing": 15544 },
+        "out_of_state": { "tuition": 48340, "total_coa": 73685, "supplemental_tuition": 0 }
+      },
+      "aid_philosophy": "Merit Focused",
+      "percent_receiving_aid": 97.0,
+      "average_merit_aid": 34166,
+      "average_need_based_aid": 30016
+    },
+    "scholarships": [
+      {
+        "name": "National Merit Semifinalist Package",
+        "type": "Merit",
+        "amount": "Approx. $240,000 over 4 years",
+        "benefits": "Full tuition, housing, dining, fees, books, and $6,000 annual gift.",
+        "application_method": "Separate Application/Interview"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition for 8 semesters",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "University Academic Scholarship",
+        "type": "Merit",
+        "amount": "Up to $26,000 per year",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "International Baccalaureate (IB) Scholarship",
+        "type": "Merit",
+        "amount": "$3,000 per year",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Earn to Learn",
+        "type": "Need",
+        "amount": "Varies (Matched Savings)",
+        "application_method": "FAFSA and Matched Savings Account"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Scores of 3 or higher grant credit for most subjects",
+        "exceptions": ["AP Music Theory requires a score of 4", "Total exam credit is capped at 36 semester hours"],
+        "usage": "Satisfies general education requirements (Quad I-IV) and major prerequisites."
+      },
+      "ib_policy": {
+        "general_rule": "Scores of 5 or higher on HL and some SL exams grant credit",
+        "diploma_bonus": true
+      },
+      "transfer_articulation": {
+        "restrictions": "60 unit cap for community college; the last 45 hours must be completed in residence."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A strong academic record (typically 3.66+ GPA)",
+        "High standardized test scores (1360+ SAT / 30+ ACT) for merit scholarships",
+        "Demonstrated fit through a 'Talk with Tulsa' interview",
+        "Evidence of intellectual curiosity"
+      ],
+      "common_activities": [
+        "Undergraduate research (TURC program)",
+        "National Merit scholarship competition",
+        "Leadership roles in Greek life, athletics, or student government",
+        "Community service with long-term impact"
+      ],
+      "essay_tips": [
+        "Name-drop specific research labs or traditions like the 'Old Bell'",
+        "Detail how you plan to contribute to campus culture",
+        "Focus on growth in the activity elaboration prompt",
+        "Ensure your authentic voice shines through—admissions prefers personality."
+      ],
+      "red_flags": [
+        "A 'senioritis' grade slump in the final year",
+        "Generic 'Why This College' essays mentioning programs not offered at TU",
+        "Unprofessional communication with admissions",
+        "Submitting an application that lacks any specific connection to Tulsa."
+      ],
+      "insights": [
+        "Highest numbers of National Merit Scholars per capita in the nation",
+        "9:1 student-to-faculty ratio",
+        "Medical school acceptance rates are consistently double the national average",
+        "President is known to share his cell number with students."
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 61408,
+      "employment_rate_2yr": 97.0,
+      "grad_school_rate": 23.0,
+      "top_employers": ["Phillips 66", "Williams", "Saint Francis Health System", "ONEOK", "Goldman Sachs", "Walmart Corporate"],
+      "student_retention": {
+        "freshman_retention_rate": 85.0,
+        "graduation_rate_4_year": 62.0,
+        "graduation_rate_6_year": 73.0
+      },
+      "loan_default_rate": 0.0
+    }
+  }
+}

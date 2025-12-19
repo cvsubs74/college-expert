@@ -1,0 +1,747 @@
+{
+  "_id": "university_of_vermont",
+  "metadata": {
+    "official_name": "University of Vermont and State Agricultural College",
+    "location": {
+      "city": "Burlington",
+      "state": "VT",
+      "type": "Public"
+    },
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://www.uvm.edu",
+      "https://www.usnews.com/best-colleges/university-of-vermont-3696",
+      "https://www.niche.com/colleges/university-of-vermont/rankings/"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Founded in 1791, the University of Vermont (UVM) is a premier public land-grant research university known for its commitment to liberal arts, sustainability, and health sciences. It combines the resources of a major research institution with a student-centered atmosphere in a scenic, small-city setting.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Holistic review",
+    "us_news_rank": 121,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Acceptance rates have tightened significantly, dropping from 71% in 2020 to approximately 60% for the Class of 2028.",
+        "implication": "Applicants should leverage Early Action/Decision tracks to improve odds, as these pools often see higher admit rates."
+      },
+      {
+        "category": "Standardized Testing",
+        "insight": "UVM has permanently adopted a test-optional policy for Fall 2026 and beyond.",
+        "implication": "Students can focus on academic rigor and extracurricular impact rather than testing scores to demonstrate fit."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "UVM is characterized by a liberal, active, and outdoor-oriented culture; it frequently ranks as a top party school while maintaining deep engagement in environmental and social justice activism.",
+      "transportation_impact": "The campus prioritizes sustainability through its 'Campus Area Transportation System' (CATS) and free access to Burlington's Green Mountain Transit (GMT), making the university effectively car-independent for most students.",
+      "research_impact": "As a Carnegie R1 institution, UVM offers high-impact undergraduate research through the FOUR office and maintains strong industry partnerships with local leaders like Ben & Jerry's and healthcare providers."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 65.3,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 34.9,
+      "transfer_acceptance_rate": 80.9,
+      "admits_class_size": 17722,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 479,
+          "admits": 449,
+          "acceptance_rate": 93.7,
+          "class_fill_percentage": 16.0
+        },
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data for the Class of 2029 is not yet available."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 27138,
+        "admits_total": 17722,
+        "enrolled_total": 2808,
+        "acceptance_rate_overall": 65.3,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 7348,
+          "accepted_spots": 2833,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "According to the 2024-2025 CDS, zero students were admitted from the waitlist."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 28236,
+        "admits_total": 16947,
+        "enrolled_total": 2896,
+        "acceptance_rate_overall": 60.0,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 6156,
+          "accepted_spots": 2734,
+          "admitted_from_waitlist": 84,
+          "waitlist_admit_rate": 3.1,
+          "is_waitlist_ranked": false
+        }
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.80-4.00",
+        "average_weighted": 4.00,
+        "percentile_25": "3.80",
+        "percentile_75": "4.00",
+        "notes": "Class of 2028 entered with a record-high 4.0 average weighted GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1320-1480",
+        "sat_reading_middle_50": "670-740",
+        "sat_math_middle_50": "650-740",
+        "act_composite_middle_50": "31-34",
+        "submission_rate": 35.0,
+        "policy_note": "Test-optional through Fall 2026."
+      },
+      "demographics": {
+        "first_gen_percentage": 11.0,
+        "international_percentage": 2.7,
+        "geographic_breakdown": [
+          {
+            "region": "Vermont",
+            "percentage": 19.0
+          },
+          {
+            "region": "Massachusetts",
+            "percentage": 16.0
+          },
+          {
+            "region": "New York",
+            "percentage": 11.0
+          },
+          {
+            "region": "Connecticut & New Jersey",
+            "percentage": 14.0
+          },
+          {
+            "region": "California",
+            "percentage": 1.1
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "acceptance_rate": 61.6,
+            "note": "36% of student body"
+          },
+          "women": {
+            "acceptance_rate": 67.4,
+            "note": "63% of student body"
+          }
+        },
+        "racial_breakdown": {
+          "white": 80.2,
+          "black_african_american": 1.35,
+          "hispanic_latino": 5.59,
+          "asian": 3.39,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.02,
+          "two_or_more_races": 4.02,
+          "unknown": 4.37,
+          "non_resident_alien": 0.96
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences (CAS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 65.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a traditional liberal arts education with flexibility.",
+        "housing_profile": "Associated with 'Liberal Arts Scholars' residential programs.",
+        "student_archetype": "Intellectual explorers and creative thinkers",
+        "majors": [
+          {
+            "name": "Biological Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 2580 Organic Chemistry 1",
+              "BCOR 2300 Genetics"
+            ],
+            "direct_admit_only": false,
+            "curriculum": {
+              "total_units": 120,
+              "major_units": 41
+            }
+          },
+          {
+            "name": "Psychological Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSYS 2000 Psych Research Methods w/lab"
+            ],
+            "direct_admit_only": false
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Neuroscience",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Anthropology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          }
+        ]
+      },
+      {
+        "name": "Grossman School of Business (GSB)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 60.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Focus on 'triple-bottom-line' thinking (profit, people, planet).",
+        "housing_profile": "Connected to the 'Innovation & Entrepreneurship' learning community.",
+        "student_archetype": "Socially-conscious entrepreneurs",
+        "majors": [
+          {
+            "name": "Business Administration",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": true,
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "BUS 1610 Financial Accounting",
+              "BUS 2130 Decision Analysis"
+            ],
+            "direct_admit_only": false,
+            "curriculum": {
+              "total_units": 120,
+              "major_units": 37
+            }
+          }
+        ]
+      },
+      {
+        "name": "College of Engineering and Mathematical Sciences (CEMS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 60.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Requires a strong STEM foundation.",
+        "housing_profile": "Tied to Innovation & Entrepreneurship or Sustainability communities.",
+        "student_archetype": "Analytical problem-solvers",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CS 2100 Intermediate Programming",
+              "MATH 1234 Calculus I"
+            ],
+            "direct_admit_only": false,
+            "curriculum": {
+              "total_units": 120,
+              "major_units": 52
+            }
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.M.E.",
+            "is_impacted": true,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ME 1210 Thermodynamics",
+              "MATH 1234 Calculus I"
+            ],
+            "direct_admit_only": false,
+            "curriculum": {
+              "total_units": 128,
+              "major_units": 85
+            }
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.CE.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.EE.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.BME.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Data Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Statistics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Engineering Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "direct_admit_only": false
+          }
+        ]
+      },
+      {
+        "name": "Rubenstein School of Environment and Natural Resources (RSENR)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 55.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students committed to environmental advocacy and field research.",
+        "housing_profile": "Linked to Sustainability and Outdoor Experience communities.",
+        "student_archetype": "Earth advocates and field scientists",
+        "majors": [
+          {
+            "name": "Environmental Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "NR 2030 Ecology, Ecosystems and Environment"
+            ],
+            "direct_admit_only": false
+          },
+          {
+            "name": "Forestry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Wildlife and Fisheries Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Parks, Recreation and Tourism",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Sustainability, Ecology and Policy",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "direct_admit_only": false
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing and Health Sciences (CNHS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 49.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive, especially for Nursing.",
+        "housing_profile": "Associated with the 'Wellness Environment' (WE) learning community.",
+        "student_archetype": "Compassionate clinical practitioners",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [
+              "ANPS 1190 Human Anatomy & Physiology",
+              "PRNU 2110 Fundamentals of Nursing"
+            ],
+            "direct_admit_only": false,
+            "curriculum": {
+              "total_units": 123,
+              "major_units": 66
+            }
+          },
+          {
+            "name": "Exercise Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.8,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Public Health Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.8,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Medical Laboratory Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.8,
+            "direct_admit_only": false
+          },
+          {
+            "name": "Communication Sciences and Disorders",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "weeder_courses": [],
+            "minimum_gpa_to_declare": 2.8,
+            "direct_admit_only": false
+          }
+        ]
+      },
+      {
+        "name": "College of Agriculture and Life Sciences (CALS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 65.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Focus on 'planetary health' and the intersection of systems.",
+        "housing_profile": "Residents often join Sustainability or Wellness communities.",
+        "student_archetype": "Practical life scientists",
+        "majors": []
+      },
+      {
+        "name": "College of Education and Social Services (CESS)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 65.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Dedicated to social justice and transforming educational systems.",
+        "housing_profile": "Found in Cultural Crossroads or Arts & Creativity communities.",
+        "student_archetype": "Visionary changemakers",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Sustainable Business Minor",
+      "American Sign Language Minor",
+      "Entrepreneurship Certificate",
+      "Place-Based Education Certificate",
+      "Geographic Information Systems Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision I",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Notification by early December"
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Notification by late December"
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2025-01-15",
+        "is_binding": true,
+        "notes": "Notification by mid-February"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": "Notification by early March"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Optional Short Answer",
+        "details": "Creative prompts (Ben & Jerry’s, personal identity, etc.)."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Audition",
+        "deadline": "2025-02-01",
+        "details": "Required for Music majors."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Academic Trends",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character",
+        "Geographical Residence"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Not Offered"
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to CAS as 'Undeclared' for maximum flexibility.",
+      "Consider B.A. in CS within CAS instead of B.S. in CEMS to avoid rigid engineering prerequisites initially.",
+      "Directly apply to Nursing; internal transfer is extremely restricted.",
+      "Use CALS major like Community Entrepreneurship as a strategic entry point for Business."
+    ],
+    "college_ranking_tactics": [
+      "Rank 'Wellness Environment' or 'Honors College' first for premium dorms.",
+      "Prioritize 'Outdoor Experience' for active social scenes.",
+      "Learning Community choice dictates physical dorm location for the first two years."
+    ],
+    "alternate_major_strategy": "If applying to Business, list 'Community Entrepreneurship' (CALS) as an alternate major for a higher acceptance rate and easier internal move later."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 16280,
+        "total_coa": 37928,
+        "housing": 14480
+      },
+      "out_of_state": {
+        "tuition": 42724,
+        "total_coa": 60798,
+        "supplemental_tuition": 26444
+      }
+    },
+    "aid_philosophy": "Merit Focused",
+    "average_need_based_aid": 24421,
+    "average_merit_aid": 18070,
+    "percent_receiving_aid": 92.0,
+    "scholarships": [
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$18,000–$25,000 per year",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Trustees Scholarship",
+        "type": "Merit",
+        "amount": "$10,000–$15,000 per year",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Green and Gold Scholars Award",
+        "type": "Merit",
+        "amount": "Full in-state tuition and fees",
+        "application_method": "Nomination"
+      },
+      {
+        "name": "Catamount Commitment",
+        "type": "Need",
+        "amount": "Full tuition and fees",
+        "application_method": "FAFSA"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 grant credit for most exams; 3s are accepted for select subjects.",
+      "exceptions": [
+        "Score of 3 acceptable for Calc BC, Env Science, French, Italian, and Latin"
+      ],
+      "usage": "Can satisfy Catamount Core and major equivalencies"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with scores of 5, 6, or 7 grant credit; no credit for SL exams until July 2025.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "UVM Interactive Credit Guide"
+      ],
+      "restrictions": "Residency requirement: 30 of last 45 credits must be at UVM."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "GPA around 3.8 and focus on course rigor.",
+      "Demonstrated interest through engagement tracking.",
+      "Alignment with progressive, environmentally-conscious culture."
+    ],
+    "common_activities": [
+      "Undergraduate research",
+      "Outdoor recreation (Outing Club)",
+      "Community service"
+    ],
+    "essay_tips": [
+      "Get creative with the Ben & Jerry’s prompt.",
+      "Be specific about why Burlington fits academic goals.",
+      "In 'Why UVM?', mention specific labs or learning communities."
+    ],
+    "red_flags": [
+      "Generic essays about 'nature' without personal depth.",
+      "Total lack of demonstrated interest (tracked by clicks/attendance).",
+      "Missing high school math/science prerequisites for Nursing/Engineering."
+    ],
+    "insights": [
+      "The 'Groovy UV' outdoorsy vibe is authentic.",
+      "Burlington faces a housing crisis; off-campus housing is difficult after sophomore year.",
+      "Winters are harsh; indoor social outlets are essential."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 62472,
+    "employment_rate_2yr": 76.5,
+    "grad_school_rate": 17.4,
+    "top_employers": [
+      "University of Vermont Medical Center",
+      "GlobalFoundries",
+      "State of Vermont",
+      "Deloitte",
+      "KPMG"
+    ],
+    "loan_default_rate": 2.5
+  },
+  "student_retention": {
+    "freshman_retention_rate": 89.2,
+    "graduation_rate_4_year": 68.0,
+    "graduation_rate_6_year": 79.0
+  }
+}

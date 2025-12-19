@@ -17,25 +17,42 @@ const CreditsBadge = ({ showTier = false, compact = false }) => {
         );
     }
 
-    // Color based on credits remaining
+    // Color based on credits remaining - using solid backgrounds for high visibility
     const getColorClasses = () => {
         if (creditsRemaining <= 0) {
-            return 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800';
+            // Solid red with white text for maximum visibility
+            return 'bg-red-500 text-white border-red-600 shadow-md';
         }
         if (creditsRemaining <= 5) {
-            return 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-800';
+            // Solid amber with white text
+            return 'bg-amber-500 text-white border-amber-600 shadow-md';
         }
         if (creditsTier === 'pro') {
-            return 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-800';
+            return 'bg-purple-600 text-white border-purple-700 shadow-md';
         }
-        return 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800';
+        // Default: dark slate for high contrast on light background
+        return 'bg-slate-700 text-white border-slate-800 shadow-md';
     };
 
     if (compact) {
         return (
-            <div className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium border ${getColorClasses()}`}>
-                <BoltIcon className="w-3 h-3" />
-                <span>{creditsRemaining}</span>
+            <div className="relative group">
+                <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border cursor-help ${getColorClasses()}`}>
+                    <BoltIcon className="w-3.5 h-3.5" />
+                    <span>{creditsRemaining} AI {creditsRemaining === 1 ? 'query' : 'queries'}</span>
+                </div>
+                {/* Tooltip on hover */}
+                <div className="hidden group-hover:block absolute top-full right-0 mt-2 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-xl w-56 z-50">
+                    <p className="font-medium mb-1">AI Query Credits</p>
+                    <p className="text-gray-300 leading-relaxed">
+                        Credits are used for fit analysis, profile updates via chat, and AI-powered recommendations.
+                    </p>
+                    {creditsRemaining <= 3 && (
+                        <p className="mt-2 text-amber-400">
+                            Running low! Upgrade for more credits.
+                        </p>
+                    )}
+                </div>
             </div>
         );
     }

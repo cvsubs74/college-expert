@@ -1,0 +1,342 @@
+{
+  "university_profile": {
+    "_id": "university_of_california_merced",
+    "metadata": {
+      "official_name": "University of California, Merced",
+      "location": {
+        "city": "Merced",
+        "state": "CA",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "ucmerced.edu",
+        "universityofcalifornia.edu",
+        "themercedfocus.org"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "The first American research university built in the 21st century, UC Merced is a rapidly ascending R1 institution known for its commitment to social mobility and sustainability. Located in California's San Joaquin Valley, it offers a small-campus feel within the prestigious University of California system.",
+      "market_position": "Rising Public Powerhouse",
+      "admissions_philosophy": "Test-free holistic review",
+      "us_news_rank": 57,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Acceptance rates have significantly tightened, dropping from nearly 90% to approximately 39% as application volume surged by over 120%.",
+          "implication": "Applicants can no longer view the campus as a guaranteed safety school and should prioritize personal insight questions to stand out."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A 'pioneer' culture where students actively shape the campus identity, characterized by a diverse, close-knit community with a high percentage of first-generation students.",
+        "transportation_impact": "The 'CatTracks' bus system serves as a vital link between the suburban campus and the city of Merced, mitigating the distance from urban centers and fostering off-campus engagement.",
+        "research_impact": "As an R1 institution, the campus emphasizes undergraduate participation in groundbreaking research focused on regional challenges like agricultural technology, water conservation, and climate change."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 95.1,
+      "in_state_acceptance_rate": 93.0,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 72.1,
+      "admits_class_size": 46932,
+      "is_test_optional": true,
+      "test_policy_details": "Test Free/Test Blind",
+      "early_admission_stats": []
+    },
+    "admissions_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 51745,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record high applications for Fall 2025, marking a 57% increase from the previous cycle. UC Merced does not utilize a traditional waitlist for freshman admissions."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 49358,
+        "admits_total": 46932,
+        "enrolled_total": 2093,
+        "acceptance_rate_overall": 95.1,
+        "yield_rate": 4.5,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "UC Merced serves as the referral campus for the UC system; applicants not admitted to other campuses are often referred here."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 30017,
+        "admits_total": 26595,
+        "enrolled_total": 2416,
+        "acceptance_rate_overall": 88.5,
+        "yield_rate": 9.1,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        }
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.48-4.08",
+        "unweighted_middle_50": "3.39-3.75",
+        "average_weighted": 3.78,
+        "percentile_25": "3.48",
+        "percentile_75": "4.08",
+        "notes": "GPA reflects the UC-calculated weighted GPA which includes extra points for honors and AP courses."
+      },
+      "testing": {
+        "policy_note": "Test-blind. UC Merced does not consider SAT or ACT scores for admission or scholarship purposes.",
+        "submission_rate": 0.0,
+        "sat_composite_middle_50": "1030-1350",
+        "sat_reading_middle_50": "500-660",
+        "sat_math_middle_50": "510-690",
+        "act_composite_middle_50": "20-31"
+      },
+      "demographics": {
+        "first_gen_percentage": 65.0,
+        "legacy_percentage": 0.0,
+        "international_percentage": 1.0,
+        "geographic_breakdown": [
+          { "region": "California", "percentage": 98.0 },
+          { "region": "Other US States", "percentage": 1.0 },
+          { "region": "International", "percentage": 1.0 }
+        ],
+        "gender_breakdown": {
+          "men": { "acceptance_rate": 89.9 },
+          "women": { "acceptance_rate": 91.2 },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 10.0,
+          "black_african_american": 4.65,
+          "hispanic_latino": 54.6,
+          "asian": 21.3,
+          "native_american_alaskan": 0.15,
+          "pacific_islander": 0.25,
+          "two_or_more_races": 4.34,
+          "unknown": 3.71,
+          "non_resident_alien": 1.0
+        },
+        "religious_affiliation": null
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Schools",
+      "colleges": [
+        {
+          "name": "School of Engineering",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 82.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "While no majors are officially capped, Computer Science and Engineering is highly competitive; applicants are strongly encouraged to complete precalculus or higher prior to applying.",
+          "housing_profile": "Modern dorms like Glacier Point and Granite Pass; home to the 'NextGen Health Professionals' and 'Aristotle House' LLCs which provide maker spaces and peer tutoring.",
+          "student_archetype": "Ambitious problem-solvers and first-generation researchers seeking a 'big fish in a small pond' environment.",
+          "majors": [
+            {
+              "name": "Computer Science and Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "curriculum": {
+                "core_courses": ["CSE 015 Discrete Mathematics", "CSE 022 Intro to Programming", "CSE 100 Algorithm Design"],
+                "total_units": 128,
+                "major_units": 92
+              }
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "curriculum": {
+                "core_courses": ["ME 001 Intro to ME", "ENGR 120 Fluid Mechanics", "ENGR 130 Thermodynamics"],
+                "total_units": 127,
+                "major_units": 88
+              }
+            }
+          ]
+        },
+        {
+          "name": "School of Natural Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 85.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Uses a 'core and emphasis' model allowing flexibility; focus on early foundational math.",
+          "housing_profile": "Residential experience centered on LLCs such as 'Beyond the MD' (pre-med) and 'Carson House' (sustainability).",
+          "student_archetype": "Curious scientists and aspiring medical professionals dedicated to sustainability.",
+          "majors": [
+            {
+              "name": "Biological Sciences",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "curriculum": {
+                "core_courses": ["BIO 011 Molecular Bio", "BIO 110 The Cell", "BIO 140 Genetics"],
+                "total_units": 124,
+                "major_units": 75
+              }
+            }
+          ]
+        },
+        {
+          "name": "School of Social Sciences, Humanities and Arts",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 90.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "The largest and most flexible school; current 'Admissions Pilot' (2025-2027) removes major-specific transfer selection criteria.",
+          "housing_profile": "Traditional and suite-style halls; features LLCs like 'Justice & Social Change'.",
+          "student_archetype": "Socially engaged professionals who value interdisciplinary collaboration.",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "curriculum": {
+                "core_courses": ["PSY 001 Intro to Psych", "PSY 010 Analysis Data", "PSY 015 Research Methods"],
+                "total_units": 120,
+                "major_units": 46
+              }
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Accounting", "American Studies", "Anthropology", "Applied Mathematics", "Business Administration", "Data Science and Computing", "Environmental Humanities", "Geospatial Technology", "Public Health", "Writing Studies"
+      ]
+    },
+    "application_process": {
+      "platforms": ["University of California Application"],
+      "application_deadlines": [
+        { "plan_type": "Regular Decision (Fall Admission)", "date": "2025-12-02", "is_binding": false, "notes": "Standard filing Oct 1-Nov 30; extended to Dec 2 for 2025." },
+        { "plan_type": "Regular Decision (Spring Admission)", "date": "2025-07-31", "is_binding": false, "notes": "Filing period July 1-31." },
+        { "plan_type": "SJV PRIME+ (BS to MD Pathway)", "date": "2025-11-20", "is_binding": false }
+      ],
+      "supplemental_requirements": [
+        { "target_program": "All", "requirement_type": "Personal Insight Questions", "details": "Respond to 4 out of 8 PIQs, max 350 words each." },
+        { "target_program": "SJV PRIME+ (BS to MD)", "requirement_type": "Supplemental Application", "details": "Additional essays and letters of recommendation." }
+      ],
+      "holistic_factors": {
+        "primary_factors": ["GPA (A-G Courses)", "Course Rigor", "Personal Insight Questions"],
+        "secondary_factors": ["Extracurricular Activities", "Volunteer Service", "Special Talents"],
+        "essay_importance": "Critical",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "None",
+        "first_gen_boost": "Moderate",
+        "specific_differentiators": "Uses the UC 13-point comprehensive review process; emphasizes achievement within context."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to 'Undeclared' within SSHA to maximize high admit rates (~91%)",
+        "Select 'Environmental Humanities' to leverage its niche status",
+        "Use 'Applied Mathematical Sciences' as a 'back-door' into tech",
+        "Avoid 'Psychology' or 'Biology' unless stats are well above average"
+      ],
+      "college_ranking_tactics": [
+        "Selection is based on three academic Schools, not residential college rankings",
+        "Prioritize SSHA for the most flexible General Education requirements"
+      ],
+      "alternate_major_strategy": "List a competitive major (Engineering) but select an alternate in SSHA (Economics) to ensure review."
+    },
+    "financials": {
+      "tuition_model": "Tuition Stability Plan",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": { "tuition": 15185, "total_coa": 44252, "housing": 21446 },
+        "out_of_state": { "tuition": 46211, "total_coa": 75278, "supplemental_tuition": 31026 }
+      },
+      "aid_philosophy": "Need-Blind",
+      "average_need_based_aid": 31688,
+      "average_merit_aid": 7832,
+      "percent_receiving_aid": 90.0
+    },
+    "scholarships": [
+      {
+        "name": "Fiat Lux Scholars Program",
+        "type": "Need/Merit",
+        "amount": "Guaranteed minimum $100,000 over 4 years",
+        "deadline": "2025-03-02",
+        "benefits": "Living Learning Community, dedicated mentorship",
+        "application_method": "Automatic via FAFSA/CADAA"
+      },
+      {
+        "name": "Blue and Gold Opportunity Plan",
+        "type": "Need",
+        "amount": "Full coverage of system-wide tuition",
+        "deadline": "2025-03-02",
+        "benefits": "Guaranteed tuition for families earning < $80,000",
+        "application_method": "FAFSA or CA Dream Act"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for most exams",
+        "exceptions": ["No unit credit for AP Research", "CS A requires 5 for CSE 022 exemption"]
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with 5+ grant credit",
+        "diploma_bonus": true
+      },
+      "transfer_articulation": {
+        "tools": ["ASSIST.org", "TES"],
+        "restrictions": "70 unit cap for community college credits"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Minimum weighted GPA of 3.0 (CA) or 3.4 (Non-resident)",
+        "Top 9% ranking for ELC guarantee",
+        "Completion of 15 'a-g' courses"
+      ],
+      "essay_tips": [
+        "Be direct; treat responses like an interview",
+        "Use 'I' statements and focus on personal actions",
+        "Keep responses general to the UC system"
+      ],
+      "red_flags": [
+        "Significant decline in GPA or D/F grades in senior year",
+        "Essays focusing entirely on another person",
+        "Unexplained gaps in education timeline"
+      ],
+      "insights": [
+        "Highly 'First-Gen' friendly campus",
+        "Research opportunities often accessible to freshmen",
+        "Close-knit feel with easy professor access"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 64368,
+      "employment_rate_2yr": 86.0,
+      "grad_school_rate": 22.0,
+      "top_employers": ["Apple", "Google", "Meta", "Tesla", "Genentech", "Kaiser Permanente"],
+      "loan_default_rate": 2.9,
+      "student_retention": {
+        "freshman_retention_rate": 83.0,
+        "graduation_rate_4_year": 49.0,
+        "graduation_rate_6_year": 69.0
+      }
+    }
+  }
+}

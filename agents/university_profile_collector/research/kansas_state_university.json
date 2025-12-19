@@ -1,0 +1,433 @@
+{
+  "university_profile": {
+    "_id": "kansas_state_university",
+    "university_name": "Kansas State University",
+    "metadata": {
+      "official_name": "Kansas State University",
+      "location": {
+        "city": "Manhattan",
+        "state": "KS",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": []
+    },
+    "strategic_profile": {
+      "executive_summary": "Kansas State University is the nation's first operational land-grant institution, recognized for its high-tier research activity and exceptional student satisfaction. It combines a small-town 'family' atmosphere with global leadership in biodefense, food systems, and agricultural sciences.",
+      "market_position": "Land-Grant Powerhouse",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 158,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Acceptance rates have dropped from approximately 95% to 81% over the last three years, reflecting a sharp increase in applicant volume and competitiveness.",
+          "implication": "Prospective students should aim for early application cycles and emphasize their involvement in the holistic review process."
+        },
+        {
+          "category": "Value and Growth",
+          "insight": "The university climbed 42 places to #88 in Best Value Schools and rose to #84 among Top Public Schools in the 2026 rankings.",
+          "implication": "K-State is successfully positioning itself as a high-ROI destination with rising national prestige."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Consistently ranked as one of the 'happiest' campuses in the U.S., social life is defined by 'Purple Pride' and a close-knit, supportive community often called the 'K-State Family.'",
+        "transportation_impact": "Current Campus Master Plan efforts are shifting the university toward a pedestrian-focused core, reducing central parking by 10% and expanding the ATA Bus transit system to improve safety and accessibility.",
+        "research_impact": "As a leading R1 research university, K-State hosts the National Bio and Agro-Defense Facility (NBAF) and offers robust undergraduate research grants, particularly in one-health, sustainable infrastructure, and agriculture."
+      }
+    },
+    "admissions_status": {
+      "overall_acceptance_rate": 81.7,
+      "in_state_acceptance_rate": 92.6,
+      "out_of_state_acceptance_rate": 83.7,
+      "international_acceptance_rate": 30.2,
+      "transfer_acceptance_rate": 93.4,
+      "admits_class_size": 3482,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": null
+    },
+    "admissions_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 15509,
+        "admits_total": 12669,
+        "enrolled_total": 3482,
+        "acceptance_rate_overall": 81.69,
+        "yield_rate": 27.48,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Kansas State University does not maintain a waitlist policy for first-time freshmen."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 13437,
+        "admits_total": 10663,
+        "enrolled_total": 3187,
+        "acceptance_rate_overall": 79.36,
+        "yield_rate": 29.89,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 9703,
+        "admits_total": 9231,
+        "enrolled_total": 2908,
+        "acceptance_rate_overall": 95.14,
+        "yield_rate": 31.5,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        }
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.50-4.00",
+        "unweighted_middle_50": "3.40-3.60",
+        "average_weighted": 3.78,
+        "notes": "Admission is generally guaranteed with a 3.25+ GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1040-1260",
+        "sat_reading_middle_50": "490-580",
+        "sat_math_middle_50": "560-660",
+        "act_composite_middle_50": "20-27",
+        "submission_rate": 81.0,
+        "policy_note": "Test optional but recommended for scholarships and honors programs."
+      },
+      "demographics": {
+        "first_gen_percentage": 21.0,
+        "international_percentage": 2.5,
+        "geographic_breakdown": [
+          {
+            "region": "Kansas",
+            "percentage": 73.2
+          },
+          {
+            "region": "Other US States",
+            "percentage": 25.8
+          },
+          {
+            "region": "International",
+            "percentage": 1.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 7247,
+            "admits": 5796,
+            "acceptance_rate": 79.98
+          },
+          "women": {
+            "applicants": 8258,
+            "admits": 6872,
+            "acceptance_rate": 83.22
+          }
+        },
+        "racial_breakdown": {
+          "white": 76.2,
+          "black_african_american": 2.94,
+          "hispanic_latino": 8.68,
+          "asian": 2.12,
+          "native_american_alaskan": 0.43,
+          "pacific_islander": 0.086,
+          "two_or_more_races": 3.49,
+          "unknown": 1.2,
+          "non_resident_alien": 5.5
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "College of Agriculture",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 85.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Strongly suited for students with interests in food systems, natural resources, and community leadership.",
+          "housing_profile": "Commonly found in the Derby Community due to proximity to agriculture facilities.",
+          "student_archetype": "The 'Wildcat Backbone': Community-oriented and practical-minded.",
+          "majors": [
+            {
+              "name": "Animal Sciences and Industry",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "prerequisite_courses": [
+                "BIOL 198 Principles of Biology"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "ASI 102 Principles of Animal Science"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "ASI 102 Principles of Animal Science",
+                  "ASI 202 Domestic Animal Anatomy",
+                  "ASI 300 Animal Nutrition"
+                ],
+                "total_units": 120
+              },
+              "notes": "Most popular major; strong ties to College of Veterinary Medicine."
+            }
+          ]
+        },
+        {
+          "name": "College of Architecture, Planning and Design (APDesign)",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 45.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Selective admissions require a high GPA (avg 3.75) and priority deadline (Dec 1).",
+          "housing_profile": "Often reside in Wefald Hall (Kramer).",
+          "student_archetype": "Disciplined Makers: High-achieving designers.",
+          "majors": [
+            {
+              "name": "Architecture",
+              "degree_type": "M. Arch (5-year non-baccalaureate)",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.75,
+              "prerequisite_courses": [
+                "MATH 100",
+                "PHYS 113",
+                "Studio Art"
+              ],
+              "minimum_gpa_to_declare": 3.0,
+              "curriculum": {
+                "core_courses": [
+                  "ENVD 201 Environmental Design Studio I",
+                  "ARCH 248 Building Science"
+                ],
+                "total_units": 170
+              },
+              "notes": "Integrated professional master's degree."
+            }
+          ]
+        },
+        {
+          "name": "Carl R. Ice College of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Selective admissions with Feb 1 priority deadline.",
+          "housing_profile": "Primarily housed in the Kramer Community (Wefald, Goodnow, Marlatt).",
+          "student_archetype": "Pragmatic Problem-Solvers: Solution-oriented students.",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.3,
+              "prerequisite_courses": [
+                "MATH 220",
+                "MATH 221"
+              ],
+              "weeder_courses": [
+                "CIS 300",
+                "CIS 301"
+              ],
+              "curriculum": {
+                "core_courses": [
+                  "CIS 115 Intro to Computing Science",
+                  "CIS 200 Programming Fundamentals"
+                ],
+                "total_units": 120
+              }
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Data Analytics Certificate",
+        "Entrepreneurship and Innovation Minor",
+        "Global Food Systems Certificate",
+        "Professional Strategic Selling Certificate",
+        "Leadership Studies Minor",
+        "Conflict Analysis and Resolution Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "K-State Online Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Priority Admission & Financial Aid",
+          "date": "2024-12-01",
+          "is_binding": false,
+          "notes": "Priority deadline for FAFSA and select programs."
+        },
+        {
+          "plan_type": "Competitive Awards Deadline",
+          "date": "2024-12-15",
+          "is_binding": false,
+          "notes": "Deadline for top-tier competitive scholarships."
+        },
+        {
+          "plan_type": "Rolling Admission",
+          "date": "2025-08-01",
+          "is_binding": false
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "University Honors Program",
+          "requirement_type": "Essay",
+          "deadline": "2024-12-15",
+          "details": "Requires a 300-500 word essay on motivation."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "GPA",
+          "Test Scores",
+          "Course Rigor"
+        ],
+        "secondary_factors": [
+          "Extracurriculars",
+          "Leadership",
+          "Character"
+        ],
+        "essay_importance": "Low",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "specific_differentiators": "K-State operates primarily on 'Assured Admission' (3.25+ GPA or 21+ ACT)."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to the 'Open Option' track in Arts and Sciences if undecided.",
+        "Target niche programs in Agriculture like Bakery Science.",
+        "Submit to Engineering or Architecture by Feb 1 priority deadline."
+      ],
+      "college_ranking_tactics": [
+        "Prioritize Kramer Community for Engineering or STEM.",
+        "Rank Derby Community higher for a more social environment."
+      ],
+      "alternate_major_strategy": "If applying to Computer Science, list a related backup major like Mathematics or Information Systems."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 11221,
+          "housing": 12830,
+          "total_coa": 28141
+        },
+        "out_of_state": {
+          "tuition": 28568,
+          "housing": 12830,
+          "supplemental_tuition": 17347,
+          "total_coa": 45488
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 9399,
+      "average_merit_aid": 6988,
+      "percent_receiving_aid": 80.0,
+      "scholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "type": "Merit",
+          "amount": "$80,000 over 4 years",
+          "deadline": "2025-12-15",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "Wildcat Nonresident Award",
+          "type": "Merit",
+          "amount": "Waives 50-100% of nonresident tuition",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Land Grant Promise",
+          "type": "Need",
+          "amount": "Covers remaining in-state tuition costs",
+          "application_method": "FAFSA"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for most exams",
+        "exceptions": [
+          "AP Research (3+) grants 3 units of 100-level elective credit",
+          "AP Seminar (3+) grants ENGL 200 credit"
+        ],
+        "usage": "Satisfies K-State 8 general education requirements."
+      },
+      "ib_policy": {
+        "general_rule": "Credit awarded for HL and SL exams with score of 4+.",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transferology",
+          "TES",
+          "DirectLink"
+        ],
+        "restrictions": "75 unit cap for community college credits; 30 resident credits required."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Minimum 3.25 HS GPA or 21 ACT for assured admission.",
+        "Competitive stats (29+ ACT) for Veterinary Early Admission.",
+        "A transcript reflecting academic rigor."
+      ],
+      "common_activities": [
+        "K-State sports culture (football/basketball).",
+        "Undergraduate research (e.g., campus nuclear reactor).",
+        "Ag-specific clubs like Rodeo or Bakery Science."
+      ],
+      "essay_tips": [
+        "Be specific about K-State's unique offerings like the Insect Zoo.",
+        "Write in your natural voice—avoid 'thesaurus abuse'."
+      ],
+      "insights": [
+        "The 'K-State Family' is a real cultural pillar.",
+        "Manhattan, KS (the 'Little Apple') is a quintessential college town.",
+        "Only Bakery Science major in the U.S."
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 57262,
+      "employment_rate_2yr": 94.0,
+      "grad_school_rate": 19.0,
+      "top_employers": [
+        "Burns & McDonnell",
+        "Garmin",
+        "Koch Industries",
+        "Cargill",
+        "Textron"
+      ],
+      "student_retention": {
+        "freshman_retention_rate": 87.1,
+        "graduation_rate_4_year": 51.1,
+        "graduation_rate_6_year": 67.9
+      }
+    }
+  }
+}

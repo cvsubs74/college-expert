@@ -1,8 +1,17 @@
 import json
 import logging
 import os
-from google.adk.agents import LlmAgent, ParallelAgent, SequentialAgent
+from google.adk.agents import LlmAgent, ParallelAgent, SequentialAgent, LoopAgent, BaseAgent
 from google.adk.tools import google_search, AgentTool, ToolContext
+from google.adk.events import Event, EventActions
+from google.adk.agents.invocation_context import InvocationContext
+from typing import AsyncGenerator
+
+# Import validation logic - support both module and direct execution
+try:
+    from .validation_logic import apply_all_fixes, fix_escape_sequences, fix_json_syntax
+except ImportError:
+    from validation_logic import apply_all_fixes, fix_escape_sequences, fix_json_syntax
 
 # Import models for validation reference - support both module and direct execution
 try:
@@ -819,11 +828,191 @@ Use ( ) instead of curly braces.
 
 
 # ==============================================================================
-# PARALLEL RESEARCH GROUP (13 Agents)
+# VALIDATION AGENTS  (New)
 # ==============================================================================
 
-research_group = ParallelAgent(
-    name="UniversityResearchGroup",
+class ValidationFixer(BaseAgent):
+    """
+    Applies deterministic Python fixes and validates against the schema.
+    If valid, escalates to break the loop.
+    If invalid, saves error details to state.
+    """
+    async def _run_async_impl(self, ctx: InvocationContext) -> AsyncGenerator[Event, None]:
+        profile_json = ctx.session.state.get("university_profile")
+        if not profile_json:
+            logger.warning("[ValidationFixer] No profile found in state.")
+            yield Event(author=self.name)
+            return
+
+        try:
+            # Parse if string
+            if isinstance(profile_json, str):
+                profile_json = fix_escape_sequences(profile_json)
+                profile_json = fix_json_syntax(profile_json)
+                try:
+                    data = json.loads(profile_json)
+                except json.JSONDecodeError as e:
+                    ctx.session.state['validation_passed'] = False
+                    ctx.session.state['validation_errors'] = f"JSON Decode Error: {e}"
+                    yield Event(author=self.name)
+                    return
+            else:
+                data = profile_json
+
+            # Apply all deterministic fixes from validation_logic.py
+            data, total_fixes = apply_all_fixes(data)
+            
+            # Update state with potentially fixed data
+            ctx.session.state["university_profile"] = data
+            if total_fixes > 0:
+                logger.info(f"[ValidationFixer] Applied {total_fixes} deterministic fixes.")
+
+            # Validate against Pydantic model
+            try:
+                UniversityProfile.model_validate(data)
+                logger.info("[ValidationFixer] ✅ Profile matches schema!")
+                ctx.session.state['validation_passed'] = True
+                
+                # IMPORTANT: Signal to LoopAgent to STOP
+                yield Event(
+                    author=self.name,
+                    actions=EventActions(escalate=True)
+                )
+                
+            except Exception as e:
+                # Capture validation errors
+                error_msg = str(e)
+                # Try to get cleaner error message from Pydantic
+                if hasattr(e, 'errors'):
+                    details = []
+                    for err in e.errors()[:3]:
+                        loc = ".".join(str(l) for l in err['loc'])
+                        msg = err['msg']
+                        details.append(f"{loc}: {msg}")
+                    error_msg = "; ".join(details)
+                
+                logger.warning(f"[ValidationFixer] ⚠️ Validation failed: {error_msg[:200]}...")
+                ctx.session.state['validation_passed'] = False
+                ctx.session.state['validation_errors'] = error_msg
+                yield Event(author=self.name)
+
+        except Exception as e:
+            logger.error(f"[ValidationFixer] Critical Error: {e}")
+            ctx.session.state['validation_passed'] = False
+            ctx.session.state['validation_errors'] = f"Processing error: {str(e)}"
+            yield Event(author=self.name)
+
+
+llm_refiner_agent = LlmAgent(
+    name="LlmRefinerAgent",
+    model=MODEL_NAME,
+    description="Fixes complex validation errors in the university profile JSON.",
+    instruction="""You are a strict data validation agent.
+Your Task: Fix the JSON object in state `university_profile` based on the validation errors in `validation_errors`.
+    
+RULES:
+1. Read the full `university_profile` JSON.
+2. Read the `validation_errors` from state.
+3. Fix ONLY the fields mentioned in the errors.
+4. Ensure the output strictly follows the schema.
+5. If a field is required but missing/null, infer a reasonable value (e.g., 0 for numbers, "Not specified" for strings, [] for lists).
+6. Output the FULL CORRECTED JSON.
+
+Common Fixes:
+- "Input should be a valid boolean" -> Convert "Yes"/"No" to true/false.
+- "Input should be a valid integer" -> Convert strings to int, removing % or commas.
+- "Field required" -> Add the field with a default value.
+""",
+    output_key="university_profile"
+)
+
+correction_loop = LoopAgent(
+    name="CorrectionLoop",
+    description="Iteratively fixes validation errors.",
+    sub_agents=[
+        ValidationFixer(name="ValidationFixer"),
+        llm_refiner_agent
+    ],
+    max_iterations=3
+)
+
+# ==============================================================================
+# PROFILE BUILDER AGENT
+# ==============================================================================
+
+profile_builder_agent = LlmAgent(
+    name="ProfileBuilder",
+    model=MODEL_NAME,
+    description="Aggregates all research outputs into a structured UniversityProfile JSON.",
+    instruction="""Aggregate all research outputs into a single UniversityProfile.
+    
+INPUTS FROM SESSION STATE:
+- university_name
+- strategy_output
+- admissions_current_output
+- admissions_trends_output
+- admitted_profile_output
+- colleges_output
+- majors_output
+- application_output
+- strategy_tactics_output
+- financials_output
+- scholarships_output
+- credit_policies_output
+- student_insights_output
+- outcomes_output
+
+TASK:
+1. Merge `colleges_output["academic_structure"]` with majors. Matches on college name.
+   - For each college in `academic_structure.colleges`, find matching key in `majors_by_college`.
+   - Set `college.majors = majors_by_college[college_name]`.
+   
+2. Construct the final `UniversityProfile` JSON.
+   - Combine all sections.
+   - Ensure `_id` is snake_case of university name.
+   - Ensure `last_updated` is today's date.
+   - Ensure `report_source_files` is empty list [].
+
+3. OUTPUT the complete JSON object in `university_profile` key.
+""",
+    output_key="university_profile"
+)
+
+# ==============================================================================
+# FILE SAVER AGENT
+# ==============================================================================
+
+file_saver_agent = LlmAgent(
+    name="FileSaver",
+    model=MODEL_NAME,
+    description="Saves the final profile to a JSON file.",
+    instruction="""YOU MUST CALL the write_file tool to save the profile.
+
+=== STEP 1: Generate filename ===
+Convert the university name to a lowercase slug:
+- Replace spaces with underscores
+- Remove punctuation
+- Example: "UC San Diego" -> "uc_san_diego.json"
+
+=== STEP 2: Prepare content ===
+Take the complete JSON from {university_profile} and format it with proper indentation.
+
+=== STEP 3: CALL THE TOOL ===
+YOU MUST call write_file with these exact parameters:
+- filename: the slug.json you generated
+- content: the formatted JSON string
+""",
+    tools=[write_file],
+    output_key="save_result"
+)
+
+# ==============================================================================
+# PIPELINES
+# ==============================================================================
+
+# 1. Parallel Research
+research_phase = ParallelAgent(
+    name="ResearchPhase",
     sub_agents=[
         strategy_agent,
         admissions_current_agent,
@@ -837,181 +1026,39 @@ research_group = ParallelAgent(
         scholarships_agent,
         credit_policies_agent,
         student_insights_agent,
-        outcomes_agent  # NEW AGENT 13
-    ],
-    description="Runs 13 specialized research agents in parallel."
+        outcomes_agent
+    ]
 )
 
-
-# ==============================================================================
-# PROFILE BUILDER AGENT
-# ==============================================================================
-
-profile_builder_agent = LlmAgent(
-    name="ProfileBuilder",
-    model=MODEL_NAME,
-    description="Aggregates all research outputs into a structured UniversityProfile JSON.",
-    instruction="""Aggregate all research outputs into a single UniversityProfile.
-
-INPUTS FROM SESSION STATE:
-- university_name
-- strategy_output: contains 'metadata', 'strategic_profile'
-- admissions_current_output: contains 'current_status'
-- admissions_trends_output: contains 'longitudinal_trends' (with waitlist_stats nested)
-- admitted_profile_output: contains 'admitted_student_profile' (with racial_breakdown)
-- colleges_output: contains 'academic_structure' with colleges array (majors = [] empty)
-- majors_output: contains 'majors_by_college' dictionary keyed by college name
-- application_output: contains 'application_process'
-- strategy_tactics_output: contains 'application_strategy'
-- financials_output: contains 'financials'
-- scholarships_output: contains 'scholarships'
-- credit_policies_output: contains 'credit_policies'
-- student_insights_output: contains 'student_insights'
-- outcomes_output: contains 'outcomes' and 'student_retention'
-
-=== CRITICAL MERGE RULE FOR MAJORS ===
-You MUST merge majors INTO each college. DO NOT keep majors_by_college as a separate field.
-
-STEP BY STEP:
-1. Take each college from academic_structure.colleges
-2. Find the matching key in majors_by_college (e.g., "Jacobs School of Engineering")
-3. Copy that array INTO the college's "majors" field
-
-EXAMPLE:
-If colleges_output has: 
-  "colleges": [("name": "Jacobs School of Engineering", "majors": []), ...]
-And majors_output has:
-  "majors_by_college": ("Jacobs School of Engineering": [("name": "Computer Science", ...), ...])
-  
-RESULT should be:
-  "colleges": [("name": "Jacobs School of Engineering", "majors": [("name": "Computer Science", ...)])]
-
-DO NOT output majors_by_college as a separate field in academic_structure!
-
-=== OTHER MERGE RULES ===
-2. Add scholarships_output.scholarships INTO financials.scholarships
-3. Create admissions_data object containing current_status, longitudinal_trends, admitted_student_profile
-4. Add outcomes_output.outcomes as top-level "outcomes" field
-5. Add outcomes_output.student_retention as top-level "student_retention" field
-
-OUTPUT with EXACTLY this top-level structure:
-(
-  "_id": "university_name_slug",
-  "metadata": ...,
-  "strategic_profile": ...,
-  "admissions_data": (
-    "current_status": ...,
-    "longitudinal_trends": [...with waitlist_stats nested...],
-    "admitted_student_profile": (...with racial_breakdown...)
-  ),
-  "academic_structure": (
-    "structure_type": "Colleges",
-    "colleges": [
-      (
-        "name": "College Name",
-        "majors": [...MERGED FROM majors_by_college...]
-      )
-    ],
-    "minors_certificates": [...]
-  ),
-  "application_process": ...,
-  "application_strategy": ...,
-  "financials": (...WITH scholarships array...),
-  "credit_policies": ...,
-  "student_insights": ...,
-  "outcomes": ...,
-  "student_retention": ...
+# 2. Sequential Validation Loop (Build -> Fix -> Save)
+validation_and_save_pipeline = SequentialAgent(
+    name="ValidationAndSavePipeline",
+    sub_agents=[
+        profile_builder_agent,
+        correction_loop,
+        file_saver_agent
+    ]
 )
-
-=== FORBIDDEN FIELDS (DO NOT CREATE) ===
-- majors_by_college (must be merged into colleges)
-- majors_by_academic_division
-- waitlist_offered / waitlist_accepted (use waitlist_stats object instead)
-
-=== REQUIRED NESTED FIELDS ===
-- longitudinal_trends[].waitlist_stats object
-- demographics.racial_breakdown object
-- majors[].weeder_courses array
-- majors[].minimum_gpa_to_declare number
-- majors[].direct_admit_only boolean
-
-OUTPUT valid JSON with curly braces (convert ( ) to curly braces).
-""",
-    output_key="final_profile"
-)
-
-
-# ==============================================================================
-# FILE SAVER AGENT
-# ==============================================================================
-
-file_saver_agent = LlmAgent(
-    name="FileSaver",
-    model=MODEL_NAME,
-    description="Saves the final profile to a JSON file.",
-    instruction="""YOU MUST CALL the write_file tool to save the profile. This is mandatory.
-
-=== STEP 1: Generate filename ===
-Convert the university name to a lowercase slug:
-- Replace spaces with underscores
-- Remove punctuation
-- Examples: "UC San Diego" -> "uc_san_diego.json"
-           "Stanford University" -> "stanford_university.json"
-           "University of California, Berkeley" -> "university_of_california_berkeley.json"
-
-=== STEP 2: Prepare content ===
-Take the complete JSON from {final_profile} and format it with proper indentation.
-
-=== STEP 3: CALL THE TOOL ===
-YOU MUST call write_file with these exact parameters:
-- filename: the slug.json you generated
-- content: the formatted JSON string
-
-=== EXAMPLE TOOL CALL ===
-write_file(filename="uc_san_diego.json", content=<the full JSON string>)
-
-=== CRITICAL ===
-- DO NOT skip this step
-- DO NOT just describe what you would do
-- ACTUALLY CALL the write_file tool
-- After calling, confirm the file was saved successfully
-""",
-    tools=[write_file],
-    output_key="save_result"
-)
-
-
-# ==============================================================================
-# PIPELINES
-# ==============================================================================
-
-aggregator_pipeline = SequentialAgent(
-    name="AggregatorPipeline",
-    sub_agents=[profile_builder_agent, file_saver_agent],
-    description="Builds structured profile, then saves to disk."
-)
-
-research_pipeline = SequentialAgent(
-    name="ResearchPipeline",
-    sub_agents=[research_group, aggregator_pipeline],
-    description="Parallel Research -> Profile Building -> File Save."
-)
-
 
 # ==============================================================================
 # ROOT AGENT
 # ==============================================================================
 
 input_tool = AgentTool(agent=university_name_extractor)
-research_tool = AgentTool(agent=research_pipeline)
+research_tool = AgentTool(
+    agent=SequentialAgent(
+        name="ResearchAndValidate",
+        sub_agents=[research_phase, validation_and_save_pipeline]
+    )
+)
 
 root_agent = LlmAgent(
     name="UniversityProfileCollector",
     model=MODEL_NAME,
-    description="Orchestrates comprehensive university data collection.",
+    description="Orchestrates comprehensive university data collection with validation.",
     instruction="""When asked to research a university:
 1. Call UniversityNameExtractor to get the university name
-2. Call ResearchPipeline to gather data and save profile
+2. Call ResearchAndValidate to gather data, build profile, validate/fix it, and save it.
 
 Confirm save and summarize key findings including:
 - Acceptance rate and trends

@@ -10,6 +10,8 @@ import logging
 from flask import request
 from elasticsearch import Elasticsearch
 from datetime import datetime, timezone
+from google import genai
+from google.genai import types
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -777,6 +779,128 @@ def get_university(university_id: str) -> dict:
         return {"success": False, "error": str(e)}
 
 
+# --- University Chat with Context Injection ---
+def university_chat(university_id: str, question: str, conversation_history: list = None) -> dict:
+    """
+    Chat about a specific university using its full profile as context.
+    Uses gemini-2.5-flash-lite with context injection.
+    
+    Args:
+        university_id: The university ID to chat about
+        question: User's question
+        conversation_history: List of {role, content} dicts for context
+    
+    Returns:
+        dict with answer and updated conversation history
+    """
+    try:
+        if conversation_history is None:
+            conversation_history = []
+        
+        # Load university data from ES
+        university_result = get_university(university_id)
+        if not university_result.get("success") or not university_result.get("university"):
+            return {
+                "success": False,
+                "error": f"University {university_id} not found"
+            }
+        
+        university = university_result["university"]
+        university_name = university.get("official_name", university_id)
+        
+        # Build context with university profile (use profile if available, else use summary)
+        profile_data = university.get("profile", {})
+        if not profile_data:
+            # Fallback to summary and other fields
+            profile_data = {
+                "name": university_name,
+                "location": university.get("location"),
+                "acceptance_rate": university.get("acceptance_rate"),
+                "us_news_rank": university.get("us_news_rank"),
+                "summary": university.get("summary"),
+                "market_position": university.get("market_position"),
+                "median_earnings_10yr": university.get("median_earnings_10yr"),
+            }
+        
+        university_json = json.dumps(profile_data, indent=2, default=str)
+        
+        system_prompt = f"""You are a helpful university advisor for {university_name}. Answer questions using ONLY the data provided below.
+
+UNIVERSITY DATA:
+{university_json}
+
+RULES:
+- Only answer based on the data above
+- If information is not in the data, say "I don't have that specific information about {university_name}"
+- Be concise and direct
+- Format responses in markdown when helpful
+- Be friendly and helpful
+"""
+        
+        # Build conversation for Gemini
+        contents = []
+        
+        # Add system context as first user message
+        contents.append(types.Content(
+            role="user",
+            parts=[types.Part(text=system_prompt)]
+        ))
+        contents.append(types.Content(
+            role="model",
+            parts=[types.Part(text=f"I'm ready to answer questions about {university_name}. What would you like to know?")]
+        ))
+        
+        # Add conversation history
+        for msg in conversation_history:
+            role = "user" if msg.get("role") == "user" else "model"
+            contents.append(types.Content(
+                role=role,
+                parts=[types.Part(text=msg.get("content", ""))]
+            ))
+        
+        # Add current question
+        contents.append(types.Content(
+            role="user",
+            parts=[types.Part(text=question)]
+        ))
+        
+        # Call Gemini
+        client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+        response = client.models.generate_content(
+            model="gemini-2.5-flash-lite",
+            contents=contents,
+            config=types.GenerateContentConfig(
+                temperature=0.7,
+                max_output_tokens=1024
+            )
+        )
+        
+        answer = response.text
+        
+        # Update history
+        updated_history = conversation_history + [
+            {"role": "user", "content": question},
+            {"role": "assistant", "content": answer}
+        ]
+        
+        logger.info(f"University chat for {university_id}: question='{question[:50]}...', answer_length={len(answer)}")
+        
+        return {
+            "success": True,
+            "answer": answer,
+            "conversation_history": updated_history,
+            "university_name": university_name,
+            "university_id": university_id
+        }
+        
+    except Exception as e:
+        logger.error(f"University chat failed: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
+
+
 # --- Delete University ---
 def delete_university(university_id: str) -> dict:
     """Delete a university from the index."""
@@ -861,6 +985,18 @@ def knowledge_base_manager_universities_http_entry(req):
             elif 'profile' in data or '_id' in data:
                 profile = data.get('profile', data)
                 result = ingest_university(profile)
+                return add_cors_headers(result)
+            
+            # Chat request
+            elif 'action' in data and data['action'] == 'chat':
+                university_id = data.get('university_id')
+                question = data.get('question', '')
+                history = data.get('conversation_history', [])
+                
+                if not university_id or not question:
+                    return add_cors_headers({"error": "university_id and question required for chat"}, 400)
+                
+                result = university_chat(university_id, question, history)
                 return add_cors_headers(result)
             
             else:

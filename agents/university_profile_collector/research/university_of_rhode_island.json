@@ -1,0 +1,407 @@
+{
+  "university_profile": {
+    "_id": "university_of_rhode_island",
+    "university_name": "University of Rhode Island",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "US News & World Report 2026 Best Colleges",
+      "Wall Street Journal/College Pulse 2026 Best Colleges",
+      "URI Official Admissions Portal",
+      "URI Department of Transportation and Parking (TAP) Reports"
+    ],
+    "metadata": {
+      "official_name": "University of Rhode Island",
+      "location": {
+        "city": "Kingston",
+        "state": "RI",
+        "type": "Public"
+      },
+      "us_news_rank": 151,
+      "market_position": "Public Flagship"
+    },
+    "strategic_profile": {
+      "executive_summary": "The University of Rhode Island (URI) is a flagship public research university and a designated Land, Sea, and Urban Grant institution with an R1 classification for very high research activity. It is recognized as a regional leader in marine science, nursing, and engineering, leveraging its coastal location for specialized research and industry ties.",
+      "admissions_philosophy": "Holistic review",
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "First-year applications hit a record 28,036 for the Fall 2025 cycle, reflecting surging interest.",
+          "implication": "Admission is becoming increasingly competitive, particularly for specialized 0-6 Pharm.D. and Engineering programs."
+        },
+        {
+          "category": "Outcome Value",
+          "insight": "Ranked #76 nationally by Wall Street Journal (2026) based on student outcomes and salary impact.",
+          "implication": "The university provides high ROI relative to its US News academic reputation ranking (#151)."
+        },
+        {
+          "category": "Research Prowess",
+          "insight": "Designated as a 'Blue Economy' hub with $3.75M in recent federal funding for marine initiatives.",
+          "implication": "Students in STEM and maritime fields have unique access to elite, well-funded research pipelines."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A large suburban campus characterized by its proximity to Narragansett beaches and a solid liberal ideology. Social life is anchored by Greek life, Division I athletics (Rams), and over 100 student organizations.",
+        "transportation_impact": "Highly reliant on the 'Rhody Shuttle' and RIPTA bus lines; recent student senate initiatives focus on improving shuttle frequency and sustainability to accommodate a significant commuter population.",
+        "research_impact": "Strong research culture centered on the 'Academic Health Collaborative' and the Graduate School of Oceanography, with extensive collaborative ties to Brown University and local healthcare systems."
+      }
+    },
+    "admissions": {
+      "current_status": {
+        "overall_acceptance_rate": 72.2,
+        "in_state_acceptance_rate": 75.9,
+        "out_of_state_acceptance_rate": 77.4,
+        "international_acceptance_rate": 67.4,
+        "transfer_acceptance_rate": 64.3,
+        "admits_class_size": 3004,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "applications": 0,
+            "admits": 0,
+            "acceptance_rate": 0.0,
+            "class_fill_percentage": 0.0
+          },
+          {
+            "plan_type": "ED",
+            "applications": 0,
+            "admits": 0,
+            "acceptance_rate": 0.0,
+            "class_fill_percentage": 0.0
+          }
+        ]
+      },
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": "3.40-4.12",
+          "percentile_25": "3.40",
+          "percentile_75": "4.12",
+          "notes": "Data reflects the 2025 Admitted Student Profile. URI uses a holistic review process that considers the rigor of the high school curriculum."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1180-1350",
+          "sat_reading_middle_50": "520-650",
+          "sat_math_middle_50": "500-630",
+          "act_composite_middle_50": "26-31",
+          "submission_rate": 27.4,
+          "policy_note": "Test-optional for most programs. SAT/ACT scores are considered if submitted and can be used for merit scholarship evaluation."
+        },
+        "demographics": {
+          "first_gen_percentage": 33.3,
+          "international_percentage": 1.7,
+          "geographic_breakdown": [
+            { "region": "Rhode Island", "percentage": 47.0 },
+            { "region": "Out-of-State", "percentage": 51.8 },
+            { "region": "International", "percentage": 1.2 }
+          ],
+          "gender_breakdown": {
+            "men": {
+              "applicants": 9498,
+              "admits": 6672,
+              "acceptance_rate": 70.2
+            },
+            "women": {
+              "applicants": 16968,
+              "admits": 12776,
+              "acceptance_rate": 75.3,
+              "note": "The student body is significantly female-heavy, with a female-to-male ratio of approximately 1.4:1."
+            }
+          },
+          "racial_breakdown": {
+            "white": 72.8,
+            "black_african_american": 5.3,
+            "hispanic_latino": 12.6,
+            "asian": 3.7,
+            "native_american_alaskan": 0.1,
+            "two_or_more_races": 4.3,
+            "unknown": 7.9,
+            "non_resident_alien": 1.7
+          }
+        }
+      },
+      "longitudinal_trends": [
+        {
+          "year": 2025,
+          "cycle_name": "Class of 2029",
+          "applications_total": 27000,
+          "enrolled_total": 3300,
+          "notes": "Preliminary data indicates a record-breaking 27,000 applications for the first cycle featuring a binding Early Decision option.",
+          "waitlist_stats": {
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          }
+        },
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 26987,
+          "admits_total": 19475,
+          "enrolled_total": 3004,
+          "acceptance_rate_overall": 72.17,
+          "yield_rate": 15.42,
+          "waitlist_stats": {
+            "offered_spots": 2459,
+            "accepted_spots": 795,
+            "admitted_from_waitlist": 474,
+            "waitlist_admit_rate": 59.62,
+            "is_waitlist_ranked": false
+          }
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 25391,
+          "admits_total": 19568,
+          "enrolled_total": 3286,
+          "acceptance_rate_overall": 77.06,
+          "acceptance_rate_in_state": 75.89,
+          "acceptance_rate_out_of_state": 77.40,
+          "yield_rate": 16.79,
+          "waitlist_stats": {
+            "offered_spots": 1983,
+            "accepted_spots": 776,
+            "admitted_from_waitlist": 333,
+            "waitlist_admit_rate": 42.91,
+            "is_waitlist_ranked": false
+          }
+        }
+      ]
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "College of Nursing",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 6.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Extremely competitive; applicants must demonstrate high achievement in biology and chemistry. Early Action (Dec 1) is virtually mandatory for serious consideration.",
+          "housing_profile": "Nursing Living and Learning Community (LLC) featuring peer mentoring and study groups for rigorous clinical prerequisites.",
+          "student_archetype": "High-achieving, service-oriented healers",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 15.0,
+              "average_gpa_admitted": 4.1,
+              "prerequisite_courses": ["BIO 220", "CHM 103", "WRT 104"],
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": ["BIO 220 Anatomy & Physiology I", "CHM 103 Introductory Chemistry"],
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "core_courses": ["NUR 100", "NUR 203", "NUR 213", "NUR 208", "NUR 233", "NUR 253", "NUR 443", "NUR 444"],
+                "total_units": 120,
+                "major_units": 64
+              },
+              "notable_professors": ["Dr. Barbara Wolfe"],
+              "notes": "Non-nursing majors must apply as internal transfers but seats are limited by clinical space."
+            }
+          ]
+        },
+        {
+          "name": "College of Pharmacy",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 21.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Zero-to-six Pharm.D. program is highly selective. Requires strong math/science background and two letters of recommendation.",
+          "housing_profile": "Pharmacy LLC designed to support students through heavy chemistry and lab-based workloads.",
+          "student_archetype": "Rigorous researchers and clinical experts",
+          "majors": [
+            {
+              "name": "Pharmacy",
+              "degree_type": "Pharm.D.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.9,
+              "prerequisite_courses": ["CHM 101", "MTH 141", "BIO 101"],
+              "minimum_gpa_to_declare": 2.7,
+              "weeder_courses": ["CHM 112 General Chemistry II", "BPS 333 Nursing Pharmacology"],
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.7,
+              "notable_professors": ["Dr. Thomas Ryan"],
+              "notes": "0-6 Program; progression to professional years requires minimum 2.7 science GPA."
+            }
+          ]
+        },
+        {
+          "name": "College of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 55.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Strong math preparation through pre-calculus or calculus is expected. Highlight interests in the International Engineering Program (IEP).",
+          "housing_profile": "Engineering LLC (ELLC) with dedicated maker spaces and resident academic mentors.",
+          "student_archetype": "Global-minded problem solvers",
+          "majors": [
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.8,
+              "prerequisite_courses": ["MTH 141", "CHM 101", "PHY 203"],
+              "weeder_courses": ["MTH 142 Calculus II", "EGR 105 Foundations of Engineering I", "MCE 262 Statics"],
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": ["EGR 105", "EGR 106", "MCE 201", "MCE 262", "MCE 263", "MCE 341", "MCE 354", "MCE 372", "MCE 401"],
+                "total_units": 120,
+                "major_units": 68
+              },
+              "notable_professors": ["Dr. Mehrshad Amini", "Dr. Michael Lambert"]
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Cyber Security Undergraduate Certificate",
+        "Data Science Minor",
+        "Engineering Entrepreneurship Minor",
+        "Innovation and Entrepreneurship Minor",
+        "Marine Affairs Minor",
+        "Underwater Archaeology Minor",
+        "Chinese Language Flagship Certificate",
+        "Digital Forensics Minor"
+      ]
+    },
+    "application": {
+      "process": {
+        "platforms": ["Common App", "URI Transfer Application"],
+        "deadlines": [
+          { "plan_type": "Early Decision", "date": "2024-11-01", "is_binding": true, "notes": "Binding; Fall start" },
+          { "plan_type": "Early Action", "date": "2024-12-01", "is_binding": false, "notes": "Priority for merit aid" },
+          { "plan_type": "Regular Decision", "date": "2025-02-01", "is_binding": false, "notes": "Final Fall deadline" },
+          { "plan_type": "Spring Admission", "date": "2024-12-15", "is_binding": false }
+        ],
+        "supplemental_requirements": [
+          { "target_program": "Nursing, Pharmacy (PharmD)", "requirement_type": "Short Response", "deadline": "2024-12-01", "details": "Statement explaining choice of major (approx. 250 words)" },
+          { "target_program": "Honors Program", "requirement_type": "Essay", "deadline": "2025-02-01", "details": "Propose a theme for the URI Honors Colloquium (250 words)" }
+        ],
+        "holistic_factors": {
+          "primary_factors": ["Course Rigor", "GPA", "STARS Record (SRAR/SSAR)"],
+          "secondary_factors": ["Extracurriculars", "Recommendations", "Talents", "Character"],
+          "essay_importance": "High",
+          "demonstrated_interest": "Not Considered",
+          "interview_policy": "Not Offered",
+          "legacy_consideration": "None",
+          "first_gen_boost": "Strong",
+          "specific_differentiators": "Uses the STARS record for self-reported academic history; heavily emphasizes math and science readiness for Nursing and Engineering programs"
+        }
+      },
+      "strategy": {
+        "major_selection_tactics": [
+          "Apply to Humanities or Social Sciences (e.g., History, English) for a higher baseline admission probability.",
+          "Use the 'Undeclared' option within a specific college to secure a spot without high GPA thresholds.",
+          "Prioritize Early Action (Dec 1) for Nursing, Pharmacy, and Engineering."
+        ],
+        "alternate_major_strategy": "If applying to the highly selective 6-year Pharm.D. program, list the B.S. in Pharmaceutical Sciences (BSPS) as your alternate choice. For Nursing, list Health Sciences or Kinesiology as a backup."
+      }
+    },
+    "financials": {
+      "cost_of_attendance": {
+        "academic_year": "2024-2025",
+        "in_state": { "tuition": 14630, "total_coa": 36477, "housing": 15607 },
+        "out_of_state": { "tuition": 34834, "total_coa": 56681, "supplemental_tuition": 20204 }
+      },
+      "aid": {
+        "philosophy": "Merit Focused",
+        "average_need_based_aid": 11857,
+        "average_merit_aid": 10105,
+        "percent_receiving_aid": 89.0
+      },
+      "scholarships": [
+        {
+          "name": "Thomas M. Ryan Scholars Award",
+          "type": "Merit/Full-Ride",
+          "amount": "Full tuition, fees, housing, meals, and books for 4 years",
+          "deadline": "2024-12-01 (Priority)",
+          "benefits": "Honors Program, Leadership Institute, global J-Term travel",
+          "application_method": "Automatic consideration then invitation for interview"
+        },
+        {
+          "name": "Alfred J. Verrecchia Business Scholars Award",
+          "type": "Merit/Full-Ride",
+          "amount": "Full tuition, fees, housing, meals, and books for 4 years",
+          "deadline": "2024-12-01 (Priority)",
+          "benefits": "Business mentor, career coach, travel stipend",
+          "application_method": "Automatic consideration for Business majors"
+        },
+        {
+          "name": "Presidential Scholarship",
+          "type": "Merit",
+          "amount": "Up to $17,000 per year",
+          "deadline": "Automatic consideration",
+          "benefits": "Renewable for 4 years with 2.8 cumulative GPA",
+          "application_method": "Automatic Consideration"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Scores of 3, 4, or 5 grant credit for most subjects including STEM, Humanities, and Arts.",
+        "usage": "Can satisfy General Education (GE) requirements and foundational major prerequisites."
+      },
+      "ib_policy": {
+        "general_rule": "Credit is awarded for Higher Level (HL) exams with scores of 5, 6, or 7.",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "restrictions": "Minimum grade of C required for all transferable courses; maximum of 60 credits accepted from 2-year institutions; 90 credit cap for 4-year institutions."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A strong academic profile with a middle 50% GPA range between 3.4 and 4.12",
+        "Four years of challenging coursework in math and science, especially for competitive majors like Nursing and Pharmacy",
+        "Evidence of demonstrated interest, such as campus visits or counselor outreach, to stand out in the applicant pool",
+        "A minimum of B or better in core subjects to be competitive for high-demand STEM programs"
+      ],
+      "common_activities": [
+        "Research experience in marine biology, engineering, or life sciences",
+        "Leadership roles in school clubs or local community organizations",
+        "Involvement in varsity athletics or intramural sports",
+        "Volunteer work or participation in programs like Talent Development for eligible residents",
+        "Part-time employment or internships that show real-world responsibility"
+      ],
+      "essay_tips": [
+        "Be highly specific in program-specific supplements (Nursing/Pharmacy) by connecting personal goals to URI's faculty and facilities",
+        "Avoid reciting impersonal facts or statistics about URI; focus instead on how those resources benefit your specific journey",
+        "Use the personal statement to highlight resilience and self-reflection",
+        "Structure essays with a compelling anecdote that ties back to your chosen field of study"
+      ],
+      "red_flags": [
+        "Slacking off or showing a grade decline during senior year",
+        "Lack of necessary science and math prerequisites for competitive PharmD or Nursing pathways",
+        "Generic essays that lack a personal connection to the Kingston campus or specific major",
+        "A 'wall of text' formatting in the personal statement that suggests poor attention to detail"
+      ]
+    },
+    "outcomes": {
+      "earnings_employment": {
+        "median_earnings_10yr": 56200,
+        "employment_rate_2yr": 96.0,
+        "top_employers": [
+          "CVS Health",
+          "Fidelity Investments",
+          "Citizens Bank",
+          "General Dynamics Electric Boat",
+          "Hasbro",
+          "Raytheon Technologies",
+          "Lifespan"
+        ]
+      },
+      "retention_graduation": {
+        "freshman_retention_rate": 85.0,
+        "graduation_rate_4_year": 57.0,
+        "graduation_rate_6_year": 71.0
+      }
+    }
+  }
+}

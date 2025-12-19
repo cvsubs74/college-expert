@@ -18,6 +18,7 @@ import ApproachIndicator from './components/ApproachIndicator';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ApproachProvider } from './context/ApproachContext';
 import { PaymentProvider, usePayment } from './context/PaymentContext';
+import { ToastProvider } from './components/Toast';
 import UpgradeModal from './components/UpgradeModal';
 import { logout } from './services/authService';
 import { checkOnboardingStatus, saveOnboardingProfile } from './services/api';
@@ -61,6 +62,7 @@ function Navigation() {
                 <DocumentTextIcon className="h-5 w-5 mr-2" />
                 Student Profile
               </Link>
+              {/* My Advisor - DISABLED FOR MVP (agent not reliable for general questions)
               <Link
                 to="/chat"
                 className={`${isActive('/chat')
@@ -71,6 +73,7 @@ function Navigation() {
                 <ChatBubbleLeftRightIcon className="h-5 w-5 mr-2" />
                 My Advisor
               </Link>
+              */}
               <Link
                 to="/universities"
                 className={`${isActive('/universities')
@@ -234,30 +237,33 @@ function App() {
       <AuthProvider>
         <PaymentProvider>
           <ApproachProvider>
-            <Routes>
-              {/* Public routes */}
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/payment-success" element={<PaymentSuccess />} />
+            <ToastProvider>
+              <Routes>
+                {/* Public routes */}
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/pricing" element={<PricingPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/payment-success" element={<PaymentSuccess />} />
 
-              {/* Protected routes */}
-              <Route
-                element={
-                  <ProtectedRoute>
-                    <AppLayout />
-                  </ProtectedRoute>
-                }
-              >
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/chat" element={<Chat />} />
-                <Route path="/universities" element={<UniversityExplorer />} />
-                <Route path="/launchpad" element={<MyLaunchpad />} />
-                <Route path="/fit-visualizer" element={<FitVisualizer />} />
-                <Route path="/knowledge-base" element={<KnowledgeBase />} />
-              </Route>
-            </Routes>
-            <UpgradeModal />
+                {/* Protected routes */}
+                <Route
+                  element={
+                    <ProtectedRoute>
+                      <AppLayout />
+                    </ProtectedRoute>
+                  }
+                >
+                  <Route path="/profile" element={<Profile />} />
+                  {/* My Advisor - DISABLED FOR MVP */}
+                  {/* <Route path="/chat" element={<Chat />} /> */}
+                  <Route path="/universities" element={<UniversityExplorer />} />
+                  <Route path="/launchpad" element={<MyLaunchpad />} />
+                  <Route path="/fit-visualizer" element={<FitVisualizer />} />
+                  <Route path="/knowledge-base" element={<KnowledgeBase />} />
+                </Route>
+              </Routes>
+              <UpgradeModal />
+            </ToastProvider>
           </ApproachProvider>
         </PaymentProvider>
       </AuthProvider>

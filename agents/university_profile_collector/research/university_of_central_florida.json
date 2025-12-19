@@ -1,0 +1,528 @@
+{
+  "university_profile": {
+    "_id": "university_of_central_florida",
+    "metadata": {
+      "official_name": "University of Central Florida",
+      "location": {
+        "city": "Orlando",
+        "state": "FL",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": []
+    },
+    "strategic_profile": {
+      "executive_summary": "The University of Central Florida (UCF) is a massive metropolitan public research university known for its deep industry ties, rapid growth, and status as a top producer of talent for the aerospace and defense sectors. As an R1 institution, it leverages its proximity to the Kennedy Space Center and the Central Florida Research Park to drive innovation in engineering, optics, and simulation.",
+      "market_position": "Innovation Hub",
+      "admissions_philosophy": "Numbers-focused",
+      "us_news_rank": 117,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "UCF has a moderately competitive acceptance rate around 40-44% with a strong emphasis on recalculated academic GPAs.",
+          "implication": "Applicants should apply between September and November to maximize their chances for both admission and merit-based scholarships."
+        },
+        {
+          "category": "Transfer Dynamics",
+          "insight": "The university accepts more transfer students than almost any other U.S. institution through its DirectConnect program.",
+          "implication": "Transferring from a Florida state college provides a high-probability pathway for students who may not meet freshman entry criteria."
+        },
+        {
+          "category": "Industry Integration",
+          "insight": "UCF is the primary workforce supplier for Florida's 'Space Coast' and the 7th largest research park in the nation.",
+          "implication": "Engineering and computer science students gain significant ROI via direct recruitment from Lockheed Martin, NASA, and Siemens."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "UCF offers a high-energy, 'big campus' experience centered around Big 12 athletics and Knights Plaza, an uptown-style athletic village. With over 650 student organizations and a massive student body of nearly 70,000, the social scene is diverse, ranging from Greek life to high-tech research cohorts.",
+        "transportation_impact": "The campus layout is unique for its concentric circle design (Gemini Blvd), which is serviced by the Pegasus Express shuttle system. Students heavily rely on a robust network of 15+ off-campus shuttle routes and free access to the regional Lynx bus system.",
+        "research_impact": "Research is a core pillar, with the university attracting over $200 million in annual funding. Undergraduates have rare early access to R1-level projects particularly in photonics, modeling, and simulation."
+      }
+    },
+    "admissions_statistics": {
+      "current_status": {
+        "overall_acceptance_rate": 44.7,
+        "in_state_acceptance_rate": 0.0,
+        "out_of_state_acceptance_rate": 0.0,
+        "international_acceptance_rate": 23.4,
+        "transfer_acceptance_rate": 67.4,
+        "admits_class_size": 8255,
+        "is_test_optional": false,
+        "test_policy_details": "Test Required",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "applications": 0,
+            "admits": 0,
+            "acceptance_rate": 0.0,
+            "class_fill_percentage": 0.0
+          }
+        ]
+      },
+      "trends": [
+        {
+          "year": 2025,
+          "cycle_name": "Class of 2029",
+          "applications_total": 0,
+          "admits_total": 0,
+          "enrolled_total": 0,
+          "acceptance_rate_overall": 0.0,
+          "yield_rate": 0.0,
+          "waitlist_stats": {
+            "year": 2025,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Data for the Class of 2029 is not yet publicly finalized in Common Data Set reports."
+        },
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 55135,
+          "admits_total": 24651,
+          "enrolled_total": 8256,
+          "acceptance_rate_overall": 44.7,
+          "yield_rate": 33.5,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 2500,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 50,
+            "waitlist_admit_rate": 2.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "UCF does not publicly separate in-state vs out-of-state acceptance rates."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 55210,
+          "admits_total": 23958,
+          "enrolled_total": 7512,
+          "acceptance_rate_overall": 43.4,
+          "yield_rate": 33.3,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": 2369,
+            "accepted_spots": 1271,
+            "admitted_from_waitlist": 46,
+            "waitlist_admit_rate": 3.6,
+            "is_waitlist_ranked": false
+          }
+        }
+      ],
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": "4.10-4.50",
+          "unweighted_middle_50": "3.70-4.00",
+          "average_weighted": 4.26,
+          "percentile_25": "4.10",
+          "percentile_75": "4.50",
+          "notes": "UCF recalculates GPA based on academic core courses. Most admitted students have nearly straight A's in honors, AP, IB, or Dual Enrollment classes."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1310-1430",
+          "sat_reading_middle_50": "610-680",
+          "sat_math_middle_50": "590-670",
+          "act_composite_middle_50": "28-32",
+          "submission_rate": 71.4,
+          "policy_note": "SAT or ACT scores are required for all first-time-in-college students per Florida Board of Governors regulation."
+        },
+        "demographics": {
+          "first_gen_percentage": 25.0,
+          "legacy_percentage": 0.0,
+          "international_percentage": 4.62,
+          "geographic_breakdown": [
+            {
+              "region": "Florida",
+              "percentage": 92.0
+            },
+            {
+              "region": "Other US States",
+              "percentage": 4.4
+            },
+            {
+              "region": "International",
+              "percentage": 3.6
+            }
+          ],
+          "gender_breakdown": {
+            "men": {
+              "applicants": 26263,
+              "admits": 11293,
+              "acceptance_rate": 43.0
+            },
+            "women": {
+              "applicants": 35187,
+              "admits": 13371,
+              "acceptance_rate": 38.0
+            }
+          },
+          "racial_breakdown": {
+            "white": 43.46,
+            "black_african_american": 9.23,
+            "hispanic_latino": 29.2,
+            "asian": 7.51,
+            "native_american_alaskan": 0.1,
+            "pacific_islander": 0.11,
+            "two_or_more_races": 4.55,
+            "unknown": 1.2,
+            "non_resident_alien": 4.62
+          }
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "College of Arts and Humanities",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 45.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "General admission is accessible, but performance-based majors like Music, Theatre, and Emerging Media require separate auditions or portfolio reviews.",
+          "housing_profile": "Traditional suites in Libra or Apollo; students in Downtown majors live in the UnionWest at Creative Village.",
+          "student_archetype": "Creative storytellers and cultural analysts",
+          "majors": [
+            {
+              "name": "Art",
+              "degree_type": "B.A./B.F.A.",
+              "is_impacted": true,
+              "acceptance_rate": 0.0
+            },
+            {
+              "name": "English",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 0.0
+            },
+            {
+              "name": "History",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 0.0
+            }
+          ]
+        },
+        {
+          "name": "College of Business",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 0.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Students enter as 'Pre-Business' and must complete five core classes (Primary Core) with specific GPA targets before transitioning into restricted-access majors.",
+          "housing_profile": "Main campus residence halls like Neptune or Lake Claire.",
+          "student_archetype": "Aspiring corporate leaders and entrepreneurs",
+          "majors": [
+            {
+              "name": "Finance",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": true,
+              "acceptance_rate": 0.0,
+              "curriculum": {
+                "core_courses": [
+                  "FIN 3403 Business Finance",
+                  "MAN 3025 Management of Organizations",
+                  "MAR 3023 Marketing",
+                  "QMB 3200 Quantitative Business Tools II",
+                  "FIN 4243 Debt and Capital Markets",
+                  "FIN 4504 Equity and Capital Markets",
+                  "MAN 4720 Strategic Management"
+                ],
+                "electives": [
+                  "FIN 4324 Commercial Bank Management",
+                  "FIN 4424 Intermediate Financial Management",
+                  "REE 3043 Fundamentals of Real Estate"
+                ],
+                "total_units": 120,
+                "major_units": 60
+              }
+            }
+          ]
+        },
+        {
+          "name": "College of Engineering and Computer Science",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 40.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "All students start as 'Pending' majors and must pass a Foundation Exam (for Computer Science) or complete specific math/science sequences to advance.",
+          "housing_profile": "Nike and Hercules communities, which host the EXCEL and COMPASS STEM living-learning communities (LLCs).",
+          "student_archetype": "Ambitious problem-solvers and tech innovators",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 40.0,
+              "average_gpa_admitted": 4.18,
+              "curriculum": {
+                "core_courses": [
+                  "COP 3223C Intro to Programming with C",
+                  "COP 3502C Computer Science I",
+                  "COP 3503C Computer Science II",
+                  "COT 3100C Intro to Discrete Structures",
+                  "CDA 3103C Computer Logic and Organization",
+                  "COP 3402 Systems Software",
+                  "COT 4210 Discrete Structures II",
+                  "COP 4331C Processes for Object-Oriented Development",
+                  "COP 4934/4935 Senior Design I & II"
+                ],
+                "electives": [
+                  "CAP 4630 Artificial Intelligence",
+                  "CAP 4453 Robot Vision",
+                  "CIS 4361 Secure Computing",
+                  "COP 4710 Database Systems"
+                ],
+                "total_units": 120,
+                "major_units": 54
+              }
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.M.E.",
+              "is_impacted": true,
+              "acceptance_rate": 40.0,
+              "average_gpa_admitted": 4.18,
+              "curriculum": {
+                "core_courses": [
+                  "EGN 3310 Engineering Analysis-Statics",
+                  "EGN 3321 Engineering Analysis-Dynamics",
+                  "EGN 3343 Thermodynamics",
+                  "EGM 3601 Solid Mechanics",
+                  "EML 3701 Fluid Mechanics I",
+                  "EML 4142 Heat Transfer",
+                  "EML 4220 Vibration Analysis",
+                  "EML 4501C/4502C Engineering Design I & II"
+                ],
+                "electives": [
+                  "EML 3101 Thermodynamics of Mechanical Systems",
+                  "EML 4703 Fluid Mechanics II",
+                  "EMA 4102 Thermodynamics of Materials"
+                ],
+                "total_units": 128,
+                "major_units": 74
+              }
+            }
+          ]
+        },
+        {
+          "name": "College of Nursing",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 15.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Extremely competitive; students enter as 'Nursing-Pending' and must apply for the limited-access clinical program.",
+          "housing_profile": "Nike community, featuring the 'Nursing @ Nike' living-learning community.",
+          "student_archetype": "Dedicated caregivers and healthcare leaders",
+          "majors": [
+            {
+              "name": "Nursing (Traditional BSN)",
+              "degree_type": "B.S.N.",
+              "is_impacted": true,
+              "acceptance_rate": 18.0,
+              "average_gpa_admitted": 3.84
+            }
+          ]
+        },
+        {
+          "name": "Rosen College of Hospitality Management",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 0.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Located on a separate campus near Orlando's tourism corridor; emphasizes world-class service.",
+          "housing_profile": "Rosen College Apartments, a resort-style community.",
+          "student_archetype": "Service-oriented professionals and resort managers",
+          "majors": [
+            {
+              "name": "Hospitality Management",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": 0.0
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Aging Studies Minor",
+        "Bioengineering Minor",
+        "Business Analytics Minor",
+        "Cybersecurity Minor",
+        "Entrepreneurship Certificate",
+        "Medical Speech-Language Pathology Certificate",
+        "Nonprofit Management Minor",
+        "Photonics Certificate",
+        "Sport Business Management Minor"
+      ]
+    },
+    "application_information": {
+      "application_process": {
+        "platforms": [
+          "Common App",
+          "UCF Online Application"
+        ],
+        "application_deadlines": [
+          {
+            "plan_type": "Early Action",
+            "date": "2024-10-15",
+            "is_binding": false,
+            "notes": "Priority deadline for merit scholarship consideration"
+          },
+          {
+            "plan_type": "Early Action II",
+            "date": "2024-11-15",
+            "is_binding": false,
+            "notes": "Secondary priority deadline"
+          },
+          {
+            "plan_type": "Regular Decision",
+            "date": "2025-05-01",
+            "is_binding": false,
+            "notes": "Rolling admissions"
+          }
+        ],
+        "supplemental_requirements": [
+          {
+            "target_program": "All",
+            "requirement_type": "Essays",
+            "details": "Three optional supplemental essays (Why UCF, Community Contribution, Extracurricular)"
+          },
+          {
+            "target_program": "Musical Theatre (BFA)",
+            "requirement_type": "Audition",
+            "deadline": "2026-01-12",
+            "details": "Pre-screening and audition submission required via Acceptd"
+          },
+          {
+            "target_program": "Studio Art",
+            "requirement_type": "Portfolio",
+            "deadline": "2026-03-05",
+            "details": "Portfolio review required for restricted upper-level studio art courses"
+          }
+        ],
+        "holistic_factors": {
+          "primary_factors": [
+            "Course Rigor",
+            "Academic GPA",
+            "Standardized Test Scores"
+          ],
+          "secondary_factors": [
+            "Application Essay",
+            "Extracurricular Activities",
+            "Talent/Ability"
+          ],
+          "essay_importance": "High",
+          "demonstrated_interest": "Not Considered",
+          "interview_policy": "Not Offered"
+        }
+      },
+      "application_strategy": {
+        "major_selection_tactics": [
+          "Select 'Summer' as the starting term to increase odds",
+          "Declare an 'Open Access' major initially if borderline on stats",
+          "Avoid declaring a double major on the initial application",
+          "Leverage the 'DirectConnect' pathway via Florida state colleges if denied"
+        ],
+        "alternate_major_strategy": "If applying to a Restricted major like Nursing, list a related Open Access major such as Health Sciences as your backup."
+      }
+    },
+    "financials_and_aid": {
+      "financials": {
+        "tuition_model": "Annual Increase",
+        "cost_of_attendance_breakdown": {
+          "academic_year": "2024-2025",
+          "in_state": {
+            "tuition": 6368,
+            "total_coa": 25250,
+            "housing": 12452
+          },
+          "out_of_state": {
+            "tuition": 22467,
+            "total_coa": 41349,
+            "supplemental_tuition": 16099
+          }
+        },
+        "aid_philosophy": "Merit Focused",
+        "percent_receiving_aid": 72.8
+      },
+      "scholarships": [
+        {
+          "name": "Benacquisto Scholarship (National Merit)",
+          "type": "Merit",
+          "amount": "Full Cost of Attendance",
+          "deadline": "May 31 (First-choice designation)",
+          "benefits": "Covers tuition, fees, housing, and books; guaranteed admission to The Burnett Honors College"
+        },
+        {
+          "name": "Provost Scholarship",
+          "type": "Merit",
+          "amount": "$30,000 over 4 years",
+          "deadline": "Dec 1",
+          "benefits": "Financial support divided into $3,750 per semester; renewable for 8 semesters"
+        },
+        {
+          "name": "Pegasus Gold Scholarship",
+          "type": "Merit",
+          "amount": "$4,000 - $42,000 over 4 years",
+          "benefits": "Competitive award based on academic achievement"
+        }
+      ],
+      "credit_policies": {
+        "philosophy": "Generous Credit",
+        "ap_policy": {
+          "general_rule": "Scores of 3, 4, or 5 grant college credit for nearly all exams",
+          "exceptions": [
+            "AP Computer Science A score of 3 grants elective credit",
+            "Maximum of 45 combined credit hours for accelerated mechanisms"
+          ]
+        },
+        "ib_policy": {
+          "general_rule": "Scores of 4 or higher on SL/HL exams grant credit",
+          "diploma_bonus": "The IB Diploma guarantees 100% Bright Futures scholarship coverage for Florida residents"
+        }
+      }
+    },
+    "student_experience": {
+      "student_insights": {
+        "what_it_takes": [
+          "Strong academic record with emphasis on high school GPA and rigor (AP/IB/AICE)",
+          "Competitive SAT (1190-1350) or ACT (25-29) scores to balance the profile",
+          "Early application submission to benefit from rolling admissions and priority review"
+        ],
+        "common_activities": [
+          "Leadership roles in school clubs or honor societies",
+          "Dual Enrollment credits through local community colleges",
+          "Extensive community service hours (often for Bright Futures eligibility)"
+        ],
+        "red_flags": [
+          "Noticeable decline in grades during senior year ('senioritis')",
+          "Generic 'Why UCF' essays that could be copy-pasted for any other Florida school",
+          "Incomplete documentation or missed rolling admission deadlines"
+        ],
+        "insights": [
+          "DirectConnect is a guaranteed admit shortcut for FL state college grads",
+          "Learning communities help navigate the massive campus",
+          "Applying for Summer B is a strategic move for lower stats"
+        ]
+      }
+    },
+    "outcomes_and_retention": {
+      "outcomes": {
+        "median_earnings_10yr": 58308,
+        "employment_rate_2yr": 93.0,
+        "top_employers": [
+          "Lockheed Martin",
+          "Boeing",
+          "Walt Disney World",
+          "Amazon",
+          "Microsoft"
+        ]
+      },
+      "student_retention": {
+        "freshman_retention_rate": 92.0,
+        "graduation_rate_4_year": 54.0,
+        "graduation_rate_6_year": 75.0
+      }
+    }
+  }
+}

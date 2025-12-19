@@ -1,0 +1,131 @@
+[2025-12-18 23:13:43] 
+============================================================
+[2025-12-18 23:13:43] Starting Next 100 Universities Collection (Ranks 101-200)
+[2025-12-18 23:13:43] Parallel workers: 5
+[2025-12-18 23:13:43] ============================================================
+[2025-12-18 23:13:43] Found 141 existing university profiles in research folder.
+[2025-12-18 23:13:43] 
+📊 Summary: 0 already done, 100 remaining
+
+[2025-12-18 23:13:43] ⚠️ ES not configured - profiles will NOT be ingested to knowledge base
+[2025-12-18 23:13:43] 
+🚀 Starting research with parallelism=5
+
+[2025-12-18 23:13:43] 
+🔄 Processing batch 1: University of South Carolina, University of Vermont, Texas Christian University, SUNY College of Environmental Science and Forestry, San Diego State University
+[2025-12-18 23:13:43] 
+============================================================
+[2025-12-18 23:13:43] Processing: University of South Carolina
+[2025-12-18 23:13:43] ============================================================
+[2025-12-18 23:13:43] 
+============================================================
+[2025-12-18 23:13:43] Processing: University of Vermont
+[2025-12-18 23:13:43] ============================================================
+[2025-12-18 23:13:43] 
+============================================================
+[2025-12-18 23:13:43] Processing: Texas Christian University
+[2025-12-18 23:13:43] ============================================================
+[2025-12-18 23:13:43] 
+============================================================
+[2025-12-18 23:13:43] Processing: SUNY College of Environmental Science and Forestry
+[2025-12-18 23:13:43] ============================================================
+[2025-12-18 23:13:43] 
+============================================================
+[2025-12-18 23:13:43] Processing: San Diego State University
+[2025-12-18 23:13:43] ============================================================
+[2025-12-18 23:16:02] Research completed for University of South Carolina
+[2025-12-18 23:16:02] Response: The comprehensive research profile for the **University of South Carolina (USC)** has been successfully generated and saved to `university_of_south_carolina.json`.
+
+### **Key Findings & Statistics**
+
+...
+[2025-12-18 23:16:03] ✓ Profile saved: university_of_south_carolina.json
+[2025-12-18 23:16:03]   ⚠️ Validation failed: admissions_data.current_status.early_admission_stats: Input should be a valid list; admissions_data.longitudinal_trends.0.admits_total: Input should be a valid integer; admissions_data.longitudinal_trends.0.acceptance_rate_overall: Input should be a valid number
+[2025-12-18 23:16:21] Research completed for SUNY College of Environmental Science and Forestry
+[2025-12-18 23:16:21] Response: I have completed the research for **SUNY College of Environmental Science and Forestry (SUNY ESF)**. The strategic profile has been saved as `suny_college_of_environmental_science_and_forestry.json`.
+...
+[2025-12-18 23:16:22] ✓ Profile saved: suny_college_of_environmental_science_and_forestry.json
+[2025-12-18 23:16:22]   ✅ Validation passed
+[2025-12-18 23:16:28] Research completed for University of Vermont
+[2025-12-18 23:16:28] Response: The research for the **University of Vermont (UVM)** is complete, and the comprehensive profile has been saved to `university_of_vermont.json`.
+
+### **Key Findings Summary**
+
+*   **Acceptance Rate & T...
+[2025-12-18 23:16:29] ✓ Profile saved: university_of_vermont.json
+[2025-12-18 23:16:29]   ⚠️ Validation failed: admissions_data.longitudinal_trends.0.applications_total: Input should be a valid integer; admissions_data.longitudinal_trends.0.admits_total: Input should be a valid integer; admissions_data.longitudinal_trends.0.acceptance_rate_overall: Input should be a valid number
+[2025-12-18 23:16:51] Research completed for San Diego State University
+[2025-12-18 23:16:51] Response: The strategic profile for **San Diego State University (SDSU)** has been successfully compiled and saved to `san_diego_state_university.json`.
+
+### **Key Institutional Findings**
+
+*   **Acceptance Rat...
+[2025-12-18 23:16:52] ✓ Profile saved: san_diego_state_university.json
+[2025-12-18 23:16:52]   ⚠️ Validation failed: admissions_data.current_status.early_admission_stats: Input should be a valid list
+[2025-12-18 23:18:07] Research completed for Texas Christian University
+[2025-12-18 23:18:07] Response: Research for **Texas Christian University (TCU)** has been completed, and the comprehensive profile has been saved to `texas_christian_university.json`.
+
+### **Key Findings & Strategic Summary**
+
+*   ...
+[2025-12-18 23:18:08] ✓ Profile saved: texas_christian_university.json
+[2025-12-18 23:18:08]   ⚠️ Validation failed: Invalid JSON: Invalid \escape: line 506 column 154 (char 31872)
+[2025-12-18 23:18:08] Waiting 5 seconds before next batch...
+[2025-12-18 23:18:13] 
+🔄 Processing batch 2: University of Dayton, University of Kansas, University of the Pacific, University of Alabama, Yeshiva University
+[2025-12-18 23:18:13] 
+============================================================
+[2025-12-18 23:18:13] Processing: University of Dayton
+[2025-12-18 23:18:13] ============================================================
+[2025-12-18 23:18:13] 
+============================================================
+[2025-12-18 23:18:13] Processing: University of Kansas
+[2025-12-18 23:18:13] ============================================================
+[2025-12-18 23:18:13] 
+============================================================
+[2025-12-18 23:18:13] Processing: University of the Pacific
+[2025-12-18 23:18:13] ============================================================
+[2025-12-18 23:18:13] 
+============================================================
+[2025-12-18 23:18:13] Processing: University of Alabama
+[2025-12-18 23:18:13] ============================================================
+[2025-12-18 23:18:13] 
+============================================================
+[2025-12-18 23:18:13] Processing: Yeshiva University
+[2025-12-18 23:18:13] ============================================================
+[2025-12-18 23:18:15] Error researching Yeshiva University: unhandled errors in a TaskGroup (13 sub-exceptions)
+[2025-12-19 00:16:38] 
+============================================================
+[2025-12-19 00:16:38] Starting Next 100 Universities Collection (Ranks 101-200)
+[2025-12-19 00:16:38] Parallel workers: 1
+[2025-12-19 00:16:38] ============================================================
+[2025-12-19 00:16:38] Targeting single university: San Diego State University
+[2025-12-19 00:16:38] ⚠️ ES not configured - profiles will NOT be ingested to knowledge base
+[2025-12-19 00:16:38] 
+🚀 Starting research with parallelism=1
+
+[2025-12-19 00:16:38] 
+[1/1]
+[2025-12-19 00:17:09] 
+============================================================
+[2025-12-19 00:17:09] Starting Next 100 Universities Collection (Ranks 101-200)
+[2025-12-19 00:17:09] Parallel workers: 1
+[2025-12-19 00:17:09] ============================================================
+[2025-12-19 00:17:09] Targeting single university: San Diego State University
+[2025-12-19 00:17:09] ⚠️ ES not configured - profiles will NOT be ingested to knowledge base
+[2025-12-19 00:17:09] 
+🚀 Starting research with parallelism=1
+
+[2025-12-19 00:17:09] 
+[1/1]
+[2025-12-19 00:17:09] 
+============================================================
+[2025-12-19 00:17:09] Processing: San Diego State University
+[2025-12-19 00:17:09] ============================================================
+[2025-12-19 00:22:20] Error researching San Diego State University: 
+[2025-12-19 00:22:20] 
+============================================================
+[2025-12-19 00:22:20] 🏁 Batch collection complete!
+[2025-12-19 00:22:20]    ✅ Successful: 0
+[2025-12-19 00:22:20]    ❌ Failed: 1
+[2025-12-19 00:22:20] ============================================================

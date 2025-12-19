@@ -1,0 +1,635 @@
+{
+  "university_profile": {
+    "_id": "university_of_alabama",
+    "university_name": "University of Alabama",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "UA Undergrad Admissions Requirements",
+      "US News and World Report Best Colleges 2026",
+      "Alabama Transportation Institute Research Portfolios"
+    ],
+    "metadata": {
+      "official_name": "The University of Alabama",
+      "location": {
+        "city": "Tuscaloosa",
+        "state": "AL",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "UA Undergrad Admissions Requirements",
+        "US News and World Report Best Colleges 2026",
+        "Alabama Transportation Institute Research Portfolios"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "The University of Alabama is a premier public flagship research university (R1) renowned for its massive undergraduate enrollment, highly ranked Greek life, and world-class athletic programs. It balances a high-volume admissions model with an aggressive recruitment strategy for National Merit Scholars and top-tier research talent.",
+      "market_position": "Public Flagship",
+      "admissions_philosophy": "Holistic review (Test-Optional through Fall 2026)",
+      "us_news_rank": 169,
+      "analyst_takeaways": [
+        {
+          "category": "Enrollment Scaling",
+          "insight": "UA reached a record enrollment of over 42,300 students in late 2025, driven by a 37% surge in National Merit Scholars.",
+          "implication": "The university is leveraging its massive scale to fund elite academic tracks while maintaining broad access for in-state students."
+        },
+        {
+          "category": "Selectivity Paradox",
+          "insight": "While the overall acceptance rate remains near 76%, selectivity is tightening for high-value merit scholarships and honors programs.",
+          "implication": "Applicants seeking financial aid should focus heavily on GPA and leadership to compete for automatic-merit tiers."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "One of the most active social campuses in the U.S., dominated by the nation's largest Greek life system and a 'Top Party School' reputation. Social life is heavily anchored by SEC football culture and a mid-sized college town atmosphere.",
+        "transportation_impact": "The 'Crimson Ride' shuttle system supports a pedestrian-friendly core, but rapid growth has led to oversold commuter parking lots and reliance on personal vehicles for off-campus transit due to limited regional public infrastructure.",
+        "research_impact": "Holds R1: Very High Research Activity status with over $600 million in active awards. Key research hubs include the Alabama Transportation Institute and the Center for Advanced Public Safety, offering significant undergraduate research apprenticeships."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 76.6,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 52.1,
+      "admits_class_size": 8032,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": null
+    },
+    "admissions_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 61994,
+        "admits_total": 44124,
+        "enrolled_total": 8127,
+        "acceptance_rate_overall": 71.2,
+        "yield_rate": 18.4,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        },
+        "notes": "Residency-specific acceptance rates not publicly disclosed. University of Alabama typically does not utilize a waitlist for general freshman admission."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 56795,
+        "admits_total": 43531,
+        "enrolled_total": 8032,
+        "acceptance_rate_overall": 76.6,
+        "yield_rate": 18.5,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 58418,
+        "admits_total": 44295,
+        "enrolled_total": 8279,
+        "acceptance_rate_overall": 75.8,
+        "yield_rate": 18.7,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 54072,
+        "admits_total": 43290,
+        "enrolled_total": 8037,
+        "acceptance_rate_overall": 80.1,
+        "yield_rate": 18.6,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 42421,
+        "admits_total": 33472,
+        "enrolled_total": 7593,
+        "acceptance_rate_overall": 78.9,
+        "yield_rate": 22.7,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": null
+        }
+      }
+    ],
+    "admitted_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.54-4.21",
+        "unweighted_middle_50": "3.68-4.00",
+        "average_weighted": 4.12,
+        "percentile_25": "3.54",
+        "percentile_75": "4.21",
+        "notes": "Middle 50% for non-residents (3.54-4.21) is slightly higher than residents (3.48-4.16)."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1410",
+        "sat_reading_middle_50": "590-690",
+        "sat_math_middle_50": "580-710",
+        "act_composite_middle_50": "24-31",
+        "submission_rate": 43.0,
+        "policy_note": "Test optional through 2026. Required for automatic merit and Honors College consideration."
+      },
+      "demographics": {
+        "first_gen_percentage": 25.0,
+        "legacy_percentage": null,
+        "international_percentage": 3.0,
+        "geographic_breakdown": [
+          {
+            "region": "Alabama",
+            "percentage": 42.4
+          },
+          {
+            "region": "Other US States",
+            "percentage": 54.6
+          },
+          {
+            "region": "International",
+            "percentage": 3.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 23104,
+            "admits": 17506,
+            "acceptance_rate": 75.8,
+            "note": "Based on 2024-2025 IPEDS data."
+          },
+          "women": {
+            "applicants": 33691,
+            "admits": 26025,
+            "acceptance_rate": 77.3,
+            "note": "Women represent the majority of both applicants and the enrolled freshman class."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 67.5,
+          "black_african_american": 12.9,
+          "hispanic_latino": 7.5,
+          "asian": 1.7,
+          "native_american_alaskan": 0.3,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.7,
+          "unknown": 3.3,
+          "non_resident_alien": 3.0
+        },
+        "religious_affiliation": null
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "Barefield College of Arts & Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 77.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Perfect for students who want a liberal arts foundation within a major research university. Applicants should emphasize interest in the Blount Scholars Program.",
+          "housing_profile": "Blount Hall (living-learning community) and Parker-Adams LLC.",
+          "student_archetype": "Intellectually curious polymaths",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "prerequisite_courses": [
+                "PY 101 Intro to Psychology"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "PY 211 Statistical Methods",
+                "PY 355 Experimental Psychology"
+              ],
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "total_units": 120,
+                "major_units": 31
+              },
+              "notable_professors": [
+                "Dr. Susan White",
+                "Dr. Theodore Tomeny",
+                "Dr. Jeffrey Parker"
+              ],
+              "notes": "Flexible major; BS path available."
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "notable_professors": [
+                "Dr. Guy Caldwell"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Culverhouse College of Business",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 75.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Students admitted to 'Lower Division' and must apply to 'Upper Division' after 60 credits. Maintaining a 2.5+ GPA is critical.",
+          "housing_profile": "Presidential Village or Riverside, or Business LLC.",
+          "student_archetype": "Career-driven corporate strategists",
+          "majors": [
+            {
+              "name": "Finance",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "EC 110 Microeconomics",
+                "AC 210 Financial Accounting"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "EC 110 Principles of Microeconomics",
+                "FI 302 Business Finance"
+              ],
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "total_units": 120,
+                "major_units": 36
+              },
+              "notable_professors": [
+                "Anup Agrawal"
+              ]
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "prerequisite_courses": [
+                "MKT 300 Marketing"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "AC 210 Financial Accounting",
+                "ST 260 Statistical Data Analysis"
+              ],
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "curriculum": {
+                "total_units": 120,
+                "major_units": 18
+              },
+              "notable_professors": [
+                "Dr. Arthur Allaway",
+                "Dr. Thomas Baker",
+                "Dr. Kristy Reynolds"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Styslinger College of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Direct entry standard, but the 'Freshman Engineering Program' is a hurdle. Students must be math-ready.",
+          "housing_profile": "Bryant Hall and Riverside East.",
+          "student_archetype": "Ambitious technical problem-solvers",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.86,
+              "prerequisite_courses": [
+                "MATH 125 Calculus I",
+                "CS 100 CS I for Majors"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "CS 100 Computer Science I",
+                "CS 201 Data Structures and Algorithms"
+              ],
+              "admissions_pathway": "Direct or Internal Transfer",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "total_units": 120,
+                "major_units": 58
+              },
+              "notable_professors": [
+                "Dr. Jeff Gray",
+                "Dr. Travis Atkison"
+              ]
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.M.E.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "MATH 125 Calculus I",
+                "PH 105 General Physics"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "ME 215 Thermodynamics",
+                "AEM 201 Statics"
+              ],
+              "admissions_pathway": "Direct or Internal Transfer",
+              "internal_transfer_allowed": true,
+              "curriculum": {
+                "total_units": 120,
+                "major_units": 64
+              },
+              "notable_professors": [
+                "Dr. Ajay Agrawal"
+              ],
+              "notes": "laptop_required: true (Windows-based recommended)"
+            }
+          ]
+        },
+        {
+          "name": "Capstone College of Nursing",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 35.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Extremely competitive. Admission only grants entry to Lower Division. Upper Division requires science GPA (3.8+).",
+          "housing_profile": "Emphasis on quiet study hours.",
+          "student_archetype": "Resilient and academically elite caregivers",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.N.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.6,
+              "prerequisite_courses": [
+                "BSC 215 Anatomy & Physiology I",
+                "CH 104 Intro to Chemistry"
+              ],
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": [
+                "BSC 215 Anatomy & Physiology I",
+                "CH 105 Intro to Organic Chemistry"
+              ],
+              "admissions_pathway": "Pre-Nursing to Promotion",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "total_units": 120,
+                "major_units": 65
+              },
+              "notes": "Requires separate promotion application."
+            }
+          ]
+        },
+        {
+          "name": "Honors College",
+          "admissions_model": "Direct Admit",
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires a separate application (typically 30+ ACT/1360+ SAT). Provides early registration.",
+          "housing_profile": "Ridgecrest West, Ridgecrest South, and Blount Hall.",
+          "student_archetype": "The 'Overachieving Capstone Scholars'",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Blount Scholars Minor",
+        "Shakespeare Studies Minor",
+        "Catherine J. Randall Research Scholars Program (Minor)",
+        "Entrepreneurship Certificate",
+        "Cyber Security Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "UA Undergraduate App"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Priority Scholarship",
+          "date": "2024-12-15",
+          "is_binding": false,
+          "notes": "Priority deadline for automatic merit and competitive scholarship consideration."
+        },
+        {
+          "plan_type": "Priority Admissions",
+          "date": "2025-01-15",
+          "is_binding": false,
+          "notes": "Priority deadline for admission consideration."
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-05-01",
+          "is_binding": false,
+          "notes": "Final application deadline for the Fall 2025 term."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Optional Short Answers",
+          "details": "General admission does not require a formal essay, but short responses are encouraged for scholarships."
+        },
+        {
+          "target_program": "Honors College",
+          "requirement_type": "Essays",
+          "deadline": "2025-01-15",
+          "details": "Required for test-optional applicants."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "GPA",
+          "Course Rigor",
+          "Test Scores (if submitted)"
+        ],
+        "secondary_factors": [
+          "Leadership",
+          "Extracurricular Activities",
+          "Volunteer Work"
+        ],
+        "essay_importance": "Low",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "Minimal",
+        "first_gen_boost": "Moderate",
+        "specific_differentiators": "Emphasis on high school core curriculum performance and potential for campus leadership."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply directly to Culverhouse for 'Lower Division' status for immediate business advisor access",
+        "Choose Management Information Systems (MIS) over Computer Science if seeking better faculty-to-student ratios",
+        "Submit separate Honors College application immediately after admission to secure priority registration"
+      ],
+      "college_ranking_tactics": [
+        "Prioritize the Honors College for access to Ridgecrest South housing",
+        "Rank the Blount Scholars Program for a small, residential liberal arts experience",
+        "Evaluate 'Upper Division' GPA requirements (e.g., 2.5 for Business, 3.0 for Nursing) before selection"
+      ],
+      "alternate_major_strategy": "If applying to Computer Science, list MIS in Culverhouse as your alternate for better industry recruiting and a less rigorous weed-out curriculum."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 12180,
+          "total_coa": 33924,
+          "housing": 9800
+        },
+        "out_of_state": {
+          "tuition": 34172,
+          "total_coa": 55916,
+          "supplemental_tuition": 21992
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 15823,
+      "average_merit_aid": 17380,
+      "percent_receiving_aid": 66.0
+    },
+    "scholarships": [
+      {
+        "name": "National Merit Finalist Package",
+        "type": "Merit",
+        "amount": "Full tuition for up to 5 years",
+        "deadline": "2026-05-01",
+        "benefits": "4 years housing, $4,000/year stipend, $2,000 research allowance",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Presidential Elite Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition for up to 4 years",
+        "deadline": "2025-12-15",
+        "benefits": "1st year housing, $1,500/year supplemental, $2,000 research allowance",
+        "application_method": "Automatic (Requires 4.0+ GPA and 36 ACT/1600 SAT)"
+      },
+      {
+        "name": "Presidential Scholarship (Out-of-State)",
+        "type": "Merit",
+        "amount": "$28,000 per year",
+        "deadline": "2026-05-01",
+        "benefits": "Renewable for 4 years",
+        "application_method": "Automatic Consideration (Requires 32-36 ACT/1420-1600 SAT and 3.50+ GPA)"
+      },
+      {
+        "name": "Alabama Advantage Scholarship",
+        "type": "Need",
+        "amount": "Up to $5,000 per year",
+        "deadline": "2026-05-01",
+        "benefits": "Covers remaining in-state tuition costs",
+        "application_method": "FAFSA"
+      },
+      {
+        "name": "UA Scholar Program",
+        "type": "Merit",
+        "amount": "$24,000 per year",
+        "deadline": "2026-05-01",
+        "benefits": "Renewable for 4 years",
+        "application_method": "Automatic (Requires 30-31 ACT/1360-1410 SAT and 3.50+ GPA)"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for many common exams",
+        "exceptions": [
+          "AP Computer Science A requires a 4 for CS 100 credit",
+          "AP Art History requires a 4"
+        ],
+        "usage": "Satisfies core General Education requirements"
+      },
+      "ib_policy": {
+        "general_rule": "Higher Level (HL) exams with scores of 5, 6, or 7 grant credit",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Alabama Transfers (STARS)",
+          "UA Transfer Credit Equivalency Tables"
+        ],
+        "restrictions": "60 unit cap for community college credits; 50% of degree must be from a 4-year institution"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A minimum 3.0 GPA for out-of-state applicants to be competitive",
+        "Qualifying test scores (30+ ACT) for automatic merit and Honors College",
+        "Application submission by the December 1st priority scholarship deadline"
+      ],
+      "common_activities": [
+        "Greek Life (fraternities and sororities)",
+        "SEC football culture and gameday events",
+        "National Merit Scholar groups"
+      ],
+      "essay_tips": [
+        "Treat the 150-word activity description boxes like mini-essays",
+        "Write a focused 'Why Honors' essay highlighting intellectual curiosity",
+        "Use the 'Additional Info' section to explain grading discrepancies"
+      ],
+      "red_flags": [
+        "Missing the hard December deadline for scholarship consideration",
+        "Applying test-optional without a strong 3.5+ GPA",
+        "Poor time management in a high-social environment"
+      ],
+      "insights": [
+        "Famous for 'automatic merit' scholarships based on GPA and test score charts",
+        "Honors College offers a 'small school feel' with early registration perks",
+        "National Merit Finalists often receive full-ride packages"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 59221,
+      "employment_rate_2yr": 90.0,
+      "grad_school_rate": 20.0,
+      "top_employers": [
+        "Lockheed Martin",
+        "ExxonMobil",
+        "Ernst & Young (EY)",
+        "PricewaterhouseCoopers (PwC)",
+        "Goldman Sachs",
+        "Boeing",
+        "Dell Technologies",
+        "AT&T",
+        "Regions Bank"
+      ],
+      "loan_default_rate": 5.1,
+      "student_retention": {
+        "freshman_retention_rate": 86.0,
+        "graduation_rate_4_year": 56.5,
+        "graduation_rate_6_year": 73.4
+      }
+    }
+  }
+}
