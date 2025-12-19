@@ -1150,7 +1150,7 @@ const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
 
     const tabs = [
         { id: 'details', label: 'University Details', icon: BuildingLibraryIcon },
-        { id: 'fit', label: 'Your Fit Analysis', icon: SparklesIcon },
+        ...(fitAnalysis ? [{ id: 'fit', label: 'Your Fit Analysis', icon: SparklesIcon }] : []),
     ];
 
     if (!university) return null;
