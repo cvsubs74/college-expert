@@ -61,7 +61,7 @@ function Profile() {
   const [resetOptions, setResetOptions] = useState({ deleteCollegeList: false });
 
   // New state for tabs, profile view, and chat
-  const [activeTab, setActiveTab] = useState('files'); // 'view' | 'files' | 'form' | 'guided' | 'chat'
+  const [activeTab, setActiveTab] = useState('view'); // 'view' | 'files' | 'form' | 'guided' | 'chat'
   const [profileMarkdown, setProfileMarkdown] = useState('');
   const [structuredProfile, setStructuredProfile] = useState(null);
   const [loadingProfile, setLoadingProfile] = useState(false);
@@ -848,6 +848,18 @@ If this is a question about my profile, answer based on my profile data.`;
 
       {/* Tab Navigation - Always visible */}
       <div className="flex border-b border-gray-200 mb-6 overflow-x-auto">
+        {/* Upload Documents - Always first */}
+        <button
+          onClick={() => setActiveTab('files')}
+          className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'files'
+            ? 'border-indigo-600 text-indigo-600'
+            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+        >
+          <DocumentTextIcon className="h-5 w-5" />
+          Upload Documents
+        </button>
+
         {/* View Profile - Only show if there's data */}
         {!isProfileEmpty && (
           <button
@@ -863,17 +875,6 @@ If this is a question about my profile, answer based on my profile data.`;
         )}
 
         <button
-          onClick={() => setActiveTab('files')}
-          className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'files'
-            ? 'border-indigo-600 text-indigo-600'
-            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            }`}
-        >
-          <DocumentTextIcon className="h-5 w-5" />
-          Upload Documents
-        </button>
-
-        <button
           onClick={() => setActiveTab('form')}
           className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'form'
             ? 'border-indigo-600 text-indigo-600'
@@ -881,7 +882,7 @@ If this is a question about my profile, answer based on my profile data.`;
             }`}
         >
           <PencilSquareIcon className="h-5 w-5" />
-          Manual Entry
+          Profile Editor
         </button>
 
         <button
