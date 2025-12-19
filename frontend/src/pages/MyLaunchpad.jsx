@@ -1823,7 +1823,16 @@ const MyLaunchpad = () => {
                             match_score: fit.match_percentage || fit.match_score,
                             explanation: fit.explanation,
                             factors: fit.factors || [],
-                            recommendations: fit.recommendations || []
+                            recommendations: fit.recommendations || [],
+                            gap_analysis: fit.gap_analysis || {},
+                            essay_angles: fit.essay_angles || [],
+                            application_timeline: fit.application_timeline || {},
+                            scholarship_matches: fit.scholarship_matches || [],
+                            test_strategy: fit.test_strategy || {},
+                            major_strategy: fit.major_strategy || {},
+                            demonstrated_interest_tips: fit.demonstrated_interest_tips || [],
+                            red_flags_to_avoid: fit.red_flags_to_avoid || [],
+                            infographic_url: fit.infographic_url
                         };
                     });
 
@@ -1833,7 +1842,8 @@ const MyLaunchpad = () => {
                         if (precomputed) {
                             return {
                                 ...college,
-                                fit_analysis: precomputed  // Override with fresh precomputed data
+                                fit_analysis: precomputed,  // Override with fresh precomputed data
+                                infographic_url: precomputed.infographic_url // Lift to top level for FitAnalysisPage
                             };
                         }
                         return college;

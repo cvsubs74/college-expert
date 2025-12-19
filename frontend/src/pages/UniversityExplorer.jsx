@@ -812,7 +812,8 @@ const UniversityExplorer = () => {
                             us_news_rank: fit.us_news_rank,
                             location: fit.location,
                             acceptance_rate: fit.acceptance_rate,
-                            market_position: fit.market_position
+                            market_position: fit.market_position,
+                            infographic_url: fit.infographic_url
                         };
                     });
                     setPrecomputedFits(fitsMap);
@@ -914,7 +915,8 @@ const UniversityExplorer = () => {
                                     match_percentage: fit.match_score,
                                     university_name: fit.university_name,
                                     explanation: fit.explanation,
-                                    factors: fit.factors
+                                    factors: fit.factors,
+                                    infographic_url: fit.infographic_url
                                 };
                             });
                             setPrecomputedFits(fitsMap);
