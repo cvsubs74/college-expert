@@ -132,10 +132,11 @@ const FitAnalysisPage = ({ college, onBack }) => {
     return (
         <div className="bg-gray-50 min-h-screen">
             {/* Header */}
-            <div className="bg-white border-b border-gray-200 px-6 py-4">
+            <div className="bg-white border-b border-gray-200 px-6 py-4 sticky top-0 z-30 shadow-sm">
                 <button
+                    type="button"
                     onClick={onBack}
-                    className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors mb-2"
+                    className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors mb-2 cursor-pointer z-40 relative"
                 >
                     <ArrowLeftIcon className="h-5 w-5" />
                     Back to Launchpad

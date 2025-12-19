@@ -1852,6 +1852,27 @@ const MyLaunchpad = () => {
                 }
 
                 setCollegeList(colleges);
+
+                // Backfill missing infographics in background
+                // This handles colleges added before the "generate on add" fix
+                colleges.forEach(college => {
+                    const hasFit = (college.fit_analysis && Object.keys(college.fit_analysis).length > 0) || (college.match_score > 0);
+                    const hasInfographic = college.infographic_url || (college.fit_analysis && college.fit_analysis.infographic_url);
+
+                    if (hasFit && !hasInfographic) {
+                        // Use a small timeout to not block main thread rendering
+                        setTimeout(() => {
+                            console.log(`[Launchpad] Backfilling infographic for ${college.university_name}...`);
+                            generateFitInfographic(currentUser.email, college.university_id, false)
+                                .then(result => {
+                                    if (result.success && result.infographic_url && !result.from_cache) {
+                                        console.log(`[Launchpad] Backfilled infographic for ${college.university_name}`);
+                                    }
+                                })
+                                .catch(err => console.error(`[Launchpad] Failed to backfill infographic for ${college.university_name}:`, err));
+                        }, 1000 + (Math.random() * 2000)); // Stagger slightly
+                    }
+                });
             } else {
                 setError(listResult.error || 'Failed to load college list');
             }
