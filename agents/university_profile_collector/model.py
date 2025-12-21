@@ -67,13 +67,16 @@ class Metadata(BaseModel):
 class AnalystTakeaway(BaseModel):
     """Key insight with strategic implication."""
     category: str = Field(
+        default="General",
         description="[REQUIRED] Category of insight. Examples: 'Selectivity', 'Financial', 'Academic', 'Culture'"
     )
     insight: str = Field(
+        default="",
         description="[REQUIRED] The key finding. Example: 'Acceptance rate dropped 15% in 3 years'"
     )
-    implication: str = Field(
-        description="[REQUIRED] What this means for applicants. Example: 'Apply ED to maximize chances'"
+    implication: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] What this means for applicants. Example: 'Apply ED to maximize chances'"
     )
 
 
@@ -81,15 +84,18 @@ class AnalystTakeaway(BaseModel):
 class CampusDynamics(BaseModel):
     """Campus culture, transportation, and research environment."""
     social_environment: str = Field(
-        description="[REQUIRED] Social atmosphere description. Source: Reddit, Niche reviews. "
+        default="",
+        description="[OPTIONAL] Social atmosphere description. Source: Reddit, Niche reviews. "
                     "Examples: 'Socially Dead myth - actually vibrant', 'Greek Life dominant', 'Commuter school vibe'"
     )
     transportation_impact: str = Field(
-        description="[REQUIRED] How transportation affects campus life. Source: Reddit, student reviews. "
+        default="",
+        description="[OPTIONAL] How transportation affects campus life. Source: Reddit, student reviews. "
                     "Examples: 'Blue Line Trolley connects to downtown', 'Isolated campus needs car', 'Walking campus'"
     )
     research_impact: str = Field(
-        description="[REQUIRED] Research opportunities and industry connections. Source: Official research page. "
+        default="",
+        description="[OPTIONAL] Research opportunities and industry connections. Source: Official research page. "
                     "Examples: 'Adjacent to biotech hub', 'Strong undergrad research programs', 'Industry internship pipeline'"
     )
 
@@ -151,7 +157,8 @@ class EarlyAdmissionStats(BaseModel):
 
 class CurrentStatus(BaseModel):
     """Current admissions cycle statistics."""
-    overall_acceptance_rate: float = Field(
+    overall_acceptance_rate: Optional[float] = Field(
+        default=None,
         description="[REQUIRED] Overall acceptance rate as percentage. Source: Common Data Set Section C. Example: 23.5"
     )
     in_state_acceptance_rate: Optional[float] = Field(
@@ -174,10 +181,12 @@ class CurrentStatus(BaseModel):
         default=None,
         description="[OPTIONAL] Total number of students in admitted class"
     )
-    is_test_optional: bool = Field(
-        description="[REQUIRED] Whether standardized tests are optional. True/False"
+    is_test_optional: Optional[bool] = Field(
+        default=None,
+        description="[REQUIRED] Whether standardized tests are optional. True/False. Default: null if unknown"
     )
-    test_policy_details: str = Field(
+    test_policy_details: Optional[str] = Field(
+        default="",
         description="[REQUIRED] Detailed test policy. Values: 'Test Required', 'Test Optional', "
                     "'Test Free', 'Test Blind', 'Test Flexible'"
     )
@@ -195,51 +204,57 @@ class CurrentStatus(BaseModel):
 
 class WaitlistDetailedStats(BaseModel):
     """Detailed breakdown of waitlist outcomes (The 'Black Box')."""
-    year: int = Field(
-        description="[REQUIRED] Cycle year. Example: 2024"
+    year: Optional[int] = Field(
+        default=None,
+        description="[OPTIONAL] Cycle year. Example: 2024"
     )
     offered_spots: Optional[int] = Field(
         default=None,
-        description="[REQUIRED] Total students offered a waitlist spot. Source: Common Data Set Section C2"
+        description="[OPTIONAL] Total students offered a waitlist spot. Source: Common Data Set Section C2"
     )
     accepted_spots: Optional[int] = Field(
         default=None,
-        description="[REQUIRED] Total students who accepted a waitlist spot. Source: Common Data Set Section C2"
+        description="[OPTIONAL] Total students who accepted a waitlist spot. Source: Common Data Set Section C2"
     )
     admitted_from_waitlist: Optional[int] = Field(
         default=None,
-        description="[REQUIRED] Total students admitted from the waitlist. Source: Common Data Set Section C2"
+        description="[OPTIONAL] Total students admitted from the waitlist. Source: Common Data Set Section C2"
     )
     waitlist_admit_rate: Optional[float] = Field(
         default=None,
         description="[OPTIONAL] Calculated conversion rate: (admitted / accepted) * 100"
     )
-    is_waitlist_ranked: bool = Field(
-        default=False,
-        description="[REQUIRED] Whether waitlist positions are ranked. Source: Common Data Set Section C2"
+    is_waitlist_ranked: Optional[bool] = Field(
+        default=None,
+        description="[OPTIONAL] Whether waitlist positions are ranked. Source: Common Data Set Section C2"
     )
 
 
 class LongitudinalTrend(BaseModel):
     """Admissions data for a single year."""
-    year: int = Field(
-        description="[REQUIRED] Application year. Example: 2025 (for Class of 2029)"
+    year: Optional[int] = Field(
+        default=None,
+        description="[OPTIONAL] Application year. Example: 2025 (for Class of 2029)"
     )
-    cycle_name: str = Field(
-        description="[REQUIRED] Graduating class name. Example: 'Class of 2029'"
+    cycle_name: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Graduating class name. Example: 'Class of 2029'"
     )
-    applications_total: int = Field(
-        description="[REQUIRED] Total applications received. Source: Common Data Set/news"
+    applications_total: Optional[int] = Field(
+        default=None,
+        description="[OPTIONAL] Total applications received. Source: Common Data Set/news"
     )
-    admits_total: int = Field(
-        description="[REQUIRED] Total students admitted"
+    admits_total: Optional[int] = Field(
+        default=None,
+        description="[OPTIONAL] Total students admitted"
     )
     enrolled_total: Optional[int] = Field(
         default=None,
-        description="[REQUIRED] Total students enrolled (matriculated)"
+        description="[OPTIONAL] Total students enrolled (matriculated)"
     )
-    acceptance_rate_overall: float = Field(
-        description="[REQUIRED] Overall acceptance rate as percentage"
+    acceptance_rate_overall: Optional[float] = Field(
+        default=None,
+        description="[OPTIONAL] Overall acceptance rate as percentage"
     )
     acceptance_rate_in_state: Optional[float] = Field(
         default=None,
@@ -327,7 +342,7 @@ class TestingProfile(BaseModel):
         default=None,
         description="[OPTIONAL] Percentage of admits who submitted test scores. Example: 65.0"
     )
-    policy_note: str = Field(
+    policy_note: Optional[str] = Field(
         default="",
         description="[OPTIONAL] Test policy notes. Example: 'Scores optional but considered if submitted'"
     )
@@ -336,10 +351,12 @@ class TestingProfile(BaseModel):
 class RegionBreakdown(BaseModel):
     """Geographic distribution of students."""
     region: str = Field(
-        description="[REQUIRED] Region or state name. Examples: 'California', 'Northeast', 'International'"
+        default="Unknown",
+        description="[OPTIONAL] Region or state name. Examples: 'California', 'Northeast', 'International'"
     )
-    percentage: float = Field(
-        description="[REQUIRED] Percentage from this region. Example: 35.5"
+    percentage: Optional[float] = Field(
+        default=None,
+        description="[OPTIONAL] Percentage from this region. Example: 35.5"
     )
 
 
@@ -516,7 +533,7 @@ class Major(BaseModel):
                     "'electives': ['CS 310 Machine Learning', 'CS 320 Databases'], "
                     "'total_units': 120, 'major_units': 60}"
     )
-    notable_professors: List[str] = Field(
+    notable_professors: Optional[List[Optional[str]]] = Field(
         default=[],
         description="[OPTIONAL] Notable faculty members who teach in this major. Source: Department website, "
                     "RateMyProfessors. Format: ['Dr. Jane Smith (Machine Learning)', 'Prof. John Doe (Algorithms)']"
@@ -550,17 +567,17 @@ class College(BaseModel):
         default=False,
         description="[REQUIRED] Whether enrollment is restricted/capped"
     )
-    strategic_fit_advice: str = Field(
+    strategic_fit_advice: Optional[str] = Field(
         default="",
         description="[REQUIRED] Who should/shouldn't apply. Source: Reddit, student advice. "
                     "Example: 'Avoid if Engineering major - harsh GE requirements'"
     )
-    housing_profile: str = Field(
+    housing_profile: Optional[str] = Field(
         default="",
         description="[REQUIRED] Housing/dorm vibe. Source: Housing reviews, Reddit. "
                     "Examples: 'Brutalist concrete towers', 'Resort-style modern', 'Traditional quads'"
     )
-    student_archetype: str = Field(
+    student_archetype: Optional[str] = Field(
         default="",
         description="[REQUIRED] Stereotypical student type. Source: Reddit, Niche. "
                     "Examples: 'The Overachiever', 'The STEM Nerd', 'The Humanities Scholar', 'The Pre-Med'"
@@ -653,11 +670,11 @@ class HolisticFactors(BaseModel):
         default="Not Offered",
         description="[REQUIRED] Interview policy. Values: 'Required', 'Recommended', 'Evaluative', 'Informational', 'Not Offered'"
     )
-    legacy_consideration: str = Field(
+    legacy_consideration: Optional[str] = Field(
         default="Unknown",
         description="[REQUIRED] Legacy impact. Values: 'Strong', 'Moderate', 'Minimal', 'None', 'Unknown'"
     )
-    first_gen_boost: str = Field(
+    first_gen_boost: Optional[str] = Field(
         default="Unknown",
         description="[REQUIRED] First-gen consideration. Values: 'Strong', 'Moderate', 'Minimal', 'None', 'Unknown'"
     )
@@ -750,10 +767,12 @@ class CostOfAttendanceBreakdown(BaseModel):
 class Scholarship(BaseModel):
     """Information about a specific scholarship."""
     name: str = Field(
-        description="[REQUIRED] Scholarship name. Example: 'Regents Scholarship'"
+        default="Unnamed Scholarship",
+        description="[OPTIONAL] Scholarship name. Example: 'Regents Scholarship'"
     )
     type: str = Field(
-        description="[REQUIRED] Scholarship type. Values: 'Merit', 'Need', 'Both', 'Athletic', 'Departmental'"
+        default="General",
+        description="[OPTIONAL] Scholarship type. Values: 'Merit', 'Need', 'Both', 'Athletic', 'Departmental', 'General'"
     )
     amount: str = Field(
         default="",
@@ -775,7 +794,7 @@ class Scholarship(BaseModel):
 
 class Financials(BaseModel):
     """Complete financial information."""
-    tuition_model: str = Field(
+    tuition_model: Optional[str] = Field(
         default="",
         description="[REQUIRED] Tuition policy. Examples: 'Tuition Stability Plan (locked 4 years)', 'Annual Increase (~3%)'"
     )
@@ -783,7 +802,7 @@ class Financials(BaseModel):
         default_factory=CostOfAttendanceBreakdown,
         description="[REQUIRED] Complete cost breakdown"
     )
-    aid_philosophy: str = Field(
+    aid_philosophy: Optional[str] = Field(
         default="",
         description="[REQUIRED] Aid approach. Examples: '100% Need Met', 'Need-Blind Admissions', 'Merit Focused'"
     )
@@ -842,11 +861,11 @@ class IBPolicy(BaseModel):
 
 class TransferArticulation(BaseModel):
     """Transfer credit policies."""
-    tools: List[str] = Field(
+    tools: Optional[List[Optional[str]]] = Field(
         default=[],
         description="[REQUIRED] Tools for checking transfer credits. Examples: ['ASSIST.org', 'Transferology', 'TES']"
     )
-    restrictions: str = Field(
+    restrictions: Optional[str] = Field(
         default="",
         description="[OPTIONAL] Transfer credit limits. Examples: '60 unit cap', 'No upper-division credit', 'Must be C or better'"
     )
@@ -927,17 +946,17 @@ class StudentInsights(BaseModel):
 
 class ApplicationStrategy(BaseModel):
     """Tactical strategies for maximizing admission chances."""
-    major_selection_tactics: List[str] = Field(
+    major_selection_tactics: Optional[List[str]] = Field(
         default=[],
         description="[REQUIRED] Tactics for choosing primary/alternate majors. "
                     "Examples: ['Don't list two capped majors', 'Use Undeclared as safety', 'List less popular major in same college']"
     )
-    college_ranking_tactics: List[str] = Field(
+    college_ranking_tactics: Optional[List[str]] = Field(
         default=[],
         description="[REQUIRED for residential college systems] How to rank colleges strategically. "
                     "Examples: ['Engineers should pick Warren over Revelle', 'Seventh has easiest GEs']"
     )
-    alternate_major_strategy: str = Field(
+    alternate_major_strategy: Optional[str] = Field(
         default="",
         description="[REQUIRED] Best backup major strategies. "
                     "Example: 'Cognitive Science is good CS backup - still in same division, can try to transfer'"
@@ -1030,7 +1049,8 @@ class UniversityProfile(BaseModel):
     academic_structure: AcademicStructure = Field(
         description="[REQUIRED] Academic organization. AGENTS: CollegesAgent, MajorsAgent"
     )
-    application_process: ApplicationProcess = Field(
+    application_process: Optional[ApplicationProcess] = Field(
+        default=None,
         description="[REQUIRED] Application requirements. AGENT: ApplicationAgent"
     )
     application_strategy: ApplicationStrategy = Field(

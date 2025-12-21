@@ -1,0 +1,174 @@
+"""
+Application Agent - Uses ParallelAgent pattern with focused micro-agents.
+
+This agent runs 3 micro-agents in parallel to gather application process info,
+then aggregates their outputs into a single structured result.
+"""
+from google.adk.agents import LlmAgent, ParallelAgent, SequentialAgent
+from .shared_logging import (
+    agent_logging_before, agent_logging_after,
+    tool_logging_before, tool_logging_after
+)
+from google.adk.tools import google_search
+
+MODEL_NAME = "gemini-2.5-flash-lite"
+
+# ==============================================================================
+# MICRO-AGENTS
+# ==============================================================================
+
+# Micro-agent 1: Platforms and deadlines
+deadlines_micro = LlmAgent(
+    name="DeadlinesMicro",
+    model=MODEL_NAME,
+    description="Fetches application platforms and deadlines.",
+    instruction="""Research application deadlines for {university_name}:
+
+1. platforms (list): ["Common App", "Coalition App", etc.]
+2. For each deadline type (ED, EA, ED2, RD):
+   - plan_type: "Early Decision", "Early Action", "Regular Decision"
+   - date: "YYYY-MM-DD" format
+   - is_binding: true/false
+   - notes: Any special notes
+
+Search: "{university_name}" application deadline 2025
+Search: site:commonapp.org "{university_name}"
+
+OUTPUT (JSON):
+{
+  "platforms": ["Common App"],
+  "application_deadlines": [
+    {"plan_type": "Early Decision", "date": "2024-11-01", "is_binding": true, "notes": ""},
+    {"plan_type": "Regular Decision", "date": "2025-01-05", "is_binding": false, "notes": ""}
+  ]
+}""",
+    tools=[google_search],
+    output_key="deadlines",
+    before_agent_callback=agent_logging_before,
+    after_agent_callback=agent_logging_after
+)
+
+# Micro-agent 2: Supplemental requirements
+supplementals_micro = LlmAgent(
+    name="SupplementalsMicro",
+    model=MODEL_NAME,
+    description="Fetches supplemental essay and audition requirements.",
+    instruction="""Research supplemental requirements for {university_name}:
+
+For each requirement:
+- target_program: "All", "Music", "Architecture", etc.
+- requirement_type: "Essays", "Audition", "Portfolio"
+- deadline: Date or null
+- details: What's required
+
+Search: "{university_name}" supplemental essays 2025
+Search: site:acceptd.com "{university_name}" audition
+
+OUTPUT (JSON array):
+[
+  {
+    "target_program": "All",
+    "requirement_type": "Essays",
+    "deadline": null,
+    "details": "Two supplemental essays required"
+  }
+]""",
+    tools=[google_search],
+    output_key="supplemental_requirements",
+    before_agent_callback=agent_logging_before,
+    after_agent_callback=agent_logging_after
+)
+
+# Micro-agent 3: Holistic review factors
+holistic_factors_micro = LlmAgent(
+    name="HolisticFactorsMicro",
+    model=MODEL_NAME,
+    description="Fetches holistic review factors.",
+    instruction="""Research holistic review factors for {university_name}:
+
+⚠️ CRITICAL: You MUST return a JSON OBJECT with these exact keys. NEVER return a string or paragraph.
+
+EXACT REQUIRED FIELDS (return this JSON object structure):
+  - primary_factors (array of strings): Most important factors from CDS Section C7
+  - secondary_factors (array of strings): Secondary/considered factors
+  - essay_importance (string): MUST be one of: "Critical", "High", "Moderate", "Low"
+  - demonstrated_interest (string): MUST be one of: "Important", "Considered", "Not Considered"
+  - interview_policy (string): MUST be one of: "Required", "Recommended", "Evaluative", "Informational", "Not Offered"
+  - legacy_consideration (string): MUST be one of: "Strong", "Moderate", "Minimal", "None", "Unknown"
+  - first_gen_boost (string): MUST be one of: "Strong", "Moderate", "Minimal", "None", "Unknown"
+  - specific_differentiators (string): What makes their process unique
+
+Search: "{university_name}" Common Data Set Section C7
+Search: "{university_name}" demonstrated interest policy
+
+OUTPUT (JSON OBJECT - NOT A STRING):
+{
+  "holistic_factors": {
+    "primary_factors": ["Course Rigor", "GPA", "Essays", "Recommendations"],
+    "secondary_factors": ["Extracurriculars", "Talents", "Character"],
+    "essay_importance": "Critical",
+    "demonstrated_interest": "Not Considered",
+    "interview_policy": "Recommended",
+    "legacy_consideration": "Moderate",
+    "first_gen_boost": "Moderate",
+    "specific_differentiators": "Values intellectual curiosity"
+  }
+}""",
+    tools=[google_search],
+    output_key="holistic_factors",
+    before_agent_callback=agent_logging_before,
+    after_agent_callback=agent_logging_after
+)
+
+# ==============================================================================
+# PARALLEL AGENT
+# ==============================================================================
+
+application_parallel_collector = ParallelAgent(
+    name="ApplicationParallelCollector",
+    sub_agents=[
+        deadlines_micro,
+        supplementals_micro,
+        holistic_factors_micro
+    ]
+)
+
+# ==============================================================================
+# AGGREGATOR
+# ==============================================================================
+
+application_aggregator = LlmAgent(
+    name="ApplicationAggregator",
+    model=MODEL_NAME,
+    description="Aggregates all application micro-agent outputs.",
+    instruction="""Aggregate ALL micro-agent outputs into final application_process structure.
+
+=== INPUT DATA ===
+- deadlines: platforms, application_deadlines array
+- supplemental_requirements: array of requirements
+- holistic_factors: review factors
+
+=== OUTPUT STRUCTURE ===
+{
+  "application_process": {
+    "platforms": <from deadlines>,
+    "application_deadlines": <from deadlines>,
+    "supplemental_requirements": <from supplemental_requirements>,
+    "holistic_factors": <from holistic_factors>
+  }
+}
+
+Use ( ) instead of {} in output.""",
+    output_key="application_output",
+    before_agent_callback=agent_logging_before,
+    after_agent_callback=agent_logging_after
+)
+
+# ==============================================================================
+# MAIN AGENT
+# ==============================================================================
+
+application_agent = SequentialAgent(
+    name="ApplicationSequential",
+    sub_agents=[application_parallel_collector, application_aggregator]
+)
