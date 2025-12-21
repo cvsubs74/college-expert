@@ -20,6 +20,7 @@ Usage:
 import os
 import sys
 import asyncio
+import contextlib
 import re
 import json
 import glob
@@ -188,6 +189,10 @@ def validate_profile(file_path: str) -> tuple[bool, str]:
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
+        
+        # Handle wrapped format {"university_profile": {...}}
+        if "university_profile" in data and isinstance(data.get("university_profile"), dict):
+            data = data["university_profile"]
         
         UniversityProfile.model_validate(data)
         return True, ""
@@ -430,6 +435,7 @@ def log_message(message: str):
 
 async def run_agent_for_university(runner: InMemoryRunner, university: str) -> str:
     """Run the agent to collect data for a single university."""
+    import time
     user_id = "batch_user"
     session_id = f"session_{get_university_id(university)}"
     
@@ -445,22 +451,56 @@ async def run_agent_for_university(runner: InMemoryRunner, university: str) -> s
     )
     
     final_response = ""
+    start_time = time.time()
+    event_count = 0
+    agent_times = {}  # Track time per agent
+    last_agent = None
+    last_agent_start = start_time
+    
+    # Create short name for logging (first 15 chars)
+    uni_short = university[:15].replace(" ", "_") if len(university) > 15 else university.replace(" ", "_")
+    
     async for event in runner.run_async(
         user_id=user_id,
         session_id=session.id,
         new_message=message
     ):
+        event_count += 1
+        current_time = time.time()
+        elapsed = current_time - start_time
+        
+        # Track agent name if available
+        agent_name = getattr(event, 'author', 'Unknown')
+        
+        # Log timing when agent changes
+        if agent_name != last_agent and last_agent is not None:
+            agent_duration = current_time - last_agent_start
+            agent_times[last_agent] = agent_times.get(last_agent, 0) + agent_duration
+            log_message(f"  [{uni_short}] ⏱️ [{elapsed:.1f}s] {last_agent} done in {agent_duration:.1f}s")
+        
+        if agent_name != last_agent:
+            log_message(f"  [{uni_short}] 🔄 [{elapsed:.1f}s] {agent_name}")
+            last_agent = agent_name
+            last_agent_start = current_time
+        
         if hasattr(event, 'content') and event.content and event.content.parts:
             for part in event.content.parts:
                 if hasattr(part, 'text') and part.text:
                     final_response = part.text
+    
+    # Final timing summary
+    total_time = time.time() - start_time
+    log_message(f"  [{uni_short}] 📊 Total: {total_time:.1f}s, Events: {event_count}")
+    if agent_times:
+        sorted_agents = sorted(agent_times.items(), key=lambda x: x[1], reverse=True)
+        log_message(f"  [{uni_short}] 📊 Top agents: {', '.join([f'{a}:{t:.1f}s' for a, t in sorted_agents[:3]])}")
     
     return final_response
 
 
 async def process_single_university(runner, university: str, existing: set, es_client, semaphore: asyncio.Semaphore = None):
     """Process a single university - research, validate, and ingest."""
-    async with semaphore if semaphore else asyncio.nullcontext():
+    async with semaphore if semaphore else contextlib.nullcontext():
         log_message(f"\n{'='*60}")
         log_message(f"Processing: {university}")
         log_message(f"{'='*60}")

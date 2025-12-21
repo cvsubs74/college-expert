@@ -23,11 +23,10 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 # Common config
-MODEL_NAME = "gemini-3-flash-preview"
+MODEL_NAME = "gemini-2.5-flash"
 
 # Get the research directory path
 RESEARCH_DIR = os.path.join(os.path.dirname(__file__), 'research')
-
 
 # ==============================================================================
 # TOOL: Write File
@@ -46,6 +45,31 @@ def write_file(
     logger.info(f"Saved file to: {target_path}")
     return {"status": "success", "path": target_path}
 
+# ==============================================================================
+# STATE INITIALIZER - Ensures all output keys exist
+# ==============================================================================
+
+class StateInitializer(BaseAgent):
+    """Initializes session state with expected output keys to prevent KeyError."""
+    
+    async def _run_async_impl(self, ctx: InvocationContext) -> AsyncGenerator:
+        keys = [
+            "university_name",  # Must be initialized before sub-agents run
+            "strategy_output", "admissions_current_output", "admissions_trends_output",
+            "admitted_profile_output", "colleges_output", "majors_output",
+            "application_output", "strategy_tactics_output", "financials_output",
+            "scholarships_output", "credit_policies_output", "student_insights_output",
+            "outcomes_output"
+        ]
+        for key in keys:
+            if key not in ctx.session.state:
+                ctx.session.state[key] = "" if key == "university_name" else None
+        logger.info(f"[StateInitializer] Initialized {len(keys)} output keys, university_name={ctx.session.state.get('university_name')}")
+        # Empty generator - just for async signature
+        if False:
+            yield Event(author=self.name, content={})
+
+state_initializer = StateInitializer(name="StateInitializer")
 
 # ==============================================================================
 # AGENT 0: University Name Extractor
@@ -60,7 +84,6 @@ Output ONLY the university name (e.g., 'Stanford University'). No other text."""
     output_key="university_name"
 )
 
-
 # ==============================================================================
 # AGENT 1: Strategy Agent -> Metadata + StrategicProfile
 # ==============================================================================
@@ -71,7 +94,25 @@ strategy_agent = LlmAgent(
     description="Researches university ranking, market position, and campus dynamics.",
     instruction="""Research the university: {university_name}
 
-SEARCH for: US News National Universities ranking 2026, admissions philosophy, campus social life, transportation, research opportunities.
+=== DATA SOURCES (Search these specifically) ===
+1. IPEDS (nces.ed.gov/ipeds): Official metadata, institution type, location
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+2. U.S. News & World Report (usnews.com/best-colleges): Current rankings, market position
+3. Niche (niche.com): Campus dynamics, social environment ratings, community "vibe"
+4. Official University Website: Mission statement, admissions philosophy
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- site:usnews.com "{university_name}" ranking 2026 National Universities
+- site:niche.com "{university_name}" campus life review
+- "{university_name}" IPEDS institution profile
+- "{university_name}" official admissions philosophy mission
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -93,27 +134,35 @@ OUTPUT JSON with EXACTLY this structure:
   "analyst_takeaways": [
     (
       "category": "Selectivity",
-      "insight": "Acceptance rate dropped 15% in 3 years",
-      "implication": "Apply early to maximize chances"
+      "insight": "Key finding from research",
+      "implication": "What this means for applicants"
+    ),
+    (
+      "category": "Value",
+      "insight": "Another key finding",
+      "implication": "Strategic recommendation"
+    ),
+    (
+      "category": "Academic",
+      "insight": "Third insight",
+      "implication": "Action item for applicants"
     )
   ],
   "campus_dynamics": (
-    "social_environment": "Description of social atmosphere",
+    "social_environment": "From Niche reviews - social atmosphere description",
     "transportation_impact": "How transport affects campus life",
     "research_impact": "Research opportunities and industry ties"
   )
 )
 
 CRITICAL: 
-- us_news_rank must be the US News National Universities ranking (integer).
-- Search for the latest 2026 ranking specifically.
-- Use EXACTLY these field names. 
-- Use ( ) instead of curly braces in your output.
+- us_news_rank must be INTEGER from usnews.com 2026 National Universities ranking
+- Include AT LEAST 3 analyst_takeaways
+- Use ( ) instead of curly braces
 """,
     tools=[google_search],
     output_key="strategy_output"
 )
-
 
 # ==============================================================================
 # AGENT 2: Admissions Current Agent -> CurrentStatus
@@ -125,7 +174,20 @@ admissions_current_agent = LlmAgent(
     description="Researches current admissions cycle statistics.",
     instruction="""Research: {university_name}
 
-SEARCH for: Common Data Set 2024 Section C, acceptance rates, test policy, early admission stats.
+=== DATA SOURCES (Search these specifically) ===
+1. Common Data Set Section C: Primary source for acceptance rates, waitlist, testing policies
+2. IPEDS Admissions Component: Verified admissions data released annually
+3. Expert Admissions (expertadmissions.com): Qualitative updates on recent cycle trends
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- site:*.edu "{university_name}" Common Data Set 2024-2025 filetype:pdf
+- "{university_name}" Common Data Set Section C acceptance rate 2024
+- site:expertadmissions.com "{university_name}" admissions 2025
+- "{university_name}" test optional policy 2025
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -151,13 +213,13 @@ OUTPUT JSON with EXACTLY this structure:
 
 CRITICAL: 
 - Rates are PERCENTAGES (e.g., 23.5 not 0.235)
+- Data should come from CDS Section C
 - Use null for unknown values
-- Use ( ) instead of curly braces in your output
+- Use ( ) instead of curly braces
 """,
     tools=[google_search],
     output_key="admissions_current_output"
 )
-
 
 # ==============================================================================
 # AGENT 3: Admissions Trends Agent -> LongitudinalTrends + WaitlistDetailedStats
@@ -169,18 +231,29 @@ admissions_trends_agent = LlmAgent(
     description="Researches historical admissions trends and WAITLIST mechanics.",
     instruction="""Research: {university_name}
 
-YOU MUST SEARCH for: 
-- Common Data Set Section C2 (WAITLIST data specifically)
-- Admissions statistics 2024-2021
-- Acceptance rate history
-- Yield rates
+=== DATA SOURCES (Search these specifically) ===
+1. Common Data Set Archives: Historical CDS reports (Section C) for 3-5 year trends
+2. ApplyingToCollege (applyingtocollege.com): Real-time decision release dates
+3. Expert Admissions: Waitlist activity analysis and "summer melt" trends
 
-WAITLIST REQUIREMENTS (The "Black Box"):
-- Find: applicants OFFERED waitlist spots
-- Find: applicants who ACCEPTED waitlist spots  
-- Find: applicants ADMITTED from waitlist
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- site:*.edu "{university_name}" Common Data Set 2023 2024 filetype:pdf
+- "{university_name}" Common Data Set Section C2 waitlist 2024
+- "{university_name}" acceptance rate history 2020 2021 2022 2023 2024
+- site:applyingtocollege.com "{university_name}" decision date 2025
+- "{university_name}" waitlist statistics admitted yield rate
+
+=== WAITLIST REQUIREMENTS (The "Black Box") ===
+From CDS Section C2, find:
+- applicants OFFERED waitlist spots
+- applicants who ACCEPTED waitlist spots  
+- applicants ADMITTED from waitlist
 - CALCULATE: waitlist_admit_rate = (admitted / accepted) * 100
-- Find: whether waitlist is RANKED or unranked
+- whether waitlist is RANKED or unranked
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -207,14 +280,15 @@ OUTPUT JSON with EXACTLY this structure:
   )
 ]
 
-Include at least 3-5 years of data.
-If a school HIDES waitlist data, explicitly note "Waitlist data not publicly disclosed" in notes.
-Use null for unknown values. Use ( ) instead of curly braces.
+CRITICAL:
+- Include AT LEAST 5 YEARS of data (2021-2025)
+- Each year MUST have waitlist_stats
+- If waitlist data hidden, note "Waitlist data not publicly disclosed" in notes
+- Use null for unknown values. Use ( ) instead of curly braces
 """,
     tools=[google_search],
     output_key="admissions_trends_output"
 )
-
 
 # ==============================================================================
 # AGENT 4: Admitted Profile Agent -> AdmittedStudentProfile + RaceEthnicity
@@ -226,12 +300,21 @@ admitted_profile_agent = LlmAgent(
     description="Researches admitted student statistics including GPA, test scores, and FULL demographics.",
     instruction="""Research: {university_name}
 
-SEARCH for: 
-- Common Data Set Section C (GPA, test scores)
-- Common Data Set Section B2 (RACIAL/ETHNIC breakdown)
-- PrepScholar admitted student stats
-- Niche demographics
-- IPEDS data
+=== DATA SOURCES (Search these specifically) ===
+1. Common Data Set Sections C9-C11: GPA distribution, class rank, mid-50% test scores
+2. IPEDS: Federal demographic breakdowns (race, ethnicity, gender)
+3. PrepScholar (prepscholar.com): "What are my chances?" data, admitted student scattergrams
+4. Cappex: Additional admitted student profiles
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- "{university_name}" Common Data Set Section C GPA test scores 2024
+- site:prepscholar.com "{university_name}" SAT ACT scores admitted students
+- "{university_name}" IPEDS demographics race ethnicity 2024
+- "{university_name}" admitted student profile GPA middle 50
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -298,7 +381,6 @@ Use null for unknown values. Use ( ) instead of curly braces.
     output_key="admitted_profile_output"
 )
 
-
 # ==============================================================================
 # AGENT 5: Colleges Agent -> AcademicStructure (without majors)
 # ==============================================================================
@@ -309,7 +391,29 @@ colleges_agent = LlmAgent(
     description="Researches college/school structure, housing, and student archetypes.",
     instruction="""Research: {university_name}
 
-SEARCH for: colleges/schools list, residential college system, housing reviews, student archetypes.
+=== DATA SOURCES (Search these specifically) ===
+1. CampusReel (campusreel.org): Student-led video tours of dorms and housing
+2. Niche (niche.com): Letter grades on housing quality and campus life
+3. Official University Website: List of ALL undergraduate schools and colleges
+
+⚠️ WARNING: Example values are for STRUCTURE ONLY.
+DO NOT copy examples. Use ONLY data from searches. Use null for missing data.
+
+=== CRITICAL: FIND ALL SCHOOLS ===
+You MUST find ALL undergraduate schools/colleges, not just the main one.
+Common examples include:
+- School of Engineering / Applied Science
+- College of Arts & Sciences / Letters & Science
+- School of Business (if offers undergrad)
+- School of Nursing (if offers undergrad)
+- School of Music / Arts (if offers undergrad)
+
+=== REQUIRED SEARCHES ===
+- "{university_name}" list of undergraduate schools colleges
+- "{university_name}" School of Engineering undergraduate
+- "{university_name}" all undergraduate programs schools
+- site:niche.com "{university_name}" housing dorms review
+- "{university_name}" residential colleges housing system
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -317,9 +421,9 @@ OUTPUT JSON with EXACTLY this structure:
   "structure_type": "Colleges" or "Schools" or "Divisions",
   "colleges": [
     (
-      "name": "College of Engineering",
+      "name": "School of Engineering",
       "admissions_model": "Direct Admit" or "Pre-Major" or "Lottery",
-      "acceptance_rate_estimate": 15.0,
+      "acceptance_rate_estimate": null,
       "is_restricted_or_capped": true,
       "strategic_fit_advice": "Strong STEM background required",
       "housing_profile": "Modern dorms with maker spaces",
@@ -327,7 +431,7 @@ OUTPUT JSON with EXACTLY this structure:
       "majors": []
     ),
     (
-      "name": "College of Letters and Science",
+      "name": "College of Arts and Sciences",
       "admissions_model": "Pre-Major",
       "acceptance_rate_estimate": null,
       "is_restricted_or_capped": false,
@@ -340,13 +444,14 @@ OUTPUT JSON with EXACTLY this structure:
   "minors_certificates": ["Data Science Minor", "Entrepreneurship Certificate"]
 )
 
-IMPORTANT: Leave "majors": [] empty - MajorsAgent will populate it.
-Use ( ) instead of curly braces.
+CRITICAL: 
+- Include ALL undergraduate schools/colleges that offer bachelor's degrees
+- Leave "majors": [] empty - MajorsAgent will populate it
+- Use ( ) instead of curly braces
 """,
     tools=[google_search],
     output_key="colleges_output"
 )
-
 
 # ==============================================================================
 # AGENT 6: Majors Agent -> Majors with IMPACTION DETAILS
@@ -358,15 +463,27 @@ majors_agent = LlmAgent(
     description="Researches all majors with acceptance rates, prerequisites, WEEDER COURSES, GPA FLOORS, CURRICULUM, and PROFESSORS.",
     instruction="""Research: {university_name}
 
-YOU MUST SEARCH for:
-- Undergraduate majors list
-- Impacted/capped majors lists
-- "transferring into [Major] at [University]" to find HIDDEN PREREQUISITES
+=== DATA SOURCES (Search these specifically) ===
+1. College Scorecard (collegescorecard.ed.gov): Earnings data broken down by major
+2. Official Department Catalogs: Prerequisite courses, degree types, curriculum
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+3. Acceptd (acceptd.com): Performing arts major requirements (auditions/portfolios)
+
+=== REQUIRED SEARCHES ===
+- site:*.edu "{university_name}" undergraduate majors list catalog
+- "{university_name}" impacted capped majors 2024
+- "{university_name}" transfer into [Major] prerequisites GPA requirement
+- site:collegescorecard.ed.gov "{university_name}" earnings by field of study
+- "{university_name}" [Major] curriculum requirements core courses
+
+=== ADDITIONAL SEARCHES ===
+- "transferring INTO [Major] at {university_name}" for HIDDEN PREREQUISITES
 - Major-specific acceptance rates
 - Departmental handbooks for GPA requirements
-- "[Major] curriculum [University]" for course requirements
-- "[Major] faculty [University]" for professors
-- Department "People" or "Faculty" pages
+- "[Major] faculty {university_name}" for professors
 - RateMyProfessors for top-rated professors
 
 HIDDEN PREREQUISITES TO FIND:
@@ -489,7 +606,6 @@ Use ( ) instead of curly braces.
     output_key="majors_output"
 )
 
-
 # ==============================================================================
 # AGENT 7: Application Agent -> ApplicationProcess
 # ==============================================================================
@@ -500,7 +616,21 @@ application_agent = LlmAgent(
     description="Researches application requirements, deadlines, and evaluation factors.",
     instruction="""Research: {university_name}
 
-SEARCH for: application deadlines 2025, supplemental essays, demonstrated interest, interview policy.
+=== DATA SOURCES (Search these specifically) ===
+1. Common Data Set Section C7: Which factors are "Very Important" vs "Considered"
+2. Coalition for College / Common App: Application platforms and fee waiver info
+3. Acceptd / Musical Theater Common Prescreen: Arts program requirements
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- "{university_name}" Common Data Set Section C7 important factors 2024
+- site:commonapp.org "{university_name}" supplemental essays 2025
+- "{university_name}" application deadline 2025 early decision regular
+- "{university_name}" demonstrated interest interview policy
+- site:acceptd.com "{university_name}" audition prescreen requirements
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -552,7 +682,6 @@ Use ( ) instead of curly braces.
     output_key="application_output"
 )
 
-
 # ==============================================================================
 # AGENT 8: Strategy Tactics Agent -> ApplicationStrategy
 # ==============================================================================
@@ -563,7 +692,22 @@ strategy_tactics_agent = LlmAgent(
     description="Researches application gaming strategies and tactical advice.",
     instruction="""Research: {university_name}
 
-SEARCH for: Reddit major selection tips, easier majors, college ranking strategies, alternate major advice.
+=== DATA SOURCES (Search these specifically) ===
+1. Common Data Set Section C21: Statistical advantage of Early Decision vs Regular Decision
+2. College Confidential Forums: Crowdsourced admissions quirks and gaming strategies
+3. Road2College: Balancing academic fit with financial reality
+4. Examplit: Analyzing successful profiles for narrative strategies
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- "{university_name}" early decision acceptance rate vs regular decision
+- site:talk.collegeconfidential.com "{university_name}" major selection strategy
+- site:road2college.com "{university_name}" application strategy
+- "{university_name}" easier majors to get into transfer later
+- "{university_name}" Common Data Set C21 early vs regular admit rate
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -587,7 +731,6 @@ Use ( ) instead of curly braces.
     output_key="strategy_tactics_output"
 )
 
-
 # ==============================================================================
 # AGENT 9: Financials Agent -> Financials (without scholarships)
 # ==============================================================================
@@ -598,7 +741,21 @@ financials_agent = LlmAgent(
     description="Researches cost of attendance and financial aid philosophy.",
     instruction="""Research: {university_name}
 
-SEARCH for: cost of attendance 2024-2025, tuition, financial aid statistics.
+=== DATA SOURCES (Search these specifically) ===
+1. Common Data Set Section H: Need-based aid generosity, percentage of need met, "gapping"
+2. College Scorecard: Average annual costs and cumulative debt
+3. TuitionFit: Actual pricing packages offered to similar profiles
+4. MyinTuition / Net Price Calculator: Instant cost estimates
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- "{university_name}" Common Data Set Section H financial aid 2024
+- site:collegescorecard.ed.gov "{university_name}" cost debt
+- "{university_name}" net price calculator average aid
+- "{university_name}" cost of attendance 2024-2025 tuition room board
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -631,7 +788,6 @@ Use ( ) instead of curly braces.
     output_key="financials_output"
 )
 
-
 # ==============================================================================
 # AGENT 10: Scholarships Agent -> Scholarships
 # ==============================================================================
@@ -642,7 +798,22 @@ scholarships_agent = LlmAgent(
     description="Researches all available scholarships.",
     instruction="""Research: {university_name}
 
-SEARCH for: merit scholarships, Regents Scholarship, full ride, departmental scholarships.
+=== DATA SOURCES (Search these specifically) ===
+1. Common Data Set Section H2A: "Institutional non-need-based scholarship or grant aid" (merit aid)
+2. Fastweb: External scholarship matches
+3. Road2College (R2C Insights): Merit aid generosity rankings
+4. EducationUSA: International student scholarship opportunities
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- "{university_name}" merit scholarship Regents full ride
+- "{university_name}" Common Data Set H2A non-need scholarship
+- site:fastweb.com "{university_name}" scholarship
+- "{university_name}" departmental scholarships honors program
+- "{university_name}" international student scholarship
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -680,7 +851,6 @@ Use ( ) instead of curly braces.
     output_key="scholarships_output"
 )
 
-
 # ==============================================================================
 # AGENT 11: Credit Policies Agent -> CreditPolicies
 # ==============================================================================
@@ -691,7 +861,21 @@ credit_policies_agent = LlmAgent(
     description="Researches AP, IB, and transfer credit policies.",
     instruction="""Research: {university_name}
 
-SEARCH for: AP credit policy, IB credit policy, ASSIST.org, transfer articulation.
+=== DATA SOURCES (Search these specifically) ===
+1. Common Data Set Section D: Transfer admission stats and credit acceptance policies
+2. Transferology / ASSIST.org: Specific transfer articulations
+3. Official Registrar Websites: AP/IB score conversion charts
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- site:*.edu "{university_name}" AP credit policy 2024 score chart
+- site:*.edu "{university_name}" IB credit policy higher level
+- site:assist.org "{university_name}" transfer articulation
+- "{university_name}" Common Data Set Section D transfer credits
+- "{university_name}" registrar AP IB exam credit
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -718,7 +902,6 @@ Use ( ) instead of curly braces.
     output_key="credit_policies_output"
 )
 
-
 # ==============================================================================
 # AGENT 12: Student Insights Agent -> StudentInsights
 # ==============================================================================
@@ -729,7 +912,22 @@ student_insights_agent = LlmAgent(
     description="Researches crowdsourced student insights and tips.",
     instruction="""Research: {university_name}
 
-SEARCH for: Niche reviews, Reddit accepted profiles, essays that worked, mistakes to avoid.
+=== DATA SOURCES (Search these specifically) ===
+1. StudentsReview: Uncensored faculty and social dynamics feedback
+2. Unigo: Student-written reviews and ratings on campus safety
+3. Niche: Student polls and "grades" on campus aspects
+4. College Confidential: Real-time student discussions and "chance me" threads
+
+⚠️ WARNING: Example values below are for STRUCTURE ONLY.
+DO NOT copy example numbers. Use ONLY data from your searches.
+If data cannot be found, use null - NEVER make up values.
+
+=== REQUIRED SEARCHES ===
+- site:studentsreview.com "{university_name}" review rating
+- site:unigo.com "{university_name}" student reviews
+- site:niche.com "{university_name}" student life poll
+- site:talk.collegeconfidential.com "{university_name}" accepted profile 2024
+- "{university_name}" essays that worked reddit
 
 OUTPUT JSON with EXACTLY this structure:
 
@@ -764,7 +962,6 @@ Use ( ) instead of curly braces.
     tools=[google_search],
     output_key="student_insights_output"
 )
-
 
 # ==============================================================================
 # AGENT 13: Outcomes Agent -> CareerOutcomes + RetentionStats (NEW)
@@ -825,7 +1022,6 @@ Use ( ) instead of curly braces.
     tools=[google_search],
     output_key="outcomes_output"
 )
-
 
 # ==============================================================================
 # VALIDATION AGENTS  (New)
@@ -902,7 +1098,6 @@ class ValidationFixer(BaseAgent):
             ctx.session.state['validation_errors'] = f"Processing error: {str(e)}"
             yield Event(author=self.name)
 
-
 llm_refiner_agent = LlmAgent(
     name="LlmRefinerAgent",
     model=MODEL_NAME,
@@ -944,36 +1139,56 @@ profile_builder_agent = LlmAgent(
     name="ProfileBuilder",
     model=MODEL_NAME,
     description="Aggregates all research outputs into a structured UniversityProfile JSON.",
-    instruction="""Aggregate all research outputs into a single UniversityProfile.
-    
-INPUTS FROM SESSION STATE:
-- university_name
-- strategy_output
-- admissions_current_output
-- admissions_trends_output
-- admitted_profile_output
-- colleges_output
-- majors_output
-- application_output
-- strategy_tactics_output
-- financials_output
-- scholarships_output
-- credit_policies_output
-- student_insights_output
-- outcomes_output
+    instruction="""CRITICAL: You MUST aggregate ALL research outputs into a complete UniversityProfile.
+DO NOT summarize, truncate, or omit ANY data from the sub-agent outputs.
 
-TASK:
-1. Merge `colleges_output["academic_structure"]` with majors. Matches on college name.
-   - For each college in `academic_structure.colleges`, find matching key in `majors_by_college`.
-   - Set `college.majors = majors_by_college[college_name]`.
-   
-2. Construct the final `UniversityProfile` JSON.
-   - Combine all sections.
-   - Ensure `_id` is snake_case of university name.
-   - Ensure `last_updated` is today's date.
-   - Ensure `report_source_files` is empty list [].
+=== INPUT DATA (from session state) ===
+Read ALL of these state variables and include ALL their content:
 
-3. OUTPUT the complete JSON object in `university_profile` key.
+1. strategy_output → Extract: metadata, strategic_profile (executive_summary, market_position, admissions_philosophy, us_news_rank, analyst_takeaways, campus_dynamics)
+2. admissions_current_output → Extract: current_status (ALL acceptance rates, class size, test policy, early_admission_stats)
+3. admissions_trends_output → Extract: longitudinal_trends (ALL 5 years of data including waitlist_stats)
+4. admitted_profile_output → Extract: admitted_student_profile (gpa, testing, demographics with racial_breakdown)
+5. colleges_output → Extract: academic_structure (structure_type, ALL colleges, minors_certificates)
+6. majors_output → MERGE into colleges: For each college, add .majors array from majors_by_college
+7. application_output → Extract: application_process (platforms, deadlines, supplemental_requirements, holistic_factors)
+8. strategy_tactics_output → Extract: application_strategy (ALL tips and tactics)
+9. financials_output → Extract: financials (tuition_and_fees, financial_aid_philosophy)
+10. scholarships_output → MERGE into financials: Add ALL scholarships with full details (name, amount, eligibility)
+11. credit_policies_output → Extract: credit_policies (ap_credits, ib_credits, transfer_articulation)
+12. student_insights_output → Extract: student_insights (campus_dynamics, tips_and_hacks)
+13. outcomes_output → Extract: outcomes (employment, median_earnings_10yr, top_employers) AND student_retention
+
+=== OUTPUT STRUCTURE ===
+Output this EXACT structure with ALL data preserved:
+
+{
+  "_id": "<snake_case of university_name>",
+  "metadata": <from strategy_output>,
+  "strategic_profile": <from strategy_output - PRESERVE ALL analyst_takeaways>,
+  "admissions_data": {
+    "current_status": <from admissions_current_output>,
+    "longitudinal_trends": <from admissions_trends_output - ALL 5 years>,
+    "admitted_student_profile": <from admitted_profile_output - ALL demographics>
+  },
+  "academic_structure": <from colleges_output WITH majors_output MERGED>,
+  "application_process": <from application_output>,
+  "application_strategy": <from strategy_tactics_output>,
+  "financials": <from financials_output WITH scholarships_output MERGED>,
+  "credit_policies": <from credit_policies_output>,
+  "student_insights": <from student_insights_output>,
+  "outcomes": <from outcomes_output>,
+  "student_retention": <from outcomes_output>
+}
+
+=== RULES ===
+1. PRESERVE ALL DATA - do not truncate or summarize
+2. Include ALL array items (all years, all scholarships, all majors)
+3. Include ALL nested objects with ALL their fields
+4. Use null only for genuinely missing data
+5. Ensure _id is snake_case of university name
+6. Set last_updated to today's date
+7. report_source_files should be empty list []
 """,
     output_key="university_profile"
 )
@@ -1030,12 +1245,11 @@ research_phase = ParallelAgent(
     ]
 )
 
-# 2. Sequential Validation Loop (Build -> Fix -> Save)
+# 2. Sequential Pipeline (Build -> Save)
 validation_and_save_pipeline = SequentialAgent(
     name="ValidationAndSavePipeline",
     sub_agents=[
         profile_builder_agent,
-        correction_loop,
         file_saver_agent
     ]
 )
@@ -1048,7 +1262,7 @@ input_tool = AgentTool(agent=university_name_extractor)
 research_tool = AgentTool(
     agent=SequentialAgent(
         name="ResearchAndValidate",
-        sub_agents=[research_phase, validation_and_save_pipeline]
+        sub_agents=[state_initializer, research_phase, validation_and_save_pipeline]
     )
 )
 

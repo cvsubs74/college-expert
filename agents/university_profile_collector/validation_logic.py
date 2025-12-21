@@ -10,8 +10,20 @@ def fix_escape_sequences(content: str) -> str:
     return content.replace("\\'", "'")
 
 def fix_json_syntax(content: str) -> str:
-    """Fix common JSON syntax issues."""
+    """Fix common JSON syntax issues including malformed field names."""
+    # Remove trailing commas before } or ]
     content = re.sub(r',(\s*[}\]])', r'\1', content)
+    
+    # Fix double-quoted field names like "\"field": -> "field":
+    # This handles cases where LLM outputs extra escaped quotes
+    content = re.sub(r'"\\?"([^"]+)":', r'"\1":', content)
+    
+    # Fix """field""" patterns (triple quotes)
+    content = re.sub(r'"""([^"]+)"""', r'"\1"', content)
+    
+    # Fix empty field names ""field" -> "field"
+    content = re.sub(r'""([a-zA-Z_][^"]*)":', r'"\1":', content)
+    
     return content
 
 def fix_is_waitlist_ranked(data: dict) -> int:
