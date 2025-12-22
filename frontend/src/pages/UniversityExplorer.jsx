@@ -163,205 +163,119 @@ const transformUniversityData = (apiData) => {
 
 // --- University Card Component ---
 const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick, isInList, onToggleList, fitAnalysis, onAnalyzeFit, isAnalyzing, onShowFitDetails, onOpenChat }) => {
-    const formatNumber = (num) => {
-        if (num === 'N/A' || num === null || num === undefined) return 'N/A';
-        return typeof num === 'number' ? num.toLocaleString() : num;
+    // Fit category badge colors (matching Launchpad style)
+    const fitBadgeColors = {
+        SAFETY: 'bg-green-100 text-green-800',
+        TARGET: 'bg-blue-100 text-blue-800',
+        REACH: 'bg-[#FCEEE8] text-[#C05838]',
+        SUPER_REACH: 'bg-red-100 text-red-800'
     };
 
-    // Stratia-themed Fit category styling
-    const fitConfig = {
-        SAFETY: {
-            color: 'from-[#1A4D2E] to-[#2D6B45]',
-            label: 'Safety',
-            Icon: CheckCircleIcon,
-            border: 'border-[#D6E8D5]',
-            bg: 'bg-[#D6E8D5]/30'
-        },
-        TARGET: {
-            color: 'from-blue-500 to-indigo-600',
-            label: 'Target',
-            Icon: ArrowTrendingUpIcon,
-            border: 'border-blue-200',
-            bg: 'bg-blue-50'
-        },
-        REACH: {
-            color: 'from-[#C05838] to-[#D4704F]',
-            label: 'Reach',
-            Icon: LightBulbIcon,
-            border: 'border-[#E8A090]',
-            bg: 'bg-[#FCEEE8]'
-        },
-        SUPER_REACH: {
-            color: 'from-red-500 to-rose-600',
-            label: 'Super Reach',
-            Icon: SparklesIcon,
-            border: 'border-red-200',
-            bg: 'bg-red-50'
-        }
+    const fitLabels = {
+        SAFETY: 'Safety',
+        TARGET: 'Target',
+        REACH: 'Reach',
+        SUPER_REACH: 'Super Reach'
     };
 
-    const currentFit = fitAnalysis?.fit_category || uni.softFitCategory || 'TARGET';
-    const fit = fitConfig[currentFit] || fitConfig.TARGET;
-    const FitIcon = fit.Icon;
+    const currentFit = fitAnalysis?.fit_category || uni.softFitCategory || null;
+    const matchPercentage = fitAnalysis?.match_percentage;
+
+    // Get first letter for avatar
+    const initial = uni.name?.charAt(0)?.toUpperCase() || 'U';
 
     return (
-        <div className={`group relative bg-white rounded-2xl shadow-sm hover:shadow-lg border ${fit.border} transition-all duration-300 hover:-translate-y-0.5 overflow-hidden`}>
-
-            {/* Ribbon */}
-            <div className={`absolute top-0 left-0 px-4 py-1.5 bg-gradient-to-r ${fit.color} text-white text-xs font-bold rounded-br-xl shadow-sm z-10 flex items-center gap-1.5`}>
-                <FitIcon className="w-3.5 h-3.5" />
-                {fitAnalysis?.match_percentage ? (
-                    <span>{fitAnalysis.match_percentage}% {fit.label}</span>
-                ) : (
-                    <span>{fit.label}</span>
-                )}
-                {isAnalyzing && <span className="animate-pulse ml-1">...</span>}
-            </div>
-
-            {/* Main Row Layout */}
-            <div className="flex items-stretch pt-2">
-                {/* Content Area */}
-                <div className="flex-1 px-5 pb-5 pt-12">
-                    {/* Header Row */}
-                    <div className="flex items-start justify-between mb-3">
-                        <div className="flex-1">
-                            <h3
-                                onClick={() => onSelect(uni)}
-                                className="font-serif text-lg font-bold text-[#2C2C2C] hover:text-[#1A4D2E] cursor-pointer transition-colors line-clamp-1"
-                            >
-                                {uni.name}
-                            </h3>
-                            <div className="flex items-center gap-3 mt-1 text-sm text-gray-500">
-                                <span className="flex items-center gap-1">
-                                    <MapPinIcon className="h-4 w-4" />
-                                    {uni.location.city}, {uni.location.state}
-                                </span>
-                                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${uni.location.type === 'Private'
-                                    ? 'bg-purple-100 text-purple-700'
-                                    : 'bg-blue-100 text-blue-700'
-                                    }`}>
-                                    {uni.location.type}
-                                </span>
-                            </div>
-                        </div>
-                        {/* News Sentiment Badge */}
-                        {sentiment && sentiment.sentiment !== 'neutral' && (
-                            <button
-                                onClick={(e) => { e.stopPropagation(); onSentimentClick(sentiment); }}
-                                className={`ml-2 px-2 py-1 rounded-lg text-xs font-medium flex items-center gap-1 ${sentiment.sentiment === 'positive'
-                                    ? 'bg-green-50 text-green-700 hover:bg-green-100'
-                                    : 'bg-red-50 text-red-700 hover:bg-red-100'
-                                    }`}
-                            >
-                                {sentiment.sentiment === 'positive' ? '📈' : '⚠️'}
-                                <span className="hidden sm:inline">News</span>
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Stats Row - M3 Filled Cards */}
-                    <div className="flex flex-wrap gap-2 mb-3">
-                        <div className="flex items-center gap-2 bg-[#D6E8D5] rounded-xl px-3 py-2">
-                            <ChartBarIcon className="h-4 w-4 text-[#1A4D2E]" />
-                            <div>
-                                <div className="text-xs text-[#1A4D2E] font-medium">Accept</div>
-                                <div className="text-sm font-bold text-[#2C2C2C]">
-                                    {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}%` : 'N/A'}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2 bg-green-50 rounded-xl px-3 py-2">
-                            <CurrencyDollarIcon className="h-4 w-4 text-green-600" />
-                            <div>
-                                <div className="text-xs text-green-600 font-medium">Tuition</div>
-                                <div className="text-sm font-bold text-gray-900">
-                                    {uni.financials.inStateTuition !== 'N/A' ? `$${formatNumber(uni.financials.inStateTuition)}` : 'N/A'}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2 bg-blue-50 rounded-xl px-3 py-2">
-                            <TrophyIcon className="h-4 w-4 text-blue-600" />
-                            <div>
-                                <div className="text-xs text-blue-600 font-medium">Rank</div>
-                                <div className="text-sm font-bold text-gray-900">
-                                    {uni.rankings.usNews !== 'N/A' ? `#${uni.rankings.usNews}` : 'N/A'}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2 bg-purple-50 rounded-xl px-3 py-2">
-                            <BanknotesIcon className="h-4 w-4 text-purple-600" />
-                            <div>
-                                <div className="text-xs text-purple-600 font-medium">Earnings</div>
-                                <div className="text-sm font-bold text-gray-900">
-                                    {uni.outcomes.medianEarnings !== 'N/A' ? `$${formatNumber(uni.outcomes.medianEarnings)}` : 'N/A'}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Summary (truncated) */}
-                    {uni.summary && uni.summary !== 'No summary available.' && (
-                        <p className="text-sm text-gray-600 line-clamp-2 mb-3">{uni.summary}</p>
-                    )}
+        <div className="bg-white rounded-xl border border-[#E0DED8] p-5 hover:shadow-md transition-all">
+            <div className="flex items-start gap-4">
+                {/* Circular Avatar */}
+                <div className="w-12 h-12 rounded-full bg-[#F8F6F0] flex items-center justify-center flex-shrink-0 border border-[#E0DED8]">
+                    <span className="text-lg font-bold text-[#4A4A4A]">{initial}</span>
                 </div>
 
-                {/* Action Buttons - Right Side */}
-                <div className="flex flex-col justify-center gap-2 p-4 border-l border-gray-100 bg-gray-50/50">
-                    <button
+                {/* Main Content */}
+                <div className="flex-1 min-w-0">
+                    {/* Name & Location */}
+                    <h3
                         onClick={() => onSelect(uni)}
-                        className="px-4 py-2.5 rounded-xl text-sm font-medium bg-[#1A4D2E] text-white hover:bg-[#2D6B45] transition-all shadow-sm hover:shadow flex items-center gap-2"
+                        className="font-semibold text-[#2C2C2C] hover:text-[#1A4D2E] cursor-pointer transition-colors truncate"
                     >
-                        <EyeIcon className="h-4 w-4" />
-                        Explore
-                    </button>
-                    <button
-                        onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
-                        disabled={!isInList && uni.isLimitReached}
-                        className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center gap-2 ${isInList
-                            ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-700'
-                            : uni.isLimitReached
-                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                : 'bg-purple-100 text-purple-700 hover:bg-purple-200'
-                            }`}
-                        title={isInList ? 'Remove from list' : (uni.isLimitReached ? 'Upgrade to add more' : 'Add to My Launchpad')}
-                    >
-                        {isInList ? (
-                            <>
-                                <CheckCircleIcon className="h-4 w-4" />
-                                Saved
-                            </>
-                        ) : uni.isLimitReached ? (
-                            <>
-                                <LockClosedIcon className="h-4 w-4" />
-                                Locked
-                            </>
-                        ) : (
-                            <>
-                                <RocketLaunchIcon className="h-4 w-4" />
-                                Save
-                            </>
+                        {uni.name}
+                    </h3>
+                    <p className="text-sm text-[#4A4A4A] flex items-center gap-1 mt-0.5">
+                        <MapPinIcon className="h-3.5 w-3.5" />
+                        {uni.location.city}, {uni.location.state}
+                    </p>
+
+                    {/* Badges Row */}
+                    <div className="flex flex-wrap items-center gap-2 mt-2">
+                        {currentFit && (
+                            <span className={`px-2 py-0.5 rounded text-xs font-medium ${fitBadgeColors[currentFit]}`}>
+                                {fitLabels[currentFit]}
+                            </span>
                         )}
-                    </button>
-                    <div className="flex gap-1">
+                        <span className="text-xs text-[#4A4A4A] bg-[#F8F6F0] px-2 py-0.5 rounded">
+                            #{uni.rankings.usNews !== 'N/A' ? uni.rankings.usNews : '—'} US News
+                        </span>
+                        <span className="text-xs text-[#4A4A4A] bg-[#F8F6F0] px-2 py-0.5 rounded">
+                            {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}% Accept` : 'N/A'}
+                        </span>
+                        {uni.location.type && (
+                            <span className="text-xs text-[#4A4A4A] bg-[#F8F6F0] px-2 py-0.5 rounded">
+                                {uni.location.type}
+                            </span>
+                        )}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex items-center gap-2 mt-3">
                         <button
-                            onClick={() => onCompare(uni)}
-                            className={`flex-1 p-2 rounded-xl text-xs transition-all ${isSelectedForCompare
-                                ? 'bg-[#1A4D2E] text-white'
-                                : 'bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#A8C5A6]'
-                                }`}
-                            title="Compare"
+                            onClick={() => onSelect(uni)}
+                            className="px-3 py-1.5 text-sm font-medium text-[#1A4D2E] bg-[#D6E8D5] rounded-lg hover:bg-[#A8C5A6] transition-colors"
                         >
-                            <ScaleIcon className="h-4 w-4 mx-auto" />
+                            View Analysis
+                        </button>
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
+                            disabled={!isInList && uni.isLimitReached}
+                            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${isInList
+                                    ? 'text-green-700 bg-green-100 hover:bg-red-100 hover:text-red-700'
+                                    : uni.isLimitReached
+                                        ? 'text-gray-400 bg-gray-100 cursor-not-allowed'
+                                        : 'text-[#4A4A4A] bg-[#F8F6F0] hover:bg-[#E0DED8]'
+                                }`}
+                        >
+                            {isInList ? 'Saved' : uni.isLimitReached ? 'Locked' : 'Save'}
                         </button>
                         <button
                             onClick={(e) => { e.stopPropagation(); onOpenChat(uni); }}
-                            className="flex-1 p-2 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-all"
-                            title="Ask AI"
+                            className="px-3 py-1.5 text-sm font-medium text-[#4A4A4A] bg-[#F8F6F0] rounded-lg hover:bg-[#E0DED8] transition-colors"
                         >
-                            <ChatBubbleLeftRightIcon className="h-4 w-4 mx-auto" />
+                            Chat
                         </button>
                     </div>
                 </div>
+
+                {/* Match Percentage Circle (Right Side) */}
+                {matchPercentage && (
+                    <div className="flex flex-col items-center flex-shrink-0">
+                        <div className="relative w-14 h-14">
+                            <svg className="w-14 h-14 transform -rotate-90">
+                                <circle cx="28" cy="28" r="24" fill="none" stroke="#E0DED8" strokeWidth="4" />
+                                <circle
+                                    cx="28" cy="28" r="24" fill="none"
+                                    stroke="#1A4D2E"
+                                    strokeWidth="4"
+                                    strokeDasharray={`${(matchPercentage / 100) * 150.8} 150.8`}
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                            <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-[#1A4D2E]">
+                                {matchPercentage}%
+                            </span>
+                        </div>
+                        <span className="text-xs text-[#4A4A4A] mt-1">Match</span>
+                    </div>
+                )}
             </div>
         </div>
     );
