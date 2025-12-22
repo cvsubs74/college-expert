@@ -70,10 +70,12 @@ const StratiaLaunchpad = () => {
                 console.log('[StratiaLaunchpad] Colleges loaded:', colleges.length, colleges.map(c => c.university_id));
 
                 // Merge precomputed fits into college list
-                if (fitsResult.success && fitsResult.fits) {
-                    console.log('[StratiaLaunchpad] Fits available:', fitsResult.fits.length, fitsResult.fits.map(f => f.university_id));
+                // API returns 'results' array (or 'fits' for backwards compat)
+                const fitsArray = fitsResult.results || fitsResult.fits || [];
+                if (fitsResult.success && fitsArray.length > 0) {
+                    console.log('[StratiaLaunchpad] Fits available:', fitsArray.length, fitsArray.map(f => f.university_id));
                     const fitsMap = {};
-                    fitsResult.fits.forEach(fit => {
+                    fitsArray.forEach(fit => {
                         fitsMap[fit.university_id] = {
                             fit_category: fit.fit_category,
                             match_percentage: fit.match_percentage || fit.match_score,
