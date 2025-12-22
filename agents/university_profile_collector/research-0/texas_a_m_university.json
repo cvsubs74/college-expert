@@ -1,0 +1,588 @@
+{
+  "university_profile": {
+    "_id": "texas_a_m_university",
+    "university_name": "Texas A&M University",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://www.tamu.edu",
+      "https://www.usnews.com/best-colleges/tamu-3632"
+    ],
+    "metadata": {
+      "official_name": "Texas A&M University",
+      "location": {
+        "city": "College Station",
+        "state": "TX",
+        "type": "Public"
+      }
+    },
+    "strategic_profile": {
+      "executive_summary": "Texas A&M University is a flagship public research institution and one of the largest universities in the United States by enrollment. It holds the rare triple designation as a land-, sea-, and space-grant university, specializing in engineering, agriculture, and military traditions through its Corps of Cadets.",
+      "market_position": "Public Ivy",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 51,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "While the headline acceptance rate is approximately 63%, the rate for non-auto-admit (holistic review) applicants often dips below 30%, especially in Engineering.",
+          "implication": "Out-of-state and non-top 10% Texas residents must treat the school as highly selective and apply by the early December deadline."
+        },
+        {
+          "category": "Testing Policy",
+          "insight": "The university has officially reinstated SAT/ACT requirements for the Fall 2026 admissions cycle after a temporary test-optional period.",
+          "implication": "Prospective students must prioritize standardized testing as a mandatory component of their academic profile."
+        },
+        {
+          "category": "Enrollment Scaling",
+          "insight": "Enrollment surged to over 81,000 students in 2025, leading to a $25 million faculty hiring initiative to maintain student-teacher ratios.",
+          "implication": "Applicants should prepare for a high-density campus environment and competitive registration for popular majors."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Deeply rooted in the 'Aggie' identity, the social life revolves around historic traditions such as Midnight Yell, Silver Taps, and the Corps of Cadets, creating a high-affinity 'family' atmosphere.",
+        "transportation_impact": "The sprawling 5,200-acre campus is bisected by railroad tracks, making the internal free shuttle bus system and bicycle infrastructure critical for student mobility between Main and West campus.",
+        "research_impact": "As an R1 institution with over $1.6 billion in system-wide R&D expenditures, the university leverages the Texas A&M Transportation Institute (TTI) and its RELLIS campus to lead global innovations in autonomous vehicles and infrastructure."
+      }
+    },
+    "admissions_data": {
+      "current_status": {
+        "overall_acceptance_rate": 57.3,
+        "in_state_acceptance_rate": 57.7,
+        "out_of_state_acceptance_rate": 45.1,
+        "international_acceptance_rate": 48.0,
+        "transfer_acceptance_rate": 51.8,
+        "admits_class_size": 31472,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional (Note: SAT/ACT requirements reinstated for Fall 2026)",
+        "early_admission_stats": []
+      },
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": null,
+          "unweighted_middle_50": null,
+          "average_weighted": null,
+          "percentile_25": null,
+          "percentile_75": null,
+          "notes": "Texas A&M does not officially report average GPA. Approximately 53% of the class graduated in the top 10% of high school class. Admissions are heavily influenced by the Texas Top 10% rule."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1160-1390",
+          "sat_reading_middle_50": "580-690",
+          "sat_math_middle_50": "570-710",
+          "act_composite_middle_50": "25-31",
+          "submission_rate": 76.0
+        },
+        "demographics": {
+          "first_gen_percentage": 21.0,
+          "legacy_percentage": 0.0,
+          "international_percentage": 1.2,
+          "geographic_breakdown": [
+            {
+              "region": "Texas",
+              "percentage": 94.0
+            },
+            {
+              "region": "Other US States",
+              "percentage": 4.8
+            },
+            {
+              "region": "International",
+              "percentage": 1.2
+            }
+          ],
+          "gender_breakdown": {
+            "men": 49.8,
+            "women": 50.2,
+            "non_binary": null
+          },
+          "racial_breakdown": {
+            "white": 53.8,
+            "black_african_american": 2.4,
+            "hispanic_latino": 25.6,
+            "asian": 12.6,
+            "native_american_alaskan": 0.2,
+            "pacific_islander": 0.03,
+            "two_or_more_races": 3.8,
+            "unknown": 0.4,
+            "non_resident_alien": 1.2
+          },
+          "religious_affiliation": "Not specified"
+        }
+      },
+      "longitudinal_trends": [
+        {
+          "year": 2025,
+          "applications_total": 58742,
+          "admits_total": 33735,
+          "acceptance_rate_overall": 57.43,
+          "yield_rate": 39.91,
+          "notes": "Waitlist not utilized; applicants funneled into alternative pathways like Blinn TEAM or PSA."
+        },
+        {
+          "year": 2024,
+          "applications_total": 54905,
+          "admits_total": 31472,
+          "acceptance_rate_overall": 57.32,
+          "yield_rate": 39.71
+        },
+        {
+          "year": 2023,
+          "applications_total": 51108,
+          "admits_total": 32249,
+          "acceptance_rate_overall": 63.1,
+          "yield_rate": 42.55
+        },
+        {
+          "year": 2022,
+          "applications_total": 43422,
+          "admits_total": 27203,
+          "acceptance_rate_overall": 62.65,
+          "yield_rate": 45.91
+        },
+        {
+          "year": 2021,
+          "applications_total": 44188,
+          "admits_total": 26079,
+          "acceptance_rate_overall": 59.02,
+          "yield_rate": 44.95
+        }
+      ]
+    },
+    "academic_structure": {
+      "structure_type": "Colleges and Schools",
+      "colleges": [
+        {
+          "name": "College of Engineering",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 40.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Uses the Entry-to-a-Major (ETAM) process. Students enter as General Engineering and must earn a 3.75 GPA for automatic entry into first-choice major.",
+          "housing_profile": "Engineering Living Learning Community (LLC) located in the Commons (Mosher Hall).",
+          "student_archetype": "The Driven Problem-Solver: Highly collaborative yet competitive.",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.75
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.75
+            },
+            {
+              "name": "Aerospace Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.75
+            },
+            {
+              "name": "Civil Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.75
+            },
+            {
+              "name": "Electrical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.75
+            },
+            {
+              "name": "Chemical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.75
+            },
+            {
+              "name": "Industrial Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 3.2
+            },
+            {
+              "name": "Petroleum Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.75
+            },
+            {
+              "name": "Nuclear Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 3.0
+            },
+            {
+              "name": "Ocean Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 3.0
+            }
+          ]
+        },
+        {
+          "name": "Mays Business School",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 35.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Enrollment strictly capped; seats fill by mid-October. Apply early (Aug/Sept).",
+          "housing_profile": "Northside modular halls or Hullabaloo Hall.",
+          "student_archetype": "The Professional Networker: Polished, career-oriented.",
+          "majors": [
+            {
+              "name": "Business Administration",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.5
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.5
+            },
+            {
+              "name": "Finance",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.5
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.5
+            },
+            {
+              "name": "Management",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.5
+            },
+            {
+              "name": "Supply Chain Management",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.5
+            }
+          ]
+        },
+        {
+          "name": "College of Arts and Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 65.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Largest college; interdisciplinary. Psychology is highly popular.",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.75
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.A./B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Chemistry",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Political Science",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Communication",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.25
+            },
+            {
+              "name": "History",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            }
+          ]
+        },
+        {
+          "name": "College of Veterinary Medicine and Biomedical Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 40.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "BIMS is rigorous; recommended for pre-vet and pre-med.",
+          "majors": [
+            {
+              "name": "Biomedical Sciences",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5
+            }
+          ]
+        },
+        {
+          "name": "College of Agriculture and Life Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Rooted in A&M history. Demonstrating FFA/4-H involvement is beneficial.",
+          "majors": [
+            {
+              "name": "Animal Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Agricultural Economics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Biochemistry",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Genetics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Horticultural Sciences",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Poultry Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            }
+          ]
+        },
+        {
+          "name": "College of Architecture",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 45.0,
+          "is_restricted_or_capped": true,
+          "majors": []
+        },
+        {
+          "name": "School of Performance, Visualization and Fine Arts",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 50.0,
+          "is_restricted_or_capped": true,
+          "majors": []
+        },
+        {
+          "name": "Bush School of Government and Public Service",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 55.0,
+          "is_restricted_or_capped": false,
+          "majors": []
+        },
+        {
+          "name": "School of Public Health",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 60.0,
+          "is_restricted_or_capped": false,
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Game Design and Development Minor",
+        "National Security Affairs Certificate",
+        "Entrepreneurship and Innovation Certificate",
+        "Artificial Intelligence in the Arts Minor",
+        "Cybersecurity Minor",
+        "Public Policy Certificate",
+        "Leadership Studies Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "ApplyTexas"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-12-01",
+          "is_binding": false,
+          "notes": "Main application deadline; documentation due by Dec 15."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Class Rank",
+          "GPA",
+          "Course Rigor",
+          "Extracurriculars"
+        ],
+        "secondary_factors": [
+          "Character",
+          "Talent",
+          "First-Generation Status",
+          "State Residency"
+        ],
+        "essay_importance": "Important",
+        "demonstrated_interest": "Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "None",
+        "first_gen_boost": "Moderate",
+        "specific_differentiators": "Significant weight on Texas Top 10% auto-admit and alignment with the six core Aggie values."
+      },
+      "strategy_tactics": {
+        "major_selection": [
+          "Apply early (mid-October) for Mays Business School as it is first-come, first-served.",
+          "List a competitive major 1st and a 'safe' major in a different college 2nd.",
+          "Consider Agribusiness in the College of Ag as a strategic alternative to Mays Finance."
+        ],
+        "college_ranking": [
+          "Choose the Galveston (TAMUG) pathway for engineering to be treated as a full-time College Station student.",
+          "Blinn TEAM or TEAB pathways save tuition while maintaining Aggie status."
+        ]
+      }
+    },
+    "financials_scholarships": {
+      "financials": {
+        "tuition_model": "Tuition Stability Plan",
+        "cost_of_attendance": {
+          "in_state_total": 30608,
+          "out_of_state_total": 58976
+        },
+        "average_aid": {
+          "need_based": 13226,
+          "merit_based": 4914
+        },
+        "percent_receiving_aid": 65.0
+      },
+      "scholarships": [
+        {
+          "name": "Regents' Scholars Program",
+          "amount": "$24,000 over 4 years",
+          "type": "Need/Merit",
+          "application_method": "Automatic Consideration (via FAFSA/TASFA)"
+        },
+        {
+          "name": "National Merit Recognition Award",
+          "amount": "Up to $43,000 total package",
+          "type": "Merit",
+          "application_method": "Automatic (Name TAMU first choice)"
+        },
+        {
+          "name": "Aggie Assurance",
+          "amount": "Full tuition coverage",
+          "type": "Need",
+          "application_method": "FAFSA/TASFA"
+        },
+        {
+          "name": "President's Endowed Scholarship",
+          "amount": "$13,000 total",
+          "type": "Merit",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "Century Scholars Program",
+          "amount": "$21,000 total",
+          "type": "Merit",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "Foundation Excellence Award",
+          "amount": "$10,000 over 4 years",
+          "type": "Merit/Need",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "Lechner Scholarship",
+          "amount": "$11,000 total",
+          "type": "Merit",
+          "application_method": "Separate Application"
+        }
+      ]
+    },
+    "credit_policies": {
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for most exams",
+        "notes": "Score of 5 required for PHYS 206/207. Calculus BC requires 4/5 for full MATH 151/152."
+      },
+      "ib_policy": {
+        "general_rule": "Scores of 5+ on HL exams; 4+ for Diploma holders",
+        "diploma_bonus": true
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Top 10% class rank for Texas residents (automatic admission)",
+        "1250+ SAT or 28+ ACT for holistic review",
+        "Early submission for Engineering and Business",
+        "Strong performance in advanced coursework (AP, IB, Dual Credit)"
+      ],
+      "common_activities": [
+        "Leadership roles in organizations like NHS or Student Council",
+        "Varsity athletics or competitive sports teams",
+        "STEM-focused projects (for Engineering)",
+        "Significant community service and volunteer hours",
+        "Part-time work experience demonstrating responsibility"
+      ],
+      "essay_tips": [
+        "Be extremely concise for 'Why Major' prompts (50-100 words).",
+        "Connect values to the 'Aggie Spirit' and core traditions.",
+        "Demonstrate how the Aggie Network aligns with career goals.",
+        "Use the 'Life Event' essay to demonstrate resilience and maturity."
+      ],
+      "red_flags": [
+        "Applying late for rolling majors like Business.",
+        "Generic essays not tailored specifically to TAMU.",
+        "Low grades in prerequisite math/science for Engineering.",
+        "Failing to utilize 'Additional Information' for academic gaps."
+      ],
+      "insights": [
+        "The Aggie Network provides immense post-grad job placement benefits.",
+        "Engineering students must pass ETAM to stay in their major.",
+        "Alternative pathways like Blinn TEAM are very common entries.",
+        "Demonstrating fit with traditional school values is highly valued."
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 72097,
+      "employment_rate_2yr": 92.0,
+      "top_employers": [
+        "Amazon",
+        "Dell Technologies",
+        "Apple",
+        "Lockheed Martin",
+        "Google",
+        "Tesla",
+        "Meta",
+        "Deloitte"
+      ],
+      "retention_graduation": {
+        "freshman_retention": 94.0,
+        "graduation_rate_4yr": 61.0,
+        "graduation_rate_6yr": 84.0
+      },
+      "loan_default_rate": 2.1
+    }
+  }
+}

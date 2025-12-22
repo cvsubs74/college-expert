@@ -1,0 +1,357 @@
+{
+  "university_profile": {
+    "_id": "clarkson_university",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://www.clarkson.edu",
+      "https://en.wikipedia.org/wiki/Clarkson_University",
+      "https://www.usnews.com/best-colleges/clarkson-university-2699"
+    ],
+    "metadata": {
+      "official_name": "Clarkson University",
+      "location": {
+        "city": "Potsdam",
+        "state": "NY",
+        "type": "Private"
+      }
+    },
+    "strategic_profile": {
+      "executive_summary": "Clarkson University is a private research university focused on STEM, engineering, and business, located in a rural setting near the Adirondack Park. It is highly regarded for its high return on investment, boasting a 97-98% job placement rate within six months of graduation.",
+      "market_position": "High-ROI Private Research",
+      "admissions_philosophy": "Holistic review (Test-optional)",
+      "us_news_rank": 143,
+      "analyst_takeaways": [
+        {
+          "category": "Career Outcomes",
+          "insight": "Graduates earn salaries in the top 3% nationally, with an average early career salary of over $82,000.",
+          "implication": "The school is a prime choice for students prioritizing immediate workforce readiness and high starting pay."
+        },
+        {
+          "category": "Selectivity",
+          "insight": "Maintains a moderately selective acceptance rate between 70-79%.",
+          "implication": "Competitive for STEM but accessible for strong students who demonstrate interest through essays and recommendations."
+        },
+        {
+          "category": "Industry Alignment",
+          "insight": "Self-branded as 'America’s Corporate Partner University' with over 200 employers attending career fairs.",
+          "implication": "Industry ties are deeply integrated into the curriculum and research funding."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A tight-knit, STEM-centric community with a dominant 'Division I' hockey culture (ECAC) and strong ties to outdoor recreation in the nearby Adirondack Mountains.",
+        "transportation_impact": "The rural Potsdam location makes the 'Hill' campus highly residential; the university is actively researching sustainable electric vehicle grid transport to address its unique geographical challenges.",
+        "research_impact": "Classified as an R2 High Research Activity institution, Clarkson provides hands-on undergraduate research opportunities starting as early as freshman year, particularly through its CAMP (Center for Advanced Materials Processing) and SPEED teams."
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Schools",
+      "colleges": [
+        {
+          "name": "Wallace H. Coulter School of Engineering and Applied Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Strong performance in calculus and physics is essential. Highlight hands-on experience in STEM clubs like FIRST Robotics or maker-space projects, as the school values 'motivated doers.'",
+          "housing_profile": "Traditional first-year halls in 'The Quad' with access to the Solinsky Engineers LLC and the FIRST Robotics floor in Graham Hall.",
+          "student_archetype": "Hands-on problem-solvers and makers",
+          "majors": [
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": 77.0,
+              "average_gpa_admitted": 3.82,
+              "prerequisite_courses": ["Calculus I", "Calculus II", "Physics I", "Physics II", "General Chemistry I"],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": ["ES 220 Statics", "ES 340 Thermodynamics", "ES 223 Rigid Body Dynamics"],
+              "special_requirements": "Professional Experience (internship or co-op) required for graduation",
+              "admissions_pathway": "Direct Admit / Engineering Studies",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": ["MA 231 Calculus III", "MA 232 Elementary Differential Equations", "ES 220 Statics", "ES 222 Strength of Materials", "ES 330 Fluid Mechanics", "ME 310 Thermodynamic System Engineering", "ME 445 Integrated Design I", "ME 446 Integrated Design II"],
+                "electives": ["ME 444 Computer-Aided Engineering", "ME 390 Additive Manufacturing", "ES 380 Biomechanics", "ME 429 Welding and Metallurgy"],
+                "total_units": 120,
+                "major_units": 73
+              },
+              "notable_professors": ["Dr. Goodarz Ahmadi", "Dr. Cetin Cetinkaya", "Dr. Ken Visser"],
+              "notes": "Engineering Studies program allows students to switch between engineering disciplines freely during the first year."
+            },
+            {
+              "name": "Civil Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": 77.0,
+              "average_gpa_admitted": 3.75,
+              "prerequisite_courses": ["Calculus I", "Calculus II", "Physics I", "Chemistry I"],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": ["ES 220 Statics", "ES 222 Strength of Materials"],
+              "special_requirements": "Not specified",
+              "admissions_pathway": "Direct Admit / Engineering Studies",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": ["CE 212 Intro to Engineering Design", "CE 320 Structural Analysis", "CE 330 Water Resources Engineering", "CE 441 Reinforced Concrete Design", "CE 490 Senior Design"],
+                "electives": ["CE 410 Sustainable Infrastructure", "CE 501 Fracture Mechanics of Concrete"],
+                "total_units": 120,
+                "major_units": 90
+              },
+              "notable_professors": ["Dr. John Dempsey", "Dr. Robert Thomas", "Dr. Steve Wojtkiewicz"],
+              "notes": "Highly ranked program with strong emphasis on infrastructure and materials."
+            },
+            {
+              "name": "Chemical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": 77.0,
+              "average_gpa_admitted": 3.8,
+              "prerequisite_courses": ["General Chemistry I & II", "Calculus I & II", "Physics I & II"],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": ["CH 210 Chemical Process Analysis", "CM 241 Organic Chemistry I"],
+              "special_requirements": "Not specified",
+              "admissions_pathway": "Direct Admit / Engineering Studies",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": ["CH 220 Chemical Engineering Thermodynamics", "CH 330 Transfer Process Fundamentals", "CH 350 Chemical Reactor Principles"],
+                "electives": ["CH 465 Biochemical Engineering", "ES 464 Corrosion Engineering"],
+                "total_units": 120,
+                "major_units": 33
+              },
+              "notable_professors": ["Dr. Elizabeth Podlaha-Murphy", "Dr. Sitaraman Krishnan", "Dr. Simona Liguori"],
+              "notes": "Curriculum focuses on molecular-level process design and sustainable chemistry."
+            }
+          ]
+        },
+        {
+          "name": "David D. Reh School of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 78.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Focus on leadership roles and entrepreneurial initiative. The school values students who seek to bridge the gap between technology and market strategy.",
+          "housing_profile": "Traditional dorms and suites with Living-Learning Communities (LLCs) focused on innovation and professional development.",
+          "student_archetype": "Entrepreneurial leaders and analytical thinkers",
+          "majors": [
+            {
+              "name": "Engineering & Management",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": 77.0,
+              "average_gpa_admitted": 3.8,
+              "prerequisite_courses": ["Calculus I", "General Chemistry"],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": ["SB 113 Small Business", "ES 220 Statics"],
+              "special_requirements": "Dually accredited by AACSB and ABET",
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": ["ES 220 Statics", "OM 331 Operations & Supply Chain Management", "EC 350 Engineering Economics", "EM 480 Project Management"],
+                "electives": ["EM 390 Additive Manufacturing", "MK 320 Principles of Marketing"],
+                "total_units": 120,
+                "major_units": 32
+              },
+              "notable_professors": ["Dr. Alan Bowman", "Dr. John Milne", "Dr. Amir Mousavian"],
+              "notes": "One of only two programs in the world dually accredited as both business and engineering."
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Aerospace Engineering Minor",
+        "Business Minor",
+        "Biology Minor",
+        "Computer Science Minor",
+        "Data Science Minor",
+        "Materials Engineering Minor",
+        "Project Management Certificate"
+      ]
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 77.36,
+      "international_acceptance_rate": 68.15,
+      "transfer_acceptance_rate": 85.5,
+      "admits_class_size": 5153,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 151,
+          "admits": 119,
+          "acceptance_rate": 79.0,
+          "class_fill_percentage": 24.0
+        }
+      ]
+    },
+    "admissions_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 6661,
+        "admits_total": 5153,
+        "enrolled_total": 489,
+        "acceptance_rate_overall": 77.38,
+        "yield_rate": 9.49,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 59,
+          "accepted_spots": 37,
+          "admitted_from_waitlist": 7,
+          "waitlist_admit_rate": 18.92,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Significant increase in waitlist admission rate."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 7347,
+        "admits_total": 5668,
+        "enrolled_total": 606,
+        "acceptance_rate_overall": 77.15,
+        "yield_rate": 10.69,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 37,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 1,
+          "waitlist_admit_rate": 2.7,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record high number of applications."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.50-4.00",
+        "unweighted_middle_50": "3.00-3.74",
+        "average_weighted": 3.7,
+        "percentile_25": "3.50",
+        "percentile_75": "4.00",
+        "notes": "Strong emphasis on STEM-heavy coursework."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1215-1380",
+        "sat_reading_middle_50": "593-690",
+        "sat_math_middle_50": "605-700",
+        "act_composite_middle_50": "26-31",
+        "submission_rate": 51.0,
+        "policy_note": "Test-optional for most programs."
+      },
+      "demographics": {
+        "first_gen_percentage": 25.0,
+        "legacy_percentage": 0.0,
+        "international_percentage": 6.0,
+        "geographic_breakdown": [
+          {"region": "New York", "percentage": 68.8},
+          {"region": "Massachusetts", "percentage": 5.9},
+          {"region": "International", "percentage": 6.0}
+        ],
+        "gender_breakdown": {
+          "men": {"applicants": 3572, "admits": 2837, "acceptance_rate": 79.4, "note": "69.8% of undergraduates"},
+          "women": {"applicants": 3063, "admits": 2300, "acceptance_rate": 75.1, "note": "30.2% of undergraduates"},
+          "non_binary": {"applicants": 26, "admits": 16, "acceptance_rate": 61.5, "note": "0.5% of applicants"}
+        },
+        "racial_breakdown": {
+          "white": 67.0,
+          "black_african_american": 3.05,
+          "hispanic_latino": 6.3,
+          "asian": 4.36,
+          "native_american_alaskan": 0.33,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 2.91,
+          "unknown": 2.0,
+          "non_resident_alien": 13.95
+        },
+        "religious_affiliation": "Not specified"
+      }
+    },
+    "application_process": {
+      "platforms": ["Common App", "Clarkson University Application"],
+      "application_deadlines": [
+        {"plan_type": "Early Decision", "date": "2024-12-01", "is_binding": true, "notes": "Priority for merit aid"},
+        {"plan_type": "Regular Decision", "date": "2025-01-15", "is_binding": false, "notes": "Priority for financial aid"}
+      ],
+      "supplemental_requirements": [
+        {"target_program": "All", "requirement_type": "Personal Statement", "deadline": "2025-01-15", "details": "One personal statement (250-650 words) required."},
+        {"target_program": "Honors Program", "requirement_type": "Supplemental Essays", "deadline": "2025-02-01", "details": "Two short essay questions required."}
+      ],
+      "holistic_factors": {
+        "primary_factors": ["High School GPA", "Course Rigor", "Letters of Recommendation", "Personal Statement"],
+        "secondary_factors": ["Extracurricular Activities", "Talents", "Character/Personal Qualities"],
+        "essay_importance": "High",
+        "demonstrated_interest": "Important",
+        "interview_policy": "Recommended",
+        "specific_differentiators": "Emphasis on STEM engagement and hands-on experience."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to 'Engineering Studies' if stats are borderline for easier initial entry.",
+        "Consider 'Engineering and Management' for high placement rates and ROI."
+      ],
+      "college_ranking_tactics": [
+        "Rank highly for salary impact and ROI.",
+        "Factor in the 4-year on-campus residency requirement."
+      ],
+      "alternate_major_strategy": "List 'Engineering Studies' as an alternate for high-demand engineering majors."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {"tuition": 59398, "total_coa": 81706, "housing": 18252},
+        "out_of_state": {"tuition": 59398, "total_coa": 81706}
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 40642,
+      "average_merit_aid": 37930,
+      "percent_receiving_aid": 100.0
+    },
+    "scholarships": [
+      {"name": "Ignite Presidential Fellowship", "type": "Merit", "amount": "Full Tuition", "deadline": "2025-02-15", "benefits": "Covers all tuition for 10 students", "application_method": "Separate Application"},
+      {"name": "Clarkson Leadership Award", "type": "Merit", "amount": "$30,000 per year", "application_method": "Counselor Nomination"},
+      {"name": "Dean's Scholarship", "type": "Merit", "amount": "Varies", "application_method": "Automatic Consideration"}
+    ],
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 4 or 5 generally required for credit",
+        "exceptions": ["30-hour limit for all test-based credit"],
+        "usage": "Satisfies Knowledge Area and major requirements"
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with scores of 5, 6, or 7 grant credit",
+        "diploma_bonus": true
+      },
+      "transfer_articulation": {
+        "tools": ["Internal Mapping Your Credits tool"],
+        "restrictions": "30-hour cap on exam credits; grade of C or better"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": ["Strong STEM performance", "Hands-on tinkering mindset", "GPA near 3.8"],
+      "common_activities": ["SPEED teams", "Undergraduate research", "D-I Hockey"],
+      "essay_tips": ["Reference specific SPEED teams", "Focus on fit with Potsdam's geography"],
+      "red_flags": ["Lack of genuine interest in collaborative 'maker' culture"],
+      "insights": ["Highly ranked for ROI", "Close-knit, unpretentious culture", "Winter resilience is essential"]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 89696,
+      "employment_rate_2yr": 98.0,
+      "grad_school_rate": 23.0,
+      "top_employers": ["General Dynamics", "Lockheed Martin", "IBM", "Amazon"],
+      "loan_default_rate": 1.6
+    },
+    "student_retention": {
+      "freshman_retention_rate": 85.0,
+      "graduation_rate_4_year": 64.6,
+      "graduation_rate_6_year": 78.0
+    }
+  }
+}

@@ -106,16 +106,43 @@
           "legacy_percentage": 0.0,
           "international_percentage": 4.5,
           "geographic_breakdown": [
-            { "region": "Colorado", "percentage": 65.0 },
-            { "region": "California", "percentage": 7.0 },
-            { "region": "Texas", "percentage": 4.0 },
-            { "region": "Other US States", "percentage": 19.5 },
-            { "region": "International", "percentage": 4.5 }
+            {
+              "region": "Colorado",
+              "percentage": 65.0
+            },
+            {
+              "region": "California",
+              "percentage": 7.0
+            },
+            {
+              "region": "Texas",
+              "percentage": 4.0
+            },
+            {
+              "region": "Other US States",
+              "percentage": 19.5
+            },
+            {
+              "region": "International",
+              "percentage": 4.5
+            }
           ],
           "gender_breakdown": {
-            "men": { "applicants": 16770, "admits": 14533, "acceptance_rate": 86.6 },
-            "women": { "applicants": 21608, "admits": 19500, "acceptance_rate": 90.2 },
-            "non_binary": { "applicants": 0, "admits": 0, "acceptance_rate": 0.0 }
+            "men": {
+              "applicants": 16770,
+              "admits": 14533,
+              "acceptance_rate": 86.6
+            },
+            "women": {
+              "applicants": 21608,
+              "admits": 19500,
+              "acceptance_rate": 90.2
+            },
+            "non_binary": {
+              "applicants": 0,
+              "admits": 0,
+              "acceptance_rate": 0.0
+            }
           },
           "racial_breakdown": {
             "white": 68.0,
@@ -173,19 +200,54 @@
       ]
     },
     "application_process": {
-      "platforms": ["Common App"],
+      "platforms": [
+        "Common App"
+      ],
       "application_deadlines": [
-        { "plan_type": "Early Action", "date": "2024-11-15", "is_binding": false, "notes": "Non-binding; recommended for full scholarship consideration" },
-        { "plan_type": "Early Action (International)", "date": "2024-12-01", "is_binding": false, "notes": "Non-binding" },
-        { "plan_type": "Regular Decision", "date": "2025-01-15", "is_binding": false, "notes": "Final date for full scholarship consideration" }
+        {
+          "plan_type": "Early Action",
+          "date": "2024-11-15",
+          "is_binding": false,
+          "notes": "Non-binding; recommended for full scholarship consideration"
+        },
+        {
+          "plan_type": "Early Action (International)",
+          "date": "2024-12-01",
+          "is_binding": false,
+          "notes": "Non-binding"
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-01-15",
+          "is_binding": false,
+          "notes": "Final date for full scholarship consideration"
+        }
       ],
       "supplemental_requirements": [
-        { "target_program": "All", "requirement_type": "Common App Personal Statement", "deadline": "Same as application", "details": "Standard 250-650 word essay required for all applicants." },
-        { "target_program": "Music & Dance", "requirement_type": "Audition", "deadline": "Varies by department", "details": "Audition or portfolio required for admission to specific performing arts majors." }
+        {
+          "target_program": "All",
+          "requirement_type": "Common App Personal Statement",
+          "deadline": "Same as application",
+          "details": "Standard 250-650 word essay required for all applicants."
+        },
+        {
+          "target_program": "Music & Dance",
+          "requirement_type": "Audition",
+          "deadline": "Varies by department",
+          "details": "Audition or portfolio required for admission to specific performing arts majors."
+        }
       ],
       "holistic_factors": {
-        "primary_factors": ["Course Rigor", "Academic GPA"],
-        "secondary_factors": ["Application Essay", "Extracurriculars", "Talent", "Character"],
+        "primary_factors": [
+          "Course Rigor",
+          "Academic GPA"
+        ],
+        "secondary_factors": [
+          "Application Essay",
+          "Extracurriculars",
+          "Talent",
+          "Character"
+        ],
         "essay_importance": "Important",
         "demonstrated_interest": "Not Considered",
         "interview_policy": "Not Offered",
@@ -197,8 +259,16 @@
       "tuition_model": "Annual Increase",
       "cost_of_attendance_breakdown": {
         "academic_year": "2024-2025",
-        "in_state": { "tuition": 13774, "total_coa": 35722, "housing": 17508 },
-        "out_of_state": { "tuition": 32734, "total_coa": 56372, "supplemental_tuition": 18960 }
+        "in_state": {
+          "tuition": 13774,
+          "total_coa": 35722,
+          "housing": 17508
+        },
+        "out_of_state": {
+          "tuition": 32734,
+          "total_coa": 56372,
+          "supplemental_tuition": 18960
+        }
       },
       "aid_philosophy": "Merit Focused",
       "average_need_based_aid": 12538,
@@ -206,18 +276,64 @@
       "percent_receiving_aid": 60.0
     },
     "scholarships": [
-      { "name": "Monfort Scholarship", "type": "Merit", "amount": "Full ride", "deadline": "2025-02-01", "application_method": "Admission Application + CSUSA" },
-      { "name": "Green and Gold Scholarship", "type": "Merit", "amount": "Up to $16,000 per year", "deadline": "2025-01-15", "application_method": "Automatic Consideration" },
-      { "name": "Western Undergraduate Exchange (WUE)", "type": "Merit", "amount": "Approx. $11,500/year savings", "deadline": "2025-01-15", "application_method": "Automatic Consideration" },
-      { "name": "University Honors Program Scholarship", "type": "Merit", "amount": "$4,000 over 4 years", "deadline": "2025-05-01", "application_method": "Honors Program Application" },
-      { "name": "Presidential Scholarship (Non-Resident)", "type": "Merit", "amount": "$9,000 per year", "deadline": "2025-01-15", "application_method": "Automatic Consideration" }
+      {
+        "name": "Monfort Scholarship",
+        "type": "Merit",
+        "amount": "Full ride",
+        "deadline": "2025-02-01",
+        "application_method": "Admission Application + CSUSA"
+      },
+      {
+        "name": "Green and Gold Scholarship",
+        "type": "Merit",
+        "amount": "Up to $16,000 per year",
+        "deadline": "2025-01-15",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Western Undergraduate Exchange (WUE)",
+        "type": "Merit",
+        "amount": "Approx. $11,500/year savings",
+        "deadline": "2025-01-15",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "University Honors Program Scholarship",
+        "type": "Merit",
+        "amount": "$4,000 over 4 years",
+        "deadline": "2025-05-01",
+        "application_method": "Honors Program Application"
+      },
+      {
+        "name": "Presidential Scholarship (Non-Resident)",
+        "type": "Merit",
+        "amount": "$9,000 per year",
+        "deadline": "2025-01-15",
+        "application_method": "Automatic Consideration"
+      }
     ],
     "outcomes": {
-      "earnings_stats": { "median_earnings_10yr": 60543 },
-      "employment_stats": { "employment_rate_2yr": 79.0, "grad_school_rate": 17.0 },
-      "top_employers": ["Amazon", "Deloitte", "Lockheed Martin", "Charles Schwab", "KPMG"],
-      "retention_graduation": { "freshman_retention_rate": 85.6, "graduation_rate_4_year": 47.0, "graduation_rate_6_year": 70.0 },
+      "earnings_stats": {
+        "median_earnings_10yr": 60543
+      },
+      "employment_stats": {
+        "employment_rate_2yr": 79.0,
+        "grad_school_rate": 17.0
+      },
+      "top_employers": [
+        "Amazon",
+        "Deloitte",
+        "Lockheed Martin",
+        "Charles Schwab",
+        "KPMG"
+      ],
+      "retention_graduation": {
+        "freshman_retention_rate": 85.6,
+        "graduation_rate_4_year": 47.0,
+        "graduation_rate_6_year": 70.0
+      },
       "loan_default_rate": 3.1
     }
-  }
+  },
+  "_id": "colorado_state_university"
 }

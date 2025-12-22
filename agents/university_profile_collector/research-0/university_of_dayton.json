@@ -1,0 +1,609 @@
+{
+  "university_profile": {
+    "_id": "university_of_dayton",
+    "university_name": "University of Dayton",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://udayton.edu",
+      "https://www.usnews.com/best-colleges/university-of-dayton-3127",
+      "https://shiksha.com/studyabroad/usa/universities/university-of-dayton/rankings"
+    ],
+    "metadata": {
+      "official_name": "University of Dayton",
+      "location": {
+        "city": "Dayton",
+        "state": "Ohio",
+        "type": "Private"
+      }
+    },
+    "strategic_profile": {
+      "executive_summary": "A top-tier private Catholic research university known for its Marianist educational philosophy, which emphasizes community, service, and educating the whole person. It is a national leader in engineering research and development with deep ties to the aerospace and defense industries.",
+      "market_position": "Hidden Gem",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 143,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Acceptance rates have plummeted from 81% in 2020 to approximately 62% for the most recent cycles",
+          "implication": "Admissions are becoming significantly more competitive; applicants should leverage the Early Action deadline and demonstrate a fit for the Marianist mission."
+        },
+        {
+          "category": "Experiential Learning",
+          "insight": "The university hosts 'Flyer Enterprises,' the fourth-largest student-run business in the nation, and the Davis Center, where students manage nearly $40 million of the endowment",
+          "implication": "Business and entrepreneurship majors receive practical, high-stakes experience that outpaces traditional classroom theory."
+        },
+        {
+          "category": "Housing and Engagement",
+          "insight": "A unique 'PATH' points system rewards campus involvement with priority for the highly-coveted 'Neighborhood' housing",
+          "implication": "A high level of social and extracurricular engagement is essentially required to secure preferred upperclassman residence options."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "UD features a deeply community-centric residential culture centered on 'The Neighborhood,' a collection of university-owned houses where students maintain long-standing traditions like 'Christmas on Campus' and a notable 'party school' reputation.",
+        "transportation_impact": "While on-campus parking is limited and strictly regulated, the university provides comprehensive shuttle services and a free 'Flyer' bus connection to downtown Dayton, fostering high campus walkability.",
+        "research_impact": "UD is the #1 Catholic university for engineering R&D, heavily influenced by its proximity to Wright-Patterson Air Force Base and its role as a hub for aerospace, aviation history, and STEM innovation."
+      }
+    },
+    "admissions_statistics": {
+      "current_status": {
+        "overall_acceptance_rate": 65.45,
+        "in_state_acceptance_rate": null,
+        "out_of_state_acceptance_rate": null,
+        "international_acceptance_rate": 74.0,
+        "transfer_acceptance_rate": 30.8,
+        "admits_class_size": 14386,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "applications": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "class_fill_percentage": null
+          }
+        ]
+      },
+      "trends": [
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 21981,
+          "admits_total": 14386,
+          "enrolled_total": 1680,
+          "acceptance_rate_overall": 65.45,
+          "yield_rate": 11.68,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Waitlist data not publicly disclosed for recent cycles; admissions selectivity increased significantly compared to 2021 levels."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 22747,
+          "admits_total": 14023,
+          "enrolled_total": 1985,
+          "acceptance_rate_overall": 61.65,
+          "yield_rate": 14.16,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Record high application volume for this cycle."
+        },
+        {
+          "year": 2022,
+          "cycle_name": "Class of 2026",
+          "applications_total": 18864,
+          "admits_total": 13969,
+          "enrolled_total": 2100,
+          "acceptance_rate_overall": 74.05,
+          "yield_rate": 15.04,
+          "waitlist_stats": {
+            "year": 2022,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Waitlist data not publicly disclosed."
+        },
+        {
+          "year": 2021,
+          "cycle_name": "Class of 2025",
+          "applications_total": 17791,
+          "admits_total": 14340,
+          "enrolled_total": 2064,
+          "acceptance_rate_overall": 80.6,
+          "yield_rate": 14.39,
+          "waitlist_stats": {
+            "year": 2021,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Admissions metrics reflect post-pandemic baseline."
+        }
+      ]
+    },
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.50-4.00",
+        "average_weighted": null,
+        "percentile_25": "3.50",
+        "percentile_75": "4.00",
+        "notes": "Admission is selective; 55% of admitted students have a GPA of 3.75 or higher. Most successful applicants graduate in the top 25% of their high school class."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1350",
+        "sat_reading_middle_50": "590-680",
+        "sat_math_middle_50": "590-690",
+        "act_composite_middle_50": "24-31",
+        "submission_rate": 43.0,
+        "policy_note": "Test-optional for most programs, but scores are considered if submitted."
+      },
+      "demographics": {
+        "first_gen_percentage": 10.0,
+        "legacy_percentage": null,
+        "international_percentage": 2.8,
+        "geographic_breakdown": [
+          {
+            "region": "Ohio",
+            "percentage": 54.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 43.2
+          },
+          {
+            "region": "International",
+            "percentage": 2.8
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 11553,
+            "admits": 6941,
+            "acceptance_rate": 60.1,
+            "note": "Men make up approximately 51% of the enrolled undergraduate student body."
+          },
+          "women": {
+            "applicants": 10230,
+            "admits": 7361,
+            "acceptance_rate": 72.0,
+            "note": "Women make up approximately 49% of the enrolled undergraduate student body."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 79.2,
+          "black_african_american": 4.9,
+          "hispanic_latino": 6.7,
+          "asian": 1.7,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.6,
+          "unknown": 0.9,
+          "non_resident_alien": 2.8
+        },
+        "religious_affiliation": "Catholic (Marianist)"
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "School of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 55.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Strong performance in advanced mathematics (calculus-ready) and a stated interest in the university's robust multi-term co-op and internship program are essential for applicants.",
+          "housing_profile": "Commonly associated with the Marianist Hall Living Learning Community (LLC) which focuses on integration of faith and technical vocation.",
+          "student_archetype": "Ambitious problem-solvers and career-oriented pragmatists who value the school’s high-touch industry connections.",
+          "majors": [
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.M.E.",
+              "is_impacted": true,
+              "acceptance_rate": 68.0,
+              "average_gpa_admitted": 3.8,
+              "prerequisite_courses": [
+                "Calculus 1",
+                "Chemistry",
+                "Physics"
+              ],
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": [
+                "MEE 202 Thermodynamics",
+                "EGM 202 Dynamics",
+                "MEE 303 Strength of Materials"
+              ],
+              "special_requirements": "Requires B or better in MTH 168, CHM 123, and PHY 206 for internal transfer.",
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "core_courses": [
+                  "MEE 104L Solid Modeling in Design",
+                  "MEE 202 Engineering Thermodynamics",
+                  "EGM 201 Statics",
+                  "EGM 202 Dynamics",
+                  "MEE 307L Fluid Mechanics Laboratory",
+                  "MEE 431L Manufacturing Process Laboratory",
+                  "MEE 432L Capstone Design I",
+                  "MEE 439 Senior Seminar"
+                ],
+                "electives": [
+                  "MEE 420 Energy Systems",
+                  "MEE 438 Robotics",
+                  "MEE 450 Biomechanics",
+                  "MEE 460 Composite Materials"
+                ],
+                "total_units": 122,
+                "major_units": 78
+              },
+              "notable_professors": [
+                "Dr. Jamie Ervin",
+                "Dr. Andrew Murray",
+                "Dr. Tony Saliba"
+              ],
+              "notes": "One of the most popular and rigorous programs at UD; high research volume."
+            },
+            {
+              "name": "Computer Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "Calculus 1",
+                "Physics"
+              ],
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": [
+                "ECE 201 Circuit Analysis",
+                "ECE 303 Signals and Systems"
+              ],
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "notable_professors": [],
+              "notes": "Strong focus on microprocessors and embedded systems."
+            },
+            {
+              "name": "Chemical Engineering",
+              "degree_type": "B.C.E.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 3.0,
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "notable_professors": []
+            },
+            {
+              "name": "Electrical Engineering",
+              "degree_type": "B.S.E.E.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": [
+                "ECE 333 Electromagnetics"
+              ],
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "notable_professors": []
+            }
+          ]
+        },
+        {
+          "name": "School of Business Administration",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 60.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Applicants should emphasize leadership experiences and an interest in community-based business ethics.",
+          "housing_profile": "Students typically reside in Marycrest or Stuart Hall, moving into Student Neighborhood houses as juniors.",
+          "student_archetype": "Socially-adept networkers and aspiring entrepreneurs.",
+          "majors": [
+            {
+              "name": "Finance",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "Calculus for Business"
+              ],
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": [
+                "ACC 207 Financial Accounting",
+                "FIN 301 Introduction to Financial Management"
+              ],
+              "special_requirements": "Requires C+ or better in FIN 301.",
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "core_courses": [
+                  "ACC 207 Financial Accounting",
+                  "FIN 301",
+                  "FIN 360",
+                  "FIN 401",
+                  "FIN 460",
+                  "ECO 203",
+                  "MGT 101",
+                  "MGT 490"
+                ],
+                "electives": [
+                  "FIN 450",
+                  "FIN 470",
+                  "FIN 491",
+                  "FIN 498"
+                ],
+                "total_units": 120,
+                "major_units": 21
+              },
+              "notable_professors": [
+                "Dr. Jon Fulkerson",
+                "Dr. Robert Berger",
+                "Dr. Ralph Frasca"
+              ],
+              "notes": "Allows access to the Hanley Trading Center."
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 3.0,
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "core_courses": [
+                  "MKT 301",
+                  "MKT 315",
+                  "MKT 430",
+                  "MKT 440",
+                  "ACC 208",
+                  "BAN 203"
+                ],
+                "electives": [
+                  "MKT 310",
+                  "MKT 411",
+                  "MKT 421",
+                  "MKT 428"
+                ],
+                "total_units": 120,
+                "major_units": 18
+              },
+              "notable_professors": [
+                "Dr. Trevor Collier",
+                "Dr. Marsha Keune"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "College of Arts and Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 68.0,
+          "is_restricted_or_capped": false,
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 74.0,
+              "average_gpa_admitted": 3.6,
+              "prerequisite_courses": [
+                "Precalculus"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "CPS 150",
+                "CPS 151",
+                "CPS 350"
+              ],
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.0,
+              "notable_professors": [
+                "Dr. R. Sritharan",
+                "Dr. James Buckley"
+              ]
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "AI and Data Science Minor",
+        "Catholic Social Thought and Practice Minor",
+        "Human Rights Studies Minor",
+        "Cyber Security Minor",
+        "Entrepreneurship Minor",
+        "Sustainability Minor",
+        "Bioengineering Minor",
+        "Nonprofit Management Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Coalition App",
+        "Dayton Admissions Portal"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Action",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Priority consideration for merit scholarships"
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-02-01",
+          "is_binding": false,
+          "notes": "Rolling notification follows after the deadline"
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Essays",
+          "details": "No supplemental essays required beyond the Common App personal statement"
+        },
+        {
+          "target_program": "Music",
+          "requirement_type": "Audition & Essay",
+          "deadline": "2025-02-16",
+          "details": "Audition and short essay (500 words) required"
+        },
+        {
+          "target_program": "Physician Assistant (Pre-professional)",
+          "requirement_type": "Interview",
+          "details": "Interviews required for specialized tracks"
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Rigor of Secondary School Record",
+          "Academic GPA",
+          "Standardized Test Scores (Test-Optional)"
+        ],
+        "secondary_factors": [
+          "Extracurricular Activities",
+          "Recommendations",
+          "Character/Personal Qualities"
+        ],
+        "essay_importance": "Important",
+        "demonstrated_interest": "Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "Considered",
+        "first_gen_boost": "Considered",
+        "specific_differentiators": "Emphasis on Marianist values and community service."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to 'Discover Engineering' or 'Discover Business' if your stats are slightly below thresholds.",
+        "Choose Computer Engineering over Computer Science for guaranteed co-ops in the local defense sector."
+      ],
+      "college_ranking_tactics": [
+        "Rank UD as 'High Interest' early to qualify for the $4,000 textbook scholarship.",
+        "Prioritize UD if you prefer a non-'weed-out' engineering culture."
+      ],
+      "alternate_major_strategy": "If denied from Engineering, select Physics or Biology to use the 'Bachelor’s Plus Master’s' pathway into an Engineering Master's."
+    },
+    "financials": {
+      "tuition_model": "Tuition Stability Plan",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 49140,
+          "total_coa": 69965,
+          "housing": 16800
+        },
+        "out_of_state": {
+          "tuition": 49140,
+          "total_coa": 69965,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 41066,
+      "average_merit_aid": 26810,
+      "percent_receiving_aid": 98.0
+    },
+    "scholarships": [
+      {
+        "name": "Trustees' Merit Scholarship",
+        "type": "Merit",
+        "amount": "Up to $132,000 over 4 years",
+        "deadline": "2025-02-01",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Textbook Scholarship",
+        "type": "Other",
+        "amount": "$4,000 over 4 years",
+        "deadline": "2025-02-01",
+        "application_method": "Campus Visit & FAFSA Completion"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Scores of 3, 4, or 5 grant credit for most exams.",
+        "exceptions": [
+          "Scores of 3 are awarded on a department-by-department basis"
+        ],
+        "usage": "Used for advanced standing and CAP requirements."
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with scores of 5+ generally grant credit.",
+        "diploma_bonus": true,
+        "sl_exceptions": [
+          "SL credit only for Computer Science and Philosophy"
+        ]
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transferology",
+          "UD Internal Credit Evaluation Tool"
+        ],
+        "restrictions": "30 unit residency requirement; 50% of major requirements must be completed at UD."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A weighted GPA around 3.8 or higher",
+        "Evidence of character that aligns with the 'Marianist spirit'",
+        "Strong interest in collaborative learning"
+      ],
+      "common_activities": [
+        "Community service and social justice work",
+        "Flyer sports culture",
+        "Undergraduate research via UDRI"
+      ],
+      "essay_tips": [
+        "Mention the unique 'student neighborhood' housing",
+        "Connect personal values to the common good"
+      ],
+      "red_flags": [
+        "Generic 'Why School' essay failing to mention Marianist identity",
+        "Lacking evidence of teamwork"
+      ],
+      "insights": [
+        "Flyer network and community support are significant career assets",
+        "The 'neighborhood' is central to the UD identity"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 75537,
+      "employment_rate_2yr": 78.0,
+      "grad_school_rate": 19.0,
+      "top_employers": [
+        "General Electric (GE)",
+        "Deloitte",
+        "Wright-Patterson Air Force Base",
+        "Google",
+        "Apple"
+      ],
+      "loan_default_rate": 1.0,
+      "student_retention": {
+        "freshman_retention_rate": 89.0,
+        "graduation_rate_4_year": 66.0,
+        "graduation_rate_6_year": 82.0
+      }
+    }
+  }
+}

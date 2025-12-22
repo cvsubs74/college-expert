@@ -127,13 +127,32 @@
         "first_gen_percentage": 22.3,
         "international_percentage": 8.9,
         "geographic_breakdown": [
-          { "region": "Ohio", "percentage": 70.5 },
-          { "region": "Other US States", "percentage": 20.6 },
-          { "region": "International", "percentage": 8.9 }
+          {
+            "region": "Ohio",
+            "percentage": 70.5
+          },
+          {
+            "region": "Other US States",
+            "percentage": 20.6
+          },
+          {
+            "region": "International",
+            "percentage": 8.9
+          }
         ],
         "gender_breakdown": {
-          "men": { "applicants": 15566, "admits": 13189, "acceptance_rate": 84.7, "note": "Based on 2024 IPEDS/CDS reporting." },
-          "women": { "applicants": 18713, "admits": 16049, "acceptance_rate": 85.8, "note": "Based on 2024 IPEDS/CDS reporting." },
+          "men": {
+            "applicants": 15566,
+            "admits": 13189,
+            "acceptance_rate": 84.7,
+            "note": "Based on 2024 IPEDS/CDS reporting."
+          },
+          "women": {
+            "applicants": 18713,
+            "admits": 16049,
+            "acceptance_rate": 85.8,
+            "note": "Based on 2024 IPEDS/CDS reporting."
+          },
           "non_binary": null
         },
         "racial_breakdown": {
@@ -166,11 +185,24 @@
               "is_impacted": true,
               "average_gpa_admitted": 4.1,
               "curriculum": {
-                "core_courses": ["CS 1021C Computer Science I", "CS 2021C Computer Science II", "CS 2011 Discrete Structures", "MATH 1061 Calculus I", "MATH 1062 Calculus II"],
-                "electives": ["CS 5152 Artificial Intelligence", "CS 5137 Machine Learning"],
+                "core_courses": [
+                  "CS 1021C Computer Science I",
+                  "CS 2021C Computer Science II",
+                  "CS 2011 Discrete Structures",
+                  "MATH 1061 Calculus I",
+                  "MATH 1062 Calculus II"
+                ],
+                "electives": [
+                  "CS 5152 Artificial Intelligence",
+                  "CS 5137 Machine Learning"
+                ],
                 "total_units": 128
               },
-              "notable_professors": ["Dr. Raj Bhatnagar", "Dr. Anca Ralescu", "Dr. Gowtham Atluri"]
+              "notable_professors": [
+                "Dr. Raj Bhatnagar",
+                "Dr. Anca Ralescu",
+                "Dr. Gowtham Atluri"
+              ]
             },
             {
               "name": "Mechanical Engineering",
@@ -178,11 +210,22 @@
               "is_impacted": true,
               "average_gpa_admitted": 4.0,
               "curriculum": {
-                "core_courses": ["MECH 1072 Engineering Foundations", "MECH 2020 Statics", "MECH 2021 Strength of Materials", "MECH 3010 Thermodynamics I"],
-                "electives": ["MECH 5131 Automotive Engineering", "MECH 5135 Robotics"],
+                "core_courses": [
+                  "MECH 1072 Engineering Foundations",
+                  "MECH 2020 Statics",
+                  "MECH 2021 Strength of Materials",
+                  "MECH 3010 Thermodynamics I"
+                ],
+                "electives": [
+                  "MECH 5131 Automotive Engineering",
+                  "MECH 5135 Robotics"
+                ],
                 "total_units": 126
               },
-              "notable_professors": ["Dr. Marc Cahay", "Dr. Tamara Lorenz"]
+              "notable_professors": [
+                "Dr. Marc Cahay",
+                "Dr. Tamara Lorenz"
+              ]
             }
           ]
         },
@@ -201,11 +244,23 @@
               "acceptance_rate": 15.0,
               "average_gpa_admitted": 3.8,
               "curriculum": {
-                "core_courses": ["ARCH 1001 Design Studio I", "ARCH 2001 Design Studio III", "ARCH 3004 History of Architecture", "ARCH 4001 Design Studio VII"],
-                "electives": ["ARCH 5161 Sustainable Design", "ARCH 5114 Digital Fabrication"],
+                "core_courses": [
+                  "ARCH 1001 Design Studio I",
+                  "ARCH 2001 Design Studio III",
+                  "ARCH 3004 History of Architecture",
+                  "ARCH 4001 Design Studio VII"
+                ],
+                "electives": [
+                  "ARCH 5161 Sustainable Design",
+                  "ARCH 5114 Digital Fabrication"
+                ],
                 "total_units": 120
               },
-              "notable_professors": ["Pravin Bhiwapurkar", "Mara Marcu", "Timothy Jachna"]
+              "notable_professors": [
+                "Pravin Bhiwapurkar",
+                "Mara Marcu",
+                "Timothy Jachna"
+              ]
             }
           ]
         },
@@ -223,11 +278,22 @@
               "is_impacted": true,
               "internal_transfer_gpa": 2.5,
               "curriculum": {
-                "core_courses": ["MKTG 3000 Principles", "MKTG 3080 Consumer Behavior", "ACCT 2081 Financial Accounting"],
-                "electives": ["MKTG 3090 Professional Selling", "MKTG 4015 Digital Marketing"],
+                "core_courses": [
+                  "MKTG 3000 Principles",
+                  "MKTG 3080 Consumer Behavior",
+                  "ACCT 2081 Financial Accounting"
+                ],
+                "electives": [
+                  "MKTG 3090 Professional Selling",
+                  "MKTG 4015 Digital Marketing"
+                ],
                 "total_units": 120
               },
-              "notable_professors": ["Dr. Raj Mehta", "Dr. Frank Kardes", "Professor Drew Boyd"]
+              "notable_professors": [
+                "Dr. Raj Mehta",
+                "Dr. Frank Kardes",
+                "Professor Drew Boyd"
+              ]
             }
           ]
         },
@@ -244,10 +310,18 @@
               "is_impacted": false,
               "internal_transfer_gpa": 2.0,
               "curriculum": {
-                "core_courses": ["PSYC 1001 Intro", "PSYC 2001 Research Methods", "PSYC 2002 Statistics"],
+                "core_courses": [
+                  "PSYC 1001 Intro",
+                  "PSYC 2001 Research Methods",
+                  "PSYC 2002 Statistics"
+                ],
                 "total_units": 120
               },
-              "notable_professors": ["Dr. Paula Shear", "Dr. Meera Rastogi", "Dr. Cathy Stough"]
+              "notable_professors": [
+                "Dr. Paula Shear",
+                "Dr. Meera Rastogi",
+                "Dr. Cathy Stough"
+              ]
             },
             {
               "name": "Biological Sciences",
@@ -255,10 +329,18 @@
               "is_impacted": false,
               "internal_transfer_gpa": 2.0,
               "curriculum": {
-                "core_courses": ["BIOL 1081 Biology I", "BIOL 1082 Biology II", "CHEM 1040 Gen Chem"],
+                "core_courses": [
+                  "BIOL 1081 Biology I",
+                  "BIOL 1082 Biology II",
+                  "CHEM 1040 Gen Chem"
+                ],
                 "total_units": 120
               },
-              "notable_professors": ["Dr. Laura Zanotti", "Dr. Kenneth Petren", "Dr. Stephen Matter"]
+              "notable_professors": [
+                "Dr. Laura Zanotti",
+                "Dr. Kenneth Petren",
+                "Dr. Stephen Matter"
+              ]
             }
           ]
         }
@@ -273,7 +355,9 @@
       ]
     },
     "application_process": {
-      "platforms": ["Common App"],
+      "platforms": [
+        "Common App"
+      ],
       "application_deadlines": [
         {
           "plan_type": "Early Action (Priority)",
@@ -296,8 +380,16 @@
         }
       ],
       "holistic_factors": {
-        "primary_factors": ["Course Rigor", "GPA", "Personal Statement"],
-        "secondary_factors": ["Extracurriculars", "Recommendations (Optional)", "Class Rank"],
+        "primary_factors": [
+          "Course Rigor",
+          "GPA",
+          "Personal Statement"
+        ],
+        "secondary_factors": [
+          "Extracurriculars",
+          "Recommendations (Optional)",
+          "Class Rank"
+        ],
         "essay_importance": "Moderate",
         "demonstrated_interest": "Not Considered",
         "specific_differentiators": "Focuses on 'fit' for the specific major."
@@ -323,8 +415,16 @@
       "tuition_model": "Tuition Stability Plan",
       "cost_of_attendance_breakdown": {
         "academic_year": "2024-2025",
-        "in_state": { "tuition": 13976, "housing": 13564, "total_coa": 35764 },
-        "out_of_state": { "tuition": 29310, "supplemental_tuition": 15334, "total_coa": 51098 }
+        "in_state": {
+          "tuition": 13976,
+          "housing": 13564,
+          "total_coa": 35764
+        },
+        "out_of_state": {
+          "tuition": 29310,
+          "supplemental_tuition": 15334,
+          "total_coa": 51098
+        }
       },
       "aid_philosophy": "Merit Focused",
       "average_need_based_aid": 6570,
@@ -375,7 +475,10 @@
         "diploma_bonus": false
       },
       "transfer_articulation": {
-        "tools": ["Transferology", "Transfer Equivalency Database"],
+        "tools": [
+          "Transferology",
+          "Transfer Equivalency Database"
+        ],
         "restrictions": "30 semester hour residency requirement at UC"
       }
     },
@@ -403,7 +506,13 @@
       "median_earnings_10yr": 54810,
       "employment_rate_2yr": 91.0,
       "grad_school_rate": 18.0,
-      "top_employers": ["Procter & Gamble", "Kroger", "GE Aerospace", "Cincinnati Children's", "Deloitte"],
+      "top_employers": [
+        "Procter & Gamble",
+        "Kroger",
+        "GE Aerospace",
+        "Cincinnati Children's",
+        "Deloitte"
+      ],
       "loan_default_rate": 6.9,
       "student_retention": {
         "freshman_retention_rate": 86.0,
@@ -411,5 +520,6 @@
         "graduation_rate_6_year": 72.0
       }
     }
-  }
+  },
+  "_id": "university_of_cincinnati"
 }

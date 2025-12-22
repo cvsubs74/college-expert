@@ -1,0 +1,331 @@
+{
+  "university_profile": {
+    "_id": "washington_university_in_st_louis",
+    "metadata": {
+      "official_name": "Washington University in St. Louis",
+      "location": {
+        "city": "St. Louis",
+        "state": "MO",
+        "type": "Private"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": []
+    },
+    "strategic_profile": {
+      "executive_summary": "Washington University in St. Louis is a premier private research institution renowned for its Collegiate Gothic architecture, world-class medical facilities, and a collaborative academic culture that spans nine specialized schools. It is widely recognized for balancing high-intensity research output with a strong emphasis on undergraduate teaching and student well-being.",
+      "market_position": "Elite Private",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 20,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Acceptance rates have tightened significantly, reaching a historic low of approximately 12% for the Class of 2028, down from roughly 15-16% in recent years.",
+          "implication": "Applicants should utilize Early Decision (ED I or ED II) pathways, which typically account for about 60% of the incoming class, to maximize admission chances."
+        },
+        {
+          "category": "Financial Accessibility",
+          "insight": "The university transitioned to a need-blind admissions policy for all domestic applicants in 2021, supported by a multi-billion dollar endowment.",
+          "implication": "This removes financial barriers for high-talent, low-income students, increasing the diversity and competitiveness of the applicant pool."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "The social atmosphere is characterized as 'collaborative without being cutthroat,' with over 400 student organizations and a strong emphasis on community engagement through the Gephardt Institute.",
+        "transportation_impact": "As a multimodal campus, WashU provides U-Passes for free regional transit (MetroLink/MetroBus) and has integrated the Centennial Greenway trail, reducing reliance on cars and fostering a pedestrian-friendly environment adjacent to Forest Park.",
+        "research_impact": "With an annual research budget exceeding $900 million and deep ties to the Washington University Medical Center, students have early access to high-impact clinical and technical research, particularly in biotechnology and public health."
+      }
+    },
+    "admissions_data": {
+      "current_status": {
+        "overall_acceptance_rate": 12.06,
+        "in_state_acceptance_rate": 18.82,
+        "out_of_state_acceptance_rate": 13.13,
+        "international_acceptance_rate": 6.8,
+        "transfer_acceptance_rate": 14.01,
+        "admits_class_size": 3951,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional",
+        "early_admission_stats": [
+          {
+            "plan_type": "ED",
+            "applications": 4817,
+            "admits": 1217,
+            "acceptance_rate": 25.26,
+            "class_fill_percentage": 65.85
+          }
+        ]
+      },
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": "4.00-4.30",
+          "unweighted_middle_50": "3.80-4.00",
+          "average_weighted": 4.19,
+          "percentile_25": "3.80",
+          "percentile_75": "4.00",
+          "notes": "86% of students in the Class of 2028 ranked in the top 10% of their high school class. Admissions emphasizes rigor and GPA as critical factors."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1500-1570",
+          "sat_reading_middle_50": "730-770",
+          "sat_math_middle_50": "770-800",
+          "act_composite_middle_50": "33-35",
+          "submission_rate": 56.0,
+          "policy_note": "Test-optional for the Class of 2028, but returning to required testing for the Class of 2030 (Fall 2026 entry)."
+        },
+        "demographics": {
+          "first_gen_percentage": 18.0,
+          "legacy_percentage": null,
+          "international_percentage": 11.0,
+          "geographic_breakdown": [
+            { "region": "Midwest", "percentage": 32.0 },
+            { "region": "Middle States", "percentage": 16.0 },
+            { "region": "West", "percentage": 16.0 },
+            { "region": "South", "percentage": 10.0 },
+            { "region": "Southwest", "percentage": 9.0 },
+            { "region": "New England", "percentage": 5.0 },
+            { "region": "International", "percentage": 13.0 }
+          ],
+          "gender_breakdown": {
+            "men": {
+              "applicants": 15330,
+              "admits": 1920,
+              "acceptance_rate": 12.5,
+              "note": "Represents 47% of the enrolling Class of 2028."
+            },
+            "women": {
+              "applicants": 17411,
+              "admits": 2030,
+              "acceptance_rate": 11.7,
+              "note": "Represents 53% of the enrolling Class of 2028."
+            },
+            "non_binary": null
+          },
+          "racial_breakdown": {
+            "white": 37.0,
+            "black_african_american": 8.0,
+            "hispanic_latino": 12.0,
+            "asian": 26.0,
+            "native_american_alaskan": 0.0,
+            "pacific_islander": 0.0,
+            "two_or_more_races": 1.0,
+            "unknown": 5.0,
+            "non_resident_alien": 11.0
+          },
+          "religious_affiliation": null
+        }
+      },
+      "longitudinal_trends": [
+        {
+          "year": 2025,
+          "cycle_name": "Class of 2029",
+          "applications_total": 33283,
+          "admits_total": 3968,
+          "enrolled_total": 1963,
+          "acceptance_rate_overall": 11.9,
+          "yield_rate": 49.5,
+          "waitlist_stats": {
+            "year": 2025,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Class of 2029 is the second-largest in university history."
+        },
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 32754,
+          "admits_total": 3951,
+          "enrolled_total": 1848,
+          "acceptance_rate_overall": 12.1,
+          "yield_rate": 46.8,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": null,
+            "accepted_spots": 2658,
+            "admitted_from_waitlist": 210,
+            "waitlist_admit_rate": 7.9,
+            "is_waitlist_ranked": false
+          }
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 32240,
+          "admits_total": 3855,
+          "enrolled_total": 1828,
+          "acceptance_rate_overall": 12.0,
+          "yield_rate": 47.4,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": null,
+            "accepted_spots": 2713,
+            "admitted_from_waitlist": 200,
+            "waitlist_admit_rate": 7.37,
+            "is_waitlist_ranked": false
+          }
+        }
+      ]
+    },
+    "academic_structure": {
+      "structure_type": "Schools",
+      "colleges": [
+        {
+          "name": "College of Arts & Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 12.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Strongest fit for students demonstrating 'intellectual spark' and interdisciplinary curiosity; pre-med applicants should emphasize research and community service.",
+          "housing_profile": "Primarily housed in the South 40 residential colleges; known for a mix of traditional and modern suites.",
+          "student_archetype": "Intellectually curious polymaths and high-achieving pre-professional students",
+          "majors": [
+            { "name": "Psychological & Brain Sciences", "degree_type": "B.A.", "is_impacted": false, "admissions_pathway": "Pre-Major", "notes": "Most popular major at WashU." },
+            { "name": "Biology", "degree_type": "B.A.", "is_impacted": false, "admissions_pathway": "Pre-Major", "notes": "Pre-med track standard." },
+            { "name": "Economics", "degree_type": "B.A.", "is_impacted": false, "admissions_pathway": "Pre-Major", "notes": "Strongly mathematical." }
+          ]
+        },
+        {
+          "name": "Olin Business School",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 11.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires a strong quantitative background; Calculus is essential.",
+          "housing_profile": "South 40 suites for underclassmen; many juniors and seniors live in the 'Village'.",
+          "student_archetype": "Collaborative, data-driven entrepreneurs",
+          "majors": [
+            { "name": "Finance", "degree_type": "B.S.B.A.", "is_impacted": true, "admissions_pathway": "Direct Admit", "notes": "Top-ranked undergraduate program." },
+            { "name": "Accounting", "degree_type": "B.S.B.A.", "is_impacted": false, "admissions_pathway": "Direct Admit" }
+          ]
+        },
+        {
+          "name": "McKelvey School of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 14.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Prioritize high-level Math and Science. Highlight collaborative problem-solving skills.",
+          "housing_profile": "Access to specialized makerspaces and collaborative study lounges.",
+          "student_archetype": "Ambitious problem-solvers and tech-oriented innovators",
+          "majors": [
+            { "name": "Computer Science", "degree_type": "B.S.", "is_impacted": true, "admissions_pathway": "Direct Admit", "notes": "Highly competitive for internal transfer." },
+            { "name": "Mechanical Engineering", "degree_type": "B.S.", "is_impacted": false, "admissions_pathway": "Direct Admit" }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "African & African American Studies Minor",
+        "Anthropology: Global Health and Environment Minor",
+        "Bioinformatics Minor",
+        "Business of Social Impact Minor",
+        "Data Science in the Humanities Minor",
+        "Medical Humanities Minor",
+        "Mechatronics Minor",
+        "Sustainability Certificate"
+      ]
+    },
+    "application_details": {
+      "process": {
+        "platforms": ["Common App", "Coalition App"],
+        "application_deadlines": [
+          { "plan_type": "Early Decision I", "date": "2024-11-01", "is_binding": true, "notes": "Decision released by mid-December" },
+          { "plan_type": "Early Decision II", "date": "2025-01-02", "is_binding": true, "notes": "Decision released by mid-February" },
+          { "plan_type": "Regular Decision", "date": "2025-01-02", "is_binding": false, "notes": "Decision released by April 1" }
+        ],
+        "supplemental_requirements": [
+          { "target_program": "All", "requirement_type": "Required Essay", "deadline": null, "details": "One 200-word response regarding academic interest and division choice." },
+          { "target_program": "All", "requirement_type": "Optional Essay", "deadline": null, "details": "One 250-word response to one of two prompts." },
+          { "target_program": "All", "requirement_type": "Optional Video", "deadline": "2024-11-10", "details": "90-second optional video to share personal qualities." }
+        ],
+        "holistic_factors": {
+          "primary_factors": ["Academic Rigor", "GPA", "Application Essay", "Recommendations"],
+          "secondary_factors": ["Extracurricular Activities", "Talent/Ability", "Character/Personal Qualities"],
+          "essay_importance": "Critical",
+          "demonstrated_interest": "Not Considered",
+          "interview_policy": "Not Offered",
+          "legacy_consideration": "Minimal",
+          "first_gen_boost": "Strong",
+          "specific_differentiators": "Emphasis on 'By Name & Story' philosophy and collaborative mindset."
+        }
+      },
+      "strategy_tactics": {
+        "major_selection_tactics": [
+          "Apply to the College of Arts & Sciences as 'Undeclared' for maximum flexibility.",
+          "Utilize the Beyond Boundaries program as a 'no-risk' application add-on.",
+          "Apply to the McKelvey School of Engineering only if you have high-level math/physics scores."
+        ],
+        "alternate_major_strategy": "If targeting a highly competitive major like BME or Finance, consider applying to a related major in Arts & Sciences and transferring internally later."
+      },
+      "student_insights": {
+        "what_it_takes": [
+          "High academic statistics with typical SAT scores in the 1500-1570 range",
+          "Strong preference for Early Decision (ED1) to maximize admit odds",
+          "Evidence of a collaborative rather than competitive mindset"
+        ],
+        "essay_tips": [
+          "Mention specific programs like 'Ampersand Courses' or 'Beyond Boundaries'",
+          "Emphasize your connection to the St. Louis community ('In St. Louis, For St. Louis')",
+          "Write with an authentic personal voice rather than a formal academic tone"
+        ],
+        "red_flags": [
+          "Generic essays that could apply to any top-tier research university",
+          "Exhibiting a 'cutthroat' or elitist attitude",
+          "Treating the application as a backup for Ivy League schools"
+        ]
+      }
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 64500,
+          "total_coa": 92523,
+          "housing": 21854
+        },
+        "out_of_state": {
+          "tuition": 64500,
+          "total_coa": 92523,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Need-Blind",
+      "average_need_based_aid": 75600,
+      "average_merit_aid": 42700,
+      "percent_receiving_aid": 47.0,
+      "scholarships": [
+        { "name": "Danforth Scholars Program", "type": "Merit", "amount": "Full or half-tuition plus stipend", "application_method": "Separate Application" },
+        { "name": "John B. Ervin Scholars Program", "type": "Merit", "amount": "Full-tuition plus stipend", "application_method": "Separate Application" },
+        { "name": "WashU Pledge", "type": "Need", "amount": "Full tuition, fees, room, and board", "application_method": "FAFSA and CSS Profile" }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Strict",
+      "ap_policy": {
+        "general_rule": "Scores of 4 or 5 are generally required to earn credit",
+        "usage": "Max 15 units of total pre-matriculation credit"
+      },
+      "ib_policy": {
+        "general_rule": "Credit granted for Higher Level (HL) exams only, scores 5-7",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": ["Internal Departmental Review", "WUachieve"],
+        "restrictions": "60-unit transfer cap for most undergraduate schools"
+      }
+    },
+    "outcomes": {
+      "career_metrics": {
+        "median_earnings_10yr": 86182,
+        "employment_rate_2yr": 94.0,
+        "grad_school_rate": 25.0,
+        "top_employers": ["Mastercard", "Capital One", "Boeing", "Epic Systems", "Microsoft", "Amazon", "JPMorgan Chase & Co."],
+        "loan_default_rate": 1.5
+      },
+      "retention_graduation": {
+        "freshman_retention_rate": 95.0,
+        "graduation_rate_4_year": 87.0,
+        "graduation_rate_6_year": 94.0
+      }
+    }
+  }
+}

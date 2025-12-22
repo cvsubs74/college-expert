@@ -26,7 +26,11 @@ import {
     LightBulbIcon,
     FlagIcon,
     CheckCircleIcon,
-    ChartBarIcon
+    ChartBarIcon,
+    EyeIcon,
+    BanknotesIcon,
+    RocketLaunchIcon,
+    LockClosedIcon
 } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid, FilmIcon } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
@@ -58,7 +62,7 @@ const Badge = ({ children, color }) => {
         blue: "bg-blue-100 text-blue-800",
         green: "bg-green-100 text-green-800",
         purple: "bg-purple-100 text-purple-800",
-        orange: "bg-orange-100 text-orange-800",
+        orange: "bg-[#FCEEE8] text-[#C05838]",
         red: "bg-red-100 text-red-800",
         gray: "bg-gray-100 text-gray-800",
         white: "bg-white/20 text-white backdrop-blur-sm",
@@ -164,146 +168,199 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
         return typeof num === 'number' ? num.toLocaleString() : num;
     };
 
-    // Fit category colors - 4 standard categories
-    const fitColors = {
-        SAFETY: 'bg-green-100 text-green-800 border-green-300',
-        TARGET: 'bg-blue-100 text-blue-800 border-blue-300',
-        REACH: 'bg-orange-100 text-orange-800 border-orange-300',
-        SUPER_REACH: 'bg-red-100 text-red-800 border-red-300'
+    // Stratia-themed Fit category styling
+    const fitConfig = {
+        SAFETY: {
+            color: 'from-[#1A4D2E] to-[#2D6B45]',
+            label: 'Safety',
+            Icon: CheckCircleIcon,
+            border: 'border-[#D6E8D5]',
+            bg: 'bg-[#D6E8D5]/30'
+        },
+        TARGET: {
+            color: 'from-blue-500 to-indigo-600',
+            label: 'Target',
+            Icon: ArrowTrendingUpIcon,
+            border: 'border-blue-200',
+            bg: 'bg-blue-50'
+        },
+        REACH: {
+            color: 'from-[#C05838] to-[#D4704F]',
+            label: 'Reach',
+            Icon: LightBulbIcon,
+            border: 'border-[#E8A090]',
+            bg: 'bg-[#FCEEE8]'
+        },
+        SUPER_REACH: {
+            color: 'from-red-500 to-rose-600',
+            label: 'Super Reach',
+            Icon: SparklesIcon,
+            border: 'border-red-200',
+            bg: 'bg-red-50'
+        }
     };
 
-    return (
-        <div className="bg-white rounded-2xl shadow-lg shadow-amber-50 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden">
-            <div className="p-4 flex-grow">
-                <div className="flex justify-between items-start mb-3">
-                    <div>
-                        <h3
-                            onClick={() => onSelect(uni)}
-                            className="text-lg font-bold cursor-pointer line-clamp-2 text-gray-900 hover:text-amber-600"
-                            title={uni.name}
-                        >
-                            {uni.name}
-                        </h3>
-                        <div className="flex items-center text-gray-500 text-sm mt-1">
-                            <MapPinIcon className="h-4 w-4 mr-1" />
-                            {uni.location.city}, {uni.location.state}
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-end gap-1">
-                        <Badge color={uni.location.type === "Private" ? "purple" : "blue"}>{uni.location.type}</Badge>
-                        {/* Show fit badge: computed fit > analyzing > soft fit > in list */}
-                        {fitAnalysis ? (
-                            <span
-                                className={`px-2 py-1 rounded-full text-xs font-bold border whitespace-nowrap ${fitColors[fitAnalysis.fit_category] || fitColors.TARGET}`}
-                                title={`${fitAnalysis.match_percentage}% match`}
-                            >
-                                {fitAnalysis.fit_category === 'SUPER_REACH' ? '🎯 Super Reach' :
-                                    fitAnalysis.fit_category === 'REACH' ? '🎯 Reach' :
-                                        fitAnalysis.fit_category === 'TARGET' ? '🎯 Target' :
-                                            '✅ Safety'}
-                            </span>
-                        ) : isAnalyzing ? (
-                            <span className="px-2 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-600 border border-purple-200 animate-pulse whitespace-nowrap">
-                                ⏳ Analyzing...
-                            </span>
-                        ) : uni.softFitCategory ? (
-                            <span
-                                className={`px-2 py-1 rounded-full text-xs font-medium border whitespace-nowrap ${fitColors[uni.softFitCategory] || 'bg-gray-100 text-gray-600 border-gray-300'}`}
-                                title="Based on acceptance rate. Add to Launchpad for personalized fit."
-                            >
-                                {uni.softFitCategory === 'SUPER_REACH' ? '🎯 Super Reach' :
-                                    uni.softFitCategory === 'REACH' ? '🎯 Reach' :
-                                        uni.softFitCategory === 'TARGET' ? '🎯 Target' :
-                                            '✅ Safety'}
-                            </span>
-                        ) : isInList ? (
-                            <span className="px-2 py-1 rounded-full text-xs font-medium text-green-600 bg-green-50 border border-green-200 whitespace-nowrap">
-                                ✓ In List
-                            </span>
-                        ) : null}
-                    </div>
-                </div>
+    const currentFit = fitAnalysis?.fit_category || uni.softFitCategory || 'TARGET';
+    const fit = fitConfig[currentFit] || fitConfig.TARGET;
+    const FitIcon = fit.Icon;
 
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div className="bg-amber-50 p-2 rounded-xl">
-                        <div className="text-gray-500 text-xs">Acceptance</div>
-                        <div className="font-semibold text-gray-900">
-                            {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}%` : 'N/A'}
-                        </div>
-                    </div>
-                    <div className="bg-gray-50 p-2 rounded">
-                        <div className="text-gray-500 text-xs">Tuition (In-State)</div>
-                        <div className="font-semibold text-gray-900">
-                            {uni.financials.inStateTuition !== 'N/A' ? `$${formatNumber(uni.financials.inStateTuition)}` : 'N/A'}
-                        </div>
-                    </div>
-                    <div className="bg-gray-50 p-2 rounded">
-                        <div className="text-gray-500 text-xs">US News Rank</div>
-                        <div className="font-semibold text-gray-900">
-                            {uni.rankings.usNews !== 'N/A' ? `#${uni.rankings.usNews}` : 'N/A'}
-                        </div>
-                    </div>
-                    <div className="bg-amber-50 p-2 rounded-xl">
-                        <div className="text-gray-500 text-xs">Median Earnings</div>
-                        <div className="font-semibold text-gray-900">
-                            {uni.outcomes.medianEarnings !== 'N/A' ? `$${formatNumber(uni.outcomes.medianEarnings)}` : 'N/A'}
-                        </div>
-                    </div>
-                </div>
+    return (
+        <div className={`group relative bg-white rounded-2xl shadow-sm hover:shadow-lg border ${fit.border} transition-all duration-300 hover:-translate-y-0.5 overflow-hidden`}>
+
+            {/* Ribbon */}
+            <div className={`absolute top-0 left-0 px-4 py-1.5 bg-gradient-to-r ${fit.color} text-white text-xs font-bold rounded-br-xl shadow-sm z-10 flex items-center gap-1.5`}>
+                <FitIcon className="w-3.5 h-3.5" />
+                {fitAnalysis?.match_percentage ? (
+                    <span>{fitAnalysis.match_percentage}% {fit.label}</span>
+                ) : (
+                    <span>{fit.label}</span>
+                )}
+                {isAnalyzing && <span className="animate-pulse ml-1">...</span>}
             </div>
 
-            <div className="p-4 border-t border-gray-100">
-                <div className="flex gap-2 mb-2">
+            {/* Main Row Layout */}
+            <div className="flex items-stretch pt-2">
+                {/* Content Area */}
+                <div className="flex-1 px-5 pb-5 pt-12">
+                    {/* Header Row */}
+                    <div className="flex items-start justify-between mb-3">
+                        <div className="flex-1">
+                            <h3
+                                onClick={() => onSelect(uni)}
+                                className="font-serif text-lg font-bold text-[#2C2C2C] hover:text-[#1A4D2E] cursor-pointer transition-colors line-clamp-1"
+                            >
+                                {uni.name}
+                            </h3>
+                            <div className="flex items-center gap-3 mt-1 text-sm text-gray-500">
+                                <span className="flex items-center gap-1">
+                                    <MapPinIcon className="h-4 w-4" />
+                                    {uni.location.city}, {uni.location.state}
+                                </span>
+                                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${uni.location.type === 'Private'
+                                    ? 'bg-purple-100 text-purple-700'
+                                    : 'bg-blue-100 text-blue-700'
+                                    }`}>
+                                    {uni.location.type}
+                                </span>
+                            </div>
+                        </div>
+                        {/* News Sentiment Badge */}
+                        {sentiment && sentiment.sentiment !== 'neutral' && (
+                            <button
+                                onClick={(e) => { e.stopPropagation(); onSentimentClick(sentiment); }}
+                                className={`ml-2 px-2 py-1 rounded-lg text-xs font-medium flex items-center gap-1 ${sentiment.sentiment === 'positive'
+                                    ? 'bg-green-50 text-green-700 hover:bg-green-100'
+                                    : 'bg-red-50 text-red-700 hover:bg-red-100'
+                                    }`}
+                            >
+                                {sentiment.sentiment === 'positive' ? '📈' : '⚠️'}
+                                <span className="hidden sm:inline">News</span>
+                            </button>
+                        )}
+                    </div>
+
+                    {/* Stats Row - M3 Filled Cards */}
+                    <div className="flex flex-wrap gap-2 mb-3">
+                        <div className="flex items-center gap-2 bg-[#D6E8D5] rounded-xl px-3 py-2">
+                            <ChartBarIcon className="h-4 w-4 text-[#1A4D2E]" />
+                            <div>
+                                <div className="text-xs text-[#1A4D2E] font-medium">Accept</div>
+                                <div className="text-sm font-bold text-[#2C2C2C]">
+                                    {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}%` : 'N/A'}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2 bg-green-50 rounded-xl px-3 py-2">
+                            <CurrencyDollarIcon className="h-4 w-4 text-green-600" />
+                            <div>
+                                <div className="text-xs text-green-600 font-medium">Tuition</div>
+                                <div className="text-sm font-bold text-gray-900">
+                                    {uni.financials.inStateTuition !== 'N/A' ? `$${formatNumber(uni.financials.inStateTuition)}` : 'N/A'}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2 bg-blue-50 rounded-xl px-3 py-2">
+                            <TrophyIcon className="h-4 w-4 text-blue-600" />
+                            <div>
+                                <div className="text-xs text-blue-600 font-medium">Rank</div>
+                                <div className="text-sm font-bold text-gray-900">
+                                    {uni.rankings.usNews !== 'N/A' ? `#${uni.rankings.usNews}` : 'N/A'}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2 bg-purple-50 rounded-xl px-3 py-2">
+                            <BanknotesIcon className="h-4 w-4 text-purple-600" />
+                            <div>
+                                <div className="text-xs text-purple-600 font-medium">Earnings</div>
+                                <div className="text-sm font-bold text-gray-900">
+                                    {uni.outcomes.medianEarnings !== 'N/A' ? `$${formatNumber(uni.outcomes.medianEarnings)}` : 'N/A'}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Summary (truncated) */}
+                    {uni.summary && uni.summary !== 'No summary available.' && (
+                        <p className="text-sm text-gray-600 line-clamp-2 mb-3">{uni.summary}</p>
+                    )}
+                </div>
+
+                {/* Action Buttons - Right Side */}
+                <div className="flex flex-col justify-center gap-2 p-4 border-l border-gray-100 bg-gray-50/50">
                     <button
                         onClick={() => onSelect(uni)}
-                        className="flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-colors shadow-md"
+                        className="px-4 py-2.5 rounded-xl text-sm font-medium bg-[#1A4D2E] text-white hover:bg-[#2D6B45] transition-all shadow-sm hover:shadow flex items-center gap-2"
                     >
-                        View Details <ChevronRightIcon className="h-4 w-4" />
-                    </button>
-                </div>
-                <div className="flex gap-2">
-                    <button
-                        onClick={() => onCompare(uni)}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-colors ${isSelectedForCompare
-                            ? 'bg-amber-500 text-white hover:bg-amber-600'
-                            : 'bg-amber-50 text-amber-700 hover:bg-amber-100'
-                            }`}
-                    >
-                        {isSelectedForCompare ? 'Added' : 'Compare'}
-                        {isSelectedForCompare ? <XMarkIcon className="h-4 w-4" /> : <ScaleIcon className="h-4 w-4" />}
+                        <EyeIcon className="h-4 w-4" />
+                        Explore
                     </button>
                     <button
                         onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
                         disabled={!isInList && uni.isLimitReached}
-                        className={`p-2 rounded-lg transition-all ${isInList
-                            ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-600 hover:scale-105'
+                        className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center gap-2 ${isInList
+                            ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-700'
                             : uni.isLimitReached
                                 ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                : 'bg-purple-100 text-purple-700 hover:bg-purple-200 hover:scale-105'
+                                : 'bg-purple-100 text-purple-700 hover:bg-purple-200'
                             }`}
-                        title={isInList ? 'Remove from Launchpad' : (uni.isLimitReached ? 'Upgrade to add more colleges' : '🚀 Add to My Launchpad')}
+                        title={isInList ? 'Remove from list' : (uni.isLimitReached ? 'Upgrade to add more' : 'Add to My Launchpad')}
                     >
-                        {isInList ? '✓' : (uni.isLimitReached ? '🔒' : '🚀')}
+                        {isInList ? (
+                            <>
+                                <CheckCircleIcon className="h-4 w-4" />
+                                Saved
+                            </>
+                        ) : uni.isLimitReached ? (
+                            <>
+                                <LockClosedIcon className="h-4 w-4" />
+                                Locked
+                            </>
+                        ) : (
+                            <>
+                                <RocketLaunchIcon className="h-4 w-4" />
+                                Save
+                            </>
+                        )}
                     </button>
-                    {sentiment && sentiment.sentiment !== 'neutral' && (
+                    <div className="flex gap-1">
                         <button
-                            onClick={(e) => { e.stopPropagation(); onSentimentClick(sentiment); }}
-                            className={`p-2 rounded-lg transition-all hover:scale-110 ${sentiment.sentiment === 'positive'
-                                ? 'bg-green-100 text-green-700 hover:bg-green-200'
-                                : 'bg-red-100 text-red-700 hover:bg-red-200'
+                            onClick={() => onCompare(uni)}
+                            className={`flex-1 p-2 rounded-xl text-xs transition-all ${isSelectedForCompare
+                                ? 'bg-[#1A4D2E] text-white'
+                                : 'bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#A8C5A6]'
                                 }`}
-                            title={sentiment.headline}
+                            title="Compare"
                         >
-                            {sentiment.sentiment === 'positive' ? '📈' : '⚠️'}
+                            <ScaleIcon className="h-4 w-4 mx-auto" />
                         </button>
-                    )}
-                    <button
-                        onClick={(e) => { e.stopPropagation(); onOpenChat(uni); }}
-                        className="p-2 rounded-lg bg-indigo-100 text-indigo-700 hover:bg-indigo-200 hover:scale-105 transition-all"
-                        title="Ask AI about this university"
-                    >
-                        <ChatBubbleLeftRightIcon className="h-4 w-4" />
-                    </button>
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onOpenChat(uni); }}
+                            className="flex-1 p-2 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-all"
+                            title="Ask AI"
+                        >
+                            <ChatBubbleLeftRightIcon className="h-4 w-4 mx-auto" />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -320,7 +377,7 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis, fullUnive
     const fitColors = {
         SAFETY: 'bg-green-100 text-green-800 border-green-300',
         TARGET: 'bg-blue-100 text-blue-800 border-blue-300',
-        REACH: 'bg-orange-100 text-orange-800 border-orange-300',
+        REACH: 'bg-[#FCEEE8] text-[#C05838] border-[#E8A090]',
         SUPER_REACH: 'bg-red-100 text-red-800 border-red-300'
     };
 
@@ -337,7 +394,7 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis, fullUnive
     const location = uni.location ? `${uni.location.city}, ${uni.location.state}` : (college.location || 'Location N/A');
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg shadow-amber-50 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+        <div className="bg-white rounded-2xl shadow-lg shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="p-4 flex-grow">
                 <div className="flex justify-between items-start mb-3">
                     <div className="flex-1 min-w-0">
@@ -363,7 +420,7 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis, fullUnive
 
                 {/* Stats Grid - Same as UniversityCard */}
                 <div className="grid grid-cols-2 gap-2 text-sm mb-3">
-                    <div className="bg-amber-50 p-2 rounded-xl">
+                    <div className="bg-[#D6E8D5] p-2 rounded-xl">
                         <div className="text-gray-500 text-xs">Acceptance</div>
                         <div className="font-semibold text-gray-900">
                             {acceptanceRate !== 'N/A' ? `${acceptanceRate}%` : 'N/A'}
@@ -381,7 +438,7 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis, fullUnive
                             {rank !== 'N/A' ? `#${rank}` : 'N/A'}
                         </div>
                     </div>
-                    <div className="bg-amber-50 p-2 rounded-xl">
+                    <div className="bg-[#D6E8D5] p-2 rounded-xl">
                         <div className="text-gray-500 text-xs">Median Earnings</div>
                         <div className="font-semibold text-gray-900">
                             {earnings !== 'N/A' ? `$${formatNumber(earnings)}` : 'N/A'}
@@ -403,7 +460,7 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis, fullUnive
                 <div className="flex gap-2">
                     <button
                         onClick={() => onViewDetails && onViewDetails(college)}
-                        className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200"
+                        className="flex-1 bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45] text-white py-2 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-md"
                     >
                         View Details
                         <ChevronRightIcon className="h-4 w-4" />
@@ -835,6 +892,14 @@ const UniversityExplorer = () => {
     // Track which university is having fit computed
     const [computingFitFor, setComputingFitFor] = useState(null);
 
+    // Analysis progress modal state
+    const [analysisModal, setAnalysisModal] = useState({
+        isOpen: false,
+        universityName: '',
+        step: '', // 'fit', 'infographic', 'complete'
+        progress: 0
+    });
+
     const handleToggleCollegeList = async (university) => {
         if (!currentUser?.email) {
             console.warn('[College List] No user logged in');
@@ -876,34 +941,47 @@ const UniversityExplorer = () => {
                 // Compute fit on add
                 if (action === 'add') {
                     setComputingFitFor(university.id);
-                    console.log(`[Fit] Computing fit for ${university.name}...`);
 
-                    // Show loading toast
-                    const loadingToastId = toast.loading('Generating Fit Analysis...', `Analyzing ${university.name}`);
+                    // Show analysis modal instead of toast
+                    setAnalysisModal({
+                        isOpen: true,
+                        universityName: university.name,
+                        step: 'fit',
+                        progress: 0
+                    });
 
                     try {
+                        console.log(`[Fit] Computing fit for ${university.name}...`);
+                        setAnalysisModal(prev => ({ ...prev, step: 'fit', progress: 25 }));
+
                         const fitResult = await computeSingleFit(currentUser.email, university.id);
 
                         // Handle insufficient credits (402 response)
                         if (fitResult.insufficientCredits) {
                             console.warn('[Fit] Insufficient credits for fit analysis');
+                            setAnalysisModal(prev => ({ ...prev, isOpen: false }));
                             promptCreditsUpgrade('fit analysis');
                             return;
                         }
 
                         console.log(`[Fit] Computed: ${university.name} -> ${fitResult?.fit_analysis?.fit_category || 'N/A'}`);
+                        setAnalysisModal(prev => ({ ...prev, step: 'infographic', progress: 50 }));
 
-                        // Generate infographic in the background (don't block)
+                        // Generate infographic - NOW AWAITED (not background)
                         console.log(`[Infographic] Generating for ${university.name}...`);
-                        generateFitInfographic(currentUser.email, university.id, false)
-                            .then(result => {
-                                if (result.success) {
-                                    console.log(`[Infographic] Generated for ${university.name} (cached=${result.from_cache})`);
-                                } else {
-                                    console.warn('[Infographic] Failed:', result.error);
-                                }
-                            })
-                            .catch(err => console.error('[Infographic] Error:', err));
+                        try {
+                            const infographicResult = await generateFitInfographic(currentUser.email, university.id, false);
+                            if (infographicResult.success) {
+                                console.log(`[Infographic] Generated for ${university.name} (cached=${infographicResult.from_cache})`);
+                            } else {
+                                console.warn('[Infographic] Failed:', infographicResult.error);
+                            }
+                        } catch (infographicErr) {
+                            console.error('[Infographic] Error:', infographicErr);
+                            // Don't fail the whole process for infographic errors
+                        }
+
+                        setAnalysisModal(prev => ({ ...prev, progress: 75 }));
 
                         // Refresh precomputed fits to get the new fit
                         const fitsResult = await getPrecomputedFits(currentUser.email, {}, 500, 'rank');
@@ -922,14 +1000,23 @@ const UniversityExplorer = () => {
                             setPrecomputedFits(fitsMap);
                             console.log(`[Fit] Refreshed fits: ${Object.keys(fitsMap).length} total`);
                         }
+
+                        // Show complete status
+                        setAnalysisModal(prev => ({ ...prev, step: 'complete', progress: 100 }));
+
+                        // Auto-close modal after 1.5 seconds
+                        setTimeout(() => {
+                            setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+                        }, 1500);
+
                     } catch (fitErr) {
                         console.error('[Fit] Error computing fit:', fitErr);
-                        toast.remove(loadingToastId);
-                        toast.error('Error Computing Fit', fitErr.message || 'Please try again');
+                        setAnalysisModal(prev => ({ ...prev, step: 'error', progress: 0 }));
+                        setTimeout(() => {
+                            setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+                        }, 2000);
                     } finally {
                         setComputingFitFor(null);
-                        toast.remove(loadingToastId);
-                        toast.success('Fit Analysis Ready!', `${university.name} added to Launchpad`);
                     }
                 }
             }
@@ -1437,21 +1524,7 @@ const UniversityExplorer = () => {
 
             {/* Main List/Favorites View */}
             {activeView !== 'detail' && (
-                <>            {/* Header */}
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                                <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
-                                    <BuildingLibraryIcon className="h-6 w-6 text-white" />
-                                </div>
-                                UniInsight
-                            </h1>
-                            <p className="text-gray-500 mt-1">
-                                Explore and compare top universities
-                            </p>
-                        </div>
-
-                    </div>
+                <>
 
                     {/* Error State */}
                     {error && (
@@ -1485,12 +1558,12 @@ const UniversityExplorer = () => {
 
                     {/* Tab Navigation */}
                     {!loading && !error && (
-                        <div className="bg-white rounded-2xl shadow-lg shadow-amber-100 border border-gray-100 p-1.5 flex gap-2">
+                        <div className="bg-white rounded-2xl shadow-lg border border-[#E0DED8] p-1.5 flex gap-2">
                             <button
                                 onClick={() => setActiveView('list')}
                                 className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'list'
-                                    ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-200'
-                                    : 'text-gray-600 hover:bg-amber-50'
+                                    ? 'bg-[#1A4D2E] text-white shadow-lg'
+                                    : 'text-[#4A4A4A] hover:bg-[#F8F6F0]'
                                     }`}
                             >
                                 <BuildingLibraryIcon className="h-5 w-5" />
@@ -1499,8 +1572,8 @@ const UniversityExplorer = () => {
                             <button
                                 onClick={() => setActiveView('favorites')}
                                 className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'favorites'
-                                    ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-200'
-                                    : 'text-gray-600 hover:bg-amber-50'
+                                    ? 'bg-[#1A4D2E] text-white shadow-lg'
+                                    : 'text-[#4A4A4A] hover:bg-[#F8F6F0]'
                                     }`}
                             >
                                 {activeView === 'favorites' ? (
@@ -1512,34 +1585,12 @@ const UniversityExplorer = () => {
                                 {myCollegeList.length > 0 && (
                                     <span className={`ml-1 px-2 py-0.5 rounded-full text-xs font-semibold ${activeView === 'favorites'
                                         ? 'bg-white/20 text-white'
-                                        : 'bg-amber-100 text-amber-700'
+                                        : 'bg-[#D6E8D5] text-[#1A4D2E]'
                                         }`}>
                                         {myCollegeList.length}
                                     </span>
                                 )}
                             </button>
-                        </div>
-                    )}
-
-                    {/* Free Tier Warning Banner */}
-                    {!canAccessLaunchpad && currentUser && (
-                        <div className="mb-4 p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl">
-                            <div className="flex items-start gap-3">
-                                <div className="p-2 bg-amber-100 rounded-lg">
-                                    <span className="text-xl">⚠️</span>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-amber-800">Free Tier: {myCollegeList.length}/3 Colleges Selected</h4>
-                                    <p className="text-amber-700 text-sm mt-1">
-                                        You can add up to <strong>3 colleges</strong> to your list. This selection is <strong>permanent</strong> and cannot be changed on the free tier.
-                                        {myCollegeList.length >= 3 && (
-                                            <span className="block mt-1 text-amber-600">
-                                                <strong>You've reached your limit!</strong> Upgrade to Pro for unlimited colleges + 50 credits.
-                                            </span>
-                                        )}
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                     )}
 
@@ -1549,11 +1600,11 @@ const UniversityExplorer = () => {
                             {activeView === 'list' && (
                                 <div className="space-y-6">
                                     {/* Filters */}
-                                    <div className="bg-white rounded-2xl p-6 shadow-lg shadow-amber-50 border border-gray-100">
+                                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#E0DED8]">
                                         <div className="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center mb-6">
                                             <div>
-                                                <h2 className="text-lg font-semibold text-gray-900">Find Your Perfect University</h2>
-                                                <p className="text-gray-500 text-sm">Compare admission stats, costs, and outcomes</p>
+                                                <h2 className="font-serif text-lg font-semibold text-[#2C2C2C]">Find Your Perfect University</h2>
+                                                <p className="text-[#4A4A4A] text-sm">Compare admission stats, costs, and outcomes</p>
                                             </div>
 
                                             {/* Search Bar */}
@@ -1563,7 +1614,7 @@ const UniversityExplorer = () => {
                                                 </div>
                                                 <input
                                                     type="text"
-                                                    className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-sm"
+                                                    className="block w-full pl-10 pr-3 py-2 border border-[#E0DED8] rounded-xl bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1A4D2E] focus:border-[#1A4D2E] text-sm"
                                                     placeholder="Search by name..."
                                                     value={searchTerm}
                                                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -1686,8 +1737,8 @@ const UniversityExplorer = () => {
                                             </div>
                                         )}
 
-                                        {/* Cards Grid */}
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        {/* Cards Grid - One per row */}
+                                        <div className="grid grid-cols-1 gap-6">
                                             {paginatedUniversities.length > 0 ? (
                                                 paginatedUniversities.map((uni) => {
                                                     // Free tier: limit reached when 3 colleges already added (and this uni not in list)
@@ -1810,7 +1861,7 @@ const UniversityExplorer = () => {
 
                                     {/* Favorites Grid */}
                                     {myCollegeList.length > 0 && (
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div className="grid grid-cols-1 gap-6">
                                             {myCollegeList.map((college) => {
                                                 // Find full university data to pass to card
                                                 const fullUni = universities.find(u => u.id === college.university_id);
@@ -1911,13 +1962,13 @@ const UniversityExplorer = () => {
                                 onClick={() => setShowFitModal(false)}>
                                 <div className={`bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-t-4 ${selectedFitData.fit_category === 'SAFETY' ? 'border-green-500' :
                                     selectedFitData.fit_category === 'TARGET' ? 'border-blue-500' :
-                                        selectedFitData.fit_category === 'REACH' ? 'border-orange-500' :
+                                        selectedFitData.fit_category === 'REACH' ? 'border-[#E8A090]' :
                                             'border-red-500'
                                     }`}
                                     onClick={(e) => e.stopPropagation()}>
                                     <div className={`p-6 ${selectedFitData.fit_category === 'SAFETY' ? 'bg-green-50' :
                                         selectedFitData.fit_category === 'TARGET' ? 'bg-blue-50' :
-                                            selectedFitData.fit_category === 'REACH' ? 'bg-orange-50' :
+                                            selectedFitData.fit_category === 'REACH' ? 'bg-[#FCEEE8]' :
                                                 'bg-red-50'
                                         }`}>
                                         <div className="flex items-start justify-between">
@@ -1930,7 +1981,7 @@ const UniversityExplorer = () => {
                                                 <div>
                                                     <h3 className={`text-xl font-bold ${selectedFitData.fit_category === 'SAFETY' ? 'text-green-900' :
                                                         selectedFitData.fit_category === 'TARGET' ? 'text-blue-900' :
-                                                            selectedFitData.fit_category === 'REACH' ? 'text-orange-900' :
+                                                            selectedFitData.fit_category === 'REACH' ? 'text-[#C05838]' :
                                                                 'text-red-900'
                                                         }`}>
                                                         {selectedFitData.university_name} - {(selectedFitData.fit_category || '').replace('_', ' ')}
@@ -1984,7 +2035,7 @@ const UniversityExplorer = () => {
                                                     {typeof rec === 'object' && rec.addresses_gap && (
                                                         <div className="ml-7 flex flex-wrap gap-2 text-xs">
                                                             <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full">Addresses: {rec.addresses_gap}</span>
-                                                            {rec.timeline && <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">Timeline: {rec.timeline}</span>}
+                                                            {rec.timeline && <span className="px-2 py-0.5 bg-[#D6E8D5] text-[#1A4D2E] rounded-full">Timeline: {rec.timeline}</span>}
                                                         </div>
                                                     )}
                                                 </div>
@@ -2026,6 +2077,81 @@ const UniversityExplorer = () => {
                 creditsRemaining={creditsRemaining}
                 feature={creditsModalFeature}
             />
+
+            {/* Analysis Progress Modal */}
+            {analysisModal.isOpen && (
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+                    <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 text-center">
+                        {/* Icon */}
+                        <div className={`w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6 ${analysisModal.step === 'complete'
+                            ? 'bg-green-100'
+                            : analysisModal.step === 'error'
+                                ? 'bg-red-100'
+                                : 'bg-[#D6E8D5]'
+                            }`}>
+                            {analysisModal.step === 'complete' ? (
+                                <CheckCircleIcon className="w-10 h-10 text-green-600" />
+                            ) : analysisModal.step === 'error' ? (
+                                <ExclamationTriangleIcon className="w-10 h-10 text-red-600" />
+                            ) : (
+                                <SparklesIcon className="w-10 h-10 text-[#1A4D2E] animate-pulse" />
+                            )}
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                            {analysisModal.step === 'complete'
+                                ? 'Analysis Complete!'
+                                : analysisModal.step === 'error'
+                                    ? 'Analysis Failed'
+                                    : 'Analyzing Your Fit'
+                            }
+                        </h3>
+
+                        {/* University Name */}
+                        <p className="text-gray-600 mb-6">{analysisModal.universityName}</p>
+
+                        {/* Progress Steps */}
+                        {analysisModal.step !== 'complete' && analysisModal.step !== 'error' && (
+                            <div className="mb-6">
+                                <div className="flex justify-between text-sm text-gray-500 mb-2">
+                                    <span className={analysisModal.step === 'fit' ? 'text-[#1A4D2E] font-medium' : ''}>
+                                        {analysisModal.step === 'fit' ? '⏳' : '✓'} Fit Analysis
+                                    </span>
+                                    <span className={analysisModal.step === 'infographic' ? 'text-[#1A4D2E] font-medium' : ''}>
+                                        {analysisModal.progress >= 50 ? (analysisModal.progress > 50 ? '✓' : '⏳') : '○'} Infographic
+                                    </span>
+                                    <span className={analysisModal.progress >= 75 ? 'text-[#1A4D2E] font-medium' : ''}>
+                                        {analysisModal.progress >= 75 ? '⏳' : '○'} Saving
+                                    </span>
+                                </div>
+
+                                {/* Progress Bar */}
+                                <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div
+                                        className="h-full bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45] transition-all duration-500"
+                                        style={{ width: `${analysisModal.progress}%` }}
+                                    />
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Success Message */}
+                        {analysisModal.step === 'complete' && (
+                            <p className="text-green-600 font-medium">
+                                ✓ Added to your Launchpad with personalized fit analysis
+                            </p>
+                        )}
+
+                        {/* Error Message */}
+                        {analysisModal.step === 'error' && (
+                            <p className="text-red-600 font-medium">
+                                Something went wrong. Please try again.
+                            </p>
+                        )}
+                    </div>
+                </div>
+            )}
 
             {/* University Chat Widget */}
             <UniversityChatWidget

@@ -114,12 +114,30 @@
         "legacy_percentage": 0.0,
         "international_percentage": 4.0,
         "geographic_breakdown": [
-          { "region": "New Hampshire", "percentage": 46.0 },
-          { "region": "Massachusetts", "percentage": 30.0 },
-          { "region": "Connecticut", "percentage": 6.0 },
-          { "region": "Maine", "percentage": 4.0 },
-          { "region": "Other US States", "percentage": 10.0 },
-          { "region": "International", "percentage": 4.0 }
+          {
+            "region": "New Hampshire",
+            "percentage": 46.0
+          },
+          {
+            "region": "Massachusetts",
+            "percentage": 30.0
+          },
+          {
+            "region": "Connecticut",
+            "percentage": 6.0
+          },
+          {
+            "region": "Maine",
+            "percentage": 4.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 10.0
+          },
+          {
+            "region": "International",
+            "percentage": 4.0
+          }
         ],
         "gender_breakdown": {
           "men": {
@@ -173,21 +191,44 @@
               "is_impacted": true,
               "acceptance_rate": 67.0,
               "average_gpa_admitted": 3.64,
-              "prerequisite_courses": ["ECON 401", "ECON 402", "ADMN 410", "MATH 422"],
+              "prerequisite_courses": [
+                "ECON 401",
+                "ECON 402",
+                "ADMN 410",
+                "MATH 422"
+              ],
               "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": ["ADMN 510", "ECON 401"],
+              "weeder_courses": [
+                "ADMN 510",
+                "ECON 401"
+              ],
               "special_requirements": "3.0 cumulative and Paul College GPA required.",
               "admissions_pathway": "Direct Admit",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 3.0,
               "curriculum": {
-                "core_courses": ["ADMN 403", "ADMN 410", "ADMN 502", "ADMN 503", "ADMN 510", "ECON 401", "ECON 402"],
-                "electives": ["FIN 601", "MKTG 630", "MGT 614", "DS 775"],
+                "core_courses": [
+                  "ADMN 403",
+                  "ADMN 410",
+                  "ADMN 502",
+                  "ADMN 503",
+                  "ADMN 510",
+                  "ECON 401",
+                  "ECON 402"
+                ],
+                "electives": [
+                  "FIN 601",
+                  "MKTG 630",
+                  "MGT 614",
+                  "DS 775"
+                ],
                 "total_units": 128,
                 "major_units": 64
               },
-              "notable_professors": ["Dr. Lucy Gilson"],
+              "notable_professors": [
+                "Dr. Lucy Gilson"
+              ],
               "notes": "Options in Accounting, Finance, Marketing."
             }
           ]
@@ -207,21 +248,38 @@
               "is_impacted": true,
               "acceptance_rate": 65.0,
               "average_gpa_admitted": 0.0,
-              "prerequisite_courses": ["MATH 425"],
+              "prerequisite_courses": [
+                "MATH 425"
+              ],
               "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": ["CS 415", "CS 416"],
+              "weeder_courses": [
+                "CS 415",
+                "CS 416"
+              ],
               "special_requirements": "Internal transfer requires foundational science with C or better.",
               "admissions_pathway": "Direct Admit / Internal Transfer",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.5,
               "curriculum": {
-                "core_courses": ["CS 415", "CS 416", "CS 420", "CS 515", "CS 520", "MATH 425"],
-                "electives": ["CS 750", "CS 725"],
+                "core_courses": [
+                  "CS 415",
+                  "CS 416",
+                  "CS 420",
+                  "CS 515",
+                  "CS 520",
+                  "MATH 425"
+                ],
+                "electives": [
+                  "CS 750",
+                  "CS 725"
+                ],
                 "total_units": 128,
                 "major_units": 72
               },
-              "notable_professors": ["Arvind Narayan"],
+              "notable_professors": [
+                "Arvind Narayan"
+              ],
               "notes": "Restricted core course repeats."
             }
           ]
@@ -241,21 +299,38 @@
               "is_impacted": true,
               "acceptance_rate": 19.0,
               "average_gpa_admitted": 3.7,
-              "prerequisite_courses": ["BMS 507", "PSYC 401"],
+              "prerequisite_courses": [
+                "BMS 507",
+                "PSYC 401"
+              ],
               "minimum_gpa_to_declare": 3.2,
-              "weeder_courses": ["BMS 507", "BMS 508"],
+              "weeder_courses": [
+                "BMS 507",
+                "BMS 508"
+              ],
               "special_requirements": "Restricted clinical space; internal deadline March 1.",
               "admissions_pathway": "Direct Admit",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 3.2,
               "curriculum": {
-                "core_courses": ["NURS 500", "NURS 504", "NURS 516", "NURS 611", "BMS 507"],
-                "electives": ["HMP 540", "PSYC 581"],
+                "core_courses": [
+                  "NURS 500",
+                  "NURS 504",
+                  "NURS 516",
+                  "NURS 611",
+                  "BMS 507"
+                ],
+                "electives": [
+                  "HMP 540",
+                  "PSYC 581"
+                ],
                 "total_units": 128,
                 "major_units": 88
               },
-              "notable_professors": ["Dr. Gene Harkless"],
+              "notable_professors": [
+                "Dr. Gene Harkless"
+              ],
               "notes": "Extremely competitive."
             }
           ]
@@ -268,7 +343,9 @@
       ]
     },
     "application_process": {
-      "platforms": ["Common App"],
+      "platforms": [
+        "Common App"
+      ],
       "application_deadlines": [
         {
           "plan_type": "Early Action",
@@ -292,8 +369,15 @@
         }
       ],
       "holistic_factors": {
-        "primary_factors": ["Course Rigor", "Academic GPA"],
-        "secondary_factors": ["Recommendations", "Application Essay", "Extracurriculars"],
+        "primary_factors": [
+          "Course Rigor",
+          "Academic GPA"
+        ],
+        "secondary_factors": [
+          "Recommendations",
+          "Application Essay",
+          "Extracurriculars"
+        ],
         "essay_importance": "Moderate",
         "demonstrated_interest": "Not Considered",
         "interview_policy": "Not Offered",
@@ -402,5 +486,6 @@
         "graduation_rate_6_year": 78.0
       }
     }
-  }
+  },
+  "_id": "university_of_new_hampshire"
 }

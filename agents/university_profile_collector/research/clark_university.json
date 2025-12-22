@@ -182,20 +182,56 @@
           "legacy_percentage": null,
           "international_percentage": 5.1,
           "geographic_breakdown": [
-            { "region": "Massachusetts", "percentage": 38.1 },
-            { "region": "Mid-Atlantic", "percentage": 20.4 },
-            { "region": "Other New England", "percentage": 19.9 },
-            { "region": "West", "percentage": 5.5 },
-            { "region": "South", "percentage": 3.8 },
-            { "region": "Midwest", "percentage": 3.1 },
-            { "region": "Southwest", "percentage": 2.1 },
-            { "region": "International", "percentage": 5.1 },
-            { "region": "Other Territories", "percentage": 1.9 }
+            {
+              "region": "Massachusetts",
+              "percentage": 38.1
+            },
+            {
+              "region": "Mid-Atlantic",
+              "percentage": 20.4
+            },
+            {
+              "region": "Other New England",
+              "percentage": 19.9
+            },
+            {
+              "region": "West",
+              "percentage": 5.5
+            },
+            {
+              "region": "South",
+              "percentage": 3.8
+            },
+            {
+              "region": "Midwest",
+              "percentage": 3.1
+            },
+            {
+              "region": "Southwest",
+              "percentage": 2.1
+            },
+            {
+              "region": "International",
+              "percentage": 5.1
+            },
+            {
+              "region": "Other Territories",
+              "percentage": 1.9
+            }
           ],
           "gender_breakdown": {
-            "men": { "acceptance_rate": 34.1, "note": "Men represent approximately 44% of the applicant pool." },
-            "women": { "acceptance_rate": 43.8, "note": "Women represent approximately 56% of the applicant pool." },
-            "non_binary": { "acceptance_rate": 57.7, "note": "Reported as 'Another Gender' in Common Data Set." }
+            "men": {
+              "acceptance_rate": 34.1,
+              "note": "Men represent approximately 44% of the applicant pool."
+            },
+            "women": {
+              "acceptance_rate": 43.8,
+              "note": "Women represent approximately 56% of the applicant pool."
+            },
+            "non_binary": {
+              "acceptance_rate": 57.7,
+              "note": "Reported as 'Another Gender' in Common Data Set."
+            }
           },
           "racial_breakdown": {
             "white": 60.5,
@@ -226,29 +262,77 @@
             {
               "name": "Psychology",
               "degree_type": "B.A.",
-              "curriculum": { "core_courses": ["PSYC 101", "PSYC 105", "PSYC 108", "PSYC 109"], "total_units": 32, "major_units": 10 },
+              "curriculum": {
+                "core_courses": [
+                  "PSYC 101",
+                  "PSYC 105",
+                  "PSYC 108",
+                  "PSYC 109"
+                ],
+                "total_units": 32,
+                "major_units": 10
+              },
               "notes": "Most popular major at Clark; emphasizes sociocultural contexts and diversity."
             },
             {
               "name": "Political Science",
               "degree_type": "B.A.",
-              "curriculum": { "core_courses": ["PSCI 010", "PSCI 070", "PSCI 069", "PSCI 107", "PSCI 155"], "total_units": 32, "major_units": 13 }
+              "curriculum": {
+                "core_courses": [
+                  "PSCI 010",
+                  "PSCI 070",
+                  "PSCI 069",
+                  "PSCI 107",
+                  "PSCI 155"
+                ],
+                "total_units": 32,
+                "major_units": 13
+              }
             },
             {
               "name": "Biology",
               "degree_type": "B.S.",
-              "curriculum": { "core_courses": ["BIOL 101", "BIOL 102", "BIOL 105", "BIOL 118"], "total_units": 32, "major_units": 10 },
+              "curriculum": {
+                "core_courses": [
+                  "BIOL 101",
+                  "BIOL 102",
+                  "BIOL 105",
+                  "BIOL 118"
+                ],
+                "total_units": 32,
+                "major_units": 10
+              },
               "notes": "Highly research-oriented; offers accelerated B.A./M.S. pathway."
             },
             {
               "name": "Computer Science",
               "degree_type": "B.A.",
-              "curriculum": { "core_courses": ["CSCI 120", "CSCI 121", "CSCI 122", "CSCI 140", "CSCI 160"], "total_units": 32, "major_units": 11 }
+              "curriculum": {
+                "core_courses": [
+                  "CSCI 120",
+                  "CSCI 121",
+                  "CSCI 122",
+                  "CSCI 140",
+                  "CSCI 160"
+                ],
+                "total_units": 32,
+                "major_units": 11
+              }
             },
             {
               "name": "Economics",
               "degree_type": "B.S.",
-              "curriculum": { "core_courses": ["ECON 010", "ECON 011", "ECON 160", "ECON 205", "ECON 206"], "total_units": 32, "major_units": 11 }
+              "curriculum": {
+                "core_courses": [
+                  "ECON 010",
+                  "ECON 011",
+                  "ECON 160",
+                  "ECON 205",
+                  "ECON 206"
+                ],
+                "total_units": 32,
+                "major_units": 11
+              }
             }
           ]
         },
@@ -274,7 +358,17 @@
             {
               "name": "Business Administration",
               "degree_type": "B.S.",
-              "curriculum": { "core_courses": ["ECON 010", "MGMT 100", "MGMT 210", "MKT 230", "FIN 200"], "total_units": 32, "major_units": 15 },
+              "curriculum": {
+                "core_courses": [
+                  "ECON 010",
+                  "MGMT 100",
+                  "MGMT 210",
+                  "MKT 230",
+                  "FIN 200"
+                ],
+                "total_units": 32,
+                "major_units": 15
+              },
               "notes": "Now a B.S. for students entering Fall 2025 and beyond."
             }
           ]
@@ -291,7 +385,17 @@
             {
               "name": "Environmental Science",
               "degree_type": "B.S.",
-              "curriculum": { "core_courses": ["EN 101", "GEOG 104", "BIOL 101", "CHEM 101", "GEOG 190"], "total_units": 32, "major_units": 17 },
+              "curriculum": {
+                "core_courses": [
+                  "EN 101",
+                  "GEOG 104",
+                  "BIOL 101",
+                  "CHEM 101",
+                  "GEOG 190"
+                ],
+                "total_units": 32,
+                "major_units": 17
+              },
               "notes": "Administered primarily by the Graduate School of Geography."
             }
           ]
@@ -320,12 +424,35 @@
     },
     "application_details": {
       "application_process": {
-        "platforms": ["Common App", "Coalition App"],
+        "platforms": [
+          "Common App",
+          "Coalition App"
+        ],
         "application_deadlines": [
-          { "plan_type": "Early Decision I", "date": "2024-11-01", "is_binding": true, "notes": "Decision notification by mid-December." },
-          { "plan_type": "Early Action", "date": "2024-11-01", "is_binding": false, "notes": "Non-binding; notification by late December." },
-          { "plan_type": "Early Decision II", "date": "2025-01-15", "is_binding": true, "notes": "Binding; notification by mid-February." },
-          { "plan_type": "Regular Decision", "date": "2025-01-15", "is_binding": false, "notes": "Decision notification by late March." }
+          {
+            "plan_type": "Early Decision I",
+            "date": "2024-11-01",
+            "is_binding": true,
+            "notes": "Decision notification by mid-December."
+          },
+          {
+            "plan_type": "Early Action",
+            "date": "2024-11-01",
+            "is_binding": false,
+            "notes": "Non-binding; notification by late December."
+          },
+          {
+            "plan_type": "Early Decision II",
+            "date": "2025-01-15",
+            "is_binding": true,
+            "notes": "Binding; notification by mid-February."
+          },
+          {
+            "plan_type": "Regular Decision",
+            "date": "2025-01-15",
+            "is_binding": false,
+            "notes": "Decision notification by late March."
+          }
         ],
         "supplemental_requirements": [
           {
@@ -341,8 +468,17 @@
           }
         ],
         "holistic_factors": {
-          "primary_factors": ["Course Rigor", "Academic GPA", "Application Essay", "Recommendations"],
-          "secondary_factors": ["Extracurricular Activities", "Talent/Ability", "Character/Personal Qualities"],
+          "primary_factors": [
+            "Course Rigor",
+            "Academic GPA",
+            "Application Essay",
+            "Recommendations"
+          ],
+          "secondary_factors": [
+            "Extracurricular Activities",
+            "Talent/Ability",
+            "Character/Personal Qualities"
+          ],
           "essay_importance": "Critical",
           "demonstrated_interest": "Important",
           "interview_policy": "Recommended",
@@ -512,5 +648,6 @@
         "graduation_rate_6_year": 77.0
       }
     }
-  }
+  },
+  "_id": "clark_university"
 }

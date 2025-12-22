@@ -272,7 +272,7 @@ const ProfileSection = ({ sectionKey, section, profile, onUpdate, expandedSectio
                                                     <select
                                                         value={item[field.key] || ''}
                                                         onChange={(e) => handleUpdateArrayItem(idx, field.key, e.target.value)}
-                                                        className="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                                        className="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-md focus:ring-2 focus:ring-[#1A4D2E] focus:border-transparent"
                                                     >
                                                         <option value="">Select...</option>
                                                         {field.options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
@@ -282,14 +282,14 @@ const ProfileSection = ({ sectionKey, section, profile, onUpdate, expandedSectio
                                                         value={item[field.key] || ''}
                                                         onChange={(e) => handleUpdateArrayItem(idx, field.key, e.target.value)}
                                                         rows={2}
-                                                        className="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                                        className="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-md focus:ring-2 focus:ring-[#1A4D2E] focus:border-transparent"
                                                     />
                                                 ) : (
                                                     <input
                                                         type={field.type}
                                                         value={item[field.key] || ''}
                                                         onChange={(e) => handleUpdateArrayItem(idx, field.key, field.type === 'number' ? parseFloat(e.target.value) : e.target.value)}
-                                                        className="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                                        className="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-md focus:ring-2 focus:ring-[#1A4D2E] focus:border-transparent"
                                                     />
                                                 )}
                                             </div>
@@ -299,7 +299,7 @@ const ProfileSection = ({ sectionKey, section, profile, onUpdate, expandedSectio
                             ))}
                             <button
                                 onClick={handleAddArrayItem}
-                                className="flex items-center gap-2 text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+                                className="flex items-center gap-2 text-sm text-[#1A4D2E] hover:text-[#1A4D2E] font-medium"
                             >
                                 <PlusIcon className="h-4 w-4" /> Add {section.label.replace(/s$/, '')}
                             </button>
@@ -319,7 +319,7 @@ const ProfileSection = ({ sectionKey, section, profile, onUpdate, expandedSectio
                                                 <select
                                                     value={tempValue}
                                                     onChange={(e) => setTempValue(e.target.value)}
-                                                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                                                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A4D2E]"
                                                 >
                                                     <option value="">Select...</option>
                                                     {field.options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
@@ -333,14 +333,14 @@ const ProfileSection = ({ sectionKey, section, profile, onUpdate, expandedSectio
                                                     min={field.min}
                                                     max={field.max}
                                                     placeholder={field.placeholder}
-                                                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                                                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A4D2E]"
                                                     autoFocus
                                                 />
                                             )}
                                             <button
                                                 onClick={() => handleSave(field.key, field.type === 'number' ? parseFloat(tempValue) : tempValue)}
                                                 disabled={saving}
-                                                className="px-3 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50"
+                                                className="px-3 py-2 bg-[#1A4D2E] text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50"
                                             >
                                                 {saving ? '...' : 'Save'}
                                             </button>
@@ -417,7 +417,7 @@ const DocumentUploadZone = ({ onUpload, uploadedDocs, onDelete, uploading }) => 
                 <p className="text-sm text-gray-600 mb-2">
                     {uploading ? 'Uploading...' : 'Drop transcripts or resumes here'}
                 </p>
-                <label className="inline-block px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg cursor-pointer hover:bg-indigo-700">
+                <label className="inline-block px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg cursor-pointer hover:bg-indigo-700">
                     Browse Files
                     <input
                         type="file"

@@ -357,66 +357,15 @@ export const getStudentProfileContent = async (userEmail, filename) => {
 };
 
 /**
- * Fetch the complete user profile directly from Profile Manager ES
- * Returns both raw content and structured data (JSON) for display
+ * Fetch the complete user profile from Profile Manager ES
+ * Uses /get-profile endpoint which returns both structured data and markdown content
  * @param {string} userEmail - User's email address
- * @returns {object} Profile data with content and structuredData fields
+ * @returns {object} Profile data with success, content (markdown), and profile (structured) fields
  */
 export const fetchUserProfile = async (userEmail) => {
   try {
     const baseUrl = getProfileManagerUrl();
     console.log(`[API] Fetching profile for ${userEmail} from ${baseUrl}`);
-
-    const response = await axios.post(`${baseUrl}/search`, {
-      user_email: userEmail,
-      query: 'student profile',
-      size: 1
-    }, {
-      timeout: 60000,
-      headers: {
-        'Content-Type': 'application/json',
-        'X-User-Email': userEmail
-      }
-    });
-
-    if (response.data?.success && response.data?.documents?.length > 0) {
-      const doc = response.data.documents[0];
-      // Content is nested inside doc.document
-      const innerDoc = doc.document || doc;
-      const content = innerDoc.content || doc.content || '';
-      const metadata = innerDoc.metadata || doc.metadata || {};
-
-      console.log(`[API] Profile found, content length: ${content.length}`);
-
-      return {
-        success: true,
-        content: content,  // Clean markdown (for both search and display)
-        metadata: metadata,
-        filename: metadata?.filename || doc.display_name || 'profile'
-      };
-    }
-
-    return {
-      success: false,
-      error: 'No profile found',
-      content: ''
-    };
-  } catch (error) {
-    console.error('Error fetching user profile:', error);
-    throw error;
-  }
-};
-
-/**
- * Fetch structured profile data (JSON) for visual display
- * Uses the /get-profile endpoint which returns parsed JSON structure
- * @param {string} userEmail - User's email address
- * @returns {object} Structured profile data with fields like personal_info, academics, etc.
- */
-export const fetchStructuredProfile = async (userEmail) => {
-  try {
-    const baseUrl = getProfileManagerUrl();
-    console.log(`[API] Fetching structured profile for ${userEmail}`);
 
     const response = await axios.get(`${baseUrl}/get-profile`, {
       params: { user_email: userEmail },
@@ -427,28 +376,60 @@ export const fetchStructuredProfile = async (userEmail) => {
       }
     });
 
-    if (response.data?.success && response.data?.profile) {
-      console.log(`[API] Structured profile found`);
+    if (response.data?.success && (response.data?.profile || response.data?.content)) {
+      const profile = response.data.profile || {};
+      const content = response.data.content || response.data.markdown || '';
+
+      console.log(`[API] Profile found, content length: ${content.length}, has structured: ${!!response.data.profile}`);
+
       return {
         success: true,
-        profile: response.data.profile
+        content: content,  // Raw markdown content
+        profile: profile,  // Structured data (personal_info, academics, etc.)
+        metadata: response.data.metadata || {}
       };
     }
 
+    console.log(`[API] No profile found for ${userEmail}`);
     return {
       success: false,
       error: 'No profile found',
+      content: '',
       profile: null
     };
   } catch (error) {
-    console.error('Error fetching structured profile:', error);
-    // Don't throw - return error state for graceful handling
+    console.error('Error fetching user profile:', error);
     return {
       success: false,
       error: error.message,
+      content: '',
       profile: null
     };
   }
+};
+
+/**
+ * Fetch structured profile data (JSON) for visual display
+ * Wrapper around fetchUserProfile that extracts just the structured data
+ * @param {string} userEmail - User's email address
+ * @returns {object} Structured profile data with fields like personal_info, academics, etc.
+ */
+export const fetchStructuredProfile = async (userEmail) => {
+  const result = await fetchUserProfile(userEmail);
+
+  if (result.success && result.profile) {
+    console.log(`[API] Structured profile found`);
+    return {
+      success: true,
+      profile: result.profile
+    };
+  }
+
+  return {
+    success: false,
+    error: result.error || 'No profile found',
+    profile: null
+  };
 };
 
 /**
@@ -533,16 +514,19 @@ export const saveOnboardingProfile = async (userEmail, onboardingData) => {
  * Check onboarding status for a user
  * Returns whether user has completed or skipped onboarding
  * @param {string} userEmail - User's email address
- * @returns {object} { hasProfile: boolean, onboardingStatus: string }
+ * @returns {object} { hasProfile: boolean, needsOnboarding: boolean }
  */
 export const checkOnboardingStatus = async (userEmail) => {
   try {
     const baseUrl = getProfileManagerUrl();
     console.log(`[API] Checking onboarding status for ${userEmail}`);
 
-    // Fetch the structured profile to check onboarding_status
-    const response = await axios.get(`${baseUrl}/get-profile`, {
-      params: { user_email: userEmail },
+    // Use the existing /search endpoint to check if user has a profile
+    const response = await axios.post(`${baseUrl}/search`, {
+      user_email: userEmail,
+      query: 'student profile',
+      size: 1
+    }, {
       timeout: 15000,
       headers: {
         'Content-Type': 'application/json',
@@ -550,18 +534,29 @@ export const checkOnboardingStatus = async (userEmail) => {
       }
     });
 
-    if (response.data?.success && response.data?.profile) {
-      const profile = response.data.profile;
-      const onboardingStatus = profile.onboarding_status || null;
+    console.log(`[API] Search response:`, response.data?.success, `docs:`, response.data?.documents?.length || 0);
 
-      return {
-        hasProfile: true,
-        onboardingStatus: onboardingStatus,
-        needsOnboarding: !onboardingStatus || onboardingStatus === 'in_progress'
-      };
+    // Check if we found any profile content
+    if (response.data?.success && response.data?.documents?.length > 0) {
+      const doc = response.data.documents[0];
+      const innerDoc = doc.document || doc;
+      const content = innerDoc.content || doc.content || '';
+
+      console.log(`[API] Found profile content, length: ${content.length}`);
+
+      // If content is substantial (more than 100 chars), user has uploaded a profile
+      if (content && content.length > 100) {
+        console.log(`[API] User has profile with ${content.length} chars, no onboarding needed`);
+        return {
+          hasProfile: true,
+          onboardingStatus: 'completed',
+          needsOnboarding: false
+        };
+      }
     }
 
-    // No profile found - definitely needs onboarding
+    // No profile found or empty profile - needs onboarding
+    console.log(`[API] No substantial profile found for ${userEmail}, needs onboarding`);
     return {
       hasProfile: false,
       onboardingStatus: null,
@@ -569,11 +564,11 @@ export const checkOnboardingStatus = async (userEmail) => {
     };
   } catch (error) {
     console.error('[API] Error checking onboarding status:', error);
-    // On error, assume needs onboarding (safer default)
+    // On error, assume no onboarding needed to avoid blocking returning users
     return {
       hasProfile: false,
       onboardingStatus: null,
-      needsOnboarding: true
+      needsOnboarding: false
     };
   }
 };

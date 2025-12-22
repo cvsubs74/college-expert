@@ -51,25 +51,25 @@ const ContactPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-orange-50">
+        <div className="min-h-screen bg-[#FDFCF7]">
             {/* Header */}
-            <header className="px-6 py-5 bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-amber-100">
+            <header className="px-6 py-5 bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-[#E0DED8]">
                 <nav className="max-w-7xl mx-auto flex items-center justify-between">
                     <a href="/" className="flex items-center gap-3">
-                        <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
+                        <div className="p-2 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-xl shadow-lg shadow-md">
                             <SparklesIcon className="h-7 w-7 text-white" />
                         </div>
-                        <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                        <span className="text-2xl font-bold bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45] bg-clip-text text-transparent">
                             CollegeAI Pro
                         </span>
                     </a>
                     <div className="flex items-center gap-4">
-                        <a href="/pricing" className="text-gray-600 hover:text-amber-600 font-medium transition-colors">
+                        <a href="/pricing" className="text-gray-600 hover:text-[#1A4D2E] font-medium transition-colors">
                             Pricing
                         </a>
                         <a
                             href="/"
-                            className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-full hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200"
+                            className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-full hover:from-[#2D6B45] hover:to-[#3A7D5A] transition-all shadow-lg shadow-md"
                         >
                             Get Started
                         </a>
@@ -108,7 +108,7 @@ const ContactPage = () => {
                                                 value={formData.name}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all"
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4D2E] focus:border-[#1A4D2E] transition-all"
                                                 placeholder="John Doe"
                                             />
                                         </div>
@@ -123,7 +123,7 @@ const ContactPage = () => {
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all"
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4D2E] focus:border-[#1A4D2E] transition-all"
                                                 placeholder="john@example.com"
                                             />
                                         </div>
@@ -138,7 +138,7 @@ const ContactPage = () => {
                                             name="subject"
                                             value={formData.subject}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4D2E] focus:border-[#1A4D2E] transition-all"
                                         >
                                             <option>General Inquiry</option>
                                             <option>Pricing Question</option>
@@ -160,14 +160,14 @@ const ContactPage = () => {
                                             onChange={handleChange}
                                             required
                                             rows={5}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all resize-none"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#1A4D2E] focus:border-[#1A4D2E] transition-all resize-none"
                                             placeholder="How can we help you?"
                                         />
                                     </div>
 
                                     <button
                                         type="submit"
-                                        className="w-full py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg font-bold rounded-xl hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200 flex items-center justify-center gap-2"
+                                        className="w-full py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg font-bold rounded-xl hover:from-[#2D6B45] hover:to-[#3A7D5A] transition-all shadow-lg shadow-md flex items-center justify-center gap-2"
                                     >
                                         <EnvelopeIcon className="h-5 w-5" />
                                         Send Message
@@ -184,10 +184,10 @@ const ContactPage = () => {
                         {/* Sidebar */}
                         <div className="lg:col-span-2 space-y-6">
                             {/* Direct Email */}
-                            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-6 border border-amber-200">
+                            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-6 border border-[#A8C5A6]">
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="p-3 bg-white rounded-xl shadow-sm">
-                                        <EnvelopeIcon className="h-6 w-6 text-amber-600" />
+                                        <EnvelopeIcon className="h-6 w-6 text-[#1A4D2E]" />
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-gray-900">Email Us Directly</h3>
@@ -196,7 +196,7 @@ const ContactPage = () => {
                                 </div>
                                 <a
                                     href="mailto:cvsubs@gmail.com?subject=CollegeAI%20Pro%20Inquiry"
-                                    className="block text-center py-3 bg-white text-amber-600 font-semibold rounded-xl border border-amber-200 hover:bg-amber-50 transition-all"
+                                    className="block text-center py-3 bg-white text-[#1A4D2E] font-semibold rounded-xl border border-[#A8C5A6] hover:bg-[#D6E8D5] transition-all"
                                 >
                                     cvsubs@gmail.com
                                 </a>
@@ -209,10 +209,10 @@ const ContactPage = () => {
                                     <a
                                         key={idx}
                                         href={link.link}
-                                        className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-200 hover:border-amber-200 hover:shadow-md transition-all group"
+                                        className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-200 hover:border-[#A8C5A6] hover:shadow-md transition-all group"
                                     >
-                                        <div className="p-2 bg-gray-100 rounded-xl group-hover:bg-amber-100 transition-colors">
-                                            <link.icon className="h-5 w-5 text-gray-600 group-hover:text-amber-600" />
+                                        <div className="p-2 bg-gray-100 rounded-xl group-hover:bg-[#D6E8D5] transition-colors">
+                                            <link.icon className="h-5 w-5 text-gray-600 group-hover:text-[#1A4D2E]" />
                                         </div>
                                         <div>
                                             <p className="font-semibold text-gray-900">{link.title}</p>
@@ -229,15 +229,15 @@ const ContactPage = () => {
                                 <ul className="space-y-2 text-sm text-gray-600">
                                     <li className="flex justify-between">
                                         <span>General inquiries</span>
-                                        <span className="text-amber-600 font-medium">&lt; 24 hours</span>
+                                        <span className="text-[#1A4D2E] font-medium">&lt; 24 hours</span>
                                     </li>
                                     <li className="flex justify-between">
                                         <span>Technical support</span>
-                                        <span className="text-amber-600 font-medium">&lt; 12 hours</span>
+                                        <span className="text-[#1A4D2E] font-medium">&lt; 12 hours</span>
                                     </li>
                                     <li className="flex justify-between">
                                         <span>Partnerships</span>
-                                        <span className="text-amber-600 font-medium">&lt; 48 hours</span>
+                                        <span className="text-[#1A4D2E] font-medium">&lt; 48 hours</span>
                                     </li>
                                 </ul>
                             </div>
@@ -250,16 +250,16 @@ const ContactPage = () => {
             <footer className="px-6 py-12 bg-white border-t border-gray-100 mt-20">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="flex items-center gap-3">
-                        <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl">
+                        <div className="p-2 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-xl">
                             <SparklesIcon className="h-6 w-6 text-white" />
                         </div>
-                        <span className="text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                        <span className="text-xl font-bold bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45] bg-clip-text text-transparent">
                             CollegeAI Pro
                         </span>
                     </div>
                     <div className="flex gap-6 text-sm text-gray-500">
-                        <a href="/pricing" className="hover:text-amber-600">Pricing</a>
-                        <a href="/contact" className="hover:text-amber-600">Contact</a>
+                        <a href="/pricing" className="hover:text-[#1A4D2E]">Pricing</a>
+                        <a href="/contact" className="hover:text-[#1A4D2E]">Contact</a>
                     </div>
                     <p className="text-gray-500 text-sm">
                         © {new Date().getFullYear()} CollegeAI Pro

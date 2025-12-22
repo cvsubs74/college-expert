@@ -11,7 +11,7 @@ from .shared_logging import (
 )
 from google.adk.tools import google_search
 
-MODEL_NAME = "gemini-2.5-flash-lite"
+MODEL_NAME = "gemini-2.5-flash"
 
 # ==============================================================================
 # MICRO-AGENTS

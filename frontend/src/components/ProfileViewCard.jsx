@@ -24,8 +24,8 @@ const TabButton = ({ id, label, icon: Icon, isActive, onClick }) => {
         <button
             onClick={() => onClick(id)}
             className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-all ${isActive
-                ? 'bg-amber-600 text-white shadow-md'
-                : 'text-gray-600 hover:bg-amber-50'
+                ? 'bg-[#1A4D2E] text-white shadow-md'
+                : 'text-gray-600 hover:bg-[#D6E8D5]'
                 }`}
         >
             <Icon className="h-4 w-4" />
@@ -39,7 +39,7 @@ const TabButton = ({ id, label, icon: Icon, isActive, onClick }) => {
 // ============================================================================
 const HighlightBadge = ({ children }) => {
     return (
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 border border-amber-200">
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#D6E8D5] text-[#1A4D2E] border border-[#A8C5A6]">
             {children}
         </span>
     );
@@ -54,14 +54,14 @@ const StatCard = ({ label, value, subtext, icon: Icon }) => {
             <div className="flex items-start justify-between">
                 <div>
                     <p className="text-sm text-gray-500 font-medium">{label}</p>
-                    <p className="text-3xl font-bold text-amber-600 mt-1">
+                    <p className="text-3xl font-bold text-[#1A4D2E] mt-1">
                         {value || 'N/A'}
                     </p>
                     {subtext && <p className="text-xs text-gray-400 mt-1">{subtext}</p>}
                 </div>
                 {Icon && (
-                    <div className="p-2.5 rounded-xl bg-amber-100">
-                        <Icon className="h-5 w-5 text-amber-600" />
+                    <div className="p-2.5 rounded-xl bg-[#D6E8D5]">
+                        <Icon className="h-5 w-5 text-[#1A4D2E]" />
                     </div>
                 )}
             </div>
@@ -75,9 +75,9 @@ const StatCard = ({ label, value, subtext, icon: Icon }) => {
 const SectionCard = ({ title, icon: Icon, children, badge, className = '' }) => {
     return (
         <div className={`rounded-xl border border-gray-200 overflow-hidden ${className}`}>
-            <div className="bg-amber-50 px-4 py-3 flex items-center justify-between">
+            <div className="bg-[#D6E8D5] px-4 py-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <Icon className="h-5 w-5 text-amber-600" />
+                    <Icon className="h-5 w-5 text-[#1A4D2E]" />
                     <h3 className="font-semibold text-gray-900">{title}</h3>
                 </div>
                 {badge && <HighlightBadge>{badge}</HighlightBadge>}
@@ -110,7 +110,7 @@ const ActivityCard = ({ activity }) => {
     const displayItems = expanded ? bulletPoints : bulletPoints.slice(0, maxItems);
 
     return (
-        <div className="bg-white rounded-xl p-4 border border-gray-200 hover:border-amber-200 hover:shadow-md transition-all">
+        <div className="bg-white rounded-xl p-4 border border-gray-200 hover:border-[#A8C5A6] hover:shadow-md transition-all">
             <div className="flex items-start justify-between mb-2">
                 <h4 className="font-semibold text-gray-900">{activity.name}</h4>
                 {activity.role && (
@@ -122,7 +122,7 @@ const ActivityCard = ({ activity }) => {
                     <ul className="space-y-1.5 text-sm text-gray-600">
                         {displayItems.map((item, i) => (
                             <li key={i} className="flex items-start gap-2">
-                                <span className="text-amber-500 mt-1.5">•</span>
+                                <span className="text-[#1A4D2E] mt-1.5">•</span>
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -130,7 +130,7 @@ const ActivityCard = ({ activity }) => {
                     {isTruncated && (
                         <button
                             onClick={() => setExpanded(!expanded)}
-                            className="text-xs text-amber-600 hover:text-amber-700 font-medium mt-2"
+                            className="text-xs text-[#1A4D2E] hover:text-[#1A4D2E] font-medium mt-2"
                         >
                             {expanded ? 'Show less' : `Show ${bulletPoints.length - maxItems} more...`}
                         </button>
@@ -152,7 +152,7 @@ const ActivityCard = ({ activity }) => {
             {activity.achievements && activity.achievements.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-1">
                     {activity.achievements.map((a, i) => (
-                        <span key={i} className="inline-flex items-center gap-1 px-2 py-1 bg-amber-50 text-amber-700 rounded-lg text-xs border border-amber-100">
+                        <span key={i} className="inline-flex items-center gap-1 px-2 py-1 bg-[#D6E8D5] text-[#1A4D2E] rounded-lg text-xs border border-[#D6E8D5]">
                             <TrophyIcon className="h-3 w-3" /> {a}
                         </span>
                     ))}
@@ -237,15 +237,15 @@ const CoursePill = ({ course }) => {
     // Subject-based color palette (no gray!)
     const subjectColors = {
         'English': 'bg-blue-100 text-blue-800 border-blue-200',
-        'Math': 'bg-purple-100 text-purple-800 border-purple-200',
+        'Math': 'bg-[#D6E8D5] text-[#1A4D2E] border-[#A8C5A6]',
         'Science': 'bg-emerald-100 text-emerald-800 border-emerald-200',
-        'History': 'bg-amber-100 text-amber-800 border-amber-200',
+        'History': 'bg-[#D6E8D5] text-[#1A4D2E] border-[#A8C5A6]',
         'Language': 'bg-rose-100 text-rose-800 border-rose-200',
         'Business': 'bg-cyan-100 text-cyan-800 border-cyan-200',
         'Arts': 'bg-pink-100 text-pink-800 border-pink-200',
-        'Tech': 'bg-indigo-100 text-indigo-800 border-indigo-200',
+        'Tech': 'bg-[#D6E8D5] text-[#1A4D2E] border-[#A8C5A6]',
         'Health': 'bg-lime-100 text-lime-800 border-lime-200',
-        'Leadership': 'bg-orange-100 text-orange-800 border-orange-200',
+        'Leadership': 'bg-[#D6E8D5] text-[#1A4D2E] border-[#A8C5A6]',
         'Psychology': 'bg-violet-100 text-violet-800 border-violet-200',
         'General': 'bg-slate-100 text-slate-700 border-slate-200',
     };
@@ -301,9 +301,9 @@ const OverviewTab = ({ profileData }) => {
     return (
         <div className="space-y-6">
             {/* Student Info Card - Subtle light design */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100">
+            <div className="bg-gradient-to-br from-[#D6E8D5] to-[#F8F6F0] rounded-2xl p-6 border border-[#D6E8D5]">
                 <div className="flex items-center gap-5">
-                    <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-full flex items-center justify-center shadow-lg">
                         <UserCircleIcon className="h-9 w-9 text-white" />
                     </div>
                     <div className="flex-1">
@@ -311,16 +311,16 @@ const OverviewTab = ({ profileData }) => {
                         <div className="flex flex-wrap items-center gap-4 mt-2 text-gray-600">
                             {school && (
                                 <span className="flex items-center gap-1.5 text-sm">
-                                    <AcademicCapIcon className="h-4 w-4 text-amber-600" /> {school}
+                                    <AcademicCapIcon className="h-4 w-4 text-[#1A4D2E]" /> {school}
                                 </span>
                             )}
                             {location && (
                                 <span className="flex items-center gap-1.5 text-sm">
-                                    <MapPinIcon className="h-4 w-4 text-amber-600" /> {location}
+                                    <MapPinIcon className="h-4 w-4 text-[#1A4D2E]" /> {location}
                                 </span>
                             )}
                             {grade && (
-                                <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">
+                                <span className="px-3 py-1 bg-[#D6E8D5] text-[#1A4D2E] rounded-full text-sm font-medium">
                                     Grade {grade}
                                 </span>
                             )}
@@ -329,7 +329,7 @@ const OverviewTab = ({ profileData }) => {
                     {profileData.intended_major && (
                         <div className="text-right hidden md:block">
                             <p className="text-xs text-gray-500 uppercase tracking-wide">Intended Major</p>
-                            <p className="text-lg font-semibold text-amber-700 mt-1">{profileData.intended_major}</p>
+                            <p className="text-lg font-semibold text-[#1A4D2E] mt-1">{profileData.intended_major}</p>
                         </div>
                     )}
                 </div>
@@ -351,8 +351,8 @@ const OverviewTab = ({ profileData }) => {
             {/* Quick Glance */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-white rounded-xl p-5 border border-gray-200 flex items-center gap-4">
-                    <div className="p-3 bg-amber-100 rounded-xl">
-                        <AcademicCapIcon className="h-6 w-6 text-amber-600" />
+                    <div className="p-3 bg-[#D6E8D5] rounded-xl">
+                        <AcademicCapIcon className="h-6 w-6 text-[#1A4D2E]" />
                     </div>
                     <div>
                         <p className="text-2xl font-bold text-gray-900">{apCount}</p>
@@ -360,8 +360,8 @@ const OverviewTab = ({ profileData }) => {
                     </div>
                 </div>
                 <div className="bg-white rounded-xl p-5 border border-gray-200 flex items-center gap-4">
-                    <div className="p-3 bg-amber-100 rounded-xl">
-                        <SparklesIcon className="h-6 w-6 text-amber-600" />
+                    <div className="p-3 bg-[#D6E8D5] rounded-xl">
+                        <SparklesIcon className="h-6 w-6 text-[#1A4D2E]" />
                     </div>
                     <div>
                         <p className="text-2xl font-bold text-gray-900">{activityCount}</p>
@@ -369,8 +369,8 @@ const OverviewTab = ({ profileData }) => {
                     </div>
                 </div>
                 <div className="bg-white rounded-xl p-5 border border-gray-200 flex items-center gap-4">
-                    <div className="p-3 bg-amber-100 rounded-xl">
-                        <TrophyIcon className="h-6 w-6 text-amber-600" />
+                    <div className="p-3 bg-[#D6E8D5] rounded-xl">
+                        <TrophyIcon className="h-6 w-6 text-[#1A4D2E]" />
                     </div>
                     <div>
                         <p className="text-2xl font-bold text-gray-900">{awardCount}</p>
@@ -402,18 +402,18 @@ const AcademicsTab = ({ profileData }) => {
         <div className="space-y-6">
             {/* AP Exams */}
             {apExams.length > 0 && (
-                <SectionCard title="AP Exams" icon={AcademicCapIcon} color="purple" badge={`${apExams.length} exams`}>
+                <SectionCard title="AP Exams" icon={AcademicCapIcon} color="stratia" badge={`${apExams.length} exams`}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                         {apExams.map((ap, i) => (
                             <div key={i} className="bg-white rounded-xl p-4 flex items-center justify-between border border-gray-100">
                                 <span className="font-medium text-gray-700">{ap.subject}</span>
                                 <div className="flex items-center gap-2">
                                     <span className={`text-2xl font-bold ${ap.score >= 4 ? 'text-green-600' :
-                                        ap.score >= 3 ? 'text-amber-600' : 'text-red-500'
+                                        ap.score >= 3 ? 'text-[#1A4D2E]' : 'text-red-500'
                                         }`}>
                                         {ap.score}
                                     </span>
-                                    {ap.score >= 4 && <StarIconSolid className="h-5 w-5 text-amber-400" />}
+                                    {ap.score >= 4 && <StarIconSolid className="h-5 w-5 text-[#C05838]" />}
                                 </div>
                             </div>
                         ))}
@@ -498,13 +498,13 @@ const ActivitiesTab = ({ profileData }) => {
 
             {/* Special Programs */}
             {specialPrograms.length > 0 && (
-                <SectionCard title="Special Programs" icon={StarIcon} color="indigo">
+                <SectionCard title="Special Programs" icon={StarIcon} color="stratia">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {specialPrograms.map((sp, i) => (
                             <div key={i} className="bg-white rounded-xl p-4 border border-gray-100">
                                 <p className="font-semibold text-gray-900">{sp.name}</p>
                                 {sp.description && <p className="text-sm text-gray-600 mt-1">{sp.description}</p>}
-                                {sp.grade && <p className="text-xs text-indigo-600 mt-2">Grade {sp.grade}</p>}
+                                {sp.grade && <p className="text-xs text-[#1A4D2E] mt-2">Grade {sp.grade}</p>}
                             </div>
                         ))}
                     </div>
@@ -523,17 +523,17 @@ const AchievementsTab = ({ profileData }) => {
     return (
         <div className="space-y-6">
             {awards.length > 0 ? (
-                <SectionCard title="Awards & Honors" icon={TrophyIcon} color="amber" badge={`${awards.length} awards`}>
+                <SectionCard title="Awards & Honors" icon={TrophyIcon} color="stratia" badge={`${awards.length} awards`}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {awards.map((award, i) => (
-                            <div key={i} className="bg-white rounded-xl p-4 flex items-start gap-4 border border-gray-100 hover:border-amber-200 transition-colors">
-                                <div className="p-2.5 bg-amber-100 rounded-xl shrink-0">
-                                    <TrophyIcon className="h-6 w-6 text-amber-600" />
+                            <div key={i} className="bg-white rounded-xl p-4 flex items-start gap-4 border border-gray-100 hover:border-[#A8C5A6] transition-colors">
+                                <div className="p-2.5 bg-[#D6E8D5] rounded-xl shrink-0">
+                                    <TrophyIcon className="h-6 w-6 text-[#1A4D2E]" />
                                 </div>
                                 <div>
                                     <p className="font-semibold text-gray-900">{award.name}</p>
                                     {award.grade && (
-                                        <p className="text-sm text-amber-600 mt-1">Awarded in Grade {award.grade}</p>
+                                        <p className="text-sm text-[#1A4D2E] mt-1">Awarded in Grade {award.grade}</p>
                                     )}
                                     {award.description && (
                                         <p className="text-sm text-gray-500 mt-1">{award.description}</p>

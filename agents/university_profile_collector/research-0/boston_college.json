@@ -1,0 +1,996 @@
+{
+  "_id": "boston_college",
+  "metadata": {
+    "official_name": "Boston College",
+    "location": {
+      "city": "Chestnut Hill",
+      "state": "MA",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Boston College is a private Catholic Jesuit research university renowned for its strong liberal arts, scientific inquiry, and formative education. It consistently ranks among the top national universities and is highly selective, attracting academically talented and community-oriented students.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Boston College employs a holistic review process, seeking a new generation of leaders who are academically talented, intellectually curious, desire a close-knit community, and are eager to use their talents to improve society. The university values personal growth, character formation, and service, aligning with its Jesuit mission. While test-optional, a significant majority (74%) of admitted students still submit test scores. Admissions are highly competitive, with the acceptance rate for the Class of 2029 at a record low of 12.6%, and applying via Early Decision offers a statistical advantage.",
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Boston College's acceptance rate has become significantly more selective, dropping to a record low of 12.6% for the Class of 2029, a notable decrease from previous years.",
+        "implication": "Prospective applicants face extremely high competition; utilizing Early Decision options may increase chances of admission."
+      },
+      {
+        "category": "Reputation & Outcomes",
+        "insight": "Forbes recognized Boston College as a 'New Ivy' in April 2024, highlighting employer preference for its graduates due to their academic quality and drive.",
+        "implication": "Graduates are highly sought after by employers, suggesting strong career prospects and a valuable return on investment."
+      },
+      {
+        "category": "Academic Strengths",
+        "insight": "The university is particularly recognized for strong programs in business (Carroll School of Management), education (Lynch School), economics, and nursing.",
+        "implication": "Students interested in these fields will find robust academic resources, faculty expertise, and strong alumni networks."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Boston College offers a vibrant social life centered around traditions, community events, and numerous student organizations. Most students live on campus during their first, second, and fourth years, fostering a strong sense of community and facilitating friendships. While the social scene includes parties, some describe it as more 'low-key' than other universities, with a focus on a balance between academics and social activities. Official Greek life is absent, though some 'underground' fraternities exist off-campus. Opportunities for non-alcoholic events are also available, and students frequently utilize Boston's broader social scene.",
+      "transportation_impact": "Located in Chestnut Hill, approximately six miles west of downtown Boston, Boston College benefits from convenient access to the city. The MBTA Green Line ('B' line) stops directly at the campus, and free BC Shuttle services connect the various campuses and surrounding areas. This robust transportation network allows students to easily access Boston's cultural attractions, nightlife, and other collegiate events, expanding their social and academic opportunities beyond the immediate campus.",
+      "research_impact": "As a 'Research 1: Very High Research Spending and Doctorate Production' university, Boston College is deeply committed to providing diverse research opportunities for undergraduates across the humanities, sciences, business, and education. Programs include undergraduate research fellowships, independent study, senior honors theses, and various summer fellowships and grants for student-designed projects, conference travel, and thesis expenses. Students can also pursue research experiences in faculty labs on campus or through off-campus opportunities at biomedical institutions in the greater Boston area."
+    },
+    "us_news_rank": 36
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 12.6,
+      "in_state_acceptance_rate": 16.6,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 17.0,
+      "admits_class_size": 5000,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 5000,
+          "admits": 1500,
+          "acceptance_rate": 30.0,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "ED",
+          "applications": 3200,
+          "admits": null,
+          "acceptance_rate": 31.25,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 39686,
+        "admits_total": 5497,
+        "enrolled_total": 2479,
+        "acceptance_rate_overall": 13.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 45.1,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate reached a record low of 12.6% in some reports, but Boston College's First-Year Admission Profile states 13.9%. In-state/out-of-state acceptance rates not specified for this class. Waitlist data not publicly disclosed in detail."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 35475,
+        "admits_total": 5200,
+        "enrolled_total": 2394,
+        "acceptance_rate_overall": 14.7,
+        "acceptance_rate_in_state": 16.6,
+        "acceptance_rate_out_of_state": 16.0,
+        "yield_rate": 43.0,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed in detail."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 36525,
+        "admits_total": 5511,
+        "enrolled_total": 2335,
+        "acceptance_rate_overall": 15.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 41.0,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": 8671,
+          "admitted_from_waitlist": 116,
+          "waitlist_admit_rate": 1.34,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data specifically for 'offered spots' not found. Is waitlist ranked not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 40477,
+        "admits_total": 6748,
+        "enrolled_total": 2335,
+        "acceptance_rate_overall": 16.7,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 34.6,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": 7660,
+          "admitted_from_waitlist": 55,
+          "waitlist_admit_rate": 0.72,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Conflicting waitlist data found; one source states 13 admitted from 8,019 waitlisted for a 0.16% admit rate. Acceptance rate reported between 16% and 17% in various sources. Waitlist data specifically for 'offered spots' not found. Is waitlist ranked not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 39875,
+        "admits_total": 7570,
+        "enrolled_total": 2516,
+        "acceptance_rate_overall": 19.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 33.2,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed in detail."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 4.09,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "Average GPA is an estimate; most admits have straight A's in honors/AP courses."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1450-1520",
+        "sat_reading_middle_50": "710-760",
+        "sat_math_middle_50": "730-780",
+        "act_composite_middle_50": "33-34",
+        "submission_rate": 74.0,
+        "policy_note": "Test optional, but scores are considered very important."
+      },
+      "demographics": {
+        "first_gen_percentage": 12.0,
+        "legacy_percentage": 15.0,
+        "international_percentage": 9.0,
+        "geographic_breakdown": [
+          {
+            "region": "New England",
+            "percentage": 28.3
+          },
+          {
+            "region": "Mid-Atlantic",
+            "percentage": 29.3
+          },
+          {
+            "region": "Midwest",
+            "percentage": 8.1
+          },
+          {
+            "region": "South/Southwest",
+            "percentage": 10.9
+          },
+          {
+            "region": "West",
+            "percentage": 11.3
+          },
+          {
+            "region": "Other US States",
+            "percentage": 1.2
+          },
+          {
+            "region": "International",
+            "percentage": 10.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "46% of admitted students were male for Class of 2029."
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "54% of admitted students were female for Class of 2029."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 58.6,
+          "black_african_american": 5.4,
+          "hispanic_latino": 11.6,
+          "asian": 11.3,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.9,
+          "unknown": 1.8,
+          "non_resident_alien": 7.2
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Morrissey College of Arts & Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 13.9,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a broad liberal arts education, valuing interdisciplinary study, and intellectual exploration across humanities, social sciences, and natural sciences. Strong emphasis on critical thinking and ethical development.",
+        "housing_profile": "Students reside in traditional dorms on Chestnut Hill or Newton Campus for their first year, fostering community through residential life activities and Living Learning Communities. Upperclassmen may have access to more varied housing options, including apartment-style living.",
+        "student_archetype": "Intellectually curious, well-rounded, socially aware, and committed to academic rigor within a Jesuit tradition of service to others. They often have diverse interests beyond a single discipline.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I (MATH1102 or equivalent)",
+              "Calculus II (MATH1103 for B.S.)"
+            ],
+            "minimum_gpa_to_declare": 1.67,
+            "weeder_courses": [
+              "CSCI1101 Computer Science I",
+              "CSCI1102 Computer Science II",
+              "CSCI2243 Logic and Computation",
+              "CSCI2244 Randomness and Computation"
+            ],
+            "special_requirements": "Maintain a 1.67 GPA in CSCI courses once declared (for students after Spring 2023).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Popular major with increasing enrollment. The 1.67 GPA is a maintenance requirement, not necessarily for initial declaration. Calculus II and Linear Algebra are required for the B.S. degree. [cite: 8, 10, 17, 36]"
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I (MATH1102 preferred)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECON1101 Principles of Economics",
+              "ECON1151 Statistics",
+              "ECON2201 Microeconomic Theory",
+              "ECON2202 Macroeconomic Theory",
+              "ECON2228 Econometric Methods"
+            ],
+            "special_requirements": "Intermediate Theory, Statistics, and Econometric Methods must be taken in the BC Economics department. [cite: 7, 13, 27]",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "One of the most popular undergraduate majors. Calculus is a prerequisite for intermediate theory courses. [cite: 7, 13, 27, 34, 45]"
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "General Chemistry (e.g., CHEM1101/1102 or equivalent)",
+              "Calculus I (MATH1100 or equivalent)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL2000/2010 Introductory Biology (Molecules & Cells/Ecology & Evolution)",
+              "General Chemistry I & II (CHEM1101 & CHEM1102)",
+              "Organic Chemistry I & II"
+            ],
+            "special_requirements": "B.S. requires stronger background in physics, chemistry, and mathematics and is suitable for pre-medical/pre-dental. B.A. is more flexible. [cite: 5, 14, 29]",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "General Chemistry and Organic Chemistry are typically considered 'weed out courses' for pre-health tracks, which many Biology majors pursue. [cite: 5, 14, 29]"
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSYC1110 Introductory Psychology I",
+              "PSYC1111 Introductory Psychology II",
+              "PSYC1120 Introduction to Behavioral Statistics and Research I",
+              "PSYC1121 Introduction to Behavioral Statistics and Research II"
+            ],
+            "special_requirements": "PSYC1110 and PSYC1111 should be taken early. PSYC1120 and PSYC1121 (or research practicum) should be taken sequentially in sophomore year. [cite: 3, 13, 31]",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "The B.S. in Psychology includes co-requisites in Biology, Computer Science, Math, Physics, and Chemistry. [cite: 3, 13]"
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Two introductory courses (e.g., POLI1021 How to Rule the World)"
+            ],
+            "special_requirements": "At least one course in each of the four subfields (American, Comparative, International, Political Theory) must be taken at Boston College. [cite: 2, 4, 26]",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "The major consists of 10 courses (30 credits), with a variety of electives. [cite: 2, 4, 26, 35, 36]"
+          },
+          {
+            "name": "Human-Centered Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Physics 1",
+              "Calculus 1",
+              "Calculus 2"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGR1026 Innovation Through Engineering Design",
+              "ENGR1101 Introduction to Human-Centered Engineering",
+              "Engineering Foundations Studio sequence (ENGR2101, etc.)"
+            ],
+            "special_requirements": "Incoming first-year students must be admitted directly to the HCE major. Focus areas in health, energy, and environment. [cite: 5, 11, 15, 16, 23]",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "notes": "No internal transfer policy for current BC students wishing to join HCE; must apply directly from high school. [cite: 11, 38]"
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH1100 Calculus I",
+              "MATH1101 Calculus II (for Science Majors)"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Two introductory history courses (History I and History II as part of the core curriculum)"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "International Studies",
+            "degree_type": "B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Enrollment in the major is by competitive application, submitted in mid-February of freshman year. Requires core courses, a concentration, language proficiency, and study abroad. [cite: 45]",
+            "admissions_pathway": "Application",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "3.25 (estimated from old program website)",
+            "notes": "Competitive application process to enter the major. Former minimum GPA for consideration was around 3.25. [cite: 44, 45]"
+          }
+        ]
+      },
+      {
+        "name": "Carroll School of Management",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 13.9,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Suited for ambitious, quantitatively strong students with a clear interest in business, finance, accounting, or entrepreneurship. Emphasizes ethical leadership and integration of management with liberal arts.",
+        "housing_profile": "Students typically experience traditional freshman dorms and later move into sophomore, junior, or senior housing options which can include suites or apartment-style residences. Residence life fosters a strong community, though direct academic integration into housing is not explicit.",
+        "student_archetype": "Driven, career-focused, analytical problem-solvers who are proactive in networking and seeking internships. Often described as competitive, yet collaborative, with a 'work hard, play hard' mentality.",
+        "majors": [
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Principles of Economics",
+              "Calculus I",
+              "Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACCT1021 Financial Accounting",
+              "ECON1101 Principles of Economics",
+              "MATH1100 Calculus I"
+            ],
+            "special_requirements": "Internal transfer to CSOM is highly competitive, limited to max 10 students/year, and via a lottery process. [cite: 18, 34]",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.4,
+            "notes": "Most popular major at BC. Internal transfer requires a minimum 3.4 GPA and completion of Principles of Economics, Calculus I and II. [cite: 18, 33, 34]"
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Principles of Economics",
+              "Calculus I",
+              "Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACCT1021 Financial Accounting",
+              "ACCT1022 Managerial Accounting"
+            ],
+            "special_requirements": "Internal transfer to CSOM is highly competitive, limited to max 10 students/year, and via a lottery process. Many states require additional accounting classes for CPA qualification beyond the concentration's 6 courses. [cite: 6, 12, 16, 18, 20, 34]",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.4,
+            "notes": "Internal transfer requires a minimum 3.4 GPA and completion of Principles of Economics, Calculus I and II. [cite: 18, 34]"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Principles of Economics",
+              "Calculus I",
+              "Calculus II",
+              "ACCT1021 Introduction to Financial Accounting"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MKTG1021 Marketing Principles"
+            ],
+            "special_requirements": "Internal transfer to CSOM is highly competitive, limited to max 10 students/year, and via a lottery process. [cite: 10, 15, 18, 25, 28, 34]",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.4,
+            "notes": "MKTG1021 is a prerequisite for all other marketing courses. Internal transfer requires a minimum 3.4 GPA and completion of Principles of Economics, Calculus I and II. [cite: 10, 15, 18, 34]"
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Principles of Economics",
+              "Calculus I",
+              "Calculus II",
+              "BZAN1135 Statistical Analysis"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BZAN1135 Statistical Analysis",
+              "BZAN1136 Business Statistics--R Programming Lab",
+              "BZAN2021 Coding for Business"
+            ],
+            "special_requirements": "Internal transfer to CSOM is highly competitive, limited to max 10 students/year, and via a lottery process. [cite: 7, 8, 17, 18, 33, 34]",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.4,
+            "notes": "Emphasizes statistics, forecasting, experimental design, and data mining. Internal transfer requires a minimum 3.4 GPA and completion of Principles of Economics, Calculus I and II. [cite: 18, 34]"
+          },
+          {
+            "name": "General Management",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Principles of Economics",
+              "Calculus I",
+              "Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfer to CSOM is highly competitive, limited to max 10 students/year, and via a lottery process. [cite: 18, 30, 34]",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.4,
+            "notes": "Internal transfer requires a minimum 3.4 GPA and completion of Principles of Economics, Calculus I and II. [cite: 18, 34]"
+          },
+          {
+            "name": "Management and Leadership",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Principles of Economics",
+              "Calculus I",
+              "Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Internal transfer to CSOM is highly competitive, limited to max 10 students/year, and via a lottery process. [cite: 9, 18, 19, 30, 34]",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.4,
+            "notes": "Focuses on the behavioral side of management. Internal transfer requires a minimum 3.4 GPA and completion of Principles of Economics, Calculus I and II. [cite: 18, 19, 34]"
+          }
+        ]
+      },
+      {
+        "name": "Lynch School of Education and Human Development",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 13.9,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students passionate about making a societal impact through careers in education, applied psychology, human development, or related fields. Focuses on social justice and community engagement.",
+        "housing_profile": "Shares general Boston College housing, with first-year students in traditional dorms and upperclassmen moving to varied residential options that support a close-knit campus community. Living Learning Communities are available to foster shared interests.",
+        "student_archetype": "Service-oriented, empathetic, and socially conscious individuals dedicated to understanding and improving the human condition. They value community involvement and practical application of knowledge.",
+        "majors": [
+          {
+            "name": "Applied Psychology and Human Development",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "APSY2152 Applied Psychology Practicum: Pathways Work & Life (typically sophomore year)"
+            ],
+            "special_requirements": "Students can register for practicum no sooner than the second semester of sophomore year, after completing a minimum of 12 credits of APSY major courses. [cite: 2, 23, 28, 37, 38, 46]",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Minimum 3.0 GPA required for internal transfer consideration. Requires a six-course sequence and three major electives. [cite: 2, 23, 37, 38, 46]"
+          },
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "EDUC1030 Child Development",
+              "EDUC1031 Family, School, and Society OR FORM1051 Reimagining School and Society"
+            ],
+            "special_requirements": "Requires a second major for Class of 2026 and prior. 2.5 cumulative GPA and successful completion of major courses required prior to student teaching. [cite: 2, 12, 30, 32, 35, 37]",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Minimum 3.0 GPA required for internal transfer consideration. [cite: 2, 3, 37]"
+          },
+          {
+            "name": "Secondary Education",
+            "degree_type": "B.A., B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [],
+            "special_requirements": "Requires a second major in the Morrissey College of Arts and Sciences (Biology, Chemistry, Physics, English, History, or Mathematics). 2.5 cumulative GPA and successful completion of major courses required prior to student teaching. [cite: 2, 30, 35, 37]",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Minimum 3.0 GPA required for internal transfer consideration. [cite: 2, 3, 37]"
+          },
+          {
+            "name": "Transformative Educational Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Minimum 2.5 GPA required for internal transfer consideration. [cite: 3, 37]"
+          }
+        ]
+      },
+      {
+        "name": "Connell School of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 13.9,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "For students with a strong aptitude for science and a compassionate drive to serve in healthcare. Requires early commitment to a rigorous nursing curriculum.",
+        "housing_profile": "Nursing students participate in the general Boston College housing system, starting in traditional first-year dorms and progressing through the standard housing selection process for returning students. All housing aims to build a supportive community.",
+        "student_archetype": "Dedicated, resilient, and compassionate individuals with a strong scientific foundation and a clear calling to patient care and health promotion. They are committed to rigorous academic and clinical training.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.73,
+            "prerequisite_courses": [
+              "BIOL1300 Anatomy & Physiology I",
+              "BIOL1320 Anatomy & Physiology II",
+              "CHEM1161 Life Science Chemistry",
+              "MATH1180 Statistics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL1300 Anatomy & Physiology I (with Lab)",
+              "BIOL1320 Anatomy & Physiology II (with Lab)",
+              "CHEM1161 Life Science Chemistry (with Lab)",
+              "BIOL2200 Microbiology (with Lab)"
+            ],
+            "special_requirements": "Due to maximum capacity, internal transfer applications have been suspended for Fall 2026 entry. External transfer applicants had a competitive GPA of around 3.73. [cite: 8, 12, 19, 22, 23, 31, 34]",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "notes": "Highly selective. Historically, internal transfers have been possible but are currently suspended due to capacity. Best chance of admission is direct from high school. [cite: 12, 23, 34]"
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Accounting for CPAs (non-CSOM students)",
+      "Business Analytics",
+      "Computer Science",
+      "Data Science",
+      "Economics",
+      "Entrepreneurship",
+      "Environmental Studies",
+      "Finance (non-CSOM students)",
+      "Global Public Health and the Common Good",
+      "Journalism",
+      "Management and Leadership (non-CSOM students)",
+      "Marketing (non-CSOM students)",
+      "Philosophy",
+      "Psychology",
+      "Sociology"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision I",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Binding commitment. Notification by December 15."
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2025-01-02",
+        "is_binding": true,
+        "notes": "Binding commitment. Notification by January 2 (some sources indicate February 15)."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-02",
+        "is_binding": false,
+        "notes": "Notification by April 1."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Two supplemental essays required: one choice from four prompts (or a fifth specific to Human-Centered Engineering majors) with a 400-word limit, and the Common Application personal statement."
+      },
+      {
+        "target_program": "Arts (including Studio Art)",
+        "requirement_type": "Portfolio",
+        "deadline": "2024-11-01",
+        "details": "Optional arts credentials (e.g., portfolio for studio art) can be submitted via SlideRoom by November 1 for Early Decision I or QuestBridge National College Match candidates."
+      },
+      {
+        "target_program": "Arts (including Studio Art)",
+        "requirement_type": "Portfolio",
+        "deadline": "2025-01-03",
+        "details": "Optional arts credentials (e.g., portfolio for studio art) can be submitted via SlideRoom by January 3 for Early Decision II and Regular Decision candidates."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations (Counselor & Teacher)"
+      ],
+      "secondary_factors": [
+        "Class Rank",
+        "Extracurriculars",
+        "Volunteer Work",
+        "Character",
+        "Motivation",
+        "Energy",
+        "Promise for Personal Growth"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Seeking students with academic ability, intellectual curiosity, strength of character, motivation, energy, and promise for personal growth. Emphasis on the Jesuit mission of liberal arts, character development, and cultivating leaders."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to a less competitive major if your primary interest (e.g., CS, Engineering, Nursing) is highly selective, considering fields like business, psychology, sociology, history, criminal justice, political science, or communications as potentially easier pathways into a college.",
+      "If truly undecided about a specific major, apply to the Morrissey College of Arts and Sciences as 'undeclared' at Boston College, as it will not negatively impact admission chances and provides flexibility to explore options before declaring in sophomore year.",
+      "Research the specific admission policies of each college regarding majors; some admit by major, others by a broader college (e.g., Letters and Science), which can influence the competitiveness of your application.",
+      "Beyond a major's name, review the course catalog for potential majors and identify classes that genuinely interest you, as enjoying your coursework can lead to better performance and motivation.",
+      "Understand that for some highly competitive majors, even if a school states it doesn't admit by major, the overall applicant pool for certain programs can be more competitive (e.g., Computer Science, Engineering)."
+    ],
+    "college_ranking_tactics": [
+      "Prioritize colleges where the core curriculum or general education (GE) requirements align with your educational philosophy, as these foundational courses are a significant part of a Boston College education.",
+      "View college rankings as only one data point, and focus on personal goals, preferences, and what makes a school the 'right' fit for you, rather than solely on prestige or overall rank.",
+      "Consider the quality of life outside the classroom, including student activities and campus environment, as part of your ranking decision.",
+      "Research a college's specific programs and opportunities beyond just its overall ranking, as accompanying articles and deeper dives can reveal unique academic offerings.",
+      "Evaluate factors like college size, location, strength of alumni network, and faculty expertise in your areas of interest, as these contribute significantly to the college experience."
+    ],
+    "alternate_major_strategy": "If applying to a highly competitive major like Human-Centered Engineering at Boston College, utilize the option to list a backup major in a different college, such as the Morrissey College of Arts and Sciences, as this might offer an alternative path to admission if your first choice is not successful. Ensure your alternate major genuinely interests you and aligns with your passions, rather than choosing it solely for perceived ease of admission, as transferring into highly selective majors later can be difficult."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 69400,
+        "total_coa": 88632,
+        "housing": 15658
+      },
+      "out_of_state": {
+        "tuition": 69400,
+        "total_coa": 88632,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 58000,
+    "average_merit_aid": 24920,
+    "percent_receiving_aid": 67.0,
+    "scholarships": [
+      {
+        "name": "Gabelli Presidential Scholars Program",
+        "type": "Merit",
+        "amount": "Full tuition",
+        "deadline": "November 1 (Early Decision and Regular Decision priority scholarship deadline)",
+        "benefits": "Full tuition scholarship, fully-funded GPSP-sponsored summer programs",
+        "application_method": "Automatic Consideration (by applying to BC by the priority deadline)"
+      },
+      {
+        "name": "QuestBridge National College Match",
+        "type": "Merit/Need-Based",
+        "amount": "Full tuition for four years",
+        "deadline": "Varies by QuestBridge program, typically in the fall for the National College Match",
+        "benefits": "Full tuition scholarship",
+        "application_method": "Separate Application (through QuestBridge)"
+      },
+      {
+        "name": "Boston College Need-Based Financial Aid (Institutional Grants/Scholarships)",
+        "type": "Need-Based",
+        "amount": "Varies (meets 100% of demonstrated need)",
+        "deadline": "FAFSA deadline, CSS Profile deadline (check BC financial aid website for specific dates)",
+        "benefits": "Covers demonstrated financial need",
+        "application_method": "FAFSA, CSS Profile, and submission of tax returns"
+      },
+      {
+        "name": "Boston College Trustee Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition",
+        "deadline": "Automatic consideration with application",
+        "benefits": "Full tuition scholarship",
+        "application_method": "Automatic Consideration (by applying to Boston College)"
+      },
+      {
+        "name": "Flynn Scholarship",
+        "type": "Merit/Geographic",
+        "amount": "Full tuition and board",
+        "deadline": "Automatic consideration for eligible students",
+        "benefits": "Full tuition and board",
+        "application_method": "Automatic Consideration (open only to students from Boston public and parochial schools)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 generally grant advanced placement, and in some cases a score of 3 may be eligible.",
+      "exceptions": [
+        "AP credit typically fulfills University Core Curriculum requirements, major prerequisites, or allows placement into higher-level courses, but does not usually count as actual credit toward the 120 credits required for graduation.",
+        "Students with the equivalency of 30 AP credits may qualify for advanced standing to graduate in three years.",
+        "Computer Science majors must consult with the department regarding AP application to the major.",
+        "Mathematics AP credit can exempt students from the University Core Curriculum mathematics requirement or the Carroll School of Management Calculus requirement."
+      ],
+      "usage": "Can satisfy University Core Curriculum requirements and some major prerequisites; can allow for placement into higher-level courses."
+    },
+    "ib_policy": {
+      "general_rule": "Each score of 6 or 7 on Higher Level (HL) exams earns advanced placement units and generally satisfies a core requirement.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Boston College's equivalency databases",
+        "Transfer Course Database"
+      ],
+      "restrictions": "A maximum of 60 credit hours will be allowed in transfer. Courses must be from regionally accredited institutions, be similar in content, depth, and breadth to courses taught at Boston College, and have earned a grade of C- or better (some sources state C or better). No credit is granted for internships, field experiences, practica, military training, independent study, online or correspondence coursework. Grades from previous institutions do not transfer into the Boston College GPA."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework, often including AP/Honors classes and high SAT/ACT scores (e.g., 1540 SAT, 35 ACT for accepted ED students).",
+      "Demonstrated growth and sustained effort in academics and extracurriculars throughout high school.",
+      "Authentic essays that convey a genuine interest in Boston College and an understanding of its Jesuit values, such as personal development and service to others.",
+      "Engaging in meaningful extracurricular activities, particularly those showcasing leadership and a commitment to community.",
+      "A strong sense of personal narrative and self-reflection in the application, highlighting how experiences have shaped aspirations."
+    ],
+    "common_activities": [
+      "Leadership roles in school clubs and organizations.",
+      "Significant community service involvement.",
+      "Varsity athletics, which are a big part of campus life and often noted in accepted profiles.",
+      "Participation in music and arts, sometimes trying new things outside primary interests.",
+      "Internships and other pre-professional experiences."
+    ],
+    "essay_tips": [
+      "Show an understanding of Jesuit values (e.g., living for others, service) and weave them into your narrative.",
+      "Be specific and personal, using vivid details and imagery to 'show, don't tell' your experiences and feelings.",
+      "Tie your experiences and interests to BC's mission and offerings, demonstrating why you are a unique fit for the institution.",
+      "Focus on specific moments and what you gathered from them, rather than making general statements.",
+      "Address how your background or unique identity has shaped your aspirations, especially if you are from a diverse background."
+    ],
+    "red_flags": [
+      "Generic essays that lack personal specifics and could apply to any college.",
+      "A significant decline in grades, especially in senior year, without a clear explanation.",
+      "Failing to demonstrate genuine interest in Boston College beyond its reputation or acceptance rate.",
+      "Underestimating the competitiveness of regular decision, as a significant portion of the class is admitted via Early Decision with higher acceptance rates.",
+      "Sub-par GPA without compensating factors like very high test scores or compelling extracurriculars."
+    ],
+    "insights": [
+      "Boston College values a strong sense of community and school spirit among its students.",
+      "While a Jesuit university, it welcomes students of all backgrounds and belief systems, with Jesuit values often manifesting in a focus on service and social justice.",
+      "The campus is known for its beauty and Gothic architecture.",
+      "Early Decision (ED1 and ED2) acceptance rates at Boston College can be significantly higher than the overall regular decision rate.",
+      "Many students highlight the supportive atmosphere and opportunities for connections through numerous clubs and extracurricular activities."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 103937,
+    "employment_rate_2yr": 75.0,
+    "grad_school_rate": 19.0,
+    "top_employers": [
+      "PwC",
+      "Deloitte",
+      "JPMorganChase",
+      "Amazon",
+      "Goldman Sachs",
+      "Microsoft",
+      "Massachusetts General Hospital"
+    ],
+    "loan_default_rate": 1.5
+  },
+  "student_retention": {
+    "freshman_retention_rate": 96.0,
+    "graduation_rate_4_year": 88.0,
+    "graduation_rate_6_year": 91.0
+  }
+}

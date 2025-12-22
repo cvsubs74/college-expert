@@ -188,9 +188,18 @@
         "legacy_percentage": 17.5,
         "international_percentage": 5.0,
         "geographic_breakdown": [
-          { "region": "Texas (In-State)", "percentage": 48.0 },
-          { "region": "Out-of-State", "percentage": 47.0 },
-          { "region": "International", "percentage": 5.0 }
+          {
+            "region": "Texas (In-State)",
+            "percentage": 48.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 47.0
+          },
+          {
+            "region": "International",
+            "percentage": 5.0
+          }
         ],
         "gender_breakdown": {
           "men": {
@@ -240,9 +249,18 @@
             "is_impacted": true,
             "acceptance_rate": 43.0,
             "average_gpa_admitted": 3.7,
-            "prerequisite_courses": ["ECON 10223 Microeconomics", "ECON 10233 Macroeconomics", "MATH 10283 Applied Calculus", "ENGL 10803 Composition I"],
+            "prerequisite_courses": [
+              "ECON 10223 Microeconomics",
+              "ECON 10233 Macroeconomics",
+              "MATH 10283 Applied Calculus",
+              "ENGL 10803 Composition I"
+            ],
             "minimum_gpa_to_declare": 3.25,
-            "weeder_courses": ["ACCT 20353 Fundamentals of Accounting", "MATH 10283 Applied Calculus", "INSC 20153 Statistical Analysis"],
+            "weeder_courses": [
+              "ACCT 20353 Fundamentals of Accounting",
+              "MATH 10283 Applied Calculus",
+              "INSC 20153 Statistical Analysis"
+            ],
             "special_requirements": "Must achieve Microsoft Office Specialist certification in Excel and PowerPoint; minimum 2.75 GPA in lower-division business courses to advance to major.",
             "admissions_pathway": "Direct Admit / Internal Transfer",
             "internal_transfer_allowed": true,
@@ -267,7 +285,11 @@
               "total_units": 120,
               "major_units": 24
             },
-            "notable_professors": ["Dr. Steve Mann (Finance)", "Dr. David Weltman (Supply Chain)", "Dr. Ann Tasby (Accounting)"],
+            "notable_professors": [
+              "Dr. Steve Mann (Finance)",
+              "Dr. David Weltman (Supply Chain)",
+              "Dr. Ann Tasby (Accounting)"
+            ],
             "notes": "Internal transfer is highly competitive and only reviewed once per year in the spring."
           },
           {
@@ -275,19 +297,74 @@
             "degree_type": "B.B.A.",
             "is_impacted": true,
             "minimum_gpa_to_declare": 3.25,
-            "weeder_courses": ["ACCT 20353 Fundamentals of Accounting"],
+            "weeder_courses": [
+              "ACCT 20353 Fundamentals of Accounting"
+            ],
             "special_requirements": "Microsoft Specialist Certification required.",
             "admissions_pathway": "Direct Admit / Internal Transfer",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 3.25,
-            "notable_professors": ["Dr. Marc Neri", "Dr. Amy Troutman"]
+            "notable_professors": [
+              "Dr. Marc Neri",
+              "Dr. Amy Troutman"
+            ]
           },
-          { "name": "Marketing", "degree_type": "B.B.A.", "is_impacted": false, "minimum_gpa_to_declare": 3.25, "weeder_courses": [], "admissions_pathway": "Direct Admit / Internal Transfer", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 3.25 },
-          { "name": "Management", "degree_type": "B.B.A.", "is_impacted": false, "minimum_gpa_to_declare": 3.25, "weeder_courses": [], "admissions_pathway": "Direct Admit / Internal Transfer", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 3.25 },
-          { "name": "Supply & Value Chain Management", "degree_type": "B.B.A.", "is_impacted": false, "minimum_gpa_to_declare": 3.25, "weeder_courses": [], "admissions_pathway": "Direct Admit / Internal Transfer", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 3.25 },
-          { "name": "Entrepreneurship and Innovation", "degree_type": "B.B.A.", "is_impacted": false, "minimum_gpa_to_declare": 3.25, "weeder_courses": [], "admissions_pathway": "Direct Admit / Internal Transfer", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 3.25 },
-          { "name": "Business Information Systems", "degree_type": "B.B.A.", "is_impacted": false, "minimum_gpa_to_declare": 3.25, "weeder_courses": [], "admissions_pathway": "Direct Admit / Internal Transfer", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 3.25 }
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 3.25,
+            "weeder_courses": [],
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25
+          },
+          {
+            "name": "Management",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 3.25,
+            "weeder_courses": [],
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25
+          },
+          {
+            "name": "Supply & Value Chain Management",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 3.25,
+            "weeder_courses": [],
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25
+          },
+          {
+            "name": "Entrepreneurship and Innovation",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 3.25,
+            "weeder_courses": [],
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25
+          },
+          {
+            "name": "Business Information Systems",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 3.25,
+            "weeder_courses": [],
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25
+          }
         ]
       },
       {
@@ -304,27 +381,95 @@
             "degree_type": "B.S.N.",
             "is_impacted": true,
             "average_gpa_admitted": 3.8,
-            "prerequisite_courses": ["BIOL 20204 A&P I", "BIOL 20214 A&P II", "BIOL 20234 Microbiology", "MATH 10043 Statistics", "NTDT 20403 Nutrition", "NURS 10303 Human Development"],
+            "prerequisite_courses": [
+              "BIOL 20204 A&P I",
+              "BIOL 20214 A&P II",
+              "BIOL 20234 Microbiology",
+              "MATH 10043 Statistics",
+              "NTDT 20403 Nutrition",
+              "NURS 10303 Human Development"
+            ],
             "minimum_gpa_to_declare": 2.5,
-            "weeder_courses": ["BIOL 20204 Anatomy & Physiology I", "BIOL 20234 Basic Microbiology", "NURS 30163 Pharmacotherapeutics"],
+            "weeder_courses": [
+              "BIOL 20204 Anatomy & Physiology I",
+              "BIOL 20234 Basic Microbiology",
+              "NURS 30163 Pharmacotherapeutics"
+            ],
             "special_requirements": "Requires TEAS entrance exam (minimum 58.7% in all 4 subjects); clinical placement is competitive based on TCU GPA.",
             "admissions_pathway": "Direct Admit / Internal Transfer",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.5,
             "curriculum": {
-              "core_courses": ["NURS 20271 Health Assessment Lab", "NURS 20363 Pathophysiology", "NURS 30163 Pharmacotherapeutics", "NURS 30263 Foundations of Nursing Care", "NURS 40563 Care of Adults II", "NURS 40763 Leadership in Nursing"],
-              "electives": ["NURS 40001 NCLEX Review", "NURS 40863 Public Health Nursing"],
+              "core_courses": [
+                "NURS 20271 Health Assessment Lab",
+                "NURS 20363 Pathophysiology",
+                "NURS 30163 Pharmacotherapeutics",
+                "NURS 30263 Foundations of Nursing Care",
+                "NURS 40563 Care of Adults II",
+                "NURS 40763 Leadership in Nursing"
+              ],
+              "electives": [
+                "NURS 40001 NCLEX Review",
+                "NURS 40863 Public Health Nursing"
+              ],
               "total_units": 124,
               "major_units": 60
             },
-            "notable_professors": ["Dr. Melissa Sherrod", "Dr. Kathy Baker", "Dr. Gina Alexander"],
+            "notable_professors": [
+              "Dr. Melissa Sherrod",
+              "Dr. Kathy Baker",
+              "Dr. Gina Alexander"
+            ],
             "notes": "Internal transfers often require a minimum 4.5-year plan to graduation due to clinical sequencing."
           },
-          { "name": "Kinesiology", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0 },
-          { "name": "Speech-Language Pathology", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0 },
-          { "name": "Social Work", "degree_type": "B.S.W.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0, "notable_professors": ["Dr. Lynn Jackson"] },
-          { "name": "Health Studies", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0 }
+          {
+            "name": "Kinesiology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0
+          },
+          {
+            "name": "Speech-Language Pathology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0
+          },
+          {
+            "name": "Social Work",
+            "degree_type": "B.S.W.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notable_professors": [
+              "Dr. Lynn Jackson"
+            ]
+          },
+          {
+            "name": "Health Studies",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0
+          }
         ]
       },
       {
@@ -340,21 +485,42 @@
             "name": "Computer Science",
             "degree_type": "B.S.",
             "is_impacted": false,
-            "prerequisite_courses": ["MATH 10524 Calculus I"],
+            "prerequisite_courses": [
+              "MATH 10524 Calculus I"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["COSC 20203 Techniques in Programming", "COSC 20803 Data Structures"],
+            "weeder_courses": [
+              "COSC 20203 Techniques in Programming",
+              "COSC 20803 Data Structures"
+            ],
             "special_requirements": "Minimum 2.0 GPA in all COSC coursework required to graduate.",
             "admissions_pathway": "Open",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.0,
             "curriculum": {
-              "core_courses": ["COSC 10403 Intro to Programming", "COSC 20203 Techniques in Programming", "COSC 20803 Data Structures", "COSC 30253 Computer Organization", "COSC 40403 Analysis of Algorithms", "COSC 40943 Software Engineering", "COSC 40993 Senior Design Project"],
-              "electives": ["CITE 30103 Unix/Linux System Admin", "COSC 30603 Database Systems", "COSC 40203 Operating Systems"],
+              "core_courses": [
+                "COSC 10403 Intro to Programming",
+                "COSC 20203 Techniques in Programming",
+                "COSC 20803 Data Structures",
+                "COSC 30253 Computer Organization",
+                "COSC 40403 Analysis of Algorithms",
+                "COSC 40943 Software Engineering",
+                "COSC 40993 Senior Design Project"
+              ],
+              "electives": [
+                "CITE 30103 Unix/Linux System Admin",
+                "COSC 30603 Database Systems",
+                "COSC 40203 Operating Systems"
+              ],
               "total_units": 122,
               "major_units": 48
             },
-            "notable_professors": ["Dr. Bingyang Wei (Chair)", "Dr. J. Richard Rinewalt", "Dr. Michael Scherger"],
+            "notable_professors": [
+              "Dr. Bingyang Wei (Chair)",
+              "Dr. J. Richard Rinewalt",
+              "Dr. Michael Scherger"
+            ],
             "notes": "Interdisciplinary program with strong emphasis on software development."
           },
           {
@@ -362,24 +528,86 @@
             "degree_type": "B.S.",
             "is_impacted": false,
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["BIOL 10503 Unity of Life", "BIOL 10513 Diversity of Life", "CHEM 10113 General Chemistry"],
+            "weeder_courses": [
+              "BIOL 10503 Unity of Life",
+              "BIOL 10513 Diversity of Life",
+              "CHEM 10113 General Chemistry"
+            ],
             "special_requirements": "Foundational courses (10503, 10513, 10523, 30403, 30603) cannot be transferred from other institutions after matriculation.",
             "admissions_pathway": "Open",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.0,
             "curriculum": {
-              "core_courses": ["BIOL 10503 Unity of Life", "BIOL 10513 Diversity of Life", "BIOL 10523 Intro to Biological Investigation", "BIOL 30403 Ecology and the Environment", "BIOL 30603 Cellular and Molecular Biology"],
-              "electives": ["BIOL 40320 Immunology", "BIOL 30233 Economic Botany", "BIOL 40443 Environmental Biology"],
+              "core_courses": [
+                "BIOL 10503 Unity of Life",
+                "BIOL 10513 Diversity of Life",
+                "BIOL 10523 Intro to Biological Investigation",
+                "BIOL 30403 Ecology and the Environment",
+                "BIOL 30603 Cellular and Molecular Biology"
+              ],
+              "electives": [
+                "BIOL 40320 Immunology",
+                "BIOL 30233 Economic Botany",
+                "BIOL 40443 Environmental Biology"
+              ],
               "total_units": 120,
               "major_units": 36
             },
-            "notable_professors": ["Dr. Marlo Jeffries (Chair)", "Dr. Matt Chumchal (Pre-Health Director)", "Dr. Michael Chumley"],
+            "notable_professors": [
+              "Dr. Marlo Jeffries (Chair)",
+              "Dr. Matt Chumchal (Pre-Health Director)",
+              "Dr. Michael Chumley"
+            ],
             "notes": "Strong Pre-Health program with high medical school acceptance rates."
           },
-          { "name": "Engineering", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": ["ENGR 10032 Static Mechanics", "ENGR 10402 Circuit Analysis"], "special_requirements": "Choice of Electrical or Mechanical emphasis.", "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0, "notable_professors": ["Dr. Steve Weis", "Dr. Sue Gong"], "notes": "ABET accredited program." },
-          { "name": "Psychology", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0, "notable_professors": ["Dr. Sarah Hill"] },
-          { "name": "Chemistry", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": ["CHEM 10113 General Chemistry"], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0 }
+          {
+            "name": "Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ENGR 10032 Static Mechanics",
+              "ENGR 10402 Circuit Analysis"
+            ],
+            "special_requirements": "Choice of Electrical or Mechanical emphasis.",
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notable_professors": [
+              "Dr. Steve Weis",
+              "Dr. Sue Gong"
+            ],
+            "notes": "ABET accredited program."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notable_professors": [
+              "Dr. Sarah Hill"
+            ]
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 10113 General Chemistry"
+            ],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0
+          }
         ]
       },
       {
@@ -391,11 +619,75 @@
         "housing_profile": "Distributed across campus; reflects the 'Swiss Army Knife' versatility of the student body.",
         "student_archetype": "Critical thinkers and global citizens",
         "majors": [
-          { "name": "Economics", "degree_type": "B.A.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": ["ECON 10223 Microeconomics"], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0, "notable_professors": ["Dr. Rob Garnett"] },
-          { "name": "Political Science", "degree_type": "B.A.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0, "notable_professors": ["Dr. Eric Cox"] },
-          { "name": "English", "degree_type": "B.A.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0, "notable_professors": ["Dr. Joddy Murray"] },
-          { "name": "History", "degree_type": "B.A.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0 },
-          { "name": "Sociology", "degree_type": "B.A.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0, "notable_professors": ["Dr. Michael Katovich"] }
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 10223 Microeconomics"
+            ],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notable_professors": [
+              "Dr. Rob Garnett"
+            ]
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notable_professors": [
+              "Dr. Eric Cox"
+            ]
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notable_professors": [
+              "Dr. Joddy Murray"
+            ]
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notable_professors": [
+              "Dr. Michael Katovich"
+            ]
+          }
         ]
       },
       {
@@ -412,26 +704,82 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "average_gpa_admitted": 3.5,
-            "prerequisite_courses": ["MATH 10043 Statistics"],
+            "prerequisite_courses": [
+              "MATH 10043 Statistics"
+            ],
             "minimum_gpa_to_declare": 2.5,
-            "weeder_courses": ["STCO 23113 Advertising", "STCO 23123 Public Relations"],
+            "weeder_courses": [
+              "STCO 23113 Advertising",
+              "STCO 23123 Public Relations"
+            ],
             "special_requirements": "Requires separate application including resume and essay; must earn a C or higher and combined 2.5 GPA in gateway courses.",
             "admissions_pathway": "Internal Transfer / Selective",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.5,
             "curriculum": {
-              "core_courses": ["STCO 23113 Advertising", "STCO 23123 Public Relations", "STCO 35503 Research Methods", "STCO 32403 Design and Content", "STCO 47403 Ethics", "STCO 48803 Campaigns"],
-              "electives": ["STCO 47433 Global Communication", "STCO 30403 Media Relations", "STCO 40123 Digital Storytelling"],
+              "core_courses": [
+                "STCO 23113 Advertising",
+                "STCO 23123 Public Relations",
+                "STCO 35503 Research Methods",
+                "STCO 32403 Design and Content",
+                "STCO 47403 Ethics",
+                "STCO 48803 Campaigns"
+              ],
+              "electives": [
+                "STCO 47433 Global Communication",
+                "STCO 30403 Media Relations",
+                "STCO 40123 Digital Storytelling"
+              ],
               "total_units": 124,
               "major_units": 36
             },
-            "notable_professors": ["Dr. Catherine Coleman (Chair)", "Dr. Julie O'Neil", "Dr. Wendy Macias"],
+            "notable_professors": [
+              "Dr. Catherine Coleman (Chair)",
+              "Dr. Julie O'Neil",
+              "Dr. Wendy Macias"
+            ],
             "notes": "One of the most popular majors at TCU; 3.0+ GPA recommended to be competitive for the internal application."
           },
-          { "name": "Communication Studies", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0, "notable_professors": ["Dr. Melissa Schroeder"] },
-          { "name": "Journalism", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0, "notable_professors": ["Peter Noble"] },
-          { "name": "Film, Television and Digital Media", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0, "weeder_courses": [], "admissions_pathway": "Open", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.0 }
+          {
+            "name": "Communication Studies",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notable_professors": [
+              "Dr. Melissa Schroeder"
+            ]
+          },
+          {
+            "name": "Journalism",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notable_professors": [
+              "Peter Noble"
+            ]
+          },
+          {
+            "name": "Film, Television and Digital Media",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "admissions_pathway": "Open",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0
+          }
         ]
       },
       {
@@ -443,8 +791,30 @@
         "housing_profile": "Proximity to the Ed Landreth Hall; many students bond in creative clusters within the halls.",
         "student_archetype": "Talented and expressive performers",
         "majors": [
-          { "name": "Graphic Design", "degree_type": "B.F.A.", "is_impacted": true, "minimum_gpa_to_declare": null, "weeder_courses": [], "special_requirements": "Portfolio review required for advancement.", "admissions_pathway": "Selective", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": null },
-          { "name": "Interior Design", "degree_type": "B.F.A.", "is_impacted": true, "minimum_gpa_to_declare": null, "weeder_courses": [], "special_requirements": "CIDA accredited; portfolio review required.", "admissions_pathway": "Selective", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": null }
+          {
+            "name": "Graphic Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Portfolio review required for advancement.",
+            "admissions_pathway": "Selective",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null
+          },
+          {
+            "name": "Interior Design",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "CIDA accredited; portfolio review required.",
+            "admissions_pathway": "Selective",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null
+          }
         ]
       },
       {
@@ -456,8 +826,33 @@
         "housing_profile": "Often reside in halls near the 'Laboratory Schools' for easy access to student teaching rotations.",
         "student_archetype": "Dedicated and reflective educators",
         "majors": [
-          { "name": "Early Childhood Education", "degree_type": "B.S.E.", "is_impacted": false, "minimum_gpa_to_declare": 2.75, "weeder_courses": [], "special_requirements": "Formal application to Teacher Education Program at 54 credit hours.", "admissions_pathway": "Pre-Major", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.75, "notable_professors": ["Dr. Robin Griffith (Chair)"] },
-          { "name": "Secondary Education", "degree_type": "B.S.E.", "is_impacted": false, "minimum_gpa_to_declare": 2.75, "weeder_courses": [], "special_requirements": "Requires double major or specialized content focus.", "admissions_pathway": "Pre-Major", "internal_transfer_allowed": true, "direct_admit_only": false, "internal_transfer_gpa": 2.75 }
+          {
+            "name": "Early Childhood Education",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Formal application to Teacher Education Program at 54 credit hours.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75,
+            "notable_professors": [
+              "Dr. Robin Griffith (Chair)"
+            ]
+          },
+          {
+            "name": "Secondary Education",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [],
+            "special_requirements": "Requires double major or specialized content focus.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75
+          }
         ]
       },
       {
@@ -493,42 +888,95 @@
     ]
   },
   "application_process": {
-    "platforms": ["Common App", "Coalition App", "ApplyTexas", "TCU Application"],
+    "platforms": [
+      "Common App",
+      "Coalition App",
+      "ApplyTexas",
+      "TCU Application"
+    ],
     "application_deadlines": [
-      { "plan_type": "Early Decision I", "date": "2024-11-01", "is_binding": true, "notes": "Decision by Jan 1" },
-      { "plan_type": "Early Action", "date": "2024-11-01", "is_binding": false, "notes": "Non-binding; Decision by Jan 1" },
-      { "plan_type": "Early Decision II", "date": "2025-02-01", "is_binding": true, "notes": "Decision by March 3" },
-      { "plan_type": "Regular Decision", "date": "2025-02-01", "is_binding": false, "notes": "Priority deadline for scholarship consideration" }
+      {
+        "plan_type": "Early Decision I",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Decision by Jan 1"
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding; Decision by Jan 1"
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2025-02-01",
+        "is_binding": true,
+        "notes": "Decision by March 3"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": "Priority deadline for scholarship consideration"
+      }
     ],
     "supplemental_requirements": [
-      { "target_program": "All", "requirement_type": "Main Essay", "details": "One required essay (300-500 words) chosen from specific prompts or the Common App personal statement." },
-      { "target_program": "All", "requirement_type": "Freedom of Expression", "details": "Optional piece (essay, poem, art, or URL) to showcase a side of the applicant not seen elsewhere." },
-      { "target_program": "Honors College", "requirement_type": "Supplemental Application", "deadline": "2024-11-15", "details": "Required for Chancellor\'s Scholars and John V. Roach Honors College; includes additional essay/questions." },
-      { "target_program": "Nursing/Music/Dance", "requirement_type": "Portfolio/Audition", "deadline": "Varies", "details": "Clinical nursing or fine arts programs may require additional materials or pre-screening." }
+      {
+        "target_program": "All",
+        "requirement_type": "Main Essay",
+        "details": "One required essay (300-500 words) chosen from specific prompts or the Common App personal statement."
+      },
+      {
+        "target_program": "All",
+        "requirement_type": "Freedom of Expression",
+        "details": "Optional piece (essay, poem, art, or URL) to showcase a side of the applicant not seen elsewhere."
+      },
+      {
+        "target_program": "Honors College",
+        "requirement_type": "Supplemental Application",
+        "deadline": "2024-11-15",
+        "details": "Required for Chancellor's Scholars and John V. Roach Honors College; includes additional essay/questions."
+      },
+      {
+        "target_program": "Nursing/Music/Dance",
+        "requirement_type": "Portfolio/Audition",
+        "deadline": "Varies",
+        "details": "Clinical nursing or fine arts programs may require additional materials or pre-screening."
+      }
     ],
     "holistic_factors": {
-      "primary_factors": ["Course Rigor", "GPA", "Personal Essay", "Recommendations"],
-      "secondary_factors": ["Extracurriculars", "Community Involvement", "Talent", "Character"],
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Personal Essay",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Community Involvement",
+        "Talent",
+        "Character"
+      ],
       "essay_importance": "Critical",
       "demonstrated_interest": "Considered",
       "interview_policy": "Not Offered",
       "legacy_consideration": "Minimal",
       "first_gen_boost": "Moderate",
-      "specific_differentiators": "TCU emphasizes the \'Freedom of Expression\' page and seeks students who align with their mission of being \'ethical leaders and responsible citizens.\' Demonstrated interest can provide a \'marginal boost\' for borderline candidates."
+      "specific_differentiators": "TCU emphasizes the 'Freedom of Expression' page and seeks students who align with their mission of being 'ethical leaders and responsible citizens.' Demonstrated interest can provide a 'marginal boost' for borderline candidates."
     }
   },
   "application_strategy": {
     "major_selection_tactics": [
-      "Apply as \'Undeclared\' in the General Studies program if not set on a career path, as it maintains an admit rate (~53%) nearly identical to declared majors.",
-      "Target Communication Studies or Journalism in the Schieffer College as \'safer\' entry points compared to the highly competitive Strategic Communication major.",
+      "Apply as 'Undeclared' in the General Studies program if not set on a career path, as it maintains an admit rate (~53%) nearly identical to declared majors.",
+      "Target Communication Studies or Journalism in the Schieffer College as 'safer' entry points compared to the highly competitive Strategic Communication major.",
       "Avoid selecting Nursing as a primary major if your stats are below the mid-50% range (SAT 1280+/ACT 29+), as it is the most restricted program with fixed clinical spots.",
-      "Utilize the optional \'Freedom of Expression\' page to specifically align your extracurricular resume with your intended major\'s academic focus."
+      "Utilize the optional 'Freedom of Expression' page to specifically align your extracurricular resume with your intended major's academic focus."
     ],
     "college_ranking_tactics": [
-      "Prioritize the AddRan College of Liberal Arts for the most flexible GE \'overlay\' potential, allowing one course to satisfy multiple Core Curriculum requirements.",
+      "Prioritize the AddRan College of Liberal Arts for the most flexible GE 'overlay' potential, allowing one course to satisfy multiple Core Curriculum requirements.",
       "Evaluate the Neeley School of Business primarily for direct-admit status, as internal transfer requires a high 3.25 GPA and a competitive secondary application.",
       "Target the College of Fine Arts only if prepared for the audition/portfolio process, as rejection from the program can stall your general university admission.",
-      "Consider the John V. Roach Honors College as a separate ranking priority to gain access to priority housing, which is a major factor given TCU\'s two-year on-campus requirement."
+      "Consider the John V. Roach Honors College as a separate ranking priority to gain access to priority housing, which is a major factor given TCU's two-year on-campus requirement."
     ],
     "alternate_major_strategy": "When applying to competitive programs like Nursing or the Neeley School of Business, always list a second-choice major in a non-impacted college like the AddRan College of Liberal Arts (e.g., Political Science or Sociology) to secure a foothold for a later internal transfer."
   },
@@ -536,21 +984,78 @@
     "tuition_model": "Annual Increase",
     "cost_of_attendance_breakdown": {
       "academic_year": "2024-2025",
-      "in_state": { "tuition": 61740, "total_coa": 83662, "housing": 16700 },
-      "out_of_state": { "tuition": 61740, "total_coa": 83662, "supplemental_tuition": 0 }
+      "in_state": {
+        "tuition": 61740,
+        "total_coa": 83662,
+        "housing": 16700
+      },
+      "out_of_state": {
+        "tuition": 61740,
+        "total_coa": 83662,
+        "supplemental_tuition": 0
+      }
     },
     "aid_philosophy": "Need-Blind",
     "average_need_based_aid": 50870,
     "average_merit_aid": 23555,
     "percent_receiving_aid": 80.0,
     "scholarships": [
-      { "name": "Chancellor\'s Scholarship", "type": "Merit", "amount": "Full tuition and fees for 4 years", "deadline": "2025-11-01", "benefits": "Highest academic honor, special programming with the Chancellor, invitation to interview weekend", "application_method": "Automatic Consideration via Admissions Application" },
-      { "name": "STEM Scholar Program", "type": "Merit/Full-Ride", "amount": "Full cost of attendance ($293,000 value)", "deadline": "2025-02-01", "benefits": "Covers tuition, housing, food, and books; includes mentoring, research opportunities, and travel", "application_method": "Separate Application (via MyTCU Portal)" },
-      { "name": "Dean\'s Scholarship", "type": "Merit", "amount": "$120,000 over 4 years ($30,000/year)", "deadline": "Automatic consideration", "benefits": "Renewable for 8 semesters with 3.25 GPA", "application_method": "Automatic Consideration" },
-      { "name": "Faculty Scholarship", "type": "Merit", "amount": "$108,000 over 4 years ($27,000/year)", "deadline": "Automatic consideration", "benefits": "Awarded to high-achieving applicants based on GPA and test scores", "application_method": "Automatic Consideration" },
-      { "name": "Nordan Young Artist Award", "type": "Departmental", "amount": "Varies (Competitive talent-based)", "deadline": "2026-01-10", "benefits": "Exclusive to Fine Arts majors (Art, Dance, Music, Theatre); renewable for 3 years", "application_method": "Audition/Portfolio Submission" },
-      { "name": "TCU Scholarship", "type": "Merit", "amount": "$100,000 over 4 years ($25,000/year)", "deadline": "Automatic consideration", "benefits": "Merit-based award for high school curriculum rigor and academic success", "application_method": "Automatic Consideration" },
-      { "name": "Founders\' Scholarship", "type": "Merit", "amount": "$60,000 over 4 years ($15,000/year)", "deadline": "Automatic consideration", "benefits": "Awarded based on academic achievement and personal credentials", "application_method": "Automatic Consideration" }
+      {
+        "name": "Chancellor's Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition and fees for 4 years",
+        "deadline": "2025-11-01",
+        "benefits": "Highest academic honor, special programming with the Chancellor, invitation to interview weekend",
+        "application_method": "Automatic Consideration via Admissions Application"
+      },
+      {
+        "name": "STEM Scholar Program",
+        "type": "Merit/Full-Ride",
+        "amount": "Full cost of attendance ($293,000 value)",
+        "deadline": "2025-02-01",
+        "benefits": "Covers tuition, housing, food, and books; includes mentoring, research opportunities, and travel",
+        "application_method": "Separate Application (via MyTCU Portal)"
+      },
+      {
+        "name": "Dean's Scholarship",
+        "type": "Merit",
+        "amount": "$120,000 over 4 years ($30,000/year)",
+        "deadline": "Automatic consideration",
+        "benefits": "Renewable for 8 semesters with 3.25 GPA",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Faculty Scholarship",
+        "type": "Merit",
+        "amount": "$108,000 over 4 years ($27,000/year)",
+        "deadline": "Automatic consideration",
+        "benefits": "Awarded to high-achieving applicants based on GPA and test scores",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Nordan Young Artist Award",
+        "type": "Departmental",
+        "amount": "Varies (Competitive talent-based)",
+        "deadline": "2026-01-10",
+        "benefits": "Exclusive to Fine Arts majors (Art, Dance, Music, Theatre); renewable for 3 years",
+        "application_method": "Audition/Portfolio Submission"
+      },
+      {
+        "name": "TCU Scholarship",
+        "type": "Merit",
+        "amount": "$100,000 over 4 years ($25,000/year)",
+        "deadline": "Automatic consideration",
+        "benefits": "Merit-based award for high school curriculum rigor and academic success",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Founders' Scholarship",
+        "type": "Merit",
+        "amount": "$60,000 over 4 years ($15,000/year)",
+        "deadline": "Automatic consideration",
+        "benefits": "Awarded based on academic achievement and personal credentials",
+        "application_method": "Automatic Consideration"
+      }
     ]
   },
   "credit_policies": {
@@ -568,7 +1073,10 @@
       "diploma_bonus": false
     },
     "transfer_articulation": {
-      "tools": ["TCU Transfer Equivalency Tool", "TCU Transfer Credit Calculator"],
+      "tools": [
+        "TCU Transfer Equivalency Tool",
+        "TCU Transfer Credit Calculator"
+      ],
       "restrictions": "Maximum of 75 total transfer credits; 66-hour cap on community college or exam-based credit; 45-hour residency requirement; last 30 hours must be completed at TCU"
     }
   },
@@ -576,7 +1084,7 @@
     "what_it_takes": [
       "Rigorous academic record featuring AP, IB, or Honors courses",
       "Demonstrated interest through campus visits, webinars, or local info sessions",
-      "Evidence of character that aligns with the school\'s \'ethical leadership\' mission",
+      "Evidence of character that aligns with the school's 'ethical leadership' mission",
       "Deep commitment to 1-2 core passions rather than a high volume of surface-level clubs"
     ],
     "common_activities": [
@@ -587,22 +1095,22 @@
       "Competitive varsity athletics or high-engagement intramural sports"
     ],
     "essay_tips": [
-      "Take advantage of the \'Freedom of Expression\' prompt to show personality beyond stats",
-      "Explicitly connect personal stories to one of TCU\'s seven core values",
-      "Focus on the \'why\' behind your extracurriculars to show self-reflection",
+      "Take advantage of the 'Freedom of Expression' prompt to show personality beyond stats",
+      "Explicitly connect personal stories to one of TCU's seven core values",
+      "Focus on the 'why' behind your extracurriculars to show self-reflection",
       "Incorporate humor or a lighthearted tone if it authentically represents your voice"
     ],
     "red_flags": [
-      "Submitting generic essays that don\'t mention specific TCU programs or traditions",
-      "Writing about \'failure\' clichés like a single bad grade without showing growth",
-      "Treating \'optional\' supplemental essays as unnecessary rather than an opportunity",
+      "Submitting generic essays that don't mention specific TCU programs or traditions",
+      "Writing about 'failure' clichés like a single bad grade without showing growth",
+      "Treating 'optional' supplemental essays as unnecessary rather than an opportunity",
       "Lack of demonstrated interest, as TCU tracks engagement in their review process"
     ],
     "insights": [
       "Greek life significantly influences the social scene, though non-Greek events exist",
-      "School spirit is exceptionally high, centered around football and the \'Horned Frog\' identity",
+      "School spirit is exceptionally high, centered around football and the 'Horned Frog' identity",
       "Career services and alumni networks are frequently cited as top-tier for job placement",
-      "Campus culture is described as welcoming and \'tight-knit\' with small class sizes"
+      "Campus culture is described as welcoming and 'tight-knit' with small class sizes"
     ]
   },
   "outcomes": {

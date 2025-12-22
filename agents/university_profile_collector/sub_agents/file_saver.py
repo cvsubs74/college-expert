@@ -12,7 +12,7 @@ try:
 except ImportError:
     from tools import write_file
 
-MODEL_NAME = "gemini-2.5-flash-lite"
+MODEL_NAME = "gemini-2.5-flash"
 
 file_saver_agent = LlmAgent(
     name="FileSaver",

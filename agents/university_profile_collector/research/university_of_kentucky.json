@@ -134,9 +134,18 @@
         "legacy_percentage": 0.0,
         "international_percentage": 1.5,
         "geographic_breakdown": [
-          { "region": "Kentucky", "percentage": 59.1 },
-          { "region": "Other US States", "percentage": 39.7 },
-          { "region": "International", "percentage": 1.2 }
+          {
+            "region": "Kentucky",
+            "percentage": 59.1
+          },
+          {
+            "region": "Other US States",
+            "percentage": 39.7
+          },
+          {
+            "region": "International",
+            "percentage": 1.2
+          }
         ],
         "gender_breakdown": {
           "men": {
@@ -177,16 +186,66 @@
           "housing_profile": "Engineering LLP in Woodland Glen III.",
           "student_archetype": "Ambitious problem-solvers and tech-oriented innovators",
           "majors": [
-            { "name": "Computer Science", "degree_type": "B.S.", "is_impacted": true, "minimum_gpa_to_declare": 2.5 },
-            { "name": "Mechanical Engineering", "degree_type": "B.S.M.E.", "is_impacted": true, "minimum_gpa_to_declare": 2.5 },
-            { "name": "Civil Engineering", "degree_type": "B.S.C.E.", "is_impacted": false, "minimum_gpa_to_declare": 2.5 },
-            { "name": "Electrical Engineering", "degree_type": "B.S.E.E.", "is_impacted": false, "minimum_gpa_to_declare": 2.5 },
-            { "name": "Chemical Engineering", "degree_type": "B.S.Ch.E.", "is_impacted": false, "minimum_gpa_to_declare": 2.5 },
-            { "name": "Biomedical Engineering", "degree_type": "B.S.B.E.", "is_impacted": false, "minimum_gpa_to_declare": 2.5 },
-            { "name": "Aerospace Engineering", "degree_type": "B.S.A.E.", "is_impacted": true, "minimum_gpa_to_declare": 2.5 },
-            { "name": "Computer Engineering", "degree_type": "B.S.Cp.E.", "is_impacted": false, "minimum_gpa_to_declare": 2.5 },
-            { "name": "Materials Engineering", "degree_type": "B.S.Mat.E.", "is_impacted": false, "minimum_gpa_to_declare": 2.5 },
-            { "name": "Mining Engineering", "degree_type": "B.S.MIE", "is_impacted": false, "minimum_gpa_to_declare": 2.0 }
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.M.E.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Civil Engineering",
+              "degree_type": "B.S.C.E.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Electrical Engineering",
+              "degree_type": "B.S.E.E.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Chemical Engineering",
+              "degree_type": "B.S.Ch.E.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Biomedical Engineering",
+              "degree_type": "B.S.B.E.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Aerospace Engineering",
+              "degree_type": "B.S.A.E.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Computer Engineering",
+              "degree_type": "B.S.Cp.E.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Materials Engineering",
+              "degree_type": "B.S.Mat.E.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Mining Engineering",
+              "degree_type": "B.S.MIE",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            }
           ]
         },
         {
@@ -198,11 +257,36 @@
           "housing_profile": "Business and Economics LLP in Jewell Hall.",
           "student_archetype": "Future corporate leaders and entrepreneurial strategists",
           "majors": [
-            { "name": "Finance", "degree_type": "B.B.A.", "is_impacted": true, "minimum_gpa_to_declare": 2.8 },
-            { "name": "Marketing", "degree_type": "B.B.A.", "is_impacted": true, "minimum_gpa_to_declare": 2.8 },
-            { "name": "Accounting", "degree_type": "B.S.B.E.", "is_impacted": true, "minimum_gpa_to_declare": 2.8 },
-            { "name": "Economics", "degree_type": "B.S.B.E.", "is_impacted": true, "minimum_gpa_to_declare": 2.8 },
-            { "name": "Management", "degree_type": "B.B.A.", "is_impacted": true, "minimum_gpa_to_declare": 2.8 }
+            {
+              "name": "Finance",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.8
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.8
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.S.B.E.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.8
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.S.B.E.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.8
+            },
+            {
+              "name": "Management",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.8
+            }
           ]
         },
         {
@@ -214,7 +298,12 @@
           "housing_profile": "Healthcare LLP in Holmes Hall.",
           "student_archetype": "Empathetic and high-achieving caregivers",
           "majors": [
-            { "name": "Nursing", "degree_type": "B.S.N.", "is_impacted": true, "minimum_gpa_to_declare": 2.75 }
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.N.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.75
+            }
           ]
         },
         {
@@ -226,10 +315,30 @@
           "housing_profile": "Various themed LLPs (Arts & Sciences, International Village).",
           "student_archetype": "Intellectually curious and socially engaged scholars",
           "majors": [
-            { "name": "Psychology", "degree_type": "B.A. / B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0 },
-            { "name": "Biology", "degree_type": "B.A. / B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0 },
-            { "name": "Political Science", "degree_type": "B.A.", "is_impacted": false, "minimum_gpa_to_declare": 2.0 },
-            { "name": "Neuroscience", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0 }
+            {
+              "name": "Psychology",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Political Science",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Neuroscience",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            }
           ]
         },
         {
@@ -241,9 +350,24 @@
           "housing_profile": "Not specified",
           "student_archetype": "Resourceful scientists and agricultural leaders",
           "majors": [
-            { "name": "Animal Sciences", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0 },
-            { "name": "Equine Science and Management", "degree_type": "B.S.", "is_impacted": false, "minimum_gpa_to_declare": 2.0 },
-            { "name": "Agricultural and Medical Biotechnology", "degree_type": "B.S.", "is_impacted": true, "minimum_gpa_to_declare": 3.0 }
+            {
+              "name": "Animal Sciences",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Equine Science and Management",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Agricultural and Medical Biotechnology",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.0
+            }
           ]
         }
       ],
@@ -262,7 +386,11 @@
       ]
     },
     "application_process": {
-      "platforms": ["Common App", "Coalition App", "UK Undergraduate Application"],
+      "platforms": [
+        "Common App",
+        "Coalition App",
+        "UK Undergraduate Application"
+      ],
       "application_deadlines": [
         {
           "plan_type": "Early Action",
@@ -297,8 +425,17 @@
         }
       ],
       "holistic_factors": {
-        "primary_factors": ["GPA", "Academic Rigor", "Application Essay"],
-        "secondary_factors": ["Test Scores", "Extracurriculars", "Character", "Talent/Ability"],
+        "primary_factors": [
+          "GPA",
+          "Academic Rigor",
+          "Application Essay"
+        ],
+        "secondary_factors": [
+          "Test Scores",
+          "Extracurriculars",
+          "Character",
+          "Talent/Ability"
+        ],
         "essay_importance": "High",
         "demonstrated_interest": "Not Considered",
         "interview_policy": "Not Offered",
@@ -311,8 +448,16 @@
       "tuition_model": "Annual Increase",
       "cost_of_attendance_breakdown": {
         "academic_year": "2024-2025",
-        "in_state": { "tuition": 13502, "total_coa": 36200, "housing": 17000 },
-        "out_of_state": { "tuition": 34140, "total_coa": 56840, "supplemental_tuition": 20638 }
+        "in_state": {
+          "tuition": 13502,
+          "total_coa": 36200,
+          "housing": 17000
+        },
+        "out_of_state": {
+          "tuition": 34140,
+          "total_coa": 56840,
+          "supplemental_tuition": 20638
+        }
       },
       "aid_philosophy": "Merit Focused",
       "percent_receiving_aid": 95.0,
@@ -375,15 +520,40 @@
         "Interest in 'Big Blue Nation' culture",
         "Upward grade trends after early struggles"
       ],
-      "common_activities": ["Varsity sports", "Greek Life", "Student leadership", "LLPs"],
-      "essay_tips": ["Mention support systems", "Highlight KY ties", "Use authentic inner voice"],
-      "red_flags": ["Missing Dec 1 deadline", "Generic 'Why UK' essays", "Senior grade drops"],
-      "insights": ["Friendly campus vibe", "Out-of-state integration is easy", "TRACS mental health resource is highly rated"]
+      "common_activities": [
+        "Varsity sports",
+        "Greek Life",
+        "Student leadership",
+        "LLPs"
+      ],
+      "essay_tips": [
+        "Mention support systems",
+        "Highlight KY ties",
+        "Use authentic inner voice"
+      ],
+      "red_flags": [
+        "Missing Dec 1 deadline",
+        "Generic 'Why UK' essays",
+        "Senior grade drops"
+      ],
+      "insights": [
+        "Friendly campus vibe",
+        "Out-of-state integration is easy",
+        "TRACS mental health resource is highly rated"
+      ]
     },
     "outcomes": {
       "median_earnings_10yr": 59025,
       "grad_school_rate": 23.1,
-      "top_employers": ["Humana", "Amazon", "Dell Technologies", "JPMorgan Chase", "Deloitte", "Kroger", "Commonwealth of Kentucky"],
+      "top_employers": [
+        "Humana",
+        "Amazon",
+        "Dell Technologies",
+        "JPMorgan Chase",
+        "Deloitte",
+        "Kroger",
+        "Commonwealth of Kentucky"
+      ],
       "loan_default_rate": 5.9,
       "student_retention": {
         "freshman_retention_rate": 87.3,
@@ -391,5 +561,6 @@
         "graduation_rate_6_year": 71.0
       }
     }
-  }
+  },
+  "_id": "university_of_kentucky"
 }

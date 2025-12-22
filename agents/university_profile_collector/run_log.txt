@@ -1,0 +1,70 @@
+[2025-12-21 12:36:04] Processing: Brown University
+[2025-12-21 12:36:04]   Target file: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/brown_university.json
+[2025-12-21 12:42:32] Research completed.
+[2025-12-21 12:42:34] ✓ Profile saved: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/brown_university.json
+[2025-12-21 12:42:34]   ⚠️ Validation failed: Invalid JSON: Expecting ':' delimiter: line 1303 column 11 (char 64010)
+[2025-12-21 12:42:34]   🔧 Attempting auto-correction via JsonCorrectorAgent...
+[2025-12-21 12:42:34]   ❌ Auto-repair crashed: Session not found: 8e9b2e82-cde6-404e-baca-860966a4022a
+[2025-12-21 12:51:02] Processing: Brown University
+[2025-12-21 12:51:02]   Target file: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/brown_university.json
+[2025-12-21 12:55:50] Research completed.
+[2025-12-21 12:55:52] ❌ File not found after execution.
+[2025-12-21 13:05:58] Processing: Brown University
+[2025-12-21 13:08:53] Research completed.
+[2025-12-21 13:08:55] ✓ Profile saved: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/brown_university.json
+[2025-12-21 13:08:55]   ⚠️ Validation failed: admissions_data.current_status.early_admission_stats.0.plan_type: Field required; admissions_data.admitted_student_profile.gpa: Field required; admissions_data.admitted_student_profile.demographics.legacy_percentage: Input should be a valid number, unable to parse string as a number
+[2025-12-21 13:08:55]   🔧 Attempting auto-correction via JsonCorrectorAgent...
+[2025-12-21 13:09:59]   ❌ Auto-repair failed: admissions_data.admitted_student_profile.gpa: Input should be a valid dictionary or instance of GPAProfile; admissions_data.admitted_student_profile.demographics.geographic_breakdown: Input should be a valid list
+[2025-12-21 14:16:21] Processing: Brown University
+[2025-12-21 14:22:07] Research completed.
+[2025-12-21 14:22:09] ✓ Profile saved: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/brown_university.json
+[2025-12-21 14:22:09]   ⚠️ Validation failed: metadata.location.type: Field required; strategic_profile.analyst_takeaways.0: Input should be a valid dictionary or instance of AnalystTakeaway; strategic_profile.analyst_takeaways.1: Input should be a valid dictionary or instance of AnalystTakeaway
+[2025-12-21 14:22:09]   🔧 Attempting auto-correction via JsonCorrectorAgent...
+[2025-12-21 14:45:20] Processing: Cornell University
+[2025-12-21 14:47:26] Error: unhandled errors in a TaskGroup (1 sub-exception)
+[2025-12-21 14:49:50] Processing: Cornell University
+[2025-12-21 14:56:11] Processing: Cornell University
+[2025-12-21 15:01:46] Processing: Cornell University
+[2025-12-21 15:02:17] Processing: Cornell University
+[2025-12-21 15:02:47] Processing: Cornell University
+[2025-12-21 15:08:02] Processing: Cornell University
+[2025-12-21 15:11:40] Processing: Cornell University
+[2025-12-21 15:14:23] Processing: Cornell University
+[2025-12-21 15:14:36] Processing: Cornell University
+[2025-12-21 15:14:49] Processing: Cornell University
+[2025-12-21 15:17:05] Processing: Cornell University
+[2025-12-21 15:24:10] Research completed.
+[2025-12-21 15:24:12]   📂 No new file found, checking newest: brown_university.json
+[2025-12-21 15:24:12] ✓ Profile saved: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/brown_university.json
+[2025-12-21 15:24:12]   ✅ Validation passed
+[2025-12-21 15:37:41] Processing: Cornell University
+[2025-12-21 15:39:32] Research completed.
+[2025-12-21 15:39:34] ✓ Profile saved: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/cornell_university.json
+[2025-12-21 15:39:34]   ⚠️ Validation failed: metadata.location: Field required; strategic_profile: Input should be a valid dictionary or instance of StrategicProfile; application_process: Input should be a valid dictionary or instance of ApplicationProcess
+[2025-12-21 15:39:34]   🔧 Attempting auto-correction via JsonCorrectorAgent...
+[2025-12-21 15:39:55]   ❌ Auto-repair failed: strategic_profile.executive_summary: Field required; strategic_profile.market_position: Field required; strategic_profile.admissions_philosophy: Field required
+[2025-12-21 17:43:35] Processing: Cornell University
+[2025-12-21 17:46:05] Research completed.
+[2025-12-21 17:46:07] ✓ Profile saved: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/cornell_university-2.json
+[2025-12-21 17:46:07]   ✅ Validation passed
+[2025-12-21 18:04:49] Processing: Cornell University
+[2025-12-21 18:05:52] Research completed.
+[2025-12-21 18:05:54]   📂 No new file found, checking newest: cornell_university.json
+[2025-12-21 18:05:54] ✓ Profile saved: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/cornell_university.json
+[2025-12-21 18:05:54]   ⚠️ Validation failed: strategic_profile.executive_summary: Input should be a valid string; strategic_profile.market_position: Input should be a valid string; strategic_profile.admissions_philosophy: Input should be a valid string
+[2025-12-21 18:05:54]   🔧 Attempting auto-correction via JsonCorrectorAgent...
+[2025-12-21 18:06:05]   ❌ Auto-repair failed: financials.cost_of_attendance_breakdown.academic_year: Input should be a valid string
+[2025-12-21 18:19:18] Processing: Cornell University
+[2025-12-21 18:21:36] Research completed.
+[2025-12-21 18:21:38]   📂 No new file found, checking newest: cornell_university.json
+[2025-12-21 18:21:38] ✓ Profile saved: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/cornell_university.json
+[2025-12-21 18:21:38]   ⚠️ Validation failed: admissions_data.current_status.early_admission_stats.0.applications: Input should be a valid integer, unable to parse string as an integer; admissions_data.current_status.early_admission_stats.0.admits: Input should be a valid integer, unable to parse string as an integer; admissions_data.current_status.early_admission_stats.0.acceptance_rate: Input should be a valid number, unable to parse string as a number
+[2025-12-21 18:21:38]   🔧 Attempting auto-correction via JsonCorrectorAgent...
+[2025-12-21 18:22:16]   ❌ Auto-repair failed: admissions_data.current_status.early_admission_stats.0.class_fill_percentage: Input should be a valid number, unable to parse string as a number; academic_structure.colleges.0.is_restricted_or_capped: Input should be a valid boolean; application_process.supplemental_requirements.0.target_program: Field required
+[2025-12-21 18:24:00] Processing: Cornell University
+[2025-12-21 18:32:57] Research completed.
+[2025-12-21 18:32:59]   📂 No new file found, checking newest: cornell_university.json
+[2025-12-21 18:32:59] ✓ Profile saved: /Users/cvsubramanian/CascadeProjects/graphrag/agents/college_counselor/agents/university_profile_collector/research/cornell_university.json
+[2025-12-21 18:32:59]   ⚠️ Validation failed: academic_structure.colleges.5.majors.0.internal_transfer_allowed: Input should be a valid boolean; academic_structure.colleges.5.majors.0.direct_admit_only: Input should be a valid boolean; academic_structure.colleges.5.majors.1.internal_transfer_allowed: Input should be a valid boolean
+[2025-12-21 18:32:59]   🔧 Attempting auto-correction via JsonCorrectorAgent...
+[2025-12-21 18:35:33]   ❌ Auto-repair failed: Invalid JSON: Expecting ',' delimiter: line 687 column 2029 (char 40501)

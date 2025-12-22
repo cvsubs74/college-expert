@@ -122,7 +122,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
     const getCategoryStyle = (category) => {
         const styles = {
             'TARGET': 'bg-green-100 text-green-800 border-green-200',
-            'REACH': 'bg-amber-100 text-amber-800 border-amber-200',
+            'REACH': 'bg-[#FCEEE8] text-[#C05838] border-amber-200',
             'SUPER_REACH': 'bg-red-100 text-red-800 border-red-200',
             'SAFETY': 'bg-blue-100 text-blue-800 border-blue-200'
         };
@@ -151,7 +151,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                             {(fitAnalysis.fit_category || college.soft_fit_category || 'UNKNOWN').replace('_', ' ')}
                         </span>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-purple-600">{fitAnalysis.match_score || fitAnalysis.match_percentage || 0}</div>
+                            <div className="text-3xl font-bold text-[#1A4D2E]">{fitAnalysis.match_score || fitAnalysis.match_percentage || 0}</div>
                             <div className="text-xs text-gray-500">Match Score</div>
                         </div>
                     </div>
@@ -162,7 +162,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
             <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
 
                 {/* Infographic Section */}
-                <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 rounded-2xl overflow-hidden border border-purple-100 shadow-sm">
+                <div className="bg-gradient-to-br from-[#D6E8D5] via-[#F8F6F0] to-[#FDFCF7] rounded-2xl overflow-hidden border border-[#E0DED8] shadow-sm">
                     {infographicUrl ? (
                         <div>
                             <img
@@ -175,7 +175,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                     <button
                                         onClick={() => handleGenerateInfographic(true)}
                                         disabled={isGenerating}
-                                        className="flex items-center gap-1 text-sm text-purple-600 hover:text-purple-800 transition-colors disabled:opacity-50"
+                                        className="flex items-center gap-1 text-sm text-[#1A4D2E] hover:text-[#1A4D2E] transition-colors disabled:opacity-50"
                                     >
                                         <ArrowPathIcon className={`h-4 w-4 ${isGenerating ? 'animate-spin' : ''}`} />
                                         {isGenerating ? 'Regenerating...' : 'Regenerate (1 credit)'}
@@ -190,13 +190,13 @@ const FitAnalysisPage = ({ college, onBack }) => {
                         </div>
                     ) : isGenerating ? (
                         <div className="p-12 text-center">
-                            <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg animate-pulse">
+                            <div className="w-20 h-20 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg animate-pulse">
                                 <PhotoIcon className="h-10 w-10 text-white" />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-2">Generating Your Personalized Infographic...</h3>
                             <p className="text-gray-600">This may take 15-30 seconds.</p>
                             <div className="flex justify-center mt-4">
-                                <ArrowPathIcon className="h-5 w-5 animate-spin text-purple-600" />
+                                <ArrowPathIcon className="h-5 w-5 animate-spin text-[#1A4D2E]" />
                             </div>
                         </div>
                     ) : generationError ? (
@@ -205,7 +205,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                             <p className="text-red-600 mb-4">{generationError}</p>
                             <button
                                 onClick={() => handleGenerateInfographic(false)}
-                                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+                                className="px-4 py-2 bg-[#1A4D2E] text-white rounded-lg hover:bg-[#2D6B45]"
                             >
                                 Try Again
                             </button>
@@ -216,7 +216,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                 {/* Executive Summary */}
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                     <h2 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                        <SparklesIcon className="h-5 w-5 text-purple-500" />
+                        <SparklesIcon className="h-5 w-5 text-[#1A4D2E]" />
                         Executive Summary
                     </h2>
                     <p className="text-gray-700 leading-relaxed">{fitAnalysis.explanation}</p>
@@ -226,7 +226,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                 {factors.length > 0 && (
                     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                         <h2 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                            <ChartBarIcon className="h-5 w-5 text-indigo-500" />
+                            <ChartBarIcon className="h-5 w-5 text-[#1A4D2E]" />
                             Factor Breakdown
                         </h2>
                         <div className="space-y-4">
@@ -282,14 +282,14 @@ const FitAnalysisPage = ({ college, onBack }) => {
                 {recommendations.length > 0 && (
                     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                         <h2 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                            <LightBulbIcon className="h-5 w-5 text-amber-500" />
+                            <LightBulbIcon className="h-5 w-5 text-[#C05838]" />
                             Strategic Action Plan
                         </h2>
                         <div className="space-y-4">
                             {recommendations.map((rec, idx) => (
-                                <div key={idx} className="bg-amber-50 p-4 rounded-lg border border-amber-100">
+                                <div key={idx} className="bg-[#FCEEE8] p-4 rounded-lg border border-[#E8A090]">
                                     <div className="flex items-start gap-3">
-                                        <span className="flex-shrink-0 w-8 h-8 bg-amber-200 text-amber-800 rounded-full flex items-center justify-center font-bold text-sm">
+                                        <span className="flex-shrink-0 w-8 h-8 bg-[#E8A090] text-[#C05838] rounded-full flex items-center justify-center font-bold text-sm">
                                             {idx + 1}
                                         </span>
                                         <div className="flex-1">
@@ -299,7 +299,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                             )}
                                             <div className="flex flex-wrap gap-2 mt-2">
                                                 {rec.addresses_gap && (
-                                                    <span className="px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs font-medium">
+                                                    <span className="px-2 py-0.5 bg-[#FCEEE8] text-[#C05838] rounded text-xs font-medium">
                                                         Addresses: {rec.addresses_gap}
                                                     </span>
                                                 )}
@@ -333,7 +333,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                         <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
                             <div className="flex items-center gap-4 mb-3">
                                 <span className={`px-4 py-2 rounded-full text-sm font-bold ${testStrategy.recommendation === 'Submit' ? 'bg-green-100 text-green-800' :
-                                    testStrategy.recommendation === 'Test Optional' ? 'bg-amber-100 text-amber-800' :
+                                    testStrategy.recommendation === 'Test Optional' ? 'bg-[#FCEEE8] text-[#C05838]' :
                                         'bg-gray-100 text-gray-800'
                                     }`}>
                                     {testStrategy.recommendation}
@@ -384,14 +384,14 @@ const FitAnalysisPage = ({ college, onBack }) => {
                 {majorStrategy.intended_major && (
                     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                         <h2 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                            <BookOpenIcon className="h-5 w-5 text-purple-500" />
+                            <BookOpenIcon className="h-5 w-5 text-[#1A4D2E]" />
                             Major Strategy
                         </h2>
-                        <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
+                        <div className="bg-[#F8F6F0] p-4 rounded-lg border border-[#E0DED8]">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                 <div>
                                     <span className="text-xs text-gray-500">Intended Major</span>
-                                    <div className="font-bold text-purple-800">{majorStrategy.intended_major}</div>
+                                    <div className="font-bold text-[#1A4D2E]">{majorStrategy.intended_major}</div>
                                 </div>
                                 {majorStrategy.college_within_university && (
                                     <div>
@@ -423,7 +423,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                 </p>
                             )}
                             {majorStrategy.strategic_tip && (
-                                <p className="text-sm text-purple-700 bg-purple-100 p-2 rounded">
+                                <p className="text-sm text-[#1A4D2E] bg-[#D6E8D5] p-2 rounded">
                                     💡 {majorStrategy.strategic_tip}
                                 </p>
                             )}
@@ -473,12 +473,12 @@ const FitAnalysisPage = ({ college, onBack }) => {
                 {applicationTimeline.recommended_plan && (
                     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                         <h2 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                            <CalendarIcon className="h-5 w-5 text-orange-500" />
+                            <CalendarIcon className="h-5 w-5 text-[#C05838]" />
                             Application Timeline
                         </h2>
-                        <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
+                        <div className="bg-[#FCEEE8] p-4 rounded-lg border border-[#E8A090]">
                             <div className="flex items-center gap-4 mb-3">
-                                <div className="text-2xl font-bold text-orange-600">{applicationTimeline.recommended_plan}</div>
+                                <div className="text-2xl font-bold text-[#C05838]">{applicationTimeline.recommended_plan}</div>
                                 {applicationTimeline.is_binding && (
                                     <span className="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">BINDING</span>
                                 )}
@@ -504,7 +504,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                     <ul className="mt-2 space-y-1">
                                         {applicationTimeline.key_milestones.map((m, i) => (
                                             <li key={i} className="text-sm text-gray-700 flex items-center gap-2">
-                                                <CheckCircleIcon className="h-4 w-4 text-orange-500" />
+                                                <CheckCircleIcon className="h-4 w-4 text-[#C05838]" />
                                                 {m}
                                             </li>
                                         ))}
@@ -539,7 +539,7 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                     )}
                                     <div className="flex flex-wrap gap-2 mt-2">
                                         {sch.deadline && (
-                                            <span className="text-xs text-orange-600 bg-orange-50 px-2 py-0.5 rounded">
+                                            <span className="text-xs text-[#C05838] bg-[#FCEEE8] px-2 py-0.5 rounded">
                                                 Deadline: {sch.deadline}
                                             </span>
                                         )}
@@ -559,13 +559,13 @@ const FitAnalysisPage = ({ college, onBack }) => {
                 {demonstratedInterestTips.length > 0 && (
                     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                         <h2 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                            <ClipboardDocumentCheckIcon className="h-5 w-5 text-indigo-500" />
+                            <ClipboardDocumentCheckIcon className="h-5 w-5 text-[#1A4D2E]" />
                             Demonstrated Interest Tips
                         </h2>
                         <ul className="space-y-2">
                             {demonstratedInterestTips.map((tip, idx) => (
                                 <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                                    <CheckCircleIcon className="h-4 w-4 text-indigo-500 mt-0.5 flex-shrink-0" />
+                                    <CheckCircleIcon className="h-4 w-4 text-[#1A4D2E] mt-0.5 flex-shrink-0" />
                                     {tip}
                                 </li>
                             ))}

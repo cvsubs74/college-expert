@@ -1,0 +1,516 @@
+{
+  "university_profile": {
+    "metadata": {
+      "_id": "clark_university",
+      "official_name": "Clark University",
+      "location": {
+        "city": "Worcester",
+        "state": "MA",
+        "type": "Private"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "https://www.clarku.edu/admissions/apply/process/",
+        "https://www.clarku.edu/about/rankings-recognition/",
+        "https://www.usnews.com/best-colleges/clark-university-2139",
+        "https://thescarlet.org/clark-drops-45-spots-in-u-s-news-rankings/"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "Founded in 1887, Clark University is a private research university known for its small-school intimacy and rigorous R2-level doctoral research activity. It centers its identity on the motto 'Challenge Convention. Change our World,' emphasizing undergraduate involvement in social and environmental problem-solving.",
+      "market_position": "Hidden Gem Research Powerhouse",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 132,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "The university has maintained an acceptance rate between 48% and 53% while becoming increasingly selective in its holistic 'whole-person' review.",
+          "implication": "Applicants should focus on demonstrating social engagement and leadership rather than just standardized metrics."
+        },
+        {
+          "category": "Rank Volatility",
+          "insight": "Rankings fell sharply to 142 in 2024 due to U.S. News methodology changes but have stabilized at 132 for the 2026 edition.",
+          "implication": "The school's 'Best Value' rank (#37) remains its strongest marketing asset to counter ranking fluctuations."
+        },
+        {
+          "category": "Institutional Identity",
+          "insight": "One of the few R2 research universities that explicitly lacks Greek life and focuses on 130+ student-led clubs.",
+          "implication": "Best suited for students seeking a collaborative, intellectually focused community over traditional social hierarchies."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A deeply intellectual and collaborative atmosphere driven by community activism and creative student organizations; notably excludes fraternities and sororities.",
+        "transportation_impact": "A compact, highly walkable 50-acre urban campus where most students live on-site, supplemented by a dedicated shuttle system for city access and late-night safety.",
+        "research_impact": "Undergraduate students gain disproportionate access to high-level research in climate change and genocide studies, with ties to the Higher Education Consortium of Central Massachusetts (HECCMA)."
+      }
+    },
+    "admissions_profile": {
+      "current_status": {
+        "overall_acceptance_rate": 39.5,
+        "in_state_acceptance_rate": null,
+        "out_of_state_acceptance_rate": null,
+        "international_acceptance_rate": null,
+        "transfer_acceptance_rate": 30.1,
+        "admits_class_size": 4528,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional",
+        "early_admission_stats": [
+          {
+            "plan_type": "ED",
+            "applications": null,
+            "admits": null,
+            "acceptance_rate": 73.0,
+            "class_fill_percentage": null
+          },
+          {
+            "plan_type": "EA",
+            "applications": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "class_fill_percentage": null
+          }
+        ]
+      },
+      "historical_trends": [
+        {
+          "year": 2025,
+          "cycle_name": "Class of 2029",
+          "applications_total": 12224,
+          "admits_total": 4659,
+          "enrolled_total": 438,
+          "acceptance_rate_overall": 38.1,
+          "yield_rate": 9.4,
+          "waitlist_stats": {
+            "year": 2025,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Yield rate hit a decade low of 9.4%. Enrollment numbers based on preliminary reports from August 2025."
+        },
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 11452,
+          "admits_total": 4528,
+          "enrolled_total": 486,
+          "acceptance_rate_overall": 39.5,
+          "yield_rate": 10.7,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 730,
+            "accepted_spots": 309,
+            "admitted_from_waitlist": 57,
+            "waitlist_admit_rate": 18.4,
+            "is_waitlist_ranked": false
+          },
+          "notes": "Waitlist admission rate significantly higher than the previous cycle due to yield volatility."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 10735,
+          "admits_total": 4498,
+          "enrolled_total": 634,
+          "acceptance_rate_overall": 41.9,
+          "yield_rate": 14.1,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": 1612,
+            "accepted_spots": null,
+            "admitted_from_waitlist": 101,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          }
+        },
+        {
+          "year": 2022,
+          "cycle_name": "Class of 2026",
+          "applications_total": 8591,
+          "admits_total": 4323,
+          "enrolled_total": 700,
+          "acceptance_rate_overall": 50.3,
+          "yield_rate": 16.2,
+          "waitlist_stats": {
+            "year": 2022,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          }
+        },
+        {
+          "year": 2021,
+          "cycle_name": "Class of 2025",
+          "applications_total": 8757,
+          "admits_total": 4202,
+          "enrolled_total": 505,
+          "acceptance_rate_overall": 48.0,
+          "yield_rate": 12.0,
+          "waitlist_stats": {
+            "year": 2021,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": false
+          }
+        }
+      ],
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": null,
+          "unweighted_middle_50": "3.60-4.00",
+          "average_weighted": null,
+          "percentile_25": "3.60",
+          "percentile_75": "4.00",
+          "notes": "Average unweighted GPA is approximately 3.68-3.70; 59% of admitted students have a GPA of 3.75 or higher."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1300-1440",
+          "sat_reading_middle_50": "658-740",
+          "sat_math_middle_50": "630-720",
+          "act_composite_middle_50": "29-33",
+          "submission_rate": 23.0,
+          "policy_note": "Test-optional; scores are considered if submitted but not required for admission or merit scholarships."
+        },
+        "demographics": {
+          "first_gen_percentage": 18.0,
+          "legacy_percentage": null,
+          "international_percentage": 5.1,
+          "geographic_breakdown": [
+            { "region": "Massachusetts", "percentage": 38.1 },
+            { "region": "Mid-Atlantic", "percentage": 20.4 },
+            { "region": "Other New England", "percentage": 19.9 },
+            { "region": "West", "percentage": 5.5 },
+            { "region": "South", "percentage": 3.8 },
+            { "region": "Midwest", "percentage": 3.1 },
+            { "region": "Southwest", "percentage": 2.1 },
+            { "region": "International", "percentage": 5.1 },
+            { "region": "Other Territories", "percentage": 1.9 }
+          ],
+          "gender_breakdown": {
+            "men": { "acceptance_rate": 34.1, "note": "Men represent approximately 44% of the applicant pool." },
+            "women": { "acceptance_rate": 43.8, "note": "Women represent approximately 56% of the applicant pool." },
+            "non_binary": { "acceptance_rate": 57.7, "note": "Reported as 'Another Gender' in Common Data Set." }
+          },
+          "racial_breakdown": {
+            "white": 60.5,
+            "black_african_american": 4.8,
+            "hispanic_latino": 9.4,
+            "asian": 6.6,
+            "native_american_alaskan": 0.05,
+            "pacific_islander": 0.0,
+            "two_or_more_races": 3.3,
+            "unknown": 7.7,
+            "non_resident_alien": 7.6
+          }
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Schools",
+      "colleges": [
+        {
+          "name": "Arts and Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 42.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Ideal for students who value a liberal arts foundation and interdisciplinary inquiry. Success requires an interest in 'Problems of Practice' and combining research with community-focused action.",
+          "housing_profile": "First-year students often reside in Bullock Hall (known for a 'quirky' atmosphere) or Wright Hall (more athletic-focused).",
+          "student_archetype": "Intellectually daring and socially conscious individuals who value authenticity over prestige.",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "curriculum": { "core_courses": ["PSYC 101", "PSYC 105", "PSYC 108", "PSYC 109"], "total_units": 32, "major_units": 10 },
+              "notes": "Most popular major at Clark; emphasizes sociocultural contexts and diversity."
+            },
+            {
+              "name": "Political Science",
+              "degree_type": "B.A.",
+              "curriculum": { "core_courses": ["PSCI 010", "PSCI 070", "PSCI 069", "PSCI 107", "PSCI 155"], "total_units": 32, "major_units": 13 }
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "curriculum": { "core_courses": ["BIOL 101", "BIOL 102", "BIOL 105", "BIOL 118"], "total_units": 32, "major_units": 10 },
+              "notes": "Highly research-oriented; offers accelerated B.A./M.S. pathway."
+            },
+            {
+              "name": "Computer Science",
+              "degree_type": "B.A.",
+              "curriculum": { "core_courses": ["CSCI 120", "CSCI 121", "CSCI 122", "CSCI 140", "CSCI 160"], "total_units": 32, "major_units": 11 }
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.S.",
+              "curriculum": { "core_courses": ["ECON 010", "ECON 011", "ECON 160", "ECON 205", "ECON 206"], "total_units": 32, "major_units": 11 }
+            }
+          ]
+        },
+        {
+          "name": "Becker School of Design & Technology",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 35.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires a strong creative portfolio or technical aptitude in computing. Applicants should emphasize their collaborative mindset and desire to use game design for social impact.",
+          "housing_profile": "Access to state-of-the-art Center for Media Arts, Computing, and Design.",
+          "student_archetype": "Visionary gamers and digital storytellers.",
+          "majors": []
+        },
+        {
+          "name": "School of Business",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 42.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Best for students who want a business degree with a heavy emphasis on ethics and corporate responsibility.",
+          "housing_profile": "Traditional housing for early years; juniors/seniors often move to Blackstone Hall.",
+          "student_archetype": "Future leaders looking to combine entrepreneurial drive with a socially responsible worldview.",
+          "majors": [
+            {
+              "name": "Business Administration",
+              "degree_type": "B.S.",
+              "curriculum": { "core_courses": ["ECON 010", "MGMT 100", "MGMT 210", "MKT 230", "FIN 200"], "total_units": 32, "major_units": 15 },
+              "notes": "Now a B.S. for students entering Fall 2025 and beyond."
+            }
+          ]
+        },
+        {
+          "name": "School of Climate, Environment, and Society",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 42.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Candidates should showcase a track record of environmental advocacy or scientific curiosity.",
+          "housing_profile": "Likely to utilize themed or affinity housing options centering on sustainability.",
+          "student_archetype": "Environmental activists and scientists dedicated to solving the climate crisis.",
+          "majors": [
+            {
+              "name": "Environmental Science",
+              "degree_type": "B.S.",
+              "curriculum": { "core_courses": ["EN 101", "GEOG 104", "BIOL 101", "CHEM 101", "GEOG 190"], "total_units": 32, "major_units": 17 },
+              "notes": "Administered primarily by the Graduate School of Geography."
+            }
+          ]
+        },
+        {
+          "name": "School of Professional Studies",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": null,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Tailored for students seeking practical, career-ready skills.",
+          "housing_profile": "Mix of traditional dorms and Clark-owned houses.",
+          "student_archetype": "Career-focused doers often pursuing accelerated pathways.",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Actuarial and Financial Mathematics Minor",
+        "Data Science Minor",
+        "Entrepreneurship and Innovation Minor",
+        "Health, Science, & Society Minor",
+        "International Development and Social Change Minor",
+        "Women's and Gender Studies Minor",
+        "Youth Work Practice Certificate",
+        "Advanced Graduate Study Certificate"
+      ]
+    },
+    "application_details": {
+      "application_process": {
+        "platforms": ["Common App", "Coalition App"],
+        "application_deadlines": [
+          { "plan_type": "Early Decision I", "date": "2024-11-01", "is_binding": true, "notes": "Decision notification by mid-December." },
+          { "plan_type": "Early Action", "date": "2024-11-01", "is_binding": false, "notes": "Non-binding; notification by late December." },
+          { "plan_type": "Early Decision II", "date": "2025-01-15", "is_binding": true, "notes": "Binding; notification by mid-February." },
+          { "plan_type": "Regular Decision", "date": "2025-01-15", "is_binding": false, "notes": "Decision notification by late March." }
+        ],
+        "supplemental_requirements": [
+          {
+            "target_program": "All",
+            "requirement_type": "Essays",
+            "details": "Two optional but strongly recommended short-answer prompts on community and impact."
+          },
+          {
+            "target_program": "Honors Program",
+            "requirement_type": "Essay",
+            "deadline": "2025-01-15",
+            "details": "Additional essay required for those wishing to be considered for the Traina or Fiat Lux Honors programs."
+          }
+        ],
+        "holistic_factors": {
+          "primary_factors": ["Course Rigor", "Academic GPA", "Application Essay", "Recommendations"],
+          "secondary_factors": ["Extracurricular Activities", "Talent/Ability", "Character/Personal Qualities"],
+          "essay_importance": "Critical",
+          "demonstrated_interest": "Important",
+          "interview_policy": "Recommended",
+          "legacy_consideration": "None",
+          "first_gen_boost": "Moderate",
+          "specific_differentiators": "Clark seeks 'challenge convention' thinkers who demonstrate collaborative spirits and community engagement."
+        }
+      },
+      "application_strategy": {
+        "major_selection_tactics": [
+          "Apply as 'Undeclared' to maximize flexibility.",
+          "Tailor the personal statement to Clark's 'Challenge Convention, Change the World' motto.",
+          "Target Geography or Psychology for historically prestigious departments.",
+          "Submit a portfolio for Becker School of Design & Technology."
+        ],
+        "college_ranking_tactics": [
+          "Prioritize the 5th-Year Accelerated Master's program to receive a 100% tuition scholarship for graduate school.",
+          "Leverage the HECCMA consortium for courses at WPI or Holy Cross.",
+          "Evaluate programs based on their alignment with 'LEEP' requirements."
+        ],
+        "alternate_major_strategy": "If applying to the competitive Interactive Media major, list 'Media, Culture, and the Arts' or 'Computer Science' as an alternate."
+      }
+    },
+    "financials": {
+      "cost_of_attendance": {
+        "academic_year": "2024-2025",
+        "tuition": 58867,
+        "housing": 13700,
+        "total_coa": 73317
+      },
+      "financial_aid": {
+        "aid_philosophy": "Need-Blind",
+        "average_need_based_aid": 41033,
+        "average_merit_aid": 20757,
+        "percent_receiving_aid": 98.0
+      },
+      "scholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "type": "Merit",
+          "amount": "Full tuition, on-campus housing, and meals for 4 years",
+          "application_method": "Common Application interest check + 2 additional essays",
+          "benefits": "Potential for tuition-free master's degree, funded research project, and mentorship"
+        },
+        {
+          "name": "Richard Traina Scholarship",
+          "type": "Merit",
+          "amount": "$20,000 – $28,000 per year",
+          "application_method": "Automatic Consideration",
+          "benefits": "Summer research stipend ($3,000) and housing for science research"
+        },
+        {
+          "name": "Robert Goddard Achievement Scholarship",
+          "type": "Merit",
+          "amount": "$17,000 – $26,000 per year",
+          "application_method": "Automatic Consideration",
+          "benefits": "Renewable for four years based on academic standing"
+        },
+        {
+          "name": "Jonas Clark Scholarship",
+          "type": "Merit",
+          "amount": "$14,000 – $21,000 per year",
+          "application_method": "Automatic Consideration",
+          "benefits": "Renewable for four years regardless of financial need"
+        },
+        {
+          "name": "Scarlet Award",
+          "type": "Merit",
+          "amount": "$16,000 per year",
+          "application_method": "Automatic Consideration",
+          "benefits": "Awarded for exceptional academic devotion or community endeavors"
+        },
+        {
+          "name": "Global Scholars Program Scholarship",
+          "type": "Merit",
+          "amount": "$15,000 – $25,000 per year",
+          "application_method": "Common Application interest check",
+          "benefits": "Includes a $2,500 guaranteed taxable stipend for a paid internship"
+        },
+        {
+          "name": "1887 Scholarship",
+          "type": "Merit",
+          "amount": "$13,000 per year",
+          "application_method": "Automatic Consideration",
+          "benefits": "Named in honor of the university's founding year"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Moderate",
+      "ap_policy": {
+        "general_rule": "Scores of 4 or 5 grant 1 unit of degree credit each",
+        "usage": "Can satisfy Clark Core requirements (up to 3 waivers) and major prerequisites",
+        "exceptions": [
+          "Maximum of 8 units total for all advanced standing credit",
+          "Score of 5 required for PHYS 110 equivalency",
+          "Score of 5 in English Lit/Comp required to waive Written Expression requirement"
+        ]
+      },
+      "ib_policy": {
+        "general_rule": "Higher Level (HL) exams with scores of 5 or higher grant 1 unit of credit each",
+        "diploma_bonus": true
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transfer Credit Evaluation Form",
+          "Articulation agreements with Quinsigamond and Mount Wachusett Community Colleges"
+        ],
+        "restrictions": "16 unit cap for all external credits; minimum grade of C required for transfer"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Academic growth specifically in junior and senior years as part of a 'whole-person' review",
+        "Demonstrated alignment with Clark's 'Challenge Convention, Change Our World' motto",
+        "Evidence of being community-focused and eager to engage with social or environmental issues",
+        "Average GPA around 3.68, though the school is test-optional and holistic"
+      ],
+      "common_activities": [
+        "Undergraduate research, often started as early as freshman year",
+        "Community service and engagement within the Worcester/Main South neighborhood",
+        "Internships through the LEEP (Liberal Education and Effective Practice) program",
+        "Leadership in awareness-based or advocacy-focused campus clubs",
+        "Part-time jobs or significant family responsibilities (highly valued as 'context')"
+      ],
+      "essay_tips": [
+        "Highlight 'unconventional thinking' and how you navigate unexpected challenges",
+        "Connect your personal story to Clark’s specific culture of social impact and community",
+        "Discuss how you would utilize the LEEP framework for real-world application of your studies",
+        "Focus more on reflection and self-analysis than just narrating a chronological story",
+        "Be specific about why a small, research-intensive liberal arts setting fits your goals"
+      ],
+      "red_flags": [
+        "Generic 'Why Clark' essays that don't mention the school's unique relationship with Worcester",
+        "An 'arrogant or entitled' tone that conflicts with the school's collaborative, humble culture",
+        "Inconsistencies between listed activities and the narrative provided in the personal statement",
+        "Copy-pasting an essay from a larger university that fails to address Clark's tight-knit community"
+      ],
+      "insights": [
+        "Known for independent, socially conscious 'Clarkies' who are often slightly quirky",
+        "The 'Main South' area of Worcester is central to campus life; students are expected to be respectful neighbors",
+        "The university offers a 4+1 accelerated master's program that is a major draw for many applicants",
+        "There is no application fee, making it a common 'hidden gem' choice",
+        "The social scene is described as 'stagnant' if you don't join clubs early; minimal party culture"
+      ]
+    },
+    "outcomes": {
+      "career_outcomes": {
+        "median_earnings_10yr": 62381,
+        "employment_rate_2yr": 97.0,
+        "grad_school_rate": 44.0,
+        "top_employers": [
+          "Amazon",
+          "Goldman Sachs",
+          "Deloitte",
+          "Accenture",
+          "Fidelity Investments",
+          "Bank of America",
+          "IBM",
+          "Apple"
+        ],
+        "loan_default_rate": 1.9
+      },
+      "student_retention": {
+        "freshman_retention_rate": 86.0,
+        "graduation_rate_4_year": 71.0,
+        "graduation_rate_6_year": 77.0
+      }
+    }
+  }
+}

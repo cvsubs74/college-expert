@@ -28,64 +28,68 @@ import FitInfographicView from '../components/FitInfographicView';
 import FitAnalysisPage from '../components/FitAnalysisPage';
 import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 
-// Fit category configuration - Uses warm amber-based tones consistent with app theme
+// Fit category configuration - Uses Stratia theme colors
 const FIT_CATEGORIES = {
     REACH: {
         label: 'Reach',
         emoji: '🎯',
-        color: 'amber',
-        bgGradient: 'from-amber-50 to-orange-50',
-        borderColor: 'border-amber-300',
-        headerBg: 'bg-amber-100',
-        textColor: 'text-amber-700',
-        description: 'Challenging admits'
+        color: 'terracotta',
+        bgGradient: 'from-[#FCEEE8] to-[#FDF8F6]',
+        borderColor: 'border-[#E8A090]',
+        headerBg: 'bg-[#FCEEE8]',
+        textColor: 'text-[#C05838]',
+        description: 'Challenging admits',
+        icon: LightBulbIcon
     },
     SUPER_REACH: {
         label: 'Super Reach',
         emoji: '🌟',
         color: 'rose',
-        bgGradient: 'from-rose-50 to-orange-50',
+        bgGradient: 'from-rose-50 to-[#FCEEE8]',
         borderColor: 'border-rose-300',
         headerBg: 'bg-rose-100',
         textColor: 'text-rose-700',
-        description: 'Dream schools'
+        description: 'Dream schools',
+        icon: SparklesIcon
     },
     TARGET: {
         label: 'Target',
         emoji: '✅',
-        color: 'orange',
-        bgGradient: 'from-orange-50 to-amber-50',
-        borderColor: 'border-orange-300',
-        headerBg: 'bg-orange-100',
-        textColor: 'text-orange-700',
-        description: 'Good match'
+        color: 'blue',
+        bgGradient: 'from-blue-50 to-[#F8F6F0]',
+        borderColor: 'border-blue-200',
+        headerBg: 'bg-blue-50',
+        textColor: 'text-blue-700',
+        description: 'Good match',
+        icon: ArrowTrendingUpIcon
     },
     SAFETY: {
         label: 'Safety',
         emoji: '🛡️',
-        color: 'emerald',
-        bgGradient: 'from-emerald-50 to-amber-50',
-        borderColor: 'border-emerald-300',
-        headerBg: 'bg-emerald-100',
-        textColor: 'text-emerald-700',
-        description: 'Likely admits'
+        color: 'stratia-green',
+        bgGradient: 'from-[#D6E8D5] to-[#F8F6F0]',
+        borderColor: 'border-[#A8C5A6]',
+        headerBg: 'bg-[#D6E8D5]',
+        textColor: 'text-[#1A4D2E]',
+        description: 'Likely admits',
+        icon: CheckCircleIcon
     }
 };
 
 // College Card Component for Launchpad - matches UniInsight style
-const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelected, onToggleSelect, selectionMode, onOpenChat }) => {
+const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelected, onToggleSelect, selectionMode, onOpenChat, canRemove = true }) => {
     const fitAnalysis = college.fit_analysis || {};
     const hasFitAnalysis = fitAnalysis && fitAnalysis.fit_category; // Only true if we have actual fit data
     // Use fit_analysis category first, then fallback to soft_fit_category (pre-computed based on acceptance rate)
     const fitCategory = fitAnalysis.fit_category || college.soft_fit_category || 'TARGET';
-    const matchPercentage = fitAnalysis.match_percentage || null;
+    const matchPercentage = fitAnalysis.match_percentage || fitAnalysis.match_score || null;
     const categoryConfig = FIT_CATEGORIES[fitCategory] || FIT_CATEGORIES.TARGET;
 
-    // Fit category colors matching the warm amber theme
+    // Fit category colors matching Stratia theme
     const fitColors = {
-        SAFETY: 'bg-emerald-100 text-emerald-800 border-emerald-300',
-        TARGET: 'bg-orange-100 text-orange-800 border-orange-300',
-        REACH: 'bg-amber-100 text-amber-800 border-amber-300',
+        SAFETY: 'bg-[#D6E8D5] text-[#1A4D2E] border-[#A8C5A6]',
+        TARGET: 'bg-blue-100 text-blue-800 border-blue-300',
+        REACH: 'bg-[#FCEEE8] text-[#C05838] border-[#E8A090]',
         SUPER_REACH: 'bg-rose-100 text-rose-800 border-rose-300'
     };
 
@@ -95,101 +99,79 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg shadow-amber-50 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-            <div className="p-5 flex-grow">
-                {/* Header with optional checkbox */}
-                <div className="flex justify-between items-start mb-3">
-                    {selectionMode && (
-                        <div className="mr-3 flex-shrink-0">
-                            <input
-                                type="checkbox"
-                                checked={isSelected}
-                                onChange={() => onToggleSelect(college.university_id)}
-                                className="h-5 w-5 text-orange-600 rounded border-gray-300 focus:ring-orange-500 cursor-pointer"
-                            />
-                        </div>
-                    )}
-                    <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-bold text-gray-900 line-clamp-2" title={college.university_name}>
-                            {college.university_name}
-                        </h3>
-                        <div className="flex items-center text-gray-500 text-sm mt-1">
-                            <MapPinIcon className="h-4 w-4 mr-1 flex-shrink-0" />
-                            <span className="truncate">{college.location || 'Location N/A'}</span>
-                        </div>
+        <div className={`group relative bg-white rounded-2xl border border-gray-200 transition-all hover:shadow-md hover:border-gray-300 flex items-center p-4 gap-5 ${isRemoving ? 'opacity-50' : ''}`}>
+
+            {/* Selection Checkbox */}
+            {selectionMode && (
+                <div className="flex-shrink-0">
+                    <input
+                        type="checkbox"
+                        checked={isSelected}
+                        onChange={() => onToggleSelect(college.university_id)}
+                        className="h-5 w-5 text-[#C05838] rounded-md border-gray-300 focus:ring-[#1A4D2E] cursor-pointer"
+                    />
+                </div>
+            )}
+
+            {/* Main Info Section */}
+            <div className="flex-1 min-w-0 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                {/* University Details */}
+                <div className="md:col-span-5">
+                    <h3 className="text-lg font-bold text-gray-900 truncate" title={college.university_name}>
+                        {college.university_name}
+                    </h3>
+                    <div className="flex items-center text-gray-500 text-sm mt-1">
+                        <MapPinIcon className="h-4 w-4 mr-1 flex-shrink-0" />
+                        <span className="truncate">{college.location || 'Location N/A'}</span>
                     </div>
-                    {/* Fit Badge - only show if we have actual fit analysis */}
+                </div>
+
+                {/* Fit Status Badge */}
+                <div className="md:col-span-4 flex items-center">
                     {hasFitAnalysis ? (
-                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold border whitespace-nowrap ${fitColors[fitCategory] || fitColors.TARGET}`}>
-                            {categoryConfig.emoji} {categoryConfig.label}
-                            {matchPercentage && ` ${matchPercentage}%`}
-                        </span>
+                        <div className={`px-3 py-1.5 rounded-full text-xs font-bold border flex items-center gap-2 ${fitColors[fitCategory] || fitColors.TARGET}`}>
+                            <span className="text-base">{categoryConfig.emoji}</span>
+                            <span>{categoryConfig.label}</span>
+                            <span className="w-px h-3 bg-current opacity-30 mx-1"></span>
+                            <span>{matchPercentage ? `${matchPercentage}% Match` : 'N/A'}</span>
+                        </div>
                     ) : (
-                        <span className="px-2.5 py-1 rounded-full text-xs font-medium border whitespace-nowrap bg-gray-100 text-gray-500 border-gray-200">
-                            Pending
+                        <span className="px-3 py-1.5 rounded-full text-xs font-medium bg-gray-100 text-gray-500 flex items-center gap-1.5">
+                            <SparklesIcon className="h-3.5 w-3.5" />
+                            <span>Pending Analysis</span>
                         </span>
                     )}
                 </div>
 
-                {/* Stats Grid - only show if we have fit analysis */}
-                {hasFitAnalysis ? (
-                    <div className="grid grid-cols-2 gap-2 text-sm mb-3">
-                        <div className="bg-amber-50 p-2 rounded-xl">
-                            <div className="text-gray-500 text-xs">Fit Category</div>
-                            <div className={`font-semibold ${categoryConfig.textColor}`}>
-                                {categoryConfig.label}
-                            </div>
-                        </div>
-                        <div className="bg-gray-50 p-2 rounded">
-                            <div className="text-gray-500 text-xs">Match Score</div>
-                            <div className="font-semibold text-gray-900">
-                                {matchPercentage ? `${matchPercentage}%` : 'N/A'}
-                            </div>
-                        </div>
-                    </div>
-                ) : (
-                    <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-3">
-                        <div className="text-amber-800 text-sm flex items-center gap-2">
-                            <SparklesIcon className="h-4 w-4" />
-                            <span>Upload your profile to get personalized fit analysis</span>
-                        </div>
-                    </div>
-                )}
-
-                {/* LLM Explanation (if available) - brief version */}
-                {fitAnalysis.explanation && (
-                    <div className="text-sm text-gray-600 bg-blue-50 rounded p-3 border border-amber-100">
-                        <span className="font-medium text-blue-700">✨ Why This Fit: </span>
-                        <span className="line-clamp-2">{fitAnalysis.explanation}</span>
-                    </div>
-                )}
-            </div>
-
-            {/* Footer with action buttons */}
-            <div className="p-3 border-t border-gray-100">
-                <div className="flex gap-2">
+                {/* Actions */}
+                <div className="md:col-span-3 flex items-center justify-end gap-2">
                     <button
                         onClick={() => onViewDetails && onViewDetails(college)}
-                        className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 px-3 rounded-xl text-sm font-medium hover:from-amber-400 hover:to-orange-400 flex items-center justify-center gap-1 shadow-lg shadow-amber-200 whitespace-nowrap"
-                        title="View your fit analysis for this university"
+                        className="p-2 text-gray-600 hover:text-[#1A4D2E] hover:bg-[#D6E8D5] rounded-lg transition-colors flex items-center gap-2"
+                        title="View Fit Analysis"
                     >
-                        📊 Fit Analysis
+                        <ChartBarIcon className="h-5 w-5" />
+                        <span className="hidden xl:inline text-sm font-medium">Analysis</span>
                     </button>
-                    <button
-                        onClick={() => onRemove(college)}
-                        disabled={isRemoving}
-                        className="px-3 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors disabled:opacity-50 flex items-center justify-center"
-                        title="Remove from list"
-                    >
-                        <TrashIcon className="h-4 w-4" />
-                    </button>
+
                     {onOpenChat && (
                         <button
                             onClick={() => onOpenChat(college)}
-                            className="px-3 py-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors flex items-center justify-center"
-                            title="Ask AI about your fit"
+                            className="p-2 text-gray-600 hover:text-[#1A4D2E] hover:bg-[#D6E8D5] rounded-lg transition-colors"
+                            title="Ask AI"
                         >
-                            <ChatBubbleLeftRightIcon className="h-4 w-4" />
+                            <ChatBubbleLeftRightIcon className="h-5 w-5" />
+                        </button>
+                    )}
+
+                    {canRemove && (
+                        <button
+                            onClick={() => onRemove(college)}
+                            disabled={isRemoving}
+                            className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                            title="Remove"
+                        >
+                            <TrashIcon className="h-5 w-5" />
                         </button>
                     )}
                 </div>
@@ -198,55 +180,92 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
     );
 };
 
-// Category Column Component
-const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetails, selectedColleges, onToggleSelect, selectionMode, onOpenChat }) => {
-    const config = FIT_CATEGORIES[category] || FIT_CATEGORIES.TARGET;
+// Category Column Component - Minimalist (Just a list of cards, no blocks)
+const CategoryColumn = ({ category, colleges, onRemove, removingId, onViewDetails, selectedColleges, onToggleSelect, selectionMode, onOpenChat, canRemove = true }) => {
+    // Hide empty categories to avoid "empty blocks"
+    if (!colleges || colleges.length === 0) return null;
 
     return (
-        <div className={`rounded-xl border ${config.borderColor} bg-gradient-to-b ${config.bgGradient} overflow-hidden`}>
-            {/* Header */}
-            <div className={`${config.headerBg} px-4 py-3 border-b ${config.borderColor}`}>
-                <div className="flex items-center justify-between">
-                    <h3 className={`font-bold ${config.textColor} flex items-center gap-2`}>
-                        <span className="text-lg">{config.emoji}</span>
-                        {config.label}
-                    </h3>
-                    <span className={`text-xs ${config.textColor} bg-white/50 px-2 py-0.5 rounded-full`}>
-                        {colleges.length} school{colleges.length !== 1 ? 's' : ''}
-                    </span>
-                </div>
-                <p className="text-xs text-gray-500 mt-1">{config.description}</p>
-            </div>
-
-            {/* Cards */}
-            <div className="p-3 space-y-3 min-h-[200px]">
-                {colleges.length === 0 ? (
-                    <div className="text-center py-8 text-gray-400 text-sm">
-                        No {config.label.toLowerCase()} schools yet
-                    </div>
-                ) : (
-                    colleges.map((college) => (
-                        <LaunchpadCard
-                            key={college.university_id}
-                            college={college}
-                            onRemove={onRemove}
-                            isRemoving={removingId === college.university_id}
-                            onViewDetails={onViewDetails}
-                            isSelected={selectedColleges.has(college.university_id)}
-                            onToggleSelect={onToggleSelect}
-                            selectionMode={selectionMode}
-                            onOpenChat={onOpenChat}
-                        />
-                    ))
-                )}
-            </div>
+        <div className="space-y-4">
+            {colleges.map((college) => (
+                <LaunchpadCard
+                    key={college.university_id}
+                    college={college}
+                    onRemove={onRemove}
+                    isRemoving={removingId === college.university_id}
+                    onViewDetails={onViewDetails}
+                    isSelected={selectedColleges.has(college.university_id)}
+                    onToggleSelect={onToggleSelect}
+                    selectionMode={selectionMode}
+                    onOpenChat={onOpenChat}
+                    canRemove={canRemove}
+                />
+            ))}
         </div>
     );
 };
 
 // Detailed Fit Analysis Component (shown when clicking "Details" on a college)
 const FitAnalysisDetail = ({ college, onBack }) => {
-    const fitAnalysis = college.fit_analysis || {};
+    const { currentUser } = useAuth();
+
+    // Debug: log incoming college data
+    console.log('[FitAnalysisDetail] Received college:', college?.university_name, 'fit_analysis:', college?.fit_analysis);
+
+    // Use state for fit analysis so we can update it after fetching
+    const [fitAnalysis, setFitAnalysis] = useState(college.fit_analysis || {});
+    const [fitLoading, setFitLoading] = useState(false);
+
+    // Fetch fit analysis on-demand if missing
+    useEffect(() => {
+        const fetchFitAnalysis = async () => {
+            // Check if we already have meaningful fit data
+            const hasFitData = fitAnalysis &&
+                (fitAnalysis.explanation || fitAnalysis.match_score || fitAnalysis.match_percentage || fitAnalysis.factors?.length > 0);
+
+            console.log('[FitAnalysisDetail] hasFitData:', hasFitData, 'fitAnalysis:', fitAnalysis);
+
+            if (!hasFitData && currentUser?.email && college?.university_id) {
+                console.log('[FitAnalysisDetail] Fetching fit analysis for', college.university_name);
+                setFitLoading(true);
+                try {
+                    const response = await fetch(
+                        `https://profile-manager-es-pfnwjfp26a-ue.a.run.app/get-precomputed-fits?user_email=${encodeURIComponent(currentUser.email)}`
+                    );
+                    const data = await response.json();
+                    if (data.success && data.fits) {
+                        const fit = data.fits.find(f => f.university_id === college.university_id);
+                        if (fit) {
+                            console.log('[FitAnalysisDetail] Found fit analysis:', fit.fit_category);
+                            setFitAnalysis({
+                                fit_category: fit.fit_category,
+                                match_score: fit.match_score,
+                                match_percentage: fit.match_percentage,
+                                explanation: fit.explanation,
+                                factors: fit.factors,
+                                recommendations: fit.recommendations,
+                                gap_analysis: fit.gap_analysis,
+                                essay_angles: fit.essay_angles,
+                                application_timeline: fit.application_timeline,
+                                scholarship_matches: fit.scholarship_matches,
+                                test_strategy: fit.test_strategy,
+                                major_strategy: fit.major_strategy,
+                                demonstrated_interest_tips: fit.demonstrated_interest_tips,
+                                red_flags_to_avoid: fit.red_flags_to_avoid,
+                                infographic_url: fit.infographic_url
+                            });
+                        }
+                    }
+                } catch (err) {
+                    console.error('[FitAnalysisDetail] Failed to fetch fit:', err);
+                } finally {
+                    setFitLoading(false);
+                }
+            }
+        };
+        fetchFitAnalysis();
+    }, [currentUser?.email, college?.university_id]);
+
     // Use fit_analysis category first, then fallback to soft_fit_category (pre-computed based on acceptance rate)
     const fitCategory = fitAnalysis.fit_category || college.soft_fit_category || 'TARGET';
     const matchScore = fitAnalysis.match_percentage || fitAnalysis.match_score || 50;
@@ -281,8 +300,7 @@ const FitAnalysisDetail = ({ college, onBack }) => {
     const gapAnalysis = parseJsonField(fitAnalysis.gap_analysis);
 
 
-    // Get the { currentUser } = useAuth() to fetch profile
-    const { currentUser } = useAuth();
+    // Student profile state
     const [studentProfile, setStudentProfile] = useState(null);
     const [profileLoading, setProfileLoading] = useState(true);
     const [profileExists, setProfileExists] = useState(false);
@@ -311,6 +329,7 @@ const FitAnalysisDetail = ({ college, onBack }) => {
             setProfileExists(false);
         }
     }, [currentUser]);
+
 
 
     // Map backend factors to display format with icons
@@ -445,9 +464,9 @@ const FitAnalysisDetail = ({ college, onBack }) => {
 
                 {/* Profile Required Banner */}
                 <div className="p-8">
-                    <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200 rounded-xl p-8 text-center">
-                        <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <ExclamationCircleIcon className="h-8 w-8 text-amber-600" />
+                    <div className="bg-gradient-to-r from-[#D6E8D5] to-[#FCEEE8] border-2 border-[#A8C5A6] rounded-xl p-8 text-center">
+                        <div className="w-16 h-16 bg-[#D6E8D5] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <ExclamationCircleIcon className="h-8 w-8 text-[#1A4D2E]" />
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">
                             Create Your Profile First
@@ -458,7 +477,7 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                         </p>
                         <Link
                             to="/profile"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl font-semibold hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#D6E8D5]0 to-[#FCEEE8]0 text-white rounded-xl font-semibold hover:from-[#2D6B45] hover:to-[#3A7D5A] transition-all shadow-lg"
                         >
                             <SparklesIcon className="h-5 w-5" />
                             Create Your Profile
@@ -504,9 +523,9 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                 <FitInfographicView data={infographicData} />
 
                 {/* Fit Explanation */}
-                <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-lg p-4 border border-amber-100">
+                <div className="bg-gradient-to-r from-blue-50 to-[#FCEEE8] rounded-lg p-4 border border-[#E0DED8]">
                     <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                        <SparklesIcon className="h-5 w-5 text-orange-600" />
+                        <SparklesIcon className="h-5 w-5 text-[#C05838]" />
                         Why This Fit Category?
                     </h3>
                     <div className="text-gray-700 prose prose-sm max-w-none">
@@ -520,7 +539,7 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                 {/* Score Breakdown */}
                 <div>
                     <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        <ChartBarIcon className="h-5 w-5 text-amber-600" />
+                        <ChartBarIcon className="h-5 w-5 text-[#1A4D2E]" />
                         Score Breakdown (Fair Mode - 100pt Scale)
                     </h3>
 
@@ -563,8 +582,8 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                     </div>
 
                     {/* Fair Mode Explanation */}
-                    <div className="mt-4 p-3 bg-orange-50 rounded-lg border border-orange-100">
-                        <p className="text-xs text-orange-700">
+                    <div className="mt-4 p-3 bg-[#FCEEE8] rounded-lg border border-[#E8A090]">
+                        <p className="text-xs text-[#C05838]">
                             <strong>Fair Mode:</strong> Your match score is calculated based on academic factors only.
                             School selectivity is used as a ceiling for the category (not to reduce your score).
                         </p>
@@ -575,20 +594,20 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                 {recommendations.length > 0 && (
                     <div>
                         <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                            <LightBulbIcon className="h-5 w-5 text-amber-600" />
+                            <LightBulbIcon className="h-5 w-5 text-[#1A4D2E]" />
                             Action Plan to Strengthen Your Application
                         </h3>
                         <div className="space-y-2">
                             {recommendations.map((rec, idx) => (
                                 <div key={idx} className="flex flex-col gap-2 p-4 bg-blue-50 rounded-lg">
                                     <div className="flex items-start gap-3">
-                                        <span className="text-orange-600 font-bold">{idx + 1}.</span>
+                                        <span className="text-[#C05838] font-bold">{idx + 1}.</span>
                                         <span className="text-gray-700">{typeof rec === 'object' ? rec.action : rec}</span>
                                     </div>
                                     {typeof rec === 'object' && rec.addresses_gap && (
                                         <div className="ml-7 flex flex-wrap gap-2 text-xs">
-                                            <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">Addresses: {rec.addresses_gap}</span>
-                                            {rec.timeline && <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">Timeline: {rec.timeline}</span>}
+                                            <span className="px-2 py-0.5 bg-[#D6E8D5] text-[#1A4D2E] rounded-full">Addresses: {rec.addresses_gap}</span>
+                                            {rec.timeline && <span className="px-2 py-0.5 bg-[#D6E8D5] text-[#1A4D2E] rounded-full">Timeline: {rec.timeline}</span>}
                                         </div>
                                     )}
                                 </div>
@@ -599,7 +618,7 @@ const FitAnalysisDetail = ({ college, onBack }) => {
 
                 {/* Gap Analysis Section */}
                 {gapAnalysis && (gapAnalysis.primary_gap || gapAnalysis.secondary_gap || (gapAnalysis.student_strengths && gapAnalysis.student_strengths.length > 0)) && (
-                    <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg p-4 border border-orange-200">
+                    <div className="bg-gradient-to-r from-orange-50 to-[#D6E8D5] rounded-lg p-4 border border-[#E8A090]">
                         <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                             🔍 Gap Analysis
                         </h3>
@@ -607,14 +626,14 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                             {/* Gaps */}
                             <div className="space-y-3">
                                 {gapAnalysis.primary_gap && (
-                                    <div className="bg-white rounded-lg p-3 border border-orange-100">
-                                        <div className="text-xs font-medium text-orange-700 mb-1">Primary Gap</div>
+                                    <div className="bg-white rounded-lg p-3 border border-[#E8A090]">
+                                        <div className="text-xs font-medium text-[#C05838] mb-1">Primary Gap</div>
                                         <p className="text-sm text-gray-700">{gapAnalysis.primary_gap}</p>
                                     </div>
                                 )}
                                 {gapAnalysis.secondary_gap && (
-                                    <div className="bg-white rounded-lg p-3 border border-amber-100">
-                                        <div className="text-xs font-medium text-amber-700 mb-1">Secondary Gap</div>
+                                    <div className="bg-white rounded-lg p-3 border border-[#E0DED8]">
+                                        <div className="text-xs font-medium text-[#1A4D2E] mb-1">Secondary Gap</div>
                                         <p className="text-sm text-gray-700">{gapAnalysis.secondary_gap}</p>
                                     </div>
                                 )}
@@ -726,12 +745,12 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                 {(testStrategy || majorStrategy) && (
                     <div className="grid md:grid-cols-2 gap-4">
                         {testStrategy && (
-                            <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg p-4 border border-amber-200">
+                            <div className="bg-gradient-to-r from-[#D6E8D5] to-yellow-50 rounded-lg p-4 border border-[#A8C5A6]">
                                 <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                                     📝 Test Strategy
                                 </h3>
                                 <div className="flex items-center gap-2 mb-2">
-                                    <span className={`px-3 py-1 rounded-full font-bold text-sm ${testStrategy.recommendation === 'Submit' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}`}>
+                                    <span className={`px-3 py-1 rounded-full font-bold text-sm ${testStrategy.recommendation === 'Submit' ? 'bg-green-100 text-green-800' : 'bg-[#D6E8D5] text-[#1A4D2E]'}`}>
                                         {testStrategy.recommendation}
                                     </span>
                                     {testStrategy.student_score_position && <span className="text-xs text-gray-500">Score Position: {testStrategy.student_score_position}</span>}
@@ -804,24 +823,35 @@ const FitAnalysisDetail = ({ college, onBack }) => {
 };
 
 // Recommendation Card Component - Selectable with checkbox
-const RecommendationCard = ({ recommendation, isSelected, onToggleSelect }) => {
+const RecommendationCard = ({ recommendation, isSelected, onToggleSelect, disabled }) => {
     const fitCategory = recommendation.fit_category || 'TARGET';
     const categoryConfig = FIT_CATEGORIES[fitCategory] || FIT_CATEGORIES.TARGET;
+    const Icon = categoryConfig.icon;
 
     return (
         <div
-            onClick={() => onToggleSelect(recommendation.id)}
-            className={`bg-white rounded-xl shadow-sm border-2 p-4 cursor-pointer transition-all ${isSelected
-                ? 'border-amber-500 ring-2 ring-amber-200 shadow-md'
-                : 'border-gray-200 hover:border-purple-300 hover:shadow-md'
+            onClick={() => !disabled && onToggleSelect(recommendation.id)}
+            className={`relative overflow-hidden bg-white rounded-xl shadow-sm border-2 px-4 pb-4 pt-9 cursor-pointer transition-all ${isSelected
+                ? 'border-[#1A4D2E] ring-2 ring-[#D6E8D5] shadow-md'
+                : disabled
+                    ? 'border-gray-100 opacity-60 cursor-not-allowed'
+                    : 'border-gray-200 hover:border-purple-300 hover:shadow-md'
                 }`}
         >
-            <div className="flex justify-between items-start mb-2">
+            {/* Ribbon */}
+            <div className={`absolute top-0 left-0 px-3 py-1 bg-gradient-to-r ${categoryConfig.color} text-white text-xs font-bold rounded-br-xl shadow-sm z-10 flex items-center gap-1`}>
+                <Icon className="w-3 h-3" />
+                {fitCategory.replace('_', ' ')}
+            </div>
+
+            <div className="flex justify-between items-start mb-2 mt-1">
                 <div className="flex items-center gap-3 flex-1 min-w-0">
                     {/* Checkbox */}
-                    <div className={`flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center ${isSelected
-                        ? 'bg-amber-600 border-amber-600'
-                        : 'border-gray-300'
+                    <div className={`flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${isSelected
+                        ? 'bg-[#1A4D2E] border-amber-600'
+                        : disabled
+                            ? 'bg-gray-100 border-gray-200'
+                            : 'border-gray-300 group-hover:border-[#D6E8D5]'
                         }`}>
                         {isSelected && (
                             <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -844,7 +874,7 @@ const RecommendationCard = ({ recommendation, isSelected, onToggleSelect }) => {
             <div className="ml-8">
                 <p className="text-sm text-gray-600 line-clamp-2">{recommendation.reason}</p>
                 <div className="mt-2 text-xs text-gray-500">
-                    Match: <span className="font-semibold text-amber-600">{recommendation.matchScore}%</span>
+                    Match: <span className="font-semibold text-[#1A4D2E]">{recommendation.matchScore}%</span>
                 </div>
             </div>
         </div>
@@ -1301,23 +1331,23 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
             return { status: 'warning', message: '⚠️ You need safety schools!', color: 'text-red-600' };
         }
         if (targetCount < 2) {
-            return { status: 'warning', message: '💡 Add more target schools', color: 'text-amber-600' };
+            return { status: 'warning', message: '💡 Add more target schools', color: 'text-[#1A4D2E]' };
         }
-        return { status: 'info', message: '🎯 Getting balanced...', color: 'text-orange-600' };
+        return { status: 'info', message: '🎯 Getting balanced...', color: 'text-[#C05838]' };
     };
 
     const balanceStatus = getBalanceStatus();
 
     return (
-        <div className="bg-gradient-to-r from-amber-50 to-blue-50 rounded-xl border border-amber-200 overflow-hidden">
+        <div className="bg-gradient-to-r from-[#D6E8D5] to-blue-50 rounded-xl border border-[#A8C5A6] overflow-hidden">
             {/* Header - Always visible */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-amber-100/50 transition-colors"
+                className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#D6E8D5]/50 transition-colors"
             >
                 <div className="flex items-center gap-3">
-                    <div className="p-2 bg-amber-100 rounded-lg">
-                        <LightBulbIcon className="h-6 w-6 text-amber-600" />
+                    <div className="p-2 bg-[#D6E8D5] rounded-lg">
+                        <LightBulbIcon className="h-6 w-6 text-[#1A4D2E]" />
                     </div>
                     <div className="text-left">
                         <h3 className="font-bold text-gray-900">Smart Discovery</h3>
@@ -1325,16 +1355,16 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
-                    <span className="text-sm text-amber-600 font-medium">
+                    <span className="text-sm text-[#1A4D2E] font-medium">
                         {isOpen ? 'Close' : 'Find More Schools'}
                     </span>
-                    <XMarkIcon className={`h-5 w-5 text-amber-600 transition-transform ${isOpen ? 'rotate-0' : 'rotate-45'}`} />
+                    <XMarkIcon className={`h-5 w-5 text-[#1A4D2E] transition-transform ${isOpen ? 'rotate-0' : 'rotate-45'}`} />
                 </div>
             </button>
 
             {/* Expanded Content */}
             {isOpen && (
-                <div className="px-6 pb-6 pt-2 border-t border-amber-200">
+                <div className="px-6 pb-6 pt-2 border-t border-[#A8C5A6]">
                     {/* List Balance Summary */}
                     <div className="flex gap-4 mb-4 text-sm">
                         <div className="flex items-center gap-1">
@@ -1360,7 +1390,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             <button
                                 onClick={() => handleQuickBalancedList()}
                                 disabled={isLoading}
-                                className="px-3 py-1.5 bg-white border border-amber-200 text-amber-700 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors disabled:opacity-50"
+                                className="px-3 py-1.5 bg-white border border-[#A8C5A6] text-[#1A4D2E] rounded-full text-sm font-medium hover:bg-[#D6E8D5] transition-colors disabled:opacity-50"
                                 title="Fast: Uses pre-computed fits"
                             >
                                 ⚖️ Balanced List ⚡
@@ -1384,7 +1414,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             <button
                                 onClick={() => handleQuickFilter('REACH', null)}
                                 disabled={isLoading}
-                                className="px-3 py-1.5 bg-white border border-orange-200 text-orange-700 rounded-full text-sm font-medium hover:bg-orange-50 transition-colors disabled:opacity-50"
+                                className="px-3 py-1.5 bg-white border border-[#E8A090] text-[#C05838] rounded-full text-sm font-medium hover:bg-[#FCEEE8] transition-colors disabled:opacity-50"
                                 title="Fast: Uses pre-computed fits"
                             >
                                 🎯 More Reach Schools ⚡
@@ -1392,7 +1422,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             <button
                                 onClick={() => handleQuickFilter(null, null)}
                                 disabled={isLoading}
-                                className="px-3 py-1.5 bg-white border border-orange-200 text-orange-700 rounded-full text-sm font-medium hover:bg-orange-50 transition-colors disabled:opacity-50"
+                                className="px-3 py-1.5 bg-white border border-[#E8A090] text-[#C05838] rounded-full text-sm font-medium hover:bg-[#FCEEE8] transition-colors disabled:opacity-50"
                                 title="Fast: Uses pre-computed fits"
                             >
                                 📚 Best Matches ⚡
@@ -1400,7 +1430,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             <button
                                 onClick={() => handleQuickFilter(null, 'California')}
                                 disabled={isLoading}
-                                className="px-3 py-1.5 bg-white border border-amber-200 text-amber-700 rounded-full text-sm font-medium hover:bg-amber-50 transition-colors disabled:opacity-50"
+                                className="px-3 py-1.5 bg-white border border-[#A8C5A6] text-[#1A4D2E] rounded-full text-sm font-medium hover:bg-[#D6E8D5] transition-colors disabled:opacity-50"
                                 title="Fast: Uses pre-computed fits"
                             >
                                 🌴 California Schools ⚡
@@ -1426,7 +1456,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                     <button
                         onClick={handleQuickBalancedList}
                         disabled={isLoading}
-                        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-xl font-medium hover:from-amber-700 hover:to-blue-700 transition-all shadow-lg disabled:opacity-50 mb-4"
+                        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45] text-white rounded-xl font-medium hover:from-amber-700 hover:to-blue-700 transition-all shadow-lg disabled:opacity-50 mb-4"
                     >
                         <SparklesIcon className="h-5 w-5" />
                         {recommendations.length > 0 ? 'Get More Recommendations ⚡' : 'Get Smart Recommendations ⚡'}
@@ -1461,12 +1491,12 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
                                 <h4 className="font-semibold text-gray-800 flex items-center gap-2">
-                                    <SparklesIcon className="h-4 w-4 text-amber-600" />
+                                    <SparklesIcon className="h-4 w-4 text-[#1A4D2E]" />
                                     Recommended For You ({recommendations.length} schools)
                                 </h4>
                                 <button
                                     onClick={toggleSelectAll}
-                                    className="text-sm text-orange-600 hover:text-blue-800"
+                                    className="text-sm text-[#C05838] hover:text-blue-800"
                                 >
                                     {getSelectedRecs().length === recommendations.length ? 'Deselect All' : 'Select All'}
                                 </button>
@@ -1514,7 +1544,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                             <button
                                 onClick={handleQuickBalancedList}
                                 disabled={isAddingAll}
-                                className="w-full text-sm text-amber-600 hover:text-purple-800 font-medium disabled:opacity-50"
+                                className="w-full text-sm text-[#1A4D2E] hover:text-purple-800 font-medium disabled:opacity-50"
                             >
                                 ↻ Get different recommendations ⚡
                             </button>
@@ -1573,7 +1603,7 @@ const EmptyState = ({ onQuickStart }) => {
             title: 'Smart Balanced List',
             description: 'AI picks the perfect mix of safety, target, and reach schools tailored to your profile',
             action: 'balanced',
-            gradient: 'from-amber-500 via-orange-500 to-rose-500',
+            gradient: 'from-[#D6E8D5]0 via-orange-500 to-rose-500',
             highlight: 'Most Popular'
         },
         {
@@ -1591,7 +1621,7 @@ const EmptyState = ({ onQuickStart }) => {
             title: 'Target Schools',
             description: 'Schools that match your academic profile well',
             action: 'TARGET',
-            gradient: 'from-orange-500 to-amber-500',
+            gradient: 'from-orange-500 to-[#D6E8D5]0',
             highlight: null
         },
         {
@@ -1617,8 +1647,8 @@ const EmptyState = ({ onQuickStart }) => {
             <div className="text-center mb-10">
                 {/* Animated Rocket Icon */}
                 <div className="relative inline-block mb-6">
-                    <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
-                    <div className="relative p-5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl shadow-amber-200">
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-[#FCEEE8]0 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+                    <div className="relative p-5 bg-gradient-to-br from-amber-400 to-[#FCEEE8]0 rounded-3xl shadow-2xl shadow-amber-200">
                         <RocketLaunchIcon className="h-12 w-12 text-white" />
                     </div>
                 </div>
@@ -1636,7 +1666,7 @@ const EmptyState = ({ onQuickStart }) => {
                 {steps.map((step, idx) => (
                     <div key={step.num} className="flex items-center gap-2 md:gap-4">
                         <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-full shadow-sm border border-gray-100">
-                            <span className="w-6 h-6 flex items-center justify-center bg-amber-100 text-amber-700 rounded-full text-xs font-bold">
+                            <span className="w-6 h-6 flex items-center justify-center bg-[#D6E8D5] text-[#1A4D2E] rounded-full text-xs font-bold">
                                 {step.num}
                             </span>
                             <span className="text-sm text-gray-600 hidden sm:inline">{step.text}</span>
@@ -1724,7 +1754,7 @@ const EmptyState = ({ onQuickStart }) => {
             {/* Manual Browse Button */}
             <a
                 href="/universities"
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-2xl font-semibold hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 transition-all shadow-sm hover:shadow-lg"
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-2xl font-semibold hover:border-[#A8C5A6] hover:bg-[#D6E8D5] hover:text-[#1A4D2E] transition-all shadow-sm hover:shadow-lg"
             >
                 <SparklesIcon className="h-5 w-5 text-amber-500" />
                 Browse All Universities
@@ -1751,6 +1781,7 @@ const MyLaunchpad = () => {
     const [selectedUniversity, setSelectedUniversity] = useState(null);
     const [deepResearchData, setDeepResearchData] = useState({});
     const [recomputingFits, setRecomputingFits] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('ALL');
 
     // Multi-select state for bulk removal
     const [selectedColleges, setSelectedColleges] = useState(new Set());
@@ -1893,6 +1924,12 @@ const MyLaunchpad = () => {
     const handleRemove = async (college) => {
         if (!currentUser?.email) return;
 
+        // Free tier: colleges are PERMANENT - cannot be removed
+        if (!canAccessLaunchpad) {
+            alert('Free tier colleges are permanent. Upgrade to Pro to modify your list.');
+            return;
+        }
+
         setRemovingId(college.university_id);
         console.log('[Launchpad] Removing college:', college.university_name, college.university_id);
 
@@ -1941,15 +1978,27 @@ const MyLaunchpad = () => {
         setQuickStartAdding(true);
         try {
             // Add all selected colleges
-            for (const rec of selectedRecs) {
-                console.log(`[Quick Start] Adding: ${rec.name} as ${rec.fit_category}`);
-                await updateCollegeList(currentUser.email, 'add', { id: rec.id, name: rec.name }, '');
-            }
-            // Clear quick start state and refresh college list
+            const addPromises = selectedRecs.map(rec =>
+                updateCollegeList(currentUser.email, 'add', { id: rec.id, name: rec.name }, '')
+            );
+            await Promise.all(addPromises);
+
+            // Trigger fit computation in background for all new colleges
+            // We don't await this so the UI updates immediately
+            selectedRecs.forEach(rec => {
+                console.log(`[Quick Start] Triggering fit computation for: ${rec.name}`);
+                computeSingleFit(currentUser.email, rec.id)
+                    .then(res => console.log(`[Quick Start] Fit computed for ${rec.name}:`, res.success))
+                    .catch(err => console.error(`[Quick Start] Fit computation failed for ${rec.name}:`, err));
+            });
+
+            // Clear quick start state and refresh college list immediately
             setQuickStartPrompt(null);
             setQuickStartRecommendations([]);
             setQuickStartSelected({});
-            fetchCollegeList();
+
+            // Short delay to allow DB propagation before fetching
+            setTimeout(() => fetchCollegeList(), 500);
         } catch (err) {
             console.error('[Quick Start] Error adding colleges:', err);
         } finally {
@@ -1989,8 +2038,19 @@ const MyLaunchpad = () => {
             }
 
             if (result.success && result.results?.length > 0) {
+                // Deduplicate results by university_id
+                const seenIds = new Set();
+                const uniqueResults = result.results.filter(fit => {
+                    const id = fit.university_id;
+                    if (id && seenIds.has(id)) {
+                        return false;
+                    }
+                    if (id) seenIds.add(id);
+                    return true;
+                });
+
                 // Transform to recommendation format and sort by match score descending
-                const recs = result.results.map((fit, idx) => ({
+                let recs = uniqueResults.map((fit, idx) => ({
                     id: fit.university_id || `rec-${idx}`,
                     name: fit.university_name || fit.official_name || 'Unknown',
                     fit_category: fit.fit_category,
@@ -1999,8 +2059,18 @@ const MyLaunchpad = () => {
                     reason: `${fit.fit_category?.replace('_', ' ')} school with ${fit.match_percentage || fit.match_score || 0}% match`,
                     selected: true
                 })).sort((a, b) => b.matchScore - a.matchScore);  // Sort by match score descending
+
+                // Free tier limit: show all, but only pre-select top 3
+                if (!canAccessLaunchpad) {
+                    recs = recs.map((rec, idx) => ({
+                        ...rec,
+                        selected: idx < 3 // Only first 3 are selected by default for free tier
+                    }));
+                    console.log(`[Quick Start] Free tier: showing all but pre-selecting only top 3`);
+                }
+
                 setQuickStartRecommendations(recs);
-                console.log(`[Quick Start] Loaded ${recs.length} recommendations`);
+                console.log(`[Quick Start] Loaded ${recs.length} recommendations (deduplicated from ${result.results.length})`);
             }
         } catch (err) {
             console.error('[Quick Start] Error:', err);
@@ -2103,7 +2173,7 @@ const MyLaunchpad = () => {
         return (
             <div className="flex items-center justify-center min-h-[400px]">
                 <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mx-auto mb-4"></div>
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1A4D2E] mx-auto mb-4"></div>
                     <p className="text-gray-500">Loading your college list...</p>
                 </div>
             </div>
@@ -2137,7 +2207,7 @@ const MyLaunchpad = () => {
             <div className="space-y-6">
                 <div className="text-center py-6">
                     <h1 className="text-2xl font-bold text-gray-900 flex items-center justify-center gap-3">
-                        <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
+                        <div className="p-2 bg-gradient-to-br from-amber-400 to-[#FCEEE8]0 rounded-xl shadow-lg shadow-amber-200">
                             <RocketLaunchIcon className="h-6 w-6 text-white" />
                         </div>
                         Building Your College List
@@ -2150,7 +2220,7 @@ const MyLaunchpad = () => {
                 {/* Loading State */}
                 {quickStartLoading && (
                     <div className="flex justify-center py-8">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500"></div>
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1A4D2E]"></div>
                     </div>
                 )}
 
@@ -2167,6 +2237,7 @@ const MyLaunchpad = () => {
                                     recommendation={rec}
                                     isSelected={!!quickStartSelected[rec.id]}
                                     onToggleSelect={toggleQuickStartSelection}
+                                    disabled={!canAccessLaunchpad && !quickStartSelected[rec.id] && Object.values(quickStartSelected).filter(Boolean).length >= 3}
                                 />
                             ))}
                         </div>
@@ -2180,7 +2251,7 @@ const MyLaunchpad = () => {
                                 <button
                                     onClick={handleQuickStartConfirm}
                                     disabled={quickStartAdding}
-                                    className="px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl font-medium hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200 disabled:opacity-50 flex items-center gap-2"
+                                    className="px-6 py-3 bg-gradient-to-r from-[#D6E8D5]0 to-[#FCEEE8]0 text-white rounded-xl font-medium hover:from-[#2D6B45] hover:to-[#3A7D5A] transition-all shadow-lg shadow-amber-200 disabled:opacity-50 flex items-center gap-2"
                                 >
                                     {quickStartAdding ? (
                                         <>
@@ -2213,10 +2284,10 @@ const MyLaunchpad = () => {
         <div className="space-y-6">
             {/* Recomputation Banner */}
             {recomputingFits && (
-                <div className="bg-amber-100 border-l-4 border-amber-500 text-amber-700 p-4 rounded shadow-sm" role="alert">
+                <div className="bg-[#D6E8D5] border-l-4 border-[#1A4D2E] text-[#1A4D2E] p-4 rounded shadow-sm" role="alert">
                     <div className="flex items-center">
                         <div className="py-1">
-                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-amber-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-[#1A4D2E]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
@@ -2229,94 +2300,46 @@ const MyLaunchpad = () => {
                 </div>
             )}
             {/* Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                        <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
+                        <div className="p-2 bg-gradient-to-br from-amber-400 to-[#FCEEE8]0 rounded-xl shadow-lg shadow-amber-200">
                             <RocketLaunchIcon className="h-6 w-6 text-white" />
                         </div>
                         My Launchpad
                     </h1>
-                    <p className="text-gray-500 mt-1">
-                        {totalColleges} school{totalColleges !== 1 ? 's' : ''} in your list
-                        {analyzedCount < totalColleges && (
-                            <span className="ml-2 text-amber-600">
-                                ({totalColleges - analyzedCount} pending analysis)
-                            </span>
-                        )}
-                    </p>
-                    {/* Credit Balance Display */}
-                    <div className="mt-2">
-                        <CreditsBadge showTier={true} />
-                    </div>
                 </div>
-
-                {/* Selection Mode Controls */}
-                <div className="flex items-center gap-2">
-                    {selectionMode ? (
-                        <>
-                            <button
-                                onClick={toggleSelectAll}
-                                className="px-3 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
-                            >
-                                {selectedColleges.size === collegeList.length ? 'Deselect All' : 'Select All'}
-                            </button>
-                            <button
-                                onClick={handleBulkRemove}
-                                disabled={selectedColleges.size === 0 || bulkRemoving}
-                                className="px-3 py-2 text-sm bg-red-600 hover:bg-red-700 disabled:bg-gray-300 text-white rounded-lg transition-colors flex items-center gap-2"
-                            >
-                                {bulkRemoving ? (
-                                    <ArrowPathIcon className="h-4 w-4 animate-spin" />
-                                ) : (
-                                    <TrashIcon className="h-4 w-4" />
-                                )}
-                                Remove ({selectedColleges.size})
-                            </button>
-                            <button
-                                onClick={() => {
-                                    setSelectionMode(false);
-                                    setSelectedColleges(new Set());
-                                }}
-                                className="px-3 py-2 text-sm text-gray-500 hover:text-gray-700"
-                            >
-                                Cancel
-                            </button>
-                        </>
-                    ) : (
-                        <button
-                            onClick={() => setSelectionMode(true)}
-                            className="px-3 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center gap-2"
-                        >
-                            <TrashIcon className="h-4 w-4" />
-                            Bulk Remove
-                        </button>
-                    )}
-                </div>
-                <button
-                    onClick={fetchCollegeList}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors shadow-sm"
-                >
-                    <ArrowPathIcon className="h-4 w-4" />
-                    Refresh
-                </button>
             </div>
 
             {/* Stats Bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {/* Category Filter Tabs */}
+            <div className="flex overflow-x-auto pb-4 gap-3 mb-6 scrollbar-hide">
+                <button
+                    onClick={() => setSelectedCategory('ALL')}
+                    className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all whitespace-nowrap flex items-center gap-2 border shadow-sm ${selectedCategory === 'ALL'
+                        ? 'bg-gray-900 text-white border-gray-900 shadow-md transform scale-105'
+                        : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                        }`}
+                >
+                    <span>🏫 All Schools</span>
+                    <span className={`px-2 py-0.5 rounded-full text-xs ${selectedCategory === 'ALL' ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-600'}`}>
+                        {collegeList.length}
+                    </span>
+                </button>
                 {Object.entries(FIT_CATEGORIES).map(([key, config]) => (
-                    <div
+                    <button
                         key={key}
-                        className={`bg-gradient-to-r ${config.bgGradient} rounded-xl p-4 border ${config.borderColor}`}
+                        onClick={() => setSelectedCategory(key)}
+                        className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all whitespace-nowrap flex items-center gap-2 border shadow-sm ${selectedCategory === key
+                            ? `bg-gradient-to-r ${config.bgGradient} ${config.borderColor} ${config.textColor} ring-2 ring-offset-1 ring-${config.color}-200 transform scale-105`
+                            : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                            }`}
                     >
-                        <div className="flex items-center gap-2 mb-1">
-                            <span className="text-lg">{config.emoji}</span>
-                            <span className={`text-sm font-medium ${config.textColor}`}>{config.label}</span>
-                        </div>
-                        <div className="text-2xl font-bold text-gray-900">
+                        <span>{config.emoji} {config.label}</span>
+                        <span className={`px-2 py-0.5 rounded-full text-xs ${selectedCategory === key ? 'bg-white/60' : 'bg-gray-100 text-gray-600'}`}>
                             {categorizedColleges[key]?.length || 0}
-                        </div>
-                    </div>
+                        </span>
+                    </button>
                 ))}
             </div>
 
@@ -2329,59 +2352,76 @@ const MyLaunchpad = () => {
 
             {/* Full-Page Fit Analysis View (no tabs, just fit analysis) */}
             {fitModalCollege && (
-                <FitAnalysisPage
+                <FitAnalysisDetail
                     college={fitModalCollege}
                     onBack={handleCloseFitModal}
                 />
             )}
 
             {/* Four-Column Layout (hidden when viewing full-page fit analysis) */}
+            {/* Four-Column Layout (hidden when viewing full-page fit analysis) */}
             {!fitModalCollege && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                     {/* Reach Column */}
-                    <CategoryColumn
-                        category="REACH"
-                        colleges={categorizedColleges.REACH}
-                        onRemove={handleRemove}
-                        removingId={removingId}
-                        onViewDetails={handleOpenFitModal}
-                        selectedColleges={selectedColleges}
-                        onToggleSelect={toggleSelection}
-                        selectionMode={selectionMode}
-                    />
+                    {(selectedCategory === 'ALL' || selectedCategory === 'REACH') && (
+                        <CategoryColumn
+                            category="REACH"
+                            colleges={categorizedColleges.REACH}
+                            onRemove={handleRemove}
+                            removingId={removingId}
+                            onViewDetails={handleOpenFitModal}
+                            selectedColleges={selectedColleges}
+                            onToggleSelect={toggleSelection}
+                            selectionMode={selectionMode}
+                            onOpenChat={handleOpenChat}
+                            canRemove={canAccessLaunchpad}
+                        />
+                    )}
                     {/* Super Reach Column */}
-                    <CategoryColumn
-                        category="SUPER_REACH"
-                        colleges={categorizedColleges.SUPER_REACH}
-                        onRemove={handleRemove}
-                        removingId={removingId}
-                        onViewDetails={handleOpenFitModal}
-                        selectedColleges={selectedColleges}
-                        onToggleSelect={toggleSelection}
-                        selectionMode={selectionMode}
-                    />
+                    {(selectedCategory === 'ALL' || selectedCategory === 'SUPER_REACH') && (
+                        <CategoryColumn
+                            category="SUPER_REACH"
+                            colleges={categorizedColleges.SUPER_REACH}
+                            onRemove={handleRemove}
+                            removingId={removingId}
+                            onViewDetails={handleOpenFitModal}
+                            selectedColleges={selectedColleges}
+                            onToggleSelect={toggleSelection}
+                            selectionMode={selectionMode}
+                            onOpenChat={handleOpenChat}
+                            canRemove={canAccessLaunchpad}
+                        />
+                    )}
                     {/* Target Column */}
-                    <CategoryColumn
-                        category="TARGET"
-                        colleges={categorizedColleges.TARGET}
-                        onRemove={handleRemove}
-                        removingId={removingId}
-                        onViewDetails={handleOpenFitModal}
-                        selectedColleges={selectedColleges}
-                        onToggleSelect={toggleSelection}
-                        selectionMode={selectionMode}
-                    />
+                    {(selectedCategory === 'ALL' || selectedCategory === 'TARGET') && (
+                        <CategoryColumn
+                            category="TARGET"
+                            colleges={categorizedColleges.TARGET}
+                            onRemove={handleRemove}
+                            removingId={removingId}
+                            onViewDetails={handleOpenFitModal}
+                            selectedColleges={selectedColleges}
+                            onToggleSelect={toggleSelection}
+                            selectionMode={selectionMode}
+                            onOpenChat={handleOpenChat}
+                            canRemove={canAccessLaunchpad}
+                        />
+                    )}
                     {/* Safety Column */}
-                    <CategoryColumn
-                        category="SAFETY"
-                        colleges={categorizedColleges.SAFETY}
-                        onRemove={handleRemove}
-                        removingId={removingId}
-                        onViewDetails={handleOpenFitModal}
-                        selectedColleges={selectedColleges}
-                        onToggleSelect={toggleSelection}
-                        selectionMode={selectionMode}
-                    />
+                    {(selectedCategory === 'ALL' || selectedCategory === 'SAFETY') && (
+                        <CategoryColumn
+                            category="SAFETY"
+                            colleges={categorizedColleges.SAFETY}
+                            onRemove={handleRemove}
+                            removingId={removingId}
+                            onViewDetails={handleOpenFitModal}
+                            selectedColleges={selectedColleges}
+                            onToggleSelect={toggleSelection}
+                            selectionMode={selectionMode}
+                            onOpenChat={handleOpenChat}
+                            canRemove={canAccessLaunchpad}
+                        />
+                    )}
                 </div>
             )}
 
@@ -2393,22 +2433,18 @@ const MyLaunchpad = () => {
                 feature={creditsModalFeature}
             />
 
-            {/* Floating Chat Button - Fixed to bottom-right */}
-            {collegeList.length > 0 && (
-                <div className="fixed bottom-6 right-6 z-40">
-                    <button
-                        onClick={() => {
-                            // Open chat for the first college or the selected one
-                            const targetCollege = fitModalCollege || collegeList[0];
-                            handleOpenChat(targetCollege);
-                        }}
-                        className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl hover:from-indigo-400 hover:to-purple-500 transition-all group"
-                    >
-                        <ChatBubbleLeftRightIcon className="h-5 w-5" />
-                        <span className="font-medium">Ask AI About Fit</span>
-                        <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-                    </button>
-                </div>
+            {/* Floating Chat Button - Fixed to bottom-right (Only in Detail View) */}
+            {fitModalCollege && !isChatOpen && (
+                <button
+                    onClick={() => handleOpenChat(fitModalCollege)}
+                    className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-[#D6E8D5]0 to-orange-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium group"
+                >
+                    <div className="relative">
+                        <ChatBubbleLeftRightIcon className="h-6 w-6" />
+                        <SparklesIcon className="h-3 w-3 absolute -top-1 -right-1 text-yellow-200 animate-pulse" />
+                    </div>
+                    <span className="font-bold">Ask AI</span>
+                </button>
             )}
 
             {/* Fit Chat Widget */}

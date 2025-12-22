@@ -11,7 +11,7 @@ from .shared_logging import (
     tool_logging_before, tool_logging_after
 )
 
-MODEL_NAME = "gemini-2.5-flash-lite"
+MODEL_NAME = "gemini-2.5-flash"
 
 # ==============================================================================
 # MICRO-AGENTS

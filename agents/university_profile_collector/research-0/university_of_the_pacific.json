@@ -1,0 +1,588 @@
+{
+  "university_profile": {
+    "_id": "university_of_the_pacific",
+    "metadata": {
+      "official_name": "University of the Pacific",
+      "location": {
+        "city": "Stockton",
+        "state": "CA",
+        "type": "Private"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": []
+    },
+    "strategic_profile": {
+      "executive_summary": "Established in 1851 as California’s first chartered university, the University of the Pacific is a private institution known for its student-centered focus and specialized professional programs in dentistry, law, and pharmacy.",
+      "market_position": "Hidden Gem",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 139,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Maintains a high overall acceptance rate (approx. 95%) despite rising national rankings.",
+          "implication": "Provides a high-value 'Dream School' option for students seeking quality education without the barriers of ultra-low selectivity."
+        },
+        {
+          "category": "Value Proposition",
+          "insight": "Ranked #3 in California for Best Value by US News, trailing only Stanford and Caltech.",
+          "implication": "Ideal for families prioritizing return on investment (ROI) through accelerated professional tracks."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Atmosphere is characterized by a small-school feel with high engagement in Greek life (10% participation) and over 150 student-led clubs.",
+        "transportation_impact": "The 'Tiger Transportation' initiative reduces the need for cars via campus-wide e-bike rentals, electric vehicle Zipcars, and shuttles to Stockton’s shopping districts.",
+        "research_impact": "Strong undergraduate research culture supported by an annual conference and industry partnerships with organizations like NASA and local biotech firms."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 71.3,
+      "in_state_acceptance_rate": 0.0,
+      "out_of_state_acceptance_rate": 0.0,
+      "international_acceptance_rate": 90.6,
+      "transfer_acceptance_rate": 77.1,
+      "admits_class_size": 5549,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 0,
+          "admits": 0,
+          "acceptance_rate": 0.0,
+          "class_fill_percentage": 0.0
+        }
+      ]
+    },
+    "admissions_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 7780,
+        "admits_total": 5549,
+        "enrolled_total": 759,
+        "acceptance_rate_overall": 71.3,
+        "yield_rate": 13.7,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 104,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 47,
+          "waitlist_admit_rate": 45.2,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Selectivity increased significantly in the 2024 cycle."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 5763,
+        "admits_total": 5467,
+        "enrolled_total": 771,
+        "acceptance_rate_overall": 94.9,
+        "yield_rate": 14.1,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data for the 2023 cycle was not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 5891,
+        "admits_total": 5492,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 93.2,
+        "yield_rate": 0.0,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 220,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 93,
+          "waitlist_admit_rate": 42.3,
+          "is_waitlist_ranked": false
+        }
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "Not specified",
+        "unweighted_middle_50": "3.50-3.80",
+        "average_weighted": 3.63,
+        "percentile_25": "3.35",
+        "percentile_75": "3.85",
+        "notes": "Approximately 47% of admitted students have an unweighted GPA of 3.75 or higher."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1170-1410",
+        "sat_reading_middle_50": "580-690",
+        "sat_math_middle_50": "580-730",
+        "act_composite_middle_50": "23-31",
+        "submission_rate": 27.3,
+        "policy_note": "SAT/ACT scores are required for certain accelerated programs (e.g., Pre-Dentistry, Pre-Pharmacy)."
+      },
+      "demographics": {
+        "first_gen_percentage": 35.0,
+        "international_percentage": 6.9,
+        "geographic_breakdown": [
+          {
+            "region": "California",
+            "percentage": 83.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 10.0
+          },
+          {
+            "region": "International",
+            "percentage": 7.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 2184,
+            "admits": 2054,
+            "acceptance_rate": 94.1
+          },
+          "women": {
+            "applicants": 3498,
+            "admits": 3339,
+            "acceptance_rate": 95.5
+          }
+        },
+        "racial_breakdown": {
+          "white": 15.3,
+          "black_african_american": 3.2,
+          "hispanic_latino": 30.7,
+          "asian": 36.2,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.3,
+          "two_or_more_races": 6.1,
+          "unknown": 7.9,
+          "non_resident_alien": 6.9
+        },
+        "religious_affiliation": "United Methodist Church (Historically affiliated)"
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Schools and Colleges",
+      "colleges": [
+        {
+          "name": "College of the Pacific (Arts and Sciences)",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 85.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Ideal for students seeking a liberal arts foundation; emphasizes small class sizes.",
+          "housing_profile": "Commonly housed in 'The Quads,' featuring LLCs for Humanities and Honors students.",
+          "student_archetype": "The Broad Thinker: Versatile and Preparation-focused.",
+          "majors": [
+            {
+              "name": "Biological Sciences",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.7
+            },
+            {
+              "name": "Psychology",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.4
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Communication",
+              "degree_type": "B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Political Science",
+              "degree_type": "B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "English",
+              "degree_type": "B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "History",
+              "degree_type": "B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Chemistry",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Mathematics",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Sociology",
+              "degree_type": "B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Art / Graphic Design",
+              "degree_type": "B.A. / B.F.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Environmental Science",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            }
+          ]
+        },
+        {
+          "name": "School of Engineering and Computer Science",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 75.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Strong focus on the 'CO-OP' program. Applicants should highlight technical projects.",
+          "housing_profile": "Southwest Hall is the primary residential hub for STEM students.",
+          "student_archetype": "The Practical Innovator: Hands-on and career-oriented.",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.8
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.6
+            },
+            {
+              "name": "Bioengineering",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Civil Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Computer Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Electrical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Engineering Management",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Data Science",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            }
+          ]
+        },
+        {
+          "name": "Eberhardt School of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 80.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Focuses on 'experience-based learning.' Applicants benefit from demonstrating leadership.",
+          "housing_profile": "Centralized housing in Grace Covell or the Quads.",
+          "student_archetype": "The Aspiring Executive: Professional and networking-focused.",
+          "majors": [
+            {
+              "name": "Business Administration",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.5
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            },
+            {
+              "name": "Business Analytics",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Finance",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Marketing Management",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false
+            },
+            {
+              "name": "Sport Management",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false
+            }
+          ]
+        },
+        {
+          "name": "Conservatory of Music",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 45.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Admission is heavily dependent on the audition.",
+          "housing_profile": "Students cluster in the Quads near practice rooms.",
+          "student_archetype": "The Disciplined Artist",
+          "majors": []
+        },
+        {
+          "name": "Thomas J. Long School of Pharmacy",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 15.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Extremely competitive accelerated programs (2+3 or 3+3). Requires high GPA.",
+          "housing_profile": "Professional and pre-professional students live in apartment-style housing.",
+          "student_archetype": "The High-Stakes Professional: Goal-oriented and academically rigorous.",
+          "majors": [
+            {
+              "name": "Pre-Pharmacy Advantage",
+              "degree_type": "B.A. (Applied Science)",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.8
+            },
+            {
+              "name": "Pharmaceutical Science",
+              "degree_type": "B.S.",
+              "is_impacted": false
+            }
+          ]
+        },
+        {
+          "name": "Arthur A. Dugoni School of Dentistry",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 10.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Offers the only accelerated 3-year DDS program in the US.",
+          "housing_profile": "Undergraduates live in Stockton; clinical years are in San Francisco.",
+          "student_archetype": "The Future Clinician",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Data Science Minor",
+        "Entrepreneurship Minor",
+        "Pre-Law Minor",
+        "Sustainability Minor",
+        "Music Industry Minor",
+        "Technological Innovation and Entrepreneurship Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Pacific Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Action",
+          "date": "2024-11-15",
+          "is_binding": false,
+          "notes": "Required for Pre-Pharmacy and Pre-Dental"
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-01-15",
+          "is_binding": false,
+          "notes": "Final deadline for Honors and Powell Scholars"
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Personal Statement",
+          "details": "Only standard personal essay required for general admission."
+        },
+        {
+          "target_program": "Pre-Dental / Pre-Pharmacy / Honors",
+          "requirement_type": "Supplemental Essays",
+          "deadline": "2024-11-15"
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Course Rigor",
+          "Academic GPA",
+          "Personal Statement",
+          "Recommendations"
+        ],
+        "secondary_factors": [
+          "Extracurriculars",
+          "Talent/Ability",
+          "Character/Personal Qualities"
+        ],
+        "essay_importance": "High",
+        "demonstrated_interest": "Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "Considered",
+        "first_gen_boost": "Strong"
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Select the 'Exploratory' major to access specialized advising if undecided",
+        "Apply via Common App Direct Admission for eligible majors to skip personal essays",
+        "Avoid applying directly to 'contract' programs like Pre-Dental unless meeting high thresholds",
+        "Consider Multi/Interdisciplinary Studies for high ROI with lower entry barriers"
+      ],
+      "college_ranking_tactics": [
+        "Prioritize the College of the Pacific for the most flexible GE requirements",
+        "Select the School of Engineering if seeking the mandatory CO-OP program",
+        "Choose the Eberhardt School of Business for accelerated 4-year paths to Bachelor's and Master's"
+      ],
+      "alternate_major_strategy": "If applying to impacted Pre-Dental or Pre-Pharmacy, list 'Biological Sciences' or 'Chemistry' as an alternate."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 57824,
+          "total_coa": 81799,
+          "housing": 17546
+        },
+        "out_of_state": {
+          "tuition": 57824,
+          "total_coa": 81799,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 43607,
+      "average_merit_aid": 27838,
+      "percent_receiving_aid": 89.0,
+      "scholarships": [
+        {
+          "name": "Powell Scholars Program",
+          "type": "Merit",
+          "amount": "$49,000 per year",
+          "deadline": "2024-12-01",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "Regents Scholarship",
+          "type": "Merit",
+          "amount": "Up to $30,000 per year",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "President's Scholarship",
+          "type": "Merit",
+          "amount": "$18,000 per year",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Community Involvement Program (CIP)",
+          "type": "Need/Merit",
+          "amount": "Up to full tuition",
+          "application_method": "Separate Application and FAFSA"
+        },
+        {
+          "name": "Transfer Academic Excellence Scholarship",
+          "type": "Merit",
+          "amount": "$16,000 to $30,000 per year",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Pacific Scholarship",
+          "type": "Merit",
+          "amount": "$10,000 per year",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Provost's Scholarship",
+          "type": "Merit",
+          "amount": "$14,000 per year",
+          "application_method": "Automatic Consideration"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Strict",
+      "ap_policy": {
+        "general_rule": "Scores of 4 or 5 required for most exams",
+        "usage": "Satisfies GE Breadth requirements and certain major prerequisites"
+      },
+      "ib_policy": {
+        "general_rule": "Credit granted for HL exams with scores of 5, 6, or 7"
+      },
+      "transfer_articulation": {
+        "tools": [
+          "ROAR",
+          "ASSIST.org"
+        ],
+        "restrictions": "Maximum of 70 units; grade of 'C' or higher required."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A GPA of 3.5 or higher is typically needed for merit scholarships.",
+        "Evidence of 'intellectual curiosity' and passion for a specific field.",
+        "Strong performance in a rigorous course load through senior year."
+      ],
+      "common_activities": [
+        "Clinical volunteering or shadowing for health majors.",
+        "Leadership in school clubs or student government.",
+        "Involvement in arts (theatre, orchestra).",
+        "Personal responsibilities like jobs or caregiving."
+      ],
+      "essay_tips": [
+        "Be specific about why you want to attend Pacific; mention pre-professional programs.",
+        "Show, don't tell: share unique personal stories that reveal maturity.",
+        "Connect past experiences directly to future career aspirations."
+      ],
+      "red_flags": [
+        "Applying to specialized programs with missing prerequisites.",
+        "Generic essays failing to showcase a unique voice.",
+        "Significant decline in grades during senior year."
+      ],
+      "insights": [
+        "Small 6:1 student-faculty ratio allows for personalized interaction.",
+        "Accelerated programs in Pharmacy and Dentistry are the most competitive.",
+        "The Stockton campus is noted for historic architecture and physical beauty."
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 78445,
+      "employment_rate_2yr": 91.5,
+      "grad_school_rate": 36.7,
+      "top_employers": [
+        "Amazon",
+        "Deloitte",
+        "Goldman Sachs",
+        "Google",
+        "Apple",
+        "Bank of America"
+      ],
+      "loan_default_rate": 0.0,
+      "student_retention": {
+        "freshman_retention_rate": 89.0,
+        "graduation_rate_4_year": 53.0,
+        "graduation_rate_6_year": 71.9
+      }
+    }
+  }
+}

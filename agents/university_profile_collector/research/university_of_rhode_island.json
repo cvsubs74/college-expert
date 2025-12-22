@@ -91,9 +91,18 @@
           "first_gen_percentage": 33.3,
           "international_percentage": 1.7,
           "geographic_breakdown": [
-            { "region": "Rhode Island", "percentage": 47.0 },
-            { "region": "Out-of-State", "percentage": 51.8 },
-            { "region": "International", "percentage": 1.2 }
+            {
+              "region": "Rhode Island",
+              "percentage": 47.0
+            },
+            {
+              "region": "Out-of-State",
+              "percentage": 51.8
+            },
+            {
+              "region": "International",
+              "percentage": 1.2
+            }
           ],
           "gender_breakdown": {
             "men": {
@@ -159,7 +168,7 @@
           "enrolled_total": 3286,
           "acceptance_rate_overall": 77.06,
           "acceptance_rate_in_state": 75.89,
-          "acceptance_rate_out_of_state": 77.40,
+          "acceptance_rate_out_of_state": 77.4,
           "yield_rate": 16.79,
           "waitlist_stats": {
             "offered_spots": 1983,
@@ -189,18 +198,36 @@
               "is_impacted": true,
               "acceptance_rate": 15.0,
               "average_gpa_admitted": 4.1,
-              "prerequisite_courses": ["BIO 220", "CHM 103", "WRT 104"],
+              "prerequisite_courses": [
+                "BIO 220",
+                "CHM 103",
+                "WRT 104"
+              ],
               "minimum_gpa_to_declare": 3.0,
-              "weeder_courses": ["BIO 220 Anatomy & Physiology I", "CHM 103 Introductory Chemistry"],
+              "weeder_courses": [
+                "BIO 220 Anatomy & Physiology I",
+                "CHM 103 Introductory Chemistry"
+              ],
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 3.0,
               "curriculum": {
-                "core_courses": ["NUR 100", "NUR 203", "NUR 213", "NUR 208", "NUR 233", "NUR 253", "NUR 443", "NUR 444"],
+                "core_courses": [
+                  "NUR 100",
+                  "NUR 203",
+                  "NUR 213",
+                  "NUR 208",
+                  "NUR 233",
+                  "NUR 253",
+                  "NUR 443",
+                  "NUR 444"
+                ],
                 "total_units": 120,
                 "major_units": 64
               },
-              "notable_professors": ["Dr. Barbara Wolfe"],
+              "notable_professors": [
+                "Dr. Barbara Wolfe"
+              ],
               "notes": "Non-nursing majors must apply as internal transfers but seats are limited by clinical space."
             }
           ]
@@ -219,13 +246,22 @@
               "degree_type": "Pharm.D.",
               "is_impacted": true,
               "average_gpa_admitted": 3.9,
-              "prerequisite_courses": ["CHM 101", "MTH 141", "BIO 101"],
+              "prerequisite_courses": [
+                "CHM 101",
+                "MTH 141",
+                "BIO 101"
+              ],
               "minimum_gpa_to_declare": 2.7,
-              "weeder_courses": ["CHM 112 General Chemistry II", "BPS 333 Nursing Pharmacology"],
+              "weeder_courses": [
+                "CHM 112 General Chemistry II",
+                "BPS 333 Nursing Pharmacology"
+              ],
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.7,
-              "notable_professors": ["Dr. Thomas Ryan"],
+              "notable_professors": [
+                "Dr. Thomas Ryan"
+              ],
               "notes": "0-6 Program; progression to professional years requires minimum 2.7 science GPA."
             }
           ]
@@ -244,17 +280,38 @@
               "degree_type": "B.S.",
               "is_impacted": true,
               "average_gpa_admitted": 3.8,
-              "prerequisite_courses": ["MTH 141", "CHM 101", "PHY 203"],
-              "weeder_courses": ["MTH 142 Calculus II", "EGR 105 Foundations of Engineering I", "MCE 262 Statics"],
+              "prerequisite_courses": [
+                "MTH 141",
+                "CHM 101",
+                "PHY 203"
+              ],
+              "weeder_courses": [
+                "MTH 142 Calculus II",
+                "EGR 105 Foundations of Engineering I",
+                "MCE 262 Statics"
+              ],
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.0,
               "curriculum": {
-                "core_courses": ["EGR 105", "EGR 106", "MCE 201", "MCE 262", "MCE 263", "MCE 341", "MCE 354", "MCE 372", "MCE 401"],
+                "core_courses": [
+                  "EGR 105",
+                  "EGR 106",
+                  "MCE 201",
+                  "MCE 262",
+                  "MCE 263",
+                  "MCE 341",
+                  "MCE 354",
+                  "MCE 372",
+                  "MCE 401"
+                ],
                 "total_units": 120,
                 "major_units": 68
               },
-              "notable_professors": ["Dr. Mehrshad Amini", "Dr. Michael Lambert"]
+              "notable_professors": [
+                "Dr. Mehrshad Amini",
+                "Dr. Michael Lambert"
+              ]
             }
           ]
         }
@@ -272,20 +329,61 @@
     },
     "application": {
       "process": {
-        "platforms": ["Common App", "URI Transfer Application"],
+        "platforms": [
+          "Common App",
+          "URI Transfer Application"
+        ],
         "deadlines": [
-          { "plan_type": "Early Decision", "date": "2024-11-01", "is_binding": true, "notes": "Binding; Fall start" },
-          { "plan_type": "Early Action", "date": "2024-12-01", "is_binding": false, "notes": "Priority for merit aid" },
-          { "plan_type": "Regular Decision", "date": "2025-02-01", "is_binding": false, "notes": "Final Fall deadline" },
-          { "plan_type": "Spring Admission", "date": "2024-12-15", "is_binding": false }
+          {
+            "plan_type": "Early Decision",
+            "date": "2024-11-01",
+            "is_binding": true,
+            "notes": "Binding; Fall start"
+          },
+          {
+            "plan_type": "Early Action",
+            "date": "2024-12-01",
+            "is_binding": false,
+            "notes": "Priority for merit aid"
+          },
+          {
+            "plan_type": "Regular Decision",
+            "date": "2025-02-01",
+            "is_binding": false,
+            "notes": "Final Fall deadline"
+          },
+          {
+            "plan_type": "Spring Admission",
+            "date": "2024-12-15",
+            "is_binding": false
+          }
         ],
         "supplemental_requirements": [
-          { "target_program": "Nursing, Pharmacy (PharmD)", "requirement_type": "Short Response", "deadline": "2024-12-01", "details": "Statement explaining choice of major (approx. 250 words)" },
-          { "target_program": "Honors Program", "requirement_type": "Essay", "deadline": "2025-02-01", "details": "Propose a theme for the URI Honors Colloquium (250 words)" }
+          {
+            "target_program": "Nursing, Pharmacy (PharmD)",
+            "requirement_type": "Short Response",
+            "deadline": "2024-12-01",
+            "details": "Statement explaining choice of major (approx. 250 words)"
+          },
+          {
+            "target_program": "Honors Program",
+            "requirement_type": "Essay",
+            "deadline": "2025-02-01",
+            "details": "Propose a theme for the URI Honors Colloquium (250 words)"
+          }
         ],
         "holistic_factors": {
-          "primary_factors": ["Course Rigor", "GPA", "STARS Record (SRAR/SSAR)"],
-          "secondary_factors": ["Extracurriculars", "Recommendations", "Talents", "Character"],
+          "primary_factors": [
+            "Course Rigor",
+            "GPA",
+            "STARS Record (SRAR/SSAR)"
+          ],
+          "secondary_factors": [
+            "Extracurriculars",
+            "Recommendations",
+            "Talents",
+            "Character"
+          ],
           "essay_importance": "High",
           "demonstrated_interest": "Not Considered",
           "interview_policy": "Not Offered",
@@ -306,8 +404,16 @@
     "financials": {
       "cost_of_attendance": {
         "academic_year": "2024-2025",
-        "in_state": { "tuition": 14630, "total_coa": 36477, "housing": 15607 },
-        "out_of_state": { "tuition": 34834, "total_coa": 56681, "supplemental_tuition": 20204 }
+        "in_state": {
+          "tuition": 14630,
+          "total_coa": 36477,
+          "housing": 15607
+        },
+        "out_of_state": {
+          "tuition": 34834,
+          "total_coa": 56681,
+          "supplemental_tuition": 20204
+        }
       },
       "aid": {
         "philosophy": "Merit Focused",
@@ -403,5 +509,6 @@
         "graduation_rate_6_year": 71.0
       }
     }
-  }
+  },
+  "_id": "university_of_rhode_island"
 }

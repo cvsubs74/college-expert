@@ -1,0 +1,1373 @@
+{
+  "_id": "university_of_florida_slug",
+  "metadata": {
+    "official_name": "University of Florida",
+    "location": {
+      "city": "Gainesville",
+      "state": "FL",
+      "type": "Public"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of Florida (UF) is a highly-ranked public land-grant research university in Gainesville, Florida, known for its academic excellence, vibrant campus life, and significant research contributions. It consistently places among the top public universities nationally, offering a diverse range of undergraduate and graduate programs.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Holistic review, considering academic record (GPA, test scores in context of high school district), and extracurricular involvement.",
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The University of Florida is classified as 'most selective' with an acceptance rate of 24.0% for the Class of 2027 (Fall 2023 enrollment).",
+        "implication": "Prospective students need strong academic profiles and competitive extracurricular involvement due to the highly selective admissions process."
+      },
+      {
+        "category": "Rankings Trajectory",
+        "insight": "UF consistently ranks among the top public universities, holding a top 10 position in U.S. News for eight consecutive years and a top 5 position in Forbes' public university rankings.",
+        "implication": "The university demonstrates sustained excellence and a strong national reputation, attractive to high-achieving students and faculty."
+      },
+      {
+        "category": "Research Focus",
+        "insight": "UF is a comprehensive research university with significant research activities in various fields, including medicine and agriculture, and offers numerous undergraduate and graduate research opportunities.",
+        "implication": "Students interested in research will find extensive opportunities for involvement and mentorship across diverse disciplines."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The campus social environment at the University of Florida is dynamic and lively, largely due to its substantial student population (over 50,000) and location in a college town. There are over 1,300 student organizations, a prominent Greek life, and a strong emphasis on sports, particularly Gator football weekends. Gainesville offers a variety of restaurants, bars, and entertainment venues, along with art shows, live music, and food festivals. While vibrant, the campus also provides quieter academic spaces like well-stocked libraries.",
+      "transportation_impact": "Transportation on and around campus is facilitated by various options, positively impacting student mobility. Students can use Gainesville's Regional Transit System (RTS) buses for free with a valid Gator1 ID, connecting them across campus and the city. The university also offers Campus Connector shuttles, Campus Cab by Lyft for faculty and staff, e-scooters, biking resources, and Zipcar for alternative travel. While personal vehicles require parking permits, the robust public and alternative transportation options reduce reliance on private cars for daily campus life.",
+      "research_impact": "Research is a cornerstone of UF, evident in its designation as a 'preeminent university' and its 16 academic colleges and over 150 research centers and institutes. The university emphasizes innovative research across disciplines, with a strong focus on STEM fields and initiatives like artificial intelligence. Undergraduate and graduate students have abundant opportunities to engage in research, working with faculty mentors on existing projects or developing their own. This extensive research infrastructure and culture not only attracts top talent but also fosters groundbreaking discoveries and strong ties with industry, particularly in areas like tech transfer."
+    },
+    "us_news_rank": 30
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 24.2,
+      "in_state_acceptance_rate": 23.82,
+      "out_of_state_acceptance_rate": 23.26,
+      "international_acceptance_rate": 10.5,
+      "transfer_acceptance_rate": 44.8,
+      "admits_class_size": 7500,
+      "is_test_optional": false,
+      "test_policy_details": "Test Required",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": 10510,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 73557,
+        "admits_total": 17804,
+        "enrolled_total": 7513,
+        "acceptance_rate_overall": 24.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 42.19,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed for quantitative metrics in Common Data Set for this period. The waitlist is not ranked."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 65375,
+        "admits_total": 15707,
+        "enrolled_total": 6612,
+        "acceptance_rate_overall": 24.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 42.09,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed for quantitative metrics in Common Data Set for this period. The waitlist is not ranked."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 64473,
+        "admits_total": 15054,
+        "enrolled_total": 6762,
+        "acceptance_rate_overall": 23.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 44.92,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed for quantitative metrics in Common Data Set for this period. The waitlist is not ranked."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 51207,
+        "admits_total": 15431,
+        "enrolled_total": 6787,
+        "acceptance_rate_overall": 30.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 44.0,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed for quantitative metrics in Common Data Set for this period. The waitlist is not ranked."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 48193,
+        "admits_total": 15002,
+        "enrolled_total": 6333,
+        "acceptance_rate_overall": 31.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 42.21,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed for quantitative metrics in Common Data Set for this period. The waitlist is not ranked."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.5-4.7",
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "Most admits have straight A's in honors/AP coursework."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1380-1510",
+        "sat_reading_middle_50": "660-730",
+        "sat_math_middle_50": "660-750",
+        "act_composite_middle_50": "31-34",
+        "submission_rate": 100.0,
+        "policy_note": "SAT or ACT scores are required for admission consideration."
+      },
+      "demographics": {
+        "first_gen_percentage": 13.8,
+        "legacy_percentage": null,
+        "international_percentage": 6.0,
+        "geographic_breakdown": [
+          {
+            "region": "Florida",
+            "percentage": 79.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 15.0
+          },
+          {
+            "region": "International",
+            "percentage": 6.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 39515,
+            "admits": 7813,
+            "acceptance_rate": 19.8,
+            "note": "Based on a 43% male applicant and admitted student split."
+          },
+          "women": {
+            "applicants": 52381,
+            "admits": 10356,
+            "acceptance_rate": 19.8,
+            "note": "Based on a 57% female applicant and admitted student split."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 48.4,
+          "black_african_american": 5.4,
+          "hispanic_latino": 20.8,
+          "asian": 9.8,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 4.3,
+          "unknown": null,
+          "non_resident_alien": null
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "College of Agricultural and Life Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 25.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Strong interest in agricultural sciences, environmental issues, or human nutrition. Emphasis on research and practical application.",
+        "housing_profile": "Access to Living Learning Communities focused on environmental or scientific interests, otherwise traditional dorms providing a balanced social and academic environment.",
+        "student_archetype": "Environmentally conscious, hands-on learners, problem-solvers for sustainable futures.",
+        "majors": [
+          {
+            "name": "Agricultural Operations Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACG 2021 (Introduction to Financial Accounting)",
+              "BSC 2010/2010L (General Biology 1 & Lab)",
+              "CHM 2045/2045L (General Chemistry 1 & Lab)",
+              "ECO 2013 (Principles of Macroeconomics)",
+              "MAC 1147 (Precalculus) or MAC 2233 (Survey of Calculus 1)",
+              "STA 2023 (Introduction to Statistics 1)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHM 2045 (General Chemistry 1)",
+              "MAC 1147 (Precalculus) or MAC 2233 (Survey of Calculus 1)"
+            ],
+            "special_requirements": "Minimum 2.0 GPA on all critical-tracking coursework and 2.0 UF GPA. Complete 2 of 6 critical-tracking courses (excluding labs) with minimum C grades. [cite: 4, 11, 13 (previous search), 15 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Combined-degree program is available. Small class sizes. [cite: 11, 13 (previous search), 15 (previous search)]"
+          },
+          {
+            "name": "Food Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 2045/2045L (General Chemistry 1 & Lab)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CHM 2045 (General Chemistry 1)",
+              "CHM 2210 (Organic Chemistry 1)",
+              "CHM 2211 (Organic Chemistry 2)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)"
+            ],
+            "special_requirements": "Minimum 2.5 GPA required for all critical-tracking courses. Minimum C in AEC 3030C and AEC 3033C. [cite: 4 (previous search), 14, 27 (previous search), 30 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Curriculum approved by the Institute of Food Technologists (IFT). [cite: 4 (previous search), 14, 27 (previous search), 30 (previous search)]"
+          },
+          {
+            "name": "Environmental Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BSC 2005 (General Biology) or BSC 2010 (General Biology 1)",
+              "CHM 2045 (General Chemistry 1) or CHM 2047 (One-Semester General Chemistry) or CHM 2095 (General Chemistry for Engineers)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "EVS 3000 (Environmental Science 1)",
+              "EVS 3000L (Environmental Science Laboratory)",
+              "BSC 2005 (General Biology) or BSC 2010 (General Biology 1)",
+              "CHM 2045 (General Chemistry 1)"
+            ],
+            "special_requirements": "Minimum C- in BSC 2005/2010 and CHM 2045/2047/2095. Minimum 2.5 GPA on all critical-tracking courses. [cite: 7 (previous search), 12 (previous search), 24 (previous search), 37 (previous search), 38 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Interdisciplinary program. Students are mentored by faculty. Combined-degree programs available. [cite: 7 (previous search), 12 (previous search), 24 (previous search), 37 (previous search), 38 (previous search)]"
+          },
+          {
+            "name": "Wildlife Ecology and Conservation",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BSC 2010/2010L (General Biology 1 & Lab)",
+              "BSC 2011/2011L (General Biology 2 & Lab)",
+              "CHM 2045/2045L (General Chemistry 1 & Lab)",
+              "CHM 2046/2046L (General Chemistry 2 & Lab)",
+              "AEB 2014 (Economics of Food & Resource Issues) or AEB 3103 (Principles of Food & Resource Economics) or ECO 2023 (Principles of Microeconomics)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "STA 2023 (Introduction to Statistics 1)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "BSC 2010 (General Biology 1)",
+              "BSC 2011 (General Biology 2)",
+              "CHM 2045 (General Chemistry 1)",
+              "CHM 2046 (General Chemistry 2)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)"
+            ],
+            "special_requirements": "Minimum 2.5 GPA on required math and science courses combined for critical tracking. Minimum grades of C within two attempts (including withdrawals) in all WEC Core Courses. [cite: 6 (previous search), 8 (previous search), 13 (previous search), 48 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Offers a preprofessional specialization for veterinary medicine. [cite: 6 (previous search), 8 (previous search), 13 (previous search)]"
+          }
+        ]
+      },
+      {
+        "name": "College of the Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 20.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Requires a portfolio or audition for many programs; strong creative talent and dedication to artistic discipline are essential.",
+        "housing_profile": "Traditional and suite-style dorms, with potential for creative Living Learning Communities focused on performance or visual arts.",
+        "student_archetype": "Creative, expressive, disciplined artists and performers seeking a vibrant cultural community.",
+        "majors": []
+      },
+      {
+        "name": "Warrington College of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 20.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Competitive admission to upper-division majors, requiring strong academic performance in prerequisite courses. Emphasizes leadership and analytical skills.",
+        "housing_profile": "Modern and suite-style dorms, with opportunities to join entrepreneurial or leadership-focused Living Learning Communities.",
+        "student_archetype": "Ambitious, analytical, future business leaders and innovators.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.Ac.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.48,
+            "prerequisite_courses": [
+              "ACG 2021 (Introduction to Financial Accounting)",
+              "ACG 2071 (Introduction to Managerial Accounting)",
+              "ECO 2013 (Principles of Macroeconomics)",
+              "ECO 2023 (Principles of Microeconomics)",
+              "MAC 2233 (Survey of Calculus 1) or MAC 2311 (Analytic Geometry and Calculus 1)",
+              "STA 2023 (Introduction to Statistics 1)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ACG 2021 (Introduction to Financial Accounting)",
+              "ACG 2071 (Introduction to Managerial Accounting)"
+            ],
+            "special_requirements": "For internal transfers: 3.0 cumulative GPA on all college-level coursework, 3.0 GPA in seven preprofessional courses. Minimum grade of B in ACG 2021 and ACG 2071 (maximum two attempts). [cite: 15 (previous search)]",
+            "admissions_pathway": "Pre-Major / Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "UF students who matriculated as freshmen can change to a business major if they have a 3.0 UF GPA with no critical-tracking courses completed or a 2.0 UF GPA and a 3.0 critical-tracking GPA. Upper-division transfers admitted to UF as non-business majors are not eligible for admission to the Heavener School of Business."
+          },
+          {
+            "name": "Business Administration (General Studies)",
+            "degree_type": "B.A.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.48,
+            "prerequisite_courses": [
+              "ACG 2021 (Introduction to Financial Accounting)",
+              "ECO 2013 (Principles of Macroeconomics)",
+              "ECO 2023 (Principles of Microeconomics)",
+              "MAC 2233 (Survey of Calculus 1) or MAC 2311 (Analytic Geometry and Calculus 1)",
+              "STA 2023 (Introduction to Statistics 1)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ACG 2021 (Introduction to Financial Accounting)",
+              "ECO 2013 (Principles of Macroeconomics)",
+              "ECO 2023 (Principles of Microeconomics)"
+            ],
+            "special_requirements": "For internal transfers: 3.0 critical-tracking GPA. Minimum 2.0 UF GPA. Upper-division transfers admitted to UF as non-business majors are not eligible for admission to the Heavener School of Business.",
+            "admissions_pathway": "Pre-Major / Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "This major has some flexibility in course selection. Upper-division transfer applicants from other institutions need a minimum 3.0 GPA from each previously attended college and 3.5 GPA in all prerequisite courses. [cite: 2, 5, 22, 45 (previous search)]"
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.48,
+            "prerequisite_courses": [
+              "ACG 2021 (Introduction to Financial Accounting)",
+              "ACG 2071 (Introduction to Managerial Accounting)",
+              "ECO 2013 (Principles of Macroeconomics)",
+              "ECO 2023 (Principles of Microeconomics)",
+              "MAC 2233 (Survey of Calculus 1)",
+              "STA 2023 (Introduction to Statistics 1)",
+              "FIN 3403 (Business Finance)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ACG 2021 (Introduction to Financial Accounting)",
+              "ACG 2071 (Introduction to Managerial Accounting)",
+              "FIN 3403 (Business Finance)"
+            ],
+            "special_requirements": "For internal transfers: 3.0 critical-tracking GPA. Minimum grade of B in ACG 2021 and ACG 2071. Minimum 3.0 or higher in all ACG courses. Upper-division transfers admitted to UF as non-business majors are not eligible for admission to the Heavener School of Business. [cite: 2, 5, 14, 45 (previous search)]",
+            "admissions_pathway": "Pre-Major / Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Considered very competitive for transfers. Upper-division transfer applicants from other institutions need a minimum 3.0 GPA from each previously attended college and 3.5 GPA in all prerequisite courses. [cite: 2, 5, 14, 40 (previous search), 42 (previous search), 45 (previous search), 46 (previous search)]"
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.48,
+            "prerequisite_courses": [
+              "ACG 2021 (Introduction to Financial Accounting)",
+              "ACG 2071 (Introduction to Managerial Accounting)",
+              "ECO 2013 (Principles of Macroeconomics)",
+              "ECO 2023 (Principles of Microeconomics)",
+              "MAC 2233 (Survey of Calculus 1) or MAC 2311 (Analytic Geometry and Calculus 1)",
+              "STA 2023 (Introduction to Statistics 1)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ACG 2021 (Introduction to Financial Accounting)",
+              "ACG 2071 (Introduction to Managerial Accounting)",
+              "MAR 3023 (Principles of Marketing)"
+            ],
+            "special_requirements": "For internal transfers: 3.0 critical-tracking GPA. Minimum 2.0 UF GPA. Upper-division transfers admitted to UF as non-business majors are not eligible for admission to the Heavener School of Business.",
+            "admissions_pathway": "Pre-Major / Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Upper-division transfer applicants from other institutions need a minimum 3.0 GPA from each previously attended college and 3.5 GPA in all prerequisite courses. [cite: 2, 5, 45 (previous search)]"
+          }
+        ]
+      },
+      {
+        "name": "College of Dentistry",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 10.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive, typically graduate-level professional program. Requires extensive science background and relevant experience for admission.",
+        "housing_profile": "Primarily off-campus or graduate/family housing options. Undergraduate pre-dental students would reside in general university housing, possibly pre-health LLCs.",
+        "student_archetype": "Dedicated, detail-oriented, future healthcare professionals with a strong scientific foundation.",
+        "majors": []
+      },
+      {
+        "name": "College of Design, Construction and Planning",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 22.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong spatial reasoning, design aptitude, and problem-solving skills are crucial. Portfolio may be required for some programs.",
+        "housing_profile": "A mix of traditional and modern dorms, potentially with Living Learning Communities for design or engineering-related fields.",
+        "student_archetype": "Innovative, practical thinkers with a passion for shaping the built environment.",
+        "majors": []
+      },
+      {
+        "name": "College of Education",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 28.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Commitment to learning, strong communication skills, and a desire to impact future generations. Field experiences are integral.",
+        "housing_profile": "Traditional dorms, fostering a community-oriented environment; some Living Learning Communities may support students interested in education or public service.",
+        "student_archetype": "Nurturing, patient, passionate about teaching and community development.",
+        "majors": []
+      },
+      {
+        "name": "Herbert Wertheim College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 15.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Exceptional STEM background required, particularly in math and physics. Strong problem-solving and analytical abilities are key.",
+        "housing_profile": "Modern dorms, often with maker spaces or dedicated study areas. The Engineering Living Learning Community is a prime option.",
+        "student_archetype": "Ambitious problem-solvers, logical thinkers, driven to innovate and build.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "COP 3502 (Programming Fundamentals 1)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "COP 3502 (Programming Fundamentals 1)",
+              "COP 3503 (Programming Fundamentals 2)",
+              "COP 3530 (Data Structures and Algorithms)",
+              "COT 3100 (Applications of Discrete Structures)",
+              "CDA 3101 (Introduction to Computer Organization)"
+            ],
+            "special_requirements": "Minimum grade of C in all critical-tracking courses. Critical-tracking GPA must be 2.5 minimum. Minimum C in all prerequisites to required courses (CDA 3101, COP 3503, COP 3530, COP 4600, COT 3100, MAS 3114).",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Admission is highly competitive due to limited slots for transfer students. Combined BS/MS degree program is available.",
+            "direct_admit_only": true
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "MAP 2302 (Elementary Differential Equations)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)",
+              "CHM 2045 (General Chemistry 1)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)"
+            ],
+            "special_requirements": "Minimum 2.5 GPA in the eight preprofessional courses (based on first two attempts) and a minimum grade of C in each critical-tracking course.",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Combined BS/MS degree program is available. Students admitted with a C+ or higher in critical-tracking courses (Calculus 1, 2, 3, Physics with Calculus 1, 2, Differential Equations) and a C in General Chemistry 1 and 2 or an approved biological sciences course.",
+            "direct_admit_only": true
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 2045 (General Chemistry 1)",
+              "EML 2023 (Mechanical Engineering Design & Graphics)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "MAP 2302 (Elementary Differential Equations)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)",
+              "EML 2023 (Mechanical Engineering Design & Graphics)"
+            ],
+            "special_requirements": "Minimum 2.5 GPA on all critical-tracking coursework and a minimum grade of C in each critical-tracking course within two attempts. Minimum C in EML 2511.",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Combined BS/MS degree program is available.",
+            "direct_admit_only": true
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "MAP 2302 (Elementary Differential Equations)",
+              "CHM 2045/L (General Chemistry I & Lab)",
+              "CHM 2046/L (General Chemistry II & Lab)",
+              "PHY 2048/L (Physics with Calculus I & Lab)",
+              "PHY 2049/L (Physics with Calculus II & Lab)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "CHM 2045 (General Chemistry I)",
+              "CHM 2046 (General Chemistry II)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "MAP 2302 (Elementary Differential Equations)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)",
+              "ECH 3023 (Introduction to Chemical Engineering Analysis)",
+              "ECH 3101 (Chemical Engineering Thermodynamics)",
+              "ECH 3203 (Transport Phenomena I)"
+            ],
+            "special_requirements": "Minimum 2.5 GPA in 8 preprofessional courses and 2.5 GPA in calculus sequence (best of two attempts for each course). Minimum C grade in ECH 3023, 3101, 3203, 3223, 3264, and COT 3502. Students who GREATLY exceed the minimum GPA are most competitive. [cite: 7, 10, 26, 28, 30, 35, 36, 39, 49 (previous search)]",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 3.5,
+            "notes": "Considered a highly competitive program. Combined BS/MS degree program available. [cite: 7, 10, 26, 28, 30, 35, 36, 39, 49 (previous search)]",
+            "direct_admit_only": true
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "MAP 2302 (Elementary Differential Equations)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)",
+              "CHM 2045 (General Chemistry 1)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)"
+            ],
+            "special_requirements": "Minimum 2.5 GPA in critical-tracking courses. Minimum C+ in each course of Calculus 1, 2, 3, Physics 1, 2, and Differential Equations. Minimum C in General Chemistry 1 and 2 or an approved biological sciences course, within two attempts. Minimum 2.0 GPA in all ECE courses. [cite: 9, 17, 19, 29 (previous search)]",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Combined BS/MS degree program is available. [cite: 42 (previous search)]",
+            "direct_admit_only": true
+          },
+          {
+            "name": "Industrial & Systems Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COP 2271 (Introduction to Computer Programming)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "MAP 2302 (Elementary Differential Equations)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)",
+              "COP 2271 (Introduction to Computer Programming)"
+            ],
+            "special_requirements": "Minimum 2.5 overall GPA and 2.5 GPA in designated pre-engineering technical courses. Minimum C grade in every required course within three attempts. Minimum C in critical-tracking courses within two attempts and a 2.5 GPA for all critical-tracking courses. [cite: 10, 12, 14, 18, 20 (previous search)]",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Combined-degree program available. [cite: 10, 18, 20 (previous search)]",
+            "direct_admit_only": true
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BSC 2010 (General Biology)",
+              "CHM 2045 (General Chemistry 1)",
+              "CHM 2046 (General Chemistry 2)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "MAP 2302 (Elementary Differential Equations)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)",
+              "BME 3060 (Biomedical Fundamentals)",
+              "PCB 3713C (Cellular and Systems Physiology)"
+            ],
+            "minimum_gpa_to_declare": 2.8,
+            "weeder_courses": [
+              "BSC 2010 (General Biology)",
+              "CHM 2045 (General Chemistry 1)",
+              "CHM 2046 (General Chemistry 2)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "MAC 2313 (Analytic Geometry and Calculus 3)",
+              "PHY 2048 (Physics with Calculus 1)",
+              "PHY 2049 (Physics with Calculus 2)",
+              "BME 3060 (Biomedical Fundamentals)"
+            ],
+            "special_requirements": "Minimum 2.8 GPA in critical tracking courses (best attempt, no more than two attempts per course). Minimum grade of C in each critical tracking course and in BME 3508, BME 3053C, CHM 3217, COP 2271, COP 2271L, EEL 3003, and ENC 3246. [cite: 3, 12, 20, 34 (previous search)]",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.8,
+            "notes": "The program is described as Limited Access at other SUS institutions due to space and accreditation requirements. Combined BS/MS degree program is available. [cite: 41 (previous search), 42 (previous search)]",
+            "direct_admit_only": true
+          }
+        ]
+      },
+      {
+        "name": "College of Health and Human Performance",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 25.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Interest in health sciences, human movement, and improving quality of life. Strong foundation in biology and chemistry is beneficial.",
+        "housing_profile": "Traditional and suite-style dorms, with access to pre-health Living Learning Communities.",
+        "student_archetype": "Health-conscious, empathetic, aspiring professionals in health and wellness fields.",
+        "majors": [
+          {
+            "name": "Sport Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECO 2013 (Principles of Macroeconomics) or ECO 2023 (Principles of Microeconomics)",
+              "MAC 1140 (Precalculus Algebra) or MAC 1105 (College Algebra)",
+              "STA 2023 (Introduction to Statistics 1)",
+              "MAN 3025 (Principles of Management)",
+              "MAR 3023 (Principles of Marketing)",
+              "PSY 2012 (General Psychology)"
+            ],
+            "minimum_gpa_to_declare": 2.2,
+            "weeder_courses": [
+              "ECO 2013 (Principles of Macroeconomics) or ECO 2023 (Principles of Microeconomics)",
+              "STA 2023 (Introduction to Statistics 1)"
+            ],
+            "special_requirements": "Minimum 2.2 GPA required for all critical-tracking courses. Minimum 2.0 UF GPA. [cite: 38 (previous search), 47 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.2,
+            "notes": "Students must complete an approved 12-credit internship or opt for a non-internship option. [cite: 6 (previous search), 38 (previous search), 42 (previous search)]"
+          },
+          {
+            "name": "Applied Physiology and Kinesiology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "APK 2100C (Applied Human Anatomy with Lab)",
+              "APK 2105C (Applied Human Physiology with Lab)",
+              "ATR 2010C (Foundations of Athletic Training)",
+              "ECO 2023 (Principles of Microeconomics) or AEB2014 (Economics of Food & Resource Issues)",
+              "HUN 2201 (Principles of Nutrition)",
+              "MAC 1140 (Precalculus Algebra) or MAC 1147 (Precalculus) or higher level calculus",
+              "PSY 2012 (General Psychology)",
+              "STA 2023 (Introduction to Statistics 1)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "APK 2100C (Applied Human Anatomy with Lab)",
+              "APK 2105C (Applied Human Physiology with Lab)",
+              "ATR 2010C (Foundations of Athletic Training)",
+              "MAC 1140 (Precalculus Algebra) or MAC 1147 (Precalculus)"
+            ],
+            "special_requirements": "Minimum 2.5 GPA on tracking coursework. Minimum C grades required in APK 2100C, APK 2105C and ATR 2010C. Maximum of two Cs allowed in tracking courses, all others must be B or better. [cite: 40 (previous search), 41 (previous search), 43 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "notes": "All APK students complete 12 credit hours of internship. [cite: 5 (previous search)]"
+          },
+          {
+            "name": "Health Education and Behavior",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "APK 2100C (Human Anatomy with Lab) or H. Anat & Phys I w/Lab",
+              "APK 2105C (Human Physiology with Lab) or H. Anat & Phys II w/Lab",
+              "BSC 2005 (Biological Sciences with Lab) or BSC 2010 (Principles of Biology with Lab)",
+              "MAC 1105 (College Algebra) or MAC 1140 (Precalculus Algebra) or MAC 1147 (Precalculus) or higher",
+              "PSY 2012 (Psychology)",
+              "STA 2023 (Statistics)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "APK 2100C (Human Anatomy with Lab)",
+              "APK 2105C (Human Physiology with Lab)",
+              "BSC 2005 (Biological Sciences with Lab) or BSC 2010 (Principles of Biology with Lab)",
+              "MAC 1105 (College Algebra) or higher"
+            ],
+            "special_requirements": "Minimum 2.5 GPA required for all critical-tracking courses. Minimum 2.0 UF GPA. All prerequisite courses must be completed with a grade of C or better. [cite: 2, 3, 5 (previous search), 17 (previous search), 18 (previous search), 29 (previous search), 33 (previous search), 49 (previous search), 51 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Online BS program available. Conditionally admitted with 2.0 overall GPA and 2.5 GPA in 5 of 6 prerequisites. [cite: 2, 5 (previous search)]"
+          }
+        ]
+      },
+      {
+        "name": "College of Journalism and Communications",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 20.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong communication skills, creativity, and an interest in media, storytelling, and public relations. Portfolio or writing samples may be considered.",
+        "housing_profile": "Social and collaborative dorms, encouraging peer interaction and project work. Central campus locations are often preferred.",
+        "student_archetype": "Articulate, creative storytellers, media-savvy, keen observers of society.",
+        "majors": [
+          {
+            "name": "Journalism",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENC 1102 (Argument and Persuasion)",
+              "AMH 2020 (United States History since 1877)",
+              "POS 2041 (American Federal Government)",
+              "STA 2023 (Introduction to Statistics I)",
+              "ECO 2013 (Principles of Macroeconomics)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "MMC 2121 (Writing Fundamentals for Communicators)",
+              "JOU 3101 (Reporting)",
+              "VIC 3001 (Sight, Sound and Motion)"
+            ],
+            "special_requirements": "College of Journalism and Communications is a limited admissions college. Transfer applicants considered on a space-available basis. A 2.0 GPA (on all work attempted) is required, but a 2.5 overall GPA is considered competitive for admission. All critical-tracking courses require a minimum C. [cite: 6, 7, 11 (previous search), 16, 17, 19, 23 (previous search)]",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.5,
+            "notes": "Excellent writing skills are essential. Offers specializations including Sports and Media. [cite: 16, 17, 19, 23 (previous search)]",
+            "direct_admit_only": true
+          },
+          {
+            "name": "Advertising",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ADV 3008 (Principles of Advertising)",
+              "MAR 3023 (Principles of Marketing)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ADV 3008 (Principles of Advertising)",
+              "MAR 3023 (Principles of Marketing)"
+            ],
+            "special_requirements": "College of Journalism and Communications is a limited admissions college. Students not admitted to the college must have a 3.0 overall GPA to enroll in ADV 3008. Earning a 'C' or better in ADV 3008 and MAR 3023 is a prerequisite for subsequent courses. [cite: 4, 6, 7, 10 (previous search), 11 (previous search)]",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Students are advised that changing to or adding an advertising major likely will require them to extend their time of study.",
+            "direct_admit_only": true
+          },
+          {
+            "name": "Public Relations",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PUR 3000 (Principles of Public Relations)",
+              "STA 2023 (Introduction to Statistics I)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "PUR 3000 (Principles of Public Relations)",
+              "MMC 2121 (Writing Fundamentals for Communicators)",
+              "JOU 3101 (Reporting)"
+            ],
+            "special_requirements": "College of Journalism and Communications is a limited admissions college. Students not admitted to the college must have a 3.0 overall GPA for admission. Earning a 'C' or better in PUR 3000 is a prerequisite for subsequent courses. Minimum C in STA 2023. [cite: 3, 6, 7, 9, 11 (previous search), 27, 28, 29 (previous search), 32]",
+            "admissions_pathway": "Direct Admit / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Public Relations is a flexible degree. Excellent writing and critical thinking skills are essential.",
+            "direct_admit_only": true
+          }
+        ]
+      },
+      {
+        "name": "Levin College of Law",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 18.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive, primarily a graduate professional program. Requires strong analytical, critical thinking, and writing skills.",
+        "housing_profile": "Primarily off-campus or graduate/family housing. Undergraduate pre-law students would typically be in general university housing.",
+        "student_archetype": "Analytical, persuasive, ethically driven individuals committed to justice and legal principles.",
+        "majors": []
+      },
+      {
+        "name": "College of Liberal Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 24.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Flexible major options, ideal for students exploring diverse academic interests. Strong foundational coursework in various disciplines.",
+        "housing_profile": "A wide range of housing options, from traditional and social dorms like Broward and Jennings to quieter, more academically focused environments.",
+        "student_archetype": "Intellectually curious, adaptable, broad-minded learners exploring various fields.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BSC 2010/2010L (General Biology 1 & Lab)",
+              "BSC 2011/2011L (General Biology 2 & Lab)",
+              "CHM 2045/2045L (General Chemistry 1 & Lab)",
+              "CHM 2046/2046L (General Chemistry 2 & Lab)",
+              "CHM 2210 (Organic Chemistry 1)",
+              "CHM 2211/2211L (Organic Chemistry 2 & Lab)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "STA 2023 (Introduction to Statistics 1)",
+              "PHY 2053/2053L (Physics 1 & Lab)",
+              "PHY 2054/2054L (Physics 2 & Lab)"
+            ],
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": [
+              "BSC 2010 (General Biology 1)",
+              "CHM 2045 (General Chemistry 1)",
+              "CHM 2046 (General Chemistry 2)",
+              "CHM 2210 (Organic Chemistry 1)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)"
+            ],
+            "special_requirements": "Minimum 2.5 GPA on all critical-tracking courses. All major coursework must be completed with minimum grades of C. [cite: 5, 10, 14, 19, 22, 23 (previous search), 37, 38 (previous search), 44 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.5,
+            "notes": "UF Online Biology also requires a 2.5 GPA on critical-tracking courses.",
+            "direct_admit_only": false
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 2012 (General Psychology)",
+              "STA 2023 (Introduction to Statistics 1)",
+              "BSC 2007 or BSC 2008 or BSC 2010 (Biology Course)",
+              "MAC 1147 (Precalculus) or MAC 1140 (Precalculus Algebra) and MAC 1114 (Trigonometry)"
+            ],
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": [
+              "PSY 2012 (General Psychology)",
+              "STA 2023 (Introduction to Statistics 1)",
+              "PSY 3213L (Laboratory Methods in Psychology)"
+            ],
+            "special_requirements": "Minimum UF GPA of 2.80 and 2.75 GPA on all critical tracking coursework required for continuation beyond Semester 4. All course grades must be C or better to count toward the 36-hour total. Limited access major. [cite: 4, 6, 21, 24, 31, 34 (previous search), 36 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.75,
+            "notes": "Considered a limited access major. Strong undergraduate preparation in statistics and various psychology areas (Biological, Developmental, Learning/Cognition, Sociocultural/Individual Differences) is emphasized for graduate studies. [cite: 15 (previous search), 31 (previous search)]",
+            "direct_admit_only": false
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAC 2233 (Survey of Calculus 1) or MAC 2311 (Analytic Geometry and Calculus 1)",
+              "STA 2023 (Introduction to Statistics 1)",
+              "ECO 2013 (Principles of Macroeconomics)",
+              "ECO 2023 (Principles of Microeconomics)"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "ECO 2013 (Principles of Macroeconomics)",
+              "ECO 2023 (Principles of Microeconomics)",
+              "ECO 3101 (Intermediate Microeconomics)"
+            ],
+            "special_requirements": "Minimum C grade in each required foundation and economics course. Critical-tracking GPA starts at 2.5, rising to 3.0 by Semester 4. Complete ECO 3101 early as it is a prerequisite for some electives. [cite: 8, 18 (previous search), 25, 27 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 3.0,
+            "notes": "Students will learn analytical skills useful for various careers. [cite: 8, 25, 27 (previous search)]",
+            "direct_admit_only": false
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "STA 2023 (Introduction to Statistics 1)",
+              "CPO 2001 (Comparative Politics)",
+              "INR 2001 (International Relations)",
+              "POS 2041 (American Federal Government)",
+              "POT 2002 (Introduction to Political Theory)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "STA 2023 (Introduction to Statistics 1)",
+              "POS 2041 (American Federal Government)"
+            ],
+            "special_requirements": "Majors must complete 30 credits of political science coursework, plus STA 2023, all with minimum grades of C. Minimum 15 credits of 3000/4000 level major coursework must be completed at UF. [cite: 16 (previous search), 23, 24, 32 (previous search), 44 (previous search)]",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Students are encouraged to serve in political internships and participate in overseas studies. [cite: 23, 24, 32 (previous search), 44 (previous search)]",
+            "direct_admit_only": false
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 2045/L (General Chemistry 1 & Lab)",
+              "CHM 2046/L (General Chemistry 2 & Lab)",
+              "MAC 2311 (Analytic Geometry and Calculus 1)",
+              "MAC 2312 (Analytic Geometry and Calculus 2)",
+              "PHY 2053/L (Physics 1 & Lab)",
+              "PHY 2054/L (Physics 2 & Lab)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHM 2045 (General Chemistry 1)",
+              "CHM 2046 (General Chemistry 2)",
+              "CHM 2210 (Organic Chemistry 1)",
+              "CHM 2211 (Organic Chemistry 2)"
+            ],
+            "special_requirements": "All required courses must be completed within two attempts with minimum grades of C. Achieving at least 50% on the Diagnostic of Undergraduate Chemistry Knowledge (DUCK) exam. Minimum C in specified laboratory courses.",
+            "admissions_pathway": "Pre-Major / Internal Transfer",
+            "internal_transfer_allowed": true,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Strong background in high school chemistry and mathematics (through MAC 1147) is presumed. Chemistry placement exam is available. Combined BS/MS degree is available (Chemistry and Master of Arts in Arts in Medicine). [cite: 16 (previous search), 25, 31, 33]",
+            "direct_admit_only": false
+          }
+        ]
+      },
+      {
+        "name": "College of Medicine",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 5.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Extremely competitive, primarily a graduate professional program. Requires exceptional academic record in sciences and clinical experience.",
+        "housing_profile": "Primarily off-campus or graduate/family housing. Undergraduate pre-med students would reside in general university housing, potentially pre-health LLCs.",
+        "student_archetype": "Compassionate, highly intelligent, resilient individuals dedicated to patient care and medical advancement.",
+        "majors": []
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 18.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly selective upper-division program. Requires strong science background, excellent GPA, and demonstrated commitment to healthcare.",
+        "housing_profile": "Suite-style or modern dorms with a focus on a supportive academic environment. Pre-health Living Learning Communities are relevant.",
+        "student_archetype": "Empathetic, meticulous, resilient caregivers committed to health and well-being.",
+        "majors": []
+      },
+      {
+        "name": "College of Pharmacy",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 15.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Competitive, typically a graduate-level professional program. Strong science foundation, particularly in chemistry and biology, is essential.",
+        "housing_profile": "Primarily off-campus or graduate/family housing. Undergraduate pre-pharmacy students would be in general university housing.",
+        "student_archetype": "Analytical, precise, dedicated to pharmacology and patient medication management.",
+        "majors": []
+      },
+      {
+        "name": "College of Public Health and Health Professions",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 25.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Interest in population health, disease prevention, and various health professions. Strong analytical and communication skills are valuable.",
+        "housing_profile": "Traditional and suite-style dorms, with a focus on fostering a supportive community for health-related studies. Pre-health LLCs are beneficial.",
+        "student_archetype": "Community-minded, analytical, focused on improving health outcomes for diverse populations.",
+        "majors": []
+      },
+      {
+        "name": "College of Veterinary Medicine",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 8.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Extremely competitive, primarily a graduate professional program. Requires extensive animal science background and veterinary experience.",
+        "housing_profile": "Primarily off-campus or graduate/family housing. Undergraduate pre-vet students would reside in general university housing.",
+        "student_archetype": "Passionate about animal welfare, resilient, scientifically rigorous, and dedicated to veterinary practice.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Agricultural Curriculum and Development Minor",
+      "Anthropology Minor",
+      "Business Administration Minor",
+      "Computer and Information Science and Engineering Minor",
+      "Digital Arts and Sciences Minor",
+      "Leadership Minor",
+      "Mass Communication Minor",
+      "Sociology Minor",
+      "Advanced Manufacturing Certificate (Graduate)",
+      "Financial Technology (FinTech) Certificate (Graduate)",
+      "Machine Learning Certificate (Graduate)",
+      "Social Media Certificate (Graduate)"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Non-binding; materials deadline November 8, 2025. Decision notification January 23, 2026."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "Materials deadline January 22, 2026. Decision notification March 13, 2026. Applications after this deadline may be reviewed on a 'space available' basis."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "One required essay: 'Please provide more details on your most meaningful commitment outside of the classroom while in high school and explain why it was meaningful.' (250 words). An optional essay is available for additional information or extenuating circumstances (250 words)."
+      },
+      {
+        "target_program": "Honors Program",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Prompt about navigating AI's evolving landscape during college, focusing on critical thinking, creativity, and human connection, and how the Honors Program will impact learning and interactions (400 words maximum)."
+      },
+      {
+        "target_program": "Innovation Academy",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Prompt to discuss interest in becoming a UF Innovation Academy student and how it will influence professional career path."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Audition & Interview",
+        "deadline": "2025-11-08 (EA materials), 2026-01-22 (RD materials)",
+        "details": "Audition required for all music majors and performance minors. Bachelor of Science in Music Business & Entrepreneurship applicants also require a portfolio. An interview with a music faculty member and a letter of recommendation from a former music teacher are also considered. Prescreening recordings may be required for specific programs (e.g., Music Theatre, Piano Performance) with a December 1 deadline."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Secondary School Academic Performance (weighted GPA, strength of curriculum, academic progression)",
+        "Standardized Test Scores (SAT/ACT/CLT)",
+        "Extracurricular Activities",
+        "Quality of Admission Essay",
+        "Personal Background and Experiences"
+      ],
+      "secondary_factors": [],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Holistic review process evaluating academic and nonacademic criteria, considering student's success potential within their distinct opportunities and challenges. Seeks students who show potential and desire to succeed in a rigorous academic environment and will be future community of learners, leaders, and thinkers. Machen Florida Opportunity Scholars program supports first-generation, low-income students."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive colleges within the university if not set on highly competitive majors like CS/Engineering, such as the College of Agricultural and Life Sciences or the College of Health and Human Performance at UF.",
+      "Consider applying undeclared, especially for colleges like Letters and Science, as UF generally does not consider the chosen major for freshman admissions and allows flexibility to declare later.",
+      "Research major-specific admission requirements if applying as a transfer student, as competitiveness can vary by major for transfers.",
+      "Prioritize majors that align with your genuine interests and career aspirations, as passion can contribute to success and enjoyment, rather than solely focusing on perceived 'easy' majors.",
+      "Utilize academic advisors, career coaches, and online resources (like ONE.UF) to explore different majors and understand course requirements before making a final decision."
+    ],
+    "college_ranking_tactics": [
+      "Evaluate colleges based on their specific program strengths in your areas of interest, rather than relying solely on overall university rankings.",
+      "Consider the cost of attendance and potential return on investment, as well as the affordability of a degree.",
+      "Assess the quality of student life and campus environment, including factors like community, safety, and convenience, which housing often influences.",
+      "Investigate the flexibility of general education (GE) requirements and how incoming credits (AP, IB, dual enrollment) apply, as this can impact your academic path and time to graduation.",
+      "Look into the student-to-faculty ratio and average class sizes, as these can affect the learning environment and individual attention received."
+    ],
+    "alternate_major_strategy": "If applying to a university where major choice can influence admission (unlike UF for most freshman applications), list a backup major in a different, less competitive college or department that still aligns with broader interests. For example, if applying to Computer Science in Engineering, list a related but less impacted major like Data Science in the College of Liberal Arts and Sciences, or Cognitive Science if available, ensuring the alternate major's prerequisites are also met where applicable."
+  },
+  "financials": {
+    "tuition_model": "Tuition Stability Plan",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 6380,
+        "total_coa": 21420,
+        "housing": 12120
+      },
+      "out_of_state": {
+        "tuition": 28658,
+        "total_coa": 43698,
+        "supplemental_tuition": 22278
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 11590,
+    "average_merit_aid": 3210,
+    "percent_receiving_aid": 83.0,
+    "scholarships": [
+      {
+        "name": "Presidential Platinum Scholarship",
+        "type": "Merit",
+        "amount": "$10,000 per year (total $40,000 over 4 years)",
+        "deadline": "Automatic consideration with freshman admission application (priority deadline: November 1)",
+        "benefits": "Financial award for high-achieving students",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Benacquisto Scholarship Program",
+        "type": "Merit / Full Ride",
+        "amount": "Covers remaining institutionally posted cost of attendance (minus Bright Futures and National Merit Scholarship)",
+        "deadline": "Indicate UF as first-choice institution with National Merit Corporation by May 31",
+        "benefits": "Full cost of attendance (for in-state National Merit Finalists)",
+        "application_method": "National Merit Corporation (designate UF as first choice)"
+      },
+      {
+        "name": "Gator Nation Scholarship",
+        "type": "Merit (Out-of-State Tuition Waiver)",
+        "amount": "Up to $20,000 per year (total $80,000 over 4 years)",
+        "deadline": "Automatic consideration with freshman admission application (priority deadline: November 1)",
+        "benefits": "Reduces out-of-state tuition for selected students",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Florida Bright Futures Scholarship (Academic Scholars)",
+        "type": "Merit (State-funded)",
+        "amount": "Covers 100% of tuition and fees at Florida public universities",
+        "deadline": "Varies by state program guidelines (typically during high school senior year)",
+        "benefits": "Full tuition and fees, based on high school academic achievement, test scores, and community service",
+        "application_method": "State of Florida application (e.g., via Florida Department of Education)"
+      },
+      {
+        "name": "John V. Lombardi Scholarship",
+        "type": "Merit / Full Ride",
+        "amount": "Four-year scholarship with four fully funded summer enrichment experiences (stipend amount varies)",
+        "deadline": "Invitation to apply after admission to the Honors Program (typically Early Action applicants)",
+        "benefits": "Academic funding, study abroad, domestic leadership retreat, mentorship",
+        "application_method": "Separate Application (by invitation)"
+      },
+      {
+        "name": "Machen Florida Opportunity Scholars Program (MFOS)",
+        "type": "Need-Based / Full Ride",
+        "amount": "$6,500 in funding plus comprehensive support (can be a full ride)",
+        "deadline": "FAFSA deadline (early submission recommended for maximum aid)",
+        "benefits": "Financial aid, mentorship, and support services for first-generation, low-income students",
+        "application_method": "FAFSA & Automatic Consideration"
+      },
+      {
+        "name": "Departmental Scholarships",
+        "type": "Merit / Need-Based",
+        "amount": "Varies by department and specific award (e.g., $500 - $1,500 for specific Industrial & Systems Engineering awards)",
+        "deadline": "Varies by department and specific scholarship (e.g., some December deadlines)",
+        "benefits": "Support for students in specific majors or colleges, often with unique criteria",
+        "application_method": "Check with individual academic departments or colleges"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for most exams",
+      "exceptions": [
+        "Credit for some exams (L000/0301 course numbers) may apply only to minimum degree credits and not to General Education, Writing, or the major. Specific score requirements exist for some courses like Music Theory."
+      ],
+      "usage": "Can satisfy General Education requirements, foreign language proficiency, and some course equivalencies"
+    },
+    "ib_policy": {
+      "general_rule": "Scores of 4 or higher on both Higher-Level and Standard-Level examinations grant credit (effective Summer B 2006 and after)",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transferology"
+      ],
+      "restrictions": "60 unit cap for community college credits; a maximum of 45 credits from all test credit types (AP, IB, CLEP, etc.); courses must be similar in nature and content to UF courses; remedial, technical, vocational, or doctrinal courses are not transferable"
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework, with admitted students typically having a recalculated GPA between 4.5-4.7 for all admitted students and 4.7-4.8 for Honors students.",
+      "Demonstrated passion in 1-2 areas rather than scattered activities, as extracurriculars and essays are considered as important as GPA and test scores in the holistic review process.",
+      "Authentic essays that show self-reflection and provide context on meaningful commitments outside the classroom."
+    ],
+    "common_activities": [
+      "Leadership in school clubs, such as creating a Speech and Debate Club.",
+      "Volunteering and community service.",
+      "Work experience, as part of a meaningful commitment outside the classroom.",
+      "Research experience, as seen in an essay about biomedical engineering.",
+      "Varsity athletics (implied by general competitive admissions and holistic review)."
+    ],
+    "essay_tips": [
+      "Be specific and detailed about your most meaningful commitment outside of the classroom, explaining what it was, what it entailed, and why it was important to you.",
+      "Show, don't tell; instead of just stating what you did, describe how you did it and the impact it had.",
+      "Consider starting your essay with a 'tension' or a problem to lead into why your commitment was meaningful.",
+      "Avoid writing about an activity you've already heavily detailed elsewhere in your application; use the essay to show a different side of yourself.",
+      "Don't forget to connect your story to a meaningful outcome."
+    ],
+    "red_flags": [
+      "Grade decline senior year, as all offers of admission are conditional and expect consistent performance.",
+      "Generic essays that could apply anywhere and do not specifically address why the University of Florida or the meaning of the activity.",
+      "Solely relying on high GPA and test scores without strong extracurriculars and essays, as UF conducts a holistic review.",
+      "Applying to the PaCE program with the intention of immediately transferring out, as it is difficult and uncommon to change the program for which you were admitted."
+    ],
+    "insights": [
+      "The University of Florida's admissions process is very selective, with an acceptance rate of 24%.",
+      "UF places heavy emphasis on recalculated GPA, which is based solely on academic courses, with admitted applicants typically having a GPA of 3.7 and above.",
+      "Standardized test scores (SAT 1300-1480 or ACT 28-33 for admitted students) are critical, but UF uses a holistic review process that evaluates much more than just scores.",
+      "UF does not accept letters of recommendation and does not consider demonstrated interest.",
+      "Applying Early Action (by November 1) can maximize your chance of acceptance, with Regular Decision deadline on January 15."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 71588,
+    "employment_rate_2yr": null,
+    "grad_school_rate": null,
+    "top_employers": [
+      "Deloitte",
+      "JPMorgan Chase",
+      "Apple",
+      "Amazon",
+      "PwC",
+      "Raymond James Financial",
+      "The Walt Disney Company"
+    ],
+    "loan_default_rate": 1.5
+  },
+  "student_retention": {
+    "freshman_retention_rate": 97.0,
+    "graduation_rate_4_year": 72.0,
+    "graduation_rate_6_year": 91.0
+  }
+}

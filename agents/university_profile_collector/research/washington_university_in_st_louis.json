@@ -76,13 +76,34 @@
           "legacy_percentage": null,
           "international_percentage": 11.0,
           "geographic_breakdown": [
-            { "region": "Midwest", "percentage": 32.0 },
-            { "region": "Middle States", "percentage": 16.0 },
-            { "region": "West", "percentage": 16.0 },
-            { "region": "South", "percentage": 10.0 },
-            { "region": "Southwest", "percentage": 9.0 },
-            { "region": "New England", "percentage": 5.0 },
-            { "region": "International", "percentage": 13.0 }
+            {
+              "region": "Midwest",
+              "percentage": 32.0
+            },
+            {
+              "region": "Middle States",
+              "percentage": 16.0
+            },
+            {
+              "region": "West",
+              "percentage": 16.0
+            },
+            {
+              "region": "South",
+              "percentage": 10.0
+            },
+            {
+              "region": "Southwest",
+              "percentage": 9.0
+            },
+            {
+              "region": "New England",
+              "percentage": 5.0
+            },
+            {
+              "region": "International",
+              "percentage": 13.0
+            }
           ],
           "gender_breakdown": {
             "men": {
@@ -180,9 +201,27 @@
           "housing_profile": "Primarily housed in the South 40 residential colleges; known for a mix of traditional and modern suites.",
           "student_archetype": "Intellectually curious polymaths and high-achieving pre-professional students",
           "majors": [
-            { "name": "Psychological & Brain Sciences", "degree_type": "B.A.", "is_impacted": false, "admissions_pathway": "Pre-Major", "notes": "Most popular major at WashU." },
-            { "name": "Biology", "degree_type": "B.A.", "is_impacted": false, "admissions_pathway": "Pre-Major", "notes": "Pre-med track standard." },
-            { "name": "Economics", "degree_type": "B.A.", "is_impacted": false, "admissions_pathway": "Pre-Major", "notes": "Strongly mathematical." }
+            {
+              "name": "Psychological & Brain Sciences",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "admissions_pathway": "Pre-Major",
+              "notes": "Most popular major at WashU."
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "admissions_pathway": "Pre-Major",
+              "notes": "Pre-med track standard."
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "admissions_pathway": "Pre-Major",
+              "notes": "Strongly mathematical."
+            }
           ]
         },
         {
@@ -194,8 +233,19 @@
           "housing_profile": "South 40 suites for underclassmen; many juniors and seniors live in the 'Village'.",
           "student_archetype": "Collaborative, data-driven entrepreneurs",
           "majors": [
-            { "name": "Finance", "degree_type": "B.S.B.A.", "is_impacted": true, "admissions_pathway": "Direct Admit", "notes": "Top-ranked undergraduate program." },
-            { "name": "Accounting", "degree_type": "B.S.B.A.", "is_impacted": false, "admissions_pathway": "Direct Admit" }
+            {
+              "name": "Finance",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": true,
+              "admissions_pathway": "Direct Admit",
+              "notes": "Top-ranked undergraduate program."
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "admissions_pathway": "Direct Admit"
+            }
           ]
         },
         {
@@ -207,8 +257,19 @@
           "housing_profile": "Access to specialized makerspaces and collaborative study lounges.",
           "student_archetype": "Ambitious problem-solvers and tech-oriented innovators",
           "majors": [
-            { "name": "Computer Science", "degree_type": "B.S.", "is_impacted": true, "admissions_pathway": "Direct Admit", "notes": "Highly competitive for internal transfer." },
-            { "name": "Mechanical Engineering", "degree_type": "B.S.", "is_impacted": false, "admissions_pathway": "Direct Admit" }
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "admissions_pathway": "Direct Admit",
+              "notes": "Highly competitive for internal transfer."
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "admissions_pathway": "Direct Admit"
+            }
           ]
         }
       ],
@@ -225,20 +286,62 @@
     },
     "application_details": {
       "process": {
-        "platforms": ["Common App", "Coalition App"],
+        "platforms": [
+          "Common App",
+          "Coalition App"
+        ],
         "application_deadlines": [
-          { "plan_type": "Early Decision I", "date": "2024-11-01", "is_binding": true, "notes": "Decision released by mid-December" },
-          { "plan_type": "Early Decision II", "date": "2025-01-02", "is_binding": true, "notes": "Decision released by mid-February" },
-          { "plan_type": "Regular Decision", "date": "2025-01-02", "is_binding": false, "notes": "Decision released by April 1" }
+          {
+            "plan_type": "Early Decision I",
+            "date": "2024-11-01",
+            "is_binding": true,
+            "notes": "Decision released by mid-December"
+          },
+          {
+            "plan_type": "Early Decision II",
+            "date": "2025-01-02",
+            "is_binding": true,
+            "notes": "Decision released by mid-February"
+          },
+          {
+            "plan_type": "Regular Decision",
+            "date": "2025-01-02",
+            "is_binding": false,
+            "notes": "Decision released by April 1"
+          }
         ],
         "supplemental_requirements": [
-          { "target_program": "All", "requirement_type": "Required Essay", "deadline": null, "details": "One 200-word response regarding academic interest and division choice." },
-          { "target_program": "All", "requirement_type": "Optional Essay", "deadline": null, "details": "One 250-word response to one of two prompts." },
-          { "target_program": "All", "requirement_type": "Optional Video", "deadline": "2024-11-10", "details": "90-second optional video to share personal qualities." }
+          {
+            "target_program": "All",
+            "requirement_type": "Required Essay",
+            "deadline": null,
+            "details": "One 200-word response regarding academic interest and division choice."
+          },
+          {
+            "target_program": "All",
+            "requirement_type": "Optional Essay",
+            "deadline": null,
+            "details": "One 250-word response to one of two prompts."
+          },
+          {
+            "target_program": "All",
+            "requirement_type": "Optional Video",
+            "deadline": "2024-11-10",
+            "details": "90-second optional video to share personal qualities."
+          }
         ],
         "holistic_factors": {
-          "primary_factors": ["Academic Rigor", "GPA", "Application Essay", "Recommendations"],
-          "secondary_factors": ["Extracurricular Activities", "Talent/Ability", "Character/Personal Qualities"],
+          "primary_factors": [
+            "Academic Rigor",
+            "GPA",
+            "Application Essay",
+            "Recommendations"
+          ],
+          "secondary_factors": [
+            "Extracurricular Activities",
+            "Talent/Ability",
+            "Character/Personal Qualities"
+          ],
           "essay_importance": "Critical",
           "demonstrated_interest": "Not Considered",
           "interview_policy": "Not Offered",
@@ -293,9 +396,24 @@
       "average_merit_aid": 42700,
       "percent_receiving_aid": 47.0,
       "scholarships": [
-        { "name": "Danforth Scholars Program", "type": "Merit", "amount": "Full or half-tuition plus stipend", "application_method": "Separate Application" },
-        { "name": "John B. Ervin Scholars Program", "type": "Merit", "amount": "Full-tuition plus stipend", "application_method": "Separate Application" },
-        { "name": "WashU Pledge", "type": "Need", "amount": "Full tuition, fees, room, and board", "application_method": "FAFSA and CSS Profile" }
+        {
+          "name": "Danforth Scholars Program",
+          "type": "Merit",
+          "amount": "Full or half-tuition plus stipend",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "John B. Ervin Scholars Program",
+          "type": "Merit",
+          "amount": "Full-tuition plus stipend",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "WashU Pledge",
+          "type": "Need",
+          "amount": "Full tuition, fees, room, and board",
+          "application_method": "FAFSA and CSS Profile"
+        }
       ]
     },
     "credit_policies": {
@@ -309,7 +427,10 @@
         "diploma_bonus": false
       },
       "transfer_articulation": {
-        "tools": ["Internal Departmental Review", "WUachieve"],
+        "tools": [
+          "Internal Departmental Review",
+          "WUachieve"
+        ],
         "restrictions": "60-unit transfer cap for most undergraduate schools"
       }
     },
@@ -318,7 +439,15 @@
         "median_earnings_10yr": 86182,
         "employment_rate_2yr": 94.0,
         "grad_school_rate": 25.0,
-        "top_employers": ["Mastercard", "Capital One", "Boeing", "Epic Systems", "Microsoft", "Amazon", "JPMorgan Chase & Co."],
+        "top_employers": [
+          "Mastercard",
+          "Capital One",
+          "Boeing",
+          "Epic Systems",
+          "Microsoft",
+          "Amazon",
+          "JPMorgan Chase & Co."
+        ],
         "loan_default_rate": 1.5
       },
       "retention_graduation": {
@@ -327,5 +456,6 @@
         "graduation_rate_6_year": 94.0
       }
     }
-  }
+  },
+  "_id": "washington_university_in_st_louis"
 }

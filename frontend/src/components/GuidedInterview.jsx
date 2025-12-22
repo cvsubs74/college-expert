@@ -280,10 +280,10 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
             <div className="p-4 border-b border-gray-100 bg-gradient-to-r from-purple-50 to-indigo-50">
                 <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
-                        <SparklesIcon className="h-5 w-5 text-purple-600" />
+                        <SparklesIcon className="h-5 w-5 text-[#1A4D2E]" />
                         <h2 className="text-sm font-semibold text-gray-900">Profile Assessment</h2>
                     </div>
-                    <span className="text-xs font-medium text-purple-700 bg-purple-100 px-2 py-1 rounded-full">
+                    <span className="text-xs font-medium text-[#1A4D2E] bg-[#D6E8D5] px-2 py-1 rounded-full">
                         {currentQuestionNum} / {totalQuestions}
                     </span>
                 </div>
@@ -295,7 +295,7 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                             key={section.id}
                             onClick={() => jumpToSection(idx)}
                             className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${idx === sectionIndex
-                                    ? 'bg-purple-600 text-white'
+                                    ? 'bg-[#1A4D2E] text-white'
                                     : idx < sectionIndex
                                         ? 'bg-green-100 text-green-700'
                                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -379,7 +379,7 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                                 <button
                                     onClick={addArrayItem}
                                     disabled={saving || !currentSection.itemFields.filter(f => f.required).every(f => currentArrayItem[f.key])}
-                                    className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {saving ? <ArrowPathIcon className="h-4 w-4 animate-spin" /> : <PlusIcon className="h-4 w-4" />}
                                     Add {currentSection.label.replace(/s$/, '')}
@@ -389,7 +389,7 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                     ) : (
                         // Scalar Question
                         <div className="text-center">
-                            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700 mb-3">
+                            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#D6E8D5] text-[#1A4D2E] mb-3">
                                 {currentSection.questions[questionIndex].label}
                                 {!currentSection.questions[questionIndex].required && <span className="ml-1 opacity-70">(Optional)</span>}
                             </span>
@@ -406,7 +406,7 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                                                 key={opt}
                                                 onClick={() => handleAnswerChange(currentSection.questions[questionIndex].key, opt)}
                                                 className={`p-3 rounded-xl border-2 text-sm font-medium transition-all ${isSelected
-                                                        ? 'border-purple-500 bg-purple-100 text-purple-700'
+                                                        ? 'border-purple-500 bg-[#D6E8D5] text-[#1A4D2E]'
                                                         : 'border-gray-200 hover:border-purple-300 text-gray-700'
                                                     }`}
                                             >
@@ -451,7 +451,7 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                     <button
                         onClick={handleNext}
                         disabled={saving}
-                        className="flex items-center gap-1 px-4 py-2 bg-purple-600 text-white rounded-xl text-sm font-medium hover:bg-purple-700 disabled:opacity-50"
+                        className="flex items-center gap-1 px-4 py-2 bg-[#1A4D2E] text-white rounded-xl text-sm font-medium hover:bg-purple-700 disabled:opacity-50"
                     >
                         {saving ? (
                             <ArrowPathIcon className="h-4 w-4 animate-spin" />

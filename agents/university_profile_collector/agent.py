@@ -41,7 +41,7 @@ MODEL_NAME = "gemini-2.5-flash"
 
 # 1. Sequential Research Phase (for timing visibility)
 # Changed from ParallelAgent to SequentialAgent to track timing per sub-agent
-research_phase = SequentialAgent(
+research_phase = ParallelAgent(
     name="ResearchPhase",
     sub_agents=[
         strategy_agent,              # LLM + google_search: Strategy/vibe

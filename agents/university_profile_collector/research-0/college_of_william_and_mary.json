@@ -1,0 +1,934 @@
+{
+  "_id": "college_of_william_and_mary",
+  "metadata": {
+    "official_name": "College of William & Mary",
+    "location": {
+      "city": "Williamsburg",
+      "state": "VA",
+      "type": "Public"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "The College of William & Mary is a premier public research university, renowned for its rigorous academics, vibrant community, and commitment to undergraduate research. It is recognized as one of the original 'Public Ivies' and emphasizes a distinctive, personal educational experience.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Most selective, considering high-achieving students with a strong academic background, as evidenced by a high average GPA and a competitive acceptance rate.",
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Admission is considered 'most selective' with a 34.0% acceptance rate for Fall 2024 and an average matriculant GPA of 4.4.",
+        "implication": "Prospective students need a strong academic record and well-rounded profile to be competitive. The university's focus on a 'personal educational experience' suggests a holistic review beyond just numbers."
+      },
+      {
+        "category": "Rankings Volatility",
+        "insight": "The university's U.S. News National University ranking dropped from 41 to 53 in 2023-24 due to methodological changes, but its public university rankings and undergraduate teaching rankings remain strong in later years.",
+        "implication": "While overall national rankings may fluctuate, William & Mary consistently maintains a strong position among public universities and is highly regarded for its undergraduate teaching. Applicants should consider specific program and public institution rankings relevant to their interests."
+      },
+      {
+        "category": "Student Experience",
+        "insight": "William & Mary is noted for a tight-knit community, robust student life with over 475 clubs and organizations, and strong faculty-student interaction, including professors taking care of student pets.",
+        "implication": "Students seeking a close-knit academic community with ample opportunities for engagement outside of a large party scene will thrive. The emphasis on community and faculty mentorship suggests a supportive and enriching environment."
+      },
+      {
+        "category": "Research Focus",
+        "insight": "The university is an 'R1' research institution with high undergraduate involvement; 85% of undergraduates participate in mentored research with faculty by their senior year.",
+        "implication": "Students interested in hands-on research and direct collaboration with faculty will find extensive opportunities. This strong research culture prepares students with valuable skills for both graduate school and the workforce."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "William & Mary offers a varied and engaging social environment characterized by a tight-knit community. Students are diverse in their passions\u2014athletes, artists, activists, researchers\u2014and are highly motivated and open to forming friendships. While the party scene may not be as large or energetic as bigger universities, Greek life and numerous clubs (over 475) provide consistent social opportunities every weekend. The focus is on building strong relationships and engaging in a wide array of activities on and off campus, including beloved traditions.",
+      "transportation_impact": "Transportation services significantly enhance campus life by providing convenient mobility within Williamsburg and to surrounding areas. The Williamsburg Area Transit Authority (WATA) bus and trolley systems, in partnership with W&M, offer free rides to students, faculty, and staff with a W&M ID, connecting campus to local attractions and shopping centers. This robust public transport system, along with options for airport shuttles and ride-sharing, reduces the reliance on personal cars for students, contributing to a more sustainable and accessible campus experience.",
+      "research_impact": "Research is a cornerstone of the William & Mary experience, integrated into both undergraduate and graduate curricula from day one. The university's designation as an 'R1' research institution underscores its commitment to high-level, cutting-edge research. This culture fosters significant collaboration between professors, post-docs, graduate students, and undergraduates, with an estimated 85% of undergraduates participating in faculty-mentored research by senior year. These opportunities provide students with invaluable skills like leadership, teamwork, problem-solving, and critical thinking, directly preparing them for careers and advanced studies."
+    },
+    "us_news_rank": 51
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 37.0,
+      "in_state_acceptance_rate": 37.0,
+      "out_of_state_acceptance_rate": 37.0,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 50.1,
+      "admits_class_size": 6136,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 1478,
+          "admits": 735,
+          "acceptance_rate": 49.7,
+          "class_fill_percentage": 44.8
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 16897,
+        "admits_total": 6136,
+        "enrolled_total": 1642,
+        "acceptance_rate_overall": 36.3,
+        "acceptance_rate_in_state": 37.0,
+        "acceptance_rate_out_of_state": 37.0,
+        "yield_rate": 26.8,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed yet for this cycle. Acceptance rate is calculated as (admits_total / applications_total) * 100. Yield rate is calculated as (enrolled_total / admits_total) * 100. William & Mary Law School states its waitlist is not ranked, and the undergraduate admissions page aligns with an unranked, holistic review."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 17798,
+        "admits_total": 6064,
+        "enrolled_total": 1614,
+        "acceptance_rate_overall": 34.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 26.6,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 4232,
+          "accepted_spots": 2063,
+          "admitted_from_waitlist": 207,
+          "waitlist_admit_rate": 10.03,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Yield rate is calculated as (enrolled_total / admits_total) * 100. Waitlist admit rate is calculated as (admitted_from_waitlist / accepted_spots) * 100. William & Mary Law School states its waitlist is not ranked, and the undergraduate admissions page aligns with an unranked, holistic review."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 17548,
+        "admits_total": 5741,
+        "enrolled_total": 1650,
+        "acceptance_rate_overall": 32.7,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 28.7,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 3833,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 136,
+          "waitlist_admit_rate": 3.5,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Yield rate is calculated as (enrolled_total / admits_total) * 100. Accepted waitlist spots not explicitly available; waitlist_admit_rate calculated as (admitted_from_waitlist / offered_spots) * 100. William & Mary Law School states its waitlist is not ranked, and the undergraduate admissions page aligns with an unranked, holistic review."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 18087,
+        "admits_total": 5969,
+        "enrolled_total": 1643,
+        "acceptance_rate_overall": 33.0,
+        "acceptance_rate_in_state": 42.0,
+        "acceptance_rate_out_of_state": 28.0,
+        "yield_rate": 27.5,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 4004,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 4,
+          "waitlist_admit_rate": 0.1,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admits total calculated as (applications_total * acceptance_rate_overall). Yield rate is calculated as (enrolled_total / admits_total) * 100. Accepted waitlist spots not explicitly available; waitlist_admit_rate calculated as (admitted_from_waitlist / offered_spots) * 100. William & Mary Law School states its waitlist is not ranked, and the undergraduate admissions page aligns with an unranked, holistic review."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 17475,
+        "admits_total": 6386,
+        "enrolled_total": 1682,
+        "acceptance_rate_overall": 37.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 26.3,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 4720,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 38,
+          "waitlist_admit_rate": 0.8,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate overall is cited as 37%, which is approximately (6386 / 17475) * 100 = 36.54%. Yield rate is calculated as (enrolled_total / admits_total) * 100. Accepted waitlist spots not explicitly available; waitlist_admit_rate calculated as (admitted_from_waitlist / offered_spots) * 100. William & Mary Law School states its waitlist is not ranked, and the undergraduate admissions page aligns with an unranked, holistic review."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.16-4.51",
+        "unweighted_middle_50": null,
+        "average_weighted": 4.4,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "Middle 50% GPA is for enrolled Class of 2029 on a 4.0 weighted scale. 79% of enrolled students ranked in the top 10% of their high school class. Most admitted students have nearly straight A's in honors/AP courses."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1390-1520",
+        "sat_reading_middle_50": "710-760",
+        "sat_math_middle_50": "680-760",
+        "act_composite_middle_50": "32-34",
+        "submission_rate": 60.0,
+        "policy_note": "Test optional. Students can decide whether or not to include SAT/ACT scores as part of their application review. For the Class of 2029, 40% applied test-optional."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": 8.0,
+        "international_percentage": 7.0,
+        "geographic_breakdown": [
+          {
+            "region": "Virginia",
+            "percentage": 60.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 33.0
+          },
+          {
+            "region": "International",
+            "percentage": 7.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "Approximately 41.2% of enrolled first-time, first-year students are men."
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "Approximately 58.8% of enrolled first-time, first-year students are women."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 60.6,
+          "black_african_american": 5.42,
+          "hispanic_latino": 9.5,
+          "asian": 11.82,
+          "native_american_alaskan": 0.06,
+          "pacific_islander": 0.06,
+          "two_or_more_races": 7.0,
+          "unknown": 1.58,
+          "non_resident_alien": 3.96
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools",
+    "colleges": [
+      {
+        "name": "College of Arts & Sciences",
+        "admissions_model": "University Admit (Students start here, then declare major)",
+        "acceptance_rate_estimate": 37.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Demonstrate strong academic ability across a broad liberal arts curriculum, emphasize intellectual curiosity and diverse extracurricular engagement. A high GPA in rigorous courses is crucial.",
+        "housing_profile": "Diverse options from traditional doubles in freshman dorms (some with AC like Lemon and Camm) to suite-style or apartment living for upperclassmen. Focus on community building within residential areas.",
+        "student_archetype": "Intellectually curious, academically driven, engaged in a wide range of interests, community-oriented, not seeking a large party scene.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSCI 141 or 140",
+              "CSCI 241",
+              "CSCI 243 or MATH 214",
+              "MATH 111 or 131",
+              "MATH 112 or 132",
+              "MATH 211"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSCI 241 Data Structures",
+              "CSCI 243 Discrete Structures of Computer Science"
+            ],
+            "special_requirements": "Students are encouraged to complete core CS and Math prerequisites by end of sophomore year.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Offers concentrations in General, Artificial Intelligence/Machine Learning, and Cybersecurity."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 103",
+              "CHEM 206",
+              "MATH 131 or 111",
+              "MATH 132 or 112 or BIOL 327 or BIOL 325"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 203 Introduction to Molecules, Cells, Development",
+              "BIOL 204 Introduction to Organisms, Ecology, Evolution",
+              "CHEM 103 General Chemistry I",
+              "CHEM 206 Organic Chemistry I"
+            ],
+            "special_requirements": "Minimum 37 credit hours in biology courses. Strongly recommended two semesters of physics and two additional semesters of chemistry, especially for those planning advanced degrees."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 101 Microeconomics",
+              "ECON 102 Macroeconomics",
+              "MATH 111 or 131"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECON 303 Intermediate Microeconomic Theory",
+              "ECON 304 Intermediate Macroeconomic Theory"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYC 201 Introduction to Psychology as a Natural Science",
+              "PSYC 202 Introduction to Psychology as a Social Science"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSYC 301 Elementary Statistics",
+              "PSYC 302 Experimental Methods"
+            ],
+            "special_requirements": "B.S. degree requires three additional courses from Applied Science, Biology, Chemistry, Computer Science, Data Science, Geology, Health Sciences, Mathematics, or Physics."
+          },
+          {
+            "name": "Government",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "GOVT 201 or 151W",
+              "GOVT 203 or 153W",
+              "GOVT 204"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "GOVT 301 Political Science Methods"
+            ],
+            "special_requirements": "Strongly advised to complete GOVT 201, 203, 204, and 301 before junior year."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "HIST 121",
+              "HIST 122",
+              "HIST 111 or 112"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "HIST 301 The Historian's Craft"
+            ],
+            "special_requirements": "Completion of at least one HIST 490C/491C 'Capstone Seminar' with a C or better. Foreign languages recommended for graduate study."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHYS 101 or 101H",
+              "PHYS 102 or 102H",
+              "MATH 111",
+              "MATH 112"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PHYS 201 Modern Physics",
+              "PHYS 208 Classical Mechanics of Particles and Waves I",
+              "MATH 212 Introduction to Multivariable Calculus"
+            ],
+            "special_requirements": "Recommended to take General Physics and Calculus in the first year. Offers Standard, Pre-Med, and Engineering Physics & Applied Design concentrations."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGL 210 Introduction to Literary and Cultural Studies"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 103",
+              "CHEM 206",
+              "MATH 111",
+              "MATH 112"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 206 Organic Chemistry I",
+              "CHEM 207 Organic Chemistry II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 111",
+              "MATH 112"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 211 Linear Algebra",
+              "MATH 212 Introduction to Multivariable Calculus"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Offers concentrations in Standard, Applied, and Pre-College Teaching."
+          }
+        ]
+      },
+      {
+        "name": "Raymond A. Mason School of Business",
+        "admissions_model": "Pre-Major (Competitive application after admission to W&M and junior standing)",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Excel in prerequisite courses (Accounting, Micro/Macroeconomics, Calculus, Statistics) during freshman and sophomore years. Demonstrate leadership and analytical skills. Admission is competitive and not guaranteed after initial university acceptance.",
+        "housing_profile": "Students reside in general university housing, with upperclassmen often in newer dorms or apartments with AC, some offering more independent living. Proximity to Miller Hall (Business School building) might be a consideration for some.",
+        "student_archetype": "Ambitious, analytical, leadership-oriented, strong academic performers in quantitative subjects, keen on real-world application and networking.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BUAD 203 Principles of Accounting",
+              "ECON 101 Introductory Microeconomics",
+              "ECON 102 Introductory Macroeconomics",
+              "MATH 108 or 111 or 112 or 131 or 132 Introductory Calculus",
+              "BUAD 231 or ECON 307 or PSYC 301 or SOCL 353 or MATH 351 or KINE 394 Introductory Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BUAD 203 Principles of Accounting",
+              "BUAD 301 Financial Reporting & Analysis"
+            ],
+            "special_requirements": "Requires separate application to the Mason School of Business, typically in sophomore year. Admission is competitive. Must achieve junior standing (54 credits). 220 students admitted annually (110 Fall, 110 Spring).",
+            "admissions_pathway": "Internal Application",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "Competitive (3.5 suggested)",
+            "notes": "A 3.5 GPA is often cited as making an applicant most competitive for admission to the Business School. "
+          },
+          {
+            "name": "Business Analytics",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BUAD 203 Principles of Accounting",
+              "ECON 101 Introductory Microeconomics",
+              "ECON 102 Introductory Macroeconomics",
+              "MATH 108 or 111 or 112 or 131 or 132 Introductory Calculus",
+              "BUAD 231 or ECON 307 or PSYC 301 or SOCL 353 or MATH 351 or KINE 394 Introductory Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BUAD 203 Principles of Accounting",
+              "BUAD 350 Introduction to Business Analytics"
+            ],
+            "special_requirements": "Requires separate application to the Mason School of Business, typically in sophomore year. Admission is competitive. Must achieve junior standing (54 credits).",
+            "admissions_pathway": "Internal Application",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "Competitive (3.5 suggested)",
+            "notes": "A 3.5 GPA is often cited as making an applicant most competitive for admission to the Business School. Offers emphasis in Data Science or Supply Chain."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BUAD 203 Principles of Accounting",
+              "ECON 101 Introductory Microeconomics",
+              "ECON 102 Introductory Macroeconomics",
+              "MATH 108 or 111 or 112 or 131 or 132 Introductory Calculus",
+              "BUAD 231 or ECON 307 or PSYC 301 or SOCL 353 or MATH 351 or KINE 394 Introductory Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BUAD 203 Principles of Accounting",
+              "BUAD 323 Financial Management"
+            ],
+            "special_requirements": "Requires separate application to the Mason School of Business, typically in sophomore year. Admission is competitive. Must achieve junior standing (54 credits).",
+            "admissions_pathway": "Internal Application",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "Competitive (3.5 suggested)",
+            "notes": "A 3.5 GPA is often cited as making an applicant most competitive for admission to the Business School."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BUAD 203 Principles of Accounting",
+              "ECON 101 Introductory Microeconomics",
+              "ECON 102 Introductory Macroeconomics",
+              "MATH 108 or 111 or 112 or 131 or 132 Introductory Calculus",
+              "BUAD 231 or ECON 307 or PSYC 301 or SOCL 353 or MATH 351 or KINE 394 Introductory Statistics"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BUAD 203 Principles of Accounting",
+              "BUAD 311 Principles of Marketing"
+            ],
+            "special_requirements": "Requires separate application to the Mason School of Business, typically in sophomore year. Admission is competitive. Must achieve junior standing (54 credits).",
+            "admissions_pathway": "Internal Application",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "Competitive (3.5 suggested)",
+            "notes": "A 3.5 GPA is often cited as making an applicant most competitive for admission to the Business School."
+          }
+        ]
+      },
+      {
+        "name": "William & Mary School of Computing, Data Sciences & Physics",
+        "admissions_model": "Pre-Major (Admission in second year after meeting minimum criteria)",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Demonstrate strong aptitude and interest in STEM fields, particularly computing, data sciences, and physics. Excel in relevant foundational courses during the first year. Meeting minimum criteria is essential for second-year admission to programs within this school.",
+        "housing_profile": "General university housing; students often prioritize proximity to academic buildings such as Small Hall (for physics) or other science facilities. Access to campus-wide amenities and study spaces is key.",
+        "student_archetype": "Problem-solvers, innovative, research-oriented, technologically adept, strong in quantitative reasoning, collaborative.",
+        "majors": []
+      },
+      {
+        "name": "Batten School of Coastal & Marine Sciences at VIMS",
+        "admissions_model": "Pre-Major (Competitive application during sophomore year)",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Show a strong interest and foundational coursework in marine and environmental sciences. Apply competitively during the sophomore year for junior year entry, often involving an immersive semester at the VIMS campus.",
+        "housing_profile": "General university housing in Williamsburg, with transportation provided for the immersive semester at the VIMS campus in Gloucester Point. Housing experience is typical of W&M, with various dorm types.",
+        "student_archetype": "Environmentally conscious, scientific, research-driven, interested in interdisciplinary study of marine ecosystems, hands-on learners.",
+        "majors": []
+      },
+      {
+        "name": "William & Mary Law School",
+        "admissions_model": "Graduate Only",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "N/A (Graduate program)",
+        "housing_profile": "N/A (Primarily graduate housing or off-campus for graduate students)",
+        "student_archetype": "N/A (Graduate program)",
+        "majors": []
+      },
+      {
+        "name": "William & Mary School of Education",
+        "admissions_model": "Primarily Graduate (Undergraduate minors available)",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Undergraduate students interested in education can pursue minors. Graduate admissions focus on academic record, experience, and commitment to the field of education.",
+        "housing_profile": "N/A (Primarily graduate housing or off-campus for graduate students; undergraduates reside in general university housing)",
+        "student_archetype": "N/A (Primarily graduate program; undergraduates interested in teaching, counseling, or educational policy)",
+        "majors": [
+          {
+            "name": "Elementary Education",
+            "degree_type": "B.A.Ed.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "EDUC 301 Educational Psychology",
+              "EDUC 310 Social, Philosophical, Cultural & Historical Foundations of American Education"
+            ],
+            "special_requirements": "Requires application to the School of Education.",
+            "admissions_pathway": "Internal Application",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Optional specializations in ESL/Bilingual and Special Education."
+          },
+          {
+            "name": "Secondary Education",
+            "degree_type": "Second Major",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "EDUC 301 Educational Psychology",
+              "EDUC 310 Social, Philosophical, Cultural & Historical Foundations of American Education"
+            ],
+            "special_requirements": "Offered as a second major to become a teacher in English, Math, Science, or Social Studies for grades 6-12. Requires application to the School of Education.",
+            "admissions_pathway": "Internal Application",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Designed for students adding an education major to teach specific subjects in middle and high school."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Africana Studies Minor",
+      "American Studies Minor",
+      "Anthropology Minor",
+      "Applied Science Minor",
+      "Arabic Language & Literature Minor",
+      "Art & Art History Minor",
+      "Artificial Intelligence Minor",
+      "Biochemistry Minor",
+      "Biology Minor",
+      "Business \u2014 Accounting Minor",
+      "Business \u2014 Business Analytics Minor",
+      "Business \u2014 Finance Minor",
+      "Business \u2014 Global Business Minor",
+      "Business \u2014 Interdisciplinary Innovation & Entrepreneurship Minor",
+      "Business \u2014 Management & Organizational Leadership Minor",
+      "Business \u2014 Marketing Minor",
+      "Business \u2014 Supply Chain Analytics Minor",
+      "Chemistry Minor",
+      "Chinese Studies Minor",
+      "Classical Studies Minor",
+      "Coastal & Marine Sciences Minor",
+      "Computational & Applied Mathematics & Statistics (Mathematical Biology) Minor",
+      "Computer Science Minor",
+      "Creative Writing Minor",
+      "Dance Minor",
+      "Data Science Minor",
+      "East Asian Studies Minor",
+      "Economics Minor",
+      "Educational Studies Minor",
+      "English Minor",
+      "Environment & Sustainability Minor",
+      "European Studies Minor",
+      "Film & Media Studies Minor",
+      "French & Francophone Studies Minor",
+      "Gender, Sexuality & Women's Studies Minor",
+      "Geology Minor",
+      "German Studies Minor",
+      "Global Studies Minor",
+      "Government Minor",
+      "Hispanic Studies Minor",
+      "History Minor",
+      "Human Health & Physiology Minor",
+      "Integrative Conservation Minor",
+      "International Relations Minor",
+      "Japanese Studies Minor",
+      "Judaic Studies Minor",
+      "Kinesiology Minor",
+      "Linguistics Minor",
+      "Mathematics Minor",
+      "Medieval & Renaissance Studies Minor",
+      "Music Minor",
+      "Native American Studies Minor",
+      "Neuroscience Minor",
+      "Philosophy Minor",
+      "Physics Minor",
+      "Psychology Minor",
+      "Public Health Minor",
+      "Public Policy Minor",
+      "Religious Studies Minor",
+      "Russian & Post-Soviet Studies Minor",
+      "Sociology Minor",
+      "Theatre Minor",
+      "Undergraduate Film Studies Minor",
+      "Classical Studies Post-Baccalaureate Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision I",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2025-01-05",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Two optional short-answer essays (300 words each) are strongly encouraged. Prompts typically include a 'Why Us' question (e.g., 'What led to your interest in William & Mary?') and a 'Community' question (e.g., 'Are there any particular communities that are important to you, and how do you see yourself being a part of our community?'). Other options may be available."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Arts Submission",
+        "deadline": null,
+        "details": "Auditions are not required for admission to the music program. However, prospective students are encouraged to include an Arts Submission along with their Common Application, a music resume, and a statement of intent regarding participation in the Department of Music's classes, lessons, and ensembles. Auditions are typically required for placement in departmental ensembles and for some music scholarships."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations",
+        "Extracurriculars"
+      ],
+      "secondary_factors": [
+        "Talents",
+        "Character",
+        "Standardized Test Scores (Optional)"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Optional",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Looking for intellectual curiosity and drive, ambition, and a commitment to a personalized liberal arts and sciences education within a research university context. Emphasizes critical thinking, collaboration, service, and leadership."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to a less competitive major if your profile genuinely aligns with it, especially if not set on highly competitive fields like CS or Engineering, which can increase admission chances.",
+      "Consider undeclared for Letters and Science if the university doesn't admit directly by major, as is often the case for many programs at William & Mary.",
+      "Research whether the specific university admits by major or by a broader college (e.g., College of Arts and Sciences) before making your primary major choice.",
+      "If interested in a competitive major like Computer Science, consider related but less selective majors in different departments as a strategic alternative to improve admission odds.",
+      "Ensure your extracurriculars and essays demonstrate a genuine interest in your chosen major to avoid appearing to 'game the system'."
+    ],
+    "college_ranking_tactics": [
+      "Rank colleges based on the overall learning environment, including class sizes, faculty-to-student ratios, and faculty focus on undergraduate learning, rather than solely on broad prestige rankings.",
+      "Consider the quality and availability of housing options, as living situation can impact academic performance and overall satisfaction.",
+      "Evaluate colleges based on specific programs, clubs, research opportunities, or individual professors that align with your personal interests and goals."
+    ],
+    "alternate_major_strategy": "If applying to a competitive major, list a backup in a different college or department within the university to increase chances of admission. For example, if applying to Computer Science in an Engineering school, list Cognitive Science in a College of Letters and Science as an alternate. Ensure the alternate major genuinely interests you, as switching to your first-choice competitive major later might be difficult or impossible at some institutions."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 25914,
+        "total_coa": 45606,
+        "housing": 16192
+      },
+      "out_of_state": {
+        "tuition": 51038,
+        "total_coa": 70730,
+        "supplemental_tuition": 25124
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 31177,
+    "average_merit_aid": 0,
+    "percent_receiving_aid": 53.0,
+    "scholarships": [
+      {
+        "name": "1693 Scholars Program",
+        "type": "Merit",
+        "amount": "Full in-state tuition, fees, room and board (in-state residents); equivalent amount (out-of-state residents) + $6,000 research/project stipend",
+        "deadline": "January 5 (for W&M admission)",
+        "benefits": "Extensive financial support, faculty mentoring, collaborative and individual research initiatives, priority course registration, special first-year class, use of Murray House, weekly lunches, trips and programs",
+        "application_method": "Automatic Consideration (for first-year applicants, finalists submit additional essay and video)"
+      },
+      {
+        "name": "James Monroe Scholars Program",
+        "type": "Merit",
+        "amount": "$1,500 first-year summer research funding; guaranteed $4,000 sophomore or junior summer research/internship funding",
+        "deadline": "January 5 (W&M admission deadline) / Automatic Consideration",
+        "benefits": "Special housing option during first year, priority course registration, invitation to additional seminars, peer mentorship, conference travel grants",
+        "application_method": "Automatic Consideration (for top 10-15% of admitted first-year students)"
+      },
+      {
+        "name": "Provost Scholar Awards",
+        "type": "Merit",
+        "amount": "$10,000 per year for up to four years",
+        "deadline": "Automatic consideration",
+        "benefits": "Scholarship for out-of-state students",
+        "application_method": "Automatic Consideration (for a select group of incoming out-of-state first-year students)"
+      },
+      {
+        "name": "William & Mary Scholars Award",
+        "type": "Merit",
+        "amount": "At least the full cost of in-state tuition and fees",
+        "deadline": "January 5 (W&M admission deadline)",
+        "benefits": "Mentoring and advising opportunities through WMSURE, supports academically distinguished students who contribute to campus diversity (often first-generation, low-income, or underrepresented groups)",
+        "application_method": "Automatic Consideration (all first-year applicants reviewed, nominations from school counselors accepted but not required)"
+      },
+      {
+        "name": "Need-Based Scholarships & Grants",
+        "type": "Need",
+        "amount": "Varies based on demonstrated financial need",
+        "deadline": "November 15 (Early Decision I), January 5 (Early Decision II), February 1 (Regular Decision) for FAFSA and CSS Profile priority filing",
+        "benefits": "Covers educational expenses; for Virginia residents, 100% of demonstrated financial need is typically met; for Pell-eligible Virginia students, tuition and fees are covered",
+        "application_method": "FAFSA and CSS Profile"
+      },
+      {
+        "name": "ROTC Scholarships (Army/Naval)",
+        "type": "Merit",
+        "amount": "Covers full tuition and fees or a monthly stipend (Army ROTC); Covers tuition and fees, books, and a monthly allowance (Naval ROTC)",
+        "deadline": "Varies (contact respective ROTC programs)",
+        "benefits": "Education and training to become military officers, commissioned as a second lieutenant upon completion of ROTC and degree requirements",
+        "application_method": "Separate Application (through United States Army's Reserve Officers' Training Corps or Naval ROTC program)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Typically, a score of 4 or 5 on an AP exam will earn a student credit and/or exemption.",
+      "exceptions": [
+        "A score of 5 or higher is required for AP Biology (effective Fall 2022).",
+        "AP credit for MATH 111 (Calculus I) is awarded for a score of 4 or 5 on the AB test, or a score of 3 on the BC test. AP credit for both Calculus I and Calculus II (MATH 111 and 112) is awarded for a score of 4 or 5 on the BC test.",
+        "A score of 5 on AP Physics 1 and 2 (both exams) or Physics C: Mechanics and Physics C: Electricity & Magnetism is typically required for physics credit."
+      ],
+      "usage": "Can satisfy proficiency, 'credits in domain' General Education requirements, and some major prerequisites. Transfer credits may not be used to fulfill COLL 150, 200, 350, or 400 requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Typically, a score of 5, 6, or 7 on a Higher Level (HL) IB exam will earn a student credit and/or exemption.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "TransferVirginia.org portal (for VCCS guaranteed admission)"
+      ],
+      "restrictions": "At least 60 credit hours must be earned in residence at William & Mary, including a minimum of 15 credits in the major. Transfer credit is granted for courses taken at a regionally accredited college or university with a grade of C or better (C- is not acceptable). Transfer grades do not affect degree requirements, GPA, or class rank. Certain COLL (General Education) requirements, specifically COLL 150, 200, 350, and 400, cannot be fulfilled by transfer credits."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, including a high GPA (e.g., 4.1-4.5 weighted) and challenging coursework like AP or IB classes (e.g., 11 AP classes, full IB curriculum with HL courses)",
+      "Demonstrated depth and passion in areas of interest, rather than scattered activities, showcasing a 'holistic' applicant in a 'holistic class'",
+      "Authentic essays that allow the applicant's true self to shine through, reflecting on unique experiences and personal growth",
+      "Ability to thrive in an academically rigorous environment, with students often described as \"studious and hardworking\"",
+      "Demonstrated interest in William & Mary, which can be shown through applying Early Decision, interviews, and specific references to W&M programs in essays"
+    ],
+    "common_activities": [
+      "Leadership roles in school clubs and organizations (e.g., president of a performing arts club or honors society)",
+      "Community service and volunteering (e.g., 4 years of volunteering with 4-H, active in local youth group)",
+      "Music and arts involvement (e.g., all-state/regional/county choir, high school chamber choir, theater, submitting an arts supplement)",
+      "Participation in varsity athletics or multiple sports",
+      "Research experience, particularly given W&M's strong emphasis on undergraduate research"
+    ],
+    "essay_tips": [
+      "Be specific about why William & Mary is the right fit, mentioning particular classes, professors, programs, clubs, or historical/personal connections",
+      "Show, don't tell; illustrate personal growth, values, and experiences through specific stories and reflections",
+      "Connect your unique experiences to how you will contribute to the W&M community and its values",
+      "Highlight perseverance, leadership, and inclusivity in your experiences outside of academics",
+      "Revise and edit multiple times, soliciting feedback from others to ensure clarity, grammar, and tone"
+    ],
+    "red_flags": [
+      "Generic essays that could apply to any institution, lacking specific connections to William & Mary",
+      "Lack of demonstrated interest, especially if William & Mary is a top choice (though applying ED helps to counter this)",
+      "A significant decline in grades during senior year, as consistent academic rigor is highly valued",
+      "Focusing solely on academics without demonstrating engagement or potential contributions to the broader campus community",
+      "Submitting an application that doesn't reflect your 'authentic self' by trying to guess what admissions officers want to hear"
+    ],
+    "insights": [
+      "William & Mary performs a holistic review of applications, looking beyond just raw statistics like GPA and test scores",
+      "The university attracts \"work hard\" students who prioritize classes and education, but also have diverse passions and are excited about their involvements",
+      "Demonstrated interest is valuable, with Early Decision often providing better odds of acceptance",
+      "It is statistically more challenging for out-of-state applicants due to a smaller percentage of the entering class being allocated to them",
+      "William & Mary encourages applicants to be their authentic selves in their applications, as this helps them stand out"
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 73490,
+    "employment_rate_2yr": 94.0,
+    "grad_school_rate": 39.0,
+    "top_employers": [
+      "Accenture",
+      "Amazon",
+      "Capital One",
+      "Deloitte",
+      "EY",
+      "J.P. Morgan Chase & Co.",
+      "PwC"
+    ],
+    "loan_default_rate": 1.4
+  },
+  "student_retention": {
+    "freshman_retention_rate": 96.0,
+    "graduation_rate_4_year": 86.0,
+    "graduation_rate_6_year": 91.0
+  }
+}

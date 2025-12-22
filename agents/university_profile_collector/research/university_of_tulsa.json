@@ -121,14 +121,35 @@
         "first_gen_percentage": 23.0,
         "international_percentage": 11.0,
         "geographic_breakdown": [
-          { "region": "Oklahoma", "percentage": 53.0 },
-          { "region": "Other US States", "percentage": 43.0 },
-          { "region": "International", "percentage": 4.0 }
+          {
+            "region": "Oklahoma",
+            "percentage": 53.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 43.0
+          },
+          {
+            "region": "International",
+            "percentage": 4.0
+          }
         ],
         "gender_breakdown": {
-          "men": { "applicants": 2224, "admits": 1562, "acceptance_rate": 70.2 },
-          "women": { "applicants": 2864, "admits": 1577, "acceptance_rate": 55.1 },
-          "non_binary": { "applicants": 33, "admits": 11, "acceptance_rate": 33.3 }
+          "men": {
+            "applicants": 2224,
+            "admits": 1562,
+            "acceptance_rate": 70.2
+          },
+          "women": {
+            "applicants": 2864,
+            "admits": 1577,
+            "acceptance_rate": 55.1
+          },
+          "non_binary": {
+            "applicants": 33,
+            "admits": 11,
+            "acceptance_rate": 33.3
+          }
         },
         "racial_breakdown": {
           "white": 51.3,
@@ -156,17 +177,55 @@
           "housing_profile": "Often reside in Lottie Jane Mabee or John Mabee; many participate in the FYRE LLC in LaFortune House.",
           "student_archetype": "The Renaissance Soul—intellectually curious, involved in multiple clubs, and passionate about social impact.",
           "majors": [
-            { "name": "Psychology", "degree_type": "B.A.", "is_impacted": false, "notes": "B.A. track requires 4 semesters of a foreign language; must earn a B in foundations." },
-            { "name": "Political Science", "degree_type": "B.A.", "is_impacted": false, "notes": "AP credits are not accepted; must complete a 12-hour minor." },
-            { "name": "Sociology", "degree_type": "B.A." },
-            { "name": "Anthropology", "degree_type": "B.A." },
-            { "name": "English & Creative Writing", "degree_type": "B.A." },
-            { "name": "History", "degree_type": "B.A." },
-            { "name": "Media Studies", "degree_type": "B.A." },
-            { "name": "Film Studies", "degree_type": "B.A." },
-            { "name": "Philosophy", "degree_type": "B.A." },
-            { "name": "Arts, Culture, and Entertainment Management", "degree_type": "B.A." },
-            { "name": "Music", "degree_type": "B.A.", "special_requirements": "Audition required." }
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "notes": "B.A. track requires 4 semesters of a foreign language; must earn a B in foundations."
+            },
+            {
+              "name": "Political Science",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "notes": "AP credits are not accepted; must complete a 12-hour minor."
+            },
+            {
+              "name": "Sociology",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "Anthropology",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "English & Creative Writing",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "History",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "Media Studies",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "Film Studies",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "Philosophy",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "Arts, Culture, and Entertainment Management",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "Music",
+              "degree_type": "B.A.",
+              "special_requirements": "Audition required."
+            }
           ]
         },
         {
@@ -178,14 +237,40 @@
           "housing_profile": "Mix of traditional halls and modern apartments like Mayo Village.",
           "student_archetype": "The Aspiring Executive—professional, networking-focused, and pragmatic.",
           "majors": [
-            { "name": "Finance", "degree_type": "B.S.B.A.", "notes": "Opportunities to manage an $8 million real-money student investment fund." },
-            { "name": "Accounting", "degree_type": "B.S.B.A.", "notes": "100% placement rate for graduates." },
-            { "name": "Management", "degree_type": "B.S.B.A." },
-            { "name": "Marketing", "degree_type": "B.S.B.A." },
-            { "name": "Energy Management", "degree_type": "B.S.B.A." },
-            { "name": "Computer Information Systems", "degree_type": "B.S.B.A." },
-            { "name": "International Business & Language", "degree_type": "B.S.B.A." },
-            { "name": "Economics", "degree_type": "B.S.B.A." }
+            {
+              "name": "Finance",
+              "degree_type": "B.S.B.A.",
+              "notes": "Opportunities to manage an $8 million real-money student investment fund."
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.S.B.A.",
+              "notes": "100% placement rate for graduates."
+            },
+            {
+              "name": "Management",
+              "degree_type": "B.S.B.A."
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.S.B.A."
+            },
+            {
+              "name": "Energy Management",
+              "degree_type": "B.S.B.A."
+            },
+            {
+              "name": "Computer Information Systems",
+              "degree_type": "B.S.B.A."
+            },
+            {
+              "name": "International Business & Language",
+              "degree_type": "B.S.B.A."
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.S.B.A."
+            }
           ]
         },
         {
@@ -197,15 +282,46 @@
           "housing_profile": "Frequent residents of the Gaming LLC in Fisher Suites or Brown Village.",
           "student_archetype": "The Technical Pioneer—highly focused on research and innovative problem-solving.",
           "majors": [
-            { "name": "Petroleum Engineering", "degree_type": "B.S.P.E.", "is_impacted": true, "notes": "Ranked #1 private doctoral program; requires 2.5 GPA in foundation courses." },
-            { "name": "Computer Science", "degree_type": "B.S.C.S.", "notes": "100% placement rate for graduates." },
-            { "name": "Mechanical Engineering", "degree_type": "B.S.M.E.", "notes": "Features an interdisciplinary design capstone." },
-            { "name": "Chemical Engineering", "degree_type": "B.S.Ch.E." },
-            { "name": "Electrical Engineering", "degree_type": "B.S.E.E." },
-            { "name": "Computer Engineering", "degree_type": "B.S.Com.E." },
-            { "name": "Cyber Security", "degree_type": "B.S.Cy.S." },
-            { "name": "Data Science", "degree_type": "B.S.D.S." },
-            { "name": "Engineering Physics", "degree_type": "B.S.E.P." }
+            {
+              "name": "Petroleum Engineering",
+              "degree_type": "B.S.P.E.",
+              "is_impacted": true,
+              "notes": "Ranked #1 private doctoral program; requires 2.5 GPA in foundation courses."
+            },
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.C.S.",
+              "notes": "100% placement rate for graduates."
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.M.E.",
+              "notes": "Features an interdisciplinary design capstone."
+            },
+            {
+              "name": "Chemical Engineering",
+              "degree_type": "B.S.Ch.E."
+            },
+            {
+              "name": "Electrical Engineering",
+              "degree_type": "B.S.E.E."
+            },
+            {
+              "name": "Computer Engineering",
+              "degree_type": "B.S.Com.E."
+            },
+            {
+              "name": "Cyber Security",
+              "degree_type": "B.S.Cy.S."
+            },
+            {
+              "name": "Data Science",
+              "degree_type": "B.S.D.S."
+            },
+            {
+              "name": "Engineering Physics",
+              "degree_type": "B.S.E.P."
+            }
           ]
         },
         {
@@ -217,16 +333,50 @@
           "housing_profile": "Centrally located near science labs; utilizes FYRE community.",
           "student_archetype": "The Clinical Compass—dedicated, service-oriented, and disciplined.",
           "majors": [
-            { "name": "Nursing", "degree_type": "B.S.N.", "is_impacted": true, "notes": "95% NCLEX first-time pass rate; separate application required." },
-            { "name": "Biology", "degree_type": "B.S.B.S.", "notes": "Features a Pre-Med Option with specific cluster requirements." },
-            { "name": "Exercise & Sports Science", "degree_type": "B.S.E.S.S." },
-            { "name": "Speech-Language Pathology", "degree_type": "B.S.S.P." },
-            { "name": "Biochemistry", "degree_type": "B.S.B." },
-            { "name": "Chemistry", "degree_type": "B.A." },
-            { "name": "Geosciences", "degree_type": "B.S.G.S." },
-            { "name": "Physics", "degree_type": "B.S." },
-            { "name": "Integrated Health Care Studies", "degree_type": "B.S.", "notes": "New 2025 strategic entry point for pre-health tracks." },
-            { "name": "Sports Leadership", "degree_type": "B.A." }
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.N.",
+              "is_impacted": true,
+              "notes": "95% NCLEX first-time pass rate; separate application required."
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.S.B.S.",
+              "notes": "Features a Pre-Med Option with specific cluster requirements."
+            },
+            {
+              "name": "Exercise & Sports Science",
+              "degree_type": "B.S.E.S.S."
+            },
+            {
+              "name": "Speech-Language Pathology",
+              "degree_type": "B.S.S.P."
+            },
+            {
+              "name": "Biochemistry",
+              "degree_type": "B.S.B."
+            },
+            {
+              "name": "Chemistry",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "Geosciences",
+              "degree_type": "B.S.G.S."
+            },
+            {
+              "name": "Physics",
+              "degree_type": "B.S."
+            },
+            {
+              "name": "Integrated Health Care Studies",
+              "degree_type": "B.S.",
+              "notes": "New 2025 strategic entry point for pre-health tracks."
+            },
+            {
+              "name": "Sports Leadership",
+              "degree_type": "B.A."
+            }
           ]
         },
         {
@@ -252,13 +402,41 @@
       ]
     },
     "application_process": {
-      "platforms": ["Common App", "UTulsa Application"],
+      "platforms": [
+        "Common App",
+        "UTulsa Application"
+      ],
       "application_deadlines": [
-        { "plan_type": "Early Decision", "date": "2024-11-01", "is_binding": true, "notes": "Binding; notifications by Dec 15." },
-        { "plan_type": "Early Action I", "date": "2024-11-01", "is_binding": false, "notes": "Non-binding; notifications by Dec 15." },
-        { "plan_type": "Priority Regular Decision", "date": "2025-01-15", "is_binding": false, "notes": "Priority for full scholarships." },
-        { "plan_type": "Early Action II", "date": "2025-02-01", "is_binding": false, "notes": "Non-binding; notifications by Feb 15." },
-        { "plan_type": "Rolling Admission", "date": "2025-08-01", "is_binding": false, "notes": "Evaluated continuously after Feb 16." }
+        {
+          "plan_type": "Early Decision",
+          "date": "2024-11-01",
+          "is_binding": true,
+          "notes": "Binding; notifications by Dec 15."
+        },
+        {
+          "plan_type": "Early Action I",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Non-binding; notifications by Dec 15."
+        },
+        {
+          "plan_type": "Priority Regular Decision",
+          "date": "2025-01-15",
+          "is_binding": false,
+          "notes": "Priority for full scholarships."
+        },
+        {
+          "plan_type": "Early Action II",
+          "date": "2025-02-01",
+          "is_binding": false,
+          "notes": "Non-binding; notifications by Feb 15."
+        },
+        {
+          "plan_type": "Rolling Admission",
+          "date": "2025-08-01",
+          "is_binding": false,
+          "notes": "Evaluated continuously after Feb 16."
+        }
       ],
       "supplemental_requirements": [
         {
@@ -274,8 +452,17 @@
         }
       ],
       "holistic_factors": {
-        "primary_factors": ["GPA", "Course Rigor", "Academic Accomplishments"],
-        "secondary_factors": ["Extracurriculars", "Character", "Letters of Recommendation", "Talents"],
+        "primary_factors": [
+          "GPA",
+          "Course Rigor",
+          "Academic Accomplishments"
+        ],
+        "secondary_factors": [
+          "Extracurriculars",
+          "Character",
+          "Letters of Recommendation",
+          "Talents"
+        ],
         "essay_importance": "High",
         "demonstrated_interest": "Important",
         "interview_policy": "Recommended",
@@ -300,8 +487,16 @@
       "tuition_model": "Annual Increase",
       "cost_of_attendance_breakdown": {
         "academic_year": "2024-2025",
-        "in_state": { "tuition": 48340, "total_coa": 73685, "housing": 15544 },
-        "out_of_state": { "tuition": 48340, "total_coa": 73685, "supplemental_tuition": 0 }
+        "in_state": {
+          "tuition": 48340,
+          "total_coa": 73685,
+          "housing": 15544
+        },
+        "out_of_state": {
+          "tuition": 48340,
+          "total_coa": 73685,
+          "supplemental_tuition": 0
+        }
       },
       "aid_philosophy": "Merit Focused",
       "percent_receiving_aid": 97.0,
@@ -345,7 +540,10 @@
       "philosophy": "Generous Credit",
       "ap_policy": {
         "general_rule": "Scores of 3 or higher grant credit for most subjects",
-        "exceptions": ["AP Music Theory requires a score of 4", "Total exam credit is capped at 36 semester hours"],
+        "exceptions": [
+          "AP Music Theory requires a score of 4",
+          "Total exam credit is capped at 36 semester hours"
+        ],
         "usage": "Satisfies general education requirements (Quad I-IV) and major prerequisites."
       },
       "ib_policy": {
@@ -392,7 +590,14 @@
       "median_earnings_10yr": 61408,
       "employment_rate_2yr": 97.0,
       "grad_school_rate": 23.0,
-      "top_employers": ["Phillips 66", "Williams", "Saint Francis Health System", "ONEOK", "Goldman Sachs", "Walmart Corporate"],
+      "top_employers": [
+        "Phillips 66",
+        "Williams",
+        "Saint Francis Health System",
+        "ONEOK",
+        "Goldman Sachs",
+        "Walmart Corporate"
+      ],
       "student_retention": {
         "freshman_retention_rate": 85.0,
         "graduation_rate_4_year": 62.0,
@@ -400,5 +605,6 @@
       },
       "loan_default_rate": 0.0
     }
-  }
+  },
+  "_id": "university_of_tulsa"
 }

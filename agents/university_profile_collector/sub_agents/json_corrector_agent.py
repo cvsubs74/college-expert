@@ -11,7 +11,7 @@ from .shared_logging import (
 )
 from google.adk.code_executors import BuiltInCodeExecutor
 
-MODEL_NAME = "gemini-2.5-flash-lite"
+MODEL_NAME = "gemini-2.5-flash"
 
 json_corrector_agent = LlmAgent(
     name="JsonCorrectorAgent",

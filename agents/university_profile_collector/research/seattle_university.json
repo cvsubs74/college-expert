@@ -118,10 +118,22 @@
           "international_percentage": 7.4,
           "religious_affiliation": 30.0,
           "geographic_breakdown": [
-            { "region": "Washington (In-State)", "percentage": 54.3 },
-            { "region": "California", "percentage": 32.0 },
-            { "region": "Other US States", "percentage": 11.0 },
-            { "region": "International", "percentage": 2.7 }
+            {
+              "region": "Washington (In-State)",
+              "percentage": 54.3
+            },
+            {
+              "region": "California",
+              "percentage": 32.0
+            },
+            {
+              "region": "Other US States",
+              "percentage": 11.0
+            },
+            {
+              "region": "International",
+              "percentage": 2.7
+            }
           ],
           "gender_breakdown": {
             "men": 39.0,
@@ -159,12 +171,27 @@
               "degree_type": "B.A.B.A.",
               "is_impacted": false,
               "average_gpa_admitted": 3.44,
-              "prerequisite_courses": ["Business Calculus", "Statistics", "Macroeconomics", "Microeconomics", "Financial Accounting", "Managerial Accounting"],
+              "prerequisite_courses": [
+                "Business Calculus",
+                "Statistics",
+                "Macroeconomics",
+                "Microeconomics",
+                "Financial Accounting",
+                "Managerial Accounting"
+              ],
               "minimum_gpa_to_declare": 2.25,
-              "weeder_courses": ["ACCT 2300 Financial Accounting", "ECON 2110 Principles of Microeconomics"],
+              "weeder_courses": [
+                "ACCT 2300 Financial Accounting",
+                "ECON 2110 Principles of Microeconomics"
+              ],
               "admissions_pathway": "Direct or Internal Transfer",
               "curriculum": {
-                "core_courses": ["ACCT 2300 Financial Accounting", "ACCT 2310 Managerial Accounting", "ECON 2110 Microeconomics", "FINC 3400 Business Finance"],
+                "core_courses": [
+                  "ACCT 2300 Financial Accounting",
+                  "ACCT 2310 Managerial Accounting",
+                  "ECON 2110 Microeconomics",
+                  "FINC 3400 Business Finance"
+                ],
                 "total_units": 180,
                 "major_units": 105
               }
@@ -173,7 +200,11 @@
               "name": "Accounting",
               "degree_type": "B.A.B.A.",
               "is_impacted": false,
-              "prerequisite_courses": ["Pre-Calculus", "Financial Accounting", "Managerial Accounting"],
+              "prerequisite_courses": [
+                "Pre-Calculus",
+                "Financial Accounting",
+                "Managerial Accounting"
+              ],
               "minimum_gpa_to_declare": 2.25,
               "admissions_pathway": "Direct or Internal Transfer"
             },
@@ -181,11 +212,18 @@
               "name": "Marketing",
               "degree_type": "B.A.B.A.",
               "is_impacted": false,
-              "prerequisite_courses": ["Statistics", "Microeconomics"],
+              "prerequisite_courses": [
+                "Statistics",
+                "Microeconomics"
+              ],
               "minimum_gpa_to_declare": 2.25,
               "admissions_pathway": "Direct or Internal Transfer",
               "curriculum": {
-                "core_courses": ["MKTG 3500 Introduction to Marketing", "MKTG 3510 Consumer Behavior", "ECON 2110 Microeconomics"],
+                "core_courses": [
+                  "MKTG 3500 Introduction to Marketing",
+                  "MKTG 3510 Consumer Behavior",
+                  "ECON 2110 Microeconomics"
+                ],
                 "total_units": 180,
                 "major_units": 105
               }
@@ -204,12 +242,21 @@
               "name": "Psychology",
               "degree_type": "B.A. / B.S.",
               "is_impacted": false,
-              "prerequisite_courses": ["Introductory Psychology"],
+              "prerequisite_courses": [
+                "Introductory Psychology"
+              ],
               "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": ["PSYC 2010 Statistics", "PSYC 2020 Research Methods"],
+              "weeder_courses": [
+                "PSYC 2010 Statistics",
+                "PSYC 2020 Research Methods"
+              ],
               "admissions_pathway": "Open Major",
               "curriculum": {
-                "core_courses": ["PSYC 1200 Introductory Psychology", "PSYC 2010 Statistics and Data Analysis", "PSYC 2020 Research Design and Methods"],
+                "core_courses": [
+                  "PSYC 1200 Introductory Psychology",
+                  "PSYC 2010 Statistics and Data Analysis",
+                  "PSYC 2020 Research Design and Methods"
+                ],
                 "total_units": 180,
                 "major_units": 65
               }
@@ -236,12 +283,25 @@
               "degree_type": "B.S.",
               "is_impacted": false,
               "average_gpa_admitted": 3.85,
-              "prerequisite_courses": ["Programming I & II", "Calculus I", "Calculus II", "Calculus III", "Linear Algebra"],
+              "prerequisite_courses": [
+                "Programming I & II",
+                "Calculus I",
+                "Calculus II",
+                "Calculus III",
+                "Linear Algebra"
+              ],
               "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": ["CPSC 1430 Programming II", "MATH 1335 Calculus II"],
+              "weeder_courses": [
+                "CPSC 1430 Programming II",
+                "MATH 1335 Calculus II"
+              ],
               "admissions_pathway": "Direct or Internal Transfer",
               "curriculum": {
-                "core_courses": ["CPSC 1420 Programming I", "CPSC 2430 Data Structures", "CPSC 4100 Design and Analysis of Algorithms"],
+                "core_courses": [
+                  "CPSC 1420 Programming I",
+                  "CPSC 2430 Data Structures",
+                  "CPSC 4100 Design and Analysis of Algorithms"
+                ],
                 "total_units": 180,
                 "major_units": 122
               }
@@ -261,12 +321,25 @@
               "degree_type": "B.S.",
               "is_impacted": true,
               "average_gpa_admitted": 3.67,
-              "prerequisite_courses": ["Anatomy & Physiology I & II", "Microbiology", "Introductory Chemistry", "Introductory Biology", "Statistics"],
+              "prerequisite_courses": [
+                "Anatomy & Physiology I & II",
+                "Microbiology",
+                "Introductory Chemistry",
+                "Introductory Biology",
+                "Statistics"
+              ],
               "minimum_gpa_to_declare": 2.75,
-              "weeder_courses": ["BIOL 2200 Anatomy & Physiology I", "BIOL 2220 Microbiology"],
+              "weeder_courses": [
+                "BIOL 2200 Anatomy & Physiology I",
+                "BIOL 2220 Microbiology"
+              ],
               "admissions_pathway": "Direct Admit / Junior Transfer",
               "curriculum": {
-                "core_courses": ["NURS 2100 Physical Assessment", "NURS 3100 Nursing Skills Lab", "BIOL 2200 Human Anatomy & Physiology I"],
+                "core_courses": [
+                  "NURS 2100 Physical Assessment",
+                  "NURS 3100 Nursing Skills Lab",
+                  "BIOL 2200 Human Anatomy & Physiology I"
+                ],
                 "total_units": 137,
                 "major_units": 86
               }
@@ -283,18 +356,45 @@
       ]
     },
     "application_process": {
-      "platforms": ["Common App"],
+      "platforms": [
+        "Common App"
+      ],
       "application_deadlines": [
-        { "plan_type": "Early Action", "date": "2024-11-15", "is_binding": false },
-        { "plan_type": "Regular Decision", "date": "2025-01-15", "is_binding": false },
-        { "plan_type": "Rolling Admission", "date": "2025-01-25", "is_binding": false }
+        {
+          "plan_type": "Early Action",
+          "date": "2024-11-15",
+          "is_binding": false
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-01-15",
+          "is_binding": false
+        },
+        {
+          "plan_type": "Rolling Admission",
+          "date": "2025-01-25",
+          "is_binding": false
+        }
       ],
       "supplemental_requirements": [
-        { "target_program": "All", "requirement_type": "Essays", "details": "Two optional supplemental essays (250 words each): 'Why Seattle U' and 'Equity, Inclusion, and Belonging'." },
-        { "target_program": "Nursing/Diagnostic Ultrasound", "requirement_type": "Program Essay", "details": "Required essay explaining interest in the profession." }
+        {
+          "target_program": "All",
+          "requirement_type": "Essays",
+          "details": "Two optional supplemental essays (250 words each): 'Why Seattle U' and 'Equity, Inclusion, and Belonging'."
+        },
+        {
+          "target_program": "Nursing/Diagnostic Ultrasound",
+          "requirement_type": "Program Essay",
+          "details": "Required essay explaining interest in the profession."
+        }
       ],
       "holistic_factors": {
-        "primary_factors": ["Course Rigor", "GPA", "Application Essay", "Recommendations"],
+        "primary_factors": [
+          "Course Rigor",
+          "GPA",
+          "Application Essay",
+          "Recommendations"
+        ],
         "essay_importance": "Critical",
         "demonstrated_interest": "Considered",
         "specific_differentiators": "Emphasis on Jesuit values, social justice, and leadership."
@@ -314,8 +414,16 @@
       "tuition_model": "Annual Increase",
       "cost_of_attendance_breakdown": {
         "academic_year": "2024-2025",
-        "in_state": { "tuition": 56721, "total_coa": 75128, "housing": 15702 },
-        "out_of_state": { "tuition": 56721, "total_coa": 75128, "housing": 15702 }
+        "in_state": {
+          "tuition": 56721,
+          "total_coa": 75128,
+          "housing": 15702
+        },
+        "out_of_state": {
+          "tuition": 56721,
+          "total_coa": 75128,
+          "housing": 15702
+        }
       },
       "aid_philosophy": "Merit Focused",
       "average_need_based_aid": 41627,
@@ -323,27 +431,75 @@
       "percent_receiving_aid": 95.8
     },
     "scholarships": [
-      { "name": "Sullivan Scholarship", "type": "Merit/Leadership (Full Ride)", "amount": "Full tuition, room, and board", "deadline": "2026-01-15" },
-      { "name": "Presidential Scholarship", "type": "Merit", "amount": "$15,000/year", "application_method": "Automatic Consideration" },
-      { "name": "Trustees Scholarship", "type": "Merit", "amount": "$12,000/year", "application_method": "Automatic Consideration" },
-      { "name": "Bannan Scholarship", "type": "Departmental", "amount": "$5,000/year", "benefits": "Specific to STEM majors" }
+      {
+        "name": "Sullivan Scholarship",
+        "type": "Merit/Leadership (Full Ride)",
+        "amount": "Full tuition, room, and board",
+        "deadline": "2026-01-15"
+      },
+      {
+        "name": "Presidential Scholarship",
+        "type": "Merit",
+        "amount": "$15,000/year",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Trustees Scholarship",
+        "type": "Merit",
+        "amount": "$12,000/year",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Bannan Scholarship",
+        "type": "Departmental",
+        "amount": "$5,000/year",
+        "benefits": "Specific to STEM majors"
+      }
     ],
     "credit_policies": {
       "philosophy": "Generous Credit",
-      "ap_policy": { "general_rule": "Score of 3+ grants credit; 4+ typically satisfies Core requirements." },
-      "ib_policy": { "general_rule": "HL exams with scores of 5, 6, or 7 grant credit." },
-      "transfer_articulation": { "restrictions": "90 quarter unit cap for lower-division credits." }
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit; 4+ typically satisfies Core requirements."
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with scores of 5, 6, or 7 grant credit."
+      },
+      "transfer_articulation": {
+        "restrictions": "90 quarter unit cap for lower-division credits."
+      }
     },
     "student_insights": {
-      "what_it_takes": ["Alignment with Jesuit values", "Solid academic preparation", "Interest in urban service"],
-      "essay_tips": ["Connect goals to Jesuit ethos", "Mention specific SU programs", "Focus on equity for supplemental prompt"],
-      "red_flags": ["Recycled essays", "Senior year grade decline", "Broad cliches"],
-      "insights": ["Small class sizes (11:1 ratio)", "Emphasis on 'care for the whole person'", "Prime urban location in Capitol Hill"]
+      "what_it_takes": [
+        "Alignment with Jesuit values",
+        "Solid academic preparation",
+        "Interest in urban service"
+      ],
+      "essay_tips": [
+        "Connect goals to Jesuit ethos",
+        "Mention specific SU programs",
+        "Focus on equity for supplemental prompt"
+      ],
+      "red_flags": [
+        "Recycled essays",
+        "Senior year grade decline",
+        "Broad cliches"
+      ],
+      "insights": [
+        "Small class sizes (11:1 ratio)",
+        "Emphasis on 'care for the whole person'",
+        "Prime urban location in Capitol Hill"
+      ]
     },
     "outcomes": {
       "median_earnings_10yr": 75272,
       "employment_rate_2yr": 95.0,
-      "top_employers": ["Amazon", "Microsoft", "Boeing", "Starbucks", "Google"],
+      "top_employers": [
+        "Amazon",
+        "Microsoft",
+        "Boeing",
+        "Starbucks",
+        "Google"
+      ],
       "loan_default_rate": 1.9,
       "student_retention": {
         "freshman_retention_rate": 85.0,
@@ -351,5 +507,6 @@
         "graduation_rate_6_year": 77.0
       }
     }
-  }
+  },
+  "_id": "seattle_university"
 }

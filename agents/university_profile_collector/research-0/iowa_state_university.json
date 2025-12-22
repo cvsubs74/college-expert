@@ -1,0 +1,537 @@
+{
+  "university_profile": {
+    "_id": "iowa_state_university",
+    "metadata": {
+      "official_name": "Iowa State University of Science and Technology",
+      "location": {
+        "city": "Ames",
+        "state": "IA",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": []
+    },
+    "strategic_profile": {
+      "executive_summary": "Iowa State University is a premier public land-grant research university known for its leadership in agriculture, engineering, and veterinary medicine. As an R1 institution, it emphasizes a 'Science with Practice' philosophy, integrating hands-on learning with high-impact research.",
+      "market_position": "Public Research Powerhouse",
+      "admissions_philosophy": "Numbers-focused",
+      "us_news_rank": 117,
+      "analyst_takeaways": [
+        {
+          "category": "Admissions Accessibility",
+          "insight": "The university utilizes the Regent Admission Index (RAI) where a score of 245 or higher guarantees automatic admission for residents.",
+          "implication": "Provides high predictability for applicants, reinforcing its land-grant mission of broad accessibility."
+        },
+        {
+          "category": "Academic Excellence",
+          "insight": "Ranked #1 in Iowa for student outcomes by the Wall Street Journal and #9 globally for undergraduate entrepreneurship by The Princeton Review (2026).",
+          "implication": "Strong choice for ROI-focused students and aspiring entrepreneurs."
+        },
+        {
+          "category": "Selectivity Trend",
+          "insight": "While maintaining a high overall acceptance rate (~90%), the university has seen increased competitiveness in its Ivy College of Business and Engineering programs.",
+          "implication": "Applicants to specialized STEM programs should prioritize early application despite the general open-access mission."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Characterized by a 'warm and welcoming' Midwest culture with high school spirit centered on Big 12 athletics and 800+ student organizations.",
+        "transportation_impact": "The campus is deeply integrated with the CyRide bus system, which is free for students, effectively bridging the 1,900-acre campus with the city of Ames.",
+        "research_impact": "Home to the Ames Laboratory (the only U.S. Department of Energy laboratory physically located on a university campus) and robust industry ties with partners like John Deere."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 88.7,
+      "in_state_acceptance_rate": 93.4,
+      "out_of_state_acceptance_rate": 91.5,
+      "international_acceptance_rate": 68.4,
+      "transfer_acceptance_rate": 79.9,
+      "admits_class_size": 5906,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": null
+    },
+    "admissions_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": null,
+        "admits_total": null,
+        "enrolled_total": 6160,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Enrollment grew for the fifth consecutive year. Iowa State University does not maintain an undergraduate waitlist."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 23095,
+        "admits_total": 20475,
+        "enrolled_total": 5906,
+        "acceptance_rate_overall": 88.7,
+        "acceptance_rate_in_state": 93.4,
+        "acceptance_rate_out_of_state": 91.5,
+        "yield_rate": 28.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "In-state and out-of-state acceptance rates calculated from Common Data Set residency breakdown."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 22995,
+        "admits_total": 20496,
+        "enrolled_total": 5859,
+        "acceptance_rate_overall": 89.1,
+        "yield_rate": 28.6,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Common Data Set Section C2 explicitly confirms no waitlist policy."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 21919,
+        "admits_total": 19776,
+        "enrolled_total": 5729,
+        "acceptance_rate_overall": 90.2,
+        "yield_rate": 29.0,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "ISU does not use a waitlist."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 20357,
+        "admits_total": 18550,
+        "enrolled_total": 5388,
+        "acceptance_rate_overall": 91.1,
+        "yield_rate": 29.0,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "ISU does not use a waitlist."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.76,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "The average high school GPA for the Fall 2025 incoming class was 3.76. Most successful applicants have primarily A and B grades."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1350",
+        "sat_reading_middle_50": "560-670",
+        "sat_math_middle_50": "560-690",
+        "act_composite_middle_50": "21-28",
+        "submission_rate": 13.0,
+        "policy_note": "Test optional; scores are considered if submitted but not required for most programs."
+      },
+      "demographics": {
+        "first_gen_percentage": 20.0,
+        "legacy_percentage": null,
+        "international_percentage": 9.0,
+        "geographic_breakdown": [
+          {
+            "region": "Iowa",
+            "percentage": 52.5
+          },
+          {
+            "region": "Other US States",
+            "percentage": 38.5
+          },
+          {
+            "region": "International",
+            "percentage": 9.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 11855,
+            "admits": 10534,
+            "acceptance_rate": 88.86,
+            "note": "Based on 2024-2025 admission cycle data."
+          },
+          "women": {
+            "applicants": 11240,
+            "admits": 9941,
+            "acceptance_rate": 88.44,
+            "note": "Based on 2024-2025 admission cycle data."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 71.32,
+          "black_african_american": 2.56,
+          "hispanic_latino": 6.68,
+          "asian": 4.12,
+          "native_american_alaskan": 0.14,
+          "pacific_islander": 0.06,
+          "two_or_more_races": 2.82,
+          "unknown": 3.3,
+          "non_resident_alien": 9.0
+        },
+        "religious_affiliation": null
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "College of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 89.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "High schoolers must meet specific RAI scores and 2 years of a single foreign language for direct entry. Focus on a rigorous math/science curriculum.",
+          "housing_profile": "Friley Residence Hall is a favorite due to its proximity to engineering buildings and its 'Dungeons' for quiet study.",
+          "student_archetype": "Practical problem-solvers and collaborative builders.",
+          "majors": [
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "MATH 1650 Calculus I",
+                "CHEM 1670 General Chemistry for Engineering",
+                "PHYS 2310 Introduction to Classical Physics I"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "M E 2310 Engineering Thermodynamics I",
+                "E M 3240 Mechanics of Materials"
+              ],
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.25,
+              "curriculum": {
+                "core_courses": [
+                  "M E 1600",
+                  "M E 1700",
+                  "M E 2310",
+                  "M E 3240",
+                  "M E 3320",
+                  "M E 3350",
+                  "M E 3700",
+                  "M E 4210",
+                  "M E 4360"
+                ],
+                "electives": [
+                  "M E 4110",
+                  "M E 4160",
+                  "M E 4490",
+                  "M E 4840"
+                ],
+                "total_units": 129,
+                "major_units": 65
+              },
+              "notable_professors": [
+                "Dr. Caroline Hayes",
+                "Dr. Theodore Heindel",
+                "Dr. James Heise"
+              ],
+              "notes": "Admitted as 'Pre-Mechanical Engineering' until Basic Program completion."
+            }
+          ]
+        },
+        {
+          "name": "Ivy College of Business",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 88.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Incoming freshmen start as Pre-Business and must complete foundation courses with a 2.5+ GPA to enter the 'Professional Program.'",
+          "housing_profile": "Geoffroy and Buchanan Halls are popular for business students due to their modern suite-style layouts.",
+          "student_archetype": "Ambitious, networking-focused professionals.",
+          "majors": [
+            {
+              "name": "Marketing",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "ECON 1010",
+                "STAT 2260"
+              ],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "ACCT 2840"
+              ],
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": [
+                  "BUSAD 1020",
+                  "ACCT 2840",
+                  "ACCT 2850",
+                  "FIN 3010",
+                  "MGMT 3710",
+                  "MIS 3010",
+                  "MKT 3400",
+                  "SCM 3010",
+                  "MGMT 4780"
+                ],
+                "electives": [
+                  "MKT 3420",
+                  "MKT 4440",
+                  "MKT 4470",
+                  "MKT 4530"
+                ],
+                "total_units": 122,
+                "major_units": 45
+              },
+              "notable_professors": [
+                "Dr. Sekar Raju",
+                "Dr. Raj Agnihotri",
+                "Dr. Huifang Mao"
+              ],
+              "notes": "Admission into the professional program is required for 3000+ level courses."
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Applied Artificial Intelligence Minor",
+        "Data Science Minor",
+        "Entrepreneurship Minor",
+        "Leadership Studies Certificate",
+        "Professional Sales Certificate",
+        "Healthcare Management Certificate",
+        "Real Estate Certificate",
+        "Cybersecurity Certificate",
+        "International Business Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Iowa State Institutional Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Rolling Admission",
+          "date": "2025-03-01",
+          "is_binding": false,
+          "notes": "Priority deadline for financial aid and scholarship consideration."
+        },
+        {
+          "plan_type": "Final Fall Deadline",
+          "date": "2025-05-01",
+          "is_binding": false,
+          "notes": "Final date for fall semester acceptance."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "General Admission",
+          "requirement_type": "None",
+          "deadline": null,
+          "details": "No supplemental essays or letters of recommendation required."
+        },
+        {
+          "target_program": "First-Year Honors Program",
+          "requirement_type": "Essays",
+          "deadline": "2025-04-01",
+          "details": "Two 500-word essays required."
+        },
+        {
+          "target_program": "Music",
+          "requirement_type": "Audition",
+          "deadline": "2025-02-15",
+          "details": "Audition and departmental application required."
+        },
+        {
+          "target_program": "College of Design (Architecture)",
+          "requirement_type": "Portfolio/Essay",
+          "deadline": null,
+          "details": "Admission to professional B.Arch degree occurs after the first year."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "GPA",
+          "Course Rigor",
+          "Test Scores (if submitted)"
+        ],
+        "secondary_factors": [
+          "Class Rank",
+          "Core Course Completion"
+        ],
+        "essay_importance": "Low",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "None",
+        "first_gen_boost": "Minimal",
+        "specific_differentiators": "Uses the Regent Admission Index (RAI) for automatic admission."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Start in 'Undeclared Engineering' to explore all 14+ engineering branches while completing the common 'Basic Program' core",
+        "Choose the BA in Computer Science over the BS if looking for a more flexible liberal arts integration",
+        "Consult the 'ISU Placement Rates' data by department before applying to ensure the major's ROI aligns with career goals"
+      ],
+      "college_ranking_tactics": [
+        "Rank the university based on industry partnerships (e.g., John Deere, Boeing) rather than traditional prestige",
+        "Evaluate the 'Honors Program' as a primary ranking factor to gain priority registration",
+        "Factor in housing location; engineers often prefer the 'West Side' (Friley/Helser)"
+      ],
+      "alternate_major_strategy": "If applying to a highly rigorous major like Aerospace Engineering or Architecture, list 'Undeclared Engineering' or 'Design-Undeclared' as your alternate choice."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 10787,
+          "total_coa": 24695,
+          "housing": 10808
+        },
+        "out_of_state": {
+          "tuition": 28881,
+          "total_coa": 42789,
+          "supplemental_tuition": 18094
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 11488,
+      "average_merit_aid": 5660,
+      "percent_receiving_aid": 85.0
+    },
+    "scholarships": [
+      {
+        "name": "Iowa Resident National Merit Full Tuition Scholarship",
+        "type": "Merit",
+        "amount": "100% of tuition",
+        "deadline": "2026-03-01",
+        "benefits": "Covers four years of undergraduate tuition",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Loyal Scholar Award",
+        "type": "Merit",
+        "amount": "$12,000",
+        "deadline": "2025-03-01",
+        "benefits": "Renewable for 4 years with minimum GPA",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "International Merit Scholarship",
+        "type": "Merit",
+        "amount": "$8,000 - $40,000",
+        "deadline": "2025-02-15",
+        "benefits": "Awarded based on high school GPA and scores",
+        "application_method": "OneApp Application"
+      },
+      {
+        "name": "Generations Award",
+        "type": "Legacy/Merit",
+        "amount": "$6,000",
+        "deadline": "2026-03-01",
+        "benefits": "For nonresident children/grandchildren of ISU graduates",
+        "application_method": "OneApp Application"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Moderate",
+      "ap_policy": {
+        "general_rule": "Scores of 3 or higher generally grant credit, though many core subjects require a 4 or 5",
+        "exceptions": [
+          "No credit for AP 2-D Art and Design",
+          "AP Biology, Chemistry, and Calculus AB require a score of 4 or higher"
+        ],
+        "usage": "Can satisfy general education requirements and specific major prerequisites"
+      },
+      "ib_policy": {
+        "general_rule": "Credit awarded for HL exams with score of 4 or higher",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "TRANSIT",
+          "Course Equivalency Guides"
+        ],
+        "restrictions": "65 semester unit cap for community college credits"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A Regents Admission Index (RAI) score of 245 or higher for automatic admission",
+        "A solid academic foundation with a mix of A's and B's (average GPA 3.75)",
+        "Demonstrated ability to handle challenging coursework such as AP or IB classes"
+      ],
+      "common_activities": [
+        "Leadership in some of the 800+ student-led clubs and organizations",
+        "Undergraduate research or hands-on projects",
+        "Community service and volunteering within Ames"
+      ],
+      "essay_tips": [
+        "Be specific about the academic department or program",
+        "Use a 'passionate hook' to explain your interest",
+        "Focus on how you will contribute to the ISU community"
+      ],
+      "red_flags": [
+        "Generic 'Why ISU' essays",
+        "Submitting incomplete academic records",
+        "A lack of academic rigor in senior year"
+      ],
+      "insights": [
+        "Students remark 'getting in is easy; staying in is the challenge' due to early rigor",
+        "RAI is the dominant metric, making the process more transparent",
+        "Heavy emphasis on job placement and practical learning"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 61000,
+      "employment_rate_2yr": null,
+      "grad_school_rate": 26.0,
+      "top_employers": [
+        "John Deere",
+        "Collins Aerospace",
+        "Boeing",
+        "Principal Financial Group",
+        "Wells Fargo"
+      ],
+      "loan_default_rate": 3.2,
+      "student_retention": {
+        "freshman_retention_rate": 87.6,
+        "graduation_rate_4_year": 63.6,
+        "graduation_rate_6_year": 75.2
+      }
+    }
+  }
+}

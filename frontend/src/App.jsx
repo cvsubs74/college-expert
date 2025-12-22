@@ -6,7 +6,7 @@ import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
 import UniversityExplorer from './pages/UniversityExplorer';
-import MyLaunchpad from './pages/MyLaunchpad';
+import StratiaLaunchpad from './pages/StratiaLaunchpad';
 import FitVisualizer from './pages/FitVisualizer';
 import LandingPage from './pages/LandingPage';
 import PricingPage from './pages/PricingPage';
@@ -21,16 +21,14 @@ import { PaymentProvider, usePayment } from './context/PaymentContext';
 import { ToastProvider } from './components/Toast';
 import UpgradeModal from './components/UpgradeModal';
 import { logout } from './services/authService';
-import { checkOnboardingStatus, saveOnboardingProfile } from './services/api';
+import { checkOnboardingStatus, saveOnboardingProfile, fetchUserProfile } from './services/api';
 import './index.css';
 
 function Navigation() {
   const location = useLocation();
   const { currentUser } = useAuth();
 
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
+  const isActive = (path) => location.pathname === path;
 
   const handleLogout = async () => {
     try {
@@ -40,104 +38,90 @@ function Navigation() {
     }
   };
 
+  // Navigation links with Stratia styling
+  const navLinks = [
+    { path: '/profile', label: 'Profile', icon: DocumentTextIcon },
+    { path: '/universities', label: 'Discover', icon: BuildingLibraryIcon },
+    { path: '/launchpad', label: 'My Schools', icon: RocketLaunchIcon },
+  ];
+
   return (
-    <nav className="bg-white/90 backdrop-blur-sm shadow-sm border-b border-amber-100 sticky top-0 z-50">
+    <nav className="bg-[#FDFCF7]/95 backdrop-blur-sm border-b border-[#E0DED8] sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex">
-            <div className="flex-shrink-0 flex items-center">
-              <div className="p-1.5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
-                <SparklesIcon className="h-6 w-6 text-white" />
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center gap-2">
+              <div className="w-9 h-9 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-xl flex items-center justify-center">
+                <BookOpenIcon className="h-5 w-5 text-white" />
               </div>
-              <span className="ml-2 text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">CollegeAI Pro</span>
-            </div>
-            <div className="hidden sm:ml-8 sm:flex sm:space-x-6">
-              <Link
-                to="/profile"
-                className={`${isActive('/profile')
-                  ? 'border-amber-500 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
-              >
-                <DocumentTextIcon className="h-5 w-5 mr-2" />
-                Student Profile
-              </Link>
-              {/* My Advisor - DISABLED FOR MVP (agent not reliable for general questions)
-              <Link
-                to="/chat"
-                className={`${isActive('/chat')
-                  ? 'border-amber-500 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
-              >
-                <ChatBubbleLeftRightIcon className="h-5 w-5 mr-2" />
-                My Advisor
-              </Link>
-              */}
-              <Link
-                to="/universities"
-                className={`${isActive('/universities')
-                  ? 'border-amber-500 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
-              >
-                <BuildingLibraryIcon className="h-5 w-5 mr-2" />
-                UniInsight
-              </Link>
-              <Link
-                to="/launchpad"
-                className={`${isActive('/launchpad')
-                  ? 'border-amber-500 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
-                  } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
-              >
-                <RocketLaunchIcon className="h-5 w-5 mr-2" />
-                My Launchpad
-              </Link>
-              {/* Knowledge Base - Only visible to admin */}
+              <span className="font-serif text-lg font-semibold text-[#1A4D2E]">Stratia</span>
+              <span className="hidden sm:inline text-sm font-medium text-[#4A4A4A]">Admissions</span>
+            </Link>
+
+            {/* Nav Links */}
+            <div className="hidden sm:ml-8 sm:flex sm:items-center sm:gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2
+                    ${isActive(link.path)
+                      ? 'bg-[#D6E8D5] text-[#1A4D2E]'
+                      : 'text-[#4A4A4A] hover:bg-[#F8F6F0] hover:text-[#1A4D2E]'
+                    }`}
+                >
+                  <link.icon className="h-4 w-4" />
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* Admin Knowledge Base Link */}
               {currentUser?.email === 'cvsubs@gmail.com' && (
                 <Link
                   to="/knowledge-base"
-                  className={`${isActive('/knowledge-base')
-                    ? 'border-amber-500 text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-amber-300 hover:text-gray-700'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2
+                    ${isActive('/knowledge-base')
+                      ? 'bg-[#D6E8D5] text-[#1A4D2E]'
+                      : 'text-[#4A4A4A] hover:bg-[#F8F6F0] hover:text-[#1A4D2E]'
+                    }`}
                 >
-                  <BookOpenIcon className="h-5 w-5 mr-2" />
                   Knowledge Base
                 </Link>
               )}
             </div>
           </div>
-          <div className="flex items-center">
+
+          {/* User Menu */}
+          <div className="flex items-center gap-3">
             {currentUser && (
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
+              <>
+                <div className="hidden md:flex items-center gap-2">
                   {currentUser.photoURL && (
                     <img
                       src={currentUser.photoURL}
                       alt={currentUser.displayName}
-                      className="h-8 w-8 rounded-full ring-2 ring-amber-100"
+                      className="h-8 w-8 rounded-full ring-2 ring-[#D6E8D5]"
                     />
                   )}
-                  <span className="text-sm text-gray-700 font-medium">{currentUser.displayName}</span>
+                  <span className="text-sm text-[#4A4A4A] font-medium">
+                    {currentUser.displayName}
+                  </span>
                 </div>
-                <CreditsBadge compact />
                 <button
                   onClick={handleLogout}
-                  className="inline-flex items-center px-3 py-2 border border-gray-200 text-sm font-medium rounded-xl text-gray-700 hover:bg-amber-50 hover:border-amber-200 transition-colors"
+                  className="px-3 py-2 text-sm font-medium text-[#4A4A4A] border border-[#E0DED8] rounded-full hover:bg-[#F8F6F0] hover:border-[#1A4D2E] transition-all"
                 >
-                  <ArrowRightOnRectangleIcon className="h-5 w-5 mr-1" />
                   Sign Out
                 </button>
                 <Link
                   to="/pricing"
-                  className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-medium rounded-xl hover:from-amber-400 hover:to-orange-400 transition-all shadow-md hover:shadow-lg"
+                  className="hidden sm:inline-flex items-center px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-full hover:bg-[#2D6B45] transition-all shadow-md"
                 >
-                  <StarIcon className="h-5 w-5 mr-1" />
+                  <StarIcon className="h-4 w-4 mr-1" />
                   Upgrade
                 </Link>
-              </div>
+              </>
             )}
           </div>
         </div>
@@ -168,22 +152,28 @@ function AppLayout() {
       }
 
       try {
-        console.log('[App] Checking onboarding status for:', currentUser.email);
-        const status = await checkOnboardingStatus(currentUser.email);
-        console.log('[App] Onboarding status result:', status);
+        console.log('[App] v2 - Checking if profile exists for:', currentUser.email);
 
-        if (status.needsOnboarding) {
-          console.log('[App] User needs onboarding, showing modal');
-          setShowOnboarding(true);
-        } else {
-          console.log('[App] User already onboarded, skipping modal');
-          // Mark as completed so we don't check again this session
+        // Use fetchUserProfile which returns both content and structured profile
+        const profileResult = await fetchUserProfile(currentUser.email);
+        const hasContent = profileResult.content && profileResult.content.length > 100;
+        const hasStructuredProfile = profileResult.profile && Object.keys(profileResult.profile).length > 0;
+
+        console.log('[App] v2 - Profile result:', profileResult.success, 'content length:', profileResult.content?.length || 0, 'has structured:', hasStructuredProfile);
+
+        // If profile has content OR structured profile data, skip onboarding
+        if (profileResult.success && (hasContent || hasStructuredProfile)) {
+          console.log('[App] v2 - User has profile, skipping onboarding');
           sessionStorage.setItem(completedKey, 'true');
+          setShowOnboarding(false);
+        } else {
+          console.log('[App] v2 - No profile found, showing onboarding');
+          setShowOnboarding(true);
         }
       } catch (error) {
-        console.error('[App] Error checking onboarding:', error);
-        // On error, show onboarding to be safe
-        setShowOnboarding(true);
+        console.error('[App] v2 - Error checking profile:', error);
+        // On error, DON'T show onboarding - we don't want to block returning users
+        setShowOnboarding(false);
       }
       setOnboardingChecked(true);
     };
@@ -214,7 +204,7 @@ function AppLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-orange-50">
+    <div className="min-h-screen bg-[#FDFCF7]">
       <Navigation />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Outlet />
@@ -257,7 +247,7 @@ function App() {
                   {/* My Advisor - DISABLED FOR MVP */}
                   {/* <Route path="/chat" element={<Chat />} /> */}
                   <Route path="/universities" element={<UniversityExplorer />} />
-                  <Route path="/launchpad" element={<MyLaunchpad />} />
+                  <Route path="/launchpad" element={<StratiaLaunchpad />} />
                   <Route path="/fit-visualizer" element={<FitVisualizer />} />
                   <Route path="/knowledge-base" element={<KnowledgeBase />} />
                 </Route>

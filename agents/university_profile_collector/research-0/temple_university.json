@@ -1,0 +1,1193 @@
+{
+  "_id": "temple_university",
+  "metadata": {
+    "official_name": "Temple University",
+    "location": {
+      "city": "Philadelphia",
+      "state": "PA",
+      "type": "Public"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Temple University is a large public research university located in Philadelphia, Pennsylvania, offering a wide array of undergraduate, graduate, and professional programs. It is recognized for its R1 research status and commitment to providing accessible, high-quality education within an urban environment.",
+    "market_position": "Urban Public Research University",
+    "admissions_philosophy": "Temple University employs a holistic review process for undergraduate admissions, considering high school transcripts, required college preparatory courses, an optional essay, and optional letters of recommendation. It is a test-optional institution, meaning standardized test scores (SAT/ACT) are not required, though they can be submitted if desired.",
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Temple University has an acceptance rate of around 80-83%. Applying Early Action generally results in a higher admission rate and earlier housing planning.",
+        "implication": "Prospective students should consider applying Early Action by November 1st to maximize their chances of admission and secure on-campus housing."
+      },
+      {
+        "category": "Rankings",
+        "insight": "Temple has shown a significant rise in US News & World Report rankings, including breaking into the top 100 National Universities in 2023 and consistently ranking in the top 50 public universities.",
+        "implication": "The university's improving national and public university rankings may enhance its reputation and attract a broader pool of applicants, potentially increasing future competitiveness."
+      },
+      {
+        "category": "Research Opportunities",
+        "insight": "As an R1 research university, Temple offers extensive undergraduate and graduate research opportunities across various disciplines, including funded programs and faculty-mentored projects.",
+        "implication": "Students interested in research should actively explore the diverse programs like CARAS, Diamond Research Scholars, and department-level opportunities to gain valuable experience and prepare for advanced studies or careers."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Temple University offers a vibrant and diverse urban campus experience, with a wide array of cultural, athletic, and social activities. There are over 400 student-run clubs and organizations, including cultural clubs, academic/professional groups, sports, and creative arts. The university's location in Philadelphia provides students with access to the city's rich cultural scene, including museums, theaters, and sports events. While the urban setting means the university is part of a bustling city, safety is addressed through regular patrols, emergency phones, and shuttle services.",
+      "transportation_impact": "The university's location in Philadelphia means it is highly accessible via public transportation, including SEPTA buses, subway (Broad Street Line), and regional rail, with a dedicated Temple University station. This extensive public transport network, along with Amtrak access, provides students with great flexibility for commuting and exploring the city. On-campus shuttle services like Flight, OWLoop, and TUr Door also enhance safety and convenience for navigating between campuses and off-campus residences, particularly at night.",
+      "research_impact": "As an R1 research institution, Temple University emphasizes research as a core component of its academic mission. This creates numerous opportunities for both undergraduate and graduate students to engage in faculty-mentored investigations and creative inquiries. Programs like Creative Arts, Research, and Scholarship (CARAS), Diamond Research Scholars, and various college/department-specific initiatives provide funding, credit, and stipends for student researchers. These opportunities foster advanced skills, experience, and pathways to graduate and professional success, contributing to discoveries that impact Philadelphia and beyond."
+    },
+    "us_news_rank": 102
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 80.5,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 70.8,
+      "transfer_acceptance_rate": 76.0,
+      "admits_class_size": 32838,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 14903,
+          "admits": 13887,
+          "acceptance_rate": 93.2,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 45544,
+        "admits_total": 37000,
+        "enrolled_total": 5379,
+        "acceptance_rate_overall": 81.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 14.5,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record number of applications. 'Admitted total' is reported as 'more than 37,000 students were offered admission', using 37,000 for calculations. In-state/out-of-state acceptance rates are not publicly disclosed. Waitlist data for this cycle is not yet available."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 40817,
+        "admits_total": 32838,
+        "enrolled_total": 4926,
+        "acceptance_rate_overall": 80.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 15.0,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 2030,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 118,
+          "waitlist_admit_rate": 5.8,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance, admitted, and enrolled data from multiple sources. Waitlist 'accepted spots' not explicitly stated; waitlist admit rate calculated based on offered spots (118/2030*100). Waitlist is unranked based on 2023-2024 CDS. In-state/out-of-state acceptance rates are not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 36399,
+        "admits_total": 30181,
+        "enrolled_total": 3763,
+        "acceptance_rate_overall": 82.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 12.47,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 782,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 43,
+          "waitlist_admit_rate": 5.5,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Applications also cited as 36,876. Admitted calculated from acceptance rate (82.9% of 36,399). Enrolled calculated from yield rate (12.47% of 30,181). Waitlist 'accepted spots' not publicly disclosed in the provided sources for this year. Waitlist admit rate calculated based on offered spots (43/782*100). Waitlist is unranked. In-state/out-of-state acceptance rates are not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 39065,
+        "admits_total": 31093,
+        "enrolled_total": 4695,
+        "acceptance_rate_overall": 79.6,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 15.1,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 3813,
+          "accepted_spots": 777,
+          "admitted_from_waitlist": 633,
+          "waitlist_admit_rate": 81.47,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admitted calculated from acceptance rate (79.6% of 39,065). Enrolled calculated from yield rate (15.1% of 31,093). Waitlist data from Common Data Set 2022-2023. In-state/out-of-state acceptance rates are not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 37571,
+        "admits_total": 27176,
+        "enrolled_total": 4881,
+        "acceptance_rate_overall": 72.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 17.96,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 6377,
+          "accepted_spots": 636,
+          "admitted_from_waitlist": 558,
+          "waitlist_admit_rate": 87.74,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions statistics from College Factual and Common Data Set 2021-2022. Yield rate calculated (4881/27176*100). Waitlist data from Common Data Set 2021-2022. In-state/out-of-state acceptance rates are not publicly disclosed."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 33797,
+        "admits_total": 24865,
+        "enrolled_total": 4802,
+        "acceptance_rate_overall": 73.57,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 19.31,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": 2350,
+          "accepted_spots": 660,
+          "admitted_from_waitlist": 436,
+          "waitlist_admit_rate": 66.06,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Admissions statistics (applicants, admitted, enrolled) are for first-time, first-year students from Common Data Set 2020-2021. Acceptance rate calculated (24865/33797*100). Yield rate calculated (4802/24865*100). Waitlist data from Common Data Set 2020-2021. In-state/out-of-state acceptance rates are not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": null,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "The average GPA at Temple University is 3.42. Admitted students typically have a mix of A's and B's, with very few C's. Taking AP or IB classes can help boost a weighted GPA and demonstrate readiness for college-level work."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1130-1358",
+        "sat_reading_middle_50": null,
+        "sat_math_middle_50": null,
+        "act_composite_middle_50": "24-31",
+        "submission_rate": null,
+        "policy_note": "Temple University is test-optional, meaning there is no absolute SAT or ACT score requirement for admission."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 4.0,
+        "geographic_breakdown": [
+          {
+            "region": "Pennsylvania (in-state)",
+            "percentage": 65.0
+          },
+          {
+            "region": "Other US States (out-of-state)",
+            "percentage": 33.0
+          },
+          {
+            "region": "International",
+            "percentage": 2.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 14616,
+            "admits": 11953,
+            "acceptance_rate": 81.78,
+            "note": "Data for 2023-2024 admission cycle."
+          },
+          "women": {
+            "applicants": 21783,
+            "admits": 18228,
+            "acceptance_rate": 83.68,
+            "note": "Data for 2023-2024 admission cycle."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 46.0,
+          "black_african_american": 17.0,
+          "hispanic_latino": 10.0,
+          "asian": 15.0,
+          "native_american_alaskan": 0.0,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 5.0,
+          "unknown": 3.0,
+          "non_resident_alien": 4.0
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools and Colleges",
+    "colleges": [
+      {
+        "name": "Tyler School of Art and Architecture",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Portfolio submission likely required; strong creative aptitude and interest in art, design, or the built environment.",
+        "housing_profile": "Standard university housing; creative living-learning communities may be available.",
+        "student_archetype": "Creative thinkers, aspiring artists, designers, architects, and art historians.",
+        "majors": []
+      },
+      {
+        "name": "Boyer College of Music and Dance",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Audition or portfolio required; strong musical or dance talent and dedication.",
+        "housing_profile": "Standard university housing; potential for music-focused living communities.",
+        "student_archetype": "Passionate musicians, dancers, and performers.",
+        "majors": []
+      },
+      {
+        "name": "College of Education and Human Development",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Interest in teaching, counseling, human development, or educational leadership.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Caring, community-minded individuals interested in shaping future generations or supporting human well-being.",
+        "majors": []
+      },
+      {
+        "name": "College of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong background in mathematics and science; aptitude for problem-solving and innovation.",
+        "housing_profile": "Standard university housing; potential for STEM-focused living communities.",
+        "student_archetype": "Analytical, ambitious problem-solvers focused on technical and scientific advancements.",
+        "majors": [
+          {
+            "name": "Bioengineering",
+            "degree_type": "B.S.B.I.O.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Offers concentrations in Cellular Engineering, Engineering Devices, and Pre-Health."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Accredited program."
+          },
+          {
+            "name": "Electrical and Computer Engineering",
+            "degree_type": "B.S.E.C.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Offers both Electrical Engineering and Computer Engineering concentrations."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Accredited program."
+          },
+          {
+            "name": "Computer Science (College of Engineering)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "This major might also be offered in the College of Science and Technology with different requirements."
+          },
+          {
+            "name": "Industrial and Systems Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Fox School of Business and Management",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong academic record; interest in business, finance, entrepreneurship, or marketing.",
+        "housing_profile": "Standard university housing; professional development focus.",
+        "student_archetype": "Ambitious, career-oriented, and often entrepreneurial individuals.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ACCT 2101 Financial Accounting",
+              "ACCT 2102 Managerial Accounting"
+            ],
+            "special_requirements": "Minimum grade of C- in prerequisite courses. Minimum grade of C in accounting courses unless otherwise specified.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Students must attain a 2.0 GPA in the major and a 2.0 cumulative GPA to graduate."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Students must meet College Graduation Requirements for the BBA. A 2.0 GPA in the major and cumulatively is required for graduation."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Students must meet College Graduation Requirements for the BBA. A 2.0 GPA in the major and cumulatively is required for graduation."
+          },
+          {
+            "name": "Management Information Systems",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MIS 2001 (minimum CR grade)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MIS 2402 Web Application Development",
+              "MIS 2502 Data and Analytics"
+            ],
+            "special_requirements": "Minimum grade of C or better required for most major courses, C- for MIS 4596.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Students must attain a 2.0 GPA in the major and a 2.0 cumulative GPA to graduate. Requires 1,000 professional achievement points for graduation."
+          },
+          {
+            "name": "Supply Chain Management",
+            "degree_type": "B.B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Students must meet College Graduation Requirements for the BBA. A 2.0 GPA in the major and cumulatively is required for graduation."
+          }
+        ]
+      },
+      {
+        "name": "College of Liberal Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Broad intellectual curiosity; strong writing and critical thinking skills.",
+        "housing_profile": "Traditional dorms and modern residence halls, fostering diverse social interaction.",
+        "student_archetype": "Intellectually curious, open-minded, and socially aware individuals.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 1001 Foundations of Psychology",
+              "statistics courses",
+              "research methodology courses"
+            ],
+            "special_requirements": "Only courses with a grade of C- or better satisfy major requirements.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Highly popular major at Temple University."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "POLS 1101 American Political System",
+              "POLS 1201 Foreign Governments and Politics",
+              "POLS 1301 International Politics"
+            ],
+            "special_requirements": "Minimum GPA of 2.0 cumulatively in CLA/CST coursework and in the major. Only courses with a grade of C- or better satisfy major requirements.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Offers an accelerated BA/MA program with a minimum 3.5 overall and major GPA."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 1101 Macroeconomic Principles",
+              "ECON 1102 Microeconomic Principles"
+            ],
+            "special_requirements": "Minimum GPA of 2.0 cumulatively in CLA/CST coursework and in the major. Only courses with a grade of C- or better satisfy major requirements.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Provides rigorous training valuable for the job market and graduate studies."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "English 0802 Analytical Reading & Writing"
+            ],
+            "special_requirements": "Minimum GPA of 2.0 cumulatively in CLA/CST coursework and in the major. Only courses with a grade of C- or better satisfy major requirements.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Offers an accelerated BA/MA program."
+          },
+          {
+            "name": "Criminal Justice",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CJ 1001 The American Criminal Justice System",
+              "CJ 2401 Criminal Law",
+              "CJ 2597 Research Methods in Criminal Justice",
+              "CJ 2602 Criminology"
+            ],
+            "special_requirements": "Minimum GPA of 2.0 cumulatively in CLA/CST coursework and in the major. Only courses with a grade of C- or better satisfy major requirements.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Offers an accelerated +1 BA/MA program with a minimum 3.25 overall GPA and specific prerequisite courses."
+          },
+          {
+            "name": "Environmental Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ENST 2097 Environmental Issues and Science"
+            ],
+            "special_requirements": "Minimum GPA of 2.0 cumulatively in CLA/CST coursework and in the major. Only courses with a grade of C- or better satisfy major requirements.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Focuses on human-environmental interactions and offers technical skills in GIS."
+          }
+        ]
+      },
+      {
+        "name": "Lew Klein College of Media and Communication",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Interest in media production, journalism, public relations, or communication studies.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Creative storytellers, communicators, and media enthusiasts.",
+        "majors": [
+          {
+            "name": "Communication Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MSC 1101 Media and Society"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Journalism",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "JRN 1101 Journalism: The First Draft of History"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Advertising",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ADV 1101 Introduction to Advertising"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Media Studies and Production",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MSP 1101 Introduction to Media Studies and Production"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Public Relations",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PR 1101 Introduction to Public Relations"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "School of Pharmacy",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong science background; interest in pharmaceutical sciences or patient care.",
+        "housing_profile": "Standard university housing, possibly with options near the Health Sciences Campus.",
+        "student_archetype": "Detail-oriented, science-focused individuals interested in healthcare and medication.",
+        "majors": []
+      },
+      {
+        "name": "Barnett College of Public Health",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Interest in community health, epidemiology, health policy, or global health.",
+        "housing_profile": "Standard university housing, possibly with options near the Health Sciences Campus.",
+        "student_archetype": "Socially conscious individuals dedicated to improving community well-being and health outcomes.",
+        "majors": []
+      },
+      {
+        "name": "College of Science and Technology",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Strong aptitude for science and mathematics; interest in research or scientific careers.",
+        "housing_profile": "Standard university housing; potential for STEM-focused living communities.",
+        "student_archetype": "Inquisitive, analytical, and research-oriented individuals.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 1111 Foundations of Biology I",
+              "BIOL 1112 Foundations of Biology II",
+              "CHEM 1031 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Also offered as a B.A. degree."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1021 (C or better) or placement into MATH 1022 for CHEM 1031"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 1031 General Chemistry I",
+              "CHEM 1032 General Chemistry II",
+              "CHEM 2201 Organic Chemistry I",
+              "CHEM 2202 Organic Chemistry II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Also offered as a B.A. degree and with a Teaching concentration."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MATH 1041 Calculus I",
+              "MATH 1042 Calculus II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PHYS 1061 General Physics I",
+              "PHYS 1062 General Physics II"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Also offered as a B.A. degree and with a Teaching concentration."
+          },
+          {
+            "name": "Computer Science (College of Science and Technology)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Also available as a B.A., which requires fewer advanced Computer Science courses."
+          },
+          {
+            "name": "Neuroscience: Systems, Behavior and Plasticity",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 1031/CHEM 1033",
+              "CHEM 1032/CHEM 1034",
+              "MATH 1021 (C or better) or placement into MATH 1022"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "NSCI 1001 Foundations of Neuroscience"
+            ],
+            "special_requirements": "Minimum GPA of 2.0 cumulatively in CLA/CST coursework and in the major. Only courses with a grade of C- or better satisfy GenEd, major, or minor requirements.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Offered by the Neuroscience Program within the Department of Psychology and Neuroscience."
+          },
+          {
+            "name": "Environmental Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 1101 for some related courses"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "EES 2001 Earth and Environmental Science I"
+            ],
+            "special_requirements": "Minimum 3.5 major GPA for distinction, or 3.3 if electives are difficult, with no grade below C in a major requirement.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students select one of four concentrations: Applied Ecology, Climate, Environmental Geochemistry, or Hydrology."
+          }
+        ]
+      },
+      {
+        "name": "School of Social Work",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Commitment to social justice and helping vulnerable populations.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Empathetic, resilient individuals driven to advocate for social change and support others.",
+        "majors": []
+      },
+      {
+        "name": "School of Sport, Tourism and Hospitality Management",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Interest in the business and management aspects of sports, tourism, or hospitality industries.",
+        "housing_profile": "Standard university housing.",
+        "student_archetype": "Dynamic, service-oriented individuals with an interest in event planning, hospitality, or the sports industry.",
+        "majors": []
+      },
+      {
+        "name": "School of Theater, Film and Media Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Audition or portfolio may be required; passion for performance, filmmaking, or media arts.",
+        "housing_profile": "Standard university housing; artistic living-learning communities may be available.",
+        "student_archetype": "Creative, expressive individuals drawn to storytelling through performance and visual media.",
+        "majors": []
+      },
+      {
+        "name": "Maurice H. Kornberg School of Dentistry",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive, strong science background, and demonstrated interest in dentistry. Primarily a graduate/professional school.",
+        "housing_profile": "Graduate housing options or off-campus living.",
+        "student_archetype": "Dedicated and meticulous individuals aspiring to a career in dental medicine.",
+        "majors": []
+      },
+      {
+        "name": "Beasley School of Law",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive, strong analytical and communication skills. Primarily a graduate/professional school.",
+        "housing_profile": "Graduate housing options or off-campus living.",
+        "student_archetype": "Analytical, persuasive, and justice-oriented individuals.",
+        "majors": []
+      },
+      {
+        "name": "Lewis Katz School of Medicine",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Extremely competitive, exceptional science background, and commitment to healthcare. Primarily a graduate/professional school.",
+        "housing_profile": "Graduate housing options or off-campus living near the Health Sciences Campus.",
+        "student_archetype": "Compassionate, intellectually driven individuals dedicated to medical practice and research.",
+        "majors": []
+      },
+      {
+        "name": "School of Podiatric Medicine",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong science background; interest in foot and ankle care. Primarily a graduate/professional school.",
+        "housing_profile": "Graduate housing options or off-campus living.",
+        "student_archetype": "Specialized healthcare-focused individuals with an interest in podiatric medicine.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Sport Management Minor",
+      "Event and Entertainment Management Certificate",
+      "Accounting Minor",
+      "Finance Minor",
+      "Marketing Minor",
+      "Management Information Systems Minor",
+      "Business Minor",
+      "Biology Minor",
+      "Chemistry Minor",
+      "Data Science: Computational Analytics Minor",
+      "Computer Science Minor",
+      "Digital Media Technologies Minor",
+      "Geology Minor",
+      "Information Science and Technology Minor",
+      "Mathematics Minor",
+      "Natural Sciences Minor",
+      "Physics Minor",
+      "Japanese Minor",
+      "Gender, Sexuality and Women's Studies Minor",
+      "Chinese Minor",
+      "Journalism, Society and Culture Minor",
+      "Health Research Certificate",
+      "Acting Certificate",
+      "Jazz Arranging Certificate",
+      "Jazz Improvisation Certificate",
+      "Jazz Piano Certificate",
+      "Jazz Studies Composition Certificate",
+      "Jazz Voice Certificate",
+      "Chamber Music Certificate",
+      "Classical Piano Certificate",
+      "Classical Voice Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding commitment; receive decision by January 10"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-02-01",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "One optional personal essay as part of the Common Application; recommended for all students to complete to share more about themselves beyond grades and test scores"
+      },
+      {
+        "target_program": "Music, Dance, Art and Architecture, Film and Media Arts",
+        "requirement_type": "Audition/Portfolio/Interview",
+        "deadline": null,
+        "details": "Some majors in the Boyer College of Music and Dance, the Tyler School of Art and Architecture, and the School of Theater, Film and Media Arts may require additional supporting information such as an audition, interview or portfolio. Applicants should check specific program requirements."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Extracurriculars"
+      ],
+      "secondary_factors": [
+        "Recommendations",
+        "Talents"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Holistic review to capture individual experiences, extracurricular interests, and academic coursework; values grit, passion, and perseverance."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to a less competitive major if not definitively set on a highly competitive field like Computer Science or Engineering",
+      "Consider applying as undeclared, especially for colleges like Letters and Science, as some universities do not admit by major in these colleges",
+      "Research specific major admit rates for each university before applying, as they can vary significantly",
+      "Ensure your extracurriculars and profile align with your chosen major, even if it's considered less competitive",
+      "Prioritize majors with good career outcomes and return on investment if you are unsure about your specific interests"
+    ],
+    "college_ranking_tactics": [
+      "Avoid solely basing college decisions on general college rankings like those from US News, as they can be manipulated",
+      "Evaluate colleges based on their Return on Investment (ROI) and job placement statistics, rather than just prestige",
+      "Research Honors Programs within state schools as a way to find 'hidden gems' and potentially enhance your academic experience",
+      "Consider the quality of housing options available at each institution.",
+      "Look beyond prestige and assess the overall academic fit and curriculum, including General Education (GE) requirements."
+    ],
+    "alternate_major_strategy": "If applying to a highly competitive major, list a backup in a different, less competitive college within the university. For example, if applying to Computer Science in Engineering, list Cognitive Science in Letters and Science as an alternate. Be aware that some universities only guarantee the review of your primary major, and alternate majors may only be considered if space is available or under specific conditions. Choosing a non-capped or less competitive major as an alternate can increase your chances of admission to the university, even if not your first choice."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 19608,
+        "total_coa": 46506,
+        "housing": 14010
+      },
+      "out_of_state": {
+        "tuition": 35232,
+        "total_coa": 62453,
+        "supplemental_tuition": 15624
+      }
+    },
+    "aid_philosophy": "Need Focused",
+    "average_need_based_aid": 7506,
+    "average_merit_aid": 8749,
+    "percent_receiving_aid": 89.0,
+    "scholarships": [
+      {
+        "name": "President's Scholar Award",
+        "type": "Merit",
+        "amount": "Full tuition or full ride",
+        "deadline": "November 1st (Early Action recommended)",
+        "benefits": "Covers tuition, potentially housing, meals, fees, books, and personal spending",
+        "application_method": "Automatic Consideration with Admissions Application"
+      },
+      {
+        "name": "Provost's Scholar Award",
+        "type": "Merit",
+        "amount": "$6,000-$10,000/year",
+        "deadline": "February 1st (for first-year students)",
+        "benefits": "Renewable for up to 8 semesters with maintained GPA",
+        "application_method": "Automatic Consideration with Admissions Application"
+      },
+      {
+        "name": "Dean's Scholar Award",
+        "type": "Merit",
+        "amount": "$3,000-$5,000/year",
+        "deadline": "February 1st (for first-year students)",
+        "benefits": "Renewable for up to 8 semesters with maintained GPA",
+        "application_method": "Automatic Consideration with Admissions Application"
+      },
+      {
+        "name": "Temple University Academic Merit Scholarships (General)",
+        "type": "Merit",
+        "amount": "$3,000-$20,000/year (PA residents: $3,000-$10,000; Non-PA/International: $10,000-$20,000)",
+        "deadline": "February 1st (Admissions application deadline)",
+        "benefits": "Tuition-only scholarship, renewable for up to eight consecutive semesters with full-time enrollment and minimum GPA.",
+        "application_method": "Automatic Consideration with Undergraduate Admissions Application"
+      },
+      {
+        "name": "Broad Street Finish Line Scholarship",
+        "type": "Need-Based",
+        "amount": "$500-$5,000/year",
+        "deadline": "February 1st (FAFSA priority deadline)",
+        "benefits": "Supports first-generation college students to graduate in four years, based on financial need.",
+        "application_method": "FAFSA"
+      },
+      {
+        "name": "International Student Merit Scholarships",
+        "type": "Merit",
+        "amount": "Up to $20,000 per year for first-year students (up to four years)",
+        "deadline": "February 1st (Admissions application deadline)",
+        "benefits": "Awards for international students with strong academic records. Full tuition options are highly competitive.",
+        "application_method": "Automatic Consideration with Admissions Application"
+      },
+      {
+        "name": "Departmental Scholarships",
+        "type": "Merit / Specific Criteria",
+        "amount": "Varies",
+        "deadline": "Varies by department",
+        "benefits": "Specific to majors or fields of study within academic colleges; contact individual departments for details.",
+        "application_method": "Contact undergraduate faculty advisor/director"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Scores of 3+ typically grant credit for most exams",
+      "exceptions": [
+        "Credit for AP English Literature & Composition does not waive the English 802 requirement; a placement assessment is still needed",
+        "Duplicate credit will not be awarded for both university/college credit and AP scores for the same course",
+        "If dual enrollment credit is on a college transcript and AP scores are also submitted for the same course, credit is awarded based on the dual enrollment evaluation"
+      ],
+      "usage": "Can satisfy designated General Education (GenEd) requirements and may contribute to major prerequisites"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with scores of 5+ generally grant credit",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Transfer Equivalency Tool"
+      ],
+      "restrictions": "A minimum of 45 of the last 60 credits for a Temple degree must be completed as a matriculated student at Temple. Generally, Temple accepts academic, college-level courses with a grade 'C' or better."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "A strong academic record, including GPA and challenging coursework.",
+      "A unique and personal essay that showcases your individuality and authentic self.",
+      "Demonstrated interest in Temple University, possibly through early action applications or specific mention of programs.",
+      "Standardized test scores (SAT/ACT) are optional, but good scores can strengthen an application if submitted."
+    ],
+    "common_activities": [
+      "Participation in school clubs and leadership roles within them.",
+      "Involvement in sports or varsity athletics.",
+      "Community service or volunteer work.",
+      "Internships or work experience relevant to intended major."
+    ],
+    "essay_tips": [
+      "Write a unique and personal essay that makes you stand out from the crowd.",
+      "Be specific about your interest in Temple University and its programs, showing you've done your research.",
+      "Reflect on personal experiences and perspectives that are not evident elsewhere in your application.",
+      "Proofread carefully for spelling and grammatical errors, and consider having a trusted adult review it."
+    ],
+    "red_flags": [
+      "Submitting a generic essay that could apply to any school.",
+      "Waiting too long to complete and submit the application, increasing the likelihood of errors and missed opportunities.",
+      "Failing to proofread the application, leading to simple errors that make it appear sloppy.",
+      "Not including all relevant extracurriculars or personal details that shape who you are."
+    ],
+    "insights": [
+      "Temple University has a relatively high acceptance rate, around 83%.",
+      "Applying Early Action (EA) can lead to quicker decisions and potentially higher chances of acceptance or scholarship consideration.",
+      "Merit scholarship notifications and financial aid breakdowns may come at a different time than the initial acceptance letter.",
+      "The university accepts the Common Application.",
+      "The admissions process can sometimes take several weeks for essays and full applications to be reviewed."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 63727,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 18.0,
+    "top_employers": [
+      "School District of Philadelphia",
+      "Vanguard",
+      "SEI",
+      "Amazon",
+      "Lockheed Martin"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 84.0,
+    "graduation_rate_4_year": 57.0,
+    "graduation_rate_6_year": 75.0
+  }
+}

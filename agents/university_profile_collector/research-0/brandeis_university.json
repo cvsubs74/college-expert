@@ -1,0 +1,986 @@
+{
+  "_id": "brandeis_university",
+  "metadata": {
+    "official_name": "Brandeis University",
+    "location": {
+      "city": "Waltham",
+      "state": "MA",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Brandeis University is a private research university located in Waltham, Massachusetts, within the Greater Boston area. Founded in 1948, it is recognized for its academic excellence, commitment to social justice, and vibrant intellectual community, emphasizing a liberal arts education within a research-driven environment.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic review, emphasizing academic excellence, commitment to social justice, and an inclusive educational environment.",
+    "analyst_takeaways": [
+      {
+        "category": "Rankings Volatility",
+        "insight": "Brandeis's US News National Universities ranking has shown some fluctuation, dropping from #35 in 2019 to #44 in 2021, and further to #63 in 2025.",
+        "implication": "Prospective students should look beyond overall rankings and consider specific program strengths and academic fit, as the institution maintains high rankings in particular areas like Best Value Schools and specific graduate programs."
+      },
+      {
+        "category": "Social Life Perception",
+        "insight": "There are mixed reviews on campus social life, with some characterizing it as quieter and more introverted, while others highlight active student organizations and a strong sense of community.",
+        "implication": "Prospective students valuing a vibrant party scene might find it less prominent, but those seeking close-knit communities, diverse engagement, and opportunities to create their own experience will likely thrive."
+      },
+      {
+        "category": "Research Focus",
+        "insight": "Brandeis is classified as an R1 research university, indicating 'very high research activity,' and offers extensive undergraduate and graduate research opportunities, including working with Nobel laureates.",
+        "implication": "Students interested in hands-on research and close collaboration with faculty will find significant opportunities and support to engage in impactful projects across various disciplines."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Brandeis fosters a close-knit, diverse, and welcoming community with over 270 student organizations and a strong emphasis on community service. While some describe the campus social life as quieter and less focused on large parties or Greek life, students often find engagement through clubs, events, and forming meaningful relationships. Proximity to Boston and Cambridge offers additional social and cultural opportunities.",
+      "transportation_impact": "Located in Waltham, 9 miles west of Boston, Brandeis provides a balance of a suburban setting with urban access. The university offers a free shuttle service to Waltham, Boston, and Cambridge. Additionally, the MBTA commuter rail has a stop directly at the Brandeis/Roberts station, providing convenient access to Boston and surrounding areas. This connectivity allows students to explore off-campus opportunities while maintaining a residential campus experience.",
+      "research_impact": "As an R1 research university and a member of the Association of American Universities, Brandeis places a high value on research. Undergraduates have significant opportunities to work alongside faculty, including Nobel laureates, and lead their own projects, often resulting in co-authored publications. The university provides resources like the Undergraduate Research and Creative Collaborations Office to help students find mentors and funding across sciences, humanities, social sciences, and creative arts. Graduate students also benefit from small classes, faculty mentorship, and collaborative research environments."
+    },
+    "us_news_rank": 63
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 40.5,
+      "in_state_acceptance_rate": 43.9,
+      "out_of_state_acceptance_rate": 55.82,
+      "international_acceptance_rate": 20.0,
+      "transfer_acceptance_rate": 49.3,
+      "admits_class_size": 4234,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional for domestic students; international undergraduate applicants are required to submit SAT or ACT scores.",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 765,
+          "admits": 323,
+          "acceptance_rate": 42.2,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 9748,
+        "admits_total": 4387,
+        "enrolled_total": 761,
+        "acceptance_rate_overall": 45.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 17.35,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Preliminary data for Fall 2025 enrollment (Class of 2029). Waitlist data not publicly disclosed yet. Brandeis confirms waitlist is not ranked based on historical CDS data."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 10698,
+        "admits_total": 4008,
+        "enrolled_total": 874,
+        "acceptance_rate_overall": 37.47,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 21.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 1805,
+          "accepted_spots": 703,
+          "admitted_from_waitlist": 373,
+          "waitlist_admit_rate": 53.06,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data derived from Brandeis University Common Data Set 2024-2025. Waitlist is not ranked."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 11282,
+        "admits_total": 3986,
+        "enrolled_total": 865,
+        "acceptance_rate_overall": 35.33,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 21.7,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data derived from Brandeis University Common Data Set 2023-2024. Waitlist data for this year was not publicly disclosed in the CDS, though the university indicated having a waitlist policy. Brandeis generally does not rank its waitlist."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 10462,
+        "admits_total": 4238,
+        "enrolled_total": 735,
+        "acceptance_rate_overall": 40.51,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 17.34,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data derived from Brandeis University Common Data Set 2022-2023. Waitlist data for this year was not publicly disclosed in the CDS, though the university indicated having a waitlist policy. Brandeis generally does not rank its waitlist."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 9796,
+        "admits_total": 3834,
+        "enrolled_total": 943,
+        "acceptance_rate_overall": 39.14,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 24.6,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 1665,
+          "accepted_spots": 768,
+          "admitted_from_waitlist": 31,
+          "waitlist_admit_rate": 4.04,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data derived from Brandeis University Common Data Set 2021-2022. Waitlist is not ranked."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.60-4.00",
+        "average_weighted": null,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "The average GPA is 3.9 (likely unweighted). Approximately 33.8% of enrolled students had a 4.0 GPA, and 31.4% had a GPA between 3.75 and 3.99. Most admitted students have straight A's in honors/AP courses."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1410-1510",
+        "sat_reading_middle_50": "690-750",
+        "sat_math_middle_50": "700-780",
+        "act_composite_middle_50": "31-34",
+        "submission_rate": 40.0,
+        "policy_note": "Test optional, but scores are considered if submitted. Approximately 40% of enrolled first-time, first-year students submitted SAT scores, and 16% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 19.3,
+        "geographic_breakdown": [
+          {
+            "region": "US States",
+            "percentage": 80.7
+          },
+          {
+            "region": "International",
+            "percentage": 19.3
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 4886,
+            "admits": 1507,
+            "acceptance_rate": 30.84,
+            "note": ""
+          },
+          "women": {
+            "applicants": 6396,
+            "admits": 2477,
+            "acceptance_rate": 38.73,
+            "note": ""
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 41.38,
+          "black_african_american": 5.84,
+          "hispanic_latino": 8.97,
+          "asian": 17.73,
+          "native_american_alaskan": 0.03,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 4.27,
+          "unknown": 2.51,
+          "non_resident_alien": 19.27
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools",
+    "colleges": [
+      {
+        "name": "School of Arts, Humanities and Culture",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 35.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students passionate about exploring human expression, language, literature, philosophy, and the arts within a liberal arts framework. Encourages interdisciplinary approaches to understanding culture.",
+        "housing_profile": "First-year students often reside in traditional corridor-style dorms in Massell or North Quad, with upperclassmen moving to suite-style or apartment living with private bathrooms and kitchens through a lottery system.",
+        "student_archetype": "Intellectually curious, socially conscious, values deep theoretical knowledge and critical thinking. Often engaged in campus discussions and creative expression.",
+        "majors": [
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ENG 10b Poetry: A Basic Course OR ENG 11a Close Reading: Theory and Practice OR ENG 11b Fiction: A Basic Course (to be taken early)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENG 10b Poetry: A Basic Course",
+              "ENG 11a Close Reading: Theory and Practice",
+              "ENG 11b Fiction: A Basic Course"
+            ],
+            "special_requirements": "Ten semester courses are required, including two pre-1800 courses, two post-1800 courses, one course from each of three categories (e.g., theory/criticism, American literature, global literature), and three electives. A maximum of three courses taken outside the department (including study abroad and cross-listed) may count.",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Declaration is typically by the end of sophomore year."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "At least nine semester courses in history are required, with at least five HIST-designated courses taken at Brandeis. Declaration is typically during the second semester of the second year, in consultation with a faculty advisor.",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "A flexible major allowing students to tailor their program to specific interests and career plans."
+          },
+          {
+            "name": "Art History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "FA 30a History of Western Art I: From Antiquity to the Middle Ages",
+              "FA 30b History of Western Art II: From the Renaissance to the Modern Age"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "FA 30a History of Western Art I",
+              "FA 30b History of Western Art II"
+            ],
+            "special_requirements": "Eleven courses from Fine Arts and cross-listed offerings are required. All courses taken for the major must receive a final grade of C- or better. No course taken pass/fail may count toward the major requirements.",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Emphasizes detailed and critical analyses of art from a global perspective. Introductory courses are open to all students, including first-years and sophomores."
+          }
+        ]
+      },
+      {
+        "name": "School of Business and Economics",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 35.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Suited for students seeking analytical rigor and ethical perspectives in business, finance, policy, and entrepreneurship, integrated with a liberal arts education. Focuses on preparing leaders for a global, data-driven economy.",
+        "housing_profile": "First-year students often reside in traditional corridor-style dorms in Massell or North Quad, with upperclassmen moving to suite-style or apartment living with private bathrooms and kitchens through a lottery system.",
+        "student_archetype": "Ambitious, analytical, and globally-minded, interested in connecting academic learning with practical, career-focused applications. Values interdisciplinary study and real-world perspectives.",
+        "majors": [
+          {
+            "name": "Business",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 2a Survey of Economics OR ECON 10a Introduction to Microeconomics",
+              "BUS 6a Financial Accounting",
+              "BUS 10a Business Fundamentals"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 10a Introduction to Microeconomics",
+              "BUS 6a Financial Accounting",
+              "BUS 10a Business Fundamentals"
+            ],
+            "special_requirements": "Students may declare the major once they have completed ECON 2a or ECON 10a with a grade of C- or higher, BUS 6a, and BUS 10a. A minimum grade of 'C' is required in core and Business Administration courses, and 'C-' in Business & Society courses. Pass/Fail is not accepted.",
+            "admissions_pathway": "Application Process",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "A minimum grade of 'C' in core and Business Administration courses is required.",
+            "notes": "The only major explicitly mentioned as having an application process, though open to internal transfers upon meeting prerequisites and grade requirements. Located within the Brandeis International Business School (IBS)."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 10a Introduction to Microeconomics",
+              "ECON 20a Introduction to Macroeconomics",
+              "Calculus (MATH 10a or equivalent/AP score)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 10a Introduction to Microeconomics",
+              "ECON 20a Introduction to Macroeconomics",
+              "Calculus"
+            ],
+            "special_requirements": "Students must earn a grade of C or higher in both introductory courses (Econ 10a and 20a) to continue with the major. A student must satisfy the calculus requirement prior to enrolling in intermediate theory courses. A GPA of at least 2.00 in their 'best' ten Economics courses is required.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "One of the most popular majors. Declaration by end of sophomore year."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.S. in Quantitative Economics",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECON 10a Introduction to Microeconomics",
+              "ECON 20a Introduction to Macroeconomics",
+              "MATH 10a Calculus I",
+              "MATH 15a Linear Algebra",
+              "MATH 20a Multivariable Calculus"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECON 10a Introduction to Microeconomics",
+              "ECON 20a Introduction to Macroeconomics",
+              "MATH 10a Calculus I",
+              "MATH 15a Linear Algebra"
+            ],
+            "special_requirements": "Requires the same core economics courses as the BA plus three additional mathematics courses (Linear Algebra, Multivariable Calculus) and all four economics electives must be upper-level, with at least two focusing on quantitative skills. Students must earn a grade of C or higher in introductory economics courses and satisfy the calculus requirement.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Combines core economics with advanced mathematics and quantitative electives."
+          }
+        ]
+      },
+      {
+        "name": "School of Science, Engineering and Technology",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 35.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Best for students interested in scientific exploration, discovery, and tackling urgent challenges in health, sustainability, and AI through interdisciplinary research. Emphasizes hands-on experience and a liberal arts approach to science.",
+        "housing_profile": "First-year students often reside in traditional corridor-style dorms in Massell or North Quad, with upperclassmen moving to suite-style or apartment living with private bathrooms and kitchens through a lottery system.",
+        "student_archetype": "Problem-solvers, innovative thinkers, and researchers committed to advancing scientific knowledge and its applications. Values a rigorous academic environment with access to research opportunities.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COSI 12b",
+              "COSI 21a",
+              "COSI 29a",
+              "COSI 131a"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "COSI 12b Data Structures and Fundamentals of Computing",
+              "COSI 21a Data Structures",
+              "COSI 29a Discrete Structures"
+            ],
+            "special_requirements": "No course with a final grade below C- can count toward fulfilling the requirements for the major. No course taken pass/fail may count toward requirements for the major.",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Any Brandeis student can declare a CS major; there is no application process. The 9-course BA emphasizes bridging CS with other majors. Declaration typically by end of sophomore year."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COSI 12b",
+              "COSI 21a",
+              "COSI 29a",
+              "COSI 121b",
+              "COSI 130a",
+              "COSI 131a",
+              "MATH 8a",
+              "MATH 10a"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "COSI 12b Data Structures and Fundamentals of Computing",
+              "COSI 21a Data Structures",
+              "COSI 29a Discrete Structures",
+              "MATH 10a Introduction to Calculus"
+            ],
+            "special_requirements": "No course with a final grade below C- can count toward fulfilling the requirements for the major in computer science. No course taken pass/fail may count toward requirements for the major. A 2-credit practicum (COSI 45a) is required.",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "The BS is a more intensive 14.5-course program. Any Brandeis student can declare a CS major; there is no application process. Declaration typically by end of sophomore year."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms",
+              "BIOL 16a Evolution and Biodiversity",
+              "CHEM 11a,b General Chemistry I & II",
+              "CHEM 18a,b General Chemistry Laboratory I & II"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms",
+              "CHEM 11a General Chemistry I",
+              "CHEM 25a Organic Chemistry I"
+            ],
+            "special_requirements": "Satisfactory grades (C- or above) must be earned in all Biology Core courses with BIOL designations (BIOL 14a, 15b, 16a, 18a, 18b) and all Elective courses. No more than one D or D+ may be earned in any other courses for the major. No grade of D- will be allowed.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare their major by the end of their sophomore year. Requires core biology, chemistry, and specific lab courses."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms",
+              "BIOL 16a Evolution and Biodiversity",
+              "CHEM 11a,b General Chemistry I & II",
+              "CHEM 18a,b General Chemistry Laboratory I & II",
+              "CHEM 25a,b Organic Chemistry I & II",
+              "CHEM 29a,b Organic Chemistry Laboratory I & II",
+              "PHYS 10a,b or 11a,b or 15a,b",
+              "PHYS 18a,b or 19a,b lab"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms",
+              "CHEM 11a General Chemistry I",
+              "CHEM 25a Organic Chemistry I",
+              "PHYS 11a Introductory Physics I"
+            ],
+            "special_requirements": "The BS is an intensive biology option. Satisfactory grades (C- or above) must be earned in all Biology Core courses with BIOL designations, all Quantitative courses, and in all Elective courses. No more than one D or D+ may be earned in any other courses for the major. No grade of D- will be allowed.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare their major by the end of their sophomore year. The BS degree has more extensive requirements in chemistry, physics, and quantitative courses."
+          },
+          {
+            "name": "Biochemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHEM 11a,b General Chemistry I & II",
+              "CHEM 18a,b General Chemistry Lab I & II",
+              "CHEM 25a,b Organic Chemistry I & II",
+              "CHEM 29a,b Organic Chemistry Lab I & II",
+              "PHYS 11a,b or PHYS 15a,b Calculus-based Introductory Physics",
+              "PHYS 19a,b Physics Lab",
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CHEM 11a General Chemistry I",
+              "CHEM 25a Organic Chemistry I",
+              "PHYS 11a Introductory Physics I",
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms"
+            ],
+            "special_requirements": "Grades below C- cannot be used to fulfill the requirements for the major. Biochemistry majors are typically students with excellent performance in introductory science courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "A demanding major requiring a strong background in chemistry, physics, and mathematics. Students intending this major should select their first- and second-year science and math courses carefully."
+          },
+          {
+            "name": "Neuroscience",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "NBIO 140b Principles of Neuroscience (or NBIO 240a)",
+              "One quantitative course (e.g., BIOL 51a, PSYC 51a)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "NBIO 140b Principles of Neuroscience",
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms",
+              "PSYC 1a Introduction to Psychology"
+            ],
+            "special_requirements": "Requires core courses, neuroscience electives (three at 100-level), and laboratory courses. Declaration involves completing an online worksheet and meeting with an Undergraduate Advising Head.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Provides a general background in neuroscience and offers flexibility with fewer quantitative and physical science requirements compared to the BS."
+          },
+          {
+            "name": "Neuroscience",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "NBIO 140b Principles of Neuroscience (or NBIO 240a)",
+              "One quantitative course (e.g., BIOL 51a, PSYC 51a)",
+              "A series of additional science courses (e.g., Biology, Chemistry, Physics, Math) and laboratory courses."
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "NBIO 140b Principles of Neuroscience",
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms",
+              "CHEM 11a General Chemistry I",
+              "PHYS 11a Introductory Physics I"
+            ],
+            "special_requirements": "An intensive option with a strong background in several areas of neuroscience, recommended for students pursuing a career in research. Requires at least 52 credits (13 full courses) of additional science electives, with at least 12 credits from laboratory courses. Declaration involves completing an online worksheet and meeting with an Undergraduate Advising Head.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "The BS program provides rigorous training for students intending to pursue graduate work in neuroscience or related biological sciences."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHYS 11a,b or PHYS 15a,b Introductory Physics",
+              "PHYS 18a,b or PHYS 19a,b Physics Lab",
+              "MATH 10a,b Calculus I & II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PHYS 11a Introductory Physics I",
+              "PHYS 15a Advanced Introductory Physics I",
+              "MATH 10a Introduction to Calculus"
+            ],
+            "special_requirements": "No course with a grade below C- can be used to satisfy the requirements of the major. No course taken pass/fail may count toward the major requirements. Declaration encouraged as early as possible with the Undergraduate Advising Head.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Provides a solid grounding in physics while allowing students to study another field, suitable for careers in climate science, science journalism, pre-medical studies, etc."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHYS 11a,b or PHYS 15a,b Introductory Physics",
+              "PHYS 19a,b Physics Lab",
+              "MATH 10a,b Calculus I & II",
+              "MATH 15a Linear Algebra",
+              "MATH 20a Multivariable Calculus"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PHYS 11a Introductory Physics I",
+              "PHYS 15a Advanced Introductory Physics I",
+              "MATH 10a Introduction to Calculus",
+              "MATH 15a Linear Algebra"
+            ],
+            "special_requirements": "Provides rigorous training for students intending to pursue graduate work in physics or engineering. No course with a grade below C- can be used to satisfy the requirements of the major. No course taken pass/fail may count toward the major requirements. Declaration encouraged as early as possible with the Undergraduate Advising Head.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "The BS degree is an in-depth study developing a strong foundation in many areas of physics and math."
+          }
+        ]
+      },
+      {
+        "name": "School of Social Sciences and Social Policy",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 35.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Designed for students who want to address pressing social issues through policy, research, and civic engagement. Builds on strengths in social policy, public health, and international development.",
+        "housing_profile": "First-year students often reside in traditional corridor-style dorms in Massell or North Quad, with upperclassmen moving to suite-style or apartment living with private bathrooms and kitchens through a lottery system.",
+        "student_archetype": "Advocates for social justice, community-oriented, and engaged in understanding societal interactions and inequalities. Often actively involved in clubs and organizations related to social causes.",
+        "majors": [
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSYC 1a Introduction to Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSYC 1a Introduction to Psychology",
+              "PSYC 51a Introduction to Statistical Methods"
+            ],
+            "special_requirements": "Declaration involves downloading a checklist and declaration form, completing it, and meeting with the Undergraduate Advising Head.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students are assigned a faculty advisor after declaration."
+          },
+          {
+            "name": "Health: Science, Society, and Policy (HSSP)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "HSSP 100b Introduction to Epidemiology, Biostatistics, and Population Health",
+              "One core Science course (e.g., BIOL 14a, BIOL 15b)",
+              "One core Society course (e.g., SOC 84a)",
+              "One core Policy course"
+            ],
+            "special_requirements": "All HSSP majors must complete a health-related Hands-on Experience (HOE). Declaration requires completing the HSSP Declaration Form and meeting with the Undergraduate Advising Head.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Interdisciplinary major drawing from life sciences, social sciences, and health policy."
+          },
+          {
+            "name": "Health: Science, Society, and Policy (HSSP)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms",
+              "BIOL 16a Evolution and Biodiversity",
+              "BIOL 18a General Biology Lab",
+              "BIOL 18b General Biology Lab",
+              "BIOL 42a Physiology",
+              "HSSP 100b Introduction to Epidemiology, Biostatistics, and Population Health",
+              "One core Society course",
+              "One core Policy course"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 14a Genetics and Genomics",
+              "BIOL 15b Cells and Organisms",
+              "BIOL 42a Physiology",
+              "HSSP 100b Introduction to Epidemiology, Biostatistics, and Population Health"
+            ],
+            "special_requirements": "Requires the introductory biology sequence and accompanying labs, BIOL 42a - Physiology, plus HSSP core courses and electives. All HSSP majors must complete a health-related Hands-on Experience (HOE). Declaration requires completing the HSSP Declaration Form and meeting with the Undergraduate Advising Head.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "More science-intensive HSSP option."
+          },
+          {
+            "name": "Politics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Two or three introductory politics courses (recommended in first two years)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Nine courses are required. Majors should complete introductory courses in at least three subfields by the end of sophomore year. Declaration is normally during the second semester of the second year, in consultation with the departmental undergraduate advising head.",
+            "admissions_pathway": "Open Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Flexible major preparing students for careers in public service, policy analysis, journalism, law, and business."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Various Minors across disciplines",
+      "Certificates (specific names not provided in search results)"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision I",
+        "date": "2025-11-01",
+        "is_binding": true,
+        "notes": "Binding commitment for Fall 2026 entry"
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2026-01-15",
+        "is_binding": true,
+        "notes": "Binding commitment for Fall 2026 entry"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-15",
+        "is_binding": false,
+        "notes": "For Fall 2026 entry"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "One required essay: How has your educational experience shaped your perspective on Brandeis' founding values of inclusivity and justice? (250 words max.)"
+      },
+      {
+        "target_program": "International Students",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Additional required essay: What excites you about being an international student at Brandeis University? (250 words max.)"
+      },
+      {
+        "target_program": "Myra Kraft Achievers Program",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Additional required essay: What strengths will you bring to the group, and in what areas will you benefit from the strengths of others? (250 words)"
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations",
+        "Character/Personal Qualities"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Not Considered",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Seeking intellectual curiosity and drive, potential for social and academic success, demonstrated understanding of Brandeis' mission (inclusivity, justice, improving the world), and active citizens."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Leverage Brandeis's policy of admitting to the college, not to a specific major, allowing flexibility in initial major interest selection.",
+      "Plan to explore a range of interests and fields, as major declaration is not required until the fourth semester.",
+      "Take advantage of the shopping period at the beginning of each semester to try out different classes before committing.",
+      "Consider pursuing a double major or multiple minors, a feasible and common option at Brandeis, with over half of undergraduates doing so.",
+      "Attend 'meet the majors' events and clubs to discover programs you may not have considered initially."
+    ],
+    "college_ranking_tactics": [
+      "Look beyond overall national rankings and consider specific program strengths, such as Brandeis's reputation for life sciences.",
+      "Evaluate factors like student-faculty ratio (Brandeis has 11:1), first-year retention (90.3%), and graduation rates (86.1%).",
+      "Consider the quality of campus life and student body characteristics, such as the active club culture and diverse, driven peers.",
+      "Assess the school's location and proximity to major cities like Boston for opportunities and a broader social scene.",
+      "Investigate aspects like housing quality and career services, as these can significantly impact the college experience."
+    ],
+    "alternate_major_strategy": "Given Brandeis admits to the university rather than specific schools or colleges, the strategy of listing a backup major in a 'different college' for admission is not directly applicable. However, once admitted, leverage the university's flexibility to explore and easily change majors until your fourth semester. If you have a primary competitive interest (e.g., Computer Science), consider exploring a related but potentially less intensive field (e.g., Computational and Applied Mathematics or Economics, both popular at Brandeis) as an internal backup or complementary major/minor once enrolled."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 68080,
+        "total_coa": 90224,
+        "housing": 19944
+      },
+      "out_of_state": {
+        "tuition": 68080,
+        "total_coa": 90224,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 31964,
+    "average_merit_aid": 0,
+    "percent_receiving_aid": 64.0,
+    "scholarships": [
+      {
+        "name": "Brandeis Merit Scholarships (e.g., Justice Brandeis, Dean's, Presidential, Trustee)",
+        "type": "Merit",
+        "amount": "Varies, typically $5,000 to $30,000 annually",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Renewable for up to eight semesters (with GPA requirement, e.g., 3.0 GPA)",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Wien International Scholarship Program",
+        "type": "Merit/Need-Based (full demonstrated need)",
+        "amount": "Full demonstrated financial need (covers tuition, boarding, living expenses)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Full funding for exceptional international undergraduate students",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Stroum Family Waltham Scholarship",
+        "type": "Merit/Full Tuition",
+        "amount": "Full tuition",
+        "deadline": "Submit admission application and CSS Profile",
+        "benefits": "Full tuition for outstanding graduating seniors from Waltham High School",
+        "application_method": "Automatic Consideration (requires CSS Profile submission)"
+      },
+      {
+        "name": "Brandeis-Sponsored National Merit Scholarship",
+        "type": "Merit",
+        "amount": "$500 (renewable)",
+        "deadline": "Designate Brandeis as first choice through NMSC by NMSC deadlines (May 1 for offers)",
+        "benefits": "Awarded to National Merit Finalists",
+        "application_method": "Designate Brandeis as first-choice through National Merit Scholarship Corporation (NMSC)"
+      },
+      {
+        "name": "Need-Based Scholarships/Grants",
+        "type": "Need",
+        "amount": "Varies based on demonstrated financial need",
+        "deadline": "FAFSA/CSS Profile deadlines",
+        "benefits": "Partial tuition coverage, support for educational expenses",
+        "application_method": "FAFSA (U.S. citizens/permanent residents) or CSS Profile (international applicants)"
+      },
+      {
+        "name": "Community College Transfer Scholarship",
+        "type": "Merit/Full Tuition",
+        "amount": "Full tuition",
+        "deadline": "Automatic consideration with transfer admission application",
+        "benefits": "Full tuition for competitive community college transfer applicants",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Humanities Scholars Program",
+        "type": "Merit/Departmental",
+        "amount": "Approximately $20,000 annually (plus stipend for experiential learning)",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Opportunity to work closely with faculty, stipend for experiential learning opportunities",
+        "application_method": "Automatic Consideration"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "A maximum of 16 credits can be applied toward the 128 credits required for graduation for qualifying exams. Additional exams can be used for placement, general degree requirements, and major/minor requirements as allowed by individual departments.",
+      "exceptions": [
+        "Students may not enroll in a lower-level course at Brandeis and also claim AP exam credit that has a higher-level course equivalent, specifically for Chemistry, Mathematics, and Physics exams. If a student enrolls in a lower-level course after claiming AP credit, the credit may be revoked."
+      ],
+      "usage": "Can be applied towards the overall 128 credits for graduation (up to 16), and can be used for placement, general degree requirements, and major/minor requirements."
+    },
+    "ib_policy": {
+      "general_rule": "Eight credits (two four-credit courses) are awarded for each Higher Level (HL) examination with a score of 5 or better.",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "None specified"
+      ],
+      "restrictions": "A maximum of 64 credits (equivalent to 16 four-credit courses) may be granted for transfer. Courses must be from accredited, degree-granting institutions, generally equivalent to Brandeis courses, and have a grade of C- or better (B- in summer school). A minimum of 64 credits in four fall/spring semesters must be completed at Brandeis to satisfy the residency requirement for transfer students. For first-year students, a combined maximum of 16 credits from all external sources (including AP, IB, A-Level, and college work done in high school/gap year) can be applied."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework, including AP, IB, and honors classes, aiming for a GPA of 3.83 or higher.",
+      "Demonstrated passion and engagement in extracurriculars, showing alignment with the university's mission to prepare active citizens.",
+      "Authentic and specific essays that showcase critical thinking skills and self-awareness.",
+      "Strong letters of recommendation from teachers who know you well, personally and academically.",
+      "For international applicants, a strong showing of how they would contribute to the Brandeis community and understanding of their belief system."
+    ],
+    "common_activities": [
+      "Leadership in school clubs and organizations.",
+      "Community service and volunteer work.",
+      "Research experience, as Brandeis emphasizes research opportunities.",
+      "Varsity athletics (though not explicitly detailed, general college admissions often value this).",
+      "Involvement in cultural societies or initiatives that promote diversity and inclusivity."
+    ],
+    "essay_tips": [
+      "Be specific about why Brandeis and what excites you most about the university, avoiding generic statements.",
+      "Show, don't tell: use specific examples to illustrate your critical thinking skills and contributions.",
+      "Reflect on your personal strengths and how you can contribute to a peer group, as well as how you would benefit from others.",
+      "For international students, articulate what distinguishes you from other international applicants and what unique perspective you bring.",
+      "Avoid starting with famous quotes and focus on specific experiences that led you to apply."
+    ],
+    "red_flags": [
+      "Generic essays that could apply to any school, failing to demonstrate genuine interest in Brandeis.",
+      "Lack of specific examples to support claims about skills or experiences in essays.",
+      "Asking for letters of recommendation from individuals who do not know the applicant well.",
+      "Not following application instructions carefully, such as exceeding word limits.",
+      "A significant decline in grades during senior year (implied by the emphasis on a strong and consistent GPA)."
+    ],
+    "insights": [
+      "Brandeis has a holistic application review process, considering academic qualifications alongside qualitative aspects like essays and extracurriculars.",
+      "Applying Early Decision can increase acceptance chances due to improved yield rates, but it's a binding commitment.",
+      "While standardized test scores are considered but not required, submitting strong scores can compensate for a lower GPA.",
+      "Brandeis seeks students who align with its mission of preparing active citizens who care about improving the world.",
+      "Interviews can be beneficial, particularly for international applicants, to showcase personality and receive strong scores."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 66700,
+    "employment_rate_2yr": 93.0,
+    "grad_school_rate": 43.0,
+    "top_employers": [
+      "Google",
+      "Deloitte",
+      "Amazon",
+      "Goldman Sachs",
+      "Microsoft",
+      "Boston Children's Hospital",
+      "Massachusetts General Hospital"
+    ],
+    "loan_default_rate": 2.1
+  },
+  "student_retention": {
+    "freshman_retention_rate": 90.0,
+    "graduation_rate_4_year": 78.0,
+    "graduation_rate_6_year": 86.0
+  }
+}

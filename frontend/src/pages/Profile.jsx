@@ -838,12 +838,12 @@ If this is a question about my profile, answer based on my profile data.`;
       <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center shadow-md">
+            <div className="w-12 h-12 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-xl flex items-center justify-center shadow-md">
               <UserCircleIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Student Profile</h1>
-              <p className="mt-0.5 text-sm text-gray-500 max-w-lg">
+              <h1 className="font-serif text-xl font-bold text-[#2C2C2C]">Student Profile</h1>
+              <p className="mt-0.5 text-sm text-[#4A4A4A] max-w-lg">
                 Upload your academic profile, transcript, and activities for personalized analysis.
               </p>
             </div>
@@ -854,13 +854,13 @@ If this is a question about my profile, answer based on my profile data.`;
       </div>
 
       {/* Tab Navigation - Always visible */}
-      <div className="flex border-b border-gray-200 mb-6 overflow-x-auto">
+      <div className="flex border-b border-[#E0DED8] mb-6 overflow-x-auto">
         {/* Upload Documents - Always first */}
         <button
           onClick={() => setActiveTab('files')}
           className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'files'
-            ? 'border-indigo-600 text-indigo-600'
-            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            ? 'border-[#1A4D2E] text-[#1A4D2E]'
+            : 'border-transparent text-[#4A4A4A] hover:text-[#1A4D2E] hover:border-[#D6E8D5]'
             }`}
         >
           <DocumentTextIcon className="h-5 w-5" />
@@ -872,8 +872,8 @@ If this is a question about my profile, answer based on my profile data.`;
           <button
             onClick={() => setActiveTab('view')}
             className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'view'
-              ? 'border-indigo-600 text-indigo-600'
-              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              ? 'border-[#1A4D2E] text-[#1A4D2E]'
+              : 'border-transparent text-[#4A4A4A] hover:text-[#1A4D2E] hover:border-[#D6E8D5]'
               }`}
           >
             <UserCircleIcon className="h-5 w-5" />
@@ -884,8 +884,8 @@ If this is a question about my profile, answer based on my profile data.`;
         <button
           onClick={() => setActiveTab('form')}
           className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'form'
-            ? 'border-indigo-600 text-indigo-600'
-            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            ? 'border-[#1A4D2E] text-[#1A4D2E]'
+            : 'border-transparent text-[#4A4A4A] hover:text-[#1A4D2E] hover:border-[#D6E8D5]'
             }`}
         >
           <PencilSquareIcon className="h-5 w-5" />
@@ -895,8 +895,8 @@ If this is a question about my profile, answer based on my profile data.`;
         <button
           onClick={() => setActiveTab('guided')}
           className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'guided'
-            ? 'border-purple-600 text-purple-600'
-            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            ? 'border-[#1A4D2E] text-[#1A4D2E]'
+            : 'border-transparent text-[#4A4A4A] hover:text-[#1A4D2E] hover:border-[#D6E8D5]'
             }`}
         >
           <SparklesIcon className="h-5 w-5" />
@@ -906,8 +906,8 @@ If this is a question about my profile, answer based on my profile data.`;
         <button
           onClick={() => setActiveTab('chat')}
           className={`px-4 py-3 font-medium text-sm border-b-2 transition-colors duration-200 flex items-center gap-2 whitespace-nowrap ${activeTab === 'chat'
-            ? 'border-indigo-600 text-indigo-600'
-            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            ? 'border-[#1A4D2E] text-[#1A4D2E]'
+            : 'border-transparent text-[#4A4A4A] hover:text-[#1A4D2E] hover:border-[#D6E8D5]'
             }`}
         >
           <ChatBubbleLeftRightIcon className="h-5 w-5" />
@@ -1083,29 +1083,29 @@ If this is a question about my profile, answer based on my profile data.`;
           <>
 
             {/* Upload Section */}
-            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-              <h2 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                <div className="p-1.5 bg-indigo-100 rounded-lg">
-                  <DocumentArrowUpIcon className="h-5 w-5 text-indigo-600" />
+            <div className="bg-white rounded-2xl p-6 border border-[#E0DED8] shadow-sm">
+              <h2 className="font-serif text-xl font-semibold text-[#2C2C2C] mb-2 flex items-center gap-2">
+                <div className="p-1.5 bg-[#D6E8D5] rounded-lg">
+                  <DocumentArrowUpIcon className="h-5 w-5 text-[#1A4D2E]" />
                 </div>
                 Upload Your Documents
               </h2>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A4A4A] mb-4">
                 Upload any documents that showcase your achievements. Our AI will automatically extract relevant information to build your profile.
               </p>
 
               {/* Document Types */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-                <div className="flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-lg">
+                <div className="flex items-center gap-2 text-sm text-[#1A4D2E] bg-[#D6E8D5] px-3 py-2 rounded-lg">
                   <span>📄</span> Transcripts
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-lg">
+                <div className="flex items-center gap-2 text-sm text-[#1A4D2E] bg-[#D6E8D5] px-3 py-2 rounded-lg">
                   <span>🏆</span> Award Certificates
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-lg">
+                <div className="flex items-center gap-2 text-sm text-[#1A4D2E] bg-[#D6E8D5] px-3 py-2 rounded-lg">
                   <span>📝</span> Resumes
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-lg">
+                <div className="flex items-center gap-2 text-sm text-[#1A4D2E] bg-[#D6E8D5] px-3 py-2 rounded-lg">
                   <span>🤝</span> Volunteer Records
                 </div>
               </div>
@@ -1117,16 +1117,16 @@ If this is a question about my profile, answer based on my profile data.`;
                     Select Files (PDF, DOCX, TXT) - Multiple files supported
                   </label>
                   <div className="flex items-center space-x-4">
-                    <label className="flex-1 flex items-center justify-center px-6 py-6 border-2 border-dashed border-gray-300 rounded-2xl cursor-pointer hover:border-gray-400 hover:bg-gray-50 transition-colors">
+                    <label className="flex-1 flex items-center justify-center px-6 py-6 border-2 border-dashed border-[#D6E8D5] rounded-2xl cursor-pointer hover:border-[#1A4D2E] hover:bg-[#F8F6F0] transition-colors">
                       <div className="text-center">
-                        <DocumentArrowUpIcon className="mx-auto h-10 w-10 text-gray-400" />
-                        <p className="mt-2 text-sm text-gray-600">
+                        <DocumentArrowUpIcon className="mx-auto h-10 w-10 text-[#1A4D2E]/50" />
+                        <p className="mt-2 text-sm text-[#4A4A4A]">
                           {selectedFiles.length > 0
                             ? `${selectedFiles.length} file(s) selected`
                             : 'Click to select files'}
                         </p>
                         {selectedFiles.length > 0 && (
-                          <p className="mt-1 text-xs text-gray-500">
+                          <p className="mt-1 text-xs text-[#4A4A4A]">
                             {selectedFiles.map(f => f.name).join(', ')}
                           </p>
                         )}
@@ -1211,8 +1211,8 @@ If this is a question about my profile, answer based on my profile data.`;
                           <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                             <div
                               className={`h-full rounded-full transition-all duration-300 ${progress.status === 'uploading' ? 'bg-blue-500' :
-                                progress.status === 'processing' ? 'bg-amber-500' :
-                                  progress.status === 'extracting' ? 'bg-purple-500' :
+                                progress.status === 'processing' ? 'bg-[#C05838]' :
+                                  progress.status === 'extracting' ? 'bg-[#1A4D2E]' :
                                     progress.status === 'success' ? 'bg-green-500' :
                                       'bg-red-500'
                                 }`}
@@ -1241,7 +1241,7 @@ If this is a question about my profile, answer based on my profile data.`;
                   disabled={selectedFiles.length === 0 || uploading}
                   className={`w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white ${selectedFiles.length === 0 || uploading
                     ? 'bg-gray-300 cursor-not-allowed'
-                    : 'bg-gray-900 hover:bg-gray-800'
+                    : 'bg-[#1A4D2E] hover:bg-[#2D6B45]'
                     } transition-all duration-200`}
                 >
                   {uploading ? (

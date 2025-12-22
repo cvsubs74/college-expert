@@ -1,0 +1,986 @@
+{
+  "university_profile": {
+    "_id": "university_of_oklahoma",
+    "metadata": {
+      "official_name": "University of Oklahoma",
+      "location": {
+        "city": "Norman",
+        "state": "OK",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "https://www.ou.edu",
+        "https://www.usnews.com/best-colleges",
+        "https://www.niche.com/colleges/university-of-oklahoma/"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "The University of Oklahoma is a flagship public research university known for its strong sense of community, elite athletics, and leadership in fields like meteorology and energy. It has recently achieved significant momentum, marked by record-breaking enrollment and a major jump in national rankings.",
+      "market_position": "Flagship Research Powerhouse",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 110,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Freshman enrollment has surged over 30% in the last three years with five consecutive record-breaking classes.",
+          "implication": "Despite a holistic approach, the increasing volume of applicants suggests rising competition; early application is recommended to secure scholarships."
+        },
+        {
+          "category": "Institutional Momentum",
+          "insight": "OU climbed 22 spots in the 2026 US News rankings, the largest jump in the SEC.",
+          "implication": "The university's brand value is appreciating rapidly, making it an attractive choice for out-of-state students seeking a rising academic profile."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Consistently ranked among the 'happiest student bodies' in the nation, featuring a dominant Greek life (30% participation) and high-energy game days.",
+        "transportation_impact": "The campus is highly walkable and provides the free Campus Area Rapid Transit (CART) system for students, facilitating easy access between the main campus and Norman’s suburban amenities.",
+        "research_impact": "As a Carnegie R1 institution, OU leverages its University Research Campus (URC) to maintain deep industry ties in aerospace, defense, and weather technology."
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "Dodge Family College of Arts and Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 77.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Ideal for students seeking a traditional liberal arts foundation or those pursuing interdisciplinary research in the humanities and social sciences.",
+          "housing_profile": "Standard residence halls (Couch/Walker); proximity to Bizzell Memorial Library and the South Oval.",
+          "student_archetype": "Intellectually curious and socially engaged citizens",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Microbiology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Political Science",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "History",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "English",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Mathematics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Social Work",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Communication",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Anthropology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Chemistry",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Physics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Criminology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Health and Exercise Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.0
+            }
+          ]
+        },
+        {
+          "name": "Michael F. Price College of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 82.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Strong focus on professionalism and networking; applicants should emphasize leadership experience and early interest in corporate tracks.",
+          "housing_profile": "Traditional housing with close access to Price Hall; often found in Headington Hall.",
+          "student_archetype": "Ambitious, career-oriented networkers",
+          "majors": [
+            {
+              "name": "Finance",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "MATH 1743",
+                "ECON 1113",
+                "ECON 1123"
+              ],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "ACCT 2113 Financial Accounting",
+                "ECON 2843 Elements of Statistics"
+              ],
+              "special_requirements": "Must achieve 'Degree Candidacy' status to take upper-division courses",
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": [
+                  "ACCT 2113 Financial Accounting",
+                  "ACCT 2123 Managerial Accounting",
+                  "FIN 3303 Business Finance",
+                  "FIN 3403 Financial Markets",
+                  "FIN 3503 Investments",
+                  "B C 2813 Strategic Business Communication",
+                  "MGT 3013 Management",
+                  "MKT 3013 Marketing",
+                  "B AD 4013 Business Strategy and Policy"
+                ],
+                "electives": [
+                  "FIN 4113 Derivative Securities",
+                  "FIN 4303 Advanced Business Finance",
+                  "FIN 4413 Real Estate Finance",
+                  "FIN 4133 International Financial Management"
+                ],
+                "total_units": 122,
+                "major_units": 24
+              },
+              "notable_professors": [
+                "Dr. Corey Phelps (Dean)",
+                "Dr. Lubo Litov (Corporate Finance)",
+                "Dr. Jared Stanfield (Finance)"
+              ],
+              "notes": "Highly popular; requires 2.5 GPA for all major and business core courses."
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Management Information Systems",
+              "degree_type": "B.B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Entrepreneurship",
+              "degree_type": "B.B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Energy Management",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "International Business",
+              "degree_type": "B.B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Supply Chain Management",
+              "degree_type": "B.B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Management",
+              "degree_type": "B.B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.5
+            }
+          ]
+        },
+        {
+          "name": "Gallogly College of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Requires rigorous STEM background; students should demonstrate passion for hands-on 'maker' culture.",
+          "housing_profile": "Near 'maker spaces' in the Residential Colleges.",
+          "student_archetype": "Technical problem-solvers and collaborative makers",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "MATH 1914 Calculus I",
+                "PHYS 2514 Physics I"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "C S 2334 Programming Structures",
+                "MATH 1914 Calculus I"
+              ],
+              "special_requirements": "Grade of C or better required in all curriculum courses",
+              "admissions_pathway": "Direct/Pre-Major",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "C S 1323 Introduction to Computer Programming",
+                  "C S 2334 Programming Structures and Abstractions",
+                  "C S 2413 Data Structures",
+                  "C S 2813 Discrete Structures",
+                  "C S 3113 Operating Systems",
+                  "C S 3323 Principles of Programming Languages",
+                  "C S 3823 Computer Organization",
+                  "C S 4413 Algorithm Analysis"
+                ],
+                "electives": [
+                  "C S 4053 Computer Graphics",
+                  "C S 4013 Artificial Intelligence",
+                  "C S 4513 Database Management",
+                  "C S 4613 Computer Security"
+                ],
+                "total_units": 120,
+                "major_units": 54
+              },
+              "notable_professors": [
+                "Dr. John Klier (Dean)",
+                "Dr. Sridhar Radhakrishnan (Algorithms)",
+                "Dr. Dean Hougen (AI/Robotics)"
+              ],
+              "notes": "Increasingly competitive; students must pass 'Engineering Catalyst' as freshmen."
+            },
+            {
+              "name": "Aerospace Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Chemical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Civil Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Biomedical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Electrical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Industrial and Systems Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Computer Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Environmental Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Architectural Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Engineering Physics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Cybersecurity",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.0
+            }
+          ]
+        },
+        {
+          "name": "Gaylord College of Journalism and Mass Communication",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 75.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Must pass the Language Skills Test (LST) and Academic Integrity Test (AIT) for full admission.",
+          "housing_profile": "Traditional dorms; students often cluster in the Couch Center.",
+          "student_archetype": "Persuasive storytellers and strategic communicators",
+          "majors": [
+            {
+              "name": "Journalism",
+              "degree_type": "B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.75
+            },
+            {
+              "name": "Advertising",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.75
+            },
+            {
+              "name": "Public Relations",
+              "degree_type": "B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.75
+            },
+            {
+              "name": "Creative Media Production",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.75
+            },
+            {
+              "name": "Professional Writing",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.75
+            }
+          ]
+        },
+        {
+          "name": "Christopher C. Gibbs College of Architecture",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 60.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Portfolio review may be required; demands high resilience for 'studio culture'.",
+          "housing_profile": "Gould Hall proximity.",
+          "student_archetype": "Pragmatic visionaries and design experimentalists",
+          "majors": []
+        },
+        {
+          "name": "College of Atmospheric and Geographic Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 65.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "World-leading meteorology program; high competition for aviation spots.",
+          "housing_profile": "Often residential in the National Weather Center vicinity.",
+          "student_archetype": "Severe weather enthusiasts and future aviators",
+          "majors": [
+            {
+              "name": "Meteorology",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "MATH 1914",
+                "MATH 2924",
+                "PHYS 2514"
+              ],
+              "minimum_gpa_to_declare": 2.25,
+              "weeder_courses": [
+                "METR 2004 Atmospheric Circulations",
+                "MATH 3413 Physical Mathematics I"
+              ],
+              "special_requirements": "Grade of C or better required in all MATH, PHYS, and METR courses",
+              "admissions_pathway": "Pre-Major",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.25,
+              "curriculum": {
+                "core_courses": [
+                  "METR 1111 Orientation to Professional Meteorology",
+                  "METR 2004 Atmospheric Circulations",
+                  "METR 2213 Physical Meteorology I",
+                  "METR 3113 Atmospheric Dynamics I",
+                  "METR 3123 Atmospheric Dynamics II",
+                  "METR 3223 Physical Meteorology II",
+                  "METR 4424 Synoptic Meteorology Lab",
+                  "METR 4913 Senior Seminar (Capstone)"
+                ],
+                "electives": [
+                  "METR 4603 Severe and Unusual Weather",
+                  "METR 4433 Mesoscale Meteorology",
+                  "METR 4313 Statistical Meteorology"
+                ],
+                "total_units": 124,
+                "major_units": 51
+              },
+              "notable_professors": [
+                "Dr. Jens Redemann (Director)",
+                "Dr. Petra Klein (Boundary Layer)",
+                "Dr. Jason Furtado (Climate/Long-range Forecasting)"
+              ],
+              "notes": "Located in the National Weather Center; top-ranked program globally."
+            },
+            {
+              "name": "Aviation: Professional Pilot",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "MATH 1743 or higher"
+              ],
+              "minimum_gpa_to_declare": 2.25,
+              "weeder_courses": [
+                "AVIA 1222 Primary Flying",
+                "AVIA 2231 Advanced Flying"
+              ],
+              "special_requirements": "FAA Second Class Medical Certificate required for flight courses",
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.25,
+              "curriculum": {
+                "core_courses": [
+                  "AVIA 1113 Introduction to Aviation",
+                  "AVIA 1222 Primary Flying",
+                  "AVIA 2341 Secondary Flying",
+                  "AVIA 3013 Career Development for Aviation",
+                  "AVIA 3113 Commercial Aviation",
+                  "AVIA 3572 Instrument Flying",
+                  "AVIA 4423 Crew Resource Management",
+                  "AVIA 4713 Aviation Field Project (Capstone)"
+                ],
+                "electives": [
+                  "AVIA 3103 Flight Deck Environmental Issues",
+                  "AVIA 4313 Turbine Transition",
+                  "AVIA 4663 Survey of Aerospace Ethical Issues"
+                ],
+                "total_units": 125,
+                "major_units": 48
+              },
+              "notable_professors": [
+                "Ken Carson (Program Director)",
+                "Shelly Ainsworth (Academic Counselor)"
+              ],
+              "notes": "Capped enrollment due to flight slot availability; extremely competitive internally."
+            },
+            {
+              "name": "Geography",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Geographic Information Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Environmental Sustainability",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            }
+          ]
+        },
+        {
+          "name": "Weitzenhoffer Family College of Fine Arts",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 15.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Highly selective; performance-based majors require rigorous auditions.",
+          "housing_profile": "Fine Arts students often seek residence in Boren Hall.",
+          "student_archetype": "Disciplined performers and creative explorers",
+          "majors": []
+        },
+        {
+          "name": "Mewbourne College of Earth and Energy",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 0.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Focus on the petroleum industry and geosciences.",
+          "housing_profile": "Proximity to Sarkeys Energy Center.",
+          "student_archetype": "Resource-focused engineers and geoscientists",
+          "majors": [
+            {
+              "name": "Petroleum Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "prerequisite_courses": [
+                "CHEM 1315",
+                "MATH 1914",
+                "GEOL 1114"
+              ],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "P E 2113 Statics and Dynamics",
+                "MATH 2924 Calculus II"
+              ],
+              "special_requirements": "Minimum grade of C required in all major-specific courses",
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": [
+                  "P E 2113 Statics and Dynamics",
+                  "P E 2213 Thermodynamics",
+                  "P E 3213 Reservoir Rock Properties",
+                  "P E 3223 Fluid Mechanics",
+                  "P E 3313 Drilling I",
+                  "P E 3413 Production Engineering I",
+                  "P E 4423 Production Engineering II",
+                  "P E 4533 Reservoir Engineering II",
+                  "P E 4393 Integrated Reservoir Management (Capstone)"
+                ],
+                "electives": [
+                  "P E 4463 Data Analytics",
+                  "P E 5613 Natural Gas Engineering",
+                  "P E G4033 Oil and Gas Law"
+                ],
+                "total_units": 126,
+                "major_units": 58
+              },
+              "notable_professors": [
+                "Dr. Runar Nygaard (Director)",
+                "Dr. Ramadan Ahmed (Drilling/Well Services)",
+                "Dr. Catalin Teodoriu (Drilling)"
+              ],
+              "notes": "One of the top programs in the nation."
+            },
+            {
+              "name": "Geological Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Geology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Geophysics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            },
+            {
+              "name": "Environmental Geology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0
+            }
+          ]
+        },
+        {
+          "name": "Honors College",
+          "admissions_model": "Lottery",
+          "acceptance_rate_estimate": 25.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires 30+ ACT/1330+ SAT and 3.75 GPA.",
+          "housing_profile": "Priority housing in the Residential Colleges.",
+          "student_archetype": "High-achieving, interdisciplinary scholars",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Data Science and Analytics Certificate",
+        "Engineering Leadership Undergraduate Certificate",
+        "Esports Business Undergraduate Certificate",
+        "Commercial Banking Undergraduate Certificate",
+        "Arts Management and Entrepreneurship Minor",
+        "Bioprocessing Undergraduate Certificate",
+        "Climate Adaptation Minor",
+        "Medical Humanities Minor"
+      ]
+    },
+    "admissions": {
+      "current_status": {
+        "overall_acceptance_rate": 76.6,
+        "in_state_acceptance_rate": 0.0,
+        "out_of_state_acceptance_rate": 0.0,
+        "international_acceptance_rate": 36.0,
+        "transfer_acceptance_rate": 62.6,
+        "admits_class_size": 5593,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional",
+        "early_admission_stats": []
+      },
+      "longitudinal_trends": [
+        {
+          "year": 2025,
+          "cycle_name": "Class of 2029",
+          "applications_total": 0,
+          "admits_total": 0,
+          "enrolled_total": 6229,
+          "acceptance_rate_overall": 73.0,
+          "yield_rate": 0.0,
+          "waitlist_stats": null,
+          "notes": "Class of 2029 is the largest freshman class in the university's 135-year history."
+        },
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 24893,
+          "admits_total": 19069,
+          "enrolled_total": 5615,
+          "acceptance_rate_overall": 76.6,
+          "yield_rate": 30.4,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 2342,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 81,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          }
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 22157,
+          "admits_total": 17097,
+          "enrolled_total": 5198,
+          "acceptance_rate_overall": 77.2,
+          "yield_rate": 30.4,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": 2074,
+            "accepted_spots": 1436,
+            "admitted_from_waitlist": 94,
+            "waitlist_admit_rate": 6.55,
+            "is_waitlist_ranked": false
+          }
+        }
+      ],
+      "admitted_student_profile": {
+        "gpa": {
+          "unweighted_middle_50": "3.48-3.90",
+          "percentile_25": "3.48",
+          "percentile_75": "3.90",
+          "notes": "The average unweighted high school GPA for the most recent incoming class (Fall 2025) is 3.64."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1150-1310",
+          "sat_reading_middle_50": "580-670",
+          "sat_math_middle_50": "560-660",
+          "act_composite_middle_50": "23-29",
+          "submission_rate": 63.0,
+          "policy_note": "Test optional; however, 63% of enrolled students submitted scores (23% SAT, 40% ACT) for the Fall 2025 class."
+        },
+        "demographics": {
+          "first_gen_percentage": 26.8,
+          "international_percentage": 2.6,
+          "geographic_breakdown": [
+            {
+              "region": "Oklahoma",
+              "percentage": 47.6
+            },
+            {
+              "region": "Other US States",
+              "percentage": 49.8
+            },
+            {
+              "region": "International",
+              "percentage": 2.6
+            }
+          ],
+          "gender_breakdown": {
+            "men": {
+              "applicants": 10811,
+              "admits": 8017,
+              "acceptance_rate": 74.1
+            },
+            "women": {
+              "applicants": 14082,
+              "admits": 11052,
+              "acceptance_rate": 78.5
+            }
+          },
+          "racial_breakdown": {
+            "white": 58.5,
+            "black_african_american": 5.1,
+            "hispanic_latino": 13.9,
+            "asian": 7.4,
+            "native_american_alaskan": 3.4,
+            "pacific_islander": 0.1,
+            "two_or_more_races": 10.2,
+            "unknown": 1.4,
+            "non_resident_alien": 2.6
+          }
+        }
+      },
+      "application_process": {
+        "platforms": [
+          "Common App",
+          "Coalition App",
+          "OU Application"
+        ],
+        "application_deadlines": [
+          {
+            "plan_type": "Early Action",
+            "date": "2024-11-01",
+            "is_binding": false,
+            "notes": "Priority for admission and housing."
+          },
+          {
+            "plan_type": "Scholarship Priority",
+            "date": "2024-12-15",
+            "is_binding": false,
+            "notes": "Final deadline for merit scholarship consideration."
+          },
+          {
+            "plan_type": "Regular Decision",
+            "date": "2025-02-01",
+            "is_binding": false,
+            "notes": "Final admission deadline."
+          }
+        ],
+        "supplemental_requirements": [
+          {
+            "target_program": "All",
+            "requirement_type": "Essays",
+            "details": "Common App personal statement required plus three optional scholarship essays (Leadership, Community, Career)."
+          },
+          {
+            "target_program": "Music",
+            "requirement_type": "Audition",
+            "details": "Requires registration 2 weeks prior to audition dates (typically Jan/Feb)."
+          },
+          {
+            "target_program": "Honors College",
+            "requirement_type": "Additional Application",
+            "details": "Priority deadline Feb 1; requires separate essay."
+          }
+        ],
+        "holistic_factors": {
+          "primary_factors": [
+            "Course Rigor",
+            "Academic GPA",
+            "Writing Ability"
+          ],
+          "secondary_factors": [
+            "Extracurriculars",
+            "Leadership",
+            "Community Engagement",
+            "Talents"
+          ],
+          "essay_importance": "High",
+          "demonstrated_interest": "Considered",
+          "specific_differentiators": "Emphasis on 'OU Family' values and intellectual curiosity."
+        }
+      },
+      "application_strategy": {
+        "major_selection_tactics": [
+          "Apply to the Dodge Family College of Arts and Sciences for less competitive general admission.",
+          "Utilize 'University College' for undecided entry if stats are borderline.",
+          "Submit ACT/SAT scores if aiming for Honors or top-tier merit (30+ ACT recommended).",
+          "Avoid applying directly to impacted programs like Petroleum Engineering if stats are below 75th percentile."
+        ],
+        "college_ranking_tactics": [
+          "Prioritize the Honors College for superior housing amenities.",
+          "Rank Residential Colleges (Dunham/Headington) first for a 'small college feel'.",
+          "Select major-specific LLCs for renovated suite-style living."
+        ],
+        "alternate_major_strategy": "List a competitive major first, but always provide a backup in Arts & Sciences. For pre-med, consider Microbiology over Biochemistry to protect GPA."
+      }
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 14155,
+          "total_coa": 31216,
+          "housing": 13630
+        },
+        "out_of_state": {
+          "tuition": 31225,
+          "total_coa": 48796,
+          "supplemental_tuition": 17070
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 10560,
+      "average_merit_aid": 3273,
+      "percent_receiving_aid": 69.6,
+      "scholarship_opportunities": [
+        {
+          "name": "National Merit Finalist Scholarship",
+          "type": "Merit",
+          "amount": "Up to $153,450 over 5 years",
+          "deadline": "2025-12-15",
+          "benefits": "100% tuition waiver, tech stipend, housing scholarship, research/study abroad stipends"
+        },
+        {
+          "name": "Oklahoma State Regents' Academic Scholars Program",
+          "type": "Merit",
+          "amount": "$6,500 annual stipend + tuition waiver",
+          "deadline": "2025-12-15",
+          "benefits": "100% resident tuition waiver, cash stipend for 8 semesters"
+        },
+        {
+          "name": "OU Award of Excellence",
+          "type": "Merit",
+          "amount": "$36,000 - $68,000 over 4 years",
+          "deadline": "2025-12-15",
+          "benefits": "Renewable partial tuition waiver for resident and non-resident students"
+        },
+        {
+          "name": "Crimson Commitment",
+          "type": "Need",
+          "amount": "Full tuition and average mandatory fees",
+          "deadline": "2025-12-15",
+          "benefits": "Guaranteed 4-year coverage for OK Promise students"
+        },
+        {
+          "name": "Distinguished Scholar",
+          "type": "Merit",
+          "amount": "$32,000 - $60,000 over 4 years",
+          "deadline": "2025-12-15",
+          "benefits": "Renewable partial tuition waiver based on performance"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "A score of 3 or higher is required for credit on most exams.",
+        "exceptions": [
+          "AP Computer Science Principles grants no credit"
+        ],
+        "usage": "Credits satisfy Gen Ed and major prerequisites like Calculus, Biology, and Chemistry."
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with a score of 4 or higher grant course-specific credit.",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transferology",
+          "Transfer Equivalencies Database (TED)"
+        ],
+        "restrictions": "Must complete at least 60 hours at a 4-year institution and 30 hours in residence at OU."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Competitive GPA (average 3.63) with honors/AP rigor",
+        "Demonstrated leadership in community roles",
+        "Alignment with 'OU Family' values",
+        "Submission by December 15th scholarship deadline"
+      ],
+      "common_activities": [
+        "Greek life involvement (30% participation)",
+        "Community service and charity work",
+        "Student government",
+        "Performing arts or band",
+        "Spirit organizations and athletics"
+      ],
+      "essay_tips": [
+        "Explicitly mention your contribution to the 'OU Family'",
+        "Focus on meaningful leadership anecdotes",
+        "Name specific OU resources or majors",
+        "Reflect on a personal challenge to show growth"
+      ],
+      "red_flags": [
+        "Senior year grade drops",
+        "Generic essays that lack OU-specific detail",
+        "Grammar or spelling errors",
+        "Resume-style essays that repeat the activity list"
+      ],
+      "insights": [
+        "Greek life is a massive social driver",
+        "Faculty are noted for being supportive and approachable",
+        "The campus is beautiful but requires planning for the large scale",
+        "School spirit and sports create a high-energy atmosphere"
+      ]
+    },
+    "outcomes": {
+      "career_outcomes": {
+        "median_earnings_10yr": 63126,
+        "employment_rate_2yr": 92.0,
+        "grad_school_rate": 28.8,
+        "top_employers": [
+          "Boeing",
+          "Paycom",
+          "AT&T",
+          "U.S. Air Force",
+          "Amazon",
+          "Deloitte",
+          "ConocoPhillips",
+          "ExxonMobil"
+        ],
+        "loan_default_rate": 0.0
+      },
+      "student_retention": {
+        "freshman_retention_rate": 90.0,
+        "graduation_rate_4_year": 60.3,
+        "graduation_rate_6_year": 75.3
+      }
+    }
+  }
+}

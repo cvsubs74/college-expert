@@ -134,13 +134,30 @@
           "legacy_percentage": null,
           "international_percentage": 6.89,
           "geographic_breakdown": [
-            { "region": "Nebraska", "percentage": 75.0 },
-            { "region": "Other US States", "percentage": 18.11 },
-            { "region": "International", "percentage": 6.89 }
+            {
+              "region": "Nebraska",
+              "percentage": 75.0
+            },
+            {
+              "region": "Other US States",
+              "percentage": 18.11
+            },
+            {
+              "region": "International",
+              "percentage": 6.89
+            }
           ],
           "gender_breakdown": {
-            "men": { "applicants": 7954, "admits": 6849, "acceptance_rate": 86.11 },
-            "women": { "applicants": 9869, "admits": 8745, "acceptance_rate": 88.61 },
+            "men": {
+              "applicants": 7954,
+              "admits": 6849,
+              "acceptance_rate": 86.11
+            },
+            "women": {
+              "applicants": 9869,
+              "admits": 8745,
+              "acceptance_rate": 88.61
+            },
             "non_binary": null
           },
           "racial_breakdown": {
@@ -170,16 +187,67 @@
           "housing_profile": "Massengale Residential Center (modern apartments) on East Campus.",
           "student_archetype": "Community-minded, outdoorsy types",
           "majors": [
-            { "name": "Animal Science", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Agribusiness", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Agricultural Economics", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Agronomy", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Food Science and Technology", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Forensic Science", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Fisheries and Wildlife", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Environmental Science", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Veterinary Technology", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "PGA Golf Management", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false, "special_requirements": "Certified golf handicap of 12 or better required." }
+            {
+              "name": "Animal Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Agribusiness",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Agricultural Economics",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Agronomy",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Food Science and Technology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Forensic Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Fisheries and Wildlife",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Environmental Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Veterinary Technology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "PGA Golf Management",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false,
+              "special_requirements": "Certified golf handicap of 12 or better required."
+            }
           ]
         },
         {
@@ -197,21 +265,47 @@
               "is_impacted": false,
               "acceptance_rate": 79.0,
               "average_gpa_admitted": 3.6,
-              "prerequisite_courses": ["MATH 106", "PHYS 211"],
+              "prerequisite_courses": [
+                "MATH 106",
+                "PHYS 211"
+              ],
               "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": ["CSCE 310", "CSCE 235"],
+              "weeder_courses": [
+                "CSCE 310",
+                "CSCE 235"
+              ],
               "special_requirements": "Professional admission required after sophomore year.",
               "admissions_pathway": "Direct Admit",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.5,
               "curriculum": {
-                "core_courses": ["CSCE 155E", "CSCE 156", "CSCE 230", "CSCE 235", "CSCE 310", "CSCE 361", "CSCE 322", "CSCE 351", "CSCE 486", "CSCE 487"],
-                "electives": ["CSCE 470", "CSCE 472", "CSCE 456", "CSCE 464"],
+                "core_courses": [
+                  "CSCE 155E",
+                  "CSCE 156",
+                  "CSCE 230",
+                  "CSCE 235",
+                  "CSCE 310",
+                  "CSCE 361",
+                  "CSCE 322",
+                  "CSCE 351",
+                  "CSCE 486",
+                  "CSCE 487"
+                ],
+                "electives": [
+                  "CSCE 470",
+                  "CSCE 472",
+                  "CSCE 456",
+                  "CSCE 464"
+                ],
                 "total_units": 120,
                 "major_units": 72
               },
-              "notable_professors": ["Dr. Witty Srisa-an", "Dr. Brittany Duncan", "Dr. Marilyn Wolf"],
+              "notable_professors": [
+                "Dr. Witty Srisa-an",
+                "Dr. Brittany Duncan",
+                "Dr. Marilyn Wolf"
+              ],
               "notes": "Internal transfers must be calculus-ready."
             },
             {
@@ -219,30 +313,97 @@
               "degree_type": "B.S.",
               "is_impacted": false,
               "average_gpa_admitted": 3.5,
-              "prerequisite_courses": ["MATH 106", "PHYS 211", "CHEM 109"],
+              "prerequisite_courses": [
+                "MATH 106",
+                "PHYS 211",
+                "CHEM 109"
+              ],
               "minimum_gpa_to_declare": 2.7,
-              "weeder_courses": ["MECH 223", "MECH 200"],
+              "weeder_courses": [
+                "MECH 223",
+                "MECH 200"
+              ],
               "special_requirements": "Major GPA of 2.7 required for professional admission.",
               "admissions_pathway": "Direct Admit",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "curriculum": {
-                "core_courses": ["MECH 223", "MECH 200", "MECH 325", "MECH 310", "MATL 360", "MECH 342", "MECH 350", "MECH 380", "MECH 446", "MECH 447"],
-                "electives": ["MECH 407", "MECH 416", "MECH 437", "MECH 457"],
+                "core_courses": [
+                  "MECH 223",
+                  "MECH 200",
+                  "MECH 325",
+                  "MECH 310",
+                  "MATL 360",
+                  "MECH 342",
+                  "MECH 350",
+                  "MECH 380",
+                  "MECH 446",
+                  "MECH 447"
+                ],
+                "electives": [
+                  "MECH 407",
+                  "MECH 416",
+                  "MECH 437",
+                  "MECH 457"
+                ],
                 "total_units": 120,
                 "major_units": 84
               },
-              "notable_professors": ["Dr. Lance C. Pèrez", "Dr. Mark R. Riley", "Dr. Fadi Alsaleem"],
+              "notable_professors": [
+                "Dr. Lance C. Pèrez",
+                "Dr. Mark R. Riley",
+                "Dr. Fadi Alsaleem"
+              ],
               "notes": "Calculus-ready status required for admission."
             },
-            { "name": "Civil Engineering", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Chemical Engineering", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Electrical Engineering", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Software Engineering", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Computer Engineering", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Construction Management", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Biological Systems Engineering", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Agricultural Engineering", "degree_type": "B.S.", "is_impacted": false, "direct_admit_only": false }
+            {
+              "name": "Civil Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Chemical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Electrical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Software Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Computer Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Construction Management",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Biological Systems Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Agricultural Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            }
           ]
         },
         {
@@ -259,32 +420,105 @@
               "degree_type": "B.S.B.A.",
               "is_impacted": false,
               "average_gpa_admitted": 3.54,
-              "prerequisite_courses": ["MATH 104"],
+              "prerequisite_courses": [
+                "MATH 104"
+              ],
               "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": ["ACCT 201", "ECON 215"],
+              "weeder_courses": [
+                "ACCT 201",
+                "ECON 215"
+              ],
               "special_requirements": "Maintenance of 2.5 cumulative GPA required for upper-level courses.",
               "admissions_pathway": "Direct Admit",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.5,
               "curriculum": {
-                "core_courses": ["MNGT 101", "BSAD 111", "BSAD 222", "ACCT 201", "ACCT 202", "ECON 211", "ECON 212", "BLAW 371", "FINA 361", "MNGT 301", "MRKT 341", "SCMA 331", "MNGT 475"],
-                "electives": ["BSAD 261", "BSAD 340", "MNGT 321", "SCMA 350"],
+                "core_courses": [
+                  "MNGT 101",
+                  "BSAD 111",
+                  "BSAD 222",
+                  "ACCT 201",
+                  "ACCT 202",
+                  "ECON 211",
+                  "ECON 212",
+                  "BLAW 371",
+                  "FINA 361",
+                  "MNGT 301",
+                  "MRKT 341",
+                  "SCMA 331",
+                  "MNGT 475"
+                ],
+                "electives": [
+                  "BSAD 261",
+                  "BSAD 340",
+                  "MNGT 321",
+                  "SCMA 350"
+                ],
                 "total_units": 120,
                 "major_units": 53
               },
-              "notable_professors": ["Dr. Kathy Farrell", "Dr. Laurie Miller", "Dr. Özgür M. Araz"],
+              "notable_professors": [
+                "Dr. Kathy Farrell",
+                "Dr. Laurie Miller",
+                "Dr. Özgür M. Araz"
+              ],
               "notes": "New core curriculum launching Fall 2025."
             },
-            { "name": "Accounting", "degree_type": "B.S.B.A.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Finance", "degree_type": "B.S.B.A.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Marketing", "degree_type": "B.S.B.A.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Actuarial Science", "degree_type": "B.S.B.A.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Economics", "degree_type": "B.S.B.A.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Management", "degree_type": "B.S.B.A.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Supply Chain Management", "degree_type": "B.S.B.A.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "Business Analytics", "degree_type": "B.S.B.A.", "is_impacted": false, "direct_admit_only": false },
-            { "name": "International Business", "degree_type": "B.S.B.A.", "is_impacted": false, "direct_admit_only": false }
+            {
+              "name": "Accounting",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Finance",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Actuarial Science",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Economics",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Management",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Supply Chain Management",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "Business Analytics",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            },
+            {
+              "name": "International Business",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "direct_admit_only": false
+            }
           ]
         }
       ],
@@ -299,22 +533,72 @@
       ]
     },
     "application_process": {
-      "platforms": ["Common App", "Nebraska's Application"],
+      "platforms": [
+        "Common App",
+        "Nebraska's Application"
+      ],
       "application_deadlines": [
-        { "plan_type": "Priority Scholarship Deadline", "date": "2024-11-01", "is_binding": false, "notes": "Full scholarship consideration; rolling admission." },
-        { "plan_type": "Honors / Raikes School Deadline", "date": "2024-11-15", "is_binding": false, "notes": "Priority deadline for honors programs." },
-        { "plan_type": "Regular Decision (Fall)", "date": "2025-05-01", "is_binding": false, "notes": "Final fall application deadline." },
-        { "plan_type": "Regular Decision (Spring)", "date": "2024-12-01", "is_binding": false, "notes": "Deadline for January start." }
+        {
+          "plan_type": "Priority Scholarship Deadline",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Full scholarship consideration; rolling admission."
+        },
+        {
+          "plan_type": "Honors / Raikes School Deadline",
+          "date": "2024-11-15",
+          "is_binding": false,
+          "notes": "Priority deadline for honors programs."
+        },
+        {
+          "plan_type": "Regular Decision (Fall)",
+          "date": "2025-05-01",
+          "is_binding": false,
+          "notes": "Final fall application deadline."
+        },
+        {
+          "plan_type": "Regular Decision (Spring)",
+          "date": "2024-12-01",
+          "is_binding": false,
+          "notes": "Deadline for January start."
+        }
       ],
       "supplemental_requirements": [
-        { "target_program": "All (General Admission)", "requirement_type": "Essays", "details": "No personal essay for standard admission." },
-        { "target_program": "Honors Programs", "requirement_type": "Supplemental Application", "deadline": "2025-02-15", "details": "300-500 word essay and leadership resume." },
-        { "target_program": "Music / Dance", "requirement_type": "Audition", "deadline": "2025-02-27", "details": "Performance audition required." },
-        { "target_program": "Scholarships", "requirement_type": "Supplemental Essay", "deadline": "2025-02-01", "details": "500-word essay on leadership/service for specific awards." }
+        {
+          "target_program": "All (General Admission)",
+          "requirement_type": "Essays",
+          "details": "No personal essay for standard admission."
+        },
+        {
+          "target_program": "Honors Programs",
+          "requirement_type": "Supplemental Application",
+          "deadline": "2025-02-15",
+          "details": "300-500 word essay and leadership resume."
+        },
+        {
+          "target_program": "Music / Dance",
+          "requirement_type": "Audition",
+          "deadline": "2025-02-27",
+          "details": "Performance audition required."
+        },
+        {
+          "target_program": "Scholarships",
+          "requirement_type": "Supplemental Essay",
+          "deadline": "2025-02-01",
+          "details": "500-word essay on leadership/service for specific awards."
+        }
       ],
       "holistic_factors": {
-        "primary_factors": ["Course Rigor", "Academic GPA", "Class Rank"],
-        "secondary_factors": ["Test Scores", "Talent", "First-Generation Status"],
+        "primary_factors": [
+          "Course Rigor",
+          "Academic GPA",
+          "Class Rank"
+        ],
+        "secondary_factors": [
+          "Test Scores",
+          "Talent",
+          "First-Generation Status"
+        ],
         "essay_importance": "Low",
         "demonstrated_interest": "Not Considered",
         "interview_policy": "Not Offered",
@@ -342,8 +626,16 @@
       "tuition_model": "Annual Increase",
       "cost_of_attendance_breakdown": {
         "academic_year": "2024-2025",
-        "in_state": { "tuition": 10434, "total_coa": 28710, "housing": 14120 },
-        "out_of_state": { "tuition": 28584, "total_coa": 46860, "supplemental_tuition": 18150 }
+        "in_state": {
+          "tuition": 10434,
+          "total_coa": 28710,
+          "housing": 14120
+        },
+        "out_of_state": {
+          "tuition": 28584,
+          "total_coa": 46860,
+          "supplemental_tuition": 18150
+        }
       },
       "aid_philosophy": "Merit Focused",
       "average_need_based_aid": 8222,
@@ -351,23 +643,69 @@
       "percent_receiving_aid": 87.0
     },
     "scholarships": [
-      { "name": "Presidential Scholars Program", "type": "Merit", "amount": "Full cost of attendance + $5,000 annual stipend", "application_method": "Automatic (requires 36 ACT or 1570-1600 SAT)" },
-      { "name": "Regents Scholar Tuition Commitment", "type": "Merit", "amount": "Full tuition", "application_method": "Automatic Consideration" },
-      { "name": "Chancellor's Tuition Scholarship", "type": "Merit", "amount": "Up to $8,000 per year", "application_method": "Automatic Consideration" },
-      { "name": "Nebraska Legends Scholarship", "type": "Merit", "amount": "$1,000 (renewable)", "application_method": "Supplemental Scholarship Application" },
-      { "name": "Nebraska Achievement Scholarship", "type": "Merit/Need", "amount": "$1,000 per year", "application_method": "Automatic Consideration" },
-      { "name": "Nebraska Legacy Scholarship", "type": "Merit (Non-Resident)", "amount": "$14,000 per year", "application_method": "Automatic Consideration" },
-      { "name": "New Nebraskan Tuition Scholarship", "type": "Merit (Non-Resident)", "amount": "$15,000 to $20,000 per year", "application_method": "Automatic Consideration" }
+      {
+        "name": "Presidential Scholars Program",
+        "type": "Merit",
+        "amount": "Full cost of attendance + $5,000 annual stipend",
+        "application_method": "Automatic (requires 36 ACT or 1570-1600 SAT)"
+      },
+      {
+        "name": "Regents Scholar Tuition Commitment",
+        "type": "Merit",
+        "amount": "Full tuition",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Chancellor's Tuition Scholarship",
+        "type": "Merit",
+        "amount": "Up to $8,000 per year",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Nebraska Legends Scholarship",
+        "type": "Merit",
+        "amount": "$1,000 (renewable)",
+        "application_method": "Supplemental Scholarship Application"
+      },
+      {
+        "name": "Nebraska Achievement Scholarship",
+        "type": "Merit/Need",
+        "amount": "$1,000 per year",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Nebraska Legacy Scholarship",
+        "type": "Merit (Non-Resident)",
+        "amount": "$14,000 per year",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "New Nebraskan Tuition Scholarship",
+        "type": "Merit (Non-Resident)",
+        "amount": "$15,000 to $20,000 per year",
+        "application_method": "Automatic Consideration"
+      }
     ],
     "credit_policies": {
       "philosophy": "Generous Credit",
       "ap_policy": {
         "general_rule": "Scores of 3+ generally grant credit, core subjects may require 4 or 5",
-        "exceptions": ["No credit for AP Capstone", "Music Theory requires score of 4+ and diagnostic"],
+        "exceptions": [
+          "No credit for AP Capstone",
+          "Music Theory requires score of 4+ and diagnostic"
+        ],
         "usage": "Satisfies ACE requirements and major prerequisites"
       },
-      "ib_policy": { "general_rule": "Scores of 5+ on HL and SL grant credit", "diploma_bonus": true },
-      "transfer_articulation": { "tools": ["Transferology"], "restrictions": "60 unit CC cap; 90 unit total cap" }
+      "ib_policy": {
+        "general_rule": "Scores of 5+ on HL and SL grant credit",
+        "diploma_bonus": true
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transferology"
+        ],
+        "restrictions": "60 unit CC cap; 90 unit total cap"
+      }
     },
     "student_insights": {
       "what_it_takes": [
@@ -376,7 +714,12 @@
         "Evidence of leadership (DECA, FBLA, Boys/Girls State, Eagle Scouts).",
         "Honors Core: 4 years math (Calculus recommended) and 2 years foreign language."
       ],
-      "common_activities": ["Robotics (VEX), Debate, or Speech", "LPS one-on-one mentoring", "Varsity athletics", "Fine arts ensembles"],
+      "common_activities": [
+        "Robotics (VEX), Debate, or Speech",
+        "LPS one-on-one mentoring",
+        "Varsity athletics",
+        "Fine arts ensembles"
+      ],
       "essay_tips": [
         "Focus Honors essays on: Intellectual Curiosity, Varied Perspectives, or Meaningful Service.",
         "Specialized program prompts must be under 25 words.",
@@ -398,7 +741,16 @@
         "median_earnings_10yr": 56887,
         "employment_rate_2yr": 74.0,
         "grad_school_rate": 17.0,
-        "top_employers": ["Lincoln Public Schools", "Kiewit", "HDR", "Amazon", "Charles Schwab", "Hudl", "Sandhills Global", "Omaha Public Schools"],
+        "top_employers": [
+          "Lincoln Public Schools",
+          "Kiewit",
+          "HDR",
+          "Amazon",
+          "Charles Schwab",
+          "Hudl",
+          "Sandhills Global",
+          "Omaha Public Schools"
+        ],
         "loan_default_rate": 3.5
       },
       "student_retention": {
@@ -407,5 +759,6 @@
         "graduation_rate_6_year": 66.0
       }
     }
-  }
+  },
+  "_id": "university_of_nebraska_lincoln"
 }

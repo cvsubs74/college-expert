@@ -178,21 +178,39 @@
               "is_impacted": false,
               "acceptance_rate": 0.0,
               "average_gpa_admitted": 0.0,
-              "prerequisite_courses": ["PSYC 201"],
+              "prerequisite_courses": [
+                "PSYC 201"
+              ],
               "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": ["PSYC 301", "PSYC 302"],
+              "weeder_courses": [
+                "PSYC 301",
+                "PSYC 302"
+              ],
               "special_requirements": "C or higher in core PSYC courses",
               "admissions_pathway": "Open",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.0,
               "curriculum": {
-                "core_courses": ["PSYC 201", "PSYC 301", "PSYC 302", "PSYC 305", "PSYC 307", "PSYC 308", "PSYC 400"],
-                "electives": ["PSYC 366", "PSYC 412"],
+                "core_courses": [
+                  "PSYC 201",
+                  "PSYC 301",
+                  "PSYC 302",
+                  "PSYC 305",
+                  "PSYC 307",
+                  "PSYC 308",
+                  "PSYC 400"
+                ],
+                "electives": [
+                  "PSYC 366",
+                  "PSYC 412"
+                ],
                 "total_units": 121,
                 "major_units": 42
               },
-              "notable_professors": ["Dr. Lora Haynes"],
+              "notable_professors": [
+                "Dr. Lora Haynes"
+              ],
               "notes": "Most popular major"
             }
           ]
@@ -212,21 +230,36 @@
               "is_impacted": true,
               "acceptance_rate": 0.0,
               "average_gpa_admitted": 0.0,
-              "prerequisite_courses": ["Calculus", "Chemistry"],
+              "prerequisite_courses": [
+                "Calculus",
+                "Chemistry"
+              ],
               "minimum_gpa_to_declare": 2.8,
-              "weeder_courses": ["ENGR 101", "ENGR 102"],
+              "weeder_courses": [
+                "ENGR 101",
+                "ENGR 102"
+              ],
               "special_requirements": "Math ACT 25 requirement",
               "admissions_pathway": "Pre-Major",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.8,
               "curriculum": {
-                "core_courses": ["ENGR 101", "CSE 120", "CSE 302"],
-                "electives": ["CSE 532", "CSE 545"],
+                "core_courses": [
+                  "ENGR 101",
+                  "CSE 120",
+                  "CSE 302"
+                ],
+                "electives": [
+                  "CSE 532",
+                  "CSE 545"
+                ],
                 "total_units": 125,
                 "major_units": 59
               },
-              "notable_professors": ["Dr. Mehmed Kantardzic"],
+              "notable_professors": [
+                "Dr. Mehmed Kantardzic"
+              ],
               "notes": "Includes three required co-op semesters"
             }
           ]
@@ -239,7 +272,10 @@
       ]
     },
     "application_process": {
-      "platforms": ["Common App", "Take Flight Application"],
+      "platforms": [
+        "Common App",
+        "Take Flight Application"
+      ],
       "application_deadlines": [
         {
           "plan_type": "Honors Early Action",
@@ -263,8 +299,14 @@
         }
       ],
       "holistic_factors": {
-        "primary_factors": ["Course Rigor", "GPA"],
-        "secondary_factors": ["Extracurriculars", "Test Scores"],
+        "primary_factors": [
+          "Course Rigor",
+          "GPA"
+        ],
+        "secondary_factors": [
+          "Extracurriculars",
+          "Test Scores"
+        ],
         "essay_importance": "Low",
         "demonstrated_interest": "Not Considered",
         "interview_policy": "Not Offered",
@@ -318,7 +360,9 @@
       "philosophy": "Generous Credit",
       "ap_policy": {
         "general_rule": "Score of 3+ grants credit.",
-        "exceptions": ["Score of 3 often grants elective credit rather than direct equivalency."],
+        "exceptions": [
+          "Score of 3 often grants elective credit rather than direct equivalency."
+        ],
         "usage": "Applied to Cardinal Core."
       },
       "ib_policy": {
@@ -326,22 +370,43 @@
         "diploma_bonus": true
       },
       "transfer_articulation": {
-        "tools": ["TES", "Transferology"],
+        "tools": [
+          "TES",
+          "Transferology"
+        ],
         "restrictions": "60-unit CC cap; 90-unit total cap."
       }
     },
     "student_insights": {
-      "what_it_takes": ["GPA 2.5+ for general; 3.0+ for Nursing/Engineering."],
-      "common_activities": ["Undergraduate research", "Community service"],
-      "essay_tips": ["Use 'Prove It' evidence", "Connect to Louisville community"],
-      "red_flags": ["Missing advanced math for Speed School"],
-      "insights": ["JCTC transfer path is a top recommended money-saving 'hack'."]
+      "what_it_takes": [
+        "GPA 2.5+ for general; 3.0+ for Nursing/Engineering."
+      ],
+      "common_activities": [
+        "Undergraduate research",
+        "Community service"
+      ],
+      "essay_tips": [
+        "Use 'Prove It' evidence",
+        "Connect to Louisville community"
+      ],
+      "red_flags": [
+        "Missing advanced math for Speed School"
+      ],
+      "insights": [
+        "JCTC transfer path is a top recommended money-saving 'hack'."
+      ]
     },
     "outcomes": {
       "median_earnings_10yr": 53899,
       "employment_rate_2yr": 93.0,
       "grad_school_rate": 28.2,
-      "top_employers": ["Humana", "UPS", "Ford", "Norton Healthcare", "GE Appliances"],
+      "top_employers": [
+        "Humana",
+        "UPS",
+        "Ford",
+        "Norton Healthcare",
+        "GE Appliances"
+      ],
       "loan_default_rate": 6.4,
       "student_retention": {
         "freshman_retention_rate": 81.0,
@@ -349,5 +414,6 @@
         "graduation_rate_6_year": 61.0
       }
     }
-  }
+  },
+  "_id": "university_of_louisville"
 }

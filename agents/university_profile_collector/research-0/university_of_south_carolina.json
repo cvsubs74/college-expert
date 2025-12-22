@@ -1,0 +1,518 @@
+{
+  "_id": "university-of-south-carolina",
+  "metadata": {
+    "official_name": "University of South Carolina",
+    "location": {
+      "city": "Columbia",
+      "state": "SC",
+      "type": "Public"
+    },
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "US News & World Report 2026 Rankings",
+      "University of South Carolina Admissions Data",
+      "USC Research and Partnership Reports"
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "The University of South Carolina is a flagship R1 research institution known for its top-ranked international business programs and the nation's premier public honors college. As a major economic driver for the Palmetto State, it balances high-energy SEC campus culture with deep industry-integrated research.",
+    "market_position": "Public Ivy",
+    "admissions_philosophy": "Numbers-focused with holistic elements",
+    "us_news_rank": 127,
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The acceptance rate dropped from 68.6% in 2019 to approximately 60.2% in 2024 as application volume surged by over 12%.",
+        "implication": "Applicants should focus on high GPA and class rank, as these remain the most pivotal factors in a tightening admissions landscape."
+      },
+      {
+        "category": "Research & Industry",
+        "insight": "The university reached a record $323 million in external research funding in FY25, supported by major tech partnerships with IBM, Siemens, and Verizon.",
+        "implication": "Students in STEM and business have unique access to high-tech facilities like the IIoT Lab and Digital Transformation Lab."
+      },
+      {
+        "category": "Institutional Growth",
+        "insight": "USC is currently undergoing a 'Master Mobility Study' set for completion in April 2026 to overhaul aging transit and parking infrastructure.",
+        "implication": "Near-term students may experience construction-related transit delays but will benefit from a more walkable, 'USC Next' campus layout in the future."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "A high-energy, sports-centric atmosphere dominated by 'Gamecock' pride and Greek life, though a large commuter population (roughly 22% of first-years and more upperclassmen) creates a distinct sub-culture of off-campus social hubs like Five Points.",
+      "transportation_impact": "Campus life is heavily influenced by the 'Carolina Shuttle' system and the 'COMET' bus service; however, limited and expensive on-campus parking remains a primary pain point for the significant off-campus student body.",
+      "research_impact": "As a Carnegie R1 institution, research is deeply integrated into the undergraduate experience through the Magellan Scholars program and specialized centers like the McNair Aerospace Research Center."
+    }
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 60.2,
+      "in_state_acceptance_rate": 76.2,
+      "out_of_state_acceptance_rate": 54.7,
+      "international_acceptance_rate": 65.3,
+      "transfer_acceptance_rate": 66.1,
+      "admits_class_size": 31701,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": null
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 60000,
+        "admits_total": null,
+        "enrolled_total": null,
+        "acceptance_rate_overall": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record number of applications exceeding 60,000."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 52703,
+        "admits_total": 31701,
+        "enrolled_total": 7719,
+        "acceptance_rate_overall": 60.2,
+        "yield_rate": 24.3,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 7332,
+          "accepted_spots": 2915,
+          "admitted_from_waitlist": 500,
+          "waitlist_admit_rate": 17.15,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist activity saw a significant increase in 2024 compared to prior years."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 46682,
+        "admits_total": 28706,
+        "enrolled_total": 7319,
+        "acceptance_rate_overall": 61.5,
+        "yield_rate": 25.5,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 7233,
+          "accepted_spots": 2791,
+          "admitted_from_waitlist": 15,
+          "waitlist_admit_rate": 0.54,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate for in-state vs out-of-state breakdown: In-State: 77.5%; Out-of-State: 55.6%."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.10-4.80",
+        "unweighted_middle_50": "3.69-3.80",
+        "average_weighted": 4.45,
+        "percentile_25": "4.10",
+        "percentile_75": "4.80",
+        "notes": "Honors College admits typically exceed 4.6 weighted."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1180-1380",
+        "sat_reading_middle_50": "600-690",
+        "sat_math_middle_50": "580-690",
+        "act_composite_middle_50": "26-32",
+        "submission_rate": 49.0,
+        "policy_note": "Test-optional for admission but considered if submitted; scores often required for Honors College."
+      },
+      "demographics": {
+        "first_gen_percentage": 20.6,
+        "legacy_percentage": null,
+        "international_percentage": 2.1,
+        "geographic_breakdown": [
+          { "region": "South Carolina", "percentage": 53.0 },
+          { "region": "Out-of-State", "percentage": 44.9 },
+          { "region": "International", "percentage": 2.1 }
+        ],
+        "gender_breakdown": {
+          "men": { "acceptance_rate": 56.7 },
+          "women": { "acceptance_rate": 64.6 }
+        },
+        "racial_breakdown": {
+          "white": 72.9,
+          "black_african_american": 9.3,
+          "hispanic_latino": 5.9,
+          "asian": 4.4,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 4.2,
+          "unknown": 1.1,
+          "non_resident_alien": 2.1
+        }
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Darla Moore School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 49.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highest fit for students with strong quantitative skills and a global mindset. The International Business (IB) major is world-ranked but requires a separate competitive application.",
+        "housing_profile": "Often associated with the I.D.E.A. (Entrepreneurship) or Global Fellows (Maxcy) communities.",
+        "student_archetype": "Career-oriented networkers and global travelers",
+        "majors": [
+          {
+            "name": "International Business",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": true,
+            "acceptance_rate": 15.0,
+            "average_gpa_admitted": 3.9,
+            "prerequisite_courses": ["MATH 122 or 141", "MGSC 290", "ECON 221", "ECON 222"],
+            "minimum_gpa_to_declare": 3.65,
+            "weeder_courses": ["ACCT 225 Elementary Financial Accounting", "MGSC 290 Computer Information Systems"],
+            "special_requirements": "Must complete a second functional business major; requires mandatory study abroad.",
+            "admissions_pathway": "Direct Admit / Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.65,
+            "curriculum": {
+              "core_courses": ["IBUS 310", "ACCT 225", "ACCT 226", "ECON 221", "ECON 222", "FINA 363", "MGMT 371", "MKTG 350", "MGSC 290"],
+              "total_units": 122
+            }
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": true,
+            "minimum_gpa_to_declare": 3.25,
+            "weeder_courses": ["ACCT 225", "FINA 363"],
+            "admissions_pathway": "Pre-Major",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25
+          },
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.B.A.",
+            "is_impacted": true,
+            "minimum_gpa_to_declare": 3.25,
+            "weeder_courses": ["ACCT 225", "ACCT 226"],
+            "admissions_pathway": "Pre-Major",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.25
+          }
+        ]
+      },
+      {
+        "name": "McCausland College of Arts and Sciences",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 64.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Perfect for students seeking a traditional liberal arts education with the resources of a large research university.",
+        "housing_profile": "Reside across campus, often in traditional dorms or Sustainability (Green Quad).",
+        "student_archetype": "Intellectually curious explorers",
+        "majors": [
+          {
+            "name": "Experimental Psychology",
+            "degree_type": "B.A. / B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": ["PSYC 226 Research Methods"],
+            "admissions_pathway": "Direct Admit",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0
+          },
+          {
+            "name": "Biological Sciences",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": ["BIOL 101", "CHEM 111"],
+            "admissions_pathway": "Direct Admit",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5
+          }
+        ]
+      },
+      {
+        "name": "Molinaroli College of Engineering and Computing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 60.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Requires high school prep in calculus and physics. High fit for hands-on learners.",
+        "housing_profile": "Engineering & Computing LLC (Campus Village) features 3D printers and collaborative labs.",
+        "student_archetype": "Innovative builders and tech enthusiasts",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.C.S.",
+            "is_impacted": true,
+            "average_gpa_admitted": 4.1,
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": ["MATH 142 Calculus II", "CSCE 146 Algorithmic Design II"],
+            "admissions_pathway": "Direct Admit",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.5,
+            "weeder_courses": ["EMCH 200 Statics", "MATH 142 Calculus II"],
+            "admissions_pathway": "Direct Admit",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.5
+          }
+        ]
+      },
+      {
+        "name": "College of Nursing",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 61.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Extremely competitive upper-division entry. Freshmen enter as 'Pre-Nursing'.",
+        "housing_profile": "Galen Health Fellows (Patterson Hall) provides clinical simulations.",
+        "student_archetype": "Resilient and empathetic healthcare leaders",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": 10.0,
+            "average_gpa_admitted": 3.8,
+            "minimum_gpa_to_declare": 3.5,
+            "weeder_courses": ["BIOL 243 Anatomy and Physiology I", "CHEM 102 Fundamental Chemistry II"],
+            "admissions_pathway": "Direct Admit / Pre-Nursing",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5
+          }
+        ]
+      },
+      {
+        "name": "Arnold School of Public Health",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 62.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students interested in the intersection of health, science, and policy.",
+        "housing_profile": "Often linked with Galen Health Fellows or Sustainability LLC.",
+        "student_archetype": "Advocates for community wellness",
+        "majors": [
+          {
+            "name": "Exercise Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "average_gpa_admitted": 3.5,
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": ["EXSC 223 Anatomy and Physiology I", "CHEM 111 General Chemistry I"],
+            "admissions_pathway": "Direct Admit",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0
+          },
+          {
+            "name": "Public Health",
+            "degree_type": "B.S. / B.A.",
+            "is_impacted": false,
+            "minimum_gpa_to_declare": 2.75,
+            "weeder_courses": ["ENHS 321 Environmental Health"],
+            "admissions_pathway": "Direct Admit",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.75
+          }
+        ]
+      },
+      {
+        "name": "College of Hospitality, Retail and Sport Management",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 65.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Strongest fit for industry-specific business education.",
+        "housing_profile": "Integrated into general residential life.",
+        "student_archetype": "Logistics-minded and hospitality-focused",
+        "majors": []
+      },
+      {
+        "name": "South Carolina Honors College",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 10.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Requires a separate, rigorous application. Offers priority registration and research funding.",
+        "housing_profile": "Honors Residence (Honors-only suite-style dorm).",
+        "student_archetype": "High-achieving scholars and researchers",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Artificial Intelligence Literacy Certificate",
+      "Data Analytics and Visualization Certificate",
+      "Digital Studies Certificate",
+      "Entrepreneurship Minor",
+      "Game Design and Development Minor",
+      "Medical Humanities Minor"
+    ]
+  },
+  "application_process": {
+    "platforms": ["Common App", "Coalition App", "USC Application"],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Action",
+        "date": "2024-10-15",
+        "is_binding": false,
+        "notes": "Decisions released mid-December."
+      },
+      {
+        "plan_type": "Honors College / Top Scholar",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "Required for SCHC and Top Scholar awards."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "Priority deadline for general admission."
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Personal Statement",
+        "details": "One essay required (250-650 words)."
+      },
+      {
+        "target_program": "South Carolina Honors College",
+        "requirement_type": "Essays",
+        "deadline": "2024-11-15",
+        "details": "Two additional essays required on intellectual curiosity and initiative."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": ["Course Rigor", "GPA"],
+      "secondary_factors": ["Application Essay", "Extracurriculars", "Talents", "Character", "Class Rank"],
+      "essay_importance": "Important",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "Considered",
+      "first_gen_boost": "Considered"
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to the College of Arts and Sciences for less competitive admission rates compared to the Moore School",
+      "Avoid selecting International Business as a primary major unless having a 3.9+ GPA",
+      "Research major-specific prerequisites, as transferring into Nursing requires a high institutional GPA"
+    ],
+    "college_ranking_tactics": [
+      "Rank the South Carolina Honors College (SCHC) as top priority to secure earliest course registration",
+      "List the Capstone Scholars program as a secondary choice for suite-style housing"
+    ],
+    "alternate_major_strategy": "If applying to a competitive first-choice program like Nursing or Business, list a second-choice major within the College of Arts and Sciences."
+  },
+  "financials": {
+    "tuition_model": "Tuition Stability Plan",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 12688,
+        "total_coa": 30544,
+        "housing": 10798
+      },
+      "out_of_state": {
+        "tuition": 36296,
+        "total_coa": 54152,
+        "supplemental_tuition": 23608
+      }
+    },
+    "aid_philosophy": "Merit Focused",
+    "average_need_based_aid": 6835,
+    "average_merit_aid": 15000,
+    "percent_receiving_aid": 90.0,
+    "scholarships": [
+      {
+        "name": "Stamps Scholars Award",
+        "type": "Merit",
+        "amount": "Full ride (approx. $142,000 over 4 years)",
+        "deadline": "2025-11-15",
+        "benefits": "Automatic Honors College entry, $15,000 enrichment fund",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "McNair Scholars Award",
+        "type": "Merit",
+        "amount": "Full ride (approx. $142,000 over 4 years)",
+        "deadline": "2025-11-15",
+        "benefits": "Honors College entry, $10,000 enrichment fund",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "Distinction Award",
+        "type": "Merit",
+        "amount": "$10,000/year plus tuition reduction",
+        "deadline": "2025-10-15 (Priority)",
+        "benefits": "Reduced tuition rates for nonresidents",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Gamecock Guarantee",
+        "type": "Need",
+        "amount": "Full tuition and fees coverage",
+        "deadline": "2025-12-01 (Admission)",
+        "benefits": "Coordinated academic support",
+        "application_method": "Automatic Consideration via FAFSA"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Generous Credit",
+    "ap_policy": {
+      "general_rule": "Score of 3+ grants credit for most exams",
+      "usage": "Satisfies Carolina Core (GE) requirements"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with scores of 4+ grant credit; SL exams not accepted",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": ["Institutional Equivalency Table", "SCTRAC.org"],
+      "restrictions": "32-unit cap for combined exam credits (AP/IB)"
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "High academic rigor with a focus on AP/IB scores",
+      "An Early Action application strategy to maximize Honors College chances",
+      "A compelling personal narrative highlighting intangible traits"
+    ],
+    "common_activities": [
+      "Leadership roles in school clubs",
+      "Varsity sports and performance arts",
+      "Community service and pre-professional internships"
+    ],
+    "essay_tips": [
+      "Avoid 'swappable' language; avoid generic 'Why UofSC' essays",
+      "For Honors prompts, focus on your contribution to the 'community of scholars'",
+      "Address specific campus resources like the Horseshoe"
+    ],
+    "red_flags": [
+      "Careless proofreading errors",
+      "Generic topics like breakups or basic study advice",
+      "Applying to a major purely for perceived ease of admission"
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 62177,
+    "employment_rate_2yr": 90.0,
+    "grad_school_rate": 25.0,
+    "top_employers": ["Amazon", "Boeing", "Deloitte", "EY", "Prisma Health", "Bank of America"],
+    "loan_default_rate": 2.3
+  },
+  "student_retention": {
+    "freshman_retention_rate": 91.0,
+    "graduation_rate_4_year": 69.0,
+    "graduation_rate_6_year": 78.0
+  }
+}

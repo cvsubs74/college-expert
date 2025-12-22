@@ -22,11 +22,13 @@ import {
 } from '@heroicons/react/24/outline';
 import { StarIcon } from '@heroicons/react/24/solid';
 import MediaGallery from '../MediaGallery';
+import UniversityChatWidget from '../UniversityChatWidget';
+import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 
 // ============================================================================
 // HERO SECTION
 // ============================================================================
-const HeroSection = ({ university, fitAnalysis }) => {
+const HeroSection = ({ university, fitAnalysis, onAskAI }) => {
     const fitColors = {
         SAFETY: { bg: 'bg-green-500', text: 'text-green-100', border: 'border-green-400' },
         TARGET: { bg: 'bg-blue-500', text: 'text-blue-100', border: 'border-blue-400' },
@@ -1147,6 +1149,7 @@ const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
 // ============================================================================
 const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
     const [activeTab, setActiveTab] = useState('details');
+    const [showChat, setShowChat] = useState(false);
 
     const tabs = [
         { id: 'details', label: 'University Details', icon: BuildingLibraryIcon },
@@ -1170,8 +1173,12 @@ const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
 
             {/* Hero Section */}
             <div className="max-w-6xl mx-auto px-4 py-6">
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <HeroSection university={university} fitAnalysis={fitAnalysis} />
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden relative">
+                    <HeroSection
+                        university={university}
+                        fitAnalysis={fitAnalysis}
+                        onAskAI={() => setShowChat(true)}
+                    />
 
                     {/* Tab Navigation - Only 2 Tabs */}
                     <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
@@ -1183,6 +1190,28 @@ const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
                     </div>
                 </div>
             </div>
+
+            {/* Ask AI Floating Action Button */}
+            {!showChat && (
+                <button
+                    onClick={() => setShowChat(true)}
+                    className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium group"
+                >
+                    <div className="relative">
+                        <ChatBubbleLeftRightIcon className="h-6 w-6" />
+                        <SparklesIcon className="h-3 w-3 absolute -top-1 -right-1 text-yellow-200 animate-pulse" />
+                    </div>
+                    <span className="font-bold">Ask AI</span>
+                </button>
+            )}
+
+            {/* Floating Chat Widget */}
+            <UniversityChatWidget
+                universityId={university.id}
+                universityName={university.name}
+                isOpen={showChat}
+                onClose={() => setShowChat(false)}
+            />
         </div>
     );
 };

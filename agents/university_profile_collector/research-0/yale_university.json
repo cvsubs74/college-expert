@@ -1,0 +1,892 @@
+{
+  "_id": "yale_university",
+  "metadata": {
+    "official_name": "Yale University",
+    "location": {
+      "city": "New Haven",
+      "state": "CT",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Yale University is a highly prestigious Ivy League institution renowned for its rigorous academics, vibrant residential college system, and extensive research opportunities. Located in New Haven, CT, it fosters a close-knit community while offering the vast resources of a major research university.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Yale's admissions philosophy is highly selective and emphasizes a holistic review process. It encourages applicants to present a complete and concrete image of themselves, including strengths, weaknesses, dreams, and aspirations, recognizing that perfect scores, while necessary, are not sufficient.",
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Yale is consistently ranked among the most selective universities, with a 5% acceptance rate as of 2026, and was ranked the 5th hardest school to get into by Niche in 2022.",
+        "implication": "Prospective students must demonstrate exceptional academic achievement and personal qualities beyond just grades and test scores to be competitive."
+      },
+      {
+        "category": "Undergraduate Experience",
+        "insight": "Yale places an 'unparalleled focus on undergraduate education,' requiring all professors to teach at least one undergraduate course annually, complemented by a distinctive residential college system.",
+        "implication": "Students benefit from a personalized and supportive learning environment within a top-tier research institution, fostering strong community bonds and direct access to leading faculty."
+      },
+      {
+        "category": "Financial Accessibility",
+        "insight": "Yale has a strong commitment to financial aid, meeting 100% of demonstrated financial need for all admitted students, regardless of citizenship or immigration status.",
+        "implication": "This policy aims to make a Yale education accessible to a wide range of students, reducing financial barriers and the need for student loans."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Yale's social life is deeply rooted in its residential college system, which provides a 'small-college vibe' within the larger university, fostering close-knit communities, traditions, and events like formals and study breaks. The campus boasts over 500 student organizations, a vibrant arts scene with free museum access, and cherished traditions such as 'The Game' (Harvard-Yale football) and Spring Fling concerts. While academics are rigorous, the environment balances individual pursuits with a strong community spirit, supported by various activities including Greek life and opportunities to engage with New Haven's cultural offerings.",
+      "transportation_impact": "New Haven is a compact city, and a personal car is not necessary for students. Yale operates a comprehensive and free campus shuttle system, which is trackable online, facilitating travel around the main and West Campuses. Walking and biking are popular and encouraged, with resources like bike maps and repair stations. Local bus and train services connect students to neighboring towns, New York City, and Boston, while car-sharing options like Zipcar and ride-sharing services are also available. This robust transportation infrastructure ensures ease of mobility and reduces reliance on private vehicles.",
+      "research_impact": "Yale is a leading student-centered research university with a mission to advance knowledge and address global challenges. It offers extensive research opportunities for undergraduates, including First-Year Summer Research Fellowships in science and engineering. With over 1,200 science and engineering labs across more \u043f\u0435\u0440 45 degree programs, significant annual funding, and access to world-class resources like the Beinecke Rare Book and Manuscript Library and the Brain Imaging Center, students can engage in groundbreaking work. The university has strategic priorities in areas such as data science, neuroscience, planetary solutions, and quantum science, fostering innovation and preparing future scientific leaders with strong ties to its renowned professional schools."
+    },
+    "us_news_rank": 4
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 4.59,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 1.5,
+      "admits_class_size": 2308,
+      "is_test_optional": false,
+      "test_policy_details": "Test Flexible",
+      "early_admission_stats": [
+        {
+          "plan_type": "REA",
+          "applications": 6729,
+          "admits": 728,
+          "acceptance_rate": 10.82,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 50228,
+        "admits_total": 2308,
+        "enrolled_total": 1650,
+        "acceptance_rate_overall": 4.59,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 71.5,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 943,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data for Class of 2029 (Fall 2025 entry) is based on the 2024-2025 admissions cycle. The enrolled total is the target class size for the Class of 2029. Waitlist accepted spots and admitted from waitlist are not yet available for this cycle as of the current time."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 57517,
+        "admits_total": 2227,
+        "enrolled_total": 1554,
+        "acceptance_rate_overall": 3.87,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 69.8,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 773,
+          "accepted_spots": 565,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate hit a record low. Waitlist data for Fall 2024 admissions is from the 2024-2025 Common Data Set, indicating no students were admitted from the waitlist."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 52303,
+        "admits_total": 2353,
+        "enrolled_total": 1641,
+        "acceptance_rate_overall": 4.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 69.78,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1000,
+          "accepted_spots": 780,
+          "admitted_from_waitlist": 9,
+          "waitlist_admit_rate": 1.15,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Applications increased, and acceptance rate remained highly selective. Waitlist data is sourced from the 2022-2023 Common Data Set, which reports Fall 2022 admissions waitlist figures. It is assumed this refers to the Class of 2027 waitlist process."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 50015,
+        "admits_total": 2234,
+        "enrolled_total": 1554,
+        "acceptance_rate_overall": 4.46,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 1000,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record number of applications at the time. Waitlist data for Class of 2026 offered spots are available, but accepted spots and admitted from waitlist are not explicitly detailed in the provided search results for this specific class."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 46905,
+        "admits_total": 2169,
+        "enrolled_total": 1786,
+        "acceptance_rate_overall": 4.62,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 1030,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Significant increase in applications due to test-optional policy. The enrolled total from College Factual might include deferred students from the previous cycle. Waitlist data offered spots are available, but further details are not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.90-4.00",
+        "average_weighted": null,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "GPA details not publicly disclosed for the current admissions cycle."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1510-1570",
+        "sat_reading_middle_50": "740-780",
+        "sat_math_middle_50": "770-800",
+        "act_composite_middle_50": "34-36",
+        "submission_rate": null,
+        "policy_note": "Test flexible; accepts SAT, ACT, AP, or IB scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 18.0,
+        "legacy_percentage": null,
+        "international_percentage": 14.0,
+        "geographic_breakdown": [],
+        "gender_breakdown": null,
+        "racial_breakdown": null,
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Yale School of Engineering & Applied Science",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students admitted to Yale College and interested in engineering can pursue B.S. degrees through SEAS.",
+        "housing_profile": "Integrated within Yale's residential college system.",
+        "student_archetype": "Ambitious problem-solvers with strong STEM backgrounds seeking Yale's liberal arts environment.",
+        "majors": [
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 1010 (Biochemistry and Biophysics)",
+              "BIOL 1020 (Principles of Cell Biology)",
+              "CHEM 1610 (General Chemistry) or higher",
+              "MATH 1150 or MATH 1160 (Calculus I or II)",
+              "MATH 1200 or ENAS 1510 (Multivariable Calculus or Intro to Engineering Math)",
+              "ENAS 1940 (Introduction to Engineering)",
+              "PHYS 1800 (Fundamentals of Physics I)",
+              "PHYS 1810 (Fundamentals of Physics II)",
+              "PHYS 2050L (Physics Lab I)",
+              "PHYS 2060L (Physics Lab II)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 1010 Biochemistry and Biophysics",
+              "CHEM 1610 General Chemistry",
+              "MATH 1200 Multivariable Calculus"
+            ],
+            "special_requirements": "By the end of sophomore year, students should have taken BENG 2080, 2800, and 3200.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare at the beginning of sophomore year. Advanced high school preparation does not bypass prerequisites."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "ABET-accredited program."
+          },
+          {
+            "name": "Computer Science (B.S.)",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CPSC 2010 Introduction to Computer Science",
+              "CPSC 2020 Mathematical Tools for Computer Science or MATH 2440 (Discrete Mathematics)",
+              "CPSC 2230 Data Structures and Programming Techniques"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Five core courses are required: CPSC 2010, CPSC 2020 or MATH 2440, CPSC 2230, CPSC 3230, and CPSC 3650 or 3660."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "ABET-accredited program."
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "ABET-accredited program."
+          },
+          {
+            "name": "Applied Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Computer Science and Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CPSC 1001 (Introduction to Programming) or equivalent",
+              "CPSC 2020 (Mathematical Tools for Computer Science) or MATH 2440 (Discrete Mathematics)",
+              "MATH 1120 (Calculus)",
+              "ECON 1110 or ECON 1115 (Introductory Microeconomics)",
+              "ECON 1111 or ECON 1116 (Introductory Macroeconomics)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CPSC 2010 Introduction to Computer Science",
+              "CPSC 2230 Data Structures and Programming Techniques",
+              "ECON 2121 Intermediate Microeconomics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Grades of 4 or 5 on high-school AP Computer Science, Statistics, Calculus, Microeconomics, and Macroeconomics signal adequate preparation."
+          },
+          {
+            "name": "Computer Science and Mathematics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CPSC 2010 Introduction to Computer Science",
+              "CPSC 2230 Data Structures and Programming Techniques",
+              "MATH 1200 Multivariable Calculus"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Requires 14 term courses and a senior project."
+          }
+        ]
+      },
+      {
+        "name": "Yale College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 4.59,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a rigorous liberal arts education with strong residential college community.",
+        "housing_profile": "All undergraduates assigned to one of 14 residential colleges providing dining, social, and academic support.",
+        "student_archetype": "Intellectually curious, engaged, well-rounded students passionate about diverse academic pursuits.",
+        "majors": [
+          {
+            "name": "Computer Science (B.A.)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CPSC 2010 Introduction to Computer Science",
+              "CPSC 2020 Mathematical Tools for Computer Science or MATH 2440 (Discrete Mathematics)",
+              "CPSC 2230 Data Structures and Programming Techniques"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Five core courses are required: CPSC 2010, CPSC 2020 or MATH 2440, CPSC 2230, CPSC 3230, and CPSC 3650 or 3660."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECON 1108 or ECON 1110 or ECON 1115 (Introductory Microeconomics)",
+              "ECON 1111 or ECON 1116 (Introductory Macroeconomics)",
+              "MATH 1180 or MATH 1200 (preferred) or other approved math course"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "No prerequisites for the major itself, but specific introductory courses are required for the major."
+          },
+          {
+            "name": "History",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Two term courses in History"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "All History majors select either the global or the specialist concentration.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Directed Studies history and philosophy courses count automatically as history prerequisites."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Requires courses in research methods, statistics, and neuroscience."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Biology (Molecular, Cellular, and Developmental Biology concentration)",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIOL 1010 (Biochemistry and Biophysics)",
+              "BIOL 1020 (Principles of Cell Biology)",
+              "BIOL 1030 (Genetics and Development)",
+              "BIOL 1040 (Ecology and Evolutionary Biology)",
+              "Two-term lecture sequence in chemistry with associated labs (for B.S. degree)",
+              "One organic chemistry course with associated lab (for B.S. degree)",
+              "Two physics courses, PHYS 1700 or above (for B.S. degree)",
+              "MATH 1150 or above or a Yale statistics course (for B.A. and B.S. degrees)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 1010 Biochemistry and Biophysics",
+              "BIOL 1020 Principles of Cell Biology",
+              "CHEM 1610 General Chemistry"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students who do not complete the introductory BIOL sequence take advanced lecture or seminar courses to fulfill the biology prerequisite."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 1200 Multivariable Calculus",
+              "MATH 2250 Linear Algebra"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Music",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MUSI 210a or b, 211a or b, 218a or b, 219a or b, or equivalents"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Some courses require familiarity with music notation.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "A combined B.A./M.M. degree program exists with specific application requirements."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Classics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students need proficiency in Greek and Latin. Concentrates in either Greek or Latin literature, or both.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "No formal prerequisite courses, but students interested should meet with the DUS early."
+          },
+          {
+            "name": "Classical Civilization",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Students need either Greek or Latin at Intermediate level.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "No formal prerequisite courses, but students interested should meet with the DUS early."
+          },
+          {
+            "name": "Global Affairs",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          },
+          {
+            "name": "Ethics, Politics, and Economics (EP&E)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHIL 175 (Ethics) or Directed Studies",
+              "A course in Political Philosophy (e.g., PHIL 178, PLSC 114, PLSC 118, PLSC 108 or Directed Studies)",
+              "A Political Science introductory course (international relations, comparative politics, or American politics)",
+              "A course on Other Perspectives (e.g., Anthropology, History, Sociology, WGSS or Directed Studies)",
+              "ECON 108 or ECON 110 or ECON 115 (Introduction to Microeconomics)",
+              "ECON 111 or ECON 116 (Introduction to Macroeconomics)",
+              "Game Theory",
+              "Econometrics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECON 115 Introductory Microeconomics",
+              "ECON 116 Introductory Macroeconomics",
+              "ECON 117 Introduction to Data Analysis and Econometrics"
+            ],
+            "special_requirements": "Students must complete eight introductory requirements by the end of their fourth, or the beginning of their fifth term of enrollment to declare the major.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Requires 15 term courses."
+          },
+          {
+            "name": "Statistics and Data Science",
+            "degree_type": "B.A. or B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": null
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Advanced Language Certificates (e.g., Ancient Egyptian, Ancient Greek, Arabic, Chinese, French, German, Hebrew, Hindi, Indonesian, isiZulu, Italian, Japanese, Kiswahili, Korean, Latin)",
+      "Skills-Based Certificates (e.g., Data Science, Programming)",
+      "Interdisciplinary Certificates (e.g., Medieval Studies, Education Studies, Islamic Studies, Translation Studies)"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Single-Choice Early Action",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": "Non-binding but restrictive, meaning applicants cannot apply to other private institutions under early programs (some exceptions apply for public universities)."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-02",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Two longer essays and four short answer questions. One longer essay (200 words or fewer) asks about a topic or idea that excites the applicant and is related to academic areas. The other longer essay (400 words or fewer) requires choosing from three options, one of which is to 'Reflect on your membership in a community to which you feel connected.' There is also a 'Why Yale' essay (125 words or fewer) and four 'Short Take' questions (200 characters or fewer each)."
+      },
+      {
+        "target_program": "Music",
+        "requirement_type": "Arts Supplement (Recording/Score)",
+        "deadline": "2024-11-08 (Single-Choice Early Action), 2025-01-09 (Regular Decision)",
+        "details": "For Yale College applicants interested in music, a supplementary recording or score can be submitted through the Yale Admissions Status Portal. This is reviewed by music faculty, not admissions officers."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Academic Record (Course Rigor, GPA)",
+        "Essays",
+        "Recommendations",
+        "Extracurriculars (sustained engagement, leadership, impact)"
+      ],
+      "secondary_factors": [
+        "Talents (e.g., musical, athletic, creative)",
+        "Character",
+        "Intellectual Curiosity"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Moderate",
+      "first_gen_boost": "Moderate",
+      "specific_differentiators": "Looking for intellectual curiosity and drive, students who will make the most of Yale's resources and contribute significantly to the Yale community."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Choose a major based on genuine intellectual interests, as you can easily change it later at Yale.",
+      "Consider less competitive majors like Religious Studies, East Asian Languages and Literatures, or History of Science, Medicine, and Public Health, as they may have fewer applicants for admission, although Yale doesn't prioritize one major over another in admissions.",
+      "If interested in STEM, start fulfilling requirements during your first year, as these often require earlier declaration compared to humanities.",
+      "Do not feel pressured to double major unless genuinely passionate about both fields or if it significantly aids job prospects, as it can limit flexibility for other electives.",
+      "Utilize resources like Directors of Undergraduate Studies (DUSes) and upperclassmen for advice on specific majors and course roadmaps."
+    ],
+    "college_ranking_tactics": [
+      "Prioritize colleges based on their overall academic environment and fit, rather than solely prestige, considering factors like collaborative culture.",
+      "Evaluate colleges based on the flexibility of their curriculum and general education requirements, as Yale's distribution requirements offer significant freedom.",
+      "Consider the quality of residential college life and community engagement opportunities, as these are significant aspects of the Yale experience.",
+      "Look beyond specific major rankings, as the quality of education at Yale is generally high across diverse fields.",
+      "Explore opportunities for engagement with the broader city of New Haven, not just campus-centric activities."
+    ],
+    "alternate_major_strategy": "At Yale College, your chosen major, or applying as undeclared, generally does not affect admission chances, as admissions officers look holistically at applications. Students are not bound by their declared major on the application and can easily change it, often as late as junior year, by simply updating it in their student portal. Therefore, the strategy isn't about leveraging an alternate major for admission to a 'different college' in the traditional sense, but rather selecting a primary major that genuinely interests you, knowing you have the flexibility to explore and switch. If applying to a demanding field like CS, listing an alternate in a less intensive but related area (e.g., Cognitive Science) can reflect broader academic interests without impacting admissions negatively, as Yale focuses on a liberal arts education where interdisciplinary exploration is encouraged."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67250,
+        "total_coa": 90975,
+        "housing": 11300
+      },
+      "out_of_state": {
+        "tuition": 67250,
+        "total_coa": 90975,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 68800,
+    "average_merit_aid": 0,
+    "percent_receiving_aid": 55.0,
+    "scholarships": [
+      {
+        "name": "Yale Scholarship (Need-Based)",
+        "type": "Need",
+        "amount": "Varies from a few hundred dollars to over $80,000 per year; average over $65,000. Covers 100% of demonstrated financial need.",
+        "deadline": "Varies (aligned with admissions application deadlines; e.g., January 2 for regular decision for 2025-2026, though some sources state December 15, 2025)",
+        "benefits": "Covers tuition, room, and board for students whose parents earn less than $65,000 a year; generally meets full demonstrated need without relying on student loans.",
+        "application_method": "Automatic consideration upon application for admission and completion of financial aid application (e.g., CSS Profile, FAFSA)"
+      },
+      {
+        "name": "Yale Divinity School Merit Scholarships",
+        "type": "Merit",
+        "amount": "Full cost of tuition plus a $13,250 or $15,000 annual stipend for M.Div. and M.A.R. students.",
+        "deadline": "Automatic consideration through the admissions process by the Admissions Committee.",
+        "benefits": "Covers tuition and provides a stipend for living expenses; renewable annually.",
+        "application_method": "Automatic consideration with admission application; must complete a YDS financial aid application to accept."
+      },
+      {
+        "name": "Yale Divinity School Need-Based Scholarships",
+        "type": "Need",
+        "amount": "Full cost of tuition plus a $4,400 annual stipend for M.Div. and M.A.R. students.",
+        "deadline": "Annually, must complete a YDS financial aid application.",
+        "benefits": "Covers tuition and provides a stipend for living expenses; renewable annually.",
+        "application_method": "YDS financial aid application."
+      },
+      {
+        "name": "Yale University Women's Organization (YUWO) Scholarship",
+        "type": "Merit and Need",
+        "amount": "Varies, ranging from $2,500 to $10,500 per year.",
+        "deadline": "March 31, 2026",
+        "benefits": "Supports women whose formal education has been delayed or interrupted to resume academic studies or enhance careers; awards are exclusively for tuition and paid directly to the institution.",
+        "application_method": "Separate application form and supporting documents to scholarships@yuwowomen.org"
+      },
+      {
+        "name": "Graduate Departmental Funding (PhD Students)",
+        "type": "Full Ride / Departmental",
+        "amount": "Covers full tuition, hospitalization fellowship, and an annual stipend.",
+        "deadline": "Varies by department and program.",
+        "benefits": "Fully funded, covering tuition, health benefits, and living expenses.",
+        "application_method": "Apply directly to the departments of choice; funding policies are different for each department."
+      },
+      {
+        "name": "Yale Young African Scholars (YYAS) Alumni Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition and travel costs for any Yale Young Global Scholars (YYGS) session in 2025.",
+        "deadline": "Varies (tied to YYGS application deadlines)",
+        "benefits": "Covers full tuition and travel to participate in a YYGS session.",
+        "application_method": "Likely part of the YYGS application process for YYAS alumni."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "Scores of 5 on AP exams may grant 'acceleration credit' for placement, not direct course credit towards graduation requirements",
+      "exceptions": [
+        "No credit for AP Physics 1 or 2 tests",
+        "For languages like Chinese, French, German, Japanese, Latin, and Spanish, a 5 grants 2 credits; for Italian, a 5 grants 1 credit",
+        "A 4 on Calculus BC test grants 1 credit, while a 5 grants 2 credits"
+      ],
+      "usage": "Can satisfy placement into advanced courses, potentially leading to early graduation or qualification for combined programs; does not appear on transcript or affect GPA"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with scores of 6 or 7 may grant 'acceleration credit' for placement",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "No credit for AP, IB, CLEP, or college credits earned in high school. Maximum of 18 transferable course credits; students must complete at least 18 course credits (two years) at Yale. Not normally admitted with more than two years (18 Yale credits) of transferable undergraduate coursework. Pass/Fail courses do not typically transfer. Online courses from other institutions may be eligible under limited conditions."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record and intellectual curiosity, often demonstrated through challenging coursework.",
+      "Demonstrated sustained passion and leadership in 1-2 areas rather than a scattered list of many activities.",
+      "Authenticity and self-reflection in essays that reveal personality and values.",
+      "A clear understanding of Yale's distinct culture, such as its residential college system and emphasis on liberal arts, showing genuine 'fit'.",
+      "Community engagement and collaborative thinking, indicating how one will contribute to Yale's environment."
+    ],
+    "common_activities": [
+      "Research experience, potentially leading to publications.",
+      "Leadership roles in school clubs and organizations (e.g., President of Math Team, Founder of Chemistry Club).",
+      "Significant community service or engagement in meaningful projects.",
+      "Participation in academic competitions and honor societies.",
+      "Varsity athletics or other sustained extracurricular involvement."
+    ],
+    "essay_tips": [
+      "Be specific about why Yale, referencing unique programs, courses, or aspects of the university that align with your interests.",
+      "Show, don't tell; use specific examples and anecdotes that reveal your personality and insights rather than just recounting experiences.",
+      "Focus on personal growth and introspection, explaining how experiences shaped you internally.",
+      "Ensure your voice is authentic and genuine, avoiding overly polished or generic language.",
+      "Treat every supplemental prompt as an opportunity to reveal a new dimension of yourself, using specific examples."
+    ],
+    "red_flags": [
+      "Submitting generic essays that could apply to any Ivy League school or lack specific connection to Yale's unique offerings.",
+      "Overloading on a large number of extracurricular activities without demonstrating depth, growth, or significant impact in any one area.",
+      "Essays that are purely descriptive, lacking introspection or personal insight into how experiences changed the applicant.",
+      "Essays where the applicant plays a supporting role rather than being the main character, focusing too much on others' actions or external circumstances.",
+      "A significantly low GPA or a decline in grades, especially in challenging coursework, without a compelling explanation."
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 100533,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 18.0,
+    "top_employers": [
+      "McKinsey & Company",
+      "Bain & Company",
+      "Goldman Sachs Group",
+      "Google",
+      "Meta",
+      "JPMorgan Chase & Co.",
+      "Deloitte"
+    ],
+    "loan_default_rate": 0.0
+  },
+  "student_retention": {
+    "freshman_retention_rate": 98.8,
+    "graduation_rate_4_year": null,
+    "graduation_rate_6_year": 95.7
+  }
+}

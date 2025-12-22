@@ -1,0 +1,415 @@
+{
+  "university_profile": {
+    "_id": "university_of_cincinnati",
+    "metadata": {
+      "official_name": "University of Cincinnati",
+      "location": {
+        "city": "Cincinnati",
+        "state": "OH",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": []
+    },
+    "strategic_profile": {
+      "executive_summary": "The University of Cincinnati is a premier public research university recognized for pioneering the cooperative education model and maintaining R1-level research activity. With over 53,000 students, it serves as a major economic and innovation engine for the Midwest.",
+      "market_position": "Public Research Powerhouse",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 152,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "While the overall acceptance rate remains relatively high at approximately 85-88%, total applicant volume has surged over 45% since 2018.",
+          "implication": "Admission to flagship specialized colleges like DAAP and Engineering is significantly more competitive than the university-wide average."
+        },
+        {
+          "category": "Career Outcomes",
+          "insight": "As the global founder of co-op, UC students collectively earned over $94 million in paid professional roles during the 2024-25 academic year.",
+          "implication": "Students prioritizing immediate workforce integration and debt reduction through earnings should view UC as a top-tier ROI choice."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "UC offers a high-energy urban experience with a vibrant Greek life, 'Top Party School' recognition from Niche (#27), and high-stakes athletic spirit following its entry into the Big 12 Conference.",
+        "transportation_impact": "The university operates a robust multi-modal system, including free Bearcat Shuttles, 'NightRide' safe-travel vans, and universal free Metro bus passes.",
+        "research_impact": "As an R1 institution, UC integrates research with industry via the 1819 Innovation Hub and over 1,700 corporate partners, recently achieving a No. 4 national ranking for cooperative education in 2026."
+      }
+    },
+    "admissions_current": {
+      "current_status": {
+        "overall_acceptance_rate": 85.3,
+        "in_state_acceptance_rate": null,
+        "out_of_state_acceptance_rate": null,
+        "international_acceptance_rate": 68.9,
+        "transfer_acceptance_rate": 47.9,
+        "admits_class_size": 6584,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "applications": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "class_fill_percentage": null
+          }
+        ]
+      }
+    },
+    "admissions_trends": {
+      "longitudinal_trends": [
+        {
+          "year": 2025,
+          "cycle_name": "Class of 2029",
+          "applications_total": null,
+          "admits_total": null,
+          "enrolled_total": 53682,
+          "acceptance_rate_overall": null,
+          "yield_rate": null,
+          "notes": "Fall 2025 official headcount reached record 53,682 students; freshman class cited as second-largest in history."
+        },
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 34285,
+          "admits_total": 29242,
+          "enrolled_total": 6583,
+          "acceptance_rate_overall": 85.3,
+          "yield_rate": 22.5,
+          "notes": "Waitlist data not publicly disclosed; University typically reports no waitlist policy."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 33165,
+          "admits_total": 29077,
+          "enrolled_total": 6922,
+          "acceptance_rate_overall": 87.7,
+          "yield_rate": 23.8
+        },
+        {
+          "year": 2022,
+          "cycle_name": "Class of 2026",
+          "applications_total": 29024,
+          "admits_total": 25023,
+          "enrolled_total": 6369,
+          "acceptance_rate_overall": 86.2,
+          "yield_rate": 25.5
+        },
+        {
+          "year": 2021,
+          "cycle_name": "Class of 2025",
+          "applications_total": 25949,
+          "admits_total": 22039,
+          "enrolled_total": 5400,
+          "acceptance_rate_overall": 84.9,
+          "yield_rate": 24.5
+        }
+      ]
+    },
+    "admitted_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.30-3.70",
+        "average_weighted": 3.74,
+        "percentile_25": "3.30",
+        "percentile_75": "3.70",
+        "notes": "Average high school GPA of enrolled first-year students is 3.74; Honors program admits typically have a 3.8+ weighted GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1120-1350",
+        "sat_reading_middle_50": "580-670",
+        "sat_math_middle_50": "570-690",
+        "act_composite_middle_50": "24-29",
+        "submission_rate": 36.0,
+        "policy_note": "Test-optional for most programs. Approximately 11% submit SAT scores while 36% submit ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 22.3,
+        "international_percentage": 8.9,
+        "geographic_breakdown": [
+          { "region": "Ohio", "percentage": 70.5 },
+          { "region": "Other US States", "percentage": 20.6 },
+          { "region": "International", "percentage": 8.9 }
+        ],
+        "gender_breakdown": {
+          "men": { "applicants": 15566, "admits": 13189, "acceptance_rate": 84.7, "note": "Based on 2024 IPEDS/CDS reporting." },
+          "women": { "applicants": 18713, "admits": 16049, "acceptance_rate": 85.8, "note": "Based on 2024 IPEDS/CDS reporting." },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 66.3,
+          "black_african_american": 8.7,
+          "hispanic_latino": 4.6,
+          "asian": 5.1,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 4.0,
+          "unknown": 2.1,
+          "non_resident_alien": 8.9
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "College of Engineering and Applied Science (CEAS)",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 40.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Strong emphasis on math and science readiness; applicants should highlight interest in mandatory co-op.",
+          "student_archetype": "Industrious innovators and problem-solvers",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "average_gpa_admitted": 4.1,
+              "curriculum": {
+                "core_courses": ["CS 1021C Computer Science I", "CS 2021C Computer Science II", "CS 2011 Discrete Structures", "MATH 1061 Calculus I", "MATH 1062 Calculus II"],
+                "electives": ["CS 5152 Artificial Intelligence", "CS 5137 Machine Learning"],
+                "total_units": 128
+              },
+              "notable_professors": ["Dr. Raj Bhatnagar", "Dr. Anca Ralescu", "Dr. Gowtham Atluri"]
+            },
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.M.E.",
+              "is_impacted": true,
+              "average_gpa_admitted": 4.0,
+              "curriculum": {
+                "core_courses": ["MECH 1072 Engineering Foundations", "MECH 2020 Statics", "MECH 2021 Strength of Materials", "MECH 3010 Thermodynamics I"],
+                "electives": ["MECH 5131 Automotive Engineering", "MECH 5135 Robotics"],
+                "total_units": 126
+              },
+              "notable_professors": ["Dr. Marc Cahay", "Dr. Tamara Lorenz"]
+            }
+          ]
+        },
+        {
+          "name": "College of Design, Architecture, Art, and Planning (DAAP)",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 25.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Highly competitive; requires strong academic standing (3.5+ GPA). Portfolio optional for freshman.",
+          "student_archetype": "Visionary creators and design thinkers",
+          "majors": [
+            {
+              "name": "Architecture",
+              "degree_type": "B.S. Arch",
+              "is_impacted": true,
+              "acceptance_rate": 15.0,
+              "average_gpa_admitted": 3.8,
+              "curriculum": {
+                "core_courses": ["ARCH 1001 Design Studio I", "ARCH 2001 Design Studio III", "ARCH 3004 History of Architecture", "ARCH 4001 Design Studio VII"],
+                "electives": ["ARCH 5161 Sustainable Design", "ARCH 5114 Digital Fabrication"],
+                "total_units": 120
+              },
+              "notable_professors": ["Pravin Bhiwapurkar", "Mara Marcu", "Timothy Jachna"]
+            }
+          ]
+        },
+        {
+          "name": "Carl H. Lindner College of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 60.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Focus on leadership and professional development (PACE curriculum).",
+          "student_archetype": "Ambitious future executives and entrepreneurs",
+          "majors": [
+            {
+              "name": "Marketing",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": ["MKTG 3000 Principles", "MKTG 3080 Consumer Behavior", "ACCT 2081 Financial Accounting"],
+                "electives": ["MKTG 3090 Professional Selling", "MKTG 4015 Digital Marketing"],
+                "total_units": 120
+              },
+              "notable_professors": ["Dr. Raj Mehta", "Dr. Frank Kardes", "Professor Drew Boyd"]
+            }
+          ]
+        },
+        {
+          "name": "College of Arts and Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 85.0,
+          "is_restricted_or_capped": false,
+          "student_archetype": "Intellectually curious and multi-disciplinary",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": ["PSYC 1001 Intro", "PSYC 2001 Research Methods", "PSYC 2002 Statistics"],
+                "total_units": 120
+              },
+              "notable_professors": ["Dr. Paula Shear", "Dr. Meera Rastogi", "Dr. Cathy Stough"]
+            },
+            {
+              "name": "Biological Sciences",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": ["BIOL 1081 Biology I", "BIOL 1082 Biology II", "CHEM 1040 Gen Chem"],
+                "total_units": 120
+              },
+              "notable_professors": ["Dr. Laura Zanotti", "Dr. Kenneth Petren", "Dr. Stephen Matter"]
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Data Science Minor",
+        "Entrepreneurship Certificate",
+        "Cyber Operations Certificate",
+        "Blockchain Technology Certificate",
+        "Business Analytics Minor",
+        "International Human Rights Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": ["Common App"],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Action (Priority)",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Required for merit scholarship and honors program consideration."
+        },
+        {
+          "plan_type": "Regular Decision (Rolling)",
+          "date": "2025-03-01",
+          "is_binding": false,
+          "notes": "Applications reviewed on a space-available basis after this date."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Essay",
+          "details": "One required personal statement answering: 'What motivated you to choose your first-choice academic program?'"
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": ["Course Rigor", "GPA", "Personal Statement"],
+        "secondary_factors": ["Extracurriculars", "Recommendations (Optional)", "Class Rank"],
+        "essay_importance": "Moderate",
+        "demonstrated_interest": "Not Considered",
+        "specific_differentiators": "Focuses on 'fit' for the specific major."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Choose Information Technology (CECH) as an entry point if CS is too competitive.",
+        "Apply to Urban Planning within DAAP as a 'safer' entry point.",
+        "Target the 'Center for Exploratory Studies' if GPA is below direct-admit thresholds.",
+        "Check the 'Closed Programs' list early; high-demand majors stop accepting apps early.",
+        "Consider the 'Early IT' program from partner high schools for guaranteed pathways."
+      ],
+      "college_ranking_tactics": [
+        "Rank regional campuses (Blue Ash/Clermont) if GPA is lower; they offer a 100% funnel to Clifton.",
+        "Prioritize colleges with mandatory co-op programs (CEAS and DAAP) for immediate ROI.",
+        "Select regional campuses for first 60 credits for lower tuition and smaller classes.",
+        "Regional campus students can often live in Clifton dorms and use the shuttle to save money."
+      ],
+      "alternate_major_strategy": "List 'Exploratory' or 'Liberal Arts' as alternate to ensure system admission, then transfer internally after one year."
+    },
+    "financials": {
+      "tuition_model": "Tuition Stability Plan",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": { "tuition": 13976, "housing": 13564, "total_coa": 35764 },
+        "out_of_state": { "tuition": 29310, "supplemental_tuition": 15334, "total_coa": 51098 }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 6570,
+      "average_merit_aid": 5752,
+      "percent_receiving_aid": 63.0,
+      "scholarships": [
+        {
+          "name": "Cincinnatus Presidential Scholarship",
+          "type": "Merit",
+          "amount": "$120,000 over 4 years",
+          "deadline": "2025-11-01",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Darwin T. Turner Scholarship",
+          "type": "Merit/Diversity",
+          "amount": "In-state tuition plus stipend",
+          "application_method": "Invitation Only"
+        },
+        {
+          "name": "NEXT Innovation Scholars Program",
+          "type": "Merit/Innovation",
+          "amount": "Full tuition and supplemental expenses",
+          "application_method": "Separate Application (by invitation)"
+        },
+        {
+          "name": "CEAS - FIRST Robotics Scholarship",
+          "type": "Departmental",
+          "amount": "$2,000 - $5,000",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "Cincinnatus Century and University Scholarships",
+          "type": "Merit",
+          "amount": "$6,000 to $24,000 over 4 years",
+          "application_method": "Automatic Consideration"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for most exams",
+        "usage": "Can satisfy Gen Ed and major prerequisites"
+      },
+      "ib_policy": {
+        "general_rule": "Scores of 5+ on HL and SL grant credit",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": ["Transferology", "Transfer Equivalency Database"],
+        "restrictions": "30 semester hour residency requirement at UC"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Competitive GPA (3.7+) and rigorous transcript",
+        "Early application by Dec 1st",
+        "Clear interest in experiential learning/co-op"
+      ],
+      "essay_tips": [
+        "Address the 'Why this Major' prompt with specific UC resources like co-op",
+        "For Honors, focus on being an 'innovator' or 'explorer'"
+      ],
+      "red_flags": [
+        "Missing Dec 1st deadline",
+        "Generic 'Why UC' responses lacking co-op mentions"
+      ],
+      "insights": [
+        "Founder of cooperative education; co-ops are often mandatory",
+        "Nursing, DAAP, and Engineering are significantly more selective",
+        "Campus is distinctly urban; students mention the mix of modern architecture and safety awareness."
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 54810,
+      "employment_rate_2yr": 91.0,
+      "grad_school_rate": 18.0,
+      "top_employers": ["Procter & Gamble", "Kroger", "GE Aerospace", "Cincinnati Children's", "Deloitte"],
+      "loan_default_rate": 6.9,
+      "student_retention": {
+        "freshman_retention_rate": 86.0,
+        "graduation_rate_4_year": 39.0,
+        "graduation_rate_6_year": 72.0
+      }
+    }
+  }
+}

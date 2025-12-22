@@ -1,0 +1,965 @@
+{
+  "_id": "princeton_university",
+  "metadata": {
+    "official_name": "Princeton University",
+    "location": {
+      "city": "Princeton",
+      "state": "New Jersey",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Princeton University is a highly selective Ivy League research institution known for its strong commitment to undergraduate teaching, extensive research opportunities, and vibrant campus life. It consistently ranks among the top universities nationally and globally, attracting exceptional students from diverse backgrounds.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic review, highly competitive, seeking exceptional individuals of every background with a strong academic foundation and demonstrated interest in their chosen fields.",
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Princeton consistently maintains one of the lowest acceptance rates in the nation (around 4-6%), indicating extreme competitiveness.",
+        "implication": "Prospective applicants must present an exceptionally strong academic profile, compelling essays, and notable extracurricular achievements to be considered."
+      },
+      {
+        "category": "Research Focus",
+        "insight": "The university is classified as 'R1: Doctoral Universities \u2013 Very high research activity' and offers extensive undergraduate research programs.",
+        "implication": "Students seeking significant hands-on research experience, even at the undergraduate level, will find abundant opportunities and faculty mentorship across various disciplines."
+      },
+      {
+        "category": "Campus Culture",
+        "insight": "Social life is significantly shaped by its residential college system and the unique eating clubs for upperclassmen.",
+        "implication": "Applicants should be aware of this distinctive social structure and consider how it aligns with their preferred campus experience."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Princeton fosters a vibrant and tight-knit community, largely due to its small undergraduate population and robust residential college system. Social life for juniors and seniors often revolves around the co-ed eating clubs on 'The Street,' which serve as dining and social hubs. The university also offers numerous student organizations, club and intramural sports, and campus-wide events like Lawn Parties and the Orange and Black Ball. While academically rigorous, students find outlets for stress relief in arts, cultural events, and social gatherings.",
+      "transportation_impact": "The campus is designed for walking and biking, promoting a connected and accessible environment. The free TigerTransit shuttle system provides convenient transportation throughout campus and to local shopping areas, including late-night on-demand service. The 'Dinky' train connects the campus to Princeton Junction, offering easy access to New Jersey Transit and Amtrak lines for quick trips to major cities like New York City and Philadelphia, which broadens social and cultural opportunities for students.",
+      "research_impact": "Princeton is a leading research institution with 'very high research activity,' actively involving both undergraduate and graduate students. The Office of Undergraduate Research supports various programs, including paid summer projects (ReMatch+, OURSIP) and research assistantship positions. Students can engage in interdisciplinary research across humanities, social sciences, natural sciences, and engineering, often collaborating with faculty. The university also manages significant external research facilities like the Princeton Plasma Physics Laboratory, offering high-level industry and scientific ties."
+    },
+    "us_news_rank": 1
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 4.62,
+      "in_state_acceptance_rate": 5.14,
+      "out_of_state_acceptance_rate": 5.48,
+      "international_acceptance_rate": 2.11,
+      "transfer_acceptance_rate": 1.9,
+      "admits_class_size": 1868,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "SCEA",
+          "applications": 5000,
+          "admits": 791,
+          "acceptance_rate": 15.8,
+          "class_fill_percentage": 43.0
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 42303,
+        "admits_total": 1868,
+        "enrolled_total": 1408,
+        "acceptance_rate_overall": 4.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 75.37,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Princeton University is not disclosing detailed admissions data for the Class of 2029. Waitlist data not publicly disclosed. It was estimated that over 1,000 accepted a waitlist spot and fewer than 50 were admitted for the 2024-2025 cycle (which applies to Class of 2028 or 2029 admissions)."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 40468,
+        "admits_total": 1868,
+        "enrolled_total": 1411,
+        "acceptance_rate_overall": 4.62,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 75.54,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Princeton University has withheld detailed admissions statistics since 2021, including specific waitlist data. Waitlist is generally unranked based on prior Common Data Sets."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 39644,
+        "admits_total": 1782,
+        "enrolled_total": 1366,
+        "acceptance_rate_overall": 4.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 76.66,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 1032,
+          "accepted_spots": null,
+          "admitted_from_waitlist": 52,
+          "waitlist_admit_rate": 5.04,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data is from Princeton University Common Data Set 2023-2024. The 'accepted_spots' number was not explicitly provided in the same format as 'offered_spots' and 'admitted_from_waitlist' for this year, but the calculated admit rate matches (52/1032)*100 = 5.038% rounded to 5.04%. Waitlist is unranked."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 38019,
+        "admits_total": 2167,
+        "enrolled_total": 1500,
+        "acceptance_rate_overall": 5.7,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 69.22,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 1710,
+          "accepted_spots": 1348,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data is from Princeton University Common Data Set 2022-2023."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 37601,
+        "admits_total": 1647,
+        "enrolled_total": 1290,
+        "acceptance_rate_overall": 4.38,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 78.32,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 1265,
+          "accepted_spots": 1000,
+          "admitted_from_waitlist": 150,
+          "waitlist_admit_rate": 15.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data is from Princeton University Common Data Set 2021-2022. The 1,647 total admitted students include 1,498 initial admits plus 149 from the waitlist/deferred."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.90-4.00",
+        "average_weighted": null,
+        "percentile_25": "3.95",
+        "percentile_75": "4.00",
+        "notes": "Most admits have straight A's in honors/AP. 68.5% of enrolled students had a 4.0 GPA, and 25.5% had a GPA between 3.75 and 3.99."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1510-1560",
+        "sat_reading_middle_50": "740-780",
+        "sat_math_middle_50": "770-800",
+        "act_composite_middle_50": "34-35",
+        "submission_rate": 77.0,
+        "policy_note": "Test optional through the 2024-2025 application cycle; scores are considered if submitted, and Princeton prefers applicants who have standardized testing scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 16.7,
+        "legacy_percentage": 11.2,
+        "international_percentage": 14.1,
+        "geographic_breakdown": [
+          {
+            "region": "International",
+            "percentage": 14.1
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": 915,
+            "acceptance_rate": null,
+            "note": "Represents 49.0% of admitted students for the Class of 2029."
+          },
+          "women": {
+            "applicants": null,
+            "admits": 953,
+            "acceptance_rate": null,
+            "note": "Represents 51.0% of admitted students for the Class of 2029."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 28.5,
+          "black_african_american": 5.0,
+          "hispanic_latino": 9.2,
+          "asian": 27.1,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 7.7,
+          "unknown": 8.2,
+          "non_resident_alien": 14.1
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "Undergraduate College (A.B. Programs)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 4.5,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a broad liberal arts education with strong emphasis on independent research and interdisciplinary exploration. A strong academic record and intellectual curiosity across diverse fields are highly valued.",
+        "housing_profile": "First and second-year students are required to live in one of the seven residential colleges (Butler, Forbes, Mathey, New College West, Rockefeller, Whitman, Yeh College). These colleges provide a supportive community, academic advising, and numerous social and intellectual opportunities. Housing varies from older, Gothic-style dorms (e.g., Mathey, Rockefeller, Forbes, some lack AC) to newer, modern residences with amenities like AC and updated study spaces (e.g., Yeh College, New College West, Whitman).",
+        "student_archetype": "Intellectually passionate and curious, driven, well-rounded individuals who are eager to explore diverse subjects, engage in community service, and develop leadership potential. Many are high-achievers with strong work ethics and a desire to make a meaningful impact.",
+        "majors": [
+          {
+            "name": "Architecture",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "The A.B. in Architecture is a pre-professional program and does not fulfill requirements for professional licensure. It prepares students for a Master of Architecture professional degree program. Requires 12 courses in history and theory, technology, and design/studio.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Housed within the School of Architecture. Students declare this major in their sophomore year."
+          },
+          {
+            "name": "Art and Archaeology",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": "C- average in courses and independent work to graduate from the department.",
+            "weeder_courses": [],
+            "special_requirements": "Two tracks: History of Art or Practice of Art. Requires a total of 10-12 courses including a junior seminar, two senior thesis courses, and departmental courses with distribution requirements across historical periods and cultural areas. No more than two cognate courses from other departments may count towards the 10 departmentals.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 201/207 (General Chemistry I)",
+              "CHM 202 (General Chemistry II)"
+            ],
+            "minimum_gpa_to_declare": "Satisfactory completion of prerequisites. Organic Chemistry prerequisites (CHM 301 and CHM 302 or CHM 304) must be taken at Princeton.",
+            "weeder_courses": [
+              "CHM 201 General Chemistry I",
+              "CHM 202 General Chemistry II"
+            ],
+            "special_requirements": "Requires three 300/400-level chemistry courses, at least one term of experimental lab (CHM 371 or equivalent), and at least one term each of organic, physical, and inorganic chemistry.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year. AP credit can satisfy CHM 201/207."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COS 126 (General Computer Science) or ECE 115",
+              "COS 217 (Introduction to Programming Systems)",
+              "COS 226 (Algorithms and Data Structures)",
+              "MAT 202, MAT 204, MAT 217, or EGR 154"
+            ],
+            "minimum_gpa_to_declare": "All prerequisite courses must be taken for a letter grade. COS 217 and COS 226 must be completed before junior year. Majoring with only COS 126 by end of sophomore year is extremely difficult.",
+            "weeder_courses": [
+              "COS 217 Introduction to Programming Systems",
+              "COS 226 Algorithms and Data Structures"
+            ],
+            "special_requirements": "Requires 8 departmental courses (foundation, core, electives) and 4 semesters of independent work, including a junior research workshop and a senior thesis. COS 240 (Reasoning and Computation) must be completed before the end of junior year.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "One of two departments offering both A.B. and B.S.E. degrees. A.B. students declare in spring of their second year."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Introductory Microeconomics (ECO 100)",
+              "Introductory Macroeconomics (ECO 101)",
+              "Statistics (ECO 202)",
+              "Multivariable Calculus (MAT 175 or equivalent)"
+            ],
+            "minimum_gpa_to_declare": "All prerequisite courses must be completed on a graded basis with a grade of C or higher before the start of junior year.",
+            "weeder_courses": [
+              "ECO 300/310 Intermediate Microeconomics",
+              "ECO 301/311 Intermediate Macroeconomics",
+              "ECO 302/312 Econometrics"
+            ],
+            "special_requirements": "Requires 3 core courses (Intermediate Microeconomics, Intermediate Macroeconomics, Econometrics), 5 departmental electives, and two major pieces of independent research (junior papers and senior thesis). Must pass a senior comprehensive exam.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "C or higher in prerequisites.",
+            "notes": "Most popular major for the Class of 2026. Students declare this major in their sophomore year."
+          },
+          {
+            "name": "English",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "No specific prerequisite courses, but prospective majors should take at least one English course in the first and second years. Requires 12 courses: a junior seminar (ENG 300), one designated course in Literary and Cultural History, two senior thesis courses (ENG 498 and ENG 499), and eight additional departmental courses with distribution requirements. Majors may not take English courses on a pass/D/fail basis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year."
+          },
+          {
+            "name": "History",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires 10 departmental courses, including a junior seminar, two junior independent work projects, and a senior thesis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year."
+          },
+          {
+            "name": "Mathematics",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MAT 215 (Honors Analysis in a Single Variable)",
+              "MAT 216 (Honors Linear Algebra)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MAT 215 Honors Analysis in a Single Variable",
+              "MAT 216 Honors Linear Algebra"
+            ],
+            "special_requirements": "Requires 8 approved courses in mathematics, plus junior independent work and a senior thesis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year. Strong math background expected."
+          },
+          {
+            "name": "Molecular Biology",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MOL 214 (Introduction to Cellular and Molecular Biology)",
+              "CHM 201/207 (General Chemistry I)",
+              "CHM 202 (General Chemistry II)",
+              "One course in statistics (SML 201 or ORF 245)",
+              "One course in computer science (COS 126 or above) or math (MAT 103, 104, 175 or any 200-level MAT course)"
+            ],
+            "minimum_gpa_to_declare": "MOL 214 with a grade of C or better. Organic Chemistry (CHM 301 and CHM 304, or CHM 337) must be completed before junior year. Neither AP credit nor courses taken at other institutions can be used for MOL 214 or the statistics course.",
+            "weeder_courses": [
+              "MOL 214 Introduction to Cellular and Molecular Biology",
+              "CHM 201 General Chemistry I",
+              "CHM 202 General Chemistry II"
+            ],
+            "special_requirements": "Requires 4 core departmental courses (MOL 342, MOL 345, MOL 348, MOL 350 or MOL 320), at least one 300/400/500-level MOL course, plus three other approved departmentals, and a senior thesis. All departmentals must be taken at Princeton.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "C or better in MOL 214.",
+            "notes": "Students declare this major in their sophomore year."
+          },
+          {
+            "name": "Neuroscience",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "NEU 201 (Fundamentals of Neuroscience) or NEU 202 (Introduction to Cognitive Neuroscience)",
+              "MAT 103 (Calculus I)"
+            ],
+            "minimum_gpa_to_declare": "Satisfactory completion of prerequisites.",
+            "weeder_courses": [
+              "NEU 201 Fundamentals of Neuroscience",
+              "NEU 202 Introduction to Cognitive Neuroscience"
+            ],
+            "special_requirements": "Requires the two prerequisites, plus four elective courses from three out of four subject areas: Molecular & Cellular, Circuits & Systems, Formal Theory & Neural Computation, Social & Cognitive Neuroscience. A senior thesis is required.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Housed within the Princeton Neuroscience Institute. Students declare this major in their sophomore year. NEU 201 is strongly recommended if considering the major."
+          },
+          {
+            "name": "Philosophy",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires 8 departmental courses, including an introduction to philosophy course, a logic course, ancient philosophy, modern philosophy, and a senior thesis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHY 103-104 (General Physics) or PHY 105-106 (Advanced Physics)",
+              "PHY 207 (Classical Mechanics)",
+              "MAT 201-202 (Multivariable Calculus and Differential Equations) or MAT 203-204 (Advanced Multivariable Calculus and Applied Algebra)"
+            ],
+            "minimum_gpa_to_declare": "Prerequisites should be completed by the end of sophomore year.",
+            "weeder_courses": [
+              "PHY 207 Classical Mechanics",
+              "MAT 201 Multivariable Calculus",
+              "MAT 202 Differential Equations"
+            ],
+            "special_requirements": "Requires PHY 208 (Quantum Mechanics), PHY 301 (Thermal and Statistical Physics), PHY 312 (Experimental Physics), one course in complex analysis or differential equations, and three additional 300-level or above physics/math courses, plus a senior thesis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year."
+          },
+          {
+            "name": "Politics",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Requires 10 departmental courses, including POL 210 (Political Theory), POL 230 (Introduction to Comparative Politics), POL 240 (Introduction to International Relations), POL 345 (Introduction to Quantitative Social Science), and a senior thesis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 101 (Introduction to Psychology)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSY 251 (Quantitative Methods in Psychology)"
+            ],
+            "special_requirements": "Requires 10 departmental courses, including PSY 251 (Quantitative Methods), courses across different areas of psychology, and a senior thesis. Psychology majors must take at least one course in the three core areas of psychology: perception and cognition, social and personality, and developmental and clinical.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year."
+          },
+          {
+            "name": "Public and International Affairs",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Introductory public policy course",
+              "Ethics course",
+              "Course on power and identity",
+              "Statistics",
+              "Basics of single-variable calculus"
+            ],
+            "minimum_gpa_to_declare": "All prerequisites must be completed before September of junior year with a grade of C or higher.",
+            "weeder_courses": [],
+            "special_requirements": "Housed within the Princeton School of Public and International Affairs. Multidisciplinary major requiring courses across history, economics, politics, psychology, sociology, and science. Requires junior policy seminars, a junior research design seminar, a policy-related senior thesis, and an approved cross-cultural or field experience (e.g., study abroad, internship).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": "C or higher in prerequisites.",
+            "notes": "Students declare this major in their sophomore year."
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "A.B.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "SOC 101 (Introduction to Sociology)"
+            ],
+            "special_requirements": "Requires 10 departmental courses, including SOC 101 (Introduction to Sociology), SOC 301 (Sociological Research Methods), SOC 302 (Statistical Methods in Sociology), and a senior thesis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare this major in their sophomore year."
+          }
+        ]
+      },
+      {
+        "name": "School of Engineering and Applied Science (B.S.E. Programs)",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 4.5,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Suited for students with a strong background and interest in mathematics, physics, chemistry, and computer science. Focus is on applying scientific principles to solve real-world problems. Students choose their engineering concentration at the end of their first year. Approximately 25% of each class is enrolled in B.S.E. programs.",
+        "housing_profile": "First and second-year students are required to live in one of the seven residential colleges (Butler, Forbes, Mathey, New College West, Rockefeller, Whitman, Yeh College), which integrate students from all disciplines. These colleges offer various amenities, with newer buildings often providing modern dorms and common spaces (e.g., Yeh College, New College West) while older ones retain historic charm.",
+        "student_archetype": "Ambitious problem-solvers with exceptional STEM abilities, often combining their technical interests with other pursuits. They are highly disciplined and focused on rigorous academic challenges, aiming for leadership in engineering and related fields.",
+        "majors": [
+          {
+            "name": "Chemical and Biological Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Four years of mathematics (including calculus)",
+              "Two years of laboratory science (including physics and chemistry)",
+              "Introductory Computer Science (COS 126 or ECE 115)"
+            ],
+            "minimum_gpa_to_declare": "Satisfactory completion of foundational courses for all B.S.E. students. Differential equations (MAE 305 or MAT 427 or APC 350) by end of junior fall. General Chemistry (CHM 201/207 and CHM 202) and Molecular Biology (MOL 214) for core.",
+            "weeder_courses": [
+              "CBE 245 Introduction to Chemical Engineering Principles",
+              "CBE 246 Thermodynamics",
+              "CBE 341 Mass, Momentum and Energy Transport"
+            ],
+            "special_requirements": "Requires foundational courses, CBE core courses (9 courses including a double-credit senior thesis), advanced science/math, and program electives. Students choose one of six areas of concentration (e.g., Bioengineering & Biotechnology, Energy, Data Science & AI/ML). Year-long senior thesis required.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Housed within the School of Engineering and Applied Science. B.S.E. students declare their major in the spring of their first year."
+          },
+          {
+            "name": "Civil and Environmental Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Mathematics (including calculus)",
+              "Basic sciences (physics, chemistry)",
+              "Computer science",
+              "Writing requirements common to all B.S.E. programs"
+            ],
+            "minimum_gpa_to_declare": "Satisfactory completion of foundational courses.",
+            "weeder_courses": [
+              "CEE 205 Mechanics of Solids",
+              "CEE 262A/B Structural Analysis and Design",
+              "CEE 303 Environmental Engineering and Water Resources"
+            ],
+            "special_requirements": "Offers four subplans: architecture and engineering, environmental engineering, structural engineering, and engineering and the liberal arts. Requires engineering science courses, engineering design courses, program electives, and a year-long senior thesis. A minimum of 14 engineering courses are required (except for non-ABET accredited subplans).",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Housed within the School of Engineering and Applied Science. Students declare this major at the end of their first year. Some tracks are ABET accredited."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "COS 126 (General Computer Science) or ECE 115",
+              "COS 217 (Introduction to Programming Systems)",
+              "COS 226 (Algorithms and Data Structures)",
+              "B.S.E. general requirements (Physics, Chemistry, Math)"
+            ],
+            "minimum_gpa_to_declare": "All prerequisite courses must be taken for a letter grade. COS 217 and COS 226 must be completed before junior year. Majoring with only COS 126 by end of sophomore year is extremely difficult.",
+            "weeder_courses": [
+              "COS 217 Introduction to Programming Systems",
+              "COS 226 Algorithms and Data Structures",
+              "COS 240 Reasoning and Computation"
+            ],
+            "special_requirements": "Requires 8 departmental courses (foundation, core, electives) and at least one term of independent work. COS 240 (Reasoning and Computation) must be completed before the end of junior year.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "One of two departments offering both A.B. and B.S.E. degrees. B.S.E. students declare in spring of their first year."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PHY 103-104 (General Physics) or PHY 105-106 (Advanced Physics)",
+              "MAT 203-204 (Multivariable Calculus and Differential Equations) or MAT 201-202",
+              "Introductory Computer Science course (COS 126 or ECE 115)"
+            ],
+            "minimum_gpa_to_declare": "Normal prerequisite for entering in sophomore year is the required program for all SEAS students. Students considering transferring for junior year should have at least two sophomore EE courses.",
+            "weeder_courses": [
+              "ELE 201 Introduction to Electrical Engineering",
+              "ELE 203 Electronic Circuits",
+              "ELE 206 Digital Logic Design"
+            ],
+            "special_requirements": "Requires foundational courses (ELE 201, 203, 206, 208), core courses (ELE 301, 302), upperclass mathematics, concentration courses, breadth courses, design experience, and independent work/thesis.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Housed within the School of Engineering and Applied Science. B.S.E. students declare their major in the spring of their first year."
+          },
+          {
+            "name": "Mechanical and Aerospace Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Mathematics (through multivariable calculus and differential equations)",
+              "Physics (two semesters)",
+              "Chemistry (one semester)",
+              "Computer science (COS 126 or ECE 115)"
+            ],
+            "minimum_gpa_to_declare": "Satisfactory completion of foundational courses for all B.S.E. students.",
+            "weeder_courses": [
+              "MAE 221 (Introduction to Thermodynamics)",
+              "MAE 222 (Mechanics of Fluids)",
+              "MAE 223 (Introduction to Flight)"
+            ],
+            "special_requirements": "Requires foundational courses, core MAE courses, departmental electives, and a senior thesis or independent work. Students typically specialize in either mechanical or aerospace engineering tracks.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Housed within the School of Engineering and Applied Science. B.S.E. students declare their major in the spring of their first year."
+          },
+          {
+            "name": "Operations Research and Financial Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "SEAS general requirements (Mathematics through MAT 202/204, Computer Science (COS 126), Chemistry (CHM 201/207), Physics (PHY 103/104))"
+            ],
+            "minimum_gpa_to_declare": "Departmental GPA of 2.0 or greater for graduation. Core requirements (ORF 245, 307, 309, 335) should be completed before pursuing independent research.",
+            "weeder_courses": [
+              "ORF 245 Fundamentals of Statistics",
+              "ORF 307 Optimization",
+              "ORF 309 Probability and Stochastic Systems",
+              "ORF 335 Introduction to Financial Mathematics"
+            ],
+            "special_requirements": "Requires 4 core courses (statistics, probability, stochastic processes, optimization), 10 or 11 departmental electives, and a full-year senior thesis or a one-semester project. At least four electives must be from ORFE.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Housed within the School of Engineering and Applied Science. B.S.E. students declare their major in the spring of their first year."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "African American Studies Minor",
+      "Applied and Computational Mathematics Minor",
+      "Bioengineering Minor",
+      "Computer Science Minor",
+      "Creative Writing Minor",
+      "Data Science (Certificate in Statistics and Machine Learning)",
+      "Entrepreneurship Certificate",
+      "European Studies Minor",
+      "Finance Minor",
+      "Gender and Sexuality Studies Minor",
+      "Global Health and Health Policy Minor",
+      "History and the Practice of Diplomacy Minor",
+      "History of Art Minor",
+      "Mathematics Minor",
+      "Religion Minor",
+      "Urban Studies Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Single-Choice Early Action",
+        "date": "2025-11-01",
+        "is_binding": false,
+        "notes": "Restrictive early action; applicants may not apply early to other private institutions. Not binding for enrollment."
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2026-01-01",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Multiple supplemental essays required: academic interests ('Why Us' for AB or BSE applicants), reflection on lived experiences ('Your Voice'), commitment to service, and three short answer questions (new skill, joy, song)."
+      },
+      {
+        "target_program": "All",
+        "requirement_type": "Graded Written Paper",
+        "deadline": null,
+        "details": "Required, preferably in English or history."
+      },
+      {
+        "target_program": "Arts",
+        "requirement_type": "Arts Supplement",
+        "deadline": null,
+        "details": "Optional. Submitted through the Princeton Applicant Status Portal after application submission. No specific deadline found for Music audition or pre-screening recording."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Looking for intellectual curiosity, drive, and a commitment to service and civic engagement."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to your genuine interest, as the intended major on your application is non-binding and does not affect admission chances at Princeton.",
+      "Be aware that over 70% of Princeton students end up concentrating in something other than what they listed on their application.",
+      "Consider applying undeclared, especially for A.B. degrees, as you don't declare a major until the end of sophomore year (A.B.) or freshman year (B.S.E.).",
+      "If considering a STEM field, starting in the B.S.E. program might offer more flexibility to switch to an A.B. STEM discipline later, as switching from B.S.E. to A.B. is generally easier than the reverse due to prerequisites.",
+      "Some majors, like Economics and Public Policy (SPIA), are perceived by students as less difficult and more flexible, which might be a consideration for managing workload."
+    ],
+    "college_ranking_tactics": [
+      "Do not place excessive weight on overall college rankings, as their methodologies vary significantly and may not align with your personal priorities.",
+      "Evaluate rankings based on the specific criteria they prioritize (e.g., ROI and career outcomes for LinkedIn, student life for Niche) to see if they match your values.",
+      "Prioritize research into departmental rankings and program strengths that directly relate to your areas of interest, rather than just the university's overall standing.",
+      "Consider qualitative factors like the quality of housing and student life, which are often overlooked in broad rankings but significantly impact your college experience."
+    ],
+    "alternate_major_strategy": "If applying to competitive major, list backup in different college. For example, if applying to CS in Engineering, list Cognitive Science in Letters and Science as alternate."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 62688,
+        "total_coa": 86988,
+        "housing": 20250
+      },
+      "out_of_state": {
+        "tuition": 62688,
+        "total_coa": 86988,
+        "housing": 20250,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 62200,
+    "average_merit_aid": 0,
+    "percent_receiving_aid": 65.0,
+    "scholarships": [
+      {
+        "name": "Princeton University Grant",
+        "type": "Need-Based",
+        "amount": "Varies; covers 100% of demonstrated financial need (average grant for Class of 2025 was $62,200, covering 100% of tuition). For most families with incomes up to $150,000, aid covers full cost of attendance, including tuition, housing, food, books, and personal expenses. Most families with incomes up to $250,000 will pay no tuition.",
+        "deadline": "FAFSA and CSS Profile deadlines (typically November 1 for Early Action, January 1 for Regular Decision, and May 1 for returning students).",
+        "benefits": "Covers tuition, housing, food, books, personal expenses; no loans included in aid package.",
+        "application_method": "Automatic consideration upon submission of FAFSA and CSS Profile (and other required documents via IDOC for undergraduates)."
+      },
+      {
+        "name": "QuestBridge National College Match Scholarship",
+        "type": "Need-Based (Full-Ride)",
+        "amount": "Full four-year scholarship covering tuition, room, board, and other expenses.",
+        "deadline": "QuestBridge application deadlines (typically September for the College Match).",
+        "benefits": "Full cost of attendance covered; designed for high-achieving, low-income students.",
+        "application_method": "Apply through the QuestBridge National College Match program and be 'matched' with Princeton."
+      },
+      {
+        "name": "Federal Pell Grant",
+        "type": "Need-Based",
+        "amount": "Varies based on Student Aid Index (SAI), cost of attendance, and enrollment status.",
+        "deadline": "FAFSA deadline.",
+        "benefits": "Federal grant for undergraduates demonstrating exceptional financial need.",
+        "application_method": "Complete the Free Application for Federal Student Aid (FAFSA)."
+      },
+      {
+        "name": "Federal Supplemental Educational Opportunity Grant (FSEOG)",
+        "type": "Need-Based",
+        "amount": "Varies based on funding availability.",
+        "deadline": "FAFSA deadline.",
+        "benefits": "Federal grant administered by Princeton, primarily for students eligible for a Pell Grant with the lowest Student Aid Index.",
+        "application_method": "Complete the Free Application for Federal Student Aid (FAFSA)."
+      },
+      {
+        "name": "New Jersey Tuition Aid Grant (TAG)",
+        "type": "Need-Based",
+        "amount": "Varies.",
+        "deadline": "FAFSA and state application deadlines.",
+        "benefits": "State grant for eligible New Jersey residents attending a New Jersey college.",
+        "application_method": "Complete the FAFSA (and potentially additional state-specific applications)."
+      },
+      {
+        "name": "Princeton University Graduate Fellowships & Assistantships",
+        "type": "Merit/Need (primarily for PhD candidates)",
+        "amount": "Guaranteed full funding for regularly enrolled, degree-seeking Ph.D. candidates for all years of regular program enrollment, contingent upon satisfactory academic performance. Covers tuition, health fees, and a living stipend.",
+        "deadline": "Varies by department, typically the same as the admission deadline (e.g., end of January for Fall 2025).",
+        "benefits": "Full financial support for PhD students through fellowships, teaching assistantships, research assistantships, and external funding.",
+        "application_method": "Automatic consideration upon application to a graduate program; some may require separate departmental applications or specific statements of purpose."
+      },
+      {
+        "name": "William G. Bowen Merit Fellowship (Graduate)",
+        "type": "Merit",
+        "amount": "Not specified, but awarded as a fellowship.",
+        "deadline": "Varies.",
+        "benefits": "Merit-based award with one fellowship in each academic division.",
+        "application_method": "Likely automatic consideration or departmental nomination; specific application details would be on departmental graduate admissions pages."
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Strict",
+    "ap_policy": {
+      "general_rule": "AP scores are used for course placement and requirement fulfillment",
+      "exceptions": [
+        "No credit units granted for advanced standing for Class of 2029 and beyond (including transfer students matriculating as sophomores in Fall 2025)",
+        "No credit for AP Statistics (placement exemption possible for concentrators)",
+        "Forfeiting AP units if equivalent or lower-level courses are taken"
+      ],
+      "usage": "Can satisfy general education requirements, fulfill language requirements, allow entry into upper-level courses, and fulfill B.S.E. general requirements in math, physics, and chemistry"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with a score of 6+ grant advanced placement or fulfill requirements",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "None specified (evaluation by Princeton faculty and deans)"
+      ],
+      "restrictions": "Maximum of three courses for A.B. students and four for B.S.E. students; Courses must be from an accredited postsecondary institution; General education requirements prioritized, departmental requirements generally not fulfilled by transfer credit; No transfer for higher standing than fall of junior year entry; No credit for courses taken before high school completion or during dual enrollment; A student may not earn more than two units of transfer credit in a given summer or term of leave; Must have prior approval for courses taken outside Princeton"
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with challenging coursework (high GPA, rigorous classes, top 10% of class)",
+      "Exceptional academic ability and intellectual curiosity, demonstrating a genuine desire to learn",
+      "Demonstrated passion and extraordinary commitment in one particular area, rather than scattered activities",
+      "Strong standardized test scores (e.g., SAT 1500-1580, ACT 34-35)",
+      "Authentic essays that show self-reflection, unique perspectives, and personal growth"
+    ],
+    "common_activities": [
+      "Research experience, especially those related to academic interests",
+      "Leadership roles and making a difference in school and community clubs/organizations",
+      "Community service and civic engagement, showing a commitment to society",
+      "Varsity athletics, particularly for recruited athletes",
+      "Meaningful extracurricular involvement demonstrating commitment and special skills"
+    ],
+    "essay_tips": [
+      "Be specific about why Princeton: highlight particular programs, professors, research opportunities, clubs, or activities unique to the university",
+      "Show, don't tell: illustrate experiences and personal growth through evocative details rather than just stating them",
+      "Avoid cliched topics (e.g., generic mission trips, athletic injury narratives, essays solely about grandparents)",
+      "Write in a personal and authentic voice, revealing your true self and how your experiences have shaped you",
+      "Focus on a single topic in detail, providing a unified theme rather than a list of accomplishments"
+    ],
+    "red_flags": [
+      "Generic essays that could apply to any school and lack specific connection to Princeton",
+      "Essays that are impersonal, cliched, or simply list accomplishments without depth or self-reflection",
+      "Focusing too much on someone else's story rather than your own experiences and growth",
+      "Submitting a significantly low SAT/ACT score if other parts of the academic profile don't compensate (though test-optional policies vary)",
+      "Lack of intellectual integrity, such as essays written by others"
+    ],
+    "insights": [
+      "Princeton University, like most Ivy League schools, does not formally track demonstrated interest in its admissions process.",
+      "The admissions process is holistic, meaning they consider strong academic performance, extracurricular involvement, leadership potential, and essay quality.",
+      "Showing genuine interest can be beneficial, particularly in a 'Why Princeton' essay, by articulating specific reasons for wanting to attend.",
+      "Princeton seeks students who will make a difference in their schools and communities and contribute to the university community.",
+      "The university places a strong emphasis on a student's unique story and the perspective they bring to campus."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 110066,
+    "employment_rate_2yr": 92.8,
+    "grad_school_rate": 18.4,
+    "top_employers": [
+      "JPMorgan Chase & Co.",
+      "Goldman Sachs",
+      "Bank of America",
+      "Citi",
+      "Morgan Stanley",
+      "Amazon",
+      "Meta"
+    ],
+    "loan_default_rate": 0.9
+  },
+  "student_retention": {
+    "freshman_retention_rate": 95.8,
+    "graduation_rate_4_year": 89.0,
+    "graduation_rate_6_year": 97.0
+  }
+}

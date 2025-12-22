@@ -1,0 +1,532 @@
+{
+  "university_profile": {
+    "_id": "ohio_university",
+    "metadata": {
+      "official_name": "Ohio University",
+      "location": {
+        "city": "Athens",
+        "state": "OH",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "ohio.edu",
+        "usnews.com",
+        "niche.com",
+        "wikipedia.org"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "Established in 1804 as the first university in the Northwest Territory, Ohio University is a premier public research institution (R1 status) famous for its scenic Appalachian campus. It balances a high-activity research environment with a quintessential residential college town atmosphere in Athens.",
+      "market_position": "Public Ivy",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 198,
+      "analyst_takeaways": [
+        {
+          "category": "Admissions Selectivity",
+          "insight": "While the overall acceptance rate remains accessible at approximately 85%, the university has seen record-breaking freshman class sizes in recent years.",
+          "implication": "Applicants should apply early to secure preferred housing and competitive merit-based aid, as residential capacity is a limiting factor."
+        },
+        {
+          "category": "Research Infrastructure",
+          "insight": "The university holds a Carnegie R1 classification, attracting over $60 million in annual research awards with specialized strengths in avionics and biotechnology.",
+          "implication": "Undergraduates benefit from high-tier research facilities typically reserved for graduate students, particularly in the Russ College of Engineering."
+        },
+        {
+          "category": "Financial Value",
+          "insight": "Ohio University utilizes a 'Tuition Guarantee' model that freezes tuition, room, and board rates for four years.",
+          "implication": "This provides high cost predictability, making it an attractive option for middle-income families seeking long-term financial stability."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Consistently ranked as one of America's best college towns, the social scene is defined by its historic 'greens' and a high-energy Greek life presence.",
+        "transportation_impact": "The pedestrian-centric Athens campus is served by the free 'CATS' shuttle system and 'Bobcat Pass' transit, making a personal vehicle largely unnecessary for residential students.",
+        "research_impact": "Research is deeply integrated into the local economy through the Corporate Engagement Office, fostering a culture of entrepreneurship and regional industry partnerships."
+      }
+    },
+    "admissions": {
+      "current_status": {
+        "overall_acceptance_rate": 84.99,
+        "in_state_acceptance_rate": null,
+        "out_of_state_acceptance_rate": null,
+        "international_acceptance_rate": 55.6,
+        "transfer_acceptance_rate": 65.5,
+        "admits_class_size": 23360,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "applications": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "class_fill_percentage": null
+          }
+        ]
+      },
+      "longitudinal_trends": [
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 27105,
+          "admits_total": 23085,
+          "enrolled_total": 4500,
+          "acceptance_rate_overall": 85.2,
+          "yield_rate": 19.5,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": null
+          },
+          "notes": "Enrollment remained at record levels; waitlist data not publicly disclosed."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 25385,
+          "admits_total": 21567,
+          "enrolled_total": 4517,
+          "acceptance_rate_overall": 84.96,
+          "yield_rate": 20.9,
+          "waitlist_stats": {
+            "year": 2023
+          },
+          "notes": "Record first-year enrollment; Ohio University typically does not utilize a waitlist."
+        },
+        {
+          "year": 2022,
+          "cycle_name": "Class of 2026",
+          "applications_total": 22291,
+          "admits_total": 19285,
+          "enrolled_total": 4441,
+          "acceptance_rate_overall": 86.5,
+          "yield_rate": 23.0,
+          "notes": "Estimated based on yield trends and historical reports."
+        },
+        {
+          "year": 2021,
+          "cycle_name": "Class of 2025",
+          "applications_total": 21733,
+          "admits_total": 19245,
+          "enrolled_total": 3648,
+          "acceptance_rate_overall": 88.56,
+          "yield_rate": 18.96,
+          "notes": "Post-COVID rebound year."
+        }
+      ],
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": null,
+          "unweighted_middle_50": "3.50-4.00",
+          "average_weighted": 3.64,
+          "percentile_25": "3.48",
+          "percentile_75": "3.90",
+          "notes": "Average high school GPA was 3.64. Roughly 50% of admitted students had a 3.75 or higher."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1100-1280",
+          "sat_reading_middle_50": "550-650",
+          "sat_math_middle_50": "540-640",
+          "act_composite_middle_50": "22-28",
+          "submission_rate": 48.0,
+          "policy_note": "Test-optional for the Athens campus."
+        },
+        "demographics": {
+          "first_gen_percentage": 25.0,
+          "legacy_percentage": null,
+          "international_percentage": 1.0,
+          "geographic_breakdown": [
+            {
+              "region": "Ohio (In-State)",
+              "percentage": 86.0
+            },
+            {
+              "region": "Other US States",
+              "percentage": 13.0
+            },
+            {
+              "region": "International",
+              "percentage": 1.0
+            }
+          ],
+          "gender_breakdown": {
+            "men": {
+              "applicants": 11326,
+              "admits": 9308,
+              "acceptance_rate": 82.2
+            },
+            "women": {
+              "applicants": 15779,
+              "admits": 13777,
+              "acceptance_rate": 87.3
+            }
+          },
+          "racial_breakdown": {
+            "white": 78.3,
+            "black_african_american": 5.2,
+            "hispanic_latino": 4.3,
+            "asian": 2.2,
+            "native_american_alaskan": 0.1,
+            "pacific_islander": 0.1,
+            "two_or_more_races": 3.8,
+            "unknown": 5.0,
+            "non_resident_alien": 1.0
+          }
+        }
+      },
+      "application_process": {
+        "platforms": [
+          "Common App",
+          "Ohio University Alternative Online Application"
+        ],
+        "application_deadlines": [
+          {
+            "plan_type": "Early Action",
+            "date": "2024-11-15",
+            "is_binding": false,
+            "notes": "Priority consideration for merit scholarships and Honors Tutorial College"
+          },
+          {
+            "plan_type": "Rolling Admission",
+            "date": "2025-02-01",
+            "is_binding": false,
+            "notes": "Priority deadline for fall semester general admission"
+          },
+          {
+            "plan_type": "Spring Admission",
+            "date": "2024-11-01",
+            "is_binding": false
+          }
+        ],
+        "supplemental_requirements": [
+          {
+            "target_program": "All",
+            "requirement_type": "Essay",
+            "details": "Optional personal statement (250-500 words)."
+          },
+          {
+            "target_program": "Honors Tutorial College (HTC)",
+            "requirement_type": "Essays",
+            "deadline": "2024-11-15",
+            "details": "Two required 600-word essays: Why Major and Why Tutorial Education."
+          },
+          {
+            "target_program": "Fine Arts",
+            "requirement_type": "Audition/Portfolio",
+            "details": "Required for Music, Dance, Theater, and Art majors."
+          },
+          {
+            "target_program": "Business & Journalism",
+            "requirement_type": "Essay",
+            "details": "Highly encouraged supplemental essay regarding field preparation."
+          }
+        ],
+        "holistic_factors": {
+          "primary_factors": [
+            "Course Rigor",
+            "GPA",
+            "Class Rank"
+          ],
+          "secondary_factors": [
+            "Extracurriculars",
+            "Test Scores",
+            "Recommendations",
+            "Character"
+          ],
+          "essay_importance": "Moderate",
+          "demonstrated_interest": "Considered",
+          "interview_policy": "Not Offered",
+          "legacy_consideration": "Minimal",
+          "first_gen_boost": "Moderate",
+          "specific_differentiators": "OHIO Admission Promise provides automatic admission for students with a 3.0+ GPA."
+        }
+      },
+      "application_strategy": {
+        "major_selection_tactics": [
+          "Target 'non-selective' majors in Arts and Sciences for easier entry.",
+          "Utilize 'University-wide Major Exploration' to bypass selective college prerequisites initially.",
+          "Apply to the 'Bachelor of General Studies' for maximum multidisciplinary flexibility.",
+          "Submit optional essays for Business or Journalism to offset borderline stats.",
+          "Review 'selective' major codes (SA) vs. standard codes to identify programs with supplemental audits."
+        ],
+        "college_ranking_tactics": [
+          "Rank regional campuses (Lancaster, Zanesville) as backups; they offer guaranteed relocation to Athens after 30 credits.",
+          "Prioritize 'Undecided' Learning Communities (LCs) for major-specific advising.",
+          "Opt into 'Regional Campus' consideration box to ensure admission if the main campus is full.",
+          "Select career-path specific LCs (e.g., 'Pre-Law') to gain early faculty access."
+        ],
+        "alternate_major_strategy": "Use 'Undecided - University College' as a tactical alternate for high-impact majors. Pre-Major status (e.g., Pre-Nursing) is often offered for rejected selective applicants."
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "Russ College of Engineering and Technology",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Strong preparation in math, chemistry, and physics essential. Lower stats may lead to 'Pre-Engineering' placement.",
+          "housing_profile": "Located on West Green near STEM facilities; James Hall is a common choice.",
+          "student_archetype": "Pragmatic 'doers' and technical problem-solvers",
+          "majors": [
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.M.E.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "MATH 2302 Calculus II",
+                "ET 2200 Statics"
+              ],
+              "admissions_pathway": "Direct Admit/Internal Transfer"
+            },
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.C.S.",
+              "is_impacted": true,
+              "admissions_pathway": "Direct/Internal Transfer"
+            },
+            {
+              "name": "Aviation Flight",
+              "degree_type": "B.S.A.",
+              "is_impacted": true,
+              "special_requirements": "Medical clearance and supplemental app required.",
+              "admissions_pathway": "Direct Admit"
+            }
+          ]
+        },
+        {
+          "name": "Scripps College of Communication",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 65.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Highly selective for Journalism/VisCom; portfolio or strong writing samples required.",
+          "housing_profile": "East and South Green; proximity to Schoonover Center.",
+          "student_archetype": "Career-driven storytellers",
+          "majors": [
+            {
+              "name": "Journalism",
+              "degree_type": "B.S.J.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.0,
+              "admissions_pathway": "Direct/Internal Transfer"
+            },
+            {
+              "name": "Visual Communication",
+              "degree_type": "B.S.V.C.",
+              "is_impacted": true,
+              "special_requirements": "Portfolio review and interview.",
+              "admissions_pathway": "Direct Admit"
+            }
+          ]
+        },
+        {
+          "name": "College of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 75.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Holistic review with 3.0+ GPA focus; leadership evidence is highly valued.",
+          "housing_profile": "East Green or renovated South Green suites.",
+          "student_archetype": "Professional networking-focused leaders",
+          "majors": [
+            {
+              "name": "Marketing",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "admissions_pathway": "Direct/Internal Transfer"
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.B.A.",
+              "is_impacted": true,
+              "admissions_pathway": "Direct/Internal Transfer"
+            }
+          ]
+        },
+        {
+          "name": "Honors Tutorial College (HTC)",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 15.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires 30+ ACT/1300+ SAT, two additional essays, and a faculty interview.",
+          "housing_profile": "Priority for Hoover House (South Green) or Jefferson Hall.",
+          "student_archetype": "Intellectually elite and self-motivated scholars"
+        },
+        {
+          "name": "College of Health Sciences and Professions",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 50.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Nursing is highly competitive; enter as 'Pre-BSN' and apply to clinicals after year one.",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.N.",
+              "is_impacted": true,
+              "admissions_pathway": "Pre-Major"
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Environmental Studies Sustainability and Resilience Certificate",
+        "Social Media Certificate",
+        "Global Health Certificate",
+        "Communication Studies Minor",
+        "Health Services Administration Minor",
+        "Marketing Minor",
+        "Entrepreneurship Certificate",
+        "Semiconductor Manufacturing Technician Fundamentals Certificate"
+      ]
+    },
+    "financials": {
+      "tuition_model": "Tuition Stability Plan",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 14158,
+          "total_coa": 32204,
+          "housing": 14162
+        },
+        "out_of_state": {
+          "tuition": 24838,
+          "total_coa": 42884,
+          "supplemental_tuition": 10680
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 12693,
+      "average_merit_aid": 6639,
+      "percent_receiving_aid": 99.0,
+      "scholarships": [
+        {
+          "name": "Manasseh Cutler Scholars Program",
+          "type": "Merit",
+          "amount": "$25,000 annual renewable",
+          "deadline": "2025-11-15",
+          "benefits": "Outdoor leadership, service projects, study abroad stipend",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "OHIO Premier Scholarship",
+          "type": "Merit",
+          "amount": "Full in-state tuition (~$14,582/year)",
+          "deadline": "2025-11-15",
+          "benefits": "Direct HTC entry, mentoring, research opportunities",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "OHIO Excellence Scholarship",
+          "type": "Merit",
+          "amount": "Up to $6,500 annually",
+          "deadline": "2025-11-15",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "President's Opportunity Promise Award",
+          "type": "Need/Merit",
+          "amount": "Full tuition and mandatory fees",
+          "deadline": "2026-01-15",
+          "benefits": "Covers remaining tuition for Pell-eligible regional students",
+          "application_method": "FAFSA and Admission Application"
+        },
+        {
+          "name": "OHIO Admission Promise Award",
+          "type": "Merit",
+          "amount": "$2,000 renewable",
+          "deadline": "2026-01-15",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "OHIO Trustee Award",
+          "type": "Merit (Out-of-State)",
+          "amount": "$7,000+ of non-resident surcharge",
+          "deadline": "2025-11-15",
+          "application_method": "Automatic Consideration"
+        },
+        {
+          "name": "Next Generation Award",
+          "type": "Alumni",
+          "amount": "Value of non-resident surcharge",
+          "deadline": "2025-11-15",
+          "benefits": "Allows alumni descendants to pay in-state rates",
+          "application_method": "Automatic Consideration"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for most exams",
+        "exceptions": [
+          "Art Studio requires a portfolio review of 6-10 digital images",
+          "AP Research and Seminar accepted for UNIV 1XXL credit"
+        ],
+        "usage": "Satisfies BRICKS general education requirements and major prerequisites."
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with score of 5+ grant up to 9 semester hours",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transferology",
+          "Ohio Transfer 36"
+        ],
+        "restrictions": "Min 30 hours in residence; 50% of major/minor coursework must be in residence."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "A GPA of 3.4+ and ACT scores between 21-28 for the most competitive scholarship tiers",
+        "Applying by the Early Action deadline (Nov 15) to secure merit aid",
+        "Strong performance in core subjects for majors like Nursing or Business",
+        "Demonstrated interest in the 'Athens experience'"
+      ],
+      "common_activities": [
+        "Schey Sales Centre professional development",
+        "Greek Life (involved in roughly 10% of the student body)",
+        "Outdoor recreation (Hocking Hills proximity)",
+        "Uptown cultural events and student-led media"
+      ],
+      "essay_tips": [
+        "Highlight a connection to the unique Athens community or 'Bobcat' spirit",
+        "Be specific about departmental resources",
+        "Voice your fit for an 'inclusive, progressive island' atmosphere"
+      ],
+      "red_flags": [
+        "Missing the EA deadline, which significantly reduces merit aid chances",
+        "Generic 'Why OU' essays that fit any state school",
+        "Senior year grade drops in STEM subjects"
+      ],
+      "insights": [
+        "Athens is an 'island of blue in a sea of red' hub for progressive students",
+        "Joining at least one of the 500+ clubs early is essential for social retention",
+        "Uptown Athens culture is a central part of student identity"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 52581,
+      "employment_rate_2yr": 93.0,
+      "grad_school_rate": 25.0,
+      "top_employers": [
+        "Cleveland Clinic",
+        "OhioHealth",
+        "JPMorgan Chase & Co.",
+        "Amazon",
+        "Nike",
+        "Google"
+      ],
+      "loan_default_rate": 7.5,
+      "retention_graduation": {
+        "freshman_retention_rate": 82.7,
+        "graduation_rate_4_year": 53.0,
+        "graduation_rate_6_year": 69.0
+      }
+    }
+  }
+}

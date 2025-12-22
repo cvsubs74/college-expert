@@ -61,21 +61,49 @@
               "is_impacted": false,
               "acceptance_rate": 77.0,
               "average_gpa_admitted": 3.82,
-              "prerequisite_courses": ["Calculus I", "Calculus II", "Physics I", "Physics II", "General Chemistry I"],
+              "prerequisite_courses": [
+                "Calculus I",
+                "Calculus II",
+                "Physics I",
+                "Physics II",
+                "General Chemistry I"
+              ],
               "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": ["ES 220 Statics", "ES 340 Thermodynamics", "ES 223 Rigid Body Dynamics"],
+              "weeder_courses": [
+                "ES 220 Statics",
+                "ES 340 Thermodynamics",
+                "ES 223 Rigid Body Dynamics"
+              ],
               "special_requirements": "Professional Experience (internship or co-op) required for graduation",
               "admissions_pathway": "Direct Admit / Engineering Studies",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.5,
               "curriculum": {
-                "core_courses": ["MA 231 Calculus III", "MA 232 Elementary Differential Equations", "ES 220 Statics", "ES 222 Strength of Materials", "ES 330 Fluid Mechanics", "ME 310 Thermodynamic System Engineering", "ME 445 Integrated Design I", "ME 446 Integrated Design II"],
-                "electives": ["ME 444 Computer-Aided Engineering", "ME 390 Additive Manufacturing", "ES 380 Biomechanics", "ME 429 Welding and Metallurgy"],
+                "core_courses": [
+                  "MA 231 Calculus III",
+                  "MA 232 Elementary Differential Equations",
+                  "ES 220 Statics",
+                  "ES 222 Strength of Materials",
+                  "ES 330 Fluid Mechanics",
+                  "ME 310 Thermodynamic System Engineering",
+                  "ME 445 Integrated Design I",
+                  "ME 446 Integrated Design II"
+                ],
+                "electives": [
+                  "ME 444 Computer-Aided Engineering",
+                  "ME 390 Additive Manufacturing",
+                  "ES 380 Biomechanics",
+                  "ME 429 Welding and Metallurgy"
+                ],
                 "total_units": 120,
                 "major_units": 73
               },
-              "notable_professors": ["Dr. Goodarz Ahmadi", "Dr. Cetin Cetinkaya", "Dr. Ken Visser"],
+              "notable_professors": [
+                "Dr. Goodarz Ahmadi",
+                "Dr. Cetin Cetinkaya",
+                "Dr. Ken Visser"
+              ],
               "notes": "Engineering Studies program allows students to switch between engineering disciplines freely during the first year."
             },
             {
@@ -84,21 +112,42 @@
               "is_impacted": false,
               "acceptance_rate": 77.0,
               "average_gpa_admitted": 3.75,
-              "prerequisite_courses": ["Calculus I", "Calculus II", "Physics I", "Chemistry I"],
+              "prerequisite_courses": [
+                "Calculus I",
+                "Calculus II",
+                "Physics I",
+                "Chemistry I"
+              ],
               "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": ["ES 220 Statics", "ES 222 Strength of Materials"],
+              "weeder_courses": [
+                "ES 220 Statics",
+                "ES 222 Strength of Materials"
+              ],
               "special_requirements": "Not specified",
               "admissions_pathway": "Direct Admit / Engineering Studies",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.0,
               "curriculum": {
-                "core_courses": ["CE 212 Intro to Engineering Design", "CE 320 Structural Analysis", "CE 330 Water Resources Engineering", "CE 441 Reinforced Concrete Design", "CE 490 Senior Design"],
-                "electives": ["CE 410 Sustainable Infrastructure", "CE 501 Fracture Mechanics of Concrete"],
+                "core_courses": [
+                  "CE 212 Intro to Engineering Design",
+                  "CE 320 Structural Analysis",
+                  "CE 330 Water Resources Engineering",
+                  "CE 441 Reinforced Concrete Design",
+                  "CE 490 Senior Design"
+                ],
+                "electives": [
+                  "CE 410 Sustainable Infrastructure",
+                  "CE 501 Fracture Mechanics of Concrete"
+                ],
                 "total_units": 120,
                 "major_units": 90
               },
-              "notable_professors": ["Dr. John Dempsey", "Dr. Robert Thomas", "Dr. Steve Wojtkiewicz"],
+              "notable_professors": [
+                "Dr. John Dempsey",
+                "Dr. Robert Thomas",
+                "Dr. Steve Wojtkiewicz"
+              ],
               "notes": "Highly ranked program with strong emphasis on infrastructure and materials."
             },
             {
@@ -107,21 +156,39 @@
               "is_impacted": false,
               "acceptance_rate": 77.0,
               "average_gpa_admitted": 3.8,
-              "prerequisite_courses": ["General Chemistry I & II", "Calculus I & II", "Physics I & II"],
+              "prerequisite_courses": [
+                "General Chemistry I & II",
+                "Calculus I & II",
+                "Physics I & II"
+              ],
               "minimum_gpa_to_declare": 2.0,
-              "weeder_courses": ["CH 210 Chemical Process Analysis", "CM 241 Organic Chemistry I"],
+              "weeder_courses": [
+                "CH 210 Chemical Process Analysis",
+                "CM 241 Organic Chemistry I"
+              ],
               "special_requirements": "Not specified",
               "admissions_pathway": "Direct Admit / Engineering Studies",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.5,
               "curriculum": {
-                "core_courses": ["CH 220 Chemical Engineering Thermodynamics", "CH 330 Transfer Process Fundamentals", "CH 350 Chemical Reactor Principles"],
-                "electives": ["CH 465 Biochemical Engineering", "ES 464 Corrosion Engineering"],
+                "core_courses": [
+                  "CH 220 Chemical Engineering Thermodynamics",
+                  "CH 330 Transfer Process Fundamentals",
+                  "CH 350 Chemical Reactor Principles"
+                ],
+                "electives": [
+                  "CH 465 Biochemical Engineering",
+                  "ES 464 Corrosion Engineering"
+                ],
                 "total_units": 120,
                 "major_units": 33
               },
-              "notable_professors": ["Dr. Elizabeth Podlaha-Murphy", "Dr. Sitaraman Krishnan", "Dr. Simona Liguori"],
+              "notable_professors": [
+                "Dr. Elizabeth Podlaha-Murphy",
+                "Dr. Sitaraman Krishnan",
+                "Dr. Simona Liguori"
+              ],
               "notes": "Curriculum focuses on molecular-level process design and sustainable chemistry."
             }
           ]
@@ -141,21 +208,39 @@
               "is_impacted": false,
               "acceptance_rate": 77.0,
               "average_gpa_admitted": 3.8,
-              "prerequisite_courses": ["Calculus I", "General Chemistry"],
+              "prerequisite_courses": [
+                "Calculus I",
+                "General Chemistry"
+              ],
               "minimum_gpa_to_declare": 2.5,
-              "weeder_courses": ["SB 113 Small Business", "ES 220 Statics"],
+              "weeder_courses": [
+                "SB 113 Small Business",
+                "ES 220 Statics"
+              ],
               "special_requirements": "Dually accredited by AACSB and ABET",
               "admissions_pathway": "Direct Admit",
               "internal_transfer_allowed": true,
               "direct_admit_only": false,
               "internal_transfer_gpa": 2.5,
               "curriculum": {
-                "core_courses": ["ES 220 Statics", "OM 331 Operations & Supply Chain Management", "EC 350 Engineering Economics", "EM 480 Project Management"],
-                "electives": ["EM 390 Additive Manufacturing", "MK 320 Principles of Marketing"],
+                "core_courses": [
+                  "ES 220 Statics",
+                  "OM 331 Operations & Supply Chain Management",
+                  "EC 350 Engineering Economics",
+                  "EM 480 Project Management"
+                ],
+                "electives": [
+                  "EM 390 Additive Manufacturing",
+                  "MK 320 Principles of Marketing"
+                ],
                 "total_units": 120,
                 "major_units": 32
               },
-              "notable_professors": ["Dr. Alan Bowman", "Dr. John Milne", "Dr. Amir Mousavian"],
+              "notable_professors": [
+                "Dr. Alan Bowman",
+                "Dr. John Milne",
+                "Dr. Amir Mousavian"
+              ],
               "notes": "One of only two programs in the world dually accredited as both business and engineering."
             }
           ]
@@ -248,14 +333,38 @@
         "legacy_percentage": 0.0,
         "international_percentage": 6.0,
         "geographic_breakdown": [
-          {"region": "New York", "percentage": 68.8},
-          {"region": "Massachusetts", "percentage": 5.9},
-          {"region": "International", "percentage": 6.0}
+          {
+            "region": "New York",
+            "percentage": 68.8
+          },
+          {
+            "region": "Massachusetts",
+            "percentage": 5.9
+          },
+          {
+            "region": "International",
+            "percentage": 6.0
+          }
         ],
         "gender_breakdown": {
-          "men": {"applicants": 3572, "admits": 2837, "acceptance_rate": 79.4, "note": "69.8% of undergraduates"},
-          "women": {"applicants": 3063, "admits": 2300, "acceptance_rate": 75.1, "note": "30.2% of undergraduates"},
-          "non_binary": {"applicants": 26, "admits": 16, "acceptance_rate": 61.5, "note": "0.5% of applicants"}
+          "men": {
+            "applicants": 3572,
+            "admits": 2837,
+            "acceptance_rate": 79.4,
+            "note": "69.8% of undergraduates"
+          },
+          "women": {
+            "applicants": 3063,
+            "admits": 2300,
+            "acceptance_rate": 75.1,
+            "note": "30.2% of undergraduates"
+          },
+          "non_binary": {
+            "applicants": 26,
+            "admits": 16,
+            "acceptance_rate": 61.5,
+            "note": "0.5% of applicants"
+          }
         },
         "racial_breakdown": {
           "white": 67.0,
@@ -272,18 +381,50 @@
       }
     },
     "application_process": {
-      "platforms": ["Common App", "Clarkson University Application"],
+      "platforms": [
+        "Common App",
+        "Clarkson University Application"
+      ],
       "application_deadlines": [
-        {"plan_type": "Early Decision", "date": "2024-12-01", "is_binding": true, "notes": "Priority for merit aid"},
-        {"plan_type": "Regular Decision", "date": "2025-01-15", "is_binding": false, "notes": "Priority for financial aid"}
+        {
+          "plan_type": "Early Decision",
+          "date": "2024-12-01",
+          "is_binding": true,
+          "notes": "Priority for merit aid"
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-01-15",
+          "is_binding": false,
+          "notes": "Priority for financial aid"
+        }
       ],
       "supplemental_requirements": [
-        {"target_program": "All", "requirement_type": "Personal Statement", "deadline": "2025-01-15", "details": "One personal statement (250-650 words) required."},
-        {"target_program": "Honors Program", "requirement_type": "Supplemental Essays", "deadline": "2025-02-01", "details": "Two short essay questions required."}
+        {
+          "target_program": "All",
+          "requirement_type": "Personal Statement",
+          "deadline": "2025-01-15",
+          "details": "One personal statement (250-650 words) required."
+        },
+        {
+          "target_program": "Honors Program",
+          "requirement_type": "Supplemental Essays",
+          "deadline": "2025-02-01",
+          "details": "Two short essay questions required."
+        }
       ],
       "holistic_factors": {
-        "primary_factors": ["High School GPA", "Course Rigor", "Letters of Recommendation", "Personal Statement"],
-        "secondary_factors": ["Extracurricular Activities", "Talents", "Character/Personal Qualities"],
+        "primary_factors": [
+          "High School GPA",
+          "Course Rigor",
+          "Letters of Recommendation",
+          "Personal Statement"
+        ],
+        "secondary_factors": [
+          "Extracurricular Activities",
+          "Talents",
+          "Character/Personal Qualities"
+        ],
         "essay_importance": "High",
         "demonstrated_interest": "Important",
         "interview_policy": "Recommended",
@@ -305,8 +446,15 @@
       "tuition_model": "Annual Increase",
       "cost_of_attendance_breakdown": {
         "academic_year": "2024-2025",
-        "in_state": {"tuition": 59398, "total_coa": 81706, "housing": 18252},
-        "out_of_state": {"tuition": 59398, "total_coa": 81706}
+        "in_state": {
+          "tuition": 59398,
+          "total_coa": 81706,
+          "housing": 18252
+        },
+        "out_of_state": {
+          "tuition": 59398,
+          "total_coa": 81706
+        }
       },
       "aid_philosophy": "Merit Focused",
       "average_need_based_aid": 40642,
@@ -314,15 +462,34 @@
       "percent_receiving_aid": 100.0
     },
     "scholarships": [
-      {"name": "Ignite Presidential Fellowship", "type": "Merit", "amount": "Full Tuition", "deadline": "2025-02-15", "benefits": "Covers all tuition for 10 students", "application_method": "Separate Application"},
-      {"name": "Clarkson Leadership Award", "type": "Merit", "amount": "$30,000 per year", "application_method": "Counselor Nomination"},
-      {"name": "Dean's Scholarship", "type": "Merit", "amount": "Varies", "application_method": "Automatic Consideration"}
+      {
+        "name": "Ignite Presidential Fellowship",
+        "type": "Merit",
+        "amount": "Full Tuition",
+        "deadline": "2025-02-15",
+        "benefits": "Covers all tuition for 10 students",
+        "application_method": "Separate Application"
+      },
+      {
+        "name": "Clarkson Leadership Award",
+        "type": "Merit",
+        "amount": "$30,000 per year",
+        "application_method": "Counselor Nomination"
+      },
+      {
+        "name": "Dean's Scholarship",
+        "type": "Merit",
+        "amount": "Varies",
+        "application_method": "Automatic Consideration"
+      }
     ],
     "credit_policies": {
       "philosophy": "Generous Credit",
       "ap_policy": {
         "general_rule": "Score of 4 or 5 generally required for credit",
-        "exceptions": ["30-hour limit for all test-based credit"],
+        "exceptions": [
+          "30-hour limit for all test-based credit"
+        ],
         "usage": "Satisfies Knowledge Area and major requirements"
       },
       "ib_policy": {
@@ -330,22 +497,46 @@
         "diploma_bonus": true
       },
       "transfer_articulation": {
-        "tools": ["Internal Mapping Your Credits tool"],
+        "tools": [
+          "Internal Mapping Your Credits tool"
+        ],
         "restrictions": "30-hour cap on exam credits; grade of C or better"
       }
     },
     "student_insights": {
-      "what_it_takes": ["Strong STEM performance", "Hands-on tinkering mindset", "GPA near 3.8"],
-      "common_activities": ["SPEED teams", "Undergraduate research", "D-I Hockey"],
-      "essay_tips": ["Reference specific SPEED teams", "Focus on fit with Potsdam's geography"],
-      "red_flags": ["Lack of genuine interest in collaborative 'maker' culture"],
-      "insights": ["Highly ranked for ROI", "Close-knit, unpretentious culture", "Winter resilience is essential"]
+      "what_it_takes": [
+        "Strong STEM performance",
+        "Hands-on tinkering mindset",
+        "GPA near 3.8"
+      ],
+      "common_activities": [
+        "SPEED teams",
+        "Undergraduate research",
+        "D-I Hockey"
+      ],
+      "essay_tips": [
+        "Reference specific SPEED teams",
+        "Focus on fit with Potsdam's geography"
+      ],
+      "red_flags": [
+        "Lack of genuine interest in collaborative 'maker' culture"
+      ],
+      "insights": [
+        "Highly ranked for ROI",
+        "Close-knit, unpretentious culture",
+        "Winter resilience is essential"
+      ]
     },
     "outcomes": {
       "median_earnings_10yr": 89696,
       "employment_rate_2yr": 98.0,
       "grad_school_rate": 23.0,
-      "top_employers": ["General Dynamics", "Lockheed Martin", "IBM", "Amazon"],
+      "top_employers": [
+        "General Dynamics",
+        "Lockheed Martin",
+        "IBM",
+        "Amazon"
+      ],
       "loan_default_rate": 1.6
     },
     "student_retention": {
@@ -353,5 +544,6 @@
       "graduation_rate_4_year": 64.6,
       "graduation_rate_6_year": 78.0
     }
-  }
+  },
+  "_id": "clarkson_university"
 }

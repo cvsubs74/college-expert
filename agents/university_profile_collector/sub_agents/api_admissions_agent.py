@@ -16,7 +16,7 @@ try:
 except ImportError:
     from api_tools import get_college_scorecard_data, get_ipeds_admissions_data
 
-MODEL_NAME = "gemini-2.5-flash-lite"
+MODEL_NAME = "gemini-2.5-flash"
 
 # ==============================================================================
 # MICRO-AGENTS: Each focuses on a specific piece of admissions data

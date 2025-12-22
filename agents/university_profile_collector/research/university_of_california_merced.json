@@ -120,13 +120,26 @@
         "legacy_percentage": 0.0,
         "international_percentage": 1.0,
         "geographic_breakdown": [
-          { "region": "California", "percentage": 98.0 },
-          { "region": "Other US States", "percentage": 1.0 },
-          { "region": "International", "percentage": 1.0 }
+          {
+            "region": "California",
+            "percentage": 98.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 1.0
+          },
+          {
+            "region": "International",
+            "percentage": 1.0
+          }
         ],
         "gender_breakdown": {
-          "men": { "acceptance_rate": 89.9 },
-          "women": { "acceptance_rate": 91.2 },
+          "men": {
+            "acceptance_rate": 89.9
+          },
+          "women": {
+            "acceptance_rate": 91.2
+          },
           "non_binary": null
         },
         "racial_breakdown": {
@@ -160,7 +173,11 @@
               "degree_type": "B.S.",
               "is_impacted": true,
               "curriculum": {
-                "core_courses": ["CSE 015 Discrete Mathematics", "CSE 022 Intro to Programming", "CSE 100 Algorithm Design"],
+                "core_courses": [
+                  "CSE 015 Discrete Mathematics",
+                  "CSE 022 Intro to Programming",
+                  "CSE 100 Algorithm Design"
+                ],
                 "total_units": 128,
                 "major_units": 92
               }
@@ -170,7 +187,11 @@
               "degree_type": "B.S.",
               "is_impacted": false,
               "curriculum": {
-                "core_courses": ["ME 001 Intro to ME", "ENGR 120 Fluid Mechanics", "ENGR 130 Thermodynamics"],
+                "core_courses": [
+                  "ME 001 Intro to ME",
+                  "ENGR 120 Fluid Mechanics",
+                  "ENGR 130 Thermodynamics"
+                ],
                 "total_units": 127,
                 "major_units": 88
               }
@@ -191,7 +212,11 @@
               "degree_type": "B.S.",
               "is_impacted": false,
               "curriculum": {
-                "core_courses": ["BIO 011 Molecular Bio", "BIO 110 The Cell", "BIO 140 Genetics"],
+                "core_courses": [
+                  "BIO 011 Molecular Bio",
+                  "BIO 110 The Cell",
+                  "BIO 140 Genetics"
+                ],
                 "total_units": 124,
                 "major_units": 75
               }
@@ -212,7 +237,11 @@
               "degree_type": "B.A.",
               "is_impacted": false,
               "curriculum": {
-                "core_courses": ["PSY 001 Intro to Psych", "PSY 010 Analysis Data", "PSY 015 Research Methods"],
+                "core_courses": [
+                  "PSY 001 Intro to Psych",
+                  "PSY 010 Analysis Data",
+                  "PSY 015 Research Methods"
+                ],
                 "total_units": 120,
                 "major_units": 46
               }
@@ -221,23 +250,64 @@
         }
       ],
       "minors_certificates": [
-        "Accounting", "American Studies", "Anthropology", "Applied Mathematics", "Business Administration", "Data Science and Computing", "Environmental Humanities", "Geospatial Technology", "Public Health", "Writing Studies"
+        "Accounting",
+        "American Studies",
+        "Anthropology",
+        "Applied Mathematics",
+        "Business Administration",
+        "Data Science and Computing",
+        "Environmental Humanities",
+        "Geospatial Technology",
+        "Public Health",
+        "Writing Studies"
       ]
     },
     "application_process": {
-      "platforms": ["University of California Application"],
+      "platforms": [
+        "University of California Application"
+      ],
       "application_deadlines": [
-        { "plan_type": "Regular Decision (Fall Admission)", "date": "2025-12-02", "is_binding": false, "notes": "Standard filing Oct 1-Nov 30; extended to Dec 2 for 2025." },
-        { "plan_type": "Regular Decision (Spring Admission)", "date": "2025-07-31", "is_binding": false, "notes": "Filing period July 1-31." },
-        { "plan_type": "SJV PRIME+ (BS to MD Pathway)", "date": "2025-11-20", "is_binding": false }
+        {
+          "plan_type": "Regular Decision (Fall Admission)",
+          "date": "2025-12-02",
+          "is_binding": false,
+          "notes": "Standard filing Oct 1-Nov 30; extended to Dec 2 for 2025."
+        },
+        {
+          "plan_type": "Regular Decision (Spring Admission)",
+          "date": "2025-07-31",
+          "is_binding": false,
+          "notes": "Filing period July 1-31."
+        },
+        {
+          "plan_type": "SJV PRIME+ (BS to MD Pathway)",
+          "date": "2025-11-20",
+          "is_binding": false
+        }
       ],
       "supplemental_requirements": [
-        { "target_program": "All", "requirement_type": "Personal Insight Questions", "details": "Respond to 4 out of 8 PIQs, max 350 words each." },
-        { "target_program": "SJV PRIME+ (BS to MD)", "requirement_type": "Supplemental Application", "details": "Additional essays and letters of recommendation." }
+        {
+          "target_program": "All",
+          "requirement_type": "Personal Insight Questions",
+          "details": "Respond to 4 out of 8 PIQs, max 350 words each."
+        },
+        {
+          "target_program": "SJV PRIME+ (BS to MD)",
+          "requirement_type": "Supplemental Application",
+          "details": "Additional essays and letters of recommendation."
+        }
       ],
       "holistic_factors": {
-        "primary_factors": ["GPA (A-G Courses)", "Course Rigor", "Personal Insight Questions"],
-        "secondary_factors": ["Extracurricular Activities", "Volunteer Service", "Special Talents"],
+        "primary_factors": [
+          "GPA (A-G Courses)",
+          "Course Rigor",
+          "Personal Insight Questions"
+        ],
+        "secondary_factors": [
+          "Extracurricular Activities",
+          "Volunteer Service",
+          "Special Talents"
+        ],
         "essay_importance": "Critical",
         "demonstrated_interest": "Not Considered",
         "interview_policy": "Not Offered",
@@ -263,8 +333,16 @@
       "tuition_model": "Tuition Stability Plan",
       "cost_of_attendance_breakdown": {
         "academic_year": "2024-2025",
-        "in_state": { "tuition": 15185, "total_coa": 44252, "housing": 21446 },
-        "out_of_state": { "tuition": 46211, "total_coa": 75278, "supplemental_tuition": 31026 }
+        "in_state": {
+          "tuition": 15185,
+          "total_coa": 44252,
+          "housing": 21446
+        },
+        "out_of_state": {
+          "tuition": 46211,
+          "total_coa": 75278,
+          "supplemental_tuition": 31026
+        }
       },
       "aid_philosophy": "Need-Blind",
       "average_need_based_aid": 31688,
@@ -293,14 +371,20 @@
       "philosophy": "Generous Credit",
       "ap_policy": {
         "general_rule": "Score of 3+ grants credit for most exams",
-        "exceptions": ["No unit credit for AP Research", "CS A requires 5 for CSE 022 exemption"]
+        "exceptions": [
+          "No unit credit for AP Research",
+          "CS A requires 5 for CSE 022 exemption"
+        ]
       },
       "ib_policy": {
         "general_rule": "HL exams with 5+ grant credit",
         "diploma_bonus": true
       },
       "transfer_articulation": {
-        "tools": ["ASSIST.org", "TES"],
+        "tools": [
+          "ASSIST.org",
+          "TES"
+        ],
         "restrictions": "70 unit cap for community college credits"
       }
     },
@@ -330,7 +414,14 @@
       "median_earnings_10yr": 64368,
       "employment_rate_2yr": 86.0,
       "grad_school_rate": 22.0,
-      "top_employers": ["Apple", "Google", "Meta", "Tesla", "Genentech", "Kaiser Permanente"],
+      "top_employers": [
+        "Apple",
+        "Google",
+        "Meta",
+        "Tesla",
+        "Genentech",
+        "Kaiser Permanente"
+      ],
       "loan_default_rate": 2.9,
       "student_retention": {
         "freshman_retention_rate": 83.0,
@@ -338,5 +429,6 @@
         "graduation_rate_6_year": 69.0
       }
     }
-  }
+  },
+  "_id": "university_of_california_merced"
 }

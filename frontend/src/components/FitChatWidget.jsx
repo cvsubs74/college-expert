@@ -32,12 +32,12 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
     const messagesEndRef = useRef(null);
     const inputRef = useRef(null);
 
-    // Fit category colors
+    // Fit category colors - Stratia theme
     const fitColors = {
-        'SAFETY': { bg: 'from-green-400 to-emerald-500', text: 'text-green-700', bgLight: 'bg-green-50' },
-        'TARGET': { bg: 'from-blue-400 to-indigo-500', text: 'text-blue-700', bgLight: 'bg-blue-50' },
-        'REACH': { bg: 'from-amber-400 to-orange-500', text: 'text-amber-700', bgLight: 'bg-amber-50' },
-        'SUPER_REACH': { bg: 'from-red-400 to-rose-500', text: 'text-red-700', bgLight: 'bg-red-50' },
+        'SAFETY': { bg: 'from-[#1A4D2E] to-[#2D6B45]', text: 'text-[#1A4D2E]', bgLight: 'bg-[#D6E8D5]' },
+        'TARGET': { bg: 'from-blue-400 to-blue-600', text: 'text-blue-700', bgLight: 'bg-blue-50' },
+        'REACH': { bg: 'from-[#C05838] to-[#D97858]', text: 'text-[#C05838]', bgLight: 'bg-[#FCEEE8]' },
+        'SUPER_REACH': { bg: 'from-rose-400 to-rose-500', text: 'text-rose-700', bgLight: 'bg-rose-50' },
     };
     const colors = fitColors[fitCategory] || fitColors['TARGET'];
 

@@ -1,0 +1,377 @@
+{
+  "university_profile": {
+    "_id": "missouri_university_of_science_and_technology",
+    "metadata": {
+      "official_name": "Missouri University of Science and Technology",
+      "location": {
+        "city": "Rolla",
+        "state": "MO",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "mst.edu",
+        "usnews.com",
+        "niche.com",
+        "shiksha.com"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "A premier public research university with an R1 Carnegie Classification, Missouri S&T is a leader in STEM education, renowned for its intensive engineering programs and high return on investment.",
+      "market_position": "Hidden Gem",
+      "admissions_philosophy": "Numbers-focused / Committee-based holistic for test-optional",
+      "us_news_rank": 192,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "The acceptance rate has tightened by nearly 13% over the last three years, falling from 85.4% in 2021 to 72.5% for the 2024-2025 cycle.",
+          "implication": "Prospective students must showcase stronger academic and technical credentials than in previous years to remain competitive."
+        },
+        {
+          "category": "Admissions Strategy",
+          "insight": "The university has extended its test-optional policy through 2026, where non-test applicants undergo a committee review of extracurriculars and community impact.",
+          "implication": "Applicants without competitive SAT/ACT scores should leverage the 'FYRE' and 'OURE' research narratives to demonstrate fit."
+        },
+        {
+          "category": "Career Outcomes",
+          "insight": "Graduates are heavily recruited by top-tier tech firms like SpaceX, Boeing, and Google, reflecting the school's R1 research status and technical rigor.",
+          "implication": "The university serves as a high-ROI pipeline for students targeting immediate entry into specialized engineering and defense sectors."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A close-knit, engineering-centric culture defined by a massive Greek life presence (approx. 25% of students) and high-stakes student design teams like the Mars Rover and Formula SAE projects.",
+        "transportation_impact": "While the campus is highly walkable, transportation is managed through a digital 'License Plate Recognition' (LPR) permit system and dedicated shuttles to St. Louis (2 hours away) for airport access.",
+        "research_impact": "Missouri S&T provides rare undergraduate research access through the FYRE (First Year Research Experience) program, enabling freshmen to enter labs typically reserved for graduate students."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 72.5,
+      "in_state_acceptance_rate": 0.0,
+      "out_of_state_acceptance_rate": 0.0,
+      "international_acceptance_rate": 51.3,
+      "transfer_acceptance_rate": 73.6,
+      "admits_class_size": 6059,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": []
+    },
+    "admissions_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 8354,
+        "admits_total": 6060,
+        "enrolled_total": 1269,
+        "acceptance_rate_overall": 72.5,
+        "acceptance_rate_in_state": 0.0,
+        "acceptance_rate_out_of_state": 0.0,
+        "yield_rate": 20.9,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed; institution typically reports no waitlist policy in CDS Section C2."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "Not specified",
+        "unweighted_middle_50": "3.60-4.00",
+        "average_weighted": 0.0,
+        "percentile_25": "3.60",
+        "percentile_75": "4.00",
+        "notes": "The average unweighted GPA for admitted students is approximately 3.81. Approximately 70% of enrolled freshmen entered with a high school GPA of 3.75 or higher."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1220-1400",
+        "sat_reading_middle_50": "580-690",
+        "sat_math_middle_50": "610-730",
+        "act_composite_middle_50": "25-31",
+        "submission_rate": 89.0,
+        "policy_note": "Test-optional but scores are considered if submitted; approximately 78% of students submit ACT scores while 11% submit SAT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 22.0,
+        "legacy_percentage": 0.0,
+        "international_percentage": 13.7,
+        "geographic_breakdown": [
+          {
+            "region": "Missouri",
+            "percentage": 75.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 22.0
+          },
+          {
+            "region": "International",
+            "percentage": 3.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 5399,
+            "admits": 4029,
+            "acceptance_rate": 74.6,
+            "note": "Men represent approximately 76% of the total undergraduate population."
+          },
+          "women": {
+            "applicants": 2772,
+            "admits": 1940,
+            "acceptance_rate": 70.0,
+            "note": "Women represent approximately 24% of the undergraduate population, a record high for the institution."
+          },
+          "non_binary": {
+            "applicants": 0,
+            "admits": 0,
+            "acceptance_rate": 0.0,
+            "note": "Not reported"
+          }
+        },
+        "racial_breakdown": {
+          "white": 64.6,
+          "black_african_american": 2.95,
+          "hispanic_latino": 5.16,
+          "asian": 3.95,
+          "native_american_alaskan": 0.36,
+          "pacific_islander": 0.01,
+          "two_or_more_races": 2.39,
+          "unknown": 6.88,
+          "non_resident_alien": 13.7
+        },
+        "religious_affiliation": "Not specified"
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "College of Engineering and Computing (CEC)",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 75.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "High schoolers should prioritize advanced math (Calculus) and physics. The admissions committee looks for students who will thrive in the 'Foundational Engineering and Computing' year.",
+          "housing_profile": "Commonly clustered in Residential Commons or Thomas Jefferson (TJ) Hall.",
+          "student_archetype": "Hands-on 'Miners' and practical problem-solvers",
+          "majors": [
+            {
+              "name": "Mechanical Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "prerequisite_courses": [
+                "Calculus I",
+                "Calculus II",
+                "Engineering Physics I",
+                "Chemistry I"
+              ],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "ME 2360 Dynamics",
+                "ME 2519 Thermodynamics",
+                "CIV ENG 2200 Statics"
+              ],
+              "special_requirements": "Completion of the Foundational Engineering and Computing Program (Freshman Engineering) with a minimum 2.5 GPA.",
+              "admissions_pathway": "Internal Transfer / Direct Entry",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": [
+                  "ME 1720 Intro to Engineering Design",
+                  "ME 2519 Thermodynamics",
+                  "ME 2360 Dynamics",
+                  "ME 3313 Machine Dynamics",
+                  "ME 3411 Modeling and Analysis of Dynamic Systems",
+                  "ME 3521 Applied Thermodynamics",
+                  "ME 3525 Heat Transfer",
+                  "ME 4479 Control System Design",
+                  "ME 4761 Engineering Design"
+                ],
+                "electives": [
+                  "ME 5527 Combustion Processes",
+                  "ME 5333 Internal Combustion Engines",
+                  "ME 5212 Finite Element Analysis",
+                  "ME 5667 Heat Pump and Refrigeration Systems"
+                ],
+                "total_units": 128,
+                "major_units": 97
+              },
+              "notable_professors": [
+                "Dr. David Bayless",
+                "Dr. J. Keith Nisbett",
+                "Dr. Frank Liou"
+              ],
+              "notes": "The most popular major at S&T."
+            },
+            {
+              "name": "Aerospace Engineering",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "prerequisite_courses": [
+                "Calculus I",
+                "Calculus II",
+                "Physics I"
+              ],
+              "minimum_gpa_to_declare": 2.5,
+              "weeder_courses": [
+                "AERO ENG 2360 Dynamics",
+                "AERO ENG 2861 Aerodynamics I"
+              ],
+              "special_requirements": "Not specified",
+              "admissions_pathway": "Internal Transfer / Direct Entry",
+              "internal_transfer_allowed": true,
+              "internal_transfer_gpa": 2.5,
+              "curriculum": {
+                "core_courses": [],
+                "electives": [],
+                "total_units": 128,
+                "major_units": 0
+              },
+              "notable_professors": [
+                "Dr. Henry Pernicka"
+              ],
+              "notes": "Not specified"
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Adaptive Leadership Minor",
+        "Explosives Engineering Certificate",
+        "Technical Writing Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Missouri S&T Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Priority Scholarship Deadline (Fall)",
+          "date": "2024-12-01",
+          "is_binding": false,
+          "notes": "Ensures priority consideration for merit-based scholarships."
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "Test-Optional Applicants",
+          "requirement_type": "Short Answer Essays",
+          "deadline": "2024-12-01",
+          "details": "Two required responses regarding activities and community contribution."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "GPA",
+          "Course Rigor"
+        ],
+        "secondary_factors": [
+          "Test Scores",
+          "Extracurriculars"
+        ],
+        "essay_importance": "Moderate",
+        "demonstrated_interest": "Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "None",
+        "first_gen_boost": "Moderate",
+        "specific_differentiators": "Emphasis on 17-unit core curriculum rigor."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Utilize the Freshman Engineering Program (FEP) to enter as 'undeclared engineering'."
+      ],
+      "college_ranking_tactics": [
+        "Prioritize the College of Engineering and Computing (CEC) for largest career fairs."
+      ],
+      "alternate_major_strategy": "If applying to CS, list IST as an alternate for similar career paths with less rigorous math."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 15930,
+          "total_coa": 32182,
+          "housing": 13422
+        },
+        "out_of_state": {
+          "tuition": 33248,
+          "total_coa": 50617,
+          "supplemental_tuition": 17318
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 13434,
+      "average_merit_aid": 16541,
+      "percent_receiving_aid": 98.0,
+      "scholarships": [
+        {
+          "name": "Chancellor's Scholarship",
+          "type": "Merit",
+          "amount": "Full tuition and fees",
+          "deadline": "2025-12-01",
+          "benefits": "Premier award for Missouri residents.",
+          "application_method": "Separate Application"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Moderate",
+      "ap_policy": {
+        "general_rule": "Score of 3+ grants credit for most exams.",
+        "exceptions": [
+          "Students with 90+ semester hours ineligible."
+        ],
+        "usage": "Credits count toward degree requirements."
+      },
+      "ib_policy": {
+        "general_rule": "Credit granted for HL exams with scores of 4+.",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transferology"
+        ],
+        "restrictions": "Last 60 hours must be completed at S&T."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Solid foundation in math."
+      ],
+      "common_activities": [
+        "Student Design Teams"
+      ],
+      "essay_tips": [
+        "Be specific about design teams."
+      ],
+      "red_flags": [
+        "Weak grades in high school math."
+      ],
+      "insights": [
+        "The 5:1 male-to-female ratio is defining."
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 82957,
+      "employment_rate_2yr": 96.06,
+      "grad_school_rate": 14.5,
+      "top_employers": [
+        "Boeing",
+        "Microsoft"
+      ],
+      "loan_default_rate": 3.7
+    },
+    "student_retention": {
+      "freshman_retention_rate": 87.8,
+      "graduation_rate_4_year": 27.0,
+      "graduation_rate_6_year": 69.0
+    }
+  }
+}

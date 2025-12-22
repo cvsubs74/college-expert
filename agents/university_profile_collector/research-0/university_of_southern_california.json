@@ -1,0 +1,270 @@
+{
+  "university_profile": {
+    "_id": "university_of_southern_california",
+    "metadata": {
+      "official_name": "University of Southern California",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "type": "Private"
+      },
+      "last_updated": "2025-12-20",
+      "report_source_files": [
+        "https://www.usc.edu",
+        "https://www.usnews.com/best-colleges/usc-1328"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "A premier private research institution in Los Angeles, USC is defined by its 'Trojan Family' network, massive $8.2 billion endowment, and a dominant presence in cinema, engineering, and business. It serves as a global hub for interdisciplinary research, fueled by nearly $1 billion in annual sponsored funding.",
+      "market_position": "Elite Private",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 28,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "The overall acceptance rate rebounded slightly to 11.2% for the Class of 2029, yet Early Action remains significantly more competitive (8.4%) as it serves as the primary gateway for merit scholarships.",
+          "implication": "Applicants seeking merit aid must target the November 1st Early Action deadline."
+        },
+        {
+          "category": "Testing Policy",
+          "insight": "USC has extended its test-optional policy through the 2026-2027 application cycle, though 44% of enrolled students still choose to submit high-percentile scores (1490-1550 SAT).",
+          "implication": "Submit scores only if they fall within the 1500+ SAT range."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A high-energy atmosphere characterized by a strong Greek life presence, a fervent sports culture, and the influential 'Trojan Family' alumni network.",
+        "transportation_impact": "The mandatory 'U-Pass' program grants all students unlimited Metro access, connecting the urban campus to Santa Monica and Downtown LA.",
+        "research_impact": "USC maintains high-stakes industry ties through the METRANS Transportation Consortium and leading advancements in AI-driven clinical trials."
+      }
+    },
+    "admissions": {
+      "current_status": {
+        "overall_acceptance_rate": 11.2,
+        "in_state_acceptance_rate": null,
+        "out_of_state_acceptance_rate": null,
+        "international_acceptance_rate": null,
+        "transfer_acceptance_rate": 27.1,
+        "admits_class_size": 9345,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional through 2026-2027",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "applications": 42119,
+            "admits": 3524,
+            "acceptance_rate": 8.4,
+            "class_fill_percentage": 33.3
+          }
+        ]
+      },
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": "4.10-4.30",
+          "unweighted_middle_50": "3.79-4.00",
+          "average_weighted": 4.17,
+          "percentile_25": 3.79,
+          "percentile_75": 4.0,
+          "notes": "USC reports unweighted GPA on a 4.0 scale."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1460-1540",
+          "sat_reading_middle_50": "700-760",
+          "sat_math_middle_50": "740-790",
+          "act_composite_middle_50": "32-35",
+          "submission_rate": 52.0,
+          "policy_note": "Test-optional, though scores recommended for scholarship consideration."
+        },
+        "demographics": {
+          "first_gen_percentage": 25.0,
+          "legacy_percentage": 14.5,
+          "international_percentage": 12.0,
+          "geographic_breakdown": [
+            { "region": "California", "percentage": 42.0 },
+            { "region": "Other US States", "percentage": 46.0 },
+            { "region": "International", "percentage": 12.0 }
+          ],
+          "gender_breakdown": {
+            "men": { "applicants": 38787, "admits": 3885, "acceptance_rate": 10.0 },
+            "women": { "applicants": 42021, "admits": 4209, "acceptance_rate": 10.0 },
+            "non_binary": null
+          },
+          "racial_breakdown": {
+            "white": 32.3,
+            "black_african_american": 6.2,
+            "hispanic_latino": 20.0,
+            "asian": 23.2,
+            "native_american_alaskan": 0.03,
+            "pacific_islander": 0.3,
+            "two_or_more_races": 6.2,
+            "unknown": 2.4,
+            "non_resident_alien": 14.3
+          }
+        }
+      },
+      "longitudinal_trends": [
+        {
+          "year": 2025,
+          "cycle_name": "Class of 2029",
+          "applications_total": 83488,
+          "admits_total": 9345,
+          "enrolled_total": 3759,
+          "acceptance_rate_overall": 11.2,
+          "yield_rate": 40.2,
+          "waitlist_stats": {
+            "year": 2025,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          },
+          "notes": "USC does not use a traditional waitlist."
+        },
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 82027,
+          "admits_total": 8050,
+          "enrolled_total": 3489,
+          "acceptance_rate_overall": 9.8,
+          "yield_rate": 43.3,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          }
+        }
+      ]
+    },
+    "academic_structure": {
+      "structure_type": "Schools",
+      "colleges": [
+        {
+          "name": "Dornsife College of Letters, Arts and Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 13.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Emphasize interdisciplinary curiosity and a desire to 'solve world problems'.",
+          "majors": [
+            { "name": "Psychology", "degree_type": "B.A.", "is_impacted": false, "internal_transfer_allowed": true },
+            { "name": "International Relations", "degree_type": "B.A.", "is_impacted": false, "internal_transfer_allowed": true },
+            { "name": "Biological Sciences", "degree_type": "B.S.", "is_impacted": false, "internal_transfer_allowed": true },
+            { "name": "Economics", "degree_type": "B.A.", "is_impacted": false, "internal_transfer_allowed": true }
+          ]
+        },
+        {
+          "name": "Marshall School of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 12.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Focus on leadership, entrepreneurship, and 'Trojan Family' networking.",
+          "majors": [
+            { "name": "Business Administration", "degree_type": "B.S.", "is_impacted": true, "internal_transfer_allowed": true },
+            { "name": "Accounting", "degree_type": "B.S.", "is_impacted": true, "internal_transfer_allowed": true },
+            { "name": "Accounting and Finance", "degree_type": "B.S.", "is_impacted": true, "internal_transfer_allowed": false }
+          ]
+        },
+        {
+          "name": "Viterbi School of Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 10.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Looks for 'Engineering Plus'—technical elite with strong outside interests.",
+          "majors": [
+            { "name": "Computer Science", "degree_type": "B.S.", "is_impacted": true, "internal_transfer_allowed": true },
+            { "name": "Aerospace Engineering", "degree_type": "B.S.", "is_impacted": false, "internal_transfer_allowed": true }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "Applied Analytics Minor",
+        "Entertainment Industry Minor",
+        "Innovation: The Digital Entrepreneurship Minor",
+        "Business Finance Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": ["Common App"],
+      "application_deadlines": [
+        { "plan_type": "Early Action", "date": "2024-11-01", "is_binding": false, "notes": "Required for merit scholarship consideration." },
+        { "plan_type": "Early Decision", "date": "2024-11-01", "is_binding": true, "notes": "Pilot program for Marshall School of Business." },
+        { "plan_type": "Regular Decision", "date": "2025-01-15", "is_binding": false, "notes": "Final deadline for most majors." }
+      ],
+      "supplemental_requirements": [
+        { "target_program": "All", "requirement_type": "Essays", "deadline": null, "details": "One required 'Why USC' essay and one 'Issue/Passion' essay (250 words each)." },
+        { "target_program": "All", "requirement_type": "Short Answers", "deadline": null, "details": "Series of 10 fun, rapid-fire short responses." },
+        { "target_program": "Arts/Cinematic Arts", "requirement_type": "Portfolio", "deadline": "2024-12-01", "details": "Creative samples required via SlideRoom." }
+      ],
+      "holistic_factors": {
+        "primary_factors": ["Course Rigor", "GPA", "Essays", "Recommendations"],
+        "secondary_factors": ["Extracurriculars", "Talent/Ability", "Character"],
+        "essay_importance": "Critical",
+        "demonstrated_interest": "Not Considered",
+        "interview_policy": "Not Offered",
+        "legacy_consideration": "Moderate"
+      }
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": { "tuition": 69904, "total_coa": 95225, "housing": 12271 },
+        "out_of_state": { "tuition": 69904, "total_coa": 95225, "supplemental_tuition": 0 }
+      },
+      "aid_philosophy": "100% Need Met",
+      "average_need_based_aid": 52073,
+      "average_merit_aid": 19182,
+      "percent_receiving_aid": 67.0,
+      "scholarships": [
+        { "name": "Trustee Scholarship", "type": "Merit", "amount": "Full tuition", "deadline": "2025-11-01", "benefits": "Full tuition for four years.", "application_method": "Automatic Consideration (Early Action)" },
+        { "name": "Presidential Scholarship", "type": "Merit", "amount": "Half tuition", "deadline": "2025-11-01", "benefits": "Half tuition for four years.", "application_method": "Automatic Consideration (Early Action)" },
+        { "name": "University Grant", "type": "Need-Based", "amount": "Varies", "deadline": "2026-02-04", "benefits": "Covers remaining tuition for eligible families.", "application_method": "FAFSA and CSS Profile" }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Moderate",
+      "ap_policy": {
+        "general_rule": "Score of 4 or 5 grants 4 units of elective credit.",
+        "usage": "Can satisfy GE and foreign language requirements."
+      },
+      "ib_policy": {
+        "general_rule": "HL exams with 5, 6, or 7 grant 6 units.",
+        "diploma_bonus": true
+      },
+      "transfer_articulation": {
+        "restrictions": "64 unit cap for transfer credits."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Rigorous course load with multiple AP/IB classes",
+        "Evidence of being a 'global citizen'",
+        "Demonstrated interdisciplinary interest"
+      ],
+      "essay_tips": [
+        "Name-drop specific professors or programs in 'Why USC'",
+        "Be authentic in short-answer 'fun' responses",
+        "Emphasize commitment to service"
+      ],
+      "red_flags": [
+        "Generic supplemental essays",
+        "Inconsistent grades in upper years",
+        "Lack of coherent narrative arc"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 89884,
+      "employment_rate_2yr": 91.9,
+      "grad_school_rate": 16.4,
+      "top_employers": ["Google", "Amazon", "Deloitte", "The Walt Disney Company", "Goldman Sachs"],
+      "loan_default_rate": 1.6,
+      "student_retention": {
+        "freshman_retention_rate": 96.0,
+        "graduation_rate_6_year": 92.0
+      }
+    }
+  }
+}

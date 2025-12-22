@@ -1,0 +1,1110 @@
+{
+  "_id": "case_western_reserve_university",
+  "metadata": {
+    "official_name": "Case Western Reserve University",
+    "location": {
+      "city": "Cleveland",
+      "state": "OH",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyz0er-lnJC3Yrjyh8rAT1uhhfK0awDCxyUYcfvGKdw5RuMVO_DoZ0hrDCHjyo8zTvMtoDFVg9-pNraL4uaM0Ja9I9niRf93oXcvNAE8SJJ4dTPc5MikBYXO9FSSQxJyIg9O8rYD5lMhYQA_94Quo8_amBel8ykapgdRY=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVPcTTsk7pO2E-zSs9YODfzucJ85WPArwIcFxrvVPcduk7ZKsYuxNQu3kVDXiWQp1HMIR28xFjZ7DaVDv3tm49hY-63g9vWrGBUqLaxSGnrFkXn2avBCLBD1CFKLUr9a9cLxiAokR6-KZM7VIhHYrj7kd6AbN6xZn72nOBeOBx6fBCB7cjhUbAFXKQxlSNSWngWn96GopRqmxlgpy19Q==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrZjdqEhpi7Hsjt9l0FZc9vbBM3JjQiAnqzR33hGp0hLiGrK9OiZso6Y1A_xNSq3LSL-QH0iiEeuDRrYkbMwXsJ5x9FLYYRMhrbRpTtfPK6Tp2L5w-VEKS02E-L_iCzLvwRnM7f5yw8DUcXCyyZsk9_OMHc0yAdhWfPp2j4lmql9mRKj63lJ_c15if4uNF5e4Bo=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1Y3nVb2JUaE2NU6Re2a-ZbNd5PVhsCHSB0u9s8hMMm2twgzH5BVJnHviSsEP2OEXROIX4uUA5HpNpI2AnvJFSDCddMDwBa5rbGfJpkToiuydnRj_zu86WLHm2NQZYpFwyLs5eQ3ghisaKWur-rf5EwffgYNLWbDeprI0LU7ouq4KGM6BUsGTMKeZZ6dkqm7BVqQ==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtW5DcSSfhD2rv8FhvfIm4z80NdXC9BzTNKkk_JxumZeW83OxtjfD0ltdasGUtBjweXbvagjD-oULz5yojhmSViTX5P0rEQEnsDVLOYfm1oDuiljDTRTuau1yzHDrLvyDl5cdjhHRz7ueQhwN8kh948emnlDIiXPmYtpkqGkZulsFBXbNqthPd0LZed-Rgn2egRTlf",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJcjoFfnXdaPfQ-SB1v2pjWN7ajCemWEx1BwFeMx4K0uVj-syUh9NDNeO8crpDoGx-qR5gZKBSkLLlHQ_vvt7E_o6uyOiISFasz3RfNkezYgUpuS7UF7slzb221UA_63_qcmKKYfVqTQnu3IPFOstag0am7SgWzhSljMgkksoVpjn3Q7k=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGbUOcZ5ka9Ts1UOciiJV3qhn9up1g77ahlM9y9lqGaYKQ82IEWrj2UbhhP57s3NVlzyWT8S07GPe7H7fwbpTBtQZTtM2_OP8GTeCU5cbClpgaul8AThnzjPg2CgFzyXsgUXRcBRnfwFtWVRPtMq2CMwoUbq8_CJEuCA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2oNlWh7P4erVYsbQbjBj5VWI4g87MYWlgTBQ_v7zBQn0tdZpyxVlGdBQFz19w4B8Lh4jfj0OH343L7Yf_kRb0AKmi6nCf0ycIkSKdzVl-5EMBrjNdRFi-aORY6-nuzFDAy1x7eduRZxBOTAy9WzdjvZjJ1tCxoJo33SKMmR8=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGj4qgoFNdW3f5MPuuyT7txRULbEVuu2_K5QEwBgtNYrpZJ28qL0Gg39Whfq5MT2LLJV1v3Vt0gcPyalNVGcxaaQFxFzGga8D4I_UgOuZ2W6MJNeLdssETkxwAJaxbYY7_k",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs6QxYvCeThIfXEVHvcmZYUmhuB9fDGXVSDeQNvs4sSyLxz-9pVmaxHABpvFL7Jyj_pbOpIy2Q9xufNcJeZ-X7XgbcFMWweBPYXoS0E_2vIaaDm_eVzWWj",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIfotVnF4ezMuQKt8doqgWH3yurhqz81HFbMk5yuZJS3af2uz7Q402Odn82shqULyupAUTncbCRCG9LJ_tF9HQKRFs8ZxmZSNF3CZFhGClHw1oKjT2RrCflLF_Gk3bGby2l7FwwXCxRrvH0hHUvnXKnAaS-cS_YOLlTWxPTC098EPDdXj5R0gRK5IMitZiTOkSTSK507pEiNaCYC4=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO-sRbvoGQUscrOOxz71qMGrhCmjAJuiDg4HsFtajayDVnZCH348A4-6Ylsr_6sqe9J5pWfbIljTRFtUxBprCfJNgYQl4XxhQ8FoOJ2RzpcVhaPZmSadU_LmC4kHc59VBct78jYuh_td6n7fGR3xad9XXr_gEq11oJJETtHA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZuMs4X8K6T2JLcNhoGWHaBoBd5xsiYmrTl1WNxNZeqMbDVpooY-4C8LR_o-h5fBX-GcfQZclKsgODyq1-pgu5walYu1oW1c4hItQGVXo4B0mIyv-_FbYxFZTKgWRkLQh1qdnguam5wSGON7yCO0Lm",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyHCbAfl3H3LgUettjcJ5TuyMRKmQHogKKIeUuauSdECaCzJDcqkvjMuEkgD9JSNOcgpmd0hleWN9XmOIfrrxmWk60FMW1K1J7wlJ-1d7v1yhx7NGpW6LNZOtOne1NvdbUpIoiMJ6vcafXGzxA7g6v5bRt2kkbZCkp1b_JtkaxTkaCw_I17hxQ8TM5Q4NLu1lBmQ==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAmBq37Dr5ALvUeldlynbrR5Uz_Nmz3V_eiZ24t9RNG7K1vH_KRQNEIMP91ZNxrdspXPc72iOsbM-m-F9BRF1vcG14o7Q4zaR6zskKzR1sB-CJ8vKhyKQftarNubCDriiKz_onikaJm8XXcl_ZXAbhRvLTPz4jYlgAEyG4BeU=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYdB6IWtw-2cwWr2QZxY8AfuLyxU4wHNMpLb0WboysTgXqzauPq-JxxrbfBEqTgVUZSAmEGqtfFFstswiA_091ET0WB3fVedlg2T_X236JMySDPB357KfUufxu8F0pYSY4k4GNjilwh_xcve3wsMMQeymRfX91CNE=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuv5j81kAD3_hiqqOFQYln2ZZKps5WcA7LApv54rOmO6gnF5tHvA4WSKuBtGZ3clXEITHNmcluOsVeXf4nY78ZBcAiTPSKV5AlAek0idAV7S8zZl8sttwihDAap14bO4yRmUGIX8mXm-MqWwU9P7ZgNQtu",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ_zW-K6n-fUvQeQ9zQ5V7uY-qGzGqGzK1vH_KRQNEIMP91ZNxrdspXPc72iOsbM-m-F9BRF1vcG14o7Q4zaR6zskKzR1sB-CJ8vKhyKQftarNubCDriiKz_onikaJm8XXcl_ZXAbhRvLTPz4jYlgAEyG4BeU="
+    ]
+  },
+  "strategic_profile": {
+    "executive_summary": "Case Western Reserve University is a private research university located in Cleveland, Ohio, renowned for its strong STEM programs and comprehensive research opportunities. It consistently ranks among the top national universities, offering a vibrant campus life integrated with the cultural amenities of University Circle and a commitment to interdisciplinary collaboration.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Case Western Reserve University employs a holistic review process, evaluating applicants based on academic performance, extracurricular activities, essays, interviews, and other factors beyond just test scores. While selective, the university considers a broad range of student qualities and aspirations for admission.",
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "The acceptance rate for Case Western Reserve University has seen fluctuations. While some sources indicate rates around 29% for recent cycles, others report a significant increase to approximately 37.7% for the 2024 application year, up from 28.6% in 2023.",
+        "implication": "Despite variations, CWRU remains a highly selective institution. Prospective students should focus on presenting a well-rounded application that highlights strong academic performance, compelling extracurricular involvement, and well-articulated personal statements to stand out in a competitive applicant pool."
+      },
+      {
+        "category": "Academic & Research Focus",
+        "insight": "CWRU consistently ranks high in specific STEM fields (e.g., Biomedical Engineering, Nursing) and for undergraduate research opportunities, indicating a strong emphasis on scientific and technological innovation and hands-on learning.",
+        "implication": "Students with interests in STEM, research, and collaborative academic environments will find significant resources and opportunities. High school coursework and extracurriculars aligned with these areas could strengthen an application."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "Case Western Reserve University offers a vibrant and collaborative campus life, with over 200 student organizations ranging from debate teams to robotics clubs. Greek life is active, involving about a third of undergraduates. The University Program Board organizes numerous events, including concerts and Homecoming. While not characterized as a major 'party school,' students can find social gatherings. The university's urban location in Cleveland's University Circle provides easy access to museums, the Rock and Roll Hall of Fame, Playhouse Square, and other cultural attractions, enriching the student experience beyond campus activities.",
+      "transportation_impact": "Transportation significantly impacts campus life by connecting students to the wider Cleveland area. Undergraduate students receive a year-round pass for the Greater Cleveland Regional Transit Authority (RTA), offering convenient public transport to downtown, the airport, and surrounding neighborhoods. The campus itself is well-served by free internal shuttles ('Greenies') and a 'Safe Ride' program for evening hours, ensuring accessibility and safety within University Circle. Car-sharing services are also available.",
+      "research_impact": "Research is a cornerstone of the Case Western Reserve experience, deeply integrated into the curriculum and offering extensive opportunities for undergraduates. The university is recognized as a research-intensive institution with a long tradition of involving students in discovery. Programs like CanSUR (cancer-focused), SURP (pharmacology), and CREATE KUH (biomedical fields) provide structured summer research internships. The Undergraduate Research Office helps students find faculty-led projects and secure funding. CWRU's strong performance in patent generation per student highlights its innovative spirit and industry ties."
+    },
+    "us_news_rank": 48
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 37.7,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 22.9,
+      "transfer_acceptance_rate": 23.9,
+      "admits_class_size": 14010,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 804,
+          "admits": 298,
+          "acceptance_rate": 37.0,
+          "class_fill_percentage": null
+        },
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 33.0,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2029,
+        "cycle_name": "Class of 2029",
+        "applications_total": 39000,
+        "admits_total": 13767,
+        "enrolled_total": 1650,
+        "acceptance_rate_overall": 35.3,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 11.98,
+        "waitlist_stats": {
+          "year": 2029,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": 13.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate and enrolled total for Class of 2029 are based on early reports. Waitlist admit rate is approximate."
+      },
+      {
+        "year": 2028,
+        "cycle_name": "Class of 2028",
+        "applications_total": 37082,
+        "admits_total": 14010,
+        "enrolled_total": 1619,
+        "acceptance_rate_overall": 37.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 11.6,
+        "waitlist_stats": {
+          "year": 2028,
+          "offered_spots": 9805,
+          "accepted_spots": 4478,
+          "admitted_from_waitlist": 1282,
+          "waitlist_admit_rate": 28.63,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate and yield rate are consistently reported across multiple sources. Waitlist data for 'application year 2024' corresponds to Class of 2028."
+      },
+      {
+        "year": 2027,
+        "cycle_name": "Class of 2027",
+        "applications_total": 39033,
+        "admits_total": 11193,
+        "enrolled_total": 1544,
+        "acceptance_rate_overall": 28.68,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 13.79,
+        "waitlist_stats": {
+          "year": 2027,
+          "offered_spots": 11841,
+          "accepted_spots": 7940,
+          "admitted_from_waitlist": 1141,
+          "waitlist_admit_rate": 14.37,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data confirmed from College Tuition Compare and AdmissionSight. Waitlist data corresponds to Class of 2027."
+      },
+      {
+        "year": 2026,
+        "cycle_name": "Class of 2026",
+        "applications_total": 38701,
+        "admits_total": 10607,
+        "enrolled_total": 1553,
+        "acceptance_rate_overall": 27.41,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 14.64,
+        "waitlist_stats": {
+          "year": 2026,
+          "offered_spots": 11620,
+          "accepted_spots": 6056,
+          "admitted_from_waitlist": 436,
+          "waitlist_admit_rate": 7.19,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data sourced from College Tuition Compare and AdmissionSight. Waitlist data corresponds to Class of 2026."
+      },
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2025",
+        "applications_total": 33232,
+        "admits_total": 10049,
+        "enrolled_total": 1606,
+        "acceptance_rate_overall": 30.24,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 15.98,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": 11494,
+          "accepted_spots": 4992,
+          "admitted_from_waitlist": 364,
+          "waitlist_admit_rate": 7.29,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data sourced from CollegeVine Blog and AdmissionSight. Waitlist data corresponds to Class of 2025."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2024",
+        "applications_total": 29769,
+        "admits_total": 9760,
+        "enrolled_total": 1076,
+        "acceptance_rate_overall": 32.78,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 11.02,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 9760,
+          "accepted_spots": 4921,
+          "admitted_from_waitlist": 598,
+          "waitlist_admit_rate": 12.15,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Data extracted from Case Western Reserve University Common Data Set 2020-2021. Waitlist data corresponds to Class of 2024."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2023",
+        "applications_total": 28987,
+        "admits_total": 7826,
+        "enrolled_total": 1360,
+        "acceptance_rate_overall": 27.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 17.38,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 10375,
+          "accepted_spots": 5661,
+          "admitted_from_waitlist": 209,
+          "waitlist_admit_rate": 3.69,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Overall admissions data from CWRU Newsroom. Waitlist data from AdmissionSight. Waitlist data corresponds to Class of 2023."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.10-4.30",
+        "unweighted_middle_50": "3.80-4.00",
+        "average_weighted": 4.2,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "Based on the 2024-2025 Common Data Set, 17.89% of enrolled students had a 4.0 GPA, and 46.82% had a GPA between 3.75 and 3.99. The average unweighted GPA reported by PrepScholar is 3.78. Most admits have straight A's in honors/AP courses."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1450-1530",
+        "sat_reading_middle_50": "700-750",
+        "sat_math_middle_50": "730-790",
+        "act_composite_middle_50": "32-35",
+        "submission_rate": null,
+        "policy_note": "Test optional; SAT/ACT scores are not required but are considered for admission. English proficiency test scores are considered (required)."
+      },
+      "demographics": {
+        "first_gen_percentage": null,
+        "legacy_percentage": null,
+        "international_percentage": 11.47,
+        "geographic_breakdown": [
+          {
+            "region": "In-State (Ohio)",
+            "percentage": 14.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 69.0
+          },
+          {
+            "region": "International",
+            "percentage": 12.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 19937,
+            "admits": 5721,
+            "acceptance_rate": 28.69,
+            "note": "For 2023-2024 academic year."
+          },
+          "women": {
+            "applicants": 19096,
+            "admits": 5472,
+            "acceptance_rate": 28.66,
+            "note": "For 2023-2024 academic year."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 33.73,
+          "black_african_american": 6.2,
+          "hispanic_latino": 11.5,
+          "asian": 30.15,
+          "native_american_alaskan": 0.08,
+          "pacific_islander": 0.03,
+          "two_or_more_races": 5.22,
+          "unknown": 1.61,
+          "non_resident_alien": 11.47
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools",
+    "colleges": [
+      {
+        "name": "College of Arts and Sciences",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Students admitted to the university's 'single-door admission policy' can explore majors across all undergraduate schools. This college offers broad options in humanities, natural sciences, mathematics, performing arts, and social and behavioral sciences.",
+        "housing_profile": "First-year students are part of residential college communities (Cedar, Juniper, Magnolia, Mistletoe, Clarke) with shared amenities and common spaces designed for community living and academic support. Sophomore housing provides more autonomy with suite-style arrangements, and upperclassmen have apartment-style options.",
+        "student_archetype": "Intellectually curious, collaborative, diverse socially, and passionate about learning. May not always fit the 'nerdy STEM' stereotype, with interests spanning various fields.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "General Biology I & II",
+              "General Chemistry I & II",
+              "Calculus I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL 214 Introductory Cell Biology",
+              "CHEM 223 Organic Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students. Honors in Biology requires a 3.6 overall GPA and 3.8 in BIOL courses."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "PSCL 101 General Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSCL 282 Quantitative Methods in Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students. Honors in Psychology requires a 3.25 GPA in psychology coursework and 3.0 overall."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "ECON 101 Principles of Microeconomics",
+              "ECON 102 Principles of Macroeconomics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MATH 121 Calculus for Science & Engineering I (or equivalent)",
+              "STAT 201 Basic Statistics for Engineering and Science"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "CHEM 111 General Chemistry for Engineers (or equivalent)",
+              "MATH 121 Calculus for Science & Engineering I (or equivalent)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 223 Organic Chemistry I",
+              "CHEM 301 Physical Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGL 201 Introduction to the English Major (required for majors)"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students. Honors in English requires a 3.75 GPA in English courses."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "POSC 100 American Politics",
+              "POSC 103 Introduction to Comparative Politics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Physics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Physics I & II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PHYS 221 Introduction to Modern Physics",
+              "PHYS 301 Classical Mechanics",
+              "MATH 223/224 (Multivariable Calculus/Differential Equations)"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Biochemistry and Molecular Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "General Biology I & II",
+              "General Chemistry I & II",
+              "Organic Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHEM 224 Organic Chemistry II",
+              "BIOL 300 Molecular Biology",
+              "BIOL 328 Cell Biology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          }
+        ]
+      },
+      {
+        "name": "Case School of Engineering",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Undergraduates are admitted through a 'single-door admission policy', allowing flexibility to explore engineering disciplines before declaring a major. Strong STEM background is highly recommended.",
+        "housing_profile": "First-year students are part of residential college communities (Cedar, Juniper, Magnolia, Mistletoe, Clarke) focused on community living. Sophomore and upperclassmen housing offers increasing autonomy with suite-style and apartment-style living on campus.",
+        "student_archetype": "Academically rigorous, problem-solvers, high-achieving, and driven with a strong interest in STEM fields. Collaborates well with peers and engages in research opportunities.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Physics I & II",
+              "Object-Oriented Programming (e.g., CSDS 132/133)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CSDS 233 Introduction to Data Structures",
+              "CSDS 391 Introduction to Computer Networks (or other core advanced CS courses)"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy; once admitted to the university, students generally have flexibility to declare this major. Major-specific acceptance rates are not published, but may be slightly lower than the overall university rate. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Biomedical Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Physics I & II",
+              "Chemistry I & II",
+              "Intro to Biomedical Engineering (EBME 105)"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "EBME 201 Physiology-Biophysics I",
+              "EBME 202 Physiology-Biophysics II",
+              "ENGR 200 Introduction to Engineering (General Engineering Core)"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Major-specific acceptance rates are not published, but may be lower than the overall university rate due to competitiveness. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Physics I & II",
+              "Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGR 200 Introduction to Engineering (General Engineering Core)",
+              "EMAE 250 Engineering Mechanics: Statics",
+              "EMAE 260 Engineering Mechanics: Dynamics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Chemical Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Physics I & II",
+              "Chemistry I & II",
+              "ECHE 151 Intro to Chemical Engineering at Case"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECHE 225 Thermal and Fluid Sciences",
+              "ECHE 260 Intro to Chemical Systems",
+              "ECHE 363 Thermodynamics of Chemical Systems"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Aerospace Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Physics I & II",
+              "Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGR 200 Introduction to Engineering (General Engineering Core)",
+              "EMAE 250 Engineering Mechanics: Statics",
+              "EMAE 260 Engineering Mechanics: Dynamics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Physics I & II",
+              "ENGR 131 Elementary Computer Programming"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGR 210 Intro to Circuits and Instrumentation",
+              "EECS 245 Electronic Circuits",
+              "EECS 340 Signals and Systems"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Materials Science and Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Physics I & II",
+              "Chemistry I & II"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGR 200 Introduction to Engineering (General Engineering Core)",
+              "EMSE 276 Structure and Properties of Materials",
+              "EMSE 220 Materials Laboratory I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "B.S.E.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Physics I & II",
+              "Chemistry I"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ENGR 200 Introduction to Engineering (General Engineering Core)",
+              "ECIV 310 Mechanics of Solids",
+              "ECIV 315 Introduction to Structural Engineering and Analysis"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Data Science and Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "Calculus I & II",
+              "Object-Oriented Programming (e.g., CSDS 132)",
+              "Foundational Statistics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "DSCI 201 Introduction to Data Science",
+              "CSDS 233 Introduction to Data Structures",
+              "MATH 223/224 (Multivariable Calculus/Differential Equations)"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          }
+        ]
+      },
+      {
+        "name": "Frances Payne Bolton School of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 29.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "This is a direct-admit Bachelor of Science in Nursing (BSN) program, requiring a strong academic record and demonstrated interest in nursing. It is highly competitive.",
+        "housing_profile": "First-year students reside in residential college communities (Cedar, Juniper, Magnolia, Mistletoe, Clarke) that emphasize community and academic support. Later housing stages offer more independent suite and apartment-style living.",
+        "student_archetype": "Caring, academically driven, committed to healthcare, and seeking extensive hands-on clinical experience early in their studies. Prepared for a rigorous curriculum.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.N.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "High school biology",
+              "High school chemistry",
+              "Strong academic record in science and math"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "NU 100 Introduction to Nursing",
+              "NU 201 Pathophysiology",
+              "CHEM 105 or 111 (General Chemistry)"
+            ],
+            "special_requirements": "Direct admission as a freshman is typically required. Progression in the BSN program requires a minimum GPA of 2.0 and a grade of C or higher in all nursing and science courses.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": false,
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "notes": "Nursing is a direct-entry program at CWRU and generally does not allow internal transfers once admitted to another major. Students interested in switching to Nursing should contact a four-year advisor immediately to discuss limited options. Overall university acceptance rate is around 27-38%; Nursing program may be more competitive. Average admitted GPA reflects the overall university average for admitted students."
+          }
+        ]
+      },
+      {
+        "name": "Weatherhead School of Management",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Undergraduates are admitted through a 'single-door admission policy', enabling students to explore various business disciplines within the school.",
+        "housing_profile": "First-year students are part of residential college communities (Cedar, Juniper, Magnolia, Mistletoe, Clarke) designed for community building and support. Subsequent years offer suite-style and apartment-style university housing.",
+        "student_archetype": "Ambitious, analytical, with an interest in business and leadership. Seeks practical experience and strong career preparation.",
+        "majors": [
+          {
+            "name": "Accounting",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "ACCT 100 Introduction to Financial Accounting",
+              "ACCT 106 Introduction to Managerial Accounting",
+              "MGMT 201 Principles of Management"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACCT 200 Intermediate Accounting I",
+              "BUAD 201 Business Statistics"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "ECON 101 Principles of Microeconomics",
+              "ECON 102 Principles of Macroeconomics",
+              "BUAD 201 Business Statistics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "FINC 301 Financial Management",
+              "ACCT 100 Introduction to Financial Accounting"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Marketing",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "MGMT 201 Principles of Management",
+              "BUAD 201 Business Statistics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MKTG 301 Principles of Marketing"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          },
+          {
+            "name": "Business Management",
+            "degree_type": "B.S.M.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.6,
+            "prerequisite_courses": [
+              "ECON 101 Principles of Microeconomics",
+              "ACCT 100 Introduction to Financial Accounting",
+              "BUAD 201 Business Statistics"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "MGMT 201 Principles of Management",
+              "ORBH 250 Organizational Behavior"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "University Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "CWRU has a 'single door admissions' policy. Average admitted GPA reflects the overall university average for admitted students."
+          }
+        ]
+      },
+      {
+        "name": "Pre-Professional Scholars Program (Medicine)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 29.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive program for exceptional high school seniors offering conditional admission to the School of Medicine upon successful completion of undergraduate requirements. Requires a challenging high school curriculum, high standardized test scores, significant extracurricular involvement, and demonstrated exploration of medicine.",
+        "housing_profile": "Participants reside in standard undergraduate housing. First-year students are integrated into residential college communities, with subsequent years offering various on-campus options.",
+        "student_archetype": "Exceptional, highly driven, and academically accomplished pre-medical students with extensive experience in volunteering, shadowing, and leadership within their communities.",
+        "majors": []
+      },
+      {
+        "name": "Pre-Professional Scholars Program (Dental Medicine)",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 29.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Highly competitive program for exceptional high school seniors offering conditional admission to the School of Dental Medicine upon successful completion of undergraduate requirements. Requires a challenging high school curriculum, high standardized test scores, significant extracurricular involvement, and demonstrated interest in dental medicine.",
+        "housing_profile": "Participants reside in standard undergraduate housing. First-year students are integrated into residential college communities, with subsequent years offering various on-campus options.",
+        "student_archetype": "Exceptional, highly driven, and academically accomplished pre-dental students with extensive experience in volunteering, shadowing, and leadership within their communities.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": []
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-01",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2025-01-15",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-15",
+        "is_binding": false,
+        "notes": ""
+      },
+      {
+        "plan_type": "Pre-Professional Scholars Program",
+        "date": "2024-12-01",
+        "is_binding": false,
+        "notes": "For medicine/dental programs"
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All (excluding PPSP)",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "Common Application personal essay required. No additional supplemental essays for general applicants."
+      },
+      {
+        "target_program": "Pre-Professional Scholars Program",
+        "requirement_type": "Essays",
+        "deadline": "2024-12-01",
+        "details": "Two additional supplemental essays required beyond the Common App essay: Why interested in chosen profession & proud achievement not on resume."
+      },
+      {
+        "target_program": "Music (BA, BS in Music Education, or Arts Achievement Award)",
+        "requirement_type": "Audition",
+        "deadline": "2024-11-15",
+        "details": "Music Arts Supplement (including audition videos) required for EA/ED I applicants. Final deadline for all Music Arts Supplements is February 1 for ED II/RD applicants. Live interviews/auditions for Music Education (BS) have specific dates in December and February."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Extracurriculars",
+        "Class Rank"
+      ],
+      "secondary_factors": [
+        "Essays",
+        "Recommendations",
+        "Talents",
+        "Character",
+        "Interview",
+        "Volunteer Work"
+      ],
+      "essay_importance": "High",
+      "demonstrated_interest": "Considered",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Minimal",
+      "first_gen_boost": "Minimal",
+      "specific_differentiators": "Strong emphasis on academic rigor, scientific research, and educating leaders in engineering and medical professions. Seeks intellectual curiosity, drive, and a commitment to experiential learning."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Leverage single-door admissions by applying with genuine major interest, as changing majors after admission is generally easy (except for nursing which requires full four-year enrollment, and music requiring an audition).",
+      "Declare a major of genuine interest, as you will not officially declare until later in your first or second year, and switching is a simple administrative process.",
+      "Consider that your listed major on the application could potentially influence merit scholarships tied to specific schools (e.g., nursing, management).",
+      "If undecided, utilize the time before official declaration (typically by the end of sophomore year or before your fifth semester) to explore different fields through initial coursework and advising.",
+      "Consult with your assigned advisor early on, as they can provide guidance on initial course selection and the logistics of changing majors, especially when switching between different academic schools (e.g., Arts and Sciences to Engineering)."
+    ],
+    "college_ranking_tactics": [
+      "Look beyond overall national rankings (like US News) as they can be subjective and influenced by factors that may not reflect individual academic fit or quality of specific programs.",
+      "Research specific departmental rankings or reputation for your intended fields of study, as some programs at CWRU (e.g., pre-med, engineering, business, nursing) are highly regarded even if the overall ranking fluctuates.",
+      "Consider the university's robust merit aid program when evaluating its value, as it can make CWRU a more financially viable option compared to other highly ranked private institutions.",
+      "Evaluate factors beyond academic rankings, suchs as campus life, student support, and housing quality, which some discussions indicate can be a concern at CWRU."
+    ],
+    "alternate_major_strategy": "Since Case Western Reserve University has single-door admissions and makes it relatively easy to change majors after enrollment, the primary strategy isn't to list a 'backup' major for admission purposes. Instead, focus on applying with a major you are genuinely interested in. If you have multiple interests, know that you will have the flexibility to explore and switch. For instance, if you are interested in a competitive STEM field but also a humanities subject, you could apply with either knowing you can easily change later or even pursue both as a double major or a primary with a secondary major."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 66608,
+        "total_coa": 88570,
+        "housing": 18762
+      },
+      "out_of_state": {
+        "tuition": 66608,
+        "total_coa": 88570,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "Merit Focused",
+    "average_need_based_aid": 30734,
+    "average_merit_aid": 30499,
+    "percent_receiving_aid": 88.0,
+    "scholarships": [
+      {
+        "name": "University Scholarship",
+        "type": "Merit",
+        "amount": "$15,000 - $30,000/year",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Renewable for up to four years (eight semesters)",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Andrew and Eleanor Squire Scholarship",
+        "type": "Merit",
+        "amount": "Full tuition for four years",
+        "deadline": "Typically around March 1st (requires additional application materials)",
+        "benefits": "Covers full tuition costs",
+        "application_method": "Automatic Consideration for first-year applicants in arts, humanities, management, accountancy, and natural, social, and behavioral sciences"
+      },
+      {
+        "name": "Louis Stokes Congressional Black Caucus Foundation Scholarship",
+        "type": "Merit/Need",
+        "amount": "Full tuition (renewable for up to five years) + up to $2,500 for computer and book purchases",
+        "deadline": "Automatic consideration for first-year and community college transfer students",
+        "benefits": "Full tuition, grant for books/computer, assistance securing paid summer internship",
+        "application_method": "Automatic Consideration for economically and educationally disadvantaged students"
+      },
+      {
+        "name": "FIRST Scholarship",
+        "type": "Merit",
+        "amount": "$10,000/year (renewable up to $40,000 over four years)",
+        "deadline": "January 15th (Application and essay required)",
+        "benefits": "Supports students with a background in FIRST Robotics Competition or FIRST Tech Challenge",
+        "application_method": "Separate Application (requires essay and letter of recommendation from FIRST mentor/coach)"
+      },
+      {
+        "name": "Milton A. and Roslyn Z. Wolf Scholarship",
+        "type": "Full Ride",
+        "amount": "Full cost of attendance (tuition, room, board, fees, books) + elective summer experiences",
+        "deadline": "Automatic consideration with admission application",
+        "benefits": "Covers all major educational and living expenses, including summer enrichment",
+        "application_method": "Automatic Consideration based on character, leadership potential, academic performance, intellect, and accomplishments"
+      },
+      {
+        "name": "Performing Arts Scholarships",
+        "type": "Merit/Departmental",
+        "amount": "A small number of full-tuition scholarships",
+        "deadline": "Submit Arts Supplement through Applicant Status Portal",
+        "benefits": "Supports students exhibiting excellence in music, theater, or dance",
+        "application_method": "Audition/Portfolio (Music majors submit video audition; theater/dance majors contact departments for auditions)"
+      },
+      {
+        "name": "Need-Based Grant",
+        "type": "Need",
+        "amount": "Varies based on demonstrated financial need",
+        "deadline": "FAFSA and CSS Profile deadlines (typically early spring for incoming students)",
+        "benefits": "Does not need to be repaid; CWRU meets 100% of demonstrated need for admitted students",
+        "application_method": "FAFSA and CSS Profile"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 grant credit for most exams, with specific score requirements varying by subject",
+      "exceptions": [
+        "No credit for AP Research",
+        "No credit for AP Seminar",
+        "No credit for AP Music Theory",
+        "English AP scores require successful completion of a 3-credit-hour 300-level ENGL course with a grade of C or better for a maximum of 3 credit hours",
+        "History AP scores require successful completion of a 1-credit-hour HSTY 100 for a maximum of 3 credit hours",
+        "Some art studio credits determined by portfolio review",
+        "AP Biology credit for BIOL 214 requires a score of 5 (effective Fall 2025) and only for the lecture, not the lab"
+      ],
+      "usage": "Can satisfy general education requirements, some major prerequisites, and contribute to credit-hours required for an undergraduate degree. Credit may be forfeited if a student completes a course for which they received AP credit after matriculation."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with scores of 5, 6, or 7 grant credit for most examinations",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [
+        "Northeast Ohio Community College Transfer Guides"
+      ],
+      "restrictions": "A maximum of 38 credit hours of off-campus study credit can be applied towards the degree after matriculation, with no more than 15 credit hours from domestic programs or summer study in a student's home country. Credit is awarded for comparable courses from accredited institutions with a grade of C or better. Courses taken prior to high school graduation must be degree-credit bearing, taken with matriculated college students, taught by college faculty, and not used for high school graduation requirements. The Mathematics, Applied Mathematics and Statistics Department does not accept online courses for transfer credit."
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record with a solid GPA, particularly in challenging courses (AP or honors)",
+      "Demonstrated passion or a 'spike' in 1-2 specific areas, creating a strong narrative around that interest",
+      "Success in rigorous coursework, especially those beyond graduation requirements",
+      "Strong standardized test scores if submitted (SAT 1420-1510, ACT 32-35), though test-optional"
+    ],
+    "common_activities": [
+      "Research experience, especially in STEM fields and connecting with nearby institutions",
+      "Leadership roles in school clubs or activities",
+      "Community service and volunteering",
+      "Participation in varsity athletics (though it offers less boost to admissions chances)",
+      "Music/arts involvement, potentially for specific scholarships or majors"
+    ],
+    "essay_tips": [
+      "Be specific about why Case Western Reserve University and personalize your essay to convey who you are",
+      "Show, don't tell, using specific details and personal reflection",
+      "Focus on a singular accomplishment, event, or realization that sparked personal growth",
+      "Avoid generic essays that could apply to any institution",
+      "Utilize the video essay opportunity to share lived experiences beyond transcripts and resumes"
+    ],
+    "red_flags": [
+      "Grade decline, particularly in challenging subjects during junior or senior year",
+      "Generic essays that lack personalization and specific reasons for choosing CWRU",
+      "Lack of demonstrated interest in the university",
+      "Scattered extracurricular activities without depth or significant commitment to a few areas"
+    ],
+    "insights": []
+  },
+  "outcomes": {
+    "median_earnings_10yr": 87989,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 42.0,
+    "top_employers": [
+      "Amazon",
+      "Cleveland Clinic",
+      "Deloitte",
+      "Epic",
+      "EY",
+      "Google",
+      "KeyBank"
+    ],
+    "loan_default_rate": null
+  },
+  "student_retention": {
+    "freshman_retention_rate": 93.0,
+    "graduation_rate_4_year": 66.0,
+    "graduation_rate_6_year": 82.0
+  }
+}

@@ -4,7 +4,7 @@ Admitted Profile Agent -> AdmittedStudentProfile + RaceEthnicity - LLM-based res
 from google.adk.agents import LlmAgent
 from google.adk.tools import google_search
 
-MODEL_NAME = "gemini-2.5-flash-lite"
+MODEL_NAME = "gemini-2.5-flash"
 
 admitted_profile_agent = LlmAgent(
     name="AdmittedProfileAgent",

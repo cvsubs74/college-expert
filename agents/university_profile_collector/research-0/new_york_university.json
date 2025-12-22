@@ -1,0 +1,962 @@
+{
+  "_id": "new_york_university",
+  "metadata": {
+    "official_name": "New York University",
+    "location": {
+      "city": "New York City",
+      "state": "New York",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "New York University (NYU) is a highly selective private research university located in New York City, renowned for its global presence with degree-granting campuses worldwide and a strong emphasis on diverse academic and research opportunities. Its urban campus is deeply integrated into the vibrant life of New York, offering students an immersive city experience alongside rigorous academics.",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "NYU employs a test-optional policy through the 2025-2026 application cycle, offering applicants flexibility in submitting standardized test scores. While not explicitly stated as 'holistic' in all search results, the highly selective nature, low acceptance rate (7.7% for the Class of 2029), and requirement for essays and letters of recommendation suggest a comprehensive, individualized review of applicants.",
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "NYU's acceptance rate has dropped significantly, reaching a record low of 7.7% for the Class of 2029.",
+        "implication": "Applicants should focus on presenting a strong and distinctive profile beyond just academic metrics to stand out in a highly competitive pool. Early application might be beneficial."
+      },
+      {
+        "category": "Admissions Policy",
+        "insight": "NYU remains test-optional through the 2025-2026 application cycle, offering a flexible testing policy.",
+        "implication": "Students have the choice to submit scores if they believe it strengthens their application, but it is not a requirement. This may attract a broader range of applicants."
+      },
+      {
+        "category": "Urban Integration",
+        "insight": "NYU's campus is an integral part of New York City, with buildings scattered throughout Manhattan and Brooklyn.",
+        "implication": "Students seeking a traditional, self-contained campus experience might find NYU's urban integration challenging, while those desiring an immersive city life will thrive. Networking and internship opportunities are vast due to this integration."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "NYU's social environment is diverse and highly integrated with New York City life. Students engage in a wide array of activities, from numerous student clubs and organizations to exploring the city's cultural, entertainment, and dining scenes. Washington Square Park serves as a central gathering spot, and residence halls foster community, especially for first-year students. The social scene caters to both studious individuals and those seeking vibrant nightlife.",
+      "transportation_impact": "Transportation is a significant aspect of campus life, as NYU's 'campus' is the city itself. The vast majority of the NYU community relies on mass transit (subway, bus) and walking for commuting. A university shuttle system also connects major academic locations, including its Manhattan and Brooklyn campuses. Navigating the city is an essential skill, and the public transportation system becomes an extension of the learning environment for many students, particularly commuters.",
+      "research_impact": "As a prominent research university, NYU provides extensive research opportunities for both undergraduate and graduate students across its many schools and institutes. Research is broadly defined to include artistic and professional activities alongside traditional academic inquiry. Students can engage in one-on-one work with faculty, participate in specialized programs, and contribute to significant projects. NYU is a leader in research funding and innovation, boasting strong industry ties through various centers and initiatives."
+    },
+    "us_news_rank": 30
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 9.2,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": null,
+      "admits_class_size": 10232,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": 25000,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 120000,
+        "admits_total": 9240,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 7.7,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2025,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Record number of applications. Acceptance rate hit an all-time low of 7.7%. Yield rate is 'TBA' for this class. Waitlist data is not publicly disclosed by NYU."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 110807,
+        "admits_total": 10232,
+        "enrolled_total": 5666,
+        "acceptance_rate_overall": 9.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 55.4,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate of 9.2% is based on the 2024-2025 Common Data Set for Fall 2024 enrollment. Some sources also reported 8% acceptance rate for Class of 2028. Yield rate was reported as 55.4% or 60.4%. Waitlist data is not publicly disclosed by NYU."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 113578,
+        "admits_total": 10693,
+        "enrolled_total": 0,
+        "acceptance_rate_overall": 9.4,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": null,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate of 9.4%. Yield rate is 'TBA' for this class. Waitlist data is not publicly disclosed by NYU and the waitlist was unranked according to the 2022-2023 CDS."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 100662,
+        "admits_total": 12539,
+        "enrolled_total": 5700,
+        "acceptance_rate_overall": 12.2,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 45.46,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "100,662 applications were reported in the Common Data Set for 2021-2022. News releases at the time indicated over 105,000 applications. Acceptance rate was 12.2%. Enrolled total is approximate. Yield rate calculated based on approximate enrolled and admitted figures. Waitlist data is not publicly disclosed by NYU and the waitlist was unranked."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 95517,
+        "admits_total": 12380,
+        "enrolled_total": 6700,
+        "acceptance_rate_overall": 12.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 54.12,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Over 100,000 applications were reported across all NYU campuses (New York, Abu Dhabi, and Shanghai). Acceptance rate for the New York campus was 12.8%. Enrolled total is approximate. Yield rate calculated based on approximate enrolled and admitted figures. Waitlist data is not publicly disclosed by NYU."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 85000,
+        "admits_total": 13000,
+        "enrolled_total": 6700,
+        "acceptance_rate_overall": 15.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 51.54,
+        "waitlist_stats": {
+          "year": 2020,
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Acceptance rate of 15% for the New York campus. Yield rate calculated based on approximate enrolled and admitted figures. Some sources report acceptance rates as high as 21% or 29.8% for this class year, possibly reflecting different campus inclusions or calculation methodologies. Waitlist data is not publicly disclosed by NYU."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 3.81,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "Average weighted GPA is 3.81. The typical unweighted GPA for most first-years is 3.7 (A). Most admits would have mostly A's, ideally with several AP or IB classes."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1470-1570",
+        "sat_reading_middle_50": "720-770",
+        "sat_math_middle_50": "750-800",
+        "act_composite_middle_50": "33-35",
+        "submission_rate": 38.0,
+        "policy_note": "Test optional but recommended. For enrolled students, 28% submitted SAT scores and 10% submitted ACT scores (Fall 2024 Common Data Set data)."
+      },
+      "demographics": {
+        "first_gen_percentage": 20.0,
+        "legacy_percentage": null,
+        "international_percentage": 22.2,
+        "geographic_breakdown": [
+          {
+            "region": "New York (in-state)",
+            "percentage": 23.0
+          },
+          {
+            "region": "Other US States (out-of-state)",
+            "percentage": 50.0
+          },
+          {
+            "region": "International",
+            "percentage": 27.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "50% of undergraduates"
+          },
+          "women": {
+            "applicants": null,
+            "admits": null,
+            "acceptance_rate": null,
+            "note": "50% of undergraduates"
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 22.08,
+          "black_african_american": 8.41,
+          "hispanic_latino": 16.82,
+          "asian": 22.08,
+          "native_american_alaskan": 0.0,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 4.21,
+          "unknown": 4.21,
+          "non_resident_alien": 22.2
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Schools",
+    "colleges": [
+      {
+        "name": "College of Arts & Science",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 5.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong academic record and intellectual curiosity are essential. Emphasize ability to thrive in a broad liberal arts curriculum within an urban setting.",
+        "housing_profile": "Vibrant urban living in diverse residence halls, community-oriented with social activities. First-year students may be part of the Residential College at the Paulson Center, offering integrated living and learning experiences including a dedicated writing course.",
+        "student_archetype": "Intellectually curious, academically rigorous, independent thinkers, often with pre-professional interests (e.g., pre-med).",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 4.0,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Overall CAS acceptance rate is 4%. No specific prerequisites are generally required for CAS internal transfers, but strong performance in relevant courses is noted."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 4.0,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECON-UA 10 Principles of Microeconomics",
+              "MATH-UA 121 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Overall CAS acceptance rate is 4%. Strong performance in introductory economics and math courses is beneficial."
+          },
+          {
+            "name": "Biology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 4.0,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL-UA 210 General Biology I",
+              "CHEM-UA 125 General Chemistry I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Overall CAS acceptance rate is 4%. Foundational science courses often serve as early filters."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": 4.0,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PSYCH-UA 1 Introduction to Psychology",
+              "STAT-UA 103 Statistics for the Behavioral Sciences"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Overall CAS acceptance rate is 4%. Introductory courses are key."
+          },
+          {
+            "name": "Neural Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": 4.0,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "BIOL-UA 210 General Biology I",
+              "CHEM-UA 125 General Chemistry I",
+              "MATH-UA 121 Calculus I"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Overall CAS acceptance rate is 4%. Strong performance in foundational sciences is expected."
+          }
+        ]
+      },
+      {
+        "name": "Leonard N. Stern School of Business",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 5.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Demonstrate strong analytical skills, leadership potential, and a clear interest in business. Highlight relevant experiences and achievements.",
+        "housing_profile": "Vibrant urban living in diverse residence halls, community-oriented with social activities. First-year students may be part of the Residential College at the Paulson Center, fostering a sense of belonging amidst city life.",
+        "student_archetype": "Highly ambitious, career-focused, entrepreneurial, and driven, often described as 'finance bros' in jest but serious about their professional goals.",
+        "majors": [
+          {
+            "name": "Business (General, with concentrations)",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": 5.0,
+            "average_gpa_admitted": 3.61,
+            "prerequisite_courses": [
+              "Calculus I",
+              "Writing/Composition"
+            ],
+            "minimum_gpa_to_declare": 3.8,
+            "weeder_courses": [
+              "Calculus I",
+              "Principles of Financial Accounting",
+              "Introduction to Microeconomics",
+              "Statistics and Regression"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.8,
+            "notes": "Extremely competitive for internal transfer, with an internal transfer acceptance rate of 2% in 2019. Recommended GPA of 3.8 or higher, with A- or better in prerequisites like Calculus, Financial Accounting, Microeconomics, and Statistics. Internal transfers can only apply for the Fall semester."
+          }
+        ]
+      },
+      {
+        "name": "Tandon School of Engineering",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 8.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong background in STEM subjects (math, science, computer science) is crucial. Showcase problem-solving skills and innovative thinking.",
+        "housing_profile": "Vibrant urban living in diverse residence halls, community-oriented with social activities. First-year students may be part of the Residential College at the Paulson Center, promoting connections within a 'small community' feel.",
+        "student_archetype": "Ambitious problem-solvers, innovative, technically skilled, often focused on specific engineering or tech fields.",
+        "majors": [
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I",
+              "Calculus II",
+              "Physics I",
+              "Physics II",
+              "General Chemistry",
+              "Introduction to Programming"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CS-UY 1114 Introduction to Programming",
+              "CS-UY 2124 Object-Oriented Programming",
+              "MA-UY 1024 Calculus I for Engineers"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "A technical GPA of at least 2.0 in ECE and CS courses is generally required. Grades of at least C- are required in core CS courses."
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I",
+              "Calculus II",
+              "Physics I",
+              "Physics II",
+              "General Chemistry",
+              "Introduction to Programming"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MA-UY 1024 Calculus I for Engineers",
+              "PH-UY 1013 Mechanics",
+              "EG-UY 1003 Introduction to Engineering & Design"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "A GPA of at least 2.0 in all courses is required for the degree. Specific foundational courses in math, physics, and engineering are critical."
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I",
+              "Calculus II",
+              "Physics I",
+              "Electricity, Magnetism and Fluids",
+              "Introduction to Programming",
+              "Fundamentals of Electric Circuits"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MA-UY 1124 Calculus II for Engineers",
+              "PH-UY 2023 Electricity, Magnetism and Fluids",
+              "ECE-UY 2004 Fundamentals of Electric Circuits",
+              "CS-UY 1114 Introduction to Programming"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "A technical GPA of at least 2.0 is required in all ECE and CS courses. A grade of at least C- is required in CS-UY 1114, ECE-UY 2204, ECE-UY 2004, and ECE-UY 3054."
+          },
+          {
+            "name": "Chemical and Biomolecular Engineering",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "Calculus I",
+              "Calculus II",
+              "General Chemistry I",
+              "General Chemistry II",
+              "Physics I",
+              "Physics II",
+              "Introduction to Engineering"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "MA-UY 1024 Calculus I for Engineers",
+              "CH-UY 1004 General Chemistry I",
+              "EG-UY 1003 Introduction to Engineering & Design"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Degree requires 128 credits with at least a 2.0 GPA in all courses."
+          }
+        ]
+      },
+      {
+        "name": "Tisch School of the Arts",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 8.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Exceptional artistic talent demonstrated through a strong portfolio, audition, or creative submissions. Passion for the arts and storytelling.",
+        "housing_profile": "Vibrant urban living in diverse residence halls, fostering a close-knit university community. First-year students may be part of the Residential College at the Paulson Center, with opportunities for engagement and events.",
+        "student_archetype": "Creative, artistic, expressive, individualistic, often seen as unconventional and dedicated to their craft.",
+        "majors": [
+          {
+            "name": "Film and Television",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Artistic review (portfolio/audition) required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Highly competitive for internal transfers. Artistic review is a critical component of the application. Spring start internal transfer application deadline is April 1st."
+          },
+          {
+            "name": "Drama",
+            "degree_type": "B.F.A.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": "Artistic review (audition) required.",
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Highly competitive for internal transfers. Artistic review is a critical component of the application. Spring start internal transfer application deadline is April 1st."
+          },
+          {
+            "name": "Performance Studies",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "PERF-UT 101 Introduction to Performance Studies",
+              "PERF-UT 102 Performance Theory"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Internal transfer is possible, and requires strong academic standing."
+          }
+        ]
+      },
+      {
+        "name": "Gallatin School of Individualized Study",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 8.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Demonstrate strong intellectual curiosity, self-direction, and an ability to design an interdisciplinary course of study. Emphasize unique academic interests.",
+        "housing_profile": "Vibrant urban living in diverse residence halls, encouraging community formation. First-year students may join the Residential College at the Paulson Center, designed to create a greater sense of connection and belonging.",
+        "student_archetype": "Independent thinkers, highly self-motivated, interdisciplinary, comfortable forging their own academic path.",
+        "majors": [
+          {
+            "name": "Individualized Study (Concentration)",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [],
+            "special_requirements": "Individualized Concentration Plan (Intellectual Autobiography and Plan for Concentration) approved by advisor. Colloquium (oral defense of concentration).",
+            "admissions_pathway": "Holistic Review",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.0,
+            "notes": "Students design their own interdisciplinary concentration. A minimum cumulative GPA of 2.0 is required for academic good standing. Maximum of 64 transfer units allowed. Students with 48+ units or rising juniors must complete a Concentration Planning Worksheet upon admission."
+          }
+        ]
+      },
+      {
+        "name": "Rory Meyers College of Nursing",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 5.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Strong academic performance in science courses, demonstrated interest in healthcare, empathy, and commitment to service.",
+        "housing_profile": "Vibrant urban living in diverse residence halls, offering a 'small community' feel within the city. First-year students may be part of the Residential College at the Paulson Center, featuring themed engagement and faculty interaction.",
+        "student_archetype": "Compassionate, dedicated, scientifically-minded, focused on health and patient care.",
+        "majors": [
+          {
+            "name": "Nursing",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": 3.5,
+            "prerequisite_courses": [
+              "Chemistry with lab (General Chemistry I)",
+              "Microbiology",
+              "Statistics",
+              "Anatomy and Physiology I",
+              "Anatomy and Physiology II",
+              "Nutrition",
+              "Developmental Psychology"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "Chemistry with lab",
+              "Anatomy and Physiology I & II",
+              "Microbiology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.5,
+            "notes": "Prerequisite courses must be completed with a C or better. A strong GPA (around 3.5 or higher) is recommended for transfer students. Students begin nursing coursework after completing liberal arts and science prerequisites."
+          }
+        ]
+      },
+      {
+        "name": "Steinhardt School of Culture, Education, and Human Development",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 8.0,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Showcase passion for fields like education, nutrition, media, or performing arts. Emphasize relevant experiences and a desire to impact human development.",
+        "housing_profile": "Vibrant urban living in diverse residence halls, fostering an inclusive and engaging social environment. The Residential College at the Paulson Center is available for first-year students.",
+        "student_archetype": "Socially conscious, creative, often interested in public service, education, or arts integration, with a global mindset.",
+        "majors": [
+          {
+            "name": "Applied Psychology",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "APSY-UE 2 Introduction to Psychology and Its Principles"
+            ],
+            "minimum_gpa_to_declare": 2.7,
+            "weeder_courses": [
+              "APSY-UE 2 Introduction to Psychology and Its Principles",
+              "APSY-UE 10 Developmental Psychology"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 2.7,
+            "notes": "To transfer for sophomore year, APSY-UE 2 with B- or better is required. For junior year, APSY-UE 2 and APSY-UE 10 with B- or better are required. Recommended 2.7 GPA or better to make satisfactory academic progress."
+          },
+          {
+            "name": "Media, Culture, and Communication",
+            "degree_type": "B.S.",
+            "is_impacted": true,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "MCC-UE 0001",
+              "MCC-UE 003"
+            ],
+            "minimum_gpa_to_declare": 3.0,
+            "weeder_courses": [
+              "MCC-UE 0001",
+              "MCC-UE 003",
+              "MCC-UE 014"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Direct Admit",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": 3.0,
+            "notes": "MCC only accepts transfers for the Fall semester. Students must complete MCC-UE 0001 and MCC-UE 003 with a B- or better in each course *before applying*. A B (3.0) cumulative GPA is recommended. Receiving below a B- in two or more MCC core courses may require exploring other major options."
+          }
+        ]
+      },
+      {
+        "name": "Liberal Studies",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": 8.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a strong liberal arts foundation with expansive global programs, often leading to transition into other NYU schools. Emphasize broad academic interests.",
+        "housing_profile": "Vibrant urban living in diverse residence halls, promoting a close-knit university community. First-year students may reside in the Residential College at the Paulson Center, offering unique opportunities for engagement.",
+        "student_archetype": "Globally minded, adaptable, foundational learners, seeking a broad education before specializing.",
+        "majors": []
+      },
+      {
+        "name": "School of Professional Studies",
+        "admissions_model": "Direct Admit",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Focus on career-oriented interests and practical skills in various professional fields. Often attracts non-traditional or working students.",
+        "housing_profile": "Vibrant urban living in diverse residence halls, designed to create a sense of belonging amidst the high energy of NYC. Residential College is primarily for first-year undergraduates.",
+        "student_archetype": "Pragmatic, career-focused, often looking for direct application of knowledge to professional industries.",
+        "majors": []
+      }
+    ],
+    "minors_certificates": [
+      "Data Science Minor",
+      "Social Entrepreneurship Minor",
+      "Business of Entertainment, Media and Technology Minor",
+      "Computer Science Minor"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision I",
+        "date": "2024-11-01",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2025-01-01",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-05",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "One supplemental essay required (250 words) focusing on being a 'bridge builder' and connecting diverse perspectives, backgrounds, or ideas. While sometimes labeled 'optional,' it is strongly encouraged and considered very important."
+      },
+      {
+        "target_program": "Artistic Programs (e.g., Tisch School of the Arts, some Steinhardt programs)",
+        "requirement_type": "Audition/Portfolio",
+        "deadline": null,
+        "details": "Required for specific artistic programs. Applicants are encouraged to submit artistic materials approximately one month before the application deadline."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations",
+        "Character/Personal Qualities"
+      ],
+      "secondary_factors": [
+        "Standardized Test Scores (if submitted)",
+        "Extracurriculars",
+        "Talent/Ability",
+        "First Generation Status",
+        "Geographical Residence",
+        "Volunteer Work",
+        "Work Experience"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Not Considered",
+      "interview_policy": "Not Offered",
+      "legacy_consideration": "None",
+      "first_gen_boost": "Considered",
+      "specific_differentiators": "Seeks 'bridge builders' who can connect people, groups, and ideas; intellectual curiosity, ambition, resilience, creativity; strong fit with a global, diverse, and vibrant urban environment."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive majors if not set on highly selective fields like CS or Business, especially at NYU where Stern has a significantly lower acceptance rate.",
+      "Consider undeclared for Colleges of Arts and Science, as major choice often doesn't impact admission for these schools, allowing for exploration during freshman year.",
+      "Research major-specific admit rates and perceived difficulty before applying; some programs like Psychology, Sociology, or certain majors in Gallatin, Liberal Studies, or the School of Professional Studies at NYU are often considered easier to get into.",
+      "Choose a major that is broad enough to provide several career options.",
+      "Examine the course catalog for degrees you are interested in and choose the one with the most classes you like and the fewest you dislike."
+    ],
+    "college_ranking_tactics": [
+      "Rank colleges based on General Education (GE) requirements, considering their ease and potential overlap with your declared major.",
+      "Prioritize colleges with desirable housing quality and location, as these significantly impact quality of life.",
+      "Look into dining hall options and their operating hours when evaluating colleges.",
+      "Consider campus amenities like gyms, game rooms, and study areas.",
+      "Factor in transportation convenience, such as bus routes and parking availability."
+    ],
+    "alternate_major_strategy": "If applying to a competitive major, list a backup in a different, less competitive college or school. For example, if applying to CS in Engineering, list Cognitive Science in Letters and Science as an alternate. At NYU, if applying to a highly competitive program like Stern, consider listing majors in Tandon (Business and Technology Management), School of Professional Studies (Sports Management, Real Estate, Hotel & Tourism Management), or Gallatin as alternate programs, as these may have higher acceptance rates."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 62796,
+        "total_coa": 92062,
+        "housing": 17700
+      },
+      "out_of_state": {
+        "tuition": 62796,
+        "total_coa": 92062,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 37000,
+    "average_merit_aid": 0,
+    "percent_receiving_aid": 46.0,
+    "scholarships": [
+      {
+        "name": "NYU Promise",
+        "type": "Need-Based",
+        "amount": "Meets 100% of Demonstrated Financial Need (full tuition for families under $100k income with typical assets)",
+        "deadline": "Early Decision I: November 10, 2025; Early Decision II: January 10, 2026; Regular Decision: February 1, 2026 (for CSS Profile)",
+        "benefits": "Full demonstrated financial need met without loans",
+        "application_method": "FAFSA and CSS Profile"
+      },
+      {
+        "name": "Presidential Honors Scholars Program",
+        "type": "Merit",
+        "amount": "Up to $32,000 annually, renewable for four years",
+        "deadline": "Automatic consideration with admission application (apply by priority deadline)",
+        "benefits": "Seminars, faculty mentoring, research grants, study away opportunities, leadership and service activities",
+        "application_method": "Automatic Consideration with Common Application"
+      },
+      {
+        "name": "Martin Luther King, Jr. Scholars Program",
+        "type": "Merit",
+        "amount": "Full-ride scholarship",
+        "deadline": "Express interest on Common Application and select on NYU Writing Supplement",
+        "benefits": "High-impact experiences including seminars, service-learning, funding for research/unpaid internships, global/domestic travel",
+        "application_method": "Common Application + NYU Writing Supplement"
+      },
+      {
+        "name": "NYU Stern Scholars Program",
+        "type": "Merit",
+        "amount": "Full-ride scholarship (tuition, fees, and sometimes room and board)",
+        "deadline": "Automatic consideration (for incoming Stern students)",
+        "benefits": "Bespoke learning experiences, academic excellence, community building, career readiness",
+        "application_method": "Automatic Consideration upon admission to Stern School of Business"
+      },
+      {
+        "name": "Meyers Nursing Scholars Program",
+        "type": "Need/Merit",
+        "amount": "Meets full demonstrated financial need",
+        "deadline": "Automatic consideration upon admission to Rory Meyers College of Nursing",
+        "benefits": "Supports two incoming first-year students, preference for first-generation, high-achieving with financial need",
+        "application_method": "Automatic Consideration upon admission to Rory Meyers College of Nursing"
+      },
+      {
+        "name": "Distinguished Scholars Award (NYU SPS Graduate)",
+        "type": "Merit",
+        "amount": "$7,000 to $11,000 over two years",
+        "deadline": "Apply by the first-round application deadline for guaranteed consideration",
+        "benefits": "Support for new graduate students in NYU School of Professional Studies",
+        "application_method": "Automatic consideration based on application for admission; no additional application or FAFSA required"
+      },
+      {
+        "name": "AnBryce Scholarship Program (NYU Law)",
+        "type": "Merit/Need",
+        "amount": "Full-tuition scholarship",
+        "deadline": "Indicate interest on NYU Law application",
+        "benefits": "Mentoring, networking opportunities, career support for first-generation law students",
+        "application_method": "Indicate interest on NYU Law application"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Score of 4 or 5 grants credit for most exams",
+      "exceptions": [
+        "Some departments may require specific scores or have different policies",
+        "No credit awarded for studio art or business examinations",
+        "Credit for Computer Science may not count toward the major",
+        "History major has a maximum of 4 AP credits",
+        "Latin and German majors may not have course requirements reduced by AP credit",
+        "Students cannot receive credit for both the AP examination and the equivalent NYU course",
+        "No credit awarded for Seminar and Research courses in the AP/Cambridge Capstone program"
+      ],
+      "usage": "Can satisfy general education requirements, some major prerequisites, and elective credits. Up to 8 points can be allocated to general education requirements, with additional credits as electives. Maximum advanced standing credits is 32."
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with 6+ grant credit, up to 8 credits per exam",
+      "diploma_bonus": true
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "Transfer credit awarded for post-secondary courses taken within a 10-year period prior to matriculation; minimum grade of C or better required; courses must be applicable to the degree program requirements and correspond to NYU courses; maximum of 64 transfer credits for a bachelor's degree for most schools for external transfer students, with exceptions for Steinhardt (up to 72) and Division of Applied Undergraduate Studies (DAUS) (up to 80); first-year students can receive a maximum of 32 transfer credits; no advanced standing offered at NYU Abu Dhabi or NYU Shanghai; generally no transfer credit for non-traditional learning formats (with exceptions for the School of Professional Studies); no transfer credit for physical education courses; first-year students cannot transfer expository writing courses; cannot earn credit for the same subject matter through a combination of AP, IB, A Level, and/or other international exams"
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, including high GPA and rigorous coursework",
+      "Demonstrated talent and ability, especially relevant for specific programs",
+      "Well-written, authentic essays that reflect self-awareness and fit with NYU",
+      "Leadership in extracurricular activities",
+      "Strong standardized test scores (if submitted), considered \"very important\""
+    ],
+    "common_activities": [
+      "Research experience, particularly with a global outlook or social impact",
+      "Leadership roles in school clubs and organizations (e.g., Model UN, Debate Society, GirlUp club)",
+      "Community service and fundraising campaigns, especially those addressing social issues",
+      "Involvement in arts and humanities, reflecting personal passions",
+      "Internships and practical experiences related to academic interests"
+    ],
+    "essay_tips": [
+      "Be specific and detailed about why NYU is the right fit for you and your chosen program",
+      "Show, don't tell, using anecdotes and examples to illustrate your qualities and experiences",
+      "Connect your experiences to NYU's dynamic, interconnected, and global academic community, emphasizing \"bridge-builder\" qualities",
+      "Be authentic and genuinely share something new about yourself; avoid generic statements",
+      "Proofread thoroughly by reading your writing out loud to catch errors"
+    ],
+    "red_flags": [
+      "Generic essays that could apply to any institution",
+      "Submitting extra, unrequested letters of recommendation beyond the specified limit",
+      "Waiting until the last minute to submit applications, especially for artistic programs with portfolios/auditions",
+      "Obsessing over message boards and forums for admissions predictions, as they are often incorrect",
+      "Using a current school email address that may become inaccessible after leaving"
+    ],
+    "insights": [
+      "NYU is highly selective, with acceptance rates around 9-12%",
+      "While some sources indicate demonstrated interest is not a significant factor, others state it is \"considered\" and can be valuable through engagement with the university",
+      "Applying Early Decision is one of the strongest ways to demonstrate interest",
+      "The university values diversity in its student body, with students from all 50 states and over 130 countries",
+      "Many students value the independence and extensive opportunities for internships, research, and cultural activities that come with NYU's urban and global presence"
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 82509,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 10.8,
+    "top_employers": [
+      "Google",
+      "Amazon",
+      "Meta",
+      "McKinsey & Company",
+      "Deloitte",
+      "JPMorgan Chase",
+      "Goldman Sachs",
+      "Morgan Stanley"
+    ],
+    "loan_default_rate": 2.2
+  },
+  "student_retention": {
+    "freshman_retention_rate": 96.0,
+    "graduation_rate_4_year": 76.0,
+    "graduation_rate_6_year": 89.0
+  }
+}

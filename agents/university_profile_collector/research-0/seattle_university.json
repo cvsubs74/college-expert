@@ -1,0 +1,355 @@
+{
+  "university_profile": {
+    "_id": "seattle_university",
+    "university_name": "Seattle University",
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://www.seattleu.edu",
+      "https://www.usnews.com/best-colleges/seattle-university-3790"
+    ],
+    "metadata": {
+      "official_name": "Seattle University",
+      "location": {
+        "city": "Seattle",
+        "state": "WA",
+        "type": "Private"
+      }
+    },
+    "strategic_profile": {
+      "executive_summary": "Seattle University is a premier Jesuit Catholic institution located in the heart of Seattle's Capitol Hill neighborhood, emphasizing the education of the whole person and professional formation. The university is distinguished by its commitment to social justice, sustainability, and high-impact undergraduate research within a vibrant urban setting.",
+      "market_position": "Elite Private",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 151,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "Acceptance rates have tightened significantly, dropping from 85.1% in 2022 to approximately 76% in the most recent cycle.",
+          "implication": "Prospective students should treat the application as increasingly competitive and leverage the optional supplemental essays to demonstrate alignment with Jesuit values."
+        },
+        {
+          "category": "Value & Mobility",
+          "insight": "Ranked #65 nationally for 'Best Value' and recognized as the top private university in Washington for social mobility.",
+          "implication": "The school is an attractive option for high-achieving students seeking a high ROI and strong institutional support for diverse backgrounds."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A close-knit, mission-driven community where 180+ student clubs and NCAA Division I athletics coexist with a deep-seated culture of service-learning and political awareness.",
+        "transportation_impact": "As an urban campus with a high commuter population, the university integrates life through 'Commuter Link' spaces, subsidized ORCA transit cards, and facilities like commuter showers to maintain a unified campus feel.",
+        "research_impact": "Strong emphasis on 'Engaged Student Scholarship' through the Office of Undergraduate Research, which facilitates faculty-mentored projects and hosts the annual Student Research and Creativity Conference (SRCCon)."
+      }
+    },
+    "admissions_profile": {
+      "current": {
+        "overall_acceptance_rate": 76.9,
+        "international_acceptance_rate": 87.5,
+        "transfer_acceptance_rate": 62.5,
+        "admits_class_size": 6514,
+        "is_test_optional": true,
+        "is_waitlist_active": true,
+        "test_policy_details": "Test Optional; for the most recent class, only about 8% of enrolled students submitted SAT scores and 1% submitted ACT scores.",
+        "early_admission_stats": [
+          {
+            "plan_type": "EA",
+            "acceptance_rate": 90.7
+          }
+        ],
+        "waitlist_stats": {
+          "offered_spots": 133,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "is_waitlist_ranked": false
+        }
+      },
+      "trends": [
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 8976,
+          "admits_total": 6826,
+          "enrolled_total": 1049,
+          "acceptance_rate_overall": 76.1,
+          "yield_rate": 15.4,
+          "notes": "Seattle University reported a significant decrease in acceptance rate from 85.1% to 76.1% this cycle."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 7936,
+          "admits_total": 6755,
+          "enrolled_total": 1004,
+          "acceptance_rate_overall": 85.1,
+          "yield_rate": 14.9
+        },
+        {
+          "year": 2022,
+          "cycle_name": "Class of 2026",
+          "applications_total": 8277,
+          "admits_total": 6795,
+          "enrolled_total": 977,
+          "acceptance_rate_overall": 82.1,
+          "yield_rate": 14.4
+        },
+        {
+          "year": 2021,
+          "cycle_name": "Class of 2025",
+          "enrolled_total": 920,
+          "acceptance_rate_overall": 83.2,
+          "yield_rate": 12.2
+        }
+      ],
+      "admitted_student_profile": {
+        "gpa": {
+          "weighted_middle_50": "3.90-4.20",
+          "unweighted_middle_50": "3.50-4.00",
+          "average_unweighted": 3.67,
+          "percentile_25": "3.50",
+          "percentile_75": "4.00"
+        },
+        "testing": {
+          "sat_composite_middle_50": "1220-1410",
+          "sat_reading_middle_50": "620-710",
+          "sat_math_middle_50": "580-720",
+          "act_composite_middle_50": "23-30",
+          "submission_rate": 24.0,
+          "policy_note": "Test-optional; SAT math of 560+ and ACT math of 23+ recommended if submitting."
+        },
+        "demographics": {
+          "first_gen_percentage": 18.0,
+          "international_percentage": 7.4,
+          "religious_affiliation": 30.0,
+          "geographic_breakdown": [
+            { "region": "Washington (In-State)", "percentage": 54.3 },
+            { "region": "California", "percentage": 32.0 },
+            { "region": "Other US States", "percentage": 11.0 },
+            { "region": "International", "percentage": 2.7 }
+          ],
+          "gender_breakdown": {
+            "men": 39.0,
+            "women": 61.0,
+            "non_binary": 1.0
+          },
+          "racial_breakdown": {
+            "white": 31.0,
+            "black_african_american": 8.1,
+            "hispanic_latino": 17.1,
+            "asian": 30.3,
+            "native_american_alaskan": 0.2,
+            "pacific_islander": 1.2,
+            "two_or_more_races": 11.1,
+            "unknown": 1.1,
+            "non_resident_alien": 7.4
+          }
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges and Schools",
+      "colleges": [
+        {
+          "name": "Albers School of Business and Economics",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 60.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Candidates should emphasize ethical leadership. Strong quantitative preparation is recommended for competitive majors like Finance and Accounting.",
+          "housing_profile": "First-year students often live in Bellarmine Hall, which houses the Albers advising satellite.",
+          "student_archetype": "Ethical entrepreneurs and socially-conscious professionals",
+          "majors": [
+            {
+              "name": "Finance",
+              "degree_type": "B.A.B.A.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.44,
+              "prerequisite_courses": ["Business Calculus", "Statistics", "Macroeconomics", "Microeconomics", "Financial Accounting", "Managerial Accounting"],
+              "minimum_gpa_to_declare": 2.25,
+              "weeder_courses": ["ACCT 2300 Financial Accounting", "ECON 2110 Principles of Microeconomics"],
+              "admissions_pathway": "Direct or Internal Transfer",
+              "curriculum": {
+                "core_courses": ["ACCT 2300 Financial Accounting", "ACCT 2310 Managerial Accounting", "ECON 2110 Microeconomics", "FINC 3400 Business Finance"],
+                "total_units": 180,
+                "major_units": 105
+              }
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.A.B.A.",
+              "is_impacted": false,
+              "prerequisite_courses": ["Pre-Calculus", "Financial Accounting", "Managerial Accounting"],
+              "minimum_gpa_to_declare": 2.25,
+              "admissions_pathway": "Direct or Internal Transfer"
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.A.B.A.",
+              "is_impacted": false,
+              "prerequisite_courses": ["Statistics", "Microeconomics"],
+              "minimum_gpa_to_declare": 2.25,
+              "admissions_pathway": "Direct or Internal Transfer",
+              "curriculum": {
+                "core_courses": ["MKTG 3500 Introduction to Marketing", "MKTG 3510 Consumer Behavior", "ECON 2110 Microeconomics"],
+                "total_units": 180,
+                "major_units": 105
+              }
+            }
+          ]
+        },
+        {
+          "name": "College of Arts and Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 80.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Ideal for students seeking a traditional liberal arts education grounded in Jesuit values.",
+          "student_archetype": "Intellectually curious and socially active global citizens",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A. / B.S.",
+              "is_impacted": false,
+              "prerequisite_courses": ["Introductory Psychology"],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": ["PSYC 2010 Statistics", "PSYC 2020 Research Methods"],
+              "admissions_pathway": "Open Major",
+              "curriculum": {
+                "core_courses": ["PSYC 1200 Introductory Psychology", "PSYC 2010 Statistics and Data Analysis", "PSYC 2020 Research Design and Methods"],
+                "total_units": 180,
+                "major_units": 65
+              }
+            },
+            {
+              "name": "Criminal Justice",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "minimum_gpa_to_declare": 2.0,
+              "admissions_pathway": "Open Major"
+            }
+          ]
+        },
+        {
+          "name": "College of Science and Engineering",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 65.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Focus on project-based learning. Applicants should demonstrate a strong STEM foundation.",
+          "student_archetype": "Purpose-driven innovators and collaborative problem-solvers",
+          "majors": [
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.85,
+              "prerequisite_courses": ["Programming I & II", "Calculus I", "Calculus II", "Calculus III", "Linear Algebra"],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": ["CPSC 1430 Programming II", "MATH 1335 Calculus II"],
+              "admissions_pathway": "Direct or Internal Transfer",
+              "curriculum": {
+                "core_courses": ["CPSC 1420 Programming I", "CPSC 2430 Data Structures", "CPSC 4100 Design and Analysis of Algorithms"],
+                "total_units": 180,
+                "major_units": 122
+              }
+            }
+          ]
+        },
+        {
+          "name": "College of Nursing and Health Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 15.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Highly competitive cohort-based program. Requires a dedicated supplemental essay.",
+          "student_archetype": "Values-based and resilient healthcare leaders",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "average_gpa_admitted": 3.67,
+              "prerequisite_courses": ["Anatomy & Physiology I & II", "Microbiology", "Introductory Chemistry", "Introductory Biology", "Statistics"],
+              "minimum_gpa_to_declare": 2.75,
+              "weeder_courses": ["BIOL 2200 Anatomy & Physiology I", "BIOL 2220 Microbiology"],
+              "admissions_pathway": "Direct Admit / Junior Transfer",
+              "curriculum": {
+                "core_courses": ["NURS 2100 Physical Assessment", "NURS 3100 Nursing Skills Lab", "BIOL 2200 Human Anatomy & Physiology I"],
+                "total_units": 137,
+                "major_units": 86
+              }
+            }
+          ]
+        }
+      ],
+      "minors_certificates": [
+        "African & African American Studies Minor",
+        "Entrepreneurship & Innovation Minor",
+        "Data Science Minor",
+        "Catholic Studies Minor",
+        "Diagnostic Ultrasound Certificate"
+      ]
+    },
+    "application_process": {
+      "platforms": ["Common App"],
+      "application_deadlines": [
+        { "plan_type": "Early Action", "date": "2024-11-15", "is_binding": false },
+        { "plan_type": "Regular Decision", "date": "2025-01-15", "is_binding": false },
+        { "plan_type": "Rolling Admission", "date": "2025-01-25", "is_binding": false }
+      ],
+      "supplemental_requirements": [
+        { "target_program": "All", "requirement_type": "Essays", "details": "Two optional supplemental essays (250 words each): 'Why Seattle U' and 'Equity, Inclusion, and Belonging'." },
+        { "target_program": "Nursing/Diagnostic Ultrasound", "requirement_type": "Program Essay", "details": "Required essay explaining interest in the profession." }
+      ],
+      "holistic_factors": {
+        "primary_factors": ["Course Rigor", "GPA", "Application Essay", "Recommendations"],
+        "essay_importance": "Critical",
+        "demonstrated_interest": "Considered",
+        "specific_differentiators": "Emphasis on Jesuit values, social justice, and leadership."
+      }
+    },
+    "strategy_tactics": {
+      "application_strategy": {
+        "major_selection_tactics": [
+          "Apply directly to high-demand programs like Nursing or Business.",
+          "Use 'Pre-Science' or 'Pre-Engineering' if math is below Calculus level.",
+          "Leverage test-optional policy if scores are below 1200/25."
+        ],
+        "alternate_major_strategy": "List a second-choice major in the College of Arts and Sciences if applying to competitive tracks."
+      }
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": { "tuition": 56721, "total_coa": 75128, "housing": 15702 },
+        "out_of_state": { "tuition": 56721, "total_coa": 75128, "housing": 15702 }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 41627,
+      "average_merit_aid": 23911,
+      "percent_receiving_aid": 95.8
+    },
+    "scholarships": [
+      { "name": "Sullivan Scholarship", "type": "Merit/Leadership (Full Ride)", "amount": "Full tuition, room, and board", "deadline": "2026-01-15" },
+      { "name": "Presidential Scholarship", "type": "Merit", "amount": "$15,000/year", "application_method": "Automatic Consideration" },
+      { "name": "Trustees Scholarship", "type": "Merit", "amount": "$12,000/year", "application_method": "Automatic Consideration" },
+      { "name": "Bannan Scholarship", "type": "Departmental", "amount": "$5,000/year", "benefits": "Specific to STEM majors" }
+    ],
+    "credit_policies": {
+      "philosophy": "Generous Credit",
+      "ap_policy": { "general_rule": "Score of 3+ grants credit; 4+ typically satisfies Core requirements." },
+      "ib_policy": { "general_rule": "HL exams with scores of 5, 6, or 7 grant credit." },
+      "transfer_articulation": { "restrictions": "90 quarter unit cap for lower-division credits." }
+    },
+    "student_insights": {
+      "what_it_takes": ["Alignment with Jesuit values", "Solid academic preparation", "Interest in urban service"],
+      "essay_tips": ["Connect goals to Jesuit ethos", "Mention specific SU programs", "Focus on equity for supplemental prompt"],
+      "red_flags": ["Recycled essays", "Senior year grade decline", "Broad cliches"],
+      "insights": ["Small class sizes (11:1 ratio)", "Emphasis on 'care for the whole person'", "Prime urban location in Capitol Hill"]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 75272,
+      "employment_rate_2yr": 95.0,
+      "top_employers": ["Amazon", "Microsoft", "Boeing", "Starbucks", "Google"],
+      "loan_default_rate": 1.9,
+      "student_retention": {
+        "freshman_retention_rate": 85.0,
+        "graduation_rate_4_year": 66.0,
+        "graduation_rate_6_year": 77.0
+      }
+    }
+  }
+}

@@ -1,0 +1,781 @@
+{
+  "university_profile": {
+    "_id": "simmons_university",
+    "name": "Simmons University",
+    "location": {
+      "city": "Boston",
+      "state": "MA",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-19",
+    "report_source_files": [
+      "https://www.simmons.edu/about/rankings-and-awards",
+      "https://www.usnews.com/best-colleges/simmons-university-2151"
+    ],
+    "strategic_profile": {
+      "executive_summary": "Simmons University is a private institution in Boston known for its women-centered undergraduate curriculum and strong professional graduate programs in nursing, social work, and library science. It emphasizes experiential learning and leadership, leveraging its location in a global medical and educational hub.",
+      "market_position": "Hidden Gem",
+      "admissions_philosophy": "Holistic review",
+      "us_news_rank": 165,
+      "analyst_takeaways": [
+        {
+          "category": "Selectivity",
+          "insight": "The undergraduate acceptance rate has trended downward from approximately 84% in 2021 to 66% for the 2024-2025 cycle.",
+          "implication": "The university is becoming increasingly competitive; applicants should prioritize articulating a strong fit for its women-centered leadership mission."
+        },
+        {
+          "category": "Infrastructure",
+          "insight": "The 'One Simmons' project is consolidating the dual-campus model into a single, modernized urban hub including a 21-story Living and Learning Center.",
+          "implication": "Prospective students will benefit from significantly upgraded facilities and a more cohesive on-campus social environment."
+        },
+        {
+          "category": "ROI and Value",
+          "insight": "Simmons consistently ranks highly for social mobility (#126) and best value (#33).",
+          "implication": "The institution is a strong choice for students focused on career-readiness and high graduate outcomes in specialized fields like healthcare and library science."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "A small-college feel within a massive student city; students have access to the 'Colleges of the Fenway' (COF) consortium for cross-registration and shared social events.",
+        "transportation_impact": "Highly urban and transit-dependent; campus life is shaped by the MBTA 'T' (Green Line) and MASCO shuttles connecting the residential and academic sectors.",
+        "research_impact": "Significant research output in healthcare and information sciences, particularly within the School of Library and Information Science (SLIS) which is ranked in the top 10 nationally."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 69.98,
+      "in_state_acceptance_rate": 0.0,
+      "out_of_state_acceptance_rate": 0.0,
+      "international_acceptance_rate": 0.0,
+      "transfer_acceptance_rate": 0.0,
+      "admits_class_size": 3340,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": 0,
+          "admits": 0,
+          "acceptance_rate": 0.0,
+          "class_fill_percentage": 0.0
+        }
+      ]
+    },
+    "admissions_trends": [
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 4871,
+        "admits_total": 3215,
+        "enrolled_total": 338,
+        "acceptance_rate_overall": 66.0,
+        "yield_rate": 10.5,
+        "waitlist_stats": {
+          "year": 2024,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed. Simmons is a women's university for undergraduates. Application numbers increased significantly over the last three years."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 4001,
+        "admits_total": 3059,
+        "enrolled_total": 361,
+        "acceptance_rate_overall": 76.5,
+        "yield_rate": 11.8,
+        "waitlist_stats": {
+          "year": 2023,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 3516,
+        "admits_total": 2937,
+        "enrolled_total": 450,
+        "acceptance_rate_overall": 83.5,
+        "yield_rate": 15.3,
+        "waitlist_stats": {
+          "year": 2022,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 2905,
+        "admits_total": 2398,
+        "enrolled_total": 451,
+        "acceptance_rate_overall": 82.5,
+        "yield_rate": 18.8,
+        "waitlist_stats": {
+          "year": 2021,
+          "offered_spots": 0,
+          "accepted_spots": 0,
+          "admitted_from_waitlist": 0,
+          "waitlist_admit_rate": 0.0,
+          "is_waitlist_ranked": false
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "3.50-4.00",
+        "unweighted_middle_50": "3.30-3.80",
+        "average_weighted": 3.77,
+        "percentile_25": "3.50",
+        "percentile_75": "4.00",
+        "notes": "Simmons employs a holistic review process; the average weighted GPA for the Class of 2028 was 3.77."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1210-1430",
+        "sat_reading_middle_50": "625-700",
+        "sat_math_middle_50": "590-680",
+        "act_composite_middle_50": "27-32",
+        "submission_rate": 10.0,
+        "policy_note": "Test-optional; 90% of the Class of 2028 applied without submitting test scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 43.0,
+        "legacy_percentage": 0.0,
+        "international_percentage": 4.3,
+        "geographic_breakdown": [
+          {
+            "region": "Massachusetts",
+            "percentage": 57.3
+          },
+          {
+            "region": "Other US States",
+            "percentage": 38.4
+          },
+          {
+            "region": "International",
+            "percentage": 4.3
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 0,
+            "admits": 0,
+            "acceptance_rate": 0.0,
+            "note": "Undergraduate programs are women-centered; men are not admitted to undergraduate degrees."
+          },
+          "women": {
+            "applicants": 4732,
+            "admits": 3316,
+            "acceptance_rate": 70.1,
+            "note": "Accepts applicants assigned female at birth and those who self-identify as women."
+          },
+          "non_binary": 0.0
+        },
+        "racial_breakdown": {
+          "white": 51.1,
+          "black_african_american": 10.7,
+          "hispanic_latino": 15.8,
+          "asian": 11.3,
+          "native_american_alaskan": 0.1,
+          "pacific_islander": 0.0,
+          "two_or_more_races": 3.5,
+          "unknown": 7.5,
+          "non_resident_alien": 4.3
+        },
+        "religious_affiliation": "Not specified"
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Schools",
+      "colleges": [
+        {
+          "name": "School of Nursing",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 45.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Highly competitive; requires 4 years of high school science and a strong commitment to clinical excellence.",
+          "housing_profile": "Standard undergraduate housing; many students participate in the 'Dotson Bridge and Mentoring Program' for peer support.",
+          "student_archetype": "Compassionate, high-achieving clinicians",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.N.",
+              "is_impacted": true,
+              "acceptance_rate": 66.0,
+              "average_gpa_admitted": 3.7,
+              "prerequisite_courses": [
+                "Anatomy and Physiology I",
+                "Anatomy and Physiology II",
+                "Microbiology",
+                "General Chemistry"
+              ],
+              "minimum_gpa_to_declare": 3.0,
+              "weeder_courses": [
+                "BIOL 231 Anatomy and Physiology I",
+                "CHEM 110 General Chemistry"
+              ],
+              "special_requirements": "Requires a C+ or better in all science prerequisites; only one retake allowed for any science course.",
+              "admissions_pathway": "Direct Admit",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "core_courses": [
+                  "NURS 228 Nursing Theory & Evidence Based Practice",
+                  "NURS 295 Fundamental Skills and Health Assessment",
+                  "NURS 331 Pharmacology",
+                  "NURS 332 Medical Surgical Nursing I",
+                  "NURS 335 Psychiatric & Mental Health Nursing",
+                  "NURS 347 Complex Nursing Care Management"
+                ],
+                "electives": [
+                  "NURS 387 Healthcare Policy",
+                  "NURS 2XX Health Promotion",
+                  "BIOL 123N Principles of Microbiology"
+                ],
+                "total_units": 128,
+                "major_units": 64
+              },
+              "notable_professors": [
+                "Dr. Heather Shlosser (Dean)",
+                "Dr. Chaluza Kapaale (School Chair)",
+                "Dr. LaDonna Christian (Director, Dotson Bridge Program)"
+              ],
+              "notes": "Internal transfer is highly competitive and space-available only."
+            }
+          ]
+        },
+        {
+          "name": "Gwen Ifill School of Media, Humanities, and Social Sciences",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 66.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Perfect for students interested in interdisciplinary study; look for the new integrated Humanities major.",
+          "housing_profile": "Often found in traditional corridor-style halls like Dix or Simmons Hall.",
+          "student_archetype": "Civic-minded storytellers and activists",
+          "majors": [
+            {
+              "name": "Communications",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 66.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [],
+              "special_requirements": "Students must choose a concentration: Design, Journalism, or Integrated Media.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "COMM 121 Visual Communication",
+                  "COMM 122 Media Writing Bootcamp",
+                  "COMM 124 Media, Messages and Society",
+                  "COMM 110 2D Design Technology",
+                  "COMM 390 Studio Five (Capstone)"
+                ],
+                "electives": [
+                  "COMM 263 Social Media Journalism",
+                  "COMM 210 Graphic Design",
+                  "COMM 323 Digital Cultures"
+                ],
+                "total_units": 128,
+                "major_units": 42
+              },
+              "notable_professors": [
+                "Dr. Ammina Kothari (Dean)",
+                "Dr. Briana Martino (Department Chair)"
+              ],
+              "notes": "Home to 'Studio Five,' a student-run professional communications agency."
+            },
+            {
+              "name": "Political Science",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 66.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [],
+              "special_requirements": "Includes an International Relations track.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [],
+                "electives": [],
+                "total_units": 128,
+                "major_units": 0
+              },
+              "notable_professors": [
+                "Dr. Lena Zuckerwise (Department Chair)",
+                "Dr. Abel Amado (International Relations)"
+              ],
+              "notes": "International Relations was absorbed into this major as a track in 2024."
+            }
+          ]
+        },
+        {
+          "name": "School of Management",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 66.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Focuses on female leadership in business; accredited by AACSB.",
+          "housing_profile": "Residential campus dorms; easy access to the Academic campus via a short walk.",
+          "student_archetype": "Strategic thinkers and inclusive leaders",
+          "majors": [
+            {
+              "name": "Business & Management",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 66.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "ACCT 110 Financial Accounting"
+              ],
+              "special_requirements": "Concentrations in Finance, Marketing, and Retail Management.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [],
+                "electives": [],
+                "total_units": 128,
+                "major_units": 0
+              },
+              "notable_professors": [
+                "Dr. Astrid Sheil (Dean)",
+                "Dr. Erin DeCurtis (Associate Dean)"
+              ],
+              "notes": "Focuses on female leadership in business."
+            }
+          ]
+        },
+        {
+          "name": "School of Sciences and Health Professions",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 66.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Requires 4 years of high school science for Nutrition and Physical Therapy tracks.",
+          "housing_profile": "Traditional dorms; Honors students in this school often reside in Morse Hall.",
+          "student_archetype": "Evidence-based problem-solvers",
+          "majors": [
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": 66.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "General Chemistry I",
+                "Calculus I"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "CHEM 224 Organic Chemistry I",
+                "BIOL 225 Cell Biology"
+              ],
+              "special_requirements": "Environmental Science is now a track within Biology.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "BIOL 113 General Biology",
+                  "BIOL 218 Organismal Diversity",
+                  "BIOL 222 Animal Physiology",
+                  "BIOL 225 Cell Biology",
+                  "BIOL 336 Genetics",
+                  "CHEM 224 Organic Chemistry I",
+                  "CHEM 225 Organic Chemistry II"
+                ],
+                "electives": [
+                  "BIOL 341 Microbiology",
+                  "BIOL 345 Biochemistry",
+                  "BIOL 333 Marine Biology"
+                ],
+                "total_units": 128,
+                "major_units": 56
+              },
+              "notable_professors": [
+                "Dr. Jane Lopilato (Department Chair)"
+              ],
+              "notes": "Environmental Science is now a track within the Biology major."
+            },
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "acceptance_rate": 66.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "Introduction to Psychological Science"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "PSYC 203 Research Methods in Psychology"
+              ],
+              "special_requirements": "Strong pathways to the School of Social Work graduate programs.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "PSYC 101 Introduction to Psychological Science",
+                  "STAT 118 Introductory Statistics",
+                  "PSYC 201 Biological Psychology",
+                  "PSYC 203 Research Methods in Psychology",
+                  "PSYC 345 Capstone Research"
+                ],
+                "electives": [
+                  "PSYC 235 Developmental Psychology",
+                  "PSYC 231 Psychopathology",
+                  "PSYC 244 Drugs and Behavior"
+                ],
+                "total_units": 128,
+                "major_units": 40
+              },
+              "notable_professors": [
+                "Dr. Amanda Carey (Department Chair)"
+              ],
+              "notes": "Popular major."
+            },
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "acceptance_rate": 66.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "Foundations of IT"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "CS 232 Data Structures",
+                "MATH 210 Discrete Mathematics"
+              ],
+              "special_requirements": "Offers a 3+1 program for Library and Information Science MS.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "CS 110 Foundations of IT",
+                  "CS 112 Intro to CS",
+                  "CS 221 Database Systems",
+                  "CS 232 Data Structures",
+                  "CS 245 Computing Systems",
+                  "CS 330 Programming Languages",
+                  "CS 332 Algorithms",
+                  "CS 335 Capstone"
+                ],
+                "electives": [
+                  "CS 327 Cybersecurity",
+                  "CS 321 Web Programming"
+                ],
+                "total_units": 128,
+                "major_units": 44
+              },
+              "notable_professors": [
+                "Dr. Amber Stubbs (Department Chair)"
+              ],
+              "notes": "3+1 accelerated master's pathway available."
+            },
+            {
+              "name": "Exercise Science",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 66.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "BIOL 113",
+                "CHEM 111"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "BIOL 231 Anatomy and Physiology I"
+              ],
+              "special_requirements": "Requires 3.25 GPA in science prerequisites for DPT phase.",
+              "admissions_pathway": "Direct Entry Track (3+3 or 4+3)",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 3.0,
+              "curriculum": {
+                "core_courses": [],
+                "electives": [],
+                "total_units": 128,
+                "major_units": 0
+              },
+              "notable_professors": [
+                "Dr. Paul Geisler (Dean)"
+              ],
+              "notes": "Primary pathway for the accelerated Physical Therapy program."
+            }
+          ]
+        },
+        {
+          "name": "School of Social Work",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 66.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Strong emphasis on social justice; offers accelerated BSW to MSW pathways.",
+          "housing_profile": "Urban gated residence campus; communal living environments.",
+          "student_archetype": "Advocates for equity and social change",
+          "majors": [
+            {
+              "name": "Social Work",
+              "degree_type": "B.S.W.",
+              "is_impacted": false,
+              "acceptance_rate": 66.0,
+              "average_gpa_admitted": 0.0,
+              "prerequisite_courses": [
+                "Introduction to Social Work"
+              ],
+              "minimum_gpa_to_declare": 2.0,
+              "weeder_courses": [
+                "SW 351 Social Work Practice I"
+              ],
+              "special_requirements": "Requires 425 hours of fieldwork/practicum in the senior year.",
+              "admissions_pathway": "Open Major",
+              "internal_transfer_allowed": true,
+              "direct_admit_only": false,
+              "internal_transfer_gpa": 2.0,
+              "curriculum": {
+                "core_courses": [
+                  "SW 101 Intro to Social Work",
+                  "SW 200 Policy",
+                  "SW 253 Human Behavior",
+                  "SW 351 Practice I",
+                  "SW 370 Field Placement",
+                  "SOCI 249 Inequalities"
+                ],
+                "electives": [
+                  "SW 255 Interviewing",
+                  "SOCI 239 Research"
+                ],
+                "total_units": 128,
+                "major_units": 72
+              },
+              "notable_professors": [
+                "Dr. Gary Bailey (MSW Program Director)"
+              ],
+              "notes": "Simmons is home to the first school of social work at a women's college."
+            }
+          ]
+        },
+        {
+          "name": "School of Library and Information Science (SLIS)",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 66.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Unique undergraduate opportunities in Information Science and Web Design.",
+          "housing_profile": "General residence halls; close proximity to the library and tech labs.",
+          "student_archetype": "Tech-savvy information architects",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Data Science and Analytics Minor",
+        "Sustainability Minor",
+        "Law and Justice Minor",
+        "Leadership for Social Impact Minor",
+        "Public Policy Studies Minor",
+        "Health Care Management Minor",
+        "Migration Studies Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Simmons Online Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Action I",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Non-binding; decisions in mid-December"
+        },
+        {
+          "plan_type": "Early Action II",
+          "date": "2024-12-01",
+          "is_binding": false,
+          "notes": "Non-binding; scholarship priority deadline"
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-02-01",
+          "is_binding": false,
+          "notes": "Decisions on a rolling basis after Feb 1"
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Personal Statement",
+          "deadline": "Varies",
+          "details": "Common App personal essay required; no additional general supplemental essays for standard admission."
+        },
+        {
+          "target_program": "Honors Program",
+          "requirement_type": "Essays",
+          "deadline": "2025-02-01",
+          "details": "Two additional essays required: one 150-word short answer and one 400-word response."
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Course Rigor",
+          "Academic GPA",
+          "Application Essay",
+          "Recommendations"
+        ],
+        "secondary_factors": [
+          "Extracurriculars",
+          "Talents",
+          "Character",
+          "Volunteer Work"
+        ],
+        "essay_importance": "High",
+        "demonstrated_interest": "Important",
+        "interview_policy": "Recommended",
+        "legacy_consideration": "Considered",
+        "first_gen_boost": "Moderate",
+        "specific_differentiators": "Commitment to community service and leadership potential reflecting the university mission."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to the 'Exploratory' path if undecided.",
+        "Target 'Health and Exercise Science' for PT pathways.",
+        "Avoid stand-alone sunsetted majors like Economics or Physics."
+      ],
+      "college_ranking_tactics": [
+        "Prioritize Nursing and Health Sciences for Longwood clinical sites.",
+        "Rank Honors Program high for stackable scholarship eligibility."
+      ],
+      "alternate_major_strategy": "List Public Health or Nutrition as an alternate for Nursing applicants."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 46874,
+          "total_coa": 68322,
+          "housing": 17618
+        },
+        "out_of_state": {
+          "tuition": 46874,
+          "total_coa": 68322,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 36796,
+      "average_merit_aid": 24280,
+      "percent_receiving_aid": 93.0,
+      "scholarships": [
+        {
+          "name": "Gilbert and Marcia Kotzen Scholarship",
+          "type": "Merit",
+          "amount": "Full tuition, fees, room and board",
+          "deadline": "2024-12-01",
+          "benefits": "$3,000 stipend",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "Trustee Scholarship",
+          "type": "Merit",
+          "amount": "Up to $31,000 per year",
+          "deadline": "Automatic",
+          "benefits": "Renewable",
+          "application_method": "Automatic Consideration"
+        }
+      ]
+    },
+    "credit_policies": {
+      "philosophy": "Moderate",
+      "ap_policy": {
+        "general_rule": "Scores of 4 or 5 typically earn 4 transfer credits per exam",
+        "exceptions": [
+          "Max 32 combined credits",
+          "AP Chemistry 5 for CHEM 113 credit"
+        ],
+        "usage": "AP credits cannot fulfill Simmons PLAN requirements"
+      },
+      "ib_policy": {
+        "general_rule": "HL exams (5-7) grant 4 credits; SL not accepted.",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transferology",
+          "Transfer Credit Evaluation (TCE)"
+        ],
+        "restrictions": "Max 96 transfer credits; 32 must be completed at Simmons."
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Demonstrated commitment to leadership and social justice",
+        "Competitive academic profile (GPA 3.6+)"
+      ],
+      "common_activities": [
+        "Clinical or volunteer hours in healthcare",
+        "Leadership in advocacy groups"
+      ],
+      "essay_tips": [
+        "Focus on specific academic tracks",
+        "Explicitly mention PLAN curriculum elements"
+      ],
+      "red_flags": [
+        "Generic essays failing to acknowledge women-centered status",
+        "Wrong university name mentioned"
+      ],
+      "insights": [
+        "Personalized acceptance letters",
+        "Strong social mobility focus"
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 63494,
+      "employment_rate_2yr": 99.0,
+      "grad_school_rate": 13.0,
+      "top_employers": [
+        "Boston University",
+        "Cisco",
+        "IBM",
+        "Wayfair",
+        "Wells Fargo"
+      ],
+      "loan_default_rate": 2.1,
+      "student_retention": {
+        "freshman_retention_rate": 81.0,
+        "graduation_rate_4_year": 67.0,
+        "graduation_rate_6_year": 71.0
+      }
+    }
+  }
+}

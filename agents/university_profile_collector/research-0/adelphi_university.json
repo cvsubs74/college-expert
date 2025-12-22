@@ -1,0 +1,653 @@
+{
+  "university_profile": {
+    "_id": "adelphi_university",
+    "metadata": {
+      "official_name": "Adelphi University",
+      "location": {
+        "city": "Garden City",
+        "state": "NY",
+        "type": "Private"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "https://www.adelphi.edu",
+        "https://aupanthers.com",
+        "https://www.usnews.com/best-colleges/adelphi-university-2666"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "Adelphi University is a private research institution in Garden City, New York, recognized for its strong professional programs in nursing, psychology, and business. It combines a small-college feel with the resources of a national university, emphasizing social mobility and personalized student success.",
+      "market_position": "Premier Long Island Private University",
+      "admissions_philosophy": "Holistic review / Test-optional",
+      "us_news_rank": 198,
+      "analyst_takeaways": [
+        {
+          "category": "Academic Momentum",
+          "insight": "The undergraduate nursing program climbed 32 spots to #186 nationally in the 2026 rankings.",
+          "implication": "Adelphi is rapidly becoming a leading regional hub for healthcare education."
+        },
+        {
+          "category": "Social Mobility",
+          "insight": "Ranked #117 for Social Mobility, outperforming many higher-ranked peers.",
+          "implication": "The university is an excellent choice for first-generation and Pell-eligible students seeking high return-on-investment."
+        },
+        {
+          "category": "Admissions Strategy",
+          "insight": "Maintains a test-optional policy with a 78% acceptance rate while shifting focus to GPA rigor and community involvement.",
+          "implication": "Applicants should emphasize leadership and specialized interests to stand out in a holistic pool."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Vibrant and diverse with over 80 student organizations and a strong NCAA Division II athletic culture (Panthers). The campus maintains a 'commuter-friendly' but highly engaged atmosphere with frequent social programming.",
+        "transportation_impact": "The 'Panther Express' shuttle provides seamless real-time connectivity to the LIRR (Nassau Blvd and Mineola stations), allowing students to live in a suburban setting while maintaining 45-minute access to Manhattan for internships and entertainment.",
+        "research_impact": "Robust undergraduate research opportunities through the SPARK Center and Levermore Global Scholars, with significant faculty-led projects in social neuroscience, paleontology, and community health."
+      }
+    },
+    "admissions_current": {
+      "overall_acceptance_rate": 65.9,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": 75.0,
+      "transfer_acceptance_rate": 33.8,
+      "admits_class_size": 12987,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "EA",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": null,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "admissions_trends": {
+      "longitudinal_trends": [
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 19705,
+          "admits_total": 12987,
+          "enrolled_total": 1343,
+          "acceptance_rate_overall": 65.9,
+          "yield_rate": 10.3,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": null
+          },
+          "notes": "Waitlist data not publicly disclosed. Significant increase in applications compared to previous cycle."
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 17111,
+          "admits_total": 13263,
+          "enrolled_total": 1376,
+          "acceptance_rate_overall": 77.5,
+          "yield_rate": 10.4,
+          "waitlist_stats": {
+            "year": 2023,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": null
+          },
+          "notes": "Waitlist data not publicly disclosed."
+        },
+        {
+          "year": 2022,
+          "cycle_name": "Class of 2026",
+          "applications_total": 17232,
+          "admits_total": 12538,
+          "enrolled_total": 1300,
+          "acceptance_rate_overall": 72.8,
+          "yield_rate": 10.4,
+          "waitlist_stats": {
+            "year": 2022,
+            "offered_spots": null,
+            "accepted_spots": null,
+            "admitted_from_waitlist": null,
+            "waitlist_admit_rate": null,
+            "is_waitlist_ranked": null
+          },
+          "notes": "Waitlist data not publicly disclosed."
+        }
+      ]
+    },
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": null,
+        "unweighted_middle_50": "3.50-4.00",
+        "average_weighted": 3.8,
+        "percentile_25": "3.50",
+        "percentile_75": "4.00",
+        "notes": "Average high school GPA is 3.8. Many admitted students hold an unweighted GPA above 3.5."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1140-1310",
+        "sat_reading_middle_50": "580-650",
+        "sat_math_middle_50": "560-660",
+        "act_composite_middle_50": "24-30",
+        "submission_rate": 23.0,
+        "policy_note": "Test-optional for most programs; approximately 70-75% of applicants applied without scores in recent cycles."
+      },
+      "demographics": {
+        "first_gen_percentage": 25.1,
+        "legacy_percentage": null,
+        "international_percentage": 3.0,
+        "geographic_breakdown": [
+          {
+            "region": "New York (In-State)",
+            "percentage": 86.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 11.0
+          },
+          {
+            "region": "International",
+            "percentage": 3.0
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 7605,
+            "admits": 4547,
+            "acceptance_rate": 59.8,
+            "note": "Represents 30.5% of the enrolled first-year class."
+          },
+          "women": {
+            "applicants": 12100,
+            "admits": 8440,
+            "acceptance_rate": 69.8,
+            "note": "Represents 69.5% of the enrolled first-year class."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 37.0,
+          "black_african_american": 12.0,
+          "hispanic_latino": 27.0,
+          "asian": 15.0,
+          "native_american_alaskan": 1.0,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 3.0,
+          "unknown": 2.9,
+          "non_resident_alien": 3.0
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges",
+      "colleges": [
+        {
+          "name": "College of Arts and Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 75.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Ideal for students seeking a traditional liberal arts education with small class sizes; emphasize interdisciplinary interests and readiness for faculty-led research.",
+          "housing_profile": "Traditional residence halls like Eddy Hall; often houses a mix of liberal arts majors who prioritize proximity to academic buildings.",
+          "student_archetype": "Intellectually curious and versatile learners",
+          "majors": [
+            {
+              "name": "Biology",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.5,
+              "curriculum": {
+                "core_courses": [
+                  "BIO 0105-111 Biological Concepts & Methods I",
+                  "BIO 0105-112 Biological Concepts & Methods II",
+                  "CHE 0106-111 General Chemistry I",
+                  "CHE 0106-112 General Chemistry II",
+                  "CHE 0106-251 Organic Chemistry I",
+                  "MTH 0144-144 Statistics for the Natural Sciences"
+                ],
+                "total_units": 120
+              }
+            },
+            {
+              "name": "Computer Science",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.0,
+              "curriculum": {
+                "core_courses": [
+                  "CSC 148 Object-Oriented Programming",
+                  "CSC 156 Discrete Structures",
+                  "CSC 273 Data Structures",
+                  "CSC 370 Computer Architecture and Organization",
+                  "CSC 440 Software Engineering"
+                ],
+                "total_units": 120
+              }
+            },
+            {
+              "name": "Chemistry",
+              "degree_type": "B.S."
+            },
+            {
+              "name": "Communications",
+              "degree_type": "B.A."
+            },
+            {
+              "name": "Criminal Justice",
+              "degree_type": "B.S."
+            }
+          ]
+        },
+        {
+          "name": "Robert B. Willumstad School of Business",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 70.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Focus on career readiness and networking; highlight interest in the 'Willumstad Winning Edge' program and internships in the NYC area.",
+          "housing_profile": "Suite-style housing in Waldo Hall is popular for upperclassmen business students seeking a professional, quiet environment.",
+          "student_archetype": "Ambitious, networking-focused professionals",
+          "majors": [
+            {
+              "name": "Business",
+              "degree_type": "B.S.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.6,
+              "curriculum": {
+                "core_courses": [
+                  "ACC 0201-101 Principles of Accounting I",
+                  "ECA 0203-111 The Price System (Microeconomics)",
+                  "MGT 0210-262 Principles of Management",
+                  "MKT 0212-280 Marketing Principles"
+                ],
+                "total_units": 120
+              }
+            },
+            {
+              "name": "Accounting",
+              "degree_type": "B.S."
+            },
+            {
+              "name": "Finance",
+              "degree_type": "B.S."
+            },
+            {
+              "name": "Marketing",
+              "degree_type": "B.S."
+            }
+          ]
+        },
+        {
+          "name": "College of Nursing and Public Health",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 51.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Highly competitive; requires a strong science GPA (3.5+ recommended) and passing TEAS scores.",
+          "housing_profile": "Living-Learning Communities are available to help nursing students form study groups.",
+          "student_archetype": "Dedicated healthcare heroes and clinical leaders",
+          "majors": [
+            {
+              "name": "Nursing",
+              "degree_type": "B.S.",
+              "is_impacted": true,
+              "acceptance_rate": 51.3,
+              "average_gpa_admitted": 3.73,
+              "special_requirements": "Passing score on ATI TEAS required for admission.",
+              "curriculum": {
+                "core_courses": [
+                  "NUR 302-391 Health Assessment",
+                  "NUR 302-392 Fundamentals of Patient Centered Nursing Care",
+                  "BIO 0105-204 Human Anatomy & Phys II"
+                ],
+                "total_units": 124
+              }
+            },
+            {
+              "name": "Health Sciences",
+              "degree_type": "B.S."
+            }
+          ]
+        },
+        {
+          "name": "Gordon F. Derner School of Psychology",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 72.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Renowned for its clinical focus; prospective students should show an interest in mental health advocacy.",
+          "housing_profile": "Residence Hall A fosters a close-knit social community for social science majors.",
+          "student_archetype": "Insightful and research-driven observers",
+          "majors": [
+            {
+              "name": "Psychology",
+              "degree_type": "B.A.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.7,
+              "curriculum": {
+                "core_courses": [
+                  "PIA 0501-101 General Psychology",
+                  "PIA 0501-245 Statistics for Psychology",
+                  "PIA 0501-262 Research Methods in Psychology"
+                ],
+                "total_units": 120
+              }
+            },
+            {
+              "name": "Neuroscience",
+              "degree_type": "B.S."
+            }
+          ]
+        },
+        {
+          "name": "Ruth S. Ammon College of Education and Health Sciences",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 75.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Look into the Scholar Teacher Education Program (STEP) for an accelerated 5-year path.",
+          "housing_profile": "Standard undergraduate housing.",
+          "student_archetype": "Empathetic educators and community builders",
+          "majors": [
+            {
+              "name": "Exercise Science",
+              "degree_type": "B.S."
+            },
+            {
+              "name": "Physical Education",
+              "degree_type": "B.S."
+            }
+          ]
+        },
+        {
+          "name": "School of Social Work",
+          "admissions_model": "Direct Admit",
+          "acceptance_rate_estimate": 78.0,
+          "is_restricted_or_capped": false,
+          "strategic_fit_advice": "Focus on a commitment to social justice and field experience.",
+          "housing_profile": "Diverse housing options; many students are commuters.",
+          "student_archetype": "Advocates for social justice and equity",
+          "majors": [
+            {
+              "name": "Social Work",
+              "degree_type": "B.S.W.",
+              "is_impacted": false,
+              "average_gpa_admitted": 3.0,
+              "curriculum": {
+                "core_courses": [
+                  "SWK 404-101 Intro to Social Welfare & Human Services",
+                  "SWK 400 Field Instruction I & II",
+                  "SOC 0170-100 Intro to Sociology"
+                ],
+                "total_units": 120
+              }
+            }
+          ]
+        },
+        {
+          "name": "Honors College",
+          "admissions_model": "Lottery",
+          "acceptance_rate_estimate": 25.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Requires a separate application with high GPA and SAT/ACT scores; prioritize creative writing in essays.",
+          "housing_profile": "Preferred housing in Earle Hall.",
+          "student_archetype": "High-achieving scholars and critical thinkers",
+          "majors": []
+        }
+      ],
+      "minors_certificates": [
+        "Statistics and Data Analytics Minor",
+        "Public Health Minor",
+        "Scientific Computing Minor",
+        "Digital Marketing Certificate",
+        "Business Minor",
+        "Deaf Studies/ASL Minor",
+        "Human Resource Management Minor",
+        "Social Work Minor"
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Adelphi Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Early Action",
+          "date": "2024-12-01",
+          "is_binding": false,
+          "notes": "Decision typically released by December 31"
+        },
+        {
+          "plan_type": "Regular Decision",
+          "date": "2025-03-01",
+          "is_binding": false,
+          "notes": "Priority deadline; rolling admissions continue after this date"
+        },
+        {
+          "plan_type": "Spring Admission",
+          "date": "2024-11-01",
+          "is_binding": false,
+          "notes": "Regular deadline for spring semester start"
+        }
+      ],
+      "supplemental_requirements": [
+        {
+          "target_program": "All",
+          "requirement_type": "Personal Statement",
+          "details": "500-word essay required via Common App or Adelphi App"
+        },
+        {
+          "target_program": "Honors College",
+          "requirement_type": "Supplemental Essay",
+          "deadline": "2024-12-01",
+          "details": "250-word essay on an idea from a book, song, or art that shaped your understanding"
+        },
+        {
+          "target_program": "Music",
+          "requirement_type": "Audition",
+          "deadline": "2024-12-14",
+          "details": "In-person or video audition required; Early Action audition by Nov 15"
+        },
+        {
+          "target_program": "Theatre",
+          "requirement_type": "Audition/Interview",
+          "deadline": "2025-01-31",
+          "details": "Two monologues for Acting; portfolio for Design/Tech"
+        },
+        {
+          "target_program": "Joint Degree Programs",
+          "requirement_type": "Statement of Interest",
+          "details": "One-page statement regarding professional goals and interest in the specific joint program"
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "GPA",
+          "Course Rigor",
+          "Personal Statement",
+          "Recommendations"
+        ],
+        "secondary_factors": [
+          "Extracurricular Activities",
+          "Talent/Ability",
+          "Character"
+        ],
+        "essay_importance": "High",
+        "demonstrated_interest": "Considered",
+        "interview_policy": "Recommended",
+        "legacy_consideration": "Minimal",
+        "first_gen_boost": "Strong",
+        "specific_differentiators": "Emphasis on 'personalized approach' and community engagement; evaluates potential beyond metrics through a holistic review."
+      }
+    },
+    "application_strategy": {
+      "major_selection_tactics": [
+        "Apply to Arts & Sciences or Psychology if seeking a lower admission bar (2.3+ GPA) compared to Nursing (3.5+)",
+        "Use the 'Undecided' path to delay major declaration until 60 credits",
+        "Identify as 'Business 3-Year' only if GPA is 3.7+; otherwise use standard 4-year track",
+        "Target Joint Degree programs by Feb 1 for specialized advising"
+      ],
+      "college_ranking_tactics": [
+        "Rank Garden City primary for traditional residential experience",
+        "Prioritize Manhattan Center for NYC career networking",
+        "List Honors College for exclusive scholarships and Earle Hall housing"
+      ],
+      "alternate_major_strategy": "If applying to Nursing, list 'Pre-medical Biology' or 'Public Health' as the alternate major to ensure university admission and a secondary internal transfer attempt."
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 49110,
+          "total_coa": 73654,
+          "housing": 20028
+        },
+        "out_of_state": {
+          "tuition": 49110,
+          "total_coa": 73654,
+          "supplemental_tuition": 0
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "average_need_based_aid": 32000,
+      "average_merit_aid": 27000,
+      "percent_receiving_aid": 99.0,
+      "scholarships": []
+    },
+    "scholarships": [
+      {
+        "name": "Presidential Award",
+        "type": "Merit",
+        "amount": "Up to $35,000 per year",
+        "deadline": "Automatic consideration",
+        "benefits": "Renewable for four years with maintaining a 2.0 GPA",
+        "application_method": "Automatic Consideration"
+      },
+      {
+        "name": "Honors College Scholarship",
+        "type": "Merit",
+        "amount": "$3,000 per year",
+        "deadline": "2025-01-15",
+        "benefits": "Dedicated honors housing in Earle Hall, priority registration, specialized honors advising",
+        "application_method": "Automatic Consideration with Honors Admission"
+      },
+      {
+        "name": "Trustee Talent Scholarship",
+        "type": "Merit/Talent",
+        "amount": "Up to $24,000 per year",
+        "deadline": "2025-02-15",
+        "benefits": "Recognition of exceptional ability in theatre, dance, art, music, or communications",
+        "application_method": "Separate Application and Portfolio/Audition"
+      },
+      {
+        "name": "Levermore Global Scholars Award",
+        "type": "Merit",
+        "amount": "$3,000 per year",
+        "deadline": "Rolling",
+        "benefits": "Global leadership training, study abroad opportunities, and research funding",
+        "application_method": "Automatic Consideration with Program Admission"
+      },
+      {
+        "name": "Phi Theta Kappa Select Award",
+        "type": "Merit",
+        "amount": "$2,500 - $5,000 per year",
+        "deadline": "Rolling",
+        "benefits": "Specifically for transfer students with high academic achievement",
+        "application_method": "Separate Application (Proof of PTK Membership Required)"
+      },
+      {
+        "name": "Panther Grant",
+        "type": "Need",
+        "amount": "Varies",
+        "deadline": "2025-03-01",
+        "benefits": "Does not need to be repaid; supplements institutional merit aid",
+        "application_method": "FAFSA"
+      },
+      {
+        "name": "NY State Scholarship for Academic Excellence (Regents)",
+        "type": "Merit",
+        "amount": "$500 - $1,500 per year",
+        "deadline": "2025-06-30",
+        "benefits": "Awarded to top-ranking New York State high school graduates",
+        "application_method": "High School Nomination/Automatic"
+      }
+    ],
+    "credit_policies": {
+      "philosophy": "Moderate",
+      "ap_policy": {
+        "general_rule": "Scores of 3 or 4 grant credit; max 30 credits total",
+        "exceptions": [
+          "Biology, Calculus, English require a 4",
+          "Computer Science A requires a 4; AP Research and AP Seminar require a 4"
+        ],
+        "usage": "Satisfies PATH (General Education) requirements"
+      },
+      "ib_policy": {
+        "general_rule": "Credit awarded for HL exams with score of 4 or higher",
+        "diploma_bonus": false
+      },
+      "transfer_articulation": {
+        "tools": [
+          "Transfer Evaluation System (TES)"
+        ],
+        "restrictions": "64 unit cap for community college; final 30 credits must be at Adelphi"
+      }
+    },
+    "student_insights": {
+      "what_it_takes": [
+        "Rigorous course load with multiple AP/IB credits",
+        "A weighted GPA often exceeding 4.0 for Honors consideration",
+        "Demonstrated intellectual curiosity and a passion for interdisciplinary learning",
+        "Strong alignment with specialized programs like Nursing or Psychology"
+      ],
+      "common_activities": [
+        "Clinical volunteering for health-related majors",
+        "Independent research projects",
+        "Leadership roles in school clubs",
+        "Involvement in theatre productions or music ensembles",
+        "Participation in summer programs at major universities"
+      ],
+      "essay_tips": [
+        "Explicitly connect personal story to Adelphi’s location",
+        "For Honors, focus on interdisciplinary thinking",
+        "Explain grade dips in 'additional information' section",
+        "Focus on a single meaningful event or realization"
+      ],
+      "red_flags": [
+        "Decline in rigor senior year",
+        "Citing wrong university name in recycled essay",
+        "Generic personal statements that lack self-reflection",
+        "Missing C+ threshold in science for nursing applicants"
+      ],
+      "insights": [
+        "Rolling admissions allows for flexibility as late as May",
+        "The Honors College interview is a critical, high-stakes component",
+        "Scholarships are often tied to program-specific applications (nursing, honors)",
+        "Transfer students need a minimum 3.5 GPA to be competitive for the Honors College"
+      ]
+    },
+    "outcomes_retention": {
+      "outcomes": {
+        "median_earnings_10yr": 75482,
+        "employment_rate_2yr": 92.0,
+        "grad_school_rate": 18.1,
+        "top_employers": [
+          "Deloitte",
+          "Northwell Health",
+          "Morgan Stanley",
+          "PwC",
+          "J.P. Morgan Chase",
+          "Memorial Sloan Kettering Cancer Center"
+        ],
+        "loan_default_rate": 0.0
+      },
+      "retention": {
+        "freshman_retention_rate": 83.0,
+        "graduation_rate_4_year": 62.0,
+        "graduation_rate_6_year": 73.0
+      }
+    }
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "university_profile": {
+    "_id": "university_of_missouri",
+    "metadata": {
+      "official_name": "University of Missouri",
+      "location": {
+        "city": "Columbia",
+        "state": "MO",
+        "type": "Public"
+      },
+      "last_updated": "2025-12-19",
+      "report_source_files": [
+        "https://missouri.edu/news",
+        "https://admissions.missouri.edu/",
+        "https://trustees.missouri.edu/common-data-set"
+      ]
+    },
+    "strategic_profile": {
+      "executive_summary": "Founded in 1839, the University of Missouri (Mizzou) is the flagship campus of the University of Missouri System and a member of the Association of American Universities (AAU). It is one of only six public universities in the U.S. to host medical, veterinary, and law schools on one campus, driven by the hands-on 'Missouri Method.'",
+      "market_position": "Public Ivy",
+      "admissions_philosophy": "Holistic review for test-optional applicants; numbers-focused sliding scale for traditional applicants.",
+      "us_news_rank": 102,
+      "analyst_takeaways": [
+        {
+          "category": "Admissions Strategy",
+          "insight": "Applications surged by over 40% recently, though the acceptance rate remains stable near 78%.",
+          "implication": "Early application is critical for high-demand programs like Journalism and for priority housing."
+        },
+        {
+          "category": "Institutional Growth",
+          "insight": "Significant jump in national rankings driven by improved retention (91%) and graduation outcomes.",
+          "implication": "Increased national brand value makes Mizzou a more competitive choice for out-of-state students."
+        }
+      ],
+      "campus_dynamics": {
+        "social_environment": "Quintessential SEC culture with high 'Tiger' spirit; nearly 30% Greek Life involvement.",
+        "transportation_impact": "Directly adjacent to downtown Columbia (CoMo); the 'Tiger Line' shuttle is vital for non-central commuters.",
+        "research_impact": "Carnegie R1 institution with the most powerful university research reactor (MURR) in the U.S."
+      }
+    },
+    "admissions": {
+      "current_status": {
+        "overall_acceptance_rate": 78.5,
+        "in_state_acceptance_rate": 80.7,
+        "out_of_state_acceptance_rate": null,
+        "international_acceptance_rate": 39.8,
+        "transfer_acceptance_rate": 72.4,
+        "admits_class_size": 5953,
+        "is_test_optional": true,
+        "test_policy_details": "Test Optional; scores used for specific scholarships and borderline holistic review.",
+        "early_admission_stats": null
+      },
+      "longitudinal_trends": [
+        {
+          "year": 2024,
+          "cycle_name": "Class of 2028",
+          "applications_total": 24490,
+          "admits_total": 19218,
+          "enrolled_total": 5917,
+          "acceptance_rate_overall": 78.5,
+          "yield_rate": 30.8,
+          "waitlist_stats": {
+            "year": 2024,
+            "offered_spots": 0,
+            "accepted_spots": 0,
+            "admitted_from_waitlist": 0,
+            "waitlist_admit_rate": 0.0,
+            "is_waitlist_ranked": false
+          }
+        },
+        {
+          "year": 2023,
+          "cycle_name": "Class of 2027",
+          "applications_total": 21669,
+          "admits_total": 16690,
+          "enrolled_total": 5139,
+          "acceptance_rate_overall": 77.0,
+          "yield_rate": 30.8
+        }
+      ],
+      "admitted_student_profile": {
+        "gpa": {
+          "unweighted_middle_50": "3.20-3.70",
+          "percentile_25": "3.20",
+          "percentile_75": "3.70",
+          "notes": "Calculates a 'Core GPA' from English, Math, Science, Social Studies, and Foreign Language."
+        },
+        "testing": {
+          "sat_composite_middle_50": "1150-1330",
+          "act_composite_middle_50": "23-30",
+          "submission_rate": 70.0
+        },
+        "demographics": {
+          "first_gen_percentage": 25.0,
+          "international_percentage": 4.6,
+          "geographic_breakdown": [
+            {
+              "region": "Missouri",
+              "percentage": 67.0
+            },
+            {
+              "region": "Other US States",
+              "percentage": 32.0
+            },
+            {
+              "region": "International",
+              "percentage": 1.0
+            }
+          ],
+          "racial_breakdown": {
+            "white": 76.3,
+            "black_african_american": 5.26,
+            "hispanic_latino": 5.41,
+            "asian": 2.93,
+            "two_or_more_races": 3.97
+          }
+        }
+      }
+    },
+    "academic_structure": {
+      "structure_type": "Colleges and Schools",
+      "colleges": [
+        {
+          "name": "Missouri School of Journalism",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 77.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Renowned for the 'Missouri Method'. Direct admission for Walter Williams Scholars; others enter as Pre-Journalism.",
+          "majors": [
+            {
+              "name": "Journalism",
+              "degree_type": "B.J.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 3.0,
+              "internal_transfer_gpa": 2.75,
+              "weeder_courses": [
+                "ENGLSH 1000",
+                "JOURN 2100 News Writing"
+              ],
+              "curriculum": {
+                "total_units": 120,
+                "major_units": 51
+              }
+            }
+          ]
+        },
+        {
+          "name": "Trulaske College of Business",
+          "admissions_model": "Pre-Major",
+          "acceptance_rate_estimate": 56.0,
+          "is_restricted_or_capped": true,
+          "strategic_fit_advice": "Uses 'Trulaske Edge' professional development points for Upper Level advancement.",
+          "majors": [
+            {
+              "name": "Business Administration",
+              "degree_type": "B.S.B.A.",
+              "is_impacted": true,
+              "minimum_gpa_to_declare": 2.6,
+              "special_requirements": "Requires 70 Professional Development Program points."
+            }
+          ]
+        }
+      ]
+    },
+    "application_process": {
+      "platforms": [
+        "Common App",
+        "Mizzou Online Application"
+      ],
+      "application_deadlines": [
+        {
+          "plan_type": "Rolling Admissions",
+          "date": "2025-06-01",
+          "is_binding": false
+        },
+        {
+          "plan_type": "Scholarship Priority",
+          "date": "2024-11-15",
+          "is_binding": false
+        }
+      ],
+      "holistic_factors": {
+        "primary_factors": [
+          "Core GPA",
+          "Course Rigor"
+        ],
+        "secondary_factors": [
+          "Extracurriculars",
+          "Personal Essays"
+        ],
+        "essay_importance": "High",
+        "demonstrated_interest": "Not Considered"
+      }
+    },
+    "financials": {
+      "tuition_model": "Annual Increase",
+      "cost_of_attendance_breakdown": {
+        "academic_year": "2024-2025",
+        "in_state": {
+          "tuition": 14837,
+          "total_coa": 33045
+        },
+        "out_of_state": {
+          "tuition": 36056,
+          "total_coa": 54264
+        }
+      },
+      "aid_philosophy": "Merit Focused",
+      "scholarships": [
+        {
+          "name": "Stamps Scholars Program",
+          "type": "Full Ride",
+          "amount": "Full COA + $16k fund",
+          "application_method": "Separate Application"
+        },
+        {
+          "name": "Mark Twain Scholarship",
+          "type": "Merit",
+          "amount": "Up to $21,500/year",
+          "application_method": "Automatic Consideration"
+        }
+      ]
+    },
+    "outcomes": {
+      "median_earnings_10yr": 54200,
+      "employment_rate_2yr": 93.0,
+      "freshman_retention_rate": 91.0,
+      "graduation_rate_6_year": 76.0,
+      "top_employers": [
+        "Boeing",
+        "Oracle",
+        "Edward Jones",
+        "Deloitte"
+      ]
+    }
+  }
+}

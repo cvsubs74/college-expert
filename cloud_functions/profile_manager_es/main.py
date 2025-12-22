@@ -2968,7 +2968,7 @@ def fit_chat(user_id: str, university_id: str, question: str, conversation_histo
         
         # Load user profile
         profile_query = {
-            "query": {"term": {"user_id": user_id}},
+            "query": {"term": {"user_id.keyword": user_id}},
             "size": 1
         }
         profile_response = es_client.search(index=ES_INDEX_NAME, body=profile_query)
@@ -2987,7 +2987,7 @@ def fit_chat(user_id: str, university_id: str, question: str, conversation_histo
             "query": {
                 "bool": {
                     "must": [
-                        {"term": {"user_email": user_id}},
+                        {"term": {"user_email.keyword": user_id}},
                         {"term": {"university_id": normalized_uni_id}}
                     ]
                 }
@@ -3266,12 +3266,96 @@ def handle_get_fits(request):
         # Apply limit after filtering (important when state filter expands fetch size)
         results = results[:limit]
         
+        # --- SOFT FIT FALLBACK ---
+        # If no precomputed fits found AND category filter is present,
+        # fall back to fetching universities by soft_fit_category from knowledge base API
+        is_soft_fit_fallback = False
+        soft_fit_error = None
+        if len(results) == 0 and category_filter:
+            try:
+                import requests
+                logger.info(f"[GET_FITS] No precomputed fits found, falling back to soft_fit_category API for {category_filter}")
+                
+                # Call the knowledge-base-manager-universities API (GET returns all universities)
+                KB_UNIVERSITIES_URL = os.environ.get('KB_UNIVERSITIES_URL', 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app')
+                api_response = requests.get(KB_UNIVERSITIES_URL, timeout=30)
+                api_response.raise_for_status()
+                api_data = api_response.json()
+                
+                if api_data.get('success') and api_data.get('universities'):
+                    # Filter by soft_fit_category on client side
+                    matching_unis = [
+                        uni for uni in api_data['universities']
+                        if uni.get('soft_fit_category') == category_filter
+                    ]
+                    
+                    # Apply exclude_ids filter  
+                    if exclude_ids:
+                        normalized_exclude = set(normalize_university_id(uid) for uid in exclude_ids)
+                        matching_unis = [
+                            uni for uni in matching_unis
+                            if normalize_university_id(uni.get('university_id', '')) not in normalized_exclude
+                        ]
+                    
+                    # Apply state filter if present
+                    state_filter = filters.get('state', '').upper() if filters.get('state') else None
+                    if state_filter:
+                        matching_unis = [
+                            uni for uni in matching_unis
+                            if isinstance(uni.get('location'), dict) and 
+                               state_filter in uni.get('location', {}).get('state', '').upper()
+                        ]
+                    
+                    # Sort by US News rank (ascending, nulls last)
+                    matching_unis.sort(key=lambda x: (x.get('us_news_rank') is None, x.get('us_news_rank') or 999))
+                    
+                    # Apply limit
+                    matching_unis = matching_unis[:limit]
+                    
+                    logger.info(f"[GET_FITS] Found {len(matching_unis)} universities with soft_fit_category={category_filter}")
+                    
+                    for uni in matching_unis:
+                        location = uni.get('location', {})
+                        results.append({
+                            'university_id': normalize_university_id(uni.get('university_id')),
+                            'university_name': uni.get('official_name'),
+                            'fit_category': uni.get('soft_fit_category'),
+                            'match_score': None,  # No personalized score for soft fits
+                            'explanation': f"Based on acceptance rate ({uni.get('acceptance_rate')}%)",
+                            'factors': [],
+                            'recommendations': [],
+                            'gap_analysis': {},
+                            'essay_angles': [],
+                            'application_timeline': {},
+                            'scholarship_matches': [],
+                            'test_strategy': {},
+                            'major_strategy': {},
+                            'demonstrated_interest_tips': [],
+                            'red_flags_to_avoid': [],
+                            'acceptance_rate': uni.get('acceptance_rate'),
+                            'us_news_rank': uni.get('us_news_rank'),
+                            'location': location,
+                            'market_position': uni.get('market_position'),
+                            'is_soft_fit': True  # Flag to indicate this is acceptance-rate based
+                        })
+                    
+                    is_soft_fit_fallback = len(results) > 0
+                else:
+                    logger.warning(f"[GET_FITS] Knowledge base API returned no universities")
+                
+            except Exception as fallback_err:
+                logger.error(f"[GET_FITS] Soft fit fallback error: {fallback_err}")
+                soft_fit_error = str(fallback_err)
+        
         return add_cors_headers({
             'success': True,
             'results': results,
-            'total': response['hits']['total']['value'],
+            'total': response['hits']['total']['value'] if not is_soft_fit_fallback else len(results),
             'returned': len(results),
             'fits_ready': len(results) > 0,
+            'is_soft_fit_fallback': is_soft_fit_fallback,
+            'fallback_attempted': len(results) == 0 and category_filter is not None,
+            'soft_fit_error': soft_fit_error if 'soft_fit_error' in dir() else None,
             'filters_applied': filters
         }, 200)
         

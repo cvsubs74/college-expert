@@ -1,0 +1,888 @@
+{
+  "_id": "wake_forest_university",
+  "metadata": {
+    "official_name": "Wake Forest University",
+    "location": {
+      "city": "Winston-Salem",
+      "state": "NC",
+      "type": "Private"
+    },
+    "last_updated": "2025-12-07",
+    "report_source_files": []
+  },
+  "strategic_profile": {
+    "executive_summary": "Wake Forest University is a private institution located in Winston-Salem, NC, known for combining a strong liberal arts curriculum with the resources of a research university. It emphasizes academic excellence, faculty-student engagement, and a commitment to its motto, Pro Humanitate, 'for humanity.'",
+    "market_position": "Elite Private",
+    "admissions_philosophy": "Holistic review",
+    "analyst_takeaways": [
+      {
+        "category": "Selectivity",
+        "insight": "Wake Forest maintains highly selective undergraduate admissions standards.",
+        "implication": "Prospective students should focus on demonstrating strong academic rigor and diverse extracurricular engagement."
+      },
+      {
+        "category": "Rankings Volatility",
+        "insight": "Wake Forest's US News ranking dropped significantly from #29 in 2023 to #47 in 2024 due to changes in methodology, which de-emphasized factors where the university previously excelled, such as small class sizes and faculty with terminal degrees.",
+        "implication": "Applicants should look beyond overall rankings and consider specific program strengths and aspects of the university experience that align with their priorities, as WFU prioritizes its educational mission over 'chasing rankings.'"
+      },
+      {
+        "category": "Social Environment",
+        "insight": "Greek life is a significant and prevalent aspect of the social scene, particularly influencing weekend activities.",
+        "implication": "Students considering Wake Forest should be aware of the strong Greek presence and evaluate if it aligns with their preferred social experience. While other clubs and activities exist, Greek life is highly visible."
+      }
+    ],
+    "campus_dynamics": {
+      "social_environment": "The social atmosphere at Wake Forest is heavily influenced by Greek life, with about half of the students participating. Fraternity and sorority events, including both 'lounge parties' on campus and 'frat parties' off-campus, are common, especially on weekends. While Greek life provides a social outlet, some student reviews suggest that those not involved might find it challenging to connect socially, and there are mixed opinions on its inclusivity. Beyond Greek life, the campus offers numerous clubs, intramural sports, and campus-wide events like 'Hit the Bricks' which supports a cancer research fund.",
+      "transportation_impact": "Wake Forest has a compact, walkable, and bikeable campus. The university operates 'Wake Line' shuttles with scheduled routes and on-demand services, connecting students to parking, local shopping centers, apartment complexes, Wake Downtown, and the Coliseum. A car-sharing program, Zipcar, is also available on campus as an alternative to owning a car. First-year students are typically required to park in a designated off-campus lot with shuttle service provided, with nearly 80% choosing not to bring a car to campus. This robust internal transportation system minimizes the need for personal vehicles on campus, especially for first-year students.",
+      "research_impact": "Research is a significant component of the Wake Forest experience, strongly supported by the Undergraduate Research and Creative Activities (URECA) Center. Students have boundless opportunities to engage in faculty-mentored research, often presenting at 'Undergraduate Research Day.' The university offers various summer fellowships, such as the Wake Forest Research Fellowship (WFRF) and Arts & Humanities Research Fellowship (WFA&HF), providing stipends and housing. The Richter Scholarship program funds globally-oriented independent research. Research opportunities span diverse fields, from humanities and fine arts to health sciences, biomedical engineering, and artificial intelligence, with strong ties to the Wake Forest School of Medicine. This emphasis on undergraduate research fosters deep engagement with professors and opportunities for publications and presentations."
+    },
+    "us_news_rank": 47
+  },
+  "admissions_data": {
+    "current_status": {
+      "overall_acceptance_rate": 21.5,
+      "in_state_acceptance_rate": null,
+      "out_of_state_acceptance_rate": null,
+      "international_acceptance_rate": null,
+      "transfer_acceptance_rate": 29.8,
+      "admits_class_size": 3768,
+      "is_test_optional": true,
+      "test_policy_details": "Test Optional",
+      "early_admission_stats": [
+        {
+          "plan_type": "ED",
+          "applications": null,
+          "admits": null,
+          "acceptance_rate": 34.5,
+          "class_fill_percentage": null
+        }
+      ]
+    },
+    "longitudinal_trends": [
+      {
+        "year": 2025,
+        "cycle_name": "Class of 2029",
+        "applications_total": 20000,
+        "admits_total": 4073,
+        "enrolled_total": 1545,
+        "acceptance_rate_overall": 20.8,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 37.9,
+        "waitlist_stats": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false,
+          "year": 2024
+        },
+        "notes": "Preliminary numbers for the Class of 2029; record-breaking application numbers and largest incoming class in University's history. Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2024,
+        "cycle_name": "Class of 2028",
+        "applications_total": 18735,
+        "admits_total": 4066,
+        "enrolled_total": 1468,
+        "acceptance_rate_overall": 22.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 36.4,
+        "waitlist_stats": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false,
+          "year": 2024
+        },
+        "notes": "Record applicant pool. Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2023,
+        "cycle_name": "Class of 2027",
+        "applications_total": 17479,
+        "admits_total": 3768,
+        "enrolled_total": 1385,
+        "acceptance_rate_overall": 21.5,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 36.8,
+        "waitlist_stats": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false,
+          "year": 2024
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2022,
+        "cycle_name": "Class of 2026",
+        "applications_total": 17496,
+        "admits_total": 3601,
+        "enrolled_total": 1379,
+        "acceptance_rate_overall": 20.0,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 38.3,
+        "waitlist_stats": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false,
+          "year": 2024
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2021,
+        "cycle_name": "Class of 2025",
+        "applications_total": 15156,
+        "admits_total": 3816,
+        "enrolled_total": 1411,
+        "acceptance_rate_overall": 25.1,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 37.0,
+        "waitlist_stats": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false,
+          "year": 2024
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      },
+      {
+        "year": 2020,
+        "cycle_name": "Class of 2024",
+        "applications_total": 11959,
+        "admits_total": 3825,
+        "enrolled_total": 1452,
+        "acceptance_rate_overall": 31.9,
+        "acceptance_rate_in_state": null,
+        "acceptance_rate_out_of_state": null,
+        "yield_rate": 38.0,
+        "waitlist_stats": {
+          "offered_spots": null,
+          "accepted_spots": null,
+          "admitted_from_waitlist": null,
+          "waitlist_admit_rate": null,
+          "is_waitlist_ranked": false,
+          "year": 2024
+        },
+        "notes": "Waitlist data not publicly disclosed."
+      }
+    ],
+    "admitted_student_profile": {
+      "gpa": {
+        "weighted_middle_50": "4.10-4.40 (estimated)",
+        "unweighted_middle_50": "3.70-4.00 (estimated)",
+        "average_weighted": 4.01,
+        "percentile_25": null,
+        "percentile_75": null,
+        "notes": "Wake Forest does not officially publish GPA ranges. Most admitted students are in the top 10% of their high school class (67% for Class of 2029). PrepScholar estimates an average weighted GPA of 4.01-4.06. An admitted student reported a weighted GPA of 4.5 and unweighted of 3.9. Another was admitted with a 3.74 unweighted GPA."
+      },
+      "testing": {
+        "sat_composite_middle_50": "1420-1500",
+        "sat_reading_middle_50": "700-750",
+        "sat_math_middle_50": "710-770",
+        "act_composite_middle_50": "32-34",
+        "submission_rate": 26.0,
+        "policy_note": "Test optional; scores are considered if submitted. For the academic year 2024 (Fall 2023 admissions), 26% of enrolled students submitted SAT scores and 22% submitted ACT scores."
+      },
+      "demographics": {
+        "first_gen_percentage": 10.7,
+        "legacy_percentage": 7.0,
+        "international_percentage": 5.8,
+        "geographic_breakdown": [
+          {
+            "region": "North Carolina",
+            "percentage": 12.7
+          },
+          {
+            "region": "Other US States",
+            "percentage": 81.5
+          },
+          {
+            "region": "International",
+            "percentage": 5.8
+          }
+        ],
+        "gender_breakdown": {
+          "men": {
+            "applicants": 7864,
+            "admits": 1751,
+            "acceptance_rate": 22.27,
+            "note": "Data for 2023-2024 admissions cycle."
+          },
+          "women": {
+            "applicants": 9613,
+            "admits": 2017,
+            "acceptance_rate": 20.98,
+            "note": "Data for 2023-2024 admissions cycle."
+          },
+          "non_binary": null
+        },
+        "racial_breakdown": {
+          "white": 65.1,
+          "black_african_american": 6.43,
+          "hispanic_latino": 9.69,
+          "asian": 5.26,
+          "native_american_alaskan": 0.07,
+          "pacific_islander": 0.15,
+          "two_or_more_races": 4.61,
+          "unknown": 2.91,
+          "non_resident_alien": 5.77
+        },
+        "religious_affiliation": null
+      }
+    }
+  },
+  "academic_structure": {
+    "structure_type": "Colleges",
+    "colleges": [
+      {
+        "name": "The Undergraduate College",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": 22.0,
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Ideal for students seeking a broad liberal arts education with flexibility to explore various disciplines before declaring a major. Emphasizes intellectual curiosity and a close-knit academic community typical of a small liberal arts college combined with research university resources.",
+        "housing_profile": "All first-year students live in one of eight vibrant first-year residence communities within 'The Forest' residential commons model. Housing includes coeducational dorms with beds, closets, desks, micro-fridge units, Wi-Fi, Ethernet, and free laundry. Students are required to live on campus for their first three years (six semesters).",
+        "student_archetype": "Intellectually curious, community-oriented individuals who are active both academically and in extracurriculars. Values the 'Pro Humanitate' motto, engages in a diverse range of clubs, arts, and intramural sports, and shows strong school spirit for Division I athletics. Social life is active, with a significant Greek life presence.",
+        "majors": [
+          {
+            "name": "Biology",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CHM 111",
+              "CHM 111L",
+              "STA 111"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "BIO 150 Biology I",
+              "BIO 150L Biology I Lab",
+              "BIO 160 Biology II",
+              "BIO 160L Biology II Lab"
+            ],
+            "special_requirements": "Minimum 2.0 GPA in biology courses taken at Wake Forest. Recommended to complete BIO 150, 150L, 160, 160L, CHM 111, 111L, and STA 111 by end of sophomore year.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students generally declare major in spring of sophomore year. A maximum of four hours of 390-sequence courses (except BIO 399) may be counted as hours in the major. No more than two online courses from another institution accepted for transfer credit."
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "CSC 111",
+              "CSC 112",
+              "MTH 117"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "CSC 111 Fundamental Concepts of Computer Programming",
+              "CSC 112 Fundamentals of Computer Science",
+              "CSC 201 Data Structures and Algorithms",
+              "CSC 231 Programming Language Structures and Paradigms",
+              "CSC 250 Mechanisms of Program Execution: Architecture",
+              "CSC 251 Mechanisms of Program Execution: Operating System Level"
+            ],
+            "special_requirements": "Minimum 2.0 GPA in computer science courses required for the major or minor, including CSC 112. Recommended to take CSC 111 and MTH 117 in freshman year, CSC 112 and CSC 201 as early as feasible.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students generally declare major after earning at least 40 credit hours. AP scores of 4 or 5 on AP Computer Science A may grant credit for CSC 111."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 150",
+              "MTH 111",
+              "STA 111"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "ECN 150 Introduction to Economics",
+              "MTH 111 Calculus with Analytic Geometry I",
+              "STA 111 Elementary Probability and Statistics",
+              "ECN 205 Intermediate Microeconomics (or ECN 210)",
+              "ECN 207 Intermediate Macroeconomics (or ECN 211)",
+              "ECN 209 Applied Econometrics"
+            ],
+            "special_requirements": "Minimum grade of C in ECN 150. Minimum grade of C- in MTH 111 and STA 111. Overall 2.0 average in economics courses.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students generally declare major in spring of sophomore year. AP credit for ECN 150 requires both micro and macro AP tests with a total score of at least eight."
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ECN 150",
+              "MTH 112"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ECN 150 Introduction to Economics",
+              "MTH 112 Calculus with Analytic Geometry II",
+              "ECN 210 Intermediate Mathematical Microeconomics",
+              "ECN 211 Intermediate Mathematical Macroeconomics",
+              "ECN 209 Applied Econometrics",
+              "MTH 113 Multivariable Calculus",
+              "MTH 121 Linear Algebra",
+              "STA 111 Elementary Probability and Statistics"
+            ],
+            "special_requirements": "Minimum B- in ECN 150 (or AP credit) and MTH 112 required before declaring.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "New B.S. in Economics replacing B.S. in Mathematical Economics starting Fall 2025. Strong quantitative focus."
+          },
+          {
+            "name": "Psychology",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "PSY 151",
+              "PSY 211",
+              "PSY 212",
+              "One Perspectives course (PSY 220-299)"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "PSY 151 Introductory Psychology",
+              "PSY 211 Research Methods I",
+              "PSY 211L Research Methods I Lab",
+              "PSY 212 Research Methods II",
+              "PSY 212L Research Methods II Lab"
+            ],
+            "special_requirements": "Minimum 2.0 GPA in all graded Psychology courses. C or better in PSY 211. PSY 211 and PSY 212 must be taken at Wake Forest.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Recommended to take PSY 151 and a Perspectives Course in first year. AP or IB credit may be accepted for PSY 151."
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Popular major. More detailed declaration requirements or specific weeder courses were not explicitly found in search results."
+          },
+          {
+            "name": "Communication",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "COM 102 Debate and Advocacy (or COM 110 Public Speaking)",
+              "COM 220 Empirical Research in Communication",
+              "COM 225 Historical/Critical Research in Communication"
+            ],
+            "special_requirements": "Overall minimum GPA of 2.0 in all communication courses attempted is required for graduation.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Most popular major over the past 10 years. Students declare major in spring of sophomore year. Up to half of degree hours can be from study abroad or transfer credits."
+          },
+          {
+            "name": "Health and Exercise Science",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "BIO 150",
+              "BIO 150L",
+              "CHM 111",
+              "CHM 111L"
+            ],
+            "minimum_gpa_to_declare": 2.0,
+            "weeder_courses": [
+              "HES 262 Statistics in the Health Sciences",
+              "HES 350 Human Physiology",
+              "HES 350L Human Physiology Lab",
+              "HES 352 Human Gross Anatomy"
+            ],
+            "special_requirements": "Minimum 2.0 GPA in courses that comprise the major. No more than 2 of the 10 required courses may be transferred.",
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students declare major in spring of sophomore year after earning at least 40 credit hours, or earlier if 55 hours completed."
+          },
+          {
+            "name": "English",
+            "degree_type": "B.A.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Listed as a B.A. degree in the College of Arts and Sciences. Specific declaration requirements or weeder courses were not explicitly found."
+          },
+          {
+            "name": "Chemistry",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "CHM 111 College Chemistry I",
+              "CHM 111L College Chemistry I Lab",
+              "CHM 122 Organic Chemistry I",
+              "CHM 122L Organic Chemistry I Lab"
+            ],
+            "special_requirements": null,
+            "admissions_pathway": "Pre-Major",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Listed as a B.S. degree in the College of Arts and Sciences. Chemistry courses are often prerequisites for science majors."
+          }
+        ]
+      },
+      {
+        "name": "School of Business",
+        "admissions_model": "Pre-Major",
+        "acceptance_rate_estimate": null,
+        "is_restricted_or_capped": true,
+        "strategic_fit_advice": "Suited for students committed to developing strong leadership, critical thinking, and practical business acumen. This school requires an application during the sophomore year for students already admitted to Wake Forest, indicating a competitive internal selection process. Offers specialized BS degrees in business fields.",
+        "housing_profile": "Students are part of the general university housing system, residing within 'The Forest' residential commons model, which aims to create supportive and connected communities. There is a three-year residency requirement for most undergraduates.",
+        "student_archetype": "Ambitious and career-focused students interested in business, finance, accounting, or analytics. Seeks practical experience, professional development, and team-based learning. Likely engaged in business-related clubs and leadership opportunities.",
+        "majors": [
+          {
+            "name": "Accountancy",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACC 111",
+              "BEM 201",
+              "ECN 150",
+              "MTH 111 or MTH 112"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACC 111 Introductory Financial Accounting",
+              "ECN 150 Introduction to Economics",
+              "BEM 201 Quantitative Analysis I",
+              "MTH 111 Calculus with Analytic Geometry I (or MTH 112)"
+            ],
+            "special_requirements": "Application to the undergraduate business program is open to Wake Forest second-year students in their Fall semester. Provides a strong foundation for the Master of Science in Accountancy (MSA) degree.",
+            "admissions_pathway": "Application to School of Business",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students typically apply to the School of Business in their sophomore spring semester."
+          },
+          {
+            "name": "Business and Enterprise Management",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACC 111",
+              "BEM 201",
+              "ECN 150",
+              "MTH 111 or MTH 112"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACC 111 Introductory Financial Accounting",
+              "BEM 201 Quantitative Analysis I",
+              "ECN 150 Introduction to Economics",
+              "MTH 111 Calculus with Analytic Geometry I (or MTH 112)",
+              "ACC 221 Introductory Management Accounting",
+              "BEM 202 Quantitative Analysis II"
+            ],
+            "special_requirements": "Application to the undergraduate business program is open to Wake Forest second-year students in their Fall semester. Requires a practicum experience including a required internship.",
+            "admissions_pathway": "Application to School of Business",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students typically apply to the School of Business in their sophomore spring semester. Allows for customization through concentrations."
+          },
+          {
+            "name": "Finance",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACC 111",
+              "ECN 150",
+              "MTH 111 or MTH 112",
+              "BEM 201"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACC 111 Introductory Financial Accounting",
+              "ECN 150 Introduction to Economics",
+              "MTH 111 Calculus with Analytic Geometry I (or MTH 112)",
+              "BEM 201 Quantitative Analysis I",
+              "ACC 221 Introductory Management Accounting",
+              "FIN 231 Principles of Finance"
+            ],
+            "special_requirements": "Application to the undergraduate business program is open to Wake Forest second-year students in their Fall semester. Strong emphasis on finance and quantitative analysis.",
+            "admissions_pathway": "Application to School of Business",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students typically apply to the School of Business in their sophomore spring semester."
+          },
+          {
+            "name": "Decision Analytics",
+            "degree_type": "B.S.",
+            "is_impacted": false,
+            "acceptance_rate": null,
+            "average_gpa_admitted": null,
+            "prerequisite_courses": [
+              "ACC 111",
+              "BEM 201",
+              "ECN 150",
+              "MTH 111 or MTH 112"
+            ],
+            "minimum_gpa_to_declare": null,
+            "weeder_courses": [
+              "ACC 111 Introductory Financial Accounting",
+              "BEM 201 Quantitative Analysis I",
+              "ECN 150 Introduction to Economics",
+              "MTH 111 Calculus with Analytic Geometry I (or MTH 112)"
+            ],
+            "special_requirements": "Offered jointly with the Department of Statistical Sciences. STEM-designated degree program.",
+            "admissions_pathway": "Application to School of Business",
+            "internal_transfer_allowed": true,
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "notes": "Students typically apply to the School of Business in their sophomore spring semester."
+          }
+        ]
+      }
+    ],
+    "minors_certificates": [
+      "Accountancy Minor",
+      "Actuarial Science Certificate",
+      "Anthropology Minor",
+      "Arabic Minor",
+      "Art History Minor",
+      "Biology Minor",
+      "Chemistry Minor",
+      "Chinese for the Global Workplace Certificate",
+      "Chinese Language and Culture Minor",
+      "Classical Studies Minor",
+      "Clinical and Translational Investigation Certificate",
+      "Communication Minor",
+      "Computer Science Minor",
+      "Creative Writing Minor",
+      "Dance Minor",
+      "Data Science Certificate",
+      "Economics Minor",
+      "Engineering Minor",
+      "English Minor",
+      "French Studies Minor",
+      "German Minor",
+      "German Studies Minor",
+      "Greek Minor",
+      "Health and Human Services Minor",
+      "History Minor",
+      "Italian Language and Culture Minor",
+      "Japanese for the Global Workplace Certificate",
+      "Japanese Language and Culture Minor",
+      "Journalism Minor",
+      "Latin Minor",
+      "Learning Health System Science Certificate",
+      "Marketing Communication Minor",
+      "Mathematics Minor",
+      "Medical Physics Certificate",
+      "Music Minor",
+      "Philosophy Minor",
+      "Physics Minor",
+      "Politics and International Affairs Minor",
+      "Psychology Minor",
+      "Secondary Education Minor",
+      "Spanish Studies Minor",
+      "Translational Biotechnology Certificate"
+    ]
+  },
+  "application_process": {
+    "platforms": [
+      "Common App",
+      "Coalition App"
+    ],
+    "application_deadlines": [
+      {
+        "plan_type": "Early Decision I",
+        "date": "2024-11-15",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Early Action",
+        "date": "2024-11-15",
+        "is_binding": false,
+        "notes": "For first-generation college students only; non-binding, decision by January 15"
+      },
+      {
+        "plan_type": "Early Decision II",
+        "date": "2025-01-01",
+        "is_binding": true,
+        "notes": "Binding commitment"
+      },
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-01-01",
+        "is_binding": false,
+        "notes": ""
+      }
+    ],
+    "supplemental_requirements": [
+      {
+        "target_program": "All",
+        "requirement_type": "Essays",
+        "deadline": null,
+        "details": "One required supplemental essay: 'Why Us' (Share with us anything that has made you interested in our institution, 150 words or fewer). Up to four optional essays/lists are also available, including prompts about intellectual curiosity, a Dr. Maya Angelou quote (community focus), a list of five intriguing books, and a 'Top Ten List'."
+      },
+      {
+        "target_program": "Music (Optional Arts Supplement)",
+        "requirement_type": "Audition/Portfolio",
+        "deadline": null,
+        "details": "Applicants with talent in music may choose to submit an optional arts supplement, which can include an audition or performance recording, via SlideRoom. Auditions for the Music Performance concentration occur in the second year. Presidential Scholarships for Distinguished Achievement in music require an application, audition, and interview by November 15."
+      }
+    ],
+    "holistic_factors": {
+      "primary_factors": [
+        "Course Rigor",
+        "GPA",
+        "Essays",
+        "Recommendations"
+      ],
+      "secondary_factors": [
+        "Extracurriculars",
+        "Talents",
+        "Character"
+      ],
+      "essay_importance": "Critical",
+      "demonstrated_interest": "Important",
+      "interview_policy": "Recommended",
+      "legacy_consideration": "Not Considered",
+      "first_gen_boost": "Strong",
+      "specific_differentiators": "Looking for intellectual curiosity, character, community, inclusion, and open-mindedness."
+    }
+  },
+  "application_strategy": {
+    "major_selection_tactics": [
+      "Apply to less competitive major if not set on CS/Engineering",
+      "Consider undeclared for Letters and Science, as some universities admit to the college first",
+      "Research major-specific admit rates before applying, if available",
+      "Take introductory classes in various subjects to explore interests before committing",
+      "Focus on majors that align with your genuine interests and have a reasonable job outlook"
+    ],
+    "college_ranking_tactics": [
+      "Consider rankings as only one data point among many in your evaluation process",
+      "Prioritize personal criteria like specific major offerings, campus culture, location, and resources over general prestige",
+      "Research specific programs and opportunities by reading articles that accompany ranking lists",
+      "Gather in-depth perspectives from current students, alumni, and potential employers",
+      "Consider housing quality and life outside the classroom as part of your personal college ranking"
+    ],
+    "alternate_major_strategy": "If applying to competitive major, list backup in different college. For example, if applying to CS in Engineering, list Cognitive Science in Letters and Science as alternate."
+  },
+  "financials": {
+    "tuition_model": "Annual Increase",
+    "cost_of_attendance_breakdown": {
+      "academic_year": "2024-2025",
+      "in_state": {
+        "tuition": 67642,
+        "total_coa": 91202,
+        "housing": 12054
+      },
+      "out_of_state": {
+        "tuition": 67642,
+        "total_coa": 91202,
+        "supplemental_tuition": 0
+      }
+    },
+    "aid_philosophy": "100% Need Met",
+    "average_need_based_aid": 53244,
+    "average_merit_aid": 45885,
+    "percent_receiving_aid": 42.0,
+    "scholarships": [
+      {
+        "name": "Nancy Susan Reynolds Scholarship",
+        "type": "Merit",
+        "amount": "Full cost of tuition, room, board, plus $3,400 for personal expenses and up to $5,000 for summer research/travel",
+        "deadline": "November 15 (Admission Application)",
+        "benefits": "Covers full cost of attendance, funding for research/study/travel projects, leadership recognition",
+        "application_method": "Automatic consideration with completed admission application; finalists invited for interviews"
+      },
+      {
+        "name": "Presidential Scholarship for Distinguished Achievement",
+        "type": "Merit",
+        "amount": "$16,000 annually (renewable)",
+        "deadline": "November 15 (Preference for application by this date)",
+        "benefits": "Recognition for exceptional talents in art, dance, debate, music, and theatre; expectation to participate in activity on campus",
+        "application_method": "Separate application including portfolio/documentation of talent and recommendations"
+      },
+      {
+        "name": "Wake Forest National Merit Scholarship",
+        "type": "Merit",
+        "amount": "Varies (typically significant aid)",
+        "deadline": "Varies (by National Merit Corp. deadlines and choosing WFU as first choice)",
+        "benefits": "Recognition for National Merit Finalists",
+        "application_method": "Automatic consideration for National Merit Finalists who select Wake Forest as their first-choice institution"
+      },
+      {
+        "name": "Wake Forest Need-Based Grant",
+        "type": "Need",
+        "amount": "Varies (meets 100% of demonstrated financial need)",
+        "deadline": "December 1 (Early Decision I and Early Action), January 1 (Early Decision II and Regular Decision)",
+        "benefits": "Covers demonstrated financial need",
+        "application_method": "FAFSA and CSS Profile"
+      },
+      {
+        "name": "Army ROTC Scholarship",
+        "type": "Merit/Leadership",
+        "amount": "Up to full tuition and required fees, monthly stipend, potential for Wake Forest housing/meal assistance",
+        "deadline": "National high school competition deadlines (for 4-year scholarship)",
+        "benefits": "Financial support for college, leadership development, commission as an officer in the U.S. Army",
+        "application_method": "Separate application through national high school competition; contact Department of Military Science"
+      },
+      {
+        "name": "School of Business Departmental Scholarships (e.g., William D. Brigman Scholarship)",
+        "type": "Merit/Departmental",
+        "amount": "Varies",
+        "deadline": "Varies (contact department)",
+        "benefits": "Financial support for students within specific academic departments, recognition of academic achievement",
+        "application_method": "Contact the awarding department's administrative coordinator for additional information and application procedures (for continuing students)"
+      }
+    ]
+  },
+  "credit_policies": {
+    "philosophy": "Moderate",
+    "ap_policy": {
+      "general_rule": "Scores of 4 or 5 generally grant credit, some departments may accept a 3 for limited credit, but most require 4 or 5",
+      "exceptions": [
+        "Credit is determined by individual academic departments",
+        "AP credit does not satisfy divisional core requirements"
+      ],
+      "usage": "Can earn credit towards the 120 hours needed for graduation and provide placement into higher-level courses, but does not satisfy divisional core requirements"
+    },
+    "ib_policy": {
+      "general_rule": "HL exams with sufficient scores (typically 5+) grant credit, determined by individual academic departments",
+      "diploma_bonus": false
+    },
+    "transfer_articulation": {
+      "tools": [],
+      "restrictions": "60 unit cap for total external credits (transfer, AP, IB) towards the 120 required for graduation; grades of C or better required for transfer; some departments do not accept transfer work from colleges that primarily award associate-level degrees; community college courses taught on high school campuses are not accepted, but those taught on the community college campus before entering Wake Forest are considered; maximum of 6 hours of transfer credit may count toward the major; after matriculation, transfer credit is only accepted from approved four-year institutions and limited online credits may apply"
+    }
+  },
+  "student_insights": {
+    "what_it_takes": [
+      "Strong academic record, with most admitted students having an unweighted GPA above 3.7 and typically in the top 10% of their high school class.",
+      "Challenging coursework, including AP and honors courses, is highly valued.",
+      "Demonstrated significant involvement, leadership, and genuine passion in 1-2 extracurricular areas rather than a scattered list.",
+      "Authentic and reflective essays that showcase individuality and personal qualities.",
+      "Participation in an interview is strongly encouraged and can significantly impact the admissions decision."
+    ],
+    "common_activities": [
+      "Leadership roles in school clubs and organizations.",
+      "Community service and initiatives, aligning with the 'Pro Humanitate' spirit.",
+      "Consistent involvement in extracurricular activities.",
+      "Varsity athletics.",
+      "Research opportunities, often with undergraduate funding."
+    ],
+    "essay_tips": [
+      "Be specific about why Wake Forest University, citing particular programs, professors, or unique aspects of the campus community.",
+      "Show genuine self-reflection and emotional/intellectual maturity, explaining *why* you do things, not just *what* you do.",
+      "Utilize the optional supplemental essays, especially the 'Top Ten list' and the Maya Angelou quote prompt, to reveal your personality and values.",
+      "Ensure essays are unique, personal, and reflect your authentic voice, avoiding generic statements or AI-generated content.",
+      "Thoroughly proofread for grammar and editing mistakes."
+    ],
+    "red_flags": [
+      "Generic essays that could apply to any institution and lack specific connections to Wake Forest.",
+      "Lack of demonstrated interest, such as not participating in an interview or campus visits.",
+      "A decline in grades during senior year, as consistent academic excellence is expected.",
+      "A long list of scattered extracurricular activities without demonstrated passion or leadership in a few key areas.",
+      "Poor grammar and editing in application materials."
+    ],
+    "insights": [
+      "Wake Forest practices holistic admissions, evaluating applicants beyond just grades and test scores, focusing on individual qualities.",
+      "Demonstrated interest is crucial; visiting campus, doing an in-person interview, and actively engaging with the admissions office can show Wake Forest is your top choice.",
+      "While test-optional, submitting strong SAT (1310-1470) or ACT (29-33) scores can enhance an application, with admitted students often having scores in these ranges or higher.",
+      "The 'Pro Humanitate' motto is central to the university's identity, and applicants who embody a commitment to service and leadership are highly valued.",
+      "The university emphasizes a close-knit academic community with small class sizes and accessible professors, which is often highlighted by current students."
+    ]
+  },
+  "outcomes": {
+    "median_earnings_10yr": 78158,
+    "employment_rate_2yr": null,
+    "grad_school_rate": 31.5,
+    "top_employers": [
+      "Deloitte",
+      "Bank of America",
+      "EY",
+      "J.P. Morgan Chase & Co.",
+      "KPMG",
+      "PwC",
+      "Goldman Sachs"
+    ],
+    "loan_default_rate": 1.4
+  },
+  "student_retention": {
+    "freshman_retention_rate": 93.8,
+    "graduation_rate_4_year": 87.0,
+    "graduation_rate_6_year": 91.0
+  }
+}
