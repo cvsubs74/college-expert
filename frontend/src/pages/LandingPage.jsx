@@ -145,7 +145,7 @@ const LandingPage = () => {
             <img
               src="/logo.png"
               alt="Stratia Admissions"
-              className="h-14 w-auto object-contain mix-blend-multiply"
+              className="h-20 w-auto object-contain mix-blend-multiply"
             />
           </Link>
 
@@ -367,7 +367,7 @@ const LandingPage = () => {
                 <img
                   src="/logo.png"
                   alt="Stratia Admissions"
-                  className="h-10 w-auto object-contain mix-blend-multiply"
+                  className="h-14 w-auto object-contain mix-blend-multiply"
                 />
               </Link>
               <p className="text-[#4A4A4A] text-sm">

@@ -501,8 +501,8 @@ const StratiaLaunchpad = () => {
                                     key={cat}
                                     onClick={() => fetchDiscoverySchools(cat)}
                                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${discoveryCategory === cat
-                                            ? 'bg-[#1A4D2E] text-white'
-                                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                        ? 'bg-[#1A4D2E] text-white'
+                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                         }`}
                                 >
                                     {cat === 'SAFETY' ? '🛡️ Safety' : cat === 'TARGET' ? '🎯 Target' : '🚀 Reach'}
@@ -534,7 +534,12 @@ const StratiaLaunchpad = () => {
                                                     {school.university_name}
                                                 </h4>
                                                 <div className="flex items-center gap-3 text-sm text-gray-500 mt-1">
-                                                    {school.location && <span>📍 {school.location}</span>}
+                                                    {school.location && (
+                                                        <span>📍 {typeof school.location === 'object'
+                                                            ? `${school.location.city || ''}${school.location.city && school.location.state ? ', ' : ''}${school.location.state || ''}`
+                                                            : school.location}
+                                                        </span>
+                                                    )}
                                                     {school.us_news_rank && <span>#{school.us_news_rank} US News</span>}
                                                     {school.match_percentage && (
                                                         <span className="text-[#1A4D2E] font-medium">
@@ -547,8 +552,8 @@ const StratiaLaunchpad = () => {
                                                 onClick={() => handleAddDiscoverySchool(school)}
                                                 disabled={addingSchoolId === school.university_id}
                                                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${addingSchoolId === school.university_id
-                                                        ? 'bg-gray-200 text-gray-500 cursor-wait'
-                                                        : 'bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#1A4D2E] hover:text-white'
+                                                    ? 'bg-gray-200 text-gray-500 cursor-wait'
+                                                    : 'bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#1A4D2E] hover:text-white'
                                                     }`}
                                             >
                                                 {addingSchoolId === school.university_id ? (
