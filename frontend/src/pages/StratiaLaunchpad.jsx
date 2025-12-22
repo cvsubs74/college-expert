@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { usePayment } from '../context/PaymentContext';
 import { getPrecomputedFits, getFitsByCategory, updateCollegeList, computeSingleFit } from '../services/api';
 import {
     BackgroundBlobs,
@@ -33,6 +34,8 @@ import {
  */
 const StratiaLaunchpad = () => {
     const { currentUser } = useAuth();
+    const { isFreeTier } = usePayment();
+    const FREE_TIER_SCHOOL_LIMIT = 3;
 
     // State
     const [collegeList, setCollegeList] = useState([]);
@@ -217,9 +220,13 @@ const StratiaLaunchpad = () => {
 
             if (result.success) {
                 // API returns 'results' array
-                const schools = result.results || result.fits || [];
+                let schools = result.results || result.fits || [];
+
+                // Client-side filter: exclude schools already in user's list
+                schools = schools.filter(s => !existingIds.includes(s.university_id));
+
                 setDiscoveryResults(schools);
-                console.log(`[Discovery] Found ${schools.length} ${category} schools`);
+                console.log(`[Discovery] Found ${schools.length} ${category} schools (after filtering existing)`);
             } else {
                 setDiscoveryResults([]);
             }
@@ -238,6 +245,12 @@ const StratiaLaunchpad = () => {
 
     const handleAddDiscoverySchool = async (school) => {
         if (!currentUser?.email || addingSchoolId) return;
+
+        // Free tier limit check
+        if (isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT) {
+            setShowCreditsModal(true);
+            return;
+        }
 
         setAddingSchoolId(school.university_id);
         try {
