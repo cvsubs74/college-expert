@@ -229,14 +229,14 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                 console.log('[FitAnalysisDetail] Fetching fit analysis for', college.university_name);
                 setFitLoading(true);
                 try {
-                    const response = await fetch(
-                        `https://profile-manager-es-pfnwjfp26a-ue.a.run.app/get-precomputed-fits?user_email=${encodeURIComponent(currentUser.email)}`
-                    );
-                    const data = await response.json();
+                    // Use the correct API function that calls POST /get-fits
+                    const data = await getPrecomputedFits(currentUser.email, {}, 500);
+                    console.log('[FitAnalysisDetail] API response:', data);
+
                     if (data.success && data.fits) {
                         const fit = data.fits.find(f => f.university_id === college.university_id);
                         if (fit) {
-                            console.log('[FitAnalysisDetail] Found fit analysis:', fit.fit_category);
+                            console.log('[FitAnalysisDetail] Found fit analysis:', fit.fit_category, 'match_percentage:', fit.match_percentage);
                             setFitAnalysis({
                                 fit_category: fit.fit_category,
                                 match_score: fit.match_score,
@@ -254,6 +254,8 @@ const FitAnalysisDetail = ({ college, onBack }) => {
                                 red_flags_to_avoid: fit.red_flags_to_avoid,
                                 infographic_url: fit.infographic_url
                             });
+                        } else {
+                            console.log('[FitAnalysisDetail] No fit found for', college.university_id, 'in', data.fits.length, 'fits');
                         }
                     }
                 } catch (err) {
@@ -1845,9 +1847,10 @@ const MyLaunchpad = () => {
                 let colleges = listResult.college_list || [];
 
                 // Merge precomputed fits into college list (precomputed takes priority)
-                if (fitsResult.success && fitsResult.results) {
+                // API returns 'fits' array, not 'results'
+                if (fitsResult.success && fitsResult.fits) {
                     const fitsMap = {};
-                    fitsResult.results.forEach(fit => {
+                    fitsResult.fits.forEach(fit => {
                         fitsMap[fit.university_id] = {
                             fit_category: fit.fit_category,
                             match_percentage: fit.match_percentage || fit.match_score,
