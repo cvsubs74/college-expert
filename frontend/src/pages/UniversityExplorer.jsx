@@ -163,119 +163,134 @@ const transformUniversityData = (apiData) => {
 
 // --- University Card Component ---
 const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentiment, onSentimentClick, isInList, onToggleList, fitAnalysis, onAnalyzeFit, isAnalyzing, onShowFitDetails, onOpenChat }) => {
-    // Fit category badge colors (matching Launchpad style)
-    const fitBadgeColors = {
-        SAFETY: 'bg-green-100 text-green-800',
-        TARGET: 'bg-blue-100 text-blue-800',
-        REACH: 'bg-[#FCEEE8] text-[#C05838]',
-        SUPER_REACH: 'bg-red-100 text-red-800'
+    // Fit category ribbon styling
+    const fitConfig = {
+        SAFETY: { gradient: 'from-[#1A4D2E] to-[#2D6B45]', label: 'Safety', icon: '🛡️' },
+        TARGET: { gradient: 'from-blue-500 to-indigo-600', label: 'Target', icon: '🎯' },
+        REACH: { gradient: 'from-[#C05838] to-[#D4704F]', label: 'Reach', icon: '🔼' },
+        SUPER_REACH: { gradient: 'from-red-500 to-rose-600', label: 'Super Reach', icon: '🚀' }
     };
 
-    const fitLabels = {
-        SAFETY: 'Safety',
-        TARGET: 'Target',
-        REACH: 'Reach',
-        SUPER_REACH: 'Super Reach'
-    };
-
-    const currentFit = fitAnalysis?.fit_category || uni.softFitCategory || null;
+    const currentFit = fitAnalysis?.fit_category || uni.softFitCategory || 'TARGET';
+    const fit = fitConfig[currentFit] || fitConfig.TARGET;
     const matchPercentage = fitAnalysis?.match_percentage;
 
-    // Get first letter for avatar
-    const initial = uni.name?.charAt(0)?.toUpperCase() || 'U';
-
     return (
-        <div className="bg-white rounded-xl border border-[#E0DED8] p-5 hover:shadow-md transition-all">
-            <div className="flex items-start gap-4">
-                {/* Circular Avatar */}
-                <div className="w-12 h-12 rounded-full bg-[#F8F6F0] flex items-center justify-center flex-shrink-0 border border-[#E0DED8]">
-                    <span className="text-lg font-bold text-[#4A4A4A]">{initial}</span>
-                </div>
+        <div className="relative bg-white rounded-2xl border border-[#E0DED8] shadow-sm hover:shadow-lg transition-all overflow-hidden">
+            {/* Fit Category Ribbon */}
+            <div className={`absolute top-0 left-0 px-4 py-1.5 bg-gradient-to-r ${fit.gradient} text-white text-xs font-bold rounded-br-xl shadow-sm z-10 flex items-center gap-1.5`}>
+                <span>{fit.icon}</span>
+                {matchPercentage ? (
+                    <span>{matchPercentage}% {fit.label}</span>
+                ) : (
+                    <span>{fit.label}</span>
+                )}
+            </div>
 
-                {/* Main Content */}
-                <div className="flex-1 min-w-0">
-                    {/* Name & Location */}
-                    <h3
-                        onClick={() => onSelect(uni)}
-                        className="font-semibold text-[#2C2C2C] hover:text-[#1A4D2E] cursor-pointer transition-colors truncate"
-                    >
-                        {uni.name}
-                    </h3>
-                    <p className="text-sm text-[#4A4A4A] flex items-center gap-1 mt-0.5">
-                        <MapPinIcon className="h-3.5 w-3.5" />
-                        {uni.location.city}, {uni.location.state}
-                    </p>
+            <div className="flex">
+                {/* Main Content Area */}
+                <div className="flex-1 p-5 pt-10">
+                    {/* Header */}
+                    <div className="flex items-start gap-3 mb-3">
+                        {/* Avatar */}
+                        <div className="w-11 h-11 rounded-full bg-[#F8F6F0] flex items-center justify-center flex-shrink-0 border border-[#E0DED8]">
+                            <span className="text-lg font-bold text-[#4A4A4A]">{uni.name?.charAt(0) || 'U'}</span>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <h3
+                                onClick={() => onSelect(uni)}
+                                className="font-serif text-lg font-bold text-[#2C2C2C] hover:text-[#1A4D2E] cursor-pointer transition-colors"
+                            >
+                                {uni.name}
+                            </h3>
+                            <div className="flex items-center gap-2 text-sm text-[#4A4A4A]">
+                                <MapPinIcon className="h-4 w-4" />
+                                <span>{uni.location.city}, {uni.location.state}</span>
+                                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${uni.location.type === 'Private' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'
+                                    }`}>
+                                    {uni.location.type}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
 
-                    {/* Badges Row */}
-                    <div className="flex flex-wrap items-center gap-2 mt-2">
-                        {currentFit && (
-                            <span className={`px-2 py-0.5 rounded text-xs font-medium ${fitBadgeColors[currentFit]}`}>
-                                {fitLabels[currentFit]}
+                    {/* Stats Row */}
+                    <div className="flex flex-wrap gap-2 mb-3">
+                        <div className="flex items-center gap-1.5 bg-[#D6E8D5] px-3 py-1.5 rounded-lg">
+                            <ChartBarIcon className="h-4 w-4 text-[#1A4D2E]" />
+                            <span className="text-xs font-medium text-[#1A4D2E]">
+                                {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}%` : 'N/A'} Accept
                             </span>
-                        )}
-                        <span className="text-xs text-[#4A4A4A] bg-[#F8F6F0] px-2 py-0.5 rounded">
-                            #{uni.rankings.usNews !== 'N/A' ? uni.rankings.usNews : '—'} US News
-                        </span>
-                        <span className="text-xs text-[#4A4A4A] bg-[#F8F6F0] px-2 py-0.5 rounded">
-                            {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}% Accept` : 'N/A'}
-                        </span>
-                        {uni.location.type && (
-                            <span className="text-xs text-[#4A4A4A] bg-[#F8F6F0] px-2 py-0.5 rounded">
-                                {uni.location.type}
+                        </div>
+                        <div className="flex items-center gap-1.5 bg-blue-50 px-3 py-1.5 rounded-lg">
+                            <TrophyIcon className="h-4 w-4 text-blue-600" />
+                            <span className="text-xs font-medium text-blue-700">
+                                #{uni.rankings.usNews !== 'N/A' ? uni.rankings.usNews : '—'} US News
                             </span>
+                        </div>
+                        {uni.financials?.inStateTuition && uni.financials.inStateTuition !== 'N/A' && (
+                            <div className="flex items-center gap-1.5 bg-green-50 px-3 py-1.5 rounded-lg">
+                                <CurrencyDollarIcon className="h-4 w-4 text-green-600" />
+                                <span className="text-xs font-medium text-green-700">
+                                    ${uni.financials.inStateTuition.toLocaleString()}
+                                </span>
+                            </div>
                         )}
                     </div>
 
-                    {/* Action Buttons */}
-                    <div className="flex items-center gap-2 mt-3">
+                    {/* Summary */}
+                    {uni.summary && uni.summary !== 'No summary available.' && (
+                        <p className="text-sm text-[#4A4A4A] line-clamp-2">{uni.summary}</p>
+                    )}
+                </div>
+
+                {/* Right Side Action Panel */}
+                <div className="flex flex-col justify-center gap-2 p-4 bg-[#FDFCF7] border-l border-[#E0DED8]">
+                    <button
+                        onClick={() => onSelect(uni)}
+                        className="px-4 py-2.5 rounded-xl text-sm font-medium bg-[#1A4D2E] text-white hover:bg-[#2D6B45] transition-all shadow-sm flex items-center gap-2"
+                    >
+                        <EyeIcon className="h-4 w-4" />
+                        Explore
+                    </button>
+                    <button
+                        onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
+                        disabled={!isInList && uni.isLimitReached}
+                        className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center gap-2 ${isInList
+                                ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-700'
+                                : uni.isLimitReached
+                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                    : 'bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#A8C5A6]'
+                            }`}
+                    >
+                        {isInList ? (
+                            <><CheckCircleIcon className="h-4 w-4" /> Saved</>
+                        ) : uni.isLimitReached ? (
+                            <><LockClosedIcon className="h-4 w-4" /> Locked</>
+                        ) : (
+                            <><RocketLaunchIcon className="h-4 w-4" /> Save</>
+                        )}
+                    </button>
+                    <div className="flex gap-1">
                         <button
-                            onClick={() => onSelect(uni)}
-                            className="px-3 py-1.5 text-sm font-medium text-[#1A4D2E] bg-[#D6E8D5] rounded-lg hover:bg-[#A8C5A6] transition-colors"
-                        >
-                            View Analysis
-                        </button>
-                        <button
-                            onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
-                            disabled={!isInList && uni.isLimitReached}
-                            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${isInList
-                                    ? 'text-green-700 bg-green-100 hover:bg-red-100 hover:text-red-700'
-                                    : uni.isLimitReached
-                                        ? 'text-gray-400 bg-gray-100 cursor-not-allowed'
-                                        : 'text-[#4A4A4A] bg-[#F8F6F0] hover:bg-[#E0DED8]'
+                            onClick={() => onCompare(uni)}
+                            className={`flex-1 p-2 rounded-xl text-xs transition-all ${isSelectedForCompare
+                                    ? 'bg-[#1A4D2E] text-white'
+                                    : 'bg-[#F8F6F0] text-[#4A4A4A] hover:bg-[#E0DED8]'
                                 }`}
+                            title="Compare"
                         >
-                            {isInList ? 'Saved' : uni.isLimitReached ? 'Locked' : 'Save'}
+                            <ScaleIcon className="h-4 w-4 mx-auto" />
                         </button>
                         <button
                             onClick={(e) => { e.stopPropagation(); onOpenChat(uni); }}
-                            className="px-3 py-1.5 text-sm font-medium text-[#4A4A4A] bg-[#F8F6F0] rounded-lg hover:bg-[#E0DED8] transition-colors"
+                            className="flex-1 p-2 rounded-xl bg-[#F8F6F0] text-[#4A4A4A] hover:bg-[#E0DED8] transition-all"
+                            title="Ask AI"
                         >
-                            Chat
+                            <ChatBubbleLeftRightIcon className="h-4 w-4 mx-auto" />
                         </button>
                     </div>
                 </div>
-
-                {/* Match Percentage Circle (Right Side) */}
-                {matchPercentage && (
-                    <div className="flex flex-col items-center flex-shrink-0">
-                        <div className="relative w-14 h-14">
-                            <svg className="w-14 h-14 transform -rotate-90">
-                                <circle cx="28" cy="28" r="24" fill="none" stroke="#E0DED8" strokeWidth="4" />
-                                <circle
-                                    cx="28" cy="28" r="24" fill="none"
-                                    stroke="#1A4D2E"
-                                    strokeWidth="4"
-                                    strokeDasharray={`${(matchPercentage / 100) * 150.8} 150.8`}
-                                    strokeLinecap="round"
-                                />
-                            </svg>
-                            <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-[#1A4D2E]">
-                                {matchPercentage}%
-                            </span>
-                        </div>
-                        <span className="text-xs text-[#4A4A4A] mt-1">Match</span>
-                    </div>
-                )}
             </div>
         </div>
     );
