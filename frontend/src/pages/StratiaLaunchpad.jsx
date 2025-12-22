@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { getPrecomputedFits } from '../services/api';
 import {
     BackgroundBlobs,
     HeroSection,
@@ -48,24 +49,72 @@ const StratiaLaunchpad = () => {
     const [showCreditsModal, setShowCreditsModal] = useState(false);
     const [creditsRemaining, setCreditsRemaining] = useState(10);
 
-    // Fetch college list
+    // Fetch college list AND precomputed fits, then merge
     const fetchCollegeList = async () => {
         if (!currentUser?.email) return;
 
         setLoading(true);
         try {
-            const response = await fetch(
-                `${import.meta.env.VITE_PROFILE_MANAGER_ES_URL}/get-college-list?user_email=${encodeURIComponent(currentUser.email)}`
-            );
-            const data = await response.json();
+            // Fetch both college list and precomputed fits in parallel
+            const [listResponse, fitsResult] = await Promise.all([
+                fetch(`${import.meta.env.VITE_PROFILE_MANAGER_ES_URL}/get-college-list?user_email=${encodeURIComponent(currentUser.email)}`),
+                getPrecomputedFits(currentUser.email, {}, 200)
+            ]);
 
-            if (data.success) {
-                setCollegeList(data.college_list || []);
+            const listData = await listResponse.json();
+            console.log('[StratiaLaunchpad] College list result:', listData);
+            console.log('[StratiaLaunchpad] Fits result:', fitsResult);
+
+            if (listData.success) {
+                let colleges = listData.college_list || [];
+                console.log('[StratiaLaunchpad] Colleges loaded:', colleges.length, colleges.map(c => c.university_id));
+
+                // Merge precomputed fits into college list
+                if (fitsResult.success && fitsResult.fits) {
+                    console.log('[StratiaLaunchpad] Fits available:', fitsResult.fits.length, fitsResult.fits.map(f => f.university_id));
+                    const fitsMap = {};
+                    fitsResult.fits.forEach(fit => {
+                        fitsMap[fit.university_id] = {
+                            fit_category: fit.fit_category,
+                            match_percentage: fit.match_percentage || fit.match_score,
+                            match_score: fit.match_percentage || fit.match_score,
+                            explanation: fit.explanation,
+                            factors: fit.factors || [],
+                            recommendations: fit.recommendations || [],
+                            gap_analysis: fit.gap_analysis || {},
+                            essay_angles: fit.essay_angles || [],
+                            application_timeline: fit.application_timeline || {},
+                            scholarship_matches: fit.scholarship_matches || [],
+                            test_strategy: fit.test_strategy || {},
+                            major_strategy: fit.major_strategy || {},
+                            infographic_url: fit.infographic_url
+                        };
+                    });
+
+                    console.log('[StratiaLaunchpad] FitsMap keys:', Object.keys(fitsMap));
+
+                    // Merge fits into colleges
+                    colleges = colleges.map(college => {
+                        const precomputed = fitsMap[college.university_id];
+                        console.log('[StratiaLaunchpad] Merge check:', college.university_id, '-> precomputed:', !!precomputed);
+                        if (precomputed) {
+                            return {
+                                ...college,
+                                fit_analysis: precomputed,
+                                infographic_url: precomputed.infographic_url
+                            };
+                        }
+                        return college;
+                    });
+                    console.log('[StratiaLaunchpad] Merged:', colleges.filter(c => c.fit_analysis?.fit_category).length, 'colleges with fit data');
+                }
+
+                setCollegeList(colleges);
             } else {
-                setError(data.error || 'Failed to load colleges');
+                setError(listData.error || 'Failed to load colleges');
             }
         } catch (err) {
-            console.error('Error fetching college list:', err);
+            console.error('[StratiaLaunchpad] Error fetching college list:', err);
             setError('Failed to load your college list');
         } finally {
             setLoading(false);
