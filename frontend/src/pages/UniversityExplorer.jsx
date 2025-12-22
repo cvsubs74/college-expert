@@ -843,14 +843,15 @@ const UniversityExplorer = () => {
 
                 // Fetch all pre-computed fits (no filtering, get all)
                 const result = await getPrecomputedFits(currentUser.email, {}, 500, 'rank');
-                if (result.success && result.results) {
+                // API returns 'fits' array, not 'results'
+                if (result.success && result.fits) {
                     // Convert array to object keyed by university_id for quick lookup
                     const fitsMap = {};
-                    result.results.forEach(fit => {
+                    result.fits.forEach(fit => {
                         /* fit mapping updated */
                         fitsMap[fit.university_id] = {
                             fit_category: fit.fit_category,
-                            match_percentage: fit.match_score,
+                            match_percentage: fit.match_percentage || fit.match_score,
                             university_name: fit.university_name,
                             explanation: fit.explanation,
                             factors: fit.factors,
@@ -985,12 +986,13 @@ const UniversityExplorer = () => {
 
                         // Refresh precomputed fits to get the new fit
                         const fitsResult = await getPrecomputedFits(currentUser.email, {}, 500, 'rank');
-                        if (fitsResult.success && fitsResult.results) {
+                        // API returns 'fits' array, not 'results'
+                        if (fitsResult.success && fitsResult.fits) {
                             const fitsMap = {};
-                            fitsResult.results.forEach(fit => {
+                            fitsResult.fits.forEach(fit => {
                                 fitsMap[fit.university_id] = {
                                     fit_category: fit.fit_category,
-                                    match_percentage: fit.match_score,
+                                    match_percentage: fit.match_percentage || fit.match_score,
                                     university_name: fit.university_name,
                                     explanation: fit.explanation,
                                     factors: fit.factors,
