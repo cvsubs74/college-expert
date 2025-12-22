@@ -139,8 +139,8 @@ const CompletionProgress = ({ profile }) => {
     const { percentage, missing } = calculateCompletion(profile);
 
     const getColor = () => {
-        if (percentage >= 80) return 'bg-green-500';
-        if (percentage >= 50) return 'bg-yellow-500';
+        if (percentage >= 80) return 'bg-[#1A4D2E]';
+        if (percentage >= 50) return 'bg-[#2D6B45]';
         return 'bg-red-500';
     };
 
@@ -148,7 +148,7 @@ const CompletionProgress = ({ profile }) => {
         <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
             <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium text-gray-700">Profile Completion</span>
-                <span className={`text-sm font-bold ${percentage >= 80 ? 'text-green-600' : percentage >= 50 ? 'text-yellow-600' : 'text-red-600'}`}>
+                <span className={`text-sm font-bold ${percentage >= 80 ? 'text-[#1A4D2E]' : percentage >= 50 ? 'text-[#2D6B45]' : 'text-red-600'}`}>
                     {percentage}%
                 </span>
             </div>
@@ -544,8 +544,8 @@ const ProfileBuilder = ({ profile: parentProfile, onProfileUpdate }) => {
         <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="mb-6">
-                <h1 className="text-2xl font-bold text-gray-900">Manual Entry</h1>
-                <p className="text-gray-500 mt-1">Fill in your academic information to get personalized college recommendations.</p>
+                <h1 className="font-serif text-2xl font-bold text-[#2C2C2C]">Profile Builder</h1>
+                <p className="text-[#4A4A4A] mt-1">Fill in your academic information to get personalized college recommendations.</p>
             </div>
 
             {/* Progress */}

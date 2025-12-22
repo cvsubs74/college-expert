@@ -269,7 +269,7 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
     if (loading) {
         return (
             <div className="flex items-center justify-center h-[500px]">
-                <ArrowPathIcon className="h-8 w-8 text-purple-500 animate-spin" />
+                <ArrowPathIcon className="h-8 w-8 text-[#1A4D2E] animate-spin" />
             </div>
         );
     }
@@ -277,7 +277,7 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
     return (
         <div className="flex flex-col h-[600px]">
             {/* Section Navigation */}
-            <div className="p-4 border-b border-gray-100 bg-gradient-to-r from-purple-50 to-indigo-50">
+            <div className="p-4 border-b border-[#E0DED8] bg-[#FDFCF7]">
                 <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
                         <SparklesIcon className="h-5 w-5 text-[#1A4D2E]" />
@@ -295,10 +295,10 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                             key={section.id}
                             onClick={() => jumpToSection(idx)}
                             className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${idx === sectionIndex
-                                    ? 'bg-[#1A4D2E] text-white'
-                                    : idx < sectionIndex
-                                        ? 'bg-green-100 text-green-700'
-                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                ? 'bg-[#1A4D2E] text-white'
+                                : idx < sectionIndex
+                                    ? 'bg-green-100 text-green-700'
+                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                 }`}
                         >
                             <span>{section.icon}</span>
@@ -379,7 +379,7 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                                 <button
                                     onClick={addArrayItem}
                                     disabled={saving || !currentSection.itemFields.filter(f => f.required).every(f => currentArrayItem[f.key])}
-                                    className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg hover:bg-[#2D6B45] disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {saving ? <ArrowPathIcon className="h-4 w-4 animate-spin" /> : <PlusIcon className="h-4 w-4" />}
                                     Add {currentSection.label.replace(/s$/, '')}
@@ -406,8 +406,8 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                                                 key={opt}
                                                 onClick={() => handleAnswerChange(currentSection.questions[questionIndex].key, opt)}
                                                 className={`p-3 rounded-xl border-2 text-sm font-medium transition-all ${isSelected
-                                                        ? 'border-purple-500 bg-[#D6E8D5] text-[#1A4D2E]'
-                                                        : 'border-gray-200 hover:border-purple-300 text-gray-700'
+                                                    ? 'border-purple-500 bg-[#D6E8D5] text-[#1A4D2E]'
+                                                    : 'border-gray-200 hover:border-purple-300 text-gray-700'
                                                     }`}
                                             >
                                                 {opt === '9' ? '9th Grade' : opt === '10' ? '10th Grade' : opt === '11' ? '11th Grade' : opt === '12' ? '12th Grade' : opt}
@@ -438,8 +438,8 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                         onClick={handlePrevious}
                         disabled={sectionIndex === 0 && questionIndex === 0}
                         className={`flex items-center gap-1 px-4 py-2 rounded-xl text-sm font-medium transition-all ${sectionIndex === 0 && questionIndex === 0
-                                ? 'text-gray-300 cursor-not-allowed'
-                                : 'text-gray-600 hover:bg-gray-200'
+                            ? 'text-gray-300 cursor-not-allowed'
+                            : 'text-gray-600 hover:bg-gray-200'
                             }`}
                     >
                         <ArrowLeftIcon className="h-4 w-4" />
@@ -451,7 +451,7 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                     <button
                         onClick={handleNext}
                         disabled={saving}
-                        className="flex items-center gap-1 px-4 py-2 bg-[#1A4D2E] text-white rounded-xl text-sm font-medium hover:bg-purple-700 disabled:opacity-50"
+                        className="flex items-center gap-1 px-4 py-2 bg-[#1A4D2E] text-white rounded-xl text-sm font-medium hover:bg-[#2D6B45] disabled:opacity-50"
                     >
                         {saving ? (
                             <ArrowPathIcon className="h-4 w-4 animate-spin" />

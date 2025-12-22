@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
     SparklesIcon,
     CheckIcon,
@@ -72,8 +72,8 @@ const PricingPage = () => {
             period: '/month',
             description: 'Great for active research. Analyze multiple schools each month.',
             icon: SparklesIcon,
-            gradient: 'from-purple-500 to-indigo-500',
-            borderColor: 'border-purple-300',
+            gradient: 'from-[#1A4D2E] to-[#2D6B45]',
+            borderColor: 'border-[#A8C5A6]',
             credits: 20,
             bestFor: 'Students building their college list',
             features: [
@@ -83,7 +83,7 @@ const PricingPage = () => {
                 { text: 'Cancel anytime, no commitment', included: true },
             ],
             cta: creditsTier === 'pro' ? 'Already Subscribed' : 'Start Monthly',
-            ctaStyle: 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:from-purple-400 hover:to-indigo-400 shadow-lg shadow-purple-200',
+            ctaStyle: 'bg-[#1A4D2E] text-white hover:bg-[#2D6B45] shadow-md',
             disabled: creditsTier === 'pro'
         },
         {
@@ -93,8 +93,8 @@ const PricingPage = () => {
             period: '/year',
             description: 'Best value for your entire application journey — from research to acceptance.',
             icon: RocketLaunchIcon,
-            gradient: 'from-amber-500 to-orange-500',
-            borderColor: 'border-amber-400',
+            gradient: 'from-[#1A4D2E] to-[#2D6B45]',
+            borderColor: 'border-[#1A4D2E]',
             credits: 150,
             popular: true,
             badge: 'Best Value',
@@ -106,7 +106,7 @@ const PricingPage = () => {
                 { text: 'Priority support when you need it', included: true },
             ],
             cta: creditsTier === 'pro' ? 'Already Subscribed' : 'Get Season Pass',
-            ctaStyle: 'bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 shadow-lg shadow-amber-200',
+            ctaStyle: 'bg-[#1A4D2E] text-white hover:bg-[#2D6B45] shadow-md',
             disabled: creditsTier === 'pro'
         },
         {
@@ -135,31 +135,30 @@ const PricingPage = () => {
     const plans = allPlans;
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-orange-50">
+        <div className="min-h-screen bg-[#FDFCF7]">
             {/* Header */}
-            <header className="px-6 py-5 bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-amber-100">
+            <header className="px-6 py-5 bg-[#FDFCF7]/95 backdrop-blur-sm sticky top-0 z-50 border-b border-[#E0DED8]">
                 <nav className="max-w-7xl mx-auto flex items-center justify-between">
-                    <a href="/" className="flex items-center gap-3">
-                        <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl shadow-lg shadow-amber-200">
-                            <SparklesIcon className="h-7 w-7 text-white" />
-                        </div>
-                        <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-                            CollegeAI Pro
-                        </span>
-                    </a>
+                    <Link to="/launchpad" className="flex items-center">
+                        <img
+                            src="/logo.png"
+                            alt="Stratia Admissions"
+                            className="h-16 w-auto object-contain mix-blend-multiply"
+                        />
+                    </Link>
                     <div className="flex items-center gap-4">
                         {currentUser && (
-                            <div className="flex items-center gap-2 px-3 py-1.5 bg-amber-100 rounded-full text-sm font-medium text-amber-700">
+                            <div className="flex items-center gap-2 px-3 py-1.5 bg-[#D6E8D5] rounded-full text-sm font-medium text-[#1A4D2E]">
                                 <BoltIcon className="h-4 w-4" />
                                 {creditsRemaining} credits
                             </div>
                         )}
-                        <button
-                            onClick={() => navigate('/')}
-                            className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-full hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200"
+                        <Link
+                            to="/launchpad"
+                            className="px-5 py-2.5 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-md"
                         >
                             Go to App
-                        </button>
+                        </Link>
                     </div>
                 </nav>
             </header>
@@ -167,14 +166,14 @@ const PricingPage = () => {
             <main className="px-6 py-16">
                 {/* Hero */}
                 <div className="max-w-4xl mx-auto text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#2C2C2C] mb-4">
                         Find Your
-                        <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent"> Perfect Fit</span>
+                        <span className="text-[#1A4D2E]"> Perfect Fit</span>
                     </h1>
-                    <p className="text-xl text-gray-600 mb-6">
+                    <p className="text-xl text-[#4A4A4A] mb-6">
                         Get AI-powered insights on how well you match with each university — academics, culture, and admission chances.
                     </p>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium border border-amber-200">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#D6E8D5] text-[#1A4D2E] rounded-full text-sm font-medium border border-[#A8C5A6]">
                         <LightBulbIcon className="h-4 w-4" />
                         1 credit = 1 comprehensive fit analysis for any university
                     </div>
@@ -190,12 +189,12 @@ const PricingPage = () => {
                             return (
                                 <div
                                     key={plan.id}
-                                    className={`relative bg-white rounded-3xl p-8 border-2 ${plan.borderColor} ${plan.popular ? 'shadow-xl shadow-amber-100' : 'shadow-sm'
+                                    className={`relative bg-white rounded-3xl p-8 border-2 ${plan.borderColor} ${plan.popular ? 'shadow-xl shadow-[#D6E8D5]' : 'shadow-sm'
                                         } transition-all hover:shadow-lg`}
                                 >
                                     {/* Popular Badge */}
                                     {plan.popular && (
-                                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-bold rounded-full shadow-lg">
+                                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#1A4D2E] text-white text-sm font-bold rounded-full shadow-md">
                                             BEST VALUE
                                         </div>
                                     )}
@@ -219,7 +218,7 @@ const PricingPage = () => {
 
                                     {/* Credits Badge */}
                                     <div className="mb-4">
-                                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+                                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-[#D6E8D5] text-[#1A4D2E] rounded-full text-sm font-semibold">
                                             <BoltIcon className="h-4 w-4" />
                                             {plan.credits} credits
                                         </span>
@@ -239,9 +238,9 @@ const PricingPage = () => {
                                             <li
                                                 key={idx}
                                                 className={`flex items-start gap-3 ${feature.included ? 'text-gray-700' : 'text-gray-400'
-                                                    } ${feature.highlight ? 'font-medium text-amber-600' : ''}`}
+                                                    } ${feature.highlight ? 'font-medium text-[#1A4D2E]' : ''}`}
                                             >
-                                                <CheckIcon className={`h-5 w-5 flex-shrink-0 mt-0.5 ${feature.highlight ? 'text-amber-500' : 'text-green-500'
+                                                <CheckIcon className={`h-5 w-5 flex-shrink-0 mt-0.5 ${feature.highlight ? 'text-[#1A4D2E]' : 'text-[#1A4D2E]'
                                                     }`} />
                                                 <span>{feature.text}</span>
                                             </li>
@@ -324,22 +323,21 @@ const PricingPage = () => {
             </main>
 
             {/* Footer */}
-            <footer className="px-6 py-12 bg-white border-t border-gray-100 mt-20">
+            <footer className="px-6 py-12 bg-white border-t border-[#E0DED8] mt-20">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div className="flex items-center gap-3">
-                        <div className="p-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl">
-                            <SparklesIcon className="h-6 w-6 text-white" />
-                        </div>
-                        <span className="text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-                            CollegeAI Pro
-                        </span>
+                    <Link to="/launchpad" className="flex items-center">
+                        <img
+                            src="/logo.png"
+                            alt="Stratia Admissions"
+                            className="h-10 w-auto object-contain mix-blend-multiply"
+                        />
+                    </Link>
+                    <div className="flex gap-6 text-sm text-[#4A4A4A]">
+                        <Link to="/pricing" className="hover:text-[#1A4D2E]">Pricing</Link>
+                        <a href="mailto:cvsubs@gmail.com" className="hover:text-[#1A4D2E]">Support</a>
                     </div>
-                    <div className="flex gap-6 text-sm text-gray-500">
-                        <a href="/pricing" className="hover:text-amber-600">Pricing</a>
-                        <a href="mailto:cvsubs@gmail.com" className="hover:text-amber-600">Support</a>
-                    </div>
-                    <p className="text-gray-500 text-sm">
-                        © {new Date().getFullYear()} CollegeAI Pro
+                    <p className="text-[#4A4A4A] text-sm">
+                        © {new Date().getFullYear()} Stratia Admissions
                     </p>
                 </div>
             </footer>
