@@ -116,8 +116,8 @@ const PricingPage = () => {
             period: 'one-time',
             description: 'Need a few more analyses? Add credits anytime.',
             icon: BoltIcon,
-            gradient: 'from-blue-500 to-cyan-500',
-            borderColor: 'border-blue-300',
+            gradient: 'from-[#1A4D2E] to-[#2D6B45]',
+            borderColor: 'border-[#A8C5A6]',
             credits: 10,
             bestFor: 'When you need extra analyses',
             features: [
@@ -127,7 +127,7 @@ const PricingPage = () => {
                 { text: 'Instant activation', included: true },
             ],
             cta: 'Buy Credits',
-            ctaStyle: 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-400 hover:to-cyan-400 shadow-lg shadow-blue-200',
+            ctaStyle: 'bg-[#1A4D2E] text-white hover:bg-[#2D6B45] shadow-md',
         }
     ];
 
@@ -143,7 +143,7 @@ const PricingPage = () => {
                         <img
                             src="/logo.png"
                             alt="Stratia Admissions"
-                            className="h-16 w-auto object-contain mix-blend-multiply"
+                            className="h-20 w-auto object-contain mix-blend-multiply"
                         />
                     </Link>
                     <div className="flex items-center gap-4">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import {
   SparklesIcon,
   RocketLaunchIcon,
@@ -29,6 +30,7 @@ import { signInWithGoogle } from '../services/authService';
  */
 const LandingPage = () => {
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
   const [openFaq, setOpenFaq] = useState(null);
 
   const handleSignIn = async () => {
@@ -157,12 +159,21 @@ const LandingPage = () => {
             <Link to="/contact" className="hidden md:block text-[#4A4A4A] hover:text-[#1A4D2E] font-medium transition-colors">
               Contact
             </Link>
-            <button
-              onClick={handleSignIn}
-              className="px-5 py-2.5 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-md hover:shadow-lg"
-            >
-              Get Started Free
-            </button>
+            {currentUser ? (
+              <Link
+                to="/launchpad"
+                className="px-5 py-2.5 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-md hover:shadow-lg"
+              >
+                Go to App
+              </Link>
+            ) : (
+              <button
+                onClick={handleSignIn}
+                className="px-5 py-2.5 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-md hover:shadow-lg"
+              >
+                Get Started Free
+              </button>
+            )}
           </div>
         </nav>
       </header>
