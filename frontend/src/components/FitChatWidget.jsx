@@ -32,12 +32,12 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
     const messagesEndRef = useRef(null);
     const inputRef = useRef(null);
 
-    // Fit category colors - Stratia theme
+    // Fit category colors - Stratia theme consistency
     const fitColors = {
         'SAFETY': { bg: 'from-[#1A4D2E] to-[#2D6B45]', text: 'text-[#1A4D2E]', bgLight: 'bg-[#D6E8D5]' },
-        'TARGET': { bg: 'from-blue-400 to-blue-600', text: 'text-blue-700', bgLight: 'bg-blue-50' },
+        'TARGET': { bg: 'from-[#1A4D2E] to-[#2D6B45]', text: 'text-[#1A4D2E]', bgLight: 'bg-[#D6E8D5]' },
         'REACH': { bg: 'from-[#C05838] to-[#D97858]', text: 'text-[#C05838]', bgLight: 'bg-[#FCEEE8]' },
-        'SUPER_REACH': { bg: 'from-rose-400 to-rose-500', text: 'text-rose-700', bgLight: 'bg-rose-50' },
+        'SUPER_REACH': { bg: 'from-[#C05838] to-[#D97858]', text: 'text-[#C05838]', bgLight: 'bg-[#FCEEE8]' },
     };
     const colors = fitColors[fitCategory] || fitColors['TARGET'];
 
@@ -68,6 +68,12 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
         setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
         setLoading(true);
 
+        console.log('[FitChat] Sending message:', {
+            user_email: currentUser.email,
+            university_id: universityId,
+            question: userMessage
+        });
+
         try {
             const response = await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat`, {
                 method: 'POST',
@@ -81,21 +87,24 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
             });
 
             const data = await response.json();
+            console.log('[FitChat] Response:', response.status, data);
 
             if (data.success) {
                 setMessages(prev => [...prev, { role: 'assistant', content: data.answer }]);
                 setConversationHistory(data.conversation_history || []);
             } else {
+                const errorMsg = data.error || 'Unknown error';
+                console.error('[FitChat] Backend error:', errorMsg);
                 setMessages(prev => [...prev, {
                     role: 'assistant',
-                    content: `Sorry, I couldn't get your fit analysis for ${universityName}. ${data.error || ''}`
+                    content: `Sorry, I couldn't process your question. ${errorMsg}`
                 }]);
             }
         } catch (error) {
-            console.error('Fit chat error:', error);
+            console.error('[FitChat] Network error:', error);
             setMessages(prev => [...prev, {
                 role: 'assistant',
-                content: 'Sorry, I encountered an error. Please try again.'
+                content: 'Sorry, I encountered a network error. Please try again.'
             }]);
         }
         setLoading(false);
@@ -178,6 +187,12 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
         setMessages(prev => [...prev, { role: 'user', content: question }]);
         setLoading(true);
 
+        console.log('[FitChat] Suggested question:', {
+            user_email: currentUser.email,
+            university_id: universityId,
+            question: question
+        });
+
         try {
             const response = await fetch(`${PROFILE_MANAGER_ES_URL}/fit-chat`, {
                 method: 'POST',
@@ -191,21 +206,24 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
             });
 
             const data = await response.json();
+            console.log('[FitChat] Suggested question response:', response.status, data);
 
             if (data.success) {
                 setMessages(prev => [...prev, { role: 'assistant', content: data.answer }]);
                 setConversationHistory(data.conversation_history || []);
             } else {
+                const errorMsg = data.error || 'Unknown error';
+                console.error('[FitChat] Backend error:', errorMsg);
                 setMessages(prev => [...prev, {
                     role: 'assistant',
-                    content: `Sorry, I couldn't get your fit analysis for ${universityName}. ${data.error || ''}`
+                    content: `Sorry, I couldn't process your question. ${errorMsg}`
                 }]);
             }
         } catch (error) {
-            console.error('Fit chat error:', error);
+            console.error('[FitChat] Network error:', error);
             setMessages(prev => [...prev, {
                 role: 'assistant',
-                content: 'Sorry, I encountered an error. Please try again.'
+                content: 'Sorry, I encountered a network error. Please try again.'
             }]);
         }
         setLoading(false);

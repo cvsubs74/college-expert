@@ -1195,11 +1195,11 @@ const UniversityProfilePage = ({ university, fitAnalysis, onBack }) => {
             {!showChat && (
                 <button
                     onClick={() => setShowChat(true)}
-                    className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium group"
+                    className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-5 py-3 bg-[#1A4D2E] text-white rounded-full shadow-lg hover:shadow-xl hover:bg-[#2D6B45] hover:scale-105 transition-all duration-300 font-medium group"
                 >
                     <div className="relative">
                         <ChatBubbleLeftRightIcon className="h-6 w-6" />
-                        <SparklesIcon className="h-3 w-3 absolute -top-1 -right-1 text-yellow-200 animate-pulse" />
+                        <SparklesIcon className="h-3 w-3 absolute -top-1 -right-1 text-[#D6E8D5] animate-pulse" />
                     </div>
                     <span className="font-bold">Ask AI</span>
                 </button>

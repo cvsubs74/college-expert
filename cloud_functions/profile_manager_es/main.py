@@ -2982,24 +2982,34 @@ def fit_chat(user_id: str, university_id: str, question: str, conversation_histo
         user_profile = profile_response['hits']['hits'][0]['_source']
         
         # Load fit analysis for this university
+        # Match the ID format exactly as stored (same pattern as handle_get_fits)
         normalized_uni_id = normalize_university_id(university_id)
+        
+        # Query matching handle_get_fits pattern - use fields without .keyword
         fit_query = {
             "query": {
                 "bool": {
                     "must": [
-                        {"term": {"user_email.keyword": user_id}},
+                        {"term": {"user_email": user_id}}
+                    ],
+                    "should": [
+                        {"term": {"university_id": university_id}},
                         {"term": {"university_id": normalized_uni_id}}
-                    ]
+                    ],
+                    "minimum_should_match": 1
                 }
             },
             "size": 1
         }
+        
+        logger.info(f"[FIT_CHAT] Querying ES with user_email={user_id}, university_id={university_id}, normalized={normalized_uni_id}")
         fit_response = es_client.search(index=ES_FITS_INDEX, body=fit_query)
         
         if fit_response['hits']['total']['value'] == 0:
+            logger.warning(f"[FIT_CHAT] No fit found for user={user_id}, uni_id={university_id}, normalized={normalized_uni_id}")
             return {
                 "success": False,
-                "error": f"No fit analysis found for {university_id}"
+                "error": f"No fit analysis found for {university_id}. Please run a fit analysis first."
             }
         
         fit_data = fit_response['hits']['hits'][0]['_source']

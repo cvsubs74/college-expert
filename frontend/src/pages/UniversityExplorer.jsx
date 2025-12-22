@@ -187,110 +187,105 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                 )}
             </div>
 
-            <div className="flex">
-                {/* Main Content Area */}
-                <div className="flex-1 p-5 pt-10">
-                    {/* Header */}
-                    <div className="flex items-start gap-3 mb-3">
-                        {/* Avatar */}
-                        <div className="w-11 h-11 rounded-full bg-[#F8F6F0] flex items-center justify-center flex-shrink-0 border border-[#E0DED8]">
-                            <span className="text-lg font-bold text-[#4A4A4A]">{uni.name?.charAt(0) || 'U'}</span>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                            <h3
-                                onClick={() => onSelect(uni)}
-                                className="font-serif text-lg font-bold text-[#2C2C2C] hover:text-[#1A4D2E] cursor-pointer transition-colors"
-                            >
-                                {uni.name}
-                            </h3>
-                            <div className="flex items-center gap-2 text-sm text-[#4A4A4A]">
-                                <MapPinIcon className="h-4 w-4" />
-                                <span>{uni.location.city}, {uni.location.state}</span>
-                                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${uni.location.type === 'Private' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'
-                                    }`}>
-                                    {uni.location.type}
-                                </span>
-                            </div>
-                        </div>
+            {/* Single Column Layout */}
+            <div className="p-5 pt-10">
+                {/* Header Row: Avatar + Name + Action Buttons */}
+                <div className="flex items-start gap-3 mb-3">
+                    {/* Avatar */}
+                    <div className="w-11 h-11 rounded-full bg-[#F8F6F0] flex items-center justify-center flex-shrink-0 border border-[#E0DED8]">
+                        <span className="text-lg font-bold text-[#4A4A4A]">{uni.name?.charAt(0) || 'U'}</span>
                     </div>
-
-                    {/* Stats Row */}
-                    <div className="flex flex-wrap gap-2 mb-3">
-                        <div className="flex items-center gap-1.5 bg-[#D6E8D5] px-3 py-1.5 rounded-lg">
-                            <ChartBarIcon className="h-4 w-4 text-[#1A4D2E]" />
-                            <span className="text-xs font-medium text-[#1A4D2E]">
-                                {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}%` : 'N/A'} Accept
+                    <div className="flex-1 min-w-0">
+                        <h3
+                            onClick={() => onSelect(uni)}
+                            className="font-serif text-lg font-bold text-[#2C2C2C] hover:text-[#1A4D2E] cursor-pointer transition-colors"
+                        >
+                            {uni.name}
+                        </h3>
+                        <div className="flex items-center gap-2 text-sm text-[#4A4A4A]">
+                            <MapPinIcon className="h-4 w-4" />
+                            <span>{uni.location.city}, {uni.location.state}</span>
+                            <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${uni.location.type === 'Private' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'
+                                }`}>
+                                {uni.location.type}
                             </span>
                         </div>
-                        <div className="flex items-center gap-1.5 bg-blue-50 px-3 py-1.5 rounded-lg">
-                            <TrophyIcon className="h-4 w-4 text-blue-600" />
-                            <span className="text-xs font-medium text-blue-700">
-                                #{uni.rankings.usNews !== 'N/A' ? uni.rankings.usNews : '—'} US News
-                            </span>
-                        </div>
-                        {uni.financials?.inStateTuition && uni.financials.inStateTuition !== 'N/A' && (
-                            <div className="flex items-center gap-1.5 bg-green-50 px-3 py-1.5 rounded-lg">
-                                <CurrencyDollarIcon className="h-4 w-4 text-green-600" />
-                                <span className="text-xs font-medium text-green-700">
-                                    ${uni.financials.inStateTuition.toLocaleString()}
-                                </span>
-                            </div>
-                        )}
                     </div>
-
-                    {/* Summary */}
-                    {uni.summary && uni.summary !== 'No summary available.' && (
-                        <p className="text-sm text-[#4A4A4A] line-clamp-2">{uni.summary}</p>
-                    )}
-                </div>
-
-                {/* Right Side Action Panel */}
-                <div className="flex flex-col justify-center gap-2 p-4 bg-[#FDFCF7] border-l border-[#E0DED8]">
-                    <button
-                        onClick={() => onSelect(uni)}
-                        className="px-4 py-2.5 rounded-xl text-sm font-medium bg-[#1A4D2E] text-white hover:bg-[#2D6B45] transition-all shadow-sm flex items-center gap-2"
-                    >
-                        <EyeIcon className="h-4 w-4" />
-                        Explore
-                    </button>
-                    <button
-                        onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
-                        disabled={!isInList && uni.isLimitReached}
-                        className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center gap-2 ${isInList
+                    {/* Inline Action Buttons (moved from right panel) */}
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                        <button
+                            onClick={() => onSelect(uni)}
+                            className="px-3 py-2 rounded-xl text-sm font-medium bg-[#1A4D2E] text-white hover:bg-[#2D6B45] transition-all shadow-sm flex items-center gap-1.5"
+                        >
+                            <EyeIcon className="h-4 w-4" />
+                            Explore
+                        </button>
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
+                            disabled={!isInList && uni.isLimitReached}
+                            className={`px-3 py-2 rounded-xl text-sm font-medium transition-all flex items-center gap-1.5 ${isInList
                                 ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-700'
                                 : uni.isLimitReached
                                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                                     : 'bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#A8C5A6]'
-                            }`}
-                    >
-                        {isInList ? (
-                            <><CheckCircleIcon className="h-4 w-4" /> Saved</>
-                        ) : uni.isLimitReached ? (
-                            <><LockClosedIcon className="h-4 w-4" /> Locked</>
-                        ) : (
-                            <><RocketLaunchIcon className="h-4 w-4" /> Save</>
-                        )}
-                    </button>
-                    <div className="flex gap-1">
+                                }`}
+                        >
+                            {isInList ? (
+                                <><CheckCircleIcon className="h-4 w-4" /> Saved</>
+                            ) : uni.isLimitReached ? (
+                                <><LockClosedIcon className="h-4 w-4" /> Locked</>
+                            ) : (
+                                <><RocketLaunchIcon className="h-4 w-4" /> Save</>
+                            )}
+                        </button>
                         <button
                             onClick={() => onCompare(uni)}
-                            className={`flex-1 p-2 rounded-xl text-xs transition-all ${isSelectedForCompare
-                                    ? 'bg-[#1A4D2E] text-white'
-                                    : 'bg-[#F8F6F0] text-[#4A4A4A] hover:bg-[#E0DED8]'
+                            className={`p-2 rounded-xl transition-all ${isSelectedForCompare
+                                ? 'bg-[#1A4D2E] text-white'
+                                : 'bg-[#F8F6F0] text-[#4A4A4A] hover:bg-[#E0DED8]'
                                 }`}
                             title="Compare"
                         >
-                            <ScaleIcon className="h-4 w-4 mx-auto" />
+                            <ScaleIcon className="h-4 w-4" />
                         </button>
                         <button
                             onClick={(e) => { e.stopPropagation(); onOpenChat(uni); }}
-                            className="flex-1 p-2 rounded-xl bg-[#F8F6F0] text-[#4A4A4A] hover:bg-[#E0DED8] transition-all"
+                            className="p-2 rounded-xl bg-[#F8F6F0] text-[#4A4A4A] hover:bg-[#E0DED8] transition-all"
                             title="Ask AI"
                         >
-                            <ChatBubbleLeftRightIcon className="h-4 w-4 mx-auto" />
+                            <ChatBubbleLeftRightIcon className="h-4 w-4" />
                         </button>
                     </div>
                 </div>
+
+                {/* Stats Row */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                    <div className="flex items-center gap-1.5 bg-[#D6E8D5] px-3 py-1.5 rounded-lg">
+                        <ChartBarIcon className="h-4 w-4 text-[#1A4D2E]" />
+                        <span className="text-xs font-medium text-[#1A4D2E]">
+                            {uni.admissions.acceptanceRate !== 'N/A' ? `${uni.admissions.acceptanceRate}%` : 'N/A'} Accept
+                        </span>
+                    </div>
+                    <div className="flex items-center gap-1.5 bg-blue-50 px-3 py-1.5 rounded-lg">
+                        <TrophyIcon className="h-4 w-4 text-blue-600" />
+                        <span className="text-xs font-medium text-blue-700">
+                            #{uni.rankings.usNews !== 'N/A' ? uni.rankings.usNews : '—'} US News
+                        </span>
+                    </div>
+                    {uni.financials?.inStateTuition && uni.financials.inStateTuition !== 'N/A' && (
+                        <div className="flex items-center gap-1.5 bg-green-50 px-3 py-1.5 rounded-lg">
+                            <CurrencyDollarIcon className="h-4 w-4 text-green-600" />
+                            <span className="text-xs font-medium text-green-700">
+                                ${uni.financials.inStateTuition.toLocaleString()}
+                            </span>
+                        </div>
+                    )}
+                </div>
+
+                {/* Summary */}
+                {uni.summary && uni.summary !== 'No summary available.' && (
+                    <p className="text-sm text-[#4A4A4A] line-clamp-2">{uni.summary}</p>
+                )}
             </div>
         </div>
     );

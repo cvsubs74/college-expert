@@ -187,19 +187,19 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm">
             <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl flex flex-col max-h-[80vh] overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
                 {/* Header */}
-                <div className="px-4 py-3 border-b bg-gradient-to-r from-amber-50 to-orange-50 flex items-center justify-between">
+                <div className="px-4 py-3 border-b bg-[#FDFCF7] flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <div className="p-1.5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-lg">
+                        <div className="p-1.5 bg-[#1A4D2E] rounded-lg">
                             <SparklesIcon className="h-4 w-4 text-white" />
                         </div>
                         <div>
                             <h3 className="font-semibold text-gray-900 text-sm">{universityName}</h3>
-                            <p className="text-xs text-gray-500">AI-powered insights</p>
+                            <p className="text-xs text-[#4A4A4A]">AI-powered insights</p>
                         </div>
                     </div>
                     <button
                         onClick={onClose}
-                        className="p-1.5 hover:bg-white/50 rounded-lg transition-colors"
+                        className="p-1.5 hover:bg-[#E0DED8] rounded-lg transition-colors"
                     >
                         <XMarkIcon className="h-5 w-5 text-gray-500" />
                     </button>
@@ -209,7 +209,7 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                 <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-[300px] bg-gray-50/50">
                     {messages.length === 0 ? (
                         <div className="text-center py-8">
-                            <ChatBubbleLeftRightIcon className="h-10 w-10 text-amber-300 mx-auto mb-3" />
+                            <ChatBubbleLeftRightIcon className="h-10 w-10 text-[#1A4D2E] opacity-50 mx-auto mb-3" />
                             <p className="text-gray-600 text-sm mb-4">
                                 Ask anything about {universityName}!
                             </p>
@@ -219,7 +219,7 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                                         key={i}
                                         onClick={() => handleSuggestedQuestion(q)}
                                         disabled={loading}
-                                        className="block w-full text-left px-3 py-2 text-sm text-gray-600 bg-white rounded-lg border border-gray-200 hover:border-amber-300 hover:bg-amber-50 transition-colors disabled:opacity-50"
+                                        className="block w-full text-left px-3 py-2 text-sm text-gray-600 bg-white rounded-lg border border-gray-200 hover:border-[#1A4D2E] hover:bg-[#D6E8D5]/30 transition-colors disabled:opacity-50"
                                     >
                                         {q}
                                     </button>
@@ -234,7 +234,7 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                                     className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                                 >
                                     <div className={`max-w-[85%] px-3 py-2 rounded-xl text-sm ${msg.role === 'user'
-                                        ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white'
+                                        ? 'bg-[#1A4D2E] text-white'
                                         : 'bg-white border border-gray-100 shadow-sm'
                                         }`}>
                                         {msg.role === 'assistant' ? (
@@ -257,7 +257,7 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                                             <button
                                                 key={i}
                                                 onClick={() => handleSuggestedQuestion(q)}
-                                                className="px-3 py-1.5 text-xs font-medium rounded-full border border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 hover:border-amber-300 transition-colors"
+                                                className="px-3 py-1.5 text-xs font-medium rounded-full border border-[#A8C5A6] bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#A8C5A6] transition-colors"
                                             >
                                                 {q}
                                             </button>
@@ -271,9 +271,9 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                         <div className="flex justify-start">
                             <div className="bg-white border border-gray-100 shadow-sm px-4 py-3 rounded-xl">
                                 <div className="flex gap-1">
-                                    <span className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                                    <span className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                                    <span className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                                    <span className="w-2 h-2 bg-[#1A4D2E] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                                    <span className="w-2 h-2 bg-[#1A4D2E] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                                    <span className="w-2 h-2 bg-[#1A4D2E] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                                 </div>
                             </div>
                         </div>
@@ -290,13 +290,13 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
                             onChange={(e) => setInput(e.target.value)}
                             onKeyPress={handleKeyPress}
                             placeholder="Ask a question..."
-                            className="flex-1 px-4 py-2.5 text-sm border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all"
+                            className="flex-1 px-4 py-2.5 text-sm border border-[#E0DED8] rounded-xl focus:ring-2 focus:ring-[#1A4D2E]/20 focus:border-[#1A4D2E] transition-all"
                             disabled={loading}
                         />
                         <button
                             onClick={sendMessage}
                             disabled={loading || !input.trim()}
-                            className="p-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl hover:from-amber-400 hover:to-orange-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg"
+                            className="p-2.5 bg-[#1A4D2E] text-white rounded-xl hover:bg-[#2D6B45] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg"
                         >
                             <PaperAirplaneIcon className="h-5 w-5" />
                         </button>
