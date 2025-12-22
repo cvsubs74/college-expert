@@ -51,12 +51,12 @@ function Navigation() {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-xl flex items-center justify-center">
-                <BookOpenIcon className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-serif text-lg font-semibold text-[#1A4D2E]">Stratia</span>
-              <span className="hidden sm:inline text-sm font-medium text-[#4A4A4A]">Admissions</span>
+            <Link to="/" className="flex items-center">
+              <img
+                src="/logo.png"
+                alt="Stratia Admissions"
+                className="h-14 w-auto object-contain mix-blend-multiply"
+              />
             </Link>
 
             {/* Nav Links */}

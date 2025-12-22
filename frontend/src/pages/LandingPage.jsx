@@ -141,15 +141,12 @@ const LandingPage = () => {
       <header className="px-6 py-5 sticky top-0 z-50 transition-all bg-[#FDFCF7]/90 backdrop-blur-sm border-b border-[#E0DED8]" role="banner">
         <nav className="max-w-7xl mx-auto flex items-center justify-between" aria-label="Main navigation">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] shadow-md">
-              <BookOpenIcon className="w-5 h-5 text-white absolute" style={{ top: '8px', left: '8px' }} />
-              <KeyIcon className="w-4 h-4 text-[#D6E8D5] absolute" style={{ bottom: '6px', right: '6px' }} />
-            </div>
-            <div className="flex items-baseline gap-1">
-              <span className="font-serif text-xl font-semibold text-[#1A4D2E]">Stratia</span>
-              <span className="font-sans text-sm font-medium text-[#4A4A4A]">Admissions</span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img
+              src="/logo.png"
+              alt="Stratia Admissions"
+              className="h-14 w-auto object-contain mix-blend-multiply"
+            />
           </Link>
 
           {/* Navigation Links */}
@@ -366,12 +363,12 @@ const LandingPage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <Link to="/" className="flex items-center gap-2 mb-4">
-                <div className="relative w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] shadow-md">
-                  <BookOpenIcon className="w-5 h-5 text-white absolute" style={{ top: '8px', left: '8px' }} />
-                  <KeyIcon className="w-4 h-4 text-[#D6E8D5] absolute" style={{ bottom: '6px', right: '6px' }} />
-                </div>
-                <span className="font-serif text-xl font-semibold text-[#1A4D2E]">Stratia</span>
+              <Link to="/" className="flex items-center mb-4">
+                <img
+                  src="/logo.png"
+                  alt="Stratia Admissions"
+                  className="h-10 w-auto object-contain mix-blend-multiply"
+                />
               </Link>
               <p className="text-[#4A4A4A] text-sm">
                 AI-powered college admissions strategy platform. Find your perfect fit college.

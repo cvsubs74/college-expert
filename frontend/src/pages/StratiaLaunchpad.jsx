@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { getPrecomputedFits } from '../services/api';
+import { getPrecomputedFits, getFitsByCategory, updateCollegeList, computeSingleFit } from '../services/api';
 import {
     BackgroundBlobs,
     HeroSection,
@@ -48,6 +48,12 @@ const StratiaLaunchpad = () => {
     const [showDiscoveryPanel, setShowDiscoveryPanel] = useState(false);
     const [showCreditsModal, setShowCreditsModal] = useState(false);
     const [creditsRemaining, setCreditsRemaining] = useState(10);
+
+    // Discovery panel state
+    const [discoveryCategory, setDiscoveryCategory] = useState('SAFETY');
+    const [discoveryResults, setDiscoveryResults] = useState([]);
+    const [discoveryLoading, setDiscoveryLoading] = useState(false);
+    const [addingSchoolId, setAddingSchoolId] = useState(null);
 
     // Fetch college list AND precomputed fits, then merge
     const fetchCollegeList = async () => {
@@ -198,6 +204,68 @@ const StratiaLaunchpad = () => {
         setFitModalCollege(null);
     };
 
+    // Discovery panel functions
+    const fetchDiscoverySchools = async (category = 'SAFETY') => {
+        if (!currentUser?.email) return;
+
+        setDiscoveryLoading(true);
+        setDiscoveryCategory(category);
+        try {
+            // Get existing college IDs to exclude
+            const existingIds = collegeList.map(c => c.university_id);
+            const result = await getFitsByCategory(currentUser.email, category, null, existingIds, 10);
+
+            if (result.success) {
+                // API returns 'results' array
+                const schools = result.results || result.fits || [];
+                setDiscoveryResults(schools);
+                console.log(`[Discovery] Found ${schools.length} ${category} schools`);
+            } else {
+                setDiscoveryResults([]);
+            }
+        } catch (err) {
+            console.error('[Discovery] Error fetching schools:', err);
+            setDiscoveryResults([]);
+        } finally {
+            setDiscoveryLoading(false);
+        }
+    };
+
+    const handleOpenDiscovery = (category = 'SAFETY') => {
+        setShowDiscoveryPanel(true);
+        fetchDiscoverySchools(category);
+    };
+
+    const handleAddDiscoverySchool = async (school) => {
+        if (!currentUser?.email || addingSchoolId) return;
+
+        setAddingSchoolId(school.university_id);
+        try {
+            // Add to college list
+            const addResult = await updateCollegeList(currentUser.email, 'add', {
+                id: school.university_id,
+                name: school.university_name
+            });
+
+            if (addResult.success) {
+                // Compute fit analysis
+                await computeSingleFit(currentUser.email, school.university_id, false);
+
+                // Refresh college list
+                await fetchCollegeList();
+
+                // Remove from discovery results
+                setDiscoveryResults(prev => prev.filter(s => s.university_id !== school.university_id));
+
+                console.log(`[Discovery] Added ${school.university_name} to launchpad`);
+            }
+        } catch (err) {
+            console.error('[Discovery] Error adding school:', err);
+        } finally {
+            setAddingSchoolId(null);
+        }
+    };
+
     // Filter tabs
     const filterTabs = [
         { key: 'ALL', label: 'All Schools', count: collegeList.length },
@@ -290,7 +358,7 @@ const StratiaLaunchpad = () => {
             <SmartDiscoveryAlert
                 hasNoSafety={stats.safety === 0 && stats.total > 0}
                 isTooAmbitious={stats.superReach > stats.target + stats.safety && stats.total > 2}
-                onFindSchools={() => setShowDiscoveryPanel(true)}
+                onFindSchools={() => handleOpenDiscovery('SAFETY')}
             />
 
             {/* Main Content */}
@@ -402,32 +470,119 @@ const StratiaLaunchpad = () => {
                 </div>
             </section>
 
-            {/* Discovery Panel - Redirect to Explorer */}
+            {/* Discovery Panel - Inline School Recommendations */}
             {showDiscoveryPanel && (
                 <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-                    <div className="stratia-card p-8 max-w-md w-full text-center animate-fade-up">
-                        <div className="w-16 h-16 bg-[#D6E8D5] rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="text-3xl">🔍</span>
+                    <div className="stratia-card p-6 max-w-3xl w-full max-h-[80vh] overflow-hidden animate-fade-up">
+                        {/* Header */}
+                        <div className="flex items-center justify-between mb-4">
+                            <div>
+                                <h3 className="font-serif text-xl font-semibold text-[#2C2C2C]">
+                                    {discoveryCategory === 'SAFETY' ? '🛡️ Safety School Recommendations' :
+                                        discoveryCategory === 'TARGET' ? '🎯 Target School Recommendations' :
+                                            '🚀 Reach School Recommendations'}
+                                </h3>
+                                <p className="text-sm text-[#4A4A4A]">
+                                    Based on your profile, we recommend these schools
+                                </p>
+                            </div>
+                            <button
+                                onClick={() => setShowDiscoveryPanel(false)}
+                                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            >
+                                <span className="text-xl">×</span>
+                            </button>
                         </div>
-                        <h3 className="font-serif text-xl font-semibold text-[#2C2C2C] mb-2">
-                            Discover New Schools
-                        </h3>
-                        <p className="text-[#4A4A4A] mb-6">
-                            Browse our curated collection of universities to find your perfect matches.
-                        </p>
-                        <div className="flex gap-3 justify-center">
+
+                        {/* Category Tabs */}
+                        <div className="flex gap-2 mb-4">
+                            {['SAFETY', 'TARGET', 'REACH'].map(cat => (
+                                <button
+                                    key={cat}
+                                    onClick={() => fetchDiscoverySchools(cat)}
+                                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${discoveryCategory === cat
+                                            ? 'bg-[#1A4D2E] text-white'
+                                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                        }`}
+                                >
+                                    {cat === 'SAFETY' ? '🛡️ Safety' : cat === 'TARGET' ? '🎯 Target' : '🚀 Reach'}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Results Grid */}
+                        <div className="overflow-y-auto max-h-[50vh] pr-2">
+                            {discoveryLoading ? (
+                                <div className="flex items-center justify-center py-12">
+                                    <ArrowPathIcon className="h-8 w-8 animate-spin text-[#1A4D2E]" />
+                                    <span className="ml-3 text-gray-600">Finding recommendations...</span>
+                                </div>
+                            ) : discoveryResults.length === 0 ? (
+                                <div className="text-center py-12 text-gray-500">
+                                    <p>No additional {discoveryCategory.toLowerCase()} schools found.</p>
+                                    <p className="text-sm mt-2">Try a different category or explore all universities.</p>
+                                </div>
+                            ) : (
+                                <div className="grid gap-3">
+                                    {discoveryResults.map(school => (
+                                        <div
+                                            key={school.university_id}
+                                            className="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow"
+                                        >
+                                            <div className="flex-1">
+                                                <h4 className="font-semibold text-[#2C2C2C]">
+                                                    {school.university_name}
+                                                </h4>
+                                                <div className="flex items-center gap-3 text-sm text-gray-500 mt-1">
+                                                    {school.location && <span>📍 {school.location}</span>}
+                                                    {school.us_news_rank && <span>#{school.us_news_rank} US News</span>}
+                                                    {school.match_percentage && (
+                                                        <span className="text-[#1A4D2E] font-medium">
+                                                            {school.match_percentage}% Match
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <button
+                                                onClick={() => handleAddDiscoverySchool(school)}
+                                                disabled={addingSchoolId === school.university_id}
+                                                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${addingSchoolId === school.university_id
+                                                        ? 'bg-gray-200 text-gray-500 cursor-wait'
+                                                        : 'bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#1A4D2E] hover:text-white'
+                                                    }`}
+                                            >
+                                                {addingSchoolId === school.university_id ? (
+                                                    <>
+                                                        <ArrowPathIcon className="h-4 w-4 animate-spin" />
+                                                        Adding...
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <PlusIcon className="h-4 w-4" />
+                                                        Add
+                                                    </>
+                                                )}
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Footer */}
+                        <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-200">
+                            <Link
+                                to="/universities"
+                                className="text-sm text-[#1A4D2E] hover:underline"
+                            >
+                                Explore all universities →
+                            </Link>
                             <button
                                 onClick={() => setShowDiscoveryPanel(false)}
                                 className="stratia-btn-outlined"
                             >
-                                Cancel
+                                Done
                             </button>
-                            <Link
-                                to="/universities"
-                                className="stratia-btn-filled"
-                            >
-                                Explore Universities
-                            </Link>
                         </div>
                     </div>
                 </div>
