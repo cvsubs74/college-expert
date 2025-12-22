@@ -7,15 +7,18 @@ import {
     RocketLaunchIcon,
     MapPinIcon,
     StarIcon,
-    ArrowTrendingUpIcon
+    ArrowTrendingUpIcon,
+    UserCircleIcon,
+    SparklesIcon,
+    LightBulbIcon
 } from '@heroicons/react/24/outline';
 import { CheckCircleIcon as CheckCircleSolid } from '@heroicons/react/24/solid';
 
 /**
- * FitInfographicView - Renders structured fit analysis data as a beautiful infographic
- * This replaces AI-generated images with a native React component for perfect text rendering
+ * FitInfographicView - Renders structured fit analysis data as a beautiful Stratia-themed infographic
+ * Replaces AI-generated images with a native React component for perfect text rendering
  */
-const FitInfographicView = ({ data, onClose }) => {
+const FitInfographicView = ({ data, studentName = "Student", onClose }) => {
     if (!data) return null;
 
     const {
@@ -33,266 +36,269 @@ const FitInfographicView = ({ data, onClose }) => {
         conclusion
     } = data;
 
-    // Theme color mapping
-    const themeColors = {
-        emerald: {
-            bg: 'bg-emerald-500',
-            light: 'bg-emerald-50',
-            text: 'text-emerald-700',
-            border: 'border-emerald-200',
-            gradient: 'from-emerald-500 to-green-600'
+    // Stratia theme colors based on fit category
+    const fitConfig = {
+        SAFETY: {
+            gradient: 'from-[#1A4D2E] to-[#2D6B45]',
+            bg: 'bg-[#1A4D2E]',
+            light: 'bg-[#D6E8D5]',
+            text: 'text-[#1A4D2E]',
+            border: 'border-[#A8C5A6]',
+            label: 'SAFETY',
+            emoji: '✓',
+            tagline: 'Strong fit with high admission probability'
         },
-        amber: {
-            bg: 'bg-amber-500',
-            light: 'bg-amber-50',
-            text: 'text-amber-700',
-            border: 'border-amber-200',
-            gradient: 'from-amber-500 to-orange-500'
+        TARGET: {
+            gradient: 'from-[#1A4D2E] to-[#2D6B45]',
+            bg: 'bg-[#1A4D2E]',
+            light: 'bg-[#D6E8D5]',
+            text: 'text-[#1A4D2E]',
+            border: 'border-[#A8C5A6]',
+            label: 'TARGET',
+            emoji: '🎯',
+            tagline: 'Accessible, but improvements needed for higher certainty'
         },
-        orange: {
-            bg: 'bg-orange-500',
-            light: 'bg-orange-50',
-            text: 'text-orange-700',
-            border: 'border-orange-200',
-            gradient: 'from-orange-500 to-red-500'
+        REACH: {
+            gradient: 'from-[#C05838] to-[#D4704F]',
+            bg: 'bg-[#C05838]',
+            light: 'bg-[#FCEEE8]',
+            text: 'text-[#C05838]',
+            border: 'border-[#E8A090]',
+            label: 'REACH',
+            emoji: '🔥',
+            tagline: 'Competitive, requires strategic positioning'
         },
-        rose: {
-            bg: 'bg-rose-500',
-            light: 'bg-rose-50',
-            text: 'text-rose-700',
-            border: 'border-rose-200',
-            gradient: 'from-rose-500 to-red-600'
+        SUPER_REACH: {
+            gradient: 'from-[#C05838] to-[#A04020]',
+            bg: 'bg-[#C05838]',
+            light: 'bg-[#FCEEE8]',
+            text: 'text-[#C05838]',
+            border: 'border-[#E8A090]',
+            label: 'SUPER REACH',
+            emoji: '⭐',
+            tagline: 'Highly competitive, exceptional positioning required'
         }
     };
 
-    const theme = themeColors[themeColor] || themeColors.amber;
+    const config = fitConfig[fitCategory] || fitConfig.TARGET;
 
-    // Fit category badge colors
-    const categoryColors = {
-        SAFETY: 'bg-emerald-500 text-white',
-        TARGET: 'bg-amber-500 text-white',
-        REACH: 'bg-orange-500 text-white',
-        SUPER_REACH: 'bg-rose-500 text-white'
-    };
-
+    // Circular Score Gauge Component
     const ScoreGauge = ({ score }) => {
-        const circumference = 2 * Math.PI * 45;
+        const radius = 50;
+        const circumference = 2 * Math.PI * radius;
         const offset = circumference - (score / 100) * circumference;
 
         return (
-            <div className="relative w-32 h-32">
-                <svg className="w-full h-full transform -rotate-90">
+            <div className="relative w-28 h-28">
+                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 120 120">
+                    {/* Background circle */}
                     <circle
-                        cx="64"
-                        cy="64"
-                        r="45"
+                        cx="60"
+                        cy="60"
+                        r={radius}
                         fill="none"
-                        stroke="#e5e7eb"
-                        strokeWidth="10"
+                        stroke="rgba(255,255,255,0.3)"
+                        strokeWidth="8"
                     />
+                    {/* Progress circle */}
                     <circle
-                        cx="64"
-                        cy="64"
-                        r="45"
+                        cx="60"
+                        cy="60"
+                        r={radius}
                         fill="none"
-                        stroke="url(#scoreGradient)"
-                        strokeWidth="10"
+                        stroke="white"
+                        strokeWidth="8"
                         strokeDasharray={circumference}
                         strokeDashoffset={offset}
                         strokeLinecap="round"
+                        className="transition-all duration-1000"
                     />
-                    <defs>
-                        <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#f59e0b" />
-                            <stop offset="100%" stopColor="#ea580c" />
-                        </linearGradient>
-                    </defs>
                 </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-gray-800">{score}%</span>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                    <span className="text-2xl font-bold">{score}</span>
+                    <span className="text-xs opacity-80">/ 100</span>
                 </div>
             </div>
         );
     };
 
-    const FactorBar = ({ factor, isStrength }) => {
-        const barColor = isStrength ? 'bg-emerald-500' : 'bg-orange-500';
-        const bgColor = isStrength ? 'bg-emerald-100' : 'bg-orange-100';
+    // Factor Score Bar
+    const FactorBar = ({ name, score, maxScore, detail, isPositive }) => {
+        const percentage = Math.min((score / maxScore) * 100, 100);
+        const barColor = isPositive ? 'bg-[#1A4D2E]' : 'bg-[#C05838]';
+        const bgColor = isPositive ? 'bg-[#D6E8D5]' : 'bg-[#FCEEE8]';
 
         return (
-            <div className="mb-3">
-                <div className="flex justify-between text-sm mb-1">
-                    <span className="font-medium text-gray-700">{factor.name}</span>
-                    <span className="text-gray-500">{factor.score}/{factor.maxScore}</span>
+            <div className="mb-4">
+                <div className="flex justify-between items-center mb-1">
+                    <span className="font-medium text-gray-800 text-sm">{name}</span>
+                    <span className={`text-sm font-bold ${isPositive ? 'text-[#1A4D2E]' : 'text-[#C05838]'}`}>
+                        {score}/{maxScore}
+                    </span>
                 </div>
-                <div className={`h-2 rounded-full ${bgColor}`}>
+                <div className={`h-2.5 rounded-full ${bgColor}`}>
                     <div
-                        className={`h-full rounded-full ${barColor} transition-all duration-500`}
-                        style={{ width: `${factor.percentage}%` }}
+                        className={`h-full rounded-full ${barColor} transition-all duration-700`}
+                        style={{ width: `${percentage}%` }}
                     />
                 </div>
+                {detail && (
+                    <p className="text-xs text-gray-500 mt-1 line-clamp-2">{detail}</p>
+                )}
             </div>
         );
     };
 
+    // Parse factors from data
+    const factors = data.strengths?.concat(data.improvements || []) || [];
+
+    // Calculate section scores from factors
+    const academicFactor = factors.find(f => f.name?.toLowerCase().includes('academic'));
+    const holisticFactor = factors.find(f => f.name?.toLowerCase().includes('holistic'));
+    const majorFactor = factors.find(f => f.name?.toLowerCase().includes('major'));
+    const selectivityFactor = factors.find(f => f.name?.toLowerCase().includes('selectivity'));
+
     return (
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
-            {/* Header */}
-            <div className={`bg-gradient-to-r ${theme.gradient} text-white p-6`}>
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+            {/* Header Section with Gradient */}
+            <div className={`bg-gradient-to-r ${config.gradient} text-white p-6`}>
                 <div className="flex items-center justify-between">
-                    <div>
-                        <h1 className="text-2xl font-bold">{title}</h1>
-                        <p className="text-white/80">{subtitle}</p>
+                    <div className="flex-1">
+                        <h2 className="text-xl font-bold mb-1">
+                            {studentName}'s Admission Chances
+                        </h2>
+                        <h3 className="text-lg opacity-90">
+                            {universityInfo?.name || 'University'}
+                        </h3>
+                        <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 bg-white/20 rounded-full text-sm">
+                            <span>{config.emoji}</span>
+                            <span className="font-semibold">{config.label}</span>
+                        </div>
+                        <p className="text-sm opacity-80 mt-2">{config.tagline}</p>
                     </div>
-                    <div className="flex items-center gap-4">
-                        <ScoreGauge score={matchScore} />
-                        <span className={`px-4 py-2 rounded-full font-bold text-sm ${categoryColors[fitCategory] || 'bg-gray-500'}`}>
-                            {fitCategory?.replace('_', ' ')}
+
+                    <div className="flex flex-col items-center gap-2">
+                        <div className="text-center">
+                            <span className="text-xs uppercase tracking-wider opacity-80">Overall Match</span>
+                        </div>
+                        <ScoreGauge score={matchScore || 0} />
+                        <span className="text-xs opacity-80">
+                            {universityInfo?.acceptanceRate && `${universityInfo.acceptanceRate}% acceptance`}
                         </span>
                     </div>
                 </div>
             </div>
 
-            {/* University Info Bar */}
-            {universityInfo && (
-                <div className="bg-gray-50 border-b border-gray-200 px-6 py-3">
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
-                        <span className="font-semibold text-gray-800">{universityInfo.name}</span>
-                        {universityInfo.location && (
-                            <span className="flex items-center gap-1">
-                                <MapPinIcon className="w-4 h-4" />
-                                {universityInfo.location}
-                            </span>
-                        )}
-                        {universityInfo.acceptanceRate && universityInfo.acceptanceRate !== 'N/A' && (
-                            <span className="flex items-center gap-1">
-                                <ChartBarIcon className="w-4 h-4" />
-                                {universityInfo.acceptanceRate}% acceptance
-                            </span>
-                        )}
-                        {universityInfo.usNewsRank && universityInfo.usNewsRank !== 'N/A' && (
-                            <span className="flex items-center gap-1">
-                                <StarIcon className="w-4 h-4" />
-                                #{universityInfo.usNewsRank} US News
-                            </span>
-                        )}
-                    </div>
-                </div>
-            )}
-
             {/* Main Content Grid */}
-            <div className="grid md:grid-cols-3 gap-0">
-                {/* Strengths Column */}
-                <div className="p-5 border-r border-gray-200">
-                    <div className="flex items-center gap-2 mb-4">
-                        <div className="p-2 bg-emerald-100 rounded-lg">
-                            <CheckCircleSolid className="w-5 h-5 text-emerald-600" />
-                        </div>
-                        <h3 className="font-bold text-gray-800">Your Strengths</h3>
-                    </div>
+            <div className="grid md:grid-cols-2 gap-0">
+                {/* Left Column: Current Standing */}
+                <div className="p-5 border-r border-gray-100">
+                    <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <ChartBarIcon className="h-5 w-5 text-[#1A4D2E]" />
+                        Current Standing & Scores
+                    </h4>
 
-                    {strengths && strengths.length > 0 ? (
-                        strengths.map((strength, idx) => (
-                            <div key={idx} className="mb-4">
-                                <FactorBar factor={strength} isStrength={true} />
-                                {strength.detail && (
-                                    <p className="text-xs text-gray-500 mt-1 line-clamp-2">{strength.detail}</p>
-                                )}
-                            </div>
-                        ))
-                    ) : (
-                        <p className="text-gray-500 text-sm">Building your strengths...</p>
-                    )}
+                    {/* Academic Score */}
+                    <FactorBar
+                        name="ACADEMIC"
+                        score={academicFactor?.score || 25}
+                        maxScore={40}
+                        detail={academicFactor?.detail || "GPA and test scores vs admitted students"}
+                        isPositive={(academicFactor?.score || 25) > 20}
+                    />
 
-                    {gapAnalysis?.studentStrengths && gapAnalysis.studentStrengths.length > 0 && (
-                        <div className="mt-4 pt-4 border-t border-gray-100">
-                            <p className="text-xs font-medium text-emerald-700 mb-2">Key Highlights:</p>
-                            <ul className="space-y-1">
-                                {gapAnalysis.studentStrengths.slice(0, 3).map((s, i) => (
-                                    <li key={i} className="text-xs text-gray-600 flex items-start gap-1">
-                                        <CheckCircleIcon className="w-3 h-3 text-emerald-500 mt-0.5 flex-shrink-0" />
-                                        <span>{s}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                </div>
+                    {/* Holistic Score */}
+                    <FactorBar
+                        name="HOLISTIC"
+                        score={holisticFactor?.score || 25}
+                        maxScore={30}
+                        detail={holisticFactor?.detail || "Leadership, activities, service, awards"}
+                        isPositive={(holisticFactor?.score || 25) > 15}
+                    />
 
-                {/* Areas for Improvement Column */}
-                <div className="p-5 border-r border-gray-200 bg-orange-50/30">
-                    <div className="flex items-center gap-2 mb-4">
-                        <div className="p-2 bg-orange-100 rounded-lg">
-                            <ExclamationTriangleIcon className="w-5 h-5 text-orange-600" />
-                        </div>
-                        <h3 className="font-bold text-gray-800">Areas to Improve</h3>
-                    </div>
+                    {/* Major Fit */}
+                    <FactorBar
+                        name="MAJOR FIT"
+                        score={majorFactor?.score || 8}
+                        maxScore={15}
+                        detail={majorFactor?.detail || "Alignment with intended field of study"}
+                        isPositive={(majorFactor?.score || 8) > 7}
+                    />
 
-                    {improvements && improvements.length > 0 ? (
-                        improvements.map((imp, idx) => (
-                            <div key={idx} className="mb-4">
-                                <FactorBar factor={imp} isStrength={false} />
-                                {imp.detail && (
-                                    <p className="text-xs text-gray-500 mt-1 line-clamp-2">{imp.detail}</p>
-                                )}
-                            </div>
-                        ))
-                    ) : (
-                        <p className="text-gray-500 text-sm">No major gaps identified!</p>
-                    )}
+                    {/* Selectivity */}
+                    <FactorBar
+                        name="SELECTIVITY"
+                        score={Math.max(0, selectivityFactor?.score || 5)}
+                        maxScore={5}
+                        detail={selectivityFactor?.detail || `${universityInfo?.acceptanceRate || 'N/A'}% acceptance rate adjustment`}
+                        isPositive={true}
+                    />
 
-                    {gapAnalysis?.primaryGap && (
-                        <div className="mt-4 pt-4 border-t border-orange-100">
-                            <p className="text-xs font-medium text-orange-700 mb-1">Primary Focus:</p>
-                            <p className="text-xs text-gray-600">{gapAnalysis.primaryGap}</p>
+                    {/* Gap Summary */}
+                    {gapAnalysis && (
+                        <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                            <p className="text-xs font-medium text-gray-700">
+                                <strong>Primary Gap:</strong> {gapAnalysis.primary_gap || gapAnalysis.primaryGap || 'N/A'}
+                            </p>
+                            <p className="text-xs text-gray-500 mt-1">
+                                <strong>Secondary Gap:</strong> {gapAnalysis.secondary_gap || gapAnalysis.secondaryGap || 'N/A'}
+                            </p>
                         </div>
                     )}
                 </div>
 
-                {/* Action Plan Column */}
-                <div className="p-5 bg-blue-50/30">
-                    <div className="flex items-center gap-2 mb-4">
-                        <div className="p-2 bg-blue-100 rounded-lg">
-                            <RocketLaunchIcon className="w-5 h-5 text-blue-600" />
-                        </div>
-                        <h3 className="font-bold text-gray-800">Action Plan</h3>
-                    </div>
+                {/* Right Column: Action Items */}
+                <div className="p-5 bg-gradient-to-b from-gray-50 to-white">
+                    <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <RocketLaunchIcon className="h-5 w-5 text-[#C05838]" />
+                        Path to Improvement
+                    </h4>
 
-                    {actionPlan && actionPlan.length > 0 ? (
-                        <div className="space-y-4">
-                            {actionPlan.map((step, idx) => (
-                                <div key={idx} className="relative pl-6">
-                                    <div className="absolute left-0 top-0 w-5 h-5 rounded-full bg-blue-500 text-white text-xs flex items-center justify-center font-bold">
-                                        {step.step}
+                    <div className="space-y-4">
+                        {actionPlan && actionPlan.length > 0 ? (
+                            actionPlan.slice(0, 4).map((item, idx) => (
+                                <div key={idx} className="flex gap-3">
+                                    <div className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-white text-sm font-bold ${idx < 2 ? 'bg-[#1A4D2E]' : 'bg-[#C05838]'}`}>
+                                        {item.step || idx + 1}
                                     </div>
-                                    <div>
-                                        <p className="text-sm text-gray-700 font-medium leading-tight">
-                                            {step.action.length > 150 ? step.action.substring(0, 150) + '...' : step.action}
+                                    <div className="flex-1">
+                                        <p className="text-sm text-gray-800 font-medium leading-snug">
+                                            {item.action?.length > 120 ? item.action.substring(0, 120) + '...' : item.action}
                                         </p>
-                                        {step.timeline && (
-                                            <span className="inline-block mt-1 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">
-                                                {step.timeline}
+                                        {item.timeline && (
+                                            <span className={`inline-block mt-1 text-xs px-2 py-0.5 rounded ${idx < 2 ? 'bg-[#D6E8D5] text-[#1A4D2E]' : 'bg-[#FCEEE8] text-[#C05838]'}`}>
+                                                {item.timeline}
                                             </span>
                                         )}
                                     </div>
                                 </div>
-                            ))}
+                            ))
+                        ) : (
+                            <p className="text-gray-500 text-sm">Action items loading...</p>
+                        )}
+                    </div>
+
+                    {/* Student Strengths */}
+                    {gapAnalysis?.studentStrengths && gapAnalysis.studentStrengths.length > 0 && (
+                        <div className="mt-5 p-3 bg-[#D6E8D5] rounded-lg border border-[#A8C5A6]">
+                            <p className="text-xs font-bold text-[#1A4D2E] mb-2 flex items-center gap-1">
+                                <SparklesIcon className="h-4 w-4" />
+                                YOUR STRENGTHS
+                            </p>
+                            <p className="text-xs text-[#1A4D2E]">
+                                {gapAnalysis.studentStrengths.slice(0, 3).join(' • ')}
+                            </p>
                         </div>
-                    ) : (
-                        <p className="text-gray-500 text-sm">Action plan loading...</p>
                     )}
                 </div>
             </div>
 
-            {/* Conclusion Footer */}
-            {conclusion && (
-                <div className="bg-gray-50 border-t border-gray-200 px-6 py-4">
-                    <div className="flex items-start gap-3">
-                        <ArrowTrendingUpIcon className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                        <p className="text-sm text-gray-600 leading-relaxed">{conclusion}</p>
-                    </div>
-                </div>
-            )}
+            {/* Footer: Goal Banner */}
+            <div className={`bg-gradient-to-r ${config.gradient} text-white py-3 px-6 text-center`}>
+                <p className="text-sm font-semibold">
+                    🎯 GOAL: Strengthen application for increased chances at {universityInfo?.name || 'this university'}
+                </p>
+            </div>
         </div>
     );
 };

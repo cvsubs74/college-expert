@@ -534,7 +534,7 @@ const FitAnalysisDetail = ({ college, onBack }) => {
             {/* Content */}
             <div className="p-6 space-y-6">
                 {/* Visual Infographic */}
-                <FitInfographicView data={infographicData} />
+                <FitInfographicView data={infographicData} studentName={studentProfile?.first_name || studentProfile?.name || 'Student'} />
 
                 {/* Fit Explanation */}
                 <div className="bg-gradient-to-r from-blue-50 to-[#FCEEE8] rounded-lg p-4 border border-[#E0DED8]">
