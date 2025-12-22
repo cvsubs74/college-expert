@@ -268,6 +268,18 @@ const FitAnalysisDetail = ({ college, onBack }) => {
         fetchFitAnalysis();
     }, [currentUser?.email, college?.university_id]);
 
+    // Show loading indicator while fetching fit data
+    if (fitLoading) {
+        return (
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden p-8">
+                <div className="flex items-center justify-center gap-3 text-gray-500">
+                    <ArrowPathIcon className="h-6 w-6 animate-spin" />
+                    <span>Loading fit analysis for {college.university_name}...</span>
+                </div>
+            </div>
+        );
+    }
+
     // Use fit_analysis category first, then fallback to soft_fit_category (pre-computed based on acceptance rate)
     const fitCategory = fitAnalysis.fit_category || college.soft_fit_category || 'TARGET';
     const matchScore = fitAnalysis.match_percentage || fitAnalysis.match_score || 50;
