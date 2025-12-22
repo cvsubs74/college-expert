@@ -222,11 +222,33 @@ const StratiaLaunchpad = () => {
                 // API returns 'results' array
                 let schools = result.results || result.fits || [];
 
-                // Client-side filter: exclude schools already in user's list
-                schools = schools.filter(s => !existingIds.includes(s.university_id));
+                // Get existing college IDs AND names for matching
+                const existingNames = collegeList.map(c =>
+                    (c.university_name || '').toLowerCase().replace(/[^a-z0-9]/g, '')
+                );
+
+                // Client-side filter: exclude schools already in user's list (by ID or name)
+                // Also deduplicate by university_id
+                const seenIds = new Set();
+                schools = schools.filter(s => {
+                    // Skip if we've already seen this ID (dedupe)
+                    if (seenIds.has(s.university_id)) return false;
+                    seenIds.add(s.university_id);
+
+                    // Skip if ID matches existing
+                    if (existingIds.includes(s.university_id)) return false;
+
+                    // Skip if name matches existing (handles ID mismatches)
+                    const normalizedName = (s.university_name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                    if (existingNames.some(existingName =>
+                        existingName.includes(normalizedName) || normalizedName.includes(existingName)
+                    )) return false;
+
+                    return true;
+                });
 
                 setDiscoveryResults(schools);
-                console.log(`[Discovery] Found ${schools.length} ${category} schools (after filtering existing)`);
+                console.log(`[Discovery] Found ${schools.length} ${category} schools (after filtering existing + dedupe)`);
             } else {
                 setDiscoveryResults([]);
             }
