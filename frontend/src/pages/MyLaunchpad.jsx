@@ -1855,12 +1855,17 @@ const MyLaunchpad = () => {
                 getPrecomputedFits(currentUser.email, {}, 200)  // Increased limit to get all fits for college list merge
             ]);
 
+            console.log('[Launchpad] College list result:', listResult);
+            console.log('[Launchpad] Fits result:', fitsResult);
+
             if (listResult.success) {
                 let colleges = listResult.college_list || [];
+                console.log('[Launchpad] Colleges loaded:', colleges.length, colleges.map(c => c.university_id));
 
                 // Merge precomputed fits into college list (precomputed takes priority)
                 // API returns 'fits' array, not 'results'
                 if (fitsResult.success && fitsResult.fits) {
+                    console.log('[Launchpad] Fits available:', fitsResult.fits.length, fitsResult.fits.map(f => f.university_id));
                     const fitsMap = {};
                     fitsResult.fits.forEach(fit => {
                         fitsMap[fit.university_id] = {
@@ -1882,9 +1887,12 @@ const MyLaunchpad = () => {
                         };
                     });
 
+                    console.log('[Launchpad] FitsMap keys:', Object.keys(fitsMap));
+
                     // Merge precomputed fits into college list items
                     colleges = colleges.map(college => {
                         const precomputed = fitsMap[college.university_id];
+                        console.log('[Launchpad] Merge check:', college.university_id, '-> precomputed:', !!precomputed);
                         if (precomputed) {
                             return {
                                 ...college,
