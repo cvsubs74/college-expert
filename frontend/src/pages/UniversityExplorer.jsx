@@ -1528,6 +1528,22 @@ const UniversityExplorer = () => {
             {/* Main List/Favorites View */}
             {activeView !== 'detail' && (
                 <>
+                    {/* Hero Header - Like Profile Page */}
+                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#E0DED8] mb-6">
+                        <div className="flex items-start gap-5">
+                            <div className="w-14 h-14 rounded-2xl bg-[#1A4D2E] flex items-center justify-center flex-shrink-0">
+                                <BuildingLibraryIcon className="h-7 w-7 text-white" />
+                            </div>
+                            <div>
+                                <h1 className="font-serif text-2xl font-bold text-[#2C2C2C]">
+                                    Discover Universities
+                                </h1>
+                                <p className="text-[#4A4A4A] mt-1">
+                                    Explore 150+ universities with AI-powered fit analysis. Find your perfect match based on your academic profile.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
                     {/* Error State */}
                     {error && (
@@ -1548,12 +1564,12 @@ const UniversityExplorer = () => {
 
                     {/* Fit Computation Status Bar */}
                     {computingFitFor && (
-                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-4 flex items-center gap-3 mb-4 animate-pulse">
-                            <div className="h-5 w-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
-                            <span className="text-blue-700 font-medium">
+                        <div className="bg-gradient-to-r from-[#D6E8D5] to-[#A8C5A6] border border-[#1A4D2E]/20 rounded-xl p-4 flex items-center gap-3 mb-4 animate-pulse">
+                            <div className="h-5 w-5 border-2 border-[#1A4D2E] border-t-transparent rounded-full animate-spin" />
+                            <span className="text-[#1A4D2E] font-medium">
                                 Computing personalized fit analysis...
                             </span>
-                            <span className="text-blue-500 text-sm">
+                            <span className="text-[#2D6B45] text-sm">
                                 This may take a few seconds
                             </span>
                         </div>
@@ -1603,30 +1619,27 @@ const UniversityExplorer = () => {
                             {activeView === 'list' && (
                                 <div className="space-y-6">
                                     {/* Filters */}
-                                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#E0DED8]">
-                                        <div className="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center mb-6">
-                                            <div>
-                                                <h2 className="font-serif text-lg font-semibold text-[#2C2C2C]">Find Your Perfect University</h2>
-                                                <p className="text-[#4A4A4A] text-sm">Compare admission stats, costs, and outcomes</p>
-                                            </div>
-
+                                    <div className="bg-white rounded-2xl p-4 shadow-sm border border-[#E0DED8]">
+                                        {/* Combined Search + Filters Row */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 items-end">
                                             {/* Search Bar */}
-                                            <div className="relative w-full md:w-80">
-                                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                                            <div className="lg:col-span-2 relative">
+                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide block mb-1">Search</label>
+                                                <div className="relative">
+                                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                        <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                                                    </div>
+                                                    <input
+                                                        type="text"
+                                                        className="block w-full pl-10 pr-3 py-2 border border-[#E0DED8] rounded-lg bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1A4D2E] focus:border-[#1A4D2E] text-sm"
+                                                        placeholder="University name..."
+                                                        value={searchTerm}
+                                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                                    />
                                                 </div>
-                                                <input
-                                                    type="text"
-                                                    className="block w-full pl-10 pr-3 py-2 border border-[#E0DED8] rounded-xl bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1A4D2E] focus:border-[#1A4D2E] text-sm"
-                                                    placeholder="Search by name..."
-                                                    value={searchTerm}
-                                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                                />
                                             </div>
-                                        </div>
 
-                                        {/* Filter Controls */}
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+                                            {/* Filter Controls */}
                                             <div className="space-y-1">
                                                 <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Type</label>
                                                 <select
