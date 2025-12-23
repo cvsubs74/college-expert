@@ -1,11 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { XMarkIcon, BoltIcon, SparklesIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon, BoltIcon, SparklesIcon, RocketLaunchIcon, CheckIcon } from '@heroicons/react/24/outline';
 import { usePayment } from '../context/PaymentContext';
 
 /**
- * CreditsUpgradeModal - Shown when user runs out of credits
- * Free tier: Only shows upgrade options (Monthly/Season Pass)
+ * CreditsUpgradeModal - Shown when user needs to upgrade
+ * Matches the pricing page format with full feature details
+ * Free tier: Only shows Monthly/Season Pass (no credit pack)
  * Subscribers: Can also buy credit packs
  */
 const CreditsUpgradeModal = ({ isOpen, onClose, creditsRemaining = 0, feature = 'fit analysis' }) => {
@@ -29,6 +30,14 @@ const CreditsUpgradeModal = ({ isOpen, onClose, creditsRemaining = 0, feature = 
         navigate('/pricing?tab=credits');
     };
 
+    // Feature list component
+    const FeatureItem = ({ children }) => (
+        <li className="flex items-start gap-2 text-sm text-gray-600">
+            <CheckIcon className="w-4 h-4 text-[#1A4D2E] mt-0.5 flex-shrink-0" />
+            <span>{children}</span>
+        </li>
+    );
+
     return (
         <div className="fixed inset-0 z-50 overflow-y-auto">
             {/* Backdrop */}
@@ -39,105 +48,145 @@ const CreditsUpgradeModal = ({ isOpen, onClose, creditsRemaining = 0, feature = 
 
             {/* Modal */}
             <div className="flex min-h-full items-center justify-center p-4">
-                <div className="relative w-full max-w-md transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all">
+                <div className="relative w-full max-w-3xl transform overflow-hidden rounded-2xl bg-[#F5F5F0] shadow-2xl transition-all">
                     {/* Close button */}
                     <button
                         onClick={onClose}
-                        className="absolute right-4 top-4 p-2 hover:bg-gray-100 rounded-lg transition-colors z-10"
+                        className="absolute right-4 top-4 p-2 hover:bg-white/50 rounded-lg transition-colors z-10"
                     >
-                        <XMarkIcon className="w-5 h-5 text-white/80 hover:text-white" />
+                        <XMarkIcon className="w-6 h-6 text-gray-500" />
                     </button>
 
-                    {/* Header - Stratia Green Theme */}
-                    <div className="bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45] px-6 py-8 text-center">
-                        <div className="mx-auto w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                            <RocketLaunchIcon className="w-8 h-8 text-white" />
+                    {/* Header */}
+                    <div className="text-center pt-8 pb-4 px-6">
+                        <div className="mx-auto w-14 h-14 bg-[#1A4D2E] rounded-full flex items-center justify-center mb-4">
+                            <RocketLaunchIcon className="w-7 h-7 text-white" />
                         </div>
-                        <h2 className="text-2xl font-bold text-white">
-                            {isFreeTier ? 'Upgrade Your Plan' : 'Need More Credits'}
-                        </h2>
-                        <p className="text-white/80 mt-2">
-                            {isFreeTier
-                                ? 'Unlock more schools and premium features'
-                                : <>You have <span className="font-bold">{creditsRemaining}</span> credits remaining</>
-                            }
+                        <h2 className="text-2xl font-bold text-gray-900">Upgrade Your Plan</h2>
+                        <p className="text-gray-600 mt-2">
+                            Choose a plan to continue adding schools and running fit analysis
                         </p>
                     </div>
 
-                    {/* Content */}
-                    <div className="px-6 py-6">
-                        <p className="text-gray-600 text-center mb-6">
-                            {isFreeTier
-                                ? 'Choose a plan to continue adding schools and running fit analysis:'
-                                : `Running ${feature} requires credits. Choose an option below:`
-                            }
-                        </p>
+                    {/* Plans Grid */}
+                    <div className="px-6 pb-8">
+                        <div className="grid md:grid-cols-2 gap-4">
+                            {/* Monthly Plan */}
+                            <div className="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-[#1A4D2E] transition-all cursor-pointer group"
+                                onClick={handleMonthlyUpgrade}>
+                                <div className="flex items-start gap-3 mb-4">
+                                    <div className="p-2 bg-[#D6E8D5] rounded-lg">
+                                        <SparklesIcon className="w-5 h-5 text-[#1A4D2E]" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-gray-900">Monthly</h3>
+                                        <p className="text-xs text-gray-500">Great for active research. Analyze multiple schools each month.</p>
+                                    </div>
+                                </div>
 
-                        {/* Options */}
-                        <div className="space-y-3">
-                            {/* Monthly Subscription */}
-                            <button
-                                onClick={handleMonthlyUpgrade}
-                                className="w-full flex items-center gap-4 p-4 bg-[#D6E8D5] border-2 border-[#1A4D2E]/30 rounded-xl hover:border-[#1A4D2E] transition-colors text-left"
-                            >
-                                <div className="p-3 bg-[#1A4D2E]/10 rounded-lg">
-                                    <SparklesIcon className="w-6 h-6 text-[#1A4D2E]" />
+                                <div className="mb-4">
+                                    <span className="text-3xl font-bold text-gray-900">$15</span>
+                                    <span className="text-gray-500">/month</span>
                                 </div>
-                                <div className="flex-1">
-                                    <div className="font-semibold text-gray-900">Monthly Pass</div>
-                                    <div className="text-sm text-gray-500">50 credits/month + AI chat</div>
+
+                                <div className="inline-flex items-center gap-1 px-3 py-1 bg-[#D6E8D5] text-[#1A4D2E] text-xs font-semibold rounded-full mb-4">
+                                    <BoltIcon className="w-3 h-3" />
+                                    20 credits
                                 </div>
-                                <div className="text-right">
-                                    <div className="font-bold text-[#1A4D2E]">$9.99</div>
-                                    <div className="text-xs text-gray-400">/month</div>
+
+                                <div className="border-t border-gray-100 pt-4 mb-4">
+                                    <p className="text-xs font-semibold text-gray-400 mb-2">BEST FOR</p>
+                                    <p className="text-sm text-gray-700">Students building their college list</p>
                                 </div>
-                            </button>
+
+                                <ul className="space-y-2 mb-6">
+                                    <FeatureItem>20 fit analyses/month</FeatureItem>
+                                    <FeatureItem>Unlimited AI chat on all universities</FeatureItem>
+                                    <FeatureItem>Compare schools side-by-side</FeatureItem>
+                                    <FeatureItem>Cancel anytime, no commitment</FeatureItem>
+                                </ul>
+
+                                <button
+                                    onClick={handleMonthlyUpgrade}
+                                    className="w-full py-3 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#143D24] transition-colors group-hover:shadow-lg"
+                                >
+                                    Start Monthly →
+                                </button>
+                            </div>
 
                             {/* Season Pass */}
-                            <button
-                                onClick={handleSeasonPass}
-                                className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-[#D6E8D5] to-[#C5DFC4] border-2 border-[#1A4D2E]/40 rounded-xl hover:border-[#1A4D2E] transition-colors text-left relative"
-                            >
-                                <span className="absolute -top-2 right-4 px-2 py-0.5 bg-[#C05838] text-white text-xs font-bold rounded-full">
+                            <div className="bg-white rounded-xl p-6 border-2 border-[#1A4D2E] relative cursor-pointer group"
+                                onClick={handleSeasonPass}>
+                                {/* Best Value Badge */}
+                                <div className="absolute -top-3 right-6 px-3 py-1 bg-[#C05838] text-white text-xs font-bold rounded-full">
                                     BEST VALUE
-                                </span>
-                                <div className="p-3 bg-[#1A4D2E]/20 rounded-lg">
-                                    <RocketLaunchIcon className="w-6 h-6 text-[#1A4D2E]" />
                                 </div>
-                                <div className="flex-1">
-                                    <div className="font-semibold text-gray-900">Season Pass</div>
-                                    <div className="text-sm text-gray-500">150 credits/year + unlimited AI</div>
-                                </div>
-                                <div className="text-right">
-                                    <div className="font-bold text-[#1A4D2E]">$99</div>
-                                    <div className="text-xs text-gray-400">/year</div>
-                                </div>
-                            </button>
 
-                            {/* Credit Pack - Only for subscribers */}
-                            {!isFreeTier && (
+                                <div className="flex items-start gap-3 mb-4">
+                                    <div className="p-2 bg-[#D6E8D5] rounded-lg">
+                                        <RocketLaunchIcon className="w-5 h-5 text-[#1A4D2E]" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-gray-900">Season Pass</h3>
+                                        <p className="text-xs text-gray-500">Best value for your entire application journey — from research to acceptance.</p>
+                                    </div>
+                                </div>
+
+                                <div className="mb-4">
+                                    <span className="text-3xl font-bold text-gray-900">$99</span>
+                                    <span className="text-gray-500">/year</span>
+                                </div>
+
+                                <div className="inline-flex items-center gap-1 px-3 py-1 bg-[#D6E8D5] text-[#1A4D2E] text-xs font-semibold rounded-full mb-4">
+                                    <BoltIcon className="w-3 h-3" />
+                                    150 credits
+                                </div>
+
+                                <div className="border-t border-gray-100 pt-4 mb-4">
+                                    <p className="text-xs font-semibold text-gray-400 mb-2">BEST FOR</p>
+                                    <p className="text-sm text-gray-700">Seniors applying this year</p>
+                                </div>
+
+                                <ul className="space-y-2 mb-6">
+                                    <FeatureItem>150 fit analyses for the year</FeatureItem>
+                                    <FeatureItem>Unlimited AI chat on all universities</FeatureItem>
+                                    <FeatureItem>Covers entire application season</FeatureItem>
+                                    <FeatureItem>Priority support when you need it</FeatureItem>
+                                </ul>
+
+                                <button
+                                    onClick={handleSeasonPass}
+                                    className="w-full py-3 bg-[#C05838] text-white font-semibold rounded-full hover:bg-[#A04828] transition-colors group-hover:shadow-lg"
+                                >
+                                    Get Season Pass →
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Credit Pack - Only for subscribers */}
+                        {!isFreeTier && (
+                            <div className="mt-4 p-4 bg-white rounded-xl border border-gray-200 flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                    <div className="p-2 bg-[#FCEEE8] rounded-lg">
+                                        <BoltIcon className="w-5 h-5 text-[#C05838]" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-900">Credit Pack</h4>
+                                        <p className="text-xs text-gray-500">Need a few more analyses? Add credits anytime.</p>
+                                    </div>
+                                </div>
                                 <button
                                     onClick={handleBuyCredits}
-                                    className="w-full flex items-center gap-4 p-4 bg-[#FCEEE8] border-2 border-[#C05838]/30 rounded-xl hover:border-[#C05838] transition-colors text-left"
+                                    className="px-4 py-2 text-[#C05838] font-medium hover:bg-[#FCEEE8] rounded-full transition-colors"
                                 >
-                                    <div className="p-3 bg-[#C05838]/10 rounded-lg">
-                                        <BoltIcon className="w-6 h-6 text-[#C05838]" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <div className="font-semibold text-gray-900">Buy Credit Pack</div>
-                                        <div className="text-sm text-gray-500">10 credits (never expire)</div>
-                                    </div>
-                                    <div className="text-right">
-                                        <div className="font-bold text-[#C05838]">$10</div>
-                                        <div className="text-xs text-gray-400">one-time</div>
-                                    </div>
+                                    $10 for 10 credits →
                                 </button>
-                            )}
-                        </div>
+                            </div>
+                        )}
 
                         {/* Footer note */}
                         <p className="text-xs text-gray-400 text-center mt-6">
-                            Each fit analysis uses 1 credit. Cache hits are free!
+                            1 credit = 1 comprehensive fit analysis for any university. Cache hits are free!
                         </p>
                     </div>
                 </div>
