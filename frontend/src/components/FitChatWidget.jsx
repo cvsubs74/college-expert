@@ -140,7 +140,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
             return [
                 ...baseQuestions,
                 "What makes me a good fit?",
-                "What are similar schools to consider?",
+                "What specific programs stand out here?",
             ];
         }
     };
@@ -176,7 +176,7 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
         return [
             "Tell me more about this",
             "What else should I know?",
-            "Compare to similar schools",
+            "How can I best demonstrate interest?",
         ];
     };
 
