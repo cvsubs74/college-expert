@@ -120,23 +120,24 @@ const FitAnalysisPage = ({ college, onBack }) => {
             </div>
             {/* Tab Navigation */}
             <div className="max-w-6xl mx-auto px-4 pt-6">
-                <div className="flex gap-1 p-1 bg-gray-100 rounded-xl overflow-x-auto">
+                <div className="flex gap-1 p-1.5 bg-[#F5F5F0] rounded-2xl overflow-x-auto border border-gray-200">
                     {[
-                        { id: 'snapshot', label: '📊 Snapshot', title: 'At a Glance' },
-                        { id: 'scores', label: '📈 Scores', title: 'Score Breakdown' },
-                        { id: 'strategy', label: '✍️ Strategy', title: 'Essay & Major' },
-                        { id: 'timeline', label: '📅 Timeline', title: 'Action Plan' },
-                        { id: 'tips', label: '💡 Tips', title: 'Pro Tips' }
+                        { id: 'snapshot', icon: ChartBarIcon, label: 'Snapshot' },
+                        { id: 'scores', icon: AcademicCapIcon, label: 'Scores' },
+                        { id: 'strategy', icon: DocumentTextIcon, label: 'Strategy' },
+                        { id: 'timeline', icon: CalendarIcon, label: 'Timeline' },
+                        { id: 'tips', icon: LightBulbIcon, label: 'Tips' }
                     ].map(tab => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`flex-1 min-w-[80px] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${activeTab === tab.id
-                                ? 'bg-white text-[#1A4D2E] shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
+                            className={`flex-1 min-w-[90px] px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap flex items-center justify-center gap-1.5 ${activeTab === tab.id
+                                ? 'bg-[#1A4D2E] text-white shadow-md'
+                                : 'text-gray-600 hover:bg-white hover:text-[#1A4D2E] hover:shadow-sm'
                                 }`}
                         >
-                            {tab.label}
+                            <tab.icon className="h-4 w-4" />
+                            <span className="hidden sm:inline">{tab.label}</span>
                         </button>
                     ))}
                 </div>
@@ -580,6 +581,17 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                         </li>
                                     ))}
                                 </ul>
+                            </div>
+                        )}
+
+                        {/* Empty State for Tips */}
+                        {demonstratedInterestTips.length === 0 && redFlags.length === 0 && (
+                            <div className="bg-[#F5F5F0] rounded-xl p-8 text-center border border-gray-200">
+                                <LightBulbIcon className="h-12 w-12 text-[#1A4D2E] mx-auto mb-4 opacity-50" />
+                                <h3 className="font-semibold text-gray-800 mb-2">No Tips Available Yet</h3>
+                                <p className="text-sm text-gray-600">
+                                    Pro tips for demonstrated interest and application strategies will appear here once we analyze your profile further.
+                                </p>
                             </div>
                         )}
                     </React.Fragment>
