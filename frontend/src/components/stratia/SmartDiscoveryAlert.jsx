@@ -20,7 +20,7 @@ const SmartDiscoveryAlert = ({
     const alertContent = hasNoSafety ? {
         headline: "Your list could use some balance!",
         body: "Adding a few safety schools can give you peace of mind and more options come decision day.",
-        action: "Find Safety Schools",
+        action: "Discover Schools",
         icon: LightBulbIcon
     } : {
         headline: "Your list is looking ambitious!",
