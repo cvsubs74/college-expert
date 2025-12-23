@@ -287,7 +287,10 @@ const StratiaLaunchpad = () => {
                 // Compute fit analysis
                 await computeSingleFit(currentUser.email, school.university_id, false);
 
-                // Refresh college list
+                // Small delay to allow Elasticsearch to index the new fit document
+                await new Promise(resolve => setTimeout(resolve, 600));
+
+                // Refresh college list with new fit data
                 await fetchCollegeList();
 
                 // Remove from discovery results
@@ -421,13 +424,27 @@ const StratiaLaunchpad = () => {
                                 />
                             </div>
 
-                            {/* Add School Button */}
+                            {/* Add School / Upgrade Button */}
                             <button
-                                onClick={() => handleOpenDiscovery('SAFETY')}
-                                className="stratia-btn-filled flex items-center gap-2"
+                                onClick={() => isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT
+                                    ? setShowCreditsModal(true)
+                                    : handleOpenDiscovery('SAFETY')}
+                                className={`flex items-center gap-2 ${isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT
+                                        ? 'bg-[#C05838] hover:bg-[#A04828] text-white px-4 py-2 rounded-full font-medium transition-colors'
+                                        : 'stratia-btn-filled'
+                                    }`}
                             >
-                                <PlusIcon className="w-5 h-5" />
-                                <span className="hidden sm:inline">Add School</span>
+                                {isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT ? (
+                                    <>
+                                        <RocketLaunchIcon className="w-5 h-5" />
+                                        <span className="hidden sm:inline">Upgrade</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <PlusIcon className="w-5 h-5" />
+                                        <span className="hidden sm:inline">Add School</span>
+                                    </>
+                                )}
                             </button>
                         </div>
                     </div>
