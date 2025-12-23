@@ -17,14 +17,15 @@ import {
     PhotoIcon
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/AuthContext';
-import { generateFitInfographic, checkCredits, deductCredit } from '../services/api';
+import { checkCredits, deductCredit } from '../services/api';
+import FitInfographicView from './FitInfographicView';
 
 // ============================================================================
 // FIT ANALYSIS PAGE - Complete display of all fit analysis data
 // ============================================================================
 const FitAnalysisPage = ({ college, onBack }) => {
     const { currentUser } = useAuth();
-    const [infographicUrl, setInfographicUrl] = useState(null);
+    // Removed infographicUrl state - using HTML template instead
     const [isGenerating, setIsGenerating] = useState(false);
     const [generationError, setGenerationError] = useState(null);
     const [hasCredits, setHasCredits] = useState(false);
@@ -40,49 +41,8 @@ const FitAnalysisPage = ({ college, onBack }) => {
         checkUserCredits();
     }, [currentUser?.email]);
 
-    // Generate infographic
-    const handleGenerateInfographic = useCallback(async (forceRegenerate = false) => {
-        if (!currentUser?.email || !college?.university_id) return;
 
-        if (forceRegenerate) {
-            const creditCheck = await checkCredits(currentUser.email, 1);
-            if (!creditCheck.has_credits) {
-                setGenerationError('Insufficient credits. Regenerating costs 1 credit.');
-                return;
-            }
-            const confirmed = window.confirm('Regenerating will use 1 credit. Continue?');
-            if (!confirmed) return;
-            await deductCredit(currentUser.email, 1, 'infographic_regeneration');
-        }
-
-        setIsGenerating(true);
-        setGenerationError(null);
-
-        try {
-            const result = await generateFitInfographic(currentUser.email, college.university_id, forceRegenerate);
-            if (result.success && result.infographic_url) {
-                setInfographicUrl(result.infographic_url);
-            } else {
-                setGenerationError(result.error || 'Failed to generate infographic');
-            }
-        } catch (err) {
-            setGenerationError(err.message);
-        } finally {
-            setIsGenerating(false);
-        }
-    }, [currentUser?.email, college?.university_id]);
-
-    // Auto-load infographic on mount
-    useEffect(() => {
-        if (college?.fit_analysis && currentUser?.email && !infographicUrl && !isGenerating) {
-            // Check if infographic URL already exists in the data
-            if (college.infographic_url) {
-                setInfographicUrl(college.infographic_url);
-            } else {
-                handleGenerateInfographic(false);
-            }
-        }
-    }, [college, currentUser?.email, infographicUrl, isGenerating, handleGenerateInfographic]);
+    // (Infographic generation removed - using HTML template FitInfographicView instead)
 
     if (!college || !college.fit_analysis) {
         return (
@@ -161,57 +121,45 @@ const FitAnalysisPage = ({ college, onBack }) => {
             {/* Main Content */}
             <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
 
-                {/* Infographic Section */}
-                <div className="bg-gradient-to-br from-[#D6E8D5] via-[#F8F6F0] to-[#FDFCF7] rounded-2xl overflow-hidden border border-[#E0DED8] shadow-sm">
-                    {infographicUrl ? (
-                        <div>
-                            <img
-                                src={infographicUrl}
-                                alt={`Fit Analysis Infographic for ${college.university_name}`}
-                                className="w-full h-auto max-h-[800px] object-contain bg-white"
-                            />
-                            <div className="flex justify-end p-3 bg-gray-50 border-t border-gray-100">
-                                {hasCredits ? (
-                                    <button
-                                        onClick={() => handleGenerateInfographic(true)}
-                                        disabled={isGenerating}
-                                        className="flex items-center gap-1 text-sm text-[#1A4D2E] hover:text-[#1A4D2E] transition-colors disabled:opacity-50"
-                                    >
-                                        <ArrowPathIcon className={`h-4 w-4 ${isGenerating ? 'animate-spin' : ''}`} />
-                                        {isGenerating ? 'Regenerating...' : 'Regenerate (1 credit)'}
-                                    </button>
-                                ) : (
-                                    <a href="/pricing" className="flex items-center gap-1 text-sm text-amber-600 hover:text-amber-700">
-                                        <CurrencyDollarIcon className="h-4 w-4" />
-                                        Purchase credits to regenerate
-                                    </a>
-                                )}
-                            </div>
-                        </div>
-                    ) : isGenerating ? (
-                        <div className="p-12 text-center">
-                            <div className="w-20 h-20 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg animate-pulse">
-                                <PhotoIcon className="h-10 w-10 text-white" />
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Generating Your Personalized Infographic...</h3>
-                            <p className="text-gray-600">This may take 15-30 seconds.</p>
-                            <div className="flex justify-center mt-4">
-                                <ArrowPathIcon className="h-5 w-5 animate-spin text-[#1A4D2E]" />
-                            </div>
-                        </div>
-                    ) : generationError ? (
-                        <div className="p-8 text-center">
-                            <ExclamationTriangleIcon className="h-12 w-12 text-red-500 mx-auto mb-3" />
-                            <p className="text-red-600 mb-4">{generationError}</p>
-                            <button
-                                onClick={() => handleGenerateInfographic(false)}
-                                className="px-4 py-2 bg-[#1A4D2E] text-white rounded-lg hover:bg-[#2D6B45]"
-                            >
-                                Try Again
-                            </button>
-                        </div>
-                    ) : null}
-                </div>
+                {/* Infographic Section - HTML Template */}
+                <FitInfographicView
+                    data={{
+                        title: `Your Fit Analysis: ${college.university_name}`,
+                        subtitle: 'Personalized assessment based on your academic profile',
+                        themeColor: (fitAnalysis.fit_category || 'TARGET').includes('REACH') ? 'orange' : 'emerald',
+                        matchScore: fitAnalysis.match_score || fitAnalysis.match_percentage || 0,
+                        fitCategory: fitAnalysis.fit_category || 'TARGET',
+                        explanation: fitAnalysis.explanation || '',
+                        universityInfo: {
+                            name: college.university_name,
+                            location: college.location,
+                            acceptanceRate: fitAnalysis.acceptance_rate || college.acceptance_rate,
+                            usNewsRank: fitAnalysis.us_news_rank || college.us_news_rank
+                        },
+                        strengths: factors.filter(f => f.score > (f.max || 40) * 0.5).map(f => ({
+                            name: f.name,
+                            score: f.score,
+                            maxScore: f.max || 40,
+                            percentage: (f.score / (f.max || 40)) * 100,
+                            detail: f.detail
+                        })),
+                        improvements: factors.filter(f => f.score <= (f.max || 40) * 0.5).map(f => ({
+                            name: f.name,
+                            score: f.score,
+                            maxScore: f.max || 40,
+                            percentage: (f.score / (f.max || 40)) * 100,
+                            detail: f.detail
+                        })),
+                        actionPlan: recommendations.slice(0, 4).map((rec, idx) => ({
+                            step: idx + 1,
+                            action: typeof rec === 'object' ? rec.action : rec,
+                            timeline: typeof rec === 'object' ? rec.timeline : null
+                        })),
+                        gapAnalysis: gapAnalysis,
+                        conclusion: `Focus on improvement areas to strengthen your application for ${college.university_name}.`
+                    }}
+                    studentName={currentUser?.displayName || 'Student'}
+                />
 
                 {/* Executive Summary */}
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
