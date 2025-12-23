@@ -7,7 +7,8 @@ import {
     ArrowRightIcon,
     ArrowLeftIcon,
     ArrowPathIcon,
-    PlusIcon
+    PlusIcon,
+    TrashIcon
 } from '@heroicons/react/24/outline';
 
 // ============================================================================
@@ -121,6 +122,9 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
     const currentSection = ASSESSMENT_SECTIONS[sectionIndex];
     const isArraySection = currentSection?.isArray;
 
+    // Track original values to detect changes
+    const originalProfile = useRef({});
+
     // Initialize only once
     useEffect(() => {
         if (currentUser?.email && !initialized.current) {
@@ -133,21 +137,29 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
     const initializeFromProfile = (profileData) => {
         const existingAnswers = {};
         const existingArrayItems = {};
+        const originals = {};
 
         ASSESSMENT_SECTIONS.forEach(section => {
             if (section.isArray) {
                 existingArrayItems[section.arrayKey] = profileData[section.arrayKey] || [];
+                // Store original array length for comparison
+                originals[section.arrayKey] = JSON.stringify(profileData[section.arrayKey] || []);
             } else {
                 section.questions.forEach(q => {
-                    if (profileData[q.key] !== undefined && profileData[q.key] !== null && profileData[q.key] !== '') {
-                        existingAnswers[q.key] = profileData[q.key];
+                    const value = profileData[q.key];
+                    if (value !== undefined && value !== null && value !== '') {
+                        existingAnswers[q.key] = value;
                     }
+                    // Store original value (even if empty)
+                    originals[q.key] = value;
                 });
             }
         });
 
         setAnswers(existingAnswers);
         setArrayItems(existingArrayItems);
+        originalProfile.current = originals;
+        console.log('[GuidedInterview] Initialized from profile, tracking originals for change detection');
     };
 
     const handleAnswerChange = (key, value) => {
@@ -167,13 +179,26 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
         if (!answer && question.required) return false;
         if (!answer) return true;
 
+        // OPTIMIZATION: Check if value actually changed from original
+        const originalValue = originalProfile.current[question.key];
+        let newValue = answer;
+        if (question.type === 'number' && newValue) {
+            newValue = parseFloat(newValue);
+        }
+
+        // Compare values - skip API call if unchanged
+        const originalNum = question.type === 'number' && originalValue ? parseFloat(originalValue) : originalValue;
+        if (newValue === originalNum || String(newValue) === String(originalValue)) {
+            console.log(`[GuidedInterview] Skipping save for ${question.key} - value unchanged`);
+            return true; // No change, skip API call
+        }
+
+        console.log(`[GuidedInterview] Saving ${question.key}: ${originalValue} → ${newValue}`);
         setSaving(true);
         try {
-            let value = answer;
-            if (question.type === 'number' && value) {
-                value = parseFloat(value);
-            }
-            await updateProfileField(currentUser.email, question.key, value, 'set');
+            await updateProfileField(currentUser.email, question.key, newValue, 'set');
+            // Update original value after successful save
+            originalProfile.current[question.key] = newValue;
             if (onProfileUpdate) await onProfileUpdate();
             return true;
         } catch (e) {
@@ -203,6 +228,33 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
             if (onProfileUpdate) await onProfileUpdate();
         } catch (e) {
             console.error('Failed to add item:', e);
+        } finally {
+            setSaving(false);
+        }
+    };
+
+    const removeArrayItem = async (index) => {
+        if (!currentSection?.isArray) return;
+
+        const itemToRemove = arrayItems[currentSection.arrayKey]?.[index];
+        if (!itemToRemove) return;
+
+        setSaving(true);
+        try {
+            // Remove from backend using 'remove' operation (matches by name/subject field)
+            // This is safer than index-based removal in case of stale data
+            await updateProfileField(currentUser.email, currentSection.arrayKey, itemToRemove, 'remove');
+
+            // Update local state
+            setArrayItems(prev => ({
+                ...prev,
+                [currentSection.arrayKey]: (prev[currentSection.arrayKey] || []).filter((_, i) => i !== index)
+            }));
+
+            console.log(`[GuidedInterview] Removed item from ${currentSection.arrayKey}:`, itemToRemove.name || itemToRemove.subject);
+            if (onProfileUpdate) await onProfileUpdate();
+        } catch (e) {
+            console.error('Failed to remove item:', e);
         } finally {
             setSaving(false);
         }
@@ -325,11 +377,18 @@ const GuidedInterview = ({ profile: parentProfile, onProfileUpdate }) => {
                                 <div className="mb-4 space-y-2">
                                     <p className="text-xs font-medium text-gray-500">Added items:</p>
                                     {(arrayItems[currentSection.arrayKey] || []).map((item, idx) => (
-                                        <div key={idx} className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg px-3 py-2">
+                                        <div key={idx} className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg px-3 py-2 group">
                                             <span className="text-sm text-green-800 font-medium">
                                                 {item.name || item.subject || 'Item ' + (idx + 1)}
                                             </span>
-                                            <CheckCircleIcon className="h-4 w-4 text-green-600" />
+                                            <button
+                                                onClick={() => removeArrayItem(idx)}
+                                                disabled={saving}
+                                                className="p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors disabled:opacity-50"
+                                                title="Remove"
+                                            >
+                                                <TrashIcon className="h-4 w-4" />
+                                            </button>
                                         </div>
                                     ))}
                                 </div>

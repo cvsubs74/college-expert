@@ -3645,7 +3645,7 @@ def handle_update_structured_field(request):
                 }, 400)
         
         # Validate operation
-        if operation not in ('set', 'append', 'remove'):
+        if operation not in ('set', 'append', 'remove', 'remove_at'):
             return add_cors_headers({'error': f'Invalid operation: {operation}'}, 400)
         
         es_client = get_elasticsearch_client()
@@ -3680,7 +3680,7 @@ def handle_update_structured_field(request):
             current_array.append(value)
             new_value = current_array
         elif operation == 'remove':
-            # Remove from array
+            # Remove from array by value/name match
             current_array = doc_source.get(field_path, [])
             if isinstance(current_array, list):
                 if isinstance(value, dict) and 'name' in value:
@@ -3691,6 +3691,19 @@ def handle_update_structured_field(request):
                     new_value = [item for item in current_array if item != value]
             else:
                 new_value = current_array
+        elif operation == 'remove_at':
+            # Remove from array by index
+            current_array = doc_source.get(field_path, [])
+            if isinstance(current_array, list) and isinstance(value, int):
+                index = value
+                if 0 <= index < len(current_array):
+                    removed_item = current_array[index]
+                    new_value = current_array[:index] + current_array[index + 1:]
+                    logger.info(f"[UPDATE_STRUCTURED_FIELD] Removed item at index {index} from {field_path}: {removed_item}")
+                else:
+                    return add_cors_headers({'error': f'Index {index} out of range for array of length {len(current_array)}'}, 400)
+            else:
+                return add_cors_headers({'error': 'remove_at requires array field and integer index'}, 400)
         else:
             return add_cors_headers({'error': f'Unknown operation: {operation}'}, 400)
         
