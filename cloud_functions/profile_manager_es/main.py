@@ -2642,11 +2642,49 @@ def fetch_university_profile(university_id, max_retries=3):
     """Fetch full university profile from knowledge base with retry logic."""
     # Note: time imported at module level
     
-    # KB API typically requires _slug suffix. Prioritize trying that.
+    # Build list of candidate IDs to try (handles variations in storage format)
+    # Some universities are stored with hyphens (e.g., university_of_wisconsin-madison)
+    # while normalized IDs use only underscores (university_of_wisconsin_madison)
     candidate_ids = []
+    
+    base_id = university_id.lower().strip()
+    
+    # Remove _slug suffix if present for base processing
+    if base_id.endswith('_slug'):
+        base_id = base_id[:-5]
+    
+    # Original ID (with _slug variant)
     if not university_id.endswith('_slug'):
         candidate_ids.append(f"{university_id}_slug")
     candidate_ids.append(university_id)
+    
+    # Try hyphenated variants for location-based universities
+    # e.g., university_of_wisconsin_madison -> university_of_wisconsin-madison
+    # Common patterns: city/campus names after university name
+    location_suffixes = ['madison', 'berkeley', 'austin', 'boulder', 'ann_arbor', 
+                         'chapel_hill', 'los_angeles', 'new_brunswick', 'twin_cities',
+                         'urbana_champaign', 'college_park', 'columbus', 'seattle']
+    
+    for suffix in location_suffixes:
+        underscore_suffix = f"_{suffix}"
+        hyphen_suffix = f"-{suffix}"
+        if underscore_suffix in base_id:
+            # Create hyphenated variant
+            hyphenated_id = base_id.replace(underscore_suffix, hyphen_suffix)
+            if hyphenated_id not in candidate_ids:
+                candidate_ids.append(hyphenated_id)
+                candidate_ids.append(f"{hyphenated_id}_slug")
+    
+    # Also try general underscore-to-hyphen for the last segment
+    # e.g., rutgers_university_new_brunswick -> rutgers_university-new_brunswick
+    parts = base_id.rsplit('_', 1)
+    if len(parts) == 2 and len(parts[1]) > 3:
+        hyphen_variant = f"{parts[0]}-{parts[1]}"
+        if hyphen_variant not in candidate_ids:
+            candidate_ids.append(hyphen_variant)
+            candidate_ids.append(f"{hyphen_variant}_slug")
+    
+    logger.info(f"[KB] Trying candidate IDs for {university_id}: {candidate_ids[:5]}...")
     
     for uid in candidate_ids:
         for attempt in range(max_retries):
@@ -2660,11 +2698,11 @@ def fetch_university_profile(university_id, max_retries=3):
                 if data.get('success'):
                     uni_data = data.get('university')
                     if uni_data:  # Ensure it's not empty
+                        logger.info(f"[KB] Found university with ID: {uid}")
                         return uni_data
                 
                 # If 404/not found, break retry loop and try next candidate ID
                 if 'NotFoundError' in str(data.get('error', '')) or not data.get('success'):
-                    logger.warning(f"[KB] University not found: {uid}")
                     break
                     
             except requests.exceptions.RequestException as e:
@@ -2677,6 +2715,7 @@ def fetch_university_profile(university_id, max_retries=3):
                 logger.error(f"[KB] Unexpected error fetching {uid}: {e}")
                 break
     
+    logger.warning(f"[KB] University not found after trying all variants: {university_id}")
     return None
 
 

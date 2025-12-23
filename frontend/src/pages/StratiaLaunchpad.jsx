@@ -423,7 +423,7 @@ const StratiaLaunchpad = () => {
 
                             {/* Add School Button */}
                             <button
-                                onClick={() => setShowDiscoveryPanel(true)}
+                                onClick={() => handleOpenDiscovery('SAFETY')}
                                 className="stratia-btn-filled flex items-center gap-2"
                             >
                                 <PlusIcon className="w-5 h-5" />
@@ -474,7 +474,7 @@ const StratiaLaunchpad = () => {
                                 </p>
                                 {!searchQuery && (
                                     <button
-                                        onClick={() => setShowDiscoveryPanel(true)}
+                                        onClick={() => handleOpenDiscovery('SAFETY')}
                                         className="stratia-btn-filled mt-2"
                                     >
                                         Discover Schools
