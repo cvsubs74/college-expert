@@ -1,418 +1,466 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
-  SparklesIcon,
-  RocketLaunchIcon,
-  AcademicCapIcon,
-  ChartBarIcon,
-  ChatBubbleLeftRightIcon,
   ArrowRightIcon,
-  BuildingLibraryIcon,
-  ShieldCheckIcon,
-  ClockIcon,
-  DocumentTextIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
   BookOpenIcon,
-  KeyIcon
+  KeyIcon,
+  CheckCircleIcon,
+  DocumentTextIcon,
+  AcademicCapIcon,
+  ChartBarIcon
 } from '@heroicons/react/24/outline';
 import { signInWithGoogle } from '../services/authService';
+import { motion, useInView } from 'framer-motion';
 
-/**
- * LandingPage - Stratia Admissions themed landing
- * 
- * Uses Digital Ivy design system:
- * - Cream background (#FDFCF7)
- * - Forest green primary (#1A4D2E)
- * - Sage secondary (#D6E8D5)
- * - Playfair Display for headlines
- */
+// Import demo components
+import OnboardingDemo from '../components/demos/OnboardingDemo';
+import DocumentUploadDemo from '../components/demos/DocumentUploadDemo';
+import ProfileViewDemo from '../components/demos/ProfileViewDemo';
+import UniversityCardsDemo from '../components/demos/UniversityCardsDemo';
+import AIChatDemo from '../components/demos/AIChatDemo';
+import FitAnalysisDemo from '../components/demos/FitAnalysisDemo';
+import MySchoolsDemo from '../components/demos/MySchoolsDemo';
+
+// ============================================================================
+// INTERACTIVE DEMO LANDING PAGE
+// Using live demo components instead of static screenshots (GoTamil-inspired)
+// ============================================================================
+
+const FeatureDemoSection = ({
+  title,
+  description,
+  features = [],
+  demo,
+  reverse = false,
+  bgColor = 'bg-white'
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  return (
+    <section ref={ref} className={`py-24 lg:py-32 px-6 lg:px-8 ${bgColor} overflow-hidden`}>
+      <div className="max-w-7xl mx-auto">
+        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${reverse ? 'lg:flex-row-reverse' : ''}`}>
+          {/* Text Content */}
+          <motion.div
+            className={`${reverse ? 'lg:order-2' : ''}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A4D2E] leading-tight mb-6">
+              {title}
+            </h2>
+            <p className="text-xl text-[#4A4A4A] leading-relaxed mb-6">
+              {description}
+            </p>
+
+            {/* Feature list */}
+            {features.length > 0 && (
+              <ul className="space-y-3">
+                {features.map((feature, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircleIcon className="h-6 w-6 text-[#2E7D32] flex-shrink-0 mt-0.5" />
+                    <span className="text-lg text-[#4A4A4A]">{feature}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            )}
+          </motion.div>
+
+          {/* Demo Component */}
+          <div className={reverse ? 'lg:order-1' : ''}>
+            {demo}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const LandingPage = () => {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
-  const [openFaq, setOpenFaq] = useState(null);
+  const heroRef = useRef(null);
+  const heroVisible = useInView(heroRef, { once: true });
+  const statsRef = useRef(null);
+  const statsVisible = useInView(statsRef, { once: true, amount: 0.3 });
+  const howItWorksRef = useRef(null);
+  const howItWorksVisible = useInView(howItWorksRef, { once: true, amount: 0.2 });
 
   const handleSignIn = async () => {
     try {
       await signInWithGoogle();
       navigate('/launchpad');
     } catch (error) {
-      console.error('Failed to sign in', error);
+      console.error('Sign in failed:', error);
     }
   };
 
-  // Journey steps with Stratia colors
-  const journeySteps = [
-    {
-      icon: AcademicCapIcon,
-      title: 'Build Your Profile',
-      desc: 'Upload transcripts, test scores, and activities — our AI extracts everything',
-      color: 'from-[#1A4D2E] to-[#2D6B45]'
-    },
-    {
-      icon: BuildingLibraryIcon,
-      title: 'Discover Colleges',
-      desc: 'Explore 150+ universities with AI-powered match scores',
-      color: 'from-[#2D6B45] to-[#A8C5A6]'
-    },
-    {
-      icon: ChartBarIcon,
-      title: 'Get Fit Analysis',
-      desc: 'Understand your real admission chances at each school',
-      color: 'from-[#C05838] to-[#E8A090]'
-    },
-    {
-      icon: RocketLaunchIcon,
-      title: 'Apply with Confidence',
-      desc: 'Strategic advice from our AI counselor every step',
-      color: 'from-[#1A4D2E] to-[#C05838]'
-    },
-  ];
-
-  // Features with Stratia palette
-  const features = [
-    {
-      icon: BuildingLibraryIcon,
-      title: 'University Explorer',
-      desc: 'Research 150+ top colleges with comprehensive profiles and admission stats',
-      bg: 'bg-[#D6E8D5]',
-      iconBg: 'bg-[#1A4D2E]'
-    },
-    {
-      icon: ChartBarIcon,
-      title: 'Personalized Fit Score',
-      desc: 'AI calculates your admission probability based on your unique profile',
-      bg: 'bg-[#FCEEE8]',
-      iconBg: 'bg-[#C05838]'
-    },
-    {
-      icon: ChatBubbleLeftRightIcon,
-      title: 'AI Admissions Counselor',
-      desc: 'Get 24/7 expert guidance on applications and strategy',
-      bg: 'bg-[#D6E8D5]',
-      iconBg: 'bg-[#2D6B45]'
-    },
-    {
-      icon: RocketLaunchIcon,
-      title: 'Application Launchpad',
-      desc: 'Track all your applications, deadlines, and requirements',
-      bg: 'bg-[#F8F6F0]',
-      iconBg: 'bg-[#1A4D2E]'
-    },
-    {
-      icon: DocumentTextIcon,
-      title: 'Smart Profile Builder',
-      desc: 'Upload documents and our AI extracts your academic info',
-      bg: 'bg-[#FCEEE8]',
-      iconBg: 'bg-[#C05838]'
-    },
-  ];
-
-  // Trust indicators
-  const trustIndicators = [
-    { icon: BuildingLibraryIcon, stat: '150+', label: 'Universities', sublabel: 'Detailed Profiles' },
-    { icon: SparklesIcon, stat: 'AI', label: 'Powered', sublabel: 'Smart Analysis' },
-    { icon: ClockIcon, stat: '24/7', label: 'Available', sublabel: 'AI Counselor' },
-    { icon: ShieldCheckIcon, stat: 'Free', label: 'To Start', sublabel: 'No Credit Card' },
-  ];
-
-  // FAQs
-  const faqs = [
-    {
-      question: 'How does AI help with college admissions?',
-      answer: 'Our AI analyzes your complete academic profile — GPA, test scores, extracurricular activities, and interests — to provide personalized college recommendations and fit scores.'
-    },
-    {
-      question: 'What makes Stratia different from other tools?',
-      answer: 'Unlike basic college search tools, Stratia uses advanced AI to provide truly personalized recommendations based on real admission data from 150+ universities.'
-    },
-    {
-      question: 'Is Stratia Admissions free to use?',
-      answer: 'Yes! Stratia offers a comprehensive free tier including AI college matching, fit analysis, and access to our 24/7 AI counselor. No credit card required.'
-    },
-    {
-      question: 'How accurate are the college fit scores?',
-      answer: 'Our AI-powered fit scores are based on real admission data and acceptance rates. While no tool guarantees admission, our analysis provides highly accurate predictions.'
-    },
-  ];
+  const handleGetStarted = () => {
+    if (currentUser) {
+      navigate('/launchpad');
+    } else {
+      handleSignIn();
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#FDFCF7]">
-      {/* Header with Stratia styling */}
-      <header className="px-6 py-5 sticky top-0 z-50 transition-all bg-[#FDFCF7]/90 backdrop-blur-sm border-b border-[#E0DED8]" role="banner">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between" aria-label="Main navigation">
-          {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <img
-              src="/logo.png"
-              alt="Stratia Admissions"
-              className="h-24 w-auto object-contain mix-blend-multiply"
-            />
-          </Link>
+      {/* ============================================
+          NAVIGATION
+          ============================================ */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FDFCF7]/80 backdrop-blur-lg border-b border-[#E0DED8]/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <Link to="/" className="flex items-center gap-2 group">
+              {/* Book & Key Logo - matches app */}
+              <div className="relative w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] shadow-md group-hover:shadow-lg transition-shadow">
+                <BookOpenIcon className="w-5 h-5 text-white absolute" style={{ top: '8px', left: '8px' }} />
+                <KeyIcon className="w-4 h-4 text-[#D6E8D5] absolute" style={{ bottom: '6px', right: '6px' }} />
+              </div>
 
-          {/* Navigation Links */}
-          <div className="flex items-center gap-4">
-            <Link to="/pricing" className="hidden md:block text-[#4A4A4A] hover:text-[#1A4D2E] font-medium transition-colors">
-              Pricing
+              {/* Brand Text */}
+              <div className="flex items-baseline gap-1">
+                <span className="font-serif text-xl font-semibold text-[#1A4D2E]">Stratia</span>
+                <span className="font-sans text-sm font-medium text-[#4A4A4A]">Admissions</span>
+              </div>
             </Link>
-            <Link to="/contact" className="hidden md:block text-[#4A4A4A] hover:text-[#1A4D2E] font-medium transition-colors">
-              Contact
-            </Link>
-            {currentUser ? (
-              <Link
-                to="/launchpad"
-                className="px-5 py-2.5 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-md hover:shadow-lg"
-              >
-                Go to App
+
+            <nav className="hidden md:flex items-center gap-8">
+              <Link to="/pricing" className="text-[#4A4A4A] hover:text-[#1A4D2E] text-sm font-medium transition-colors">
+                Pricing
               </Link>
-            ) : (
-              <button
-                onClick={handleSignIn}
-                className="px-5 py-2.5 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-md hover:shadow-lg"
-              >
-                Get Started Free
-              </button>
-            )}
-          </div>
-        </nav>
-      </header>
-
-      <main>
-        {/* Hero Section */}
-        <section className="px-6 pt-16 pb-24" aria-labelledby="hero-heading">
-          <div className="max-w-5xl mx-auto text-center">
-            {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#D6E8D5] text-[#1A4D2E] rounded-full text-sm font-medium mb-8 border border-[#A8C5A6]">
-              <SparklesIcon className="h-4 w-4" />
-              <span>AI-Powered College Strategy Platform</span>
-            </div>
-
-            {/* Headline - Serif */}
-            <h1 id="hero-heading" className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-[#2C2C2C]">Your </span>
-              <span className="text-[#1A4D2E]">Dream College</span>
-              <br />
-              <span className="text-[#2C2C2C]">Is Within Reach</span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-[#4A4A4A] max-w-3xl mx-auto mb-10 leading-relaxed">
-              <strong className="text-[#2C2C2C]">AI-powered college guidance built for you.</strong>{' '}
-              Get personalized university matches, admission insights, and 24/7 support — like having a $5,000 counselor in your pocket.
-            </p>
-
-            {/* CTA Button */}
-            <div className="flex justify-center mb-16">
-              <button
-                onClick={handleSignIn}
-                className="group px-10 py-5 bg-[#1A4D2E] text-white text-xl font-bold rounded-2xl hover:bg-[#2D6B45] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-3"
-              >
-                <RocketLaunchIcon className="h-7 w-7" />
-                Start My College Journey
-                <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-3xl mx-auto">
-              {trustIndicators.map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center p-4 bg-white rounded-2xl shadow-sm border border-[#E0DED8]">
-                  <item.icon className="h-6 w-6 text-[#1A4D2E] mb-2" />
-                  <span className="text-2xl font-bold text-[#2C2C2C]">{item.stat}</span>
-                  <span className="text-sm font-medium text-[#4A4A4A]">{item.label}</span>
-                  <span className="text-xs text-[#6B6B6B]">{item.sublabel}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* How It Works Section */}
-        <section className="px-6 py-20 bg-white" aria-labelledby="journey-heading">
-          <div className="max-w-6xl mx-auto">
-            <header className="text-center mb-16">
-              <h2 id="journey-heading" className="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] mb-4">
-                Your Path to College Success
-              </h2>
-              <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                From building your profile to submitting applications — our AI guides every step
-              </p>
-            </header>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {journeySteps.map((step, idx) => (
-                <article key={idx} className="relative group">
-                  {idx < journeySteps.length - 1 && (
-                    <div className="hidden md:block absolute top-14 left-full w-full h-0.5">
-                      <div className="h-full bg-gradient-to-r from-[#D6E8D5] to-transparent" />
-                    </div>
-                  )}
-
-                  <div className="relative bg-white border-2 border-[#E0DED8] rounded-3xl p-6 text-center hover:border-[#1A4D2E] hover:shadow-xl transition-all group-hover:-translate-y-1">
-                    <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center shadow-lg`}>
-                      <step.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-[#1A4D2E] text-white rounded-full flex items-center justify-center font-bold text-sm shadow-lg">
-                      {idx + 1}
-                    </div>
-                    <h3 className="font-serif text-lg font-bold text-[#2C2C2C] mb-2">{step.title}</h3>
-                    <p className="text-sm text-[#4A4A4A]">{step.desc}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features Grid */}
-        <section className="px-6 py-20 bg-[#F8F6F0]" aria-labelledby="features-heading">
-          <div className="max-w-6xl mx-auto">
-            <header className="text-center mb-16">
-              <h2 id="features-heading" className="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] mb-4">
-                Complete College Admissions Platform
-              </h2>
-              <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                AI-powered tools to maximize your admission chances
-              </p>
-            </header>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {features.map((feature, idx) => (
-                <article
-                  key={idx}
-                  className={`group ${feature.bg} border border-[#E0DED8] rounded-3xl p-6 hover:shadow-xl transition-all hover:-translate-y-1`}
+              {currentUser ? (
+                <Link
+                  to="/launchpad"
+                  className="px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg hover:bg-[#2D6B45] transition-all"
                 >
-                  <div className={`w-14 h-14 ${feature.iconBg} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
-                    <feature.icon className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="font-serif text-xl font-bold text-[#2C2C2C] mb-2">{feature.title}</h3>
-                  <p className="text-[#4A4A4A] leading-relaxed">{feature.desc}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+                  Open App
+                </Link>
+              ) : (
+                <button
+                  onClick={handleSignIn}
+                  className="px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg hover:bg-[#2D6B45] transition-all"
+                >
+                  Get Started
+                </button>
+              )}
+            </nav>
 
-        {/* Social Proof */}
-        <section className="px-6 py-16 bg-white" aria-labelledby="proof-heading">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 id="proof-heading" className="font-serif text-2xl md:text-3xl font-bold text-[#2C2C2C] mb-12">
-              Students Apply to Top Universities
-            </h2>
-            <div className="flex flex-wrap justify-center gap-8 opacity-60">
-              {['Harvard', 'Stanford', 'MIT', 'Yale', 'Princeton', 'Columbia', 'UPenn', 'Brown'].map((school) => (
-                <span key={school} className="text-lg font-semibold text-[#4A4A4A]">
-                  {school}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="px-6 py-20 bg-[#FDFCF7]" aria-labelledby="faq-heading">
-          <div className="max-w-3xl mx-auto">
-            <header className="text-center mb-12">
-              <h2 id="faq-heading" className="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] mb-4">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-lg text-[#4A4A4A]">
-                Everything you need to know about using AI for college admissions
-              </p>
-            </header>
-
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => (
-                <article key={idx} className="border border-[#E0DED8] rounded-2xl overflow-hidden bg-white">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full flex items-center justify-between p-5 text-left hover:bg-[#F8F6F0] transition-colors"
-                    aria-expanded={openFaq === idx}
-                  >
-                    <h3 className="font-semibold text-[#2C2C2C] pr-4">{faq.question}</h3>
-                    {openFaq === idx ? (
-                      <ChevronUpIcon className="h-5 w-5 text-[#1A4D2E] flex-shrink-0" />
-                    ) : (
-                      <ChevronDownIcon className="h-5 w-5 text-[#4A4A4A] flex-shrink-0" />
-                    )}
-                  </button>
-                  {openFaq === idx && (
-                    <div className="px-5 pb-5 text-[#4A4A4A] leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  )}
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="px-6 py-24 bg-[#D6E8D5]" aria-labelledby="cta-heading">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex p-4 bg-[#1A4D2E] rounded-2xl shadow-xl mb-8">
-              <SparklesIcon className="h-10 w-10 text-white" />
-            </div>
-            <h2 id="cta-heading" className="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] mb-4">
-              Ready to Find Your Perfect Fit College?
-            </h2>
-            <p className="text-lg text-[#4A4A4A] mb-8">
-              Join students using AI to navigate their college admissions journey — completely free
-            </p>
             <button
-              onClick={handleSignIn}
-              className="px-10 py-4 bg-[#1A4D2E] text-white text-lg font-bold rounded-2xl hover:bg-[#2D6B45] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              onClick={handleGetStarted}
+              className="md:hidden px-4 py-2 bg-[#1A4D2E] text-white text-sm font-medium rounded-lg"
             >
-              Get Started Free — No Credit Card Required
+              Start
             </button>
           </div>
-        </section>
-      </main>
+        </div>
+      </header>
 
-      {/* Footer */}
-      <footer className="px-6 py-12 bg-white border-t border-[#E0DED8]" role="contentinfo">
+      {/* ============================================
+          HERO SECTION
+          ============================================ */}
+      <section
+        ref={heroRef}
+        className="pt-32 pb-20 lg:pt-40 lg:pb-24 px-6 lg:px-8"
+      >
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={heroVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#1A4D2E] leading-[1.05] tracking-tight mb-8">
+              One platform.
+              <br />
+              <span className="text-[#4A4A4A]">Your perfect college.</span>
+            </h1>
+            <p className="text-xl sm:text-2xl text-[#6B6B6B] leading-relaxed mb-12 max-w-2xl mx-auto">
+              Stratia is where students build their profile, discover schools, and get AI-powered
+              fit analysis. All in one place.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                onClick={handleGetStarted}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1A4D2E] text-white font-semibold rounded-xl text-lg hover:bg-[#2D6B45] transition-all shadow-lg"
+              >
+                Get Stratia free
+                <ArrowRightIcon className="h-5 w-5" />
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ============================================
+          STATS SECTION - Social Proof
+          ============================================ */}
+      <section ref={statsRef} className="py-12 px-6 lg:px-8 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45]">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <Link to="/" className="flex items-center mb-4">
-                <img
-                  src="/logo.png"
-                  alt="Stratia Admissions"
-                  className="h-14 w-auto object-contain mix-blend-multiply"
-                />
-              </Link>
-              <p className="text-[#4A4A4A] text-sm">
-                AI-powered college admissions strategy platform. Find your perfect fit college.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-[#2C2C2C] mb-3">Features</h3>
-              <ul className="space-y-2 text-sm text-[#4A4A4A]">
-                <li>AI College Matching</li>
-                <li>Personalized Fit Analysis</li>
-                <li>24/7 AI Counselor</li>
-                <li>Application Tracker</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-[#2C2C2C] mb-3">Resources</h3>
-              <ul className="space-y-2 text-sm text-[#4A4A4A]">
-                <li>College Search</li>
-                <li>Admissions Guide</li>
-                <li>Deadline Tracking</li>
-                <li>Financial Aid</li>
-              </ul>
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {[
+              { value: "1,600+", label: "Universities", sublabel: "U.S. colleges & programs" },
+              { value: "100%", label: "Automated", sublabel: "Profile building from documents" },
+              { value: "Real-time", label: "AI Analysis", sublabel: "Instant fit score calculation" }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={statsVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: index * 0.2, duration: 0.6 }}
+                className="text-center"
+              >
+                <div className="text-5xl lg:text-6xl font-bold text-white mb-2 font-serif">
+                  {stat.value}
+                </div>
+                <div className="text-xl font-semibold text-[#D6E8D5] mb-1">
+                  {stat.label}
+                </div>
+                <div className="text-sm text-[#A8C5A6]">
+                  {stat.sublabel}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          HOW IT WORKS SECTION
+          ============================================ */}
+      <section ref={howItWorksRef} className="py-16 lg:py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={howItWorksVisible ? { opacity: 1, y: 0 } : {}}
+            className="text-center mb-16"
+          >
+            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#1A4D2E] mb-4">
+              How Stratia Works
+            </h2>
+            <p className="text-xl text-[#6B6B6B] max-w-2xl mx-auto">
+              Four simple steps to find your perfect college match
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                step: "1",
+                icon: DocumentTextIcon,
+                title: "Upload & Extract",
+                description: "Drop your documents. AI extracts your GPA, test scores, and activities automatically."
+              },
+              {
+                step: "2",
+                icon: AcademicCapIcon,
+                title: "Build Profile",
+                description: "Review your complete academic profile. Add honors, leadership roles, and achievements."
+              },
+              {
+                step: "3",
+                icon: ChartBarIcon,
+                title: "Get Fit Scores",
+                description: "Search 1,600+ schools. See instant fit scores comparing you to admitted students."
+              },
+              {
+                step: "4",
+                icon: CheckCircleIcon,
+                title: "Build Your List",
+                description: "Create a balanced list with reach, target, and safety schools. Track your applications."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={howItWorksVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.3 + index * 0.15, duration: 0.6 }}
+                className="relative"
+              >
+                {/* Step number */}
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#FF8C42] to-[#E67A2E] flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  {item.step}
+                </div>
+
+                {/* Card */}
+                <div className="bg-[#F8F6F0] rounded-2xl p-6 h-full border-2 border-[#E0DED8] hover:border-[#1A4D2E] transition-all">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] flex items-center justify-center mb-4">
+                    <item.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="font-bold text-xl text-[#1A4D2E] mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#4A4A4A] leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          DEMO SECTIONS - Interactive components
+          ============================================ */}
+
+      <FeatureDemoSection
+        title="Get started in 30 seconds."
+        description="No complex forms. No endless questions. Just your name, grade, and school. That's it."
+        features={[
+          "Simple 4-field onboarding form",
+          "Save progress and come back anytime",
+          "Skip setup and explore first"
+        ]}
+        demo={<OnboardingDemo />}
+        bgColor="bg-[#FDFCF7]"
+      />
+
+      <FeatureDemoSection
+        title="Upload documents. We do the work."
+        description="Drop your transcript, test scores, and activities. Our AI extracts everything automatically—no manual data entry required."
+        features={[
+          "Supports PDF, DOCX, TXT, and image files",
+          "Extracts GPA, courses, test scores, and activities",
+          "Review and edit before finalizing",
+          "Processing takes seconds, not hours"
+        ]}
+        demo={<DocumentUploadDemo />}
+        reverse={true}
+        bgColor="bg-white"
+      />
+
+      <FeatureDemoSection
+        title="See your full academic profile."
+        description="Everything in one place—academics, test scores, activities, and awards. Know exactly what colleges will see."
+        features={[
+          "Complete academic snapshot at a glance",
+          "Track all honors, AP, and IB courses",
+          "Showcase leadership roles and impact",
+          "Highlight awards and achievements"
+        ]}
+        demo={<ProfileViewDemo />}
+        bgColor="bg-[#FDFCF7]"
+      />
+
+      <FeatureDemoSection
+        title="Discover 1,600+ universities."
+        description="Browse schools with real acceptance rates, rankings, and costs. Filter by location, major, or selectivity. Every school in one search."
+        features={[
+          "Search across 1,600+ U.S. universities",
+          "Filter by state, major, size, and cost",
+          "See acceptance rates and rankings",
+          "Compare tuition and financial aid"
+        ]}
+        demo={<UniversityCardsDemo />}
+        reverse={true}
+        bgColor="bg-white"
+      />
+
+      <FeatureDemoSection
+        title="Ask anything about any school."
+        description="Our AI knows about majors, career outcomes, campus culture, and application strategies. Get instant answers with sources."
+        features={[
+          "Ask about specific programs and majors",
+          "Learn about campus culture and student life",
+          "Get application tips and deadlines",
+          "Understand career outcomes and salaries"
+        ]}
+        demo={<AIChatDemo />}
+        bgColor="bg-[#FDFCF7]"
+      />
+
+      <FeatureDemoSection
+        title="Track your balanced school list."
+        description="Save schools and see your match score for each one. Stratia compares your profile to admitted students and calculates your fit."
+        features={[
+          "Instant fit score for every school",
+          "Automatic reach/target/safety categorization",
+          "Track application deadlines",
+          "Visual list breakdown"
+        ]}
+        demo={<MySchoolsDemo />}
+        reverse={true}
+        bgColor="bg-white"
+      />
+
+      <FeatureDemoSection
+        title="Data-driven recommendations."
+        description="See exactly why each school is a reach, target, or safety. No vague guesses—just clear data comparing your stats to admitted students."
+        features={[
+          "Detailed score breakdown by category",
+          "Side-by-side comparison with admitted students",
+          "Specific improvement recommendations",
+          "Honest assessment you can trust"
+        ]}
+        demo={<FitAnalysisDemo />}
+        bgColor="bg-[#FDFCF7]"
+      />
+
+      {/* ============================================
+          FINAL CTA
+          ============================================ */}
+      <section className="py-32 px-6 lg:px-8 bg-[#1A4D2E]">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
+            Ready to find your
+            <br />
+            perfect college?
+          </h2>
+          <p className="text-xl text-[#D6E8D5] mb-12">
+            Join students who are taking control of their college journey.
+          </p>
+          <motion.button
+            onClick={handleGetStarted}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-[#1A4D2E] font-bold rounded-xl text-xl hover:bg-[#F8F6F0] transition-all shadow-xl"
+          >
+            Get started free
+            <ArrowRightIcon className="h-6 w-6" />
+          </motion.button>
+          <p className="text-[#A8C5A6] mt-8 text-sm">
+            Free tier available • No credit card required
+          </p>
+        </div>
+      </section>
+
+      {/* ============================================
+          FOOTER
+          ============================================ */}
+      <footer className="py-12 px-6 lg:px-8 bg-[#0D2818] text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <Link to="/" className="flex items-center gap-2">
+              <div className="relative w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45]">
+                <BookOpenIcon className="w-5 h-5 text-white absolute" style={{ top: '8px', left: '8px' }} />
+                <KeyIcon className="w-4 h-4 text-[#D6E8D5] absolute" style={{ bottom: '6px', right: '6px' }} />
+              </div>
+              <div className="flex items-baseline gap-1">
+                <span className="font-serif text-lg font-semibold">Stratia</span>
+                <span className="text-xs text-[#A8C5A6] font-medium">Admissions</span>
+              </div>
+            </Link>
+
+            <div className="flex gap-8 text-sm text-[#A8C5A6]">
+              <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
+              <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
+              <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms</Link>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[#E0DED8]">
-            <p className="text-[#4A4A4A] text-sm">
-              © {new Date().getFullYear()} Stratia Admissions. AI-Powered College Strategy.
-            </p>
-            <div className="flex gap-6 text-sm text-[#4A4A4A]">
-              <Link to="/privacy" className="hover:text-[#1A4D2E]">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-[#1A4D2E]">Terms of Service</Link>
-              <Link to="/contact" className="hover:text-[#1A4D2E]">Contact</Link>
-            </div>
+
+          <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-[#6B8F6B]">
+            © {new Date().getFullYear()} Stratia Admissions
           </div>
         </div>
       </footer>
