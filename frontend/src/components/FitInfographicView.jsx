@@ -75,9 +75,9 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
         const offset = circumference - (score / 100) * circumference;
 
         return (
-            <div className="relative w-24 h-24">
+            <div className="relative w-28 h-28">
                 <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r={radius} fill="none" stroke="#E5E7EB" strokeWidth="8" />
+                    <circle cx="50" cy="50" r={radius} fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="10" />
                     <circle
                         cx="50" cy="50" r={radius} fill="none"
                         stroke="white" strokeWidth="8"
@@ -99,8 +99,8 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
         const color = getScoreColor(score, maxScore);
 
         return (
-            <div className="border border-gray-200 rounded-lg p-3 bg-white">
-                <div className="flex justify-between items-center mb-1">
+            <div className="border-2 border-gray-100 rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-gray-800 text-sm">{label}</span>
                     <span className="font-bold text-sm" style={{ color }}>{score}/{maxScore}</span>
                 </div>
@@ -170,10 +170,10 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
     const isMajorUndecided = majorFactor?.detail?.toLowerCase().includes('undecided');
 
     return (
-        <div className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+        <div className="bg-white rounded-2xl overflow-hidden border-2 border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] transition-shadow duration-300">
 
             {/* ===== SECTION A: HEADER ===== */}
-            <div className="p-5 flex items-center justify-between" style={{ backgroundColor: config.bg }}>
+            <div className="p-6 flex items-center justify-between" style={{ backgroundColor: config.bg }}>
                 <div className="flex-1">
                     <p className="text-sm opacity-80" style={{ color: config.text }}>
                         {studentName}'s Admission Chances
@@ -222,8 +222,8 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
                     />
 
                     {/* Holistic Review - Star Rating */}
-                    <div className="border border-gray-200 rounded-lg p-3 bg-white">
-                        <div className="flex justify-between items-center mb-1">
+                    <div className="border-2 border-gray-100 rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition-shadow">
+                        <div className="flex justify-between items-center mb-2">
                             <span className="font-semibold text-gray-800 text-sm">HOLISTIC</span>
                             <span className="font-bold text-sm text-gray-700">
                                 {holisticFactor?.score || 25}/{holisticFactor?.maxScore || 30}
@@ -236,8 +236,8 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
                     </div>
 
                     {/* Major Fit - Signal Strength */}
-                    <div className="border border-gray-200 rounded-lg p-3 bg-white">
-                        <div className="flex justify-between items-center mb-1">
+                    <div className="border-2 border-gray-100 rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition-shadow">
+                        <div className="flex justify-between items-center mb-2">
                             <span className="font-semibold text-gray-800 text-sm">MAJOR FIT</span>
                             <span className="font-bold text-sm text-gray-700">
                                 {majorFactor?.score || 8}/{majorFactor?.maxScore || 15}
@@ -250,8 +250,8 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
                     </div>
 
                     {/* Selectivity - Badge */}
-                    <div className="border border-gray-200 rounded-lg p-3 bg-white">
-                        <div className="flex justify-between items-center mb-1">
+                    <div className="border-2 border-gray-100 rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition-shadow">
+                        <div className="flex justify-between items-center mb-2">
                             <span className="font-semibold text-gray-800 text-sm">SELECTIVITY</span>
                         </div>
                         <span
