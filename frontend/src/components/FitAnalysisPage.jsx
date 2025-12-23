@@ -76,8 +76,28 @@ const FitAnalysisPage = ({ college, onBack }) => {
     const scholarshipMatches = parseIfString(fitAnalysis.scholarship_matches) || [];
     const testStrategy = parseIfString(fitAnalysis.test_strategy) || {};
     const majorStrategy = parseIfString(fitAnalysis.major_strategy) || {};
+
+    // Demonstrated interest tips - use backend data or fallback to generic best practices
     const demonstratedInterestTips = parseIfString(fitAnalysis.demonstrated_interest_tips) || [];
+    const fallbackInterestTips = [
+        "Attend a virtual or in-person campus tour and take notes on specific details to mention in essays",
+        "Sign up for the university's mailing list and engage with their content",
+        "Connect with current students or alumni on LinkedIn for informational conversations",
+        "Attend college fairs and make sure to speak directly with admissions representatives",
+        "Follow the school's admissions social media accounts and engage thoughtfully"
+    ];
+    const displayInterestTips = demonstratedInterestTips.length > 0 ? demonstratedInterestTips : fallbackInterestTips;
+
+    // Red flags - use backend data or fallback to common pitfalls
     const redFlags = parseIfString(fitAnalysis.red_flags_to_avoid) || [];
+    const fallbackRedFlags = [
+        "Don't mention other schools by name in your essays",
+        "Avoid generic statements that could apply to any university",
+        "Never submit an essay with spelling or grammar errors",
+        "Don't ask questions in interviews that can easily be found on the website",
+        "Avoid appearing disinterested or unprepared in admissions interviews"
+    ];
+    const displayRedFlags = redFlags.length > 0 ? redFlags : fallbackRedFlags;
 
     // Category badge color
     const getCategoryStyle = (category) => {
@@ -549,51 +569,36 @@ const FitAnalysisPage = ({ college, onBack }) => {
                 {activeTab === 'tips' && (
                     <React.Fragment>
                         {/* Demonstrated Interest Tips */}
-                        {demonstratedInterestTips.length > 0 && (
-                            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                                <h2 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <ClipboardDocumentCheckIcon className="h-5 w-5 text-[#1A4D2E]" />
-                                    Demonstrated Interest Tips
-                                </h2>
-                                <ul className="space-y-2">
-                                    {demonstratedInterestTips.map((tip, idx) => (
-                                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                                            <CheckCircleIcon className="h-4 w-4 text-[#1A4D2E] mt-0.5 flex-shrink-0" />
-                                            {tip}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
+                        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                            <h2 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                <ClipboardDocumentCheckIcon className="h-5 w-5 text-[#1A4D2E]" />
+                                Show Your Interest
+                            </h2>
+                            <ul className="space-y-3">
+                                {displayInterestTips.map((tip, idx) => (
+                                    <li key={idx} className="flex items-start gap-3 text-sm text-gray-700 bg-[#F5F5F0] p-3 rounded-lg">
+                                        <CheckCircleIcon className="h-5 w-5 text-[#1A4D2E] mt-0.5 flex-shrink-0" />
+                                        {tip}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
                         {/* Red Flags to Avoid */}
-                        {redFlags.length > 0 && (
-                            <div className="bg-red-50 rounded-xl p-6 border border-red-100">
-                                <h2 className="font-semibold text-red-800 mb-4 flex items-center gap-2">
-                                    <ExclamationTriangleIcon className="h-5 w-5" />
-                                    Red Flags to Avoid
-                                </h2>
-                                <ul className="space-y-2">
-                                    {redFlags.map((flag, idx) => (
-                                        <li key={idx} className="text-sm text-red-700 flex items-start gap-2">
-                                            <span className="text-red-500">⚠️</span>
-                                            {flag}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-                        {/* Empty State for Tips */}
-                        {demonstratedInterestTips.length === 0 && redFlags.length === 0 && (
-                            <div className="bg-[#F5F5F0] rounded-xl p-8 text-center border border-gray-200">
-                                <LightBulbIcon className="h-12 w-12 text-[#1A4D2E] mx-auto mb-4 opacity-50" />
-                                <h3 className="font-semibold text-gray-800 mb-2">No Tips Available Yet</h3>
-                                <p className="text-sm text-gray-600">
-                                    Pro tips for demonstrated interest and application strategies will appear here once we analyze your profile further.
-                                </p>
-                            </div>
-                        )}
+                        <div className="bg-red-50 rounded-xl p-6 border border-red-100">
+                            <h2 className="font-semibold text-red-800 mb-4 flex items-center gap-2">
+                                <ExclamationTriangleIcon className="h-5 w-5" />
+                                Common Mistakes to Avoid
+                            </h2>
+                            <ul className="space-y-3">
+                                {displayRedFlags.map((flag, idx) => (
+                                    <li key={idx} className="flex items-start gap-3 text-sm text-red-700 bg-red-100/50 p-3 rounded-lg">
+                                        <span className="text-red-500">⚠️</span>
+                                        {flag}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </React.Fragment>
                 )}
             </div>
