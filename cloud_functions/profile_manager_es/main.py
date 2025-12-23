@@ -3078,8 +3078,44 @@ def fit_chat(user_id: str, university_id: str, question: str, conversation_histo
             "detailed_analysis": fit_data.get("detailed_analysis"),
         }
         
+        # Fetch university profile from knowledge base for additional context (majors, programs, etc.)
+        university_profile = fetch_university_profile(university_id)
+        university_summary = {}
+        if university_profile:
+            profile_data = university_profile.get('profile', university_profile)
+            academic = profile_data.get('academic_structure', {})
+            
+            # Extract colleges and majors
+            colleges_info = []
+            for college in academic.get('colleges', []):
+                college_majors = []
+                for major in college.get('majors', []):
+                    if isinstance(major, dict):
+                        college_majors.append(major.get('name', str(major)))
+                    else:
+                        college_majors.append(str(major))
+                colleges_info.append({
+                    "name": college.get('name', 'Unknown'),
+                    "majors": college_majors
+                })
+            
+            university_summary = {
+                "colleges_and_majors": colleges_info,
+                "minors_certificates": academic.get('minors_certificates', []),
+                "admissions": {
+                    "sat_range": profile_data.get('admissions_data', {}).get('test_scores', {}).get('sat_composite', {}),
+                    "acceptance_rate": profile_data.get('admissions_data', {}).get('current_status', {}).get('overall_acceptance_rate'),
+                },
+                "outcomes": profile_data.get('outcomes', {}),
+                "location": profile_data.get('metadata', {}).get('location', {})
+            }
+            logger.info(f"[FIT_CHAT] Loaded university profile with {len(colleges_info)} colleges")
+        else:
+            logger.warning(f"[FIT_CHAT] Could not fetch university profile for {university_id}")
+        
         profile_json = json.dumps(profile_summary, indent=2, default=str)
         fit_json = json.dumps(fit_summary, indent=2, default=str)
+        university_json = json.dumps(university_summary, indent=2, default=str) if university_summary else "Not available"
         
         system_prompt = f"""You are a college admissions advisor helping a student understand their fit with {university_name}. Answer questions using ONLY the data provided below.
 
@@ -3089,8 +3125,12 @@ STUDENT PROFILE:
 FIT ANALYSIS FOR {university_name}:
 {fit_json}
 
+UNIVERSITY INFORMATION (Colleges, Majors, Programs):
+{university_json}
+
 RULES:
-- Base answers on the fit analysis data above
+- Base answers on the data provided above
+- When asked about majors/programs, use the UNIVERSITY INFORMATION section
 - Explain factors affecting the fit score
 - Give actionable advice when asked
 - Be encouraging but realistic
