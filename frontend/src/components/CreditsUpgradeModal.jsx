@@ -156,7 +156,7 @@ const CreditsUpgradeModal = ({ isOpen, onClose, creditsRemaining = 0, feature = 
 
                                 <button
                                     onClick={handleSeasonPass}
-                                    className="w-full py-3 bg-[#C05838] text-white font-semibold rounded-full hover:bg-[#A04828] transition-colors group-hover:shadow-lg"
+                                    className="w-full py-3 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#143D24] transition-colors group-hover:shadow-lg"
                                 >
                                     Get Season Pass →
                                 </button>
