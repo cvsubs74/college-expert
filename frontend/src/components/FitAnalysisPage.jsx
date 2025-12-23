@@ -25,7 +25,7 @@ import FitInfographicView from './FitInfographicView';
 // ============================================================================
 const FitAnalysisPage = ({ college, onBack }) => {
     const { currentUser } = useAuth();
-    const [activeTab, setActiveTab] = useState('overview'); // 'overview' or 'details'
+    const [activeTab, setActiveTab] = useState('snapshot'); // 'snapshot', 'scores', 'strategy', 'timeline', 'tips'
     // Removed infographicUrl state - using HTML template instead
     const [isGenerating, setIsGenerating] = useState(false);
     const [generationError, setGenerationError] = useState(null);
@@ -120,33 +120,33 @@ const FitAnalysisPage = ({ college, onBack }) => {
             </div>
             {/* Tab Navigation */}
             <div className="max-w-6xl mx-auto px-4 pt-6">
-                <div className="flex gap-1 p-1 bg-gray-100 rounded-xl">
-                    <button
-                        onClick={() => setActiveTab('overview')}
-                        className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${activeTab === 'overview'
-                            ? 'bg-white text-[#1A4D2E] shadow-sm'
-                            : 'text-gray-600 hover:text-gray-900'
-                            }`}
-                    >
-                        📊 Overview
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('details')}
-                        className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${activeTab === 'details'
-                            ? 'bg-white text-[#1A4D2E] shadow-sm'
-                            : 'text-gray-600 hover:text-gray-900'
-                            }`}
-                    >
-                        📋 Deep Dive
-                    </button>
+                <div className="flex gap-1 p-1 bg-gray-100 rounded-xl overflow-x-auto">
+                    {[
+                        { id: 'snapshot', label: '📊 Snapshot', title: 'At a Glance' },
+                        { id: 'scores', label: '📈 Scores', title: 'Score Breakdown' },
+                        { id: 'strategy', label: '✍️ Strategy', title: 'Essay & Major' },
+                        { id: 'timeline', label: '📅 Timeline', title: 'Action Plan' },
+                        { id: 'tips', label: '💡 Tips', title: 'Pro Tips' }
+                    ].map(tab => (
+                        <button
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                            className={`flex-1 min-w-[80px] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${activeTab === tab.id
+                                ? 'bg-white text-[#1A4D2E] shadow-sm'
+                                : 'text-gray-600 hover:text-gray-900'
+                                }`}
+                        >
+                            {tab.label}
+                        </button>
+                    ))}
                 </div>
             </div>
 
             {/* Main Content */}
             <div className="max-w-6xl mx-auto px-4 py-6 space-y-6">
 
-                {/* Overview Tab - Infographic */}
-                {activeTab === 'overview' && (
+                {/* Snapshot Tab - Infographic */}
+                {activeTab === 'snapshot' && (
                     <FitInfographicView
                         data={{
                             title: `Your Fit Analysis: ${college.university_name}`,
@@ -187,8 +187,9 @@ const FitAnalysisPage = ({ college, onBack }) => {
                     />
                 )}
 
-                {/* Deep Dive Tab Content */}
-                {activeTab === 'details' && (
+
+                {/* ===== SCORES TAB ===== */}
+                {activeTab === 'scores' && (
                     <React.Fragment>
                         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                             <h2 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
@@ -253,7 +254,12 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                 </div>
                             </div>
                         )}
+                    </React.Fragment>
+                )}
 
+                {/* ===== STRATEGY TAB ===== */}
+                {activeTab === 'strategy' && (
+                    <React.Fragment>
                         {/* Action Plan / Recommendations */}
                         {recommendations.length > 0 && (
                             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -444,7 +450,12 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                 </div>
                             </div>
                         )}
+                    </React.Fragment>
+                )}
 
+                {/* ===== TIMELINE TAB ===== */}
+                {activeTab === 'timeline' && (
+                    <React.Fragment>
                         {/* Application Timeline */}
                         {applicationTimeline.recommended_plan && (
                             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -530,7 +541,12 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                 </div>
                             </div>
                         )}
+                    </React.Fragment>
+                )}
 
+                {/* ===== TIPS TAB ===== */}
+                {activeTab === 'tips' && (
+                    <React.Fragment>
                         {/* Demonstrated Interest Tips */}
                         {demonstratedInterestTips.length > 0 && (
                             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
