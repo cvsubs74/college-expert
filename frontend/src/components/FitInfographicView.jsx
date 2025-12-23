@@ -5,297 +5,357 @@ import {
     CheckCircleIcon,
     ExclamationTriangleIcon,
     RocketLaunchIcon,
-    MapPinIcon,
+    QuestionMarkCircleIcon,
     StarIcon,
-    ArrowTrendingUpIcon,
-    UserCircleIcon,
-    SparklesIcon,
-    LightBulbIcon
+    SignalIcon,
+    ShieldCheckIcon
 } from '@heroicons/react/24/outline';
-import { CheckCircleIcon as CheckCircleSolid } from '@heroicons/react/24/solid';
+import { CheckCircleIcon as CheckCircleSolid, StarIcon as StarSolid } from '@heroicons/react/24/solid';
 
 /**
- * FitInfographicView - Renders structured fit analysis data as a beautiful Stratia-themed infographic
- * Replaces AI-generated images with a native React component for perfect text rendering
+ * FitInfographicView - High-contrast, zero-gradient infographic component
+ * Design: Modular "Control Center" layout with distinct sections
  */
-const FitInfographicView = ({ data, studentName = "Student", onClose }) => {
+const FitInfographicView = ({ data, studentName = "Student" }) => {
     if (!data) return null;
 
     const {
-        title,
-        subtitle,
-        themeColor,
         matchScore,
         fitCategory,
-        explanation,
         universityInfo,
-        strengths,
-        improvements,
-        actionPlan,
         gapAnalysis,
-        conclusion
+        actionPlan
     } = data;
 
-    // Stratia theme colors based on fit category
-    const fitConfig = {
-        SAFETY: {
-            gradient: 'from-[#1A4D2E] to-[#2D6B45]',
-            bg: 'bg-[#1A4D2E]',
-            light: 'bg-[#D6E8D5]',
-            text: 'text-[#1A4D2E]',
-            border: 'border-[#A8C5A6]',
-            label: 'SAFETY',
-            emoji: '✓',
-            tagline: 'Strong fit with high admission probability'
-        },
-        TARGET: {
-            gradient: 'from-[#1A4D2E] to-[#2D6B45]',
-            bg: 'bg-[#1A4D2E]',
-            light: 'bg-[#D6E8D5]',
-            text: 'text-[#1A4D2E]',
-            border: 'border-[#A8C5A6]',
-            label: 'TARGET',
-            emoji: '🎯',
-            tagline: 'Accessible, but improvements needed for higher certainty'
-        },
-        REACH: {
-            gradient: 'from-[#C05838] to-[#D4704F]',
-            bg: 'bg-[#C05838]',
-            light: 'bg-[#FCEEE8]',
-            text: 'text-[#C05838]',
-            border: 'border-[#E8A090]',
-            label: 'REACH',
-            emoji: '🔥',
-            tagline: 'Competitive, requires strategic positioning'
-        },
-        SUPER_REACH: {
-            gradient: 'from-[#C05838] to-[#A04020]',
-            bg: 'bg-[#C05838]',
-            light: 'bg-[#FCEEE8]',
-            text: 'text-[#C05838]',
-            border: 'border-[#E8A090]',
-            label: 'SUPER REACH',
-            emoji: '⭐',
-            tagline: 'Highly competitive, exceptional positioning required'
-        }
+    // Solid color config per fit category (NO gradients)
+    const categoryConfig = {
+        SAFETY: { bg: '#059669', text: 'white', label: 'LIKELY', border: '#047857' },
+        TARGET: { bg: '#1A4D2E', text: 'white', label: 'TARGET', border: '#143D24' },
+        REACH: { bg: '#D97706', text: 'white', label: 'REACH', border: '#B45309' },
+        SUPER_REACH: { bg: '#DC2626', text: 'white', label: 'SUPER REACH', border: '#B91C1C' }
+    };
+    const config = categoryConfig[fitCategory] || categoryConfig.TARGET;
+
+    // Parse factors from data
+    const allFactors = [...(data.strengths || []), ...(data.improvements || [])];
+    const academicFactor = allFactors.find(f => f.name?.toLowerCase().includes('academic'));
+    const holisticFactor = allFactors.find(f => f.name?.toLowerCase().includes('holistic'));
+    const majorFactor = allFactors.find(f => f.name?.toLowerCase().includes('major'));
+    const selectivityFactor = allFactors.find(f => f.name?.toLowerCase().includes('selectivity'));
+
+    // Get strengths and weaknesses from gap analysis
+    const strengths = gapAnalysis?.student_strengths || gapAnalysis?.studentStrengths || [];
+    const primaryGap = gapAnalysis?.primary_gap || gapAnalysis?.primaryGap || '';
+    const secondaryGap = gapAnalysis?.secondary_gap || gapAnalysis?.secondaryGap || '';
+
+    // Score color helper (Red/Yellow/Green)
+    const getScoreColor = (score, max) => {
+        const pct = (score / max) * 100;
+        if (pct >= 70) return '#059669'; // Green
+        if (pct >= 40) return '#D97706'; // Amber
+        return '#DC2626'; // Red
     };
 
-    const config = fitConfig[fitCategory] || fitConfig.TARGET;
+    // Selectivity badge helper
+    const getSelectivityBadge = (acceptanceRate) => {
+        if (!acceptanceRate || acceptanceRate === 'N/A') return { label: 'Unknown', color: '#6B7280' };
+        const rate = parseFloat(acceptanceRate);
+        if (rate < 10) return { label: 'Extremely Selective', color: '#DC2626' };
+        if (rate < 25) return { label: 'Highly Selective', color: '#D97706' };
+        if (rate < 50) return { label: 'Moderately Selective', color: '#059669' };
+        return { label: 'Less Selective', color: '#059669' };
+    };
 
-    // Circular Score Gauge Component
-    const ScoreGauge = ({ score }) => {
-        const radius = 50;
+    const selectivityBadge = getSelectivityBadge(universityInfo?.acceptanceRate);
+
+    // Radial Gauge (Solid stroke, no glow)
+    const RadialGauge = ({ score }) => {
+        const radius = 40;
         const circumference = 2 * Math.PI * radius;
         const offset = circumference - (score / 100) * circumference;
 
         return (
-            <div className="relative w-28 h-28">
-                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 120 120">
-                    {/* Background circle */}
+            <div className="relative w-24 h-24">
+                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r={radius} fill="none" stroke="#E5E7EB" strokeWidth="8" />
                     <circle
-                        cx="60"
-                        cy="60"
-                        r={radius}
-                        fill="none"
-                        stroke="rgba(255,255,255,0.3)"
-                        strokeWidth="8"
-                    />
-                    {/* Progress circle */}
-                    <circle
-                        cx="60"
-                        cy="60"
-                        r={radius}
-                        fill="none"
-                        stroke="white"
-                        strokeWidth="8"
-                        strokeDasharray={circumference}
-                        strokeDashoffset={offset}
+                        cx="50" cy="50" r={radius} fill="none"
+                        stroke="white" strokeWidth="8"
+                        strokeDasharray={circumference} strokeDashoffset={offset}
                         strokeLinecap="round"
-                        className="transition-all duration-1000"
                     />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                     <span className="text-2xl font-bold">{score}</span>
-                    <span className="text-xs opacity-80">/ 100</span>
+                    <span className="text-xs opacity-80">/100</span>
                 </div>
             </div>
         );
     };
 
-    // Factor Score Bar
-    const FactorBar = ({ name, score, maxScore, detail, isPositive }) => {
-        const percentage = Math.min((score / maxScore) * 100, 100);
-        const barColor = isPositive ? 'bg-[#1A4D2E]' : 'bg-[#C05838]';
-        const bgColor = isPositive ? 'bg-[#D6E8D5]' : 'bg-[#FCEEE8]';
+    // Horizontal Progress Bar Widget
+    const ScoreWidget = ({ label, score, maxScore, detail }) => {
+        const pct = Math.min((score / maxScore) * 100, 100);
+        const color = getScoreColor(score, maxScore);
 
         return (
-            <div className="mb-4">
+            <div className="border border-gray-200 rounded-lg p-3 bg-white">
                 <div className="flex justify-between items-center mb-1">
-                    <span className="font-medium text-gray-800 text-sm">{name}</span>
-                    <span className={`text-sm font-bold ${isPositive ? 'text-[#1A4D2E]' : 'text-[#C05838]'}`}>
-                        {score}/{maxScore}
-                    </span>
+                    <span className="font-semibold text-gray-800 text-sm">{label}</span>
+                    <span className="font-bold text-sm" style={{ color }}>{score}/{maxScore}</span>
                 </div>
-                <div className={`h-2.5 rounded-full ${bgColor}`}>
-                    <div
-                        className={`h-full rounded-full ${barColor} transition-all duration-700`}
-                        style={{ width: `${percentage}%` }}
-                    />
+                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: color }} />
                 </div>
-                {detail && (
-                    <p className="text-xs text-gray-500 mt-1 line-clamp-2">{detail}</p>
-                )}
+                {detail && <p className="text-xs text-gray-500 mt-1 line-clamp-2">{detail}</p>}
             </div>
         );
     };
 
-    // Parse factors from data
-    const factors = data.strengths?.concat(data.improvements || []) || [];
+    // Star Rating Widget
+    const StarRating = ({ filled, total }) => (
+        <div className="flex gap-0.5">
+            {[...Array(total)].map((_, i) => (
+                i < filled
+                    ? <StarSolid key={i} className="w-4 h-4 text-amber-400" />
+                    : <StarIcon key={i} className="w-4 h-4 text-gray-300" />
+            ))}
+        </div>
+    );
 
-    // Calculate section scores from factors
-    const academicFactor = factors.find(f => f.name?.toLowerCase().includes('academic'));
-    const holisticFactor = factors.find(f => f.name?.toLowerCase().includes('holistic'));
-    const majorFactor = factors.find(f => f.name?.toLowerCase().includes('major'));
-    const selectivityFactor = factors.find(f => f.name?.toLowerCase().includes('selectivity'));
+    // Signal Strength Widget (for Major Fit)
+    const SignalStrength = ({ level, isUndecided }) => {
+        if (isUndecided) {
+            return (
+                <div className="flex items-center gap-1 text-amber-600">
+                    <QuestionMarkCircleIcon className="w-5 h-5" />
+                    <span className="text-xs font-medium">Undecided</span>
+                </div>
+            );
+        }
+        const bars = [1, 2, 3, 4];
+        return (
+            <div className="flex items-end gap-0.5 h-4">
+                {bars.map(b => (
+                    <div
+                        key={b}
+                        className={`w-1.5 rounded-sm ${b <= level ? 'bg-emerald-500' : 'bg-gray-200'}`}
+                        style={{ height: `${b * 25}%` }}
+                    />
+                ))}
+            </div>
+        );
+    };
+
+    // Timeline Tag
+    const TimelineTag = ({ phase }) => {
+        const colors = {
+            'Before application': { bg: '#DBEAFE', text: '#1E40AF' },
+            'In essays': { bg: '#FEE2E2', text: '#991B1B' },
+            'During senior year': { bg: '#D1FAE5', text: '#065F46' }
+        };
+        const style = colors[phase] || { bg: '#F3F4F6', text: '#374151' };
+        return (
+            <span className="text-xs px-2 py-0.5 rounded font-medium" style={{ backgroundColor: style.bg, color: style.text }}>
+                {phase}
+            </span>
+        );
+    };
+
+    // Calculate star rating from holistic score
+    const holisticStars = holisticFactor ? Math.round((holisticFactor.score / (holisticFactor.maxScore || 30)) * 5) : 3;
+
+    // Calculate signal level from major fit
+    const majorSignalLevel = majorFactor ? Math.ceil((majorFactor.score / (majorFactor.maxScore || 15)) * 4) : 2;
+    const isMajorUndecided = majorFactor?.detail?.toLowerCase().includes('undecided');
 
     return (
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
-            {/* Header Section with Gradient */}
-            <div className={`bg-gradient-to-r ${config.gradient} text-white p-6`}>
-                <div className="flex items-center justify-between">
-                    <div className="flex-1">
-                        <h2 className="text-xl font-bold mb-1">
-                            {studentName}'s Admission Chances
-                        </h2>
-                        <h3 className="text-lg opacity-90">
-                            {universityInfo?.name || 'University'}
-                        </h3>
-                        <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 bg-white/20 rounded-full text-sm">
-                            <span>{config.emoji}</span>
-                            <span className="font-semibold">{config.label}</span>
-                        </div>
-                        <p className="text-sm opacity-80 mt-2">{config.tagline}</p>
-                    </div>
+        <div className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm">
 
-                    <div className="flex flex-col items-center gap-2">
-                        <div className="text-center">
-                            <span className="text-xs uppercase tracking-wider opacity-80">Overall Match</span>
-                        </div>
-                        <ScoreGauge score={matchScore || 0} />
-                        <span className="text-xs opacity-80">
-                            {universityInfo?.acceptanceRate && `${universityInfo.acceptanceRate}% acceptance`}
+            {/* ===== SECTION A: HEADER ===== */}
+            <div className="p-5 flex items-center justify-between" style={{ backgroundColor: config.bg }}>
+                <div className="flex-1">
+                    <p className="text-sm opacity-80" style={{ color: config.text }}>
+                        {studentName}'s Admission Chances
+                    </p>
+                    <h2 className="text-xl font-bold" style={{ color: config.text }}>
+                        {universityInfo?.name || 'University'}
+                    </h2>
+                    <div className="mt-2 flex items-center gap-3">
+                        {/* Classification Badge - Solid Pill */}
+                        <span
+                            className="px-3 py-1 rounded-full text-sm font-bold border-2"
+                            style={{ backgroundColor: 'white', color: config.bg, borderColor: config.border }}
+                        >
+                            {config.label}
                         </span>
+                        {universityInfo?.acceptanceRate && (
+                            <span className="text-sm opacity-80" style={{ color: config.text }}>
+                                {universityInfo.acceptanceRate}% acceptance
+                            </span>
+                        )}
                     </div>
+                </div>
+
+                {/* Match Score Gauge */}
+                <div className="text-center">
+                    <p className="text-xs uppercase tracking-wide mb-1 opacity-80" style={{ color: config.text }}>
+                        Overall Match
+                    </p>
+                    <RadialGauge score={matchScore || 0} />
                 </div>
             </div>
 
-            {/* Main Content Grid */}
-            <div className="grid md:grid-cols-2 gap-0">
-                {/* Left Column: Current Standing */}
-                <div className="p-5 border-r border-gray-100">
-                    <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
-                        <ChartBarIcon className="h-5 w-5 text-[#1A4D2E]" />
-                        Current Standing & Scores
-                    </h4>
-
-                    {/* Academic Score */}
-                    <FactorBar
-                        name="ACADEMIC"
-                        score={academicFactor?.score || 25}
-                        maxScore={40}
-                        detail={academicFactor?.detail || "GPA and test scores vs admitted students"}
-                        isPositive={(academicFactor?.score || 25) > 20}
+            {/* ===== SECTION B: SNAPSHOT (2x2 Grid) ===== */}
+            <div className="p-5 border-b border-gray-200">
+                <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                    <ChartBarIcon className="w-5 h-5 text-gray-600" />
+                    Current Standing & Scores
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                    {/* Academic Index */}
+                    <ScoreWidget
+                        label="ACADEMIC"
+                        score={academicFactor?.score || 14}
+                        maxScore={academicFactor?.maxScore || 40}
+                        detail={academicFactor?.detail}
                     />
 
-                    {/* Holistic Score */}
-                    <FactorBar
-                        name="HOLISTIC"
-                        score={holisticFactor?.score || 25}
-                        maxScore={30}
-                        detail={holisticFactor?.detail || "Leadership, activities, service, awards"}
-                        isPositive={(holisticFactor?.score || 25) > 15}
-                    />
-
-                    {/* Major Fit */}
-                    <FactorBar
-                        name="MAJOR FIT"
-                        score={majorFactor?.score || 8}
-                        maxScore={15}
-                        detail={majorFactor?.detail || "Alignment with intended field of study"}
-                        isPositive={(majorFactor?.score || 8) > 7}
-                    />
-
-                    {/* Selectivity */}
-                    <FactorBar
-                        name="SELECTIVITY"
-                        score={Math.max(0, selectivityFactor?.score || 5)}
-                        maxScore={5}
-                        detail={selectivityFactor?.detail || `${universityInfo?.acceptanceRate || 'N/A'}% acceptance rate adjustment`}
-                        isPositive={true}
-                    />
-
-                    {/* Gap Summary */}
-                    {gapAnalysis && (
-                        <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                            <p className="text-xs font-medium text-gray-700">
-                                <strong>Primary Gap:</strong> {gapAnalysis.primary_gap || gapAnalysis.primaryGap || 'N/A'}
-                            </p>
-                            <p className="text-xs text-gray-500 mt-1">
-                                <strong>Secondary Gap:</strong> {gapAnalysis.secondary_gap || gapAnalysis.secondaryGap || 'N/A'}
-                            </p>
+                    {/* Holistic Review - Star Rating */}
+                    <div className="border border-gray-200 rounded-lg p-3 bg-white">
+                        <div className="flex justify-between items-center mb-1">
+                            <span className="font-semibold text-gray-800 text-sm">HOLISTIC</span>
+                            <span className="font-bold text-sm text-gray-700">
+                                {holisticFactor?.score || 25}/{holisticFactor?.maxScore || 30}
+                            </span>
                         </div>
-                    )}
-                </div>
-
-                {/* Right Column: Action Items */}
-                <div className="p-5 bg-gradient-to-b from-gray-50 to-white">
-                    <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
-                        <RocketLaunchIcon className="h-5 w-5 text-[#C05838]" />
-                        Path to Improvement
-                    </h4>
-
-                    <div className="space-y-4">
-                        {actionPlan && actionPlan.length > 0 ? (
-                            actionPlan.slice(0, 4).map((item, idx) => (
-                                <div key={idx} className="flex gap-3">
-                                    <div className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-white text-sm font-bold ${idx < 2 ? 'bg-[#1A4D2E]' : 'bg-[#C05838]'}`}>
-                                        {item.step || idx + 1}
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-sm text-gray-800 font-medium leading-snug">
-                                            {item.action?.length > 120 ? item.action.substring(0, 120) + '...' : item.action}
-                                        </p>
-                                        {item.timeline && (
-                                            <span className={`inline-block mt-1 text-xs px-2 py-0.5 rounded ${idx < 2 ? 'bg-[#D6E8D5] text-[#1A4D2E]' : 'bg-[#FCEEE8] text-[#C05838]'}`}>
-                                                {item.timeline}
-                                            </span>
-                                        )}
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <p className="text-gray-500 text-sm">Action items loading...</p>
+                        <StarRating filled={holisticStars} total={5} />
+                        {holisticFactor?.detail && (
+                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">{holisticFactor.detail}</p>
                         )}
                     </div>
 
-                    {/* Student Strengths */}
-                    {gapAnalysis?.studentStrengths && gapAnalysis.studentStrengths.length > 0 && (
-                        <div className="mt-5 p-3 bg-[#D6E8D5] rounded-lg border border-[#A8C5A6]">
-                            <p className="text-xs font-bold text-[#1A4D2E] mb-2 flex items-center gap-1">
-                                <SparklesIcon className="h-4 w-4" />
-                                YOUR STRENGTHS
-                            </p>
-                            <p className="text-xs text-[#1A4D2E]">
-                                {gapAnalysis.studentStrengths.slice(0, 3).join(' • ')}
-                            </p>
+                    {/* Major Fit - Signal Strength */}
+                    <div className="border border-gray-200 rounded-lg p-3 bg-white">
+                        <div className="flex justify-between items-center mb-1">
+                            <span className="font-semibold text-gray-800 text-sm">MAJOR FIT</span>
+                            <span className="font-bold text-sm text-gray-700">
+                                {majorFactor?.score || 8}/{majorFactor?.maxScore || 15}
+                            </span>
                         </div>
+                        <SignalStrength level={majorSignalLevel} isUndecided={isMajorUndecided} />
+                        {majorFactor?.detail && (
+                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">{majorFactor.detail}</p>
+                        )}
+                    </div>
+
+                    {/* Selectivity - Badge */}
+                    <div className="border border-gray-200 rounded-lg p-3 bg-white">
+                        <div className="flex justify-between items-center mb-1">
+                            <span className="font-semibold text-gray-800 text-sm">SELECTIVITY</span>
+                        </div>
+                        <span
+                            className="inline-block px-2 py-1 rounded text-xs font-bold text-white"
+                            style={{ backgroundColor: selectivityBadge.color }}
+                        >
+                            {selectivityBadge.label}
+                        </span>
+                        <p className="text-xs text-gray-500 mt-1">
+                            {universityInfo?.acceptanceRate ? `${universityInfo.acceptanceRate}% acceptance rate` : 'N/A'}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* ===== SECTION C: STRATEGY ANALYSIS (Strengths vs Risks) ===== */}
+            <div className="p-5 border-b border-gray-200 bg-gray-50">
+                <div className="grid md:grid-cols-2 gap-4">
+                    {/* Winning Factors */}
+                    <div>
+                        <h4 className="font-bold text-gray-800 mb-2 flex items-center gap-1">
+                            <ShieldCheckIcon className="w-4 h-4 text-emerald-600" />
+                            Winning Factors
+                        </h4>
+                        <ul className="space-y-2">
+                            {strengths.length > 0 ? strengths.slice(0, 3).map((s, i) => (
+                                <li key={i} className="flex items-start gap-2 text-sm">
+                                    <CheckCircleSolid className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                                    <span className="text-gray-700">{s}</span>
+                                </li>
+                            )) : (
+                                <li className="text-gray-500 text-sm">No specific strengths identified</li>
+                            )}
+                        </ul>
+                    </div>
+
+                    {/* Risk Factors */}
+                    <div>
+                        <h4 className="font-bold text-gray-800 mb-2 flex items-center gap-1">
+                            <ExclamationTriangleIcon className="w-4 h-4 text-amber-500" />
+                            Risk Factors
+                        </h4>
+                        <ul className="space-y-2">
+                            {primaryGap && (
+                                <li className="flex items-start gap-2 text-sm">
+                                    <ExclamationTriangleIcon className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                                    <span><strong className="text-gray-800">{primaryGap}</strong></span>
+                                </li>
+                            )}
+                            {secondaryGap && (
+                                <li className="flex items-start gap-2 text-sm">
+                                    <ExclamationTriangleIcon className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                                    <span><strong className="text-gray-800">{secondaryGap}</strong></span>
+                                </li>
+                            )}
+                            {!primaryGap && !secondaryGap && (
+                                <li className="text-gray-500 text-sm">No major gaps identified</li>
+                            )}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {/* ===== SECTION D: PATH TO IMPROVEMENT (Vertical Timeline) ===== */}
+            <div className="p-5">
+                <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <RocketLaunchIcon className="w-5 h-5 text-gray-600" />
+                    Path to Improvement
+                </h3>
+                <div className="space-y-3">
+                    {actionPlan && actionPlan.length > 0 ? (
+                        actionPlan.slice(0, 4).map((item, idx) => (
+                            <div
+                                key={idx}
+                                className="flex gap-3 p-3 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer group"
+                            >
+                                {/* Step Circle */}
+                                <div
+                                    className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-white text-sm font-bold"
+                                    style={{ backgroundColor: config.bg }}
+                                >
+                                    {item.step || idx + 1}
+                                </div>
+                                <div className="flex-1">
+                                    <p className="text-sm text-gray-800 leading-snug group-hover:text-gray-900">
+                                        {item.action}
+                                    </p>
+                                    {item.timeline && (
+                                        <div className="mt-1">
+                                            <TimelineTag phase={item.timeline} />
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <p className="text-gray-500 text-sm">Action items will appear here</p>
                     )}
                 </div>
             </div>
 
-            {/* Footer: Goal Banner */}
-            <div className={`bg-gradient-to-r ${config.gradient} text-white py-3 px-6 text-center`}>
-                <p className="text-sm font-semibold">
+            {/* ===== FOOTER GOAL BANNER ===== */}
+            <div className="px-5 py-3 text-center border-t border-gray-200" style={{ backgroundColor: config.bg }}>
+                <p className="text-sm font-semibold" style={{ color: config.text }}>
                     🎯 GOAL: Strengthen application for increased chances at {universityInfo?.name || 'this university'}
                 </p>
             </div>
