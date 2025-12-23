@@ -540,9 +540,10 @@ def get_storage_path(user_id, filename):
 # ============== CREDIT MANAGEMENT ==============
 
 FREE_TIER_CREDITS = 3
-PRO_TIER_CREDITS = 50
-CREDIT_PACK_SIZE = 50
-CREDIT_PACK_PRICE = 10.00  # $10 for 50 credits
+MONTHLY_TIER_CREDITS = 20
+SEASON_PASS_CREDITS = 150  # Best Value
+CREDIT_PACK_SIZE = 10
+CREDIT_PACK_PRICE = 9.00  # $9 for 10 credits
 
 def get_user_credits(user_id: str) -> dict:
     """Get user's credit balance and tier info.
@@ -587,7 +588,12 @@ def initialize_user_credits(user_id: str, tier: str = "free") -> dict:
         import hashlib
         doc_id = hashlib.sha256(user_id.encode()).hexdigest()
         
-        credits = FREE_TIER_CREDITS if tier == "free" else PRO_TIER_CREDITS
+        if tier == "free":
+            credits = FREE_TIER_CREDITS
+        elif tier == "season_pass":
+            credits = SEASON_PASS_CREDITS
+        else:
+             credits = MONTHLY_TIER_CREDITS
         
         doc = {
             "user_id": user_id,
@@ -749,26 +755,31 @@ def add_credits(user_id: str, credit_count: int, source: str = "credit_pack") ->
         logger.error(f"[CREDITS] Error adding credits: {e}")
         return {"success": False, "error": str(e)}
 
-def upgrade_to_pro(user_id: str, subscription_expires: str = None) -> dict:
-    """Upgrade user to Pro tier with 50 credits."""
+def upgrade_subscription(user_id: str, subscription_expires: str = None, plan_type: str = 'monthly') -> dict:
+    """Upgrade user to Monthly or Season Pass tier."""
     try:
         client = get_elasticsearch_client()
         import hashlib
         doc_id = hashlib.sha256(user_id.encode()).hexdigest()
         
+        # Determine credits based on plan
+        credits_to_add = SEASON_PASS_CREDITS if plan_type == 'season_pass' else MONTHLY_TIER_CREDITS
+        source = "season_pass" if plan_type == 'season_pass' else "monthly_subscription"
+        tier_name = "season_pass" if plan_type == 'season_pass' else "monthly"
+        
         # Get existing credits (don't lose them)
         existing = get_user_credits(user_id)
         existing_remaining = existing.get("credits_remaining", 0)
         
-        # Add Pro credits to existing balance
-        new_remaining = existing_remaining + PRO_TIER_CREDITS
-        new_total = existing.get("credits_total", 0) + PRO_TIER_CREDITS
+        # Add credits to existing balance
+        new_remaining = existing_remaining + credits_to_add
+        new_total = existing.get("credits_total", 0) + credits_to_add
         
         history = existing.get("purchase_history", [])
         history.append({
             "date": datetime.utcnow().isoformat(),
-            "source": "pro_subscription",
-            "credits": PRO_TIER_CREDITS
+            "source": source,
+            "credits": credits_to_add
         })
         
         client.update(
@@ -776,7 +787,7 @@ def upgrade_to_pro(user_id: str, subscription_expires: str = None) -> dict:
             id=doc_id,
             body={
                 "doc": {
-                    "tier": "pro",
+                    "tier": tier_name,
                     "credits_total": new_total,
                     "credits_remaining": new_remaining,
                     "subscription_active": True,
@@ -787,10 +798,10 @@ def upgrade_to_pro(user_id: str, subscription_expires: str = None) -> dict:
             },
             upsert={
                 "user_id": user_id,
-                "tier": "pro",
-                "credits_total": PRO_TIER_CREDITS,
+                "tier": tier_name,
+                "credits_total": credits_to_add,
                 "credits_used": 0,
-                "credits_remaining": PRO_TIER_CREDITS,
+                "credits_remaining": credits_to_add,
                 "subscription_active": True,
                 "subscription_expires": subscription_expires,
                 "purchase_history": history,
@@ -799,14 +810,14 @@ def upgrade_to_pro(user_id: str, subscription_expires: str = None) -> dict:
             }
         )
         
-        logger.info(f"[CREDITS] Upgraded {user_id} to Pro. Credits: {new_remaining}")
+        logger.info(f"[CREDITS] Upgraded {user_id} to {tier_name}. Credits: {new_remaining}")
         return {
             "success": True,
-            "tier": "pro",
+            "tier": tier_name,
             "credits_remaining": new_remaining
         }
     except Exception as e:
-        logger.error(f"[CREDITS] Error upgrading to pro: {e}")
+        logger.error(f"[CREDITS] Error upgrading subscription: {e}")
         return {"success": False, "error": str(e)}
 
 # ============== END CREDIT MANAGEMENT ==============
@@ -4744,15 +4755,16 @@ def profile_manager_es_http_entry(request):
             result = add_credits(user_email, credit_count, source)
             return add_cors_headers(result, 200 if result['success'] else 500)
         
-        elif resource_type == 'upgrade-to-pro' and request.method == 'POST':
+        elif resource_type == 'upgrade-subscription' and request.method == 'POST':
             data = request.get_json() or {}
             user_email = data.get('user_email') or request.headers.get('X-User-Email')
             subscription_expires = data.get('subscription_expires')
+            plan_type = data.get('plan_type', 'monthly')
             
             if not user_email:
                 return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
             
-            result = upgrade_to_pro(user_email, subscription_expires)
+            result = upgrade_subscription(user_email, subscription_expires, plan_type)
             return add_cors_headers(result, 200 if result['success'] else 500)
         
         # --- FIT CHAT (Context Injection) ---

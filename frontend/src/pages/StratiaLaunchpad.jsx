@@ -59,6 +59,14 @@ const StratiaLaunchpad = () => {
     const [discoveryLoading, setDiscoveryLoading] = useState(false);
     const [addingSchoolId, setAddingSchoolId] = useState(null);
 
+    // Analysis progress modal state
+    const [analysisModal, setAnalysisModal] = useState({
+        isOpen: false,
+        universityName: '',
+        step: '', // 'adding', 'fit', 'saving', 'complete', 'error'
+        progress: 0
+    });
+
     // Fetch college list AND precomputed fits, then merge
     const fetchCollegeList = async () => {
         if (!currentUser?.email) return;
@@ -276,16 +284,30 @@ const StratiaLaunchpad = () => {
         }
 
         setAddingSchoolId(school.university_id);
+
+        // Show analysis progress modal
+        setAnalysisModal({
+            isOpen: true,
+            universityName: school.university_name,
+            step: 'adding',
+            progress: 10
+        });
+
         try {
-            // Add to college list
+            // Step 1: Add to college list
+            setAnalysisModal(prev => ({ ...prev, step: 'adding', progress: 20 }));
             const addResult = await updateCollegeList(currentUser.email, 'add', {
                 id: school.university_id,
                 name: school.university_name
             });
 
             if (addResult.success) {
-                // Compute fit analysis
+                // Step 2: Compute fit analysis
+                setAnalysisModal(prev => ({ ...prev, step: 'fit', progress: 40 }));
                 await computeSingleFit(currentUser.email, school.university_id, false);
+
+                // Step 3: Saving
+                setAnalysisModal(prev => ({ ...prev, step: 'saving', progress: 70 }));
 
                 // Small delay to allow Elasticsearch to index the new fit document
                 await new Promise(resolve => setTimeout(resolve, 600));
@@ -293,13 +315,27 @@ const StratiaLaunchpad = () => {
                 // Refresh college list with new fit data
                 await fetchCollegeList();
 
+                setAnalysisModal(prev => ({ ...prev, progress: 90 }));
+
                 // Remove from discovery results
                 setDiscoveryResults(prev => prev.filter(s => s.university_id !== school.university_id));
 
+                // Step 4: Complete
+                setAnalysisModal(prev => ({ ...prev, step: 'complete', progress: 100 }));
+
                 console.log(`[Discovery] Added ${school.university_name} to launchpad`);
+
+                // Auto-close after 1.5 seconds
+                setTimeout(() => {
+                    setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+                }, 1500);
             }
         } catch (err) {
             console.error('[Discovery] Error adding school:', err);
+            setAnalysisModal(prev => ({ ...prev, step: 'error', progress: 0 }));
+            setTimeout(() => {
+                setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+            }, 2000);
         } finally {
             setAddingSchoolId(null);
         }
@@ -430,8 +466,8 @@ const StratiaLaunchpad = () => {
                                     ? setShowCreditsModal(true)
                                     : handleOpenDiscovery('SAFETY')}
                                 className={`flex items-center gap-2 ${isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT
-                                        ? 'bg-[#C05838] hover:bg-[#A04828] text-white px-4 py-2 rounded-full font-medium transition-colors'
-                                        : 'stratia-btn-filled'
+                                    ? 'bg-[#C05838] hover:bg-[#A04828] text-white px-4 py-2 rounded-full font-medium transition-colors'
+                                    : 'stratia-btn-filled'
                                     }`}
                             >
                                 {isFreeTier && collegeList.length >= FREE_TIER_SCHOOL_LIMIT ? (
@@ -659,6 +695,74 @@ const StratiaLaunchpad = () => {
                 onClose={() => setShowCreditsModal(false)}
                 creditsRemaining={creditsRemaining}
             />
+
+            {/* Analysis Progress Modal */}
+            {analysisModal.isOpen && (
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 text-center shadow-2xl">
+                        <div className={`w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6 ${analysisModal.step === 'complete'
+                            ? 'bg-green-100'
+                            : analysisModal.step === 'error'
+                                ? 'bg-red-100'
+                                : 'bg-[#E8F5E9]'
+                            }`}>
+                            {analysisModal.step === 'complete' ? (
+                                <svg className="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                            ) : analysisModal.step === 'error' ? (
+                                <svg className="w-10 h-10 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                            ) : (
+                                <div className="w-10 h-10 border-4 border-[#D6E8D5] border-t-[#1A4D2E] rounded-full animate-spin" />
+                            )}
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                            {analysisModal.step === 'complete'
+                                ? 'Added Successfully!'
+                                : analysisModal.step === 'error'
+                                    ? 'Something went wrong'
+                                    : 'Analyzing Fit...'}
+                        </h3>
+                        <p className="text-gray-600 mb-6">{analysisModal.universityName}</p>
+
+                        {/* Progress Steps */}
+                        {analysisModal.step !== 'complete' && analysisModal.step !== 'error' && (
+                            <div className="space-y-2 text-left text-sm mb-4">
+                                <div className="flex items-center gap-2">
+                                    <span className={analysisModal.step === 'adding' ? 'text-[#1A4D2E] font-medium' : 'text-gray-400'}>
+                                        {analysisModal.progress >= 20 && analysisModal.step !== 'adding' ? '✓' : '⏳'} Adding to list
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <span className={analysisModal.step === 'fit' ? 'text-[#1A4D2E] font-medium' : 'text-gray-400'}>
+                                        {analysisModal.progress >= 60 ? '✓' : analysisModal.step === 'fit' ? '⏳' : '○'} Computing fit analysis
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <span className={analysisModal.step === 'saving' ? 'text-[#1A4D2E] font-medium' : 'text-gray-400'}>
+                                        {analysisModal.progress >= 90 ? '✓' : analysisModal.step === 'saving' ? '⏳' : '○'} Saving results
+                                    </span>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Progress Bar */}
+                        {analysisModal.step !== 'error' && (
+                            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                                <div
+                                    className="h-full bg-[#1A4D2E] transition-all duration-500 ease-out"
+                                    style={{ width: `${analysisModal.progress}%` }}
+                                />
+                            </div>
+                        )}
+
+                        {analysisModal.step === 'complete' && (
+                            <p className="text-sm text-green-600 mt-4">Your personalized fit analysis is ready!</p>
+                        )}
+                        {analysisModal.step === 'error' && (
+                            <p className="text-sm text-red-600 mt-4">Please try again later.</p>
+                        )}
+                    </div>
+                </div>
+            )}
 
             {/* Chat Widget */}
             <FitChatWidget

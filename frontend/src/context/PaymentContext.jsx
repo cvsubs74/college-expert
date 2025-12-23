@@ -8,10 +8,13 @@ const PaymentContext = createContext();
 // =============================================================================
 // TIER DEFINITIONS
 // =============================================================================
+// =============================================================================
+// TIER DEFINITIONS
+// =============================================================================
 export const TIERS = {
     FREE: 'free',
-    PRO: 'pro',
-    ELITE: 'elite'
+    MONTHLY: 'monthly',
+    SEASONAL: 'season_pass'
 };
 
 // Tier feature limits
@@ -25,23 +28,23 @@ const TIER_FEATURES = {
         price: 0,
         label: 'Free'
     },
-    [TIERS.PRO]: {
+    [TIERS.MONTHLY]: {
         aiMessagesLimit: 30,           // 30 messages per month
         canAccessLaunchpad: true,      // Full launchpad access
         canAnalyzeFit: true,           // Basic fit analysis
         hasFullFitAnalysis: false,     // No recommendations/advanced features
         canDeepResearch: false,        // No deep research
-        price: 99,
-        label: 'Pro'
+        price: 15,
+        label: 'Monthly'
     },
-    [TIERS.ELITE]: {
+    [TIERS.SEASONAL]: {
         aiMessagesLimit: 50,           // 50 messages per month
         canAccessLaunchpad: true,      // Full launchpad access
         canAnalyzeFit: true,           // Full fit analysis
         hasFullFitAnalysis: true,      // Includes recommendations, essay angles, etc.
         canDeepResearch: true,         // Full deep research
-        price: 199,
-        label: 'Elite'
+        price: 99,
+        label: 'Season Pass'
     }
 };
 
@@ -152,20 +155,45 @@ export const PaymentProvider = ({ children }) => {
     // DETERMINE USER'S TIER
     // =============================================================================
     const getUserTier = useCallback(() => {
+        // Check subscription status from BOTH backends:
+        // 1. `credits` from profile-manager-es (updated by PaymentSuccess via upgradeSubscription)
+        // 2. `purchases` from payment-manager (Stripe webhook)
+
+        // PRIORITY: Check credits.tier first (from profile-manager-es) as it's updated immediately on payment
+        if (credits?.tier && credits.tier !== 'free') {
+            const tier = credits.tier.toLowerCase();
+            if (tier === 'season_pass' || tier.includes('season') || tier.includes('annual')) {
+                return TIERS.SEASONAL;
+            }
+            if (tier === 'monthly' || tier.includes('month') || tier.includes('pro')) {
+                return TIERS.MONTHLY;
+            }
+        }
+
+        // Check credits.subscription_active (also from profile-manager-es)
+        if (credits?.subscription_active) {
+            const plan = credits?.subscription_plan?.toLowerCase() || credits?.tier?.toLowerCase() || '';
+            if (plan.includes('season') || plan.includes('annual')) {
+                return TIERS.SEASONAL;
+            }
+            return TIERS.MONTHLY;
+        }
+
+        // Fallback to payment-manager purchases
         if (!purchases?.subscription_active) {
             return TIERS.FREE;
         }
         // Check subscription plan from backend
         const plan = purchases?.subscription_plan?.toLowerCase() || '';
-        if (plan.includes('elite')) {
-            return TIERS.ELITE;
+        if (plan.includes('season') || plan.includes('annual')) {
+            return TIERS.SEASONAL;
         }
-        if (plan.includes('pro')) {
-            return TIERS.PRO;
+        if (plan.includes('month') || plan.includes('pro')) {
+            return TIERS.MONTHLY;
         }
-        // Default to PRO if has active subscription but unclear plan
-        return TIERS.PRO;
-    }, [purchases]);
+        // Default to MONTHLY if has active subscription but unclear plan
+        return TIERS.MONTHLY;
+    }, [purchases, credits]);
 
     const currentTier = getUserTier();
     const tierFeatures = TIER_FEATURES[currentTier];
@@ -245,8 +273,8 @@ export const PaymentProvider = ({ children }) => {
 
         // Tier checks
         isFreeTier: currentTier === TIERS.FREE,
-        isPro: currentTier === TIERS.PRO || creditsTier === 'pro',
-        isElite: currentTier === TIERS.ELITE,
+        isMonthly: currentTier === TIERS.MONTHLY || creditsTier === 'monthly' || creditsTier === 'pro', // Backward compatibility for 'pro'
+        isSeasonal: currentTier === TIERS.SEASONAL || creditsTier === 'season_pass',
         hasActiveSubscription: currentTier !== TIERS.FREE,
 
         // Feature access

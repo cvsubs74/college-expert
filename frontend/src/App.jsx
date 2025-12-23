@@ -12,6 +12,8 @@ import LandingPage from './pages/LandingPage';
 import PricingPage from './pages/PricingPage';
 import ContactPage from './pages/ContactPage';
 import PaymentSuccess from './pages/PaymentSuccess';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import OnboardingModal from './components/OnboardingModal';
 import ApproachIndicator from './components/ApproachIndicator';
@@ -22,6 +24,7 @@ import { ToastProvider } from './components/Toast';
 import UpgradeModal from './components/UpgradeModal';
 import { logout } from './services/authService';
 import { checkOnboardingStatus, saveOnboardingProfile, fetchUserProfile } from './services/api';
+import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
 function Navigation() {
@@ -225,6 +228,7 @@ function AppLayout() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <AuthProvider>
         <PaymentProvider>
           <ApproachProvider>
@@ -235,6 +239,8 @@ function App() {
                 <Route path="/pricing" element={<PricingPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/payment-success" element={<PaymentSuccess />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsOfService />} />
 
                 {/* Protected routes */}
                 <Route

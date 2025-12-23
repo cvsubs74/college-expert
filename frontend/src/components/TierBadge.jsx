@@ -11,8 +11,8 @@ const TierBadge = () => {
     const {
         currentTier,
         isFreeTier,
-        isPro,
-        isElite,
+        isMonthly,
+        isSeasonal,
         aiMessagesAvailable,
         loading
     } = usePayment();
@@ -25,23 +25,23 @@ const TierBadge = () => {
         );
     }
 
-    if (isElite) {
+    if (isSeasonal) {
         return (
             <div className="flex items-center gap-2">
-                <span className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-purple-100 to-indigo-100 text-purple-800 text-xs font-bold rounded-full border border-purple-200">
+                <span className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 text-xs font-bold rounded-full border border-green-200">
                     <StarIcon className="h-3.5 w-3.5 mr-1" />
-                    ELITE
+                    SEASON PASS
                 </span>
             </div>
         );
     }
 
-    if (isPro) {
+    if (isMonthly) {
         return (
             <div className="flex items-center gap-2">
                 <span className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 text-xs font-bold rounded-full border border-amber-200">
                     <SparklesIcon className="h-3.5 w-3.5 mr-1" />
-                    PRO
+                    MONTHLY
                 </span>
             </div>
         );

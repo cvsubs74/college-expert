@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
     SparklesIcon,
     EnvelopeIcon,
@@ -55,24 +56,23 @@ const ContactPage = () => {
             {/* Header */}
             <header className="px-6 py-5 bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-[#E0DED8]">
                 <nav className="max-w-7xl mx-auto flex items-center justify-between">
-                    <a href="/" className="flex items-center gap-3">
-                        <div className="p-2 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-xl shadow-lg shadow-md">
-                            <SparklesIcon className="h-7 w-7 text-white" />
-                        </div>
-                        <span className="text-2xl font-bold bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45] bg-clip-text text-transparent">
-                            CollegeAI Pro
-                        </span>
-                    </a>
+                    <Link to="/" className="flex items-center">
+                        <img
+                            src="/logo.png"
+                            alt="Stratia Admissions"
+                            className="h-24 w-auto object-contain mix-blend-multiply"
+                        />
+                    </Link>
                     <div className="flex items-center gap-4">
-                        <a href="/pricing" className="text-gray-600 hover:text-[#1A4D2E] font-medium transition-colors">
+                        <Link to="/pricing" className="text-gray-600 hover:text-[#1A4D2E] font-medium transition-colors">
                             Pricing
-                        </a>
-                        <a
-                            href="/"
-                            className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-full hover:from-[#2D6B45] hover:to-[#3A7D5A] transition-all shadow-lg shadow-md"
+                        </Link>
+                        <Link
+                            to="/"
+                            className="px-5 py-2.5 bg-[#1A4D2E] text-white font-semibold rounded-full hover:bg-[#2D6B45] transition-all shadow-md"
                         >
                             Get Started
-                        </a>
+                        </Link>
                     </div>
                 </nav>
             </header>
@@ -81,15 +81,15 @@ const ContactPage = () => {
                 <div className="max-w-5xl mx-auto">
                     {/* Hero */}
                     <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#2C2C2C] mb-4">
                             Get in Touch
                         </h1>
                         <p className="text-xl text-gray-600">
-                            Have questions about CollegeAI Pro? We're here to help.
+                            Have questions about Stratia Admissions? We're here to help.
                         </p>
                     </div>
 
-                    <div className="grid lg:grid-cols-5 gap-12">
+                    <div className="grid lg:grid-cols-5 gap-12 mb-20">
                         {/* Contact Form */}
                         <div className="lg:col-span-3">
                             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200">
@@ -144,7 +144,6 @@ const ContactPage = () => {
                                             <option>Pricing Question</option>
                                             <option>Technical Support</option>
                                             <option>Partnership Opportunity</option>
-                                            <option>Feature Request</option>
                                             <option>Other</option>
                                         </select>
                                     </div>
@@ -167,7 +166,7 @@ const ContactPage = () => {
 
                                     <button
                                         type="submit"
-                                        className="w-full py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg font-bold rounded-xl hover:from-[#2D6B45] hover:to-[#3A7D5A] transition-all shadow-lg shadow-md flex items-center justify-center gap-2"
+                                        className="w-full py-4 bg-[#1A4D2E] text-white text-lg font-bold rounded-xl hover:bg-[#2D6B45] transition-all shadow-lg flex items-center justify-center gap-2"
                                     >
                                         <EnvelopeIcon className="h-5 w-5" />
                                         Send Message
@@ -184,7 +183,7 @@ const ContactPage = () => {
                         {/* Sidebar */}
                         <div className="lg:col-span-2 space-y-6">
                             {/* Direct Email */}
-                            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-6 border border-[#A8C5A6]">
+                            <div className="bg-[#FDFCF7] rounded-3xl p-6 border border-[#A8C5A6]">
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="p-3 bg-white rounded-xl shadow-sm">
                                         <EnvelopeIcon className="h-6 w-6 text-[#1A4D2E]" />
@@ -195,32 +194,11 @@ const ContactPage = () => {
                                     </div>
                                 </div>
                                 <a
-                                    href="mailto:cvsubs@gmail.com?subject=CollegeAI%20Pro%20Inquiry"
+                                    href="mailto:cvsubs@gmail.com?subject=Stratia%20Inquiry"
                                     className="block text-center py-3 bg-white text-[#1A4D2E] font-semibold rounded-xl border border-[#A8C5A6] hover:bg-[#D6E8D5] transition-all"
                                 >
                                     cvsubs@gmail.com
                                 </a>
-                            </div>
-
-                            {/* Quick Links */}
-                            <div className="space-y-4">
-                                <h3 className="font-bold text-gray-900">Quick Help</h3>
-                                {quickLinks.map((link, idx) => (
-                                    <a
-                                        key={idx}
-                                        href={link.link}
-                                        className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-200 hover:border-[#A8C5A6] hover:shadow-md transition-all group"
-                                    >
-                                        <div className="p-2 bg-gray-100 rounded-xl group-hover:bg-[#D6E8D5] transition-colors">
-                                            <link.icon className="h-5 w-5 text-gray-600 group-hover:text-[#1A4D2E]" />
-                                        </div>
-                                        <div>
-                                            <p className="font-semibold text-gray-900">{link.title}</p>
-                                            <p className="text-gray-500 text-sm">{link.desc}</p>
-                                        </div>
-                                        <ArrowRightIcon className="h-4 w-4 text-gray-400 ml-auto group-hover:translate-x-1 transition-transform" />
-                                    </a>
-                                ))}
                             </div>
 
                             {/* Response Time */}
@@ -235,12 +213,52 @@ const ContactPage = () => {
                                         <span>Technical support</span>
                                         <span className="text-[#1A4D2E] font-medium">&lt; 12 hours</span>
                                     </li>
-                                    <li className="flex justify-between">
-                                        <span>Partnerships</span>
-                                        <span className="text-[#1A4D2E] font-medium">&lt; 48 hours</span>
-                                    </li>
                                 </ul>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* Extended FAQs */}
+                    <div className="max-w-3xl mx-auto">
+                        <div className="text-center mb-10">
+                            <h2 className="font-serif text-3xl font-bold text-[#2C2C2C] mb-4">
+                                Frequently Asked Questions
+                            </h2>
+                            <p className="text-gray-600">Common questions about Stratia Admissions</p>
+                        </div>
+
+                        <div className="space-y-4">
+                            {[
+                                {
+                                    q: 'Is Stratia Admissions free?',
+                                    a: 'Yes! We offer a Free Tier that enables you to build your profile, search universities, and chat with our AI counselor. For deeper insights and unlimited fit analysis credits, we offer Monthly and Season Pass upgrade options.'
+                                },
+                                {
+                                    q: 'How does the AI Fit Analysis work?',
+                                    a: 'Our AI analyzes over 50 data points from your academic profile (GPA, test scores, activities) and compares them against real admission trends and institutional priorities. It then generates a "Fit Score" across Academic, Culture, and Financial dimensions.'
+                                },
+                                {
+                                    q: 'Is my data secure?',
+                                    a: 'Absolutely. We use enterprise-grade encryption for all data. Furthermore, we NEVER use your personal data to train public AI models, and we do not share your PII with third-party LLMs.'
+                                },
+                                {
+                                    q: 'Can I cancel my subscription?',
+                                    a: 'Yes, you can cancel your Monthly subscription at any time from your dashboard. Your credits will remain valid until the end of the billing period.'
+                                },
+                                {
+                                    q: 'Do you offer human counseling?',
+                                    a: 'Stratia is an AI-first platform designed to provide 24/7 accessible guidance at a fraction of the cost of private counselors. While we do not offer human counseling, our AI is trained on expert admission strategies.'
+                                },
+                                {
+                                    q: 'What if I need technical support?',
+                                    a: 'If you encounter any issues, please email us directly at cvsubs@gmail.com or use the form above. We prioritize technical support requests.'
+                                }
+                            ].map((faq, idx) => (
+                                <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#A8C5A6] transition-colors">
+                                    <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
+                                    <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -250,20 +268,22 @@ const ContactPage = () => {
             <footer className="px-6 py-12 bg-white border-t border-gray-100 mt-20">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="flex items-center gap-3">
-                        <div className="p-2 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-xl">
-                            <SparklesIcon className="h-6 w-6 text-white" />
-                        </div>
-                        <span className="text-xl font-bold bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45] bg-clip-text text-transparent">
-                            CollegeAI Pro
+                        <Link to="/" className="flex items-center">
+                            <img
+                                src="/logo.png"
+                                alt="Stratia Admissions"
+                                className="h-10 w-auto object-contain mix-blend-multiply"
+                            />
+                        </Link>
+                        <span className="text-[#4A4A4A] text-sm">
+                            © {new Date().getFullYear()} Stratia Admissions
                         </span>
                     </div>
                     <div className="flex gap-6 text-sm text-gray-500">
-                        <a href="/pricing" className="hover:text-[#1A4D2E]">Pricing</a>
-                        <a href="/contact" className="hover:text-[#1A4D2E]">Contact</a>
+                        <Link to="/privacy" className="hover:text-[#1A4D2E]">Privacy Policy</Link>
+                        <Link to="/terms" className="hover:text-[#1A4D2E]">Terms of Service</Link>
+                        <Link to="/contact" className="hover:text-[#1A4D2E]">Contact</Link>
                     </div>
-                    <p className="text-gray-500 text-sm">
-                        © {new Date().getFullYear()} CollegeAI Pro
-                    </p>
                 </div>
             </footer>
         </div>

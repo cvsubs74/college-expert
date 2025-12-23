@@ -409,9 +409,9 @@ const LandingPage = () => {
               © {new Date().getFullYear()} Stratia Admissions. AI-Powered College Strategy.
             </p>
             <div className="flex gap-6 text-sm text-[#4A4A4A]">
-              <a href="#" className="hover:text-[#1A4D2E]">Privacy Policy</a>
-              <a href="#" className="hover:text-[#1A4D2E]">Terms of Service</a>
-              <a href="#" className="hover:text-[#1A4D2E]">Contact</a>
+              <Link to="/privacy" className="hover:text-[#1A4D2E]">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-[#1A4D2E]">Terms of Service</Link>
+              <Link to="/contact" className="hover:text-[#1A4D2E]">Contact</Link>
             </div>
           </div>
         </div>

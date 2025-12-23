@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { usePayment } from '../context/PaymentContext';
 import { useAuth } from '../context/AuthContext';
-import { addUserCredits } from '../services/api';
+import { addUserCredits, upgradeSubscription } from '../services/api';
 
 const PaymentSuccess = () => {
     const navigate = useNavigate();
@@ -27,15 +27,29 @@ const PaymentSuccess = () => {
                 await fetchPurchases();
 
                 // Add credits to user's profile-manager-es account
-                // Default to 50 credits for Pro subscription / credit pack
+                // Add credits based on product_id
+                const productId = searchParams.get('product_id');
+
                 if (currentUser?.email) {
-                    console.log('[PaymentSuccess] Adding credits for user:', currentUser.email);
-                    const result = await addUserCredits(currentUser.email, 50, 'payment_purchase');
-                    if (result.success) {
-                        console.log('[PaymentSuccess] Credits added:', result.credits_added);
-                        setCreditsAdded(result.credits_added || 50);
+                    console.log('[PaymentSuccess] Processing purchase for user:', currentUser.email, 'Product:', productId);
+                    let result = { success: false };
+
+                    if (productId === 'subscription_monthly') {
+                        result = await upgradeSubscription(currentUser.email, null, 'monthly');
+                    } else if (productId === 'subscription_annual') {
+                        result = await upgradeSubscription(currentUser.email, null, 'season_pass');
+                    } else if (productId === 'credit_pack_10') {
+                        result = await addUserCredits(currentUser.email, 10, 'credit_pack');
                     } else {
-                        console.warn('[PaymentSuccess] Failed to add credits:', result.error);
+                        // Fallback logic could go here, but safer to rely on explicit product IDs
+                        console.warn('[PaymentSuccess] Unknown or missing product_id:', productId);
+                    }
+
+                    if (result.success) {
+                        console.log('[PaymentSuccess] Credits/Tier updated:', result);
+                        setCreditsAdded(result.credits_remaining || result.credits_added || 0);
+                    } else {
+                        console.warn('[PaymentSuccess] Failed to update credits/tier:', result.error);
                     }
 
                     // Refresh credits in context
@@ -58,10 +72,10 @@ const PaymentSuccess = () => {
     }, [sessionId, fetchPurchases, currentUser?.email, refreshCredits]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-orange-50 flex items-center justify-center px-6">
+        <div className="min-h-screen bg-[#FDFCF7] flex items-center justify-center px-6">
             <div className="max-w-md w-full text-center">
                 {/* Success Icon */}
-                <div className="mx-auto w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mb-8 shadow-xl shadow-green-200">
+                <div className="mx-auto w-20 h-20 bg-gradient-to-br from-[#1A4D2E] to-[#2D6B45] rounded-full flex items-center justify-center mb-8 shadow-xl shadow-[#A8C5A6]">
                     {loading ? (
                         <SparklesIcon className="h-10 w-10 text-white animate-pulse" />
                     ) : (
@@ -106,7 +120,7 @@ const PaymentSuccess = () => {
                 <div className="space-y-3">
                     <button
                         onClick={() => navigate('/universities')}
-                        className="w-full py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg font-bold rounded-xl hover:from-amber-400 hover:to-orange-400 transition-all shadow-lg shadow-amber-200 flex items-center justify-center gap-2"
+                        className="w-full py-4 bg-[#1A4D2E] text-white text-lg font-bold rounded-xl hover:bg-[#2D6B45] transition-all shadow-lg flex items-center justify-center gap-2"
                     >
                         Start Exploring
                         <ArrowRightIcon className="h-5 w-5" />

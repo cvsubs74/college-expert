@@ -17,7 +17,7 @@ import { createCheckoutSession } from '../services/paymentService';
 const PricingPage = () => {
     const navigate = useNavigate();
     const { currentUser } = useAuth();
-    const { creditsRemaining, creditsTier } = usePayment();
+    const { creditsRemaining, creditsTier, isMonthly, isSeasonal } = usePayment();
     const [loading, setLoading] = useState(null);
 
     const handleGetStarted = async (planId) => {
@@ -82,9 +82,9 @@ const PricingPage = () => {
                 { text: 'Compare schools side-by-side', included: true },
                 { text: 'Cancel anytime, no commitment', included: true },
             ],
-            cta: creditsTier === 'pro' ? 'Already Subscribed' : 'Start Monthly',
+            cta: isMonthly ? 'Already Subscribed' : (isSeasonal ? 'Included in Season Pass' : 'Start Monthly'),
             ctaStyle: 'bg-[#1A4D2E] text-white hover:bg-[#2D6B45] shadow-md',
-            disabled: creditsTier === 'pro'
+            disabled: isMonthly || isSeasonal
         },
         {
             id: 'subscription_annual',
@@ -105,9 +105,9 @@ const PricingPage = () => {
                 { text: 'Covers entire application season', included: true },
                 { text: 'Priority support when you need it', included: true },
             ],
-            cta: creditsTier === 'pro' ? 'Already Subscribed' : 'Get Season Pass',
+            cta: isSeasonal ? 'Already Subscribed' : (isMonthly ? 'Upgrade to Season Pass' : 'Get Season Pass'),
             ctaStyle: 'bg-[#1A4D2E] text-white hover:bg-[#2D6B45] shadow-md',
-            disabled: creditsTier === 'pro'
+            disabled: isSeasonal
         },
         {
             id: 'credit_pack_10',
@@ -143,7 +143,7 @@ const PricingPage = () => {
                         <img
                             src="/logo.png"
                             alt="Stratia Admissions"
-                            className="h-20 w-auto object-contain mix-blend-multiply"
+                            className="h-24 w-auto object-contain mix-blend-multiply"
                         />
                     </Link>
                     <div className="flex items-center gap-4">
@@ -184,7 +184,9 @@ const PricingPage = () => {
                     <div className="grid md:grid-cols-3 gap-6">
                         {plans.map((plan) => {
                             const Icon = plan.icon;
-                            const isCurrentPlan = creditsTier === plan.id || (plan.id === 'free' && creditsTier === 'free');
+                            const isCurrentPlan = (plan.id === 'free' && creditsTier === 'free') ||
+                                (plan.id === 'subscription_monthly' && isMonthly) ||
+                                (plan.id === 'subscription_annual' && isSeasonal);
 
                             return (
                                 <div
@@ -333,8 +335,9 @@ const PricingPage = () => {
                         />
                     </Link>
                     <div className="flex gap-6 text-sm text-[#4A4A4A]">
-                        <Link to="/pricing" className="hover:text-[#1A4D2E]">Pricing</Link>
-                        <a href="mailto:cvsubs@gmail.com" className="hover:text-[#1A4D2E]">Support</a>
+                        <Link to="/privacy" className="hover:text-[#1A4D2E]">Privacy Policy</Link>
+                        <Link to="/terms" className="hover:text-[#1A4D2E]">Terms of Service</Link>
+                        <Link to="/contact" className="hover:text-[#1A4D2E]">Contact</Link>
                     </div>
                     <p className="text-[#4A4A4A] text-sm">
                         © {new Date().getFullYear()} Stratia Admissions

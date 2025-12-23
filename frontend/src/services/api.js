@@ -1390,23 +1390,25 @@ export const checkCredits = async (userEmail, creditsNeeded = 1) => {
 };
 
 /**
- * Upgrade user to Pro tier (called after Stripe payment success)
+ * Upgrade user to Monthly or Season Pass (called after Stripe payment success)
  * @param {string} userEmail - User's email
  * @param {string} subscriptionExpires - Expiration date ISO string
+ * @param {string} planType - 'monthly' or 'season_pass'
  * @returns {Promise<{success: boolean, tier: string, credits_remaining: number}>}
  */
-export const upgradeToPro = async (userEmail, subscriptionExpires) => {
+export const upgradeSubscription = async (userEmail, subscriptionExpires, planType = 'monthly') => {
   try {
     const baseUrl = getProfileManagerUrl();
-    const response = await axios.post(`${baseUrl}/upgrade-to-pro`, {
+    const response = await axios.post(`${baseUrl}/upgrade-subscription`, {
       user_email: userEmail,
-      subscription_expires: subscriptionExpires
+      subscription_expires: subscriptionExpires,
+      plan_type: planType
     }, {
       headers: { 'X-User-Email': userEmail }
     });
     return response.data;
   } catch (error) {
-    console.error('Error upgrading to Pro:', error);
+    console.error('Error upgrading subscription:', error);
     return {
       success: false,
       error: error.message

@@ -59,14 +59,16 @@ STRIPE_PRICES = {
 # Product details for display and fulfillment
 PRODUCTS = {
     'subscription_monthly': {
-        'name': 'CollegeAI Monthly',
+        'name': 'Stratia Admissions Monthly',
+        'description': 'Full access to AI tools. Includes 20 fit analyses per month + unlimited AI chat.',
         'price': 1500,  # $15
         'type': 'subscription',
         'interval': 'month',
         'grants': {'access_full': True, 'ai_messages': -1, 'fit_analysis': 20}  # -1 = unlimited chat
     },
     'subscription_annual': {
-        'name': 'CollegeAI Season Pass',
+        'name': 'Stratia Admissions Season Pass',
+        'description': 'Best Value. 150 fit analyses + unlimited AI chat for one year.',
         'price': 9900,  # $99
         'type': 'subscription',
         'interval': 'year',
@@ -74,6 +76,7 @@ PRODUCTS = {
     },
     'credit_pack_10': {
         'name': '10 Credit Pack',
+        'description': 'Add 10 more fit analyses to your account.',
         'price': 900,  # $9
         'type': 'addon',
         'grants': {'fit_analysis': 10}
@@ -207,26 +210,34 @@ def handle_create_checkout(request, user_id):
             return add_cors_headers({'error': 'Invalid product'}, 400)
         
         product = PRODUCTS[product_id]
-        price_id = STRIPE_PRICES.get(product_id)
-        
-        if not price_id:
-            return add_cors_headers({
-                'error': 'Stripe not configured',
-                'message': 'Payment system is being set up. Please check back soon.',
-                'setup_required': True
-            }, 503)
         
         # Create checkout session - redirect to frontend, not backend
         FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://college-strategy.web.app')
-        success_url = f"{FRONTEND_URL}/payment-success?session_id={{CHECKOUT_SESSION_ID}}"
+        success_url = f"{FRONTEND_URL}/payment-success?session_id={{CHECKOUT_SESSION_ID}}&product_id={product_id}"
         cancel_url = f"{FRONTEND_URL}/pricing"
         
+        # Construct line item with price_data to ensure description matches
+        line_item = {
+            'price_data': {
+                'currency': 'usd',
+                'product_data': {
+                    'name': product['name'],
+                    'description': product.get('description', ''),
+                },
+                'unit_amount': product['price'],
+            },
+            'quantity': quantity,
+        }
+
+        # Add recurring info if it's a subscription
+        if product['type'] == 'subscription':
+            line_item['price_data']['recurring'] = {
+                'interval': product['interval']
+            }
+
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],
-            line_items=[{
-                'price': price_id,
-                'quantity': quantity,
-            }],
+            line_items=[line_item],
             mode='payment' if product['type'] != 'subscription' else 'subscription',
             success_url=success_url,
             cancel_url=cancel_url,
