@@ -21,6 +21,7 @@ import UniversityCardsDemo from '../components/demos/UniversityCardsDemo';
 import AIChatDemo from '../components/demos/AIChatDemo';
 import FitAnalysisDemo from '../components/demos/FitAnalysisDemo';
 import MySchoolsDemo from '../components/demos/MySchoolsDemo';
+import FitChatDemo from '../components/demos/FitChatDemo';
 
 // ============================================================================
 // INTERACTIVE DEMO LANDING PAGE
@@ -41,7 +42,7 @@ const FeatureDemoSection = ({
   return (
     <section ref={ref} className={`py-24 lg:py-32 px-6 lg:px-8 ${bgColor} overflow-hidden`}>
       <div className="max-w-7xl mx-auto">
-        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${reverse ? 'lg:flex-row-reverse' : ''}`}>
+        <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${reverse ? 'lg:flex-row-reverse' : ''}`}>
           {/* Text Content */}
           <motion.div
             className={`${reverse ? 'lg:order-2' : ''}`}
@@ -405,6 +406,20 @@ const LandingPage = () => {
         ]}
         demo={<FitAnalysisDemo />}
         bgColor="bg-[#FDFCF7]"
+      />
+
+
+      <FeatureDemoSection
+        title="Chat about your college fit."
+        description="Ask specific questions about your chances, application strategy, and what you can improve. Get personalized advice based on your profile."
+        features={[
+          "Compare your stats to admitted students",
+          "Get honest reach/target/safety assessments",
+          "Learn about early decision vs. regular",
+          "Understand what to improve for better chances"
+        ]}
+        demo={<FitChatDemo />}
+        bgColor="bg-white"
       />
 
       {/* ============================================
