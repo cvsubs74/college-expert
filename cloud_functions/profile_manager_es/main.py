@@ -1534,34 +1534,10 @@ def calculate_fit_with_llm(student_profile_text, university_data, intended_major
         # DEBUG: Log what we extracted
         logger.info(f"[LLM_FIT] University: {uni_name}, Acceptance Rate: {acceptance_rate}%, Selectivity will be: {'ULTRA_SELECTIVE' if acceptance_rate < 8 else 'HIGHLY_SELECTIVE' if acceptance_rate < 15 else 'SELECTIVE'}")
         
-        # Pass FULL university profile to LLM for comprehensive recommendations
-        # This enables 8-category recommendations: essays, timeline, scholarships, test strategy, etc.
-        academic_structure = profile_data.get('academic_structure', {})
-        application_strategy = profile_data.get('application_strategy', {})
-        
-        uni_profile_full = json.dumps({
-            "name": uni_name,
-            "location": university_data.get('location', profile_data.get('metadata', {}).get('location', {})),
-            "acceptance_rate": acceptance_rate,
-            "admitted_profile": admitted_profile,
-            "us_news_rank": university_data.get('us_news_rank', profile_data.get('metadata', {}).get('us_news_rank')),
-            # Full academic structure with all majors
-            "academic_structure": academic_structure,
-            # Full application process with deadlines, essay prompts, holistic factors
-            "application_process": profile_data.get('application_process', {}),
-            # Full application strategy with tactics
-            "application_strategy": application_strategy,
-            # Full financial data including scholarships
-            "financials": profile_data.get('financials', {}),
-            # Student insights: essay tips, red flags, what it takes
-            "student_insights": profile_data.get('student_insights', {}),
-            # Strategic profile with analyst takeaways
-            "strategic_profile": profile_data.get('strategic_profile', {}),
-            # Outcomes data
-            "outcomes": profile_data.get('outcomes', {}),
-            # Credit policies for AP/IB strategy
-            "credit_policies": profile_data.get('credit_policies', {})
-        }, default=str)
+        # Pass ENTIRE university profile to LLM for comprehensive recommendations
+        # User requested: pass entire profile instead of extracting selected pieces
+        # This gives LLM access to ALL data: essays, scholarships, majors, strategies, etc.
+        uni_profile_full = json.dumps(profile_data, default=str)
         
         logger.info(f"[LLM_FIT] Full profile size: {len(uni_profile_full)} chars (~{len(uni_profile_full)//4} tokens)")
         
@@ -3110,17 +3086,10 @@ def fit_chat(user_id: str, university_id: str, question: str, conversation_histo
                     "majors": college_majors
                 })
             
-            university_summary = {
-                "colleges_and_majors": colleges_info,
-                "minors_certificates": academic.get('minors_certificates', []),
-                "admissions": {
-                    "sat_range": profile_data.get('admissions_data', {}).get('test_scores', {}).get('sat_composite', {}),
-                    "acceptance_rate": profile_data.get('admissions_data', {}).get('current_status', {}).get('overall_acceptance_rate'),
-                },
-                "outcomes": profile_data.get('outcomes', {}),
-                "location": profile_data.get('metadata', {}).get('location', {})
-            }
-            logger.info(f"[FIT_CHAT] Loaded university profile with {len(colleges_info)} colleges")
+            # Pass ENTIRE university profile as context (same approach as calculate_fit_with_llm)
+            # This ensures chat has access to ALL data including SAT ranges, admissions stats, etc.
+            university_summary = profile_data
+            logger.info(f"[FIT_CHAT] Loaded FULL university profile with {len(colleges_info)} colleges")
         else:
             logger.warning(f"[FIT_CHAT] Could not fetch university profile for {university_id}")
         
