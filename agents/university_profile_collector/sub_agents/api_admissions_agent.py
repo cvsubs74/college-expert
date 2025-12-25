@@ -35,13 +35,13 @@ current_rates_micro = LlmAgent(
 4. admits_class_size (int): Number admitted in most recent cycle
 5. transfer_acceptance_rate (float): Transfer acceptance rate as NUMBER
 
-Search: "{university_name} acceptance rate 2024", "{university_name} test policy"
+Search: "{university_name} acceptance rate current year", "{university_name} test policy"
 
 OUTPUT (JSON only):
 {
   "overall_acceptance_rate": 5.65,
   "is_test_optional": false,
-  "test_policy_details": "SAT or ACT required since 2024",
+  "test_policy_details": "SAT or ACT required (check current policy)",
   "admits_class_size": 2418,
   "transfer_acceptance_rate": 7.2
 }""",
@@ -65,7 +65,7 @@ For EACH early plan (ED, EA, ED2, REA), get:
 - acceptance_rate: As NUMBER (e.g., 17.95)
 - class_fill_percentage: % of class filled (may be null)
 
-Search: "{university_name} early decision acceptance rate 2024"
+Search: "{university_name} early decision acceptance rate current year"
 
 OUTPUT (JSON array):
 [

@@ -108,7 +108,8 @@ def get_college_scorecard_data(
     """
     Get university data from College Scorecard API.
     
-    Returns admission rates, test scores, tuition, demographics, and outcomes.
+    Uses IPEDS ID lookup for accuracy (name search can return wrong schools).
+    Falls back to name search with verification if ID not in lookup table.
     
     Args:
         university_name: Name of the university to look up
@@ -127,12 +128,26 @@ def get_college_scorecard_data(
     if not SCORECARD_API_KEY:
         return {"error": "No API key configured. Set DATA_GOV_API_KEY environment variable."}
     
-    params = {
-        "api_key": SCORECARD_API_KEY,
-        "school.name": university_name,
-        "fields": ",".join(SCORECARD_FIELDS),
-        "per_page": 1
-    }
+    # Try to get IPEDS ID for accurate lookup (name search can return wrong schools!)
+    ipeds_id = _get_ipeds_id(university_name)
+    
+    if ipeds_id:
+        # Use ID-based lookup (more accurate)
+        params = {
+            "api_key": SCORECARD_API_KEY,
+            "id": ipeds_id,
+            "fields": ",".join(SCORECARD_FIELDS),
+        }
+        logger.info(f"Using IPEDS ID {ipeds_id} for {university_name}")
+    else:
+        # Fallback to name search (less reliable)
+        params = {
+            "api_key": SCORECARD_API_KEY,
+            "school.name": university_name,
+            "fields": ",".join(SCORECARD_FIELDS),
+            "per_page": 5  # Get multiple results to find best match
+        }
+        logger.warning(f"No IPEDS ID found for '{university_name}', using name search (may be inaccurate)")
     
     try:
         response = requests.get(SCORECARD_BASE_URL, params=params, timeout=30)
@@ -143,7 +158,20 @@ def get_college_scorecard_data(
         if not results:
             return {"error": f"No data found for '{university_name}'"}
         
+        # If using name search, try to find the best match
         school = results[0]
+        if not ipeds_id and len(results) > 1:
+            # Search for exact or closest match in results
+            name_lower = university_name.lower().strip()
+            for result in results:
+                result_name = result.get("school.name", "").lower()
+                if result_name == name_lower or name_lower in result_name:
+                    school = result
+                    break
+            # Log if we might have the wrong school
+            matched_name = school.get("school.name", "")
+            if name_lower not in matched_name.lower():
+                logger.warning(f"Name mismatch: requested '{university_name}', got '{matched_name}'")
         
         # Transform to cleaner format
         return {

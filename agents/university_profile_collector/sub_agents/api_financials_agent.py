@@ -30,17 +30,17 @@ tuition_coa_micro = LlmAgent(
     instruction="""Research tuition/COA for {university_name}:
 
 1. tuition_model (str): "Tuition Stability Plan", "Annual Increase (~3%)", "Unified"
-2. academic_year (str): "2024-2025"
+2. academic_year (str): The current academic year (e.g., "2025-2026")
 3. For IN-STATE: tuition, total_coa, housing (floats)
 4. For OUT-OF-STATE: tuition, total_coa (floats)
 
-Search: "{university_name} cost of attendance 2024-2025"
+Search: "{university_name} cost of attendance current year"
 Search: "{university_name} tuition and fees"
 
 OUTPUT (JSON):
 {
   "tuition_model": "Annual Increase (~3%)",
-  "academic_year": "2024-2025",
+  "academic_year": "<current academic year>",
   "in_state": {"tuition": 14500.0, "total_coa": 36000.0, "housing": 15000.0},
   "out_of_state": {"tuition": 46000.0, "total_coa": 68000.0}
 }

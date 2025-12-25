@@ -69,6 +69,7 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "  ${YELLOW}knowledge-es${NC} - Deploy Elasticsearch knowledge base function"
     echo -e "  ${YELLOW}knowledge-universities${NC} - Deploy Universities knowledge base function"
     echo -e "  ${YELLOW}payment${NC}     - Deploy Payment manager function (Stripe integration)"
+    echo -e "  ${YELLOW}source-curator${NC} - Deploy Source Curator UI (React + FastAPI)"
     echo -e "  ${YELLOW}functions${NC}   - Deploy all cloud functions (recommended)"
     echo -e "  ${YELLOW}backend${NC}     - Deploy both agents + all functions (recommended)"
     echo -e "  ${YELLOW}frontend${NC}    - Deploy only frontend"
@@ -78,6 +79,7 @@ if [ "$DEPLOY_TARGET" == "--help" ] || [ "$DEPLOY_TARGET" == "-h" ]; then
     echo -e "  ./deploy.sh agents             # Deploy both agents"
     echo -e "  ./deploy.sh agent-rag          # Deploy only RAG agent"
     echo -e "  ./deploy.sh agent-es           # Deploy only ES agent"
+    echo -e "  ./deploy.sh source-curator     # Deploy Source Curator UI"
     echo -e "  ./deploy.sh backend            # Deploy both agents + all cloud functions"
     echo ""
     exit 0
@@ -633,6 +635,136 @@ EOF
     echo -e "${GREEN}✓ University Profile Collector deployed: ${UNIVERSITY_COLLECTOR_URL}${NC}"
 }
 
+deploy_datamine() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Data Discovery Agent${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    DATAMINE_SERVICE="data-discovery-agent"
+    
+    # Set up environment for DataMine agent
+    cd agents/sourcery
+    cat > .env <<EOF
+GEMINI_API_KEY=${GEMINI_API_KEY}
+GOOGLE_GENAI_USE_VERTEXAI=0
+EOF
+    cd ../..
+    
+    # Deploy DataMine agent
+    adk deploy cloud_run \
+        --project="$PROJECT_ID" \
+        --region="$REGION" \
+        --service_name="$DATAMINE_SERVICE" \
+        --allow_origins="*" \
+        --with_ui \
+        agents/sourcery || true
+    
+    gcloud run services add-iam-policy-binding "$DATAMINE_SERVICE" \
+        --member="allUsers" \
+        --role="roles/run.invoker" \
+        --region="$REGION" \
+        --platform=managed
+    
+    DATAMINE_URL=$(gcloud run services describe $DATAMINE_SERVICE --region=$REGION --format='value(status.url)')
+    echo -e "${GREEN}✓ Data Discovery Agent deployed: ${DATAMINE_URL}${NC}"
+    
+    # Export URL for frontend deployment
+    export DATAMINE_AGENT_URL=$DATAMINE_URL
+}
+
+deploy_sourcery_frontend() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Sourcery Frontend to Firebase${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    # Get agent URL if not already set
+    if [ -z "$DATAMINE_AGENT_URL" ]; then
+        DATAMINE_AGENT_URL=$(gcloud run services describe data-discovery-agent --region=$REGION --format='value(status.url)' 2>/dev/null || echo "")
+    fi
+    
+    if [ -z "$DATAMINE_AGENT_URL" ]; then
+        echo -e "${YELLOW}⚠ Agent URL not found. Deploy the agent first with: ./deploy.sh datamine${NC}"
+        echo -e "${YELLOW}  Using placeholder URL for now${NC}"
+        DATAMINE_AGENT_URL="https://data-discovery-agent-pfnwjfp26a-ue.a.run.app"
+    fi
+    
+    echo -e "${GREEN}Using Agent URL: ${DATAMINE_AGENT_URL}${NC}"
+    
+    cd agents/sourcery/ui
+    
+    # Create .env with agent URL
+    cat > .env <<EOF
+VITE_AGENT_URL=${DATAMINE_AGENT_URL}
+EOF
+    
+    # Build the frontend
+    echo -e "${YELLOW}Installing dependencies...${NC}"
+    npm install --silent
+    
+    echo -e "${YELLOW}Building frontend...${NC}"
+    npm run build
+    
+    # Deploy to Firebase
+    echo -e "${YELLOW}Deploying to Firebase...${NC}"
+    firebase deploy --only hosting --project sourcery-data-app
+    
+    cd ../../..
+    
+    echo -e "${GREEN}✓ Sourcery Frontend deployed to Firebase${NC}"
+    echo -e "${GREEN}  Open: https://sourcery-data-app.web.app${NC}"
+}
+
+deploy_source_curator() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying Source Curator (FastAPI + React UI)${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    SOURCE_CURATOR_SERVICE="source-curator"
+    
+    # Fetch DATA_GOV_API_KEY from Secret Manager (for College Scorecard API)
+    echo -e "${YELLOW}Fetching DATA_GOV_API_KEY from Secret Manager...${NC}"
+    DATA_GOV_API_KEY=$(gcloud secrets versions access latest --secret=data-gov-api-key --project=$PROJECT_ID 2>/dev/null || echo "")
+    if [ -z "$DATA_GOV_API_KEY" ]; then
+        echo -e "${YELLOW}⚠ DATA_GOV_API_KEY not found - College Scorecard API may not work${NC}"
+    fi
+    
+    # Build React frontend locally
+    echo -e "${YELLOW}Building React frontend...${NC}"
+    cd agents/source_curator/source-curator-ui
+    npm install --silent
+    npm run build
+    
+    # Move built files to static directory
+    rm -rf ../static
+    mv dist ../static
+    cd ../../..
+    
+    # Deploy to Cloud Run
+    echo -e "${YELLOW}Deploying to Cloud Run...${NC}"
+    cd agents/source_curator
+    
+    gcloud run deploy $SOURCE_CURATOR_SERVICE \
+        --source=. \
+        --project=$PROJECT_ID \
+        --region=$REGION \
+        --allow-unauthenticated \
+        --set-env-vars="GEMINI_API_KEY=${GEMINI_API_KEY},DATA_GOV_API_KEY=${DATA_GOV_API_KEY}" \
+        --timeout=300 \
+        --memory=2Gi \
+        --cpu=1 \
+        --min-instances=0 \
+        --max-instances=3
+    
+    cd ../..
+    
+    SOURCE_CURATOR_URL=$(gcloud run services describe $SOURCE_CURATOR_SERVICE --region=$REGION --format='value(status.url)')
+    echo -e "${GREEN}✓ Source Curator deployed: ${SOURCE_CURATOR_URL}${NC}"
+    echo -e "${GREEN}  Open in browser: ${SOURCE_CURATOR_URL}${NC}"
+}
+
 deploy_frontend() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Frontend${NC}"
@@ -719,6 +851,20 @@ case "$DEPLOY_TARGET" in
         ;;
     "payment")
         deploy_payment_manager
+        ;;
+    "source-curator")
+        deploy_source_curator
+        ;;
+    "datamine")
+        deploy_datamine
+        ;;
+    "sourcery-frontend")
+        deploy_sourcery_frontend
+        ;;
+    "sourcery")
+        echo -e "${CYAN}Deploying Sourcery (agent + frontend)...${NC}"
+        deploy_datamine
+        deploy_sourcery_frontend
         ;;
     "vertexai")
         echo -e "${CYAN}Deploying Vertex AI backend (cloud functions + agent)...${NC}"

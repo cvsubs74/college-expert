@@ -25,7 +25,7 @@ longitudinal_micro = LlmAgent(
     instruction="""Research 5 years of admissions data for {university_name}:
 
 For each year (2021-2025), find:
-- year (int): 2025, 2024, 2023, 2022, 2021
+- year (int): Most recent 5 years of data
 - cycle_name (str): "Class of 2029", etc.
 - applications_total (int)
 - admits_total (int)
@@ -34,8 +34,8 @@ For each year (2021-2025), find:
 - yield_rate (float): enrolled/admits as %
 - notes (str): Notable events
 
-Search: "{university_name}" Common Data Set 2023-2024
-Search: "{university_name}" acceptance rate history 2020-2024
+Search: "{university_name}" Common Data Set historical
+Search: "{university_name}" acceptance rate history past 5 years
 
 OUTPUT (JSON array, 5 years):
 [
@@ -72,7 +72,7 @@ For each available year, find (from CDS Section C2):
 - is_waitlist_ranked (bool)
 
 Search: "{university_name}" Common Data Set Section C2 waitlist
-Search: "{university_name}" waitlist statistics 2024
+Search: "{university_name}" waitlist statistics recent
 
 OUTPUT (JSON object by year):
 {

@@ -23,17 +23,17 @@ DO NOT copy example numbers. Use ONLY data from your searches.
 If data cannot be found, use null - NEVER make up values.
 
 === REQUIRED SEARCHES ===
-- "{university_name}" Common Data Set Section H financial aid 2024
+- "{university_name}" Common Data Set Section H financial aid latest
 - site:collegescorecard.ed.gov "{university_name}" cost debt
 - "{university_name}" net price calculator average aid
-- "{university_name}" cost of attendance 2024-2025 tuition room board
+- "{university_name}" cost of attendance current year tuition room board
 
 OUTPUT JSON with EXACTLY this structure:
 
 "financials": (
   "tuition_model": "Tuition Stability Plan" or "Annual Increase",
   "cost_of_attendance_breakdown": (
-    "academic_year": "2024-2025",
+    "academic_year": "<current academic year>",
     "in_state": (
       "tuition": 14500,
       "total_coa": 38000,

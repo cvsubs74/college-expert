@@ -22,7 +22,10 @@ colleges_list_micro = LlmAgent(
     name="CollegesListMicro",
     model=MODEL_NAME,
     description="Fetches list of undergraduate colleges/schools.",
-    instruction="""Find ALL undergraduate colleges/schools at {university_name}:
+    instruction=\"\"\"Find ALL undergraduate colleges/schools at {university_name}:
+
+⚠️ CRITICAL: Use the CURRENT academic catalog only (the most recent available).
+If a page shows "ARCHIVED CATALOGUE", search for the current version.
 
 For each college/school:
 - name (str): Full name
@@ -36,8 +39,8 @@ MUST FIND ALL including:
 - School of Nursing (if undergrad)
 - School of Music/Arts (if undergrad)
 
-Search: "{university_name}" list of undergraduate schools colleges
-Search: "{university_name}" all undergraduate programs
+Search: "{university_name}" list of undergraduate schools colleges current
+Search: "{university_name}" all undergraduate programs current catalog
 
 OUTPUT (JSON array):
 [

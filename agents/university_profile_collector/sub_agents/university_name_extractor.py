@@ -7,7 +7,7 @@ from .shared_logging import (
     tool_logging_before, tool_logging_after
 )
 
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-2.5-flash-lite"
 
 university_name_extractor = LlmAgent(
     name="UniversityNameExtractor",

@@ -23,9 +23,9 @@ DO NOT copy example numbers. Use ONLY data from your searches.
 If data cannot be found, use null - NEVER make up values.
 
 === REQUIRED SEARCHES ===
-- "{university_name}" Common Data Set Section C GPA test scores 2024
+- "{university_name}" Common Data Set Section C GPA test scores latest
 - site:prepscholar.com "{university_name}" SAT ACT scores admitted students
-- "{university_name}" IPEDS demographics race ethnicity 2024
+- "{university_name}" IPEDS demographics race ethnicity latest
 - "{university_name}" admitted student profile GPA middle 50
 
 OUTPUT JSON with EXACTLY this structure:

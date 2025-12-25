@@ -16,28 +16,45 @@ majors_agent = LlmAgent(
     description="Researches all majors with acceptance rates, prerequisites, WEEDER COURSES, GPA FLOORS, CURRICULUM, and PROFESSORS.",
     instruction="""Research: {university_name}
 
+=== CRITICAL: USE CURRENT CATALOG YEAR ONLY ===
+⚠️ You MUST use the CURRENT academic year catalog (the most recent available).
+⚠️ University catalogs are archived yearly. ARCHIVED catalogs are OUTDATED.
+⚠️ If a page shows "ARCHIVED CATALOGUE" in the title, SEARCH AGAIN for current version.
+
+CATALOG YEAR VERIFICATION:
+1. Check the catalog year on EVERY page you reference (look for current year in URL or header)
+2. If the catalog year is from a previous academic year, that is OUTDATED - find the current version
+3. Always navigate to the university's main catalog page and select the most recent year
+4. Look for the highest catalog ID (catoid) or latest year in the URL
+
+REQUIRED SEARCHES FOR CURRENT DATA:
+- site:catalogue.{domain} \"{university_name}\" [Major] current
+- \"{university_name}\" [Major] requirements catalogue current
+- \"{university_name}\" current undergraduate catalog [Major]
+
 === DATA SOURCES (Search these specifically) ===
 1. College Scorecard (collegescorecard.ed.gov): Earnings data broken down by major
-2. Official Department Catalogs: Prerequisite courses, degree types, curriculum
+2. Official Department Catalogs (current year): Prerequisite courses, degree types, curriculum
+3. Acceptd (acceptd.com): Performing arts major requirements (auditions/portfolios)
 
 ⚠️ WARNING: Example values below are for STRUCTURE ONLY.
 DO NOT copy example numbers. Use ONLY data from your searches.
 If data cannot be found, use null - NEVER make up values.
-3. Acceptd (acceptd.com): Performing arts major requirements (auditions/portfolios)
 
 === REQUIRED SEARCHES ===
-- site:*.edu "{university_name}" undergraduate majors list catalog
-- "{university_name}" impacted capped majors 2024
-- "{university_name}" transfer into [Major] prerequisites GPA requirement
-- site:collegescorecard.ed.gov "{university_name}" earnings by field of study
-- "{university_name}" [Major] curriculum requirements core courses
+- site:*.edu \"{university_name}\" undergraduate majors list catalog current
+- \"{university_name}\" impacted capped majors current year
+- \"{university_name}\" transfer into [Major] prerequisites GPA requirement
+- site:collegescorecard.ed.gov \"{university_name}\" earnings by field of study
+- \"{university_name}\" [Major] curriculum requirements core courses
 
 === ADDITIONAL SEARCHES ===
-- "transferring INTO [Major] at {university_name}" for HIDDEN PREREQUISITES
+- \"transferring INTO [Major] at {university_name}\" for HIDDEN PREREQUISITES
 - Major-specific acceptance rates
 - Departmental handbooks for GPA requirements
 - "[Major] faculty {university_name}" for professors
 - RateMyProfessors for top-rated professors
+- \"{university_name}\" new programs majors current year (look for NEW interdisciplinary degrees)
 
 HIDDEN PREREQUISITES TO FIND:
 - minimum_gpa_to_declare: GPA floor to switch INTO this major after enrolling
@@ -145,6 +162,12 @@ OUTPUT JSON with EXACTLY this structure:
 Use EXACT college names from the university.
 Include 10-15 majors per college with curriculum details for TOP 5 most popular majors.
 
+COURSE NAME VERIFICATION:
+- Use EXACT course codes AND full official titles from the current catalog
+- Example CORRECT: "CSCI 170 Discrete Methods in Computer Science"
+- Example WRONG: "CSCI 170 Introduction to Algorithms" (outdated/incorrect title)
+- If unsure of the exact title, search: "[course code] {university_name}" to verify
+
 ANTI-HALLUCINATION RULES:
 - If you CANNOT FIND minimum_gpa_to_declare from official sources, use null. DO NOT GUESS.
 - If weeder courses are unknown for a major, use empty array []. DO NOT INVENT course names.
@@ -152,6 +175,7 @@ ANTI-HALLUCINATION RULES:
 - For curriculum, only include REAL course names from the university catalog. DO NOT INVENT COURSES.
 - For professors, only include REAL faculty names from department websites. DO NOT INVENT NAMES.
 - If curriculum or professors are not found, set curriculum: null and notable_professors: [].
+- ALWAYS add the catalog year to the notes field, e.g., "Data source: USC Catalogue 2025-2026"
 
 Use ( ) instead of curly braces.
 """,

@@ -22,10 +22,10 @@ DO NOT copy example numbers. Use ONLY data from your searches.
 If data cannot be found, use null - NEVER make up values.
 
 === REQUIRED SEARCHES ===
-- site:*.edu "{university_name}" Common Data Set 2024-2025 filetype:pdf
-- "{university_name}" Common Data Set Section C acceptance rate 2024
-- site:expertadmissions.com "{university_name}" admissions 2025
-- "{university_name}" test optional policy 2025
+- site:*.edu "{university_name}" Common Data Set latest filetype:pdf
+- "{university_name}" Common Data Set Section C acceptance rate latest
+- site:expertadmissions.com "{university_name}" admissions current cycle
+- "{university_name}" test optional policy current year
 
 OUTPUT JSON with EXACTLY this structure:
 

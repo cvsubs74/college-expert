@@ -31,7 +31,7 @@ deadlines_micro = LlmAgent(
    - is_binding: true/false
    - notes: Any special notes
 
-Search: "{university_name}" application deadline 2025
+Search: "{university_name}" application deadline current cycle
 Search: site:commonapp.org "{university_name}"
 
 OUTPUT (JSON):
@@ -61,7 +61,7 @@ For each requirement:
 - deadline: Date or null
 - details: What's required
 
-Search: "{university_name}" supplemental essays 2025
+Search: "{university_name}" supplemental essays current year
 Search: site:acceptd.com "{university_name}" audition
 
 OUTPUT (JSON array):

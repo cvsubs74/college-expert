@@ -1,0 +1,88 @@
+# Global API configurations for deterministic Tier 1 sources
+
+college_scorecard:
+  name: "College Scorecard API"
+  description: "U.S. Department of Education data on colleges"
+  base_url: "https://api.data.gov/ed/collegescorecard/v1/schools"
+  api_key_env: DATA_GOV_API_KEY
+  doc_url: "https://collegescorecard.ed.gov/data/documentation/"
+  tier: 1
+  fields:
+    - id
+    - school.name
+    - school.city
+    - school.state
+    - latest.admissions.admission_rate.overall
+    - latest.admissions.sat_scores.25th_percentile.critical_reading
+    - latest.admissions.sat_scores.75th_percentile.critical_reading
+    - latest.admissions.sat_scores.25th_percentile.math
+    - latest.admissions.sat_scores.75th_percentile.math
+    - latest.admissions.act_scores.25th_percentile.cumulative
+    - latest.admissions.act_scores.75th_percentile.cumulative
+    - latest.student.size
+    - latest.cost.tuition.in_state
+    - latest.cost.tuition.out_of_state
+    - latest.aid.pell_grant_rate
+    - latest.earnings.10_yrs_after_entry.median
+    - latest.student.retention_rate.four_year.full_time
+    - latest.completion.rate_suppressed.four_year
+    - latest.student.demographics.race_ethnicity.white
+    - latest.student.demographics.race_ethnicity.black
+    - latest.student.demographics.race_ethnicity.hispanic
+    - latest.student.demographics.race_ethnicity.asian
+    - latest.student.demographics.first_generation
+
+urban_ipeds:
+  name: "Urban Institute IPEDS API"
+  description: "Education data from IPEDS"
+  base_url: "https://educationdata.urban.org/api/v1/college-university/ipeds"
+  doc_url: "https://educationdata.urban.org/documentation/"
+  tier: 1
+  endpoints:
+    admissions_enrollment:
+      path: "/admissions-enrollment/{year}/"
+      params:
+        - unitid
+        - sex
+      latest_year: 2022
+    tuition_fees:
+      path: "/academic-year-tuition/{year}/"
+      params:
+        - unitid
+        - level_of_study
+      latest_year: 2022
+    fall_enrollment:
+      path: "/fall-enrollment/{year}/"
+      params:
+        - unitid
+        - level_of_study
+      latest_year: 2022
+    graduation_rates:
+      path: "/graduation-rates/{year}/"
+      params:
+        - unitid
+      latest_year: 2022
+
+# Common Data Set section mappings
+common_data_set_sections:
+  admissions:
+    section: C
+    subsections:
+      - C1: "First-time first-year applicants"
+      - C2: "Wait-listed students"
+      - C9: "SAT/ACT scores"
+      - C10: "Class rank"
+  demographics:
+    section: B
+    subsections:
+      - B1: "Enrollment by racial/ethnic category"
+      - B2: "Enrollment by gender"
+  financial_aid:
+    section: H
+    subsections:
+      - H1: "Need-based aid"
+      - H2: "Number of applicants and aid"
+  retention:
+    section: B
+    subsections:
+      - B22: "Retention rates"

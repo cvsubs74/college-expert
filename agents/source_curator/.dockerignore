@@ -1,0 +1,16 @@
+# Ignore files not needed for deployment
+.git
+.gitignore
+*.md
+*.pyc
+__pycache__
+.venv
+.env
+*.log
+source-curator-ui/node_modules
+source-curator-ui/src
+source-curator-ui/.git
+source-curator-ui/package*.json
+source-curator-ui/vite.config.js
+source-curator-ui/public
+research/

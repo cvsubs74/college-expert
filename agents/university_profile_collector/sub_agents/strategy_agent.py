@@ -43,7 +43,7 @@ OUTPUT (JSON):
     "state": "Rhode Island",
     "type": "Private"
   },
-  "last_updated": "2024-12-21",
+  "last_updated": "<today's date YYYY-MM-DD>",
   "report_source_files": []
 }""",
     tools=[google_search],
