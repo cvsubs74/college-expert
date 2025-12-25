@@ -216,6 +216,26 @@ const StratiaLaunchpad = () => {
         setFitModalCollege(null);
     };
 
+    // Handle removing a college from the list
+    const handleRemoveCollege = async (college) => {
+        if (!currentUser?.email) return;
+
+        try {
+            const result = await updateCollegeList(currentUser.email, 'remove', {
+                id: college.university_id,
+                name: college.university_name
+            });
+
+            if (result.success) {
+                // Remove from local state immediately
+                setCollegeList(prev => prev.filter(c => c.university_id !== college.university_id));
+                console.log(`[StratiaLaunchpad] Removed ${college.university_name} from list`);
+            }
+        } catch (err) {
+            console.error('[StratiaLaunchpad] Error removing college:', err);
+        }
+    };
+
     // Discovery panel functions
     const fetchDiscoverySchools = async (category = 'SAFETY') => {
         if (!currentUser?.email) return;
@@ -545,12 +565,23 @@ const StratiaLaunchpad = () => {
                                     <UniversityCard
                                         university={{
                                             ...college,
+                                            // Map location from object if needed (handle null)
+                                            location: college.location
+                                                ? (typeof college.location === 'object'
+                                                    ? `${college.location.city || ''}${college.location.city && college.location.state ? ', ' : ''}${college.location.state || ''}`
+                                                    : college.location)
+                                                : null,
+                                            // Pass stats from college data
+                                            acceptance_rate: college.acceptance_rate || college.fit_analysis?.acceptance_rate,
+                                            us_news_rank: college.us_news_rank || college.fit_analysis?.us_news_rank,
                                             fit_category: college.fit_analysis?.fit_category || college.soft_fit_category || 'TARGET',
                                             match_score: college.fit_analysis?.match_score || 0
                                         }}
                                         onViewAnalysis={handleViewAnalysis}
                                         onOpenChat={handleOpenChat}
                                         onViewNotes={() => {/* TODO: Notes modal */ }}
+                                        canRemove={!isFreeTier}
+                                        onRemove={handleRemoveCollege}
                                     />
                                 </div>
                             ))}

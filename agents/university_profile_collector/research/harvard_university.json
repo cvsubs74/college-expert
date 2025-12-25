@@ -7,7 +7,7 @@
       "state": "MA",
       "type": "Private"
     },
-    "last_updated": "2025-12-07",
+    "last_updated": "2025-12-24",
     "report_source_files": []
   },
   "strategic_profile": {
@@ -40,14 +40,14 @@
   },
   "admissions_data": {
     "current_status": {
-      "overall_acceptance_rate": 3.6,
+      "overall_acceptance_rate": 4.2,
       "in_state_acceptance_rate": null,
       "out_of_state_acceptance_rate": null,
       "international_acceptance_rate": 1.94,
       "transfer_acceptance_rate": 0.8,
-      "admits_class_size": 1970,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
+      "admits_class_size": 2003,
+      "is_test_optional": false,
+      "test_policy_details": "Test Required (SAT or ACT required starting Fall 2025 applications)",
       "early_admission_stats": [
         {
           "plan_type": "REA",
@@ -155,7 +155,7 @@
         "sat_math_middle_50": "760-800",
         "act_composite_middle_50": "34-36",
         "submission_rate": null,
-        "policy_note": "Test optional, but submission of strong scores is recommended and can strengthen an application."
+        "policy_note": "Test Required (SAT or ACT) starting Fall 2025; submission of strong scores is recommended and can strengthen an application."
       },
       "demographics": {
         "first_gen_percentage": 20.1,
@@ -904,7 +904,7 @@
         "GPA",
         "Essays",
         "Recommendations",
-        "Standardized Test Scores (optional for 2024 admissions cycle)"
+        "Standardized Test Scores (required starting 2025 admissions cycle)"
       ],
       "secondary_factors": [
         "Extracurriculars",
@@ -943,15 +943,15 @@
   "financials": {
     "tuition_model": "Annual Increase",
     "cost_of_attendance_breakdown": {
-      "academic_year": "2024-2025",
+      "academic_year": "2025-2026",
       "in_state": {
-        "tuition": 56550,
-        "total_coa": 82866,
-        "housing": 12922
+        "tuition": 59320,
+        "total_coa": 86926,
+        "housing": 13532
       },
       "out_of_state": {
-        "tuition": 56550,
-        "total_coa": 82866,
+        "tuition": 59320,
+        "total_coa": 86926,
         "supplemental_tuition": 0
       }
     },

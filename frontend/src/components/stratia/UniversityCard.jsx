@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPinIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, TrashIcon } from '@heroicons/react/24/outline';
 
 /**
  * UniversityCard - Rich, interactive M3 card for university listings
@@ -11,12 +11,15 @@ import { MapPinIcon } from '@heroicons/react/24/outline';
  * - Circular progress match score
  * - SegmentedButtonGroup for actions
  * - M3 State Layer hover effects
+ * - Remove button for paid plans
  */
 const UniversityCard = ({
     university,
     onViewAnalysis,
     onViewNotes,
-    onOpenChat
+    onOpenChat,
+    onRemove,
+    canRemove = false
 }) => {
     const [activeAction, setActiveAction] = useState(null);
 
@@ -156,7 +159,8 @@ const UniversityCard = ({
             </div>
 
             {/* Action Buttons - Segmented Button Group */}
-            <div className="mt-4 pt-4 border-t border-[#E0DED8] flex justify-end">
+            <div className="mt-4 pt-4 border-t border-[#E0DED8] flex justify-between items-center">
+                {/* Action Buttons */}
                 <div className="stratia-segmented-group">
                     {actions.map((action) => (
                         <button
@@ -171,6 +175,17 @@ const UniversityCard = ({
                         </button>
                     ))}
                 </div>
+
+                {/* Remove Button (paid plans only) - Right side, single click */}
+                {canRemove && onRemove && (
+                    <button
+                        onClick={() => onRemove(university)}
+                        className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-all"
+                        title="Remove from list"
+                    >
+                        <TrashIcon className="w-5 h-5" />
+                    </button>
+                )}
             </div>
         </div>
     );
