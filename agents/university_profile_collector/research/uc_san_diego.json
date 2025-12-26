@@ -173,9 +173,18 @@
         "legacy_percentage": 0.0,
         "international_percentage": 15.0,
         "geographic_breakdown": [
-          { "region": "California", "percentage": 75.0 },
-          { "region": "Other US States", "percentage": 10.0 },
-          { "region": "International", "percentage": 15.0 }
+          {
+            "region": "California",
+            "percentage": 75.0
+          },
+          {
+            "region": "Other US States",
+            "percentage": 10.0
+          },
+          {
+            "region": "International",
+            "percentage": 15.0
+          }
         ],
         "gender_breakdown": {
           "men": {
@@ -305,9 +314,20 @@
             "is_impacted": true,
             "acceptance_rate": 28.4,
             "average_gpa_admitted": 4.15,
-            "prerequisite_courses": ["CSE 8B or 11", "CSE 12", "CSE 15L or 29", "CSE 20", "MATH 20A", "MATH 20B"],
+            "prerequisite_courses": [
+              "CSE 8B or 11",
+              "CSE 12",
+              "CSE 15L or 29",
+              "CSE 20",
+              "MATH 20A",
+              "MATH 20B"
+            ],
             "minimum_gpa_to_declare": 3.0,
-            "weeder_courses": ["CSE 30 Computer Organization", "CSE 100 Advanced Data Structures", "MATH 20C Calculus III"],
+            "weeder_courses": [
+              "CSE 30 Computer Organization",
+              "CSE 100 Advanced Data Structures",
+              "MATH 20C Calculus III"
+            ],
             "special_requirements": "Point-based selection for internal transfer (GPA, CA residency, first-gen status).",
             "admissions_pathway": "Direct Admit / Selective Major",
             "internal_transfer_allowed": true,
@@ -343,9 +363,18 @@
             "is_impacted": true,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["BILD 1", "CHEM 6A", "MATH 20A", "MATH 20B", "PHYS 2A"],
+            "prerequisite_courses": [
+              "BILD 1",
+              "CHEM 6A",
+              "MATH 20A",
+              "MATH 20B",
+              "PHYS 2A"
+            ],
             "minimum_gpa_to_declare": 3.0,
-            "weeder_courses": ["BENG 100 Probability & Stats", "CHEM 40A Organic Chemistry"],
+            "weeder_courses": [
+              "BENG 100 Probability & Stats",
+              "CHEM 40A Organic Chemistry"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit / Selective Major",
             "internal_transfer_allowed": true,
@@ -368,10 +397,19 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "acceptance_rate": 28.4,
-            "average_gpa_admitted": 4.10,
-            "prerequisite_courses": ["DSC 10", "DSC 20", "MATH 18", "MATH 20A", "MATH 20B"],
+            "average_gpa_admitted": 4.1,
+            "prerequisite_courses": [
+              "DSC 10",
+              "DSC 20",
+              "MATH 18",
+              "MATH 20A",
+              "MATH 20B"
+            ],
             "minimum_gpa_to_declare": 3.0,
-            "weeder_courses": ["DSC 40B Theoretical Foundations II", "DSC 80 Data Science Practice"],
+            "weeder_courses": [
+              "DSC 40B Theoretical Foundations II",
+              "DSC 80 Data Science Practice"
+            ],
             "special_requirements": "Internal transfer is highly competitive via the Selective Major process.",
             "admissions_pathway": "Direct Admit / Selective Major",
             "internal_transfer_allowed": true,
@@ -411,9 +449,17 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": 4.0,
-            "prerequisite_courses": ["BILD 1", "BILD 3", "CHEM 6A", "CHEM 6B"],
+            "prerequisite_courses": [
+              "BILD 1",
+              "BILD 3",
+              "CHEM 6A",
+              "CHEM 6B"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["CHEM 40A Organic Chemistry", "BICD 100 Genetics"],
+            "weeder_courses": [
+              "CHEM 40A Organic Chemistry",
+              "BICD 100 Genetics"
+            ],
             "special_requirements": "As of Spring 2025, Biology majors are no longer 'Selective' for continuing students.",
             "admissions_pathway": "Open Major",
             "internal_transfer_allowed": true,
@@ -454,9 +500,16 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": 3.9,
-            "prerequisite_courses": ["ECON 1", "ECON 3", "MATH 10A or 20A"],
+            "prerequisite_courses": [
+              "ECON 1",
+              "ECON 3",
+              "MATH 10A or 20A"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["ECON 100A Microeconomics", "ECON 120A Econometrics"],
+            "weeder_courses": [
+              "ECON 100A Microeconomics",
+              "ECON 120A Econometrics"
+            ],
             "special_requirements": null,
             "admissions_pathway": "Open Major",
             "internal_transfer_allowed": true,
@@ -491,9 +544,17 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["PSYC 60", "PSYC 70", "BILD 1", "MATH 20A"],
+            "prerequisite_courses": [
+              "PSYC 60",
+              "PSYC 70",
+              "BILD 1",
+              "MATH 20A"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["PSYC 60 Statistics", "PSYC 106 Behavioral Neuroscience"],
+            "weeder_courses": [
+              "PSYC 60 Statistics",
+              "PSYC 106 Behavioral Neuroscience"
+            ],
             "special_requirements": "Requires 8 units of research experience (PSYC 199 or labs).",
             "admissions_pathway": "Open Major",
             "internal_transfer_allowed": true,
@@ -529,9 +590,16 @@
             "is_impacted": false,
             "acceptance_rate": null,
             "average_gpa_admitted": null,
-            "prerequisite_courses": ["COGS 1", "COGS 14A", "MATH 20A"],
+            "prerequisite_courses": [
+              "COGS 1",
+              "COGS 14A",
+              "MATH 20A"
+            ],
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["COGS 107A Neuroanatomy", "COGS 118A Machine Learning"],
+            "weeder_courses": [
+              "COGS 107A Neuroanatomy",
+              "COGS 118A Machine Learning"
+            ],
             "special_requirements": "Offers specializations in ML, Design, and Neuroscience.",
             "admissions_pathway": "Open Major",
             "internal_transfer_allowed": true,
@@ -577,13 +645,15 @@
     ]
   },
   "application_process": {
-    "platforms": ["UC Application"],
+    "platforms": [
+      "UC Application"
+    ],
     "application_deadlines": [
       {
         "plan_type": "Regular Decision",
         "date": "2025-12-01",
         "is_binding": false,
-        "notes": "The UC system does not offer Early Action or Early Decision. The standard deadline for Fall 2026 admission is December 1, 2025."
+        "notes": "UC application filing period: October 1 - December 1, 2025 (11:59 PM PST). All UC campuses share this single deadline. No Early Decision or Early Action available."
       }
     ],
     "supplemental_requirements": [
@@ -607,8 +677,17 @@
       }
     ],
     "holistic_factors": {
-      "primary_factors": ["Course Rigor", "GPA (A-G Courses)", "Personal Insight Questions"],
-      "secondary_factors": ["Extracurricular Activities", "Special Talents", "Volunteer/Community Service", "Academic Enrichment Programs"],
+      "primary_factors": [
+        "Course Rigor",
+        "GPA (A-G Courses)",
+        "Personal Insight Questions"
+      ],
+      "secondary_factors": [
+        "Extracurricular Activities",
+        "Special Talents",
+        "Volunteer/Community Service",
+        "Academic Enrichment Programs"
+      ],
       "essay_importance": "Critical",
       "demonstrated_interest": "Not Considered",
       "interview_policy": "Not Offered",
@@ -716,7 +795,11 @@
     "philosophy": "Generous Credit",
     "ap_policy": {
       "general_rule": "Score of 3+ grants credit for most exams",
-      "exceptions": ["AP Research and AP Seminar grant 0 units (clears Entry Level Writing only)", "Computer Science A/Principles requires 4 or 5 for specific course exemptions", "Economics requires 5 for course exemption"],
+      "exceptions": [
+        "AP Research and AP Seminar grant 0 units (clears Entry Level Writing only)",
+        "Computer Science A/Principles requires 4 or 5 for specific course exemptions",
+        "Economics requires 5 for course exemption"
+      ],
       "usage": "Can satisfy GE requirements (varies by UCSD college) and major prerequisites"
     },
     "ib_policy": {
@@ -724,7 +807,10 @@
       "diploma_bonus": true
     },
     "transfer_articulation": {
-      "tools": ["ASSIST.org", "Transferology"],
+      "tools": [
+        "ASSIST.org",
+        "Transferology"
+      ],
       "restrictions": "70 semester unit (105 quarter unit) cap for lower-division coursework"
     }
   },

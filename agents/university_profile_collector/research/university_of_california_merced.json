@@ -430,5 +430,15 @@
       }
     }
   },
-  "_id": "university_of_california_merced"
+  "_id": "university_of_california_merced",
+  "application_process": {
+    "application_deadlines": [
+      {
+        "plan_type": "Regular Decision",
+        "date": "2025-12-01",
+        "is_binding": false,
+        "notes": "UC application filing period: October 1 - December 1, 2025 (11:59 PM PST). All UC campuses share this single deadline. No Early Decision or Early Action available."
+      }
+    ]
+  }
 }

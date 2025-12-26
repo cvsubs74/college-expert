@@ -132,13 +132,26 @@
         "legacy_percentage": null,
         "international_percentage": 2.1,
         "geographic_breakdown": [
-          { "region": "South Carolina", "percentage": 53.0 },
-          { "region": "Out-of-State", "percentage": 44.9 },
-          { "region": "International", "percentage": 2.1 }
+          {
+            "region": "South Carolina",
+            "percentage": 53.0
+          },
+          {
+            "region": "Out-of-State",
+            "percentage": 44.9
+          },
+          {
+            "region": "International",
+            "percentage": 2.1
+          }
         ],
         "gender_breakdown": {
-          "men": { "acceptance_rate": 56.7 },
-          "women": { "acceptance_rate": 64.6 }
+          "men": {
+            "acceptance_rate": 56.7
+          },
+          "women": {
+            "acceptance_rate": 64.6
+          }
         },
         "racial_breakdown": {
           "white": 72.9,
@@ -172,16 +185,34 @@
             "is_impacted": true,
             "acceptance_rate": 15.0,
             "average_gpa_admitted": 3.9,
-            "prerequisite_courses": ["MATH 122 or 141", "MGSC 290", "ECON 221", "ECON 222"],
+            "prerequisite_courses": [
+              "MATH 122 or 141",
+              "MGSC 290",
+              "ECON 221",
+              "ECON 222"
+            ],
             "minimum_gpa_to_declare": 3.65,
-            "weeder_courses": ["ACCT 225 Elementary Financial Accounting", "MGSC 290 Computer Information Systems"],
+            "weeder_courses": [
+              "ACCT 225 Elementary Financial Accounting",
+              "MGSC 290 Computer Information Systems"
+            ],
             "special_requirements": "Must complete a second functional business major; requires mandatory study abroad.",
             "admissions_pathway": "Direct Admit / Pre-Major",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 3.65,
             "curriculum": {
-              "core_courses": ["IBUS 310", "ACCT 225", "ACCT 226", "ECON 221", "ECON 222", "FINA 363", "MGMT 371", "MKTG 350", "MGSC 290"],
+              "core_courses": [
+                "IBUS 310",
+                "ACCT 225",
+                "ACCT 226",
+                "ECON 221",
+                "ECON 222",
+                "FINA 363",
+                "MGMT 371",
+                "MKTG 350",
+                "MGSC 290"
+              ],
               "total_units": 122
             }
           },
@@ -190,7 +221,10 @@
             "degree_type": "B.S.B.A.",
             "is_impacted": true,
             "minimum_gpa_to_declare": 3.25,
-            "weeder_courses": ["ACCT 225", "FINA 363"],
+            "weeder_courses": [
+              "ACCT 225",
+              "FINA 363"
+            ],
             "admissions_pathway": "Pre-Major",
             "direct_admit_only": false,
             "internal_transfer_gpa": 3.25
@@ -200,7 +234,10 @@
             "degree_type": "B.S.B.A.",
             "is_impacted": true,
             "minimum_gpa_to_declare": 3.25,
-            "weeder_courses": ["ACCT 225", "ACCT 226"],
+            "weeder_courses": [
+              "ACCT 225",
+              "ACCT 226"
+            ],
             "admissions_pathway": "Pre-Major",
             "direct_admit_only": false,
             "internal_transfer_gpa": 3.25
@@ -221,7 +258,9 @@
             "degree_type": "B.A. / B.S.",
             "is_impacted": false,
             "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": ["PSYC 226 Research Methods"],
+            "weeder_courses": [
+              "PSYC 226 Research Methods"
+            ],
             "admissions_pathway": "Direct Admit",
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.0
@@ -231,7 +270,10 @@
             "degree_type": "B.S.",
             "is_impacted": false,
             "minimum_gpa_to_declare": 2.5,
-            "weeder_courses": ["BIOL 101", "CHEM 111"],
+            "weeder_courses": [
+              "BIOL 101",
+              "CHEM 111"
+            ],
             "admissions_pathway": "Direct Admit",
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.5
@@ -253,7 +295,10 @@
             "is_impacted": true,
             "average_gpa_admitted": 4.1,
             "minimum_gpa_to_declare": 2.5,
-            "weeder_courses": ["MATH 142 Calculus II", "CSCE 146 Algorithmic Design II"],
+            "weeder_courses": [
+              "MATH 142 Calculus II",
+              "CSCE 146 Algorithmic Design II"
+            ],
             "admissions_pathway": "Direct Admit",
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.5
@@ -263,7 +308,10 @@
             "degree_type": "B.S.E.",
             "is_impacted": false,
             "minimum_gpa_to_declare": 2.5,
-            "weeder_courses": ["EMCH 200 Statics", "MATH 142 Calculus II"],
+            "weeder_courses": [
+              "EMCH 200 Statics",
+              "MATH 142 Calculus II"
+            ],
             "admissions_pathway": "Direct Admit",
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.5
@@ -286,7 +334,10 @@
             "acceptance_rate": 10.0,
             "average_gpa_admitted": 3.8,
             "minimum_gpa_to_declare": 3.5,
-            "weeder_courses": ["BIOL 243 Anatomy and Physiology I", "CHEM 102 Fundamental Chemistry II"],
+            "weeder_courses": [
+              "BIOL 243 Anatomy and Physiology I",
+              "CHEM 102 Fundamental Chemistry II"
+            ],
             "admissions_pathway": "Direct Admit / Pre-Nursing",
             "direct_admit_only": false,
             "internal_transfer_gpa": 3.5
@@ -308,7 +359,10 @@
             "is_impacted": false,
             "average_gpa_admitted": 3.5,
             "minimum_gpa_to_declare": 3.0,
-            "weeder_courses": ["EXSC 223 Anatomy and Physiology I", "CHEM 111 General Chemistry I"],
+            "weeder_courses": [
+              "EXSC 223 Anatomy and Physiology I",
+              "CHEM 111 General Chemistry I"
+            ],
             "admissions_pathway": "Direct Admit",
             "direct_admit_only": false,
             "internal_transfer_gpa": 3.0
@@ -318,7 +372,9 @@
             "degree_type": "B.S. / B.A.",
             "is_impacted": false,
             "minimum_gpa_to_declare": 2.75,
-            "weeder_courses": ["ENHS 321 Environmental Health"],
+            "weeder_courses": [
+              "ENHS 321 Environmental Health"
+            ],
             "admissions_pathway": "Direct Admit",
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.75
@@ -356,23 +412,27 @@
     ]
   },
   "application_process": {
-    "platforms": ["Common App", "Coalition App", "USC Application"],
+    "platforms": [
+      "Common App",
+      "Coalition App",
+      "USC Application"
+    ],
     "application_deadlines": [
       {
         "plan_type": "Early Action",
-        "date": "2024-10-15",
+        "date": "2025-11-01",
         "is_binding": false,
         "notes": "Decisions released mid-December."
       },
       {
         "plan_type": "Honors College / Top Scholar",
-        "date": "2024-11-15",
+        "date": "2026-01-15",
         "is_binding": false,
         "notes": "Required for SCHC and Top Scholar awards."
       },
       {
         "plan_type": "Regular Decision",
-        "date": "2024-12-01",
+        "date": "2026-01-15",
         "is_binding": false,
         "notes": "Priority deadline for general admission."
       }
@@ -391,8 +451,17 @@
       }
     ],
     "holistic_factors": {
-      "primary_factors": ["Course Rigor", "GPA"],
-      "secondary_factors": ["Application Essay", "Extracurriculars", "Talents", "Character", "Class Rank"],
+      "primary_factors": [
+        "Course Rigor",
+        "GPA"
+      ],
+      "secondary_factors": [
+        "Application Essay",
+        "Extracurriculars",
+        "Talents",
+        "Character",
+        "Class Rank"
+      ],
       "essay_importance": "Important",
       "demonstrated_interest": "Not Considered",
       "interview_policy": "Not Offered",
@@ -477,7 +546,10 @@
       "diploma_bonus": true
     },
     "transfer_articulation": {
-      "tools": ["Institutional Equivalency Table", "SCTRAC.org"],
+      "tools": [
+        "Institutional Equivalency Table",
+        "SCTRAC.org"
+      ],
       "restrictions": "32-unit cap for combined exam credits (AP/IB)"
     }
   },
@@ -507,7 +579,14 @@
     "median_earnings_10yr": 62177,
     "employment_rate_2yr": 90.0,
     "grad_school_rate": 25.0,
-    "top_employers": ["Amazon", "Boeing", "Deloitte", "EY", "Prisma Health", "Bank of America"],
+    "top_employers": [
+      "Amazon",
+      "Boeing",
+      "Deloitte",
+      "EY",
+      "Prisma Health",
+      "Bank of America"
+    ],
     "loan_default_rate": 2.3
   },
   "student_retention": {

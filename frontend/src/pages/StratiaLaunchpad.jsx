@@ -13,6 +13,7 @@ import {
 import FitChatWidget from '../components/FitChatWidget';
 import CreditsUpgradeModal from '../components/CreditsUpgradeModal';
 import FitAnalysisPage from '../components/FitAnalysisPage';
+import DeadlineTracker from '../components/DeadlineTracker';
 import { Link, useNavigate } from 'react-router-dom';
 
 // Icons
@@ -527,6 +528,16 @@ const StratiaLaunchpad = () => {
                                 </span>
                             </button>
                         ))}
+                    </div>
+
+                    {/* Deadline Tracker */}
+                    <div className="mb-6">
+                        <DeadlineTracker
+                            onSchoolClick={(universityId) => {
+                                const college = collegeList.find(c => c.university_id === universityId);
+                                if (college) handleViewAnalysis(college);
+                            }}
+                        />
                     </div>
 
                     {/* College List */}

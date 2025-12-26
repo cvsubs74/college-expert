@@ -2044,6 +2044,7 @@ def handle_update_college_list(request):
                 'university_id': original_uni_id,  # Use EXACT ES ID for fetching profiles
                 'university_name': university.get('name', ''),
                 'status': 'favorites',
+                'application_plan': None,  # User's chosen deadline type: 'ED', 'ED2', 'EA', 'REA', 'RD', null
                 'added_at': datetime.utcnow().isoformat(),
                 'updated_at': datetime.utcnow().isoformat()
             }
@@ -2094,6 +2095,7 @@ def get_user_college_list(es_client, user_id):
             'university_id': item.get('university_id'),
             'university_name': item.get('university_name'),
             'status': item.get('status', 'favorites'),
+            'application_plan': item.get('application_plan'),  # ED, EA, RD, etc.
             'added_at': item.get('added_at')
             # NOTE: intended_major removed - always read from profile
         })
@@ -2216,6 +2218,189 @@ def handle_bulk_remove_colleges(request):
             'error': f'Failed to remove colleges: {str(e)}'
         }, 500)
 
+
+# ============================================
+# DEADLINE TRACKER FUNCTIONS
+# ============================================
+
+def get_user_deadlines(user_id: str) -> dict:
+    """
+    Get all application deadlines for universities in user's college list.
+    Pulls deadline data from university knowledge base and combines with user's application plan.
+    
+    Returns:
+        dict with deadlines sorted by date
+    """
+    try:
+        from elasticsearch import Elasticsearch
+        
+        es_client = get_elasticsearch_client()
+        
+        # Step 1: Get user's saved schools with their application plans
+        search_body = {
+            "size": 500,
+            "query": {"term": {"user_email": user_id}},
+            "_source": ["university_id", "university_name", "application_plan", "status"]
+        }
+        list_response = es_client.search(index=ES_LIST_ITEMS_INDEX, body=search_body)
+        
+        if list_response['hits']['total']['value'] == 0:
+            return {
+                "success": True,
+                "deadlines": [],
+                "message": "No schools saved yet"
+            }
+        
+        # Build lookup of user's application plans
+        user_plans = {}
+        for hit in list_response['hits']['hits']:
+            item = hit['_source']
+            uni_id = item.get('university_id')
+            user_plans[uni_id] = {
+                'application_plan': item.get('application_plan'),
+                'university_name': item.get('university_name'),
+                'status': item.get('status')
+            }
+        
+        university_ids = list(user_plans.keys())
+        
+        # Fetch deadline data from universities via the knowledge base API
+        deadlines = []
+        
+        for uni_id in university_ids:
+            try:
+                # Use the existing fetch_university_profile helper which handles ID variations
+                uni_data = fetch_university_profile(uni_id)
+                
+                if not uni_data:
+                    logger.warning(f"[DEADLINES] Could not find university {uni_id}")
+                    continue
+                
+                # Get full profile from the fetched data
+                profile = uni_data.get('profile', uni_data)
+                uni_name = user_plans[uni_id].get('university_name') or uni_data.get('official_name', uni_id)
+                user_plan = user_plans[uni_id].get('application_plan')
+                
+                # Extract application_deadlines from the university profile
+                app_process = profile.get('application_process', {})
+                app_deadlines = app_process.get('application_deadlines', [])
+                
+                if not app_deadlines:
+                    # Try alternate paths
+                    app_deadlines = profile.get('application_deadlines', [])
+                
+                if not app_deadlines:
+                    logger.info(f"[DEADLINES] No deadlines found for {uni_id}")
+                    continue
+                
+                for deadline in app_deadlines:
+                    plan_type = deadline.get('plan_type', 'Unknown')
+                    date_str = deadline.get('date')
+                    is_binding = deadline.get('is_binding', False)
+                    notes = deadline.get('notes', '')
+                    
+                    # Determine if this is the user's chosen plan
+                    is_user_plan = False
+                    if user_plan:
+                        # Match user plan to deadline type
+                        plan_lower = plan_type.lower()
+                        user_plan_lower = user_plan.lower()
+                        if user_plan_lower in plan_lower or plan_lower.startswith(user_plan_lower[:2]):
+                            is_user_plan = True
+                    
+                    deadlines.append({
+                        'university_id': uni_id,
+                        'university_name': uni_name,
+                        'plan_type': plan_type,
+                        'date': date_str,
+                        'is_binding': is_binding,
+                        'is_user_plan': is_user_plan,
+                        'notes': notes,
+                        'user_application_plan': user_plan
+                    })
+                    
+            except Exception as e:
+                logger.warning(f"[DEADLINES] Error fetching {uni_id}: {e}")
+                continue
+        
+        # Sort by date
+        def parse_date(d):
+            try:
+                return datetime.strptime(d.get('date', '9999-12-31'), '%Y-%m-%d')
+            except:
+                return datetime(9999, 12, 31)
+        
+        deadlines.sort(key=parse_date)
+        
+        logger.info(f"[DEADLINES] Fetched {len(deadlines)} deadlines for {user_id}")
+        
+        return {
+            "success": True,
+            "deadlines": deadlines,
+            "university_count": len(university_ids)
+        }
+        
+    except Exception as e:
+        logger.error(f"[DEADLINES] Error: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
+
+
+def update_application_plan(user_id: str, university_id: str, application_plan: str) -> dict:
+    """
+    Update the user's chosen application plan (ED, EA, RD, etc.) for a specific university.
+    
+    Args:
+        user_id: User's email
+        university_id: The university ID
+        application_plan: The plan type ('ED', 'ED2', 'EA', 'REA', 'RD', or None)
+    
+    Returns:
+        dict with success status
+    """
+    try:
+        es_client = get_elasticsearch_client()
+        
+        # Normalize ID for lookup
+        normalized_id = normalize_university_id(university_id)
+        doc_id = f"{user_id}_{normalized_id}"
+        
+        # Get existing document
+        try:
+            existing = es_client.get(index=ES_LIST_ITEMS_INDEX, id=doc_id)
+        except:
+            return {
+                "success": False,
+                "error": f"University {university_id} not found in your college list"
+            }
+        
+        # Update the application_plan field
+        update_body = {
+            "doc": {
+                "application_plan": application_plan,
+                "updated_at": datetime.utcnow().isoformat()
+            }
+        }
+        
+        es_client.update(index=ES_LIST_ITEMS_INDEX, id=doc_id, body=update_body, refresh=True)
+        
+        logger.info(f"[DEADLINES] Updated application_plan to {application_plan} for {user_id}/{university_id}")
+        
+        return {
+            "success": True,
+            "university_id": university_id,
+            "application_plan": application_plan,
+            "message": f"Application plan set to {application_plan or 'None'}"
+        }
+        
+    except Exception as e:
+        logger.error(f"[DEADLINES] Update error: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
 
 
 def handle_get_college_list(request):
@@ -5247,6 +5432,37 @@ def profile_manager_es_http_entry(request):
                 return add_cors_headers({'success': False, 'error': 'user_email and conversation_id required'}, 400)
             
             result = delete_fit_chat_conversation(user_email, conversation_id)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        # ============================================
+        # DEADLINE TRACKER ENDPOINTS
+        # ============================================
+        
+        elif resource_type == 'get-deadlines' and request.method in ['GET', 'POST']:
+            # Get all deadlines for user's saved schools
+            if request.method == 'GET':
+                user_email = request.args.get('user_email')
+            else:
+                data = request.get_json() or {}
+                user_email = data.get('user_email')
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            result = get_user_deadlines(user_email)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        elif resource_type == 'update-application-plan' and request.method == 'POST':
+            # Update user's application plan for a specific university
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            university_id = data.get('university_id')
+            application_plan = data.get('application_plan')  # Can be None to clear
+            
+            if not user_email or not university_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
+            
+            result = update_application_plan(user_email, university_id, application_plan)
             return add_cors_headers(result, 200 if result.get('success') else 400)
         
         else:

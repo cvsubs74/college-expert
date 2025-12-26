@@ -26,6 +26,7 @@ import CreditsUpgradeModal from '../components/CreditsUpgradeModal';
 import FitChatWidget from '../components/FitChatWidget';
 import FitInfographicView from '../components/FitInfographicView';
 import FitAnalysisPage from '../components/FitAnalysisPage';
+import DeadlineTracker from '../components/DeadlineTracker';
 import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 
 // Fit category configuration - Uses Stratia theme colors
@@ -2329,6 +2330,16 @@ const MyLaunchpad = () => {
                         </span>
                     </button>
                 ))}
+            </div>
+
+            {/* Deadline Tracker - Prominent position at top */}
+            <div className="mb-6">
+                <DeadlineTracker
+                    onSchoolClick={(universityId) => {
+                        const college = collegeList.find(c => c.university_id === universityId);
+                        if (college) handleOpenFitModal(college);
+                    }}
+                />
             </div>
 
             {/* Smart Discovery Panel */}
