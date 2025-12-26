@@ -460,6 +460,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 ES_LIST_ITEMS_INDEX = os.getenv("ES_LIST_ITEMS_INDEX", "student_college_list")
 ES_FITS_INDEX = os.getenv("ES_FITS_INDEX", "student_college_fits")
 ES_CREDITS_INDEX = os.getenv("ES_CREDITS_INDEX", "user_credits")
+ES_CHAT_CONVERSATIONS_INDEX = os.getenv("ES_CHAT_CONVERSATIONS_INDEX", "fit_chat_conversations")
 
 # Note: genai.Client is created per-request in each function
 
@@ -3293,6 +3294,252 @@ RULES:
         }
 
 
+# ============================================
+# FIT CHAT CONVERSATION HISTORY FUNCTIONS
+# ============================================
+
+def save_fit_chat_conversation(user_id: str, university_id: str, university_name: str, 
+                               messages: list, conversation_id: str = None, title: str = None) -> dict:
+    """
+    Save or update a fit chat conversation.
+    
+    Args:
+        user_id: The user's email
+        university_id: The university ID
+        university_name: The university display name
+        messages: List of {role, content} message dicts
+        conversation_id: Optional existing ID to update (None creates new)
+        title: Optional conversation title (auto-generated if not provided)
+    
+    Returns:
+        dict with success status and conversation_id
+    """
+    try:
+        es_client = get_elasticsearch_client()
+        
+        # Generate conversation ID if not provided
+        if not conversation_id:
+            conversation_id = f"{user_id}_{university_id}_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}"
+        
+        # Auto-generate title from first user message if not provided
+        if not title and messages:
+            for msg in messages:
+                if msg.get('role') == 'user':
+                    first_question = msg.get('content', '')[:50]
+                    title = first_question + ('...' if len(msg.get('content', '')) > 50 else '')
+                    break
+        
+        if not title:
+            title = f"Chat with {university_name}"
+        
+        # Build document
+        doc = {
+            "user_email": user_id,
+            "university_id": university_id,
+            "university_name": university_name,
+            "conversation_id": conversation_id,
+            "title": title,
+            "messages": json.dumps(messages),
+            "message_count": len(messages),
+            "created_at": datetime.utcnow().isoformat(),
+            "updated_at": datetime.utcnow().isoformat()
+        }
+        
+        # Check if updating existing
+        doc_id = conversation_id
+        try:
+            existing = es_client.get(index=ES_CHAT_CONVERSATIONS_INDEX, id=doc_id)
+            # Preserve original created_at
+            doc["created_at"] = existing['_source'].get('created_at', doc["created_at"])
+        except:
+            pass  # New document
+        
+        # Save to ES
+        es_client.index(index=ES_CHAT_CONVERSATIONS_INDEX, id=doc_id, body=doc)
+        
+        logger.info(f"[CHAT_HISTORY] Saved conversation {conversation_id} for {user_id}/{university_id}")
+        
+        return {
+            "success": True,
+            "conversation_id": conversation_id,
+            "title": title
+        }
+        
+    except Exception as e:
+        logger.error(f"[CHAT_HISTORY] Save failed: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
+
+
+def list_fit_chat_conversations(user_id: str, university_id: str = None, limit: int = 20) -> dict:
+    """
+    List saved conversations for a user, optionally filtered by university.
+    
+    Args:
+        user_id: The user's email
+        university_id: Optional filter by university
+        limit: Max conversations to return
+    
+    Returns:
+        dict with success status and conversations list
+    """
+    try:
+        es_client = get_elasticsearch_client()
+        
+        # Build query - use .keyword for exact matching on text fields
+        must_clauses = [{"term": {"user_email.keyword": user_id}}]
+        if university_id:
+            must_clauses.append({"term": {"university_id.keyword": university_id}})
+        
+        search_body = {
+            "query": {"bool": {"must": must_clauses}},
+            "sort": [{"updated_at": {"order": "desc"}}],
+            "size": limit,
+            "_source": ["conversation_id", "university_id", "university_name", "title", 
+                       "message_count", "created_at", "updated_at"]
+        }
+        
+        response = es_client.search(index=ES_CHAT_CONVERSATIONS_INDEX, body=search_body)
+        
+        conversations = []
+        for hit in response['hits']['hits']:
+            conv = hit['_source']
+            conversations.append({
+                "conversation_id": conv.get("conversation_id"),
+                "university_id": conv.get("university_id"),
+                "university_name": conv.get("university_name"),
+                "title": conv.get("title"),
+                "message_count": conv.get("message_count", 0),
+                "created_at": conv.get("created_at"),
+                "updated_at": conv.get("updated_at")
+            })
+        
+        logger.info(f"[CHAT_HISTORY] Listed {len(conversations)} conversations for {user_id}")
+        
+        return {
+            "success": True,
+            "conversations": conversations,
+            "count": len(conversations)
+        }
+        
+    except Exception as e:
+        logger.error(f"[CHAT_HISTORY] List failed: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e),
+            "conversations": []
+        }
+
+
+def load_fit_chat_conversation(user_id: str, conversation_id: str) -> dict:
+    """
+    Load a specific conversation by ID.
+    
+    Args:
+        user_id: The user's email (for ownership verification)
+        conversation_id: The conversation ID to load
+    
+    Returns:
+        dict with success status and full conversation data
+    """
+    try:
+        es_client = get_elasticsearch_client()
+        
+        # Get by ID
+        try:
+            result = es_client.get(index=ES_CHAT_CONVERSATIONS_INDEX, id=conversation_id)
+        except:
+            return {
+                "success": False,
+                "error": "Conversation not found"
+            }
+        
+        conversation = result['_source']
+        
+        # Verify ownership
+        if conversation.get("user_email") != user_id:
+            return {
+                "success": False,
+                "error": "Not authorized to access this conversation"
+            }
+        
+        # Parse messages
+        messages = []
+        try:
+            messages = json.loads(conversation.get("messages", "[]"))
+        except:
+            pass
+        
+        logger.info(f"[CHAT_HISTORY] Loaded conversation {conversation_id} for {user_id}")
+        
+        return {
+            "success": True,
+            "conversation": {
+                "conversation_id": conversation.get("conversation_id"),
+                "university_id": conversation.get("university_id"),
+                "university_name": conversation.get("university_name"),
+                "title": conversation.get("title"),
+                "messages": messages,
+                "created_at": conversation.get("created_at"),
+                "updated_at": conversation.get("updated_at")
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"[CHAT_HISTORY] Load failed: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
+
+
+def delete_fit_chat_conversation(user_id: str, conversation_id: str) -> dict:
+    """
+    Delete a conversation by ID.
+    
+    Args:
+        user_id: The user's email (for ownership verification)
+        conversation_id: The conversation ID to delete
+    
+    Returns:
+        dict with success status
+    """
+    try:
+        es_client = get_elasticsearch_client()
+        
+        # First verify ownership
+        try:
+            result = es_client.get(index=ES_CHAT_CONVERSATIONS_INDEX, id=conversation_id)
+            if result['_source'].get("user_email") != user_id:
+                return {
+                    "success": False,
+                    "error": "Not authorized to delete this conversation"
+                }
+        except:
+            return {
+                "success": False,
+                "error": "Conversation not found"
+            }
+        
+        # Delete
+        es_client.delete(index=ES_CHAT_CONVERSATIONS_INDEX, id=conversation_id)
+        
+        logger.info(f"[CHAT_HISTORY] Deleted conversation {conversation_id} for {user_id}")
+        
+        return {
+            "success": True,
+            "deleted": conversation_id
+        }
+        
+    except Exception as e:
+        logger.error(f"[CHAT_HISTORY] Delete failed: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
+
 def handle_get_fits(request):
     """
     Get pre-computed fits for a user from the new separated fits index.
@@ -4938,6 +5185,68 @@ def profile_manager_es_http_entry(request):
                 return add_cors_headers({'success': False, 'error': 'university_id and question required'}, 400)
             
             result = fit_chat(user_email, university_id, question, history)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        # --- FIT CHAT CONVERSATION SAVE ---
+        elif resource_type == 'fit-chat-save' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            university_name = data.get('university_name', university_id)
+            messages = data.get('messages', [])
+            conversation_id = data.get('conversation_id')  # Optional for updates
+            title = data.get('title')  # Optional, auto-generated if not provided
+            
+            if not user_email or not university_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
+            if not messages:
+                return add_cors_headers({'success': False, 'error': 'messages required'}, 400)
+            
+            result = save_fit_chat_conversation(user_email, university_id, university_name, 
+                                               messages, conversation_id, title)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        # --- FIT CHAT CONVERSATION LIST ---
+        elif resource_type == 'fit-chat-list' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id') or request.args.get('university_id')  # Optional filter
+            limit = int(data.get('limit') or request.args.get('limit') or 20)
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            result = list_fit_chat_conversations(user_email, university_id, limit)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        # --- FIT CHAT CONVERSATION LOAD ---
+        elif resource_type == 'fit-chat-load' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+            else:
+                data = {}
+            user_email = data.get('user_email') or request.args.get('user_email') or request.headers.get('X-User-Email')
+            conversation_id = data.get('conversation_id') or request.args.get('conversation_id')
+            
+            if not user_email or not conversation_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and conversation_id required'}, 400)
+            
+            result = load_fit_chat_conversation(user_email, conversation_id)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        # --- FIT CHAT CONVERSATION DELETE ---
+        elif resource_type == 'fit-chat-delete' and request.method in ['POST', 'DELETE']:
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            conversation_id = data.get('conversation_id')
+            
+            if not user_email or not conversation_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and conversation_id required'}, 400)
+            
+            result = delete_fit_chat_conversation(user_email, conversation_id)
             return add_cors_headers(result, 200 if result.get('success') else 400)
         
         else:
