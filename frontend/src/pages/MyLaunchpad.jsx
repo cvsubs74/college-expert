@@ -14,7 +14,7 @@ import {
     XMarkIcon,
     AcademicCapIcon
 } from '@heroicons/react/24/outline';
-import { getCollegeList, updateCollegeList, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, getFitsByCategory, getPrecomputedFits, getBalancedList, generateFitInfographic } from '../services/api';
+import { getCollegeList, updateCollegeList, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, getFitsByCategory, getPrecomputedFits, getBalancedList } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
 import { Link } from 'react-router-dom';
@@ -1286,23 +1286,7 @@ IMMEDIATELY search and provide recommendations. No clarifying questions.`;
                     computeSingleFit(currentUser.email, rec.id).then(async fitResult => {
                         if (fitResult.success) {
                             console.log(`[Smart Discovery] Fit computed for ${rec.name}: ${fitResult.fit_analysis?.fit_category}`);
-
-                            // After fit, generate infographic
-                            setProcessingColleges(prev => ({ ...prev, [rec.id]: 'infographic' }));
-                            console.log(`[Smart Discovery] Generating infographic for: ${rec.name}`);
-
-                            try {
-                                const infographicResult = await generateFitInfographic(currentUser.email, rec.id, false);
-                                if (infographicResult.success) {
-                                    console.log(`[Smart Discovery] Infographic generated for ${rec.name}`);
-                                } else {
-                                    console.warn(`[Smart Discovery] Infographic generation failed for ${rec.name}`);
-                                }
-                            } catch (err) {
-                                console.warn(`[Smart Discovery] Infographic error for ${rec.name}:`, err);
-                            }
-
-                            // Mark as done
+                            // Infographic generation removed - using static CSS template
                             setProcessingColleges(prev => ({ ...prev, [rec.id]: 'done' }));
                         } else {
                             console.warn(`[Smart Discovery] Fit computation failed for ${rec.name}`);
@@ -1907,26 +1891,7 @@ const MyLaunchpad = () => {
 
                 setCollegeList(colleges);
 
-                // Backfill missing infographics in background
-                // This handles colleges added before the "generate on add" fix
-                colleges.forEach(college => {
-                    const hasFit = (college.fit_analysis && Object.keys(college.fit_analysis).length > 0) || (college.match_score > 0);
-                    const hasInfographic = college.infographic_url || (college.fit_analysis && college.fit_analysis.infographic_url);
-
-                    if (hasFit && !hasInfographic) {
-                        // Use a small timeout to not block main thread rendering
-                        setTimeout(() => {
-                            console.log(`[Launchpad] Backfilling infographic for ${college.university_name}...`);
-                            generateFitInfographic(currentUser.email, college.university_id, false)
-                                .then(result => {
-                                    if (result.success && result.infographic_url && !result.from_cache) {
-                                        console.log(`[Launchpad] Backfilled infographic for ${college.university_name}`);
-                                    }
-                                })
-                                .catch(err => console.error(`[Launchpad] Failed to backfill infographic for ${college.university_name}:`, err));
-                        }, 1000 + (Math.random() * 2000)); // Stagger slightly
-                    }
-                });
+                // Infographic backfill removed - using static CSS template instead
             } else {
                 setError(listResult.error || 'Failed to load college list');
             }

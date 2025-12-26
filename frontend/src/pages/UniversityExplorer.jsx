@@ -35,7 +35,7 @@ import {
 import { StarIcon as StarIconSolid, FilmIcon } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, generateFitInfographic } from '../services/api';
+import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
 import { useToast } from '../components/Toast';
@@ -891,23 +891,8 @@ const UniversityExplorer = () => {
                         }
 
                         console.log(`[Fit] Computed: ${university.name} -> ${fitResult?.fit_analysis?.fit_category || 'N/A'}`);
-                        setAnalysisModal(prev => ({ ...prev, step: 'infographic', progress: 50 }));
-
-                        // Generate infographic - NOW AWAITED (not background)
-                        console.log(`[Infographic] Generating for ${university.name}...`);
-                        try {
-                            const infographicResult = await generateFitInfographic(currentUser.email, university.id, false);
-                            if (infographicResult.success) {
-                                console.log(`[Infographic] Generated for ${university.name} (cached=${infographicResult.from_cache})`);
-                            } else {
-                                console.warn('[Infographic] Failed:', infographicResult.error);
-                            }
-                        } catch (infographicErr) {
-                            console.error('[Infographic] Error:', infographicErr);
-                            // Don't fail the whole process for infographic errors
-                        }
-
-                        setAnalysisModal(prev => ({ ...prev, progress: 75 }));
+                        // Infographic generation removed - using static CSS template instead
+                        setAnalysisModal(prev => ({ ...prev, step: 'refreshing', progress: 75 }));
 
                         // Refresh precomputed fits to get the new fit
                         const fitsResult = await getPrecomputedFits(currentUser.email, {}, 500, 'rank');
@@ -2055,14 +2040,14 @@ const UniversityExplorer = () => {
                         {analysisModal.step !== 'complete' && analysisModal.step !== 'error' && (
                             <div className="mb-6">
                                 <div className="flex justify-between text-sm text-gray-500 mb-2">
-                                    <span className={analysisModal.step === 'fit' ? 'text-[#1A4D2E] font-medium' : ''}>
-                                        {analysisModal.step === 'fit' ? '⏳' : '✓'} Fit Analysis
+                                    <span className={analysisModal.step === 'fit' ? 'text-[#1A4D2E] font-medium' : 'text-gray-400'}>
+                                        {analysisModal.step === 'fit' ? '⏳' : '✓'} Computing Fit
                                     </span>
-                                    <span className={analysisModal.step === 'infographic' ? 'text-[#1A4D2E] font-medium' : ''}>
-                                        {analysisModal.progress >= 50 ? (analysisModal.progress > 50 ? '✓' : '⏳') : '○'} Infographic
+                                    <span className={analysisModal.step === 'refreshing' ? 'text-[#1A4D2E] font-medium' : 'text-gray-400'}>
+                                        {analysisModal.progress >= 75 ? '✓' : analysisModal.step === 'refreshing' ? '⏳' : '○'} Refreshing
                                     </span>
-                                    <span className={analysisModal.progress >= 75 ? 'text-[#1A4D2E] font-medium' : ''}>
-                                        {analysisModal.progress >= 75 ? '⏳' : '○'} Saving
+                                    <span className={analysisModal.step === 'saving' || analysisModal.progress >= 90 ? 'text-[#1A4D2E] font-medium' : 'text-gray-400'}>
+                                        {analysisModal.progress >= 95 ? '✓' : analysisModal.progress >= 90 ? '⏳' : '○'} Saving
                                     </span>
                                 </div>
 

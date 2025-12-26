@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { generateFitInfographic, checkCredits, deductCredit } from '../../services/api';
+import { checkCredits, deductCredit } from '../../services/api';
 import {
     ArrowLeftIcon,
     AcademicCapIcon,
@@ -807,69 +807,10 @@ const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
         checkUserCredits();
     }, [currentUser?.email]);
 
-    // Generate infographic on mount if not already cached
-    // forceRegenerate = true costs 1 credit (regeneration)
-    // forceRegenerate = false is free (initial load or cached)
-    const handleGenerateInfographic = useCallback(async (forceRegenerate = false) => {
-        if (!currentUser?.email || !university?.id) {
-            console.log('[Infographic] Missing user or university ID');
-            return;
-        }
-
-        // If regenerating (forceRegenerate=true), check and deduct credits first
-        if (forceRegenerate) {
-            const creditCheck = await checkCredits(currentUser.email, 1);
-            if (!creditCheck.has_credits) {
-                setGenerationError('Insufficient credits. Regenerating an infographic costs 1 credit.');
-                return;
-            }
-
-            // Confirm with user
-            const confirmed = window.confirm(
-                'Regenerating the infographic will use 1 credit. Continue?'
-            );
-            if (!confirmed) {
-                return;
-            }
-
-            // Deduct credit before regeneration
-            const deductResult = await deductCredit(currentUser.email, 1, 'infographic_regeneration');
-            if (!deductResult.success) {
-                setGenerationError('Failed to deduct credit. Please try again.');
-                return;
-            }
-            console.log(`[Infographic] Deducted 1 credit. Remaining: ${deductResult.credits_remaining}`);
-        }
-
-        setIsGenerating(true);
-        setGenerationError(null);
-
-        try {
-            const universityId = university.id || university.name?.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
-            console.log(`[Infographic] Generating for ${universityId} (force=${forceRegenerate})...`);
-
-            const result = await generateFitInfographic(currentUser.email, universityId, forceRegenerate);
-
-            if (result.success && result.infographic_url) {
-                setInfographicUrl(result.infographic_url);
-                console.log(`[Infographic] Generated (cached=${result.from_cache}):`, result.infographic_url);
-            } else {
-                setGenerationError(result.error || 'Failed to generate infographic');
-            }
-        } catch (err) {
-            console.error('[Infographic] Error:', err);
-            setGenerationError(err.message || 'Failed to generate infographic');
-        } finally {
-            setIsGenerating(false);
-        }
-    }, [currentUser?.email, university?.id, university?.name]);
-
-    // Auto-generate on mount
-    useEffect(() => {
-        if (fitAnalysis && currentUser?.email && university?.id && !infographicUrl && !isGenerating) {
-            handleGenerateInfographic(false);
-        }
-    }, [fitAnalysis, currentUser?.email, university?.id]);
+    // ==========================================
+    // INFOGRAPHIC GENERATION REMOVED
+    // Using static CSS template (FitInfographicView) instead
+    // ==========================================
 
     if (!fitAnalysis) {
         return (

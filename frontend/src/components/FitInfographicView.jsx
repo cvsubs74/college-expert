@@ -378,34 +378,50 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
             )}
 
             {/* ===== SECTION F: TEST STRATEGY (NEW) ===== */}
-            {data.testStrategy && data.testStrategy.recommendation && (
-                <div className="p-5 border-b border-gray-200 bg-gray-50">
-                    <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
-                        <AcademicCapIcon className="w-5 h-5 text-purple-500" />
-                        Test Strategy
-                    </h3>
-                    <div className="flex items-center gap-4">
-                        <span className={`px-3 py-1.5 rounded-full text-sm font-bold ${data.testStrategy.recommendation === 'Submit' ? 'bg-green-100 text-green-800' :
-                            data.testStrategy.recommendation === 'Test Optional' ? 'bg-amber-100 text-amber-800' :
-                                'bg-gray-100 text-gray-800'
-                            }`}>
-                            {data.testStrategy.recommendation}
-                        </span>
-                        {data.testStrategy.student_score_position && (
-                            <span className="text-sm text-gray-600">
-                                Your score: <strong className={
-                                    data.testStrategy.student_score_position.includes('above') ? 'text-green-600' :
-                                        data.testStrategy.student_score_position.includes('below') ? 'text-red-600' :
-                                            'text-gray-600'
-                                }>{data.testStrategy.student_score_position}</strong>
+            {data.testStrategy && data.testStrategy.recommendation && (() => {
+                // Detect if school is test-blind from rationale
+                const isTestBlind = data.testStrategy.rationale?.toLowerCase().includes('test-blind') ||
+                    data.testStrategy.rationale?.toLowerCase().includes('test blind') ||
+                    data.testStrategy.rationale?.toLowerCase().includes('does not consider') ||
+                    data.testStrategy.rationale?.toLowerCase().includes('do not consider');
+
+                return (
+                    <div className="p-5 border-b border-gray-200 bg-gray-50">
+                        <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                            <AcademicCapIcon className="w-5 h-5 text-purple-500" />
+                            Test Strategy
+                        </h3>
+                        <div className="flex items-center gap-4">
+                            <span className={`px-3 py-1.5 rounded-full text-sm font-bold ${isTestBlind ? 'bg-blue-100 text-blue-800' :
+                                    data.testStrategy.recommendation === 'Submit' ? 'bg-green-100 text-green-800' :
+                                        data.testStrategy.recommendation === 'Test Optional' ? 'bg-amber-100 text-amber-800' :
+                                            'bg-gray-100 text-gray-800'
+                                }`}>
+                                {isTestBlind ? 'Test Blind' : data.testStrategy.recommendation}
                             </span>
+                            {/* Only show score position if NOT test-blind */}
+                            {!isTestBlind && data.testStrategy.student_score_position && (
+                                <span className="text-sm text-gray-600">
+                                    Your score: <strong className={
+                                        data.testStrategy.student_score_position.includes('above') ? 'text-green-600' :
+                                            data.testStrategy.student_score_position.includes('below') ? 'text-red-600' :
+                                                'text-gray-600'
+                                    }>{data.testStrategy.student_score_position}</strong>
+                                </span>
+                            )}
+                            {/* Show test-blind message */}
+                            {isTestBlind && (
+                                <span className="text-sm text-blue-600 font-medium">
+                                    Scores not considered
+                                </span>
+                            )}
+                        </div>
+                        {data.testStrategy.rationale && (
+                            <p className="text-xs text-gray-500 mt-2 line-clamp-2">{data.testStrategy.rationale}</p>
                         )}
                     </div>
-                    {data.testStrategy.rationale && (
-                        <p className="text-xs text-gray-500 mt-2 line-clamp-2">{data.testStrategy.rationale}</p>
-                    )}
-                </div>
-            )}
+                );
+            })()}
 
             {/* ===== SECTION G: RED FLAGS (NEW) ===== */}
             {data.redFlags && data.redFlags.length > 0 && (
