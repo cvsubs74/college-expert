@@ -532,13 +532,20 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, isOpen, onCl
 
                 {/* Conversation History Dropdown */}
                 {showHistory && (
-                    <div className="border-b bg-gray-50 min-h-[120px] max-h-64 overflow-y-auto">
-                        <div className="p-2">
-                            <p className="text-xs text-gray-500 px-2 mb-2">Past Conversations</p>
+                    <div className="border-b-2 border-gray-200 bg-white shadow-sm">
+                        {/* Clickable header to collapse */}
+                        <div
+                            onClick={() => setShowHistory(false)}
+                            className="flex items-center justify-between px-4 py-2 bg-gray-100 cursor-pointer hover:bg-gray-150 border-b border-gray-200"
+                        >
+                            <span className="text-xs font-medium text-gray-600">Past Conversations ({savedConversations.length})</span>
+                            <ChevronDownIcon className="h-4 w-4 text-gray-400 transform rotate-180" />
+                        </div>
+                        <div className="p-2 max-h-48 overflow-y-auto">
                             {loadingHistory ? (
                                 <div className="text-center py-4 text-gray-400 text-sm">Loading...</div>
                             ) : savedConversations.length === 0 ? (
-                                <div className="text-center py-4 text-gray-400 text-sm">No saved conversations</div>
+                                <div className="text-center py-4 text-gray-400 text-sm">No saved conversations yet</div>
                             ) : (
                                 <div className="space-y-1">
                                     {savedConversations.map((conv) => (
