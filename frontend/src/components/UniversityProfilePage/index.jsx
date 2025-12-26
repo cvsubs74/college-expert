@@ -845,7 +845,7 @@ const UpdatedFitAnalysisTab = ({ fitAnalysis, university }) => {
         setGenerationError(null);
 
         try {
-            const universityId = university.id || university.name?.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+            const universityId = university.id || university.name?.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
             console.log(`[Infographic] Generating for ${universityId} (force=${forceRegenerate})...`);
 
             const result = await generateFitInfographic(currentUser.email, universityId, forceRegenerate);

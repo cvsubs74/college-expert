@@ -12,7 +12,7 @@ import { addUserCredits, upgradeSubscription } from '../services/api';
 const PaymentSuccess = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
-    const { fetchPurchases, refreshCredits } = usePayment();
+    const { fetchPurchases, fetchCredits } = usePayment();
     const { currentUser } = useAuth();
     const [loading, setLoading] = useState(true);
     const [creditsAdded, setCreditsAdded] = useState(0);
@@ -53,8 +53,8 @@ const PaymentSuccess = () => {
                     }
 
                     // Refresh credits in context
-                    if (refreshCredits) {
-                        await refreshCredits();
+                    if (fetchCredits) {
+                        await fetchCredits();
                     }
                 }
             } catch (error) {
@@ -69,7 +69,7 @@ const PaymentSuccess = () => {
         } else {
             setLoading(false);
         }
-    }, [sessionId, fetchPurchases, currentUser?.email, refreshCredits]);
+    }, [sessionId, fetchPurchases, currentUser?.email, fetchCredits]);
 
     return (
         <div className="min-h-screen bg-[#FDFCF7] flex items-center justify-center px-6">

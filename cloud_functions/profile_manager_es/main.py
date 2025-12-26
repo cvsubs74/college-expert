@@ -1950,13 +1950,38 @@ def handle_update_college_list(request):
         
         es_client = get_elasticsearch_client()
         
-        # Normalize university ID for consistent matching with fits
-        original_uni_id = university['id']
-        normalized_uni_id = normalize_university_id(original_uni_id)
+        # Get the ID from the request - but we need to look up the EXACT ES ID from KB
+        # because cached data (like precomputed fits) may have old normalized (lowercase) IDs
+        requested_uni_id = university['id']
+        
+        # Try to find the exact ES ID from the knowledge base
+        # This handles cases where frontend sends lowercase ID from cached data
+        exact_es_id = None
+        try:
+            # First try the requested ID directly
+            kb_response = requests.get(
+                f"{KNOWLEDGE_BASE_UNIVERSITIES_URL}?university_id={requested_uni_id}",
+                timeout=10
+            )
+            if kb_response.status_code == 200:
+                kb_data = kb_response.json()
+                if kb_data.get('success') and kb_data.get('university'):
+                    exact_es_id = kb_data['university'].get('_id') or requested_uni_id
+                    logger.info(f"[LIST] Found exact ES ID: {exact_es_id}")
+        except Exception as e:
+            logger.warning(f"[LIST] Could not lookup exact ES ID: {e}")
+        
+        # Use exact ES ID if found, otherwise fall back to requested ID
+        original_uni_id = exact_es_id if exact_es_id else requested_uni_id
+        logger.info(f"[LIST] Using university ID: {original_uni_id} (requested: {requested_uni_id})")
+        
+        # NOTE: We use a sanitized version for doc_id generation (to avoid special chars)
+        # but store the exact ID for fetching university profiles
+        sanitized_id = original_uni_id.replace(' ', '_').replace('-', '_')
         
         # Generate unique document ID for this user+university pair
         email_hash = hashlib.md5(user_id.encode()).hexdigest()[:8]
-        doc_id = f"{email_hash}_{normalized_uni_id}"
+        doc_id = f"{email_hash}_{sanitized_id}"
         
         if action == 'add':
             # Check if already exists
@@ -1979,15 +2004,15 @@ def handle_update_college_list(request):
                 intended_major = get_intended_major_from_profile(es_client, user_id)
                 logger.info(f"[LIST] Auto-populated intended_major from profile: {intended_major}")
             
-            # Create new list item document with normalized ID
+            # Create new list item document with EXACT ES ID (not normalized)
+            # NOTE: intended_major is NOT stored per-college - always read from profile
             list_doc = {
                 'user_email': user_id,
-                'university_id': normalized_uni_id,  # Use normalized ID for matching with fits
+                'university_id': original_uni_id,  # Use EXACT ES ID for fetching profiles
                 'university_name': university.get('name', ''),
                 'status': 'favorites',
                 'added_at': datetime.utcnow().isoformat(),
-                'updated_at': datetime.utcnow().isoformat(),
-                'intended_major': intended_major
+                'updated_at': datetime.utcnow().isoformat()
             }
             
             es_client.index(index=ES_LIST_ITEMS_INDEX, id=doc_id, body=list_doc, refresh=True)
@@ -2036,8 +2061,8 @@ def get_user_college_list(es_client, user_id):
             'university_id': item.get('university_id'),
             'university_name': item.get('university_name'),
             'status': item.get('status', 'favorites'),
-            'added_at': item.get('added_at'),
-            'intended_major': item.get('intended_major')
+            'added_at': item.get('added_at')
+            # NOTE: intended_major removed - always read from profile
         })
     return college_list
 
@@ -2251,7 +2276,7 @@ def handle_get_college_list(request):
                 'status': item.get('status', 'favorites'),
                 'order': item.get('order'),
                 'added_at': item.get('added_at'),
-                'intended_major': item.get('intended_major'),
+                # NOTE: intended_major removed - always read from profile
                 'notes': item.get('student_notes'),
                 # Enriched fields from knowledge base
                 'location': location_str,
@@ -2376,6 +2401,47 @@ def handle_compute_single_fit(request):
         
         logger.info(f"[COMPUTE_SINGLE_FIT] Request for {university_id} for user {user_id}, force={force_recompute}")
         
+        # IMPORTANT: Lookup exact ES ID from Knowledge Base
+        # Frontend may send cached lowercase IDs from precomputed fits
+        requested_university_id = university_id
+        try:
+            kb_response = requests.get(
+                f"{KNOWLEDGE_BASE_UNIVERSITIES_URL}?university_id={university_id}",
+                timeout=10
+            )
+            if kb_response.status_code == 200:
+                kb_data = kb_response.json()
+                if kb_data.get('success') and kb_data.get('university'):
+                    exact_es_id = kb_data['university'].get('_id')
+                    if exact_es_id and exact_es_id != university_id:
+                        logger.info(f"[COMPUTE_SINGLE_FIT] Resolved exact ES ID: {exact_es_id} (was: {university_id})")
+                        university_id = exact_es_id
+        except Exception as e:
+            logger.warning(f"[COMPUTE_SINGLE_FIT] Could not lookup exact ES ID: {e}")
+        
+        es_client = get_elasticsearch_client()
+        
+        # If intended_major not provided, get it from user's profile
+        if not intended_major:
+            # Get from flat profile field first, fallback to content extraction
+            try:
+                search_body = {
+                    "size": 1,
+                    "query": {"term": {"user_id.keyword": user_id}},
+                    "_source": ["intended_major", "content"],
+                    "sort": [{"indexed_at": {"order": "desc"}}]
+                }
+                response = es_client.search(index=ES_INDEX_NAME, body=search_body)
+                if response['hits']['total']['value'] > 0:
+                    profile_doc = response['hits']['hits'][0]['_source']
+                    intended_major = profile_doc.get('intended_major', '')
+                    if not intended_major:
+                        # Fallback to extracting from content
+                        intended_major = get_intended_major_from_profile(es_client, user_id)
+                    logger.info(f"[COMPUTE_SINGLE_FIT] Auto-fetched intended_major from profile: '{intended_major}'")
+            except Exception as e:
+                logger.warning(f"[COMPUTE_SINGLE_FIT] Could not fetch intended_major: {e}")
+        
         # Check credits before computing (skip for cache hits, handled below)
         skip_credit_check = data.get('skip_credit_check', False)  # For internal/batch calls
         credit_check = check_credits_available(user_id, 1)
@@ -2388,7 +2454,6 @@ def handle_compute_single_fit(request):
                 'upgrade_required': True
             }, 402)  # 402 Payment Required
         
-        es_client = get_elasticsearch_client()
         email_hash = hashlib.md5(user_id.encode()).hexdigest()[:8]
         doc_id = f"{email_hash}_{university_id}"
         
@@ -2558,13 +2623,16 @@ def handle_recalculate_all_fits(request):
                 'count': 0
             }, 200)
         
+        # Get intended_major from profile (not stored per-college)
+        intended_major = get_intended_major_from_profile(es_client, user_id) or current_doc.get('intended_major', '')
+        logger.info(f"[FIT] Using intended_major from profile: '{intended_major}'")
+        
         # Recalculate fit for each college
         updated_count = 0
         for college in college_list:
             university_id = college.get('university_id')
-            intended_major = college.get('intended_major', '')
             
-            logger.info(f"[FIT] Recalculating fit for {university_id}")
+            logger.info(f"[FIT] Recalculating fit for {university_id} with major='{intended_major}'")
             new_fit = calculate_fit_for_college(user_id, university_id, intended_major)
             
             if new_fit:
@@ -2630,10 +2698,17 @@ def fetch_university_profile(university_id, max_retries=3):
     # Note: time imported at module level
     
     # Build list of candidate IDs to try (handles variations in storage format)
-    # Some universities are stored with hyphens (e.g., university_of_wisconsin-madison)
-    # while normalized IDs use only underscores (university_of_wisconsin_madison)
+    # IMPORTANT: Try the ORIGINAL ID first (preserves casing like University_of_Chicago)
+    # Then try normalized/lowercased variants as fallbacks
     candidate_ids = []
     
+    # FIRST: Try the exact original ID as provided (preserves casing)
+    original_id = university_id.strip()
+    candidate_ids.append(original_id)
+    if not original_id.endswith('_slug'):
+        candidate_ids.append(f"{original_id}_slug")
+    
+    # SECOND: Try lowercased variant
     base_id = university_id.lower().strip()
     
     # Remove _slug suffix if present for base processing
@@ -3308,7 +3383,7 @@ def handle_get_fits(request):
                 return value if value is not None else default
             
             results.append({
-                'university_id': normalize_university_id(fit.get('university_id')),  # Normalized for matching
+                'university_id': fit.get('university_id'),  # Use EXACT ES ID (no normalization)
                 'university_name': fit.get('university_name'),
                 'fit_category': fit.get('fit_category'),
                 'match_score': fit.get('match_score'),
@@ -3386,7 +3461,7 @@ def handle_get_fits(request):
                     for uni in matching_unis:
                         location = uni.get('location', {})
                         results.append({
-                            'university_id': normalize_university_id(uni.get('university_id')),
+                            'university_id': uni.get('university_id'),  # Use EXACT ES ID
                             'university_name': uni.get('official_name'),
                             'fit_category': uni.get('soft_fit_category'),
                             'match_score': None,  # No personalized score for soft fits
@@ -3690,13 +3765,75 @@ def handle_update_structured_field(request):
         
         logger.info(f"[UPDATE_STRUCTURED_FIELD] Updated {field_path}: {old_value} -> {value} for {user_id}")
         
+        # IMPORTANT: Trigger fit recalculation if a "fit-affecting" field was updated
+        FIT_AFFECTING_FIELDS = {
+            'intended_major', 'gpa_weighted', 'gpa_unweighted', 'sat_total', 
+            'sat_math', 'sat_reading', 'act_composite', 'extracurriculars', 
+            'awards', 'courses', 'ap_exams', 'leadership_roles'
+        }
+        
+        fit_recomputation_results = []
+        if field_path in FIT_AFFECTING_FIELDS:
+            logger.info(f"[UPDATE_STRUCTURED_FIELD] Fit-affecting field '{field_path}' updated - triggering SYNCHRONOUS fit recomputation for {user_id}")
+            try:
+                # Get user's college list from the document we already have
+                college_list = doc_source.get('college_list', [])
+                if college_list:
+                    # Limit to first 10 universities to keep response time reasonable
+                    MAX_RECOMPUTE = 10
+                    universities_to_recompute = college_list[:MAX_RECOMPUTE]
+                    logger.info(f"[FIT_RECOMPUTE] Recomputing fits for {len(universities_to_recompute)} universities (max {MAX_RECOMPUTE})")
+                    
+                    # Get intended_major from profile (never stored per-college)
+                    if field_path == 'intended_major':
+                        # Use the newly updated value
+                        intended_major_for_fit = new_value if new_value else ''
+                    else:
+                        # Use profile's top-level intended_major field
+                        intended_major_for_fit = doc_source.get('intended_major', '')
+                    logger.info(f"[FIT_RECOMPUTE] Using intended_major from profile: '{intended_major_for_fit}'")
+                    
+                    for college in universities_to_recompute:
+                        university_id = college.get('university_id')
+                        if university_id:
+                            try:
+                                logger.info(f"[FIT_RECOMPUTE] Recomputing fit for {university_id}")
+                                result = calculate_fit_for_college(user_id, university_id, intended_major_for_fit)
+                                if result:
+                                    fit_recomputation_results.append({
+                                        'university_id': university_id,
+                                        'success': True,
+                                        'fit_category': result.get('fit_category')
+                                    })
+                                else:
+                                    fit_recomputation_results.append({
+                                        'university_id': university_id,
+                                        'success': False,
+                                        'error': 'No result returned'
+                                    })
+                            except Exception as fit_err:
+                                logger.warning(f"[FIT_RECOMPUTE] Error recomputing {university_id}: {fit_err}")
+                                fit_recomputation_results.append({
+                                    'university_id': university_id,
+                                    'success': False,
+                                    'error': str(fit_err)
+                                })
+                    
+                    logger.info(f"[FIT_RECOMPUTE] Completed fit recomputation for {len(fit_recomputation_results)} universities")
+                else:
+                    logger.info(f"[FIT_RECOMPUTE] No college list found for user {user_id}")
+            except Exception as recompute_err:
+                logger.warning(f"[UPDATE_STRUCTURED_FIELD] Could not trigger fit recomputation: {recompute_err}")
+        
         return add_cors_headers({
             'success': True,
             'message': f'Successfully updated {field_path}',
             'field_path': field_path,
             'old_value': old_value,
             'new_value': value,
-            'operation': operation
+            'operation': operation,
+            'fit_recomputation_triggered': field_path in FIT_AFFECTING_FIELDS,
+            'fit_recomputation_results': fit_recomputation_results if fit_recomputation_results else None
         }, 200)
         
     except Exception as e:
@@ -3903,39 +4040,52 @@ def handle_reset_all_profile(request):
 
 
 # ============================================
-# FIT INFOGRAPHIC GENERATION
+# FIT INFOGRAPHIC GENERATION (DEPRECATED)
+# Frontend now uses static CSS template - no AI image generation needed
 # ============================================
 
-# GCS bucket for fit infographic images
-FIT_IMAGES_BUCKET = os.getenv("FIT_IMAGES_BUCKET", "college-strategy-fit-images")
+def handle_generate_fit_infographic(request):
+    """
+    DEPRECATED: Infographic image generation is disabled.
+    The frontend now uses a static CSS template with dynamic data.
+    This endpoint returns a stub response for backward compatibility.
+    """
+    data = request.get_json() or {}
+    university_id = data.get('university_id', '')
+    
+    logger.info(f"[GENERATE_FIT_IMAGE] DEPRECATED - Request for {university_id} ignored (using static template)")
+    
+    return add_cors_headers({
+        'success': True,
+        'university_id': university_id,
+        'university_name': university_id.replace('_', ' ').title() if university_id else '',
+        'infographic_url': None,
+        'from_cache': True,
+        'deprecated': True,
+        'message': 'Infographic generation is deprecated. Frontend uses static template.'
+    }, 200)
 
-def generate_fit_infographic_prompt(fit_data: dict, student_name: str, university_name: str) -> str:
-    """Build a detailed prompt for Gemini image generation based on fit data."""
+
+def handle_generate_fit_infographic_data(request):
+    """
+    DEPRECATED: Returns empty infographic data.
+    The frontend now computes and renders fit data directly from the fit analysis response.
+    """
+    data = request.get_json() if request.method == 'POST' else {}
+    university_id = request.args.get('university_id') or data.get('university_id', '')
     
-    # Build complete fit data JSON for the prompt
-    clean_data = {
-        "student_name": student_name,
-        "university_name": university_name,
-        "fit_category": fit_data.get('fit_category', 'TARGET'),
-        "match_score": fit_data.get('match_score', fit_data.get('match_percentage', 70)),
-        "explanation": fit_data.get('explanation', ''),
-        "factors": fit_data.get('factors', []),
-        "recommendations": fit_data.get('recommendations', []),
-        "gap_analysis": fit_data.get('gap_analysis', ''),
-        "acceptance_rate": fit_data.get('acceptance_rate', 'N/A'),
-        "us_news_rank": fit_data.get('us_news_rank', 'N/A'),
-        "location": fit_data.get('location', {}),
-        "market_position": fit_data.get('market_position', '')
-    }
+    logger.info(f"[GENERATE_FIT_DATA] DEPRECATED - Request for {university_id} ignored")
     
-    # Parse gap_analysis if it's a string
-    if isinstance(clean_data.get('gap_analysis'), str):
-        try:
-            clean_data['gap_analysis'] = json.loads(clean_data['gap_analysis'])
-        except:
-            pass
-    
-    # Parse recommendations if it's a string 
+    return add_cors_headers({
+        'success': True,
+        'university_id': university_id,
+        'infographic_data': None,
+        'deprecated': True,
+        'message': 'Infographic data generation is deprecated. Use fit analysis response directly.'
+    }, 200)
+
+
+
     if isinstance(clean_data.get('recommendations'), str):
         try:
             clean_data['recommendations'] = json.loads(clean_data['recommendations'])
@@ -3955,39 +4105,29 @@ def generate_fit_infographic_prompt(fit_data: dict, student_name: str, universit
 
 def handle_generate_fit_infographic(request):
     """
-    Generate a fit infographic image using Gemini and store in GCS.
+    DEPRECATED: Infographic generation is disabled.
+    The frontend now uses a static CSS template with dynamic data instead of AI-generated images.
     
     POST /generate-fit-image
-    {
-        "user_email": "student@gmail.com",
-        "university_id": "stanford_university",
-        "force_regenerate": false  // Optional: force regeneration even if cached
-    }
-    
-    Returns:
-    {
-        "success": true,
-        "university_id": "stanford_university",
-        "infographic_url": "https://storage.googleapis.com/...",
-        "from_cache": true/false
-    }
+    Returns a stub response indicating the feature is deprecated.
     """
     try:
         data = request.get_json() or {}
         user_email = data.get('user_email') or data.get('user_id')
         university_id = data.get('university_id')
-        force_regenerate = data.get('force_regenerate', False)
         
-        if not user_email:
-            return add_cors_headers({'error': 'User email is required'}, 400)
-        if not university_id:
-            return add_cors_headers({'error': 'University ID is required'}, 400)
+        logger.info(f"[GENERATE_FIT_IMAGE] DEPRECATED - Request for {university_id} ignored (using static template)")
         
-        logger.info(f"[GENERATE_FIT_IMAGE] Request for {university_id} for user {user_email}, force={force_regenerate}")
-        
-        es_client = get_elasticsearch_client()
-        email_hash = hashlib.md5(user_email.encode()).hexdigest()[:8]
-        doc_id = f"{email_hash}_{university_id}"
+        # Return success with no URL - frontend will use static template
+        return add_cors_headers({
+            'success': True,
+            'university_id': university_id,
+            'university_name': university_id.replace('_', ' ').title() if university_id else '',
+            'infographic_url': None,  # No URL - frontend uses static CSS template
+            'from_cache': True,
+            'deprecated': True,
+            'message': 'Infographic generation is deprecated. Frontend uses static template with dynamic data.'
+        }, 200)
         
         # Check cache first (unless force_regenerate is True)
         if not force_regenerate:

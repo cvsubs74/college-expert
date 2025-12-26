@@ -202,6 +202,16 @@ const FitAnalysisPage = ({ college, onBack }) => {
                                 timeline: typeof rec === 'object' ? rec.timeline : null
                             })),
                             gapAnalysis: gapAnalysis,
+                            // NEW: Pass essay angles to show in snapshot view
+                            essayAngles: essayAngles,
+                            // NEW: Pass test strategy for compact display
+                            testStrategy: testStrategy,
+                            // NEW: Pass red flags to avoid
+                            redFlags: displayRedFlags,
+                            // NEW: Pass scholarship count
+                            scholarshipCount: scholarshipMatches.length,
+                            // NEW: Pass application timeline
+                            applicationTimeline: applicationTimeline,
                             conclusion: `Focus on improvement areas to strengthen your application for ${college.university_name}.`
                         }}
                         studentName={currentUser?.displayName || 'Student'}

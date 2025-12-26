@@ -8,7 +8,8 @@ import {
     QuestionMarkCircleIcon,
     StarIcon,
     SignalIcon,
-    ShieldCheckIcon
+    ShieldCheckIcon,
+    DocumentTextIcon
 } from '@heroicons/react/24/outline';
 import { CheckCircleIcon as CheckCircleSolid, StarIcon as StarSolid } from '@heroicons/react/24/solid';
 
@@ -352,6 +353,109 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
                     )}
                 </div>
             </div>
+
+            {/* ===== SECTION E: ESSAY ANGLES (NEW) ===== */}
+            {data.essayAngles && data.essayAngles.length > 0 && (
+                <div className="p-5 border-b border-gray-200">
+                    <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                        <DocumentTextIcon className="w-5 h-5 text-blue-500" />
+                        Essay Strategy Highlights
+                    </h3>
+                    <div className="space-y-2">
+                        {data.essayAngles.slice(0, 2).map((essay, idx) => (
+                            <div key={idx} className="bg-blue-50 p-3 rounded-lg border border-blue-100">
+                                <p className="text-sm text-gray-700 font-medium">{essay.angle}</p>
+                                {essay.student_hook && (
+                                    <p className="text-xs text-blue-600 mt-1">💡 Your hook: {essay.student_hook}</p>
+                                )}
+                            </div>
+                        ))}
+                        {data.essayAngles.length > 2 && (
+                            <p className="text-xs text-blue-500 text-center">+{data.essayAngles.length - 2} more essay strategies in Strategy tab</p>
+                        )}
+                    </div>
+                </div>
+            )}
+
+            {/* ===== SECTION F: TEST STRATEGY (NEW) ===== */}
+            {data.testStrategy && data.testStrategy.recommendation && (
+                <div className="p-5 border-b border-gray-200 bg-gray-50">
+                    <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                        <AcademicCapIcon className="w-5 h-5 text-purple-500" />
+                        Test Strategy
+                    </h3>
+                    <div className="flex items-center gap-4">
+                        <span className={`px-3 py-1.5 rounded-full text-sm font-bold ${data.testStrategy.recommendation === 'Submit' ? 'bg-green-100 text-green-800' :
+                            data.testStrategy.recommendation === 'Test Optional' ? 'bg-amber-100 text-amber-800' :
+                                'bg-gray-100 text-gray-800'
+                            }`}>
+                            {data.testStrategy.recommendation}
+                        </span>
+                        {data.testStrategy.student_score_position && (
+                            <span className="text-sm text-gray-600">
+                                Your score: <strong className={
+                                    data.testStrategy.student_score_position.includes('above') ? 'text-green-600' :
+                                        data.testStrategy.student_score_position.includes('below') ? 'text-red-600' :
+                                            'text-gray-600'
+                                }>{data.testStrategy.student_score_position}</strong>
+                            </span>
+                        )}
+                    </div>
+                    {data.testStrategy.rationale && (
+                        <p className="text-xs text-gray-500 mt-2 line-clamp-2">{data.testStrategy.rationale}</p>
+                    )}
+                </div>
+            )}
+
+            {/* ===== SECTION G: RED FLAGS (NEW) ===== */}
+            {data.redFlags && data.redFlags.length > 0 && (
+                <div className="p-5 border-b border-gray-200">
+                    <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                        <ExclamationTriangleIcon className="w-5 h-5 text-red-500" />
+                        Watch Out For
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        {data.redFlags.slice(0, 4).map((flag, idx) => (
+                            <div key={idx} className="flex items-start gap-2 text-sm bg-red-50 p-2 rounded-lg border border-red-100">
+                                <span className="text-red-500 flex-shrink-0">⚠️</span>
+                                <span className="text-red-700 line-clamp-2">{typeof flag === 'string' ? flag : flag.text}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* ===== SECTION H: QUICK STATS (NEW) ===== */}
+            {(data.scholarshipCount || data.applicationTimeline) && (
+                <div className="p-5 border-b border-gray-200 bg-gray-50">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        {data.scholarshipCount > 0 && (
+                            <div className="bg-emerald-50 p-3 rounded-lg border border-emerald-100">
+                                <div className="text-2xl font-bold text-emerald-600">{data.scholarshipCount}</div>
+                                <div className="text-xs text-gray-600">Scholarship Matches</div>
+                            </div>
+                        )}
+                        {data.applicationTimeline?.recommended_plan && (
+                            <div className="bg-amber-50 p-3 rounded-lg border border-amber-100">
+                                <div className="text-lg font-bold text-amber-700">{data.applicationTimeline.recommended_plan}</div>
+                                <div className="text-xs text-gray-600">Recommended Plan</div>
+                            </div>
+                        )}
+                        {data.applicationTimeline?.deadline && (
+                            <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
+                                <div className="text-sm font-bold text-blue-700">{data.applicationTimeline.deadline}</div>
+                                <div className="text-xs text-gray-600">Deadline</div>
+                            </div>
+                        )}
+                        {data.essayAngles && data.essayAngles.length > 0 && (
+                            <div className="bg-purple-50 p-3 rounded-lg border border-purple-100">
+                                <div className="text-2xl font-bold text-purple-600">{data.essayAngles.length}</div>
+                                <div className="text-xs text-gray-600">Essay Strategies</div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
 
             {/* ===== FOOTER GOAL BANNER ===== */}
             <div className="px-5 py-3 text-center border-t border-gray-200" style={{ backgroundColor: config.bg }}>

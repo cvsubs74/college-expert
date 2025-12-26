@@ -113,16 +113,16 @@ const transformUniversityData = (apiData) => {
         if (forbesObj) forbesRank = forbesObj.rank_overall || forbesObj.rank_in_category || 'N/A';
     }
 
-    // Normalize university_id: KB uses various formats (mixed case, hyphens, _slug suffix)
-    // Fits use: lowercase with underscores (e.g., university_of_florida)
+    // FIXED: Use exact university_id from ES (no longer normalizing to lowercase)
+    // The backend KB stores IDs with mixed case (e.g., University_of_Chicago)
+    // We must preserve the exact ID for fit analysis to work correctly
     const rawId = apiData.university_id || profile._id || '';
-    const normalizedId = rawId
-        .toLowerCase()                    // Convert to lowercase
-        .replace(/_slug$/, '')            // Remove _slug suffix
+    const exactId = rawId
+        .replace(/_slug$/, '')            // Remove _slug suffix only
         .replace(/[-\s]+/g, '_');         // Replace hyphens and spaces with underscores
 
     return {
-        id: normalizedId,
+        id: exactId,
         name: apiData.official_name || metadata.official_name || 'Unknown',
         shortName: metadata.official_name?.split(' ').slice(0, 3).join(' ') || apiData.official_name,
         location: apiData.location || metadata.location || { city: 'N/A', state: 'N/A', type: 'N/A' },
@@ -985,8 +985,8 @@ const UniversityExplorer = () => {
         console.log(`[Fit Analysis] Starting analysis for ${university.name}`);
 
         try {
-            // Convert university name to ID format (snake_case)
-            const universityId = university.id || university.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+            // Use exact university ID - fallback to name with underscores (preserving case)
+            const universityId = university.id || university.name.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
 
             // Build query that tells agent to use the calculate_college_fit tool
             const query = `Analyze my fit for ${university.name}. Use the calculate_college_fit tool with university_id="${universityId}" to get the deterministic fit analysis.`;
