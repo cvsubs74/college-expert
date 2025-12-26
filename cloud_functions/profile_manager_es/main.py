@@ -1468,10 +1468,16 @@ Return ONLY the JSON object, no markdown formatting."""
         return None
 
 
-def calculate_fit_with_llm(student_profile_text, university_data, intended_major=''):
+def calculate_fit_with_llm(student_profile_text, university_data, intended_major='', student_profile_json=None):
     """
     Calculate fit using comprehensive LLM reasoning with selectivity override rules.
     Acts as an expert private college admissions counselor with 20+ years experience.
+    
+    Args:
+        student_profile_text: Text content of student profile (for backwards compatibility)
+        university_data: Full university profile JSON
+        intended_major: Student's intended major
+        student_profile_json: Full student profile as JSON dict (new - for complete context)
     """
     # Note: time imported at module level
     
@@ -1491,8 +1497,10 @@ def calculate_fit_with_llm(student_profile_text, university_data, intended_major
         }
     
     try:
-        # DEBUG: Log the actual student profile text being analyzed
+        # DEBUG: Log the actual student profile being analyzed
         logger.info(f"[LLM_FIT] Student profile text length: {len(student_profile_text)} chars")
+        if student_profile_json:
+            logger.info(f"[LLM_FIT] Student profile JSON has {len(student_profile_json)} fields")
         if len(student_profile_text) < 100:
             logger.warning(f"[LLM_FIT] ALERT: Profile text is very short! Content: {student_profile_text}")
         else:
@@ -1539,7 +1547,13 @@ def calculate_fit_with_llm(student_profile_text, university_data, intended_major
         # This gives LLM access to ALL data: essays, scholarships, majors, strategies, etc.
         uni_profile_full = json.dumps(profile_data, default=str)
         
-        logger.info(f"[LLM_FIT] Full profile size: {len(uni_profile_full)} chars (~{len(uni_profile_full)//4} tokens)")
+        # Also serialize student profile JSON if available
+        student_profile_json_str = ""
+        if student_profile_json:
+            student_profile_json_str = json.dumps(student_profile_json, default=str)
+            logger.info(f"[LLM_FIT] Student profile JSON size: {len(student_profile_json_str)} chars")
+        
+        logger.info(f"[LLM_FIT] Full university profile size: {len(uni_profile_full)} chars (~{len(uni_profile_full)//4} tokens)")
         
         # Determine selectivity tier and category floor
         if acceptance_rate < 8:
@@ -1549,11 +1563,11 @@ def calculate_fit_with_llm(student_profile_text, university_data, intended_major
         elif acceptance_rate < 15:
             selectivity_tier = "HIGHLY_SELECTIVE"
             category_floor = "REACH"
-            selectivity_note = "This is a HIGHLY SELECTIVE school (8-15% acceptance). Even strong applicants face uncertain outcomes. MINIMUM category is REACH."
+            selectivity_note = "This is a HIGHLY SELECTIVE school (8-15% acceptance). Only top students have a chance. MINIMUM category is REACH."
         elif acceptance_rate < 25:
             selectivity_tier = "VERY_SELECTIVE"
-            category_floor = "TARGET"
-            selectivity_note = "This is a VERY SELECTIVE school (15-25% acceptance). Strong applicants have reasonable chances."
+            category_floor = None
+            selectivity_note = "This is a VERY SELECTIVE school (15-25% acceptance). Strong applicants compete."
         elif acceptance_rate < 40:
             selectivity_tier = "SELECTIVE"
             category_floor = None
@@ -1563,11 +1577,20 @@ def calculate_fit_with_llm(student_profile_text, university_data, intended_major
             category_floor = None
             selectivity_note = "This is an ACCESSIBLE school (>40% acceptance). Strong students are very likely admitted."
         
+        # Build student profile section - include BOTH text and structured JSON
+        student_section = f"""{student_profile_text}
+Intended Major: {intended_major or 'Undecided'}"""
+        
+        if student_profile_json_str:
+            student_section += f"""
+
+**COMPLETE STUDENT PROFILE DATA (structured):**
+{student_profile_json_str}"""
+        
         prompt = f"""You are a private college admissions counselor with 20+ years of experience placing students at Ivy League and top-50 universities. You have deep knowledge of how selective admissions works and understand that even excellent students face rejection at highly selective schools.
 
 **STUDENT PROFILE:**
-{student_profile_text}
-Intended Major: {intended_major or 'Undecided'}
+{student_section}
 
 **COMPLETE UNIVERSITY DATA (use this for all recommendations):**
 {uni_profile_full}
@@ -1885,14 +1908,22 @@ def calculate_fit_for_college(user_id, university_id, intended_major=''):
             return None
         
         profile_doc = response['hits']['hits'][0]['_source']
-        profile_content = profile_doc.get('content', '')
         
-        # If content is empty (e.g., onboarding profiles), build from flat fields
+        # Pass the ENTIRE student profile as JSON to the LLM
+        # Remove internal/metadata fields that aren't useful
+        fields_to_exclude = ['indexed_at', 'updated_at', 'created_at', '_id', 'embedding', 'chunk_id', 'user_id']
+        profile_data_clean = {k: v for k, v in profile_doc.items() if k not in fields_to_exclude and v}
+        
+        # Also get the content field for backwards compatibility (some prompts reference profile text)
+        profile_content = profile_doc.get('content', '')
         if not profile_content or len(profile_content.strip()) < 50:
             logger.info(f"[FIT] Building profile content from flat fields for {user_id}")
             profile_content = build_profile_content_from_fields(profile_doc)
         
-        # Parse student profile
+        # Log profile summary
+        logger.info(f"[FIT] Student profile has {len(profile_data_clean)} fields, content length: {len(profile_content)}")
+        
+        # Parse student profile (for legacy code compatibility)
         student_profile = parse_student_profile(profile_content)
         
         # Fetch university data via KB API (has correct data structure with acceptance_rate)
@@ -1918,7 +1949,8 @@ def calculate_fit_for_college(user_id, university_id, intended_major=''):
             }
         
         # Calculate comprehensive fit using PURE LLM reasoning
-        fit_analysis = calculate_fit_with_llm(profile_content, university_data, intended_major)
+        # Pass BOTH the text content AND the full profile JSON
+        fit_analysis = calculate_fit_with_llm(profile_content, university_data, intended_major, profile_data_clean)
         
         logger.info(f"[FIT] Calculated fit for {user_id} -> {university_id}: {fit_analysis['fit_category']} ({fit_analysis['match_percentage']}%)")
         
@@ -2846,6 +2878,11 @@ def handle_compute_all_fits(request):
         
         doc_id = response['hits']['hits'][0]['_id']
         profile_source = response['hits']['hits'][0]['_source']
+        
+        # Pass the ENTIRE student profile as JSON to the LLM
+        fields_to_exclude = ['indexed_at', 'updated_at', 'created_at', '_id', 'embedding', 'chunk_id', 'user_id', 'college_fits']
+        profile_data_clean = {k: v for k, v in profile_source.items() if k not in fields_to_exclude and v}
+        
         profile_content = profile_source.get('content', '')
         
         # If content is empty (e.g., onboarding profiles), build from flat fields
@@ -2933,7 +2970,8 @@ def handle_compute_all_fits(request):
                     continue
                 
                 # Calculate fit using PURE LLM reasoning
-                fit_analysis = calculate_fit_with_llm(profile_content, uni_profile, '')
+                # Pass full student profile JSON for complete context
+                fit_analysis = calculate_fit_with_llm(profile_content, uni_profile, '', profile_data_clean)
                 
                 # Store computed fit with all 8 categories
                 fit_result = {
@@ -3117,16 +3155,13 @@ def fit_chat(user_id: str, university_id: str, question: str, conversation_histo
         university_name = fit_data.get('university_name', university_id)
         
         # Build context with profile and fit data
-        # Extract key profile fields
-        profile_summary = {
-            "gpa": user_profile.get("gpa"),
-            "sat_score": user_profile.get("sat_score"),
-            "act_score": user_profile.get("act_score"),
-            "intended_major": user_profile.get("intended_major"),
-            "activities": user_profile.get("activities", []),
-            "awards": user_profile.get("awards", []),
-            "grade_level": user_profile.get("grade_level"),
-        }
+        # Pass the ENTIRE user profile as-is - no need to extract specific fields
+        # The profile is already JSON from Elasticsearch
+        profile_summary = user_profile
+        
+        # Remove internal/metadata fields that aren't useful for the LLM
+        fields_to_exclude = ['indexed_at', 'updated_at', 'created_at', '_id', 'embedding', 'chunk_id']
+        profile_summary = {k: v for k, v in profile_summary.items() if k not in fields_to_exclude and v}
         
         # Extract key fit fields
         fit_summary = {

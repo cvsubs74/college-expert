@@ -385,30 +385,61 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
                     data.testStrategy.rationale?.toLowerCase().includes('does not consider') ||
                     data.testStrategy.rationale?.toLowerCase().includes('do not consider');
 
+                // Parse SAT/ACT ranges for visual display
+                const studentSat = data.testStrategy.student_sat;
+                const studentAct = data.testStrategy.student_act;
+                const schoolSatRange = data.testStrategy.school_sat_middle_50; // e.g. "1330-1480"
+                const schoolActRange = data.testStrategy.school_act_middle_50; // e.g. "30-33"
+
+                // Parse range and calculate position
+                const parseRange = (rangeStr) => {
+                    if (!rangeStr) return null;
+                    const match = rangeStr.match(/(\d+)\s*[-–]\s*(\d+)/);
+                    if (match) return { min: parseInt(match[1]), max: parseInt(match[2]) };
+                    return null;
+                };
+
+                const satRange = parseRange(schoolSatRange);
+                const actRange = parseRange(schoolActRange);
+
+                // Determine which test to show (prefer SAT, fallback to ACT)
+                const showSat = studentSat && satRange;
+                const showAct = !showSat && studentAct && actRange;
+
+                const studentScore = showSat ? studentSat : (showAct ? studentAct : null);
+                const range = showSat ? satRange : (showAct ? actRange : null);
+                const testType = showSat ? 'SAT' : (showAct ? 'ACT' : null);
+                const maxScore = showSat ? 1600 : 36;
+                const minScore = showSat ? 400 : 1;
+
+                // Calculate position percentage for visual indicator
+                const calcPosition = (score, rangeObj, minS, maxS) => {
+                    if (!score || !rangeObj) return null;
+                    // Map to 0-100 where 25% = range.min, 75% = range.max
+                    // This puts the middle 50% range in the center of the bar
+                    const rangeWidth = rangeObj.max - rangeObj.min;
+                    const barMin = rangeObj.min - rangeWidth; // 25% of visual bar
+                    const barMax = rangeObj.max + rangeWidth; // 75% of visual bar
+                    const position = ((score - barMin) / (barMax - barMin)) * 100;
+                    return Math.max(0, Math.min(100, position));
+                };
+
+                const scorePosition = calcPosition(studentScore, range, minScore, maxScore);
+
                 return (
                     <div className="p-5 border-b border-gray-200 bg-gray-50">
                         <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
                             <AcademicCapIcon className="w-5 h-5 text-purple-500" />
                             Test Strategy
                         </h3>
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-4 mb-3">
                             <span className={`px-3 py-1.5 rounded-full text-sm font-bold ${isTestBlind ? 'bg-blue-100 text-blue-800' :
-                                    data.testStrategy.recommendation === 'Submit' ? 'bg-green-100 text-green-800' :
-                                        data.testStrategy.recommendation === 'Test Optional' ? 'bg-amber-100 text-amber-800' :
-                                            'bg-gray-100 text-gray-800'
+                                data.testStrategy.recommendation === 'Submit' ? 'bg-green-100 text-green-800' :
+                                    data.testStrategy.recommendation === 'Test Optional' || data.testStrategy.recommendation === 'Consider Submitting' ? 'bg-amber-100 text-amber-800' :
+                                        'bg-red-100 text-red-800'
                                 }`}>
                                 {isTestBlind ? 'Test Blind' : data.testStrategy.recommendation}
                             </span>
-                            {/* Only show score position if NOT test-blind */}
-                            {!isTestBlind && data.testStrategy.student_score_position && (
-                                <span className="text-sm text-gray-600">
-                                    Your score: <strong className={
-                                        data.testStrategy.student_score_position.includes('above') ? 'text-green-600' :
-                                            data.testStrategy.student_score_position.includes('below') ? 'text-red-600' :
-                                                'text-gray-600'
-                                    }>{data.testStrategy.student_score_position}</strong>
-                                </span>
-                            )}
                             {/* Show test-blind message */}
                             {isTestBlind && (
                                 <span className="text-sm text-blue-600 font-medium">
@@ -416,6 +447,60 @@ const FitInfographicView = ({ data, studentName = "Student" }) => {
                                 </span>
                             )}
                         </div>
+
+                        {/* Visual Score Indicator - Only show if NOT test-blind and we have data */}
+                        {!isTestBlind && studentScore && range && (
+                            <div className="mt-3 bg-white p-3 rounded-lg border border-gray-200">
+                                <div className="flex justify-between items-center text-xs text-gray-500 mb-2">
+                                    <span>Your {testType}: <strong className="text-gray-800">{studentScore}</strong></span>
+                                    <span>School Middle 50%: <strong className="text-gray-800">{range.min}-{range.max}</strong></span>
+                                </div>
+
+                                {/* Visual Bar */}
+                                <div className="relative h-6 bg-gradient-to-r from-red-200 via-amber-200 to-green-200 rounded-full overflow-visible">
+                                    {/* Middle 50% range indicator */}
+                                    <div
+                                        className="absolute top-0 h-full bg-gradient-to-r from-amber-300 to-green-300 opacity-60 border-l-2 border-r-2 border-green-500"
+                                        style={{ left: '25%', width: '50%' }}
+                                    >
+                                        <span className="absolute -top-5 left-0 text-[10px] text-gray-500">{range.min}</span>
+                                        <span className="absolute -top-5 right-0 text-[10px] text-gray-500">{range.max}</span>
+                                    </div>
+
+                                    {/* Student score dot */}
+                                    <div
+                                        className="absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-2 border-white shadow-lg flex items-center justify-center z-10"
+                                        style={{
+                                            left: `calc(${scorePosition}% - 10px)`,
+                                            backgroundColor: scorePosition < 25 ? '#ef4444' : scorePosition < 50 ? '#f59e0b' : '#22c55e'
+                                        }}
+                                    >
+                                        <div className="w-2 h-2 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+
+                                {/* Legend */}
+                                <div className="flex justify-between text-[10px] mt-1 text-gray-400">
+                                    <span>Below Range</span>
+                                    <span className="text-green-600 font-medium">Target Zone</span>
+                                    <span>Above Range</span>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Fallback text if no visual data */}
+                        {!isTestBlind && !studentScore && data.testStrategy.student_score_position && (
+                            <div className="text-sm text-gray-600 mt-2">
+                                Your score: <strong className={
+                                    data.testStrategy.student_score_position.includes('above') ? 'text-green-600' :
+                                        data.testStrategy.student_score_position.includes('below') ? 'text-red-600' :
+                                            'text-amber-600'
+                                }>{data.testStrategy.student_score_position === 'below' ? 'Below middle 50%' :
+                                    data.testStrategy.student_score_position === 'above' ? 'Above middle 50%' :
+                                        'In middle 50%'}</strong>
+                            </div>
+                        )}
+
                         {data.testStrategy.rationale && (
                             <p className="text-xs text-gray-500 mt-2 line-clamp-2">{data.testStrategy.rationale}</p>
                         )}

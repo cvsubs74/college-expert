@@ -221,19 +221,26 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                             Explore
                         </button>
                         <button
-                            onClick={(e) => { e.stopPropagation(); onToggleList(uni); }}
-                            disabled={!isInList && uni.isLimitReached}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                if (uni.isLimitReached) {
+                                    // Navigate to upgrade page
+                                    window.location.href = '/payment';
+                                } else {
+                                    onToggleList(uni);
+                                }
+                            }}
                             className={`px-3 py-2 rounded-xl text-sm font-medium transition-all flex items-center gap-1.5 ${isInList
                                 ? 'bg-green-100 text-green-700 hover:bg-red-100 hover:text-red-700'
                                 : uni.isLimitReached
-                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                    ? 'bg-amber-100 text-amber-700 hover:bg-amber-200 cursor-pointer'
                                     : 'bg-[#D6E8D5] text-[#1A4D2E] hover:bg-[#A8C5A6]'
                                 }`}
                         >
                             {isInList ? (
                                 <><CheckCircleIcon className="h-4 w-4" /> Saved</>
                             ) : uni.isLimitReached ? (
-                                <><LockClosedIcon className="h-4 w-4" /> Locked</>
+                                <><SparklesIcon className="h-4 w-4" /> Upgrade</>
                             ) : (
                                 <><RocketLaunchIcon className="h-4 w-4" /> Save</>
                             )}
