@@ -1195,7 +1195,61 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "UC Berkeley uses a holistic review process. They seek applicants with intellectual curiosity, drive, initiative, leadership, persistence, service to others, special potential, and substantial experience with other cultures. All achievements are considered in light of available opportunities."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
+        "word_limit": "350 words",
+        "type": "PIQ 1",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a specific moment where a teacher, professor, or even a peer at Berkeley (or a similar academic environment you've experienced) opened your eyes to a new way of learning or a subject you hadn't considered. What was that interaction, and how did it shift your perspective?",
+          "When you consider an 'educational barrier,' what's one specific instance where you felt genuinely challenged to learn or succeed, and what internal or external resources did you tap into to navigate it? What did you discover about your own resilience in that moment?",
+          "Berkeley is known for its diverse academic offerings. Can you recall a time when you actively sought out a unique course, research project, or even a specific professor's office hours that went beyond the standard curriculum, and what was the tangible outcome of that proactive engagement?",
+          "Beyond formal classrooms, what unconventional learning experiences have you pursued – perhaps a club, a workshop, an independent study, or even a self-taught skill – that significantly contributed to your intellectual growth and demonstrated your initiative?",
+          "Looking back, what's one educational 'aha!' moment you've had, where a difficult concept suddenly clicked or a complex problem became clear? Describe the journey leading up to that moment, and what made it particularly impactful for your learning style or future aspirations?"
+        ]
+      },
+      {
+        "prompt": "Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.",
+        "word_limit": "350 words",
+        "type": "PIQ 2",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you encountered a challenge – maybe in school, a hobby, or even a daily task – where the 'standard' solution just wasn't working. What was that situation, and what unusual or unconventional approach did you try to overcome it?",
+          "Beyond artistic pursuits like painting or music, where have you found yourself naturally generating new ideas or putting a unique spin on things? Can you recall a specific instance where you felt a spark of original thought that led to a different outcome?",
+          "Berkeley values innovative thinking. Can you pinpoint a moment when you took something that already existed and reimagined it, improved it, or combined it with something else to create something novel, even if it was on a small scale?",
+          "Consider situations where you've had to explain a complex idea or concept to someone. What methods or analogies did you invent to make it clearer or more understandable for them, and what does that reveal about your creative process?",
+          "Think about a time you were deeply engaged in a project or activity where you weren't just following instructions but were actively experimenting, trying different possibilities, or even making something up as you went along. What was that experience like, and what did you discover about your own ingenuity?"
+        ]
+      },
+      {
+        "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
+        "word_limit": "350 words",
+        "type": "PIQ 3",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your greatest talent, can you pinpoint a specific moment, perhaps a challenge or an unexpected situation, where you consciously relied on or actively utilized this skill to navigate it, and what was the outcome?",
+          "Beyond just proficiency, what is it about this particular talent that genuinely excites you or gives you a unique sense of satisfaction when you engage with it?",
+          "Consider the 'development' aspect: What specific experiences, people, or even mistakes have been instrumental in shaping and refining this talent into what it is today?",
+          "When you think about demonstrating this talent, can you recall a time when you had to explain or teach it to someone else, or when it was recognized by others in a way that surprised you?",
+          "Berkeley's motto is 'Fiat Lux' (Let there be light). How has the development and application of your greatest talent illuminated something for yourself or others, perhaps leading to a new understanding or a solution?"
+        ]
+      },
+      {
+        "prompt": "Describe how you have made a significant impact on a community that is important to you. What is the community &amp; how are you involved?",
+        "word_limit": "350 words",
+        "type": "PIQ 4",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the community that truly resonates with you, what's a specific moment or challenge you witnessed where you felt a strong urge to step in and make a difference, and what was your initial, perhaps even small, action?",
+          "Beyond just being 'involved,' can you pinpoint a time when your unique skills, perspective, or even a seemingly minor contribution fundamentally shifted the way things were done or understood within this community?",
+          "When you consider your involvement, what's a recurring pattern or a persistent need you've identified within this community that you've actively worked to address, and how has your approach evolved over time?",
+          "Imagine you're explaining your impact to someone completely unfamiliar with this community. What's the single most compelling example you'd share that encapsulates your role and the 'why' behind your dedication?",
+          "Reflecting on the people within this community, who is someone whose life or perspective you feel you've directly influenced or improved through your actions, and what did that interaction teach you about your own capacity for impact?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

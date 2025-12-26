@@ -251,7 +251,22 @@
       "interview_policy": "Recommended",
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate"
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Duquesne's Spiritan mission emphasizes service to others and ethical leadership. How do these values align with your goals?",
+        "word_limit": "300 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you were genuinely inspired by someone's selfless act or ethical decision-making. What was the situation, what did they do, and how did that moment shape your understanding of what it means to lead and serve?",
+          "Beyond the typical volunteer experiences, can you recall a situation where you actively chose to prioritize the needs of others over your own immediate convenience or desires? What was that choice, what made it challenging, and what did you learn from it?",
+          "What ethical dilemmas have you encountered, either personally or through observation, that made you pause and consider the 'right' course of action? How did you navigate those complexities, and what principles guided you?",
+          "Looking at your aspirations for the future, where do you see yourself making a tangible positive impact on a community or group of people? How does the idea of ethical leadership, as opposed to just being a leader, play into that vision?",
+          "Duquesne's Spiritan mission is rooted in a specific tradition. When you think about 'service to others' and 'ethical leadership,' what specific personal experiences or formative moments come to mind that feel most deeply connected to these ideals, even if you didn't have the words for them at the time?"
+        ]
+      }
+    ]
   },
   "financials": {
     "tuition_model": "Annual Increase",

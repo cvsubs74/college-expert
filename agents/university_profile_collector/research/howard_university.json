@@ -806,7 +806,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Howard University employs a holistic review process, valuing students who demonstrate a commitment to social change, diversity, and who can contribute meaningfully to the community. They seek applicants who align with their mission to serve the underserved."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Howard University has prided itself on preparing students like you for leadership and service. Describe how Howard can specifically contribute to your future plans.",
+        "word_limit": "500 words",
+        "type": "Why Howard",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Howard's legacy of leadership and service, what specific historical figures or movements connected to the university truly resonate with your personal aspirations for impact and how do you see yourself continuing that tradition?",
+          "When you envision yourself as a Howard graduate actively engaged in your future plans, what are the tangible skills, unique perspectives, or specific networks that you believe Howard's environment will uniquely equip you with, which you might not find elsewhere?",
+          "Howard's commitment to preparing students for leadership and service often involves challenging conventional thinking. Can you recall a time when you've had to step outside your comfort zone to lead or serve, and how do you imagine Howard's intellectual and social climate will foster your growth in those moments?",
+          "Beyond academic programs, Howard fosters a profound sense of community and cultural affirmation. In what ways do you anticipate this specific Howard experience will shape your approach to leadership and service, particularly in addressing the needs of communities you care about?",
+          "Considering your future plans, describe a specific challenge or opportunity you foresee in your chosen field, and how you believe Howard's distinct resources, faculty expertise, or student body will empower you to tackle it with the leadership and service-oriented mindset the university cultivates."
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -457,5 +457,22 @@
       }
     }
   },
-  "_id": "washington_university_in_st_louis"
+  "_id": "washington_university_in_st_louis",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Tell us about something that really sparks your intellectual curiosity and why.",
+        "word_limit": "200 words",
+        "type": "Intellectual",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the moment you first encountered this intellectual spark, can you describe the specific sensory details or the unexpected place where this curiosity ignited?",
+          "When this particular topic or idea captured your attention, what was the very first 'why' that bubbled up inside you, and how did that initial question evolve?",
+          "Beyond the surface level, what are the underlying assumptions or puzzles within this area of curiosity that you find yourself compelled to unravel or challenge?",
+          "Can you recall a time when pursuing this intellectual spark led you down an unplanned path or to an unexpected discovery, and what did that detour reveal about your learning process?",
+          "If you could sit down with someone who *doesn't* understand why this sparks your curiosity, what's the one most essential aspect or hidden beauty of it that you'd strive to convey to them?"
+        ]
+      }
+    ]
+  }
 }

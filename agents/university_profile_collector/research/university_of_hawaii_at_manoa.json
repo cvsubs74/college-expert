@@ -432,5 +432,22 @@
       }
     }
   },
-  "_id": "university_of_hawaii_at_manoa"
+  "_id": "university_of_hawaii_at_manoa",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "UH Manoa is unique in its location and cultural diversity. How will you contribute to our diverse community?",
+        "word_limit": "250 words",
+        "type": "Diversity",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about UH Manoa's specific island context and connection to the Pacific, what's a particular cultural tradition, value, or perspective from your own background that you're excited to share and how might it resonate with or offer a new lens to the existing diversity on campus?",
+          "Beyond simply listing your heritage, can you recall a specific moment or experience where your unique cultural background shaped your understanding of a challenge or opportunity, and how would that insight be valuable in a collaborative or community setting at UH Manoa?",
+          "The prompt mentions cultural diversity. What's a personal encounter you've had with someone from a very different cultural background that surprised you, taught you something new, or even challenged your own assumptions, and how would you aim to foster similar learning moments within the UH Manoa community?",
+          "Considering UH Manoa's unique geographical setting, is there an aspect of your past experiences – perhaps related to the environment, community engagement, or a specific local issue – that has given you a particular perspective on resilience, adaptation, or interconnectedness, and how would you bring that to Manoa?",
+          "When you envision yourself at UH Manoa, what's a specific way you see yourself actively bridging different cultural groups or fostering understanding, perhaps through a club, a project, or even just daily interactions, that goes beyond passive participation?"
+        ]
+      }
+    ]
+  }
 }

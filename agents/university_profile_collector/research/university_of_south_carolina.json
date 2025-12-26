@@ -467,7 +467,22 @@
       "interview_policy": "Not Offered",
       "legacy_consideration": "Considered",
       "first_gen_boost": "Considered"
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "What about the University of South Carolina excites you, and how will you contribute to the Gamecock community?",
+        "word_limit": "250 words",
+        "type": "Why USC",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond the general prestige, what specific academic program, research opportunity, or unique course at UofSC has genuinely sparked your intellectual curiosity and made you think, 'Wow, I *need* to be a part of this?'",
+          "When you envision yourself as a Gamecock, what specific traditions, campus events, or student organizations at UofSC do you see yourself actively participating in, and why do those particular aspects resonate with you?",
+          "Think about a time you've felt most fulfilled by contributing to a group or community. How do the values and mission of the University of South Carolina align with that experience, and what specific skills or passions would you bring to amplify that sense of belonging there?",
+          "Imagine you're introducing yourself to a fellow student on Greene Street. What's one unexpected or less obvious aspect of your personality, background, or a unique skill you possess that you'd be excited to share with the UofSC community?",
+          "Looking at the current landscape of challenges or opportunities within your intended field of study, how does the University of South Carolina's approach or resources specifically empower you to tackle these, and what unique perspective will you offer to the Gamecock community in this endeavor?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

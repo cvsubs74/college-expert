@@ -1018,7 +1018,48 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Rice holistically evaluates applicants based on accomplishments, interests, and contributions within the context of their life experiences, seeking intellectual curiosity and drive, and articulated knowledge about the Rice community."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Please explain why you wish to study in the academic areas you selected.",
+        "word_limit": "150 words",
+        "type": "Academic",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your chosen academic areas at Rice – for instance, if you're interested in both Political Science and Computer Science, what's a specific moment or experience where you felt a pull between analyzing systems of power and building digital ones, and what did that inner tug-of-war reveal about your curiosity?",
+          "Rice is known for its collaborative and interdisciplinary approach. Can you recall a time when tackling a complex problem required you to draw on knowledge or skills from two seemingly unrelated areas, and how did that experience make you realize Rice's specific environment might be the perfect place for you to continue that kind of learning?",
+          "Beyond the courses themselves, what specific research opportunities, labs, or faculty at Rice within your chosen fields (mentioning a specific professor or project if one comes to mind!) have ignited a particular passion and made you think, 'This is where I can truly dive deep and contribute'?",
+          "When you imagine yourself as a Rice student, what's a specific 'aha!' moment you envision having in one of your chosen academic areas, perhaps in a seminar discussion or while working on a project, that you believe would be uniquely fostered by the academic culture and resources at Rice?",
+          "Considering Rice's emphasis on undergraduate research and faculty mentorship, is there a particular question or problem within your chosen academic disciplines that you've been wrestling with, and how do you see Rice's specific community helping you find the answers or even reframe the question itself?"
+        ]
+      },
+      {
+        "prompt": "Based upon your exploration of Rice University, what elements of the Rice experience appeal to you?",
+        "word_limit": "150 words",
+        "type": "Why Rice",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Rice's unique residential college system, can you recall a specific instance where you experienced or witnessed the benefits of a close-knit community, and how that resonates with what you envision at Rice?",
+          "Beyond just academics, what specific opportunities for interdisciplinary exploration at Rice, perhaps through a particular program or research area, sparked your curiosity and made you think, 'This is exactly what I've been looking for'?",
+          "Rice emphasizes undergraduate research opportunities. Can you describe a moment in your past, academic or personal, where you deeply engaged in problem-solving or a discovery process, and how that aligns with the research culture at Rice?",
+          "Rice's commitment to 'community' and 'collaboration' is evident in many aspects. Is there a specific club, project, or even a casual interaction you've had that exemplifies these values, and how do you see yourself contributing to a similar spirit at Rice?",
+          "When you pictured yourself at Rice, what's a specific, tangible 'aha!' moment you imagined experiencing – perhaps in a particular lecture hall, a campus green space, or during a specific event – and what made that image so compelling?"
+        ]
+      },
+      {
+        "prompt": "The Residential College System is at the heart of Rice student life. What life experiences and/or unique perspectives are you looking forward to sharing with fellow Owls?",
+        "word_limit": "500 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Rice's Residential Colleges are famous for their close-knit communities. Thinking about your past experiences, what's a time you've really connected with a group or community, and what did you learn about yourself or others through that connection that you'd be eager to bring to your college family?",
+          "The prompt mentions 'unique perspectives.' Beyond what you've studied, what's an idea, a belief, or a way of looking at the world that you've developed that you're excited to share and discuss with a diverse group of Rice students?",
+          "Residential College life at Rice often involves spontaneous moments and shared traditions. Can you recall a specific instance where your contributions, big or small, helped shape a positive shared experience for others, and how might you aim to create similar moments at Rice?",
+          "Rice encourages students to be 'fellow Owls' who learn from each other. What's a skill, a hobby, or a piece of knowledge you possess that you're passionate about and would love to teach or share with others in a casual, community setting within your Residential College?",
+          "The Residential College system is designed for cross-pollination of ideas and backgrounds. What personal experience or perspective do you have that might challenge or broaden the understanding of someone from a completely different background than your own, and why are you excited for that kind of intellectual exchange at Rice?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

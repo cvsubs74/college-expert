@@ -905,7 +905,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Considered",
       "specific_differentiators": "Seeks students who are intellectually inspired, morally grounded, globally minded, and embody the core values of Veritas (Truth), Unitas (Unity), and Caritas (Love)."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "St. Augustine believed in the essential connection between the mind and the heart. For him, our intellect shapes and forms our character, helping us not only to think clearly and critically, but also to live with purpose, care, and passion. What is a question that is meaningful to your life, and of which you continue to seek an answer?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "When you've been faced with a complex problem or a difficult decision, what internal 'back-and-forth' between your logical thinking and your emotional response stands out in your memory, and how did that interplay ultimately shape your understanding?",
+          "Think about a time you were deeply passionate about something, perhaps even a belief or a cause. What specific questions did you grapple with that pushed you to not just *feel* strongly, but to also *understand* more deeply and act with purpose?",
+          "Can you recall a moment where your understanding of the world shifted significantly, and in that shift, what specific question emerged that compelled you to re-evaluate your own character and how you wanted to live?",
+          "Villanova emphasizes a liberal arts education that fosters critical thinking and ethical development. Reflecting on your own intellectual journey, what is a question that has challenged your assumptions and, in its pursuit, helped you connect your thoughts to your values and your actions?",
+          "Beyond simply wanting to know an answer, what is a question in your life that you feel is intrinsically tied to your sense of purpose and your capacity for care? What does the act of *seeking* that answer reveal about your character?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

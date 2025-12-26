@@ -1330,7 +1330,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "The University of Maryland employs a holistic review process considering more than 23 factors to identify applicants who will enrich and benefit from the campus learning environment. They seek intellectual curiosity and a diverse student body."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "If I could travel anywhere, I would go to... (Complete this statement in about 650 words max, using the personal essay as an opportunity to tell us about yourself.)",
+        "word_limit": "650 words",
+        "type": "Personal",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond the typical tourist brochure appeal, what is it about this specific destination that resonates so deeply with a core part of your identity or a long-held aspiration you've nurtured, and how does that connection reveal something essential about who you are?",
+          "Think about a time you've felt most truly 'yourself' – was there a place, an experience, or even a feeling connected to this destination that mirrors that feeling, and what does that connection tell us about your values or passions?",
+          "If you could magically transport yourself to this destination *right now*, what is the very first thing you would do, and why is that specific action or observation the most important to you, hinting at what you seek or what you're trying to understand?",
+          "Consider your current life and experiences here at Maryland; how does the desire to travel to this particular place act as a counterpoint, a complement, or perhaps a future step in your personal growth and academic journey?",
+          "Imagine you're explaining to someone who knows nothing about you why *this* place, above all others, is your ultimate travel dream. What specific, vivid details and personal anecdotes would you share that would make them say, 'Ah, now I understand *you* better'?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

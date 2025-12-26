@@ -1305,7 +1305,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "The university seeks students who are curious, driven, and desire to contribute meaningfully to campus life. Successful applicants demonstrate a commitment to engaging with the community, embracing different perspectives, and exhibit qualities of problem-solving, collaboration, and teamwork."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Please describe your academic and non-academic interests to the admissions committee. Why do you want to attend Ohio State?",
+        "word_limit": "250-500 words",
+        "type": "Why Ohio State",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your academic interests, what's a specific moment in a class, a project, or even a late-night study session where you felt a genuine spark of intellectual curiosity, and how does that spark connect to what you see yourself exploring at Ohio State?",
+          "Beyond the classroom, what's a non-academic passion or hobby you've pursued with real dedication, and how have the skills, perspectives, or even the sheer joy you've gained from it shaped who you are and might contribute to the Ohio State community?",
+          "When you imagine yourself at Ohio State, what specific opportunities – be it a research lab, a student organization, a unique course, or even a campus tradition – make you feel an immediate sense of belonging and excitement, and why is that a perfect fit for your personal aspirations?",
+          "Can you pinpoint a time where you had to grapple with a complex problem or challenge outside of academics, and what did you learn about yourself and the world through that experience that makes you eager to bring that resilience and insight to Ohio State?",
+          "If you were to describe your 'ideal college day' at Ohio State, blending your academic passions with your non-academic pursuits, what would that look like, and what makes Ohio State uniquely equipped to make that vision a reality for you?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

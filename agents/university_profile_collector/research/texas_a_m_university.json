@@ -585,5 +585,35 @@
       "loan_default_rate": 2.1
     }
   },
-  "_id": "texas_a_m_university"
+  "_id": "texas_a_m_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Describe a life event which you feel has prepared you to be successful in college.",
+        "word_limit": "250 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Texas A&M's emphasis on leadership and community, can you recall a specific time you had to step up and take responsibility for a group or project, even when it was difficult, and what did you learn from that experience that will help you thrive in a collegiate environment?",
+          "Beyond academics, Aggieland values resilience and overcoming challenges. Was there a particular setback or failure you experienced – perhaps in a club, sport, or personal endeavor – that forced you to adapt and persevere, and how did that journey shape your ability to handle academic and personal hurdles in college?",
+          "Texas A&M often celebrates the 'tradition of service.' Think about a moment where you actively contributed to something bigger than yourself, whether through volunteering, helping a neighbor, or supporting a cause. What did this act of service teach you about collaboration, empathy, and your own capacity to positively impact a community, skills crucial for campus life?",
+          "The transition to college involves navigating new social dynamics and expectations. Can you describe a situation where you had to learn to communicate effectively with individuals who had very different perspectives or backgrounds than your own, and what strategies did you develop that will serve you well in forming connections and contributing to the diverse student body at A&M?",
+          "Considering the demanding academic environment at Texas A&M, can you pinpoint a time you faced a complex problem that required you to think critically and creatively to find a solution, perhaps outside of a typical classroom setting? What was your thought process, and how did that problem-solving experience equip you to tackle the intellectual challenges of higher education?"
+        ]
+      },
+      {
+        "prompt": "Tell us about the person who has most impacted your life and why.",
+        "word_limit": "250 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the core values and traditions that Texas A&M cherishes, like the 'Aggie Spirit' and a commitment to service, which person in your life best embodies these ideals for you, and how have they demonstrated that in a way that resonated deeply?",
+          "Beyond just admiration, can you pinpoint a specific moment or a series of interactions with this person where their influence directly challenged your assumptions, pushed you to grow, or fundamentally shifted your perspective on a significant issue?",
+          "Considering the 'Aggie family' concept and the importance of community at Texas A&M, how has the guidance or example of this person helped you understand your own role within a larger group or inspired you to contribute to something bigger than yourself?",
+          "When you think about the future and the kind of impact you want to make in the world, as many Aggies strive to do, what specific lessons or enduring qualities did this person instill in you that you believe will shape your own contributions?",
+          "If you were to describe this person to an incoming freshman at Texas A&M, wanting to convey the essence of their impact on you and why they matter so much, what vivid anecdote or defining characteristic would you choose to share?"
+        ]
+      }
+    ]
+  }
 }

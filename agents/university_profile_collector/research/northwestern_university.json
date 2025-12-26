@@ -1133,7 +1133,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Holistic review focuses on academic and personal context, intellectual curiosity, interdisciplinary learning, and how applicants will contribute to the diversity of perspectives and community. InitialView interviews are optional for international students to provide additional perspective, but not submitting one is not a disadvantage."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "We want to understand what excites you intellectually and how Northwestern will help you pursue your passions and interests. Help us get to know you better by responding to two required prompts and one optional prompt.",
+        "word_limit": "300 words",
+        "type": "Why Northwestern",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a specific moment when you felt a spark of intellectual curiosity – something that made you stop, ponder, and want to learn more. What was that moment, and what questions did it ignite within you?",
+          "Northwestern has specific programs and departments that might align with your interests. Looking at their offerings (research labs, specific courses, interdisciplinary centers), which ones truly resonate with you and why do they feel like the perfect fit for your intellectual journey?",
+          "Beyond the obvious academic connections, what's a less conventional or unique intellectual pursuit you've engaged in, and how do you see Northwestern's unique environment fostering that particular passion?",
+          "If you could have a spontaneous, in-depth conversation with a professor or student at Northwestern about a topic that fascinates you, what would that conversation be about, and what kind of insights would you hope to gain?",
+          "Describe a time you encountered an intellectual challenge or a concept that initially baffled you. What was your process for wrestling with it, and what did you learn about your own intellectual resilience and problem-solving approach?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

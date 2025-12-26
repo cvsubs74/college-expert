@@ -665,7 +665,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Emphasis on character, background of service and leadership, and alignment with Pepperdine's Christian mission, particularly in contributing to conversations of faith on campus."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Pepperdine is a Christian university where students can grow spiritually and are encouraged to consider their place in the world. Tell us about how you would contribute to this environment.",
+        "word_limit": "50 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Pepperdine's emphasis on spiritual growth, what's a specific moment or experience where your own faith was challenged, deepened, or significantly transformed, and what did you learn from it that you'd want to share with others?",
+          "When you consider 'your place in the world' as Pepperdine encourages, what specific values or perspectives do you hold that you believe would resonate with and perhaps even enrich the Pepperdine community, and why?",
+          "Beyond just joining clubs, how have you actively sought to create a welcoming and supportive environment for others in past communities, and what specific actions could you envision bringing to Pepperdine to foster that kind of spiritual and personal connection?",
+          "Pepperdine highlights the integration of faith and learning. Can you recall a time when your academic pursuits or intellectual curiosity intersected with your spiritual journey in a surprising or meaningful way, and how would you bring that integrated approach to your studies at Pepperdine?",
+          "Imagine you're introducing yourself to a fellow Pepperdine student who is deeply engaged in their spiritual walk. What unique story or perspective about your own faith journey or your understanding of its role in the world would you share to spark a meaningful conversation and build connection?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

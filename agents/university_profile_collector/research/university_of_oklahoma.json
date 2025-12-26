@@ -983,5 +983,22 @@
       }
     }
   },
-  "_id": "university_of_oklahoma"
+  "_id": "university_of_oklahoma",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "OU encourages students to be leaders and change-makers. How will you leverage your OU experience to make an impact?",
+        "word_limit": "250 words",
+        "type": "Leadership",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about the specific mission and values of OU, which of its leadership or change-making initiatives or opportunities resonates most deeply with you, and why?",
+          "Beyond your academic pursuits, what specific skills or passions do you possess that you see aligning with OU's commitment to 'impact,' and how might you nurture those at OU?",
+          "Imagine yourself as a change-maker at OU a few years from now. What tangible problem within the OU community or the wider Oklahoma context are you most driven to solve, and what initial steps might you take to address it?",
+          "Reflect on a time you've felt inspired by a leader or a change-maker in your own life. What qualities did they possess, and how do you envision cultivating those same qualities through your OU experience?",
+          "OU's motto is 'Progress, in pursuit of excellence.' What does 'progress' mean to you in the context of making an impact, and what specific OU resources or connections will be essential for you to drive that progress?"
+        ]
+      }
+    ]
+  }
 }

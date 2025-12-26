@@ -1587,7 +1587,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Admission is selective and based on academic achievement, coursework rigor, and standardized test scores. USF recalculates high school GPA based on core academic subjects and weighted courses (AP, IB, AICE, honors, dual enrollment). While not a factor in admission decisions, USF offers significant support and scholarships for first-generation students."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "USF is committed to student success and innovation. How will you take advantage of opportunities at USF to achieve your goals?",
+        "word_limit": "250 words",
+        "type": "Goals",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about USF's commitment to innovation, what specific projects, research areas, or faculty members at USF spark your curiosity and directly align with a 'big idea' or innovative approach you want to pursue in your field?",
+          "Beyond the classroom, what kind of hands-on experiences or student organizations at USF, particularly those focused on leadership or entrepreneurial endeavors, do you see yourself actively contributing to in order to drive your success?",
+          "When you think about 'student success' at USF, what unique resources or support systems (like specific mentorship programs, interdisciplinary centers, or community engagement initiatives) resonate with you and seem crucial for you to overcome potential challenges and thrive?",
+          "USF encourages students to be agents of change. Can you recall a time when you've proactively sought out new opportunities or 'innovated' a solution to a problem, and how do you envision replicating that proactive spirit within the USF environment?",
+          "Considering your personal aspirations, how can the specific academic programs, research facilities, or even the diverse student body at USF serve as a catalyst for you to not just achieve your goals, but to potentially redefine them in unexpected and exciting ways?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -1199,7 +1199,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Holistic review process evaluating academic and nonacademic criteria, considering student's success potential within their distinct opportunities and challenges. Seeks students who show potential and desire to succeed in a rigorous academic environment and will be future community of learners, leaders, and thinkers. Machen Florida Opportunity Scholars program supports first-generation, low-income students."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "What has shaped who you are today and the goals you're working toward? Tell us about your experiences, achievements, and future aspirations.",
+        "word_limit": "250 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the vibrant and diverse community at the University of Florida, what's a specific moment or experience where you felt truly 'at home' or deeply connected to something larger than yourself, and how did that feeling solidify what you want to contribute there?",
+          "Beyond just listing accomplishments, can you recall a time you faced a significant challenge or failure that, in hindsight, was a crucial turning point in shaping your resilience and defining the 'why' behind your current academic or personal pursuits?",
+          "As you envision yourself as a Gator, what specific aspect of UF's culture, research, or student life ignites your passion and directly aligns with a future goal you're actively working towards, and what unique perspective do you bring to that aspiration?",
+          "Looking back at your journey, is there a particular mentor, family tradition, or even a local landmark that has subtly or overtly influenced your values and the kind of impact you aspire to make in the world, especially as a UF student?",
+          "If you could point to one core belief or guiding principle that has been consistently tested and refined throughout your experiences, what is it, and how does this principle fuel your determination to achieve your goals at the University of Florida and beyond?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

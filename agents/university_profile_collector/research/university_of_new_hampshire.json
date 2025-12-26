@@ -487,5 +487,22 @@
       }
     }
   },
-  "_id": "university_of_new_hampshire"
+  "_id": "university_of_new_hampshire",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "UNH is known for its commitment to sustainability and community engagement. How do these values align with your own?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about UNH's commitment to sustainability, can you recall a specific moment or project where you actively worked to reduce waste, conserve resources, or promote environmental awareness in your own community or school, and what did you learn from that experience?",
+          "When you hear 'community engagement,' what's the first personal memory or feeling that comes to mind, and how did that experience shape your understanding of what it means to be a contributing member of a group?",
+          "Describe a time you encountered a challenge related to environmental impact or community well-being, and how did you approach finding a solution, even if it was a small one?",
+          "Beyond just 'liking' sustainability and community, what specific actions have you taken in your life that demonstrate a deep-seated belief in these values, and what was the motivation behind those actions?",
+          "Imagine UNH's campus as a living community – what unique ways have you contributed to fostering a sense of belonging or improving the environment in other communities you've been a part of, and what made those contributions meaningful to you?"
+        ]
+      }
+    ]
+  }
 }

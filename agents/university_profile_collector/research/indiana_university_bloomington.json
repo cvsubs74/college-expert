@@ -1071,7 +1071,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Emphasis on academic preparation and performance, potential for contributing to research and scholarship, persistence in and commitment to educational success."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Please briefly elaborate on one of your extracurricular activities or work experiences.",
+        "word_limit": "200-400 words",
+        "type": "Activity",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about your [Extracurricular Activity/Work Experience], what was a specific moment where you felt you made a significant impact, even if it was small, and what did that feeling teach you about yourself?",
+          "Beyond the stated goals of your [Extracurricular Activity/Work Experience], what unexpected skill or perspective did you gain that has fundamentally changed how you approach other challenges?",
+          "Describe a time within your [Extracurricular Activity/Work Experience] where you encountered a significant obstacle or disagreement. How did you navigate it, and what did that experience reveal about your problem-solving style or your values?",
+          "If you were to explain the essence of your [Extracurricular Activity/Work Experience] to someone who knows nothing about it, what single, vivid anecdote would you share to capture its true meaning for you?",
+          "Looking back at your involvement in [Extracurricular Activity/Work Experience], what is one specific interaction with another person that stands out, and how did that connection or conversation shape your understanding of teamwork, leadership, or a particular subject?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

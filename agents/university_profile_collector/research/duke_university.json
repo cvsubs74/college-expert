@@ -791,7 +791,35 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Seeking intellectual strengths, love of learning, imagination, open-mindedness, commitment to communities, ambition, curiosity, talent, persistence, energy, and humanity."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "What is your sense of Duke as a university and a community, and why do you consider it a good match for you? If there's something in particular about our offerings that attracts you, feel free to share that as well.",
+        "word_limit": "250 words",
+        "type": "Why Duke",
+        "required": true,
+        "brainstorming_questions": [
+          "When you first encountered Duke, what specific element – whether it was a program, a student story, a research opportunity, or even an aesthetic aspect of campus – sparked your curiosity and made you think, 'This is different'?",
+          "Beyond academics, in what kind of campus conversations, student-led initiatives, or community traditions at Duke do you see yourself actively participating and contributing your unique perspective?",
+          "Reflecting on a time you felt truly intellectually challenged or deeply engaged in a learning environment, how does Duke's approach to interdisciplinary studies, specific research centers, or particular faculty members resonate with that experience?",
+          "Imagine yourself a year from now at Duke. What kind of personal growth, intellectual discovery, or community impact are you envisioning, and what specific Duke resources or opportunities do you see fueling that journey?",
+          "If you were to describe Duke's unique 'vibe' or 'spirit' to someone who's never been there, using your own lived experiences and observations, what core values or characteristic traits would you highlight, and why do those align with your own?"
+        ]
+      },
+      {
+        "prompt": "We want to emphasize that the following is optional. Feel free to share with us anything regarding the context of your application that you'd like us to know. You might share about your culture, identity, or a particular personal experience that shaped your perspective or accomplishments.",
+        "word_limit": "250 words",
+        "type": "Background",
+        "required": false,
+        "brainstorming_questions": [
+          "Duke specifically mentions 'culture, identity, or a particular personal experience' – thinking about your background, what's a moment or aspect that feels uniquely 'you' and might surprise the admissions committee, something that reveals a core value or understanding you hold?",
+          "When you consider your identity or cultural background, what's a common misconception about it that you've often had to navigate, and how did navigating that misconception shape your perspective or approach to something significant?",
+          "Duke wants to understand the 'context of your application.' Beyond your grades and activities, what's a personal experience that, while perhaps not conventionally academic, fundamentally altered how you see the world and, in turn, influenced what you now want to pursue at Duke?",
+          "The prompt offers a space for anything you 'want us to know.' If you could distill one crucial element about your personal journey or a defining moment that illuminates your character or potential, what would that element be, and what specific situation brought it into sharp relief?",
+          "Duke is interested in how you've been shaped. Think about a time when your perspective was significantly challenged or expanded – perhaps by a new environment, a difficult situation, or an encounter with someone different from you. How did that experience leave its mark and prepare you for the Duke community?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

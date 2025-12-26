@@ -813,7 +813,61 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "UCSB utilizes a comprehensive, holistic review process, evaluating applicants' achievements and personal qualities within the context of their opportunities and challenges. They look for intellectual initiative, quantified community impact, authenticity in PIQs, and resilience."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.",
+        "word_limit": "350 words",
+        "type": "Leadership",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the 'group efforts over time' part of the prompt, can you recall a specific moment when you felt a sense of genuine responsibility for the group's progress, and what was happening around you that made you feel that way?",
+          "When you've helped 'resolve disputes,' what was the underlying tension you sensed, and what was your *first* instinct – what did you *want* to do versus what did you *actually* do to influence the situation positively?",
+          "Beyond just completing a task, consider a time you 'positively influenced others.' What specific small action or interaction did you have that you believe shifted someone's perspective or motivation, even if it felt insignificant at the time?",
+          "UCSB's motto is 'Santa Barbara is a state of mind.' How did the unique environment or a particular challenge at UCSB (or a place you aspire to bring that spirit to) influence how you approached a leadership situation where you needed to unite diverse perspectives?",
+          "Looking back at a situation where you contributed to a group effort, what was a moment where you had to let go of your own idea or approach to make space for a better, collaborative outcome, and what did you learn about collective success from that experience?"
+        ]
+      },
+      {
+        "prompt": "Every person has a creative side, and it can be expressed in many ways: problem-solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.",
+        "word_limit": "350 words",
+        "type": "Creativity",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you encountered a challenge where the 'obvious' solution just didn't feel right or wouldn't work. What was the problem, and what did you do differently or 'outside the box' to overcome it, even if it felt a little unconventional at the time?",
+          "Beyond traditional art forms, when have you felt that spark of 'making something new' or 'putting things together in a fresh way'? Describe a specific instance where you were driven by an urge to experiment or innovate, and what was the outcome?",
+          "Consider a moment when you were deeply engrossed in a task, not because you had to, but because you genuinely enjoyed the process of figuring something out or bringing an idea to life. What was this task, and what specific elements of it ignited your creative energy?",
+          "UCSB has a vibrant campus known for its blend of innovation and artistic expression. Is there a particular interest, hobby, or even a quirk you have that feels like your unique creative signature? How does this interest manifest itself in your everyday thinking or actions?",
+          "Looking back, can you identify a specific skill or way of thinking that you've developed organically, perhaps even without realizing it was a form of creativity? How has this 'creative muscle' helped you navigate unexpected situations or express yourself in ways that feel authentically you?"
+        ]
+      },
+      {
+        "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
+        "word_limit": "350 words",
+        "type": "Talent",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the obvious definition of your talent, what's a specific, perhaps quirky, situation where you unexpectedly used it that surprised even yourself?",
+          "Think about a time you faced a significant obstacle in developing this talent. What was the specific challenge, and what internal resource or external support did you tap into to overcome it, showing resilience?",
+          "Can you recall a moment where sharing or teaching this talent to someone else led to a surprising insight or a deeper understanding of it for you?",
+          "When you think about the 'why' behind your dedication to this talent, what underlying value or passion does it connect you to, and how has that connection deepened over time?",
+          "Looking back, what's a small, incremental step or a seemingly insignificant experience that, in hindsight, played a crucial role in shaping or refining your talent in a unique way?"
+        ]
+      },
+      {
+        "prompt": "Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?",
+        "word_limit": "350 words",
+        "type": "Challenge",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the challenges you've faced, can you pinpoint one that felt like it fundamentally shifted your perspective, even if it wasn't the most outwardly dramatic? What was it about that particular challenge that made it so impactful for you?",
+          "Beyond the immediate actions you took, what internal shifts or lessons did you discover about yourself as you grappled with this significant challenge? How did these internal discoveries influence your approach to learning and your academic pursuits afterwards?",
+          "UCSB is known for its research and community. Can you recall a moment when the demands of this challenge intersected with your academic environment in a way that forced you to adapt your study habits or seek out specific resources? What did that adaptation look like?",
+          "When you look back at the 'steps you have taken to overcome' this challenge, what was a moment of unexpected progress or a surprising turning point? What made that moment significant in your journey, and what did it teach you about resilience?",
+          "Considering how this challenge has shaped your academic achievement, what specific qualities or skills did you develop or strengthen as a direct result of facing it, and how do you believe these will contribute to your success at a university like UCSB?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

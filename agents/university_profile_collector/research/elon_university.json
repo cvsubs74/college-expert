@@ -634,5 +634,22 @@
       }
     }
   },
-  "_id": "elon_university"
+  "_id": "elon_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Elon provides a dynamic learning environment characterized by engaged students and faculty. What aspects of Elon appeal to you, and how will you contribute to our community?",
+        "word_limit": "250 words",
+        "type": "Why Elon",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about your most engaging academic experiences. What specific teaching styles, classroom interactions, or faculty mentorships at Elon (based on your research) do you see yourself thriving in, and can you recall a time you learned something profound because of that dynamic?",
+          "Elon emphasizes 'engaged students.' When have you felt most actively involved in a learning process or community – perhaps leading a project, sparking a debate, or helping a peer – and how does that personal experience connect with the kind of active participation you envision at Elon?",
+          "Beyond academics, what are some of your passions or interests outside the classroom? How do you envision those interests aligning with Elon's specific clubs, organizations, or campus traditions, and can you share a moment when you brought a similar passion to a group you were part of?",
+          "The prompt mentions 'dynamic learning environment.' What does 'dynamic' mean to you in a college setting, and can you think of a time you've witnessed or been a part of a situation that felt truly dynamic and how you contributed to that energy?",
+          "Considering Elon's focus on experiential learning (like internships, study abroad, research), what kind of hands-on opportunities are you most excited about, and can you describe a past experience where you learned the most from doing rather than just listening, and how would you bring that 'learning by doing' spirit to Elon?"
+        ]
+      }
+    ]
+  }
 }

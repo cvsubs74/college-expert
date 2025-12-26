@@ -830,7 +830,22 @@
       "legacy_consideration": "Minimal",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Looking for intellectual curiosity and drive, and students who identify as changemakers."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "American University is deeply committed to creating a culture of inclusion and equity. How do you envision yourself contributing to this vision on our campus? Please share a time when you've contributed to creating a more inclusive environment.",
+        "word_limit": "250 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your past experiences, can you pinpoint a moment where you actively recognized a need for greater inclusion and took a specific action to address it, even if it felt small at the time?",
+          "When you imagine yourself at American University, what tangible, specific actions do you see yourself taking to foster equity and ensure everyone feels a sense of belonging in your classes, clubs, or social interactions?",
+          "Describe a time you encountered a perspective or experience that was different from your own and how you navigated that difference to build understanding or find common ground.",
+          "Beyond just being present, what does it look like for you to actively *contribute* to a culture of inclusion at AU? Think about specific skills or approaches you bring.",
+          "Reflect on a time when you felt you made a difference in making someone else feel seen, heard, or valued, especially in a context where they might have felt excluded."
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

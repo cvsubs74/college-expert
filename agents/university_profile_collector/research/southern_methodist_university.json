@@ -1099,7 +1099,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "The strongest applications resonate with authenticity and passion, adding dimension to a diverse, challenging community of scholars."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "SMU appeals to students for a variety of reasons. Briefly describe why you are interested in attending SMU and what specific aspects of the university are particularly attractive.",
+        "word_limit": "250 words",
+        "type": "Why SMU",
+        "required": true,
+        "brainstorming_questions": [
+          "When you first heard about SMU, what was the *very first thing* that sparked your curiosity, even if it seemed small at the time?",
+          "Beyond the rankings or general reputation, can you recall a specific moment or experience where SMU felt like a perfect fit for *your* kind of learning or growth?",
+          "Think about the academic programs or professors at SMU that genuinely excite you. What specific problems or questions do you hope to tackle with their guidance?",
+          "SMU has a strong connection to Dallas. How does that specific environment and culture resonate with your own aspirations and what do you hope to contribute to that community?",
+          "Imagine yourself as a student at SMU. What kind of traditions, clubs, or campus life activities are you most drawn to, and what role do you see yourself playing in them?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -730,7 +730,22 @@
       "legacy_consideration": "Minimal",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for students who have demonstrated strong academic skills and intellectual curiosity, and who have engaged in activities outside the classroom that have nurtured their growth as leaders. Emphasizes authenticity, civic engagement, and creativity."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Vanderbilt University's motto, Crescere aude, is Latin for 'dare to grow.' Reflect on how one or more aspects of your identity, culture, or background has played a role in your personal growth, and how it will contribute to our campus community.",
+        "word_limit": "250 words",
+        "type": "Identity",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about 'Crescere aude' – dare to grow – can you recall a specific moment where embracing an aspect of your identity, culture, or background felt like a real leap of faith, and what was the immediate outcome of that leap?",
+          "Beyond just listing them, how has the interplay between different facets of your identity (e.g., a cultural heritage and a particular hobby, or a personal belief and your upbringing) pushed you to adapt and evolve in ways that surprise even you?",
+          "When you consider the Vanderbilt community, where do you envision your unique cultural perspective or lived experience creating a space for others to 'dare to grow' alongside you, perhaps by challenging assumptions or introducing new ways of thinking?",
+          "If you had to teach someone about a key element of your background or culture, not just facts but the *feeling* or *essence* of it, what experience would you share, and how did navigating that experience shape your own personal growth?",
+          "Looking at the 'dare to grow' motto, where do you see a tension or a challenge within your own identity or background that you've actively worked to overcome or integrate, and what did that internal journey teach you about resilience and self-discovery?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

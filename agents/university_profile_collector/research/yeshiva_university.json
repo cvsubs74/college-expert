@@ -692,5 +692,22 @@
       "graduation_rate_6_year": 85.0
     }
   },
-  "_id": "yeshiva_university"
+  "_id": "yeshiva_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Yeshiva University combines Jewish values with secular education. How will this unique blend support your growth?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "When you've encountered a moment where a Jewish value directly informed or challenged a secular idea you were grappling with, what was that moment, and how did you navigate it?",
+          "Can you describe a specific instance where the pursuit of knowledge within a secular field felt enriched or given deeper meaning by your understanding of Jewish tradition or philosophy?",
+          "Beyond the classroom, how do you envision Yeshiva University's integration of Jewish and secular learning fostering a particular kind of ethical decision-making or leadership style in you?",
+          "Think about a time you had to reconcile a personal belief with a new idea learned in a secular subject. How might Yeshiva University's emphasis on Jewish values provide a framework for that kind of personal growth?",
+          "Looking ahead, what specific contributions do you hope to make in your chosen field, and how do you see the dual foundation of Jewish values and secular education at Yeshiva University shaping the *way* you contribute?"
+        ]
+      }
+    ]
+  }
 }

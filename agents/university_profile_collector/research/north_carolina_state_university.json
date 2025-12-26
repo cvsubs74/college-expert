@@ -27,7 +27,7 @@
       },
       {
         "category": "Research & Innovation",
-        "insight": "NC State is classified as an 'R1: Doctoral Universities \u2013 Very high research activity' institution and is a key part of the Research Triangle, with a significant Centennial Campus dedicated to public-private research partnerships.",
+        "insight": "NC State is classified as an 'R1: Doctoral Universities – Very high research activity' institution and is a key part of the Research Triangle, with a significant Centennial Campus dedicated to public-private research partnerships.",
         "implication": "Students interested in research-intensive fields, particularly STEM, will find ample opportunities for engagement and collaboration with industry and government partners."
       }
     ],
@@ -1369,7 +1369,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for strong grades in challenging courses, alignment of extracurricular activities with major interest, and for Honors, intellectual curiosity and drive."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Explain why you selected the first-choice program on your application and how it connects to your future goals or interests.",
+        "word_limit": "250 words",
+        "type": "Major",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about NC State's specific [First-Choice Program Name] program, what's one specific course, research opportunity, or faculty member that truly sparks your curiosity and why does that particular element resonate with your deepest interests?",
+          "Beyond the general description of the program, can you recall a specific moment, experience, or challenge in your past where you felt a strong pull towards the kind of learning or problem-solving that this [First-Choice Program Name] program offers at NC State?",
+          "If you could hypothetically build your ideal future career path or tackle a specific real-world issue, what tangible skills or knowledge would you gain from NC State's [First-Choice Program Name] program that would be absolutely crucial for that vision?",
+          "When you imagine yourself as a student within the [First-Choice Program Name] program at NC State, what kind of community do you see yourself being a part of, and what contributions do you envision making to that specific academic environment?",
+          "Looking at the broader landscape of your future aspirations, how does the unique approach or specific strengths of NC State's [First-Choice Program Name] program offer a distinct advantage or a different path compared to what other universities might offer in a similar field?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

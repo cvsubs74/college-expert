@@ -562,5 +562,22 @@
       }
     }
   },
-  "_id": "university_of_kentucky"
+  "_id": "university_of_kentucky",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "UK is dedicated to improving people's lives. Tell us how you plan to make a positive impact through your career or community involvement.",
+        "word_limit": "250 words",
+        "type": "Impact",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about the University of Kentucky's mission to improve lives, what specific problems or needs have you observed in your community, or in areas you care deeply about, that spark a desire within you to find solutions?",
+          "When you imagine yourself contributing to the University of Kentucky, are there particular programs, research areas, or faculty whose work resonates with your own aspirations for positive impact, and why do those specific connections excite you?",
+          "Beyond the broad idea of 'improving lives,' can you pinpoint a moment or experience where you felt you made a tangible difference, even a small one, and what did you learn about yourself and your ability to create change from that situation?",
+          "Consider the skills and knowledge you hope to gain at the University of Kentucky; how do you envision those translating into concrete actions or initiatives that directly address the challenges you want to tackle in your career or community?",
+          "If you were to describe the *feeling* of making a positive impact, what does that look like and feel like to you, and how has that vision guided your past choices and your future ambitions for your time at UK and beyond?"
+        ]
+      }
+    ]
+  }
 }

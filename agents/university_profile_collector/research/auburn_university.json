@@ -1277,7 +1277,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for academic achievements, unique qualities, and potential contributions to the Auburn community. Strong academic performance in high school is the primary predictor of success."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Auburn has a long tradition of community and belonging. If accepted, how do you plan to add to and foster Auburn's sense of community and belonging?",
+        "word_limit": "250 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you've genuinely felt like you belonged somewhere. What specific actions did you take, or what was done for you, that created that feeling, and how could that translate to Auburn's unique environment?",
+          "Auburn's tradition of community often manifests in shared experiences and traditions (like football games, traditions like 'Toomer's Corner', etc.). What's a past experience where you actively contributed to a shared positive experience for a group, and how might you bring that energy to a specific Auburn tradition or group?",
+          "Beyond simply joining clubs, how have you, in the past, intentionally reached out to someone who seemed like an outsider or helped bridge gaps between different groups of people? What was your motivation then, and what would motivate you at Auburn?",
+          "Auburn values its 'War Eagle' spirit. Can you recall a moment where you helped rally a group or build enthusiasm for a common goal, even when it was challenging? What did you learn about fostering that sense of shared purpose that you could apply to campus life?",
+          "Imagine you're walking across campus a year from now, and you see evidence of your positive impact on Auburn's community. What specific, tangible things would you be seeing or hearing that make you feel you've successfully added to and fostered that sense of belonging?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

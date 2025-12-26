@@ -430,5 +430,22 @@
       }
     }
   },
-  "_id": "kansas_state_university"
+  "_id": "kansas_state_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Tell us about your background, experiences, and goals. Why have you chosen your intended major?",
+        "word_limit": "250 words",
+        "type": "Major",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about your background in Kansas or elsewhere, what's a specific moment or observation that sparked your initial curiosity about the field of [Intended Major]? Perhaps a childhood fascination, a family tradition, or a community issue?",
+          "Beyond academics, what are some of your most meaningful hands-on experiences, hobbies, or even challenges that have shaped your understanding of [Intended Major] and demonstrated your aptitude or passion for it?",
+          "K-State is known for [mention a specific K-State program, value, or tradition related to the major, e.g., 'its hands-on research opportunities in agriculture,' or 'its commitment to community engagement in engineering']. How do you see your own past experiences aligning with or being enhanced by K-State's specific approach to [Intended Major]?",
+          "When you picture yourself as a graduate in your intended field, what tangible problem or challenge are you most driven to address, and how have your past experiences prepared you for that specific goal?",
+          "Imagine you're explaining your chosen major to someone who knows nothing about it. What's the one story from your background or a personal experience you'd share to make them truly understand why this field matters to you and why you're pursuing it at K-State?"
+        ]
+      }
+    ]
+  }
 }

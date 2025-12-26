@@ -1,0 +1,415 @@
+/* Essay Assistant Page - Simplified Card Layout */
+
+.essay-page {
+    min-height: 100vh;
+    background: #FDFCF7;
+    padding: 2rem;
+}
+
+/* Header */
+.essay-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.essay-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1A4D2E;
+    margin-bottom: 0.5rem;
+}
+
+.essay-header .subtitle {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+/* Loading & Error States */
+.loading-state,
+.error-state,
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #64748b;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e5e1db;
+    border-top-color: #1A4D2E;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* School Cards Grid */
+.school-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Essay Card */
+.essay-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #E0DED8;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.essay-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Card Header */
+.essay-card-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #E0DED8;
+    background: #FAF8F5;
+}
+
+.school-info h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin: 0 0 0.75rem 0;
+}
+
+/* Deadline Badge */
+.deadline-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.deadline-badge.urgent {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.deadline-badge.soon {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.deadline-badge.later {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.deadline-plan {
+    font-weight: 600;
+}
+
+.deadline-date {
+    color: inherit;
+    opacity: 0.9;
+}
+
+.deadline-days {
+    font-weight: 500;
+    padding-left: 0.5rem;
+    border-left: 1px solid currentColor;
+    opacity: 0.7;
+}
+
+/* Card Body */
+.essay-card-body {
+    padding: 1.25rem 1.5rem;
+}
+
+/* Essay Requirements */
+.essay-requirements {
+    margin-bottom: 1rem;
+}
+
+.essay-requirements h4,
+.essay-tips h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1A4D2E;
+    margin-bottom: 0.5rem;
+}
+
+.requirement-item {
+    background: #f8f6f0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.req-type {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #64748b;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.requirement-item p {
+    font-size: 0.9rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Essay Tips */
+.essay-tips {
+    margin-bottom: 1rem;
+}
+
+.essay-tips ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.essay-tips li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    color: #475569;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.essay-tips li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #1A4D2E;
+}
+
+.more-tips {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* AI Help Button */
+.ai-help-btn {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #1A4D2E 0%, #2D6B45 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.ai-help-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 77, 46, 0.3);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #E0DED8;
+    background: #FAF8F5;
+}
+
+.modal-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    color: #64748b;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.close-btn:hover {
+    color: #1A4D2E;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Suggested Prompts */
+.suggested-prompts {
+    margin-bottom: 1rem;
+}
+
+.suggested-prompts p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+.prompt-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.prompt-chip {
+    padding: 0.5rem 0.75rem;
+    background: #f8f6f0;
+    border: 1px solid #E0DED8;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.prompt-chip:hover {
+    background: #D6E8D5;
+    border-color: #1A4D2E;
+    color: #1A4D2E;
+}
+
+/* Prompt Input */
+.prompt-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.prompt-input textarea {
+    width: 100%;
+    padding: 0.875rem;
+    border: 1px solid #E0DED8;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    resize: none;
+    font-family: inherit;
+}
+
+.prompt-input textarea:focus {
+    outline: none;
+    border-color: #1A4D2E;
+    box-shadow: 0 0 0 3px rgba(26, 77, 46, 0.1);
+}
+
+.ask-btn {
+    align-self: flex-end;
+    padding: 0.75rem 1.5rem;
+    background: #1A4D2E;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ask-btn:hover:not(:disabled) {
+    background: #2D6B45;
+}
+
+.ask-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* AI Response */
+.ai-response {
+    background: #f8f6f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.ai-response pre {
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #1e293b;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .essay-page {
+        padding: 1rem;
+    }
+
+    .school-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .essay-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .deadline-badge {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .deadline-days {
+        border-left: none;
+        padding-left: 0;
+        width: 100%;
+    }
+}

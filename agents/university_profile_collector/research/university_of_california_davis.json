@@ -943,7 +943,35 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Emphasis on demonstrated capacity to contribute to the intellectual vitality of the campus, intellectual curiosity, and engagement with educational opportunities."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
+        "word_limit": "350 words",
+        "type": "PIQ 1",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your time at UC Davis (or a similar learning environment if you haven't yet attended), what specific program, research opportunity, or unique course at Davis excites you the most, and why does it feel like the perfect next step for your academic journey?",
+          "If you encountered an educational barrier, what was the moment you realized this obstacle was significant, and what specific, internal spark or external resource did you tap into to start pushing back against it?",
+          "Beyond the obvious academic subjects, what's a skill or perspective you gained from a Davis-specific opportunity (like a lab, a student club, or even a unique campus event) that fundamentally changed how you approach learning?",
+          "Reflecting on a time you've felt truly challenged intellectually at Davis (or in a prior academic setting), what was the specific 'aha!' moment when you finally overcame that hurdle, and what did that victory teach you about your own resilience?",
+          "Imagine you're explaining a pivotal educational experience at Davis to a younger sibling. What story would you tell them about seizing a unique learning chance or conquering a tough academic challenge that would inspire them the most?"
+        ]
+      },
+      {
+        "prompt": "What is the most significant challenge that society faces today?",
+        "word_limit": "350 words",
+        "type": "PIQ 2",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about a challenge that truly resonates with you, can you recall a specific moment or interaction where you felt its impact firsthand, perhaps even in your own community or a situation you witnessed?",
+          "Beyond the headlines, what aspect of this societal challenge makes you feel a personal sense of responsibility or a drive to understand it more deeply, maybe something you've researched or discussed at length?",
+          "If you could point to one specific, tangible consequence of this challenge that you believe is often overlooked, what would that be, and how might it affect individuals differently?",
+          "When you consider the potential solutions or the future trajectory of this challenge, what is a particular outcome or change that you find yourself hoping for or even actively working towards, however small?",
+          "Looking at how this societal challenge intersects with your own passions, interests, or even your intended field of study at UC Davis, what unique perspective or question does it spark within you?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -582,7 +582,35 @@
       "legacy_consideration": "Minimal",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Intellectual curiosity, free-thinking, ability to engage creatively with challenging prompts. UChicago does not offer on-campus or alumni interviews as part of the undergraduate application process; however, applicants have the option to submit a highly recommended two-minute video profile or external interviews (Glimpse or InitialView) in lieu of the video profile."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "How does the University of Chicago, as you know it now, satisfy your desire for a particular kind of learning, community, and future? Please address with some specificity your own wishes and how they relate to UChicago.",
+        "word_limit": "No limit",
+        "type": "Why UChicago",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the widely known strengths, what are some of the less obvious, perhaps even quirky, aspects of UChicago's academic landscape (a specific course, a unique program, a particular professor's work, or even an interdisciplinary initiative) that resonate deeply with your intellectual curiosities and learning style?",
+          "When you imagine yourself as part of the UChicago community, what specific kinds of conversations, collaborations, or even gentle debates are you envisioning, and what unique contributions do you hope to bring to those interactions?",
+          "Thinking about your future aspirations, what is one concrete skill, perspective, or network that you believe UChicago uniquely offers that will be absolutely crucial for you to cultivate, and why is it so vital for your personal and professional trajectory?",
+          "UChicago is known for its rigorous intellectual environment. Can you pinpoint a moment in your past where you've felt that same intense intellectual drive or faced a challenging question that you're eager to bring to the UChicago classroom and engage with others on?",
+          "Imagine you have a free afternoon on UChicago's campus. What specific activities or explorations, whether academic, social, or even a bit unconventional, would you be drawn to, and how do these imagined experiences connect with what you're seeking from a college environment?"
+        ]
+      },
+      {
+        "prompt": "Extended Essay: Choose one of our past or present prompts (or create your own).",
+        "word_limit": "No limit",
+        "type": "Creative",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the UChicago's history of quirky, challenging prompts, what's a past prompt that truly sparked your curiosity or made you think, 'Wow, I *have* to tackle this'?",
+          "Imagine you're at UChicago right now, surrounded by students engaging with their chosen prompts. What kind of conversation are you having with someone about *your* unique prompt choice and the idea you're exploring?",
+          "Beyond the academic, what's a personal moment, belief, or experience that you feel is perfectly captured or illuminated by one of UChicago's past or present prompts (or your own)?",
+          "If you could have a 15-minute conversation with the professor who designed one of UChicago's past prompts, what question would you ask them about *their* intention behind it, and how does your chosen prompt relate to that?",
+          "Consider the idea of a 'prompt' as a launching pad for an intellectual adventure. What unexpected direction or rabbit hole did exploring a UChicago prompt lead you down, and why is that journey uniquely yours?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

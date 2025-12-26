@@ -831,7 +831,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Seeking students with academic ability, intellectual curiosity, strength of character, motivation, energy, and promise for personal growth. Emphasis on the Jesuit mission of liberal arts, character development, and cultivating leaders."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Each year at University Convocation, the incoming class participates in the 'Burning of the Boat.' What do you need to leave behind to embrace your future?",
+        "word_limit": "400 words",
+        "type": "Personal Growth",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the 'Burning of the Boat' metaphor at Boston College, what's a specific belief or expectation you once held tightly about your own capabilities or potential that you now recognize needs to be shed to truly grow here?",
+          "When you imagine yourself stepping onto the Boston College campus for the first time, what preconceived notions or past experiences might act like an anchor, and how can 'burning' them open up new possibilities for you?",
+          "The 'Burning of the Boat' signifies a departure. What's a comfort zone or a familiar way of approaching challenges that you might need to let go of in order to fully engage with the unique academic or social landscape at Boston College?",
+          "Imagine a moment in your past where you felt truly stuck or hesitant to move forward. What was the 'boat' you were clinging to then, and how does that experience inform what you need to 'burn' to embrace your future at BC?",
+          "Beyond academic aspirations, what's a personal habit, mindset, or even a perceived limitation that you feel is holding you back from fully becoming the person you want to be at Boston College, and how will letting go of it propel you forward?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -1129,7 +1129,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Seeking passionate students who demonstrate a love for learning and go above and beyond."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Please describe a time when you contributed to a group effort. What was your role, and what did you learn from the experience?",
+        "word_limit": "250 words",
+        "type": "Teamwork",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a group project where you felt a real sense of accomplishment. What was the initial challenge or goal, and how did you personally feel about tackling it within that group setting?",
+          "Beyond just completing tasks, what was a specific moment where your unique contribution or perspective truly shifted the group's direction or the outcome in a positive way?",
+          "When you look back at the group's journey, what was a point of friction or disagreement, and how did your actions or words help the group navigate that challenge and move forward together?",
+          "Consider the skills or qualities you brought to the table – perhaps something you're naturally good at or something you had to actively develop. How did this specific ability make a tangible difference to the group's success at UMass Amherst?",
+          "Reflecting on the lessons learned, what's one insight about collaboration or your own strengths that you'll carry with you into future group endeavors, especially those you might encounter here at UMass Amherst?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

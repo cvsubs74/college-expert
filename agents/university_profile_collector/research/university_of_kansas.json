@@ -465,5 +465,22 @@
       }
     }
   },
-  "_id": "university_of_kansas"
+  "_id": "university_of_kansas",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "KU is committed to developing leaders who will shape our world. How will your education at KU contribute to your goals?",
+        "word_limit": "250 words",
+        "type": "Goals",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about KU's commitment to developing leaders, what specific skills or knowledge do you hope to cultivate in your chosen field of study that you believe will directly enable you to 'shape the world' in a unique way?",
+          "Beyond academics, what specific programs, organizations, or unique campus opportunities at KU resonate with your vision of leadership development and how do you see yourself actively engaging with them to achieve your world-shaping goals?",
+          "Can you recall a specific moment in your past where you felt the potential to influence or lead, and how do you envision your KU education building upon that nascent ability to effect larger, more impactful change?",
+          "When you imagine yourself as a KU graduate who has successfully 'shaped the world,' what does that look like in practice? What kind of challenges are you tackling, and what distinct qualities or experiences gained at KU will allow you to approach them differently?",
+          "Considering KU's location and its connection to Kansas and the broader Midwest, are there any specific regional challenges or opportunities that pique your interest, and how do you see your KU education equipping you to lead in addressing them?"
+        ]
+      }
+    ]
+  }
 }

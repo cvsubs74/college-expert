@@ -530,5 +530,22 @@
       }
     }
   },
-  "_id": "arizona_state_university"
+  "_id": "arizona_state_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "ASU is inspired by a spirit of innovation. Share an example of a time when you thought creatively to solve a problem.",
+        "word_limit": "250 words",
+        "type": "Innovation",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about ASU's 'spirit of innovation,' can you recall a moment where you felt stuck or faced a challenge that traditional approaches didn't solve, and what was the *very first* unconventional idea that popped into your head, even if it seemed a little wild at the time?",
+          "Beyond just solving the problem, what was the *feeling* or *internal shift* you experienced when your creative solution started to work, and how did that experience connect with ASU's emphasis on pushing boundaries?",
+          "Consider a time you had to work with others to overcome an obstacle. How did your unique way of thinking influence the group's approach, and what did you learn about innovation through that collaborative process?",
+          "When you look back at the problem you solved creatively, what was it about *you* – your background, your interests, or your perspective – that made you see the situation differently than others might have?",
+          "Thinking about ASU's innovative environment, what specific aspect of your creative problem-solving experience do you believe would resonate most with the ASU community and contribute to its forward-thinking spirit?"
+        ]
+      }
+    ]
+  }
 }

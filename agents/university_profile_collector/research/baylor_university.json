@@ -787,7 +787,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Baylor seeks students who are excited about intellectual activity, motivated, want to be part of a community that values faith and personal calling, have challenged themselves academically, embraced opportunities outside the classroom, and recognize that life, learning, and service are interconnected. While there isn't a direct admission boost for first-generation students, Baylor offers significant support programs and scholarships, such as the First in Line Success Academy (FILSA), which provides academic coaching, peer mentoring, and a scholarship to admitted first-generation students."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Baylor University is known for its quality academics, its strong Christian mission, and its caring community. What about Baylor University appeals to you?",
+        "word_limit": "500 words",
+        "type": "Why Baylor",
+        "required": false,
+        "brainstorming_questions": [
+          "When you think about Baylor's 'strong Christian mission,' can you recall a specific moment or experience where faith played a significant role in shaping your perspective or actions, and how might that resonate with Baylor's environment?",
+          "Beyond just 'quality academics,' what specific academic areas or research opportunities at Baylor spark your curiosity the most, and what questions do you hope to explore within those fields there?",
+          "Considering Baylor's 'caring community,' can you think of a time you felt truly supported or inspired by a community, and what elements of that experience make you believe you'd find a similar connection at Baylor?",
+          "What specific values or traditions that you've observed or learned about at Baylor seem to align with your own personal journey and aspirations, and in what ways do you see yourself contributing to that atmosphere?",
+          "Looking at Baylor's distinct blend of academic rigor and its Christian mission, can you pinpoint a particular challenge you've faced where your faith helped you navigate intellectual or ethical dilemmas, and how does that prepare you for Baylor's integrated approach?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

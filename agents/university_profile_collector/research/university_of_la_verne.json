@@ -440,5 +440,22 @@
       }
     }
   },
-  "_id": "university_of_la_verne"
+  "_id": "university_of_la_verne",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "La Verne is committed to developing ethical leaders. How have your experiences prepared you for ethical leadership?",
+        "word_limit": "250 words",
+        "type": "Leadership",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you had to make a difficult decision where you felt a strong pull between what was easiest and what you knew was right. What was the situation, and how did you navigate that ethical dilemma?",
+          "Can you recall a moment when you witnessed an ethical lapse in judgment (either by yourself or someone else) and how did that experience shape your understanding of what ethical leadership looks like?",
+          "Describe a situation where you had to advocate for a principle or value you believed in, even when it was unpopular or challenging. What did you learn about leading with integrity through that experience?",
+          "Consider a time you took responsibility for a mistake or setback, and how your approach to owning up to it and learning from it demonstrates ethical leadership. What was the impact of your actions?",
+          "How have your interactions with people from diverse backgrounds or with different perspectives helped you develop a more nuanced and ethically-grounded approach to leading and making decisions?"
+        ]
+      }
+    ]
+  }
 }

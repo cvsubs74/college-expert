@@ -1020,7 +1020,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Holistic review to capture individual experiences, extracurricular interests, and academic coursework; values grit, passion, and perseverance."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Tell us about yourself beyond your academic record. This can include interests outside the classroom, extracurricular activities, work experiences, or anything that reveals more about who you are.",
+        "word_limit": "250+ words",
+        "type": "Personal",
+        "required": false,
+        "brainstorming_questions": [
+          "Temple's motto is 'Perseverance and Ingenuity.' Thinking about your experiences outside of academics, where have you most noticeably embodied one or both of these qualities, and what specific moment or challenge best illustrates this?",
+          "Temple is a vibrant, urban university deeply connected to Philadelphia. Can you describe an experience where your interests or activities outside of school have intersected with the city of Philadelphia in a meaningful way, revealing something unique about your perspective?",
+          "Beyond your GPA, what's a skill or passion you've cultivated through a non-academic pursuit that you believe has truly shaped your problem-solving approach or your way of interacting with the world?",
+          "If your academic record represents the 'what' of your capabilities, what non-academic experience best reveals the 'how' and 'why' behind your drive and aspirations, showcasing your personal ethos?",
+          "Temple values community and diverse perspectives. Tell me about a time when an extracurricular activity, a job, or a personal interest challenged your preconceived notions or taught you something profound about people who are different from you."
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

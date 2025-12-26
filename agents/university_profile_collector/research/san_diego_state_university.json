@@ -809,7 +809,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Admission is heavily data-driven, focusing on academic performance in 'impacted' majors and providing priority to students within the SDSU local service area."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "SDSU is committed to diversity, inclusion, and student success. How will you contribute to our diverse community?",
+        "word_limit": "250 words",
+        "type": "Community",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about SDSU's commitment to diversity, can you recall a time when your unique background or perspective genuinely enriched a group project or discussion, and what specifically did you bring to the table?",
+          "Beyond just acknowledging differences, can you describe a situation where you actively worked to create a more inclusive environment for someone whose experiences or beliefs were different from your own, and what did you learn from that interaction?",
+          "Considering 'student success' at SDSU, how have you seen your own efforts to navigate challenges or support others who were struggling demonstrate resilience and a commitment to helping everyone thrive, particularly in a diverse setting?",
+          "If you were to walk onto the SDSU campus tomorrow, what's one specific way you envision yourself bringing your individual passions, skills, or cultural heritage to life in a way that would add a new dimension to campus life or student organizations?",
+          "Imagine you're mentoring a new student at SDSU who feels like an outsider. What specific advice or action would you offer them, drawing from your own experiences of finding your place or helping others feel welcomed, that aligns with SDSU's values?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

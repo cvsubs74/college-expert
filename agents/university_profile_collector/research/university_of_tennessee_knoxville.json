@@ -481,5 +481,22 @@
       }
     }
   },
-  "_id": "university_of_tennessee_knoxville"
+  "_id": "university_of_tennessee_knoxville",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "UT is committed to developing leaders who will make a difference. Describe a time when you demonstrated leadership.",
+        "word_limit": "250 words",
+        "type": "Leadership",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about the UT's commitment to leaders who make a difference, can you recall a specific moment where you felt a responsibility to step up and guide others, even when it wasn't explicitly your job?",
+          "When you imagine yourself as a leader at UT, making a difference, what kind of challenges are you picturing yourself tackling? Can you think of a time in your past that mirrors one of those challenges, where you had to find a way to move a group forward?",
+          "Beyond just being in charge, what does 'making a difference' look like to you? Describe a situation where you influenced a group's outcome or perspective in a way you're proud of, and what specifically you did to create that change.",
+          "Leadership can sometimes be about inspiring others to believe in a shared vision. What's a time you had to convince a group of people to embrace an idea or a plan that they were initially hesitant about?",
+          "UT values leaders who can navigate complexity and create positive change. Can you pinpoint a time you faced a situation with no clear solution, where you had to take the initiative to explore different paths and ultimately lead your team towards a resolution?"
+        ]
+      }
+    ]
+  }
 }

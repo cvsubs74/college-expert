@@ -575,7 +575,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Admissions focuses heavily on 'fit' with the environmental mission."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "SUNY-ESF is focused on environmental sustainability and science. What environmental issue concerns you most, and how might you address it?",
+        "word_limit": "250 words",
+        "type": "Environment",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the environmental issues you've encountered, which one has felt most personal to you, perhaps impacting your own community or a place you deeply care about?",
+          "Beyond just identifying the issue, what's a specific moment or observation that solidified this concern for you and made you realize its urgency?",
+          "When you imagine tackling this environmental issue, what's a small, actionable step you've already taken or seen someone else take that felt like a glimmer of hope?",
+          "Considering SUNY-ESF's focus on science, what specific scientific aspect of this environmental issue fascinates or troubles you the most, and why?",
+          "If you could bring a unique perspective or skill to addressing this issue at SUNY-ESF, what would it be, and how does it connect to your personal experiences or passions?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

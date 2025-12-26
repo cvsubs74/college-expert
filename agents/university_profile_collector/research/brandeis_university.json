@@ -809,7 +809,22 @@
       "legacy_consideration": "Not Considered",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Seeking intellectual curiosity and drive, potential for social and academic success, demonstrated understanding of Brandeis' mission (inclusivity, justice, improving the world), and active citizens."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Brandeis was established 75 years ago to address antisemitism, racism, and gender discrimination in higher education. How has your educational experience shaped your perspective on inclusivity and justice?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking back to a moment when you witnessed or experienced a clear instance of exclusion, what specific feelings did that evoke, and how did you process that experience in your educational journey?",
+          "When you've encountered an educational setting or activity that felt particularly inclusive, what were the key elements that made it so, and how did that foster your understanding of justice?",
+          "Beyond overt discrimination, can you recall a time when a subtle bias in an educational context challenged your assumptions about fairness, and what did you learn from that moment?",
+          "How have your interactions with individuals from backgrounds different from your own within your educational experiences (whether in class, in clubs, or in your community) directly informed your evolving definition of inclusivity?",
+          "Consider a time when you actively worked to make an educational environment more just or inclusive. What motivated you to take that action, and what was the most significant outcome for your own perspective?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

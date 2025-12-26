@@ -1150,7 +1150,22 @@
       "legacy_consideration": "Not Considered",
       "first_gen_boost": "None",
       "specific_differentiators": "Academically focused and driven to succeed; strong emphasis on co-op program and real-world experience."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Tell us about your experiences with cooperative education (co-ops), internships, or jobs where you applied classroom knowledge to real-world situations.",
+        "word_limit": "250 words",
+        "type": "Experience",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking back to your Drexel co-op or internship, can you pinpoint a moment where a specific concept or skill you learned in a classroom *immediately* clicked and made sense because of the real-world problem you were facing?",
+          "Beyond just 'applying knowledge,' describe a time during your co-op/internship where your real-world experience actually *changed* how you understood or approached something you learned in a Drexel class, or even opened your eyes to a new academic interest?",
+          "What was a challenge you encountered during your co-op/internship that, at first, seemed completely outside of your academic training, but after some thought and effort, you realized you *did* have the foundational knowledge from Drexel to tackle it, even if indirectly?",
+          "Can you recall a specific project or task during your co-op/internship where you had to explain a complex concept (learned at Drexel) to someone who didn't have your academic background? What was that experience like, and what did it teach you about your own learning and communication?",
+          "Drexel's co-op program is known for its intensity. Looking back, was there a particular co-op experience where the real-world demands pushed you to synthesize knowledge from *multiple* Drexel courses in a way you hadn't anticipated, and what was the outcome of that synthesis?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

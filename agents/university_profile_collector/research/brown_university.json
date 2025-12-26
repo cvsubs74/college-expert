@@ -891,7 +891,48 @@
       "legacy_consideration": "Minimal",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Seeking intellectual curiosity, drive, and potential to contribute to Brown's lively academic culture and open curriculum."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Brown's Open Curriculum allows students to explore broadly while also diving deeply into their academic pursuits. Tell us about any academic interests that excite you, and how you might use the Open Curriculum to pursue them.",
+        "word_limit": "200-250 words",
+        "type": "Academic",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your academic journey so far, what's a moment where a subject you *thought* you understood suddenly opened up in a surprising or unexpected way, and what curiosity did that spark?",
+          "Beyond the typical subject labels (like 'biology' or 'history'), what are the underlying *questions* or *problems* that truly capture your imagination and make you want to dig deeper, and how do you see Brown's interdisciplinary approach helping you tackle those specific puzzles?",
+          "If you were to design your dream academic 'semester' at Brown, not limited by traditional department boundaries, what unique combination of courses, perhaps even some you haven't encountered yet, would you weave together to explore a passion, and what makes that specific blend so compelling to you?",
+          "Describe a time when exploring an academic topic led you down a rabbit hole, revealing connections to seemingly unrelated fields. How does this impulse to connect disparate ideas align with the spirit of Brown's Open Curriculum?",
+          "Imagine yourself a few years into Brown's Open Curriculum. What's a specific academic challenge or research question you envision yourself tackling, and what are two or three seemingly diverse fields you anticipate needing to draw upon from Brown's offerings to truly understand and solve it?"
+        ]
+      },
+      {
+        "prompt": "Students entering Brown often find that their courses, extracurriculars, and their interactions with other students and faculty prompt them to experience many new and different perspectives. Describe how an aspect of your background or identity that is important to you has shaped your perspective and how your engagement with perspectives different from your own has changed how you move through the world.",
+        "word_limit": "200-250 words",
+        "type": "Identity",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the core of your identity – what's a moment or experience where that aspect of yourself felt particularly challenged or misunderstood by someone with a very different background, and what did you learn from that friction?",
+          "When you imagine yourself at Brown, where do you see your unique perspective, shaped by your background, naturally clashing with or complementing the perspectives of others, and what are you hoping to gain from those interactions?",
+          "Beyond just intellectual understanding, can you recall a time when encountering a drastically different viewpoint forced you to *feel* differently about something you previously held as truth, and how has that emotional shift influenced your actions since?",
+          "Describe a specific instance where your background or identity prompted you to approach a collaborative project or group discussion in a way that surprised others, and how did the resulting exchange broaden your understanding of the situation or the people involved?",
+          "Imagine your most cherished belief or value, deeply rooted in your identity. What kind of academic or extracurricular environment at Brown, filled with diverse perspectives, do you envision would be most instrumental in either solidifying that belief through rigorous challenge or subtly reshaping it?"
+        ]
+      },
+      {
+        "prompt": "Tell us about a place or community you call home. How has it shaped your perspective?",
+        "word_limit": "200-250 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond just a physical location, what are the sensory details (smells, sounds, tastes, textures) that immediately transport you back to this place you call home, and what specific memory do these details often evoke?",
+          "Think about a time you had to explain your home or community to someone from a very different background. What was the most challenging part to convey, and what did that struggle reveal about what truly defines your home's essence for you?",
+          "Consider a shared ritual, tradition, or even a recurring inside joke within your home or community. How has participating in this specific practice subtly, or not so subtly, altered the way you view the world or interact with others?",
+          "What's a moment when your home or community challenged your preconceived notions or forced you to see something in a new light? What was the situation, and what internal shift occurred as a result?",
+          "If your home or community were a character in a story, what would be its defining personality trait? How have you, as a resident or member, internalized or reacted to that trait, and how has that shaped your own outlook?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

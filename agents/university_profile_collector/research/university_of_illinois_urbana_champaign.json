@@ -1191,7 +1191,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Holistic review focuses on how students maximize available educational offerings and demonstrate academic achievement within their unique context. The university seeks genuine students with passions, ambitions, and intellectual curiosity, who can contribute to the campus community."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Explain your interest in the major you selected and describe how you have recently explored or developed this interest inside and/or outside the classroom.",
+        "word_limit": "150 words",
+        "type": "Major",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your chosen major at UIUC, what's one specific moment or realization, however small, where you thought, 'This is it, this is what I want to dive deeper into?'",
+          "Beyond just a general liking, what's a recent challenge or problem you encountered (either in a class, a project, or even just in the news) that your chosen major at Illinois feels uniquely equipped to help you understand or solve?",
+          "Can you recall a time outside of formal schooling where you actively sought out information or experience related to your major, perhaps a late-night rabbit hole of research, a conversation with a professional, or a hands-on activity? What sparked that curiosity?",
+          "Looking at the specific resources, departments, or faculty at UIUC that align with your major, is there a particular professor's research, a unique lab, or a distinctive program that has recently captured your attention and made you excited about studying it there?",
+          "Describe a situation where you encountered a misconception or a less-than-ideal approach related to your chosen field. How did that experience motivate you to learn more and explore the subject with greater intentionality, perhaps leading to your current understanding of its importance?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

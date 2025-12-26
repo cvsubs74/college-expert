@@ -777,7 +777,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Strong",
       "specific_differentiators": "Stony Brook is a highly selective institution seeking students who demonstrate intellectual curiosity and academic ability to succeed. Applicants are evaluated on a holistic review of academic record (GPA, strength of curriculum) and personal factors including co-curricular/community involvement, leadership, special talents, or interests."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Stony Brook students are known for their boldness and commitment to excellence. What inspires you to thrive in our challenging academic environment?",
+        "word_limit": "250 words",
+        "type": "Why Stony Brook",
+        "required": false,
+        "brainstorming_questions": [
+          "When have you previously faced a 'bold' choice in an academic setting that pushed you beyond your comfort zone, and how did that experience shape your approach to challenging environments like Stony Brook?",
+          "Can you recall a time you were so deeply committed to achieving academic excellence in a difficult subject that you pursued it with relentless determination, even when others might have given up?",
+          "Beyond grades or accolades, what specific aspect of Stony Brook's 'challenging academic environment' truly excites and ignites your desire to excel? Think about a particular field, research opportunity, or learning philosophy.",
+          "Describe a moment where you witnessed or experienced the 'boldness' of a peer or faculty member within an academic context, and how that inspired you to adopt a similar mindset in your own pursuits.",
+          "What personal definition of 'thriving' in a challenging academic setting have you developed, and how do you envision that definition coming to life specifically at Stony Brook?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

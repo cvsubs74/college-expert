@@ -1180,7 +1180,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "The University of Iowa seeks students ready to lead, offering resources of a major research institution with an emphasis on personal connection and support, and opportunities for hands-on experience and mentorship early on."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe a time when you witnessed or experienced an injustice. How did it affect you, and what did you learn from the experience?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about the prompt's focus on 'injustice,' what's the *first* specific moment or situation that pops into your mind, even if it seems small or insignificant at first?",
+          "When you recall that moment of injustice, what emotions surfaced within you at the time, and how did those feelings manifest in your thoughts or actions?",
+          "Beyond your immediate reaction, how did witnessing or experiencing this injustice alter your perspective on a particular group of people, a societal issue, or even your own beliefs?",
+          "The prompt asks what you 'learned.' What's a tangible change in your behavior, a new belief you adopted, or a specific skill you developed as a direct result of this experience?",
+          "If you were to explain this injustice and its impact to someone who had never encountered it before, what specific details or sensory memories would you emphasize to convey its significance?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

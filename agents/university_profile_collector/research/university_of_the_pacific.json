@@ -585,5 +585,22 @@
       }
     }
   },
-  "_id": "university_of_the_pacific"
+  "_id": "university_of_the_pacific",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Pacific's motto is 'Potential Realized.' What potential do you hope to realize during your time at Pacific?",
+        "word_limit": "250 words",
+        "type": "Goals",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond a general desire to learn, what specific *skills* or *knowledge* do you feel are underdeveloped in you right now that you believe Pacific's unique environment or specific programs are perfectly poised to help you cultivate?",
+          "Think about a time you've felt genuinely stuck or limited in achieving something important. What was that situation, and how does the idea of 'Potential Realized' at Pacific offer a different path or set of resources to overcome similar challenges in the future?",
+          "If you were to define 'potential' for yourself at Pacific, what would it look like in action? Imagine yourself a year or two into your studies – what are you *doing* that shows this potential is being realized in a way that wouldn't be possible elsewhere?",
+          "Pacific's motto is 'Potential Realized.' What does the word 'realized' mean to you personally? Is it about reaching a pinnacle, or is it more about a continuous process of growth and discovery? How does that personal definition inform what you hope to achieve there?",
+          "Consider the specific communities or opportunities at Pacific (clubs, research, service-learning, unique traditions). How do you envision these elements directly contributing to the realization of a particular aspect of your potential that you're eager to explore?"
+        ]
+      }
+    ]
+  }
 }

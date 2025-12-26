@@ -18,6 +18,7 @@ const UniversityCard = ({
     onViewAnalysis,
     onViewNotes,
     onOpenChat,
+    onEssayHelp,
     onRemove,
     canRemove = false
 }) => {
@@ -61,7 +62,7 @@ const UniversityCard = ({
 
     const actions = [
         { key: 'analysis', label: 'View Analysis', onClick: onViewAnalysis },
-        { key: 'notes', label: 'Notes', onClick: onViewNotes },
+        { key: 'essay', label: '✏️ Essay Help', onClick: onEssayHelp },
         { key: 'chat', label: 'Chat', onClick: onOpenChat }
     ];
 

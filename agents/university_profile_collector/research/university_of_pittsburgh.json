@@ -1324,7 +1324,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "The University of Pittsburgh looks for intellectual curiosity, drive, unique fit, problem-solving abilities, and effective communication skills in applicants."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Please describe a meaningful experience from your life and how it has helped shape who you are today.",
+        "word_limit": "450 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your time in Pittsburgh, what's a moment, big or small, that felt like a turning point or a significant 'aha!' in your understanding of yourself or the world around you?",
+          "The University of Pittsburgh is known for its diverse communities and urban environment. Can you recall an interaction with someone from a background very different from your own in Pittsburgh, and how that encounter challenged or broadened your perspective?",
+          "Consider a time you felt genuinely challenged by a specific Pittsburgh setting – perhaps navigating its hills, a unique cultural event, or even a specific academic endeavor at Pitt. What did you learn about your own resilience or problem-solving skills through that experience?",
+          "Pitt's motto is 'Veritas et Virtus' (Truth and Valor). Can you identify an instance where you had to stand up for something you believed in, even when it was difficult, and how that experience has solidified your values?",
+          "Beyond academics, what's a habit, interest, or passion that you've discovered or deepened since arriving at the University of Pittsburgh, and what does that say about the person you're becoming?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

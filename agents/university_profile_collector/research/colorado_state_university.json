@@ -335,5 +335,22 @@
       "loan_default_rate": 3.1
     }
   },
-  "_id": "colorado_state_university"
+  "_id": "colorado_state_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "What about Colorado State University appeals to you, and how do you plan to contribute to our community?",
+        "word_limit": "250 words",
+        "type": "Why CSU",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond the obvious academic programs, what specific CSU traditions, values, or even quirks have you encountered that genuinely resonate with your own aspirations and personality?",
+          "Thinking about your experiences outside of the classroom, what's a specific instance where you proactively built or contributed to a community, and what did you learn from that process that you'd bring to CSU?",
+          "Imagine you're a sophomore at CSU, having successfully navigated your first year. What's one tangible way you've seen yourself positively impacting the campus environment or a specific student group?",
+          "Colorado State University has a strong emphasis on sustainability and the outdoors. Can you recall a moment where your passion for these areas led you to take action or inspire others, and how might that translate to CSU's campus life?",
+          "What's a challenge you've faced that required you to collaborate with diverse perspectives to find a solution, and how do you see yourself bringing that collaborative spirit to the vibrant and varied CSU community?"
+        ]
+      }
+    ]
+  }
 }

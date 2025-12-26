@@ -955,7 +955,35 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Looking for intellectual curiosity, drive, and students who are intellectually playful, globally minded, civically engaged, collaborative, and kind."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "It's cool to love learning. What excites your intellectual curiosity and why?",
+        "word_limit": "200-250 words",
+        "type": "Intellectual",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you were completely engrossed in learning something new – what was the subject, and what specifically about it grabbed your attention so intensely that you lost track of time?",
+          "When you encounter a concept or problem that sparks your curiosity at Tufts, what's the first thing you do to dive deeper, and what kind of questions are you asking yourself during that process?",
+          "Beyond the classroom, what are some unexpected places or experiences where you've found yourself intensely curious, and how did those moments shape your understanding or lead you to ask new questions?",
+          "Looking ahead to your time at Tufts, what are you most eager to learn about that you don't fully understand yet, and what makes that particular area so compelling to you?",
+          "Describe a moment when someone else's passion for learning was infectious. What was it about their excitement that resonated with you, and how did it fuel your own desire to explore?"
+        ]
+      },
+      {
+        "prompt": "How have the environments or experiences of your upbringing influenced the person you are today?",
+        "word_limit": "200-250 words",
+        "type": "Background",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the obvious 'where' you grew up, can you recall a specific sensory detail – a smell, a sound, a texture – that instantly transports you back to a formative moment in your childhood environment, and what feeling or idea did that detail awaken in you?",
+          "Think about a time your upbringing presented a particular challenge or unexpected obstacle. Instead of focusing on the difficulty itself, what was a specific moment where you had to adapt, pivot, or see things differently because of that challenge, and how did that adaptation shape a core value you hold now?",
+          "Was there a particular tradition, ritual, or recurring activity in your upbringing that, at the time, might have seemed ordinary, but looking back, do you see how it instilled a particular way of thinking, interacting, or approaching the world that's evident in who you are today?",
+          "Consider a time you felt like an 'outsider' or had a unique perspective because of your upbringing, whether it was cultural, socioeconomic, or something else. What was a specific conversation or observation you had in that situation that led you to a deeper understanding of yourself or others?",
+          "If you were to explain your upbringing to someone who had absolutely no context for it, what is one anecdote or story you would tell that encapsulates a core 'lesson' or perspective you learned, and how does that lesson manifest in your daily life or your aspirations?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

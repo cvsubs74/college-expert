@@ -713,7 +713,35 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Looking for intellectual curiosity and drive, extraordinary engagement, courage, creativity, global/cultural interests, impact via advocacy, innovative thinking, leadership, and openness to ideas."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe an aspect of your identity (example: your religion, culture, race, sexual or gender identity, affinity group, etc.). How has this aspect of your identity shaped your life experiences thus far?",
+        "word_limit": "200-250 words",
+        "type": "Identity",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your chosen aspect of identity, what's a specific moment or experience where you felt it was particularly central to how you navigated a situation, perhaps even in a way that surprised you?",
+          "When you look back at your upbringing or formative years, how did the values or perspectives associated with this identity facet influence the way you saw the world and made choices, big or small?",
+          "Can you recall a time when this aspect of your identity presented a challenge or a unique opportunity for growth, and what did you learn about yourself through that experience?",
+          "Beyond the obvious, how has this identity element quietly shaped your everyday interactions, your friendships, or even the hobbies you've gravitated towards?",
+          "If you were to explain this aspect of your identity to someone who knew nothing about it, what specific story or anecdote would you share to help them understand its personal significance to you?"
+        ]
+      },
+      {
+        "prompt": "If you could change one thing to better your community, what would it be and why?",
+        "word_limit": "200-250 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Chapel Hill and its surrounding communities, what's a moment or recurring situation that made you feel a strong desire for a specific positive change, even if it seemed small at the time?",
+          "Beyond the obvious issues, what's a less discussed or more nuanced aspect of community life in the Chapel Hill area that you've observed and felt could be improved, and what personal experiences shaped that observation?",
+          "Imagine you've successfully implemented this change. What's a specific, vivid scene you envision, showing the positive impact on individuals or groups within the community, and what does that scene reveal about your values?",
+          "What personal skills, passions, or past experiences do you have that would be directly relevant to tackling the problem you've identified, and how might UNC Chapel Hill empower you to develop these further?",
+          "If you could sit down with someone directly affected by the issue you want to change in Chapel Hill, what's one question you would ask them to truly understand their perspective, and what do you hope their answer would reveal?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

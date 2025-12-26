@@ -583,5 +583,22 @@
       }
     }
   },
-  "_id": "loyola_university_chicago"
+  "_id": "loyola_university_chicago",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Loyola Chicago is committed to preparing people to lead extraordinary lives. What does 'living an extraordinary life' mean to you?",
+        "word_limit": "300 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "When you think about someone you deeply admire who seems to be living an 'extraordinary life,' what specific actions or qualities do they embody that resonate most with you, and how have you seen or practiced those yourself?",
+          "Beyond the typical definitions of success (fame, wealth, etc.), what are some of the quieter, more personal moments or achievements in your life that have felt profoundly meaningful or 'extraordinary' to you?",
+          "Loyola Chicago emphasizes 'leadership.' How have you, in your own way, taken initiative or guided others, even in small capacities, that has felt like a step towards living a more impactful or 'extraordinary' life?",
+          "Reflecting on a time you faced a significant challenge or disappointment, what did you learn about yourself or the world that shifted your perspective and perhaps redefined what an 'extraordinary' existence looks like for you?",
+          "Consider the Jesuit values of service and justice. How have your experiences interacting with your community, or witnessing injustice, shaped your understanding of what it means to contribute meaningfully and lead an 'extraordinary' life?"
+        ]
+      }
+    ]
+  }
 }

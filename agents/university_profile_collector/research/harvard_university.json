@@ -921,7 +921,74 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for intellectual curiosity and drive, genuine passion for learning, resilience, integrity, and ability to contribute to a diverse community."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Harvard has long recognized the importance of enrolling a diverse student body. How will the life experiences that shape who you are today enable you to contribute to Harvard?",
+        "word_limit": "200 words",
+        "type": "Diversity",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your unique background, what's a specific moment or challenge where your perspective, shaped by your life experiences, led you to see a situation or solve a problem in a way others might not have considered, and how might that approach benefit a discussion in a Harvard seminar?",
+          "Beyond the obvious demographics, what are some of the less commonly discussed 'life experiences' that have profoundly shaped your worldview, and how could sharing those experiences enrich the understanding of your peers at Harvard?",
+          "Can you recall a time when your presence or perspective challenged an assumption or sparked a new idea within a group, and how might that experience translate into actively contributing to the intellectual vibrancy of Harvard's campus community?",
+          "If you were to walk into a room of students with vastly different life stories at Harvard, what's one core belief or understanding you've gained from your own journey that you'd be eager to share and discuss, and why is that important to you?",
+          "Harvard values the intersection of diverse experiences. How have two seemingly unrelated aspects of your life (e.g., a hobby and a cultural background, or a family responsibility and an academic interest) merged to create a unique lens through which you approach the world, and how could that dual perspective be valuable at Harvard?"
+        ]
+      },
+      {
+        "prompt": "Briefly describe an intellectual experience that was important to you.",
+        "word_limit": "200 words",
+        "type": "Intellectual",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a moment when a question, concept, or idea genuinely surprised you – when your understanding of something shifted in a way you didn't expect. What was that spark of surprise, and what did it feel like to have your perspective changed?",
+          "Beyond just learning a fact, describe a time when grappling with a complex topic or problem led you to a deeper appreciation for 'how' we know what we know, or 'why' certain ideas are debated. What was your journey through that intellectual puzzle?",
+          "Can you recall a specific instance where engaging with someone else's viewpoint – whether in a classroom discussion, a debate, or even a casual conversation – challenged your own thinking so much that you had to re-evaluate your assumptions? What was that exchange like?",
+          "Think about a subject or idea that you found yourself returning to, digging deeper into, and actively seeking out more information about, even when it wasn't assigned. What drew you in so powerfully, and what did you discover on that intellectual quest?",
+          "Describe an intellectual experience where you weren't just passively receiving information, but actively constructing your own understanding or creating something new based on your learning. What was the process of creation or construction, and what made it feel significant to you?"
+        ]
+      },
+      {
+        "prompt": "Briefly describe how you hope to use your college education.",
+        "word_limit": "200 words",
+        "type": "Goals",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the broad strokes of 'making a difference,' what specific *kind* of change are you driven to create in the world, and how do you imagine your Harvard education will equip you with the precise tools and knowledge to achieve that particular impact?",
+          "Think about a moment when a complex idea or a problem genuinely challenged your understanding or perspective. How did you grapple with it, and what specific Harvard resources (a particular professor, research opportunity, or even a cross-disciplinary seminar) do you see yourself turning to in order to deepen your engagement with such intellectual provocations?",
+          "If you could hypothetically design a unique course or research project at Harvard that doesn't currently exist, what would it be, and what burning questions would it aim to answer about the world you hope to shape?",
+          "Imagine yourself five years after graduating from Harvard. Describe a tangible outcome or achievement that would signify to you that your education was a resounding success in preparing you to contribute meaningfully to society. What specific skills or insights would you have gained to make that outcome possible?",
+          "Consider a community or group you feel a strong connection to. How do you envision your Harvard education allowing you to better understand and serve the needs of this specific community, perhaps by addressing a particular challenge they face or by amplifying their voices?"
+        ]
+      },
+      {
+        "prompt": "Top 3 things your roommates might like to know about you.",
+        "word_limit": "200 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "If your roommates were to observe your daily habits and quirks, what's one unexpected 'ritual' or oddity you have that you think would genuinely surprise and amuse them, and why is it significant to you?",
+          "Beyond the surface-level interests, what's a deeply held value or passion that you rarely discuss but that would profoundly shape how your roommates understand your decision-making and interactions?",
+          "Think about a time you've had to navigate a tricky social situation or a moment of vulnerability. What did you learn about yourself in that experience, and how might that insight help you be a better roommate?",
+          "Imagine your roommates discover a secret talent or a hidden hobby you've cultivated. What is it, and what does this side of you reveal about your approach to learning, creativity, or problem-solving?",
+          "If your roommates were to ask about your biggest 'aha!' moment or a transformative realization you've had, what story would you share, and what does that moment tell them about what you hope to bring to a community?"
+        ]
+      },
+      {
+        "prompt": "How do you spend a typical day after school?",
+        "word_limit": "200 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond just listing activities, can you recall a *specific* moment during a typical after-school day where you felt a strong emotion – excitement, frustration, curiosity, or even a quiet sense of satisfaction – and what was happening that sparked it?",
+          "Think about the transitions between your after-school activities. What are the unspoken rituals, thoughts, or feelings that accompany you as you move from one space or task to the next?",
+          "When you're engaged in your most frequent after-school pursuits, what are the *unseen* or *unsaid* aspects of those activities that truly captivate you, the things most people might not notice?",
+          "Imagine explaining your typical after-school routine to someone completely unfamiliar with your life. What's one element that you'd *really* want them to understand the significance of, and why is it so important to you?",
+          "Consider a time when your typical after-school day was *interrupted* or deviated significantly from the norm. What did that disruption reveal about your priorities, your adaptability, or what truly matters to you?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

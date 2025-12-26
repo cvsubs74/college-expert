@@ -836,7 +836,74 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Looking for students with incredible potential and genuine obsession in STEM, intellectual curiosity, and drive."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "If you had to choose an area of STEM interest today, what would you choose and why?",
+        "word_limit": "100-200 words",
+        "type": "Major",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the most mind-bending STEM concept you've encountered – whether in a class, a book, or even a casual conversation – what specifically about it sparked a deeper curiosity, and how did that curiosity lead you to explore it further?",
+          "When you imagine yourself working in a STEM field, what's a specific problem or challenge you feel a strong urge to tackle, and what personal experiences have made you feel so compelled by this particular issue?",
+          "Caltech is known for its intense, hands-on approach. Can you recall a time you've been completely absorbed in solving a complex STEM-related puzzle or building something, even if it was just a personal project, and what did that feeling of deep engagement tell you about your ideal STEM environment?",
+          "Beyond the textbook definitions, what real-world application or scientific breakthrough in STEM has genuinely amazed you, and what about that specific innovation makes you want to be part of creating or understanding similar advancements?",
+          "If you could have a conversation with any living STEM researcher or thinker today, who would it be and what *one* burning question about their work would you be most eager to ask, and why does that particular question resonate so strongly with you?"
+        ]
+      },
+      {
+        "prompt": "Tell us about a STEM-related experience from the last few years and share how and why it inspired your curiosity.",
+        "word_limit": "100-200 words",
+        "type": "STEM",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a specific STEM-related experience in the last few years – was there a moment where you felt genuinely stuck, perhaps facing a problem that seemed impossible to solve, and how did you push through that challenge?",
+          "Beyond just completing a task, can you recall a time during this STEM experience where you found yourself asking 'why' or 'how' repeatedly, even after getting an initial answer? What sparked that deeper questioning?",
+          "Caltech is all about tackling hard problems. Looking back at your experience, was there a particular piece of data, an observation, or a result that defied your initial expectations or understanding, and what did that discrepancy make you want to explore further?",
+          "Describe a moment during your STEM experience where you had to collaborate with others. What was a specific interaction or shared discovery that made you appreciate the power of collective inquiry or opened your eyes to a new way of thinking?",
+          "Considering your chosen STEM experience, what's one aspect of it that, even now, you find yourself thinking about or wanting to learn more about outside of its original context? What is it about that particular concept or problem that continues to intrigue you?"
+        ]
+      },
+      {
+        "prompt": "Take this opportunity to nerd out and talk about whatever STEM rabbit hole you have found yourself falling into.",
+        "word_limit": "150 words",
+        "type": "STEM",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your most recent 'rabbit hole,' what was the initial spark, that tiny moment of curiosity that made you think, 'Hmm, I need to know more about *this*,' and how did it grow from there?",
+          "Beyond just the technical details, what was a specific moment within this STEM obsession where you felt a profound sense of wonder or intellectual delight, and what did that feeling teach you about yourself?",
+          "When you were deeply immersed in this STEM topic, were there any unexpected challenges or moments of confusion you encountered? How did you navigate those, and what did you learn about your problem-solving approach?",
+          "Can you pinpoint a specific concept, theory, or discovery within this 'rabbit hole' that fundamentally shifted your perspective on something, either scientifically or in a broader sense?",
+          "Imagine explaining this STEM passion to someone completely unfamiliar with it. What's the one 'aha!' moment you'd want them to experience, and what core aspect of your fascination does that reveal?"
+        ]
+      },
+      {
+        "prompt": "How have you been a creator, inventor, or innovator in your own life?",
+        "word_limit": "250 words",
+        "type": "Innovation",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you encountered a problem, big or small, where the existing solutions felt inadequate. What was that problem, and what was your initial thought process for tackling it differently?",
+          "Beyond the obvious 'making something,' can you recall a moment where you fundamentally changed the *way* something was done in your own life or community, even if it wasn't a tangible invention?",
+          "Caltech thrives on pushing boundaries. Can you identify a passion or interest you've pursued where you felt you were not just learning, but actively building or developing your own understanding or approach in a novel way?",
+          "Consider a time when you had to adapt existing tools, knowledge, or concepts to fit a unique need or create a new possibility. What were those elements, and how did you combine them in an unexpected way?",
+          "Innovation often involves observing the world and seeing potential where others don't. What are some everyday things, systems, or challenges you've looked at and thought, 'There *has* to be a better way,' and what steps did you take to explore that 'better way'?"
+        ]
+      },
+      {
+        "prompt": "Caltech's values include respect for a diversity of thoughts and ideas. How have you cultivated this value in your own life?",
+        "word_limit": "200 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you encountered an idea or belief that was completely foreign or even challenging to your own. What was your initial reaction, and how did you move from that reaction to understanding or respecting the other perspective, even if you didn't agree with it?",
+          "Describe a situation where you actively sought out perspectives different from your own, perhaps in a group project, a classroom discussion, or even within your own social circle. What did you learn from intentionally engaging with these diverse viewpoints?",
+          "Can you recall a moment where you had to defend or explain a viewpoint that was unpopular or not widely accepted within your community? How did you articulate your thoughts, and what did that experience teach you about the importance of respecting differing ideas?",
+          "Consider an instance where you learned something significant about a subject or a person by listening intently to someone with a background or experience vastly different from yours. What was that learning moment, and how did it broaden your understanding?",
+          "Caltech thrives on rigorous debate and the exploration of complex problems. When have you found yourself in a situation where a disagreement over ideas actually led to a more robust solution or a deeper understanding for everyone involved? What was your role in fostering that constructive dialogue?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

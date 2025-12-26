@@ -606,5 +606,22 @@
       "loan_default_rate": 0.0
     }
   },
-  "_id": "university_of_tulsa"
+  "_id": "university_of_tulsa",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "TU is committed to developing students who make a difference. How do you plan to contribute to our community?",
+        "word_limit": "250 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the University of Tulsa's focus on making a difference, what's a time you felt genuinely proud of making a positive impact, no matter how small, and what did that experience teach you about your ability to contribute?",
+          "TU emphasizes developing students to make a difference within *their* community. Reflecting on your own community, what specific issue or need has resonated with you the most, and how have you already started to address it or how are you inspired to address it at TU?",
+          "Beyond your academic interests, what passions or unique skills do you possess that you believe could uniquely enrich the University of Tulsa's environment and contribute to its mission of making a difference?",
+          "Imagine yourself a year or two into your time at TU. What kind of campus initiative or project are you most excited to join or even lead that would allow you to actively contribute to making a difference, both on and off campus?",
+          "The prompt asks how you *plan* to contribute. Looking at TU's specific strengths and opportunities for student involvement, what concrete steps can you envision yourself taking to translate your desire to make a difference into tangible actions within the TU community?"
+        ]
+      }
+    ]
+  }
 }

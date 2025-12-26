@@ -778,5 +778,22 @@
       }
     }
   },
-  "_id": "simmons_university"
+  "_id": "simmons_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Simmons empowers students to be leaders in their communities and careers. Describe how you plan to use your education to make a difference.",
+        "word_limit": "250 words",
+        "type": "Leadership",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Simmons' specific emphasis on leadership, can you recall a time, big or small, where you took initiative to improve something in your community or a group you were part of, and what did that experience teach you about your potential as a leader?",
+          "Beyond just the skills you'll gain, what are the core values or principles that drive your desire to make a difference, and how do you see Simmons' educational environment specifically nurturing those values?",
+          "Imagine yourself graduating from Simmons and looking back at your time there. What specific challenges or unmet needs within your community or chosen career field do you hope to have addressed or significantly contributed to solving, and what unique perspective do you bring to tackling them?",
+          "Simmons is known for its commitment to social justice and equity. How has your own background, experiences, or observations shaped your understanding of these issues, and what kind of impactful change do you envision yourself driving in these areas with a Simmons education?",
+          "If you could bottle up the 'Simmons difference' and pour it into a community project or career path, what would that look like? What specific problem would you tackle, and how would the distinct approach or resources at Simmons enable you to make a tangible, lasting impact that you couldn't achieve elsewhere?"
+        ]
+      }
+    ]
+  }
 }

@@ -497,5 +497,22 @@
       }
     }
   },
-  "_id": "university_of_massachusetts_lowell"
+  "_id": "university_of_massachusetts_lowell",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "UMass Lowell is focused on experiential learning and real-world impact. How will you take advantage of these opportunities?",
+        "word_limit": "250 words",
+        "type": "Experience",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about UMass Lowell's emphasis on 'real-world impact,' can you recall a time when you actively sought out a hands-on experience that taught you something truly valuable, and what was the most unexpected lesson you learned from it?",
+          "Beyond just 'taking advantage,' how do you envision yourself actively CONTRIBUTING to the experiential learning environment at UMass Lowell, perhaps by sharing a skill or perspective you've gained from a unique experience?",
+          "The prompt mentions 'experiential learning.' What specific types of hands-on projects, internships, or research opportunities at UMass Lowell genuinely excite you, and what are you hoping to achieve or discover through them?",
+          "When you imagine yourself a few years from now, having fully embraced UMass Lowell's experiential learning focus, what tangible 'real-world impact' do you hope to have made, either within the university community or beyond?",
+          "Consider a time you learned best by doing, not just by reading or listening. What was that experience, and how does that learning style inform what you're looking for in your UMass Lowell education and the opportunities you'll pursue there?"
+        ]
+      }
+    ]
+  }
 }

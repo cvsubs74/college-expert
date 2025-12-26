@@ -861,7 +861,22 @@
       "legacy_consideration": "Not Considered",
       "first_gen_boost": "None",
       "specific_differentiators": "Seeking students passionate about innovation, technology, and making a meaningful impact, who connect human values with technological progress."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Stevens is known for developing problem-solvers and innovators. Describe a problem you've worked to solve and your approach.",
+        "word_limit": "250 words",
+        "type": "Problem Solving",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you were faced with a situation where the 'right' way to do something wasn't clear, and you had to figure it out for yourself. What was that situation, and what made it so challenging to solve?",
+          "When you first encountered this problem, what was your initial gut reaction or instinct? Did you immediately have an idea for a solution, or did it take some time and exploration?",
+          "Beyond just 'fixing' the problem, what was your *ultimate goal* in solving it? Were you trying to improve something, create something new, or understand something better?",
+          "Describe a specific moment during your problem-solving process where you hit a roadblock or a setback. What did you do in that moment, and how did it push you to think differently?",
+          "Looking back at your approach to solving this problem, what specific skills or traits did you discover or refine in yourself that you believe would be valuable at Stevens?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

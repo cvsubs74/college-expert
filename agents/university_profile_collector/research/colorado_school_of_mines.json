@@ -356,5 +356,22 @@
       }
     }
   },
-  "_id": "colorado_school_of_mines"
+  "_id": "colorado_school_of_mines",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Why do you want to study your intended major at Mines? What about Mines appeals to you?",
+        "word_limit": "500 words",
+        "type": "Why Mines",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the impressive academic rankings, can you recall a specific moment or discovery (perhaps a personal project, a documentary, or even a conversation) that made you think, 'Wow, *this* is what I want to dive deep into, and Mines seems like the place to do it'?",
+          "Thinking about the problem-solving aspects of your intended major, what's a time you encountered a real-world challenge or observed a complex system that sparked your curiosity to understand the 'how' and 'why' at a deeper, engineering or science-driven level?",
+          "Mines is known for its hands-on approach. Can you describe a specific type of project, research opportunity, or even a club/activity at Mines that excites you because it directly aligns with how you learn best and want to apply your knowledge?",
+          "When you imagine yourself as a Mines student, what kind of collaborative environment do you envision, and what specific challenges or innovations within your intended field do you hope to tackle alongside your peers and faculty?",
+          "Looking at Mines' unique location and its connection to the natural resources and engineering industries, can you pinpoint a particular aspect of this connection that resonates with your personal goals or your desire to make a tangible impact in your chosen field?"
+        ]
+      }
+    ]
+  }
 }

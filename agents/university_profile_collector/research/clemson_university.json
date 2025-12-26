@@ -1056,7 +1056,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Clemson looks for a solid academic record, strong standardized test scores (if submitted), and a standout application. For Honors College, they seek intellectual curiosity and vision."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Clemson University's core principles are honesty, integrity, and mutual respect. Share a time when you demonstrated one or more of these principles.",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a moment where you felt a strong pull to do the 'right' thing, even when it was difficult or unpopular. What specific challenge did you face, and how did your commitment to honesty or integrity guide your actions in that instance?",
+          "Describe a situation where you had to actively listen to and understand someone else's perspective, even if it differed greatly from your own. What did you learn about mutual respect through that experience, and how did you show it?",
+          "Can you recall a time when your personal values were tested, and you had to make a difficult decision that aligned with honesty and integrity? What were the stakes, and what was the outcome of your choice?",
+          "When have you witnessed someone else embodying honesty, integrity, or mutual respect in a significant way? What impact did their actions have on you or the situation, and how might that inspire your own approach?",
+          "Consider a time you might have made a mistake or fallen short of one of Clemson's core principles. What did you learn from that experience, and what steps did you take to rectify the situation and demonstrate your commitment to honesty and integrity moving forward?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -1071,7 +1071,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "The University of Denver looks for students who demonstrate a passion for diverse learning, engage with their peers and community through various activities, and possess intellectual curiosity and drive."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "DU's educational experience challenges students to be creative problem-solvers and active citizens. How will you contribute to this environment?",
+        "word_limit": "250 words",
+        "type": "Contribution",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you encountered a problem that didn't have a clear, pre-existing solution. What was your immediate reaction, and what steps did you take to creatively address it, even if the outcome wasn't perfect?",
+          "Considering DU's emphasis on active citizenship, can you recall a situation where you felt compelled to speak up or take action on behalf of others or a cause you believed in? What motivated you, and what did you learn from that experience?",
+          "Beyond academic pursuits, where have you actively sought out opportunities to 'solve problems' or make a tangible difference in your community or school? Describe a specific instance and what creative approaches you employed.",
+          "Imagine DU's campus as a dynamic environment. Where do you see yourself naturally stepping in to offer a fresh perspective or a new way of tackling a challenge, drawing from your unique background and skills?",
+          "What does 'active citizenship' mean to you personally, and what specific ways do you envision yourself embodying that principle within DU's diverse community to foster creative solutions to shared issues?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

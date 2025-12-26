@@ -907,7 +907,61 @@
       "legacy_consideration": "Strong",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Looking for intellectual curiosity and drive, commitment to Notre Dame's Catholic mission, compelling service to others, and a diverse portfolio of lived experiences."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Everyone has different priorities when considering their higher education options. Tell us about your 'non-negotiable' factor(s) when searching for your future college home.",
+        "word_limit": "150 words",
+        "type": "Why Notre Dame",
+        "required": true,
+        "brainstorming_questions": [
+          "When you picture yourself thriving at Notre Dame, what's one specific experience or aspect of campus life that you absolutely can't imagine not being a part of, and why is that particular element so essential to your vision of a fulfilling college journey?",
+          "Beyond academics and general prestige, what unique opportunity or tradition at Notre Dame resonates so deeply with your personal values that you would consider it a deal-breaker if it weren't present?",
+          "Think about moments where you've felt truly challenged and supported. What kind of community or specific resource at Notre Dame do you believe would be indispensable for you to continue growing in that way?",
+          "If you had to distill your ideal college environment down to its absolute core, what essential element of Notre Dame's ethos or mission would you say is your ultimate 'must-have' for your educational and personal development?",
+          "When you envision your future self contributing to the Notre Dame community, what specific kind of impact or engagement feels non-negotiable for you, and how does Notre Dame uniquely enable that particular contribution?"
+        ]
+      },
+      {
+        "prompt": "How does faith influence the decisions you make?",
+        "word_limit": "50-100 words",
+        "type": "Values",
+        "required": false,
+        "brainstorming_questions": [
+          "Think about a time you had to make a difficult choice where the 'right' thing felt exceptionally challenging or even went against your immediate desires – what inner compass, which you might describe as faith, guided you through that dilemma, and how did you recognize that guidance?",
+          "Beyond just following rules, how has your faith provided you with a framework for understanding the world and your place in it, and can you recall a specific instance where this worldview directly shaped a decision you made, even when others might have chosen differently?",
+          "Notre Dame's motto is 'Crescit scientia, caritas et veritas.' Considering the 'caritas' (charity/love) aspect of your faith, can you describe a situation where your commitment to loving and serving others, stemming from your faith, led you to a decision that might seem unconventional or require significant personal sacrifice?",
+          "Reflect on a moment when your faith challenged your assumptions or forced you to re-evaluate something you previously believed to be true. How did this internal wrestling match with your faith lead you to a specific decision or action, and what did you learn about yourself in that process?",
+          "In what ways has your faith encouraged you to pursue knowledge and truth, as suggested by Notre Dame's pursuit of 'scientia' and 'veritas,' and can you pinpoint a decision you've made – perhaps in your academic pursuits, extracurricular activities, or personal growth – that was fundamentally driven by this faith-inspired quest?"
+        ]
+      },
+      {
+        "prompt": "Notre Dame's undergraduate experience is characterized by a collective sense of care for every person. How do you foster service to others in your community?",
+        "word_limit": "50-100 words",
+        "type": "Community",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond formal volunteering, can you recall a specific moment where you felt a strong, almost innate urge to help someone in your immediate community, and what made that impulse so powerful for you?",
+          "Think about a time you encountered a challenge within a group or community you were part of, and instead of just solving the problem, you prioritized making sure everyone felt heard and supported. What did that process teach you about fostering care?",
+          "Notre Dame emphasizes a 'collective sense of care.' Can you describe an experience where you witnessed this kind of widespread care for another person in your community, and how did that inspire or influence your own approach to service?",
+          "When you think about 'service to others,' what's a specific, perhaps unexpected, way you've contributed that went beyond typical expectations and demonstrated a deeper level of care for those around you?",
+          "Imagine a new student arriving at Notre Dame and feeling a bit lost or disconnected. Based on your experiences, what tangible actions would you take to ensure they felt that Notre Dame sense of care, and why are those actions important to you?"
+        ]
+      },
+      {
+        "prompt": "What would you fight for?",
+        "word_limit": "50-100 words",
+        "type": "Values",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about Notre Dame's mission of service and leadership, when have you felt a powerful, almost visceral urge to stand up for someone or something, even when it was difficult or unpopular?",
+          "Beyond the obvious causes, what are the smaller, perhaps even everyday, injustices or imbalances you've observed that have struck a chord with you and made you want to advocate for change, even on a personal level?",
+          "Consider a time when you witnessed or experienced something that challenged your understanding of fairness or the 'right way' things should be, and how did that experience shape what you feel compelled to defend?",
+          "Given Notre Dame's Catholic identity and emphasis on human dignity, what core values or beliefs have you found yourself defending most fiercely, perhaps in discussions with others or in your own internal convictions?",
+          "Imagine yourself as a future leader inspired by the Notre Dame spirit – what is a specific, tangible improvement or a deeper sense of justice in a community you've been part of that you would dedicate yourself to achieving, even against significant obstacles?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -500,5 +500,22 @@
       }
     }
   },
-  "_id": "university_of_st_thomas_minnesota"
+  "_id": "university_of_st_thomas_minnesota",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "St. Thomas is grounded in Catholic intellectual tradition. How does this tradition resonate with your educational goals?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the 'Catholic' aspect, what specific *intellectual traditions* (even those you encountered outside of formal religious settings) have shaped how you approach learning and problem-solving, and can you recall a time you applied one of these in a meaningful way?",
+          "When you think about 'resonating' with an educational goal, what does that feeling actually *look* like or *feel* like for you? Can you pinpoint a moment when an idea or a learning experience felt deeply aligned with your aspirations, and what was that connection?",
+          "The Catholic intellectual tradition often emphasizes themes like faith seeking understanding, community, and service. Of these, or any other aspects you're aware of, which one feels most personally relevant to *why* you want to pursue higher education right now, and what's a specific instance that illustrates this?",
+          "Consider a time when your understanding of a complex topic shifted dramatically. How did that shift occur, and does the process of questioning, exploring, and arriving at deeper understanding echo any of the intellectual explorations you associate with the Catholic tradition, even if you didn't explicitly recognize it at the time?",
+          "Thinking about your future educational goals at St. Thomas, what kind of *impact* do you hope to make, and how might a grounding in the Catholic intellectual tradition equip you to achieve that specific impact in a way that aligns with your personal values?"
+        ]
+      }
+    ]
+  }
 }

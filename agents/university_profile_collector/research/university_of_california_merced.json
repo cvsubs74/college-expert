@@ -439,6 +439,34 @@
         "is_binding": false,
         "notes": "UC application filing period: October 1 - December 1, 2025 (11:59 PM PST). All UC campuses share this single deadline. No Early Decision or Early Action available."
       }
+    ],
+    "essay_prompts": [
+      {
+        "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
+        "word_limit": "350 words",
+        "type": "PIQ",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your time at UC Merced, what specific program, class, research opportunity, or even a particularly impactful professor really ignited your curiosity or challenged your perspective in a way that felt like a major 'educational opportunity'?",
+          "When you consider educational 'barriers' at UC Merced, were there any moments where you felt stuck or faced a significant hurdle (academic, personal, or resource-related) that required you to dig deep and find a creative solution?",
+          "Beyond the classroom, what extracurriculars, clubs, or community involvement at UC Merced provided you with a unique learning experience or a chance to develop skills that felt like a valuable opportunity not typically found in traditional schooling?",
+          "Reflecting on a time you encountered an educational challenge at UC Merced, can you pinpoint a specific instance where you had to pivot, adapt your learning strategy, or seek out unconventional support to overcome it?",
+          "If you had to explain to someone the most transformative learning experience you've had at UC Merced, whether it was seizing an opportunity or conquering a barrier, what's the core feeling or realization they would understand about your growth?"
+        ]
+      },
+      {
+        "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
+        "word_limit": "350 words",
+        "type": "PIQ",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the obvious or commonly cited skills, what's a talent you possess that often surprises people when they discover it, and what's a specific moment you realized this unique ability was a strength?",
+          "Think about a time you faced a significant challenge or setback. How did your greatest talent or skill come into play, perhaps in an unexpected way, to help you navigate that situation at UC Merced or in your life leading up to it?",
+          "When you look at the skills valued by UC Merced, particularly in your intended field of study, which of your talents do you feel most uniquely aligns with the university's mission or the kind of innovative thinking they foster, and can you recall an early instance of honing that?",
+          "Describe a situation where you had to teach, mentor, or guide someone else in developing a skill. What does this experience reveal about your own mastery and the journey you took to acquire that expertise?",
+          "Imagine you're explaining your greatest talent to a younger student who is unsure of their own abilities. What specific anecdotes or examples would you use to illustrate not just the skill itself, but the dedication, practice, and perhaps even failures that led to your proficiency?"
+        ]
+      }
     ]
   }
 }

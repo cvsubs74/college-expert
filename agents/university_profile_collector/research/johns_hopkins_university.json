@@ -798,7 +798,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for intellectual curiosity and drive; students who are energized by new ideas, dig deeper into topics that matter to them, and make an impact in their communities."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Tell us about an important first in your life—big or small—that has shaped you.",
+        "word_limit": "350 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your 'important firsts,' can you recall a moment where you felt a significant internal shift—perhaps a newfound curiosity, a challenging realization, or a quiet sense of accomplishment—that you can trace back to that initial experience?",
+          "Beyond the obvious milestones, was there a 'first' time you encountered something (a concept, a place, a person's perspective) that fundamentally altered how you saw the world or your place within it, even if it wasn't a grand event?",
+          "When you consider 'important firsts,' what's a memory that, upon reflection, still evokes a strong emotional response—joy, frustration, determination, or even a touch of embarrassment—and what was the lasting lesson learned from that feeling?",
+          "Imagine you had to explain the ripple effect of one of your 'important firsts' to someone unfamiliar with your life. What specific actions, decisions, or ways of thinking have you adopted since then that directly stem from that initial experience?",
+          "For an 'important first' that was 'big or small,' what was a moment *during* that first experience where you had to actively adapt, learn, or overcome a challenge, and how did that internal process shape your approach to future endeavors?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

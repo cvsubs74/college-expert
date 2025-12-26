@@ -864,7 +864,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "The admissions committee considers a holistic view of each applicant, looking for well-rounded applicants with strong academic records, engaging extracurricular activities, a clear sense of purpose, and intellectual curiosity and drive."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "What do you hope to study, and why, at CU Boulder? Or if you don't know quite yet, think about your studies so far, extracurricular/after-school activities, jobs, volunteering, future goals, or anything else that has shaped your interests.",
+        "word_limit": "250 words",
+        "type": "Why Major",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about CU Boulder's specific programs, departments, or even unique research opportunities (like those in aerospace, environmental studies, or even the arts that might be strong there), which ones have sparked your curiosity, and what's the origin story of that specific interest?",
+          "Beyond just what you've learned, what's a moment in your academic journey so far – a specific class, project, or even a challenging assignment – that made you think, 'This is what I want to explore more deeply'?",
+          "When you imagine yourself at CU Boulder, perhaps engaging in an extracurricular activity, a research lab, or even a student-led initiative, what kind of impact do you hope to make, and what past experiences have prepared you for that aspiration?",
+          "If you're still exploring your academic path, what's a recurring question or problem you find yourself drawn to solve, whether it's in your community, your job, or your personal life, and how do you see studying at CU Boulder helping you tackle it?",
+          "CU Boulder is known for its connection to the outdoors and a certain adventurous spirit. How has your engagement with the natural world or a sense of exploration (in any form) influenced what you want to learn and achieve academically?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

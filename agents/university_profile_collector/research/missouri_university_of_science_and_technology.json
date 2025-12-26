@@ -374,5 +374,22 @@
       "graduation_rate_6_year": 69.0
     }
   },
-  "_id": "missouri_university_of_science_and_technology"
+  "_id": "missouri_university_of_science_and_technology",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Missouri S&T is focused on solving global challenges through STEM. What problem interests you most, and how might you address it?",
+        "word_limit": "250 words",
+        "type": "STEM",
+        "required": false,
+        "brainstorming_questions": [
+          "When you think about the 'global challenges' Missouri S&T tackles, which one genuinely sparks a 'what if' or 'why not' in your mind, making you want to learn more about it?",
+          "Can you recall a specific moment, experience, or observation that first ignited your curiosity about a particular global problem and made you think, 'This is something I need to understand better?'",
+          "Beyond the general idea of solving a problem, what specific aspect of a global challenge, perhaps a detail you noticed or a consequence you witnessed, truly captivates your attention and makes you want to delve deeper?",
+          "Thinking about the 'how might you address it' part, have you ever encountered a situation, even a small one, where you creatively used STEM principles (or even just logical thinking) to overcome an obstacle or improve something, and how does that connect to a larger global issue?",
+          "If you could step into a future where a specific global challenge you're interested in has been significantly addressed, what is one tangible, personal impact you'd hope to see that inspires you to want to contribute to that solution?"
+        ]
+      }
+    ]
+  }
 }

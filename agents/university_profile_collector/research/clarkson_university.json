@@ -545,5 +545,22 @@
       "graduation_rate_6_year": 78.0
     }
   },
-  "_id": "clarkson_university"
+  "_id": "clarkson_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Clarkson is committed to developing students who will be leaders and team players. Describe your approach to teamwork and collaboration.",
+        "word_limit": "250 words",
+        "type": "Teamwork",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about your most memorable team project, what was a specific moment where you had to step up as a leader, even if it wasn't your designated role, and how did that shape your approach to guiding others?",
+          "When you've been part of a team that faced a significant challenge or disagreement, what was your personal strategy for navigating that conflict and ensuring everyone felt heard and valued, ultimately contributing to a more cohesive unit?",
+          "Clarkson emphasizes developing leaders and team players; can you recall a time when you deliberately ceded control or prioritized another teammate's idea over your own, and what did you learn about the power of selfless collaboration from that experience?",
+          "Beyond just accomplishing a task, what do you believe are the key ingredients for truly *great* teamwork, and can you share an example of a time you actively fostered one of those ingredients within a group?",
+          "Describe a situation where you had to adapt your own strengths and contributions to complement the unique skills of your teammates, demonstrating how you balance individual talent with the collective success of the group in a Clarkson-like environment."
+        ]
+      }
+    ]
+  }
 }

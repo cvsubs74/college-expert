@@ -617,7 +617,22 @@
       "essay_importance": "High",
       "demonstrated_interest": "Important",
       "interview_policy": "Not Offered"
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "UVM is committed to sustainability and environmental stewardship. How do these values align with your goals?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": false,
+        "brainstorming_questions": [
+          "When have you felt a strong connection to the natural world, perhaps experiencing a moment that made you pause and appreciate its delicate balance, and how did that feeling shape your understanding of 'stewardship'?",
+          "Can you recall a time you actively worked to reduce waste or conserve a resource, even if it seemed like a small effort, and what motivated that specific action?",
+          "Beyond academics, what kind of hands-on experiences or learning have you sought out that demonstrate your commitment to environmental responsibility, and what did you learn from those experiences?",
+          "Thinking about UVM's commitment to sustainability, what specific environmental challenges in your community or the wider world feel most urgent to you, and how do you envision yourself contributing to solutions?",
+          "Describe a situation where you had to balance your personal goals with a consideration for environmental impact, and what was the outcome of that balancing act?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -670,5 +670,22 @@
       }
     }
   },
-  "_id": "the_catholic_university_of_america"
+  "_id": "the_catholic_university_of_america",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "The Catholic University of America's mission is the discovery and impartation of truth. How has your pursuit of truth shaped your academic journey?",
+        "word_limit": "300 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about CUA's mission of 'discovery and impartation of truth,' can you recall a specific moment in your academic life – perhaps a class, a research project, or even a challenging problem – where you felt you were genuinely grappling with uncovering something new or understanding a complex truth for the first time?",
+          "Beyond just learning facts, what academic experiences have genuinely challenged your existing beliefs or assumptions, pushing you to seek out a deeper or more nuanced understanding of truth in a particular subject?",
+          "Consider the 'impartation' aspect of CUA's mission. Have there been times when you've felt a strong urge to share a truth you've discovered with others, maybe through explaining a concept to a classmate, a presentation, or even a casual conversation that led to a new insight for someone else?",
+          "The pursuit of truth can sometimes involve confronting ambiguity or uncertainty. Can you describe an academic situation where you had to navigate conflicting information or perspectives to arrive at your own reasoned conclusion about what felt true or accurate?",
+          "How has your understanding of what constitutes 'truth' evolved throughout your academic journey, and can you point to a specific academic discipline or area of study at CUA that you believe is particularly well-suited to further nurturing this evolving understanding of truth in you?"
+        ]
+      }
+    ]
+  }
 }

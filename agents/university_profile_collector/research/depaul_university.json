@@ -500,5 +500,22 @@
       }
     ]
   },
-  "_id": "depaul_university"
+  "_id": "depaul_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "DePaul University is the nation's largest Catholic university, guided by the Vincentian mission of access and service to all. How does this mission resonate with you?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about the 'access' aspect of the Vincentian mission, can you recall a time when you either provided or received access to something that was previously difficult to obtain, and what did that experience teach you about opportunity?",
+          "The Vincentian mission emphasizes 'service to all.' What specific act of service, big or small, has left the most lasting impression on you, and how does DePaul's commitment to this ideal connect with that memory?",
+          "Beyond just attending classes, how do you envision yourself actively participating in and contributing to DePaul's mission of service once you are a student here, and what experiences have prepared you for that?",
+          "The Catholic identity of DePaul, combined with its Vincentian mission, suggests a particular approach to education. Can you think of a time when your beliefs or values guided you to help someone who might have been overlooked or underserved, and how does that align with what you know about DePaul?",
+          "When you hear the phrase 'access and service to all,' what immediate personal experience or aspiration comes to mind that makes this mission feel not just like a university slogan, but a genuine part of who you are and who you want to become?"
+        ]
+      }
+    ]
+  }
 }

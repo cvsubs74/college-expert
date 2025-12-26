@@ -805,5 +805,22 @@
       }
     }
   },
-  "_id": "university_of_san_francisco"
+  "_id": "university_of_san_francisco",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "USF's Jesuit mission emphasizes changing the world from here. How do you plan to make a difference in your community?",
+        "word_limit": "250 words",
+        "type": "Impact",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about USF's Jesuit mission of 'changing the world from here,' what specific element of your own community, the one you're part of right now or have been deeply involved in, feels most ripe for positive transformation, and why?",
+          "Can you recall a specific moment or experience where you felt a genuine spark of inspiration or a deep desire to contribute to something larger than yourself within your community? What was happening, and what did that feeling tell you about your potential impact?",
+          "When you imagine yourself making a difference at USF, what tangible actions or contributions come to mind that align with your personal passions and talents, and how do these connect to the needs you've observed in your community?",
+          "Beyond grand gestures, what small, consistent habits or approaches have you already developed or are you eager to cultivate that could contribute to positive change within your community, even before you arrive at USF?",
+          "Considering USF's Jesuit values, what unique perspective or skill set do you possess that you believe will allow you to approach community challenges in a way that others might not, and how can you leverage this at the university?"
+        ]
+      }
+    ]
+  }
 }

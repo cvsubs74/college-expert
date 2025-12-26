@@ -834,7 +834,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Emphasis on alignment with Jesuit identity and mission, intellectual curiosity, ethical leadership, service to others, and a passion for learning."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Creighton is a Jesuit university committed to developing men and women for others. Describe a time when you put the needs of others before your own and what you learned from that experience.",
+        "word_limit": "300 words",
+        "type": "Service",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Creighton's Jesuit values, can you recall a moment where you felt a genuine pull to serve someone or a group, even when it meant significant personal sacrifice or inconvenience? What was that specific situation and who were the 'others' involved?",
+          "When you chose to prioritize others in this instance, what internal conflict did you experience? What desires or needs of your own did you have to set aside, and how did that feel in the moment?",
+          "Beyond the immediate act of service, what lasting impact did this experience have on your understanding of responsibility, compassion, or your own capacity for selfless action? What did you learn about *yourself* through this act?",
+          "Creighton emphasizes 'men and women for others.' How did this specific experience shape your perspective on what it truly means to be 'for others,' and how might that influence your approach to community and service in college and beyond?",
+          "Looking back, was there a particular belief or value you held before this experience that was challenged or deepened as a result of putting others' needs first? How did this event refine your moral compass or your vision for contributing to society?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

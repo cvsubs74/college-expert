@@ -881,7 +881,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for creative, collaborative risk-takers; self-motivated, passionate, curious individuals who like to be challenged, have excelled in rigorous courses, and are involved in their community. Considers optional GLIMPSE videos for US students and InitialView interviews for international students."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe why you wish to study at Rensselaer and how you see yourself being part of the Rensselaer community.",
+        "word_limit": "250 words",
+        "type": "Why RPI",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the specific programs, what specific technological advancements, research areas, or interdisciplinary opportunities at Rensselaer truly ignite your curiosity and make you say, 'I *have* to be there to explore this'?",
+          "When you picture yourself as a Rensselaer student, what specific kind of 'problem' are you eager to tackle or 'creation' are you excited to contribute to, and how do Rensselaer's resources uniquely enable that?",
+          "Think about a time you've collaborated with others on a complex project, especially one involving technology or problem-solving. What was that experience like, and how do you envision bringing that collaborative spirit to Rensselaer's project-based learning environment?",
+          "Rensselaer's motto is 'Why not change the world?'. What specific aspect of the world do you feel most compelled to change, and how do you believe the Rensselaer community will help you develop the skills and mindset to pursue that change?",
+          "Imagine you've successfully navigated your first year at Rensselaer. What unique contribution will you have made to a club, a lab, a student project, or even just a classroom discussion that reflects your individuality and passion for learning within the Rensselaer ecosystem?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

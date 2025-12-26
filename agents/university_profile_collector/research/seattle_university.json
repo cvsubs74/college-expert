@@ -508,5 +508,22 @@
       }
     }
   },
-  "_id": "seattle_university"
+  "_id": "seattle_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Seattle University's Jesuit mission emphasizes developing the whole person. How have you grown intellectually, personally, and spiritually in high school?",
+        "word_limit": "300 words",
+        "type": "Personal Growth",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time in high school when you were challenged to think about something in a completely new way, perhaps by a class, a book, or even a conversation. What was that challenge, and how did it shift your intellectual perspective?",
+          "Can you recall a moment during your high school years where you had to step outside your comfort zone or confront a personal fear? What was the situation, what did you learn about yourself through that experience, and how did it shape you as a person?",
+          "Seattle University's Jesuit mission often encourages reflection on one's place in the world and a call to service. Was there an experience in high school that ignited a deeper sense of purpose or a desire to contribute to something larger than yourself? What was that experience, and how did it impact your spiritual growth?",
+          "Beyond academics, how have your extracurricular activities, volunteer work, or even your relationships with others in high school pushed you to develop a more compassionate or understanding view of different people and perspectives, contributing to your personal growth?",
+          "Consider a time when your beliefs or values were tested or questioned during high school. What was the situation, what internal dialogue did you have, and what did you discover about your spiritual or personal foundation as a result?"
+        ]
+      }
+    ]
+  }
 }

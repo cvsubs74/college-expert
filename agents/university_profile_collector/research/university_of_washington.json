@@ -991,7 +991,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "The UW conducts a holistic review to see a broader picture of the student and their achievements. For the Honors Program, intellectual curiosity and a willingness to embrace academic challenges are valued."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Our families and communities often define us and our individual worlds. Community might refer to your cultural group, extended family, religious group, neighborhood or school, sports team or club, co-workers, etc. Describe the world you come from and how you, as a product of it, might add to the diversity of the UW.",
+        "word_limit": "300 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the specific traditions, values, or even recurring inside jokes within your most significant family or community, which one feels most distinctly 'you', and can you recall a specific moment that truly embodied its essence?",
+          "Beyond shared geography or heritage, what's a particular challenge or unique perspective that your community grapples with, and how has navigating that shaped your own outlook on the world?",
+          "When you think about the 'rules' or unspoken expectations within your primary community (whether explicit or implicit), which one did you most naturally embrace or, perhaps, thoughtfully question, and why?",
+          "Imagine someone from the University of Washington has never encountered your particular cultural group, religious affiliation, or even your specific neighborhood. What's one story or experience from your background that you'd be excited to share with them to give them a genuine glimpse into your world?",
+          "Reflecting on a time you felt you significantly contributed to the vibrancy or character of your family or community, what was the situation, and what specific quality or action of yours made that contribution impactful?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

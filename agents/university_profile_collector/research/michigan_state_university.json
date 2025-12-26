@@ -1512,7 +1512,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Michigan State University employs a holistic review process, considering academic performance, challenging coursework (AP/IB), extracurricular activities that demonstrate passion and commitment, and a compelling personal essay. Submitting strong standardized test scores can enhance an application, though it is test-optional."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "MSU understands that students' experiences are often affected by their socioeconomic, cultural, and racial background. If this resonates with you, feel free to share how your experiences have shaped who you are today.",
+        "word_limit": "300 words",
+        "type": "Background",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about your upbringing, what's a specific moment where you first became aware of how your socioeconomic status, cultural background, or racial identity might differ from others around you, and how did that realization impact your perspective or actions?",
+          "Can you recall a time when your family's resources (or lack thereof) directly influenced a significant decision or opportunity you pursued, and what did you learn about your resilience or priorities through that experience?",
+          "Beyond just observing, how have you actively navigated or embraced your cultural or racial background in a way that has become a defining part of your identity, and what unique strengths has this given you?",
+          "When you've encountered situations where your background has been a point of misunderstanding or stereotyping, how have you chosen to respond, and what has that taught you about the importance of authentic representation or advocacy?",
+          "Looking ahead to your time at MSU, in what ways do you anticipate your unique socioeconomic, cultural, or racial experiences will allow you to contribute to the campus community and enrich the experiences of others?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

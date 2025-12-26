@@ -1559,7 +1559,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Seeking remarkable students who will add to the legacy of UW–Madison, demonstrating academic excellence, preparedness, leadership, and potential for positive contribution to the Wisconsin community."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Tell us why you would like to attend the University of Wisconsin-Madison. In addition, share with us the academic, extracurricular, or research opportunities you would take advantage of as a student.",
+        "word_limit": "650 words",
+        "type": "Why Wisconsin",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond its strong academics, what specific aspect of UW-Madison's culture or community resonates most deeply with your personal values or aspirations, and how have you seen this reflected in your own experiences?",
+          "Thinking about your past academic achievements or extracurricular involvements, can you pinpoint a particular moment or project that ignited your passion for a specific field of study, and how does UW-Madison's particular approach to that field excite you?",
+          "If you could step onto campus tomorrow and immediately dive into an opportunity, which specific UW-Madison academic program, research lab, or unique club would you gravitate towards first, and what's the story behind that initial attraction?",
+          "Consider a time when you faced a significant challenge or pursued a complex idea that required deep exploration. How did that experience shape your intellectual curiosity, and what specific resources or faculty at UW-Madison do you believe could help you delve even deeper into similar pursuits?",
+          "Imagine yourself contributing to the UW-Madison student body. What unique perspective or skill set do you possess that you're eager to share through extracurricular activities or collaborative projects on campus, and why is UW-Madison the ideal place for you to do so?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

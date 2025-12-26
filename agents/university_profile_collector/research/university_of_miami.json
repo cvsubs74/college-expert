@@ -795,7 +795,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Looking for students who will contribute to and benefit from the diverse and vibrant community; intellectual curiosity and drive."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "The University of Miami is a vibrant and diverse academic community. What unique perspectives or experiences would you bring to our campus?",
+        "word_limit": "250 words",
+        "type": "Diversity",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Miami's 'vibrant and diverse academic community,' what's a specific time you've felt genuinely energized by a diverse group of people, and what was your role or contribution in that moment?",
+          "Beyond just your academic interests, what's a less obvious passion or a 'quirky' aspect of your background that you believe would add a unique splash of color to UM's campus conversations?",
+          "Imagine you're explaining something you're deeply passionate about to someone completely unfamiliar with it, in a setting like UM's campus. What's a core element of your perspective that you'd want to make sure they understood?",
+          "UMiami's prompt mentions 'unique perspectives or experiences.' Can you recall a specific instance where your background or upbringing shaped your understanding of a complex issue differently than those around you, and what did you learn from that divergence?",
+          "If you were to host a small gathering for fellow UM students from various backgrounds, what kind of activity or discussion would you initiate that would allow your unique perspective to shine and encourage others to share theirs?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

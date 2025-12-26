@@ -767,7 +767,22 @@
       "legacy_consideration": "Minimal",
       "first_gen_boost": "Considered",
       "specific_differentiators": "Holistic review to identify curious, capable, and engaged students. Seeks intellectual curiosity, drive, and students who will connect ideas in new ways and promote progress and change."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "The University of Rochester is home to a diverse community of students who share certain key qualities including intellectual curiosity, openness to different ideas, and a commitment to their interests. How would these traits help you thrive at Rochester?",
+        "word_limit": "200 words",
+        "type": "Why Rochester",
+        "required": true,
+        "brainstorming_questions": [
+          "Can you think of a time when your intellectual curiosity led you down an unexpected path, perhaps a rabbit hole of research or a detour from your original plan, and how that exploration felt and what you learned from it?",
+          "Describe a specific instance where you encountered an idea that challenged your deeply held beliefs or assumptions. What was your initial reaction, and how did your openness to different perspectives allow you to process and potentially integrate that new information?",
+          "When you're deeply committed to an interest, what does that look like in your day-to-day life? Can you pinpoint a moment where this commitment manifested in a way that pushed you beyond your comfort zone or required significant dedication?",
+          "Rochester values a community where diverse individuals collaborate. Can you recall a project or experience where you actively sought out or benefited from the perspectives of people with different backgrounds or viewpoints than your own? What was the outcome?",
+          "Imagine yourself as a student at Rochester, already immersed in its community. How might your intellectual curiosity, openness, and commitment to your interests translate into specific interactions or contributions within a classroom discussion, a research lab, or a student organization?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

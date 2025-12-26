@@ -1072,7 +1072,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Seeking intellectual curiosity, drive, and students who embody Penn's mission and values, embracing academic opportunities, and contributing to the community. Looking for open-minded, curious, inventive, practical individuals making connections across fields, who are self-improving and focused on enhancing social good."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Considering the specific undergraduate school you have selected, describe how you intend to explore your academic and intellectual interests at the University of Pennsylvania.",
+        "word_limit": "150-200 words",
+        "type": "Academic",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the specific departments or majors you're considering, what's one interdisciplinary connection between your interests that Penn's unique structure (like its schools or research centers) seems particularly poised to help you explore?",
+          "Think about a moment when a specific Penn professor or a particular research opportunity you've learned about truly sparked your curiosity. What was it about that specific person or project that resonated so deeply with your intellectual journey?",
+          "If you could design your own ideal learning experience at Penn for the next four years, combining courses, research, and perhaps even extracurricular activities, what unique intellectual pathways would emerge that you couldn't easily find elsewhere?",
+          "Penn has a rich history and a distinct institutional culture. How might specific historical intellectual traditions or unique campus traditions at Penn align with or challenge your current understanding of your academic passions?",
+          "Imagine you've successfully navigated your first year at Penn and are sharing an 'aha!' moment about your academic interests with a friend. What specific Penn resource, event, or class would have been instrumental in leading you to that realization?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -979,7 +979,22 @@
       "legacy_consideration": "Strong",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Lehigh looks for intellectual curiosity and drive, a collaborative spirit, unique perspectives, creative problem-solving, and a desire to make an impact on humanity."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Lehigh students are passionate about ideas, making change, and having impact. How do you hope to make your mark at Lehigh, and what impact do you hope to have on campus?",
+        "word_limit": "200 words",
+        "type": "Why Lehigh",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Lehigh's emphasis on 'making change,' can you recall a specific instance where you felt a strong pull to alter something in your community or a system you were part of – even a small one? What was it about that situation that ignited your desire for change?",
+          "Lehigh values 'impact.' Beyond just your own learning, where have you seen your actions or ideas create a ripple effect, influencing others or shaping an outcome you didn't initially anticipate? Describe a moment where you recognized that impact.",
+          "When you envision yourself at Lehigh, what specific 'idea' or passion are you most eager to explore and contribute to? What kind of conversations do you hope to spark, and who do you see yourself engaging with to bring that idea to life?",
+          "Lehigh's motto often connects to action and progress. Can you describe a time when you moved beyond simply thinking about a problem or an interest and took concrete steps to address it or delve deeper? What motivated you to translate thought into action?",
+          "Considering Lehigh's commitment to 'impact,' what kind of lasting impression or transformation do you hope to leave on the Lehigh community itself, rather than just on your personal academic journey? What would success look like for your contributions on campus?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

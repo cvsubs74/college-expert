@@ -541,5 +541,22 @@
       }
     }
   },
-  "_id": "oklahoma_state_university"
+  "_id": "oklahoma_state_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Oklahoma State's brand promise is 'You Can Always Find a Cowboy Who Will.' Describe a time when you went above and beyond to help someone.",
+        "word_limit": "250 words",
+        "type": "Service",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about 'You Can Always Find a Cowboy Who Will,' can you recall a moment where you felt a strong sense of responsibility to step up for someone else, even when it wasn't your direct duty?",
+          "Beyond simply completing a task, describe a situation where your willingness to go the extra mile for someone revealed something important about your character or your understanding of community, much like the OSU spirit?",
+          "What was a time you witnessed or experienced the 'Cowboy spirit' firsthand, where someone's unexpected help made a significant difference, and how did that experience shape your own approach to helping others?",
+          "Consider a challenge you faced where helping someone else required you to tap into a resilience or determination you didn't know you had – what was that situation and how did you push through?",
+          "When you think about 'above and beyond,' what specific action or effort are you most proud of in helping someone, and what motivated you to take that extra step when others might have stopped?"
+        ]
+      }
+    ]
+  }
 }

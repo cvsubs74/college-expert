@@ -984,7 +984,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Emphasis on academic interests, specific alignment with Purdue's programs and opportunities (in-classroom and out-of-classroom), and reasons for major choice and campus location."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "How will opportunities at Purdue support your interests, both in and out of the classroom?",
+        "word_limit": "250 words",
+        "type": "Why Purdue",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Purdue's specific programs or research in [mention a field of interest from the student's profile], what's a particular project, lab, or even a professor's work that genuinely excites you, and what personal experience or question sparked that initial curiosity?",
+          "Beyond the lecture hall, Purdue boasts a vibrant campus life. Can you recall a time you pursued a passion outside of academics that led to unexpected growth or learning, and how do you envision a similar experience thriving at Purdue, perhaps through a club, organization, or a unique campus tradition?",
+          "When you imagine yourself at Purdue, what's a challenge or an opportunity related to your chosen field that you're eager to tackle head-on, and what specific resources or connections at Purdue do you see as crucial for you to overcome that challenge or seize that opportunity?",
+          "Purdue is known for its hands-on approach. Think about a time you learned something best by 'doing' rather than just 'knowing.' How do Purdue's specific experiential learning opportunities, like co-ops, internships, or design projects, align with that learning style and your future aspirations?",
+          "Considering the diverse student body and global perspective at Purdue, can you describe a moment where interacting with people from different backgrounds broadened your understanding or challenged your assumptions, and how do you anticipate Purdue's community will further enrich your worldview and contribute to your personal development?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -649,5 +649,22 @@
       }
     }
   },
-  "_id": "clark_university"
+  "_id": "clark_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Clark's motto is 'Challenge Convention, Change Our World.' How do you plan to challenge convention in your education and career?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you felt stifled by a rigid system, a rule that didn't make sense, or a commonly accepted approach. What was that situation, and how did you push back or find a different way?",
+          "Beyond academics, what's an idea, belief, or common practice that you find yourself questioning or wanting to re-examine? How might you bring that critical perspective to your studies and future work?",
+          "If you imagine Clark's motto, 'Challenge Convention, Change Our World,' as a call to action, what's a specific area where you see convention that desperately needs challenging, and what's your initial thought about how you might contribute to that change?",
+          "Consider a moment where you learned something profound not by following the established path, but by taking a detour or forging your own. What was that experience, and how did it teach you to approach learning and problem-solving differently?",
+          "What's a 'convention' in your chosen field of interest that you find particularly limiting or even counterproductive? How do you envision yourself disrupting or rethinking that convention as you progress through your education at Clark and beyond?"
+        ]
+      }
+    ]
+  }
 }

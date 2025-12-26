@@ -13,7 +13,6 @@ import {
 import FitChatWidget from '../components/FitChatWidget';
 import CreditsUpgradeModal from '../components/CreditsUpgradeModal';
 import FitAnalysisPage from '../components/FitAnalysisPage';
-import DeadlineTracker from '../components/DeadlineTracker';
 import { Link, useNavigate } from 'react-router-dom';
 
 // Icons
@@ -37,6 +36,7 @@ import {
 const StratiaLaunchpad = () => {
     const { currentUser } = useAuth();
     const { isFreeTier } = usePayment();
+    const navigate = useNavigate();
     const FREE_TIER_SCHOOL_LIMIT = 3;
 
     // State
@@ -215,6 +215,10 @@ const StratiaLaunchpad = () => {
 
     const handleCloseFitModal = () => {
         setFitModalCollege(null);
+    };
+
+    const handleEssayHelp = (college) => {
+        navigate(`/essay-help/${college.university_id}`);
     };
 
     // Handle removing a college from the list
@@ -530,16 +534,6 @@ const StratiaLaunchpad = () => {
                         ))}
                     </div>
 
-                    {/* Deadline Tracker */}
-                    <div className="mb-6">
-                        <DeadlineTracker
-                            onSchoolClick={(universityId) => {
-                                const college = collegeList.find(c => c.university_id === universityId);
-                                if (college) handleViewAnalysis(college);
-                            }}
-                        />
-                    </div>
-
                     {/* College List */}
                     {filteredColleges.length === 0 ? (
                         <div className="stratia-card p-12 text-center">
@@ -590,7 +584,7 @@ const StratiaLaunchpad = () => {
                                         }}
                                         onViewAnalysis={handleViewAnalysis}
                                         onOpenChat={handleOpenChat}
-                                        onViewNotes={() => {/* TODO: Notes modal */ }}
+                                        onEssayHelp={handleEssayHelp}
                                         canRemove={!isFreeTier}
                                         onRemove={handleRemoveCollege}
                                     />

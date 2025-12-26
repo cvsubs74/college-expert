@@ -724,5 +724,22 @@
       }
     }
   },
-  "_id": "rochester_institute_of_technology"
+  "_id": "rochester_institute_of_technology",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "RIT seeks students who are fascinated by possibilities and passionate about innovation. How do you envision yourself contributing to RIT's culture of creativity and discovery?",
+        "word_limit": "250 words",
+        "type": "Why RIT",
+        "required": true,
+        "brainstorming_questions": [
+          "When have you encountered a problem or a challenge where the existing solution felt uninspired or inefficient, and what was your initial spark of an idea to approach it differently, even if it was just a fleeting thought?",
+          "Think about a time you were deeply engrossed in exploring a new technology, concept, or artistic medium. What specific aspect of it captured your imagination and made you feel like you were on the cusp of uncovering something new?",
+          "RIT is known for its hands-on, project-based learning. Can you recall a specific project or experience where you took an idea from a rough concept to a tangible outcome, and what was the most exciting part of that innovation process for you?",
+          "Beyond the classroom, what are some of your personal 'hobbies' or 'side projects' where you've experimented with new approaches or pushed the boundaries of what you thought was possible, and how did that experimentation feel?",
+          "Imagine you're a member of an RIT club or team. How would you specifically inject your unique brand of fascination with possibilities and passion for innovation into a group project, helping others see new directions or approaches?"
+        ]
+      }
+    ]
+  }
 }

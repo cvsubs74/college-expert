@@ -1342,7 +1342,35 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Holistic review considers an applicant's unique opportunities or challenges, academic interests, and engagement beyond the classroom."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Why are you interested in the major you indicated as your first-choice major?",
+        "word_limit": "250-300 words",
+        "type": "Major",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a specific moment or experience where you felt a genuine pull towards [Your First-Choice Major] at UT. What was happening, who were you with, and what did that moment reveal to you about your passion for this field?",
+          "Beyond the classroom, how have you actively explored your interest in [Your First-Choice Major]? Can you recall a specific project, hobby, or even a casual conversation that solidified your desire to pursue this path at UT?",
+          "When you imagine yourself as a student in the [Your First-Choice Major] program at UT Austin, what specific opportunities or aspects of the program truly excite you and why do they resonate with your aspirations?",
+          "Is there a particular problem or challenge in the world that you feel [Your First-Choice Major] could help address? Describe a personal connection you have to that problem and how you envision your studies at UT contributing to a solution.",
+          "Looking back, can you identify a specific turning point or realization that shifted your perspective and made [Your First-Choice Major] feel like the right fit for you? What was that realization, and what did it signify about your future?"
+        ]
+      },
+      {
+        "prompt": "Describe how your experiences, perspectives, talents, and/or your involvement in leadership activities will help you to make an impact at UT Austin and beyond.",
+        "word_limit": "500 words",
+        "type": "Leadership",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your most impactful leadership moments, what specific skill or perspective did you develop at UT Austin that you feel is uniquely suited to tackling a challenge you've observed in the world beyond campus?",
+          "Beyond the typical definition of leadership, can you pinpoint a time when your unique talents or perspectives, perhaps something overlooked by others, allowed you to create a positive ripple effect within a UT Austin community or project?",
+          "When you imagine contributing to UT Austin's vibrant atmosphere, what specific aspect of the university culture resonates most with your personal values and how have past experiences shaped your desire to contribute in that particular way?",
+          "Consider a time you felt truly challenged or even failed in a leadership role at UT Austin. What did you learn from that experience, and how has that lesson equipped you to make a more meaningful impact on campus and in your future endeavors?",
+          "If you could bottle up the essence of what you've learned and experienced at UT Austin that sets you apart, what would be in that bottle, and how would it help you to address a specific need or opportunity, both at UT and in the wider world?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

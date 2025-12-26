@@ -940,7 +940,22 @@
       "legacy_consideration": "Not Considered",
       "first_gen_boost": "None",
       "specific_differentiators": "Gonzaga University takes a holistic approach, carefully reviewing academic measures, student involvement, and character. They seek motivated students who will benefit from challenging academic programs and contribute positively to campus with extracurricular achievement, community involvement, and diverse personal interests."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "At Gonzaga, we believe in the whole person. What makes you uniquely you, and how will you share that with our community?",
+        "word_limit": "300 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Gonzaga's emphasis on the 'whole person,' can you recall a time when a particular passion or interest of yours, perhaps one that isn't academic, truly shaped how you approached a challenge or interacted with others?",
+          "Gonzaga values community. How have you, in a way that feels distinctly 'you,' contributed to the growth or well-being of a group you've been a part of, and what did you learn about yourself in that process?",
+          "When you consider what makes you 'uniquely you' beyond your grades and activities, what's a core value or belief that guides your actions, and can you pinpoint a specific moment where living by that value made a difference?",
+          "Imagine you're explaining to a new friend at Gonzaga what's at the heart of who you are. What's a small, everyday detail or habit that might surprise them, but that you consider essential to your identity?",
+          "Gonzaga encourages students to engage with the world. What's an experience that has broadened your perspective or challenged your assumptions in a way that feels deeply personal, and how has that experience prepared you to contribute to Gonzaga's diverse community?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

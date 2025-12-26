@@ -659,5 +659,22 @@
       }
     }
   },
-  "_id": "worcester_polytechnic_institute"
+  "_id": "worcester_polytechnic_institute",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "WPI's project-based education prepares students to solve real-world problems. Describe a problem you're passionate about solving.",
+        "word_limit": "250 words",
+        "type": "Problem Solving",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about WPI's emphasis on project-based learning and tackling real-world issues, what's a specific moment or observation where you felt a strong urge to *fix* something in the world around you, big or small, and why did that particular problem resonate so deeply?",
+          "Beyond just an interest, what's a problem you've encountered or learned about where you've found yourself actively seeking out information, trying out solutions (even if they didn't work!), or discussing it with others, demonstrating a genuine passion for its resolution?",
+          "Considering the hands-on, iterative nature of WPI's projects, can you recall a time when you faced a persistent challenge or a complex issue where your initial attempts to solve it didn't quite hit the mark, and what did you learn from that struggle that fuels your desire to tackle it further?",
+          "If you could design a WPI-style project to address a problem you're passionate about, what kind of hands-on experience or tangible outcome would be at the heart of that project, and what makes that approach feel particularly effective to you?",
+          "Looking at the diverse range of real-world problems people face, what is one specific problem that, if you could contribute to its solution, would not only make a positive impact but also deeply fulfill a personal goal or aspiration you hold?"
+        ]
+      }
+    ]
+  }
 }

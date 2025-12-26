@@ -918,5 +918,22 @@
       }
     }
   },
-  "_id": "university_of_arkansas"
+  "_id": "university_of_arkansas",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Tell us why you want to attend the University of Arkansas and what makes you a good fit for our campus community.",
+        "word_limit": "250 words",
+        "type": "Why Arkansas",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond its academic programs, what specific aspect of the University of Arkansas's physical campus, traditions, or even its location in Fayetteville sparks your curiosity and makes you feel a sense of belonging already?",
+          "Think about a time you actively contributed to a community (school, club, family, etc.) that faced a challenge. What was your role in navigating that challenge, and how does that experience prepare you to contribute to the U of A community?",
+          "The University of Arkansas highlights its spirit of collaboration and its 'razorback pride.' Can you recall a moment where you either worked with others to achieve something significant, or felt a strong sense of collective pride, and how might that translate to life on the Hill?",
+          "Looking at the University of Arkansas's specific initiatives, research opportunities, or student organizations, which one resonates most deeply with your personal goals or passions, and why is this particular connection important to you?",
+          "Describe a situation where you had to adapt to a new environment or a different perspective. What did you learn about yourself and how did you successfully integrate, and what does this tell us about your ability to thrive within the diverse U of A community?"
+        ]
+      }
+    ]
+  }
 }

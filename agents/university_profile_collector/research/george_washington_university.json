@@ -992,7 +992,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for intellectual curiosity, drive, academic preparation, personal qualities, and motivation to thrive in a dynamic environment."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Every applicant can choose from one of the following two prompts to submit an essay. At the George Washington University, our students frequently interact with policymakers, world leaders, and influencers. How do you hope to engage in this environment?",
+        "word_limit": "500 words",
+        "type": "Why GW",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the 'policymakers, world leaders, and influencers' at GW, which specific type of individual or group excites you the most to learn from or interact with, and why does that particular audience resonate with your aspirations?",
+          "Beyond observing or listening, what's a specific skill, idea, or perspective you've developed that you believe would be valuable to *contribute* to conversations with experienced individuals in Washington D.C.?",
+          "Can you recall a moment in your life where you successfully navigated a complex or nuanced discussion with someone who held very different views? What did you learn from that experience that you'd bring to GW's environment?",
+          "Imagine yourself attending a GW event where you have a chance to speak with a policymaker. What burning question would you ask them, and what does that question reveal about what you're eager to explore at GW?",
+          "Considering the vibrant, sometimes challenging, political and social landscape that GW students engage with, how have you actively sought out or created opportunities to understand different perspectives in the past, and how will that shape your engagement there?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

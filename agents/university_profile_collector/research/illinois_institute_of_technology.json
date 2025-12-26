@@ -867,7 +867,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Strong",
       "specific_differentiators": "Looking for high academic caliber, strong community ties, committed work ethic, a solid foundation in STEM, and intellectual curiosity and drive for innovation and discovery."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Illinois Tech is committed to innovation and entrepreneurship. Tell us about a project or idea you've developed or would like to develop.",
+        "word_limit": "250 words",
+        "type": "Innovation",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about Illinois Tech's focus on innovation, can you recall a specific moment when you felt a strong urge to 'fix' something or create something new that wasn't already there, even if it was a small problem in your everyday life?",
+          "Beyond just having an idea, what was the *process* you went through (or imagine you would go through) to bring this project or idea to life? Did you encounter any surprising obstacles or have any 'aha!' moments during that development?",
+          "Considering Illinois Tech's emphasis on entrepreneurship, what aspect of your project or idea do you believe has the most potential to create value or make a positive impact on others, and why is that particular impact important to you?",
+          "If you were to describe your developed or envisioned project to an Illinois Tech professor who is deeply involved in innovation, what core problem are you solving for them, and what makes your approach stand out from other potential solutions they might have seen?",
+          "Looking ahead to your time at Illinois Tech, how does this project or idea connect with the specific resources, programs, or faculty you're excited about, and what do you hope to achieve with their support?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

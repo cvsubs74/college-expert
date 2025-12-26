@@ -817,7 +817,35 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Emory looks for students who are intellectually curious, bring bold ideas, global perspectives, and a desire to grow through community, demonstrating academic excellence and potential to contribute to campus life."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "What academic areas are you interested in exploring at Emory University and why?",
+        "word_limit": "200 words",
+        "type": "Academic",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Emory's specific academic offerings, can you recall a moment when you were genuinely captivated by a particular subject or concept that aligns with a program or department at Emory, and what was it about that moment that sparked your curiosity?",
+          "Beyond the general academic subjects, are there any unique interdisciplinary programs or research opportunities at Emory that resonate with a specific question you've been wrestling with or a passion you've been pursuing outside of the classroom?",
+          "When you picture yourself at Emory, what kind of intellectual 'conversations' do you imagine yourself having? What professors or specific research areas at Emory do you think you'd be drawn to learn from, and why does their work excite you?",
+          "Reflecting on your past academic experiences, what were the 'aha!' moments or the challenging problems that truly pushed you to delve deeper, and how do you see Emory's academic environment fostering more of those growth-inducing experiences for you?",
+          "Emory's community often emphasizes a particular approach to learning or a set of values. How do you envision your specific academic interests at Emory contributing to or benefiting from that unique intellectual culture, and what makes Emory the right place for you to explore these areas?"
+        ]
+      },
+      {
+        "prompt": "Tell us about a community you have been part of where your participation helped to change or shape the community for the better.",
+        "word_limit": "150 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the communities you've been a part of, what's one specific moment or recurring interaction where you felt a tangible shift happen because of your presence or actions, even if it was small at first?",
+          "Emory values diverse perspectives. Can you recall a time when your unique viewpoint or background brought a new idea or approach to a community challenge, and how did that play out?",
+          "Beyond just being a member, what was a specific responsibility or role you took on within a community that required you to actively contribute to its betterment? What did that experience teach you about leadership or collaboration?",
+          "Describe a time when a community you belonged to faced a challenge or a point of stagnation. What specific action did you take, or what change did you advocate for, that directly contributed to moving the community forward?",
+          "Looking back at the communities you've shaped, what is a core value or principle that you consistently championed through your participation, and how did that value become more embedded in the community as a result?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

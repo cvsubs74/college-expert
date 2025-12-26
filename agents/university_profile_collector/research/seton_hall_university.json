@@ -624,5 +624,22 @@
       }
     }
   },
-  "_id": "seton_hall_university"
+  "_id": "seton_hall_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "What about Seton Hall University appeals to you, and how do you see yourself contributing to our community?",
+        "word_limit": "250 words",
+        "type": "Why Seton Hall",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond its academic programs, what specific aspect of Seton Hall's Catholic, Vincentian, and Metropolitan mission resonates most deeply with your personal values and aspirations?",
+          "Think about a time you've actively engaged with or contributed to a diverse community that was new to you. How did that experience shape you, and how might it translate to the Seton Hall environment?",
+          "If you were to walk across the Seton Hall campus today, what specific sights, sounds, or feelings would make you feel most at home and inspired to contribute your unique talents?",
+          "Seton Hall's emphasis on 'an education for leadership and service' is a core tenet. Can you recall a moment where you led a project or a group, or a time you provided significant service, that illustrates your potential to embody this principle?",
+          "Looking at Seton Hall's particular strengths or unique programs (e.g., the Buccino Leadership Institute, the School of Diplomacy, specific research centers), which one sparks your curiosity and ignites a vision for how you'd actively participate and make an impact?"
+        ]
+      }
+    ]
+  }
 }

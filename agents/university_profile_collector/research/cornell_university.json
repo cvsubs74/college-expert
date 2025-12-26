@@ -1369,7 +1369,22 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Looking for intellectual curiosity and drive, passion for learning, individuality, depth in pursuits, unique endeavors, and potential to contribute richly to the Cornell community and address complex global challenges through interdisciplinary approaches."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Using your personal, academic, or volunteer/work experiences, describe the topics or issues that you care about and why they are important to you.",
+        "word_limit": "650 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your most impactful academic moments, what specific concept or problem sparked a genuine sense of curiosity or even frustration that you've wanted to explore further?",
+          "When you reflect on your volunteer or work experiences, what was a moment where you witnessed an issue firsthand that deeply resonated with you, and what did that specific encounter reveal about your values?",
+          "Beyond your coursework, can you pinpoint a time when a personal interaction or observation outside of school ignited a passion for a particular topic, and what was it about that specific experience that captured your attention?",
+          "Imagine you're explaining one of the issues you care about to someone who knows nothing about it. What's the most compelling personal anecdote or lived experience you'd share to illustrate why this issue matters so much?",
+          "Considering the skills or knowledge you've gained through any of your experiences (academic, work, or volunteer), which particular aspect do you feel uniquely equipped to address or contribute to a chosen topic, and why does that specific connection excite you?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

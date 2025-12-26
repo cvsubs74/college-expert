@@ -1247,7 +1247,61 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "UCLA seeks intellectually curious students who have excelled academically, gained valuable perspective from personal experiences, and will contribute to and benefit from the UCLA community. They look for personal development, creativity, ambition, and diversity."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
+        "word_limit": "350 words",
+        "type": "PIQ 1",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about UCLA, a place known for its interdisciplinary studies and cutting-edge research, can you pinpoint a time when a particular course, professor, or even a specific resource at your school (like a lab, library collection, or club) genuinely sparked a deep intellectual curiosity in you, leading you to explore beyond the syllabus?",
+          "UCLA values resilience and the ability to adapt. Reflecting on an educational barrier you've encountered – whether it was a challenging subject, a lack of resources, or a personal circumstance – what specific steps, however small or unconventional, did you take to navigate and push through it, and what did you learn about your own learning process in doing so?",
+          "Beyond academic challenges, consider opportunities for growth. Was there ever a time you stepped outside your comfort zone academically – perhaps by tackling a project you felt underqualified for, seeking out a mentor who pushed your thinking, or even initiating a new learning initiative yourself – and what was the outcome of that proactive engagement?",
+          "The prompt asks about taking advantage of opportunities. Can you recall a specific moment when you recognized a unique learning possibility (perhaps an internship, a competition, a special program, or even a chance to teach a concept to peers) and how did you actively pursue and maximize that experience to gain something valuable?",
+          "UCLA is a diverse community. If you've faced an educational barrier, did it ever require you to collaborate with others, seek diverse perspectives, or learn from classmates with different backgrounds or approaches to overcome it? How did that collaborative aspect shape your understanding or your eventual success?"
+        ]
+      },
+      {
+        "prompt": "Every person has a creative side. Describe how you express your creative side.",
+        "word_limit": "350 words",
+        "type": "PIQ 2",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you felt stuck or faced a challenge where your usual approach didn't work. What did you do differently, and how did that different approach feel like 'creating' something new?",
+          "Beyond obvious art forms, where do you find yourself innovating, improvising, or coming up with novel solutions in your everyday life – maybe in organizing, planning, or even in how you explain things to others?",
+          "Describe a moment when you felt a spark of inspiration, and what specific actions you took to bring that idea to life, even if it was a small gesture or a personal project.",
+          "When you look at something someone else has created – whether it's a piece of art, a well-written story, or even an efficient system – what aspects of it resonate with you, and how does that appreciation influence your own desire to make or do?",
+          "Consider a time you had to communicate a complex idea or emotion. What specific methods or 'tools' did you use – verbal, visual, written, or something else entirely – to make your message clear and impactful in a way that felt uniquely yours?"
+        ]
+      },
+      {
+        "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
+        "word_limit": "350 words",
+        "type": "PIQ 3",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a moment where your friends, family, or even a stranger instinctively turned to *you* for a specific kind of help or expertise – what was that situation, and what specific talent were they relying on you for?",
+          "Beyond what you're formally taught in school, what's a skill or talent you've actively pursued and honed through your own curiosity or passion, and can you recall the first time you realized you were genuinely *good* at it?",
+          "Can you pinpoint a time when you faced a challenge or obstacle that seemed insurmountable, and how did the application of your greatest talent allow you to navigate or overcome it in a way others might not have?",
+          "Imagine you had to explain your greatest talent to someone who knows absolutely nothing about it. What are the most vivid examples or anecdotes you would use to illustrate *how* you use it and *why* it's significant to you?",
+          "When you look back at your experiences, are there recurring themes or patterns in how you approach problems, learn new things, or interact with others that point to a foundational talent you consistently rely on?"
+        ]
+      },
+      {
+        "prompt": "Describe how you have made a significant impact on a community that is important to you.",
+        "word_limit": "350 words",
+        "type": "PIQ 4",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about this community that's important to you, what's one specific moment when you felt like you were truly making a difference, even if it was small at the time?",
+          "Beyond the obvious actions, what personal quality or skill did you tap into to create this impact, and how did you discover you had that ability within this community?",
+          "What was the biggest challenge or obstacle you faced while trying to make this impact, and how did your approach to overcoming it reveal something unique about your commitment to this community?",
+          "If you were to explain the ripple effect of your contribution to someone unfamiliar with this community, what story or analogy would you use to convey its significance?",
+          "Looking back, how has the experience of making this impact changed *you* and your perspective on your role within this community and beyond?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

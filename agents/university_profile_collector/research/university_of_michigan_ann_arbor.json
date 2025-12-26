@@ -806,7 +806,35 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "The University of Michigan employs an individualized, comprehensive review, seeking intellectually driven, socially engaged students who demonstrate drive, empathy, initiative, and curiosity. They value applicants who challenge the present, enrich the future, and contribute to a vibrant, diverse community. While external demonstrations of interest like visits are not factored, the essays are a critical opportunity to show genuine fit and engagement. The university is a 'First-Gen Forward Institution' and actively supports first-generation students, though this status is not cited as an admissions boost."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "At the University of Michigan, we are focused on developing leaders and citizens who will challenge the present and enrich the future. Share how you are prepared to contribute to these goals.",
+        "word_limit": "100-300 words",
+        "type": "Leadership",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your experiences so far, can you recall a specific moment or situation where you felt compelled to question an existing norm, a rule, or a way of doing things, and what was the outcome or lesson learned from that challenge?",
+          "When you consider the idea of 'enriching the future,' what are some concrete, tangible ways you envision yourself making a positive impact, perhaps something you've already started doing or a specific skill you're eager to develop at Michigan to achieve this?",
+          "Beyond just leadership roles, where have you seen opportunities to take initiative, guide others, or foster a sense of collective responsibility, even in informal settings, and what did you learn about yourself through those experiences?",
+          "The prompt mentions 'citizens.' What does being a good citizen mean to you personally, and can you share an example of a time you actively contributed to the well-being or betterment of a community you were a part of?",
+          "Imagine yourself a few years from now, having successfully contributed to Michigan's goals. What specific problem or challenge, either within the university or in the wider world, do you hope to have played a role in addressing or improving, and what steps are you taking now to prepare for that?"
+        ]
+      },
+      {
+        "prompt": "Describe the unique qualities that attract you to the specific undergraduate College or School to which you are applying. How would that curriculum support your interests?",
+        "word_limit": "100-550 words",
+        "type": "Why Major",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the broad reputation of UMich, what specific programs, research labs, or even particular faculty members within your intended College/School at Michigan genuinely excite you, and why do those specific opportunities resonate with your passions?",
+          "Think about a time your academic interests felt a little 'niche' or not perfectly aligned with traditional pathways. How does the specific curriculum, departmental structure, or interdisciplinary offerings at Michigan's College/School seem to uniquely cater to those less conventional but deeply felt interests?",
+          "Imagine yourself as a student at Michigan's College/School. What unique intellectual conversations or collaborative experiences do you envision having there, and how would the curriculum specifically facilitate those interactions?",
+          "When you consider the 'unique qualities' of this particular College/School at Michigan, what is it about their approach to teaching, learning, or the student experience that feels like a distinct departure from other universities you've researched, and how does that distinction directly align with your own learning style and goals?",
+          "Reflect on a moment where you felt truly challenged or inspired by a specific academic subject or question. How does the curriculum within your chosen College/School at Michigan offer the resources, depth, or unique perspectives to help you explore and expand upon that very feeling?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

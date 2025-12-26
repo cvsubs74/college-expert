@@ -964,7 +964,22 @@
       "legacy_consideration": "Not Considered",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Applicants are evaluated based on who will contribute to the University of Oregon's academic community in meaningful ways, considering unique talents, personality, academic and extracurricular interests. Emphasis is placed on recognizing difference and supporting equity and inclusion, and how applicants will share their experiences, values, and interests with the community."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "At the University of Oregon, we embrace the concept of 'Ducks in Service.' How have you demonstrated service to your community?",
+        "word_limit": "250 words",
+        "type": "Service",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about 'Ducks in Service,' can you recall a specific moment where you felt a genuine connection to the community you were serving, and what made that moment so impactful for you?",
+          "Beyond just logging hours, what personal values or beliefs were you actively expressing or strengthening through your service activities that align with the spirit of 'Ducks in Service'?",
+          "Describe a time when your service efforts unexpectedly challenged your assumptions or perspectives about the community you were helping, and how did that experience shape your understanding of what it means to serve?",
+          "When you think about the University of Oregon's 'Ducks in Service' initiative, which aspect of your past service experiences best embodies the idea of a 'Duck' actively contributing to something larger than themselves, and why?",
+          "Imagine you're explaining your service to a fellow Duck. What's one story or anecdote you'd share that truly captures your passion for community involvement and illustrates how you've put 'Ducks in Service' into practice in your own life?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

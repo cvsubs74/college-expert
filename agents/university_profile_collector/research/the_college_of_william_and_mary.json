@@ -929,7 +929,48 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for intellectual curiosity, ambition, drive, and diverse perspectives."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Are there any particular communities that are important to you, and how do you see yourself being a part of our community?",
+        "word_limit": "300 words",
+        "type": "Community",
+        "required": false,
+        "brainstorming_questions": [
+          "Think about the communities where you've felt most yourself, where you've been able to bring your whole self without reservation. What were the shared values or unspoken understandings that made those spaces feel so welcoming to you, and how might those experiences shape your contributions to William & Mary's vibrant intellectual and social atmosphere?",
+          "William & Mary has a strong tradition of student leadership and engagement. Can you recall a time when you stepped up within a community – perhaps a club, a team, or even a group of friends – to address a challenge, foster connection, or make a meaningful impact? What did you learn from that experience, and how could that leadership style translate to enriching William & Mary's community?",
+          "Beyond the typical categories of clubs or organizations, what are some of the more unique or niche interests you hold dear? How have you found or built communities around these passions, and how do you envision discovering and contributing to similar, perhaps unexpected, pockets of belonging at William & Mary?",
+          "Imagine you're walking through campus on your first day at William & Mary. What are the sights, sounds, and interactions that would immediately make you feel like you've found 'your people'? What specific kind of energy or connection are you seeking, and how has your past experience with certain communities prepared you to actively seek out and nurture those connections here?",
+          "William & Mary is known for its emphasis on collaborative learning and open discourse. Can you think of a time when you've learned something profound from someone with a very different background or perspective than your own, and how did that interaction broaden your understanding of the world? How do you see yourself engaging in and contributing to these kinds of enriching dialogues within the William & Mary community?"
+        ]
+      },
+      {
+        "prompt": "Share more about a personal academic interest or career goal.",
+        "word_limit": "300 words",
+        "type": "Academic",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about your academic interests, can you recall a specific moment, perhaps a class, a book, or even a casual conversation, that sparked your curiosity and made you think, 'Wow, I really want to dive deeper into this'?",
+          "When you envision yourself pursuing this academic interest or career goal, what is a concrete, real-world problem or question you are most eager to help solve or understand?",
+          "Beyond the obvious reasons, what is a more personal or unexpected motivation that fuels your passion for this particular academic path? What makes it uniquely 'you'?",
+          "William & Mary has a strong focus on engaged learning and undergraduate research. How does your chosen interest or goal align with the kind of hands-on, impactful learning you hope to experience there?",
+          "Imagine you're explaining your academic interest or career goal to someone completely outside of your field, maybe a family member or a friend. What story or anecdote would you share to make them truly understand why it matters to you?"
+        ]
+      },
+      {
+        "prompt": "What led to your interest in William & Mary?",
+        "word_limit": "300 words",
+        "type": "Why W&M",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond the impressive academics, what specific aspect of William & Mary's history or traditions truly sparked your curiosity and made you think, 'This is where I belong'?",
+          "Think about your own personal journey and values. Can you pinpoint a moment or realization where you felt William & Mary's emphasis on something – like engaged citizenship, research, or liberal arts – directly resonated with what you're passionate about?",
+          "Were there any particular faculty members, alumni stories, or even specific campus locations at William & Mary that made you feel a connection or envision yourself thriving there?",
+          "When you first learned about William & Mary, what was the initial 'aha!' moment? Was it a specific program, a unique learning opportunity, or something else that made it stand out from other institutions you considered?",
+          "Imagine yourself on campus at William & Mary. What's one experience or interaction you envision happening that perfectly encapsulates why you're drawn to its particular community and educational philosophy?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

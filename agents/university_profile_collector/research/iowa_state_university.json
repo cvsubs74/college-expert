@@ -534,5 +534,22 @@
       }
     }
   },
-  "_id": "iowa_state_university"
+  "_id": "iowa_state_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Describe the academic, extracurricular, and/or personal experiences that have influenced your choice of major or area of study.",
+        "word_limit": "250 words",
+        "type": "Major",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about your coursework at Iowa State, were there any specific professors, lectures, or even a single challenging problem that made you lean towards this major, and if so, what was it about that moment that resonated so deeply?",
+          "Beyond the classroom, what's a project, club, or activity where you encountered a real-world problem or had to find a creative solution that unexpectedly sparked your interest in this field of study?",
+          "When you imagine yourself working in your chosen major, what's a specific kind of impact you hope to make, and can you recall a personal experience, however small, that planted the seed for that aspiration?",
+          "Were there any pivotal conversations, either with mentors, friends, or family, or even something you read or saw, that challenged your initial thoughts about your academic path and ultimately solidified your choice of major?",
+          "Looking back, what's a moment where you felt genuinely curious and eager to learn more about a topic related to your major, even when it wasn't assigned or required, and what was the driving force behind that eagerness?"
+        ]
+      }
+    ]
+  }
 }

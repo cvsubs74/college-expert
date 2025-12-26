@@ -521,5 +521,22 @@
       }
     }
   },
-  "_id": "university_of_cincinnati"
+  "_id": "university_of_cincinnati",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Why are you interested in attending the University of Cincinnati? What excites you about your intended major or program?",
+        "word_limit": "250 words",
+        "type": "Why Major",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond its ranking or reputation, what specific aspect of the University of Cincinnati's campus culture or community – perhaps a student organization, a particular tradition, or even the architectural style – resonates deeply with your personal values and aspirations?",
+          "When you envision yourself thriving in your intended major at UC, what tangible experiences or learning opportunities come to mind that you can't get anywhere else? Think about specific labs, research projects, internships, or faculty connections.",
+          "Imagine you're explaining your excitement about your intended major at UC to a friend who knows nothing about it. What's the most captivating, 'aha!' moment you can describe that led you to this field, and how does UC's program specifically foster that kind of discovery?",
+          "Looking at UC's commitment to co-op education, how does this unique learning model specifically align with your own learning style and your long-term career goals, and what kind of co-op experience are you most eager to pursue?",
+          "What are some of the specific challenges or questions within your intended field that you're most eager to tackle, and how have you seen or heard about UC's faculty or resources uniquely equipping students to address these very issues?"
+        ]
+      }
+    ]
+  }
 }

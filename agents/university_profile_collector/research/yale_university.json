@@ -729,7 +729,48 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Looking for intellectual curiosity and drive, students who will make the most of Yale's resources and contribute significantly to the Yale community."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "What is it about Yale that has led you to apply?",
+        "word_limit": "125 words",
+        "type": "Why Yale",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond Yale's impressive rankings and renowned faculty, can you recall a specific moment, discovery, or person that made you think, 'This is where I need to be?'",
+          "Think about a time you encountered a problem or question that deeply intrigued you. How does Yale's unique academic environment, perhaps a particular department, research opportunity, or interdisciplinary program, feel like the ideal place to explore that fascination?",
+          "Imagine yourself walking across the Yale campus on a crisp autumn day. What specific intellectual or social communities do you envision yourself being a part of, and what contributions do you hope to make within them?",
+          "Yale often emphasizes its commitment to 'light and truth.' What does that phrase personally resonate with for you, and what specific Yale initiatives or traditions embody that spirit in a way that excites you?",
+          "Consider a skill or perspective you've developed outside of your typical academic coursework. How do you see Yale's specific resources, whether it's a unique student organization, a historical archive, or a particular artistic venue, allowing you to further cultivate and apply that aspect of yourself?"
+        ]
+      },
+      {
+        "prompt": "Reflect on a time you discussed an issue important to you with someone holding an opposing view. Why did you find the experience meaningful?",
+        "word_limit": "250 words",
+        "type": "Personal Growth",
+        "required": true,
+        "brainstorming_questions": [
+          "Think back to that discussion about an issue important to you. What was the *very first* moment or thought that comes to mind when you recall that conversation, even if it's just a feeling or an image?",
+          "Beyond just agreeing to disagree, what was a specific instance during that conversation where you felt a subtle shift in your own thinking, or perhaps a deeper understanding of the other person's perspective, even if you didn't change your mind?",
+          "When you reflect on *why* this experience was meaningful, what's one concrete takeaway, a specific lesson or insight, that you carry with you today because of that exchange?",
+          "Describe a moment in that discussion where you felt particularly challenged or uncomfortable. What did you learn about your own resilience or approach to conflict from navigating that discomfort?",
+          "Imagine you're explaining the significance of this discussion to a friend who missed it. What's the *single most important* thing you'd want them to understand about why this conversation mattered to *you* personally?"
+        ]
+      },
+      {
+        "prompt": "Tell us about a topic or idea that excites you and is related to one or more academic areas you selected. Why are you drawn to it?",
+        "word_limit": "250 words",
+        "type": "Academic Interest",
+        "required": true,
+        "brainstorming_questions": [
+          "When you think about the intersection of your chosen academic areas and this exciting topic, what's a moment where that connection *clicked* for you, perhaps even unexpectedly?",
+          "Beyond the general fascination, can you recall a specific instance or observation that fueled your curiosity about this topic, making you want to dive deeper into its academic implications?",
+          "If you could introduce this exciting topic to someone who knows nothing about it, using a personal anecdote or experience related to your academic interests, what story would you tell?",
+          "Looking at the different academic fields you've selected, which specific concepts or questions within those fields feel most vital and dynamic when you connect them to this topic?",
+          "Imagine you have the opportunity to present research on this topic at a Yale symposium. What unique perspective or question, born from your own experiences and academic explorations, would you want to explore in your presentation?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

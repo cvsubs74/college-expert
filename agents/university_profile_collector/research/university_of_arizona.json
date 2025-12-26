@@ -1460,7 +1460,22 @@
       "legacy_consideration": "Not Considered",
       "first_gen_boost": "None",
       "specific_differentiators": "The University of Arizona employs a comprehensive review process, valuing unique life experiences, personal achievements, preparedness, motivation, and potential. They also highlight their '100% engagement program' and a large first-generation student population."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Why have you chosen the University of Arizona, and what about our programs or community excites you?",
+        "word_limit": "250 words",
+        "type": "Why Arizona",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond the general prestige of a large research university, can you recall a specific moment, interaction, or piece of information about the University of Arizona that truly resonated with you and made it feel like a place you *belong*?",
+          "Thinking about the 'programs' aspect, what specific aspects of the University of Arizona's curriculum, research opportunities, or unique courses spark a genuine intellectual curiosity or a desire to solve a problem within you, and how do you envision yourself actively engaging with them?",
+          "When you imagine yourself as part of the University of Arizona's 'community,' what specific traditions, student organizations, or campus traditions come to mind, and what role do you see yourself playing in contributing to or experiencing them?",
+          "Looking at your own experiences and aspirations, how does the University of Arizona, with its specific strengths and offerings, uniquely align with your future goals and the kind of impact you hope to make, both during your studies and beyond?",
+          "Reflecting on your interactions with current students, faculty, or alumni of the University of Arizona (if any), what was it about their experiences or their passion for the university that solidified your decision to apply?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

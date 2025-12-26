@@ -418,7 +418,22 @@
       "legacy_consideration": "Not Considered",
       "first_gen_boost": "None",
       "specific_differentiators": "Holistic review to assess student potential, considering diverse student body and experiences. Strong academic preparation in challenging courses is valued."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Why are you interested in the University of Delaware and your intended major? How will UD help you achieve your goals?",
+        "word_limit": "250 words",
+        "type": "Why Delaware",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the impressive faculty and curriculum, what specific resource or opportunity at UD, perhaps a research lab, a unique club, or an interdisciplinary program, resonates deeply with your personal learning style and sparks your curiosity for your intended major?",
+          "Think about a moment when your passion for your intended major first truly ignited. How does the University of Delaware's approach or specific offerings in this field connect with the origins of that passion, and how could UD nurture its continued growth?",
+          "When you envision yourself as a student at UD, what specific kinds of experiences – be it a challenging project, a collaborative learning environment, or an off-campus opportunity – do you see yourself actively seeking that will directly prepare you for your future career aspirations?",
+          "Looking at UD's campus culture and values, is there anything about the community that particularly draws you in, and how do you see yourself contributing to or benefiting from that unique environment as you pursue your academic and personal goals?",
+          "Beyond the immediate academic and career aspects, how does the University of Delaware's broader mission or its commitment to certain principles align with your own personal values and what kind of impact you hope to make in the world through your chosen field?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -606,5 +606,22 @@
       }
     }
   },
-  "_id": "university_of_dayton"
+  "_id": "university_of_dayton",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "UD is a Catholic, Marianist university committed to community and service. How do these values align with yours?",
+        "word_limit": "250 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "When have you most powerfully experienced a sense of 'community' that felt different or more meaningful than just being around people, and how did that experience shape your understanding of its importance?",
+          "Thinking about service, what's a time you actively chose to help someone or a cause without being asked or obligated, and what did that act of service reveal about your own core beliefs?",
+          "The Marianist tradition emphasizes education and faith working together. Can you recall a moment when learning something new, whether in or out of a classroom, directly challenged or strengthened your personal values in a significant way?",
+          "How has your own upbringing or personal experiences shaped your view of what it means to be 'committed' – not just to a task, but to a principle or to people?",
+          "Reflect on a time when you've seen someone else embody the values of community and service in a way that deeply inspired you. What about their actions resonated with you and how did it make you think about your own role in similar situations?"
+        ]
+      }
+    ]
+  }
 }

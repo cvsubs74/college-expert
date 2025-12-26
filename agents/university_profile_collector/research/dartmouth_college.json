@@ -576,7 +576,35 @@
       "legacy_consideration": "Moderate",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Dartmouth looks for students who bring a unique combination of qualities, experiences, and perspectives to the community. They value intellectual curiosity, leadership, passion for learning, and a potential to deeply engage with the academic and extracurricular environment."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "As you seek admission to Dartmouth's Class of 2029, what aspects of the College's academic and campus community inspire you?",
+        "word_limit": "100 words",
+        "type": "Why Dartmouth",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the well-known strengths of Dartmouth's liberal arts education, what specific academic areas or unique programs at Dartmouth spark a deep intellectual curiosity in you, and how do you envision yourself engaging with them?",
+          "Dartmouth's intimate campus community is often highlighted. Can you recall a time when a small, close-knit community significantly impacted your growth or perspective, and how does that experience connect to your aspirations for joining Dartmouth?",
+          "The prompt mentions both academic and campus community. Think about a time you successfully bridged a gap between your academic interests and extracurricular passions. How might you envision doing something similar within Dartmouth's specific offerings?",
+          "Dartmouth's location in Hanover presents a unique environment. How does the idea of learning and living in a place like Hanover, perhaps distinct from your current surroundings, appeal to your personal development and learning style?",
+          "Considering the values Dartmouth emphasizes, such as intellectual vitality and civic engagement, can you identify a moment in your life where you demonstrated one of these values strongly, and how do you see Dartmouth as a place to further cultivate that aspect of yourself?"
+        ]
+      },
+      {
+        "prompt": "There is a Dartmouth for everyone. Choose one of the following prompts and respond in 250 words or fewer.",
+        "word_limit": "250 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the phrase 'There is a Dartmouth for everyone,' what's a time you felt truly seen or understood for your unique self, and how might that connect to finding your ' Dartmouth'?",
+          "Dartmouth has a strong sense of community and tradition. Can you recall a moment where you actively built or contributed to a community, even a small one, and what did that experience teach you about belonging?",
+          "The prompt suggests Dartmouth offers something specific to individuals. What's a particular challenge you've faced or a passion you've pursued that felt like it required a unique approach or environment to flourish?",
+          "Dartmouth is known for its 'Off-Campus Programs' and its rural, yet academically rigorous, setting. Is there a place, perhaps outside your immediate comfort zone, where you've discovered something profound about yourself or the world?",
+          "The phrase 'There is a Dartmouth for everyone' implies discovery and fit. What's something you've learned about yourself through a process of exploration or experimentation, and how does that align with the idea of finding your place?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

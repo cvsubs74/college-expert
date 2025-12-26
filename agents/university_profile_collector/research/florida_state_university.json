@@ -972,7 +972,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Emphasis on rigorous academics, intellectual curiosity, and engagement within the university community."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Florida State University is a community that is dedicated to scholarship, creativity, and the exchange of ideas. What unique perspective will you bring to FSU?",
+        "word_limit": "250 words",
+        "type": "Why FSU",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you've actively challenged a commonly held belief or idea within a group setting, and what specifically about FSU's commitment to the 'exchange of ideas' makes you feel this experience would resonate there?",
+          "When has your approach to a problem or a creative endeavor been different from those around you, and how might that 'unique perspective' contribute to FSU's emphasis on 'creativity'?",
+          "Describe a moment where your dedication to 'scholarship' wasn't just about mastering a subject, but about exploring it in an unconventional way. How does this connect to the kind of academic community you envision at FSU?",
+          "FSU's community thrives on diverse viewpoints. Can you recall a situation where understanding or incorporating a perspective vastly different from your own significantly enriched your learning or personal growth, and how do you see that playing out at FSU?",
+          "Beyond academics, what's a passion or an interest you have that you believe few others at FSU might share in the same way, and how would engaging with the FSU community allow you to both contribute this unique interest and also learn from others?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

@@ -523,5 +523,22 @@
       }
     }
   },
-  "_id": "hofstra_university"
+  "_id": "hofstra_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Hofstra encourages students to find their pride. What are you most proud of, and how will you bring that passion to Hofstra?",
+        "word_limit": "250 words",
+        "type": "Pride",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond academic achievements or typical extracurriculars, what's a moment or experience where you felt a deep, quiet sense of accomplishment – something that truly resonated with your core values, even if it wasn't widely recognized?",
+          "Think about a time you had to advocate for something you believed in, perhaps a cause, an idea, or even a person, that felt inherently 'Hofstra-esque' in its pursuit of betterment or positive impact. What was that situation and why did it matter to you?",
+          "Hofstra values community. Can you recall a specific instance where your passion or a skill you possess significantly improved a group dynamic or helped others find their own 'pride' within a shared endeavor?",
+          "If you were to describe a defining characteristic of your 'pride' to a Hofstra admissions officer in just three words, what would they be, and can you tell me a story that illustrates each of those words in action?",
+          "Imagine your first week at Hofstra, and you're looking for ways to immediately contribute. What's a passion of yours that you're eager to not just participate in, but to actively shape or lead within the Hofstra community, and why is that specific type of engagement important to you?"
+        ]
+      }
+    ]
+  }
 }

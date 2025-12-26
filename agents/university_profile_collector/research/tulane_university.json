@@ -804,7 +804,22 @@
       "legacy_consideration": "Not specified",
       "first_gen_boost": "Not specified",
       "specific_differentiators": "Seeking students who are excited about Tulane and New Orleans and will contribute to the community."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Please describe why you are interested in attending Tulane. We want to get to know you better. Consider sharing something that illustrates what Tulane can offer you and what you can contribute.",
+        "word_limit": "200 words",
+        "type": "Why Tulane",
+        "required": true,
+        "brainstorming_questions": [
+          "Imagine you're already a student at Tulane, walking through campus on a beautiful New Orleans day. What specific sights, sounds, or interactions would feel most like 'home' to you, and why do those particular elements resonate with your aspirations?",
+          "Tulane is deeply embedded in New Orleans culture. Beyond academics, what unique aspects of this city – its music, its food, its history, its spirit – have captured your imagination, and how do you see yourself engaging with and contributing to that vibrant community during your time at Tulane?",
+          "Think about a time you've faced a challenge or embraced a new idea that required you to be adaptable and creative. How does Tulane's environment, with its emphasis on interdisciplinary learning and its location in a dynamic city, seem like the perfect place for you to continue developing those qualities?",
+          "If you could pick one specific Tulane program, research opportunity, or student organization that you're genuinely excited about, what is it, and can you tell me about a personal experience or interest you have that makes this particular offering at Tulane a perfect match for you?",
+          "Beyond what you'll learn in a classroom, what kind of impact do you hope to make on the Tulane community, and how might the unique experiences you'll gain there empower you to contribute meaningfully to the world after graduation?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

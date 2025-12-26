@@ -936,7 +936,22 @@
       "legacy_consideration": "Minimal",
       "first_gen_boost": "Minimal",
       "specific_differentiators": "Strong emphasis on academic rigor, scientific research, and educating leaders in engineering and medical professions. Seeks intellectual curiosity, drive, and a commitment to experiential learning."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Think about a device, object, or machine you find fascinating. What do you think is interesting about the way it was designed or functions?",
+        "word_limit": "200 words",
+        "type": "Intellectual",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond just liking it, can you recall the very first time this device, object, or machine truly *captivated* you? What was the context, and what specific detail or action sparked that initial fascination?",
+          "When you look at this fascinating item, what's a small, almost overlooked detail about its design or function that you find particularly clever or ingenious, and why does that specific detail resonate with you?",
+          "How has your understanding or appreciation of this object's design or function evolved since you first encountered it? Have you learned something new that made you see it in a different light?",
+          "Imagine explaining the core appeal of this device, object, or machine to someone who knows absolutely nothing about it. What analogy or simple comparison would you use to convey its fascinating nature and why?",
+          "Think about the *problem* this device, object, or machine solves, or the *experience* it enables. How does its design directly and elegantly address that need or enhance that experience in a way that you find particularly noteworthy?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

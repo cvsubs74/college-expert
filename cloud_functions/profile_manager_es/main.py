@@ -2045,6 +2045,19 @@ def handle_update_college_list(request):
                 'university_name': university.get('name', ''),
                 'status': 'favorites',
                 'application_plan': None,  # User's chosen deadline type: 'ED', 'ED2', 'EA', 'REA', 'RD', null
+                'application_status': 'planning',  # planning, drafting, submitted, decision
+                'application_tasks': {
+                    'common_app_complete': False,
+                    'essays_complete': False,
+                    'supplements_complete': False,
+                    'test_scores_sent': False,
+                    'recommendations_requested': False,
+                    'recommendations_received': False,
+                    'transcript_sent': False,
+                    'fee_paid': False,
+                    'submitted': False,
+                    'interview_scheduled': False
+                },
                 'added_at': datetime.utcnow().isoformat(),
                 'updated_at': datetime.utcnow().isoformat()
             }
@@ -2096,6 +2109,8 @@ def get_user_college_list(es_client, user_id):
             'university_name': item.get('university_name'),
             'status': item.get('status', 'favorites'),
             'application_plan': item.get('application_plan'),  # ED, EA, RD, etc.
+            'application_status': item.get('application_status', 'planning'),
+            'application_tasks': item.get('application_tasks', {}),
             'added_at': item.get('added_at')
             # NOTE: intended_major removed - always read from profile
         })
@@ -2402,6 +2417,209 @@ def update_application_plan(user_id: str, university_id: str, application_plan: 
             "error": str(e)
         }
 
+
+def update_application_status(user_id: str, university_id: str, status: str) -> dict:
+    """
+    Update the application status (planning, drafting, submitted, decision) for a specific university.
+    
+    Args:
+        user_id: User's email
+        university_id: The university ID
+        status: One of 'planning', 'drafting', 'submitted', 'decision'
+    
+    Returns:
+        dict with success status
+    """
+    valid_statuses = ['planning', 'drafting', 'submitted', 'decision']
+    if status not in valid_statuses:
+        return {
+            "success": False,
+            "error": f"Invalid status. Must be one of: {valid_statuses}"
+        }
+    
+    try:
+        es_client = get_elasticsearch_client()
+        
+        # Normalize ID for lookup
+        normalized_id = normalize_university_id(university_id)
+        doc_id = f"{user_id}_{normalized_id}"
+        
+        # Get existing document
+        try:
+            existing = es_client.get(index=ES_LIST_ITEMS_INDEX, id=doc_id)
+        except:
+            return {
+                "success": False,
+                "error": f"University {university_id} not found in your college list"
+            }
+        
+        # Update the application_status field
+        update_body = {
+            "doc": {
+                "application_status": status,
+                "updated_at": datetime.utcnow().isoformat()
+            }
+        }
+        
+        es_client.update(index=ES_LIST_ITEMS_INDEX, id=doc_id, body=update_body, refresh=True)
+        
+        logger.info(f"[APPS] Updated application_status to {status} for {user_id}/{university_id}")
+        
+        return {
+            "success": True,
+            "university_id": university_id,
+            "application_status": status,
+            "message": f"Application status updated to {status}"
+        }
+        
+    except Exception as e:
+        logger.error(f"[APPS] Update status error: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
+
+
+def update_application_task(user_id: str, university_id: str, task_name: str, completed: bool) -> dict:
+    """
+    Update a specific application task (checklist item) for a university.
+    
+    Args:
+        user_id: User's email
+        university_id: The university ID
+        task_name: Name of the task (e.g., 'essays_complete', 'test_scores_sent')
+        completed: Boolean indicating if task is completed
+    
+    Returns:
+        dict with success status and updated task list
+    """
+    valid_tasks = [
+        'common_app_complete', 'essays_complete', 'supplements_complete',
+        'test_scores_sent', 'recommendations_requested', 'recommendations_received',
+        'transcript_sent', 'fee_paid', 'submitted', 'interview_scheduled'
+    ]
+    
+    if task_name not in valid_tasks:
+        return {
+            "success": False,
+            "error": f"Invalid task. Must be one of: {valid_tasks}"
+        }
+    
+    try:
+        es_client = get_elasticsearch_client()
+        
+        # Normalize ID for lookup
+        normalized_id = normalize_university_id(university_id)
+        doc_id = f"{user_id}_{normalized_id}"
+        
+        # Get existing document
+        try:
+            existing = es_client.get(index=ES_LIST_ITEMS_INDEX, id=doc_id)
+            current_tasks = existing['_source'].get('application_tasks', {})
+        except:
+            return {
+                "success": False,
+                "error": f"University {university_id} not found in your college list"
+            }
+        
+        # Update the specific task
+        current_tasks[task_name] = completed
+        
+        # Calculate progress percentage
+        completed_count = sum(1 for v in current_tasks.values() if v)
+        progress = int((completed_count / len(valid_tasks)) * 100)
+        
+        # Update document
+        update_body = {
+            "doc": {
+                "application_tasks": current_tasks,
+                "updated_at": datetime.utcnow().isoformat()
+            }
+        }
+        
+        es_client.update(index=ES_LIST_ITEMS_INDEX, id=doc_id, body=update_body, refresh=True)
+        
+        logger.info(f"[APPS] Updated task {task_name}={completed} for {user_id}/{university_id}")
+        
+        return {
+            "success": True,
+            "university_id": university_id,
+            "task_name": task_name,
+            "completed": completed,
+            "application_tasks": current_tasks,
+            "progress_percent": progress,
+            "message": f"Task '{task_name}' {'completed' if completed else 'uncompleted'}"
+        }
+        
+    except Exception as e:
+        logger.error(f"[APPS] Update task error: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
+
+
+def get_application_progress(user_id: str) -> dict:
+    """
+    Get aggregated application progress stats for the Overview view.
+    
+    Returns counts by status and overall completion percentages.
+    """
+    try:
+        es_client = get_elasticsearch_client()
+        
+        # Get all schools for user
+        search_body = {
+            "size": 500,
+            "query": {"term": {"user_email": user_id}},
+            "_source": ["university_id", "university_name", "application_status", 
+                       "application_tasks", "application_plan"]
+        }
+        response = es_client.search(index=ES_LIST_ITEMS_INDEX, body=search_body)
+        
+        # Initialize counters
+        status_counts = {'planning': 0, 'drafting': 0, 'submitted': 0, 'decision': 0}
+        total_tasks_completed = 0
+        total_tasks_possible = 0
+        schools = []
+        
+        for hit in response['hits']['hits']:
+            item = hit['_source']
+            status = item.get('application_status', 'planning')
+            tasks = item.get('application_tasks', {})
+            
+            status_counts[status] = status_counts.get(status, 0) + 1
+            
+            # Count tasks
+            completed = sum(1 for v in tasks.values() if v)
+            total = len(tasks) or 10  # Default 10 tasks
+            total_tasks_completed += completed
+            total_tasks_possible += total
+            
+            schools.append({
+                'university_id': item.get('university_id'),
+                'university_name': item.get('university_name'),
+                'application_status': status,
+                'application_plan': item.get('application_plan'),
+                'progress_percent': int((completed / total) * 100) if total > 0 else 0,
+                'tasks_completed': completed,
+                'tasks_total': total
+            })
+        
+        return {
+            "success": True,
+            "total_schools": len(schools),
+            "status_counts": status_counts,
+            "overall_progress": int((total_tasks_completed / total_tasks_possible) * 100) if total_tasks_possible > 0 else 0,
+            "schools": schools
+        }
+        
+    except Exception as e:
+        logger.error(f"[APPS] Get progress error: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e)
+        }
 
 def handle_get_college_list(request):
     """Get user's college list from the new separated index, enriched with university data."""
@@ -5464,6 +5682,47 @@ def profile_manager_es_http_entry(request):
             
             result = update_application_plan(user_email, university_id, application_plan)
             return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        elif resource_type == 'update-application-status' and request.method == 'POST':
+            # Update application status (planning, drafting, submitted, decision)
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            university_id = data.get('university_id')
+            status = data.get('status')
+            
+            if not user_email or not university_id or not status:
+                return add_cors_headers({'success': False, 'error': 'user_email, university_id, and status required'}, 400)
+            
+            result = update_application_status(user_email, university_id, status)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        elif resource_type == 'update-application-task' and request.method == 'POST':
+            # Update a specific application task/checklist item
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            university_id = data.get('university_id')
+            task_name = data.get('task_name')
+            completed = data.get('completed', False)
+            
+            if not user_email or not university_id or not task_name:
+                return add_cors_headers({'success': False, 'error': 'user_email, university_id, and task_name required'}, 400)
+            
+            result = update_application_task(user_email, university_id, task_name, completed)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+        
+        elif resource_type == 'get-application-progress' and request.method in ['GET', 'POST']:
+            # Get aggregated application progress stats
+            if request.method == 'GET':
+                user_email = request.args.get('user_email')
+            else:
+                data = request.get_json() or {}
+                user_email = data.get('user_email')
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            result = get_application_progress(user_email)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
         
         else:
             return add_cors_headers({'error': 'Not Found'}, 404)

@@ -1299,7 +1299,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "Looks for intellectual curiosity and ability to take full advantage of opportunities. Academic preparation is the strongest consideration."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe a moment when you pushed yourself beyond your comfort zone. What did you learn?",
+        "word_limit": "150 words",
+        "type": "Personal Growth",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about the University of Minnesota's spirit of innovation and pushing boundaries, can you recall a specific instance where you felt that familiar 'nervous excitement' of stepping into the unknown, perhaps in a way that aligns with exploring new ideas or tackling a challenging academic project?",
+          "Beyond just the feeling of discomfort, what was the *internal dialogue* happening within you as you faced this challenge? Were there specific fears or doubts you had to actively silence or overcome?",
+          "When you think back to that moment of pushing your comfort zone, what was the smallest, seemingly insignificant detail that stands out – a specific sound, a smell, a visual cue – that encapsulates the essence of that experience for you?",
+          "Considering the diverse community at the U of M, how did this experience of stepping outside your comfort zone potentially shape your understanding of yourself in relation to others, or how you might contribute to a new environment?",
+          "If you could tell a future freshman at the University of Minnesota one thing about navigating their own moments of stepping beyond their comfort zone, drawing directly from your learned lesson, what crucial piece of advice would you offer?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

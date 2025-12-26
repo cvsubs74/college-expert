@@ -2078,7 +2078,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "Moderate",
       "specific_differentiators": "UCI seeks students with a demonstrated record of academic and personal achievement, who are well-rounded, can contribute to the campus community, and showcase unique experiences, skills, and perspectives, including commitment to academic excellence, community service, and leadership."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe how you have taken advantage of a significant educational opportunity.",
+        "word_limit": "350 words",
+        "type": "PIQ",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about that 'significant educational opportunity' you chose. What was it about *this specific* opportunity that called to you, and what were your initial hopes or even hesitations when you decided to pursue it?",
+          "Beyond the immediate learning, what's a specific moment or realization during this experience that fundamentally shifted your perspective on a subject or even on yourself?",
+          " UCI's motto is 'Think Deeper.' How did this educational opportunity challenge you to move beyond surface-level understanding and delve into more complex ideas or problems?",
+          "Can you pinpoint a time when you had to actively *advocate* for yourself or your learning within this opportunity – perhaps to get resources, support, or even to shape the direction of your involvement?",
+          "Looking back from your current perspective, how has engaging with this educational opportunity shaped the kind of student and community member you aspire to be at UCI?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

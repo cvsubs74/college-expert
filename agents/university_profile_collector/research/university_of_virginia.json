@@ -869,7 +869,48 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for intellectual curiosity and drive, academic strength, and embrace of intellectual challenges"
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "What's your favorite word and why?",
+        "word_limit": "50 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond its definition, what specific feeling or image comes to mind for you when you hear this word, and can you recall a particular moment or experience that solidified that connection?",
+          "Think about the sound of the word itself. Does its pronunciation evoke a particular emotion or sensory experience for you, and where in your life have you encountered sounds that resonate similarly?",
+          "When you use this word, or hear it used, what kind of interactions or conversations does it tend to spark? Are there specific people or contexts where this word feels particularly powerful or revealing?",
+          "Has your appreciation for this word evolved over time? Can you pinpoint a point in your life where you discovered it, or where its meaning deepened for you, and what was happening in your life then?",
+          "If you were to describe your core values or a significant aspect of your personality using only this word and its associated feelings, what would that look like, and how does it represent something essential about you?"
+        ]
+      },
+      {
+        "prompt": "We are a community with quirks, both in language and in traditions. Describe one of your quirks and why it is part of who you are.",
+        "word_limit": "100 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the 'quirks' of the University of Virginia specifically, what's a moment or observation where you noticed a particular tradition or linguistic habit that felt distinctly 'Wahoo' to you, and how did your own behavior or perspective around that quirk surprise even yourself?",
+          "Beyond just a funny habit, can you recall a time when a unique quirk of yours—perhaps a way you approach a problem, a specific phrase you overuse, or an unusual ritual you perform—led to an unexpected connection or understanding with someone else in the UVA community?",
+          "UVA's motto is 'Believe.' How has a seemingly minor or even odd personal quirk of yours been a quiet testament to this belief, perhaps in a way that others might not immediately recognize?",
+          "Consider the historical and intellectual atmosphere of UVA. Is there a quirk you possess that, in retrospect, seems to have been brewing or even nurtured by the environment here, and what does that reveal about your own intellectual or personal growth within this community?",
+          "When you think about leaving UVA someday, what's one of your personal quirks that you imagine you'll carry with you, and what does that enduring quirk say about the core values or experiences you've taken from your time here?"
+        ]
+      },
+      {
+        "prompt": "UVA students paint messages on Beta Bridge when they want to share news with the community. What would you paint on Beta Bridge and why?",
+        "word_limit": "50 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond just a general message, what's a *specific* piece of news or a significant realization you've had during your time at UVA that you feel would genuinely resonate with and inform your fellow Hoos?",
+          "If you could choose one moment or experience at UVA that has fundamentally shaped your perspective, what would it be, and how would you visually or verbally represent that transformation on the bridge?",
+          "Thinking about the UVA community, what's a shared challenge, hope, or value that you've observed or participated in, and how could your bridge message speak to that collective experience?",
+          "Imagine you have just one shot to convey a piece of wisdom or encouragement to the UVA student body that you've personally learned and believe is crucial, what would that kernel of wisdom be, and why is it important enough for Beta Bridge?",
+          "What's a passion, interest, or cause that you've discovered or deepened at UVA that you're eager to share with others, and how could a Beta Bridge message spark curiosity or inspire action around it?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

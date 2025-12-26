@@ -1002,7 +1002,74 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for intellectual curiosity, drive, innovative thinking, problem solvers, collaborators, and individuals eager to make a positive impact on the world."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "We know you lead a busy life, full of activities, many of which are required of you. Tell us about something you do simply for the pleasure of it.",
+        "word_limit": "100-200 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the obvious MIT coursework and required extracurriculars, what's a moment or a sustained period where you've lost track of time completely, absorbed in something you chose to do just for the joy of it?",
+          "Think about a time when you've actively sought out an experience or activity purely for the feeling it gives you, without any pressure of achievement or external validation – what was that activity and what was the feeling?",
+          "If you had an unexpected free afternoon with absolutely no obligations, what is the one activity you would gravitate towards, and what makes that particular activity so inherently satisfying for you?",
+          "Describe a specific instance where you've pursued a passion or interest that might seem unconventional or even a bit quirky to others, and tell me about the pure, unadulterated enjoyment you derive from it.",
+          "MIT values curiosity and exploration. What's something you've explored or tinkered with in your personal time, not because you had to, but because it sparked a genuine sense of delight and wonder within you?"
+        ]
+      },
+      {
+        "prompt": "Describe the world you come from (for example, your family, school, community, city, or town). How has that world shaped your dreams and aspirations?",
+        "word_limit": "100-200 words",
+        "type": "Background",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about MIT's emphasis on 'mens et manus' (mind and hand), what's a specific, tangible problem or puzzle you encountered in your home, school, or community that you felt compelled to understand or fix, and how did that drive your desire to learn more?",
+          "Beyond the typical narratives, what's a less obvious aspect of your family's background or traditions that, perhaps surprisingly, instilled in you a deep curiosity about how things work or a passion for innovation?",
+          "MIT's environment is known for its collaborative spirit and problem-solving. Can you recall a time within your community or school where you worked with others to overcome a significant challenge, and what did that experience reveal about the kind of impactful, team-oriented future you aspire to build?",
+          "When you look at the physical landscape or the everyday routines of your hometown or city, what's one specific element that sparked a question in your mind – a 'why' or 'how' – that has stayed with you and fueled your aspirations for studying at MIT?",
+          "Consider the values or unspoken rules that are prevalent in the world you grew up in. How have these shaped your understanding of success and your personal definition of what it means to contribute meaningfully, especially in a field like those at MIT?"
+        ]
+      },
+      {
+        "prompt": "MIT brings people with diverse backgrounds together to collaborate, from tackling the world's biggest challenges to lending a helping hand. Describe one way you have collaborated with others to learn from them, with them, or contribute to your community together.",
+        "word_limit": "100-200 words",
+        "type": "Community",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about MIT's emphasis on tackling big challenges, can you recall a specific instance where a group you were part of faced a complex problem that felt a bit overwhelming, and how the different perspectives of your collaborators helped you collectively navigate towards a solution?",
+          "MIT thrives on 'learning from them, with them.' When have you been in a situation where someone else's unique background, skill set, or even just their way of thinking, significantly shifted your own understanding of a topic or approach to a task, and what was that exchange like?",
+          "The prompt mentions 'lending a helping hand' and contributing to your community. Can you describe a time you actively participated in a collective effort to improve your community or support others, and what you personally learned about the power of shared action through that experience?",
+          "MIT values people from diverse backgrounds. Reflect on a project or activity where the differences in your collaborators' experiences and viewpoints were initially a source of challenge, but ultimately led to a richer outcome or a deeper personal insight for you. What did that journey of bridging those differences look like?",
+          "Consider a moment when you felt you contributed something essential to a collaborative effort that others might not have brought to the table. What was that contribution, and how did working *with* others to achieve a shared goal refine or build upon your own unique strengths?"
+        ]
+      },
+      {
+        "prompt": "How did you manage a situation or challenge that you didn't expect? What did you learn from it?",
+        "word_limit": "100-200 words",
+        "type": "Challenge",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time in your MIT-focused academic or extracurricular life where the 'plan' you had meticulously crafted went completely off the rails. What was the initial unexpected event that derailed it, and what was your immediate, gut-level reaction?",
+          "Beyond the initial shock, what specific actions did you take to navigate this unexpected challenge, especially when the usual MIT-style problem-solving approaches weren't immediately apparent or effective?",
+          "When you look back at that situation, what personal belief or assumption about yourself or the world was challenged by the unexpected turn of events, and how did you have to adjust your perspective to move forward?",
+          "MIT thrives on innovation and often involves tackling problems with incomplete information. Can you recall a moment during this unexpected challenge where you had to embrace ambiguity or create a novel solution because there was no clear 'right' answer?",
+          "Considering the rigorous and often demanding environment at MIT, how did managing this unexpected situation contribute to your growth in resilience, adaptability, or perhaps even your understanding of what 'success' means in the face of unforeseen obstacles?"
+        ]
+      },
+      {
+        "prompt": "Tell us about a significant challenge you've faced or something that didn't go according to plan. How did you manage the situation?",
+        "word_limit": "100-200 words",
+        "type": "Growth",
+        "required": true,
+        "brainstorming_questions": [
+          "MIT's culture thrives on tackling complex problems. Can you recall a time when a technical challenge or a project's unexpected detour at MIT, even if it was just a conceptual one in your mind, pushed you to redefine your approach or learn a completely new skill set?",
+          "Beyond academic or extracurricular challenges, think about a moment where your deeply held beliefs or assumptions about how something *should* work were fundamentally challenged, perhaps during a research experience or a complex collaborative effort, and how you navigated that dissonance?",
+          "MIT often involves collaboration where diverse perspectives clash. Describe a situation where a plan you were involved in at MIT went significantly awry due to a misunderstanding or a fundamental difference in perspective, and how you worked to bridge that gap and move forward?",
+          "Considering the 'mind and hand' ethos of MIT, tell me about a time when a hands-on project or a practical application of your knowledge at MIT didn't yield the expected results, forcing you to troubleshoot, adapt your methodology, or even invent a new solution on the spot.",
+          "Looking back at your experiences so far, what is one instance where a failure or a significant setback, particularly in a context where you felt you had to be highly precise or innovative (akin to MIT's environment), ultimately taught you more about resilience, adaptability, or the iterative nature of discovery than any success ever could?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

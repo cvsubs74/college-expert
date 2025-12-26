@@ -720,7 +720,35 @@
       "legacy_consideration": "Not Considered",
       "first_gen_boost": "Strong",
       "specific_differentiators": "Looking for intellectual curiosity, character, community, inclusion, and open-mindedness."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Tell us what piques your intellectual curiosity or fuels your passions. This can include books, music, podcasts, movies, works of art, blogs, or anything else that deepen your interests.",
+        "word_limit": "150 words",
+        "type": "Intellectual",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about the specific books, music, or art that truly grab you, what's a moment where that interest led you to actively *do* something you wouldn't have otherwise – perhaps try a new skill, start a project, or seek out a specific experience?",
+          "Beyond just enjoying it, can you recall a specific piece of media (a song, a film, a blog post) that genuinely challenged a belief you held or made you see something familiar in a completely new light?",
+          "When you're deeply engrossed in something that fuels your passion, what's the *feeling* you experience? Can you describe a time that feeling pushed you to learn more or explore a related topic in a way that felt surprising to you?",
+          "Consider something you're passionate about. Is there a specific question that this interest consistently raises for you, or a puzzle it seems to be unraveling, that you find yourself returning to again and again?",
+          "For something that sparks your curiosity, what's a specific instance where you felt compelled to share it with someone else, and what was the outcome or conversation that followed from that sharing?"
+        ]
+      },
+      {
+        "prompt": "What are you good at? What would you like to improve at?",
+        "word_limit": "150 words",
+        "type": "Personal",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the obvious or expected answers, think about a time when someone else (a friend, family member, teacher, even a stranger) specifically pointed out something you do exceptionally well – what was it, and what did it feel like to hear that?",
+          "When you're working on something you genuinely enjoy and are good at, what's the internal feeling or flow state that washes over you? Can you describe a specific instance where you felt completely absorbed and energized by this skill?",
+          "Reflect on a moment where you realized a skill you possess unexpectedly helped you navigate a challenging situation or connect with someone. What was the challenge, what was the skill, and what did you learn from that experience?",
+          "If you could wave a magic wand and instantly become proficient in something entirely new, what would it be and why? What does the *desire* for this improvement reveal about your aspirations or values that might not be apparent in your current strengths?",
+          "Consider a time you've *tried* to improve in an area, perhaps not successfully, but the attempt itself taught you something valuable. What was the area, what was the struggle, and what lesson did you take away about yourself and the process of growth?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

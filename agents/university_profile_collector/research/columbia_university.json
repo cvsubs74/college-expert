@@ -872,7 +872,48 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Looking for academic potential, intellectual strength, ability to think independently, intellectual curiosity, meaningful impact, and a clear sense of purpose."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Why are you interested in attending Columbia University?",
+        "word_limit": "200 words",
+        "type": "Why Columbia",
+        "required": true,
+        "brainstorming_questions": [
+          "Beyond the prestige, what specific Columbia academic program, research opportunity, or faculty member has genuinely captured your intellectual curiosity and how does it align with a passion you've nurtured?",
+          "How has the unique environment of New York City, and Columbia's place within it, resonated with your personal growth, aspirations, or a particular experience that shaped your worldview?",
+          "Think about a moment when you felt a strong sense of intellectual community or collaboration. How does Columbia's specific approach to fostering such an environment excite you and why is that important for your learning journey?",
+          "Considering Columbia's rich history and diverse student body, what contribution or perspective do you envision bringing to its campus culture that goes beyond your academic pursuits?",
+          "When you imagine yourself as a student at Columbia, what's a tangible experience or a particular scene – perhaps in a classroom, a study group, or exploring the city – that vividly illustrates why this is the right place for you to thrive?"
+        ]
+      },
+      {
+        "prompt": "What attracts you to your intended field of study?",
+        "word_limit": "150 words",
+        "type": "Academic",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about Columbia's specific approach to [Intended Field of Study], what problem or unanswered question in this field truly ignites your curiosity and makes you want to dive deeper, perhaps even more than you imagined?",
+          "Beyond the curriculum, what specific aspect of New York City, or even Columbia's unique urban environment, makes you feel that it's the absolute best place to explore your passion for [Intended Field of Study]?",
+          "When you first realized you were drawn to [Intended Field of Study], what was a moment of genuine 'aha!' or unexpected connection that solidified this interest for you, perhaps something that shifted your perspective?",
+          "Imagine you've had a conversation with a leading figure in [Intended Field of Study] at Columbia. What questions would you be most eager to ask them, and what does that tell you about what you hope to gain from your studies there?",
+          "Consider a time you faced a challenge or encountered something that seemed insurmountable, but you approached it with a unique way of thinking or problem-solving. How does that experience directly relate to the skills or mindset you believe are essential for success in [Intended Field of Study] at Columbia?"
+        ]
+      },
+      {
+        "prompt": "In Columbia's admissions process, we use a holistic review, which means that we look at every part of your application. We encourage you to share additional details about yourself that you have not had an opportunity to share.",
+        "word_limit": "200 words",
+        "type": "Personal",
+        "required": false,
+        "brainstorming_questions": [
+          "Think about a time you had to explain something complex – whether it was a scientific concept, a personal belief, or a challenging situation – to someone who didn't initially understand. How did you approach bridging that gap in understanding, and what did you learn about your own perspective or communication style in the process?",
+          "Columbia emphasizes 'holistic review.' When have you felt like your true self, or a significant aspect of your identity, was overlooked or not fully appreciated in a previous context (like a standardized test score, a brief description in another application, or a conversation)? What specific details or experiences would you have shared to paint a more complete picture?",
+          "Beyond your academic achievements and extracurriculars already listed, what's a 'piece' of your personal puzzle that might surprise an admissions officer but is fundamental to who you are? Think about a passion, a habit, or a quirky interest that shapes your daily life and how you engage with the world.",
+          "Imagine you're a tour guide for Columbia, but instead of showing buildings, you're showcasing the essence of your own unique qualities and experiences. What specific 'stops' on your personal tour would you highlight, and what stories would you tell at each one to give someone a deep understanding of your journey and your potential contributions to the Columbia community?",
+          "The prompt encourages sharing details not previously shared. Is there a moment where your initial expectations or assumptions about a situation, a person, or even yourself, were completely upended? How did that moment fundamentally shift your understanding and what did it reveal about your capacity for growth and adaptation?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

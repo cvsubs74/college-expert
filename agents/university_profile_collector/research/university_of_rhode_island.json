@@ -510,5 +510,22 @@
       }
     }
   },
-  "_id": "university_of_rhode_island"
+  "_id": "university_of_rhode_island",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "URI is committed to helping students discover their potential. What do you hope to discover about yourself during your time at URI?",
+        "word_limit": "250 words",
+        "type": "Goals",
+        "required": false,
+        "brainstorming_questions": [
+          "When you think about URI's commitment to discovering potential, what's one specific skill or area of knowledge you feel you haven't fully explored yet, and why does that particular one call to you?",
+          "Imagine yourself looking back on your time at URI four years from now, having discovered something profound about yourself. What kind of challenge or experience would likely have led to that significant discovery?",
+          "URI encourages growth and exploration. Can you recall a moment, perhaps in or out of school, where you stepped outside your comfort zone and learned something unexpected and valuable about your own capabilities or limitations?",
+          "URI's diverse community offers many opportunities. Is there a particular aspect of URI's programs, clubs, or research that makes you curious about uncovering a hidden talent or a new passion within yourself?",
+          "Beyond academic achievements, what kind of personal growth do you envision for yourself at URI that would make you feel like you've truly discovered a deeper sense of who you are and what you're capable of?"
+        ]
+      }
+    ]
+  }
 }

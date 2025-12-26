@@ -415,5 +415,22 @@
       }
     }
   },
-  "_id": "university_of_louisville"
+  "_id": "university_of_louisville",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "What aspects of the University of Louisville appeal to you, and how do you see yourself contributing to our campus community?",
+        "word_limit": "250 words",
+        "type": "Why Louisville",
+        "required": false,
+        "brainstorming_questions": [
+          "Beyond the general prestige, what specific programs, research opportunities, or unique academic philosophies at UofL truly resonate with your intellectual curiosity and career aspirations, and can you recall a moment when this alignment first clicked for you?",
+          "Think about UofL's distinct cultural landscape and its connection to Louisville itself. How have your own experiences or values prepared you to engage with and enrich this specific community, perhaps in a way that a student from a different background might not?",
+          "UofL emphasizes certain values or missions. Which of these (e.g., innovation, community engagement, diversity) do you find yourself most passionate about, and can you share a personal story that demonstrates your commitment to that value?",
+          "When you imagine yourself as a Cardinal, what kind of tangible impact do you envision making on campus? Consider student organizations, academic initiatives, or even informal interactions – what problem are you eager to help solve or what perspective are you excited to share?",
+          "Looking at UofL's history or current initiatives, is there a particular story, tradition, or future goal of the university that inspires you? How does this inspiration connect to your own personal journey and what you hope to achieve as a student?"
+        ]
+      }
+    ]
+  }
 }

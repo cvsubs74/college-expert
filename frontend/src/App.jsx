@@ -7,6 +7,8 @@ import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
 import UniversityExplorer from './pages/UniversityExplorer';
 import StratiaLaunchpad from './pages/StratiaLaunchpad';
+import ApplicationsPage from './pages/ApplicationsPage';
+import EssayHelpPage from './pages/EssayHelpPage';
 import FitVisualizer from './pages/FitVisualizer';
 import LandingPage from './pages/LandingPage';
 import PricingPage from './pages/PricingPage';
@@ -255,6 +257,8 @@ function App() {
                   {/* <Route path="/chat" element={<Chat />} /> */}
                   <Route path="/universities" element={<UniversityExplorer />} />
                   <Route path="/launchpad" element={<StratiaLaunchpad />} />
+                  <Route path="/applications" element={<ApplicationsPage />} />
+                  <Route path="/essay-help/:universityId" element={<EssayHelpPage />} />
                   <Route path="/fit-visualizer" element={<FitVisualizer />} />
                   <Route path="/knowledge-base" element={<KnowledgeBase />} />
                 </Route>

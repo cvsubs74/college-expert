@@ -639,5 +639,22 @@
       }
     }
   },
-  "_id": "saint_louis_university"
+  "_id": "saint_louis_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Saint Louis University's Jesuit mission is to pursue truth for the greater glory of God and for service of humanity. How does this mission resonate with you?",
+        "word_limit": "300 words",
+        "type": "Values",
+        "required": true,
+        "brainstorming_questions": [
+          "Think about a time you felt a strong pull to understand something deeply, even when it was challenging or complex. What was that 'truth' you were pursuing, and what motivated you to keep digging?",
+          "Can you recall an experience where you acted to help someone or a group of people, and you felt a sense of purpose or fulfillment in that service, even if it wasn't a grand gesture?",
+          "Consider the phrase 'greater glory of God.' What does that phrase evoke for you personally? Does it connect to a sense of awe, wonder, responsibility, or something else entirely, and how might that connect to your actions?",
+          "In what ways have you seen or experienced the 'service of humanity' in action, either by yourself or others, that made you feel like you were contributing to something larger than yourself?",
+          "Reflect on moments where you've had to grapple with difficult questions or ethical dilemmas. How did you approach finding clarity or making a decision, and what does that process reveal about your pursuit of truth?"
+        ]
+      }
+    ]
+  }
 }

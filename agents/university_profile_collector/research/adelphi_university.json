@@ -650,5 +650,22 @@
       }
     }
   },
-  "_id": "adelphi_university"
+  "_id": "adelphi_university",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Adelphi is committed to transforming lives through education. How has your education so far transformed your perspective or goals?",
+        "word_limit": "250 words",
+        "type": "Personal Growth",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking back to a specific moment where a class, a teacher, or even a challenging assignment at Adelphi (or a previous educational experience) made you see the world, a subject, or even yourself in a fundamentally different light, what was that moment and what was the 'before' and 'after' of your perspective?",
+          "Beyond academics, what's an extracurricular activity, club, or even a volunteer experience that has been particularly impactful in shaping your personal growth and how has that experience altered the way you approach your future aspirations or your understanding of your own capabilities?",
+          "Can you pinpoint a time when your education challenged a deeply held belief or assumption you had about yourself or the world, and what was the process of grappling with that challenge and how did it ultimately lead to a new understanding or a revised goal?",
+          "Adelphi emphasizes transforming lives. Reflect on a time when you witnessed your own education positively impact someone else's life or when you saw how a particular lesson learned in an educational setting could have a ripple effect. What was that situation, and how did it influence your own sense of purpose or your desired contribution to society?",
+          "Consider a time when you felt your education opened a door to a new possibility or passion you hadn't previously considered. What was that discovery, and how has it fundamentally shifted the trajectory of your educational journey and your vision for what you want to achieve after Adelphi?"
+        ]
+      }
+    ]
+  }
 }

@@ -3533,7 +3533,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "USC seeks students who will thrive, demonstrating intellectual curiosity, drive, interdisciplinary interests, and a sustained commitment to developing interests and leadership skills both in and out of the classroom."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Describe how you plan to pursue your academic interests and why you want to explore them at USC specifically. Please feel free to address your first- and second-choice major selections.",
+        "word_limit": "250 words",
+        "type": "Academic",
+        "required": true,
+        "brainstorming_questions": [
+          "Thinking about your first-choice major, what's a specific moment or experience that ignited your passion for it, something that made you think, 'This is what I *have* to learn more about'?",
+          "Beyond USC's general reputation, what are one or two *specific* professors, research labs, unique courses, or interdisciplinary programs within your intended major (or related fields) that truly excite you and align with your academic curiosity?",
+          "Imagine you're a few years into your studies at USC. What kind of project, paper, or hands-on experience would you be thrilled to be working on that directly applies your academic interests, and how do you see USC facilitating that?",
+          "If you were to explain your second-choice major to someone who knows nothing about it, what's the most fascinating or surprising aspect you'd highlight, and how does that connect with or complement your primary academic goals at USC?",
+          "Considering USC's location and the broader Southern California landscape, what are some unique opportunities (cultural, industrial, environmental, etc.) that you envision leveraging to deepen your understanding of your academic interests, something you couldn't easily find elsewhere?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

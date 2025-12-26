@@ -1068,7 +1068,22 @@
       "legacy_consideration": "None",
       "first_gen_boost": "None",
       "specific_differentiators": "Penn State explicitly states they do not consider demonstrated interest in admissions decisions; however, showing genuine interest can indirectly help by enabling applicants to tailor their application and essays to show a strong fit. Applying by the Early Action deadline is strongly recommended for the best chance of admission, particularly for the University Park campus. Test scores (SAT/ACT) are optional for first-year applicants through Fall 2026, except for the Accelerated Premedical-Medical Program."
-    }
+    },
+    "essay_prompts": [
+      {
+        "prompt": "Please tell us something about yourself, your experiences, or activities that you believe would reflect positively on your ability to succeed at Penn State.",
+        "word_limit": "500 words",
+        "type": "Personal",
+        "required": false,
+        "brainstorming_questions": [
+          "Thinking about Penn State's specific values or traditions (like the 'We Are' spirit, the passion for research, or the strong sense of community), can you recall a time when you embodied a similar spirit or a value that resonates with what makes Penn State special, and how that experience prepared you?",
+          "Beyond simply listing activities, what was a specific moment or challenge within an experience (academic, extracurricular, or personal) where you had to adapt or grow in a way that directly demonstrates your resilience and problem-solving skills, crucial for navigating a large university like Penn State?",
+          "Consider the diverse student body and opportunities at Penn State. Can you describe a time you stepped outside your comfort zone to collaborate with or learn from someone with a very different background or perspective, and what that taught you about your own strengths in contributing to a community?",
+          "Penn State is known for its hands-on learning and emphasis on practical application. Is there a particular project, endeavor, or even a 'failure' that you learned immensely from, and how that hands-on learning experience has equipped you to tackle the challenges and opportunities at Penn State?",
+          "Looking at your past experiences, what's one unexpected skill or trait you developed, perhaps through a hobby, a part-time job, or even a personal responsibility, that you believe will allow you to uniquely contribute to the vibrant Penn State campus life and academic environment?"
+        ]
+      }
+    ]
   },
   "application_strategy": {
     "major_selection_tactics": [

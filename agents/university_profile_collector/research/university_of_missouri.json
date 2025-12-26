@@ -234,5 +234,22 @@
       ]
     }
   },
-  "_id": "university_of_missouri"
+  "_id": "university_of_missouri",
+  "application_process": {
+    "essay_prompts": [
+      {
+        "prompt": "Mizzou is committed to developing students who will lead and make a difference. How do you plan to contribute to our community?",
+        "word_limit": "250 words",
+        "type": "Community",
+        "required": false,
+        "brainstorming_questions": [
+          "When you think about 'leading' and 'making a difference,' what specific Mizzou values or initiatives immediately resonate with you, and can you recall a time you've actively embodied one of those principles, even on a small scale?",
+          "Beyond your intended major, what are one or two specific Mizzou clubs, organizations, or research opportunities that genuinely excite you, and how do you envision yourself not just joining, but actively shaping their impact?",
+          "Think about a time you've had to overcome a challenge or bring people together to achieve a common goal. How did you lead in that situation, and what lessons learned do you think would be particularly valuable to bring to the Mizzou community?",
+          "Mizzou prides itself on its diverse student body and its role in Columbia. Can you describe a personal experience where you've learned from or contributed to a community different from your own, and how do you see that experience translating to your time at Mizzou?",
+          "Looking ahead, what is one specific, tangible problem or area of improvement you've observed (either in your current community or in general) that you feel uniquely equipped to address at Mizzou, and what's your initial thought process for tackling it?"
+        ]
+      }
+    ]
+  }
 }
