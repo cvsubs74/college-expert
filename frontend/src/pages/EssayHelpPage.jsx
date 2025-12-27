@@ -1,13 +1,24 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { ArrowLeftIcon, LightBulbIcon, PencilSquareIcon, SparklesIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
+import {
+    ArrowLeftIcon,
+    LightBulbIcon,
+    PencilSquareIcon,
+    SparklesIcon,
+    ChevronDownIcon,
+    ChevronUpIcon,
+    DocumentTextIcon,
+    ArrowPathIcon,
+    ChatBubbleLeftRightIcon,
+    CheckCircleIcon
+} from '@heroicons/react/24/outline';
 
 const KB_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
+const PROFILE_ES_URL = import.meta.env.VITE_PROFILE_MANAGER_ES_URL || 'https://profile-manager-es-pfnwjfp26a-ue.a.run.app';
 
 // Fallback brainstorming questions if none are persisted
 const getDefaultBrainstormingQuestions = (promptText) => {
-    // Generate relevant questions based on keywords in the prompt
     const lowerPrompt = promptText.toLowerCase();
 
     if (lowerPrompt.includes('why') && (lowerPrompt.includes('major') || lowerPrompt.includes('study') || lowerPrompt.includes('academic'))) {
@@ -60,7 +71,6 @@ const getDefaultBrainstormingQuestions = (promptText) => {
         ];
     }
 
-    // Default personal reflection questions
     return [
         "What specific moment or experience comes to mind when you read this prompt?",
         "Why does this resonate with you personally?",
@@ -81,6 +91,18 @@ export default function EssayHelpPage() {
     const [expandedPrompt, setExpandedPrompt] = useState(null);
     const [brainstormNote, setBrainstormNote] = useState('');
     const [savedNotes, setSavedNotes] = useState({});
+
+    // Essay Copilot State
+    const [essayDrafts, setEssayDrafts] = useState({});
+    const [starters, setStarters] = useState({});
+    const [loadingStarters, setLoadingStarters] = useState({});
+    const [copilotSuggestion, setCopilotSuggestion] = useState({});
+    const [loadingCopilot, setLoadingCopilot] = useState({});
+    const [feedback, setFeedback] = useState({});
+    const [loadingFeedback, setLoadingFeedback] = useState({});
+    const [writingMode, setWritingMode] = useState({});
+    const [savingDraft, setSavingDraft] = useState({});
+    const [lastSaved, setLastSaved] = useState({});
 
     const fetchUniversityData = useCallback(async () => {
         try {
@@ -104,15 +126,190 @@ export default function EssayHelpPage() {
         fetchUniversityData();
     }, [fetchUniversityData]);
 
-    const handleSaveNote = (promptIndex) => {
+    const handleSaveNote = async (promptIndex, promptText) => {
         if (brainstormNote.trim()) {
+            const newNotes = [...(savedNotes[promptIndex] || []), brainstormNote];
             setSavedNotes(prev => ({
                 ...prev,
-                [promptIndex]: [...(prev[promptIndex] || []), brainstormNote]
+                [promptIndex]: newNotes
             }));
             setBrainstormNote('');
+
+            // Auto-save draft with the new note
+            try {
+                await fetch(`${PROFILE_ES_URL}/save-essay-draft`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_email: currentUser?.email,
+                        university_id: universityId,
+                        prompt_index: promptIndex,
+                        prompt_text: promptText,
+                        draft_text: essayDrafts[promptIndex] || '',
+                        notes: newNotes
+                    })
+                });
+            } catch (err) {
+                console.error('Failed to auto-save note:', err);
+            }
         }
     };
+
+    // Generate essay starters
+    const handleGetStarters = async (promptIndex, promptText) => {
+        setLoadingStarters(prev => ({ ...prev, [promptIndex]: true }));
+        try {
+            const notes = savedNotes[promptIndex]?.join('\n') || '';
+            const response = await fetch(`${PROFILE_ES_URL}/essay-starters`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    user_email: currentUser?.email,
+                    university_id: universityId,
+                    prompt_text: promptText,
+                    notes: notes
+                })
+            });
+            const data = await response.json();
+            if (data.success && data.starters) {
+                setStarters(prev => ({ ...prev, [promptIndex]: data.starters }));
+            }
+        } catch (err) {
+            console.error('Failed to get starters:', err);
+        } finally {
+            setLoadingStarters(prev => ({ ...prev, [promptIndex]: false }));
+        }
+    };
+
+    // Get copilot suggestion
+    const handleGetSuggestion = async (promptIndex, promptText, action = 'suggest') => {
+        setLoadingCopilot(prev => ({ ...prev, [promptIndex]: true }));
+        try {
+            const currentText = essayDrafts[promptIndex] || '';
+            const response = await fetch(`${PROFILE_ES_URL}/essay-copilot`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    prompt_text: promptText,
+                    current_text: currentText,
+                    action: action
+                })
+            });
+            const data = await response.json();
+            if (data.success && data.suggestion) {
+                setCopilotSuggestion(prev => ({ ...prev, [promptIndex]: data.suggestion }));
+            }
+        } catch (err) {
+            console.error('Failed to get suggestion:', err);
+        } finally {
+            setLoadingCopilot(prev => ({ ...prev, [promptIndex]: false }));
+        }
+    };
+
+    // Get draft feedback
+    const handleGetFeedback = async (promptIndex, promptText) => {
+        setLoadingFeedback(prev => ({ ...prev, [promptIndex]: true }));
+        try {
+            const draftText = essayDrafts[promptIndex] || '';
+            const response = await fetch(`${PROFILE_ES_URL}/essay-feedback`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    prompt_text: promptText,
+                    draft_text: draftText,
+                    university_name: university?.profile?.metadata?.official_name || ''
+                })
+            });
+            const data = await response.json();
+            if (data.success && data.feedback) {
+                setFeedback(prev => ({ ...prev, [promptIndex]: data.feedback }));
+            }
+        } catch (err) {
+            console.error('Failed to get feedback:', err);
+        } finally {
+            setLoadingFeedback(prev => ({ ...prev, [promptIndex]: false }));
+        }
+    };
+
+    // Apply a starter to the draft
+    const handleUseStarter = (promptIndex, starterText) => {
+        setEssayDrafts(prev => ({ ...prev, [promptIndex]: starterText }));
+        setWritingMode(prev => ({ ...prev, [promptIndex]: true }));
+        setStarters(prev => ({ ...prev, [promptIndex]: null }));
+    };
+
+    // Apply copilot suggestion to draft
+    const handleApplySuggestion = (promptIndex) => {
+        const suggestion = copilotSuggestion[promptIndex];
+        if (suggestion) {
+            setEssayDrafts(prev => ({
+                ...prev,
+                [promptIndex]: (prev[promptIndex] || '') + ' ' + suggestion
+            }));
+            setCopilotSuggestion(prev => ({ ...prev, [promptIndex]: null }));
+        }
+    };
+
+    // Save essay draft to backend
+    const handleSaveDraft = async (promptIndex, promptText) => {
+        setSavingDraft(prev => ({ ...prev, [promptIndex]: true }));
+        try {
+            const response = await fetch(`${PROFILE_ES_URL}/save-essay-draft`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    user_email: currentUser?.email,
+                    university_id: universityId,
+                    prompt_index: promptIndex,
+                    prompt_text: promptText,
+                    draft_text: essayDrafts[promptIndex] || '',
+                    notes: savedNotes[promptIndex] || []
+                })
+            });
+            const data = await response.json();
+            if (data.success) {
+                setLastSaved(prev => ({ ...prev, [promptIndex]: new Date().toLocaleTimeString() }));
+            }
+        } catch (err) {
+            console.error('Failed to save draft:', err);
+        } finally {
+            setSavingDraft(prev => ({ ...prev, [promptIndex]: false }));
+        }
+    };
+
+    // Load saved drafts on mount
+    const loadDrafts = useCallback(async () => {
+        if (!currentUser?.email) return;
+        try {
+            const response = await fetch(`${PROFILE_ES_URL}/get-essay-drafts`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    user_email: currentUser.email,
+                    university_id: universityId
+                })
+            });
+            const data = await response.json();
+            if (data.success && data.drafts) {
+                const draftsMap = {};
+                const notesMap = {};
+                data.drafts.forEach(draft => {
+                    draftsMap[draft.prompt_index] = draft.draft_text;
+                    if (draft.notes?.length > 0) {
+                        notesMap[draft.prompt_index] = draft.notes;
+                    }
+                });
+                setEssayDrafts(draftsMap);
+                setSavedNotes(prev => ({ ...prev, ...notesMap }));
+            }
+        } catch (err) {
+            console.error('Failed to load drafts:', err);
+        }
+    }, [currentUser?.email, universityId]);
+
+    useEffect(() => {
+        loadDrafts();
+    }, [loadDrafts]);
 
     if (loading) {
         return (
@@ -142,8 +339,6 @@ export default function EssayHelpPage() {
     const universityName = profile?.metadata?.official_name || universityId.replace(/_/g, ' ');
     const essayTips = profile?.student_insights?.essay_tips || [];
     const deadlines = profile?.application_process?.application_deadlines || [];
-
-    // Get essay prompts from the new field, fallback to empty array
     const essayPrompts = profile?.application_process?.essay_prompts || [];
 
     return (
@@ -166,7 +361,6 @@ export default function EssayHelpPage() {
                             <p className="text-[#6B6B6B] mt-1">{universityName}</p>
                         </div>
 
-                        {/* Deadline Badge */}
                         {deadlines.length > 0 && (
                             <div className="text-right">
                                 <span className="text-xs text-[#6B6B6B] uppercase tracking-wide">Next Deadline</span>
@@ -189,18 +383,17 @@ export default function EssayHelpPage() {
                             <SparklesIcon className="w-6 h-6 text-[#1A4D2E]" />
                         </div>
                         <div>
-                            <h3 className="font-serif text-lg font-semibold text-[#2C2C2C] mb-2">Your Brainstorming Partner</h3>
+                            <h3 className="font-serif text-lg font-semibold text-[#2C2C2C] mb-2">Your AI Writing Partner</h3>
                             <p className="text-[#4A4A4A] text-sm leading-relaxed">
-                                Great essays come from authentic self-reflection. I'm here to ask the right questions,
-                                not give you answers. Click on each prompt below to explore guiding questions that will
-                                help you discover your unique story.
+                                I help you discover your unique story and guide your writing. Click on a prompt to brainstorm,
+                                get personalized essay starters, and receive real-time suggestions as you write.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 {/* Essay Prompts */}
-                <div className="space-y-4">
+                <div className="space-y-6">
                     <h2 className="font-serif text-xl font-semibold text-[#2C2C2C] flex items-center gap-2">
                         <PencilSquareIcon className="w-5 h-5 text-[#1A4D2E]" />
                         Essay Prompts ({essayPrompts.length})
@@ -212,11 +405,13 @@ export default function EssayHelpPage() {
                         </div>
                     ) : (
                         essayPrompts.map((prompt, index) => (
-                            <div key={index} className="stratia-card overflow-hidden">
+                            <div key={index} className="bg-white rounded-2xl shadow-md border border-[#E0DED8] overflow-hidden hover:shadow-lg transition-shadow">
+                                {/* Colored accent bar */}
+                                <div className={`h-1.5 ${index % 3 === 0 ? 'bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45]' : index % 3 === 1 ? 'bg-gradient-to-r from-[#C05838] to-[#E07050]' : 'bg-gradient-to-r from-[#4A7C59] to-[#6B9969]'}`}></div>
                                 {/* Prompt Header */}
                                 <button
                                     onClick={() => setExpandedPrompt(expandedPrompt === index ? null : index)}
-                                    className="w-full p-5 flex items-start justify-between text-left hover:bg-[#F8F6F0] transition-colors"
+                                    className="w-full p-6 flex items-start justify-between text-left hover:bg-[#FAFAF8] transition-colors"
                                 >
                                     <div className="flex-1">
                                         <div className="flex items-center gap-2 mb-2">
@@ -227,8 +422,13 @@ export default function EssayHelpPage() {
                                             {prompt.required && (
                                                 <span className="text-xs text-[#C05838]">Required</span>
                                             )}
+                                            {essayDrafts[index] && (
+                                                <span className="text-xs text-[#1A4D2E] flex items-center gap-1">
+                                                    <DocumentTextIcon className="w-3 h-3" /> Draft saved
+                                                </span>
+                                            )}
                                         </div>
-                                        <p className="text-[#2C2C2C] font-medium leading-relaxed">{prompt.prompt}</p>
+                                        <p className="text-[#2C2C2C] font-medium leading-relaxed text-base">{prompt.prompt}</p>
                                     </div>
                                     <div className="ml-4 flex-shrink-0">
                                         {expandedPrompt === index ? (
@@ -239,58 +439,259 @@ export default function EssayHelpPage() {
                                     </div>
                                 </button>
 
-                                {/* Expanded Brainstorming Section */}
+                                {/* Expanded Section */}
                                 {expandedPrompt === index && (
-                                    <div className="border-t border-[#E0DED8] bg-[#FAF8F5]">
-                                        {/* Guiding Questions */}
-                                        <div className="p-5">
-                                            <div className="flex items-center gap-2 mb-3">
-                                                <LightBulbIcon className="w-5 h-5 text-[#C05838]" />
-                                                <h4 className="font-medium text-[#2C2C2C]">Questions to Guide Your Thinking</h4>
+                                    <div className="p-5 space-y-4 bg-[#FAFAF8]">
+                                        {/* Guiding Questions Card */}
+                                        <div className="bg-white rounded-xl border border-[#E0DED8] shadow-sm p-5">
+                                            <div className="flex items-center gap-2 mb-4">
+                                                <div className="w-8 h-8 bg-[#FFF3E0] rounded-lg flex items-center justify-center">
+                                                    <LightBulbIcon className="w-5 h-5 text-[#C05838]" />
+                                                </div>
+                                                <h4 className="font-semibold text-[#2C2C2C]">Questions to Guide Your Thinking</h4>
                                             </div>
                                             <ul className="space-y-3">
                                                 {(prompt.brainstorming_questions || getDefaultBrainstormingQuestions(prompt.prompt)).map((q, i) => (
                                                     <li key={i} className="flex items-start gap-3 text-sm text-[#4A4A4A]">
-                                                        <span className="w-5 h-5 bg-[#E0DED8] rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0 mt-0.5">
+                                                        <span className="w-6 h-6 bg-gradient-to-br from-[#C05838] to-[#E07050] text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
                                                             {i + 1}
                                                         </span>
-                                                        <span>{q}</span>
+                                                        <span className="leading-relaxed">{q}</span>
                                                     </li>
                                                 ))}
                                             </ul>
                                         </div>
 
-                                        {/* Brainstorm Notes */}
-                                        <div className="p-5 border-t border-[#E0DED8]">
-                                            <h4 className="font-medium text-[#2C2C2C] mb-3">✍️ Jot Down Your Thoughts</h4>
-                                            <textarea
-                                                value={brainstormNote}
-                                                onChange={(e) => setBrainstormNote(e.target.value)}
-                                                placeholder="Capture your ideas, memories, and reflections here..."
-                                                rows={4}
-                                                className="w-full px-4 py-3 border border-[#E0DED8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/20 focus:border-[#1A4D2E] resize-none text-sm"
-                                            />
-                                            <div className="flex justify-between items-center mt-3">
-                                                <span className="text-xs text-[#6B6B6B]">
-                                                    {savedNotes[index]?.length || 0} notes saved
-                                                </span>
+                                        {/* Brainstorm Notes Card - Collapsible */}
+                                        <div className="bg-white rounded-xl border border-[#E0DED8] shadow-sm overflow-hidden">
+                                            <button
+                                                onClick={() => setWritingMode(prev => ({ ...prev, [`notes_${index}`]: !prev[`notes_${index}`] }))}
+                                                className="w-full p-4 flex items-center justify-between text-left hover:bg-[#FAFAF8] transition-colors"
+                                            >
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 bg-[#E8F5E9] rounded-lg flex items-center justify-center">
+                                                        <span className="text-lg">✍️</span>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-[#2C2C2C]">Jot Down Your Thoughts</h4>
+                                                        <span className="text-xs text-[#6B6B6B]">
+                                                            {savedNotes[index]?.length || 0} notes saved
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                {writingMode[`notes_${index}`] ? (
+                                                    <ChevronUpIcon className="w-5 h-5 text-[#6B6B6B]" />
+                                                ) : (
+                                                    <ChevronDownIcon className="w-5 h-5 text-[#6B6B6B]" />
+                                                )}
+                                            </button>
+
+                                            {writingMode[`notes_${index}`] && (
+                                                <div className="px-4 pb-4 border-t border-[#E0DED8]">
+                                                    <textarea
+                                                        value={brainstormNote}
+                                                        onChange={(e) => setBrainstormNote(e.target.value)}
+                                                        placeholder="Capture your ideas, memories, and reflections here..."
+                                                        rows={2}
+                                                        className="w-full mt-4 px-4 py-3 bg-[#FAFAF8] border border-[#E0DED8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/20 focus:border-[#1A4D2E] resize-none text-sm"
+                                                    />
+                                                    <div className="flex justify-end mt-2">
+                                                        <button
+                                                            onClick={() => handleSaveNote(index, prompt.prompt)}
+                                                            disabled={!brainstormNote.trim()}
+                                                            className="px-3 py-1.5 bg-[#1A4D2E] text-white text-xs rounded-lg font-medium hover:bg-[#2D6B45] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                                        >
+                                                            Add Note
+                                                        </button>
+                                                    </div>
+
+                                                    {savedNotes[index]?.length > 0 && (
+                                                        <div className="mt-3 space-y-2 max-h-32 overflow-y-auto">
+                                                            {savedNotes[index].map((note, i) => (
+                                                                <div key={i} className="p-3 bg-[#FAFAF8] border border-[#E0DED8] rounded-lg text-xs text-[#4A4A4A]">
+                                                                    {note}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Essay Starters Card */}
+                                        <div className="bg-white rounded-xl border border-[#E0DED8] shadow-sm p-5">
+                                            <div className="flex items-center justify-between mb-4">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 bg-[#E8F5E9] rounded-lg flex items-center justify-center">
+                                                        <SparklesIcon className="w-5 h-5 text-[#1A4D2E]" />
+                                                    </div>
+                                                    <h4 className="font-semibold text-[#2C2C2C]">Get Personalized Starters</h4>
+                                                </div>
                                                 <button
-                                                    onClick={() => handleSaveNote(index)}
-                                                    disabled={!brainstormNote.trim()}
-                                                    className="px-4 py-2 bg-[#1A4D2E] text-white text-sm rounded-lg font-medium hover:bg-[#2D6B45] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                                    onClick={() => handleGetStarters(index, prompt.prompt)}
+                                                    disabled={loadingStarters[index]}
+                                                    className="px-4 py-2 bg-gradient-to-r from-[#1A4D2E] to-[#2D6B45] text-white text-sm rounded-lg font-medium hover:opacity-90 disabled:opacity-50 transition-all flex items-center gap-2 shadow-sm"
                                                 >
-                                                    Save Note
+                                                    {loadingStarters[index] ? (
+                                                        <>
+                                                            <ArrowPathIcon className="w-4 h-4 animate-spin" />
+                                                            Generating...
+                                                        </>
+                                                    ) : (
+                                                        '✨ Generate Starters'
+                                                    )}
                                                 </button>
                                             </div>
 
-                                            {/* Saved Notes */}
-                                            {savedNotes[index]?.length > 0 && (
-                                                <div className="mt-4 space-y-2">
-                                                    {savedNotes[index].map((note, i) => (
-                                                        <div key={i} className="p-3 bg-white border border-[#E0DED8] rounded-lg text-sm text-[#4A4A4A]">
-                                                            {note}
+                                            {starters[index] && (
+                                                <div className="space-y-3">
+                                                    {starters[index].map((starter, i) => (
+                                                        <div key={i} className="p-4 bg-gradient-to-r from-[#F0F9F0] to-[#FAFAF8] border border-[#D6E8D5] rounded-xl hover:shadow-sm transition-shadow">
+                                                            <p className="text-sm text-[#2C2C2C] leading-relaxed mb-3">{starter}</p>
+                                                            <button
+                                                                onClick={() => handleUseStarter(index, starter)}
+                                                                className="text-xs text-[#1A4D2E] font-semibold hover:underline flex items-center gap-1"
+                                                            >
+                                                                Use this starter →
+                                                            </button>
                                                         </div>
                                                     ))}
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Writing Mode Card */}
+                                        <div className="bg-white rounded-xl border border-[#E0DED8] shadow-sm p-5">
+                                            <div className="flex items-center justify-between mb-4">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 bg-[#E3F2FD] rounded-lg flex items-center justify-center">
+                                                        <DocumentTextIcon className="w-5 h-5 text-[#1565C0]" />
+                                                    </div>
+                                                    <h4 className="font-semibold text-[#2C2C2C]">Write Your Essay</h4>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <span className="text-xs text-[#6B6B6B] bg-[#F5F5F5] px-2 py-1 rounded">
+                                                        {(essayDrafts[index]?.split(/\s+/).filter(Boolean).length || 0)} words
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <textarea
+                                                value={essayDrafts[index] || ''}
+                                                onChange={(e) => setEssayDrafts(prev => ({ ...prev, [index]: e.target.value }))}
+                                                placeholder="Start writing your essay here... Use the starters above or begin fresh."
+                                                rows={10}
+                                                className="w-full px-4 py-4 bg-[#FAFAF8] border border-[#E0DED8] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1A4D2E]/20 focus:border-[#1A4D2E] resize-none text-sm leading-relaxed"
+                                            />
+
+                                            {/* Copilot Actions */}
+                                            <div className="flex flex-wrap gap-2 mt-3">
+                                                <button
+                                                    onClick={() => handleGetSuggestion(index, prompt.prompt, 'suggest')}
+                                                    disabled={loadingCopilot[index] || !essayDrafts[index]}
+                                                    className="px-3 py-1.5 bg-[#F8F6F0] border border-[#E0DED8] text-[#2C2C2C] text-xs rounded-lg hover:bg-[#E0DED8] disabled:opacity-50 transition-colors flex items-center gap-1"
+                                                >
+                                                    <ChatBubbleLeftRightIcon className="w-3.5 h-3.5" />
+                                                    {loadingCopilot[index] ? 'Thinking...' : 'Suggest next'}
+                                                </button>
+                                                <button
+                                                    onClick={() => handleGetSuggestion(index, prompt.prompt, 'expand')}
+                                                    disabled={loadingCopilot[index] || !essayDrafts[index]}
+                                                    className="px-3 py-1.5 bg-[#F8F6F0] border border-[#E0DED8] text-[#2C2C2C] text-xs rounded-lg hover:bg-[#E0DED8] disabled:opacity-50 transition-colors"
+                                                >
+                                                    Expand idea
+                                                </button>
+                                                <button
+                                                    onClick={() => handleGetFeedback(index, prompt.prompt)}
+                                                    disabled={loadingFeedback[index] || !essayDrafts[index] || (essayDrafts[index]?.split(/\s+/).length < 20)}
+                                                    className="px-3 py-1.5 bg-[#1A4D2E] text-white text-xs rounded-lg hover:bg-[#2D6B45] disabled:opacity-50 transition-colors flex items-center gap-1"
+                                                >
+                                                    <CheckCircleIcon className="w-3.5 h-3.5" />
+                                                    {loadingFeedback[index] ? 'Analyzing...' : 'Get Feedback'}
+                                                </button>
+                                                <button
+                                                    onClick={() => handleSaveDraft(index, prompt.prompt)}
+                                                    disabled={savingDraft[index] || !essayDrafts[index]}
+                                                    className="px-3 py-1.5 bg-[#2D6B45] text-white text-xs rounded-lg hover:bg-[#1A4D2E] disabled:opacity-50 transition-colors flex items-center gap-1 ml-auto"
+                                                >
+                                                    {savingDraft[index] ? 'Saving...' : '💾 Save Draft'}
+                                                </button>
+                                            </div>
+                                            {lastSaved[index] && (
+                                                <p className="text-xs text-[#6B6B6B] mt-1">Last saved: {lastSaved[index]}</p>
+                                            )}
+
+                                            {/* Copilot Suggestion */}
+                                            {copilotSuggestion[index] && (
+                                                <div className="mt-4 p-4 bg-[#D6E8D5]/30 border border-[#D6E8D5] rounded-xl">
+                                                    <p className="text-sm text-[#2C2C2C] italic mb-2">"{copilotSuggestion[index]}"</p>
+                                                    <div className="flex gap-2">
+                                                        <button
+                                                            onClick={() => handleApplySuggestion(index)}
+                                                            className="text-xs text-[#1A4D2E] font-medium hover:underline"
+                                                        >
+                                                            Add to essay
+                                                        </button>
+                                                        <button
+                                                            onClick={() => setCopilotSuggestion(prev => ({ ...prev, [index]: null }))}
+                                                            className="text-xs text-[#6B6B6B] hover:underline"
+                                                        >
+                                                            Dismiss
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {/* Feedback Panel */}
+                                            {feedback[index] && (
+                                                <div className="mt-4 p-4 bg-white border border-[#E0DED8] rounded-xl">
+                                                    <div className="flex items-center justify-between mb-3">
+                                                        <h5 className="font-medium text-[#2C2C2C]">📊 Essay Feedback</h5>
+                                                        <div className="flex gap-2">
+                                                            <span className="px-2 py-0.5 bg-[#D6E8D5] text-[#1A4D2E] text-xs rounded">
+                                                                Score: {feedback[index].overall_score}/10
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="grid grid-cols-2 gap-4 mb-4 text-xs">
+                                                        <div>
+                                                            <span className="text-[#6B6B6B]">Prompt Alignment:</span>
+                                                            <span className="ml-2 font-medium">{feedback[index].prompt_alignment}/10</span>
+                                                        </div>
+                                                        <div>
+                                                            <span className="text-[#6B6B6B]">Authenticity:</span>
+                                                            <span className="ml-2 font-medium">{feedback[index].authenticity}/10</span>
+                                                        </div>
+                                                    </div>
+
+                                                    {feedback[index].strengths?.length > 0 && (
+                                                        <div className="mb-3">
+                                                            <p className="text-xs font-medium text-[#1A4D2E] mb-1">Strengths:</p>
+                                                            <ul className="text-xs text-[#4A4A4A] space-y-1">
+                                                                {feedback[index].strengths.map((s, i) => (
+                                                                    <li key={i}>✓ {s}</li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    )}
+
+                                                    {feedback[index].improvements?.length > 0 && (
+                                                        <div className="mb-3">
+                                                            <p className="text-xs font-medium text-[#C05838] mb-1">To Improve:</p>
+                                                            <ul className="text-xs text-[#4A4A4A] space-y-1">
+                                                                {feedback[index].improvements.map((s, i) => (
+                                                                    <li key={i}>→ {s}</li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    )}
+
+                                                    {feedback[index].next_step && (
+                                                        <div className="p-2 bg-[#F8F6F0] rounded text-xs text-[#2C2C2C]">
+                                                            <strong>Next step:</strong> {feedback[index].next_step}
+                                                        </div>
+                                                    )}
                                                 </div>
                                             )}
                                         </div>

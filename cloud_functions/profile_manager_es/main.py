@@ -23,6 +23,13 @@ from google import genai
 from google.genai import types
 from PIL import Image
 
+from essay_copilot import (
+    generate_essay_starters,
+    get_copilot_suggestion,
+    get_draft_feedback,
+    save_essay_draft,
+    get_essay_drafts
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -221,7 +228,7 @@ Return ONLY the markdown content, no explanations.
 """
 
         response = client.models.generate_content(
-            model='gemini-2.0-flash',
+            model='gemini-2.5-flash-lite',
             contents=prompt
         )
         markdown_content = response.text.strip()
@@ -340,7 +347,7 @@ TRANSCRIPT-SPECIFIC RULES (IMPORTANT):
 Return ONLY the JSON object."""
 
         response = client.models.generate_content(
-            model='gemini-2.0-flash',
+            model='gemini-2.5-flash-lite',
             contents=prompt
         )
         response_text = response.text.strip()
@@ -419,7 +426,7 @@ Respond ONLY with valid JSON (no markdown):
 """
         
         response = client.models.generate_content(
-            model='gemini-2.0-flash',
+            model='gemini-2.5-flash-lite',
             contents=prompt
         )
         response_text = response.text.strip()
@@ -961,9 +968,6 @@ def index_student_profile(user_id, filename, content_markdown, metadata=None, pr
             "error": str(e)
         }
 
-
-
-
 def search_student_profiles(user_id, query_text="", size=10, from_index=0):
     """Search student profiles for a user."""
     try:
@@ -1434,7 +1438,7 @@ STUDENT PROFILE:
 Return ONLY the JSON object, no markdown formatting."""
 
         response = client.models.generate_content(
-            model='gemini-2.0-flash',
+            model='gemini-2.5-flash-lite',
             contents=prompt
         )
         response_text = response.text.strip()
@@ -1794,7 +1798,7 @@ You have access to COMPLETE university data. Generate recommendations across ALL
         for attempt in range(max_retries + 1):
             try:
                 response = client.models.generate_content(
-                    model='gemini-2.0-flash',
+                    model='gemini-2.5-flash-lite',
                     contents=prompt
                 )
                 
@@ -5722,6 +5726,74 @@ def profile_manager_es_http_entry(request):
                 return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
             
             result = get_application_progress(user_email)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        # --- ESSAY COPILOT ENDPOINTS ---
+        elif resource_type == 'essay-starters' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            prompt_text = data.get('prompt_text') or data.get('prompt')
+            notes = data.get('notes', '')
+            
+            if not user_email or not prompt_text:
+                return add_cors_headers({'success': False, 'error': 'user_email and prompt_text required'}, 400)
+            
+            result = generate_essay_starters(user_email, university_id, prompt_text, notes)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        elif resource_type == 'essay-copilot' and request.method == 'POST':
+            data = request.get_json() or {}
+            prompt_text = data.get('prompt_text') or data.get('prompt')
+            current_text = data.get('current_text') or data.get('text', '')
+            action = data.get('action', 'suggest')  # complete, suggest, expand
+            
+            if not prompt_text:
+                return add_cors_headers({'success': False, 'error': 'prompt_text required'}, 400)
+            
+            result = get_copilot_suggestion(prompt_text, current_text, action)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        elif resource_type == 'essay-feedback' and request.method == 'POST':
+            data = request.get_json() or {}
+            prompt_text = data.get('prompt_text') or data.get('prompt')
+            draft_text = data.get('draft_text') or data.get('draft', '')
+            university_name = data.get('university_name', '')
+            
+            if not prompt_text or not draft_text:
+                return add_cors_headers({'success': False, 'error': 'prompt_text and draft_text required'}, 400)
+            
+            result = get_draft_feedback(prompt_text, draft_text, university_name)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        elif resource_type == 'save-essay-draft' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            prompt_index = data.get('prompt_index', 0)
+            prompt_text = data.get('prompt_text') or data.get('prompt', '')
+            draft_text = data.get('draft_text') or data.get('draft', '')
+            notes = data.get('notes', [])
+            
+            if not user_email or not university_id:
+                return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
+            
+            result = save_essay_draft(user_email, university_id, prompt_index, prompt_text, draft_text, notes)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
+        elif resource_type == 'get-essay-drafts' and request.method in ['GET', 'POST']:
+            if request.method == 'GET':
+                user_email = request.args.get('user_email')
+                university_id = request.args.get('university_id')
+            else:
+                data = request.get_json() or {}
+                user_email = data.get('user_email') or request.headers.get('X-User-Email')
+                university_id = data.get('university_id')
+            
+            if not user_email:
+                return add_cors_headers({'success': False, 'error': 'user_email required'}, 400)
+            
+            result = get_essay_drafts(user_email, university_id)
             return add_cors_headers(result, 200 if result.get('success') else 500)
         
         else:
