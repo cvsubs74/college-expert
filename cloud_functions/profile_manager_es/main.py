@@ -28,7 +28,9 @@ from essay_copilot import (
     get_copilot_suggestion,
     get_draft_feedback,
     save_essay_draft,
-    get_essay_drafts
+    get_essay_drafts,
+    essay_chat,
+    get_starter_context
 )
 
 # Configure logging
@@ -5742,6 +5744,19 @@ def profile_manager_es_http_entry(request):
             result = generate_essay_starters(user_email, university_id, prompt_text, notes)
             return add_cors_headers(result, 200 if result.get('success') else 500)
         
+        elif resource_type == 'starter-context' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            selected_hook = data.get('selected_hook') or data.get('hook')
+            prompt_text = data.get('prompt_text') or data.get('prompt')
+            
+            if not user_email or not selected_hook:
+                return add_cors_headers({'success': False, 'error': 'user_email and selected_hook required'}, 400)
+            
+            result = get_starter_context(user_email, university_id, selected_hook, prompt_text or '')
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
         elif resource_type == 'essay-copilot' and request.method == 'POST':
             data = request.get_json() or {}
             prompt_text = data.get('prompt_text') or data.get('prompt')
@@ -5766,6 +5781,20 @@ def profile_manager_es_http_entry(request):
             result = get_draft_feedback(prompt_text, draft_text, university_name)
             return add_cors_headers(result, 200 if result.get('success') else 500)
         
+        elif resource_type == 'essay-chat' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email') or request.headers.get('X-User-Email')
+            university_id = data.get('university_id')
+            prompt_text = data.get('prompt_text') or data.get('prompt', '')
+            current_text = data.get('current_text') or data.get('text', '')
+            user_question = data.get('question', '')
+            
+            if not user_email or not university_id or not user_question:
+                return add_cors_headers({'success': False, 'error': 'user_email, university_id, and question required'}, 400)
+            
+            result = essay_chat(user_email, university_id, prompt_text, current_text, user_question)
+            return add_cors_headers(result, 200 if result.get('success') else 500)
+        
         elif resource_type == 'save-essay-draft' and request.method == 'POST':
             data = request.get_json() or {}
             user_email = data.get('user_email') or request.headers.get('X-User-Email')
@@ -5774,11 +5803,13 @@ def profile_manager_es_http_entry(request):
             prompt_text = data.get('prompt_text') or data.get('prompt', '')
             draft_text = data.get('draft_text') or data.get('draft', '')
             notes = data.get('notes', [])
+            version = data.get('version', 0)
+            version_name = data.get('version_name', '')
             
             if not user_email or not university_id:
                 return add_cors_headers({'success': False, 'error': 'user_email and university_id required'}, 400)
             
-            result = save_essay_draft(user_email, university_id, prompt_index, prompt_text, draft_text, notes)
+            result = save_essay_draft(user_email, university_id, prompt_index, prompt_text, draft_text, notes, version, version_name)
             return add_cors_headers(result, 200 if result.get('success') else 500)
         
         elif resource_type == 'get-essay-drafts' and request.method in ['GET', 'POST']:
