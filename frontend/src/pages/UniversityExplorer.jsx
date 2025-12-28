@@ -126,6 +126,7 @@ const transformUniversityData = (apiData) => {
         name: apiData.official_name || metadata.official_name || 'Unknown',
         shortName: metadata.official_name?.split(' ').slice(0, 3).join(' ') || apiData.official_name,
         location: apiData.location || metadata.location || { city: 'N/A', state: 'N/A', type: 'N/A' },
+        logoUrl: apiData.logo_url || profile.logo_url || null,
         rankings: {
             usNews: usNewsRank,
             forbes: forbesRank
@@ -192,8 +193,12 @@ const UniversityCard = ({ uni, onSelect, onCompare, isSelectedForCompare, sentim
                 {/* Header Row: Avatar + Name + Action Buttons */}
                 <div className="flex items-start gap-3 mb-3">
                     {/* Avatar */}
-                    <div className="w-11 h-11 rounded-full bg-[#F8F6F0] flex items-center justify-center flex-shrink-0 border border-[#E0DED8]">
-                        <span className="text-lg font-bold text-[#4A4A4A]">{uni.name?.charAt(0) || 'U'}</span>
+                    <div className="w-11 h-11 rounded-full bg-[#F8F6F0] flex items-center justify-center flex-shrink-0 border border-[#E0DED8] overflow-hidden">
+                        {uni.logoUrl ? (
+                            <img src={uni.logoUrl} alt={`${uni.name} logo`} className="w-full h-full object-contain p-1" />
+                        ) : (
+                            <span className="text-lg font-bold text-[#4A4A4A]">{uni.name?.charAt(0) || 'U'}</span>
+                        )}
                     </div>
                     <div className="flex-1 min-w-0">
                         <h3
@@ -324,10 +329,19 @@ const FavoriteCard = ({ college, onRemove, onViewDetails, fitAnalysis, fullUnive
     const earnings = uni.outcomes?.medianEarnings || 'N/A';
     const location = uni.location ? `${uni.location.city}, ${uni.location.state}` : (college.location || 'Location N/A');
 
+    // Extract logo from full university data
+    const logoUrl = fullUniversityData?.logoUrl || null;
+
     return (
         <div className="bg-white rounded-2xl shadow-lg shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="p-4 flex-grow">
                 <div className="flex justify-between items-start mb-3">
+                    {/* Logo */}
+                    {logoUrl && (
+                        <div className="w-12 h-12 rounded-full bg-[#F8F6F0] flex items-center justify-center flex-shrink-0 border border-[#E0DED8] overflow-hidden mr-3">
+                            <img src={logoUrl} alt={`${college.university_name} logo`} className="w-full h-full object-contain p-1" />
+                        </div>
+                    )}
                     <div className="flex-1 min-w-0">
                         <h3 className="text-lg font-bold text-gray-900 line-clamp-2">
                             {college.university_name}

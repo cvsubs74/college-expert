@@ -116,14 +116,25 @@ const LaunchpadCard = ({ college, onRemove, isRemoving, onViewDetails, isSelecte
 
             {/* Main Info Section */}
             <div className="flex-1 min-w-0 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-                {/* University Details */}
-                <div className="md:col-span-5">
-                    <h3 className="text-lg font-bold text-gray-900 truncate" title={college.university_name}>
-                        {college.university_name}
-                    </h3>
-                    <div className="flex items-center text-gray-500 text-sm mt-1">
-                        <MapPinIcon className="h-4 w-4 mr-1 flex-shrink-0" />
-                        <span className="truncate">{college.location || 'Location N/A'}</span>
+                {/* University Details with Logo */}
+                <div className="md:col-span-5 flex items-center gap-3">
+                    {/* Logo */}
+                    <div className="w-11 h-11 rounded-full bg-[#F8F6F0] flex items-center justify-center flex-shrink-0 border border-[#E0DED8] overflow-hidden">
+                        {college.logo_url ? (
+                            <img src={college.logo_url} alt={`${college.university_name} logo`} className="w-full h-full object-contain p-1" />
+                        ) : (
+                            <span className="text-lg font-bold text-[#4A4A4A]">{college.university_name?.charAt(0) || 'U'}</span>
+                        )}
+                    </div>
+                    {/* Name and Location */}
+                    <div className="flex-1 min-w-0">
+                        <h3 className="text-lg font-bold text-gray-900 truncate" title={college.university_name}>
+                            {college.university_name}
+                        </h3>
+                        <div className="flex items-center text-gray-500 text-sm mt-1">
+                            <MapPinIcon className="h-4 w-4 mr-1 flex-shrink-0" />
+                            <span className="truncate">{college.location || 'Location N/A'}</span>
+                        </div>
                     </div>
                 </div>
 
@@ -1846,6 +1857,7 @@ const MyLaunchpad = () => {
             if (listResult.success) {
                 let colleges = listResult.college_list || [];
                 console.log('[Launchpad] Colleges loaded:', colleges.length, colleges.map(c => c.university_id));
+                console.log('[Launchpad] Logo URLs:', colleges.map(c => ({ id: c.university_id, logo_url: c.logo_url })));
 
                 // Merge precomputed fits into college list (precomputed takes priority)
                 // API returns 'fits' array, not 'results'

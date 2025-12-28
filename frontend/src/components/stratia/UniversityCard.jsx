@@ -30,9 +30,13 @@ const UniversityCard = ({
         fit_category = 'TARGET',
         match_score = 0,
         image_url,
+        logo_url,  // From API
         acceptance_rate,
         us_news_rank
     } = university || {};
+
+    // Use logo_url (from API) or image_url as fallback
+    const displayImage = logo_url || image_url;
 
     // Chip styles based on fit category
     const chipStyles = {
@@ -74,12 +78,12 @@ const UniversityCard = ({
                     <div
                         className="squircle w-20 h-20 bg-gradient-to-br from-[#D6E8D5] to-[#FCEEE8] overflow-hidden"
                         style={{
-                            backgroundImage: image_url ? `url(${image_url})` : undefined,
+                            backgroundImage: displayImage ? `url(${displayImage})` : undefined,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center'
                         }}
                     >
-                        {!image_url && (
+                        {!displayImage && (
                             <div className="w-full h-full flex items-center justify-center">
                                 <span className="text-2xl font-serif font-bold text-[#1A4D2E]">
                                     {university_name?.charAt(0) || 'U'}

@@ -251,7 +251,7 @@
         "is_restricted_or_capped": false,
         "strategic_fit_advice": "Offers a broad range of disciplines, ideal for students exploring various fields. This school awards 75% of undergraduate degrees, providing a strong liberal arts foundation.",
         "housing_profile": "Students reside in a variety of university housing, including freshman-specific dorms (e.g., Wilbur, Stern, Branner, FloMo, Crothers, Casper Quad) and upperclassman residences like Row houses or apartment-style buildings (EVGR, Mirrielees). Freshman housing is generally traditional dorms, with later options for themed or apartment-style living.",
-        "student_archetype": "Intellectually curious, passionate, and often deeply concerned with social justice. Many exhibit 'Duck Syndrome' – appearing laid-back while working diligently beneath the surface.",
+        "student_archetype": "Intellectually curious, passionate, and often deeply concerned with social justice. Many exhibit 'Duck Syndrome' \u2013 appearing laid-back while working diligently beneath the surface.",
         "majors": [
           {
             "name": "Economics",
@@ -669,12 +669,12 @@
           "Beyond your assigned coursework, what's a rabbit hole of information you've fallen down recently, and what specific 'aha!' moment did you have that surprised you?",
           "Think about a time you encountered something you initially thought you understood, but a deeper dive revealed a complexity or nuance that truly captured your intellectual fascination?",
           "Stanford emphasizes learning 'out of the classroom.' Can you recall a moment outside of a formal academic setting where a casual conversation, observation, or even a frustration sparked a burning question that you felt compelled to investigate?",
-          "When you imagine yourself at Stanford, what kind of intellectual 'itch' do you hope to scratch – a particular field, a pressing problem, or a nagging question that you're eager to explore with others?",
+          "When you imagine yourself at Stanford, what kind of intellectual 'itch' do you hope to scratch \u2013 a particular field, a pressing problem, or a nagging question that you're eager to explore with others?",
           "Describe a moment where learning felt less like a task and more like a thrilling discovery, where the process itself was so engaging that you lost track of time, and what was it about that specific learning experience that ignited that feeling?"
         ]
       },
       {
-        "prompt": "Virtually all of Stanford's undergraduates live on campus. Write a note to your future roommate that reveals something about you or that will help your roommate—and us—get to know you better.",
+        "prompt": "Virtually all of Stanford's undergraduates live on campus. Write a note to your future roommate that reveals something about you or that will help your roommate\u2014and us\u2014get to know you better.",
         "word_limit": "100-250 words",
         "type": "Personal",
         "required": true,
@@ -682,7 +682,7 @@
           "Thinking about the little, everyday habits or quirks you have that bring you comfort or joy, which one would you most want to share with someone who'll be sharing your living space, and why is that particular one so significant to you?",
           "If you were to describe your ideal study environment, what elements would be present, and what's a personal memory or experience that shaped this preference, perhaps involving a place or a particular way you organize your thoughts?",
           "Beyond the academic, what's a passion or a hobby you're excited to explore further at Stanford, and what's a specific instance where this interest led you to a surprising discovery or a moment of genuine connection with others?",
-          "Imagine your roommate walks in while you're deeply engrossed in something that truly energizes you – what is that activity, and what does that state of flow feel like for you, hinting at what truly motivates you?",
+          "Imagine your roommate walks in while you're deeply engrossed in something that truly energizes you \u2013 what is that activity, and what does that state of flow feel like for you, hinting at what truly motivates you?",
           "Stanford's campus has unique traditions and spaces; is there a particular aspect of community living or campus life that you're most looking forward to, and what personal values or experiences make you anticipate it so strongly?"
         ]
       },
@@ -692,7 +692,7 @@
         "type": "Values",
         "required": true,
         "brainstorming_questions": [
-          "Stanford values 'bold ideas' and 'intellectual vitality' – thinking about your life, what's a time you pursued an idea or interest so passionately that it felt almost like a 'bold idea' to you, or intensely fueled your curiosity?",
+          "Stanford values 'bold ideas' and 'intellectual vitality' \u2013 thinking about your life, what's a time you pursued an idea or interest so passionately that it felt almost like a 'bold idea' to you, or intensely fueled your curiosity?",
           "The prompt asks about something 'meaningful'. Beyond a hobby or an achievement, what's a recurring theme, a guiding principle, or a value that has consistently shown up in the choices you've made, big or small, and why do you think it holds such significance for you?",
           "Stanford's motto is 'Die Luft der Freiheit weht' (The wind of freedom blows). Reflecting on that spirit, what's an experience where you felt a profound sense of personal freedom or agency, and what specific aspect of that moment made it so meaningful?",
           "Stanford often talks about 'making a difference'. Can you recall a moment when you felt you genuinely contributed to something larger than yourself, or when you witnessed the impact of collective effort, and what did that experience teach you about what's truly meaningful?",
@@ -832,7 +832,7 @@
       "Show, don't tell, by telling specific stories with vivid details and reflecting on what you learned or how you changed.",
       "Reflect on an idea or experience that genuinely excites you about learning to demonstrate intellectual curiosity.",
       "Write a note to your future roommate that reveals something authentic about you.",
-      "Avoid clichés and generic responses; offer fresh perspectives that align with Stanford's values."
+      "Avoid clich\u00e9s and generic responses; offer fresh perspectives that align with Stanford's values."
     ],
     "red_flags": [
       "Generic essays that could apply to any university, failing to explain \"why Stanford\".",
@@ -868,5 +868,6 @@
     "freshman_retention_rate": 98.2,
     "graduation_rate_4_year": 58.0,
     "graduation_rate_6_year": 91.9
-  }
+  },
+  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/stanford_university_logo.png"
 }

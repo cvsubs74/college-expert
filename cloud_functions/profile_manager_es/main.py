@@ -2679,7 +2679,7 @@ def handle_get_college_list(request):
                             "terms": {"university_id": university_ids}
                         },
                         "_source": ["university_id", "official_name", "location", "acceptance_rate", 
-                                   "soft_fit_category", "us_news_rank", "summary"]
+                                   "soft_fit_category", "us_news_rank", "summary", "profile.logo_url"]
                     }
                 )
                 for hit in uni_response['hits']['hits']:
@@ -2689,7 +2689,8 @@ def handle_get_college_list(request):
                         'acceptance_rate': uni.get('acceptance_rate'),
                         'soft_fit_category': uni.get('soft_fit_category'),
                         'us_news_rank': uni.get('us_news_rank'),
-                        'summary': uni.get('summary')
+                        'summary': uni.get('summary'),
+                        'logo_url': uni.get('profile', {}).get('logo_url') if uni.get('profile') else None
                     }
                 logger.info(f"[GET_COLLEGE_LIST] Enriched {len(university_data)} universities with KB data")
             except Exception as e:
@@ -2725,7 +2726,8 @@ def handle_get_college_list(request):
                 'acceptance_rate': uni_info.get('acceptance_rate'),
                 'soft_fit_category': uni_info.get('soft_fit_category'),
                 'us_news_rank': uni_info.get('us_news_rank'),
-                'summary': uni_info.get('summary')
+                'summary': uni_info.get('summary'),
+                'logo_url': uni_info.get('logo_url')
             })
         
         return add_cors_headers({
