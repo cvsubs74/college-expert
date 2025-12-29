@@ -183,6 +183,9 @@ const StratiaLaunchpad = () => {
 
         if (selectedCategory === 'ALL') {
             colleges = collegeList;
+        } else if (selectedCategory === 'REACH') {
+            // Combine SUPER_REACH and REACH schools
+            colleges = [...(categorizedColleges.SUPER_REACH || []), ...(categorizedColleges.REACH || [])];
         } else {
             colleges = categorizedColleges[selectedCategory] || [];
         }
@@ -372,7 +375,7 @@ const StratiaLaunchpad = () => {
     // Filter tabs
     const filterTabs = [
         { key: 'ALL', label: 'All Schools', count: collegeList.length },
-        { key: 'SUPER_REACH', label: 'Reach', count: stats.superReach },
+        { key: 'REACH', label: 'Reach', count: stats.superReach },
         { key: 'TARGET', label: 'Target', count: stats.target },
         { key: 'SAFETY', label: 'Safety', count: stats.safety }
     ];

@@ -25,7 +25,7 @@ const HeroSection = ({ userName = 'Student', stats = {} }) => {
 
     const statCards = [
         {
-            label: 'Super Reach',
+            label: 'Reach',
             count: stats.superReach || 0,
             icon: SparklesIcon,
             color: 'tertiary', // Terracotta
