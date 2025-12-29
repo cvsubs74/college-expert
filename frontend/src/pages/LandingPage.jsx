@@ -356,13 +356,13 @@ const LandingPage = () => {
       />
 
       <FeatureDemoSection
-        title="Discover 1,600+ universities."
-        description="Browse schools with real acceptance rates, rankings, and costs. Filter by location, major, or selectivity. Every school in one search."
+        title="Explore 1,600+ universities."
+        description="Browse every U.S. college with real data—acceptance rates, rankings, costs, and majors. View notable professors, curriculum details, and career outcomes all in one place."
         features={[
-          "Search across 1,600+ U.S. universities",
-          "Filter by state, major, size, and cost",
-          "See acceptance rates and rankings",
-          "Compare tuition and financial aid"
+          "Search by name, state, major, or ranking",
+          "See detailed academic programs and professors",
+          "Compare acceptance rates, tuition, and ROI",
+          "View campus photos and student demographics"
         ]}
         demo={<UniversityCardsDemo />}
         reverse={true}
@@ -371,25 +371,25 @@ const LandingPage = () => {
 
       <FeatureDemoSection
         title="Ask anything about any school."
-        description="Our AI knows about majors, career outcomes, campus culture, and application strategies. Get instant answers with sources."
+        description="Chat with an AI that knows every school in our database. Ask about majors, professors, research opportunities, career outcomes, and admissions strategies."
         features={[
-          "Ask about specific programs and majors",
-          "Learn about campus culture and student life",
-          "Get application tips and deadlines",
-          "Understand career outcomes and salaries"
+          "Get answers grounded in real university data",
+          "Learn about specific programs and professors",
+          "Understand application deadlines and requirements",
+          "Compare schools side-by-side with AI insights"
         ]}
         demo={<AIChatDemo />}
         bgColor="bg-[#FDFCF7]"
       />
 
       <FeatureDemoSection
-        title="Track your balanced school list."
-        description="Save schools and see your match score for each one. Stratia compares your profile to admitted students and calculates your fit."
+        title="Build your balanced list."
+        description="Save schools and instantly see where you stand. Stratia compares your GPA, test scores, and activities to admitted students and categorizes each school."
         features={[
-          "Instant fit score for every school",
-          "Automatic reach/target/safety categorization",
-          "Track application deadlines",
-          "Visual list breakdown"
+          "Instant fit score comparing you to admits",
+          "Automatic reach/target/safety categories",
+          "Track deadlines and application progress",
+          "One-click access to essay help for each school"
         ]}
         demo={<MySchoolsDemo />}
         reverse={true}
@@ -397,13 +397,13 @@ const LandingPage = () => {
       />
 
       <FeatureDemoSection
-        title="Write standout essays."
-        description="Get AI-powered feedback on your college essays. See what works, what to improve, and how to make your story shine for each school."
+        title="Your AI writing partner."
+        description="The Essay Workshop guides you from blank page to polished draft. Brainstorm with guided questions, get personalized starters based on your profile, and receive detailed feedback with scores."
         features={[
-          "Real-time essay analysis and feedback",
-          "School-specific prompt guidance",
-          "Strength and improvement suggestions",
-          "Word count tracking and optimization"
+          "Guiding questions to spark your thinking",
+          "AI-generated essay starters tailored to you",
+          "Real-time feedback with authenticity scores",
+          "Save drafts, track versions, and iterate"
         ]}
         demo={<EssayHelpDemo />}
         bgColor="bg-[#FDFCF7]"
