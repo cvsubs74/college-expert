@@ -8,7 +8,8 @@ import {
   CheckCircleIcon,
   DocumentTextIcon,
   AcademicCapIcon,
-  ChartBarIcon
+  ChartBarIcon,
+  PencilSquareIcon
 } from '@heroicons/react/24/outline';
 import { signInWithGoogle } from '../services/authService';
 import { motion, useInView } from 'framer-motion';
@@ -251,35 +252,41 @@ const LandingPage = () => {
               How Stratia Works
             </h2>
             <p className="text-xl text-[#6B6B6B] max-w-2xl mx-auto">
-              Four simple steps to find your perfect college match
+              Five simple steps to find your perfect college match
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-5 gap-6">
             {[
               {
                 step: "1",
                 icon: DocumentTextIcon,
                 title: "Upload & Extract",
-                description: "Drop your documents. AI extracts your GPA, test scores, and activities automatically."
+                description: "Drop transcripts, test scores, or activity lists. AI extracts everything in seconds."
               },
               {
                 step: "2",
                 icon: AcademicCapIcon,
                 title: "Build Profile",
-                description: "Review your complete academic profile. Add honors, leadership roles, and achievements."
+                description: "Review your academics, activities, and achievements. Edit anything before moving on."
               },
               {
                 step: "3",
                 icon: ChartBarIcon,
                 title: "Get Fit Scores",
-                description: "Search 1,600+ schools. See instant fit scores comparing you to admitted students."
+                description: "Search 1,600+ schools. Instantly see how you compare to admitted students."
               },
               {
                 step: "4",
                 icon: CheckCircleIcon,
                 title: "Build Your List",
-                description: "Create a balanced list with reach, target, and safety schools. Track your applications."
+                description: "Save reach, target, and safety schools. Track deadlines and application status."
+              },
+              {
+                step: "5",
+                icon: PencilSquareIcon,
+                title: "Write Essays",
+                description: "Get AI-guided brainstorming, personalized starters, and detailed feedback."
               }
             ].map((item, index) => (
               <motion.div
