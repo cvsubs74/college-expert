@@ -523,6 +523,33 @@
         "graduation_rate_4_year": 54.0,
         "graduation_rate_6_year": 75.0
       }
+    },
+    "application_process": {
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "Why did you choose to apply to UCF?",
+            "word_limit": 250,
+            "required": false,
+            "note": "Optional essay - strongly encouraged",
+            "application_cycle": "2025-2026"
+          },
+          {
+            "prompt": "What qualities or unique characteristics do you possess that will allow you to contribute to the UCF community?",
+            "word_limit": 250,
+            "required": false,
+            "note": "Optional essay - strongly encouraged",
+            "application_cycle": "2025-2026"
+          },
+          {
+            "prompt": "Please briefly elaborate on one of your extracurricular activities or work experiences.",
+            "word_limit": 250,
+            "required": false,
+            "note": "Optional essay - strongly encouraged",
+            "application_cycle": "2025-2026"
+          }
+        ]
+      }
     }
   },
   "_id": "university_of_central_florida",

@@ -309,6 +309,17 @@
         "legacy_consideration": "None",
         "first_gen_boost": "None",
         "specific_differentiators": "Guaranteed admission for Hawaii residents with a 3.2+ cumulative GPA. Operates a 'Do No Harm' test-optional policy."
+      },
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "Please describe any special circumstances or qualifications which you feel should be considered in the review of your admission credentials.",
+            "word_limit": 500,
+            "required": false,
+            "note": "Optional personal statement",
+            "application_cycle": "2025-2026"
+          }
+        ]
       }
     },
     "application_strategy": {

@@ -647,6 +647,19 @@
         "graduation_rate_4_year": 71.0,
         "graduation_rate_6_year": 77.0
       }
+    },
+    "application_process": {
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "Clark University invites students to 'Challenge Convention. Change Our World.' Describe a time when you challenged a conventional idea, norm, or practice.",
+            "word_limit": 300,
+            "required": false,
+            "note": "Optional supplemental essay",
+            "application_cycle": "2025-2026"
+          }
+        ]
+      }
     }
   },
   "_id": "clark_university",

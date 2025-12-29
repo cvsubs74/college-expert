@@ -455,6 +455,33 @@
         "graduation_rate_4_year": 87.0,
         "graduation_rate_6_year": 94.0
       }
+    },
+    "application_process": {
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "Please tell us what you are interested in studying at college and why. Undecided about your academic interest(s)? Don't worry\u2014tell us what excites you about the academic division you selected. Remember that all of our first-year students enter officially 'undeclared' and work closely with their team of academic advisors to discover their academic passions.",
+            "word_limit": 200,
+            "required": true,
+            "note": "Required supplemental essay",
+            "application_cycle": "2025-2026"
+          },
+          {
+            "prompt": "WashU supports engagement in the St. Louis community by considering the university as 'In St. Louis, For St. Louis.' What is a community you are a part of and your place or impact within it?",
+            "word_limit": 250,
+            "required": false,
+            "note": "Optional - choose one of two options",
+            "application_cycle": "2025-2026"
+          },
+          {
+            "prompt": "WashU strives to know every undergraduate student 'By Name & Story.' How have your life experiences shaped your story?",
+            "word_limit": 250,
+            "required": false,
+            "note": "Optional - choose one of two options",
+            "application_cycle": "2025-2026"
+          }
+        ]
+      }
     }
   },
   "_id": "washington_university_in_st_louis",

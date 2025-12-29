@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
-import { getPrecomputedFits, getFitsByCategory, updateCollegeList, computeSingleFit } from '../services/api';
+import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit } from '../services/api';
 import {
     BackgroundBlobs,
     HeroSection,
@@ -250,11 +250,14 @@ const StratiaLaunchpad = () => {
         try {
             // Get existing college IDs to exclude
             const existingIds = collegeList.map(c => c.university_id);
-            const result = await getFitsByCategory(currentUser.email, category, null, existingIds, 10);
+
+            // Fetch from universities knowledge base (uses soft_fit_category based on acceptance rate)
+            // This is more reliable than precomputed fits which may have personalized category overrides
+            const result = await getUniversitiesByCategory(category, existingIds, 100);
 
             if (result.success) {
-                // API returns 'results' array
-                let schools = result.results || result.fits || [];
+                // API returns 'universities' array from KB
+                let schools = result.universities || [];
 
                 // Get existing college IDs AND names for matching
                 const existingNames = collegeList.map(c =>

@@ -190,6 +190,17 @@
         ],
         "essay_importance": "High",
         "demonstrated_interest": "Not Considered"
+      },
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "Tell us about your background, interests, and what influenced your decision to apply to Mizzou. We'd like to learn more about you!",
+            "word_limit": 500,
+            "required": false,
+            "note": "Optional essay",
+            "application_cycle": "2025-2026"
+          }
+        ]
       }
     },
     "financials": {

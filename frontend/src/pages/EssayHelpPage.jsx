@@ -445,7 +445,7 @@ export default function EssayHelpPage() {
     const universityName = profile?.metadata?.official_name || universityId.replace(/_/g, ' ');
     const essayTips = profile?.student_insights?.essay_tips || [];
     const deadlines = profile?.application_process?.application_deadlines || [];
-    const essayPrompts = profile?.application_process?.essay_prompts || [];
+    const essayPrompts = profile?.application_process?.supplemental_requirements?.essay_prompts || profile?.application_process?.essay_prompts || [];
 
     return (
         <div className="min-h-screen bg-[#FDFCF7]">

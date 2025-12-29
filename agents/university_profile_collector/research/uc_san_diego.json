@@ -656,26 +656,86 @@
         "notes": "UC application filing period: October 1 - December 1, 2025 (11:59 PM PST). All UC campuses share this single deadline. No Early Decision or Early Action available."
       }
     ],
-    "supplemental_requirements": [
-      {
-        "target_program": "All",
-        "requirement_type": "Personal Insight Questions",
-        "deadline": "2025-12-01",
-        "details": "Applicants must choose 4 out of 8 Personal Insight Questions (PIQs) to answer; each response is limited to 350 words."
-      },
-      {
-        "target_program": "UC San Diego Specific",
-        "requirement_type": "College Ranking",
-        "deadline": "2025-12-01",
-        "details": "Applicants must rank their preference of UCSD's eight residential colleges on the application."
-      },
-      {
-        "target_program": "Arts (Music, Theatre & Dance, Visual Arts)",
-        "requirement_type": "Optional Portfolio",
-        "deadline": "2025-12-01",
-        "details": "Optional portfolio or audition video for specific arts majors to showcase creative talent."
-      }
-    ],
+    "supplemental_requirements": {
+      "requirements_list": [
+        {
+          "target_program": "All",
+          "requirement_type": "Personal Insight Questions",
+          "deadline": "2025-12-01",
+          "details": "Applicants must choose 4 out of 8 Personal Insight Questions (PIQs) to answer; each response is limited to 350 words."
+        },
+        {
+          "target_program": "UC San Diego Specific",
+          "requirement_type": "College Ranking",
+          "deadline": "2025-12-01",
+          "details": "Applicants must rank their preference of UCSD's eight residential colleges on the application."
+        },
+        {
+          "target_program": "Arts (Music, Theatre & Dance, Visual Arts)",
+          "requirement_type": "Optional Portfolio",
+          "deadline": "2025-12-01",
+          "details": "Optional portfolio or audition video for specific arts majors to showcase creative talent."
+        }
+      ],
+      "essay_prompts": [
+        {
+          "prompt": "Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.",
+          "word_limit": 350,
+          "required": false,
+          "note": "Choose 4 of 8 PIQs",
+          "application_cycle": "2025-2026"
+        },
+        {
+          "prompt": "Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.",
+          "word_limit": 350,
+          "required": false,
+          "note": "Choose 4 of 8 PIQs",
+          "application_cycle": "2025-2026"
+        },
+        {
+          "prompt": "What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?",
+          "word_limit": 350,
+          "required": false,
+          "note": "Choose 4 of 8 PIQs",
+          "application_cycle": "2025-2026"
+        },
+        {
+          "prompt": "Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.",
+          "word_limit": 350,
+          "required": false,
+          "note": "Choose 4 of 8 PIQs",
+          "application_cycle": "2025-2026"
+        },
+        {
+          "prompt": "Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement?",
+          "word_limit": 350,
+          "required": false,
+          "note": "Choose 4 of 8 PIQs",
+          "application_cycle": "2025-2026"
+        },
+        {
+          "prompt": "Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom.",
+          "word_limit": 350,
+          "required": false,
+          "note": "Choose 4 of 8 PIQs",
+          "application_cycle": "2025-2026"
+        },
+        {
+          "prompt": "What have you done to make your school or your community a better place?",
+          "word_limit": 350,
+          "required": false,
+          "note": "Choose 4 of 8 PIQs",
+          "application_cycle": "2025-2026"
+        },
+        {
+          "prompt": "Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?",
+          "word_limit": 350,
+          "required": false,
+          "note": "Choose 4 of 8 PIQs",
+          "application_cycle": "2025-2026"
+        }
+      ]
+    },
     "holistic_factors": {
       "primary_factors": [
         "Course Rigor",

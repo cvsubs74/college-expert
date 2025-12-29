@@ -266,6 +266,24 @@
         "essay_importance": "High",
         "demonstrated_interest": "Important",
         "specific_differentiators": "Emphasis on Calculus and Lab Sciences."
+      },
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "What element on the periodic table best represents you and why?",
+            "word_limit": 250,
+            "required": false,
+            "note": "Optional but strongly recommended",
+            "application_cycle": "2025-2026"
+          },
+          {
+            "prompt": "Why do you want to be an Oredigger? You can share what you want to study, your future involvement and activities, or anything else about the Mines experience that excites you.",
+            "word_limit": 250,
+            "required": false,
+            "note": "Optional but strongly recommended",
+            "application_cycle": "2025-2026"
+          }
+        ]
       }
     },
     "application_strategy": {

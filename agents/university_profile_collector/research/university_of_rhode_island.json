@@ -508,6 +508,19 @@
         "graduation_rate_4_year": 57.0,
         "graduation_rate_6_year": 71.0
       }
+    },
+    "application_process": {
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "Please share anything you would like us to know about yourself that perhaps was not evident in other parts of this application.",
+            "word_limit": 500,
+            "required": false,
+            "note": "Optional personal statement",
+            "application_cycle": "2025-2026"
+          }
+        ]
+      }
     }
   },
   "_id": "university_of_rhode_island",

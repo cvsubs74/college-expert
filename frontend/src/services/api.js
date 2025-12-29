@@ -763,6 +763,78 @@ export const listKnowledgeBaseDocuments = async (userId) => {
 };
 
 /**
+ * Get universities by soft_fit_category from the universities knowledge base
+ * Uses acceptance-rate based categories (not personalized fits)
+ * @param {string} category - SAFETY, TARGET, REACH, or SUPER_REACH
+ * @param {Array<string>} excludeIds - University IDs to exclude
+ * @param {number} limit - Max results to return
+ * @returns {Promise<{success: boolean, universities: Array}>}
+ */
+export const getUniversitiesByCategory = async (category, excludeIds = [], limit = 10) => {
+  try {
+    const baseUrl = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
+
+    // Fetch all universities from KB
+    const response = await axios.get(baseUrl, { timeout: 30000 });
+
+    if (!response.data.success || !response.data.universities) {
+      return { success: false, universities: [], error: 'Failed to fetch universities' };
+    }
+
+    // Normalize exclude IDs for comparison
+    const normalizedExcludeIds = new Set(
+      excludeIds.map(id => id.toLowerCase().replace(/[-\s]+/g, '_'))
+    );
+
+    // Filter by category and exclude existing
+    let filtered = response.data.universities.filter(uni => {
+      // Match category
+      if (uni.soft_fit_category !== category) return false;
+
+      // Exclude already-added universities
+      const normalizedId = (uni.university_id || '').toLowerCase().replace(/[-\s]+/g, '_');
+      if (normalizedExcludeIds.has(normalizedId)) return false;
+
+      return true;
+    });
+
+    // Sort by US News rank (lower is better, nulls last)
+    filtered.sort((a, b) => {
+      const rankA = a.us_news_rank ?? 999;
+      const rankB = b.us_news_rank ?? 999;
+      return rankA - rankB;
+    });
+
+    // Apply limit
+    filtered = filtered.slice(0, limit);
+
+    // Transform to match expected format
+    const universities = filtered.map(uni => ({
+      university_id: uni.university_id,
+      university_name: uni.official_name,
+      location: uni.location,
+      acceptance_rate: uni.acceptance_rate,
+      us_news_rank: uni.us_news_rank,
+      soft_fit_category: uni.soft_fit_category,
+      market_position: uni.market_position,
+      summary: uni.summary
+    }));
+
+    console.log(`[API] Found ${universities.length} ${category} universities from KB`);
+
+    return {
+      success: true,
+      universities: universities,
+      total: universities.length,
+      source: 'knowledge_base'
+    };
+  } catch (error) {
+    console.error('Error fetching universities by category:', error);
+    return { success: false, universities: [], error: error.message };
+  }
+};
+
+/**
  * Delete a document from the knowledge base
  * Uses the knowledge base manager cloud function
  * Works with all approaches (RAG, Firestore, Elasticsearch) using the same endpoint

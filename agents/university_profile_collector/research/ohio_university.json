@@ -527,6 +527,19 @@
         "graduation_rate_4_year": 53.0,
         "graduation_rate_6_year": 69.0
       }
+    },
+    "application_process": {
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "At Ohio University, we value the unique experiences and perspectives that each student brings to our community. Please share something about yourself that you believe would contribute to or benefit from the OHIO community.",
+            "word_limit": 500,
+            "required": false,
+            "note": "Optional essay",
+            "application_cycle": "2025-2026"
+          }
+        ]
+      }
     }
   },
   "_id": "ohio_university",

@@ -109,31 +109,14 @@ const HeroSection = ({ userName = 'Student', stats = {} }) => {
                         </div>
                     </div>
 
-                    {/* Right: Illustration Placeholder */}
+                    {/* Right: College Journey Illustration */}
                     <div className="hidden lg:flex items-center justify-center">
-                        <div className="relative w-full max-w-md aspect-square">
-                            {/* Decorative background circle */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#D6E8D5] to-[#FCEEE8] rounded-full opacity-50 animate-float" />
-
-                            {/* Placeholder for illustration */}
-                            <div className="absolute inset-8 flex items-center justify-center">
-                                <div className="text-center space-y-4">
-                                    {/* Telescope made of books - placeholder illustration */}
-                                    <div className="relative mx-auto">
-                                        <div className="w-24 h-8 bg-[#1A4D2E] rounded-lg transform -rotate-45 mb-2" />
-                                        <div className="w-16 h-6 bg-[#2D6B45] rounded-md transform -rotate-45 -mt-4 ml-6" />
-                                        <div className="w-12 h-4 bg-[#C05838] rounded-sm transform -rotate-45 -mt-3 ml-10" />
-                                    </div>
-                                    <div className="flex justify-center gap-2">
-                                        <div className="w-8 h-12 bg-[#1A4D2E] rounded-sm" />
-                                        <div className="w-8 h-14 bg-[#C05838] rounded-sm" />
-                                        <div className="w-8 h-10 bg-[#2D6B45] rounded-sm" />
-                                    </div>
-                                    <p className="text-sm text-[#4A4A4A] font-sans">
-                                        Your college journey starts here
-                                    </p>
-                                </div>
-                            </div>
+                        <div className="relative w-96 h-96">
+                            <img
+                                src="/images/college_journey_hero.jpg"
+                                alt="Your college journey starts here"
+                                className="w-full h-full object-contain rounded-2xl"
+                            />
                         </div>
                     </div>
                 </div>

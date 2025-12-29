@@ -916,6 +916,19 @@
         "graduation_rate_4_year": 41.7,
         "graduation_rate_6_year": 70.5
       }
+    },
+    "application_process": {
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "Tell us about something you are passionate about and why. How has this passion shaped who you are today?",
+            "word_limit": 650,
+            "required": false,
+            "note": "Optional essay",
+            "application_cycle": "2025-2026"
+          }
+        ]
+      }
     }
   },
   "_id": "university_of_arkansas",

@@ -1836,6 +1836,18 @@ You have access to COMPLETE university data. Generate recommendations across ALL
                     result['fit_category'] = 'TARGET'
                     logger.info(f"[LLM_FIT] Selectivity override: {original_category} -> TARGET (acceptance rate {acceptance_rate}%)")
                 
+                # === POST-PROCESSING: SELECTIVITY CEILING ===
+                # Enforce alignment with soft_fit_category thresholds:
+                # >50% acceptance = SAFETY (ceiling)
+                # 25-50% = TARGET or SAFETY (ceiling)
+                # This prevents LLM from calling a 60% acceptance school "TARGET"
+                if acceptance_rate >= 50 and result['fit_category'] in ['TARGET', 'REACH', 'SUPER_REACH']:
+                    logger.info(f"[LLM_FIT] Ceiling override: {result['fit_category']} -> SAFETY (acceptance rate {acceptance_rate}% >= 50%)")
+                    result['fit_category'] = 'SAFETY'
+                elif acceptance_rate >= 25 and result['fit_category'] in ['REACH', 'SUPER_REACH']:
+                    logger.info(f"[LLM_FIT] Ceiling override: {result['fit_category']} -> TARGET (acceptance rate {acceptance_rate}% >= 25%)")
+                    result['fit_category'] = 'TARGET'
+                
                 # Validate category is in allowed list
                 valid_categories = ['SAFETY', 'TARGET', 'REACH', 'SUPER_REACH']
                 if result['fit_category'] not in valid_categories:

@@ -76,7 +76,7 @@ const UniversityCard = ({
                 {/* Left: Campus Image (Squircle) */}
                 <div className="flex-shrink-0">
                     <div
-                        className="squircle w-20 h-20 bg-gradient-to-br from-[#D6E8D5] to-[#FCEEE8] overflow-hidden"
+                        className="squircle w-12 h-12 bg-gradient-to-br from-[#D6E8D5] to-[#FCEEE8] overflow-hidden"
                         style={{
                             backgroundImage: displayImage ? `url(${displayImage})` : undefined,
                             backgroundSize: 'cover',
@@ -85,7 +85,7 @@ const UniversityCard = ({
                     >
                         {!displayImage && (
                             <div className="w-full h-full flex items-center justify-center">
-                                <span className="text-2xl font-serif font-bold text-[#1A4D2E]">
+                                <span className="text-lg font-serif font-bold text-[#1A4D2E]">
                                     {university_name?.charAt(0) || 'U'}
                                 </span>
                             </div>

@@ -461,6 +461,38 @@
           "Choose the Galveston (TAMUG) pathway for engineering to be treated as a full-time College Station student.",
           "Blinn TEAM or TEAB pathways save tuition while maintaining Aggie status."
         ]
+      },
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "Tell us your story. What unique opportunities or challenges have you experienced throughout your high school career that have shaped who you are today?",
+            "word_limit": 750,
+            "required": true,
+            "note": "ApplyTexas Essay A - Personal Statement",
+            "application_cycle": "2025-2026"
+          },
+          {
+            "prompt": "Describe a life event which you feel has prepared you to be successful in college.",
+            "word_limit": 250,
+            "required": true,
+            "note": "Short Answer 1",
+            "application_cycle": "2025-2026"
+          },
+          {
+            "prompt": "Tell us about the person who has most impacted your life and why.",
+            "word_limit": 250,
+            "required": true,
+            "note": "Short Answer 2",
+            "application_cycle": "2025-2026"
+          },
+          {
+            "prompt": "If there are additional personal challenges, hardships, or opportunities (including COVID-related experiences) that have shaped or impacted your abilities or academic credentials, which you have not already written about, please note them in the space below.",
+            "word_limit": 500,
+            "required": false,
+            "note": "Optional additional information",
+            "application_cycle": "2025-2026"
+          }
+        ]
       }
     },
     "financials_scholarships": {

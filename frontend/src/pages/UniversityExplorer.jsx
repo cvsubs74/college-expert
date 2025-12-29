@@ -1162,7 +1162,7 @@ const UniversityExplorer = () => {
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             query: "university",
-                            limit: 100,
+                            limit: 1000,
                             search_type: "keyword"
                         })
                     });
@@ -1424,7 +1424,7 @@ const UniversityExplorer = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     query: "university",
-                    limit: 100,
+                    limit: 1000,
                     search_type: "keyword"
                 })
             });
@@ -1505,345 +1505,218 @@ const UniversityExplorer = () => {
                         </div>
                     )}
 
-                    {/* Tab Navigation */}
-                    {!loading && !error && (
-                        <div className="bg-white rounded-2xl shadow-lg border border-[#E0DED8] p-1.5 flex gap-2">
-                            <button
-                                onClick={() => setActiveView('list')}
-                                className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'list'
-                                    ? 'bg-[#1A4D2E] text-white shadow-lg'
-                                    : 'text-[#4A4A4A] hover:bg-[#F8F6F0]'
-                                    }`}
-                            >
-                                <BuildingLibraryIcon className="h-5 w-5" />
-                                Browse All
-                            </button>
-                            <button
-                                onClick={() => setActiveView('favorites')}
-                                className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all flex items-center justify-center gap-2 ${activeView === 'favorites'
-                                    ? 'bg-[#1A4D2E] text-white shadow-lg'
-                                    : 'text-[#4A4A4A] hover:bg-[#F8F6F0]'
-                                    }`}
-                            >
-                                {activeView === 'favorites' ? (
-                                    <StarIconSolid className="h-5 w-5" />
-                                ) : (
-                                    <StarIcon className="h-5 w-5" />
-                                )}
-                                My Favorites
-                                {myCollegeList.length > 0 && (
-                                    <span className={`ml-1 px-2 py-0.5 rounded-full text-xs font-semibold ${activeView === 'favorites'
-                                        ? 'bg-white/20 text-white'
-                                        : 'bg-[#D6E8D5] text-[#1A4D2E]'
-                                        }`}>
-                                        {myCollegeList.length}
-                                    </span>
-                                )}
-                            </button>
-                        </div>
-                    )}
+                    {/* Tab navigation removed - My Schools page now handles favorites */}
 
                     {/* Main Content */}
                     {!loading && !error && (
                         <>
-                            {activeView === 'list' && (
-                                <div className="space-y-6">
-                                    {/* Filters */}
-                                    <div className="bg-white rounded-2xl p-4 shadow-sm border border-[#E0DED8]">
-                                        {/* Combined Search + Filters Row */}
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 items-end">
-                                            {/* Search Bar */}
-                                            <div className="lg:col-span-2 relative">
-                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide block mb-1">Search</label>
-                                                <div className="relative">
-                                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                                        <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-                                                    </div>
-                                                    <input
-                                                        type="text"
-                                                        className="block w-full pl-10 pr-3 py-2 border border-[#E0DED8] rounded-lg bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1A4D2E] focus:border-[#1A4D2E] text-sm"
-                                                        placeholder="University name..."
-                                                        value={searchTerm}
-                                                        onChange={(e) => setSearchTerm(e.target.value)}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            {/* Filter Controls */}
-                                            <div className="space-y-1">
-                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Type</label>
-                                                <select
-                                                    value={selectedType}
-                                                    onChange={(e) => setSelectedType(e.target.value)}
-                                                    className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
-                                                >
-                                                    <option value="All">All Types</option>
-                                                    <option value="Public">Public</option>
-                                                    <option value="Private">Private</option>
-                                                </select>
-                                            </div>
-
-                                            <div className="space-y-1">
-                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Location</label>
-                                                <select
-                                                    value={selectedState}
-                                                    onChange={(e) => setSelectedState(e.target.value)}
-                                                    className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
-                                                >
-                                                    <option value="All">All States</option>
-                                                    {uniqueStates.map(state => (
-                                                        <option key={state} value={state}>{state}</option>
-                                                    ))}
-                                                </select>
-                                            </div>
-
-                                            <div className="space-y-1">
-                                                <div className="flex justify-between">
-                                                    <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-                                                        Max Acceptance Rate
-                                                    </label>
-                                                    <span className="text-xs font-bold text-blue-600">{maxAcceptance}%</span>
+                            {/* University List - always shown */}
+                            <div className="space-y-6">
+                                {/* Filters */}
+                                <div className="bg-white rounded-2xl p-4 shadow-sm border border-[#E0DED8]">
+                                    {/* Combined Search + Filters Row */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 items-end">
+                                        {/* Search Bar */}
+                                        <div className="lg:col-span-2 relative">
+                                            <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide block mb-1">Search</label>
+                                            <div className="relative">
+                                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
                                                 </div>
                                                 <input
-                                                    type="range"
-                                                    min="0"
-                                                    max="100"
-                                                    value={maxAcceptance}
-                                                    onChange={(e) => setMaxAcceptance(Number(e.target.value))}
-                                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-2"
+                                                    type="text"
+                                                    className="block w-full pl-10 pr-3 py-2 border border-[#E0DED8] rounded-lg bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1A4D2E] focus:border-[#1A4D2E] text-sm"
+                                                    placeholder="University name..."
+                                                    value={searchTerm}
+                                                    onChange={(e) => setSearchTerm(e.target.value)}
                                                 />
                                             </div>
-
-                                            <div className="space-y-1">
-                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Fit Category</label>
-                                                <select
-                                                    value={selectedFitCategory}
-                                                    onChange={(e) => setSelectedFitCategory(e.target.value)}
-                                                    className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
-                                                >
-                                                    <option value="All">All Fit Categories</option>
-                                                    <option value="SAFETY">🛡️ Safety</option>
-                                                    <option value="TARGET">🎯 Target</option>
-                                                    <option value="REACH">🔼 Reach</option>
-                                                    <option value="SUPER_REACH">🚀 Super Reach</option>
-                                                </select>
-                                            </div>
-
-                                            <div className="space-y-1">
-                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Sort By</label>
-                                                <select
-                                                    value={sortBy}
-                                                    onChange={(e) => setSortBy(e.target.value)}
-                                                    className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
-                                                >
-                                                    <option value="usNews">US News Rank</option>
-                                                    <option value="acceptance">Acceptance Rate</option>
-                                                    <option value="tuition">Tuition (Low to High)</option>
-                                                    <option value="name">Name (A-Z)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Comparison Section */}
-                                    {comparisonList.length > 0 && (
-                                        <ComparisonView
-                                            universities={comparisonList}
-                                            onRemove={handleCompareToggle}
-                                        />
-                                    )}
-
-                                    {/* Grid Results with Carousel */}
-                                    <div className="relative">
-                                        {/* Carousel Navigation */}
-                                        {totalPages > 1 && (
-                                            <div className="flex items-center justify-between mb-4">
-                                                <p className="text-sm text-gray-600">
-                                                    Showing {currentPage * CARDS_PER_PAGE + 1}-{Math.min((currentPage + 1) * CARDS_PER_PAGE, sortedUniversities.length)} of {sortedUniversities.length} universities
-                                                </p>
-                                                <div className="flex items-center gap-2">
-                                                    <button
-                                                        onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
-                                                        disabled={currentPage === 0}
-                                                        className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
-                                                    >
-                                                        <ChevronLeftIcon className="h-5 w-5" />
-                                                    </button>
-                                                    <span className="text-sm font-medium text-gray-700 min-w-[80px] text-center">
-                                                        Page {currentPage + 1} of {totalPages}
-                                                    </span>
-                                                    <button
-                                                        onClick={() => setCurrentPage(p => Math.min(totalPages - 1, p + 1))}
-                                                        disabled={currentPage >= totalPages - 1}
-                                                        className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
-                                                    >
-                                                        <ChevronRightIcon className="h-5 w-5" />
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Cards Grid - One per row */}
-                                        <div className="grid grid-cols-1 gap-6">
-                                            {paginatedUniversities.length > 0 ? (
-                                                paginatedUniversities.map((uni) => {
-                                                    // Free tier: limit reached when 3 colleges already added (and this uni not in list)
-                                                    const isInList = isInCollegeList(uni.id);
-                                                    const isLimitReached = !canAccessLaunchpad && !isInList && myCollegeList.length >= 3;
-                                                    return (
-                                                        <UniversityCard
-                                                            key={uni.id}
-                                                            uni={{ ...uni, isLimitReached }}
-                                                            onSelect={handleSelectUni}
-                                                            onCompare={handleCompareToggle}
-                                                            isSelectedForCompare={comparisonList.some(u => u.id === uni.id)}
-                                                            sentiment={sentimentData[uni.id]}
-                                                            onSentimentClick={(sent) => {
-                                                                setSelectedSentiment(sent);
-                                                                setShowSentimentModal(true);
-                                                            }}
-                                                            isInList={isInCollegeList(uni.id)}
-                                                            onToggleList={handleToggleCollegeList}
-                                                            fitAnalysis={getCollegeFitAnalysis(uni.id)}
-                                                            onAnalyzeFit={handleAnalyzeFit}
-                                                            isAnalyzing={analyzingFit === uni.id}
-                                                            onShowFitDetails={(fit) => {
-                                                                setSelectedFitData(fit);
-                                                                setShowFitModal(true);
-                                                            }}
-                                                            onOpenChat={handleOpenChat}
-                                                        />
-                                                    );
-                                                })
-                                            ) : (
-                                                <div className="col-span-full py-12 text-center text-gray-500 bg-white rounded-xl border border-dashed border-gray-300">
-                                                    <FunnelIcon className="h-12 w-12 mx-auto mb-4 text-gray-300" />
-                                                    <p className="text-lg font-medium">No universities found matching your criteria.</p>
-                                                    <button
-                                                        onClick={() => {
-                                                            setSearchTerm("");
-                                                            setSelectedType("All");
-                                                            setSelectedState("All");
-                                                            setMaxAcceptance(100);
-                                                        }}
-                                                        className="mt-4 text-blue-600 font-medium hover:underline"
-                                                    >
-                                                        Clear all filters
-                                                    </button>
-                                                </div>
-                                            )}
                                         </div>
 
-                                        {/* Bottom Carousel Navigation */}
-                                        {totalPages > 1 && paginatedUniversities.length > 0 && (
-                                            <div className="flex justify-center mt-6">
-                                                <div className="flex items-center gap-1">
-                                                    {Array.from({ length: totalPages }, (_, i) => (
-                                                        <button
-                                                            key={i}
-                                                            onClick={() => setCurrentPage(i)}
-                                                            className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentPage
-                                                                ? 'bg-blue-600 w-6'
-                                                                : 'bg-gray-300 hover:bg-gray-400'
-                                                                }`}
-                                                        />
-                                                    ))}
-                                                </div>
+                                        {/* Filter Controls */}
+                                        <div className="space-y-1">
+                                            <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Type</label>
+                                            <select
+                                                value={selectedType}
+                                                onChange={(e) => setSelectedType(e.target.value)}
+                                                className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                            >
+                                                <option value="All">All Types</option>
+                                                <option value="Public">Public</option>
+                                                <option value="Private">Private</option>
+                                            </select>
+                                        </div>
+
+                                        <div className="space-y-1">
+                                            <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Location</label>
+                                            <select
+                                                value={selectedState}
+                                                onChange={(e) => setSelectedState(e.target.value)}
+                                                className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                            >
+                                                <option value="All">All States</option>
+                                                {uniqueStates.map(state => (
+                                                    <option key={state} value={state}>{state}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+
+                                        <div className="space-y-1">
+                                            <div className="flex justify-between">
+                                                <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                                                    Max Acceptance Rate
+                                                </label>
+                                                <span className="text-xs font-bold text-blue-600">{maxAcceptance}%</span>
                                             </div>
-                                        )}
+                                            <input
+                                                type="range"
+                                                min="0"
+                                                max="100"
+                                                value={maxAcceptance}
+                                                onChange={(e) => setMaxAcceptance(Number(e.target.value))}
+                                                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-2"
+                                            />
+                                        </div>
+
+                                        <div className="space-y-1">
+                                            <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Fit Category</label>
+                                            <select
+                                                value={selectedFitCategory}
+                                                onChange={(e) => setSelectedFitCategory(e.target.value)}
+                                                className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                            >
+                                                <option value="All">All Fit Categories</option>
+                                                <option value="SAFETY">🛡️ Safety</option>
+                                                <option value="TARGET">🎯 Target</option>
+                                                <option value="REACH">🔼 Reach</option>
+                                                <option value="SUPER_REACH">🚀 Super Reach</option>
+                                            </select>
+                                        </div>
+
+                                        <div className="space-y-1">
+                                            <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Sort By</label>
+                                            <select
+                                                value={sortBy}
+                                                onChange={(e) => setSortBy(e.target.value)}
+                                                className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+                                            >
+                                                <option value="usNews">US News Rank</option>
+                                                <option value="acceptance">Acceptance Rate</option>
+                                                <option value="tuition">Tuition (Low to High)</option>
+                                                <option value="name">Name (A-Z)</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                            )}
 
-                            {activeView === 'favorites' && (
-                                <div className="space-y-6">
-                                    {/* Favorites Header */}
-                                    <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                                                    <StarIconSolid className="h-6 w-6 text-yellow-500" />
-                                                    My Favorites
-                                                </h2>
-                                                <p className="text-gray-500 text-sm mt-1">
-                                                    {myCollegeList.length === 0
-                                                        ? "You haven't added any universities yet"
-                                                        : `${myCollegeList.length} ${myCollegeList.length === 1 ? 'university' : 'universities'} saved`}
-                                                </p>
-                                            </div>
-                                            {myCollegeList.length > 0 && (
+                                {/* Comparison Section */}
+                                {comparisonList.length > 0 && (
+                                    <ComparisonView
+                                        universities={comparisonList}
+                                        onRemove={handleCompareToggle}
+                                    />
+                                )}
+
+                                {/* Grid Results with Carousel */}
+                                <div className="relative">
+                                    {/* Carousel Navigation */}
+                                    {totalPages > 1 && (
+                                        <div className="flex items-center justify-between mb-4">
+                                            <p className="text-sm text-gray-600">
+                                                Showing {currentPage * CARDS_PER_PAGE + 1}-{Math.min((currentPage + 1) * CARDS_PER_PAGE, sortedUniversities.length)} of {sortedUniversities.length} universities
+                                            </p>
+                                            <div className="flex items-center gap-2">
                                                 <button
-                                                    onClick={() => setActiveView('list')}
-                                                    className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 flex items-center gap-2"
+                                                    onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
+                                                    disabled={currentPage === 0}
+                                                    className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
                                                 >
-                                                    <BuildingLibraryIcon className="h-4 w-4" />
-                                                    Browse More
+                                                    <ChevronLeftIcon className="h-5 w-5" />
                                                 </button>
-                                            )}
-                                        </div>
-                                    </div>
-
-                                    {/* Empty State */}
-                                    {myCollegeList.length === 0 && (
-                                        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-12 text-center border border-blue-100">
-                                            <div className="max-w-md mx-auto">
-                                                <StarIcon className="h-16 w-16 text-blue-300 mx-auto mb-4" />
-                                                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                                                    Your favorites list is empty
-                                                </h3>
-                                                <p className="text-gray-600 mb-6">
-                                                    Browse universities and click the <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-gray-200 text-gray-700 font-bold text-sm mx-1">+</span> button to add them to your favorites.
-                                                </p>
+                                                <span className="text-sm font-medium text-gray-700 min-w-[80px] text-center">
+                                                    Page {currentPage + 1} of {totalPages}
+                                                </span>
                                                 <button
-                                                    onClick={() => setActiveView('list')}
-                                                    className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-flex items-center gap-2"
+                                                    onClick={() => setCurrentPage(p => Math.min(totalPages - 1, p + 1))}
+                                                    disabled={currentPage >= totalPages - 1}
+                                                    className="p-2 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
                                                 >
-                                                    <BuildingLibraryIcon className="h-5 w-5" />
-                                                    Browse Universities
+                                                    <ChevronRightIcon className="h-5 w-5" />
                                                 </button>
                                             </div>
                                         </div>
                                     )}
 
-                                    {/* Favorites Grid */}
-                                    {myCollegeList.length > 0 && (
-                                        <div className="grid grid-cols-1 gap-6">
-                                            {myCollegeList.map((college) => {
-                                                // Find full university data to pass to card
-                                                const fullUni = universities.find(u => u.id === college.university_id);
+                                    {/* Cards Grid - One per row */}
+                                    <div className="grid grid-cols-1 gap-6">
+                                        {paginatedUniversities.length > 0 ? (
+                                            paginatedUniversities.map((uni) => {
+                                                // Free tier: limit reached when 3 colleges already added (and this uni not in list)
+                                                const isInList = isInCollegeList(uni.id);
+                                                const isLimitReached = !canAccessLaunchpad && !isInList && myCollegeList.length >= 3;
                                                 return (
-                                                    <FavoriteCard
-                                                        key={college.university_id}
-                                                        college={college}
-                                                        fullUniversityData={fullUni}
-                                                        onRemove={(c) => handleToggleCollegeList({
-                                                            id: c.university_id,
-                                                            name: c.university_name
-                                                        })}
-                                                        onViewDetails={(c) => {
-                                                            // Try to find the full university data, or create minimal version
-                                                            const uniData = fullUni || {
-                                                                id: c.university_id,
-                                                                name: c.university_name,
-                                                                location: { city: 'N/A', state: 'N/A', type: 'N/A' },
-                                                                summary: 'Loading full details...',
-                                                                rankings: { usNews: 'N/A' },
-                                                                admissions: { acceptanceRate: 'N/A' },
-                                                                financials: {},
-                                                                outcomes: {},
-                                                                majors: []
-                                                            };
-                                                            setSelectedUni(uniData);
-                                                            setActiveView('detail');
+                                                    <UniversityCard
+                                                        key={uni.id}
+                                                        uni={{ ...uni, isLimitReached }}
+                                                        onSelect={handleSelectUni}
+                                                        onCompare={handleCompareToggle}
+                                                        isSelectedForCompare={comparisonList.some(u => u.id === uni.id)}
+                                                        sentiment={sentimentData[uni.id]}
+                                                        onSentimentClick={(sent) => {
+                                                            setSelectedSentiment(sent);
+                                                            setShowSentimentModal(true);
                                                         }}
-                                                        fitAnalysis={getCollegeFitAnalysis(college.university_id)}
+                                                        isInList={isInCollegeList(uni.id)}
+                                                        onToggleList={handleToggleCollegeList}
+                                                        fitAnalysis={getCollegeFitAnalysis(uni.id)}
+                                                        onAnalyzeFit={handleAnalyzeFit}
+                                                        isAnalyzing={analyzingFit === uni.id}
+                                                        onShowFitDetails={(fit) => {
+                                                            setSelectedFitData(fit);
+                                                            setShowFitModal(true);
+                                                        }}
+                                                        onOpenChat={handleOpenChat}
                                                     />
                                                 );
-                                            })}
+                                            })
+                                        ) : (
+                                            <div className="col-span-full py-12 text-center text-gray-500 bg-white rounded-xl border border-dashed border-gray-300">
+                                                <FunnelIcon className="h-12 w-12 mx-auto mb-4 text-gray-300" />
+                                                <p className="text-lg font-medium">No universities found matching your criteria.</p>
+                                                <button
+                                                    onClick={() => {
+                                                        setSearchTerm("");
+                                                        setSelectedType("All");
+                                                        setSelectedState("All");
+                                                        setMaxAcceptance(100);
+                                                    }}
+                                                    className="mt-4 text-blue-600 font-medium hover:underline"
+                                                >
+                                                    Clear all filters
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Bottom Carousel Navigation */}
+                                    {totalPages > 1 && paginatedUniversities.length > 0 && (
+                                        <div className="flex justify-center mt-6">
+                                            <div className="flex items-center gap-1">
+                                                {Array.from({ length: totalPages }, (_, i) => (
+                                                    <button
+                                                        key={i}
+                                                        onClick={() => setCurrentPage(i)}
+                                                        className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentPage
+                                                            ? 'bg-blue-600 w-6'
+                                                            : 'bg-gray-300 hover:bg-gray-400'
+                                                            }`}
+                                                    />
+                                                ))}
+                                            </div>
                                         </div>
                                     )}
                                 </div>
-                            )}
+                            </div>
 
                             {activeView === 'detail' && selectedUni && (
                                 <UniversityDetailPage

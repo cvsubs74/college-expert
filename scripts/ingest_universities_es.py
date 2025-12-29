@@ -34,7 +34,7 @@ def ingest_via_cloud_function(profile: dict) -> dict:
             CLOUD_FUNCTION_URL,
             json={"profile": profile},
             headers={"Content-Type": "application/json"},
-            timeout=120  # 2 min timeout for ELSER processing
+            timeout=300  # 5 min timeout for ELSER processing
         )
         response.raise_for_status()
         return response.json()
@@ -55,9 +55,15 @@ def list_existing_universities() -> set:
     return set()
 
 
-def ingest_profiles(skip_existing=True):
+def ingest_profiles(skip_existing=True, specific_id=None):
     """Ingest all university profiles via cloud function."""
     json_files = list(RESEARCH_DIR.glob("*.json"))
+    
+    if specific_id:
+        json_files = [f for f in json_files if f.stem == specific_id]
+        if not json_files:
+            print(f"❌ University ID '{specific_id}' not found in {RESEARCH_DIR}")
+            return
     
     if not json_files:
         print(f"❌ No JSON files found in {RESEARCH_DIR}")
@@ -78,7 +84,17 @@ def ingest_profiles(skip_existing=True):
         try:
             # Load profile
             with open(json_file, 'r', encoding='utf-8') as f:
-                profile = json.load(f)
+                data = json.load(f)
+            
+            # Unwrap university_profile if present (some files have this wrapper)
+            if 'university_profile' in data:
+                profile = data['university_profile']
+                # Also merge any root-level fields (like logo_url, application_process)
+                for key in data:
+                    if key != 'university_profile' and key not in profile:
+                        profile[key] = data[key]
+            else:
+                profile = data
             
             university_id = profile.get('_id', json_file.stem)
             official_name = profile.get('metadata', {}).get('official_name', university_id)
@@ -118,6 +134,7 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="Ingest university profiles via cloud function API")
     parser.add_argument("--force", action="store_true", help="Force re-ingest all documents (ignore existing)")
+    parser.add_argument("--university", help="Specific university ID to ingest (e.g. massachusetts_institute_of_technology)")
     args = parser.parse_args()
     
     print("="*60)
@@ -129,7 +146,7 @@ def main():
         print("⚠️  Force mode enabled - will re-ingest all universities")
     
     # Ingest profiles
-    ingest_profiles(skip_existing=not args.force)
+    ingest_profiles(skip_existing=not args.force, specific_id=args.university)
     
     print("\n🎉 Ingestion complete!")
     print("\n📝 Note: Cloud function computes soft_fit_category during ingest.")

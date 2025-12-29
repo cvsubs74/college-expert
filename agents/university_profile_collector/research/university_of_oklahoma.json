@@ -981,6 +981,19 @@
         "graduation_rate_4_year": 60.3,
         "graduation_rate_6_year": 75.3
       }
+    },
+    "application_process": {
+      "supplemental_requirements": {
+        "essay_prompts": [
+          {
+            "prompt": "The University of Oklahoma values a diverse community of students with different backgrounds, perspectives, and experiences. What unique contributions might you make to OU?",
+            "word_limit": 500,
+            "required": false,
+            "note": "Optional supplemental essay",
+            "application_cycle": "2025-2026"
+          }
+        ]
+      }
     }
   },
   "_id": "university_of_oklahoma",
