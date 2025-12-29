@@ -22,6 +22,7 @@ import AIChatDemo from '../components/demos/AIChatDemo';
 import FitAnalysisDemo from '../components/demos/FitAnalysisDemo';
 import MySchoolsDemo from '../components/demos/MySchoolsDemo';
 import FitChatDemo from '../components/demos/FitChatDemo';
+import EssayHelpDemo from '../components/demos/EssayHelpDemo';
 
 // ============================================================================
 // INTERACTIVE DEMO LANDING PAGE
@@ -393,6 +394,19 @@ const LandingPage = () => {
         demo={<MySchoolsDemo />}
         reverse={true}
         bgColor="bg-white"
+      />
+
+      <FeatureDemoSection
+        title="Write standout essays."
+        description="Get AI-powered feedback on your college essays. See what works, what to improve, and how to make your story shine for each school."
+        features={[
+          "Real-time essay analysis and feedback",
+          "School-specific prompt guidance",
+          "Strength and improvement suggestions",
+          "Word count tracking and optimization"
+        ]}
+        demo={<EssayHelpDemo />}
+        bgColor="bg-[#FDFCF7]"
       />
 
       <FeatureDemoSection
