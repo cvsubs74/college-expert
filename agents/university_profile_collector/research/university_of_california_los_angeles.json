@@ -707,42 +707,51 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "acceptance_rate": null,
-            "average_gpa_admitted": null,
+            "average_gpa_admitted": 3.9,
             "prerequisite_courses": [
-              "COM SCI 1",
-              "COM SCI 31",
-              "COM SCI 32",
-              "COM SCI 33",
-              "COM SCI 35L",
-              "COM SCI M51A",
-              "EC ENGR 3",
-              "MATH 31A",
-              "MATH 31B",
-              "MATH 32A",
-              "MATH 32B",
-              "MATH 33A",
-              "MATH 33B",
-              "MATH 61",
-              "PHYSICS 1A",
-              "PHYSICS 1B",
-              "PHYSICS 1C",
-              "PHYSICS 4AL or 4BL"
+              "CS 31 Introduction to CS I",
+              "CS 32 Introduction to CS II",
+              "Math 31A/B Calculus",
+              "Physics 1A/B"
             ],
-            "minimum_gpa_to_declare": 3.0,
+            "minimum_gpa_to_declare": 3.5,
             "weeder_courses": [
-              "MATH 31A Calculus I",
-              "MATH 31B Calculus II",
-              "MATH 32A Calculus III",
-              "COM SCI 31 Introduction to Computer Science I",
-              "COM SCI 32 Introduction to Computer Science II",
-              "COM SCI 33 Introduction to Computer Organization"
+              "CS 32 Intro to CS II",
+              "CS 33 Computer Organization",
+              "CS 35L Software Construction"
             ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": false,
             "direct_admit_only": true,
             "internal_transfer_gpa": null,
-            "notes": "This major is highly impacted. Internal transfers into Computer Science and Engineering are generally not allowed from outside the engineering school and are extremely difficult even within the school, often requiring direct admission as a freshman or transfer student to the specific major. Similar to Computer Science, a 3.0 GPA in pre-major CS courses and 2.7 overall is generally referenced for CS."
+            "notes": "This major is highly impacted. Internal transfers into Computer Science and Engineering are generally not allowed from outside the engineering school and are extremely difficult even within the school, often requiring direct admission as a freshman or transfer student to the specific major. Similar to Computer Science, a 3.0 GPA in pre-major CS courses and 2.7 overall is generally referenced for CS.",
+            "curriculum": {
+              "core_courses": [
+                "CS 31 Intro to CS I",
+                "CS 32 Intro to CS II",
+                "CS 33 Computer Organization",
+                "CS 35L Software Construction",
+                "CS 111 Operating Systems",
+                "CS 131 Programming Languages",
+                "CS 180 Algorithms"
+              ],
+              "electives": [
+                "CS 161 Fundamentals of AI",
+                "CS 174A Computer Graphics",
+                "CS 143 Database Systems",
+                "CS 145 Big Data"
+              ],
+              "total_units": 180,
+              "major_units": 98
+            },
+            "notable_professors": [
+              "Dr. Judea Pearl",
+              "Dr. Song-Chun Zhu",
+              "Dr. Adnan Darwiche",
+              "Dr. Todd Millstein",
+              "Dr. Stefano Soatto"
+            ]
           },
           {
             "name": "Electrical Engineering",

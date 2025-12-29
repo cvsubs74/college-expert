@@ -600,9 +600,9 @@
           {
             "name": "Management (Course 15-1)",
             "degree_type": "B.S.",
-            "is_impacted": false,
+            "is_impacted": true,
             "acceptance_rate": null,
-            "average_gpa_admitted": null,
+            "average_gpa_admitted": 3.85,
             "prerequisite_courses": [
               "18.01 Calculus I",
               "18.02 Calculus II"
@@ -618,7 +618,27 @@
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Offers a flexible curriculum in management science. Core subjects include accounting, communication, and organizational processes."
+            "notes": "Offers a flexible curriculum in management science. Core subjects include accounting, communication, and organizational processes.",
+            "curriculum": {
+              "core_courses": [
+                "15.053 Optimization Methods",
+                "15.075J Statistical Thinking",
+                "15.301 Managerial Psychology",
+                "15.501 Corporate Financial Accounting"
+              ],
+              "electives": [
+                "15.812 Marketing Management",
+                "15.414 Financial Management",
+                "15.871 System Dynamics"
+              ],
+              "total_units": 120,
+              "major_units": 60
+            },
+            "notable_professors": [
+              "Dr. John Sterman",
+              "Dr. Roberto Fernandez",
+              "Dr. Daron Acemoglu"
+            ]
           },
           {
             "name": "Business Analytics (Course 15-2)",
@@ -855,34 +875,58 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "acceptance_rate": null,
-            "average_gpa_admitted": null,
+            "average_gpa_admitted": 3.95,
             "prerequisite_courses": [
+              "6.100A Introduction to CS Programming",
               "18.01 Calculus I",
               "18.02 Calculus II",
-              "6.100A Introduction to Computer Science Programming in Python",
-              "6.100B Introduction to Computational Thinking and Data Science",
-              "6.042 Math for Computer Science"
+              "18.06 Linear Algebra"
             ],
             "minimum_gpa_to_declare": null,
             "weeder_courses": [
               "6.1010 Fundamentals of Programming",
-              "6.004 Computation Structures",
-              "6.006 Introduction to Algorithms",
-              "6.042 Math for Computer Science"
+              "6.1020 Software Construction",
+              "6.1800 Computer Systems Engineering"
             ],
             "special_requirements": null,
             "admissions_pathway": "Undeclared Freshman",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Extremely popular and competitive, though internal transfer is allowed, strong performance in foundational CS and math courses is expected. Centers on software engineering, computer systems, and theoretical computer science."
+            "notes": "Extremely popular and competitive, though internal transfer is allowed, strong performance in foundational CS and math courses is expected. Centers on software engineering, computer systems, and theoretical computer science.",
+            "curriculum": {
+              "core_courses": [
+                "6.100A Intro to CS Programming",
+                "6.1010 Fundamentals of Programming",
+                "6.1020 Software Construction",
+                "6.1200 Math for CS",
+                "6.1210 Design & Analysis of Algorithms",
+                "6.1800 Computer Systems Engineering",
+                "6.3700 Intro to Probability"
+              ],
+              "electives": [
+                "6.3900 Machine Learning",
+                "6.4100 Artificial Intelligence",
+                "6.5831 Database Systems",
+                "6.5840 Distributed Systems"
+              ],
+              "total_units": 120,
+              "major_units": 66
+            },
+            "notable_professors": [
+              "Dr. Regina Barzilay",
+              "Dr. Daniela Rus",
+              "Dr. Leslie Kaelbling",
+              "Dr. Tommi Jaakkola",
+              "Dr. Tomaso Poggio"
+            ]
           },
           {
             "name": "Artificial Intelligence and Decision Making (Course 6-4)",
             "degree_type": "B.S.",
-            "is_impacted": false,
+            "is_impacted": true,
             "acceptance_rate": null,
-            "average_gpa_admitted": null,
+            "average_gpa_admitted": 3.95,
             "prerequisite_courses": [
               "18.01 Calculus I",
               "18.02 Calculus II",
@@ -901,7 +945,27 @@
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Focuses on analysis and synthesis of AI systems, learning, decision-making, and interaction with the environment."
+            "notes": "Focuses on analysis and synthesis of AI systems, learning, decision-making, and interaction with the environment.",
+            "curriculum": {
+              "core_courses": [
+                "6.100A Intro to CS Programming",
+                "6.3900 Machine Learning",
+                "6.4100 Artificial Intelligence",
+                "6.4120 Computational Cognitive Science"
+              ],
+              "electives": [
+                "6.8611 Natural Language Processing",
+                "6.8301 Robotics",
+                "6.7900 Machine Learning Theory"
+              ],
+              "total_units": 120,
+              "major_units": 66
+            },
+            "notable_professors": [
+              "Dr. Pulkit Agrawal",
+              "Dr. Dylan Hadfield-Menell",
+              "Dr. Jacob Andreas"
+            ]
           },
           {
             "name": "Electrical Engineering with Computing (Course 6-5)",
@@ -1011,7 +1075,7 @@
         "required": true,
         "brainstorming_questions": [
           "Beyond the obvious MIT coursework and required extracurriculars, what's a moment or a sustained period where you've lost track of time completely, absorbed in something you chose to do just for the joy of it?",
-          "Think about a time when you've actively sought out an experience or activity purely for the feeling it gives you, without any pressure of achievement or external validation – what was that activity and what was the feeling?",
+          "Think about a time when you've actively sought out an experience or activity purely for the feeling it gives you, without any pressure of achievement or external validation \u2013 what was that activity and what was the feeling?",
           "If you had an unexpected free afternoon with absolutely no obligations, what is the one activity you would gravitate towards, and what makes that particular activity so inherently satisfying for you?",
           "Describe a specific instance where you've pursued a passion or interest that might seem unconventional or even a bit quirky to others, and tell me about the pure, unadulterated enjoyment you derive from it.",
           "MIT values curiosity and exploration. What's something you've explored or tinkered with in your personal time, not because you had to, but because it sparked a genuine sense of delight and wonder within you?"
@@ -1026,7 +1090,7 @@
           "Thinking about MIT's emphasis on 'mens et manus' (mind and hand), what's a specific, tangible problem or puzzle you encountered in your home, school, or community that you felt compelled to understand or fix, and how did that drive your desire to learn more?",
           "Beyond the typical narratives, what's a less obvious aspect of your family's background or traditions that, perhaps surprisingly, instilled in you a deep curiosity about how things work or a passion for innovation?",
           "MIT's environment is known for its collaborative spirit and problem-solving. Can you recall a time within your community or school where you worked with others to overcome a significant challenge, and what did that experience reveal about the kind of impactful, team-oriented future you aspire to build?",
-          "When you look at the physical landscape or the everyday routines of your hometown or city, what's one specific element that sparked a question in your mind – a 'why' or 'how' – that has stayed with you and fueled your aspirations for studying at MIT?",
+          "When you look at the physical landscape or the everyday routines of your hometown or city, what's one specific element that sparked a question in your mind \u2013 a 'why' or 'how' \u2013 that has stayed with you and fueled your aspirations for studying at MIT?",
           "Consider the values or unspoken rules that are prevalent in the world you grew up in. How have these shaped your understanding of success and your personal definition of what it means to contribute meaningfully, especially in a field like those at MIT?"
         ]
       },
@@ -1109,7 +1173,7 @@
       {
         "name": "MIT Scholarship",
         "type": "Need",
-        "amount": "Covers 100% of demonstrated financial need; median was $69,777 for 2024–2025",
+        "amount": "Covers 100% of demonstrated financial need; median was $69,777 for 2024\u20132025",
         "deadline": "Early Action: November 15; Regular Action: February 15 (for financial aid application)",
         "benefits": "Covers tuition and other educational expenses, can lead to tuition-free attendance for eligible families.",
         "application_method": "Automatic consideration upon submitting FAFSA and CSS Profile"
@@ -1201,7 +1265,7 @@
     "red_flags": [
       "Generic essays that could apply to any school or fail to address the specific \"Why MIT?\" question.",
       "Overemphasizing perfect scores without showcasing intellectual curiosity or passion.",
-      "Lack of authenticity, using clichés, or writing what one thinks admissions wants to hear.",
+      "Lack of authenticity, using clich\u00e9s, or writing what one thinks admissions wants to hear.",
       "Submitting extraneous materials that do not fit the application's confines or categories, diluting the overall content.",
       "Grammar, punctuation, and spelling errors, which can make an application seem sloppy."
     ],

@@ -22,7 +22,7 @@
       },
       {
         "category": "Research Focus",
-        "insight": "The university is classified as 'R1: Doctoral Universities – Very high research activity' and offers extensive undergraduate research programs.",
+        "insight": "The university is classified as 'R1: Doctoral Universities \u2013 Very high research activity' and offers extensive undergraduate research programs.",
         "implication": "Students seeking significant hands-on research experience, even at the undergraduate level, will find abundant opportunities and faculty mentorship across various disciplines."
       },
       {
@@ -612,28 +612,50 @@
           },
           {
             "name": "Computer Science",
-            "degree_type": "B.S.E.",
-            "is_impacted": false,
+            "degree_type": "B.S.E./A.B.",
+            "is_impacted": true,
             "acceptance_rate": null,
-            "average_gpa_admitted": null,
+            "average_gpa_admitted": 3.92,
             "prerequisite_courses": [
-              "COS 126 (General Computer Science) or ECE 115",
-              "COS 217 (Introduction to Programming Systems)",
-              "COS 226 (Algorithms and Data Structures)",
-              "B.S.E. general requirements (Physics, Chemistry, Math)"
+              "COS 126 Computer Science: An Interdisciplinary Approach",
+              "MAT 202 Linear Algebra",
+              "MAT 201 Multivariable Calculus"
             ],
             "minimum_gpa_to_declare": "All prerequisite courses must be taken for a letter grade. COS 217 and COS 226 must be completed before junior year. Majoring with only COS 126 by end of sophomore year is extremely difficult.",
             "weeder_courses": [
-              "COS 217 Introduction to Programming Systems",
               "COS 226 Algorithms and Data Structures",
-              "COS 240 Reasoning and Computation"
+              "COS 217 Introduction to Programming Systems",
+              "COS 340 Reasoning About Computation"
             ],
             "special_requirements": "Requires 8 departmental courses (foundation, core, electives) and at least one term of independent work. COS 240 (Reasoning and Computation) must be completed before the end of junior year.",
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "One of two departments offering both A.B. and B.S.E. degrees. B.S.E. students declare in spring of their first year."
+            "notes": "One of two departments offering both A.B. and B.S.E. degrees. B.S.E. students declare in spring of their first year.",
+            "curriculum": {
+              "core_courses": [
+                "COS 126 Intro to CS",
+                "COS 217 Programming Systems",
+                "COS 226 Algorithms & Data Structures",
+                "COS 340 Reasoning About Computation",
+                "COS 375 Computer Architecture"
+              ],
+              "electives": [
+                "COS 324 Machine Learning",
+                "COS 326 Functional Programming",
+                "COS 432 Information Security",
+                "COS 484 Natural Language Processing"
+              ],
+              "total_units": 36,
+              "major_units": 12
+            },
+            "notable_professors": [
+              "Dr. Sanjeev Arora",
+              "Dr. Jennifer Rexford",
+              "Dr. Arvind Narayanan",
+              "Dr. Karthik Narasimhan"
+            ]
           },
           {
             "name": "Electrical Engineering",
@@ -807,7 +829,7 @@
         "type": "Personal Growth",
         "required": true,
         "brainstorming_questions": [
-          "Thinking about a time you discussed a challenging topic, what was the specific moment – a phrase someone said, a reaction you had, or a pause in the conversation – that made you realize the conversation was truly difficult, rather than just a disagreement?",
+          "Thinking about a time you discussed a challenging topic, what was the specific moment \u2013 a phrase someone said, a reaction you had, or a pause in the conversation \u2013 that made you realize the conversation was truly difficult, rather than just a disagreement?",
           "Beyond the surface-level topic, what underlying assumptions or values were at play for you and the other person/group during this difficult conversation, and how did exploring those assumptions shift your understanding?",
           "Describe the internal 'aha!' moment you experienced. What specific piece of knowledge or perspective, gained *during* the conversation, felt like a genuine insight that you hadn't considered before?",
           "When you imagine bringing this insight into future dialogues at Princeton, what specific type of difficult issue or discussion comes to mind where this learned understanding would be most valuable for you to apply?",
@@ -824,7 +846,7 @@
           "Can you recall a specific moment, perhaps a challenge you faced or an observation you made, that first sparked your interest in acquiring this new skill?",
           "Imagine yourself a year into college, having successfully learned this skill. What tangible outcomes or new perspectives do you envision having gained from this endeavor, and how might they influence your approach to other academic or personal pursuits?",
           "Princeton has a rich history of interdisciplinary learning. How might mastering this skill allow you to connect seemingly unrelated subjects or approach existing problems at Princeton from a fresh, innovative angle?",
-          "Consider the process of learning itself. What specific aspects of the learning journey for this skill – be it the discipline required, the creative process, or the potential for collaboration – resonate most deeply with your own learning style and aspirations?"
+          "Consider the process of learning itself. What specific aspects of the learning journey for this skill \u2013 be it the discipline required, the creative process, or the potential for collaboration \u2013 resonate most deeply with your own learning style and aspirations?"
         ]
       },
       {
@@ -833,7 +855,7 @@
         "type": "Personal",
         "required": true,
         "brainstorming_questions": [
-          "Think about a time you were so absorbed in an activity that you lost track of time – what was happening, and what was it about that experience that made it so captivating for you?",
+          "Think about a time you were so absorbed in an activity that you lost track of time \u2013 what was happening, and what was it about that experience that made it so captivating for you?",
           "When you encounter a problem, big or small, that genuinely excites you to solve, what is it about the challenge itself that sparks that enthusiasm, and what does that problem-solving process feel like?",
           "Describe a moment when you felt a deep sense of connection or understanding with someone else, and what about that exchange or shared experience created that feeling of joy?",
           "Beyond achievements or external validation, when have you felt a profound sense of personal satisfaction or fulfillment, and what specific internal qualities or actions led to that feeling?",

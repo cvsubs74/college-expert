@@ -428,26 +428,46 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "acceptance_rate": 8.5,
-            "average_gpa_admitted": null,
+            "average_gpa_admitted": 3.92,
             "prerequisite_courses": [
-              "Math 1A, 1B, 53, 54",
-              "Physics 7A, 7B",
-              "CS 61A, 61B",
-              "EECS 16A, 16B"
+              "CS 61A Structure and Interpretation",
+              "CS 61B Data Structures",
+              "EE 16A/B Linear Algebra & Circuits"
             ],
-            "minimum_gpa_to_declare": null,
+            "minimum_gpa_to_declare": 3.3,
             "weeder_courses": [
-              "CS 61A (The Structure and Interpretation of Computer Programs)",
-              "CS 61B (Data Structures)",
-              "EECS 16A (Designing Information Devices and Systems I)",
-              "EECS 16B (Designing Information Devices and Systems II)"
+              "EE 16A Designing Information Devices I",
+              "EE 16B Designing Information Devices II",
+              "CS 61C Machine Structures"
             ],
             "special_requirements": "Requires a greater number of math and science courses than the CS (BA) program.",
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": false,
             "direct_admit_only": true,
             "internal_transfer_gpa": null,
-            "notes": "Extremely competitive. Students accepted into other colleges are generally NOT allowed to change into EECS. First-years are admitted directly into the EECS major."
+            "notes": "Extremely competitive. Students accepted into other colleges are generally NOT allowed to change into EECS. First-years are admitted directly into the EECS major.",
+            "curriculum": {
+              "core_courses": [
+                "CS 61A/B/C",
+                "EE 16A/B",
+                "CS 70 Discrete Math",
+                "EECS 126 Probability",
+                "EECS 127 Optimization"
+              ],
+              "electives": [
+                "EECS 151 Digital Design",
+                "EECS 149 Cyber-Physical Systems",
+                "CS 194 Special Topics"
+              ],
+              "total_units": 120,
+              "major_units": 70
+            },
+            "notable_professors": [
+              "Dr. Jitendra Malik",
+              "Dr. Michael Jordan",
+              "Dr. Trevor Darrell",
+              "Dr. Angjoo Kanazawa"
+            ]
           },
           {
             "name": "Mechanical Engineering",
@@ -998,16 +1018,13 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "acceptance_rate": 14,
-            "average_gpa_admitted": 3.64,
+            "average_gpa_admitted": 3.85,
             "prerequisite_courses": [
-              "Reading & Composition A & B",
-              "Math 1A, 1B",
-              "Stat 2 or 20",
-              "Econ 1 or 2",
-              "Bus Adm 10 (Principles of Business)",
-              "Computer Science (e.g., CS 61A, 10)"
+              "MATH 16A/B or MATH 1A/1B",
+              "STAT 20 or STAT 131A",
+              "ECON 1 or ECON 2"
             ],
-            "minimum_gpa_to_declare": 3,
+            "minimum_gpa_to_declare": 3.0,
             "weeder_courses": [
               "Math 1A (Calculus)",
               "Math 1B (Calculus)",
@@ -1018,7 +1035,27 @@
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 3,
-            "notes": "Highly competitive, students typically apply for admission to the major in their sophomore year. Some engineering majors have a 'Management, Entrepreneurship, & Technology (M.E.T.)' program for direct admission to a dual degree."
+            "notes": "Highly competitive, students typically apply for admission to the major in their sophomore year. Some engineering majors have a 'Management, Entrepreneurship, & Technology (M.E.T.)' program for direct admission to a dual degree.",
+            "curriculum": {
+              "core_courses": [
+                "UGBA 101A Microeconomics",
+                "UGBA 103 Finance",
+                "UGBA 106 Marketing",
+                "UGBA 102A Accounting"
+              ],
+              "electives": [
+                "UGBA 107 Entrepreneurship",
+                "UGBA 115 Strategy",
+                "UGBA 135 Personal Finance"
+              ],
+              "total_units": 120,
+              "major_units": 40
+            },
+            "notable_professors": [
+              "Dr. Toby Stuart",
+              "Dr. Ming Leung",
+              "Dr. Ulrike Malmendier"
+            ]
           }
         ]
       },

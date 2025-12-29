@@ -759,11 +759,11 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "acceptance_rate": null,
-            "average_gpa_admitted": null,
+            "average_gpa_admitted": 3.85,
             "prerequisite_courses": [
-              "College-level Calculus",
-              "Introductory Microeconomics (ECON 0100)",
-              "Introductory Macroeconomics (ECON 0200)"
+              "FNCE 1010 Corporate Finance",
+              "STAT 1010 Intro to Business Statistics",
+              "ECON 0110 Microeconomics"
             ],
             "minimum_gpa_to_declare": 2.5,
             "weeder_courses": [
@@ -777,7 +777,26 @@
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 3.3,
-            "notes": "Wharton is highly selective. Internal transfer is very competitive, requiring a minimum 3.30 cumulative GPA, completion of 8 CUs, and specific quantitative and economic prerequisites. External transfers are ineligible for internal transfer."
+            "notes": "Wharton is highly selective. Internal transfer is very competitive, requiring a minimum 3.30 cumulative GPA, completion of 8 CUs, and specific quantitative and economic prerequisites. External transfers are ineligible for internal transfer.",
+            "curriculum": {
+              "core_courses": [
+                "FNCE 1010 Corporate Finance",
+                "FNCE 2030 Advanced Corporate Finance",
+                "FNCE 2070 Investments"
+              ],
+              "electives": [
+                "FNCE 2380 Real Estate Investment",
+                "FNCE 2500 Venture Capital",
+                "FNCE 2040 Fixed Income Securities"
+              ],
+              "total_units": 40,
+              "major_units": 10
+            },
+            "notable_professors": [
+              "Dr. Jeremy Siegel",
+              "Dr. Kevin Murphy",
+              "Dr. Michael Roberts"
+            ]
           },
           {
             "name": "Business Analytics",

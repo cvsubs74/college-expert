@@ -423,32 +423,53 @@
           {
             "name": "Computer Science",
             "degree_type": "B.S.",
-            "is_impacted": false,
+            "is_impacted": true,
             "acceptance_rate": null,
-            "average_gpa_admitted": null,
+            "average_gpa_admitted": 3.95,
             "prerequisite_courses": [
-              "MATH 19 or 41 (Calculus)",
-              "MATH 20 or 42 (Calculus)",
-              "PHYSICS 41 or 61 or 21 (Mechanics)",
-              "PHYSICS 43 or 63 or 23 (Electricity & Magnetism)",
-              "CS 103 (Mathematical Foundations of Computing)",
-              "CS 106A (Programming Methodology)",
-              "CS 106B (Programming Abstractions)"
+              "CS 103 Mathematical Foundations",
+              "CS 106A Programming Methodology",
+              "CS 106B Programming Abstractions",
+              "MATH 51 Linear Algebra"
             ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [
-              "CS 103 (Mathematical Foundations of Computing)",
-              "CS 106B (Programming Abstractions)",
-              "CS 107 (Computer Organization and Systems)",
-              "CS 109 (Probability for Computer Scientists)",
-              "CS 161 (Design and Analysis of Algorithms)"
+              "CS 103 Mathematical Foundations",
+              "CS 107 Computer Organization",
+              "CS 161 Data Structures & Algorithms"
             ],
             "special_requirements": "Completion of program sheet, faculty advisor meeting.",
             "admissions_pathway": "Pre-Major",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.0,
-            "notes": "Students are admitted as undeclared. Minimum 2.0 GPA in Engineering Fundamentals and CS Core, Depth, and Senior Project courses combined."
+            "notes": "Students are admitted as undeclared. Minimum 2.0 GPA in Engineering Fundamentals and CS Core, Depth, and Senior Project courses combined.",
+            "curriculum": {
+              "core_courses": [
+                "CS 103 Mathematical Foundations",
+                "CS 106A Programming Methodology",
+                "CS 106B Programming Abstractions",
+                "CS 107 Computer Organization",
+                "CS 109 Probability",
+                "CS 111 Operating Systems",
+                "CS 161 Data Structures & Algorithms"
+              ],
+              "electives": [
+                "CS 148 Computer Graphics",
+                "CS 221 Artificial Intelligence",
+                "CS 229 Machine Learning",
+                "CS 224N Natural Language Processing"
+              ],
+              "total_units": 180,
+              "major_units": 96
+            },
+            "notable_professors": [
+              "Dr. Fei-Fei Li",
+              "Dr. Andrew Ng",
+              "Dr. Christopher Manning",
+              "Dr. Dan Boneh",
+              "Dr. Chelsea Finn"
+            ]
           },
           {
             "name": "Mechanical Engineering",

@@ -397,30 +397,41 @@
             "degree_type": "B.S.",
             "is_impacted": true,
             "acceptance_rate": 7.0,
-            "average_gpa_admitted": 3.97,
+            "average_gpa_admitted": 3.95,
             "prerequisite_courses": [
-              "Ma 1 abc (Calculus of One and Several Variables and Linear Algebra)",
-              "Ph 1 abc (Classical Mechanics and Electromagnetism)",
-              "Ch 1 ab (General Chemistry)",
-              "Bi 1 (The Great Ideas of Biology)",
-              "CS 1 (Introduction to Computer Programming)",
-              "Writing 2 (Introduction to Academic Writing)",
-              "Ma 2 (Differential Equations)",
-              "Ma 3 (Introduction to Probability and Statistics)",
-              "CS 2 (Data Structures and Algorithms)",
-              "CS 3x (Discrete Mathematics for Computer Science and Engineering)"
+              "CS 1 Intro to CS",
+              "CS 2 Data Structures",
+              "Ma 1 Calculus"
             ],
             "minimum_gpa_to_declare": 1.9,
             "weeder_courses": [
-              "Ma 1 abc (Calculus of One and Several Variables and Linear Algebra)",
-              "Ph 1 abc (Classical Mechanics and Electromagnetism)",
-              "CS 1 (Introduction to Computer Programming)",
-              "CS 2 (Data Structures and Algorithms)",
-              "CS 3x (Discrete Mathematics for Computer Science and Engineering)",
-              "CS 21 (Data Structures and Algorithms)",
-              "CS 24 (Computer Systems)"
+              "CS 21 Decidability and Tractability",
+              "CS 24 Computing Systems",
+              "CS 38 Algorithms"
             ],
-            "special_requirements": "Undergraduate thesis (CS 80abc) or a project in computer science is required. Emphasizes mathematical and engineering foundations."
+            "special_requirements": "Undergraduate thesis (CS 80abc) or a project in computer science is required. Emphasizes mathematical and engineering foundations.",
+            "curriculum": {
+              "core_courses": [
+                "CS 1 Intro to CS",
+                "CS 2 Data Structures",
+                "CS 21 Decidability & Tractability",
+                "CS 24 Computing Systems",
+                "CS 38 Algorithms"
+              ],
+              "electives": [
+                "CS 155 Machine Learning & Data Mining",
+                "CS 156a Learning from Data",
+                "CS 159 Reinforcement Learning"
+              ],
+              "total_units": 486,
+              "major_units": 108
+            },
+            "notable_professors": [
+              "Dr. Yaser Abu-Mostafa",
+              "Dr. Adam Wierman",
+              "Dr. Yisong Yue",
+              "Dr. Anima Anandkumar"
+            ]
           },
           {
             "name": "Electrical Engineering",

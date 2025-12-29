@@ -515,27 +515,51 @@
         "majors": [
           {
             "name": "Computer Science",
-            "degree_type": "B.S.",
-            "is_impacted": false,
+            "degree_type": "B.S./B.A.",
+            "is_impacted": true,
             "acceptance_rate": null,
-            "average_gpa_admitted": null,
+            "average_gpa_admitted": 3.85,
             "prerequisite_courses": [
-              "MATH 220-1 (Single-Variable Differential Calculus)",
-              "GEN_ENG 205-1 (Engineering Analysis I)",
-              "COMP_SCI 110 (Introduction to Computer Programming)"
+              "CS 111 Fundamentals of Computer Programming I",
+              "CS 150 Fundamentals of Computer Programming 1.5",
+              "MATH 220 Calculus"
             ],
             "minimum_gpa_to_declare": 2.0,
             "weeder_courses": [
-              "GEN_ENG 205-1,2,3 (Engineering Analysis sequence)",
-              "COMP_SCI 211 (Fundamentals of Computer Programming I)",
-              "COMP_SCI 212 (Fundamentals of Computer Programming II)"
+              "CS 211 Fundamentals of Computer Programming II",
+              "CS 212 Data Structures",
+              "CS 214 Data Structures and Algorithms"
             ],
             "special_requirements": null,
             "admissions_pathway": "Direct Admit",
             "internal_transfer_allowed": true,
             "direct_admit_only": false,
             "internal_transfer_gpa": 2.0,
-            "notes": "Students are admitted directly to McCormick and generally declare their major within the first year. Internal transfer to McCormick requires maintaining a cumulative GPA of 2.0 or higher and a C or better in all courses satisfying McCormick degree requirements."
+            "notes": "Students are admitted directly to McCormick and generally declare their major within the first year. Internal transfer to McCormick requires maintaining a cumulative GPA of 2.0 or higher and a C or better in all courses satisfying McCormick degree requirements.",
+            "curriculum": {
+              "core_courses": [
+                "CS 111 Fundamentals I",
+                "CS 211 Fundamentals II",
+                "CS 213 Computer Systems",
+                "CS 214 Data Structures & Algorithms",
+                "CS 336 Algorithms",
+                "CS 339 Databases"
+              ],
+              "electives": [
+                "CS 348 Machine Learning",
+                "CS 349 Deep Learning",
+                "CS 343 NLP",
+                "CS 344 Computer Vision"
+              ],
+              "total_units": 45,
+              "major_units": 14
+            },
+            "notable_professors": [
+              "Dr. Douglas Downey",
+              "Dr. Kristian Hammond",
+              "Dr. Bryan Pardo",
+              "Dr. Jason Hartline"
+            ]
           },
           {
             "name": "Mechanical Engineering",
@@ -1141,7 +1165,7 @@
         "type": "Why Northwestern",
         "required": true,
         "brainstorming_questions": [
-          "Think about a specific moment when you felt a spark of intellectual curiosity – something that made you stop, ponder, and want to learn more. What was that moment, and what questions did it ignite within you?",
+          "Think about a specific moment when you felt a spark of intellectual curiosity \u2013 something that made you stop, ponder, and want to learn more. What was that moment, and what questions did it ignite within you?",
           "Northwestern has specific programs and departments that might align with your interests. Looking at their offerings (research labs, specific courses, interdisciplinary centers), which ones truly resonate with you and why do they feel like the perfect fit for your intellectual journey?",
           "Beyond the obvious academic connections, what's a less conventional or unique intellectual pursuit you've engaged in, and how do you see Northwestern's unique environment fostering that particular passion?",
           "If you could have a spontaneous, in-depth conversation with a professor or student at Northwestern about a topic that fascinates you, what would that conversation be about, and what kind of insights would you hope to gain?",
