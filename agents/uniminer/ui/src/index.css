@@ -1,0 +1,1322 @@
+/* ============================================
+   UNIMINER - Stratia Design System
+   M3 Tokens + Academic Warm Palette
+   ============================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* ============================================
+   CSS CUSTOM PROPERTIES (M3 Design Tokens)
+   ============================================ */
+:root {
+    /* Digital Ivy Color Palette */
+    --stratia-surface-low: #FDFCF7;
+    --stratia-surface: #F8F6F0;
+    --stratia-surface-high: #FFFFFF;
+
+    --stratia-primary: #1A4D2E;
+    --stratia-primary-light: #2D6B45;
+    --stratia-primary-container: #D6E8D5;
+
+    --stratia-secondary: #D6E8D5;
+    --stratia-secondary-dark: #A8C5A6;
+
+    --stratia-tertiary: #C05838;
+    --stratia-tertiary-light: #E8A090;
+    --stratia-tertiary-container: #FCEEE8;
+
+    --stratia-on-surface: #2C2C2C;
+    --stratia-on-surface-variant: #4A4A4A;
+    --stratia-outline: #C4C4C4;
+    --stratia-outline-variant: #E0DED8;
+
+    /* Typography */
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+
+    /* Elevation shadows */
+    --shadow-level-1: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04);
+    --shadow-level-2: 0 2px 6px rgba(0, 0, 0, 0.06), 0 8px 16px rgba(0, 0, 0, 0.06);
+    --shadow-level-3: 0 4px 12px rgba(0, 0, 0, 0.08), 0 16px 32px rgba(0, 0, 0, 0.08);
+
+    /* State layers */
+    --state-hover: rgba(26, 77, 46, 0.08);
+    --state-focus: rgba(26, 77, 46, 0.12);
+    --state-pressed: rgba(26, 77, 46, 0.16);
+
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-full: 9999px;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--stratia-surface-low);
+    color: var(--stratia-on-surface);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
+
+/* ============================================
+   BACKGROUND BLOBS
+   ============================================ */
+.um-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.um-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: pulse-soft 4s ease-in-out infinite;
+}
+
+.um-blob-1 {
+    width: 600px;
+    height: 600px;
+    background: var(--stratia-secondary);
+    top: -200px;
+    right: -100px;
+}
+
+.um-blob-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--stratia-tertiary-container);
+    bottom: 10%;
+    left: -100px;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.um-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(253, 252, 247, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-level-1);
+    padding: 1rem 0;
+}
+
+.um-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.um-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.um-logo:hover {
+    opacity: 0.8;
+}
+
+.um-logo-icon {
+    font-size: 1.5rem;
+}
+
+.um-logo-text {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--stratia-primary);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.um-hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+}
+
+.um-hero-content {
+    text-align: center;
+    max-width: 700px;
+}
+
+.um-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--stratia-secondary);
+    color: var(--stratia-primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.um-hero-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--stratia-on-surface);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.um-hero-title span {
+    color: var(--stratia-primary);
+}
+
+.um-hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--stratia-on-surface-variant);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.um-hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.um-btn {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-full);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.um-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.um-btn-primary {
+    background: var(--stratia-primary);
+    color: white;
+}
+
+.um-btn-primary:hover:not(:disabled) {
+    background: var(--stratia-primary-light);
+    box-shadow: var(--shadow-level-1);
+}
+
+.um-btn-secondary {
+    background: var(--stratia-secondary);
+    color: var(--stratia-primary);
+}
+
+.um-btn-secondary:hover:not(:disabled) {
+    background: var(--stratia-secondary-dark);
+}
+
+.um-btn-ghost {
+    background: transparent;
+    color: var(--stratia-on-surface-variant);
+}
+
+.um-btn-ghost:hover:not(:disabled) {
+    background: var(--state-hover);
+    color: var(--stratia-primary);
+}
+
+.um-btn-large {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+}
+
+/* ============================================
+   PIPELINE SECTION
+   ============================================ */
+.um-pipeline {
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.um-pipeline-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.um-section-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--stratia-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.um-section-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--stratia-on-surface);
+}
+
+.um-pipeline-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.um-step-card {
+    background: var(--stratia-surface-high);
+    border-radius: var(--radius-xl);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-level-1);
+    transition: all 0.2s ease-out;
+}
+
+.um-step-card:hover {
+    box-shadow: var(--shadow-level-2);
+    transform: translateY(-4px);
+}
+
+.um-step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.um-step-title {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--stratia-on-surface);
+    margin-bottom: 0.5rem;
+}
+
+.um-step-desc {
+    font-size: 0.875rem;
+    color: var(--stratia-on-surface-variant);
+}
+
+/* ============================================
+   WIZARD
+   ============================================ */
+.um-wizard {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+}
+
+.um-wizard-content {
+    background: var(--stratia-surface-high);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-level-2);
+    padding: 2.5rem;
+    max-width: 600px;
+    width: 100%;
+}
+
+.um-wizard-content.um-wide {
+    max-width: 900px;
+}
+
+.um-wizard-title {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--stratia-on-surface);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.um-wizard-subtitle {
+    font-size: 1rem;
+    color: var(--stratia-on-surface-variant);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   STEP INDICATOR
+   ============================================ */
+.um-steps {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.um-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    background: var(--stratia-surface);
+    transition: all 0.2s;
+}
+
+.um-step.active {
+    background: var(--stratia-secondary);
+}
+
+.um-step.current {
+    background: var(--stratia-primary);
+}
+
+.um-step.current .um-step-num,
+.um-step.current .um-step-label {
+    color: white;
+}
+
+.um-step-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--stratia-outline-variant);
+    color: var(--stratia-on-surface-variant);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.um-step.active .um-step-num {
+    background: var(--stratia-primary);
+    color: white;
+}
+
+.um-step-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--stratia-on-surface-variant);
+}
+
+.um-step.active .um-step-label {
+    color: var(--stratia-primary);
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+.um-input-section {
+    margin-bottom: 1.5rem;
+}
+
+.um-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--stratia-on-surface);
+    margin-bottom: 0.5rem;
+}
+
+.um-input,
+.um-select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--stratia-outline-variant);
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--stratia-on-surface);
+    background: var(--stratia-surface-high);
+    transition: all 0.2s;
+}
+
+.um-input:focus,
+.um-select:focus {
+    outline: none;
+    border-color: var(--stratia-primary);
+    box-shadow: 0 0 0 3px var(--stratia-primary-container);
+}
+
+.um-input::placeholder {
+    color: var(--stratia-outline);
+}
+
+.um-examples {
+    margin-top: 0.75rem;
+}
+
+.um-examples-label {
+    font-size: 0.75rem;
+    color: var(--stratia-on-surface-variant);
+    margin-bottom: 0.5rem;
+}
+
+.um-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.um-chip {
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: var(--stratia-surface);
+    color: var(--stratia-on-surface-variant);
+    border: 1px solid var(--stratia-outline-variant);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.um-chip:hover {
+    background: var(--stratia-secondary);
+    color: var(--stratia-primary);
+    border-color: var(--stratia-secondary-dark);
+}
+
+/* ============================================
+   WIZARD ACTIONS
+   ============================================ */
+.um-wizard-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--stratia-outline-variant);
+}
+
+/* ============================================
+   ERROR / SUCCESS MESSAGES
+   ============================================ */
+.um-error {
+    background: var(--stratia-tertiary-container);
+    color: var(--stratia-tertiary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    margin: 1rem 0;
+    font-size: 0.875rem;
+    border: 1px solid var(--stratia-tertiary-light);
+}
+
+.um-success {
+    text-align: center;
+    padding: 2rem;
+}
+
+.um-success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* ============================================
+   LOADING
+   ============================================ */
+.um-loading {
+    text-align: center;
+    padding: 3rem;
+}
+
+.um-spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid var(--stratia-outline-variant);
+    border-top-color: var(--stratia-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.um-agent-list {
+    list-style: none;
+    text-align: left;
+    max-width: 300px;
+    margin: 1.5rem auto 0;
+    font-size: 0.875rem;
+    color: var(--stratia-on-surface-variant);
+}
+
+.um-agent-list li {
+    padding: 0.375rem 0;
+    border-bottom: 1px solid var(--stratia-outline-variant);
+}
+
+/* ============================================
+   AGENT LOG (Live Activity)
+   ============================================ */
+.um-current-agent {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.um-agent-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--stratia-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.um-agent-log {
+    background: var(--stratia-surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.um-log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: var(--stratia-on-surface);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.um-log-live {
+    color: #4ade80;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.um-log-scroll {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.75rem;
+    background: #1e1e1e;
+    color: #d4d4d4;
+}
+
+.um-log-empty {
+    padding: 2rem;
+    text-align: center;
+    color: #888;
+}
+
+.um-log-entry {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.25rem;
+    transition: background 0.15s;
+}
+
+.um-log-entry:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.um-log-time {
+    color: #888;
+    flex-shrink: 0;
+    width: 70px;
+}
+
+.um-log-agent {
+    color: #569cd6;
+    font-weight: 600;
+    flex-shrink: 0;
+    min-width: 100px;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.um-log-msg {
+    color: #d4d4d4;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Log entry type styling */
+.um-log-start .um-log-agent {
+    color: #4ec9b0;
+}
+
+.um-log-start .um-log-msg {
+    color: #4ec9b0;
+}
+
+.um-log-tool .um-log-agent {
+    color: #dcdcaa;
+}
+
+.um-log-tool .um-log-msg {
+    color: #dcdcaa;
+}
+
+.um-log-tool_response .um-log-agent {
+    color: #b5cea8;
+}
+
+.um-log-tool_response .um-log-msg {
+    color: #b5cea8;
+}
+
+.um-log-transfer .um-log-agent {
+    color: #c586c0;
+}
+
+.um-log-transfer .um-log-msg {
+    color: #c586c0;
+}
+
+.um-log-complete .um-log-agent {
+    color: #4ade80;
+}
+
+.um-log-complete .um-log-msg {
+    color: #4ade80;
+}
+
+.um-log-error .um-log-agent {
+    color: #f87171;
+}
+
+.um-log-error .um-log-msg {
+    color: #f87171;
+}
+
+/* ============================================
+   REPORT / QUALITY SCORE
+   ============================================ */
+.um-report-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .um-report-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.um-score-card {
+    background: var(--stratia-secondary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.um-score-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(var(--color) calc(var(--score) * 1%),
+            var(--stratia-outline-variant) 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.um-score-circle::before {
+    content: '';
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--stratia-secondary);
+    position: absolute;
+}
+
+.um-score-value {
+    position: relative;
+    z-index: 1;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--stratia-primary);
+}
+
+.um-score-details {
+    font-size: 0.875rem;
+    color: var(--stratia-on-surface-variant);
+}
+
+.um-score-details p {
+    margin-bottom: 0.25rem;
+}
+
+.um-score-details strong {
+    color: var(--stratia-on-surface);
+}
+
+.um-valid {
+    color: #2E7D32 !important;
+}
+
+.um-invalid {
+    color: var(--stratia-tertiary) !important;
+}
+
+.um-fields-card {
+    background: var(--stratia-surface);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.um-fields-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.um-field-list {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.um-field-item {
+    font-size: 0.75rem;
+    font-family: monospace;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.25rem;
+    border-radius: var(--radius-sm);
+    background: var(--stratia-surface-high);
+}
+
+.um-field-item.um-null {
+    border-left: 3px solid var(--stratia-tertiary);
+}
+
+.um-field-item.um-error {
+    border-left: 3px solid #D32F2F;
+    background: #FFEBEE;
+}
+
+.um-more {
+    font-size: 0.75rem;
+    color: var(--stratia-on-surface-variant);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Grouped Fields (Human-Readable) */
+.um-grouped-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.um-field-group {
+    border-left: 3px solid var(--stratia-primary);
+    padding-left: 1rem;
+}
+
+.um-field-category {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--stratia-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.um-field-summary {
+    font-size: 0.8rem;
+    color: var(--stratia-on-surface-variant);
+    margin: 0.25rem 0;
+    line-height: 1.4;
+}
+
+.um-field-details {
+    margin-top: 0.5rem;
+}
+
+.um-field-details summary {
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: var(--stratia-primary);
+    font-weight: 500;
+}
+
+.um-field-details summary:hover {
+    text-decoration: underline;
+}
+
+.um-field-subgroup {
+    margin: 0.75rem 0;
+    padding-left: 0.5rem;
+}
+
+.um-field-subgroup strong {
+    font-size: 0.75rem;
+    color: var(--stratia-on-surface);
+}
+
+.um-field-list.um-compact {
+    max-height: none;
+}
+
+.um-field-list.um-compact .um-field-item {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+    margin-bottom: 0.15rem;
+}
+
+.um-field-more {
+    font-size: 0.7rem;
+    color: var(--stratia-tertiary);
+    font-style: italic;
+    list-style: none;
+}
+
+/* ============================================
+   REDESIGNED REPORT PAGE
+   ============================================ */
+
+.um-wizard-content.um-full-width {
+    max-width: 1200px;
+}
+
+/* Report Header */
+.um-report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: var(--stratia-surface-high);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-level-1);
+    margin-bottom: 1.5rem;
+}
+
+.um-report-title h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--stratia-on-surface);
+    margin: 0 0 0.25rem 0;
+}
+
+.um-report-meta {
+    font-size: 0.875rem;
+    color: var(--stratia-on-surface-variant);
+    margin: 0;
+}
+
+.um-report-stats {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.um-stat {
+    text-align: center;
+    padding: 0.75rem 1.25rem;
+    background: var(--stratia-surface);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--stratia-outline-variant);
+}
+
+.um-stat-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--stratia-primary);
+}
+
+.um-stat-label {
+    font-size: 0.75rem;
+    color: var(--stratia-on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.um-stat-warning .um-stat-value {
+    color: var(--stratia-tertiary);
+}
+
+/* Success Card */
+.um-success-card {
+    background: #E8F5E9;
+    border: 1px solid #81C784;
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.um-success-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2E7D32;
+    margin: 0 0 0.75rem 0;
+}
+
+.um-success-card.um-complete {
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    text-align: center;
+    padding: 2rem;
+}
+
+.um-success-card.um-complete h3 {
+    font-size: 1.25rem;
+}
+
+.um-success-card.um-complete p {
+    color: #2E7D32;
+    margin: 0.5rem 0 0 0;
+}
+
+.um-filled-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.um-filled-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #C8E6C9;
+    color: #2E7D32;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Error Box */
+.um-error-box {
+    background: #FFEBEE;
+    border: 1px solid #EF5350;
+    border-radius: var(--radius-md);
+    padding: 1rem 1.5rem;
+    color: #C62828;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Missing Section */
+.um-missing-section {
+    background: var(--stratia-surface-high);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.um-missing-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--stratia-tertiary);
+    margin: 0 0 0.5rem 0;
+}
+
+.um-missing-hint {
+    font-size: 0.875rem;
+    color: var(--stratia-on-surface-variant);
+    margin: 0 0 1.25rem 0;
+}
+
+/* Missing Grid */
+.um-missing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+}
+
+.um-missing-category {
+    background: var(--stratia-surface);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    border-left: 3px solid var(--stratia-tertiary);
+}
+
+.um-missing-category h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--stratia-on-surface);
+    margin: 0 0 0.75rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.um-missing-category .um-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--stratia-tertiary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.7rem;
+}
+
+.um-missing-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.um-missing-category li {
+    font-size: 0.8rem;
+    color: var(--stratia-on-surface-variant);
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--stratia-outline-variant);
+}
+
+.um-missing-category li:last-child {
+    border-bottom: none;
+}
+
+.um-missing-category li.um-more {
+    font-style: italic;
+    color: var(--stratia-tertiary);
+}
+
+/* Report Actions */
+.um-report-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+
+/* ============================================
+   COMPARISON / DIFF
+   ============================================ */
+.um-info-card {
+    background: var(--stratia-primary-container);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+}
+
+.um-info-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--stratia-primary);
+    margin-bottom: 0.5rem;
+}
+
+.um-info-card p {
+    color: var(--stratia-on-surface-variant);
+}
+
+.um-diff-summary {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.um-diff-stat {
+    flex: 1;
+    text-align: center;
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+}
+
+.um-diff-stat.um-change {
+    background: var(--stratia-tertiary-container);
+}
+
+.um-diff-stat.um-add {
+    background: #E8F5E9;
+}
+
+.um-diff-stat.um-remove {
+    background: #FFEBEE;
+}
+
+.um-diff-num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--stratia-on-surface);
+}
+
+.um-diff-label {
+    font-size: 0.75rem;
+    color: var(--stratia-on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.um-critical-changes,
+.um-changes-list {
+    background: var(--stratia-surface);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.um-critical-changes h3,
+.um-changes-list h3 {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.um-changes-scroll {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.um-change-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    background: var(--stratia-surface-high);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.5rem;
+}
+
+.um-field {
+    font-weight: 600;
+    color: var(--stratia-on-surface);
+    flex-shrink: 0;
+}
+
+.um-old {
+    color: var(--stratia-tertiary);
+    font-family: monospace;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.um-arrow {
+    color: var(--stratia-outline);
+}
+
+.um-new {
+    color: #2E7D32;
+    font-family: monospace;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes pulse-soft {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.um-app {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--stratia-surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--stratia-outline);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--stratia-on-surface-variant);
+}

@@ -28,9 +28,9 @@ CATALOG YEAR VERIFICATION:
 4. Look for the highest catalog ID (catoid) or latest year in the URL
 
 REQUIRED SEARCHES FOR CURRENT DATA:
-- site:catalogue.{domain} \"{university_name}\" [Major] current
-- \"{university_name}\" [Major] requirements catalogue current
-- \"{university_name}\" current undergraduate catalog [Major]
+- site:*.edu "{university_name}" [Major] catalog current
+- "{university_name}" [Major] requirements catalogue current
+- "{university_name}" current undergraduate catalog [Major]
 
 === DATA SOURCES (Search these specifically) ===
 1. College Scorecard (collegescorecard.ed.gov): Earnings data broken down by major

@@ -1,7 +1,7 @@
 """
 Knowledge Base Manager - Universities
-Manages university profile documents in Elasticsearch with semantic_text support.
-Uses Elasticsearch's built-in ELSER model for semantic search via semantic_text field.
+Manages university profile documents in Elasticsearch for storage and retrieval.
+No longer uses ELSER semantic search - simplified for document storage only.
 """
 import functions_framework
 import json
@@ -147,7 +147,7 @@ def get_elasticsearch_client():
 
 # --- Elasticsearch Index Management ---
 def ensure_index_exists(es_client):
-    """Ensure Elasticsearch index exists with semantic_text mapping."""
+    """Ensure Elasticsearch index exists with basic mapping (no ELSER)."""
     if not es_client.indices.exists(index=ES_INDEX_NAME):
         logger.info(f"Creating index: {ES_INDEX_NAME}")
         mapping = {
@@ -179,11 +179,7 @@ def ensure_index_exists(es_client):
                             "type": {"type": "keyword"}
                         }
                     },
-                    # Semantic text field - auto-generates embeddings using ELSER
-                    "semantic_content": {
-                        "type": "semantic_text",
-                        "inference_id": ".elser-2-elasticsearch"
-                    },
+                    # Removed semantic_text field - no longer using ELSER for search
                     "searchable_text": {
                         "type": "text",
                         "analyzer": "university_analyzer"
@@ -202,7 +198,7 @@ def ensure_index_exists(es_client):
             }
         }
         es_client.indices.create(index=ES_INDEX_NAME, body=mapping)
-        logger.info(f"Index {ES_INDEX_NAME} created with semantic_text mapping")
+        logger.info(f"Index {ES_INDEX_NAME} created (without ELSER)")
 
 
 # --- Text Extraction ---
@@ -253,15 +249,26 @@ def create_university_summary(profile: dict) -> str:
     meta = profile.get('metadata', {})
     official_name = meta.get('official_name', 'This university')
     location = meta.get('location', {})
-    city = location.get('city', '')
-    state = location.get('state', '')
-    uni_type = location.get('type', 'university')
+    # Handle both dict and string formats
+    if isinstance(location, dict):
+        city = location.get('city', '')
+        state = location.get('state', '')
+        uni_type = location.get('type', 'university')
+    elif isinstance(location, str):
+        # If location is a string, try to parse city, state from it
+        city = location
+        state = ''
+        uni_type = 'university'
+    else:
+        city = ''
+        state = ''
+        uni_type = 'university'
     
-    # Admissions data
-    admissions = profile.get('admissions_data', {})
-    current_status = admissions.get('current_status', {})
-    acceptance_rate = current_status.get('overall_acceptance_rate')
-    test_policy = current_status.get('test_policy_details', 'standard testing')
+    # Admissions data - defensive None handling
+    admissions = profile.get('admissions_data') or {}
+    current_status = admissions.get('current_status') or {} if isinstance(admissions, dict) else {}
+    acceptance_rate = current_status.get('overall_acceptance_rate') if isinstance(current_status, dict) else None
+    test_policy = current_status.get('test_policy_details', 'standard testing') if isinstance(current_status, dict) else 'standard testing'
     
     # Rankings
     strategic = profile.get('strategic_profile', {})
@@ -290,16 +297,16 @@ def create_university_summary(profile: dict) -> str:
     parts.append(overview)
     
     # Admissions paragraph
-    admitted = admissions.get('admitted_student_profile', {})
-    testing = admitted.get('testing', {})
-    gpa_data = admitted.get('gpa', {})
+    admitted = admissions.get('admitted_student_profile') or {}
+    testing = admitted.get('testing') or {} if isinstance(admitted, dict) else {}
+    gpa_data = admitted.get('gpa') or {} if isinstance(admitted, dict) else {}
     
     admissions_parts = []
-    if testing.get('sat_composite_middle_50'):
+    if isinstance(testing, dict) and testing.get('sat_composite_middle_50'):
         admissions_parts.append(f"SAT middle 50%: {testing['sat_composite_middle_50']}")
-    if testing.get('act_composite_middle_50'):
+    if isinstance(testing, dict) and testing.get('act_composite_middle_50'):
         admissions_parts.append(f"ACT middle 50%: {testing['act_composite_middle_50']}")
-    if gpa_data.get('weighted_middle_50'):
+    if isinstance(gpa_data, dict) and gpa_data.get('weighted_middle_50'):
         admissions_parts.append(f"GPA middle 50%: {gpa_data['weighted_middle_50']}")
     
     early = current_status.get('early_admission_stats', [])
@@ -310,11 +317,17 @@ def create_university_summary(profile: dict) -> str:
     if admissions_parts:
         parts.append("**Admissions:** " + ". ".join(admissions_parts) + ".")
     
-    # Academics paragraph
-    academic = profile.get('academic_structure', {})
-    colleges = academic.get('colleges', [])
-    if colleges:
-        college_names = [c.get('name', '') for c in colleges[:4] if c.get('name')]
+    # Academics paragraph - handle both list and dict formats
+    academic = profile.get('academic_structure')
+    colleges = []
+    if isinstance(academic, dict):
+        colleges = academic.get('colleges', []) or []
+    elif isinstance(academic, list):
+        # academic_structure is directly a list of colleges
+        colleges = academic
+    
+    if colleges and isinstance(colleges, list):
+        college_names = [c.get('name', '') for c in colleges[:4] if isinstance(c, dict) and c.get('name')]
         if college_names:
             academics_text = f"**Academics:** The university comprises {len(colleges)} colleges/schools"
             if college_names:
@@ -343,27 +356,32 @@ def create_university_summary(profile: dict) -> str:
 
 
 def create_searchable_text(profile: dict) -> str:
-    """Create a rich text representation of the profile for semantic search."""
+    """Create a text representation of the profile for indexing."""
     parts = []
     
     # University name and basic info
-    if 'metadata' in profile:
-        meta = profile['metadata']
+    meta = profile.get('metadata') or {}
+    if isinstance(meta, dict):
         official_name = meta.get('official_name', '')
-        parts.append(f"University: {official_name}")
+        if official_name:
+            parts.append(f"University: {official_name}")
         
-        # Add known acronyms/nicknames for better searchability
-        acronyms = get_acronyms_for_university(official_name)
-        if acronyms:
-            parts.append(f"Also known as: {', '.join(acronyms)}")
+            # Add known acronyms/nicknames for better searchability
+            acronyms = get_acronyms_for_university(official_name)
+            if acronyms:
+                parts.append(f"Also known as: {', '.join(acronyms)}")
         
-        if 'location' in meta:
-            loc = meta['location']
-            parts.append(f"Location: {loc.get('city', '')}, {loc.get('state', '')} ({loc.get('type', '')})")
+        loc = meta.get('location')
+        if loc:
+            # Handle both dict and string formats
+            if isinstance(loc, dict):
+                parts.append(f"Location: {loc.get('city', '')}, {loc.get('state', '')} ({loc.get('type', '')})")
+            elif isinstance(loc, str):
+                parts.append(f"Location: {loc}")
     
     # Strategic profile - executive summary and philosophy
-    if 'strategic_profile' in profile:
-        sp = profile['strategic_profile']
+    sp = profile.get('strategic_profile') or {}
+    if isinstance(sp, dict):
         if sp.get('executive_summary'):
             parts.append(f"Summary: {sp['executive_summary']}")
         if sp.get('admissions_philosophy'):
@@ -372,10 +390,10 @@ def create_searchable_text(profile: dict) -> str:
             parts.append(f"Market Position: {sp['market_position']}")
     
     # Admissions data
-    if 'admissions_data' in profile:
-        ad = profile['admissions_data']
-        if 'current_status' in ad:
-            cs = ad['current_status']
+    ad = profile.get('admissions_data') or {}
+    if isinstance(ad, dict):
+        cs = ad.get('current_status') or {}
+        if isinstance(cs, dict):
             if cs.get('overall_acceptance_rate'):
                 parts.append(f"Acceptance Rate: {cs['overall_acceptance_rate']}% overall")
             if cs.get('transfer_acceptance_rate'):
@@ -385,55 +403,64 @@ def create_searchable_text(profile: dict) -> str:
             if cs.get('is_test_optional'):
                 parts.append("This university is test-optional.")
         
-        if 'admitted_student_profile' in ad:
-            asp = ad['admitted_student_profile']
-            if 'testing' in asp:
-                testing = asp['testing']
+        asp = ad.get('admitted_student_profile') or {}
+        if isinstance(asp, dict):
+            testing = asp.get('testing') or {}
+            if isinstance(testing, dict):
                 if testing.get('sat_composite_middle_50'):
                     parts.append(f"SAT Score Middle 50%: {testing['sat_composite_middle_50']}")
                 if testing.get('act_composite_middle_50'):
                     parts.append(f"ACT Score Middle 50%: {testing['act_composite_middle_50']}")
-            if 'gpa' in asp:
-                gpa = asp['gpa']
-                if gpa.get('weighted_middle_50'):
-                    parts.append(f"Weighted GPA Middle 50%: {gpa['weighted_middle_50']}")
+            gpa = asp.get('gpa') or {}
+            if isinstance(gpa, dict) and gpa.get('weighted_middle_50'):
+                parts.append(f"Weighted GPA Middle 50%: {gpa['weighted_middle_50']}")
     
-    # Academic structure
-    if 'academic_structure' in profile:
-        acs = profile['academic_structure']
-        if 'colleges' in acs:
-            college_names = [c.get('name', '') for c in acs['colleges'] if c.get('name')]
-            if college_names:
-                parts.append(f"Colleges: {', '.join(college_names[:10])}")
-            all_majors = []
-            all_courses = []
-            all_professors = []
-            for college in acs['colleges']:
-                for major in college.get('majors', []):
-                    if major.get('name'):
-                        all_majors.append(major['name'])
-                    # Extract curriculum courses
-                    curriculum = major.get('curriculum')
-                    if curriculum:
-                        core_courses = curriculum.get('core_courses', [])
-                        electives = curriculum.get('electives', [])
-                        for course in core_courses[:5]:  # Limit per major
-                            if course and course not in all_courses:
-                                all_courses.append(course)
-                        for course in electives[:3]:
-                            if course and course not in all_courses:
-                                all_courses.append(course)
-                    # Extract notable professors
-                    professors = major.get('notable_professors', [])
-                    for prof in professors:
-                        if prof and prof not in all_professors:
-                            all_professors.append(prof)
-            if all_majors:
-                parts.append(f"Majors offered: {', '.join(all_majors[:20])}")
-            if all_courses:
-                parts.append(f"Courses: {', '.join(all_courses[:30])}")
-            if all_professors:
-                parts.append(f"Notable Professors: {', '.join(all_professors[:15])}")
+    # Academic structure - handle both list and dict formats
+    acs = profile.get('academic_structure')
+    colleges = []
+    if isinstance(acs, dict):
+        colleges = acs.get('colleges', []) or []
+    elif isinstance(acs, list):
+        # academic_structure is directly a list of colleges
+        colleges = acs
+    
+    if colleges and isinstance(colleges, list):
+        college_names = [c.get('name', '') for c in colleges if isinstance(c, dict) and c.get('name')]
+        if college_names:
+            parts.append(f"Colleges: {', '.join(college_names[:10])}")
+        all_majors = []
+        all_courses = []
+        all_professors = []
+        for college in colleges:
+            if not isinstance(college, dict):
+                continue
+            for major in college.get('majors', []) or []:
+                if not isinstance(major, dict):
+                    continue
+                if major.get('name'):
+                    all_majors.append(major['name'])
+                # Extract curriculum courses
+                curriculum = major.get('curriculum')
+                if isinstance(curriculum, dict):
+                    core_courses = curriculum.get('core_courses', []) or []
+                    electives = curriculum.get('electives', []) or []
+                    for course in core_courses[:5]:  # Limit per major
+                        if course and course not in all_courses:
+                            all_courses.append(course)
+                    for course in electives[:3]:
+                        if course and course not in all_courses:
+                            all_courses.append(course)
+                # Extract notable professors
+                professors = major.get('notable_professors', []) or []
+                for prof in professors:
+                    if prof and prof not in all_professors:
+                        all_professors.append(prof)
+        if all_majors:
+            parts.append(f"Majors offered: {', '.join(all_majors[:20])}")
+        if all_courses:
+            parts.append(f"Courses: {', '.join(all_courses[:30])}")
+        if all_professors:
+            parts.append(f"Notable Professors: {', '.join(all_professors[:15])}")
     
     # Outcomes
     if 'outcomes' in profile:
@@ -458,6 +485,16 @@ def create_searchable_text(profile: dict) -> str:
 # --- Ingest University Profile ---
 def ingest_university(profile: dict) -> dict:
     """Ingest a university profile into Elasticsearch."""
+    
+    # Helper function for safe nested access
+    def safe_get(d, *keys, default=None):
+        """Safely get nested dictionary values, handling None at any level."""
+        for key in keys:
+            if d is None or not isinstance(d, dict):
+                return default
+            d = d.get(key)
+        return d if d is not None else default
+    
     try:
         es_client = get_elasticsearch_client()
         ensure_index_exists(es_client)
@@ -466,30 +503,53 @@ def ingest_university(profile: dict) -> dict:
         if not university_id:
             raise ValueError("Profile must have an '_id' field")
         
-        official_name = profile.get('metadata', {}).get('official_name', university_id)
-        location = profile.get('metadata', {}).get('location', {})
+        # Safe nested access for all fields
+        metadata = profile.get('metadata') or {}
+        official_name = metadata.get('official_name', university_id) if isinstance(metadata, dict) else university_id
+        
+        # Handle location - ES expects an object (geo_point or structured), so if it's a string, wrap it or ignore
+        location_raw = metadata.get('location') if isinstance(metadata, dict) else {}
+        location = {}
+        if isinstance(location_raw, dict):
+            location = location_raw
+        elif isinstance(location_raw, str):
+            # If string, we can't use it as 'location' object in ES if mapping is strict object
+            # We'll store it as 'location_display' in the doc generally, but strict 'location' field must be valid
+            pass
+            
+        location_display = location_raw if isinstance(location_raw, str) else ""
+        if isinstance(location_raw, dict):
+            city = location_raw.get('city', '')
+            state = location_raw.get('state', '')
+            if city and state:
+                location_display = f"{city}, {state}"
         
         searchable_text = create_searchable_text(profile)
         
-        current_status = profile.get('admissions_data', {}).get('current_status', {})
-        acceptance_rate = current_status.get('overall_acceptance_rate')
-        test_policy = current_status.get('test_policy_details', '')
-        market_position = profile.get('strategic_profile', {}).get('market_position', '')
-        median_earnings = profile.get('outcomes', {}).get('median_earnings_10yr')
-        last_updated = profile.get('metadata', {}).get('last_updated')
+        admissions_data = profile.get('admissions_data') or {}
+        current_status = admissions_data.get('current_status', {}) if isinstance(admissions_data, dict) else {}
+        acceptance_rate = current_status.get('overall_acceptance_rate') if isinstance(current_status, dict) else None
+        test_policy = current_status.get('test_policy_details', '') if isinstance(current_status, dict) else ''
+        
+        strategic_profile = profile.get('strategic_profile') or {}
+        market_position = strategic_profile.get('market_position', '') if isinstance(strategic_profile, dict) else ''
+        
+        outcomes = profile.get('outcomes') or {}
+        median_earnings = outcomes.get('median_earnings_10yr') if isinstance(outcomes, dict) else None
+        
+        last_updated = metadata.get('last_updated') if isinstance(metadata, dict) else None
         
         # Extract US News National Universities rank
-        # First check for the new simple us_news_rank field
-        strategic = profile.get('strategic_profile', {})
-        us_news_rank = strategic.get('us_news_rank')
+        us_news_rank = strategic_profile.get('us_news_rank') if isinstance(strategic_profile, dict) else None
         
         # Fallback to extracting from rankings array if not present
-        if us_news_rank is None:
-            rankings = strategic.get('rankings', [])
+        if us_news_rank is None and isinstance(strategic_profile, dict):
+            rankings = strategic_profile.get('rankings', []) or []
             for ranking in rankings:
-                if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
-                    us_news_rank = ranking.get('rank_overall') or ranking.get('rank_in_category')
-                    break
+                if isinstance(ranking, dict):
+                    if ranking.get('source') == 'US News' and ranking.get('rank_category') == 'National Universities':
+                        us_news_rank = ranking.get('rank_overall') or ranking.get('rank_in_category')
+                        break
         
         # Generate pre-computed summary for details view
         university_summary = create_university_summary(profile)
@@ -505,7 +565,8 @@ def ingest_university(profile: dict) -> dict:
             "university_id": university_id,
             "official_name": official_name,
             "location": location,
-            "semantic_content": searchable_text,  # ELSER auto-embeds this
+            "location_display": location_display,  # Human-readable location string
+            # Removed semantic_content - no longer using ELSER for search
             "searchable_text": searchable_text,
             "summary": university_summary,  # Pre-computed summary for details
             "acceptance_rate": acceptance_rate,
@@ -537,18 +598,17 @@ def ingest_university(profile: dict) -> dict:
 
 
 # --- Search Universities ---
-def search_universities(query: str, limit: int = 10, filters: dict = None, search_type: str = "semantic", exclude_ids: list = None, sort_by: str = "relevance") -> dict:
+def search_universities(query: str, limit: int = 10, filters: dict = None, search_type: str = "keyword", exclude_ids: list = None, sort_by: str = "relevance") -> dict:
     """
-    Search universities using semantic_text field.
+    Search universities using keyword/full-text search (BM25).
     
-    With semantic_text, we can use simple match queries for semantic search.
-    The ELSER model handles embedding generation automatically at query time.
+    Note: ELSER semantic search has been removed. Uses BM25 full-text search only.
     
     Args:
         query: Search query text
         limit: Maximum results to return
         filters: Optional filters (e.g., {"state": "CA", "acceptance_rate_max": 30})
-        search_type: "semantic" (default), "keyword", or "hybrid"
+        search_type: "keyword" (default) or "hybrid" (both use BM25 now)
         exclude_ids: List of university_ids to exclude from results (for avoiding duplicates)
         sort_by: Sort order - "relevance" (default), "selectivity" (by acceptance_rate ASC), 
                  "acceptance_rate" (same as selectivity)
@@ -595,14 +655,12 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                 }
             }
         elif search_type == "hybrid":
-            # Combine semantic_text match with BM25 on searchable_text and official_name
+            # Hybrid uses BM25 on multiple fields (ELSER removed)
             search_body = {
                 "size": limit,
                 "query": {
                     "bool": {
                         "should": [
-                            # Semantic search on semantic_content (using ELSER)
-                            {"match": {"semantic_content": {"query": expanded_query, "boost": 2.0}}},
                             # BM25 on searchable_text
                             {"match": {"searchable_text": {"query": expanded_query, "boost": 1.0}}},
                             # Boost exact name matches
@@ -615,17 +673,18 @@ def search_universities(query: str, limit: int = 10, filters: dict = None, searc
                 }
             }
         else:
-            # Semantic search only (default) - uses ELSER via semantic_text field
-            # Simple match query on semantic_text field triggers semantic search
+            # Default: keyword search on searchable_text and official_name
             search_body = {
                 "size": limit,
                 "query": {
                     "bool": {
-                        "must": [
-                            {"match": {"semantic_content": expanded_query}}
+                        "should": [
+                            {"match": {"searchable_text": expanded_query}},
+                            {"match": {"official_name": {"query": expanded_query, "boost": 2.0}}}
                         ],
                         "filter": filter_clauses,
-                        "must_not": must_not_clauses
+                        "must_not": must_not_clauses,
+                        "minimum_should_match": 1
                     }
                 }
             }

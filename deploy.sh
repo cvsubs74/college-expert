@@ -716,6 +716,78 @@ EOF
     echo -e "${GREEN}  Open: https://sourcery-data-app.web.app${NC}"
 }
 
+deploy_uniminer() {
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  Deploying UniMiner (Cloud Function + UI)${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+    echo ""
+    
+    UNIMINER_FUNCTION="uniminer"
+    
+    # Get university collector agent URL
+    UNIVERSITY_COLLECTOR_URL=$(gcloud run services describe university-profile-collector --region=$REGION --format='value(status.url)' 2>/dev/null || echo "")
+    if [ -z "$UNIVERSITY_COLLECTOR_URL" ]; then
+        echo -e "${YELLOW}⚠ University Profile Collector not deployed. Deploy it first with: ./deploy.sh university-collector${NC}"
+        UNIVERSITY_COLLECTOR_URL="https://university-profile-collector-pfnwjfp26a-ue.a.run.app"
+    fi
+    echo -e "${GREEN}Using University Collector: ${UNIVERSITY_COLLECTOR_URL}${NC}"
+    
+    # Deploy cloud function from agents/uniminer/cloud_function
+    echo -e "${YELLOW}Deploying UniMiner cloud function...${NC}"
+    cd agents/uniminer/cloud_function
+    
+    # Create deploy-time env.yaml with substituted values
+    cat > env.deploy.yaml <<EOF
+ES_CLOUD_ID: "${ES_CLOUD_ID}"
+ES_API_KEY: "${ES_API_KEY}"
+COLLEGE_SCORECARD_API_KEY: "${DATA_GOV_API_KEY:-}"
+KNOWLEDGE_BASE_UNIVERSITIES_URL: "https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app"
+EOF
+    
+    gcloud functions deploy $UNIMINER_FUNCTION \
+        --gen2 \
+        --runtime=python311 \
+        --region=$REGION \
+        --source=. \
+        --entry-point=uniminer \
+        --trigger-http \
+        --allow-unauthenticated \
+        --env-vars-file=env.deploy.yaml \
+        --timeout=300s \
+        --memory=512MB \
+        --max-instances=10
+    
+    UNIMINER_FUNCTION_URL=$(gcloud functions describe $UNIMINER_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
+    echo -e "${GREEN}✓ UniMiner cloud function deployed: ${UNIMINER_FUNCTION_URL}${NC}"
+    
+    # Clean up deploy-time env file
+    rm -f env.deploy.yaml
+    cd ../../..
+    
+    # Deploy UI to Firebase
+    echo -e "${YELLOW}Building UniMiner UI...${NC}"
+    cd agents/uniminer/ui
+    
+    # Create .env with API URLs (cloud function + agent)
+    cat > .env <<EOF
+VITE_API_URL=${UNIMINER_FUNCTION_URL}
+VITE_RESEARCH_AGENT_URL=${UNIVERSITY_COLLECTOR_URL}
+EOF
+    
+    npm install --silent
+    npm run build
+    
+    echo -e "${YELLOW}Deploying UniMiner UI to Firebase...${NC}"
+    firebase deploy --only hosting
+    
+    cd ../../..
+    
+    echo -e "${GREEN}✓ UniMiner deployed!${NC}"
+    echo -e "${GREEN}  Cloud Function: ${UNIMINER_FUNCTION_URL}${NC}"
+    echo -e "${GREEN}  Research Agent: ${UNIVERSITY_COLLECTOR_URL}${NC}"
+    echo -e "${GREEN}  UI: https://uniminer.web.app${NC}"
+}
+
 deploy_source_curator() {
     echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
     echo -e "${BLUE}  Deploying Source Curator (FastAPI + React UI)${NC}"
@@ -865,6 +937,9 @@ case "$DEPLOY_TARGET" in
         echo -e "${CYAN}Deploying Sourcery (agent + frontend)...${NC}"
         deploy_datamine
         deploy_sourcery_frontend
+        ;;
+    "uniminer")
+        deploy_uniminer
         ;;
     "vertexai")
         echo -e "${CYAN}Deploying Vertex AI backend (cloud functions + agent)...${NC}"

@@ -22,7 +22,7 @@ colleges_list_micro = LlmAgent(
     name="CollegesListMicro",
     model=MODEL_NAME,
     description="Fetches list of undergraduate colleges/schools.",
-    instruction=\"\"\"Find ALL undergraduate colleges/schools at {university_name}:
+    instruction="""Find ALL undergraduate colleges/schools at {university_name}:
 
 ⚠️ CRITICAL: Use the CURRENT academic catalog only (the most recent available).
 If a page shows "ARCHIVED CATALOGUE", search for the current version.
